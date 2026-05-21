@@ -17,6 +17,9 @@
     "CreateMemory": "<p>Creates a new Amazon Bedrock AgentCore Memory resource.</p>",
     "CreateOauth2CredentialProvider": "<p>Creates a new OAuth2 credential provider.</p>",
     "CreateOnlineEvaluationConfig": "<p> Creates an online evaluation configuration for continuous monitoring of agent performance. Online evaluation automatically samples live traffic from CloudWatch logs at specified rates and applies evaluators to assess agent quality in production. </p>",
+    "CreatePaymentConnector": "<p>Creates a new payment connector for a payment manager. A payment connector integrates with a supported payment provider to enable payment processing capabilities.</p>",
+    "CreatePaymentCredentialProvider": "<p>Creates a new payment credential provider for storing authentication credentials used by payment connectors to communicate with external payment providers.</p>",
+    "CreatePaymentManager": "<p>Creates a new payment manager in your Amazon Web Services account. A payment manager serves as the top-level resource for managing payment processing capabilities, including payment connectors that integrate with supported payment providers.</p> <p>If you specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must provide an <code>authorizerConfiguration</code>.</p>",
     "CreatePolicy": "<p>Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using the Cedar policy language, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html\">GetPolicy</a> operation to poll the <code>status</code> field to track completion.</p>",
     "CreatePolicyEngine": "<p>Creates a new policy engine within the AgentCore Policy system. A policy engine is a collection of policies that evaluates and authorizes agent tool calls. When associated with Gateways (each Gateway can be associated with at most one policy engine, but multiple Gateways can be associated with the same engine), the policy engine intercepts all agent requests and determines whether to allow or deny each action based on the defined policies. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicyEngine.html\">GetPolicyEngine</a> operation to poll the <code>status</code> field to track completion.</p>",
     "CreateRegistry": "<p>Creates a new registry in your Amazon Web Services account. A registry serves as a centralized catalog for organizing and managing registry records, including MCP servers, A2A agents, agent skills, and custom resource types.</p> <p>If you specify <code>CUSTOM_JWT</code> as the <code>authorizerType</code>, you must provide an <code>authorizerConfiguration</code>.</p>",
@@ -37,6 +40,9 @@
     "DeleteMemory": "<p>Deletes an Amazon Bedrock AgentCore Memory resource.</p>",
     "DeleteOauth2CredentialProvider": "<p>Deletes an OAuth2 credential provider.</p>",
     "DeleteOnlineEvaluationConfig": "<p> Deletes an online evaluation configuration and stops any ongoing evaluation processes associated with it. </p>",
+    "DeletePaymentConnector": "<p>Deletes a payment connector.</p>",
+    "DeletePaymentCredentialProvider": "<p>Deletes a payment credential provider and its associated stored credentials.</p>",
+    "DeletePaymentManager": "<p>Deletes a payment manager. All payment connectors associated with the payment manager must be deleted before the payment manager can be deleted. This operation initiates the deletion process asynchronously.</p>",
     "DeletePolicy": "<p>Deletes an existing policy from the AgentCore Policy system. Once deleted, the policy can no longer be used for agent behavior control and all references to it become invalid. This is an asynchronous operation. Use the <code>GetPolicy</code> operation to poll the <code>status</code> field to track completion.</p>",
     "DeletePolicyEngine": "<p>Deletes an existing policy engine from the AgentCore Policy system. The policy engine must not have any associated policies before deletion. Once deleted, the policy engine and all its configurations become unavailable for policy management and evaluation. This is an asynchronous operation. Use the <code>GetPolicyEngine</code> operation to poll the <code>status</code> field to track completion.</p>",
     "DeleteRegistry": "<p>Deletes a registry. The registry must contain zero records before it can be deleted. This operation initiates the deletion process asynchronously.</p>",
@@ -59,9 +65,15 @@
     "GetMemory": "<p>Retrieve an existing Amazon Bedrock AgentCore Memory resource.</p>",
     "GetOauth2CredentialProvider": "<p>Retrieves information about an OAuth2 credential provider.</p>",
     "GetOnlineEvaluationConfig": "<p> Retrieves detailed information about an online evaluation configuration, including its rules, data sources, evaluators, and execution status. </p>",
+    "GetPaymentConnector": "<p>Retrieves information about a specific payment connector.</p>",
+    "GetPaymentCredentialProvider": "<p>Retrieves information about a specific payment credential provider.</p>",
+    "GetPaymentManager": "<p>Retrieves information about a specific payment manager.</p>",
     "GetPolicy": "<p>Retrieves detailed information about a specific policy within the AgentCore Policy system. This operation returns the complete policy definition, metadata, and current status, allowing administrators to review and manage policy configurations.</p>",
     "GetPolicyEngine": "<p>Retrieves detailed information about a specific policy engine within the AgentCore Policy system. This operation returns the complete policy engine configuration, metadata, and current status, allowing administrators to review and manage policy engine settings.</p>",
+    "GetPolicyEngineSummary": "<p>Retrieves a metadata-only summary of a specific policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and the encryption key ARN, but does not include the description or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
     "GetPolicyGeneration": "<p>Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Cedar policy statements using AI-powered translation, enabling non-technical users to create policies.</p>",
+    "GetPolicyGenerationSummary": "<p>Retrieves a metadata-only summary of a specific policy generation request without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and findings, but does not include status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
+    "GetPolicySummary": "<p>Retrieves a metadata-only summary of a specific policy without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps, but does not include the policy definition, description, or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
     "GetRegistry": "<p>Retrieves information about a specific registry.</p>",
     "GetRegistryRecord": "<p>Retrieves information about a specific registry record.</p>",
     "GetResourcePolicy": "<p>Retrieves the resource-based policy for a specified resource.</p> <note> <p>This feature is currently available only for AgentCore Runtime and Gateway.</p> </note>",
@@ -84,11 +96,17 @@
     "ListMemories": "<p>Lists the available Amazon Bedrock AgentCore Memory resources in the current Amazon Web Services Region.</p>",
     "ListOauth2CredentialProviders": "<p>Lists all OAuth2 credential providers in your account.</p>",
     "ListOnlineEvaluationConfigs": "<p> Lists all online evaluation configurations in the account, providing summary information about each configuration's status and settings. </p>",
+    "ListPaymentConnectors": "<p>Lists all payment connectors for a specified payment manager.</p>",
+    "ListPaymentCredentialProviders": "<p>Lists all payment credential providers in the account.</p>",
+    "ListPaymentManagers": "<p>Lists all payment managers in the account.</p>",
     "ListPolicies": "<p>Retrieves a list of policies within the AgentCore Policy engine. This operation supports pagination and filtering to help administrators manage and discover policies across policy engines. Results can be filtered by policy engine or resource associations.</p>",
+    "ListPolicyEngineSummaries": "<p>Retrieves a paginated list of metadata-only policy engine summaries without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps for each policy engine, but does not include descriptions or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
     "ListPolicyEngines": "<p>Retrieves a list of policy engines within the AgentCore Policy system. This operation supports pagination to help administrators discover and manage policy engines across their account. Each policy engine serves as a container for related policies.</p>",
     "ListPolicyGenerationAssets": "<p>Retrieves a list of generated policy assets from a policy generation request within the AgentCore Policy system. This operation returns the actual Cedar policies and related artifacts produced by the AI-powered policy generation process, allowing users to review and select from multiple generated policy options.</p>",
+    "ListPolicyGenerationSummaries": "<p>Retrieves a paginated list of metadata-only policy generation summaries within a policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, timestamps, and findings for each policy generation, but does not include status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
     "ListPolicyGenerations": "<p>Retrieves a list of policy generation requests within the AgentCore Policy system. This operation supports pagination and filtering to help track and manage AI-powered policy generation operations.</p>",
-    "ListRegistries": "<p>Lists all registries in the account. You can optionally filter results by status using the <code>status</code> parameter.</p>",
+    "ListPolicySummaries": "<p>Retrieves a paginated list of metadata-only policy summaries within a policy engine without decrypting customer content. This lightweight read operation returns resource identifiers, status, and timestamps for each policy, but does not include policy definitions, descriptions, or status reasons. Because this operation does not require access to the customer's KMS key, it is suitable for resource discovery, inventory, and integration scenarios where only metadata is needed.</p>",
+    "ListRegistries": "<p>Lists all registries in the account. You can optionally filter results by status using the <code>status</code> parameter, or by authorizer type using the <code>authorizerType</code> parameter.</p>",
     "ListRegistryRecords": "<p>Lists registry records within a registry. You can optionally filter results using the <code>name</code>, <code>status</code>, and <code>descriptorType</code> parameters. When multiple filters are specified, they are combined using AND logic.</p>",
     "ListTagsForResource": "<p>Lists the tags associated with the specified resource.</p> <note> <p>This feature is currently available only for AgentCore Runtime, Browser, Browser Profile, Code Interpreter tool, and Gateway.</p> </note>",
     "ListWorkloadIdentities": "<p>Lists all workload identities in your account.</p>",
@@ -111,6 +129,9 @@
     "UpdateMemory": "<p>Update an Amazon Bedrock AgentCore Memory resource memory.</p>",
     "UpdateOauth2CredentialProvider": "<p>Updates an existing OAuth2 credential provider.</p>",
     "UpdateOnlineEvaluationConfig": "<p> Updates an online evaluation configuration's settings, including rules, data sources, evaluators, and execution status. Changes take effect immediately for ongoing evaluations. </p>",
+    "UpdatePaymentConnector": "<p>Updates an existing payment connector. This operation uses PATCH semantics, so you only need to specify the fields you want to change.</p>",
+    "UpdatePaymentCredentialProvider": "<p>Updates an existing payment credential provider with new authentication credentials.</p>",
+    "UpdatePaymentManager": "<p>Updates an existing payment manager. This operation uses PATCH semantics, so you only need to specify the fields you want to change.</p>",
     "UpdatePolicy": "<p>Updates an existing policy within the AgentCore Policy system. This operation allows modification of the policy description and definition while maintaining the policy's identity. The updated policy is validated against the Cedar schema before being applied. This is an asynchronous operation. Use the <code>GetPolicy</code> operation to poll the <code>status</code> field to track completion.</p>",
     "UpdatePolicyEngine": "<p>Updates an existing policy engine within the AgentCore Policy system. This operation allows modification of the policy engine description while maintaining its identity. This is an asynchronous operation. Use the <code>GetPolicyEngine</code> operation to poll the <code>status</code> field to track completion.</p>",
     "UpdateRegistry": "<p>Updates an existing registry. This operation uses PATCH semantics, so you only need to specify the fields you want to change.</p>",
@@ -560,14 +581,18 @@
         "CreateGatewayRequest$authorizerConfiguration": "<p>The authorizer configuration for the gateway. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>.</p>",
         "CreateGatewayResponse$authorizerConfiguration": "<p>The authorizer configuration for the created gateway.</p>",
         "CreateHarnessRequest$authorizerConfiguration": null,
+        "CreatePaymentManagerRequest$authorizerConfiguration": "<p>The authorizer configuration for the payment manager.</p>",
+        "CreatePaymentManagerResponse$authorizerConfiguration": null,
         "CreateRegistryRequest$authorizerConfiguration": "<p>The authorizer configuration for the registry. Required if <code>authorizerType</code> is <code>CUSTOM_JWT</code>. For details, see the <code>AuthorizerConfiguration</code> data type.</p>",
         "GetAgentRuntimeResponse$authorizerConfiguration": "<p>The authorizer configuration for the AgentCore Runtime.</p>",
         "GetGatewayResponse$authorizerConfiguration": "<p>The authorizer configuration for the gateway.</p>",
+        "GetPaymentManagerResponse$authorizerConfiguration": null,
         "GetRegistryResponse$authorizerConfiguration": "<p>The authorizer configuration for the registry. For details, see the <code>AuthorizerConfiguration</code> data type.</p>",
         "Harness$authorizerConfiguration": null,
         "UpdateAgentRuntimeRequest$authorizerConfiguration": "<p>The updated authorizer configuration for the AgentCore Runtime.</p>",
         "UpdateGatewayRequest$authorizerConfiguration": "<p>The updated authorizer configuration for the gateway.</p>",
         "UpdateGatewayResponse$authorizerConfiguration": "<p>The updated authorizer configuration for the gateway.</p>",
+        "UpdatePaymentManagerRequest$authorizerConfiguration": "<p>The updated authorizer configuration for the payment manager.</p>",
         "UpdateRegistryResponse$authorizerConfiguration": "<p>The authorizer configuration for the updated registry. For details, see the <code>AuthorizerConfiguration</code> data type.</p>",
         "UpdatedAuthorizerConfiguration$optionalValue": "<p>The updated authorizer configuration value. If not specified, it will clear the current authorizer configuration of the resource.</p>"
       }
@@ -602,6 +627,7 @@
         "GetResourcePolicyRequest$resourceArn": "<p>The Amazon Resource Name (ARN) of the resource for which to retrieve the resource policy.</p>",
         "HarnessAgentCoreRuntimeEnvironment$agentRuntimeArn": "<p>The ARN of the underlying AgentCore Runtime.</p>",
         "ListPoliciesRequest$targetResourceScope": "<p>Optional filter to list policies that apply to a specific resource scope or resource type. This helps narrow down policy results to those relevant for particular Amazon Web Services resources, agent tools, or operational contexts within the policy engine ecosystem.</p>",
+        "ListPolicySummariesRequest$targetResourceScope": "<p>Optional filter to list policy summaries that apply to a specific resource scope or resource type. This helps narrow down results to those relevant for particular Amazon Web Services resources, agent tools, or operational contexts within the policy engine ecosystem.</p>",
         "PutResourcePolicyRequest$resourceArn": "<p>The Amazon Resource Name (ARN) of the resource for which to create or update the resource policy.</p>",
         "Resource$arn": "<p>The Amazon Resource Name (ARN) of the resource. This globally unique identifier specifies the exact resource that policies will be evaluated against for access control decisions. </p>"
       }
@@ -627,7 +653,8 @@
         "RuntimeMetadataConfiguration$requireMMDSV2": "<p>Enables MMDSv2 (microVM Metadata Service Version 2) requirement for the agent runtime. When set to <code>true</code>, the runtime microVM will only accept MMDSv2 requests.</p>",
         "StreamingConfiguration$enableResponseStreaming": "<p>Indicates whether response streaming is enabled for the gateway. When set to <code>true</code>, the gateway streams responses from targets back to the client.</p>",
         "UpdateRegistryRecordRequest$triggerSynchronization": "<p>Whether to trigger synchronization using the stored or provided configuration. When set to <code>true</code>, the service will synchronize the record metadata from the configured external source.</p>",
-        "VersionFilter$latestPerBranch": "<p>When true, returns only the latest version for each branch. When false or not specified, returns all versions. Can be combined with <code>branchName</code> to get the latest version for a specific branch.</p>"
+        "VersionFilter$latestPerBranch": "<p>When true, returns only the latest version for each branch. When false or not specified, returns all versions. Can be combined with <code>branchName</code> to get the latest version for a specific branch.</p>",
+        "VpcConfig$requireServiceS3Endpoint": "<p><note> <p>This field applies only to Agent Runtimes. It is not applicable to Browsers or Code Interpreters.</p> </note> <p>Controls whether a service-managed Amazon S3 gateway endpoint is provisioned in the VPC network topology for the agent runtime. This gateway is used by Amazon Bedrock AgentCore Runtime to download code and container images during agent startup.</p> <p>Starting May 5, 2026, Amazon Bedrock AgentCore Runtime is gradually rolling out a change to how network isolation is configured for VPC mode agents. Agent runtimes created on or after this rollout will no longer include the service-managed Amazon S3 gateway. Instead, all network access, including to Amazon S3, is governed exclusively by your VPC configuration. This field cannot be set on agent runtimes created after the rollout. Passing this field in an <code>UpdateAgentRuntime</code> request for these agent runtimes returns a <code>ValidationException</code>.</p> <p>Agent runtimes created before the rollout are not affected and continue to operate with the service-managed Amazon S3 gateway. To enforce full VPC network isolation on these existing agent runtimes, set this field to <code>false</code> via the <code>UpdateAgentRuntime</code> API. Before opting out, ensure your VPC provides the Amazon S3 access required for agent startup. If this field is not specified or is set to <code>true</code>, the service-managed Amazon S3 gateway remains provisioned.</p> <p>This field is only supported in the <code>UpdateAgentRuntime</code> API for pre-rollout agent runtimes. Passing this field in a <code>CreateAgentRuntime</code> request returns a <code>ValidationException</code>.</p></p>"
       }
     },
     "BranchName": {
@@ -898,6 +925,8 @@
         "CreateGatewayTargetRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
         "CreateHarnessRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
         "CreateOnlineEvaluationConfigRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
+        "CreatePaymentConnectorRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
+        "CreatePaymentManagerRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
         "CreatePolicyEngineRequest$clientToken": "<p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy engine.</p>",
         "CreatePolicyRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without creating a duplicate policy.</p>",
         "CreateRegistryRecordRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
@@ -908,13 +937,17 @@
         "DeleteBrowserRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
         "DeleteCodeInterpreterRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
         "DeleteHarnessRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
+        "DeletePaymentConnectorRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
+        "DeletePaymentManagerRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
         "StartPolicyGenerationRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure the idempotency of the request. The AWS SDK automatically generates this token, so you don't need to provide it in most cases. If you retry a request with the same client token, the service returns the same response without starting a duplicate generation.</p>",
         "UpdateAgentRuntimeEndpointRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
         "UpdateAgentRuntimeRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
         "UpdateConfigurationBundleRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
         "UpdateEvaluatorRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
         "UpdateHarnessRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>",
-        "UpdateOnlineEvaluationConfigRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>"
+        "UpdateOnlineEvaluationConfigRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
+        "UpdatePaymentConnectorRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>",
+        "UpdatePaymentManagerRequest$clientToken": "<p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html\">Ensuring idempotency</a>.</p>"
       }
     },
     "CloudWatchLogsInputConfig": {
@@ -1017,6 +1050,37 @@
       "base": "<p>Contains summary information about a code interpreter. A code interpreter enables Amazon Bedrock AgentCore Agent to execute code.</p>",
       "refs": {
         "CodeInterpreterSummaries$member": null
+      }
+    },
+    "CoinbaseCdpApiKeyIdType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationInput$apiKeyId": "<p>The API key identifier provided by Coinbase Developer Platform.</p>",
+        "CoinbaseCdpConfigurationOutput$apiKeyId": "<p>The API key identifier provided by Coinbase Developer Platform.</p>"
+      }
+    },
+    "CoinbaseCdpApiKeySecretType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationInput$apiKeySecret": "<p>The API key secret provided by Coinbase Developer Platform.</p>"
+      }
+    },
+    "CoinbaseCdpConfigurationInput": {
+      "base": "<p>Coinbase CDP configuration — credentials provided by Coinbase Developer Platform.</p>",
+      "refs": {
+        "PaymentProviderConfigurationInput$coinbaseCdpConfiguration": "<p>The Coinbase CDP configuration.</p>"
+      }
+    },
+    "CoinbaseCdpConfigurationOutput": {
+      "base": "<p>Coinbase CDP configuration output with secret ARNs.</p>",
+      "refs": {
+        "PaymentProviderConfigurationOutput$coinbaseCdpConfiguration": "<p>The Coinbase CDP configuration.</p>"
+      }
+    },
+    "CoinbaseCdpWalletSecretType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationInput$walletSecret": "<p>The wallet secret provided by Coinbase Developer Platform.</p>"
       }
     },
     "ComponentConfiguration": {
@@ -1355,6 +1419,30 @@
       "base": null,
       "refs": {}
     },
+    "CreatePaymentConnectorRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "CreatePaymentConnectorResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "CreatePaymentCredentialProviderRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "CreatePaymentCredentialProviderResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "CreatePaymentManagerRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "CreatePaymentManagerResponse": {
+      "base": null,
+      "refs": {}
+    },
     "CreatePolicyEngineRequest": {
       "base": null,
       "refs": {}
@@ -1441,17 +1529,25 @@
         "CreateApiKeyCredentialProviderResponse$name": "<p>The name of the created API key credential provider.</p>",
         "CreateOauth2CredentialProviderRequest$name": "<p>The name of the OAuth2 credential provider. The name must be unique within your account.</p>",
         "CreateOauth2CredentialProviderResponse$name": "<p>The name of the OAuth2 credential provider.</p>",
+        "CreatePaymentCredentialProviderRequest$name": "<p>Unique name for the payment credential provider.</p>",
+        "CreatePaymentCredentialProviderResponse$name": "<p>The name of the created payment credential provider.</p>",
         "DeleteApiKeyCredentialProviderRequest$name": "<p>The name of the API key credential provider to delete.</p>",
         "DeleteOauth2CredentialProviderRequest$name": "<p>The name of the OAuth2 credential provider to delete.</p>",
+        "DeletePaymentCredentialProviderRequest$name": "<p>The name of the payment credential provider to delete.</p>",
         "GetApiKeyCredentialProviderRequest$name": "<p>The name of the API key credential provider to retrieve.</p>",
         "GetApiKeyCredentialProviderResponse$name": "<p>The name of the API key credential provider.</p>",
         "GetOauth2CredentialProviderRequest$name": "<p>The name of the OAuth2 credential provider to retrieve.</p>",
         "GetOauth2CredentialProviderResponse$name": "<p>The name of the OAuth2 credential provider.</p>",
+        "GetPaymentCredentialProviderRequest$name": "<p>The name of the payment credential provider to retrieve.</p>",
+        "GetPaymentCredentialProviderResponse$name": "<p>The name of the payment credential provider.</p>",
         "Oauth2CredentialProviderItem$name": "<p>The name of the OAuth2 credential provider.</p>",
+        "PaymentCredentialProviderItem$name": "<p>The name of the payment credential provider.</p>",
         "UpdateApiKeyCredentialProviderRequest$name": "<p>The name of the API key credential provider to update.</p>",
         "UpdateApiKeyCredentialProviderResponse$name": "<p>The name of the API key credential provider.</p>",
         "UpdateOauth2CredentialProviderRequest$name": "<p>The name of the OAuth2 credential provider to update.</p>",
-        "UpdateOauth2CredentialProviderResponse$name": "<p>The name of the OAuth2 credential provider.</p>"
+        "UpdateOauth2CredentialProviderResponse$name": "<p>The name of the OAuth2 credential provider.</p>",
+        "UpdatePaymentCredentialProviderRequest$name": "<p>The name of the payment credential provider to update.</p>",
+        "UpdatePaymentCredentialProviderResponse$name": "<p>The name of the updated payment credential provider.</p>"
       }
     },
     "CredentialProviderType": {
@@ -1468,6 +1564,22 @@
         "Oauth2CredentialProviderItem$credentialProviderVendor": "<p>The vendor of the OAuth2 credential provider.</p>",
         "UpdateOauth2CredentialProviderRequest$credentialProviderVendor": "<p>The vendor of the OAuth2 credential provider.</p>",
         "UpdateOauth2CredentialProviderResponse$credentialProviderVendor": "<p>The vendor of the OAuth2 credential provider.</p>"
+      }
+    },
+    "CredentialsProviderConfiguration": {
+      "base": "<p>The credential provider configuration for a payment connector. Specifies the payment provider type and its associated credential provider.</p>",
+      "refs": {
+        "CredentialsProviderConfigurations$member": null
+      }
+    },
+    "CredentialsProviderConfigurations": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorRequest$credentialProviderConfigurations": "<p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>",
+        "CreatePaymentConnectorResponse$credentialProviderConfigurations": "<p>The credential provider configurations for the created payment connector.</p>",
+        "GetPaymentConnectorResponse$credentialProviderConfigurations": "<p>The credential provider configurations for the payment connector.</p>",
+        "UpdatePaymentConnectorRequest$credentialProviderConfigurations": "<p>The updated credential provider configurations for the payment connector.</p>",
+        "UpdatePaymentConnectorResponse$credentialProviderConfigurations": "<p>The credential provider configurations for the updated payment connector.</p>"
       }
     },
     "CustomClaimValidationType": {
@@ -1605,6 +1717,8 @@
         "CreateGatewayTargetResponse$createdAt": "<p>The timestamp when the target was created.</p>",
         "CreateGatewayTargetResponse$updatedAt": "<p>The timestamp when the target was last updated.</p>",
         "CreateGatewayTargetResponse$lastSynchronizedAt": "<p>The last synchronization of the target.</p>",
+        "CreatePaymentConnectorResponse$createdAt": "<p>The timestamp when the payment connector was created.</p>",
+        "CreatePaymentManagerResponse$createdAt": "<p>The timestamp when the payment manager was created.</p>",
         "CreatePolicyEngineResponse$createdAt": "<p>The timestamp when the policy engine was created. This is automatically set by the service and used for auditing and lifecycle management.</p>",
         "CreatePolicyEngineResponse$updatedAt": "<p>The timestamp when the policy engine was last updated. For newly created policy engines, this matches the <code>createdAt</code> timestamp.</p>",
         "CreatePolicyResponse$createdAt": "<p>The timestamp when the policy was created. This is automatically set by the service and used for auditing and lifecycle management.</p>",
@@ -1642,12 +1756,22 @@
         "GetGatewayTargetResponse$createdAt": "<p>The timestamp when the gateway target was created.</p>",
         "GetGatewayTargetResponse$updatedAt": "<p>The timestamp when the gateway target was last updated.</p>",
         "GetGatewayTargetResponse$lastSynchronizedAt": "<p>The last synchronization of the target.</p>",
+        "GetPaymentConnectorResponse$createdAt": "<p>The timestamp when the payment connector was created.</p>",
+        "GetPaymentConnectorResponse$lastUpdatedAt": "<p>The timestamp when the payment connector was last updated.</p>",
+        "GetPaymentManagerResponse$createdAt": "<p>The timestamp when the payment manager was created.</p>",
+        "GetPaymentManagerResponse$lastUpdatedAt": "<p>The timestamp when the payment manager was last updated.</p>",
         "GetPolicyEngineResponse$createdAt": "<p>The timestamp when the policy engine was originally created.</p>",
         "GetPolicyEngineResponse$updatedAt": "<p>The timestamp when the policy engine was last modified. This tracks the most recent changes to the policy engine configuration.</p>",
+        "GetPolicyEngineSummaryResponse$createdAt": "<p>The timestamp when the policy engine was originally created.</p>",
+        "GetPolicyEngineSummaryResponse$updatedAt": "<p>The timestamp when the policy engine was last modified.</p>",
         "GetPolicyGenerationResponse$createdAt": "<p>The timestamp when the policy generation request was created. This is used for tracking and auditing generation operations and their lifecycle.</p>",
         "GetPolicyGenerationResponse$updatedAt": "<p>The timestamp when the policy generation was last updated. This tracks the progress of the generation process and any status changes.</p>",
+        "GetPolicyGenerationSummaryResponse$createdAt": "<p>The timestamp when the policy generation request was created.</p>",
+        "GetPolicyGenerationSummaryResponse$updatedAt": "<p>The timestamp when the policy generation was last updated.</p>",
         "GetPolicyResponse$createdAt": "<p>The timestamp when the policy was originally created.</p>",
         "GetPolicyResponse$updatedAt": "<p>The timestamp when the policy was last modified. This tracks the most recent changes to the policy configuration.</p>",
+        "GetPolicySummaryResponse$createdAt": "<p>The timestamp when the policy was originally created.</p>",
+        "GetPolicySummaryResponse$updatedAt": "<p>The timestamp when the policy was last modified.</p>",
         "GetRegistryRecordResponse$createdAt": "<p>The timestamp when the registry record was created.</p>",
         "GetRegistryRecordResponse$updatedAt": "<p>The timestamp when the registry record was last updated.</p>",
         "GetRegistryResponse$createdAt": "<p>The timestamp when the registry was created.</p>",
@@ -1656,12 +1780,21 @@
         "Harness$updatedAt": "<p>The updatedAt time of the Harness.</p>",
         "HarnessSummary$createdAt": "<p>The timestamp when the harness was created.</p>",
         "HarnessSummary$updatedAt": "<p>The timestamp when the harness was last updated.</p>",
+        "PaymentConnectorSummary$lastUpdatedAt": "<p>The timestamp when the payment connector was last updated.</p>",
+        "PaymentManagerSummary$createdAt": "<p>The timestamp when the payment manager was created.</p>",
+        "PaymentManagerSummary$lastUpdatedAt": "<p>The timestamp when the payment manager was last updated.</p>",
         "Policy$createdAt": "<p>The timestamp when the policy was originally created. This is automatically set by the service and used for auditing and lifecycle management.</p>",
         "Policy$updatedAt": "<p>The timestamp when the policy was last modified. This tracks the most recent changes to the policy configuration or metadata.</p>",
         "PolicyEngine$createdAt": "<p>The timestamp when the policy engine was originally created. This is automatically set by the service and used for auditing and lifecycle management.</p>",
         "PolicyEngine$updatedAt": "<p>The timestamp when the policy engine was last modified. This tracks the most recent changes to the policy engine configuration or metadata.</p>",
+        "PolicyEngineSummary$createdAt": "<p>The timestamp when the policy engine was originally created.</p>",
+        "PolicyEngineSummary$updatedAt": "<p>The timestamp when the policy engine was last modified.</p>",
         "PolicyGeneration$createdAt": "<p>The timestamp when this policy generation request was created.</p>",
         "PolicyGeneration$updatedAt": "<p>The timestamp when this policy generation was last updated.</p>",
+        "PolicyGenerationSummary$createdAt": "<p>The timestamp when this policy generation request was created.</p>",
+        "PolicyGenerationSummary$updatedAt": "<p>The timestamp when this policy generation was last updated.</p>",
+        "PolicySummary$createdAt": "<p>The timestamp when the policy was originally created.</p>",
+        "PolicySummary$updatedAt": "<p>The timestamp when the policy was last modified.</p>",
         "RegistryRecordSummary$createdAt": "<p>The timestamp when the registry record was created.</p>",
         "RegistryRecordSummary$updatedAt": "<p>The timestamp when the registry record was last updated.</p>",
         "RegistrySummary$createdAt": "<p>The timestamp when the registry was created.</p>",
@@ -1682,6 +1815,8 @@
         "UpdateGatewayTargetResponse$createdAt": "<p>The timestamp when the gateway target was created.</p>",
         "UpdateGatewayTargetResponse$updatedAt": "<p>The timestamp when the gateway target was last updated.</p>",
         "UpdateGatewayTargetResponse$lastSynchronizedAt": "<p>The date and time at which the targets were last synchronized.</p>",
+        "UpdatePaymentConnectorResponse$lastUpdatedAt": "<p>The timestamp when the payment connector was last updated.</p>",
+        "UpdatePaymentManagerResponse$lastUpdatedAt": "<p>The timestamp when the payment manager was last updated.</p>",
         "UpdatePolicyEngineResponse$createdAt": "<p>The original creation timestamp of the policy engine.</p>",
         "UpdatePolicyEngineResponse$updatedAt": "<p>The timestamp when the policy engine was last updated.</p>",
         "UpdatePolicyResponse$createdAt": "<p>The original creation timestamp of the policy.</p>",
@@ -1853,6 +1988,30 @@
       "base": null,
       "refs": {}
     },
+    "DeletePaymentConnectorRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeletePaymentConnectorResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "DeletePaymentCredentialProviderRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeletePaymentCredentialProviderResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "DeletePaymentManagerRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeletePaymentManagerResponse": {
+      "base": null,
+      "refs": {}
+    },
     "DeletePolicyEngineRequest": {
       "base": null,
       "refs": {}
@@ -1999,6 +2158,18 @@
         "FilterValue$doubleValue": "<p> The numeric value for numerical filtering and comparisons. </p>",
         "NumberValidation$minValue": "<p>Minimum allowed value.</p>",
         "NumberValidation$maxValue": "<p>Maximum allowed value.</p>"
+      }
+    },
+    "EfsAccessPointArn": {
+      "base": null,
+      "refs": {
+        "EfsAccessPointConfiguration$accessPointArn": "<p>The ARN of the EFS access point to mount into the AgentCore Runtime.</p>"
+      }
+    },
+    "EfsAccessPointConfiguration": {
+      "base": "<p>Configuration for an Amazon EFS access point filesystem mounted into the AgentCore Runtime. EFS access points provide shared file storage accessible from your AgentCore Runtime sessions.</p>",
+      "refs": {
+        "FilesystemConfiguration$efsAccessPoint": "<p>Configuration for an Amazon EFS access point to mount into the AgentCore Runtime.</p>"
       }
     },
     "EncryptionFailure": {
@@ -2743,11 +2914,43 @@
       "base": null,
       "refs": {}
     },
+    "GetPaymentConnectorRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPaymentConnectorResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPaymentCredentialProviderRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPaymentCredentialProviderResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPaymentManagerRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPaymentManagerResponse": {
+      "base": null,
+      "refs": {}
+    },
     "GetPolicyEngineRequest": {
       "base": null,
       "refs": {}
     },
     "GetPolicyEngineResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPolicyEngineSummaryRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPolicyEngineSummaryResponse": {
       "base": null,
       "refs": {}
     },
@@ -2759,11 +2962,27 @@
       "base": null,
       "refs": {}
     },
+    "GetPolicyGenerationSummaryRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPolicyGenerationSummaryResponse": {
+      "base": null,
+      "refs": {}
+    },
     "GetPolicyRequest": {
       "base": null,
       "refs": {}
     },
     "GetPolicyResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPolicySummaryRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "GetPolicySummaryResponse": {
       "base": null,
       "refs": {}
     },
@@ -3414,8 +3633,10 @@
         "GetEvaluatorResponse$kmsKeyArn": "<p> The Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt the evaluator's sensitive data. This field is only present for evaluators encrypted with a customer managed key. </p>",
         "GetGatewayResponse$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the gateway.</p>",
         "GetPolicyEngineResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
+        "GetPolicyEngineSummaryResponse$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
         "KmsConfiguration$kmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key.</p>",
         "PolicyEngine$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
+        "PolicyEngineSummary$encryptionKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>",
         "UpdateEvaluatorRequest$kmsKeyArn": "<p> The Amazon Resource Name (ARN) of a customer managed KMS key to use for encrypting sensitive evaluator data. Specify a new key ARN to rotate the encryption key, or specify a key ARN to add encryption to an evaluator that was previously created without one. When you rotate to a new key, the service decrypts the existing data with the old key and re-encrypts it with the new key. Only symmetric encryption KMS keys are supported. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html\">Encryption at rest for AgentCore Evaluations</a>. </p>",
         "UpdateGatewayRequest$kmsKeyArn": "<p>The updated ARN of the KMS key used to encrypt the gateway.</p>",
         "UpdateGatewayResponse$kmsKeyArn": "<p>The updated ARN of the KMS key used to encrypt the gateway.</p>",
@@ -3659,11 +3880,49 @@
       "base": null,
       "refs": {}
     },
+    "ListPaymentConnectorsRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPaymentConnectorsResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPaymentCredentialProvidersRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPaymentCredentialProvidersRequestMaxResultsInteger": {
+      "base": null,
+      "refs": {
+        "ListPaymentCredentialProvidersRequest$maxResults": "<p>Maximum number of results to return.</p>"
+      }
+    },
+    "ListPaymentCredentialProvidersResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPaymentManagersRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPaymentManagersResponse": {
+      "base": null,
+      "refs": {}
+    },
     "ListPoliciesRequest": {
       "base": null,
       "refs": {}
     },
     "ListPoliciesResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPolicyEngineSummariesRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPolicyEngineSummariesResponse": {
       "base": null,
       "refs": {}
     },
@@ -3683,11 +3942,27 @@
       "base": null,
       "refs": {}
     },
+    "ListPolicyGenerationSummariesRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPolicyGenerationSummariesResponse": {
+      "base": null,
+      "refs": {}
+    },
     "ListPolicyGenerationsRequest": {
       "base": null,
       "refs": {}
     },
     "ListPolicyGenerationsResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPolicySummariesRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListPolicySummariesResponse": {
       "base": null,
       "refs": {}
     },
@@ -3797,7 +4072,7 @@
       }
     },
     "MatchPrincipalEntry": {
-      "base": "<p>Union for principal matching. Currently supports IAM principal ARN glob matching. Extensible for future principal types (e.g., OAuth client ID).</p>",
+      "base": "<p>Union for principal matching. Currently supports IAM principal ARN glob matching.</p>",
       "refs": {
         "MatchPrincipalsAnyOfList$member": null
       }
@@ -3838,10 +4113,15 @@
         "ListBrowsersRequest$maxResults": "<p>The maximum number of results to return in a single call. The default value is 10. The maximum value is 50.</p>",
         "ListCodeInterpretersRequest$maxResults": "<p>The maximum number of results to return in the response.</p>",
         "ListHarnessesRequest$maxResults": "<p>The maximum number of results to return in a single call.</p>",
+        "ListPaymentConnectorsRequest$maxResults": "<p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>",
+        "ListPaymentManagersRequest$maxResults": "<p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>",
         "ListPoliciesRequest$maxResults": "<p>The maximum number of policies to return in a single response. If not specified, the default is 10 policies per page, with a maximum of 100 per page.</p>",
+        "ListPolicyEngineSummariesRequest$maxResults": "<p>The maximum number of policy engine summaries to return in a single response.</p>",
         "ListPolicyEnginesRequest$maxResults": "<p>The maximum number of policy engines to return in a single response. If not specified, the default is 10 policy engines per page, with a maximum of 100 per page.</p>",
         "ListPolicyGenerationAssetsRequest$maxResults": "<p>The maximum number of policy generation assets to return in a single response. If not specified, the default is 10 assets per page, with a maximum of 100 per page. This helps control response size when dealing with policy generations that produce many alternative policy options.</p>",
+        "ListPolicyGenerationSummariesRequest$maxResults": "<p>The maximum number of policy generation summaries to return in a single response.</p>",
         "ListPolicyGenerationsRequest$maxResults": "<p>The maximum number of policy generations to return in a single response.</p>",
+        "ListPolicySummariesRequest$maxResults": "<p>The maximum number of policy summaries to return in a single response.</p>",
         "ListRegistriesRequest$maxResults": "<p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>",
         "ListRegistryRecordsRequest$maxResults": "<p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>"
       }
@@ -4177,6 +4457,8 @@
     "MountPath": {
       "base": null,
       "refs": {
+        "EfsAccessPointConfiguration$mountPath": "<p>The mount path for the EFS access point inside the AgentCore Runtime. The path must be under <code>/mnt</code> with exactly one subdirectory level (for example, <code>/mnt/data</code>).</p>",
+        "S3FilesAccessPointConfiguration$mountPath": "<p>The mount path for the S3 Files access point inside the AgentCore Runtime. The path must be under <code>/mnt</code> with exactly one subdirectory level (for example, <code>/mnt/data</code>).</p>",
         "SessionStorageConfiguration$mountPath": "<p>The mount path for the session storage filesystem inside the AgentCore Runtime. The path must be under <code>/mnt</code> with exactly one subdirectory level (for example, <code>/mnt/data</code>).</p>"
       }
     },
@@ -4202,27 +4484,27 @@
     "NamespacesList": {
       "base": null,
       "refs": {
-        "CustomMemoryStrategyInput$namespaces": "<p>The namespaces associated with the custom memory strategy.</p>",
+        "CustomMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces associated with the custom memory strategy.</p>",
         "CustomMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the custom memory strategy.</p>",
-        "EpisodicMemoryStrategyInput$namespaces": "<p>The namespaces for which to create episodes.</p>",
+        "EpisodicMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create episodes.</p>",
         "EpisodicMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates for which to create episodes.</p>",
-        "EpisodicOverrideReflectionConfigurationInput$namespaces": "<p>The namespaces to use for episodic reflection. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicOverrideReflectionConfigurationInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces to use for episodic reflection. Can be less nested than the episodic namespaces.</p>",
         "EpisodicOverrideReflectionConfigurationInput$namespaceTemplates": "<p>The namespaceTemplates to use for episodic reflection. Can be less nested than the episodic namespaces.</p>",
-        "EpisodicReflectionConfiguration$namespaces": "<p>The namespaces for which to create reflections. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicReflectionConfiguration$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces for which to create reflections. Can be less nested than the episodic namespaces.</p>",
         "EpisodicReflectionConfiguration$namespaceTemplates": "<p>The namespaceTemplates for which to create reflections. Can be less nested than the episodic namespaces.</p>",
-        "EpisodicReflectionConfigurationInput$namespaces": "<p>The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>",
+        "EpisodicReflectionConfigurationInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces over which to create reflections. Can be less nested than episode namespaces.</p>",
         "EpisodicReflectionConfigurationInput$namespaceTemplates": "<p>The namespaceTemplates over which to create reflections. Can be less nested than episode namespaces.</p>",
-        "EpisodicReflectionOverride$namespaces": "<p>The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>",
+        "EpisodicReflectionOverride$namespaces": "<p>This is a legacy parameter. The namespaces over which reflections were created. Can be less nested than the episodic namespaces.</p>",
         "EpisodicReflectionOverride$namespaceTemplates": "<p>The namespaceTemplates over which reflections were created. Can be less nested than the episodic namespaces.</p>",
-        "MemoryStrategy$namespaces": "<p>The namespaces associated with the memory strategy.</p>",
+        "MemoryStrategy$namespaces": "<p>This is a legacy parameter. The namespaces associated with the memory strategy.</p>",
         "MemoryStrategy$namespaceTemplates": "<p>The namespaceTemplates associated with the memory strategy.</p>",
-        "ModifyMemoryStrategyInput$namespaces": "<p>The updated namespaces for the memory strategy.</p>",
+        "ModifyMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The updated namespaces for the memory strategy.</p>",
         "ModifyMemoryStrategyInput$namespaceTemplates": "<p>The updated namespaceTemplates for the memory strategy.</p>",
-        "SemanticMemoryStrategyInput$namespaces": "<p>The namespaces associated with the semantic memory strategy.</p>",
+        "SemanticMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces associated with the semantic memory strategy.</p>",
         "SemanticMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the semantic memory strategy.</p>",
-        "SummaryMemoryStrategyInput$namespaces": "<p>The namespaces associated with the summary memory strategy.</p>",
+        "SummaryMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces associated with the summary memory strategy.</p>",
         "SummaryMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the summary memory strategy.</p>",
-        "UserPreferenceMemoryStrategyInput$namespaces": "<p>The namespaces associated with the user preference memory strategy.</p>",
+        "UserPreferenceMemoryStrategyInput$namespaces": "<p>This is a legacy parameter, use <code>namespaceTemplates</code>. The namespaces associated with the user preference memory strategy.</p>",
         "UserPreferenceMemoryStrategyInput$namespaceTemplates": "<p>The namespaceTemplates associated with the user preference memory strategy.</p>"
       }
     },
@@ -4266,14 +4548,24 @@
         "ListCodeInterpretersResponse$nextToken": "<p>A token to retrieve the next page of results.</p>",
         "ListHarnessesRequest$nextToken": "<p>The token for the next set of results.</p>",
         "ListHarnessesResponse$nextToken": "<p>The token for the next set of results.</p>",
+        "ListPaymentConnectorsRequest$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>",
+        "ListPaymentConnectorsResponse$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>",
+        "ListPaymentManagersRequest$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>",
+        "ListPaymentManagersResponse$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>",
         "ListPoliciesRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicies.html\">ListPolicies</a> call. Use this token to retrieve the next page of results when the response is paginated.</p>",
         "ListPoliciesResponse$nextToken": "<p>A pagination token that can be used in subsequent ListPolicies calls to retrieve additional results. This token is only present when there are more results available.</p>",
+        "ListPolicyEngineSummariesRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html\">ListPolicyEngineSummaries</a> call. Use this token to retrieve the next page of results when the response is paginated.</p>",
+        "ListPolicyEngineSummariesResponse$nextToken": "<p>A pagination token that can be used in subsequent <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngineSummaries.html\">ListPolicyEngineSummaries</a> calls to retrieve additional results. This token is only present when there are more results available.</p>",
         "ListPolicyEnginesRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html\">ListPolicyEngines</a> call. Use this token to retrieve the next page of results when the response is paginated.</p>",
         "ListPolicyEnginesResponse$nextToken": "<p>A pagination token that can be used in subsequent <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyEngines.html\">ListPolicyEngines</a> calls to retrieve additional results. This token is only present when there are more results available. </p>",
         "ListPolicyGenerationAssetsRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html\">ListPolicyGenerationAssets</a> call. Use this token to retrieve the next page of assets when the response is paginated due to large numbers of generated policy options.</p>",
         "ListPolicyGenerationAssetsResponse$nextToken": "<p>A pagination token that can be used in subsequent <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html\">ListPolicyGenerationAssets</a> calls to retrieve additional assets. This token is only present when there are more generated policy assets available beyond the current response.</p>",
+        "ListPolicyGenerationSummariesRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html\">ListPolicyGenerationSummaries</a> call. Use this token to retrieve the next page of results when the response is paginated.</p>",
+        "ListPolicyGenerationSummariesResponse$nextToken": "<p>A pagination token that can be used in subsequent <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationSummaries.html\">ListPolicyGenerationSummaries</a> calls to retrieve additional results. This token is only present when there are more results available.</p>",
         "ListPolicyGenerationsRequest$nextToken": "<p>A pagination token for retrieving additional policy generations when results are paginated.</p>",
         "ListPolicyGenerationsResponse$nextToken": "<p>A pagination token for retrieving additional policy generations if more results are available.</p>",
+        "ListPolicySummariesRequest$nextToken": "<p>A pagination token returned from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html\">ListPolicySummaries</a> call. Use this token to retrieve the next page of results when the response is paginated.</p>",
+        "ListPolicySummariesResponse$nextToken": "<p>A pagination token that can be used in subsequent <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicySummaries.html\">ListPolicySummaries</a> calls to retrieve additional results. This token is only present when there are more results available.</p>",
         "ListRegistriesRequest$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>",
         "ListRegistriesResponse$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>",
         "ListRegistryRecordsRequest$nextToken": "<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, enter the token returned in the <code>nextToken</code> field in the response in this field to return the next batch of results.</p>",
@@ -4386,7 +4678,7 @@
     "OAuthGrantType": {
       "base": null,
       "refs": {
-        "OAuthCredentialProvider$grantType": "<p>Specifies the kind of credentials to use for authorization:</p> <ul> <li> <p> <code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p> </li> <li> <p> <code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p> </li> </ul>"
+        "OAuthCredentialProvider$grantType": "<p>Specifies the kind of credentials to use for authorization:</p> <ul> <li> <p> <code>CLIENT_CREDENTIALS</code> - Authorization with a client ID and secret.</p> </li> <li> <p> <code>AUTHORIZATION_CODE</code> - Authorization with a token that is specific to an individual end user.</p> </li> <li> <p> <code>TOKEN_EXCHANGE</code> - Authorization using on-behalf-of token exchange. An inbound user token is exchanged for a downstream access token scoped to the target audience.</p> </li> </ul>"
       }
     },
     "OAuthScope": {
@@ -4530,6 +4822,206 @@
         "StrategyConfiguration$type": "<p>The type of override for the strategy configuration.</p>"
       }
     },
+    "PaymentConnectorId": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorResponse$paymentConnectorId": "<p>The unique identifier of the created payment connector.</p>",
+        "DeletePaymentConnectorRequest$paymentConnectorId": "<p>The unique identifier of the payment connector to delete.</p>",
+        "DeletePaymentConnectorResponse$paymentConnectorId": "<p>The unique identifier of the deleted payment connector.</p>",
+        "GetPaymentConnectorRequest$paymentConnectorId": "<p>The unique identifier of the payment connector to retrieve.</p>",
+        "GetPaymentConnectorResponse$paymentConnectorId": "<p>The unique identifier of the payment connector.</p>",
+        "PaymentConnectorSummary$paymentConnectorId": "<p>The unique identifier of the payment connector.</p>",
+        "UpdatePaymentConnectorRequest$paymentConnectorId": "<p>The unique identifier of the payment connector to update.</p>",
+        "UpdatePaymentConnectorResponse$paymentConnectorId": "<p>The unique identifier of the updated payment connector.</p>"
+      }
+    },
+    "PaymentConnectorName": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorRequest$name": "<p>The name of the payment connector.</p>",
+        "CreatePaymentConnectorResponse$name": "<p>The name of the created payment connector.</p>",
+        "GetPaymentConnectorResponse$name": "<p>The name of the payment connector.</p>",
+        "PaymentConnectorSummary$name": "<p>The name of the payment connector.</p>",
+        "UpdatePaymentConnectorResponse$name": "<p>The name of the updated payment connector.</p>"
+      }
+    },
+    "PaymentConnectorStatus": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorResponse$status": "<p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "DeletePaymentConnectorResponse$status": "<p>The current status of the payment connector, set to <code>DELETING</code> when deletion is initiated. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "GetPaymentConnectorResponse$status": "<p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "PaymentConnectorSummary$status": "<p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "UpdatePaymentConnectorResponse$status": "<p>The current status of the updated payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>"
+      }
+    },
+    "PaymentConnectorSummaries": {
+      "base": null,
+      "refs": {
+        "ListPaymentConnectorsResponse$paymentConnectors": "<p>The list of payment connector summaries. For details about the fields in each summary, see the <code>PaymentConnectorSummary</code> data type.</p>"
+      }
+    },
+    "PaymentConnectorSummary": {
+      "base": "<p>Contains summary information about a payment connector.</p>",
+      "refs": {
+        "PaymentConnectorSummaries$member": null
+      }
+    },
+    "PaymentConnectorType": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorRequest$type": "<p>The type of payment connector, which determines the payment provider integration.</p>",
+        "CreatePaymentConnectorResponse$type": "<p>The type of the created payment connector.</p>",
+        "GetPaymentConnectorResponse$type": "<p>The type of the payment connector, which determines the payment provider integration.</p>",
+        "PaymentConnectorSummary$type": "<p>The type of the payment connector, which determines the payment provider integration.</p>",
+        "UpdatePaymentConnectorRequest$type": "<p>The updated type of the payment connector.</p>",
+        "UpdatePaymentConnectorResponse$type": "<p>The type of the updated payment connector.</p>"
+      }
+    },
+    "PaymentCredentialProviderArn": {
+      "base": null,
+      "refs": {
+        "PaymentCredentialProviderConfiguration$credentialProviderArn": "<p>The Amazon Resource Name (ARN) of the credential provider that stores the authentication credentials for the payment provider.</p>"
+      }
+    },
+    "PaymentCredentialProviderArnType": {
+      "base": null,
+      "refs": {
+        "CreatePaymentCredentialProviderResponse$credentialProviderArn": "<p>The Amazon Resource Name (ARN) of the created payment credential provider.</p>",
+        "GetPaymentCredentialProviderResponse$credentialProviderArn": "<p>The Amazon Resource Name (ARN) of the payment credential provider.</p>",
+        "PaymentCredentialProviderItem$credentialProviderArn": "<p>The Amazon Resource Name (ARN) of the payment credential provider.</p>",
+        "UpdatePaymentCredentialProviderResponse$credentialProviderArn": "<p>The Amazon Resource Name (ARN) of the updated payment credential provider.</p>"
+      }
+    },
+    "PaymentCredentialProviderConfiguration": {
+      "base": "<p>Configuration for a payment credential provider that stores authentication credentials for a payment provider.</p>",
+      "refs": {
+        "CredentialsProviderConfiguration$coinbaseCDP": "<p>The credential provider configuration for a Coinbase CDP payment connector.</p>",
+        "CredentialsProviderConfiguration$stripePrivy": "<p>The credential provider configuration for a Stripe Privy payment connector.</p>"
+      }
+    },
+    "PaymentCredentialProviderItem": {
+      "base": "<p>Contains summary information about a payment credential provider.</p>",
+      "refs": {
+        "PaymentCredentialProviders$member": null
+      }
+    },
+    "PaymentCredentialProviderVendorType": {
+      "base": "<p>Supported vendor types for payment providers using non-standard auth protocols.</p>",
+      "refs": {
+        "CreatePaymentCredentialProviderRequest$credentialProviderVendor": "<p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>",
+        "CreatePaymentCredentialProviderResponse$credentialProviderVendor": "<p>The vendor type for the created payment credential provider.</p>",
+        "GetPaymentCredentialProviderResponse$credentialProviderVendor": "<p>The vendor type for the payment credential provider.</p>",
+        "PaymentCredentialProviderItem$credentialProviderVendor": "<p>The vendor type for the payment credential provider.</p>",
+        "UpdatePaymentCredentialProviderRequest$credentialProviderVendor": "<p>The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).</p>",
+        "UpdatePaymentCredentialProviderResponse$credentialProviderVendor": "<p>The vendor type for the updated payment credential provider.</p>"
+      }
+    },
+    "PaymentCredentialProviders": {
+      "base": null,
+      "refs": {
+        "ListPaymentCredentialProvidersResponse$credentialProviders": "<p>The list of payment credential providers.</p>"
+      }
+    },
+    "PaymentManagerArn": {
+      "base": null,
+      "refs": {
+        "CreatePaymentManagerResponse$paymentManagerArn": "<p>The Amazon Resource Name (ARN) of the created payment manager.</p>",
+        "GetPaymentManagerResponse$paymentManagerArn": "<p>The Amazon Resource Name (ARN) of the payment manager.</p>",
+        "PaymentManagerSummary$paymentManagerArn": "<p>The Amazon Resource Name (ARN) of the payment manager.</p>",
+        "UpdatePaymentManagerResponse$paymentManagerArn": "<p>The Amazon Resource Name (ARN) of the updated payment manager.</p>"
+      }
+    },
+    "PaymentManagerId": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorRequest$paymentManagerId": "<p>The unique identifier of the payment manager to create the connector for.</p>",
+        "CreatePaymentConnectorResponse$paymentManagerId": "<p>The unique identifier of the parent payment manager.</p>",
+        "CreatePaymentManagerResponse$paymentManagerId": "<p>The unique identifier of the created payment manager.</p>",
+        "DeletePaymentConnectorRequest$paymentManagerId": "<p>The unique identifier of the parent payment manager.</p>",
+        "DeletePaymentManagerRequest$paymentManagerId": "<p>The unique identifier of the payment manager to delete.</p>",
+        "DeletePaymentManagerResponse$paymentManagerId": "<p>The unique identifier of the deleted payment manager.</p>",
+        "GetPaymentConnectorRequest$paymentManagerId": "<p>The unique identifier of the parent payment manager.</p>",
+        "GetPaymentManagerRequest$paymentManagerId": "<p>The unique identifier of the payment manager to retrieve.</p>",
+        "GetPaymentManagerResponse$paymentManagerId": "<p>The unique identifier of the payment manager.</p>",
+        "ListPaymentConnectorsRequest$paymentManagerId": "<p>The unique identifier of the payment manager whose connectors to list.</p>",
+        "PaymentManagerSummary$paymentManagerId": "<p>The unique identifier of the payment manager.</p>",
+        "UpdatePaymentConnectorRequest$paymentManagerId": "<p>The unique identifier of the parent payment manager.</p>",
+        "UpdatePaymentConnectorResponse$paymentManagerId": "<p>The unique identifier of the parent payment manager.</p>",
+        "UpdatePaymentManagerRequest$paymentManagerId": "<p>The unique identifier of the payment manager to update.</p>",
+        "UpdatePaymentManagerResponse$paymentManagerId": "<p>The unique identifier of the updated payment manager.</p>"
+      }
+    },
+    "PaymentManagerName": {
+      "base": null,
+      "refs": {
+        "CreatePaymentManagerRequest$name": "<p>The name of the payment manager.</p>",
+        "CreatePaymentManagerResponse$name": "<p>The name of the created payment manager.</p>",
+        "GetPaymentManagerResponse$name": "<p>The name of the payment manager.</p>",
+        "PaymentManagerSummary$name": "<p>The name of the payment manager.</p>",
+        "UpdatePaymentManagerResponse$name": "<p>The name of the updated payment manager.</p>"
+      }
+    },
+    "PaymentManagerStatus": {
+      "base": null,
+      "refs": {
+        "CreatePaymentManagerResponse$status": "<p>The current status of the payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "DeletePaymentManagerResponse$status": "<p>The current status of the payment manager, set to <code>DELETING</code> when deletion is initiated. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "GetPaymentManagerResponse$status": "<p>The current status of the payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "PaymentManagerSummary$status": "<p>The current status of the payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>",
+        "UpdatePaymentManagerResponse$status": "<p>The current status of the updated payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>"
+      }
+    },
+    "PaymentManagerSummaries": {
+      "base": null,
+      "refs": {
+        "ListPaymentManagersResponse$paymentManagers": "<p>The list of payment manager summaries. For details about the fields in each summary, see the <code>PaymentManagerSummary</code> data type.</p>"
+      }
+    },
+    "PaymentManagerSummary": {
+      "base": "<p>Contains summary information about a payment manager.</p>",
+      "refs": {
+        "PaymentManagerSummaries$member": null
+      }
+    },
+    "PaymentProviderConfigurationInput": {
+      "base": "<p>Provider configuration input — contains secrets for creation and update. Varies by vendor type.</p>",
+      "refs": {
+        "CreatePaymentCredentialProviderRequest$providerConfigurationInput": "<p>Configuration specific to the vendor, including API credentials.</p>",
+        "UpdatePaymentCredentialProviderRequest$providerConfigurationInput": "<p>Configuration specific to the vendor, including API credentials.</p>"
+      }
+    },
+    "PaymentProviderConfigurationOutput": {
+      "base": "<p>Provider configuration output — no raw secrets, only ARNs. Varies by vendor type.</p>",
+      "refs": {
+        "CreatePaymentCredentialProviderResponse$providerConfigurationOutput": "<p>Output configuration (contains secret ARNs, excludes actual secret values).</p>",
+        "GetPaymentCredentialProviderResponse$providerConfigurationOutput": "<p>Output configuration (contains secret ARNs, excludes actual secret values).</p>",
+        "UpdatePaymentCredentialProviderResponse$providerConfigurationOutput": "<p>Output configuration (contains secret ARNs, excludes actual secret values).</p>"
+      }
+    },
+    "PaymentsAuthorizerType": {
+      "base": null,
+      "refs": {
+        "CreatePaymentManagerRequest$authorizerType": "<p>The type of authorizer to use for the payment manager.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
+        "CreatePaymentManagerResponse$authorizerType": "<p>The type of authorizer for the created payment manager.</p>",
+        "GetPaymentManagerResponse$authorizerType": "<p>The type of authorizer used by the payment manager.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
+        "PaymentManagerSummary$authorizerType": "<p>The type of authorizer used by the payment manager.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
+        "UpdatePaymentManagerRequest$authorizerType": "<p>The updated authorizer type for the payment manager.</p>",
+        "UpdatePaymentManagerResponse$authorizerType": "<p>The type of authorizer for the updated payment manager.</p>"
+      }
+    },
+    "PaymentsDescription": {
+      "base": null,
+      "refs": {
+        "CreatePaymentConnectorRequest$description": "<p>A description of the payment connector.</p>",
+        "CreatePaymentManagerRequest$description": "<p>A description of the payment manager.</p>",
+        "GetPaymentConnectorResponse$description": "<p>The description of the payment connector.</p>",
+        "GetPaymentManagerResponse$description": "<p>The description of the payment manager.</p>",
+        "PaymentManagerSummary$description": "<p>The description of the payment manager.</p>",
+        "UpdatePaymentConnectorRequest$description": "<p>The updated description of the payment connector.</p>",
+        "UpdatePaymentManagerRequest$description": "<p>The updated description of the payment manager.</p>"
+      }
+    },
     "Policies": {
       "base": null,
       "refs": {
@@ -4548,7 +5040,9 @@
         "CreatePolicyResponse$policyArn": "<p>The Amazon Resource Name (ARN) of the created policy. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
         "DeletePolicyResponse$policyArn": "<p>The Amazon Resource Name (ARN) of the deleted policy. This globally unique identifier confirms which policy resource was successfully removed.</p>",
         "GetPolicyResponse$policyArn": "<p>The Amazon Resource Name (ARN) of the policy. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
+        "GetPolicySummaryResponse$policyArn": "<p>The Amazon Resource Name (ARN) of the policy.</p>",
         "Policy$policyArn": "<p>The Amazon Resource Name (ARN) of the policy. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
+        "PolicySummary$policyArn": "<p>The Amazon Resource Name (ARN) of the policy.</p>",
         "UpdatePolicyResponse$policyArn": "<p>The ARN of the updated policy.</p>"
       }
     },
@@ -4577,7 +5071,9 @@
         "CreatePolicyEngineResponse$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the created policy engine. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
         "DeletePolicyEngineResponse$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the deleted policy engine. This globally unique identifier confirms which policy engine resource was successfully removed.</p>",
         "GetPolicyEngineResponse$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the policy engine. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
+        "GetPolicyEngineSummaryResponse$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the policy engine.</p>",
         "PolicyEngine$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the policy engine. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>",
+        "PolicyEngineSummary$policyEngineArn": "<p>The Amazon Resource Name (ARN) of the policy engine.</p>",
         "UpdatePolicyEngineResponse$policyEngineArn": "<p>The ARN of the updated policy engine.</p>"
       }
     },
@@ -4588,7 +5084,9 @@
         "CreatePolicyEngineResponse$name": "<p>The customer-assigned name of the created policy engine. This matches the name provided in the request and serves as the human-readable identifier.</p>",
         "DeletePolicyEngineResponse$name": "<p>The customer-assigned name of the deleted policy engine.</p>",
         "GetPolicyEngineResponse$name": "<p>The customer-assigned name of the policy engine. This is the human-readable identifier that was specified when the policy engine was created.</p>",
+        "GetPolicyEngineSummaryResponse$name": "<p>The customer-assigned name of the policy engine.</p>",
         "PolicyEngine$name": "<p>The customer-assigned immutable name for the policy engine. This human-readable identifier must be unique within the account and cannot exceed 48 characters.</p>",
+        "PolicyEngineSummary$name": "<p>The customer-assigned name of the policy engine.</p>",
         "UpdatePolicyEngineResponse$name": "<p>The name of the updated policy engine.</p>"
       }
     },
@@ -4598,8 +5096,22 @@
         "CreatePolicyEngineResponse$status": "<p>The current status of the policy engine. A status of <code>ACTIVE</code> indicates the policy engine is ready for use.</p>",
         "DeletePolicyEngineResponse$status": "<p>The status of the policy engine deletion operation. This provides status about any issues that occurred during the deletion process.</p>",
         "GetPolicyEngineResponse$status": "<p>The current status of the policy engine.</p>",
+        "GetPolicyEngineSummaryResponse$status": "<p>The current status of the policy engine.</p>",
         "PolicyEngine$status": "<p>The current status of the policy engine.</p>",
+        "PolicyEngineSummary$status": "<p>The current status of the policy engine.</p>",
         "UpdatePolicyEngineResponse$status": "<p>The current status of the updated policy engine.</p>"
+      }
+    },
+    "PolicyEngineSummary": {
+      "base": "<p>Represents a metadata-only summary of a policy engine resource. This structure contains resource identifiers, status, and timestamps without customer-encrypted fields such as description or status reasons. Policy engine summaries are returned by operations that do not require access to the customer's KMS key.</p>",
+      "refs": {
+        "PolicyEngineSummaryList$member": null
+      }
+    },
+    "PolicyEngineSummaryList": {
+      "base": null,
+      "refs": {
+        "ListPolicyEngineSummariesResponse$policyEngines": "<p>An array of policy engine summary objects that exist in the account. Each summary contains resource identifiers, status, and timestamps without customer-encrypted content.</p>"
       }
     },
     "PolicyEngines": {
@@ -4618,7 +5130,9 @@
       "base": null,
       "refs": {
         "GetPolicyGenerationResponse$policyGenerationArn": "<p>The Amazon Resource Name (ARN) of the policy generation. This globally unique identifier can be used for tracking, auditing, and cross-service references.</p>",
+        "GetPolicyGenerationSummaryResponse$policyGenerationArn": "<p>The Amazon Resource Name (ARN) of the policy generation request.</p>",
         "PolicyGeneration$policyGenerationArn": "<p>The ARN of this policy generation request.</p>",
+        "PolicyGenerationSummary$policyGenerationArn": "<p>The ARN of this policy generation request.</p>",
         "StartPolicyGenerationResponse$policyGenerationArn": "<p>The ARN of the created policy generation request.</p>"
       }
     },
@@ -4644,7 +5158,9 @@
       "base": null,
       "refs": {
         "GetPolicyGenerationResponse$name": "<p>The customer-assigned name for the policy generation request. This helps identify and track generation operations across multiple requests.</p>",
+        "GetPolicyGenerationSummaryResponse$name": "<p>The customer-assigned name for the policy generation request.</p>",
         "PolicyGeneration$name": "<p>The customer-assigned name for this policy generation request.</p>",
+        "PolicyGenerationSummary$name": "<p>The customer-assigned name for this policy generation request.</p>",
         "StartPolicyGenerationRequest$name": "<p>A customer-assigned name for the policy generation request. This helps track and identify generation operations, especially when running multiple generations simultaneously.</p>",
         "StartPolicyGenerationResponse$name": "<p>The customer-assigned name for the policy generation request.</p>"
       }
@@ -4653,8 +5169,22 @@
       "base": null,
       "refs": {
         "GetPolicyGenerationResponse$status": "<p>The current status of the policy generation. This indicates whether the generation is in progress, completed successfully, or failed during processing.</p>",
+        "GetPolicyGenerationSummaryResponse$status": "<p>The current status of the policy generation request.</p>",
         "PolicyGeneration$status": "<p>The current status of this policy generation request.</p>",
+        "PolicyGenerationSummary$status": "<p>The current status of this policy generation request.</p>",
         "StartPolicyGenerationResponse$status": "<p>The initial status of the policy generation request.</p>"
+      }
+    },
+    "PolicyGenerationSummary": {
+      "base": "<p>Represents a metadata-only summary of a policy generation resource. This structure contains resource identifiers, status, timestamps, and findings without customer-encrypted fields such as status reasons. Policy generation summaries are returned by operations that do not require access to the customer's KMS key.</p>",
+      "refs": {
+        "PolicyGenerationSummaryList$member": null
+      }
+    },
+    "PolicyGenerationSummaryList": {
+      "base": null,
+      "refs": {
+        "ListPolicyGenerationSummariesResponse$policyGenerations": "<p>An array of policy generation summary objects that match the specified criteria. Each summary contains resource identifiers, status, timestamps, and findings without customer-encrypted content.</p>"
       }
     },
     "PolicyGenerations": {
@@ -4670,7 +5200,9 @@
         "CreatePolicyResponse$name": "<p>The customer-assigned name of the created policy. This matches the name provided in the request and serves as the human-readable identifier for the policy.</p>",
         "DeletePolicyResponse$name": "<p>The customer-assigned name of the deleted policy. This confirms which policy was successfully removed from the system and matches the name that was originally assigned during policy creation.</p>",
         "GetPolicyResponse$name": "<p>The customer-assigned name of the policy. This is the human-readable identifier that was specified when the policy was created.</p>",
+        "GetPolicySummaryResponse$name": "<p>The customer-assigned name of the policy.</p>",
         "Policy$name": "<p>The customer-assigned immutable name for the policy. This human-readable identifier must be unique within the account and cannot exceed 48 characters.</p>",
+        "PolicySummary$name": "<p>The customer-assigned name of the policy.</p>",
         "UpdatePolicyResponse$name": "<p>The name of the updated policy.</p>"
       }
     },
@@ -4680,7 +5212,9 @@
         "CreatePolicyResponse$status": "<p>The current status of the policy. A status of <code>ACTIVE</code> indicates the policy is ready for use.</p>",
         "DeletePolicyResponse$status": "<p>The status of the policy deletion operation. This provides information about any issues that occurred during the deletion process.</p>",
         "GetPolicyResponse$status": "<p>The current status of the policy.</p>",
+        "GetPolicySummaryResponse$status": "<p>The current status of the policy.</p>",
         "Policy$status": "<p>The current status of the policy.</p>",
+        "PolicySummary$status": "<p>The current status of the policy.</p>",
         "UpdatePolicyResponse$status": "<p>The current status of the updated policy.</p>"
       }
     },
@@ -4700,6 +5234,18 @@
         "StartPolicyGenerationResponse$statusReasons": "<p>Additional information about the generation status.</p>",
         "UpdatePolicyEngineResponse$statusReasons": "<p>Additional information about the update status.</p>",
         "UpdatePolicyResponse$statusReasons": "<p>Additional information about the update status.</p>"
+      }
+    },
+    "PolicySummary": {
+      "base": "<p>Represents a metadata-only summary of a policy resource. This structure contains resource identifiers, status, and timestamps without customer-encrypted fields such as definition, description, or status reasons. Policy summaries are returned by operations that do not require access to the customer's KMS key.</p>",
+      "refs": {
+        "PolicySummaryList$member": null
+      }
+    },
+    "PolicySummaryList": {
+      "base": null,
+      "refs": {
+        "ListPolicySummariesResponse$policies": "<p>An array of policy summary objects that match the specified criteria. Each summary contains resource identifiers, status, and timestamps without customer-encrypted content.</p>"
       }
     },
     "PolicyValidationMode": {
@@ -4754,9 +5300,9 @@
     "PrivateEndpointOverrides": {
       "base": null,
       "refs": {
-        "CustomJWTAuthorizerConfiguration$privateEndpointOverrides": "<p>A list of private endpoint overrides for the JWT authorizer. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>",
-        "CustomOauth2ProviderConfigInput$privateEndpointOverrides": "<p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>",
-        "CustomOauth2ProviderConfigOutput$privateEndpointOverrides": "<p>The list of private endpoint overrides for the custom OAuth2 provider. Each override maps a specific domain to a private endpoint, enabling secure connectivity through VPC Lattice resource configurations.</p>"
+        "CustomJWTAuthorizerConfiguration$privateEndpointOverrides": "<p>The private endpoint overrides for the custom JWT authorizer configuration.</p>",
+        "CustomOauth2ProviderConfigInput$privateEndpointOverrides": "<p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>",
+        "CustomOauth2ProviderConfigOutput$privateEndpointOverrides": "<p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>"
       }
     },
     "Prompt": {
@@ -4844,6 +5390,7 @@
       "refs": {
         "CreateRegistryRequest$authorizerType": "<p>The type of authorizer to use for the registry. This controls the authorization method for the Search and Invoke APIs used by consumers, and does not affect the standard CRUDL APIs for registry and registry record management used by administrators.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
         "GetRegistryResponse$authorizerType": "<p>The type of authorizer used by the registry. This controls the authorization method for the Search and Invoke APIs used by consumers.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
+        "ListRegistriesRequest$authorizerType": "<p>Filter registries by their authorizer type. Possible values are <code>CUSTOM_JWT</code> and <code>AWS_IAM</code>. For more information about authorizer types, see the <code>RegistryAuthorizerType</code> enum.</p>",
         "RegistrySummary$authorizerType": "<p>The type of authorizer used by the registry. This controls the authorization method for the Search and Invoke APIs used by consumers.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>",
         "UpdateRegistryResponse$authorizerType": "<p>The type of authorizer used by the updated registry. This controls the authorization method for the Search and Invoke APIs used by consumers.</p> <ul> <li> <p> <code>CUSTOM_JWT</code> - Authorize with a bearer token.</p> </li> <li> <p> <code>AWS_IAM</code> - Authorize with your Amazon Web Services IAM credentials.</p> </li> </ul>"
       }
@@ -5036,7 +5583,9 @@
       "base": "<p>Represents a resource within the AgentCore Policy system. Resources are the targets of policy evaluation. Currently, only AgentCore Gateways are supported as resources for policy enforcement.</p>",
       "refs": {
         "GetPolicyGenerationResponse$resource": "<p>The resource information associated with the policy generation. This provides context about the target resources for which the policies are being generated.</p>",
+        "GetPolicyGenerationSummaryResponse$resource": "<p>The resource information associated with the policy generation.</p>",
         "PolicyGeneration$resource": "<p>The resource information associated with this policy generation.</p>",
+        "PolicyGenerationSummary$resource": "<p>The resource information associated with this policy generation.</p>",
         "StartPolicyGenerationRequest$resource": "<p>The resource information that provides context for policy generation. This helps the AI understand the target resources and generate appropriate access control rules.</p>",
         "StartPolicyGenerationResponse$resource": "<p>The resource information associated with the policy generation request.</p>"
       }
@@ -5074,26 +5623,43 @@
         "DeletePolicyResponse$policyEngineId": "<p>The identifier of the policy engine from which the policy was deleted. This confirms the policy engine context for the deletion operation.</p>",
         "GetPolicyEngineRequest$policyEngineId": "<p>The unique identifier of the policy engine to be retrieved. This must be a valid policy engine ID that exists within the account.</p>",
         "GetPolicyEngineResponse$policyEngineId": "<p>The unique identifier of the retrieved policy engine. This matches the policy engine ID provided in the request and serves as the system identifier.</p>",
+        "GetPolicyEngineSummaryRequest$policyEngineId": "<p>The unique identifier of the policy engine to retrieve the summary for. This must be a valid policy engine ID that exists within the account.</p>",
+        "GetPolicyEngineSummaryResponse$policyEngineId": "<p>The unique identifier of the policy engine.</p>",
         "GetPolicyGenerationRequest$policyGenerationId": "<p>The unique identifier of the policy generation request to be retrieved. This must be a valid generation ID from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html\">StartPolicyGeneration</a> call.</p>",
         "GetPolicyGenerationRequest$policyEngineId": "<p>The identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and schema validation.</p>",
         "GetPolicyGenerationResponse$policyEngineId": "<p>The identifier of the policy engine associated with this policy generation. This confirms the policy engine context for the generation operation.</p>",
         "GetPolicyGenerationResponse$policyGenerationId": "<p>The unique identifier of the policy generation request. This matches the generation ID provided in the request and serves as the tracking identifier.</p>",
+        "GetPolicyGenerationSummaryRequest$policyGenerationId": "<p>The unique identifier of the policy generation request to retrieve the summary for.</p>",
+        "GetPolicyGenerationSummaryRequest$policyEngineId": "<p>The identifier of the policy engine associated with the policy generation request.</p>",
+        "GetPolicyGenerationSummaryResponse$policyEngineId": "<p>The identifier of the policy engine associated with this policy generation.</p>",
+        "GetPolicyGenerationSummaryResponse$policyGenerationId": "<p>The unique identifier of the policy generation request.</p>",
         "GetPolicyRequest$policyEngineId": "<p>The identifier of the policy engine that manages the policy to be retrieved.</p>",
         "GetPolicyRequest$policyId": "<p>The unique identifier of the policy to be retrieved. This must be a valid policy ID that exists within the specified policy engine.</p>",
         "GetPolicyResponse$policyId": "<p>The unique identifier of the retrieved policy. This matches the policy ID provided in the request and serves as the system identifier for the policy.</p>",
         "GetPolicyResponse$policyEngineId": "<p>The identifier of the policy engine that manages this policy. This confirms the policy engine context for the retrieved policy.</p>",
+        "GetPolicySummaryRequest$policyEngineId": "<p>The identifier of the policy engine that manages the policy to retrieve the summary for.</p>",
+        "GetPolicySummaryRequest$policyId": "<p>The unique identifier of the policy to retrieve the summary for. This must be a valid policy ID that exists within the specified policy engine.</p>",
+        "GetPolicySummaryResponse$policyId": "<p>The unique identifier of the policy.</p>",
+        "GetPolicySummaryResponse$policyEngineId": "<p>The identifier of the policy engine that manages this policy.</p>",
         "ListPoliciesRequest$policyEngineId": "<p>The identifier of the policy engine whose policies to retrieve.</p>",
         "ListPolicyGenerationAssetsRequest$policyGenerationId": "<p>The unique identifier of the policy generation request whose assets are to be retrieved. This must be a valid generation ID from a previous <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_StartPolicyGeneration.html\">StartPolicyGeneration</a> call that has completed processing.</p>",
         "ListPolicyGenerationAssetsRequest$policyEngineId": "<p>The unique identifier of the policy engine associated with the policy generation request. This provides the context for the generation operation and ensures assets are retrieved from the correct policy engine.</p>",
+        "ListPolicyGenerationSummariesRequest$policyEngineId": "<p>The identifier of the policy engine whose policy generation summaries to retrieve.</p>",
         "ListPolicyGenerationsRequest$policyEngineId": "<p>The identifier of the policy engine whose policy generations to retrieve.</p>",
+        "ListPolicySummariesRequest$policyEngineId": "<p>The identifier of the policy engine whose policy summaries to retrieve.</p>",
         "Policy$policyId": "<p>The unique identifier for the policy. This system-generated identifier consists of the user name plus a 10-character generated suffix and serves as the primary key for policy operations.</p>",
         "Policy$policyEngineId": "<p>The identifier of the policy engine that manages this policy. This establishes the policy engine context for policy evaluation and management.</p>",
         "PolicyEngine$policyEngineId": "<p>The unique identifier for the policy engine. This system-generated identifier consists of the user name plus a 10-character generated suffix and serves as the primary key for policy engine operations.</p>",
+        "PolicyEngineSummary$policyEngineId": "<p>The unique identifier for the policy engine.</p>",
         "PolicyGeneration$policyEngineId": "<p>The identifier of the policy engine associated with this generation request.</p>",
         "PolicyGeneration$policyGenerationId": "<p>The unique identifier for this policy generation request.</p>",
         "PolicyGenerationAsset$policyGenerationAssetId": "<p>The unique identifier for this generated policy asset within the policy generation request. This ID can be used to reference specific generated policy options when creating actual policies from the generation results.</p>",
         "PolicyGenerationDetails$policyGenerationId": "<p>The unique identifier for this policy generation request.</p>",
         "PolicyGenerationDetails$policyGenerationAssetId": "<p>The unique identifier for this generated policy asset within the policy generation request.</p>",
+        "PolicyGenerationSummary$policyEngineId": "<p>The identifier of the policy engine associated with this generation request.</p>",
+        "PolicyGenerationSummary$policyGenerationId": "<p>The unique identifier for this policy generation request.</p>",
+        "PolicySummary$policyId": "<p>The unique identifier for the policy.</p>",
+        "PolicySummary$policyEngineId": "<p>The identifier of the policy engine that manages this policy.</p>",
         "StartPolicyGenerationRequest$policyEngineId": "<p>The identifier of the policy engine that provides the context for policy generation. This engine's schema and tool context are used to ensure generated policies are valid and applicable.</p>",
         "StartPolicyGenerationResponse$policyEngineId": "<p>The identifier of the policy engine associated with the started policy generation. </p>",
         "StartPolicyGenerationResponse$policyGenerationId": "<p>The unique identifier assigned to the policy generation request for tracking progress. </p>",
@@ -5185,17 +5751,23 @@
         "CreateGatewayResponse$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role associated with the gateway.</p>",
         "CreateHarnessRequest$executionRoleArn": "<p>The ARN of the IAM role that the harness assumes when running. This role must have permissions for the services the agent needs to access, such as Amazon Bedrock for model invocation.</p>",
         "CreateOnlineEvaluationConfigRequest$evaluationExecutionRoleArn": "<p> The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html\">Encryption at rest for AgentCore Evaluations</a>. </p>",
+        "CreatePaymentManagerRequest$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role that the payment manager assumes to access resources on your behalf.</p>",
+        "CreatePaymentManagerResponse$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role associated with the created payment manager.</p>",
         "GetAgentRuntimeResponse$roleArn": "<p>The IAM role ARN that provides permissions for the AgentCore Runtime.</p>",
         "GetBrowserResponse$executionRoleArn": "<p>The IAM role ARN that provides permissions for the browser.</p>",
         "GetCodeInterpreterResponse$executionRoleArn": "<p>The IAM role ARN that provides permissions for the code interpreter.</p>",
         "GetGatewayResponse$roleArn": "<p>The IAM role ARN that provides permissions for the gateway.</p>",
         "GetOnlineEvaluationConfigResponse$evaluationExecutionRoleArn": "<p> The Amazon Resource Name (ARN) of the IAM role used for evaluation execution. </p>",
+        "GetPaymentManagerResponse$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role associated with the payment manager.</p>",
         "Harness$executionRoleArn": "<p>IAM role the Harness assumes when running.</p>",
+        "PaymentManagerSummary$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role associated with the payment manager.</p>",
         "UpdateAgentRuntimeRequest$roleArn": "<p>The updated IAM role ARN that provides permissions for the AgentCore Runtime.</p>",
         "UpdateGatewayRequest$roleArn": "<p>The updated IAM role ARN that provides permissions for the gateway.</p>",
         "UpdateGatewayResponse$roleArn": "<p>The updated IAM role ARN that provides permissions for the gateway.</p>",
         "UpdateHarnessRequest$executionRoleArn": "<p>The ARN of the IAM role that the harness assumes when running. If not specified, the existing value is retained.</p>",
-        "UpdateOnlineEvaluationConfigRequest$evaluationExecutionRoleArn": "<p> The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution. </p>"
+        "UpdateOnlineEvaluationConfigRequest$evaluationExecutionRoleArn": "<p> The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution. </p>",
+        "UpdatePaymentManagerRequest$roleArn": "<p>The updated Amazon Resource Name (ARN) of the IAM role for the payment manager.</p>",
+        "UpdatePaymentManagerResponse$roleArn": "<p>The Amazon Resource Name (ARN) of the IAM role associated with the updated payment manager.</p>"
       }
     },
     "RouteToTargetAction": {
@@ -5261,6 +5833,18 @@
         "ApiSchemaConfiguration$s3": null,
         "McpToolSchemaConfiguration$s3": "<p>The Amazon S3 location of the tool schema. This location contains the schema definition file.</p>",
         "ToolSchema$s3": "<p>The Amazon S3 location of the tool schema. This location contains the schema definition file.</p>"
+      }
+    },
+    "S3FilesAccessPointArn": {
+      "base": null,
+      "refs": {
+        "S3FilesAccessPointConfiguration$accessPointArn": "<p>The ARN of the S3 Files access point to mount into the AgentCore Runtime.</p>"
+      }
+    },
+    "S3FilesAccessPointConfiguration": {
+      "base": "<p>Configuration for an Amazon S3 Files access point filesystem mounted into the AgentCore Runtime. S3 Files access points provide shared file storage accessible from your AgentCore Runtime sessions.</p>",
+      "refs": {
+        "FilesystemConfiguration$s3FilesAccessPoint": "<p>Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.</p>"
       }
     },
     "S3Location": {
@@ -5381,10 +5965,14 @@
     "Secret": {
       "base": "<p>Contains information about a secret in AWS Secrets Manager.</p>",
       "refs": {
+        "CoinbaseCdpConfigurationOutput$apiKeySecretArn": null,
+        "CoinbaseCdpConfigurationOutput$walletSecretArn": null,
         "CreateApiKeyCredentialProviderResponse$apiKeySecretArn": "<p>The Amazon Resource Name (ARN) of the secret containing the API key.</p>",
         "CreateOauth2CredentialProviderResponse$clientSecretArn": "<p>The Amazon Resource Name (ARN) of the client secret in AWS Secrets Manager.</p>",
         "GetApiKeyCredentialProviderResponse$apiKeySecretArn": "<p>The Amazon Resource Name (ARN) of the API key secret in AWS Secrets Manager.</p>",
         "GetOauth2CredentialProviderResponse$clientSecretArn": "<p>The Amazon Resource Name (ARN) of the client secret in AWS Secrets Manager.</p>",
+        "StripePrivyConfigurationOutput$appSecretArn": null,
+        "StripePrivyConfigurationOutput$authorizationPrivateKeyArn": null,
         "UpdateApiKeyCredentialProviderResponse$apiKeySecretArn": "<p>The Amazon Resource Name (ARN) of the API key secret in AWS Secrets Manager.</p>",
         "UpdateOauth2CredentialProviderResponse$clientSecretArn": "<p>The Amazon Resource Name (ARN) of the client secret in AWS Secrets Manager.</p>"
       }
@@ -5627,7 +6215,7 @@
       "refs": {
         "CreateOauth2CredentialProviderResponse$status": "<p>The current status of the OAuth2 credential provider.</p>",
         "GetOauth2CredentialProviderResponse$status": "<p>The current status of the OAuth2 credential provider.</p>",
-        "UpdateOauth2CredentialProviderResponse$status": "<p>The current status of the OAuth2 credential provider.</p>"
+        "UpdateOauth2CredentialProviderResponse$status": "<p>The current status of the updated OAuth2 credential provider.</p>"
       }
     },
     "StatusReason": {
@@ -5712,9 +6300,10 @@
         "GetBrowserResponse$failureReason": "<p>The reason for failure if the browser is in a failed state.</p>",
         "GetCodeInterpreterResponse$failureReason": "<p>The reason for failure if the code interpreter is in a failed state.</p>",
         "GetOauth2CredentialProviderResponse$callbackUrl": "<p>Callback URL to register on the OAuth2 credential provider as an allowed callback URL. This URL is where the OAuth2 authorization server redirects users after they complete the authorization flow.</p>",
-        "GetOauth2CredentialProviderResponse$failureReason": "<p>The reason for the failure if the OAuth2 credential provider is in a failed state.</p>",
+        "GetOauth2CredentialProviderResponse$failureReason": "<p>The reason for failure if the OAuth2 credential provider is in a failed state.</p>",
         "GetOnlineEvaluationConfigResponse$failureReason": "<p> The reason for failure if the online evaluation configuration execution failed. </p>",
         "GetPolicyGenerationResponse$findings": "<p>The findings and results from the policy generation process. This includes any issues, recommendations, validation results, or insights from the generated policies.</p>",
+        "GetPolicyGenerationSummaryResponse$findings": "<p>The findings from the policy generation process, if available.</p>",
         "GetRegistryRecordResponse$statusReason": "<p>The reason for the current status, typically set when the status is a failure state.</p>",
         "GetRegistryResponse$statusReason": "<p>The reason for the current status, typically set when the status is a failure state.</p>",
         "Harness$failureReason": "<p>Reason why create or update operations fail.</p>",
@@ -5739,6 +6328,8 @@
         "ListOauth2CredentialProvidersResponse$nextToken": "<p>Pagination token for the next page of results.</p>",
         "ListOnlineEvaluationConfigsRequest$nextToken": "<p> The pagination token from a previous request to retrieve the next page of results. </p>",
         "ListOnlineEvaluationConfigsResponse$nextToken": "<p> The pagination token to use in a subsequent request to retrieve the next page of results. </p>",
+        "ListPaymentCredentialProvidersRequest$nextToken": "<p>Pagination token.</p>",
+        "ListPaymentCredentialProvidersResponse$nextToken": "<p>Pagination token for the next page of results.</p>",
         "ListWorkloadIdentitiesRequest$nextToken": "<p>Pagination token.</p>",
         "ListWorkloadIdentitiesResponse$nextToken": "<p>Pagination token for the next page of results.</p>",
         "Memory$failureReason": "<p>The reason for failure if the memory is in a failed state.</p>",
@@ -5746,6 +6337,7 @@
         "NumericalScaleDefinition$definition": "<p> The description that explains what this numerical rating represents and when it should be used. </p>",
         "OnlineEvaluationConfigSummary$failureReason": "<p> The reason for failure if the online evaluation configuration execution failed. </p>",
         "PolicyGeneration$findings": "<p>Findings and insights from this policy generation process.</p>",
+        "PolicyGenerationSummary$findings": "<p>Findings and insights from this policy generation process.</p>",
         "PolicyStatusReasons$member": null,
         "RegistrySummary$statusReason": "<p>The reason for the current status, typically set when the status is a failure state.</p>",
         "RequiredProperties$member": null,
@@ -5798,6 +6390,44 @@
       "base": "<p>Validation for STRING fields.</p>",
       "refs": {
         "Validation$stringValidation": null
+      }
+    },
+    "StripePrivyAppIdType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$appId": "<p>The app ID provided by Privy.</p>",
+        "StripePrivyConfigurationOutput$appId": "<p>The app ID provided by Privy.</p>"
+      }
+    },
+    "StripePrivyAppSecretType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$appSecret": "<p>The app secret provided by Privy.</p>"
+      }
+    },
+    "StripePrivyAuthorizationIdType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$authorizationId": "<p>The authorization ID for the Stripe Privy integration.</p>",
+        "StripePrivyConfigurationOutput$authorizationId": "<p>The authorization ID for the Stripe Privy integration.</p>"
+      }
+    },
+    "StripePrivyAuthorizationPrivateKeyType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$authorizationPrivateKey": "<p>The authorization private key for the Stripe Privy integration.</p>"
+      }
+    },
+    "StripePrivyConfigurationInput": {
+      "base": "<p>Stripe Privy configuration — credentials provided by Stripe and Privy.</p>",
+      "refs": {
+        "PaymentProviderConfigurationInput$stripePrivyConfiguration": "<p>The Stripe Privy configuration.</p>"
+      }
+    },
+    "StripePrivyConfigurationOutput": {
+      "base": "<p>Stripe Privy configuration output with secret ARNs.</p>",
+      "refs": {
+        "PaymentProviderConfigurationOutput$stripePrivyConfiguration": "<p>The Stripe Privy configuration.</p>"
       }
     },
     "SubmitRegistryRecordForApprovalRequest": {
@@ -5938,8 +6568,13 @@
         "CreateMemoryInput$tags": "<p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateOauth2CredentialProviderRequest$tags": "<p>A map of tag keys and values to assign to the OAuth2 credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateOnlineEvaluationConfigRequest$tags": "<p>A map of tag keys and values to assign to an AgentCore Online Evaluation Config. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
+        "CreatePaymentCredentialProviderRequest$tags": "<p>Optional tags for resource organization.</p>",
+        "CreatePaymentManagerRequest$tags": "<p>A map of tag keys and values to assign to the payment manager.</p>",
+        "CreatePaymentManagerResponse$tags": "<p>The tags associated with the created payment manager.</p>",
         "CreatePolicyEngineRequest$tags": "<p>A map of tag keys and values to assign to an AgentCore Policy. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
         "CreateWorkloadIdentityRequest$tags": "<p>A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>",
+        "GetPaymentCredentialProviderResponse$tags": "<p>The tags associated with the payment credential provider.</p>",
+        "GetPaymentManagerResponse$tags": "<p>The tags associated with the payment manager.</p>",
         "ListTagsForResourceResponse$tags": "<p>The tags associated with the resource.</p>",
         "ManagedVpcResource$tags": "<p>Tags to apply to the managed VPC Lattice resource gateway.</p>",
         "TagResourceRequest$tags": "<p>The tags to add to the resource. A tag is a key-value pair.</p>"
@@ -6148,6 +6783,8 @@
         "GetOauth2CredentialProviderResponse$lastUpdatedTime": "<p>The timestamp when the OAuth2 credential provider was last updated.</p>",
         "GetOnlineEvaluationConfigResponse$createdAt": "<p> The timestamp when the online evaluation configuration was created. </p>",
         "GetOnlineEvaluationConfigResponse$updatedAt": "<p> The timestamp when the online evaluation configuration was last updated. </p>",
+        "GetPaymentCredentialProviderResponse$createdTime": "<p>The timestamp when the payment credential provider was created.</p>",
+        "GetPaymentCredentialProviderResponse$lastUpdatedTime": "<p>The timestamp when the payment credential provider was last updated.</p>",
         "GetTokenVaultResponse$lastModifiedDate": "<p>The timestamp when the token vault was last modified.</p>",
         "GetWorkloadIdentityResponse$createdTime": "<p>The timestamp when the workload identity was created.</p>",
         "GetWorkloadIdentityResponse$lastUpdatedTime": "<p>The timestamp when the workload identity was last updated.</p>",
@@ -6161,6 +6798,8 @@
         "Oauth2CredentialProviderItem$lastUpdatedTime": "<p>The timestamp when the OAuth2 credential provider was last updated.</p>",
         "OnlineEvaluationConfigSummary$createdAt": "<p> The timestamp when the online evaluation configuration was created. </p>",
         "OnlineEvaluationConfigSummary$updatedAt": "<p> The timestamp when the online evaluation configuration was last updated. </p>",
+        "PaymentCredentialProviderItem$createdTime": "<p>The timestamp when the payment credential provider was created.</p>",
+        "PaymentCredentialProviderItem$lastUpdatedTime": "<p>The timestamp when the payment credential provider was last updated.</p>",
         "SetTokenVaultCMKResponse$lastModifiedDate": "<p>The timestamp when the token vault was last modified.</p>",
         "UpdateApiKeyCredentialProviderResponse$createdTime": "<p>The timestamp when the API key credential provider was created.</p>",
         "UpdateApiKeyCredentialProviderResponse$lastUpdatedTime": "<p>The timestamp when the API key credential provider was last updated.</p>",
@@ -6169,6 +6808,8 @@
         "UpdateOauth2CredentialProviderResponse$createdTime": "<p>The timestamp when the OAuth2 credential provider was created.</p>",
         "UpdateOauth2CredentialProviderResponse$lastUpdatedTime": "<p>The timestamp when the OAuth2 credential provider was last updated.</p>",
         "UpdateOnlineEvaluationConfigResponse$updatedAt": "<p> The timestamp when the online evaluation configuration was last updated. </p>",
+        "UpdatePaymentCredentialProviderResponse$createdTime": "<p>The timestamp when the payment credential provider was created.</p>",
+        "UpdatePaymentCredentialProviderResponse$lastUpdatedTime": "<p>The timestamp when the payment credential provider was last updated.</p>",
         "UpdateWorkloadIdentityResponse$createdTime": "<p>The timestamp when the workload identity was created.</p>",
         "UpdateWorkloadIdentityResponse$lastUpdatedTime": "<p>The timestamp when the workload identity was last updated.</p>"
       }
@@ -6477,6 +7118,30 @@
       "base": null,
       "refs": {}
     },
+    "UpdatePaymentConnectorRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "UpdatePaymentConnectorResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "UpdatePaymentCredentialProviderRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "UpdatePaymentCredentialProviderResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "UpdatePaymentManagerRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "UpdatePaymentManagerResponse": {
+      "base": null,
+      "refs": {}
+    },
     "UpdatePolicyEngineRequest": {
       "base": null,
       "refs": {}
@@ -6746,8 +7411,8 @@
     "VpcConfig": {
       "base": "<p>VpcConfig for the Agent.</p>",
       "refs": {
-        "BrowserNetworkConfiguration$vpcConfig": null,
-        "CodeInterpreterNetworkConfiguration$vpcConfig": null,
+        "BrowserNetworkConfiguration$vpcConfig": "<p>The VPC configuration for the browser. This configuration is required when the network mode is set to <code>VPC</code>.</p>",
+        "CodeInterpreterNetworkConfiguration$vpcConfig": "<p>The VPC configuration for the code interpreter. This configuration is required when the network mode is set to <code>VPC</code>.</p>",
         "NetworkConfiguration$networkModeConfig": "<p>The network mode configuration for the AgentCore Runtime.</p>"
       }
     },
@@ -6789,10 +7454,13 @@
       "refs": {
         "CreateAgentRuntimeResponse$workloadIdentityDetails": "<p>The workload identity details for the AgentCore Runtime.</p>",
         "CreateGatewayResponse$workloadIdentityDetails": "<p>The workload identity details for the created gateway.</p>",
+        "CreatePaymentManagerResponse$workloadIdentityDetails": null,
         "GetAgentRuntimeResponse$workloadIdentityDetails": "<p>The workload identity details for the AgentCore Runtime.</p>",
         "GetGatewayResponse$workloadIdentityDetails": "<p>The workload identity details for the gateway.</p>",
+        "GetPaymentManagerResponse$workloadIdentityDetails": null,
         "UpdateAgentRuntimeResponse$workloadIdentityDetails": "<p>The workload identity details for the updated AgentCore Runtime.</p>",
-        "UpdateGatewayResponse$workloadIdentityDetails": "<p>The workload identity details for the updated gateway.</p>"
+        "UpdateGatewayResponse$workloadIdentityDetails": "<p>The workload identity details for the updated gateway.</p>",
+        "UpdatePaymentManagerResponse$workloadIdentityDetails": null
       }
     },
     "WorkloadIdentityList": {

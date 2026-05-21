@@ -18,11 +18,13 @@ using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using System.Text;
 
 namespace AWSSDK.Benchmarks
 {
     [MemoryDiagnoser]
+    [Config(typeof(SdkBenchmarkConfig))]
     public class S3Benchmarks
     {
         private static string BasePath = Path.Combine(Path.GetTempPath(), "transferutility");

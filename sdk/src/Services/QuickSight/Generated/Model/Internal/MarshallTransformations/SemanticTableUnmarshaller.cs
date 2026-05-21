@@ -74,6 +74,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.RowLevelPermissionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SemanticMetadata", targetDepth))
+                {
+                    var unmarshaller = TableSemanticMetadataUnmarshaller.Instance;
+                    unmarshalledObject.SemanticMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

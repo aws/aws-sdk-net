@@ -1507,6 +1507,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlP548xlarge = new AppInstanceType("ml.p5.48xlarge");
         /// <summary>
+        /// Constant MlP54xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP54xlarge = new AppInstanceType("ml.p5.4xlarge");
+        /// <summary>
         /// Constant MlP5en48xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlP5en48xlarge = new AppInstanceType("ml.p5en.48xlarge");
@@ -4953,6 +4957,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterEventLevel.
+    /// </summary>
+    public class ClusterEventLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Error for ClusterEventLevel
+        /// </summary>
+        public static readonly ClusterEventLevel Error = new ClusterEventLevel("Error");
+        /// <summary>
+        /// Constant Info for ClusterEventLevel
+        /// </summary>
+        public static readonly ClusterEventLevel Info = new ClusterEventLevel("Info");
+        /// <summary>
+        /// Constant Warn for ClusterEventLevel
+        /// </summary>
+        public static readonly ClusterEventLevel Warn = new ClusterEventLevel("Warn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterEventLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterEventLevel FindValue(string value)
+        {
+            return FindValue<ClusterEventLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterEventLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterEventResourceType.
     /// </summary>
     public class ClusterEventResourceType : ConstantClass
@@ -5000,6 +5058,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterEventResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterImageVersionStatus.
+    /// </summary>
+    public class ClusterImageVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UpdateAvailable for ClusterImageVersionStatus
+        /// </summary>
+        public static readonly ClusterImageVersionStatus UpdateAvailable = new ClusterImageVersionStatus("UpdateAvailable");
+        /// <summary>
+        /// Constant UpToDate for ClusterImageVersionStatus
+        /// </summary>
+        public static readonly ClusterImageVersionStatus UpToDate = new ClusterImageVersionStatus("UpToDate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterImageVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterImageVersionStatus FindValue(string value)
+        {
+            return FindValue<ClusterImageVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterImageVersionStatus(string value)
         {
             return FindValue(value);
         }
@@ -7718,6 +7826,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionRoleIdentityConfig(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionRoleSessionNameMode.
+    /// </summary>
+    public class ExecutionRoleSessionNameMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STATIC for ExecutionRoleSessionNameMode
+        /// </summary>
+        public static readonly ExecutionRoleSessionNameMode STATIC = new ExecutionRoleSessionNameMode("STATIC");
+        /// <summary>
+        /// Constant USER_IDENTITY for ExecutionRoleSessionNameMode
+        /// </summary>
+        public static readonly ExecutionRoleSessionNameMode USER_IDENTITY = new ExecutionRoleSessionNameMode("USER_IDENTITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionRoleSessionNameMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionRoleSessionNameMode FindValue(string value)
+        {
+            return FindValue<ExecutionRoleSessionNameMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionRoleSessionNameMode(string value)
         {
             return FindValue(value);
         }
@@ -10789,6 +10947,14 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlP548xlarge = new InstanceType("ml.p5.48xlarge");
         /// <summary>
+        /// Constant MlP54xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP54xlarge = new InstanceType("ml.p5.4xlarge");
+        /// <summary>
+        /// Constant MlP5en48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP5en48xlarge = new InstanceType("ml.p5en.48xlarge");
+        /// <summary>
         /// Constant MlP6B20048xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP6B20048xlarge = new InstanceType("ml.p6-b200.48xlarge");
@@ -12232,6 +12398,52 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ManagedInstanceScalingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedStorageType.
+    /// </summary>
+    public class ManagedStorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Restricted for ManagedStorageType
+        /// </summary>
+        public static readonly ManagedStorageType Restricted = new ManagedStorageType("Restricted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedStorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedStorageType FindValue(string value)
+        {
+            return FindValue<ManagedStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedStorageType(string value)
         {
             return FindValue(value);
         }
@@ -19796,6 +20008,10 @@ namespace Amazon.SageMaker
         /// Constant HyperpodCluster for SageMakerResourceName
         /// </summary>
         public static readonly SageMakerResourceName HyperpodCluster = new SageMakerResourceName("hyperpod-cluster");
+        /// <summary>
+        /// Constant StudioApps for SageMakerResourceName
+        /// </summary>
+        public static readonly SageMakerResourceName StudioApps = new SageMakerResourceName("studio-apps");
         /// <summary>
         /// Constant TrainingJob for SageMakerResourceName
         /// </summary>

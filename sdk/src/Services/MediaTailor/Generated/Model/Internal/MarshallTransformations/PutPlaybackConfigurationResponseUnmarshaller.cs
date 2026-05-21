@@ -100,6 +100,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.DashConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FunctionMapping", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.FunctionMapping = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("HlsConfiguration", targetDepth))
                 {
                     var unmarshaller = HlsConfigurationUnmarshaller.Instance;

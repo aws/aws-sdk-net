@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the StartChatContact operation.
     /// Initiates a flow to start a new chat for the customer. Response of this API provides
     /// a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-    /// API in the Amazon Connect Participant Service.
+    /// API in the Connect Customer Participant Service.
     /// 
     ///  
     /// <para>
@@ -63,18 +63,18 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about chat, see the following topics in the <i>Amazon Connect
+    /// For more information about chat, see the following topics in the <i>Connect Customer
     /// Administrator Guide</i>: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
-    /// Web and mobile messaging capabilities in Amazon Connect</a> 
+    /// Web and mobile messaging capabilities in Connect Customer</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a> 
+    ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+    /// Customer Chat security best practices</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -98,8 +98,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes. They can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes. They can be accessed in flows just like any other contact attributes.
         /// 
         /// </para>
         ///  
@@ -172,7 +172,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for initiating the chat. To see the ContactFlowId in the
-        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
+        /// Connect Customer admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
         /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
         /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
         /// bold: 
@@ -263,7 +263,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -340,8 +340,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The unique identifier for an Amazon Connect contact. This identifier is related to
-        /// the chat starting.
+        /// The unique identifier for an Connect Customer contact. This identifier is related
+        /// to the chat starting.
         /// </para>
         ///  <note> 
         /// <para>
@@ -366,7 +366,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments using
-        /// an attribute map. The attributes are standard Amazon Connect attributes. They can
+        /// an attribute map. The attributes are standard Connect Customer attributes. They can
         /// be accessed in flows.
         /// </para>
         ///  

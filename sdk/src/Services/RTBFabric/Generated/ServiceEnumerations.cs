@@ -25,6 +25,68 @@ namespace Amazon.RTBFabric
 {
 
     /// <summary>
+    /// Constants used for properties of type CertificateAssociationStatus.
+    /// </summary>
+    public class CertificateAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED for CertificateAssociationStatus
+        /// </summary>
+        public static readonly CertificateAssociationStatus ASSOCIATED = new CertificateAssociationStatus("ASSOCIATED");
+        /// <summary>
+        /// Constant DISASSOCIATED for CertificateAssociationStatus
+        /// </summary>
+        public static readonly CertificateAssociationStatus DISASSOCIATED = new CertificateAssociationStatus("DISASSOCIATED");
+        /// <summary>
+        /// Constant FAILED for CertificateAssociationStatus
+        /// </summary>
+        public static readonly CertificateAssociationStatus FAILED = new CertificateAssociationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_ASSOCIATION for CertificateAssociationStatus
+        /// </summary>
+        public static readonly CertificateAssociationStatus PENDING_ASSOCIATION = new CertificateAssociationStatus("PENDING_ASSOCIATION");
+        /// <summary>
+        /// Constant PENDING_DISASSOCIATION for CertificateAssociationStatus
+        /// </summary>
+        public static readonly CertificateAssociationStatus PENDING_DISASSOCIATION = new CertificateAssociationStatus("PENDING_DISASSOCIATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAssociationStatus FindValue(string value)
+        {
+            return FindValue<CertificateAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectivityType.
     /// </summary>
     public class ConnectivityType : ConstantClass
@@ -630,6 +692,72 @@ namespace Amazon.RTBFabric
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResponderGatewayStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleStatus.
+    /// </summary>
+    public class RuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus ACTIVE = new RuleStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus CREATION_IN_PROGRESS = new RuleStatus("CREATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant DELETED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus DELETED = new RuleStatus("DELETED");
+        /// <summary>
+        /// Constant DELETION_IN_PROGRESS for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus DELETION_IN_PROGRESS = new RuleStatus("DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant FAILED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus FAILED = new RuleStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_IN_PROGRESS for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus UPDATE_IN_PROGRESS = new RuleStatus("UPDATE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleStatus FindValue(string value)
+        {
+            return FindValue<RuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleStatus(string value)
         {
             return FindValue(value);
         }

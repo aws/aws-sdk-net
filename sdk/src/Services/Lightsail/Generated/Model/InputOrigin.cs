@@ -42,10 +42,34 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class InputOrigin
     {
+        private OriginIpAddressTypeEnum _ipAddressType;
         private string _name;
         private OriginProtocolPolicyEnum _protocolPolicy;
         private RegionName _regionName;
         private int? _responseTimeout;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that the distribution uses when connecting to the origin.
+        /// </para>
+        ///  
+        /// <para>
+        /// The possible values are <c>ipv4</c> for IPv4 only, <c>ipv6</c> for IPv6 only, and
+        /// <c>dualstack</c> for IPv4 and IPv6.
+        /// </para>
+        /// </summary>
+        public OriginIpAddressTypeEnum IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

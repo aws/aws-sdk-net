@@ -75,6 +75,18 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDns64Enabled())
+            {
+                context.Writer.WritePropertyName("Dns64Enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Dns64Enabled.Value);
+            }
+
+            if(publicRequest.IsSetIpv6InternetAccessEnabled())
+            {
+                context.Writer.WritePropertyName("Ipv6InternetAccessEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.Ipv6InternetAccessEnabled.Value);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

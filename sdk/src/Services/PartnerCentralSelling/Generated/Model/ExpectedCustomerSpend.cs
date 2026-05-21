@@ -65,7 +65,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// Currency code for the expected customer spend. Supported currencies: USD, EUR
+        /// Indicates the currency in which the revenue estimate is provided. This helps in understanding
+        /// the financial impact across different markets. Accepted values are <c>USD</c> (US
+        /// Dollars) and <c>EUR</c> (Euros). If the AWS Partition is <c>aws-eusc</c> (AWS European
+        /// Sovereign Cloud), the currency code must be <c>EUR</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

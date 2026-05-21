@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.AssociateWhatsAppBusinessAccountResponse.LinkedWhatsAppBusinessAccountId</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.CreateWhatsAppMessageTemplateRequest.Id</property>
     <min>1</min>
     <max>115</max>
@@ -121,6 +127,16 @@
     <min>1</min>
     <max>100</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateRequest.TemplateLanguageCode</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetWhatsAppMessageTemplateResponse.Template</property>
@@ -259,6 +275,16 @@
     <max>3000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.TemplateLanguageCode</property>
+    <min>1</min>
+    <max>6</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateWhatsAppMessageTemplateRequest.TemplateName</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LibraryTemplateButtonInput.OtpType</property>
     <min>1</min>
     <max>25</max>
@@ -311,6 +337,11 @@
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.MarketingMessagesOnboardingStatus</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.WabaId</property>
     <min>1</min>
     <max>100</max>
@@ -342,6 +373,11 @@
     <min>1</min>
     <max>115</max>
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.MarketingMessagesOnboardingStatus</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.WabaId</property>

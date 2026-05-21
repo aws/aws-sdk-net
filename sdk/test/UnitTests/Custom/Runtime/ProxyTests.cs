@@ -23,6 +23,7 @@ namespace AWSSDK.UnitTests
     [TestClass()]
     public class ProxyTests
     {
+#if NETFRAMEWORK
         readonly string EnvironmentVariableUrl = "http://user:pass@10.0.0.2:21/proxy";
         readonly string EnvironmentVariableUrlWithoutHttp = "user:pass@10.0.0.2:21/proxy";
         readonly string Host = "10.0.0.1";
@@ -32,8 +33,6 @@ namespace AWSSDK.UnitTests
             "test.domain.com",
             "other.domain.com"
         };
-
-#if BCL
         [TestMethod][TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void TestProxySetupHostAndPortOnly()

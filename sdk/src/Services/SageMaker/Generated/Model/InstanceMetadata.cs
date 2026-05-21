@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private CapacityReservation _capacityReservation;
         private string _customerEni;
         private string _failureMessage;
+        private List<InstanceRequirementsEniConfiguration> _instanceRequirementsEniConfigurations = AWSConfigs.InitializeCollections ? new List<InstanceRequirementsEniConfiguration>() : null;
         private string _lcsExecutionState;
         private string _nodeLogicalId;
 
@@ -113,6 +114,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureMessage()
         {
             return this._failureMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceRequirementsEniConfigurations. 
+        /// <para>
+        /// The ENI configurations for the instance types in the instance requirements, grouped
+        /// by network interface category (for example, ENI-only or EFA with ENIs). At most one
+        /// configuration per category.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<InstanceRequirementsEniConfiguration> InstanceRequirementsEniConfigurations
+        {
+            get { return this._instanceRequirementsEniConfigurations; }
+            set { this._instanceRequirementsEniConfigurations = value; }
+        }
+
+        // Check to see if InstanceRequirementsEniConfigurations property is set
+        internal bool IsSetInstanceRequirementsEniConfigurations()
+        {
+            return this._instanceRequirementsEniConfigurations != null && (this._instanceRequirementsEniConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

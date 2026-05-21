@@ -109,6 +109,18 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 StringUtils.WriteBase64StringValue(context.Writer, publicRequest.TemplateComponents);
             }
 
+            if(publicRequest.IsSetTemplateLanguageCode())
+            {
+                context.Writer.WritePropertyName("templateLanguageCode");
+                context.Writer.WriteStringValue(publicRequest.TemplateLanguageCode);
+            }
+
+            if(publicRequest.IsSetTemplateName())
+            {
+                context.Writer.WritePropertyName("templateName");
+                context.Writer.WriteStringValue(publicRequest.TemplateName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

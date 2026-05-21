@@ -2092,6 +2092,9 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceInUseException">
         /// The resource that you tried to update or delete is currently in use.
         /// </exception>
@@ -2128,6 +2131,9 @@ namespace Amazon.Route53Resolver
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceInUseException">
         /// The resource that you tried to update or delete is currently in use.
@@ -2491,6 +2497,9 @@ namespace Amazon.Route53Resolver
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
         /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
         /// The specified resource doesn't exist.
         /// </exception>
@@ -2529,6 +2538,9 @@ namespace Amazon.Route53Resolver
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.InvalidParameterException">
         /// One or more parameters in this request are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InvalidRequestException">
+        /// The request is invalid.
         /// </exception>
         /// <exception cref="Amazon.Route53Resolver.Model.ResourceNotFoundException">
         /// The specified resource doesn't exist.

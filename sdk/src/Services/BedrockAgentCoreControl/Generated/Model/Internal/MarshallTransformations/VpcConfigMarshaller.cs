@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetRequireServiceS3Endpoint())
+            {
+                context.Writer.WritePropertyName("requireServiceS3Endpoint");
+                context.Writer.WriteBooleanValue(requestObject.RequireServiceS3Endpoint.Value);
+            }
+
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");

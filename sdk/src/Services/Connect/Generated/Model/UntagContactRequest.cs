@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the UntagContact operation.
     /// Removes the specified tags from the contact resource. For more information about this
     /// API is used, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/granular-billing.html">Set
-    /// up granular billing for a detailed view of your Amazon Connect usage</a>.
+    /// up granular billing for a detailed view of your Connect Customer usage</a>.
     /// </summary>
     public partial class UntagContactRequest : AmazonConnectRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// The identifier of the contact in this instance of Connect Customer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The delay, in seconds, a contact should be in the queue before they are routed to
         /// an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-        /// priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// priority and delay</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=9999)]

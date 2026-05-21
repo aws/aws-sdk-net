@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Summary representation for list responses
+    /// Summary representation for list responses.
     /// </summary>
     public partial class BatchEvaluationSummary
     {

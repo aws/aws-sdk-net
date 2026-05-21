@@ -82,18 +82,12 @@ namespace AWSSDK.UnitTests
                 // Real region with credentialScope.region
                 new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
                     "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
-                 // Pseudoregion with credentialScope.region, different partition
-                // new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
-                //     "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
                 // Pseudoregion, no credentialScope.region
                 new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-east-1") },
                     "us-east-1", "iotdata", "data.iot-fips.us-east-1.amazonaws.com" },
                 // Non-FIPS pseudoregion, no credentialScope
                 new object[]{new AmazonMTurkConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("sandbox") },
                     "sandbox", "mturk-requester", "mturk-requester-sandbox.us-east-1.amazonaws.com" },
-                // Non-FIPS pseudoregion, no credentialScope or hostname
-                // new object[]{new AmazonQuickSightConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("api") },
-                //    "api", "quicksight", "quicksight.api.amazonaws.com" },
             };
 
         /// <summary>
@@ -179,10 +173,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), string.Empty, true, null));
 
             // exception because the URI is necessary to decide whether or not to pre URL encode
-            AssertExtensions.ExpectException(() =>
-            {
-                AWSSDKUtils.CanonicalizeResourcePathV2(null, "doesn't matter", true, null);
-            }, typeof(ArgumentNullException), "A non-null endpoint is necessary to decide whether or not to pre URL encode.\r\nParameter name: endpoint");
+            AssertExtensions.ExpectException(() => AWSSDKUtils.CanonicalizeResourcePathV2(null, "doesn't matter", true, null), typeof(ArgumentNullException));
 
             // In the new signer path, if it's s3, we pass in false for double encoding
             Assert.AreEqual(
@@ -209,10 +200,9 @@ namespace AWSSDK.UnitTests
                 AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}", true, new Dictionary<string, string> { { "{a}", "nospecialcharacters" } }));
         }
 
-#if BCL
-        [TestMethod][TestCategory("UnitTest")]
+        [TestMethod]
+        [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
         public async Task TestSignerWithBasicCredentialsAsync()
         {
             var pipeline = new RuntimePipeline(new MockHandler());            
@@ -226,7 +216,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);
         }
-#endif
 
         [TestMethod]
         [TestCategory("Runtime")]

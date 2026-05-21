@@ -37,8 +37,8 @@ namespace Amazon.MarketplaceAgreement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <c>groupBy</c> parameter is required and currently supports only <c>INVOICE_ID</c>
-    /// as a value. The <c>agreementId</c> parameter is required.
+    /// The <c>groupBy</c> parameter is required and supports only <c>INVOICE_ID</c> as a
+    /// value. The <c>agreementId</c> parameter is required.
     /// </para>
     ///  </note>
     /// </summary>

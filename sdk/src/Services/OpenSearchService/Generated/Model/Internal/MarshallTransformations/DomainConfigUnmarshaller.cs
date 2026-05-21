@@ -80,6 +80,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AIMLOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AutomatedSnapshotPauseOptions", targetDepth))
+                {
+                    var unmarshaller = AutomatedSnapshotPauseOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedSnapshotPauseOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AutoTuneOptions", targetDepth))
                 {
                     var unmarshaller = AutoTuneOptionsStatusUnmarshaller.Instance;

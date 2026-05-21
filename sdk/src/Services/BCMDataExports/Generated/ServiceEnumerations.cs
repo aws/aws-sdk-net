@@ -401,9 +401,17 @@ namespace Amazon.BCMDataExports
     {
 
         /// <summary>
+        /// Constant ATHENA for S3OutputType
+        /// </summary>
+        public static readonly S3OutputType ATHENA = new S3OutputType("ATHENA");
+        /// <summary>
         /// Constant CUSTOM for S3OutputType
         /// </summary>
         public static readonly S3OutputType CUSTOM = new S3OutputType("CUSTOM");
+        /// <summary>
+        /// Constant REDSHIFT for S3OutputType
+        /// </summary>
+        public static readonly S3OutputType REDSHIFT = new S3OutputType("REDSHIFT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

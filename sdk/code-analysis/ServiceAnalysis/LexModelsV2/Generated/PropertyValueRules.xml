@@ -3101,6 +3101,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.AudioFillerSettings.AudioType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.AudioSpecification.EndTimeoutMs</property>
     <min>1</min>
   </property-value-rule>

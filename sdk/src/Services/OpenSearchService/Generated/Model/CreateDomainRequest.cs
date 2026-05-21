@@ -40,6 +40,7 @@ namespace Amazon.OpenSearchService.Model
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptionsInput _advancedSecurityOptions;
         private AIMLOptionsInput _aimlOptions;
+        private AutomatedSnapshotPauseRequestOptions _automatedSnapshotPauseOptions;
         private AutoTuneOptionsInput _autoTuneOptions;
         private ClusterConfig _clusterConfig;
         private CognitoOptions _cognitoOptions;
@@ -170,6 +171,34 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAIMLOptions()
         {
             return this._aimlOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedSnapshotPauseOptions. 
+        /// <para>
+        /// Specifies the automated snapshot pause options for the domain.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Suspending snapshots reduces data protection. You cannot restore your domain to points
+        /// in time when snapshots are suspended. Use this feature only for short-term operational
+        /// needs such as migrations or maintenance windows.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Maximum suspension duration: 3 days.
+        /// </para>
+        /// </summary>
+        public AutomatedSnapshotPauseRequestOptions AutomatedSnapshotPauseOptions
+        {
+            get { return this._automatedSnapshotPauseOptions; }
+            set { this._automatedSnapshotPauseOptions = value; }
+        }
+
+        // Check to see if AutomatedSnapshotPauseOptions property is set
+        internal bool IsSetAutomatedSnapshotPauseOptions()
+        {
+            return this._automatedSnapshotPauseOptions != null;
         }
 
         /// <summary>

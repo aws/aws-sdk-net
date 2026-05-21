@@ -42,6 +42,7 @@ namespace Amazon.RTBFabric.Model
         private string _gatewayId;
         private GatewayType _gatewayType;
         private int? _inboundLinksCount;
+        private int? _linksRequestedCount;
         private ListenerConfig _listenerConfig;
         private ManagedEndpointConfiguration _managedEndpointConfiguration;
         private int? _port;
@@ -187,9 +188,10 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property InboundLinksCount. 
         /// <para>
-        /// The count of inbound links for the responder gateway.
+        /// Deprecated. Use 'linksRequestedCount' instead.
         /// </para>
         /// </summary>
+        [Obsolete("Use linksRequestedCount instead")]
         public int? InboundLinksCount
         {
             get { return this._inboundLinksCount; }
@@ -200,6 +202,24 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetInboundLinksCount()
         {
             return this._inboundLinksCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinksRequestedCount. 
+        /// <para>
+        /// The count of requested links waiting for the responder gateway to accept or reject.
+        /// </para>
+        /// </summary>
+        public int? LinksRequestedCount
+        {
+            get { return this._linksRequestedCount; }
+            set { this._linksRequestedCount = value; }
+        }
+
+        // Check to see if LinksRequestedCount property is set
+        internal bool IsSetLinksRequestedCount()
+        {
+            return this._linksRequestedCount.HasValue; 
         }
 
         /// <summary>

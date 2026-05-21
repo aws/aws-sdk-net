@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private CaCertificatesBundleSource _caCertificatesBundleSource;
         private string _id;
         private string _ifMatch;
+        private bool? _useClientCertificateOCSPEndpoint;
 
         /// <summary>
         /// Gets and sets the property CaCertificatesBundleSource. 
@@ -45,7 +46,6 @@ namespace Amazon.CloudFront.Model
         /// The CA certificates bundle source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CaCertificatesBundleSource CaCertificatesBundleSource
         {
             get { return this._caCertificatesBundleSource; }
@@ -94,6 +94,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetIfMatch()
         {
             return this._ifMatch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseClientCertificateOCSPEndpoint. 
+        /// <para>
+        /// A Boolean that determines whether to use the CA certificate's OCSP endpoint to check
+        /// certificate revocation status.
+        /// </para>
+        /// </summary>
+        public bool? UseClientCertificateOCSPEndpoint
+        {
+            get { return this._useClientCertificateOCSPEndpoint; }
+            set { this._useClientCertificateOCSPEndpoint = value; }
+        }
+
+        // Check to see if UseClientCertificateOCSPEndpoint property is set
+        internal bool IsSetUseClientCertificateOCSPEndpoint()
+        {
+            return this._useClientCertificateOCSPEndpoint.HasValue; 
         }
 
     }

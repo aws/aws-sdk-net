@@ -36,6 +36,7 @@ namespace Amazon.ConnectCampaignsV2.Model
     {
         private string _defaultTimeZone;
         private List<string> _localTimeZoneDetection = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private LocalTimeZoneDetectionScope _localTimeZoneDetectionScope;
 
         /// <summary>
         /// Gets and sets the property DefaultTimeZone.
@@ -71,6 +72,21 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetLocalTimeZoneDetection()
         {
             return this._localTimeZoneDetection != null && (this._localTimeZoneDetection.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalTimeZoneDetectionScope.
+        /// </summary>
+        public LocalTimeZoneDetectionScope LocalTimeZoneDetectionScope
+        {
+            get { return this._localTimeZoneDetectionScope; }
+            set { this._localTimeZoneDetectionScope = value; }
+        }
+
+        // Check to see if LocalTimeZoneDetectionScope property is set
+        internal bool IsSetLocalTimeZoneDetectionScope()
+        {
+            return this._localTimeZoneDetectionScope != null;
         }
 
     }

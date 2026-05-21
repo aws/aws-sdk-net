@@ -104,6 +104,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.GlobalAuroraConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("lambdaEventSourceMappingConfig", targetDepth))
+                {
+                    var unmarshaller = LambdaEventSourceMappingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LambdaEventSourceMappingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("parallelConfig", targetDepth))
                 {
                     var unmarshaller = ParallelExecutionBlockConfigurationUnmarshaller.Instance;

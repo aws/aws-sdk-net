@@ -31,17 +31,17 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContactFlows operation.
-    /// Provides information about the flows for the specified Amazon Connect instance.
+    /// Provides information about the flows for the specified Connect Customer instance.
     /// 
     ///  
     /// <para>
-    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-    /// Connect Flow language</a>.
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+    /// Customer Flow language</a>.
     /// </para>
     ///  
     /// <para>
     /// For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a>
-    /// in the <i>Amazon Connect Administrator Guide</i>.
+    /// in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListContactFlowsRequest : AmazonConnectRequest
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

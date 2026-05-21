@@ -123,7 +123,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AnsweringMachineDetectionStatus. 
         /// <para>
         /// Indicates how an <a href="https://docs.aws.amazon.com/connect/latest/adminguide/how-to-create-campaigns.html">outbound
-        /// campaign</a> call is actually disposed if the contact is connected to Amazon Connect.
+        /// campaign</a> call is actually disposed if the contact is connected to Connect Customer.
         /// </para>
         /// </summary>
         public AnsweringMachineDetectionStatus AnsweringMachineDetectionStatus
@@ -233,7 +233,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ConnectedToSystemTimestamp. 
         /// <para>
-        /// The timestamp when customer endpoint connected to Amazon Connect.
+        /// The timestamp when customer endpoint connected to Connect Customer.
         /// </para>
         /// </summary>
         public DateTime? ConnectedToSystemTimestamp
@@ -352,7 +352,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The customer's identification number. For example, the <c>CustomerId</c> may be a
         /// customer number from your CRM. You can create a Lambda function to pull the unique
-        /// customer ID of the caller from your CRM system. If you enable Amazon Connect Voice
+        /// customer ID of the caller from your CRM system. If you enable Connect Customer Voice
         /// ID capability, this attribute is populated with the <c>CustomerSpeakerId</c> of the
         /// caller.
         /// </para>
@@ -430,7 +430,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The disconnect reason for the contact. For a list and description of all the possible
         /// disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>. 
+        /// in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         /// </summary>
         public string DisconnectReason
@@ -879,8 +879,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments using
-        /// an attribute map. The attributes are standard Amazon Connect attributes and can be
-        /// accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters.
+        /// an attribute map. The attributes are standard Connect Customer attributes and can
+        /// be accessed in flows. Attribute keys can include only alphanumeric, -, and _ characters.
         /// This field can be used to show channel subtype. For example, <c>connect:Guide</c>
         /// or <c>connect:SMS</c>.
         /// </para>
@@ -1009,7 +1009,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property WisdomInfo. 
         /// <para>
-        /// Information about Amazon Connect Wisdom.
+        /// Information about Connect Customer Wisdom.
         /// </para>
         /// </summary>
         public WisdomInfo WisdomInfo

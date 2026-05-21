@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-        /// reference</a> in the <i>Amazon Connect Administrators Guide</i>.
+        /// reference</a> in the <i>Connect Customer Administrators Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -141,7 +141,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The subject of the email if the delivery method is <c>EMAIL</c>. Supports variable
         /// injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-        /// reference</a> in the <i>Amazon Connect Administrators Guide</i>.
+        /// reference</a> in the <i>Connect Customer Administrators Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

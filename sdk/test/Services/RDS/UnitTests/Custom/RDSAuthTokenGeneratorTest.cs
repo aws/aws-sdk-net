@@ -45,6 +45,7 @@ namespace AWSSDK.UnitTests.RDS
         private static readonly AWSCredentials BasicCredentials = new BasicAWSCredentials(AccessKey, SecretKey);
         private static readonly AWSCredentials SessionCredentials = new SessionAWSCredentials(AccessKey, SecretKey, SessionToken);
 
+#if NETFRAMEWORK
         private Dictionary<Type, IIdentityResolver> originalIdentityResolvers;
 
         [TestInitialize]
@@ -52,9 +53,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AWSConfigs.AWSRegion = AWSRegion.SystemName;
 
-            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
-                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
-
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
             originalIdentityResolvers = field.GetValue(null) as Dictionary<Type, IIdentityResolver>;
 
             var mockIdentityResolver = new Mock<IIdentityResolver>();
@@ -69,13 +68,11 @@ namespace AWSSDK.UnitTests.RDS
         [TestCleanup]
         public void Cleanup()
         {
-            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
-                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
-
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, originalIdentityResolvers);
         }
+#endif
 
-#if ASYNC_AWAIT
         [TestMethod]
         [TestCategory("RDS")]
         public async System.Threading.Tasks.Task GenerateAuthTokenBasicAsync()
@@ -91,7 +88,6 @@ namespace AWSSDK.UnitTests.RDS
             AssertAuthToken(await RDSAuthTokenGenerator.GenerateAuthTokenAsync(SessionCredentials,
                 AWSRegion, DBHost, DBPort, DBUser), AccessKey, AWSRegion, true);
         }
-#endif
 
         [TestMethod]
         [TestCategory("RDS")]
@@ -109,6 +105,7 @@ namespace AWSSDK.UnitTests.RDS
                 AWSRegion, DBHost, DBPort, DBUser), AccessKey, AWSRegion, true);
         }
 
+#if NETFRAMEWORK
         [TestMethod]
         [TestCategory("RDS")]
         public void GenerateAuthTokenNoRegion()
@@ -129,6 +126,7 @@ namespace AWSSDK.UnitTests.RDS
         {
             AssertAuthToken(RDSAuthTokenGenerator.GenerateAuthToken(DBHost, DBPort, DBUser), AccessKey, FallbackRegionFactory.GetRegionEndpoint());
         }
+#endif
 
         [TestMethod]
         [TestCategory("RDS")]
@@ -231,6 +229,5 @@ namespace AWSSDK.UnitTests.RDS
 
             Assert.IsTrue(Regex.IsMatch(token, regex), token + " doesn't match regex " + regex);
         }
-
     }
 }

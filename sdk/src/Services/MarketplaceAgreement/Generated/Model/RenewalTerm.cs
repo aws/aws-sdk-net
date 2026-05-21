@@ -41,6 +41,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class RenewalTerm
     {
         private RenewalTermConfiguration _configuration;
+        private string _id;
         private string _type;
 
         /// <summary>
@@ -59,6 +60,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the term.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

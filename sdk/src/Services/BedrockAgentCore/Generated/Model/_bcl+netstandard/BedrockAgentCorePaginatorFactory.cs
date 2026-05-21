@@ -85,6 +85,22 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Paginator for ListPaymentInstruments operation
+        ///</summary>
+        public IListPaymentInstrumentsPaginator ListPaymentInstruments(ListPaymentInstrumentsRequest request) 
+        {
+            return new ListPaymentInstrumentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentSessions operation
+        ///</summary>
+        public IListPaymentSessionsPaginator ListPaymentSessions(ListPaymentSessionsRequest request) 
+        {
+            return new ListPaymentSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 

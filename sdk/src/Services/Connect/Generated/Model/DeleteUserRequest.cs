@@ -31,13 +31,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes a user account from the specified Amazon Connect instance.
+    /// Deletes a user account from the specified Connect Customer instance.
     /// 
     ///  
     /// <para>
     /// For information about what happens to a user's data when their account is deleted,
     /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete
-    /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
+    /// Users from Your Connect Customer Instance</a> in the <i>Connect Customer Administrator
     /// Guide</i>.
     /// </para>
     ///  <important> 
@@ -55,9 +55,9 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Avoid the disruption of other Amazon Connect processes, such as instance replication
-    /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
-    /// Connect Global Resiliency</a>. 
+    /// Avoid the disruption of other Connect Customer processes, such as instance replication
+    /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Connect
+    /// Customer Global Resiliency</a>. 
     /// </para>
     ///  </li> </ul> </important>
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

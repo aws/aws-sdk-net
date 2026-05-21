@@ -100,7 +100,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// The namespaces for which to create episodes.
+        /// This is a legacy parameter, use <c>namespaceTemplates</c>. The namespaces for which
+        /// to create episodes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

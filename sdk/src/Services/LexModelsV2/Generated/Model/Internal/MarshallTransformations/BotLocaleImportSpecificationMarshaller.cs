@@ -46,6 +46,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioFillerSettings())
+            {
+                context.Writer.WritePropertyName("audioFillerSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioFillerSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AudioFillerSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetBotId())
             {
                 context.Writer.WritePropertyName("botId");

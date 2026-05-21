@@ -5,6 +5,8 @@ using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -33,11 +35,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void BatchGetConfig_OverridesTableName()
+        public async Task BatchGetConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.BatchGetItem(It.Is<BatchGetItemRequest>(request => request.RequestItems.ContainsKey("OperationPrefix-TableName"))))
-               .Returns(new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() })
+            mockClient.Setup(client => client.BatchGetItemAsync(It.Is<BatchGetItemRequest>(request => request.RequestItems.ContainsKey("OperationPrefix-TableName")), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -51,18 +53,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var batchGet = context.CreateBatchGet<DataModel>(batchGetConfig);
             batchGet.AddKey("123", "Name");
-            batchGet.Execute();
+            await batchGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void BatchGetConfig_RemoveTablePrefix()
+        public async Task BatchGetConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.BatchGetItem(It.Is<BatchGetItemRequest>(request => request.RequestItems.ContainsKey("TableName"))))
-               .Returns(new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() })
+            mockClient.Setup(client => client.BatchGetItemAsync(It.Is<BatchGetItemRequest>(request => request.RequestItems.ContainsKey("TableName")), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -76,7 +78,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var batchGet = context.CreateBatchGet<DataModel>(batchGetConfig);
             batchGet.AddKey("123", "Name");
-            batchGet.Execute();
+            await batchGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -91,11 +93,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void BatchWriteConfig_OverridesTableName()
+        public async Task BatchWriteConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.BatchWriteItem(It.Is<BatchWriteItemRequest>(x => x.RequestItems.ContainsKey("OperationPrefix-TableName"))))
-               .Returns(new BatchWriteItemResponse { UnprocessedItems = new() })
+            mockClient.Setup(x => x.BatchWriteItemAsync(It.Is<BatchWriteItemRequest>(x => x.RequestItems.ContainsKey("OperationPrefix-TableName")), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new BatchWriteItemResponse { UnprocessedItems = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -109,18 +111,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var batchWrite = context.CreateBatchWrite<DataModel>(batchWriteConfig);
             batchWrite.AddPutItem(new DataModel { Id = "123", Name = "Name" });
-            batchWrite.Execute();
+            await batchWrite.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void BatchWriteConfig_RemoveTablePrefix()
+        public async Task BatchWriteConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.BatchWriteItem(It.Is<BatchWriteItemRequest>(x => x.RequestItems.ContainsKey("TableName"))))
-               .Returns(new BatchWriteItemResponse { UnprocessedItems = new() })
+            mockClient.Setup(x => x.BatchWriteItemAsync(It.Is<BatchWriteItemRequest>(x => x.RequestItems.ContainsKey("TableName")), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new BatchWriteItemResponse { UnprocessedItems = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -134,7 +136,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var batchWrite = context.CreateBatchWrite<DataModel>(batchWriteConfig);
             batchWrite.AddPutItem(new DataModel { Id = "123", Name = "Name" });
-            batchWrite.Execute();
+            await batchWrite.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -149,11 +151,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void TransactGetConfig_OverridesTableName()
+        public async Task TransactGetConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactGetItems(It.Is<TransactGetItemsRequest>(x => x.TransactItems[0].Get.TableName == "OperationPrefix-TableName")))
-               .Returns(new TransactGetItemsResponse { Responses = new() })
+            mockClient.Setup(x => x.TransactGetItemsAsync(It.Is<TransactGetItemsRequest>(x => x.TransactItems[0].Get.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new TransactGetItemsResponse { Responses = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -166,19 +168,19 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "OperationPrefix-" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", rangeKey:"Name");
-            transactGet.Execute();
+            transactGet.AddKey("123", rangeKey: "Name");
+            await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void TransactGetConfig_RemoveTablePrefix()
+        public async Task TransactGetConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactGetItems(It.Is<TransactGetItemsRequest>(x => x.TransactItems[0].Get.TableName == "TableName")))
-               .Returns(new TransactGetItemsResponse { Responses = new() })
+            mockClient.Setup(x => x.TransactGetItemsAsync(It.Is<TransactGetItemsRequest>(x => x.TransactItems[0].Get.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new TransactGetItemsResponse { Responses = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -191,8 +193,8 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", rangeKey:"Name");
-            transactGet.Execute();
+            transactGet.AddKey("123",rangeKey: "Name");
+            await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -207,11 +209,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void TransactWriteConfig_OverridesTableName()
+        public async Task TransactWriteConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "OperationPrefix-TableName")))
-               .Returns(new TransactWriteItemsResponse())
+            mockClient.Setup(x => x.TransactWriteItemsAsync(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new TransactWriteItemsResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -225,18 +227,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var transactWrite = context.CreateTransactWrite<DataModel>(transactWriteConfig);
             transactWrite.AddSaveItem(new DataModel { Id = "123" });
-            transactWrite.Execute();
+            await transactWrite.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void TransactWriteConfig_RemoveTablePrefix()
+        public async Task TransactWriteConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "TableName")))
-               .Returns(new TransactWriteItemsResponse())
+            mockClient.Setup(x => x.TransactWriteItemsAsync(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new TransactWriteItemsResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -250,7 +252,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var transactWrite = context.CreateTransactWrite<DataModel>(transactWriteConfig);
             transactWrite.AddSaveItem(new DataModel { Id = "123" });
-            transactWrite.Execute();
+            await transactWrite.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -265,11 +267,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void QueryConfig_OverridesTableName()
+        public async Task QueryConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Query(It.Is<QueryRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new QueryResponse { Items = new() })
+            mockClient.Setup(client => client.QueryAsync(It.Is<QueryRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new QueryResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -281,19 +283,19 @@ namespace AWSSDK_DotNet.UnitTests
 
             var queryConfig = new QueryConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            var query = context.Query<DataModel>("123", queryConfig);
-            query.ToList();
+            var query = context.QueryAsync<DataModel>("123", queryConfig);
+            await query.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void QueryConfig_RemoveTablePrefix()
+        public async Task QueryConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Query(It.Is<QueryRequest>(request => request.TableName == "TableName")))
-               .Returns(new QueryResponse { Items = new() })
+            mockClient.Setup(client => client.QueryAsync(It.Is<QueryRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new QueryResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -305,8 +307,8 @@ namespace AWSSDK_DotNet.UnitTests
 
             var queryConfig = new QueryConfig() { TableNamePrefix = "" };
 
-            var query = context.Query<DataModel>("123", queryConfig);
-            query.ToList();
+            var query = context.QueryAsync<DataModel>("123", queryConfig);
+            await query.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -321,11 +323,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void FromQueryConfig_OverridesTableName()
+        public async Task FromQueryConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Query(It.Is<QueryRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new QueryResponse { Items = new() })
+            mockClient.Setup(client => client.QueryAsync(It.Is<QueryRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new QueryResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -342,19 +344,19 @@ namespace AWSSDK_DotNet.UnitTests
 
             var fromQueryConfig = new FromQueryConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            var query = context.FromQuery<DataModel>(queryOperationConfig, fromQueryConfig);
-            query.ToList();
+            var query = context.FromQueryAsync<DataModel>(queryOperationConfig, fromQueryConfig);
+            await query.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void FromQueryConfig_RemoveTablePrefix()
+        public async Task FromQueryConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Query(It.Is<QueryRequest>(request => request.TableName == "TableName")))
-               .Returns(new QueryResponse { Items = new() })
+            mockClient.Setup(client => client.QueryAsync(It.Is<QueryRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new QueryResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -371,8 +373,8 @@ namespace AWSSDK_DotNet.UnitTests
 
             var fromQueryConfig = new FromQueryConfig() { TableNamePrefix = "" };
 
-            var query = context.FromQuery<DataModel>(queryOperationConfig, fromQueryConfig);
-            query.ToList();
+            var query = context.FromQueryAsync<DataModel>(queryOperationConfig, fromQueryConfig);
+            await query.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -387,11 +389,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void ScanConfig_OverridesTableName()
+        public async Task ScanConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Scan(It.Is<ScanRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new ScanResponse { Items = new() })
+            mockClient.Setup(client => client.ScanAsync(It.Is<ScanRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new ScanResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -403,19 +405,19 @@ namespace AWSSDK_DotNet.UnitTests
 
             var scanConfig = new ScanConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            var scan = context.Scan<DataModel>(new ScanCondition[0], scanConfig);
-            scan.ToList();
+            var scan = context.ScanAsync<DataModel>(new ScanCondition[0], scanConfig);
+            await scan.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void ScanConfig_RemoveTablePrefix()
+        public async Task ScanConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Scan(It.Is<ScanRequest>(request => request.TableName == "TableName")))
-               .Returns(new ScanResponse { Items = new() })
+            mockClient.Setup(client => client.ScanAsync(It.Is<ScanRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new ScanResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -427,8 +429,8 @@ namespace AWSSDK_DotNet.UnitTests
 
             var scanConfig = new ScanConfig() { TableNamePrefix = "" };
 
-            var scan = context.Scan<DataModel>(new ScanCondition[0], scanConfig);
-            scan.ToList();
+            var scan = context.ScanAsync<DataModel>(new ScanCondition[0], scanConfig);
+            await scan.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -443,11 +445,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void FromScanConfig_OverridesTableName()
+        public async Task FromScanConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Scan(It.Is<ScanRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new ScanResponse { Items = new() })
+            mockClient.Setup(client => client.ScanAsync(It.Is<ScanRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new ScanResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -459,19 +461,19 @@ namespace AWSSDK_DotNet.UnitTests
 
             var fromScanConfig = new FromScanConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            var scan = context.FromScan<DataModel>(new ScanOperationConfig(), fromScanConfig);
-            scan.ToList();
+            var scan = context.FromScanAsync<DataModel>(new ScanOperationConfig(), fromScanConfig);
+            await scan.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void FromScanConfig_RemoveTablePrefix()
+        public async Task FromScanConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.Scan(It.Is<ScanRequest>(request => request.TableName == "TableName")))
-               .Returns(new ScanResponse { Items = new() })
+            mockClient.Setup(client => client.ScanAsync(It.Is<ScanRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new ScanResponse { Items = new() })
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -483,8 +485,8 @@ namespace AWSSDK_DotNet.UnitTests
 
             var fromScanConfig = new FromScanConfig() { TableNamePrefix = "" };
 
-            var scan = context.FromScan<DataModel>(new ScanOperationConfig(), fromScanConfig);
-            scan.ToList();
+            var scan = context.FromScanAsync<DataModel>(new ScanOperationConfig(), fromScanConfig);
+            await scan.GetRemainingAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -499,11 +501,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void DeleteConfig_OverridesTableName()
+        public async Task DeleteConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.DeleteItem(It.Is<DeleteItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new DeleteItemResponse())
+            mockClient.Setup(client => client.DeleteItemAsync(It.Is<DeleteItemRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new DeleteItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -515,18 +517,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var deleteConfig = new DeleteConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            context.Delete<DataModel>("123", "Name", deleteConfig);
+            await context.DeleteAsync<DataModel>("123", "Name", deleteConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void DeleteConfig_RemoveTablePrefix()
+        public async Task DeleteConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.DeleteItem(It.Is<DeleteItemRequest>(request => request.TableName == "TableName")))
-               .Returns(new DeleteItemResponse())
+            mockClient.Setup(client => client.DeleteItemAsync(It.Is<DeleteItemRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new DeleteItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -538,7 +540,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var deleteConfig = new DeleteConfig() { TableNamePrefix = "" };
 
-            context.Delete<DataModel>("123", "Name", deleteConfig);
+            await context.DeleteAsync<DataModel>("123", "Name", deleteConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -553,11 +555,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void SaveConfig_OverridesTableName()
+        public async Task SaveConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.UpdateItem(It.Is<UpdateItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new UpdateItemResponse())
+            mockClient.Setup(client => client.UpdateItemAsync(It.Is<UpdateItemRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new UpdateItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -569,18 +571,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var saveConfig = new SaveConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            context.Save(new DataModel { Id = "123", Name = "Name" }, saveConfig);
+            await context.SaveAsync(new DataModel { Id = "123", Name = "Name" }, saveConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void SaveConfig_RemoveTablePrefix()
+        public async Task SaveConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.UpdateItem(It.Is<UpdateItemRequest>(request => request.TableName == "TableName")))
-               .Returns(new UpdateItemResponse())
+            mockClient.Setup(client => client.UpdateItemAsync(It.Is<UpdateItemRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new UpdateItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -592,7 +594,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var saveConfig = new SaveConfig() { TableNamePrefix = "" };
 
-            context.Save(new DataModel { Id = "123", Name = "Name" }, saveConfig);
+            await context.SaveAsync(new DataModel { Id = "123", Name = "Name" }, saveConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -607,11 +609,11 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void LoadConfig_OverridesTableName()
+        public async Task LoadConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.GetItem(It.Is<GetItemRequest>(request => request.TableName == "OperationPrefix-TableName")))
-               .Returns(new GetItemResponse())
+            mockClient.Setup(client => client.GetItemAsync(It.Is<GetItemRequest>(request => request.TableName == "OperationPrefix-TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new GetItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -623,18 +625,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var loadConfig = new LoadConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            context.Load<DataModel>("123", "Name", loadConfig);
+            await context.LoadAsync<DataModel>("123", "Name", loadConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
         }
 
         [TestMethod]
-        public void LoadConfig_RemoveTablePrefix()
+        public async Task LoadConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(client => client.GetItem(It.Is<GetItemRequest>(request => request.TableName == "TableName")))
-               .Returns(new GetItemResponse())
+            mockClient.Setup(client => client.GetItemAsync(It.Is<GetItemRequest>(request => request.TableName == "TableName"), It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new GetItemResponse())
                .Verifiable();
 
             // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
@@ -646,7 +648,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var loadConfig = new LoadConfig() { TableNamePrefix = "" };
 
-            context.Load<DataModel>("123", "Name", loadConfig);
+            await context.LoadAsync<DataModel>("123", "Name", loadConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();

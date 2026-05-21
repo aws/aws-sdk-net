@@ -42,8 +42,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property EmailAddressId. 
         /// <para>
         /// The identifier of the email address that should be associated with the queue. This
-        /// email address must already exist in the Amazon Connect instance and will be used to
-        /// route incoming email contacts to the specified queue.
+        /// email address must already exist in the Connect Customer instance and will be used
+        /// to route incoming email contacts to the specified queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

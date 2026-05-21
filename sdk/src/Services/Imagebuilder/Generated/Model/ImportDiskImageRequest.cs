@@ -161,7 +161,7 @@ namespace Amazon.Imagebuilder.Model
         /// The name of the image resource that's created from the import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

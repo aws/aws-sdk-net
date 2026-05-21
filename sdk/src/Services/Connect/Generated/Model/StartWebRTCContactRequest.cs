@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the StartWebRTCContact operation.
     /// Places an inbound in-app, web, or video call to a contact, and then initiates the
     /// flow. It performs the actions in the flow that are specified (in ContactFlowId) and
-    /// present in the Amazon Connect instance (specified as InstanceId).
+    /// present in the Connect Customer instance (specified as InstanceId).
     /// </summary>
     public partial class StartWebRTCContactRequest : AmazonConnectRequest
     {
@@ -68,8 +68,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         ///  
         /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect
+        /// The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer
         /// admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>. Choose the
         /// flow. On the flow page, under the name of the flow, choose <b>Show additional flow
         /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold:
@@ -171,7 +171,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -233,8 +233,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The unique identifier for an Amazon Connect contact. This identifier is related to
-        /// the contact starting.
+        /// The unique identifier for an Connect Customer contact. This identifier is related
+        /// to the contact starting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

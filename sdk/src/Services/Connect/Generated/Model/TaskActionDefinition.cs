@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// The description. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-        /// reference</a> in the <i>Amazon Connect Administrators Guide</i>.
+        /// reference</a> in the <i>Connect Customer Administrators Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]
@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
-        /// reference</a> in the <i>Amazon Connect Administrators Guide</i>.
+        /// reference</a> in the <i>Connect Customer Administrators Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

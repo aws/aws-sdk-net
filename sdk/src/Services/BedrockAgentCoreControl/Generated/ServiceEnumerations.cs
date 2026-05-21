@@ -2953,6 +2953,296 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentConnectorStatus.
+    /// </summary>
+    public class PaymentConnectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus CREATE_FAILED = new PaymentConnectorStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus CREATING = new PaymentConnectorStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus DELETE_FAILED = new PaymentConnectorStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus DELETING = new PaymentConnectorStatus("DELETING");
+        /// <summary>
+        /// Constant READY for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus READY = new PaymentConnectorStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus UPDATE_FAILED = new PaymentConnectorStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus UPDATING = new PaymentConnectorStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentConnectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentConnectorStatus FindValue(string value)
+        {
+            return FindValue<PaymentConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentConnectorType.
+    /// </summary>
+    public class PaymentConnectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CoinbaseCDP for PaymentConnectorType
+        /// </summary>
+        public static readonly PaymentConnectorType CoinbaseCDP = new PaymentConnectorType("CoinbaseCDP");
+        /// <summary>
+        /// Constant StripePrivy for PaymentConnectorType
+        /// </summary>
+        public static readonly PaymentConnectorType StripePrivy = new PaymentConnectorType("StripePrivy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentConnectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentConnectorType FindValue(string value)
+        {
+            return FindValue<PaymentConnectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentConnectorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentCredentialProviderVendorType.
+    /// </summary>
+    public class PaymentCredentialProviderVendorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CoinbaseCDP for PaymentCredentialProviderVendorType
+        /// </summary>
+        public static readonly PaymentCredentialProviderVendorType CoinbaseCDP = new PaymentCredentialProviderVendorType("CoinbaseCDP");
+        /// <summary>
+        /// Constant StripePrivy for PaymentCredentialProviderVendorType
+        /// </summary>
+        public static readonly PaymentCredentialProviderVendorType StripePrivy = new PaymentCredentialProviderVendorType("StripePrivy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentCredentialProviderVendorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentCredentialProviderVendorType FindValue(string value)
+        {
+            return FindValue<PaymentCredentialProviderVendorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentCredentialProviderVendorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentManagerStatus.
+    /// </summary>
+    public class PaymentManagerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus CREATE_FAILED = new PaymentManagerStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus CREATING = new PaymentManagerStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus DELETE_FAILED = new PaymentManagerStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus DELETING = new PaymentManagerStatus("DELETING");
+        /// <summary>
+        /// Constant READY for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus READY = new PaymentManagerStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus UPDATE_FAILED = new PaymentManagerStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for PaymentManagerStatus
+        /// </summary>
+        public static readonly PaymentManagerStatus UPDATING = new PaymentManagerStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentManagerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentManagerStatus FindValue(string value)
+        {
+            return FindValue<PaymentManagerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentManagerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PaymentsAuthorizerType.
+    /// </summary>
+    public class PaymentsAuthorizerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM for PaymentsAuthorizerType
+        /// </summary>
+        public static readonly PaymentsAuthorizerType AWS_IAM = new PaymentsAuthorizerType("AWS_IAM");
+        /// <summary>
+        /// Constant CUSTOM_JWT for PaymentsAuthorizerType
+        /// </summary>
+        public static readonly PaymentsAuthorizerType CUSTOM_JWT = new PaymentsAuthorizerType("CUSTOM_JWT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentsAuthorizerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentsAuthorizerType FindValue(string value)
+        {
+            return FindValue<PaymentsAuthorizerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentsAuthorizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyEngineStatus.
     /// </summary>
     public class PolicyEngineStatus : ConstantClass

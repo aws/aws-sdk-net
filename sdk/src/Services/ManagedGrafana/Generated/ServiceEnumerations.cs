@@ -203,6 +203,56 @@ namespace Amazon.ManagedGrafana
 
 
     /// <summary>
+    /// Constants used for properties of type IPAddressType.
+    /// </summary>
+    public class IPAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DualStack for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType DualStack = new IPAddressType("DualStack");
+        /// <summary>
+        /// Constant IPv4 for IPAddressType
+        /// </summary>
+        public static readonly IPAddressType IPv4 = new IPAddressType("IPv4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IPAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IPAddressType FindValue(string value)
+        {
+            return FindValue<IPAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IPAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LicenseType.
     /// </summary>
     public class LicenseType : ConstantClass
@@ -628,6 +678,10 @@ namespace Amazon.ManagedGrafana
         /// Constant CREATION_FAILED for WorkspaceStatus
         /// </summary>
         public static readonly WorkspaceStatus CREATION_FAILED = new WorkspaceStatus("CREATION_FAILED");
+        /// <summary>
+        /// Constant DEGRADED for WorkspaceStatus
+        /// </summary>
+        public static readonly WorkspaceStatus DEGRADED = new WorkspaceStatus("DEGRADED");
         /// <summary>
         /// Constant DELETING for WorkspaceStatus
         /// </summary>

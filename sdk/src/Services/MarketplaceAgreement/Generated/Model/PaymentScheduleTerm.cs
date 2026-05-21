@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class PaymentScheduleTerm
     {
         private string _currencyCode;
+        private string _id;
         private List<ScheduleItem> _schedule = AWSConfigs.InitializeCollections ? new List<ScheduleItem>() : null;
         private string _type;
 
@@ -57,6 +58,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetCurrencyCode()
         {
             return this._currencyCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the term.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

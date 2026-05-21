@@ -26,6 +26,7 @@ using System.Linq;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests.PaginatorTests
 {
     [TestClass]
@@ -79,3 +80,4 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
 
     }
 }
+#endif

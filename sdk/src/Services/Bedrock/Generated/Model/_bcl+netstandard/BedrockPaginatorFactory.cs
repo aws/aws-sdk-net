@@ -37,6 +37,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListAdvancedPromptOptimizationJobs operation
+        ///</summary>
+        public IListAdvancedPromptOptimizationJobsPaginator ListAdvancedPromptOptimizationJobs(ListAdvancedPromptOptimizationJobsRequest request) 
+        {
+            return new ListAdvancedPromptOptimizationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAutomatedReasoningPolicies operation
         ///</summary>
         public IListAutomatedReasoningPoliciesPaginator ListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request) 

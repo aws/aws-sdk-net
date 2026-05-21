@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContact operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// This API is in preview release for Connect Customer and is subject to change.
     /// 
     ///  
     /// <para>
@@ -73,14 +73,14 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Contact information remains available in Amazon Connect for 24 months from the <c>InitiationTimestamp</c>,
-    /// and then it is deleted. Only contact information that is available in Amazon Connect
+    /// Contact information remains available in Connect Customer for 24 months from the <c>InitiationTimestamp</c>,
+    /// and then it is deleted. Only contact information that is available in Connect Customer
     /// is returned by this API.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     /// </summary>
     public partial class DescribeContactRequest : AmazonConnectRequest
@@ -110,7 +110,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

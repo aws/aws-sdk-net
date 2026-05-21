@@ -57,7 +57,7 @@ namespace Amazon.Runtime.Internal.Settings
     {
         #region Private members
 
-        static readonly HashSet<string> ENCRYPTEDKEYS = new HashSet<string>
+        static HashSet<string> ENCRYPTEDKEYS = new HashSet<string>
         {
             SettingsConstants.AccessKeyField,
             SettingsConstants.SecretKeyField,

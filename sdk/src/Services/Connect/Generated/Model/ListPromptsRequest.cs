@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPrompts operation.
-    /// Provides information about the prompts for the specified Amazon Connect instance.
+    /// Provides information about the prompts for the specified Connect Customer instance.
     /// </summary>
     public partial class ListPromptsRequest : AmazonConnectRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

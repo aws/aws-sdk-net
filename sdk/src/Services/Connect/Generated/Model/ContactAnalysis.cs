@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// A structure that defines search criteria for contacts using analysis outputs from
-    /// Amazon Connect Contact Lens.
+    /// Connect Customer Contact Lens.
     /// </summary>
     public partial class ContactAnalysis
     {
@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Transcript. 
         /// <para>
-        /// Search criteria based on transcript analyzed by Amazon Connect Contact Lens.
+        /// Search criteria based on transcript analyzed by Connect Customer Contact Lens.
         /// </para>
         /// </summary>
         public Transcript Transcript

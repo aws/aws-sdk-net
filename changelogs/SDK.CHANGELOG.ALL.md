@@ -1,3 +1,173 @@
+### 4.0.251.0 (2026-05-19 18:24 UTC)
+* BedrockAgentCore (4.0.24.0)
+	* Add RetryableConflictException (HTTP 409) to InvokeAgentRuntime and StopRuntimeSession to prevent orphaned VMs during concurrent session access. The SDK automatically retries this exception with backoff. Enforcement is not yet active and will be enabled in a future service update.
+* DevOpsAgent (4.0.4.0)
+	* Added a new serviceType mcpserversigv4 service and association. This provides feature to register MCP sigv4 authorization based MCPs
+* GuardDuty (4.0.19.0)
+	* Adding support for exposure and vulnerability context from AWS Security Hub in GuardDuty Extended Threat Detection attack sequence findings.
+* ManagedGrafana (4.0.5.0)
+	* Introduce degraded workspace status as a possible Amazon Managed Grafana workspace status, and a new field named degraded workspace reason which informs customers why the workspace is degraded in the DescribeWorkspace API response.
+* RTBFabric (4.0.6.0)
+	* This release is to deprecate 'inboundLinksCount' field in GetResponderGateway response and introduce the new field 'linksRequestedCount' to replace it.
+* SageMaker (4.0.58.0)
+	* Add support for ml.p5.4xlarge and ml.p5en.48xlarge instances on SageMaker Notebook Instances Platform.
+
+### 4.0.250.0 (2026-05-18 18:30 UTC)
+* AccessAnalyzer (4.0.7.0)
+	* Services manage service-linked analyzers through dedicated APIs - CreateServiceLinkedAnalyzer and DeleteServiceLinkedAnalyzer that separate service-linked specific operations from customer-managed operations. It also shows up in ListAnalyzers and GetAnalyzer responses.
+* Connect (4.0.45.0)
+	* Amazon Connect Cases now supports SLA durations of up to 2 years (1,051,200 minutes), increased from the previous maximum of 90 days (129,600 minutes). This enables you to track long-running service level agreements for cases that require extended resolution timelines.
+* EC2 (4.0.89.0)
+	* Amazon VPC IP Address Manager (IPAM) now supports tags on IPAM pool allocations, enabling all standard tagging features for allocations including tag-on-create.
+* ECS (4.0.21.0)
+	* Amazon ECS now supports Pause lifecycle hooks for service deployments, allowing customers to automatically pause deployments at specified stages and use the new ContinueServiceDeployment API to continue or roll back with confidence.
+* Evs (4.0.7.5)
+	* Amazon EVS now supports up to 32 hosts per EVS environment, increasing the previous host limit to allow a larger scale of VMware workload deployments and reduce operational overhead.
+* IVS (4.0.5.0)
+	* Adds support for up to 3 mediaTailorPlaybackConfiguration objects in an ad configuration resource
+* QuickSight (4.0.22.0)
+	* Support for dataset enrichment and geo spatial in new data preparation experience
+
+### 4.0.249.0 (2026-05-15 19:41 UTC)
+* CloudWatchLogs (4.0.25.0)
+	* Updating the max limit for start query api parameter.
+* MediaPackageV2 (4.0.13.0)
+	* This release adds support for AvailabilityStartTimeConfiguration in MediaPackageV2 DASH manifests
+* PartnerCentralSelling (4.0.11.0)
+	* Enable TCV intake on Opportunity to improve Opportunities Hygiene and downstream revenue attribution.
+* Core 4.0.7.1
+	* Reduced CPU on the JSON unmarshalling hot path by removing a redundant Convert.ChangeType conversion in StringUnmarshaller.
+	* Reduced per-response allocations in JSON unmarshalling by deferring StreamReader construction in JsonUnmarshallerContext until Peek() is called.
+	* All service and extension packages updated to require new Core
+
+### 4.0.248.0 (2026-05-14 18:18 UTC)
+* Bedrock (4.0.26.0)
+	* Advanced Prompt Optimization (AdvPO) allows you to optimize and migrate your prompts for any model on Bedrock by automatically evaluating responses and rewriting prompts to improve performance. This release provides a programmatic way to create, get, list, stop, and delete AdvPO jobs.
+* CloudFront (4.0.16.0)
+	* Adding a new boolean for OCSP Revocations in Viewer mTLS Create and Update APIs, and adding a new 'Passthrough' option for TrustStore modes
+* DatabaseMigrationService (4.0.9.0)
+	* Add 9 SDK waiters for DMS Schema Conversion async operations. Eliminates manual polling for import, assessment, conversion, export, and creation jobs.
+* DataZone (4.0.28.0)
+	* Adds support for SageMaker Unified Studio notebook operations, including notebook import and export
+* Glue (4.0.30.0)
+	* Release --has-databases parameter for AWS Glue get-catalogs API, which filters catalog responses to include only those capable of containing databases, excluding parent catalogs that hold only other catalogs. Remove model-level validation on partition index list size for AWS Glue tables.
+* ManagedGrafana (4.0.4.0)
+	* Adds support for dual-stack (IPv4 and IPv6) connectivity to Amazon Managed Grafana workspaces. Customers can configure the ipAddressType parameter when creating or updating a workspace to choose between IPv4-only or dual-stack (IPv4 and IPv6) access.
+* Mgn (4.0.7.0)
+	* Introducing new option for security groups mapping - with MAP-DHCP the service translates security rules from your source environment with DHCP compatibility.
+* QConnect (4.0.11.0)
+	* ListModels is an API that returns the available AI models for a Connect Assistant based on its region and AI prompt type.
+* Core 4.0.7.0
+	* Fixed JSON deserialization of settings files with trailing commas on .NET 8 by adding AllowTrailingCommas to source-generated serializer contexts.
+	* On Unix/macOS, SSO token and Login token cache files are now created with 0600 (owner read/write only) and cache directories with 0700 (owner only). Behavior is configurable via AWSConfigs.RestrictFilePermissions.
+	* All service and extension packages updated to require new Core
+
+### 4.0.247.0 (2026-05-13 18:21 UTC)
+* ARCRegionswitch (4.0.6.0)
+	* Adds support for enabling and disabling Lambda event source mappings in Region switch plans.
+* Batch (4.0.9.3)
+	* Adds a billing callout to docs regarding using the CE Scale Down Delay feature
+* BedrockAgentCoreControl (4.0.36.0)
+	* Adds support for read-only summary APIs for Policy Engine, Policy, and Policy Generation resources, enabling metadata retrieval without KMS decryption for AWS Config integration.
+* BillingConductor (4.0.6.0)
+	* Add ConflictException to UpdateCustomLineItem operation.
+* Connect (4.0.44.0)
+	* This change added three new EventSourceName for schedule notification feature
+* ConnectCampaignsV2 (4.0.8.0)
+	* This release added support for Outbound Campaign timezone detection using all available contact methods
+* ConnectCases (4.0.14.0)
+	* Amazon Connect Cases now supports SLA durations of up to 2 years (1,051,200 minutes), increased from the previous maximum of 90 days (129,600 minutes). This enables you to track long-running service level agreements for cases that require extended resolution timelines.
+* DSQL (4.0.10.0)
+	* Added support for Amazon Aurora DSQL change data capture (CDC) streams that deliver row-level database changes to Amazon Kinesis in JSON format. Includes CreateStream, GetStream, ListStreams, and DeleteStream operations.
+* EC2 (4.0.88.0)
+	* Include length limits in the SDK and documentation for text fields in Image (AMI) APIs such as the image name and description
+* Elasticsearch (4.0.6.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* Glue (4.0.29.1)
+	* AWS Glue now defaults the job timeout to 480 minutes for Glue version 5.0 and later when no timeout value is specified. The default remains 2,880 minutes for Glue version 4.0 and earlier.
+* Lightsail (4.0.8.0)
+	* Added OriginIpAddressTypeEnum (ipv4, ipv6, dualstack) and ipAddressType field to Origin and InputOrigin structures for Lightsail CDN distributions. Allows customers to specify how the distribution connects to origins, using IPv4, IPv6, or dualstack networking
+* OpenSearchService (4.0.21.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* PartnerCentralAccount (4.0.3.0)
+	* Added ServiceQuotaExceededExceptions for Profile operations
+* PCS (4.0.14.0)
+	* Add support for Amazon EC2 Interruptible-ODCR
+* QuickSight (4.0.21.0)
+	* Adds five new custom permission option for Quick Apps so that these capabilities can be controlled by public SDK and CLI.
+* Redshift (4.0.6.19)
+	* Added rg.xlarge and rg.4xlarge to valid NodeType values and updated documentation for CreateCluster, ModifyCluster, ResizeCluster, and RestoreFromClusterSnapshot APIs to reflect RG node type support.
+* RTBFabric (4.0.5.0)
+	* Customers can now configure custom domain names for their RTB Fabric gateways. This enables partners to use their own branded domain for RTB traffic instead of the default rtbfabric endpoint
+* SageMaker (4.0.57.0)
+	* Adds execution role session name mode to reflect user identity in Studio. Adds Flexible Training Plans on Studio apps. Adds restricted model packages to control access to proprietary model artifacts via IAM. Fixed instance type parity between inference endpoints and managed shadow tests.
+* SecurityAgent (4.0.2.0)
+	* Add support for code reviews, a new resource type that enables automated security-focused static analysis of source code repositories.
+* SocialMessaging (4.0.5.0)
+	* Adds parameters to call the GetWhatsAppMessageTemplate and UpdateWhatsAppMessageTemplate APIs with a template name and language code in place of the template ID. Linked WhatsApp accounts also describe whether the WABA is onboarded to Meta's Marketing Messages API.
+* StepFunctions (4.0.3.0)
+	* Updated default SDK endpoints for AWS Step Functions in AWS GovCloud (US) regions. The default Dual-Stack endpoints now resolve to "states-fips" prefixed hostnames. There are no changes to service behavior. No customer action is required.
+* Core 4.0.6.2
+	* Cache credentials sourced from profiles when calling using the DefaultAWSCredentialsIdentityResolver's ResolveIdentity rather than doing a full file read every time a profile is specified on the config.
+	* Introduce a new internal CredentialsGenerator CachedProfileCredentialResolver which handles caching of profiles and resolving of credentials via profile.
+	* All service and extension packages updated to require new Core
+
+### 4.0.246.0 (2026-05-07 18:38 UTC)
+* BCMDataExports (4.0.4.0)
+	* With this release, customers can configure their data exports to generate additional integration artifacts for Athena and Redshift.
+* BedrockAgentCore (4.0.23.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* BedrockAgentCoreControl (4.0.35.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* EC2 (4.0.87.0)
+	* DescribeInstanceTypes now accepts an IncludeUnsupportedInRegion parameter. When set, the response also lists instance types that are not available in the current Region. Each instance type includes a SupportedInRegion field indicating its regional availability.
+* GuardDuty (4.0.18.6)
+	* This is a documentation update
+* Invoicing (4.0.7.0)
+	* Updated ListInvoiceSummaries API to add new ReceiverRole filter in Request and Response
+* Route53Resolver (4.0.6.0)
+	* Adds supports for DNS64 on inbound endpoints and IPv6 forwarding through the internet gateway (IGW) on outbound endpoints, making it easier to manage hybrid DNS across IPv4 and IPv6 networks.
+* Extensions.NETCore.Setup (4.0.3.37)
+	* Fix #3538. Allow service specific endpoints to work with SSO profiles.
+
+### 4.0.245.0 (2026-05-06 18:38 UTC)
+* BedrockAgentCoreControl (4.0.34.0)
+	* Adds support for bring-your-own file system in AgentCore Runtime. Developers can mount Amazon S3 Files and Amazon EFS access points directly into agent sessions using filesystemConfigurations.
+* Glue (4.0.29.0)
+	* Adds support for a CustomLogGroupPrefix parameter in StartDataQualityRulesetEvaluationRun to specify custom CloudWatch log group paths, and a RulesetName filter in ListDataQualityRulesetEvaluationRuns to filter evaluation runs by ruleset name.
+* Imagebuilder (4.0.11.0)
+	* The ImportDiskImage API now enforces a maximum character limit of 128 characters on the image name field.
+* LexModelsV2 (4.0.7.0)
+	* Amazon Lex V2 introduces audio filler support for speech-to-speech bots. Configure melody or typing sounds that play during backend processing to reduce perceived latency and maintain a natural conversational experience for callers.
+* MWAA (4.0.4.0)
+	* Amazon MWAA now supports a PublicAndPrivate webserver access mode. The Airflow web server is accessible over both public and private endpoints, enabling workers in VPCs without internet access to reach the Task API privately while retaining public access to the Airflow UI.
+* S3 (4.0.23.0)
+	* Validate outpost access point resource name
+* SageMaker (4.0.56.0)
+	* Amazon SageMaker HyperPod now returns ImageVersionStatus in DescribeCluster, DescribeClusterNode, and ListClusterNodes responses, indicating whether cluster instances are running the latest available image version.
+* SecurityHub (4.0.10.0)
+	* Release GenerateRecommendedPolicyV2 and GetRecommendedPolicyV2 APIs. This supports generating and retrieving policy recommendations to remediate unused permissions findings that are now being supported on Security Hub.
+* Extensions.Bedrock.MEAI (4.0.8.0)
+	* (Preview) Add Bedrock Nova Sonic realtime provider implementing `IRealtimeClient` / `IRealtimeClientSession` for real-time bidirectional audio conversations with tool calling support.
+
+### 4.0.244.0 (2026-05-05 18:16 UTC)
+* CleanRoomsML (4.0.9.0)
+	* Increase max configurable output limits in the Clean Rooms ML configured model algorithm association resource.
+* CloudFront (4.0.15.0)
+	* Adds support for tagging CloudFront Functions and KeyValueStores resources.
+* MarketplaceAgreement (4.0.6.0)
+	* With this release, Agreements API provides a programmatic way to generate quotes, accept offers, track charges and entitlements, manage renewals and cancellations, and streamline operations entirely through APIs without navigating to the AWS Marketplace website or AWS Management Console.
+* MediaTailor (4.0.8.0)
+	* Added support for Monetization Functions. Monetization Functions let you enrich ad requests with external data and transform session parameters using JSONata expressions, without deploying custom infrastructure.
+* MedicalImaging (4.0.7.0)
+	* Add support for DICOM Json Metadata Override features in startDICOMImportJob API
+* OpenSearchService (4.0.20.0)
+	* Amazon OpenSearch Service now supports VPC egress, enabling outbound traffic from your OpenSearch domain to route privately through your VPC instead of the public internet.
+* Route53Domains (4.0.4.0)
+	* This release adds the TLDInMaintenance exception.
+* SageMaker (4.0.55.0)
+	* Adds support for ml.p5.4xlarge instance type for SageMaker Studio JupyterLab and CodeEditor apps for IAD (us-east-1), NRT (ap-northeast-1), BOM (ap-south-1), CGK (ap-southeast-3), GRU (sa-east-1), PDX (us-west-2), CMH (us-east-2).
+
 ### 4.0.243.0 (2026-05-04 18:24 UTC)
 * BedrockAgentCoreControl (4.0.33.0)
 	* Amazon Bedrock AgentCore gateways now support MCP Sessions and response streaming from MCP targets. Session timeouts can be set between 15 minutes and 8 hours, and response streaming enables forwarding stream events sent by MCP targets to gateway users.

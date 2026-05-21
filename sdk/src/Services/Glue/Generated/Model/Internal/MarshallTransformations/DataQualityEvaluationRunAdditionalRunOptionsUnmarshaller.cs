@@ -68,6 +68,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompositeRuleEvaluationMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CustomLogGroupPrefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomLogGroupPrefix = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ResultsS3Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -313,6 +313,31 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
             {
+                Filter = new InvoiceSummariesFilter {
+                    ReceiverRole = "SELLER",
+                    TimeInterval = new DateInterval {
+                        EndDate = DateTime.UtcNow,
+                        StartDate = DateTime.UtcNow
+                    }
+                },
+                Selector = new InvoiceSummariesSelector {
+                    ResourceType = "ACCOUNT_ID",
+                    Value = "111111111111"
+                }
+            });
+
+            List<InvoiceSummary> invoiceSummaries = response.InvoiceSummaries;
+
+            #endregion
+        }
+
+        public void InvoicingListInvoiceSummaries()
+        {
+            #region example-5
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 
+            {
                 Filter = new InvoiceSummariesFilter { BillingPeriod = new BillingPeriod {
                     Month = 1,
                     Year = 2025
@@ -332,7 +357,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
 
         public void InvoicingListInvoiceSummaries()
         {
-            #region example-5
+            #region example-6
 
             var client = new AmazonInvoicingClient();
             var response = client.ListInvoiceSummaries(new ListInvoiceSummariesRequest 

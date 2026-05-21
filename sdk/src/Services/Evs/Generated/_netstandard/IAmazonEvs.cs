@@ -205,7 +205,7 @@ namespace Amazon.Evs
 
         /// <summary>
         /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-        /// 4-16 hosts per environment.
+        /// 4-32 hosts per environment.
         /// 
         ///  
         /// <para>

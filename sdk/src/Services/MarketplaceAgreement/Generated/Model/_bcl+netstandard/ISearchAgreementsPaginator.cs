@@ -30,5 +30,10 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<SearchAgreementsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the AgreementViewSummaries
+        /// </summary>
+        IPaginatedEnumerable<AgreementViewSummary> AgreementViewSummaries { get; }
     }
 }

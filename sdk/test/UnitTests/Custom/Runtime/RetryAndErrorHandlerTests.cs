@@ -17,7 +17,9 @@ using Amazon.S3;
 
 namespace AWSSDK.UnitTests
 {
-    [TestClass()]
+    [TestClass]
+    [TestCategory("UnitTest")]
+    [TestCategory("Runtime")]
     public class RetryAndErrorHandlerTests : RuntimePipelineTestBase<RetryHandler>
     {
         const int MAX_RETRIES = 2;
@@ -39,8 +41,7 @@ namespace AWSSDK.UnitTests
             RuntimePipeline.AddHandler(Handler);
         }
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+        [TestMethod]
         public void RetryForIOException()
         {
             Tester.Reset();
@@ -59,8 +60,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
         public void RetryForNestedIOException()
         {
             Tester.Reset();
@@ -78,8 +77,8 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+#if NETFRAMEWORK
+        [TestMethod]
         public void RetryForWebExceptionWithConnectFailure()
         {
             Tester.Reset();
@@ -97,9 +96,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
-#if BCL
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+        [TestMethod]
         [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForIOExceptionAsync()
         {
@@ -118,8 +115,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
         }
 
-        [TestMethod][TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
+        [TestMethod]
         [TestCategory(@"Runtime\AsyncNetFramework")]
         public async Task RetryForWebExceptionAsync()
         {

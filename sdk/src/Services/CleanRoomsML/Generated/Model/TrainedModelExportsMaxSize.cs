@@ -63,7 +63,7 @@ namespace Amazon.CleanRoomsML.Model
         /// The maximum size of the dataset to export.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10)]
+        [AWSProperty(Required=true, Max=50)]
         public double? Value
         {
             get { return this._value; }

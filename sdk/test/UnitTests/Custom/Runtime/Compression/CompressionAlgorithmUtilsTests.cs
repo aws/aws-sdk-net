@@ -26,7 +26,6 @@ using Moq;
 using Amazon.Runtime.Internal;
 using Amazon.CloudFront.Model;
 using Castle.Core.Internal;
-using System.Runtime.Remoting.Messaging;
 
 namespace AWSSDK.UnitTests
 {

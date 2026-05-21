@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Where to pull session spans from
+    /// Configuration for the data source used in evaluation.
     /// </summary>
     public partial class DataSourceConfig
     {

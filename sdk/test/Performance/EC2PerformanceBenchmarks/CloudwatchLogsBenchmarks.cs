@@ -16,6 +16,7 @@
 using Amazon.CloudWatchLogs;
 using Amazon.CloudWatchLogs.Model;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ using System.Threading.Tasks;
 namespace AWSSDK.Benchmarks
 {
     [MemoryDiagnoser]
+    [Config(typeof(SdkBenchmarkConfig))]
     public class CloudwatchLogsBenchmarks
     {
         private IAmazonCloudWatchLogs _cloudWatchLogsClient;

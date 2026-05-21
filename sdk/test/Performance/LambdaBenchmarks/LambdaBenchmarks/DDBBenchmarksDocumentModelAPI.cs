@@ -25,14 +25,12 @@ namespace LambdaBenchmarks;
 public class DDBBenchmarksDocumentModelAPI
 {
     private AmazonDynamoDBClient _dynamoDBClient = new AmazonDynamoDBClient();
-    private Table _booksTable;
+    private ITable _booksTable;
 
-    private Table GetBooksTable(string tableName)
+    private ITable GetBooksTable(string tableName)
     {
         if (_booksTable == null || _booksTable.TableName != tableName)
         {
-            _booksTable = Table.LoadTable(_dynamoDBClient, tableName);
-
             _booksTable = new TableBuilder(_dynamoDBClient, tableName)
                 .AddHashKey("Author", DynamoDBEntryType.String)
                 .AddRangeKey("Price", DynamoDBEntryType.Numeric)

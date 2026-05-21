@@ -33,7 +33,7 @@ namespace Amazon.Wickr
     public partial class AmazonWickrConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Wickr", "4.0.1.13");
+            InternalSDKUtils.BuildUserAgentString("Wickr", "4.0.1.16");
 
         private static readonly AmazonWickrEndpointResolver EndpointResolver =
             new AmazonWickrEndpointResolver();

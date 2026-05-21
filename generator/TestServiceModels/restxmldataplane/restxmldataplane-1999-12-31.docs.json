@@ -1,0 +1,521 @@
+{
+  "version": "2.0",
+  "service": null,
+  "operations": {
+    "CopyObject": "<pre><code>From Amazon S3. CopyObject serializes a large set of headers. </code></pre>",
+    "GetMetricData": "<pre><code>As seen in Amazon CloudWatch </code></pre>",
+    "GetObject": "<p>As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of network and checksum performance than serde. It is here because it's an important operation, for completeness.</p>",
+    "Healthcheck": "<pre><code>A response that only says &quot;OK&quot;, if it can. </code></pre>",
+    "PutMetricData": "<pre><code>As seen in Amazon CloudWatch. </code></pre>",
+    "PutObject": "<p>As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of network and checksum performance than serde. It is here because it's an important operation, for completeness.</p>"
+  },
+  "shapes": {
+    "Blob": {
+      "base": null,
+      "refs": {
+        "GetObjectOutput$Body": null,
+        "PutObjectRequest$Body": null
+      }
+    },
+    "Boolean": {
+      "base": null,
+      "refs": {
+        "CopyObjectOutput$BucketKeyEnabled": null,
+        "CopyObjectRequest$BucketKeyEnabled": null,
+        "GetObjectOutput$DeleteMarker": null,
+        "GetObjectOutput$BucketKeyEnabled": null,
+        "MetricDataQuery$ReturnData": null,
+        "PutMetricDataInput$StrictEntityValidation": null,
+        "PutObjectOutput$BucketKeyEnabled": null,
+        "PutObjectRequest$BucketKeyEnabled": null
+      }
+    },
+    "ChecksumAlgorithm": {
+      "base": null,
+      "refs": {
+        "PutObjectRequest$ChecksumAlgorithm": null
+      }
+    },
+    "ChecksumMode": {
+      "base": null,
+      "refs": {
+        "GetObjectRequest$ChecksumMode": null
+      }
+    },
+    "CopyObjectOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "CopyObjectRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "Counts": {
+      "base": null,
+      "refs": {
+        "MetricDatum$Counts": null
+      }
+    },
+    "Dimension": {
+      "base": null,
+      "refs": {
+        "Dimensions$member": null
+      }
+    },
+    "DimensionNameString": {
+      "base": null,
+      "refs": {
+        "Dimension$Name": null
+      }
+    },
+    "DimensionValueString": {
+      "base": null,
+      "refs": {
+        "Dimension$Value": null
+      }
+    },
+    "Dimensions": {
+      "base": null,
+      "refs": {
+        "Metric$Dimensions": null,
+        "MetricDatum$Dimensions": null
+      }
+    },
+    "Double": {
+      "base": null,
+      "refs": {
+        "Counts$member": null,
+        "MetricDatum$Value": null,
+        "StatisticSet$SampleCount": null,
+        "StatisticSet$Sum": null,
+        "StatisticSet$Minimum": null,
+        "StatisticSet$Maximum": null,
+        "Values$member": null
+      }
+    },
+    "Entity": {
+      "base": null,
+      "refs": {
+        "EntityMetricDatum$Entity": null
+      }
+    },
+    "EntityAttributesMap": {
+      "base": null,
+      "refs": {
+        "Entity$Attributes": null
+      }
+    },
+    "EntityAttributesMapKeyString": {
+      "base": null,
+      "refs": {
+        "EntityAttributesMap$key": null
+      }
+    },
+    "EntityAttributesMapValueString": {
+      "base": null,
+      "refs": {
+        "EntityAttributesMap$value": null
+      }
+    },
+    "EntityKeyAttributesMap": {
+      "base": null,
+      "refs": {
+        "Entity$KeyAttributes": null
+      }
+    },
+    "EntityKeyAttributesMapKeyString": {
+      "base": null,
+      "refs": {
+        "EntityKeyAttributesMap$key": null
+      }
+    },
+    "EntityKeyAttributesMapValueString": {
+      "base": null,
+      "refs": {
+        "EntityKeyAttributesMap$value": null
+      }
+    },
+    "EntityMetricDataList": {
+      "base": null,
+      "refs": {
+        "PutMetricDataInput$EntityMetricData": null
+      }
+    },
+    "EntityMetricDatum": {
+      "base": null,
+      "refs": {
+        "EntityMetricDataList$member": null
+      }
+    },
+    "GetMetricDataInput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetMetricDataOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetObjectOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "GetObjectRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "HealthcheckOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "Integer": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$MaxDatapoints": null,
+        "GetObjectOutput$MissingMeta": null,
+        "GetObjectOutput$PartsCount": null,
+        "GetObjectOutput$TagCount": null,
+        "GetObjectRequest$PartNumber": null,
+        "MetricDatum$StorageResolution": null,
+        "MetricStat$Period": null
+      }
+    },
+    "LabelOptions": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$LabelOptions": null
+      }
+    },
+    "Long": {
+      "base": null,
+      "refs": {
+        "GetObjectOutput$ContentLength": null,
+        "PutObjectOutput$Size": null,
+        "PutObjectRequest$ContentLength": null,
+        "PutObjectRequest$WriteOffsetBytes": null
+      }
+    },
+    "MessageData": {
+      "base": null,
+      "refs": {
+        "MetricDataResultMessages$member": null
+      }
+    },
+    "Metadata": {
+      "base": null,
+      "refs": {
+        "PutObjectRequest$Metadata": null
+      }
+    },
+    "Metric": {
+      "base": null,
+      "refs": {
+        "MetricStat$Metric": null
+      }
+    },
+    "MetricData": {
+      "base": null,
+      "refs": {
+        "EntityMetricDatum$MetricData": null,
+        "PutMetricDataInput$MetricData": null
+      }
+    },
+    "MetricDataQueries": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$MetricDataQueries": null
+      }
+    },
+    "MetricDataQuery": {
+      "base": null,
+      "refs": {
+        "MetricDataQueries$member": null
+      }
+    },
+    "MetricDataQueryExpressionString": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Expression": null
+      }
+    },
+    "MetricDataQueryIdString": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Id": null
+      }
+    },
+    "MetricDataQueryPeriodInteger": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$Period": null
+      }
+    },
+    "MetricDataResult": {
+      "base": null,
+      "refs": {
+        "MetricDataResults$member": null
+      }
+    },
+    "MetricDataResultMessages": {
+      "base": null,
+      "refs": {
+        "GetMetricDataOutput$Messages": null,
+        "MetricDataResult$Messages": null
+      }
+    },
+    "MetricDataResults": {
+      "base": null,
+      "refs": {
+        "GetMetricDataOutput$MetricDataResults": null
+      }
+    },
+    "MetricDatum": {
+      "base": null,
+      "refs": {
+        "MetricData$member": null
+      }
+    },
+    "MetricStat": {
+      "base": null,
+      "refs": {
+        "MetricDataQuery$MetricStat": null
+      }
+    },
+    "PutMetricDataInput": {
+      "base": null,
+      "refs": {}
+    },
+    "PutObjectOutput": {
+      "base": null,
+      "refs": {}
+    },
+    "PutObjectRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ScanBy": {
+      "base": null,
+      "refs": {
+        "GetMetricDataInput$ScanBy": null
+      }
+    },
+    "StandardUnit": {
+      "base": null,
+      "refs": {
+        "MetricDatum$Unit": null,
+        "MetricStat$Unit": null
+      }
+    },
+    "StatisticSet": {
+      "base": null,
+      "refs": {
+        "MetricDatum$StatisticValues": null
+      }
+    },
+    "StatusCode": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$StatusCode": null
+      }
+    },
+    "String": {
+      "base": null,
+      "refs": {
+        "CopyObjectOutput$Expiration": null,
+        "CopyObjectOutput$CopySourceVersionId": null,
+        "CopyObjectOutput$VersionId": null,
+        "CopyObjectOutput$ServerSideEncryption": null,
+        "CopyObjectOutput$SSECustomerAlgorithm": null,
+        "CopyObjectOutput$SSECustomerKeyMD5": null,
+        "CopyObjectOutput$SSEKMSKeyId": null,
+        "CopyObjectOutput$SSEKMSEncryptionContext": null,
+        "CopyObjectOutput$RequestCharged": null,
+        "CopyObjectOutput$ETag": null,
+        "CopyObjectOutput$ChecksumType": null,
+        "CopyObjectOutput$ChecksumCRC32": null,
+        "CopyObjectOutput$ChecksumCRC32C": null,
+        "CopyObjectOutput$ChecksumCRC64NVME": null,
+        "CopyObjectOutput$ChecksumSHA1": null,
+        "CopyObjectOutput$ChecksumSHA256": null,
+        "CopyObjectRequest$ACL": null,
+        "CopyObjectRequest$Bucket": null,
+        "CopyObjectRequest$CacheControl": null,
+        "CopyObjectRequest$ChecksumAlgorithm": null,
+        "CopyObjectRequest$ContentDisposition": null,
+        "CopyObjectRequest$ContentEncoding": null,
+        "CopyObjectRequest$ContentLanguage": null,
+        "CopyObjectRequest$ContentType": null,
+        "CopyObjectRequest$CopySource": null,
+        "CopyObjectRequest$CopySourceIfMatch": null,
+        "CopyObjectRequest$CopySourceIfNoneMatch": null,
+        "CopyObjectRequest$GrantFullControl": null,
+        "CopyObjectRequest$GrantRead": null,
+        "CopyObjectRequest$GrantReadACP": null,
+        "CopyObjectRequest$GrantWriteACP": null,
+        "CopyObjectRequest$IfMatch": null,
+        "CopyObjectRequest$IfNoneMatch": null,
+        "CopyObjectRequest$Key": null,
+        "CopyObjectRequest$MetadataDirective": null,
+        "CopyObjectRequest$TaggingDirective": null,
+        "CopyObjectRequest$ServerSideEncryption": null,
+        "CopyObjectRequest$StorageClass": null,
+        "CopyObjectRequest$WebsiteRedirectLocation": null,
+        "CopyObjectRequest$SSECustomerAlgorithm": null,
+        "CopyObjectRequest$SSECustomerKey": null,
+        "CopyObjectRequest$SSECustomerKeyMD5": null,
+        "CopyObjectRequest$SSEKMSKeyId": null,
+        "CopyObjectRequest$SSEKMSEncryptionContext": null,
+        "CopyObjectRequest$CopySourceSSECustomerAlgorithm": null,
+        "CopyObjectRequest$CopySourceSSECustomerKey": null,
+        "CopyObjectRequest$CopySourceSSECustomerKeyMD5": null,
+        "CopyObjectRequest$RequestPayer": null,
+        "CopyObjectRequest$Tagging": null,
+        "CopyObjectRequest$ObjectLockMode": null,
+        "CopyObjectRequest$ObjectLockLegalHoldStatus": null,
+        "CopyObjectRequest$ExpectedBucketOwner": null,
+        "CopyObjectRequest$ExpectedSourceBucketOwner": null,
+        "GetMetricDataInput$NextToken": null,
+        "GetMetricDataOutput$NextToken": null,
+        "GetObjectOutput$AcceptRanges": null,
+        "GetObjectOutput$Expiration": null,
+        "GetObjectOutput$Restore": null,
+        "GetObjectOutput$ETag": null,
+        "GetObjectOutput$ChecksumCRC32": null,
+        "GetObjectOutput$ChecksumCRC32C": null,
+        "GetObjectOutput$ChecksumCRC64NVME": null,
+        "GetObjectOutput$ChecksumSHA1": null,
+        "GetObjectOutput$ChecksumSHA256": null,
+        "GetObjectOutput$ChecksumType": null,
+        "GetObjectOutput$VersionId": null,
+        "GetObjectOutput$CacheControl": null,
+        "GetObjectOutput$ContentDisposition": null,
+        "GetObjectOutput$ContentEncoding": null,
+        "GetObjectOutput$ContentLanguage": null,
+        "GetObjectOutput$ContentType": null,
+        "GetObjectOutput$WebsiteRedirectLocation": null,
+        "GetObjectOutput$ServerSideEncryption": null,
+        "GetObjectOutput$SSECustomerAlgorithm": null,
+        "GetObjectOutput$SSECustomerKeyMD5": null,
+        "GetObjectOutput$SSEKMSKeyId": null,
+        "GetObjectOutput$StorageClass": null,
+        "GetObjectOutput$RequestCharged": null,
+        "GetObjectOutput$ReplicationStatus": null,
+        "GetObjectOutput$ObjectLockMode": null,
+        "GetObjectOutput$ObjectLockLegalHoldStatus": null,
+        "GetObjectRequest$Bucket": null,
+        "GetObjectRequest$Key": null,
+        "GetObjectRequest$IfMatch": null,
+        "GetObjectRequest$IfNoneMatch": null,
+        "GetObjectRequest$Range": null,
+        "GetObjectRequest$ResponseCacheControl": null,
+        "GetObjectRequest$ResponseContentDisposition": null,
+        "GetObjectRequest$ResponseContentEncoding": null,
+        "GetObjectRequest$ResponseContentLanguage": null,
+        "GetObjectRequest$ResponseContentType": null,
+        "GetObjectRequest$VersionId": null,
+        "GetObjectRequest$SSECustomerAlgorithm": null,
+        "GetObjectRequest$SSECustomerKey": null,
+        "GetObjectRequest$SSECustomerKeyMD5": null,
+        "GetObjectRequest$RequestPayer": null,
+        "GetObjectRequest$ExpectedBucketOwner": null,
+        "HealthcheckOutput$ok": null,
+        "LabelOptions$Timezone": null,
+        "MessageData$Code": null,
+        "MessageData$Value": null,
+        "Metadata$key": null,
+        "Metadata$value": null,
+        "Metric$Namespace": null,
+        "Metric$MetricName": null,
+        "MetricDataQuery$Label": null,
+        "MetricDataQuery$AccountId": null,
+        "MetricDataResult$Id": null,
+        "MetricDataResult$Label": null,
+        "MetricDatum$MetricName": null,
+        "MetricStat$Stat": null,
+        "PutMetricDataInput$Namespace": null,
+        "PutObjectOutput$Expiration": null,
+        "PutObjectOutput$ETag": null,
+        "PutObjectOutput$ChecksumCRC32": null,
+        "PutObjectOutput$ChecksumCRC32C": null,
+        "PutObjectOutput$ChecksumCRC64NVME": null,
+        "PutObjectOutput$ChecksumSHA1": null,
+        "PutObjectOutput$ChecksumSHA256": null,
+        "PutObjectOutput$ChecksumType": null,
+        "PutObjectOutput$ServerSideEncryption": null,
+        "PutObjectOutput$VersionId": null,
+        "PutObjectOutput$SSECustomerAlgorithm": null,
+        "PutObjectOutput$SSECustomerKeyMD5": null,
+        "PutObjectOutput$SSEKMSKeyId": null,
+        "PutObjectOutput$SSEKMSEncryptionContext": null,
+        "PutObjectOutput$RequestCharged": null,
+        "PutObjectRequest$Bucket": null,
+        "PutObjectRequest$Key": null,
+        "PutObjectRequest$ACL": null,
+        "PutObjectRequest$CacheControl": null,
+        "PutObjectRequest$ContentDisposition": null,
+        "PutObjectRequest$ContentEncoding": null,
+        "PutObjectRequest$ContentLanguage": null,
+        "PutObjectRequest$ContentMD5": null,
+        "PutObjectRequest$ContentType": null,
+        "PutObjectRequest$ChecksumCRC32": null,
+        "PutObjectRequest$ChecksumCRC32C": null,
+        "PutObjectRequest$ChecksumCRC64NVME": null,
+        "PutObjectRequest$ChecksumSHA1": null,
+        "PutObjectRequest$ChecksumSHA256": null,
+        "PutObjectRequest$IfMatch": null,
+        "PutObjectRequest$IfNoneMatch": null,
+        "PutObjectRequest$GrantFullControl": null,
+        "PutObjectRequest$GrantRead": null,
+        "PutObjectRequest$GrantReadACP": null,
+        "PutObjectRequest$GrantWriteACP": null,
+        "PutObjectRequest$ServerSideEncryption": null,
+        "PutObjectRequest$StorageClass": null,
+        "PutObjectRequest$WebsiteRedirectLocation": null,
+        "PutObjectRequest$SSECustomerAlgorithm": null,
+        "PutObjectRequest$SSECustomerKey": null,
+        "PutObjectRequest$SSECustomerKeyMD5": null,
+        "PutObjectRequest$SSEKMSKeyId": null,
+        "PutObjectRequest$SSEKMSEncryptionContext": null,
+        "PutObjectRequest$RequestPayer": null,
+        "PutObjectRequest$Tagging": null,
+        "PutObjectRequest$ObjectLockMode": null,
+        "PutObjectRequest$ObjectLockLegalHoldStatus": null,
+        "PutObjectRequest$ExpectedBucketOwner": null
+      }
+    },
+    "Timestamp": {
+      "base": null,
+      "refs": {
+        "CopyObjectOutput$LastModified": null,
+        "CopyObjectRequest$CopySourceIfModifiedSince": null,
+        "CopyObjectRequest$CopySourceIfUnmodifiedSince": null,
+        "CopyObjectRequest$Expires": null,
+        "CopyObjectRequest$ObjectLockRetainUntilDate": null,
+        "GetMetricDataInput$StartTime": null,
+        "GetMetricDataInput$EndTime": null,
+        "GetObjectOutput$LastModified": null,
+        "GetObjectOutput$Expires": null,
+        "GetObjectOutput$ObjectLockRetainUntilDate": null,
+        "GetObjectRequest$IfModifiedSince": null,
+        "GetObjectRequest$IfUnmodifiedSince": null,
+        "GetObjectRequest$ResponseExpires": null,
+        "MetricDatum$Timestamp": null,
+        "PutObjectRequest$Expires": null,
+        "PutObjectRequest$ObjectLockRetainUntilDate": null,
+        "Timestamps$member": null
+      }
+    },
+    "Timestamps": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$Timestamps": null
+      }
+    },
+    "Values": {
+      "base": null,
+      "refs": {
+        "MetricDataResult$Values": null,
+        "MetricDatum$Values": null
+      }
+    }
+  }
+}

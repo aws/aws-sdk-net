@@ -899,6 +899,208 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  CreatePaymentInstrument
+
+
+        /// <summary>
+        /// Create a new payment instrument for a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentInstrument service method.</param>
+        /// 
+        /// <returns>The response from the CreatePaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentInstrument">REST API Reference for CreatePaymentInstrument Operation</seealso>
+        public virtual CreatePaymentInstrumentResponse CreatePaymentInstrument(CreatePaymentInstrumentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentInstrumentResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentInstrumentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a new payment instrument for a connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentInstrument service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentInstrument">REST API Reference for CreatePaymentInstrument Operation</seealso>
+        public virtual Task<CreatePaymentInstrumentResponse> CreatePaymentInstrumentAsync(CreatePaymentInstrumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentInstrumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePaymentInstrumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePaymentSession
+
+
+        /// <summary>
+        /// Create a new payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentSession service method.</param>
+        /// 
+        /// <returns>The response from the CreatePaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSession">REST API Reference for CreatePaymentSession Operation</seealso>
+        public virtual CreatePaymentSessionResponse CreatePaymentSession(CreatePaymentSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePaymentSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Create a new payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePaymentSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSession">REST API Reference for CreatePaymentSession Operation</seealso>
+        public virtual Task<CreatePaymentSessionResponse> CreatePaymentSessionAsync(CreatePaymentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePaymentSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePaymentSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteABTest
 
 
@@ -1345,6 +1547,190 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = DeleteMemoryRecordResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMemoryRecordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePaymentInstrument
+
+
+        /// <summary>
+        /// Deletes a payment instrument. This is a soft delete operation that preserves the record
+        /// for audit and compliance purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentInstrument service method.</param>
+        /// 
+        /// <returns>The response from the DeletePaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrument">REST API Reference for DeletePaymentInstrument Operation</seealso>
+        public virtual DeletePaymentInstrumentResponse DeletePaymentInstrument(DeletePaymentInstrumentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentInstrumentResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentInstrumentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a payment instrument. This is a soft delete operation that preserves the record
+        /// for audit and compliance purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentInstrument service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrument">REST API Reference for DeletePaymentInstrument Operation</seealso>
+        public virtual Task<DeletePaymentInstrumentResponse> DeletePaymentInstrumentAsync(DeletePaymentInstrumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentInstrumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePaymentInstrumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePaymentSession
+
+
+        /// <summary>
+        /// Deletes a payment session. This permanently removes the payment session record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentSession service method.</param>
+        /// 
+        /// <returns>The response from the DeletePaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentSession">REST API Reference for DeletePaymentSession Operation</seealso>
+        public virtual DeletePaymentSessionResponse DeletePaymentSession(DeletePaymentSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePaymentSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a payment session. This permanently removes the payment session record.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePaymentSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentSession">REST API Reference for DeletePaymentSession Operation</seealso>
+        public virtual Task<DeletePaymentSessionResponse> DeletePaymentSessionAsync(DeletePaymentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePaymentSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePaymentSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2420,6 +2806,279 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  GetPaymentInstrument
+
+
+        /// <summary>
+        /// Get a payment instrument by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrument service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrument">REST API Reference for GetPaymentInstrument Operation</seealso>
+        public virtual GetPaymentInstrumentResponse GetPaymentInstrument(GetPaymentInstrumentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentInstrumentResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentInstrumentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get a payment instrument by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrument service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentInstrument service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrument">REST API Reference for GetPaymentInstrument Operation</seealso>
+        public virtual Task<GetPaymentInstrumentResponse> GetPaymentInstrumentAsync(GetPaymentInstrumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentInstrumentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentInstrumentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentInstrumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPaymentInstrumentBalance
+
+
+        /// <summary>
+        /// Get the balance of a payment instrument.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrumentBalance service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentInstrumentBalance service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalance">REST API Reference for GetPaymentInstrumentBalance Operation</seealso>
+        public virtual GetPaymentInstrumentBalanceResponse GetPaymentInstrumentBalance(GetPaymentInstrumentBalanceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentInstrumentBalanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentInstrumentBalanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentInstrumentBalanceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get the balance of a payment instrument.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentInstrumentBalance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentInstrumentBalance service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalance">REST API Reference for GetPaymentInstrumentBalance Operation</seealso>
+        public virtual Task<GetPaymentInstrumentBalanceResponse> GetPaymentInstrumentBalanceAsync(GetPaymentInstrumentBalanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentInstrumentBalanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentInstrumentBalanceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentInstrumentBalanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPaymentSession
+
+
+        /// <summary>
+        /// Get a payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentSession service method.</param>
+        /// 
+        /// <returns>The response from the GetPaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentSession">REST API Reference for GetPaymentSession Operation</seealso>
+        public virtual GetPaymentSessionResponse GetPaymentSession(GetPaymentSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPaymentSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Get a payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPaymentSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPaymentSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentSession">REST API Reference for GetPaymentSession Operation</seealso>
+        public virtual Task<GetPaymentSessionResponse> GetPaymentSessionAsync(GetPaymentSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPaymentSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPaymentSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPaymentSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRecommendation
 
 
@@ -2707,6 +3366,107 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = GetResourceOauth2TokenResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetResourceOauth2TokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResourcePaymentToken
+
+
+        /// <summary>
+        /// Generates authentication tokens for payment providers that use vendor-specific authentication
+        /// mechanisms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePaymentToken service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePaymentToken service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourcePaymentToken">REST API Reference for GetResourcePaymentToken Operation</seealso>
+        public virtual GetResourcePaymentTokenResponse GetResourcePaymentToken(GetResourcePaymentTokenRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePaymentTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePaymentTokenResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePaymentTokenResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates authentication tokens for payment providers that use vendor-specific authentication
+        /// mechanisms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePaymentToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePaymentToken service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourcePaymentToken">REST API Reference for GetResourcePaymentToken Operation</seealso>
+        public virtual Task<GetResourcePaymentTokenResponse> GetResourcePaymentTokenAsync(GetResourcePaymentTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePaymentTokenRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePaymentTokenResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourcePaymentTokenResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3071,6 +3831,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -3160,6 +3925,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
@@ -4685,6 +5455,168 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  ListPaymentInstruments
+
+
+        /// <summary>
+        /// List payment instruments for a manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentInstruments service method.</param>
+        /// 
+        /// <returns>The response from the ListPaymentInstruments service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentInstruments">REST API Reference for ListPaymentInstruments Operation</seealso>
+        public virtual ListPaymentInstrumentsResponse ListPaymentInstruments(ListPaymentInstrumentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentInstrumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentInstrumentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentInstrumentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List payment instruments for a manager.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentInstruments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentInstruments service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentInstruments">REST API Reference for ListPaymentInstruments Operation</seealso>
+        public virtual Task<ListPaymentInstrumentsResponse> ListPaymentInstrumentsAsync(ListPaymentInstrumentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentInstrumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentInstrumentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPaymentInstrumentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPaymentSessions
+
+
+        /// <summary>
+        /// List payment sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListPaymentSessions service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentSessions">REST API Reference for ListPaymentSessions Operation</seealso>
+        public virtual ListPaymentSessionsResponse ListPaymentSessions(ListPaymentSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPaymentSessionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List payment sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPaymentSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPaymentSessions service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentSessions">REST API Reference for ListPaymentSessions Operation</seealso>
+        public virtual Task<ListPaymentSessionsResponse> ListPaymentSessionsAsync(ListPaymentSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPaymentSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPaymentSessionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPaymentSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRecommendations
 
 
@@ -4885,6 +5817,107 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ProcessPayment
+
+
+        /// <summary>
+        /// Processes a payment using a payment instrument within a payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProcessPayment service method.</param>
+        /// 
+        /// <returns>The response from the ProcessPayment service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPayment">REST API Reference for ProcessPayment Operation</seealso>
+        public virtual ProcessPaymentResponse ProcessPayment(ProcessPaymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ProcessPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProcessPaymentResponseUnmarshaller.Instance;
+
+            return Invoke<ProcessPaymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Processes a payment using a payment instrument within a payment session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ProcessPayment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ProcessPayment service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPayment">REST API Reference for ProcessPayment Operation</seealso>
+        public virtual Task<ProcessPaymentResponse> ProcessPaymentAsync(ProcessPaymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ProcessPaymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ProcessPaymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ProcessPaymentResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6423,6 +7456,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -6486,6 +7524,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen

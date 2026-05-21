@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the CreatePrompt operation.
     /// Creates a prompt. For more information about prompts, such as supported file types
     /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
-    /// prompts</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// prompts</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </summary>
     public partial class CreatePromptRequest : AmazonConnectRequest
     {
@@ -65,7 +65,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

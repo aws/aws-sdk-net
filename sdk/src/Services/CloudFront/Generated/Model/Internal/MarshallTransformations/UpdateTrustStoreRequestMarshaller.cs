@@ -63,6 +63,11 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 request.Headers["If-Match"] = publicRequest.IfMatch;
             }
+        
+            if (publicRequest.IsSetUseClientCertificateOCSPEndpoint()) 
+            {
+                request.Headers["UseClientCertificateOCSPEndpoint"] = StringUtils.FromBool(publicRequest.UseClientCertificateOCSPEndpoint);
+            }
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
             request.AddPathResource("{Id}", StringUtils.FromString(publicRequest.Id));

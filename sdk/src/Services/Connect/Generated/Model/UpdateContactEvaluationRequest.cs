@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactEvaluation operation.
-    /// Updates details about a contact evaluation in the specified Amazon Connect instance.
+    /// Updates details about a contact evaluation in the specified Connect Customer instance.
     /// A contact evaluation must be in draft state. Answers included in the request are merged
     /// with existing answers for the given evaluation. An answer or note can be deleted by
     /// passing an empty object (<c>{}</c>) to the question identifier.
@@ -90,7 +90,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

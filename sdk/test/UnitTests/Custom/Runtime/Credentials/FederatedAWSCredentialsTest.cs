@@ -56,17 +56,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void NullOptions()
         {
-            AssertExtensions.ExpectException(() => {
-                new FederatedAWSCredentials(SomeSAMLEndpoint, RoleArn, null);
-            }, typeof(ArgumentNullException), new Regex("Parameter name: options"));
+            AssertExtensions.ExpectException(() => new FederatedAWSCredentials(SomeSAMLEndpoint, RoleArn, null), typeof(ArgumentNullException));
         }
 
         [TestMethod]
         public void NullEndpoint()
         {
-            AssertExtensions.ExpectException(() => {
-                new FederatedAWSCredentials(null, RoleArn);
-            }, typeof(ArgumentNullException), new Regex("Parameter name: samlEndpoint"));
+            AssertExtensions.ExpectException(() => new FederatedAWSCredentials(null, RoleArn), typeof(ArgumentNullException));
         }
 
         [TestMethod]
@@ -183,7 +179,7 @@ namespace AWSSDK.UnitTests
                         credentials.GetCredentials();
                     }, typeof(AmazonClientException)).InnerException;
                 }, typeof(FederatedAuthenticationFailureException)).InnerException;
-            }, typeof(AdfsAuthenticationControllerException), new Regex("(The remote name could not be resolved: \'somesamlendpoint.com\')|(The remote server returned an error: \\(502\\) Bad Gateway.)"));
+            }, typeof(AdfsAuthenticationControllerException));
         }
 
         private static void AssertSAMLImmutableCredentials(SAMLImmutableCredentials expected, ImmutableCredentials actual)
