@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Fix credential_process failing when executable path contains spaces on Windows."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

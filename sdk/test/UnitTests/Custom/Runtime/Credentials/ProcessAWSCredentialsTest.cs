@@ -149,5 +149,81 @@ namespace AWSSDK.UnitTests
             }
         }
 #endif
+
+        [TestMethod]
+        public void QuotedExecutablePathWithSpaces()
+        {
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return;
+            }
+
+            var dirWithSpace = Path.Combine(Path.GetTempPath(), $"aws sdk test {Guid.NewGuid():N}");
+            Directory.CreateDirectory(dirWithSpace);
+
+            try
+            {
+                var scriptCopy = Path.Combine(dirWithSpace, "windows-credentials-script.bat");
+                File.Copy(Executable, scriptCopy, overwrite: true);
+
+                var processCredential = new ProcessAWSCredentials(
+                    $"\"{scriptCopy}\" {ArgumentsBasic} {ValidVersionNumber}");
+                var credentialsRefreshState = processCredential.DetermineProcessCredential();
+                Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
+                Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
+            }
+            finally
+            {
+                Directory.Delete(dirWithSpace, recursive: true);
+            }
+        }
+
+        [TestMethod]
+        public void UnquotedExecutablePathWithoutSpaces()
+        {
+            var processCredential = new ProcessAWSCredentials(
+                $"{Executable} {ArgumentsBasic} {ValidVersionNumber}");
+            var credentialsRefreshState = processCredential.DetermineProcessCredential();
+            Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
+            Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
+        }
+
+
+        [TestMethod]
+        public void QuotedExecutablePathWithMultipleArguments()
+        {
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                return;
+            }
+
+            var dirWithSpace = Path.Combine(Path.GetTempPath(), $"aws sdk test {Guid.NewGuid():N}");
+            Directory.CreateDirectory(dirWithSpace);
+
+            try
+            {
+                var scriptCopy = Path.Combine(dirWithSpace, "windows-credentials-script.bat");
+                File.Copy(Executable, scriptCopy, overwrite: true);
+
+                var processCredential = new ProcessAWSCredentials(
+                    $"\"{scriptCopy}\" {ArgumentsSession} {ValidVersionNumber}");
+                var credentialsRefreshState = processCredential.DetermineProcessCredential();
+                Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
+                Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
+                Assert.IsNotNull(credentialsRefreshState.Credentials.Token);
+            }
+            finally
+            {
+                Directory.Delete(dirWithSpace, recursive: true);
+            }
+        }
+
+        [TestMethod]
+        public void UnmatchedDoubleQuoteThrows()
+        {
+            Assert.ThrowsExactly<ProcessAWSCredentialException>(() =>
+                new ProcessAWSCredentials("\"C:\\Program Files\\foo.exe").DetermineProcessCredential());
+        }
+
     }
 }

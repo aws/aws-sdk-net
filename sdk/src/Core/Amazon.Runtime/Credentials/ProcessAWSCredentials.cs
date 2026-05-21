@@ -74,19 +74,24 @@ namespace Amazon.Runtime
         public ProcessAWSCredentials(string processCredentialInfo, string accountId)
         {
             processCredentialInfo = processCredentialInfo.Trim();
-
-            //Default to cmd on Windows since that is the only thing BCL runs on.
-            var fileName = "cmd.exe";
-            var arguments = $@"/c {processCredentialInfo}";
             _accountId = accountId;
+
+            string fileName;
+            string arguments;
+
 #if NETSTANDARD
-            //If it is netstandard and not running on Windows use sh.
-            if(!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))            
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 fileName = "sh";
-                var escapedArgs = processCredentialInfo.Replace("\\", "\\\\").Replace("\"", "\\\"");    
+                var escapedArgs = processCredentialInfo.Replace("\\", "\\\\").Replace("\"", "\\\"");
                 arguments = $"-c \"{escapedArgs}\"";
             }
+            else
+            {
+                (fileName, arguments) = ParseCredentialProcessCommand(processCredentialInfo);
+            }
+#else
+            (fileName, arguments) = ParseCredentialProcessCommand(processCredentialInfo);
 #endif
             _processStartInfo = new ProcessStartInfo
             {
@@ -164,6 +169,57 @@ namespace Amazon.Runtime
         #endregion
 
         #region Private methods
+
+        /// <summary>
+        /// Parses the credential_process command string into an executable path and arguments,
+        /// correctly handling double-quoted paths that contain spaces per the AWS SDK specification
+        /// (https://docs.aws.amazon.com/sdkref/latest/guide/feature-process-credentials.html).
+        /// This avoids using cmd.exe, which has issues with quoted paths
+        /// and hangs when cmd.exe is disabled via Group Policy.
+        /// </summary>
+        private static (string FileName, string Arguments) ParseCredentialProcessCommand(string command)
+        {
+            if (string.IsNullOrEmpty(command))
+            {
+                return (string.Empty, string.Empty);
+            }
+
+            string fileName;
+            string arguments;
+
+            if (command[0] == '"')
+            {
+                var closingQuote = command.IndexOf('"', 1);
+                if (closingQuote == -1)
+                {
+                    // Fail fast on malformed input, consistent with botocore's _windows_shell_split().
+                    throw new ProcessAWSCredentialException(
+                        "No closing quotation mark found in credential_process command.");
+                }
+
+                fileName = command.Substring(1, closingQuote - 1);
+                arguments = closingQuote + 1 < command.Length
+                    ? command.Substring(closingQuote + 1).TrimStart()
+                    : string.Empty;
+            }
+            else
+            {
+                var spaceIndex = command.IndexOfAny(new[] { ' ', '\t' });
+                if (spaceIndex == -1)
+                {
+                    fileName = command;
+                    arguments = string.Empty;
+                }
+                else
+                {
+                    fileName = command.Substring(0, spaceIndex);
+                    arguments = command.Substring(spaceIndex + 1).TrimStart();
+                }
+            }
+
+            return (fileName, arguments);
+        }
+
         [SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands")]
         private CredentialsRefreshState SetCredentialsRefreshState(ProcessExecutionResult processInfo)
         {    
