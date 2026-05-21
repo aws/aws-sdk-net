@@ -42,7 +42,7 @@ namespace AWSSDK.UnitTests
             var uri = "https://signin.aws.amazon.com/v1/token";
             var privateKey = "invalid-key";
 
-            Assert.ThrowsException<InvalidOperationException>(() => DPoPProofGenerator.GenerateProof(httpMethod, uri, ref privateKey));
+            Assert.ThrowsExactly<InvalidOperationException>(() => DPoPProofGenerator.GenerateProof(httpMethod, uri, ref privateKey));
         }
 #endif
     }

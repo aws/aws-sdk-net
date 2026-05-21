@@ -38,29 +38,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullBufferManager_ThrowsArgumentNullException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-
-            // Act
-            var handler = new BufferedPartDataHandler(null, config);
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ArgumentNullException>(() => new BufferedPartDataHandler(null, config));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullConfiguration_ThrowsArgumentNullException()
         {
-            // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
-
-            // Act
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, null);
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ArgumentNullException>(() => new BufferedPartDataHandler(mockBufferManager.Object, null));
         }
 
         #endregion
@@ -549,7 +537,7 @@ namespace AWSSDK.UnitTests
                 var response = CreateMockGetObjectResponse(512);
 
                 // Act & Assert
-                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 {
                     await handler.ProcessPartAsync(1, response, CancellationToken.None);
                 });
@@ -580,7 +568,7 @@ namespace AWSSDK.UnitTests
                 var response = CreateMockGetObjectResponse(512);
 
                 // Act & Assert
-                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 {
                     await handler.ProcessPartAsync(2, response, CancellationToken.None);
                 });
@@ -614,7 +602,7 @@ namespace AWSSDK.UnitTests
                 };
 
                 // Act & Assert
-                await Assert.ThrowsExceptionAsync<IOException>(async () =>
+                await Assert.ThrowsExactlyAsync<IOException>(async () =>
                 {
                     await handler.ProcessPartAsync(2, response, CancellationToken.None);
                 });
@@ -875,7 +863,7 @@ namespace AWSSDK.UnitTests
                 var response = CreateMockGetObjectResponse(512);
 
                 // Act & Assert - Should throw
-                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 {
                     await handler.ProcessPartAsync(1, response, CancellationToken.None);
                 });

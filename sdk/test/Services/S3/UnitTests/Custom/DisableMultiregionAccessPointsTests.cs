@@ -77,14 +77,16 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void InvalidEnvironmentVariableThrowsException()
         {
             //"disabled" is invalid, expecting true or false
             Environment.SetEnvironmentVariable("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS", "disabled");
 
-            var config = new AmazonS3Config();
-            Assert.IsTrue(config.DisableMultiregionAccessPoints);
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+            {
+                var config = new AmazonS3Config();
+                _ = config.DisableMultiregionAccessPoints;
+            });
         }
     }
 }

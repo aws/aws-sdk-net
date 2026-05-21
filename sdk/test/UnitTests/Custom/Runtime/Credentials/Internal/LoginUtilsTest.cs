@@ -146,25 +146,22 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void IsExpired_NullToken_ThrowsArgumentNullException()
         {
-            LoginUtils.IsExpired(null);
+            Assert.ThrowsExactly<ArgumentNullException>(() => LoginUtils.IsExpired(null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void ExtractLoginSessionFromIdentityToken_InvalidJwtFormat_ThrowsArgumentException()
         {
-            LoginUtils.ExtractLoginSessionFromIdentityToken("invalid.jwt");
+            Assert.ThrowsExactly<ArgumentException>(() => LoginUtils.ExtractLoginSessionFromIdentityToken("invalid.jwt"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ExtractLoginSessionFromIdentityToken_MissingSubClaim_ThrowsInvalidOperationException()
         {
             var jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub3N1YiI6InRlc3QifQ.signature";
-            LoginUtils.ExtractLoginSessionFromIdentityToken(jwt);
+            Assert.ThrowsExactly<InvalidOperationException>(() => LoginUtils.ExtractLoginSessionFromIdentityToken(jwt));
         }
 
         [TestMethod]

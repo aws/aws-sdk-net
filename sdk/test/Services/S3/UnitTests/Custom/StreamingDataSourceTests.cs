@@ -36,13 +36,9 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullResponse_ThrowsArgumentNullException()
         {
-            // Act
-            var dataSource = new StreamingDataSource(1, null);
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ArgumentNullException>(() => new StreamingDataSource(1, null));
         }
 
         [TestMethod]
@@ -282,90 +278,42 @@ namespace AWSSDK.UnitTests
         #region ReadAsync Tests - Parameter Validation
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public async Task ReadAsync_WithNullBuffer_ThrowsArgumentNullException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
-            var dataSource = new StreamingDataSource(1, response);
-
-            try
-            {
-                // Act
-                await dataSource.ReadAsync(null, 0, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                dataSource.Dispose();
-            }
+            using var dataSource = new StreamingDataSource(1, response);
+            await Assert.ThrowsExactlyAsync<ArgumentNullException>(async () =>
+                await dataSource.ReadAsync(null, 0, 512, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public async Task ReadAsync_WithNegativeOffset_ThrowsArgumentOutOfRangeException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
-            var dataSource = new StreamingDataSource(1, response);
+            using var dataSource = new StreamingDataSource(1, response);
             byte[] buffer = new byte[512];
-
-            try
-            {
-                // Act
-                await dataSource.ReadAsync(buffer, -1, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                dataSource.Dispose();
-            }
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(async () =>
+                await dataSource.ReadAsync(buffer, -1, 512, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public async Task ReadAsync_WithNegativeCount_ThrowsArgumentOutOfRangeException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
-            var dataSource = new StreamingDataSource(1, response);
+            using var dataSource = new StreamingDataSource(1, response);
             byte[] buffer = new byte[512];
-
-            try
-            {
-                // Act
-                await dataSource.ReadAsync(buffer, 0, -1, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                dataSource.Dispose();
-            }
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(async () =>
+                await dataSource.ReadAsync(buffer, 0, -1, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public async Task ReadAsync_WithOffsetCountExceedingBounds_ThrowsArgumentException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
-            var dataSource = new StreamingDataSource(1, response);
+            using var dataSource = new StreamingDataSource(1, response);
             byte[] buffer = new byte[512];
-
-            try
-            {
-                // Act - offset + count exceeds buffer length
-                await dataSource.ReadAsync(buffer, 400, 200, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                dataSource.Dispose();
-            }
+            await Assert.ThrowsExactlyAsync<ArgumentException>(async () =>
+                await dataSource.ReadAsync(buffer, 400, 200, CancellationToken.None));
         }
 
         #endregion
@@ -510,7 +458,7 @@ namespace AWSSDK.UnitTests
             {
                 // Act & Assert
                 byte[] buffer = new byte[512];
-                await Assert.ThrowsExceptionAsync<IOException>(async () =>
+                await Assert.ThrowsExactlyAsync<IOException>(async () =>
                 {
                     await dataSource.ReadAsync(buffer, 0, 512, CancellationToken.None);
                 });
@@ -540,7 +488,7 @@ namespace AWSSDK.UnitTests
             {
                 // Act & Assert
                 byte[] buffer = new byte[512];
-                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 {
                     await dataSource.ReadAsync(buffer, 0, 512, CancellationToken.None);
                 });
@@ -586,49 +534,32 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public async Task ReadAsync_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
             var dataSource = new StreamingDataSource(1, response);
             dataSource.Dispose();
-
-            // Act
             byte[] buffer = new byte[512];
-            await dataSource.ReadAsync(buffer, 0, 512, CancellationToken.None);
-
-            // Assert - ExpectedException
+            await Assert.ThrowsExactlyAsync<ObjectDisposedException>(async () =>
+                await dataSource.ReadAsync(buffer, 0, 512, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void PartNumber_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
             var dataSource = new StreamingDataSource(1, response);
             dataSource.Dispose();
-
-            // Act
-            var partNumber = dataSource.PartNumber;
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = dataSource.PartNumber);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void IsComplete_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var response = CreateMockGetObjectResponse(512);
             var dataSource = new StreamingDataSource(1, response);
             dataSource.Dispose();
-
-            // Act
-            var isComplete = dataSource.IsComplete;
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = dataSource.IsComplete);
         }
 
         #endregion

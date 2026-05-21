@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Moq;
-using Amazon.EC2.Model;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.S3;
 using Amazon;

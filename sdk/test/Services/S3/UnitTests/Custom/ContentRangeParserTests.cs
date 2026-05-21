@@ -128,116 +128,72 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_NullContentRange_ThrowsException()
         {
-            // Act & Assert
-            ContentRangeParser.Parse(null);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse(null));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_EmptyContentRange_ThrowsException()
         {
-            // Act & Assert
-            ContentRangeParser.Parse(string.Empty);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse(string.Empty));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_MissingSlash_ThrowsException()
         {
-            // Arrange - Invalid format: missing slash separator
-            var contentRange = "bytes 0-1023";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-1023"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_MissingDash_ThrowsException()
         {
-            // Arrange - Invalid format: missing dash in range
-            var contentRange = "bytes 0 1023/2048";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0 1023/2048"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_InvalidStartByte_ThrowsException()
         {
-            // Arrange - Invalid: non-numeric start byte
-            var contentRange = "bytes abc-1023/2048";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes abc-1023/2048"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_InvalidEndByte_ThrowsException()
         {
-            // Arrange - Invalid: non-numeric end byte
-            var contentRange = "bytes 0-xyz/2048";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-xyz/2048"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_InvalidTotalSize_ThrowsException()
         {
-            // Arrange - Invalid: non-numeric total size
-            var contentRange = "bytes 0-1023/xyz";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-1023/xyz"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_WildcardTotalSize_ThrowsException()
         {
-            // Arrange - S3 should never return wildcard, but test handling
-            var contentRange = "bytes 0-1023/*";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-1023/*"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_TooManySlashes_ThrowsException()
         {
-            // Arrange - Invalid format: extra slashes
-            var contentRange = "bytes 0-1023/2048/extra";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-1023/2048/extra"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Parse_TooManyDashes_ThrowsException()
         {
-            // Arrange - Invalid format: extra dashes
-            var contentRange = "bytes 0-512-1023/2048";
-
-            // Act & Assert
-            ContentRangeParser.Parse(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.Parse("bytes 0-512-1023/2048"));
         }
 
         [TestMethod]
@@ -290,23 +246,16 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GetStartByte_InvalidContentRange_ThrowsException()
         {
-            // Arrange
-            var contentRange = "invalid";
-
-            // Act & Assert
-            ContentRangeParser.GetStartByte(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.GetStartByte("invalid"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GetStartByte_NullContentRange_ThrowsException()
         {
-            // Act & Assert
-            ContentRangeParser.GetStartByte(null);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.GetStartByte(null));
         }
 
         #endregion
@@ -343,23 +292,16 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GetTotalSize_InvalidContentRange_ThrowsException()
         {
-            // Arrange
-            var contentRange = "invalid";
-
-            // Act & Assert
-            ContentRangeParser.GetTotalSize(contentRange);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.GetTotalSize("invalid"));
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void GetTotalSize_NullContentRange_ThrowsException()
         {
-            // Act & Assert
-            ContentRangeParser.GetTotalSize(null);
+            Assert.ThrowsExactly<InvalidOperationException>(() => ContentRangeParser.GetTotalSize(null));
         }
 
         [TestMethod]

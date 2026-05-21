@@ -679,7 +679,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -687,7 +686,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -695,7 +697,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -703,7 +704,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -711,11 +715,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -739,7 +745,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Valid EndpointId with dualstack disabled and fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
         public void Valid_EndpointId_with_dualstack_disabled_and_fips_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -747,7 +752,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.", exception.Message);
         }
 
         [TestMethod]
@@ -755,7 +763,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Valid EndpointId with dualstack enabled and fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.")]
         public void Valid_EndpointId_with_dualstack_enabled_and_fips_enabled_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -763,7 +770,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with EventBridge multi-region endpoints.", exception.Message);
         }
 
         [TestMethod]
@@ -771,7 +781,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Invalid EndpointId")]
-        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label.")]
         public void Invalid_EndpointId_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -779,7 +788,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"EndpointId must be a valid host label.", exception.Message);
         }
 
         [TestMethod]
@@ -787,7 +799,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("EventBridge")]
         [Description("Invalid EndpointId (empty)")]
-        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label.")]
         public void Invalid_EndpointId_empty_Test()
         {
             var parameters = new EventBridgeEndpointParameters();
@@ -795,7 +806,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEventBridgeEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"EndpointId must be a valid host label.", exception.Message);
         }
 
         [TestMethod]

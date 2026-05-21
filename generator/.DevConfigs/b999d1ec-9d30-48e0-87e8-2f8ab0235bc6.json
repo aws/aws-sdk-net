@@ -1,0 +1,25 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Updated InternalsVisibleTo entries in Core to reflect the renamed unit-test project assemblies. No customer-visible behavior change."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  },
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change."
+      ]
+    },
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change."
+      ]
+    }
+  ]
+}

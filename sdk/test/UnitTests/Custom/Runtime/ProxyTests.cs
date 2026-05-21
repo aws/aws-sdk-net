@@ -16,7 +16,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
 
-using Amazon.EC2;
+using Amazon.S3;
 
 namespace AWSSDK.UnitTests
 {
@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestProxySetupHostAndPortOnly()
         {
-            var dummyConfig = new AmazonEC2Config();
+            var dummyConfig = new AmazonS3Config();
 
             dummyConfig.ProxyHost = Host;
             dummyConfig.ProxyPort = Port;
@@ -55,7 +55,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestProxySetupWithBypass()
         {
-            var dummyConfig = new AmazonEC2Config();
+            var dummyConfig = new AmazonS3Config();
 
             dummyConfig.ProxyHost = Host;
             dummyConfig.ProxyPort = Port;
@@ -84,7 +84,7 @@ namespace AWSSDK.UnitTests
             // up in the proxy address if the user specifies it when setting
             // proxy host (the bug yielded an address like http://http/host)
 
-            var dummyConfig = new AmazonEC2Config();
+            var dummyConfig = new AmazonS3Config();
 
             var host = string.Concat("http://", Host);
             dummyConfig.ProxyHost = host;
@@ -105,10 +105,10 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrl);
 
-                var dummyConfig = new AmazonEC2Config();
+                var dummyConfig = new AmazonS3Config();
                 IWebProxy proxy = dummyConfig.GetHttpProxy();
 
-                var address = proxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                var address = proxy.GetProxy(new Uri("https://s3.us-west-2.amazonaws.com"));
                 Assert.AreEqual(address.Host, "10.0.0.2");
                 Assert.AreEqual(address.Port, 21);
                 Assert.IsNotNull(proxy.Credentials);
@@ -130,10 +130,10 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrlWithoutHttp);
 
-                var dummyConfig = new AmazonEC2Config();
+                var dummyConfig = new AmazonS3Config();
                 IWebProxy proxy = dummyConfig.GetHttpProxy();
 
-                var address = proxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                var address = proxy.GetProxy(new Uri("https://s3.us-west-2.amazonaws.com"));
                 Assert.AreEqual(address.Scheme, "http");
                 Assert.AreEqual(address.Host, "10.0.0.2");
                 Assert.AreEqual(address.Port, 21);
@@ -158,17 +158,17 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable("http_proxy", EnvironmentVariableUrl);
                 Environment.SetEnvironmentVariable("https_proxy", EnvironmentVariableUrl);
 
-                var dummyConfig = new AmazonEC2Config();
+                var dummyConfig = new AmazonS3Config();
                 dummyConfig.ProxyHost = Host;
                 dummyConfig.ProxyPort = Port;
 
                 IWebProxy httpProxy = dummyConfig.GetHttpProxy();
-                var httpAddress = httpProxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                var httpAddress = httpProxy.GetProxy(new Uri("https://s3.us-west-2.amazonaws.com"));
                 Assert.AreEqual(httpAddress.Host, Host);
                 Assert.AreEqual(httpAddress.Port, Port);
 
                 IWebProxy httpsProxy = dummyConfig.GetHttpsProxy();
-                var httpsAddress = httpsProxy.GetProxy(new Uri("https://ec2.us-west-2.aws.amazon.com"));
+                var httpsAddress = httpsProxy.GetProxy(new Uri("https://s3.us-west-2.amazonaws.com"));
                 Assert.AreEqual(httpsAddress.Host, Host);
                 Assert.AreEqual(httpsAddress.Port, Port);
             }

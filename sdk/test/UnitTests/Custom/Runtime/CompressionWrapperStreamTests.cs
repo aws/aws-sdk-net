@@ -29,7 +29,7 @@ namespace AWSSDK.UnitTests
     public class CompressionWrapperStreamTests
     {
 #if BCL
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(0, 10)]
         [DataRow(10, 10)]
         [DataRow(10, 100)]
@@ -62,7 +62,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(resultString, text);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(0, 10)]
         [DataRow(10, 10)]
         [DataRow(100000, 10000)]

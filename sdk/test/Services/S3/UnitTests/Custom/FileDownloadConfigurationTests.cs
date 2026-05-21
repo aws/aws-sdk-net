@@ -91,75 +91,57 @@ namespace AWSSDK.UnitTests
         #region Constructor Tests - Parameter Validation
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroConcurrentServiceRequests_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(0, 8192, 8 * 1024 * 1024, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(0, 8192, 8 * 1024 * 1024, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeConcurrentServiceRequests_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(-1, 8192, 8 * 1024 * 1024, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(-1, 8192, 8 * 1024 * 1024, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroBufferSize_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 0, 8 * 1024 * 1024, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(10, 0, 8 * 1024 * 1024, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeBufferSize_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, -1, 8 * 1024 * 1024, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(10, -1, 8 * 1024 * 1024, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroTargetPartSizeBytes_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 8192, 0, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(10, 8192, 0, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeTargetPartSizeBytes_ThrowsArgumentOutOfRangeException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 8192, -1, "test.dat");
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new FileDownloadConfiguration(10, 8192, -1, "test.dat"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Constructor_WithNullDestinationFilePath_ThrowsArgumentException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, null);
+            Assert.ThrowsExactly<ArgumentException>(() => new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Constructor_WithEmptyDestinationFilePath_ThrowsArgumentException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, "");
+            Assert.ThrowsExactly<ArgumentException>(() => new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, ""));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Constructor_WithWhitespaceDestinationFilePath_ThrowsArgumentException()
         {
-            // Act
-            var config = new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, "   ");
+            Assert.ThrowsExactly<ArgumentException>(() => new FileDownloadConfiguration(10, 8192, 8 * 1024 * 1024, "   "));
         }
 
         #endregion

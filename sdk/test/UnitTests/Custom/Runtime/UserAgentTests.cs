@@ -43,7 +43,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class UserAgentTests
     {
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("SHA1", RequestChecksumCalculation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_SUPPORTED, "Z", "b", "X")]
         [DataRow("SHA1", RequestChecksumCalculation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_REQUIRED, "Z", "c", "X")]
         [DataRow("SHA1", RequestChecksumCalculation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_SUPPORTED, "a", "b", "")]
@@ -162,7 +162,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(Regex.Matches(userAgentHeader, "cfg/init-coll#").Count, 1);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(RequestRetryMode.Standard, "E")]
         [DataRow(RequestRetryMode.Adaptive, "F")]
         public void Test_AddsRetryModeToUserAgent(RequestRetryMode retryMode, string expectedRetryModeString)
@@ -184,7 +184,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(metricsSection.Contains(expectedRetryModeString));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, "cfg/init-coll#1")]
         [DataRow(false, "cfg/init-coll#0")]
         public void Test_AddsInitializeCollectionsToUserAgent(bool initializeCollections, string expectedString)
@@ -315,7 +315,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(metricsSection.Contains(UserAgentFeatureId.OBSERVABILITY_TRACING.Value));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(false, HeaderKeys.UserAgentHeader)]     // Use standard header
         [DataRow(true, HeaderKeys.XAmzUserAgentHeader)]  // Use alternate header
         public void Test_CorrectUserAgentHeaderKeyIsUsed(bool useAlternateHeader, string expectedHeaderKey)

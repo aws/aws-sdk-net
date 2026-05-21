@@ -108,8 +108,7 @@ namespace AWSSDK.UnitTests
 
                 // Mutate the RegisteredAccounts.json file with updated credentials.
                 fixture.SetFileContents(
-                    NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"));
-                Thread.Sleep(500);
+                    NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"), delayMs: 500);
                 var updated = resolver.ResolveIdentity(config);
                 Assert.IsNotNull(updated);
                 Assert.AreNotSame(original, updated,
@@ -139,8 +138,7 @@ namespace AWSSDK.UnitTests
 
                 // Mutate the RegisteredAccounts.json file.
                 fixture.SetFileContents(
-                    NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"));
-                
+                    NetSdkBasicProfileJson("netsdk-profile", "AKID_UPDATED", "SECRET_UPDATED"), delayMs: 500);
                 var updated = await resolver.ResolveIdentityAsync(config);
                 Assert.IsNotNull(updated);
                 Assert.AreNotSame(original, updated,
@@ -206,7 +204,7 @@ namespace AWSSDK.UnitTests
 
                     // With the legacy store disabled, the profile only exists in the NetSDK file
                     // which is skipped → should throw.
-                    Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(config));
+                    Assert.ThrowsExactly<AmazonClientException>(() => resolver.ResolveIdentity(config));
                 }
             }
             finally
@@ -262,7 +260,7 @@ namespace AWSSDK.UnitTests
                     "[profile-b]",
                     "aws_access_key_id = AKID_B_V2",
                     "aws_secret_access_key = SECRET_B_V2");
-                File.WriteAllText(fixture.CredentialsFilePath, updatedContent);
+                fixture.UpdateCredentialsFile(updatedContent);
 
                 // Resolve profile A first — this should NOT prevent profile B from detecting the change.
                 var credsA2 = resolver.ResolveIdentity(configA);
@@ -312,8 +310,7 @@ namespace AWSSDK.UnitTests
                     "[profile-b]",
                     "aws_access_key_id = AKID_B_V2",
                     "aws_secret_access_key = SECRET_B_V2");
-                File.WriteAllText(fixture.CredentialsFilePath, updatedContent);
-                await Task.Delay(500); // Allow FileSystemWatcher to fire.
+                fixture.UpdateCredentialsFile(updatedContent);
 
                 // Resolve A first, then B — both should see the update.
                 var credsA2 = await resolver.ResolveIdentityAsync(configA);
@@ -360,8 +357,7 @@ namespace AWSSDK.UnitTests
                     "[stable-profile]",
                     "aws_access_key_id = AKID_STABLE",
                     "aws_secret_access_key = SECRET_STABLE");
-                File.WriteAllText(fixture.CredentialsFilePath, updatedContent);
-                Thread.Sleep(500);
+                fixture.UpdateCredentialsFile(updatedContent);
 
                 // Both profiles are invalidated (same file changed), so both re-resolve.
                 var changing2 = resolver.ResolveIdentity(changingConfig);
@@ -398,7 +394,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("AKID_V1", creds1.GetCredentials().AccessKey);
 
                 // Change 1
-                File.WriteAllText(fixture.CredentialsFilePath, string.Join(Environment.NewLine,
+                fixture.UpdateCredentialsFile(string.Join(Environment.NewLine,
                     "[my-profile]",
                     "aws_access_key_id = AKID_V2",
                     "aws_secret_access_key = SECRET_V2"));
@@ -408,7 +404,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreNotSame(creds1, creds2);
 
                 // Change 2
-                File.WriteAllText(fixture.CredentialsFilePath, string.Join(Environment.NewLine,
+                fixture.UpdateCredentialsFile(string.Join(Environment.NewLine,
                     "[my-profile]",
                     "aws_access_key_id = AKID_V3",
                     "aws_secret_access_key = SECRET_V3"));
@@ -418,7 +414,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreNotSame(creds2, creds3);
 
                 // Change 3
-                File.WriteAllText(fixture.CredentialsFilePath, string.Join(Environment.NewLine,
+                fixture.UpdateCredentialsFile(string.Join(Environment.NewLine,
                     "[my-profile]",
                     "aws_access_key_id = AKID_V4",
                     "aws_secret_access_key = SECRET_V4"));
@@ -490,8 +486,7 @@ namespace AWSSDK.UnitTests
                     "[beta]",
                     "aws_access_key_id = AKID_BETA_V2",
                     "aws_secret_access_key = SECRET_BETA_V2");
-                File.WriteAllText(fixture.CredentialsFilePath, updatedContent);
-                Thread.Sleep(500);
+                fixture.UpdateCredentialsFile(updatedContent);
                 // Both profiles re-resolve.
                 var alphaV2 = resolver.ResolveIdentity(configAlpha);
                 var betaV2 = resolver.ResolveIdentity(configBeta);

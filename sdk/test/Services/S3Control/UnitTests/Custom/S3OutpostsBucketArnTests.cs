@@ -61,7 +61,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("S3Control")]
         [TestCategory("UnitTest")]
-        [DynamicData(nameof(S3OutpostBucketARNTestsData), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(S3OutpostBucketARNTestsData))]
         public void S3OutpostBucketARNTests(string bucketNameOrARNInput, string clientRegion, string additionalFlags, string useArnRegion, string expectedEndpoint, string expectedHeaders, string expectedSignedBy)
         {
             Console.WriteLine(string.Join(" | ", bucketNameOrARNInput, clientRegion, additionalFlags, useArnRegion, expectedEndpoint, expectedHeaders, expectedSignedBy));
@@ -183,7 +183,7 @@ namespace AWSSDK.UnitTests
             {
                 Bucket = outpostsBucketArn
             };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
             {
                 S3ControlArnTestUtils.RunMockRequest(getBucketRequest, GetBucketRequestMarshaller.Instance, s3ControlConfig);
             });

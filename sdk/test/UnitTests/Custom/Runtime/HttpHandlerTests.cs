@@ -107,7 +107,7 @@ namespace AWSSDK.UnitTests
             _ = new RuntimePipeline(httpHandler);
             
             var executionContext = CreateExecutionContextForListBuckets();
-            await Assert.ThrowsExceptionAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
+            await Assert.ThrowsExactlyAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
             
             var httpRequest = factory.LastCreatedRequest;
             Assert.AreEqual("GET", httpRequest.Method);

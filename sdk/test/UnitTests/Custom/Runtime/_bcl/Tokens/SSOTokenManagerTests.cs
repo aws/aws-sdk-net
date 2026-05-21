@@ -35,7 +35,7 @@ namespace AWSSDK.UnitTests.Runtime
     {
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         // "Realistic start URL example"
         [DataRow(
             "https://d-abc123.awsapps.com/start",
@@ -83,7 +83,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         // "Realistic start URL example"
         [DataRow(
             "https://d-abc123.awsapps.com/start",
@@ -132,7 +132,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(
     "7ed69759fe20aa3027c01db4b744e1437b0c8f4f.json")]
         public async Task ValidateLogoutAllAsync(string expectedCacheFile)
@@ -166,7 +166,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(
     "7ed69759fe20aa3027c01db4b744e1437b0c8f4f.json")]
         public void ValidateLogoutAll(string expectedCacheFile)
@@ -200,7 +200,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         // "Realistic start URL example"
         [DataRow(
     "https://d-abc123.awsapps.com/start",
@@ -259,7 +259,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         // "Realistic start URL example"
         [DataRow(
             "https://d-abc123.awsapps.com/start",

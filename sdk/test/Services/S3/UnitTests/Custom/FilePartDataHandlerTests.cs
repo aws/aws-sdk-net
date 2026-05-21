@@ -43,11 +43,9 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullConfig_ThrowsArgumentNullException()
         {
-            // Act
-            var handler = new FilePartDataHandler(null);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new FilePartDataHandler(null));
         }
 
         #endregion
@@ -215,53 +213,41 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ProcessPartAsync_MissingContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
-                partSize: 1000,
-                destinationPath: destinationPath);
+                partSize: 1000, destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
-            
             await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
-
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
             {
                 ContentLength = partData.Length,
                 ResponseStream = new MemoryStream(partData),
-                ContentRange = null // Missing ContentRange should throw
+                ContentRange = null
             };
-
-            // Act - Should throw InvalidOperationException
-            await handler.ProcessPartAsync(3, response, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await handler.ProcessPartAsync(3, response, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ProcessPartAsync_InvalidContentRange_ThrowsInvalidOperationException()
         {
-            // Arrange
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
-                partSize: 1000,
-                destinationPath: destinationPath);
+                partSize: 1000, destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
-            
             await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
-
             var partData = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
             var response = new GetObjectResponse
             {
                 ContentLength = partData.Length,
                 ResponseStream = new MemoryStream(partData),
-                ContentRange = "invalid-format" // Invalid ContentRange should throw
+                ContentRange = "invalid-format"
             };
-
-            // Act - Should throw InvalidOperationException
-            await handler.ProcessPartAsync(2, response, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await handler.ProcessPartAsync(2, response, CancellationToken.None));
         }
 
         #endregion
@@ -529,14 +515,11 @@ namespace AWSSDK.UnitTests
         #region ProcessPartAsync Tests - Error Handling
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ProcessPartAsync_WithoutPrepare_ThrowsInvalidOperationException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: Path.Combine(_testDirectory, "test.dat"));
             var handler = new FilePartDataHandler(config);
-
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
             {
@@ -544,9 +527,8 @@ namespace AWSSDK.UnitTests
                 ResponseStream = new MemoryStream(partData),
                 ContentRange = "bytes 0-1023/1024"
             };
-
-            // Act - Without calling PrepareAsync first
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await handler.ProcessPartAsync(1, response, CancellationToken.None));
         }
 
         #endregion
@@ -554,17 +536,13 @@ namespace AWSSDK.UnitTests
         #region ProcessPartAsync Tests - Cancellation
 
         [TestMethod]
-        [ExpectedException(typeof(TaskCanceledException))]
         public async Task ProcessPartAsync_WithCancelledToken_ThrowsTaskCanceledException()
         {
-            // Arrange
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
                 destinationPath: destinationPath);
             var handler = new FilePartDataHandler(config);
-            
             await handler.PrepareAsync(new DownloadResult(), CancellationToken.None);
-
             var partData = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
             var response = new GetObjectResponse
             {
@@ -572,12 +550,10 @@ namespace AWSSDK.UnitTests
                 ResponseStream = new MemoryStream(partData),
                 ContentRange = "bytes 0-1023/1024"
             };
-
             var cts = new CancellationTokenSource();
             cts.Cancel();
-
-            // Act
-            await handler.ProcessPartAsync(1, response, cts.Token);
+            await Assert.ThrowsExactlyAsync<TaskCanceledException>(async () =>
+                await handler.ProcessPartAsync(1, response, cts.Token));
         }
 
         #endregion

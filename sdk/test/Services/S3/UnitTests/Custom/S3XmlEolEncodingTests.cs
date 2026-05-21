@@ -28,7 +28,7 @@ namespace AWSSDK.UnitTests
         /// </summary>
         /// <param name="objectKey">S3 object key containing one or more characters that are expected to be encoded</param>
         /// <param name="expectedEscapedKey">Expected value of the S3 object key after XML encoding</param>
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("\n \n", "&#xA; &#xA;")]
         [DataRow("a\r\n b\n c\r", "a&#xD;&#xA; b&#xA; c&#xD;")]

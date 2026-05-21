@@ -33,7 +33,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("region is not a valid DNS-suffix")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void Region_is_not_a_valid_DNSsuffix_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -41,7 +40,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -49,7 +51,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Invalid access point ARN: Not S3")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN was not for the S3 service, found: not-s3")]
         public void Invalid_access_point_ARN_Not_S3_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -58,7 +59,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:not-s3:us-west-2:123456789012:accesspoint:myendpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the S3 service, found: not-s3", exception.Message);
         }
 
         [TestMethod]
@@ -66,7 +70,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Invalid access point ARN: invalid resource")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN may only contain a single resource component after `accesspoint`.")]
         public void Invalid_access_point_ARN_invalid_resource_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -75,7 +78,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint:more-data";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN may only contain a single resource component after `accesspoint`.", exception.Message);
         }
 
         [TestMethod]
@@ -83,7 +89,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Invalid access point ARN: invalid no ap name")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided")]
         public void Invalid_access_point_ARN_invalid_no_ap_name_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -92,7 +97,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided", exception.Message);
         }
 
         [TestMethod]
@@ -100,7 +108,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Invalid access point ARN: AccountId is invalid")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `123456_789012`")]
         public void Invalid_access_point_ARN_AccountId_is_invalid_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -109,7 +116,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456_789012:accesspoint:apname";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `123456_789012`", exception.Message);
         }
 
         [TestMethod]
@@ -117,7 +127,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Invalid access point ARN: access point name is invalid")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `ap_name`")]
         public void Invalid_access_point_ARN_access_point_name_is_invalid_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -126,7 +135,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:ap_name";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `ap_name`", exception.Message);
         }
 
         [TestMethod]
@@ -152,7 +164,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Access points: partition does not support FIPS")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Access_points_partition_does_not_support_FIPS_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -161,7 +172,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3:cn-north-1:123456789012:accesspoint:myendpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -169,7 +183,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Bucket region is invalid")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region in ARN: `us-west -2` (invalid DNS name)")]
         public void Bucket_region_is_invalid_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -179,7 +192,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["DisableAccessPoints"] = false;
             parameters["Bucket"] = "arn:aws:s3:us-west -2:123456789012:accesspoint:myendpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region in ARN: `us-west -2` (invalid DNS name)", exception.Message);
         }
 
         [TestMethod]
@@ -187,7 +203,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Access points when Access points explicitly disabled (used for CreateBucket)")]
-        [ExpectedException(typeof(AmazonClientException), @"Access points are not supported for this operation")]
         public void Access_points_when_Access_points_explicitly_disabled_used_for_CreateBucket_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -197,7 +212,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["DisableAccessPoints"] = true;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Access points are not supported for this operation", exception.Message);
         }
 
         [TestMethod]
@@ -205,7 +223,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("missing arn type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: `arn:aws:s3:us-west-2:123456789012:` was not a valid ARN")]
         public void Missing_arn_type_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -215,7 +232,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["DisableAccessPoints"] = true;
             parameters["Bucket"] = "arn:aws:s3:us-west-2:123456789012:";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: `arn:aws:s3:us-west-2:123456789012:` was not a valid ARN", exception.Message);
         }
 
         [TestMethod]
@@ -223,7 +243,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + access point + Dualstack is an error")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_access_point_Dualstack_is_an_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -234,7 +253,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -296,7 +318,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("MRAP does not support FIPS")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 MRAP does not support FIPS")]
         public void MRAP_does_not_support_FIPS_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -306,7 +327,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 MRAP does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -314,7 +338,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("MRAP does not support DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 MRAP does not support dual-stack")]
         public void MRAP_does_not_support_DualStack_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -324,7 +347,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 MRAP does not support dual-stack", exception.Message);
         }
 
         [TestMethod]
@@ -332,7 +358,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("MRAP does not support S3 Accelerate")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 MRAP does not support S3 Accelerate")]
         public void MRAP_does_not_support_S3_Accelerate_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -342,7 +367,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 MRAP does not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -350,7 +378,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("MRAP explicitly disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: Multi-Region Access Point ARNs are disabled.")]
         public void MRAP_explicitly_disabled_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -360,7 +387,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: Multi-Region Access Point ARNs are disabled.", exception.Message);
         }
 
         [TestMethod]
@@ -386,7 +416,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Dual-stack endpoint + SDK::Host is error")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Dualstack_endpoint_SDKHost_is_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -397,7 +426,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://abc.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -405,7 +437,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + ARN bucket")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with ARN buckets")]
         public void Path_style_ARN_bucket_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -415,7 +446,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with ARN buckets", exception.Message);
         }
 
         [TestMethod]
@@ -440,7 +474,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("implicit path style bucket + dualstack")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Implicit_path_style_bucket_dualstack_1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -450,7 +483,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
             parameters["Endpoint"] = "http://abc.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -546,7 +582,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid Endpoint override")]
-        [ExpectedException(typeof(AmazonClientException), @"Custom endpoint `abcde://nota#url` was not a valid URI")]
         public void Invalid_Endpoint_override_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -556,7 +591,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Custom endpoint `abcde://nota#url` was not a valid URI", exception.Message);
         }
 
         [TestMethod]
@@ -582,7 +620,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("vanilla access point arn with region mismatch and UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Vanilla_access_point_arn_with_region_mismatch_and_UseArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -593,7 +630,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -709,12 +749,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("no region set")]
-        [ExpectedException(typeof(AmazonClientException), @"A region must be set when sending requests to S3.")]
         public void No_region_set_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Bucket"] = "bucket-name";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A region must be set when sending requests to S3.", exception.Message);
         }
 
         [TestMethod]
@@ -1393,13 +1435,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("cross partition MRAP ARN is an error")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but bucket referred to partition `aws-cn`")]
         public void Cross_partition_MRAP_ARN_is_an_error_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Bucket"] = "arn:aws-cn:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap";
             parameters["Region"] = "us-west-1";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but bucket referred to partition `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -1440,7 +1484,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("non-bucket endpoint override with FIPS = error")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Nonbucket_endpoint_override_with_FIPS_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1448,7 +1491,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "http://beta.example.com:1234/path";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1456,7 +1502,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("FIPS + dualstack + custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void FIPS_dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1464,7 +1509,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "http://beta.example.com:1234/path";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -1472,7 +1520,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("dualstack + custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1480,7 +1527,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "http://beta.example.com:1234/path";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -1504,14 +1554,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("s3 object lambda with access points disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Access points are not supported for this operation")]
         public void S3_object_lambda_with_access_points_disabled_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-west-2";
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:myendpoint";
             parameters["DisableAccessPoints"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Access points are not supported for this operation", exception.Message);
         }
 
         [TestMethod]
@@ -1665,7 +1717,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + FIPS + dualstack (BUG)")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_FIPS_dualstack_BUG_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1675,7 +1726,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1683,7 +1737,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + non-dns bucket + FIPS (BUG)")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_nondns_bucket_FIPS_BUG_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1692,7 +1745,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1753,7 +1809,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("URI encoded bucket + use global endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void URI_encoded_bucket_use_global_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1763,7 +1818,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "https://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1844,7 +1902,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + non-uri safe endpoint + force path style")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_nonuri_safe_endpoint_force_path_style_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1856,7 +1913,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "http://foo.com";
             parameters["UseGlobalEndpoint"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1882,7 +1942,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override + FIPS + dualstack")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Endpoint_override_FIPS_dualstack_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1891,7 +1950,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -1899,7 +1961,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("non-bucket endpoint override + dualstack + global endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Nonbucket_endpoint_override_dualstack_global_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1908,7 +1969,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -1916,7 +1980,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Endpoint override + UseGlobalEndpoint + us-east-1")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Endpoint_override_UseGlobalEndpoint_useast1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1925,7 +1988,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseGlobalEndpoint"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1933,7 +1999,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("non-FIPS partition with FIPS set + custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void NonFIPS_partition_with_FIPS_set_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -1941,7 +2006,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseGlobalEndpoint"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2015,7 +2083,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("aws-global + fips + custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Awsglobal_fips_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2025,7 +2092,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2051,7 +2121,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("aws-global + dualstack + custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Awsglobal_dualstack_custom_endpoint_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2060,7 +2129,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -2103,14 +2175,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("aws-global + FIPS + endpoint override.")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Awsglobal_FIPS_endpoint_override_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "aws-global";
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2118,7 +2192,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("force path style, FIPS, aws-global & endpoint override")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void Force_path_style_FIPS_awsglobal_endpoint_override_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2127,7 +2200,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ForcePathStyle"] = true;
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2150,7 +2226,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("endpoint override with aws-global region")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void Endpoint_override_with_awsglobal_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2158,7 +2233,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -2181,13 +2259,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("empty arn type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: No ARN type specified")]
         public void Empty_arn_type_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:not-s3:us-west-2:123456789012::myendpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: No ARN type specified", exception.Message);
         }
 
         [TestMethod]
@@ -2195,14 +2275,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style can't be used with accelerate")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with S3 Accelerate")]
         public void Path_style_cant_be_used_with_accelerate_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "bucket!";
             parameters["Accelerate"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -2210,14 +2292,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void Invalid_region_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2!";
             parameters["Bucket"] = "bucket.subdomain";
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -2225,14 +2309,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void Invalid_region_1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2!";
             parameters["Bucket"] = "bucket";
             parameters["Endpoint"] = "http://foo.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -2240,13 +2326,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("empty arn type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Access Point Name")]
         public void Empty_arn_type_1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3::123456789012:accesspoint:my_endpoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Access Point Name", exception.Message);
         }
 
         [TestMethod]
@@ -2254,14 +2342,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("empty arn type")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN (`arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint`) has `aws-cn`")]
         public void Empty_arn_type_2_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint";
             parameters["UseArnRegion"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but ARN (`arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint`) has `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -2269,14 +2359,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid arn region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region in ARN: `us-east_2` (invalid DNS name)")]
         public void Invalid_arn_region_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-east_2:123456789012:accesspoint:my-endpoint";
             parameters["UseArnRegion"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region in ARN: `us-east_2` (invalid DNS name)", exception.Message);
         }
 
         [TestMethod]
@@ -2284,14 +2376,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid ARN outpost")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `op_01234567890123456`")]
         public void Invalid_ARN_outpost_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op_01234567890123456/accesspoint/reports";
             parameters["UseArnRegion"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `op_01234567890123456`", exception.Message);
         }
 
         [TestMethod]
@@ -2299,13 +2393,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: expected an access point name")]
         public void Invalid_ARN_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: expected an access point name", exception.Message);
         }
 
         [TestMethod]
@@ -2313,13 +2409,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a 4-component resource", exception.Message);
         }
 
         [TestMethod]
@@ -2327,13 +2425,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid outpost type")]
-        [ExpectedException(typeof(AmazonClientException), @"Expected an outpost type `accesspoint`, found not-accesspoint")]
         public void Invalid_outpost_type_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Expected an outpost type `accesspoint`, found not-accesspoint", exception.Message);
         }
 
         [TestMethod]
@@ -2341,13 +2441,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid outpost type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region in ARN: `us-east_1` (invalid DNS name)")]
         public void Invalid_outpost_type_1_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east_1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region in ARN: `us-east_1` (invalid DNS name)", exception.Message);
         }
 
         [TestMethod]
@@ -2355,13 +2457,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid outpost type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `12345_789012`")]
         public void Invalid_outpost_type_2_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:12345_789012:outpost/op-01234567890123456/not-accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `12345_789012`", exception.Message);
         }
 
         [TestMethod]
@@ -2369,13 +2473,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("invalid outpost type")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
         public void Invalid_outpost_type_3_Test()
         {
             var parameters = new S3EndpointParameters();
             parameters["Region"] = "us-east-2";
             parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:12345789012:outpost";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The Outpost Id was not set", exception.Message);
         }
 
         [TestMethod]
@@ -2587,7 +2693,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("accelerate + fips = error@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Accelerate cannot be used with FIPS")]
         public void Accelerate_fips_erroruswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2597,7 +2702,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Accelerate cannot be used with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2641,7 +2749,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("accelerate (dualstack=false)@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Accelerate cannot be used in this region")]
         public void Accelerate_dualstackfalsecnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2651,7 +2758,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Accelerate cannot be used in this region", exception.Message);
         }
 
         [TestMethod]
@@ -2659,7 +2769,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("virtual addressing + fips@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Virtual_addressing_fipscnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2669,7 +2778,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2785,7 +2897,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("accelerate + fips = error@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Accelerate cannot be used with FIPS")]
         public void Accelerate_fips_errorafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2795,7 +2906,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Accelerate cannot be used with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2838,7 +2952,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + accelerate = error@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with S3 Accelerate")]
         public void Path_style_accelerate_erroruswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2848,7 +2961,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -2874,7 +2990,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + arn is error@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with ARN buckets")]
         public void Path_style_arn_is_erroruswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2884,7 +2999,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with ARN buckets", exception.Message);
         }
 
         [TestMethod]
@@ -2945,7 +3063,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + fips@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Path_style_fipscnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2955,7 +3072,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2963,7 +3083,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + accelerate = error@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with S3 Accelerate")]
         public void Path_style_accelerate_errorcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -2973,7 +3092,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -2999,7 +3121,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + arn is error@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with ARN buckets")]
         public void Path_style_arn_is_errorcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3009,7 +3130,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with ARN buckets", exception.Message);
         }
 
         [TestMethod]
@@ -3088,7 +3212,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + accelerate = error@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with S3 Accelerate")]
         public void Path_style_accelerate_errorafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3098,7 +3221,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3124,7 +3250,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("path style + arn is error@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with ARN buckets")]
         public void Path_style_arn_is_errorafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3134,7 +3259,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Path-style addressing cannot be used with ARN buckets", exception.Message);
         }
 
         [TestMethod]
@@ -3215,7 +3343,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + FIPS@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void SDKHost_FIPSuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3226,7 +3353,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3234,7 +3364,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3245,7 +3374,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -3253,7 +3385,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_accelerateuswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3264,7 +3395,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3329,7 +3463,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("FIPS@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void FIPScnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3339,7 +3472,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3347,7 +3483,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3358,7 +3493,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -3366,7 +3504,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_acceleratecnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3377,7 +3514,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3442,7 +3582,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + FIPS@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with FIPS")]
         public void SDKHost_FIPSafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3453,7 +3592,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3461,7 +3603,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::Host + DualStack@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Cannot set dual-stack in combination with a custom endpoint.")]
         public void SDKHost_DualStackafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3472,7 +3613,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Cannot set dual-stack in combination with a custom endpoint.", exception.Message);
         }
 
         [TestMethod]
@@ -3480,7 +3624,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("SDK::HOST + accelerate@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"A custom endpoint cannot be combined with S3 Accelerate")]
         public void SDKHOST_accelerateafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3491,7 +3634,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"A custom endpoint cannot be combined with S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3554,7 +3700,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("access point arn + accelerate = error@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Access Points do not support S3 Accelerate")]
         public void Access_point_arn_accelerate_erroruswest2_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3564,7 +3709,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Access Points do not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3608,7 +3756,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("access point arn + FIPS@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Access_point_arn_FIPScnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3618,7 +3765,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3626,7 +3776,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("access point arn + accelerate = error@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Access Points do not support S3 Accelerate")]
         public void Access_point_arn_accelerate_errorcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3636,7 +3785,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Access Points do not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3644,7 +3796,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("access point arn + FIPS + DualStack@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Access_point_arn_FIPS_DualStackcnnorth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3654,7 +3805,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3698,7 +3852,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("access point arn + accelerate = error@af-south-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Access Points do not support S3 Accelerate")]
         public void Access_point_arn_accelerate_errorafsouth1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3708,7 +3861,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Access Points do not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3769,7 +3925,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("outposts arn with region mismatch and UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outposts_arn_with_region_mismatch_and_UseArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3780,7 +3935,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -3788,7 +3946,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("outposts arn with region mismatch, custom region and UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outposts_arn_with_region_mismatch_custom_region_and_UseArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3800,7 +3957,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -3845,7 +4005,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("outposts arn with partition mismatch and UseArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`")]
         public void Outposts_arn_with_partition_mismatch_and_UseArnRegiontrue_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3856,7 +4015,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but ARN (`arn:aws:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint`) has `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -3882,7 +4044,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 outposts does not support dualstack")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Outposts does not support Dual-stack")]
         public void S3_outposts_does_not_support_dualstack_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3891,7 +4052,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Outposts does not support Dual-stack", exception.Message);
         }
 
         [TestMethod]
@@ -3899,7 +4063,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 outposts does not support fips")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Outposts does not support FIPS")]
         public void S3_outposts_does_not_support_fips_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3908,7 +4071,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Outposts does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -3916,7 +4082,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 outposts does not support accelerate")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Outposts does not support S3 Accelerate")]
         public void S3_outposts_does_not_support_accelerate_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3925,7 +4090,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = true;
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/reports";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Outposts does not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -3933,7 +4101,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("validates against subresource")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Arn: Outpost Access Point ARN contains sub resources")]
         public void Validates_against_subresource_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3942,7 +4109,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:mybucket:object:foo";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Arn: Outpost Access Point ARN contains sub resources", exception.Message);
         }
 
         [TestMethod]
@@ -3950,7 +4120,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("validates against access point host label")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `invalid.bucket#`")]
         public void Validates_against_access_point_host_label_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -3959,7 +4128,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Bucket"] = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:invalid.bucket#";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `invalid.bucket#`", exception.Message);
         }
 
         [TestMethod]
@@ -4057,7 +4229,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda @us-east-1, client region s3-external-1, useArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`")]
         public void Object_lambda_useast1_client_region_s3external1_useArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4067,7 +4238,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `s3-external-1` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -4093,7 +4267,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda @us-east-1, client region aws-global, useArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`")]
         public void Object_lambda_useast1_client_region_awsglobal_useArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4103,7 +4276,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `aws-global` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -4111,7 +4287,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda @cn-north-1, client region us-west-2 (cross partition), useArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`")]
         public void Object_lambda_cnnorth1_client_region_uswest2_cross_partition_useArnRegiontrue_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4121,7 +4296,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but ARN (`arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner`) has `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -4129,7 +4307,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with dualstack")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Object Lambda does not support Dual-stack")]
         public void Object_lambda_with_dualstack_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4139,7 +4316,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Object Lambda does not support Dual-stack", exception.Message);
         }
 
         [TestMethod]
@@ -4183,7 +4363,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda @cn-north-1, with fips")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Object_lambda_cnnorth1_with_fips_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4193,7 +4372,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -4201,7 +4383,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with accelerate")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Object Lambda does not support S3 Accelerate")]
         public void Object_lambda_with_accelerate_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4211,7 +4392,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = true;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Object Lambda does not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -4219,7 +4403,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - bad service and someresource")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)")]
         public void Object_lambda_with_invalid_arn_bad_service_and_someresource_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4229,7 +4412,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:sqs:us-west-2:123456789012:someresource";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Unrecognized format: arn:aws:sqs:us-west-2:123456789012:someresource (type: someresource)", exception.Message);
         }
 
         [TestMethod]
@@ -4237,7 +4423,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - invalid resource")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `bucket_name`")]
         public void Object_lambda_with_invalid_arn_invalid_resource_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4247,7 +4432,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `bucket_name`", exception.Message);
         }
 
         [TestMethod]
@@ -4255,7 +4443,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: bucket ARN is missing a region")]
         public void Object_lambda_with_invalid_arn_missing_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4265,7 +4452,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = false;
             parameters["Bucket"] = "arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: bucket ARN is missing a region", exception.Message);
         }
 
         [TestMethod]
@@ -4273,7 +4463,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - missing account-id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Missing account id")]
         public void Object_lambda_with_invalid_arn_missing_accountid_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4283,7 +4472,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing account id", exception.Message);
         }
 
         [TestMethod]
@@ -4291,7 +4483,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - account id contains invalid characters")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `123.45678.9012`")]
         public void Object_lambda_with_invalid_arn_account_id_contains_invalid_characters_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4301,7 +4492,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `123.45678.9012`", exception.Message);
         }
 
         [TestMethod]
@@ -4309,7 +4503,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - missing access point name")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided")]
         public void Object_lambda_with_invalid_arn_missing_access_point_name_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4319,7 +4512,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a resource of the format `accesspoint:<accesspoint name>` but no name was provided", exception.Message);
         }
 
         [TestMethod]
@@ -4327,7 +4523,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - access point name contains invalid character: *")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `*`")]
         public void Object_lambda_with_invalid_arn_access_point_name_contains_invalid_character__Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4337,7 +4532,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `*`", exception.Message);
         }
 
         [TestMethod]
@@ -4345,7 +4543,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - access point name contains invalid character: .")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `my.bucket`")]
         public void Object_lambda_with_invalid_arn_access_point_name_contains_invalid_character__1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4355,7 +4552,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `my.bucket`", exception.Message);
         }
 
         [TestMethod]
@@ -4363,7 +4563,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda with invalid arn - access point name contains sub resources")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN may only contain a single resource component after `accesspoint`.")]
         public void Object_lambda_with_invalid_arn_access_point_name_contains_sub_resources_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4373,7 +4572,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseArnRegion"] = true;
             parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN may only contain a single resource component after `accesspoint`.", exception.Message);
         }
 
         [TestMethod]
@@ -4400,7 +4602,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("object lambda arn with region mismatch and UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Object_lambda_arn_with_region_mismatch_and_UseArnRegionfalse_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4411,7 +4612,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -4488,7 +4692,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("WriteGetObjectResponse with dualstack")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Object Lambda does not support Dual-stack")]
         public void WriteGetObjectResponse_with_dualstack_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4497,7 +4700,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Object Lambda does not support Dual-stack", exception.Message);
         }
 
         [TestMethod]
@@ -4505,7 +4711,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("WriteGetObjectResponse with accelerate")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Object Lambda does not support S3 Accelerate")]
         public void WriteGetObjectResponse_with_accelerate_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4514,7 +4719,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Object Lambda does not support S3 Accelerate", exception.Message);
         }
 
         [TestMethod]
@@ -4522,7 +4730,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("WriteGetObjectResponse with fips in CN")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void WriteGetObjectResponse_with_fips_in_CN_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4531,7 +4738,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseObjectLambdaEndpoint"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -4539,7 +4749,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("WriteGetObjectResponse with invalid partition")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void WriteGetObjectResponse_with_invalid_partition_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4548,7 +4757,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "not a valid DNS name";
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -4677,7 +4889,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 Outposts bucketAlias - No endpoint set for beta")]
-        [ExpectedException(typeof(AmazonClientException), @"Expected a endpoint to be specified but no endpoint was found")]
         public void S3_Outposts_bucketAlias_No_endpoint_set_for_beta_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4686,7 +4897,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Expected a endpoint to be specified but no endpoint was found", exception.Message);
         }
 
         [TestMethod]
@@ -4694,7 +4908,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 Outposts invalid bucket name")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Outposts Bucket alias - it must be a valid bucket name.")]
         public void S3_Outposts_invalid_bucket_name_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4704,7 +4917,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Outposts Bucket alias - it must be a valid bucket name.", exception.Message);
         }
 
         [TestMethod]
@@ -4712,7 +4928,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 Outposts bucketAlias Invalid hardware type")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized hardware type: ""Expected hardware type o or e but got h""")]
         public void S3_Outposts_bucketAlias_Invalid_hardware_type_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4721,7 +4936,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized hardware type: ""Expected hardware type o or e but got h""", exception.Message);
         }
 
         [TestMethod]
@@ -4729,7 +4947,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 Outposts bucketAlias Special character in Outpost Arn")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.")]
         public void S3_Outposts_bucketAlias_Special_character_in_Outpost_Arn_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4738,7 +4955,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`.", exception.Message);
         }
 
         [TestMethod]
@@ -4746,7 +4966,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("S3 Outposts bucketAlias - No endpoint set for beta")]
-        [ExpectedException(typeof(AmazonClientException), @"Expected a endpoint to be specified but no endpoint was found")]
         public void S3_Outposts_bucketAlias_No_endpoint_set_for_beta_1_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -4755,7 +4974,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Expected a endpoint to be specified but no endpoint was found", exception.Message);
         }
 
         [TestMethod]
@@ -5032,7 +5254,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Data Plane with short zone fips china region")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Data_Plane_with_short_zone_fips_china_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5042,7 +5263,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -5068,7 +5292,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Data Plane with short zone fips with AP china region")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Data_Plane_with_short_zone_fips_with_AP_china_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5078,7 +5301,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -5323,7 +5549,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Control plane with short AZ bucket and fips china region")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Control_plane_with_short_AZ_bucket_and_fips_china_region_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5334,7 +5559,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = true;
             parameters["DisableS3ExpressSessionAuth"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -5921,7 +6149,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("bad format error")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express bucket name format.")]
         public void Bad_format_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5931,7 +6158,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized S3Express bucket name format.", exception.Message);
         }
 
         [TestMethod]
@@ -5939,7 +6169,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("bad AP format error")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express bucket name format.")]
         public void Bad_AP_format_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5949,7 +6178,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized S3Express bucket name format.", exception.Message);
         }
 
         [TestMethod]
@@ -5957,7 +6189,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("bad format error no session auth")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express bucket name format.")]
         public void Bad_format_error_no_session_auth_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5968,7 +6199,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
             parameters["DisableS3ExpressSessionAuth"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized S3Express bucket name format.", exception.Message);
         }
 
         [TestMethod]
@@ -5976,7 +6210,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("bad AP format error no session auth")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express bucket name format.")]
         public void Bad_AP_format_error_no_session_auth_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -5987,7 +6220,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
             parameters["DisableS3ExpressSessionAuth"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized S3Express bucket name format.", exception.Message);
         }
 
         [TestMethod]
@@ -5995,7 +6231,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("accelerate error")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support S3 Accelerate.")]
         public void Accelerate_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6005,7 +6240,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = true;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express does not support S3 Accelerate.", exception.Message);
         }
 
         [TestMethod]
@@ -6013,7 +6251,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("accelerate error with AP")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support S3 Accelerate.")]
         public void Accelerate_error_with_AP_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6023,7 +6260,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = true;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express does not support S3 Accelerate.", exception.Message);
         }
 
         [TestMethod]
@@ -6031,7 +6271,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Data plane bucket format error")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Data_plane_bucket_format_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6041,7 +6280,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]
@@ -6049,7 +6291,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("Data plane AP format error")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Data_plane_AP_format_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6059,7 +6300,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["UseS3ExpressControlEndpoint"] = false;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]
@@ -6067,7 +6311,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("host override data plane bucket error session auth")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Host_override_data_plane_bucket_error_session_auth_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6077,7 +6320,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "https://custom.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]
@@ -6085,7 +6331,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("host override data plane AP error session auth")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Host_override_data_plane_AP_error_session_auth_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6095,7 +6340,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "https://custom.com";
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]
@@ -6103,7 +6351,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("host override data plane bucket error")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Host_override_data_plane_bucket_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6114,7 +6361,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "https://custom.com";
             parameters["DisableS3ExpressSessionAuth"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]
@@ -6122,7 +6372,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
         [Description("host override data plane AP error")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express bucket name is not a valid virtual hostable name.")]
         public void Host_override_data_plane_AP_error_Test()
         {
             var parameters = new S3EndpointParameters();
@@ -6133,7 +6382,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Accelerate"] = false;
             parameters["Endpoint"] = "https://custom.com";
             parameters["DisableS3ExpressSessionAuth"] = true;
-            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express bucket name is not a valid virtual hostable name.", exception.Message);
         }
 
         [TestMethod]

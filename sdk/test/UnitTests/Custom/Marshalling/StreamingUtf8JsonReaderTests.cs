@@ -9,7 +9,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
-using Amazon.EC2.Model;
 using Amazon;
 namespace AWSSDK.UnitTests
 {

@@ -53,6 +53,7 @@
     <Compile Include="Runtime/MockClientConfig.cs" />
     <Compile Include="Runtime/MockFileSystem.cs" />
     <Compile Include="Runtime/RegionEndpointProviderTest.cs" />
+    <Compile Include="Runtime/RuntimePipelineTestBase.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
     <Compile Include="Runtime/UserAgentTests.cs" />
     <Compile Include="Utils.cs" />
@@ -60,16 +61,16 @@
     <Compile Include="CapacityManagerTests.cs" />
     <Compile Include="TestTools/**" />
     <Compile Remove="TestTools/Credentials" />
-    <Compile Remove="TestTools/CustomizationsTests.cs" />
     <Compile Remove="TestTools/ComparerTest.json" />
     <Compile Include="Runtime/CustomResponses.cs" />
     <Compile Include="Util/RegionFinderTests.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.11.1">
+      <PrivateAssets>all</PrivateAssets>
+      <ExcludeAssets>runtime;buildTransitive</ExcludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

@@ -37,156 +37,267 @@ namespace ServiceClientGenerator
                 IList<ProjectFileCreator.ProjectReference> projectReferences;
                 IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
                 string projectName;
+
+                var projectTypes = configuration.TargetFrameworkProjectTypes;
                 if (_isLegacyProj)
                 {
-                    projectName = string.Format("AWSSDK.UnitTests.{0}.csproj", configuration.Name);
-                    serviceProjectReferences = new List<ProjectFileCreator.ProjectReference>()
+                    // Uber projects: emit one csproj per project type group (e.g. AWSSDK.UnitTests.NetFramework.csproj, AWSSDK.UnitTests.NetStandard.csproj).
+                    // Each uber solution includes only the matching project.
+                    foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
                     {
-                        new ProjectFileCreator.ProjectReference
+                        var groupTfms = group.Select(kvp => kvp.Key).ToList();
+                        var groupProjectType = group.Key;
+                        var excludeFolder = groupProjectType == "NetFramework" ? "_netstandard" : "_bcl";
+             
+                        var excludeFolders = configuration.PlatformExcludeFolders.Concat(new[] { excludeFolder }).ToList();
+
+                        // MobileAnalytics only supports .NET Framework; exclude its test files from the NetStandard uber project.
+                        if (groupProjectType == "NetStandard")
                         {
-                            IncludePath = Utils.PathCombineAlt("..", "..", "src", "Services", "*", $"*.{configuration.Name}.csproj")
-                        },
-                        new ProjectFileCreator.ProjectReference
-                        {
-                            IncludePath = Utils.PathCombineAlt("..", "..", "test", "Services", "*", $"*.{configuration.Name}.csproj")
+                            excludeFolders.Add(Utils.PathCombineAlt("..", "Services", "MobileAnalytics", "UnitTests", "**", "*.cs"));
                         }
+
+                        projectName = $"AWSSDK.UnitTests.{groupProjectType}.csproj";
+                        serviceProjectReferences = new List<ProjectFileCreator.ProjectReference>
+                        {
+                            new ProjectFileCreator.ProjectReference
+                            {
+                                IncludePath = Utils.PathCombineAlt("..", "..", "src", "Services", "*", $"*.{groupProjectType}.csproj")
+                            },
+                            new ProjectFileCreator.ProjectReference
+                            {
+                                IncludePath = Utils.PathCombineAlt("..", "..", "test", "Services", "*", $"*.{groupProjectType}.csproj")
+                            }
+                        };
+
+                        projectReferences = GetCommonReferences(unitTestRoot, useDllReference, groupProjectType);
+                        foreach (var r in serviceProjectReferences) projectReferences.Add(r);
+
+                        var projectProperties = new Project
+                        {
+                            AssemblyName           = $"AWSSDK.UnitTests.{groupProjectType}",
+                            TargetFrameworks       = groupTfms,
+                            DefineConstants        = configuration.CompilationConstants,
+                            ReferenceDependencies  = configuration.DllReferences,
+                            CompileRemoveList      = excludeFolders,
+                            Services               = configuration.VisualStudioServices,
+                            FrameworkPathOverride  = configuration.FrameworkPathOverride,
+                            PackageReferences      = configuration.PackageReferences,
+                            SupressWarnings        = configuration.NoWarn,
+                            OutputPathOverride     = configuration.OutputPathOverride,
+                            SignBinaries           = true,
+                            KeyFilePath            = Utils.PathCombineAlt("..", "..", "awssdk.dll.snk"),
+                            IndividualFileIncludes = new List<string> { Utils.PathCombineAlt("..", "Services", "*", "UnitTests", "**", "*.cs") },
+                            EmbeddedResources      = configuration.EmbeddedResources,
+                            FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset"),
+                            FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset"),
+                            ProjectReferences      = projectReferences
+                        };
+
+                        GenerateProjectFile(projectProperties, unitTestRoot, projectName);
+                    }
+                }
+                else
+                {
+                    // MobileAnalytics only supports .NET Framework, so restrict its TFMs to net472 only.
+                    bool netFrameworkOnly = _serviceName == "MobileAnalytics";
+                    var effectiveProjectTypes = netFrameworkOnly
+                        ? projectTypes.Where(kvp => kvp.Value == "NetFramework").ToDictionary(kvp => kvp.Key, kvp => kvp.Value)
+                        : projectTypes.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+                    var effectiveTargetFrameworks = netFrameworkOnly ? effectiveProjectTypes.Keys.ToList() : configuration.TargetFrameworkVersions;
+
+                    // Per-service projects: single multi-target csproj with conditional references.
+                    projectName = $"AWSSDK.UnitTests.{_serviceName}.csproj";
+                    serviceProjectReferences = new List<ProjectFileCreator.ProjectReference>();
+
+                    foreach (var group in effectiveProjectTypes.GroupBy(kvp => kvp.Value))
+                    {
+                        string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), effectiveProjectTypes);
+                        var refs = ServiceProjectReferences(unitTestRoot, serviceConfigurations, group.Key);
+                        foreach (var r in refs) 
+                        { 
+                            r.Condition = condition; 
+                        }
+
+                        foreach (var r in refs)
+                        {
+                            serviceProjectReferences.Add(r);
+                        }
+                    }
+
+                    string projectGuid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, projectName));
+                    projectReferences = GetCommonReferences(unitTestRoot, useDllReference, configuration);
+
+                    var conditionalExcludes = new Dictionary<string, List<string>>();
+                    foreach (var group in effectiveProjectTypes.GroupBy(kvp => kvp.Value))
+                    {
+                        string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), effectiveProjectTypes);
+                        var excludeFolder = group.Key == "NetFramework" ? "_netstandard" : "_bcl";
+                        conditionalExcludes[condition] = new List<string> { excludeFolder };
+                    }
+
+                    var projectProperties = new Project
+                    {
+                        AssemblyName           = $"AWSSDK.UnitTests.{_serviceName}",
+                        TargetFrameworks       = effectiveTargetFrameworks,
+                        DefineConstants        = configuration.CompilationConstants,
+                        ReferenceDependencies  = configuration.DllReferences,
+                        CompileRemoveList      = configuration.PlatformExcludeFolders,
+                        ConditionalCompileRemoves = conditionalExcludes,
+                        Services               = configuration.VisualStudioServices,
+                        FrameworkPathOverride  = configuration.FrameworkPathOverride,
+                        PackageReferences      = configuration.PackageReferences,
+                        SupressWarnings        = configuration.NoWarn,
+                        OutputPathOverride     = configuration.OutputPathOverride,
+                        SignBinaries           = true,
+                        KeyFilePath            = Utils.PathCombineAlt("..", "..", "..", "..", "awssdk.dll.snk"),
+                        FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDK.ruleset"),
+                        FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDKForBuild.ruleset"),
+                        ProjectReferences      = projectReferences
                     };
-                }
-                else
-                {
-                    projectName = string.Format("AWSSDK.UnitTests.{0}.{1}.csproj", _serviceName, configuration.Name);
-                    serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
-                }
-                    
-                string projectGuid = Utils.GetProjectGuid(Utils.PathCombineAlt(unitTestRoot, projectName));
 
-                projectReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
-
-                var projectProperties = new Project()
-                {
-                    TargetFrameworks       = configuration.TargetFrameworkVersions,
-                    DefineConstants        = configuration.CompilationConstants.Concat(new string[] { "DEBUG" }).ToList(),
-                    ReferenceDependencies  = configuration.DllReferences,
-                    CompileRemoveList      = configuration.PlatformExcludeFolders,
-                    Services               = configuration.VisualStudioServices,
-                    FrameworkPathOverride  = configuration.FrameworkPathOverride,
-                    PackageReferences      = configuration.PackageReferences,
-                    SupressWarnings        = configuration.NoWarn,
-                    OutputPathOverride     = configuration.OutputPathOverride,
-                    SignBinaries           = false
-                };
-                if (_isLegacyProj)
-                {
-                    projectProperties.AssemblyName = string.Format("AWSSDK.UnitTests.{0}", configuration.Name);
-                    projectProperties.IndividualFileIncludes = new List<string> { Utils.PathCombineAlt("..", "Services", "*", "UnitTests", "**", "*.cs") };
-                    projectProperties.EmbeddedResources = configuration.EmbeddedResources;
-                    projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset");
-                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset");
-                    projectProperties.SignBinaries = true;
-
-                }
-                else
-                {
-                    projectProperties.AssemblyName = $"AWSSDK.UnitTests.{_serviceName}.{configuration.Name}";
-                    //Check for embedded resources
                     var embeddedResourcePath = Utils.PathCombineAlt(unitTestRoot, "Custom", "EmbeddedResource");
                     if (Directory.Exists(embeddedResourcePath))
                     {
                         projectProperties.EmbeddedResources = new List<string> { Utils.PathCombineAlt("Custom", "EmbeddedResource", "*") };
                     }
-                    projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDK.ruleset");
-                    projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
-                    projectProperties.SignBinaries = true;
-                    
-                }
 
-                if (serviceProjectReferences != null)
-                {
-                    Array.ForEach(serviceProjectReferences.ToArray(), x => projectReferences.Add(x));
-                }
+                    foreach (var r in serviceProjectReferences)
+                    {
+                        projectReferences.Add(r);
+                    }
 
-                projectProperties.ProjectReferences = projectReferences;
-                GenerateProjectFile(projectProperties, unitTestRoot, projectName);
+                    GenerateProjectFile(projectProperties, unitTestRoot, projectName);
+                }
             }
         }
 
-        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, string projectType, bool useDllReference)
+        /// <summary>
+        /// Builds an MSBuild condition expression for a group of TFMs that share the same project type.
+        /// If the group is the minority, uses equality checks; otherwise uses inequality against the other group.
+        /// </summary>
+        private static string BuildCondition(List<string> tfmsInGroup, IReadOnlyDictionary<string, string> allMappings)
         {
-            IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
+            var otherTfms = allMappings.Keys.Where(t => !tfmsInGroup.Contains(t)).ToList();
 
-            //
-            // Core project reference
-            //
-            if (!useDllReference)
+            // Use whichever produces a simpler condition
+            if (tfmsInGroup.Count <= otherTfms.Count)
             {
-                string coreProjectName = $"AWSSDK.Core.{projectType}";
-                string coreIncludePath = Utils.PathCombineAlt("..", "..", "src", "Core", coreProjectName + ".csproj");
-                if (!_isLegacyProj)
+                if (tfmsInGroup.Count == 1)
                 {
-                    coreIncludePath = Utils.PathCombineAlt("..", "..", coreIncludePath);
+                    return $"'$(TargetFramework)' == '{tfmsInGroup[0]}'";
                 }
 
-                references.Add(new ProjectFileCreator.ProjectReference
-                {
-                    Name = coreProjectName,
-                    IncludePath = coreIncludePath
-                });
-            }
-            
-            //
-            // CommonTest project reference
-            //
-            string commonTestProjectName = "AWSSDK.CommonTest";
-            string commonTestIncludePath = Utils.PathCombineAlt("..", "Common", commonTestProjectName + ".csproj");
-            if (!_isLegacyProj)
-            {
-                commonTestIncludePath = Utils.PathCombineAlt("..", "..", commonTestIncludePath);
-            }
-
-            references.Add(new ProjectFileCreator.ProjectReference
-            {
-                Name = commonTestProjectName,
-                IncludePath = commonTestIncludePath
-            });
-
-            string projectName, projectPath;
-
-            if (_isLegacyProj)
-            {
-                projectName = "ServiceClientGeneratorLib";
-                projectPath = Utils.PathCombineAlt("..", "..", "..",  "generator", "ServiceClientGeneratorLib", $"{projectName}.csproj");
+                return string.Join(" Or ", tfmsInGroup.Select(t => $"'$(TargetFramework)' == '{t}'"));
             }
             else
             {
-                projectName = "AWSSDK.UnitTestUtilities";
-                projectPath = Utils.PathCombineAlt("..", "..", "..", "UnitTests", "Custom", $"{projectName}.csproj");
+                if (otherTfms.Count == 1)
+                {
+                    return $"'$(TargetFramework)' != '{otherTfms[0]}'";
+                }
+
+                return string.Join(" And ", otherTfms.Select(t => $"'$(TargetFramework)' != '{t}'"));
+            }
+        }
+
+        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, bool useDllReference, string projectType)
+        {
+            IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
+
+            if (!useDllReference)
+            {
+                references.Add(CreateCoreReference(projectType, null));
             }
 
             references.Add(new ProjectFileCreator.ProjectReference
             {
-                Name = projectName,
-                IncludePath = projectPath
+                Name = "AWSSDK.CommonTest",
+                IncludePath = Utils.PathCombineAlt("..", "Common", "AWSSDK.CommonTest.csproj")
             });
 
-            // Add reference to CRT extension to all unit test projects now
-            // that any service can start using flexible checksums
+            references.Add(new ProjectFileCreator.ProjectReference
+            {
+                Name = "ServiceClientGeneratorLib",
+                IncludePath = Utils.PathCombineAlt("..", "..", "..", "generator", "ServiceClientGeneratorLib", "ServiceClientGeneratorLib.csproj")
+            });
+
+            references.Add(CreateCrtReference(projectType, null));
+
+            return references;
+        }
+
+        private IList<ProjectFileCreator.ProjectReference> GetCommonReferences(string unitTestRoot, bool useDllReference, ProjectFileConfiguration configuration)
+        {
+            IList<ProjectFileCreator.ProjectReference> references = new List<ProjectFileCreator.ProjectReference>();
+
+            var projectTypes = configuration.TargetFrameworkProjectTypes;
+
+            if (!useDllReference)
+            {
+                foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
+                {
+                    string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), projectTypes);
+                    references.Add(CreateCoreReference(group.Key, condition));
+                }
+            }
+
+            references.Add(new ProjectFileCreator.ProjectReference
+            {
+                Name = "AWSSDK.CommonTest",
+                IncludePath = Utils.PathCombineAlt("..", "..", "..", "Common", "AWSSDK.CommonTest.csproj")
+            });
+
+            references.Add(new ProjectFileCreator.ProjectReference
+            {
+                Name = "AWSSDK.UnitTestUtilities",
+                IncludePath = Utils.PathCombineAlt("..", "..", "..", "UnitTests", "Custom", "AWSSDK.UnitTestUtilities.csproj")
+            });
+
+            foreach (var group in projectTypes.GroupBy(kvp => kvp.Value))
+            {
+                string condition = BuildCondition(group.Select(kvp => kvp.Key).ToList(), projectTypes);
+                references.Add(CreateCrtReference(group.Key, condition));
+            }
+
+            return references;
+        }
+
+        private ProjectFileCreator.ProjectReference CreateCoreReference(string projectType, string condition)
+        {
+            string coreProjectName = $"AWSSDK.Core.{projectType}";
+            string coreIncludePath = Utils.PathCombineAlt("..", "..", "src", "Core", coreProjectName + ".csproj");
+            if (!_isLegacyProj)
+            {
+                coreIncludePath = Utils.PathCombineAlt("..", "..", coreIncludePath);
+            }
+
+            return new ProjectFileCreator.ProjectReference
+            {
+                Name = coreProjectName,
+                IncludePath = coreIncludePath,
+                Condition = condition
+            };
+        }
+
+        private ProjectFileCreator.ProjectReference CreateCrtReference(string projectType, string condition)
+        {
             var crtExtension = new ProjectFileCreator.ProjectReference
             {
-                Name = $"AWSSDK.Extensions.CrtIntegration.{projectType}"
+                Name = $"AWSSDK.Extensions.CrtIntegration.{projectType}",
+                Condition = condition
             };
-            if (_isLegacyProj) // unit test projects with all services, which need CRT also but have a different relative path
+            if (_isLegacyProj)
             {
                 crtExtension.IncludePath = Utils.PathCombineAlt(new string[] { "..", "..", "..", "extensions", "src",
                     "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj" });
             }
-            else // service-specific project
+            else
             {
                 crtExtension.IncludePath = Utils.PathCombineAlt(new string[] {"..", "..", "..", "..", "..", "extensions", "src",
                     "AWSSDK.Extensions.CrtIntegration", $"AWSSDK.Extensions.CrtIntegration.{projectType}.csproj"});
             }
-            references.Add(crtExtension);
-
-            return references;
+            return crtExtension;
         }
 
         private IList<ProjectFileCreator.ProjectReference> ServiceProjectReferences(string unitTestRoot,

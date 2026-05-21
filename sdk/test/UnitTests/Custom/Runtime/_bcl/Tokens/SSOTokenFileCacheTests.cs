@@ -34,7 +34,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
         // "Basic name"
         [DataRow(
             "admin",
@@ -81,7 +80,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
         // "Basic name"
         [DataRow(
             "admin",
