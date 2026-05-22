@@ -47,7 +47,6 @@ namespace Amazon.PI.Model
         /// The end time defined for the analysis report.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public DateTime? EndTime
         {
             get { return this._endTime; }
