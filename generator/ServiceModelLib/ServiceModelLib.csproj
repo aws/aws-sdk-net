@@ -1,0 +1,79 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>ServiceClientGenerator</RootNamespace>
+    <AssemblyName>ServiceModelLib</AssemblyName>
+    <PackageId>ServiceModelLib</PackageId>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+    <Description>Read-only library for loading AWS service models with customizations applied.</Description>
+  </PropertyGroup>
+
+  <!-- Core model classes -->
+  <ItemGroup>
+    <Compile Include="../ServiceClientGeneratorLib/ServiceModel.cs" Link="Model/ServiceModel.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Customizations.cs" Link="Model/Customizations.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Shape.cs" Link="Model/Shape.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ExceptionShape.cs" Link="Model/ExceptionShape.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Member.cs" Link="Model/Member.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Operation.cs" Link="Model/Operation.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/SimpleModels.cs" Link="Model/SimpleModels.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/OperationPaginatorConfig.cs" Link="Model/OperationPaginatorConfig.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/OperationPaginatorConfigOption.cs" Link="Model/OperationPaginatorConfigOption.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ChecksumConfiguration.cs" Link="Model/ChecksumConfiguration.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/RequestCompressionConfiguration.cs" Link="Model/RequestCompressionConfiguration.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/AuthenticationScheme.cs" Link="Model/AuthenticationScheme.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/H2SupportDegree.cs" Link="Model/H2SupportDegree.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/OperationAuthTypeParser.cs" Link="Model/OperationAuthTypeParser.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/GeneratorEnumerations.cs" Link="Model/GeneratorEnumerations.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Example.cs" Link="Model/Example.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/GeneratorOptions.cs" Link="Model/GeneratorOptions.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/CodeBuilder.cs" Link="Model/CodeBuilder.cs" />
+  </ItemGroup>
+
+  <!-- Endpoints data model -->
+  <ItemGroup>
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Argument.cs" Link="Endpoints/Argument.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/ClientContextParameter.cs" Link="Endpoints/ClientContextParameter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Condition.cs" Link="Endpoints/Condition.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/ContextParameter.cs" Link="Endpoints/ContextParameter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Deprecated.cs" Link="Endpoints/Deprecated.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/EndpointData.cs" Link="Endpoints/EndpointData.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Function.cs" Link="Endpoints/Function.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/OperationContextParameter.cs" Link="Endpoints/OperationContextParameter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Parameter.cs" Link="Endpoints/Parameter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Rule.cs" Link="Endpoints/Rule.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/RuleSet.cs" Link="Endpoints/RuleSet.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/StaticContextParameter.cs" Link="Endpoints/StaticContextParameter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Partitions/Partition.cs" Link="Endpoints/Partitions/Partition.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Partitions/PartitionAttributes.cs" Link="Endpoints/Partitions/PartitionAttributes.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Partitions/Partitions.cs" Link="Endpoints/Partitions/Partitions.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/AuthSchema.cs" Link="Endpoints/Tests/AuthSchema.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/Endpoint.cs" Link="Endpoints/Tests/Endpoint.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/EndpointProperties.cs" Link="Endpoints/Tests/EndpointProperties.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/EndpointTests.cs" Link="Endpoints/Tests/EndpointTests.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/Expectation.cs" Link="Endpoints/Tests/Expectation.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/Endpoints/Tests/Test.cs" Link="Endpoints/Tests/Test.cs" />
+  </ItemGroup>
+
+  <!-- Utilities and helpers -->
+  <ItemGroup>
+    <Compile Include="../ServiceClientGeneratorLib/Utils.cs" Link="Utilities/Utils.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/GeneratorHelpers.cs" Link="Utilities/GeneratorHelpers.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/FileReader.cs" Link="Utilities/FileReader.cs" />
+  </ItemGroup>
+
+  <!-- Vendored JSON library -->
+  <ItemGroup>
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/IJsonWrapper.cs" Link="ThirdParty/Json/IJsonWrapper.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/JsonData.cs" Link="ThirdParty/Json/JsonData.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/JsonException.cs" Link="ThirdParty/Json/JsonException.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/JsonMapper.cs" Link="ThirdParty/Json/JsonMapper.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/JsonReader.cs" Link="ThirdParty/Json/JsonReader.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/JsonWriter.cs" Link="ThirdParty/Json/JsonWriter.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/Lexer.cs" Link="ThirdParty/Json/Lexer.cs" />
+    <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/ParserToken.cs" Link="ThirdParty/Json/ParserToken.cs" />
+  </ItemGroup>
+</Project>

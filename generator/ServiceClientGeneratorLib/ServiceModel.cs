@@ -170,7 +170,7 @@ namespace ServiceClientGenerator
         /// Sets the base json info no matter how the model was constructed
         /// </summary>
         /// <param name="reader">The reader to pull the model json from</param>
-        private void InitializePaginators(TextReader reader)
+        internal void InitializePaginators(TextReader reader)
         {
             this.PaginatorsRoot = JsonMapper.ToObject(reader);
         }
