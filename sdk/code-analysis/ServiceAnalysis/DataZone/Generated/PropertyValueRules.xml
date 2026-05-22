@@ -7363,4 +7363,40 @@
     <property>Amazon.DataZone.Model.UserProfileSummary.Id</property>
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesInput.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesInput.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesOutput.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesOutput.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesPatch.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesPatch.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
 </property-value-rules>

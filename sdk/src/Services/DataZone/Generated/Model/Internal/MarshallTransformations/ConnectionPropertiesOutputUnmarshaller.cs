@@ -122,6 +122,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.SparkGlueProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("vpcProperties", targetDepth))
+                {
+                    var unmarshaller = VpcPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.VpcProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("workflowsMwaaProperties", targetDepth))
                 {
                     var unmarshaller = WorkflowsMwaaPropertiesOutputUnmarshaller.Instance;
