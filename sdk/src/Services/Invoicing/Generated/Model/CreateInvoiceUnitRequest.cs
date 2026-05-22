@@ -35,12 +35,33 @@ namespace Amazon.Invoicing.Model
     /// </summary>
     public partial class CreateInvoiceUnitRequest : AmazonInvoicingRequest
     {
+        private string _clientToken;
         private string _description;
         private string _invoiceReceiver;
         private string _name;
         private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private InvoiceUnitRule _rule;
         private bool? _taxInheritanceDisabled;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        ///  A unique, case-sensitive identifier that you provide to ensure idempotency of the
+        /// request. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
