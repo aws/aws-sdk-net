@@ -1,3 +1,110 @@
+### 4.0.254.0 (2026-05-22 18:21 UTC)
+* AppConfig (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationSignals (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* B2bi (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* BCMPricingCalculator (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* BCMRecommendedActions (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.27.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentRuntime (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudControlApi (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeStarNotifications (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlTower (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CustomerProfiles (4.0.13.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataZone (4.0.29.0)
+	* Add support for VPC connection
+* DSQL (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* DynamoDBv2 (4.0.18.5)
+	* Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+* EC2 (4.0.90.0)
+	* The ModifyInstanceAttribute API now supports modification of EnclaveOptions for the instance as a typed parameter.
+* EMRContainers (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ForecastQueryService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ForecastService (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* FraudDetector (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FreeTier (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GameLiftStreams (4.0.7.16)
+	* Added new Gen6 stream classes based on the EC2 G6e instance family. These classes are designed for streaming high-fidelity, graphically demanding games and applications that benefit from additional GPU memory and performance.
+* GeoPlaces (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* GlueDataBrew (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* InternetMonitor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Invoicing (4.0.8.0)
+	* Adds support for idempotency with a new ClientToken field for the CreateInvoiceUnit, DeleteInvoiceUnit, UpdateInvoiceUnit, DeleteProcurementPortalPreference, PutProcurementPortalPreference, and UpdateProcurementPortalPreferenceStatus APIs.
+* IoTWireless (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* IVSRealTime (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* KafkaConnect (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManagerLinuxSubscriptions (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManagerUserSubscriptions (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceDiscovery (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubRefactorSpaces (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Neptunedata (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkFirewall (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* NotificationsContacts (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* OAM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Outposts (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Panorama (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralAccount (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* PI (4.0.3.0)
+	* Added ListPerformanceAnalysisReportRecommendations API to retrieve recommendations for a performance analysis report. Added analysis configuration support to CreatePerformanceAnalysisReport for enhanced analysis types such as vacuum analysis.
+* QConnect (4.0.12.0)
+	* Added guardrail assessment results to inference spans in the ListSpans API. You can now see which AI Guardrail policies were evaluated, whether content was blocked or masked, and per-policy details for each Bedrock Converse call
+* RecycleBin (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Repostspace (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3 (4.0.23.4)
+	* Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+* S3Vectors (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Schemas (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityAgent (4.0.3.0)
+	* Adds support for verification scripts on penetration test findings. Customers can now download executable scripts to independently reproduce confirmed vulnerabilities, with instructions and required environment variables provided for each finding.
+* SimpleEmailV2 (4.0.13.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimSpaceWeaver (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSOOIDC (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Tnb (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Core 4.0.7.3
+	* Updated InternalsVisibleTo entries in Core to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.253.0 (2026-05-21 20:23 UTC)
 * ACMPCA (4.0.4.0)
 	* Adding new BDD representation of endpoint ruleset
