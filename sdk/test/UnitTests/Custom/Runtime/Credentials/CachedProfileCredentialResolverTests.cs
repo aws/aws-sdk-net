@@ -167,7 +167,7 @@ namespace AWSSDK.UnitTests
 
                 // Modify → cache invalidated.
                 fixture.SetFileContents(
-                    NetSdkBasicProfileJson("netsdk-profile", "AKID_V2", "SECRET_V2"));
+                    NetSdkBasicProfileJson("netsdk-profile", "AKID_V2", "SECRET_V2"), delayMs: 500);
 
                 var v2 = resolver.ResolveIdentity(config);
                 Assert.AreNotSame(v1, v2, "Should have re-resolved after NetSDK file change.");
