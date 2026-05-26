@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecoveryPoint Marshaller
+    /// ContinuousScanDetails Marshaller
     /// </summary>
-    public class RecoveryPointMarshaller : IRequestMarshaller<RecoveryPoint, JsonMarshallerContext> 
+    public class ContinuousScanDetailsMarshaller : IRequestMarshaller<ContinuousScanDetails, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,20 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecoveryPoint requestObject, JsonMarshallerContext context)
+        public void Marshall(ContinuousScanDetails requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBackupVaultName())
+            if(requestObject.IsSetEndTime())
             {
-                context.Writer.WritePropertyName("backupVaultName");
-                context.Writer.WriteStringValue(requestObject.BackupVaultName);
+                context.Writer.WritePropertyName("endTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndTime.Value)));
             }
 
-            if(requestObject.IsSetContinuousScanDetails())
+            if(requestObject.IsSetStartTime())
             {
-                context.Writer.WritePropertyName("continuousScanDetails");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ContinuousScanDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ContinuousScanDetails, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartTime.Value)));
             }
 
         }
@@ -68,7 +63,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecoveryPointMarshaller Instance = new RecoveryPointMarshaller();
+        public readonly static ContinuousScanDetailsMarshaller Instance = new ContinuousScanDetailsMarshaller();
 
     }
 }

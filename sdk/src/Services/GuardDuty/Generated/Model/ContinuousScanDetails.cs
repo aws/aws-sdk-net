@@ -30,51 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the recovery point configuration for scanning backup data
-    /// from Amazon Web Services Backup.
+    /// Contains information about the time range within the continuous backup in Amazon Web
+    /// Services Backup to scan for a point-in-time recovery resource.
     /// </summary>
-    public partial class RecoveryPoint
+    public partial class ContinuousScanDetails
     {
-        private string _backupVaultName;
-        private ContinuousScanDetails _continuousScanDetails;
+        private DateTime? _endTime;
+        private DateTime? _startTime;
 
         /// <summary>
-        /// Gets and sets the property BackupVaultName. 
+        /// Gets and sets the property EndTime. 
         /// <para>
-        /// The name of the Amazon Web Services Backup vault that contains the name of the recovery
-        /// point to be scanned.
+        /// The timestamp representing the end of the time range to scan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string BackupVaultName
+        public DateTime? EndTime
         {
-            get { return this._backupVaultName; }
-            set { this._backupVaultName = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if BackupVaultName property is set
-        internal bool IsSetBackupVaultName()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._backupVaultName != null;
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ContinuousScanDetails. 
+        /// Gets and sets the property StartTime. 
         /// <para>
-        /// Contains information about the time range within the continuous backup in Amazon Web
-        /// Services Backup to scan.
+        /// The timestamp representing the start of the time range to scan. Reserved for internal
+        /// use.
         /// </para>
         /// </summary>
-        public ContinuousScanDetails ContinuousScanDetails
+        public DateTime? StartTime
         {
-            get { return this._continuousScanDetails; }
-            set { this._continuousScanDetails = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if ContinuousScanDetails property is set
-        internal bool IsSetContinuousScanDetails()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._continuousScanDetails != null;
+            return this._startTime.HasValue; 
         }
 
     }

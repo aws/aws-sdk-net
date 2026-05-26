@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class ScanConfigurationRecoveryPoint
     {
         private string _backupVaultName;
+        private ScanConfigurationContinuousScanDetails _continuousScanDetails;
 
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
@@ -54,6 +55,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetBackupVaultName()
         {
             return this._backupVaultName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousScanDetails. 
+        /// <para>
+        /// The time range within the continuous backup in Amazon Web Services Backup that was
+        /// scanned for a point-in-time recovery resource.
+        /// </para>
+        /// </summary>
+        public ScanConfigurationContinuousScanDetails ContinuousScanDetails
+        {
+            get { return this._continuousScanDetails; }
+            set { this._continuousScanDetails = value; }
+        }
+
+        // Check to see if ContinuousScanDetails property is set
+        internal bool IsSetContinuousScanDetails()
+        {
+            return this._continuousScanDetails != null;
         }
 
     }

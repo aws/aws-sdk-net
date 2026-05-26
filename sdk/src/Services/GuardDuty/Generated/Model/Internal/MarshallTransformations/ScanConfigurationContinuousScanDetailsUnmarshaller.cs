@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScanConfigurationRecoveryPoint Object
+    /// Response Unmarshaller for ScanConfigurationContinuousScanDetails Object
     /// </summary>  
-    public class ScanConfigurationRecoveryPointUnmarshaller : IJsonUnmarshaller<ScanConfigurationRecoveryPoint, JsonUnmarshallerContext>
+    public class ScanConfigurationContinuousScanDetailsUnmarshaller : IJsonUnmarshaller<ScanConfigurationContinuousScanDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScanConfigurationRecoveryPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ScanConfigurationContinuousScanDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ScanConfigurationRecoveryPoint unmarshalledObject = new ScanConfigurationRecoveryPoint();
+            ScanConfigurationContinuousScanDetails unmarshalledObject = new ScanConfigurationContinuousScanDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("backupVaultName", targetDepth))
+                if (context.TestExpression("endTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("continuousScanDetails", targetDepth))
+                if (context.TestExpression("startTime", targetDepth))
                 {
-                    var unmarshaller = ScanConfigurationContinuousScanDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ContinuousScanDetails = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScanConfigurationRecoveryPointUnmarshaller _instance = new ScanConfigurationRecoveryPointUnmarshaller();        
+        private static ScanConfigurationContinuousScanDetailsUnmarshaller _instance = new ScanConfigurationContinuousScanDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScanConfigurationRecoveryPointUnmarshaller Instance
+        public static ScanConfigurationContinuousScanDetailsUnmarshaller Instance
         {
             get
             {
