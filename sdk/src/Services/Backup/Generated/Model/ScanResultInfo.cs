@@ -43,7 +43,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>THREATS_FOUND</c> | <c>NO_THREATS_FOUND</c>.
+        /// Valid values: <c>THREATS_FOUND</c> | <c>NO_THREATS_FOUND</c> | <c>UNKNOWN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

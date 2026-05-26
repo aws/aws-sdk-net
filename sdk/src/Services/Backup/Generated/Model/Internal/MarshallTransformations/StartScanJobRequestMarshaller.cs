@@ -79,6 +79,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.BackupVaultName);
             }
 
+            if(publicRequest.IsSetContinuousScanEndTime())
+            {
+                context.Writer.WritePropertyName("ContinuousScanEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ContinuousScanEndTime.Value)));
+            }
+
             if(publicRequest.IsSetIamRoleArn())
             {
                 context.Writer.WritePropertyName("IamRoleArn");
