@@ -1,3 +1,111 @@
+### 4.0.255.0 (2026-05-26 18:33 UTC)
+* AIOps (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationCostProfiler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppRunner (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Backup (4.0.13.0)
+	* Launching S3 PITR malware scanning support for AWS Backup
+* Batch (4.0.10.0)
+	* Increase the maximum value of jobExecutionTimeoutMinutes to support longer job timeouts during compute environment infrastructure updates.
+* BCMDataExports (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCore (4.0.25.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCoreControl (4.0.38.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockDataAutomation (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Billing (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Budgets (4.0.9.20)
+	* AWS Budget Name Validation Documentation Updates.
+* ChimeSDKIdentity (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMediaPipelines (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRooms (4.0.18.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRoomsML (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeConnections (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectHealth (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlCatalog (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataZone (4.0.30.0)
+	* Added resourceConfigurations and allowUserProvidedConfigurations fields to environment blueprint configuration APIs, enabling customers who migrated from V1 to V2 domains to update resource configurations (such as lineage schedules) programmatically via the SDK.
+* DevOpsGuru (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* EMRServerless (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Evs (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* GreengrassV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GuardDuty (4.0.21.0)
+	* Add malware scan support for Continuous Backups, also known as Point-In-Time Recovery Points (PITR).
+* IAMRolesAnywhere (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IdentityStore (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTManagedIntegrations (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* Ivschat (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* KeyspacesStreams (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoWebRTCStorage (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ManagedBlockchainQuery (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceAgreement (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaPackageV2 (4.0.14.0)
+	* Adding new BDD representation of endpoint ruleset
+* MedicalImaging (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* Notifications (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ObservabilityAdmin (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Odb (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* OSIS (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralChannel (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* PcaConnectorScep (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Pipes (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* RedshiftServerless (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResilienceHub (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceGroupsTaggingAPI (4.0.3.0)
+	* The GetResources API now returns MissingTagKeys in ComplianceDetails, listing tag keys defined as required in the ReportRequiredTagBlock block of the effective tag policy that are absent from the resource.
+* Route53GlobalResolver (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Tables (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* SagemakerEdgeManager (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMakerGeospatial (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Scheduler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServiceDiscovery (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServiceQuotas (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMQuickSetup (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkSpacesThinClient (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.254.0 (2026-05-22 18:21 UTC)
 * AppConfig (4.0.4.0)
 	* Adding new BDD representation of endpoint ruleset
