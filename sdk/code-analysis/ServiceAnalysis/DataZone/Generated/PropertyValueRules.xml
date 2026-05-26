@@ -6707,6 +6707,17 @@
     <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.PutResourceConfiguration.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PutResourceConfiguration.Region</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.RedshiftClusterStorage.ClusterName</property>
     <min>1</min>
     <max>63</max>
@@ -6803,6 +6814,12 @@
     <property>Amazon.DataZone.Model.RelationPattern.MaxPathLength</property>
     <min>1</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceConfiguration.Region</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ResourceTag.Key</property>
