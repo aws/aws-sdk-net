@@ -1,3 +1,109 @@
+### 4.0.256.0 (2026-05-27 18:22 UTC)
+* BCMDashboards (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockDataAutomation (4.0.10.0)
+	* Matcher Fallback extends the CustomOutputConfiguration for the Document modality in DataAutomationProjects, enabling a fallback blueprint when no match is found. A FALLBACK match status is returned, improving the matching experience and guaranteeing customers always receive CustomOutputResults.
+* CloudWatchRUM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComputeOptimizer (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComputeOptimizerAutomation (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectCases (4.0.15.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataExchange (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* DevOpsAgent (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DocDBElastic (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* EBS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECRPublic (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECS (4.0.22.0)
+	* Add support for Neuron device resource requirements for Amazon ECS
+* EKSAuth (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElementalInference (4.0.1.0)
+	* Added support for smart subtitles in Elemental Inference, enabling automatic generation of subtitles for media content. Available in English, Spanish, French, German, Italian, and Portuguese.
+* EventBridge (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Finspace (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FIS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Imagebuilder (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Inspector2 (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTDeviceAdvisor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTFleetWise (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTThingsGraph (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LaunchWizard (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LocationService (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* MainframeModernization (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceDeployment (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaLive (4.0.21.0)
+	* AWS Elemental MediaLive now supports Smart Subtitles, a new caption source that uses AWS Elemental Inference to automatically generate WebVTT and TTML captions from source audio. Available in English, Spanish, French, German, Italian, and Portuguese.
+* MemoryDB (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Mgn (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* MPA (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NovaAct (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* Omics (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* OpenSearchService (4.0.22.0)
+	* OpenSearch will now support multi-segment paths in JWKS URLs.
+* Organizations (4.0.11.13)
+	* AWS Organizations now emits CloudTrail events (AccountJoinedOrganization, AccountDepartedOrganization) to the management account for membership changes, including join and departure method and timestamp.
+* PartnerCentralBenefits (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralSelling (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* PaymentCryptography (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* PcaConnectorAd (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceExplorer2 (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* RTBFabric (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.60.0)
+	* Adds shared environment support for Restricted Instance Groups (RIGs) on SageMaker HyperPod, enabling cross-RIG workload scheduling and FSx sharing. This unlocks shared CPU-GPU environments needed for cost-efficient RL training (e.g., Nova Forge). Adds p6 instance support for recommendation jobs
+* SageMakerFeatureStoreRuntime (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SavingsPlans (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityIR (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleDBv2 (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMContacts (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SsmSap (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* SupportApp (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* VoiceID (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WellArchitected (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkMailMessageFlow (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkSpacesWeb (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.255.0 (2026-05-26 18:33 UTC)
 * AIOps (4.0.4.0)
 	* Adding new BDD representation of endpoint ruleset
