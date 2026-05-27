@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InferenceSettings Marshaller
+    /// AudioFeedInput Marshaller
     /// </summary>
-    public class InferenceSettingsMarshaller : IRequestMarshaller<InferenceSettings, JsonMarshallerContext> 
+    public class AudioFeedInputMarshaller : IRequestMarshaller<AudioFeedInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,20 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InferenceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioFeedInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAudioFeedInputs())
+            if(requestObject.IsSetAudioSelectorName())
             {
-                context.Writer.WritePropertyName("audioFeedInputs");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectAudioFeedInputsListValue in requestObject.AudioFeedInputs)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = AudioFeedInputMarshaller.Instance;
-                    marshaller.Marshall(requestObjectAudioFeedInputsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("audioSelectorName");
+                context.Writer.WriteStringValue(requestObject.AudioSelectorName);
             }
 
-            if(requestObject.IsSetFeedArn())
+            if(requestObject.IsSetFeedInput())
             {
-                context.Writer.WritePropertyName("feedArn");
-                context.Writer.WriteStringValue(requestObject.FeedArn);
+                context.Writer.WritePropertyName("feedInput");
+                context.Writer.WriteStringValue(requestObject.FeedInput);
             }
 
         }
@@ -73,7 +63,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static InferenceSettingsMarshaller Instance = new InferenceSettingsMarshaller();
+        public readonly static AudioFeedInputMarshaller Instance = new AudioFeedInputMarshaller();
 
     }
 }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeInferenceSettings Object
+    /// Response Unmarshaller for SmartSubtitleSourceSettings Object
     /// </summary>  
-    public class DescribeInferenceSettingsUnmarshaller : IJsonUnmarshaller<DescribeInferenceSettings, JsonUnmarshallerContext>
+    public class SmartSubtitleSourceSettingsUnmarshaller : IJsonUnmarshaller<SmartSubtitleSourceSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DescribeInferenceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SmartSubtitleSourceSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DescribeInferenceSettings unmarshalledObject = new DescribeInferenceSettings();
+            SmartSubtitleSourceSettings unmarshalledObject = new SmartSubtitleSourceSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioFeedInputs", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AudioFeedInput, AudioFeedInputUnmarshaller>(AudioFeedInputUnmarshaller.Instance);
-                    unmarshalledObject.AudioFeedInputs = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("feedArn", targetDepth))
+                if (context.TestExpression("captionSynchronizationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeedArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CaptionSynchronizationMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("inferenceFeedOutput", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferenceFeedOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static DescribeInferenceSettingsUnmarshaller _instance = new DescribeInferenceSettingsUnmarshaller();        
+        private static SmartSubtitleSourceSettingsUnmarshaller _instance = new SmartSubtitleSourceSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeInferenceSettingsUnmarshaller Instance
+        public static SmartSubtitleSourceSettingsUnmarshaller Instance
         {
             get
             {
