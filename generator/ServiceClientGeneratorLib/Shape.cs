@@ -81,6 +81,9 @@ namespace ServiceClientGenerator
             return new Shape(model, name, data);
         }
 
+        // Original name of the shape (for shapes that have been renamed)
+        public string OriginalShapeName { get ; set; }
+
         /// <summary>
         /// Creates a shape with a reference to the model it's a part of, its name, and the json data of the shape pulled from the model.
         /// Shapes are used to model structures and member types. If they are a structure the shape 
@@ -96,7 +99,10 @@ namespace ServiceClientGenerator
             this._name = name.ToUpperFirstCharacter();
             var nameOverride = this.model.Customizations.GetOverrideShapeName(this._name);
             if (nameOverride != null)
+            {
+                OriginalShapeName = this._name;
                 this._name = nameOverride;
+            }
         }
 
         /// <summary>

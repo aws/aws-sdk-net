@@ -534,9 +534,18 @@ namespace ServiceClientGenerator
                     if (operation.ShapeName != operation.Name)
                     {
                         mapping.Add(operation.Name, operation.ShapeName);
+                        _reverseOperationMapping.Add(operation.ShapeName, operation.Name);
                     }
                 }
                 return mapping;
+            }
+        }
+        private IDictionary<string, string> _reverseOperationMapping = new Dictionary<string, string>();
+        public IDictionary<string,string> ReverseOperationMapping
+        {
+            get
+            {
+                return _reverseOperationMapping;
             }
         }
 
