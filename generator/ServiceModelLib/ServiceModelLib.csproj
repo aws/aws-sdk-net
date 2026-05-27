@@ -65,6 +65,12 @@
     <Compile Include="../ServiceClientGeneratorLib/FileReader.cs" Link="Utilities/FileReader.cs" />
   </ItemGroup>
 
+  <!-- Embedded data files -->
+  <ItemGroup>
+    <EmbeddedResource Include="serviceId-to-folder.json" LogicalName="ServiceModelLib.serviceId-to-folder.json" />
+    <EmbeddedResource Include="serviceId-with-customizations.json" LogicalName="ServiceModelLib.serviceId-with-customizations.json" />
+  </ItemGroup>
+
   <!-- Vendored JSON library -->
   <ItemGroup>
     <Compile Include="../ServiceClientGeneratorLib/ThirdParty/Json/IJsonWrapper.cs" Link="ThirdParty/Json/IJsonWrapper.cs" />
