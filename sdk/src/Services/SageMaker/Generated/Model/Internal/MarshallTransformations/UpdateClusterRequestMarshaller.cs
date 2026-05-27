@@ -164,6 +164,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetRestrictedInstanceGroupsConfig())
+            {
+                context.Writer.WritePropertyName("RestrictedInstanceGroupsConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterRestrictedInstanceGroupsConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RestrictedInstanceGroupsConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTieredStorageConfig())
             {
                 context.Writer.WritePropertyName("TieredStorageConfig");

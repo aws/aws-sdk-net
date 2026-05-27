@@ -668,6 +668,10 @@ namespace Amazon.SageMaker
         /// Constant MlP5en48xlarge for AIRecommendationInstanceType
         /// </summary>
         public static readonly AIRecommendationInstanceType MlP5en48xlarge = new AIRecommendationInstanceType("ml.p5en.48xlarge");
+        /// <summary>
+        /// Constant MlP6B20048xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlP6B20048xlarge = new AIRecommendationInstanceType("ml.p6-b200.48xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5058,6 +5062,56 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterEventResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterFSxLustreDeletionPolicy.
+    /// </summary>
+    public class ClusterFSxLustreDeletionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeleteIfNotUsed for ClusterFSxLustreDeletionPolicy
+        /// </summary>
+        public static readonly ClusterFSxLustreDeletionPolicy DeleteIfNotUsed = new ClusterFSxLustreDeletionPolicy("DeleteIfNotUsed");
+        /// <summary>
+        /// Constant Keep for ClusterFSxLustreDeletionPolicy
+        /// </summary>
+        public static readonly ClusterFSxLustreDeletionPolicy Keep = new ClusterFSxLustreDeletionPolicy("Keep");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterFSxLustreDeletionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterFSxLustreDeletionPolicy FindValue(string value)
+        {
+            return FindValue<ClusterFSxLustreDeletionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterFSxLustreDeletionPolicy(string value)
         {
             return FindValue(value);
         }
