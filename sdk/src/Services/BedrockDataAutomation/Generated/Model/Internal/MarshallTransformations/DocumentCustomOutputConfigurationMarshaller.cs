@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CustomOutputConfiguration Marshaller
+    /// DocumentCustomOutputConfiguration Marshaller
     /// </summary>
-    public class CustomOutputConfigurationMarshaller : IRequestMarshaller<CustomOutputConfiguration, JsonMarshallerContext> 
+    public class DocumentCustomOutputConfigurationMarshaller : IRequestMarshaller<DocumentCustomOutputConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,35 +42,24 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CustomOutputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(DocumentCustomOutputConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBlueprints())
+            if(requestObject.IsSetFallbackBlueprints())
             {
-                context.Writer.WritePropertyName("blueprints");
+                context.Writer.WritePropertyName("fallbackBlueprints");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectBlueprintsListValue in requestObject.Blueprints)
+                foreach(var requestObjectFallbackBlueprintsListValue in requestObject.FallbackBlueprints)
                 {
                     context.Writer.WriteStartObject();
 
                     var marshaller = BlueprintItemMarshaller.Instance;
-                    marshaller.Marshall(requestObjectBlueprintsListValue, context);
+                    marshaller.Marshall(requestObjectFallbackBlueprintsListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetDocument())
-            {
-                context.Writer.WritePropertyName("document");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DocumentCustomOutputConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Document, context);
-
-                context.Writer.WriteEndObject();
             }
 
         }
@@ -78,7 +67,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CustomOutputConfigurationMarshaller Instance = new CustomOutputConfigurationMarshaller();
+        public readonly static DocumentCustomOutputConfigurationMarshaller Instance = new DocumentCustomOutputConfigurationMarshaller();
 
     }
 }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomOutputConfiguration Object
+    /// Response Unmarshaller for DocumentCustomOutputConfiguration Object
     /// </summary>  
-    public class CustomOutputConfigurationUnmarshaller : IJsonUnmarshaller<CustomOutputConfiguration, JsonUnmarshallerContext>
+    public class DocumentCustomOutputConfigurationUnmarshaller : IJsonUnmarshaller<DocumentCustomOutputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomOutputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DocumentCustomOutputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CustomOutputConfiguration unmarshalledObject = new CustomOutputConfiguration();
+            DocumentCustomOutputConfiguration unmarshalledObject = new DocumentCustomOutputConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blueprints", targetDepth))
+                if (context.TestExpression("fallbackBlueprints", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BlueprintItem, BlueprintItemUnmarshaller>(BlueprintItemUnmarshaller.Instance);
-                    unmarshalledObject.Blueprints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentCustomOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FallbackBlueprints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomOutputConfigurationUnmarshaller _instance = new CustomOutputConfigurationUnmarshaller();        
+        private static DocumentCustomOutputConfigurationUnmarshaller _instance = new DocumentCustomOutputConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomOutputConfigurationUnmarshaller Instance
+        public static DocumentCustomOutputConfigurationUnmarshaller Instance
         {
             get
             {

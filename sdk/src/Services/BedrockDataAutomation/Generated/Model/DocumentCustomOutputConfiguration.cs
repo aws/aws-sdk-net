@@ -30,46 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockDataAutomation.Model
 {
     /// <summary>
-    /// Custom output configuration
+    /// Custom Configuration of Document
     /// </summary>
-    public partial class CustomOutputConfiguration
+    public partial class DocumentCustomOutputConfiguration
     {
-        private List<BlueprintItem> _blueprints = AWSConfigs.InitializeCollections ? new List<BlueprintItem>() : null;
-        private DocumentCustomOutputConfiguration _document;
+        private List<BlueprintItem> _fallbackBlueprints = AWSConfigs.InitializeCollections ? new List<BlueprintItem>() : null;
 
         /// <summary>
-        /// Gets and sets the property Blueprints.
+        /// Gets and sets the property FallbackBlueprints.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<BlueprintItem> Blueprints
+        [AWSProperty(Min=0, Max=1)]
+        public List<BlueprintItem> FallbackBlueprints
         {
-            get { return this._blueprints; }
-            set { this._blueprints = value; }
+            get { return this._fallbackBlueprints; }
+            set { this._fallbackBlueprints = value; }
         }
 
-        // Check to see if Blueprints property is set
-        internal bool IsSetBlueprints()
+        // Check to see if FallbackBlueprints property is set
+        internal bool IsSetFallbackBlueprints()
         {
-            return this._blueprints != null && (this._blueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Document.
-        /// </summary>
-        public DocumentCustomOutputConfiguration Document
-        {
-            get { return this._document; }
-            set { this._document = value; }
-        }
-
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
-        {
-            return this._document != null;
+            return this._fallbackBlueprints != null && (this._fallbackBlueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
