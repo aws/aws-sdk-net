@@ -3960,6 +3960,10 @@ namespace Amazon.ECS
         /// Constant GPU for PlatformDeviceType
         /// </summary>
         public static readonly PlatformDeviceType GPU = new PlatformDeviceType("GPU");
+        /// <summary>
+        /// Constant NEURON_DEVICE for PlatformDeviceType
+        /// </summary>
+        public static readonly PlatformDeviceType NEURON_DEVICE = new PlatformDeviceType("NEURON_DEVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4210,6 +4214,10 @@ namespace Amazon.ECS
         /// Constant InferenceAccelerator for ResourceType
         /// </summary>
         public static readonly ResourceType InferenceAccelerator = new ResourceType("InferenceAccelerator");
+        /// <summary>
+        /// Constant NeuronDevice for ResourceType
+        /// </summary>
+        public static readonly ResourceType NeuronDevice = new ResourceType("NeuronDevice");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

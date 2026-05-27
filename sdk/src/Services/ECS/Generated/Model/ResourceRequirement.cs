@@ -31,7 +31,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The type and amount of a resource to assign to a container. The supported resource
-    /// types are GPUs and Elastic Inference accelerators. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
+    /// types are GPUs, Neuron devices, and Elastic Inference accelerators. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
     /// with GPUs on Amazon ECS</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
     /// with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container
     /// Service Developer Guide</i>
@@ -70,7 +71,15 @@ namespace Amazon.ECS.Model
         /// When the type is <c>GPU</c>, the value is the number of physical <c>GPUs</c> the Amazon
         /// ECS container agent reserves for the container. The number of GPUs that's reserved
         /// for all containers in a task can't exceed the number of available GPUs on the container
-        /// instance that the task is launched on.
+        /// instance that the task is launched on. You can also specify <c>ALL</c> to allocate
+        /// all available GPUs on the instance to the container.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the type is <c>NeuronDevice</c>, the value must be <c>ALL</c>. This allocates
+        /// all available Neuron devices on the instance to the container. Only one container
+        /// in a task can specify <c>NeuronDevice</c> resources. This resource type is only supported
+        /// on Managed Instances.
         /// </para>
         ///  
         /// <para>
