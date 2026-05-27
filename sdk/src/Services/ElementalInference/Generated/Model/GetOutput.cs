@@ -31,7 +31,7 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// Contains configuration information about one output in a feed. It is used in the GetFeed
-    /// action.
+    /// response.
     /// </summary>
     public partial class GetOutput
     {
@@ -63,9 +63,12 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property FromAssociation. 
         /// <para>
-        /// True means that the output was originally created in the feed by the AssociateFeed
-        /// operation. False means it was created using CreateFeed or UpdateFeed. You will need
-        /// this value if you use the UpdateFeed operation to modify the list of outputs in the
+        /// True means that the output was originally created in the feed using AssociateFeed.
+        /// False means it was created using CreateFeed or UpdateFeed. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You will need this value if you use UpdateFeed to modify the list of outputs in the
         /// feed.
         /// </para>
         /// </summary>
@@ -84,7 +87,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The ARN of the output.
+        /// The name of the output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,10 +106,9 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// A typed property for an output in a feed. It is used in the GetFeed action. It identifies
-        /// the action for Elemental Inference to perform. It also provides a repository for the
-        /// results of that action. For example, CroppingConfig output will contain the metadata
-        /// for the crop feature. 
+        /// A typed property for an output in a feed. It identifies the action for Elemental Inference
+        /// to perform. It also provides a repository for the results of that action. For example,
+        /// CroppingConfig output will contain the metadata for the crop feature. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

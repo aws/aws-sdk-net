@@ -40,7 +40,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The AWS ARN for this association.
+        /// The ARN of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An ID for this response. It is unique in Elemental Inference for this AWS account.
+        /// The ID of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
