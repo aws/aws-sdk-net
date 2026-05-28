@@ -68,8 +68,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Add a single item to be saved in the current transaction operation.
         /// </summary>
         /// <param name="item">Item to save.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddSaveItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddSaveItem(T item);
 
         /// <summary>
         /// Add a single item to be saved in the current transaction operation.
@@ -78,8 +77,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null);
 
         /// <summary>
         /// Add a single item to be saved in the current transaction operation.
@@ -89,8 +87,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key of the item to delete.</param>
         /// <param name="updateExpression">Update expression to use.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null);
 
         /// <summary>
         /// Add a number of items to be deleted in the current transaction operation.
@@ -102,16 +99,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Add a single item to be deleted in the current transaction operation.
         /// </summary>
         /// <param name="item">Item to be deleted.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddDeleteItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddDeleteItem(T item);
 
         /// <summary>
         /// Add a single item to be deleted in the current transaction operation.
         /// Item is identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to delete.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddDeleteKey(object hashKey, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddDeleteKey(object hashKey);
 
         /// <summary>
         /// Add a single item to be deleted in the current transaction operation.
@@ -119,8 +114,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddDeleteKey(object hashKey, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddDeleteKey(object hashKey, Expression conditionExpression);
 
         /// <summary>
         /// Add a single item to be deleted in the current transaction operation.
@@ -128,8 +122,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="rangeKey">Range key of the item to delete.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddDeleteKey(object hashKey, object rangeKey, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddDeleteKey(object hashKey, object rangeKey);
 
         /// <summary>
         /// Add a single item to be deleted in the current transaction operation.
@@ -138,16 +131,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key of the item to delete.</param>
         /// <param name="rangeKey">Range key of the item to delete.</param>
         /// <param name="conditionExpression">Condition to check before the operation.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression);
 
         /// <summary>
         /// Add a single item to be version checked in the current transaction operation.
         /// The item must have a single property marked with the DynamoDBVersionAttribute.
         /// </summary>
         /// <param name="item">Item to be version checked.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddVersionCheckItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddVersionCheckItem(T item);
 
         /// <summary>
         /// Add a number of items to be version checked in the current transaction operation.
@@ -162,8 +153,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="hashKey">Hash key of the item to be version checked.</param>
         /// <param name="version">Version of the item.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddVersionCheckKey(object hashKey, object version, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddVersionCheckKey(object hashKey, object version);
 
         /// <summary>
         /// Add a single item to be version checked in the current transaction operation.
@@ -172,8 +162,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key of the item to be version checked.</param>
         /// <param name="rangeKey">Range key of the item to be version checked.</param>
         /// <param name="version">Version of the item.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity.</param>
-        void AddVersionCheckKey(object hashKey, object rangeKey, object version, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddVersionCheckKey(object hashKey, object rangeKey, object version);
     }
 
     /// <summary>
@@ -212,7 +201,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
             // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
-            DocumentTransaction = new DocumentTransactWrite(table);
+            DocumentTransaction = new DocumentTransactWrite(table, _config.ReturnConsumedCapacity);
+
+            // add here return consumed capacity from config
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
@@ -236,7 +227,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddSaveItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddSaveItem(T item)
         {
             if (item == null) return;
 
@@ -246,7 +237,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Expression conditionExpression = CreateConditionExpressionForVersion(storage);
             SetNewVersion(storage);
 
-            AddDocumentTransaction(storage, conditionExpression, returnConsumedCapacity);
+            AddDocumentTransaction(storage, conditionExpression);
 
             var objectItem = new DynamoDBContext.ObjectWithItemStorage
             {
@@ -257,20 +248,19 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddSaveItem(object hashKey, Expression updateExpression, Expression conditionExpression = null)
         {
-            AddSaveItem(hashKey, rangeKey: null, updateExpression, conditionExpression, returnConsumedCapacity);
+            AddSaveItem(hashKey, rangeKey: null, updateExpression, conditionExpression);
         }
 
         /// <inheritdoc/>
-        public void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddSaveItem(object hashKey, object rangeKey, Expression updateExpression, Expression conditionExpression = null)
         {
             var operationConfig = conditionExpression != null
                 ? new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
                     ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                    ReturnConsumedCapacity = returnConsumedCapacity
                 }
                 : null;
 
@@ -289,7 +279,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddDeleteItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddDeleteItem(T item)
         {
             if (item == null) return;
 
@@ -301,37 +291,35 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 ConditionalExpression = conditionExpression,
                 ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                ReturnConsumedCapacity = returnConsumedCapacity
             });
         }
 
         /// <inheritdoc/>
-        public void AddDeleteKey(object hashKey, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddDeleteKey(object hashKey)
         {
-            AddDeleteKey(hashKey, conditionExpression: null, returnConsumedCapacity);
+            AddDeleteKey(hashKey, conditionExpression: null);
         }
 
         /// <inheritdoc/>
-        public void AddDeleteKey(object hashKey, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddDeleteKey(object hashKey, Expression conditionExpression)
         {
-            AddDeleteKey(hashKey, rangeKey: null, conditionExpression, returnConsumedCapacity);
+            AddDeleteKey(hashKey, rangeKey: null, conditionExpression);
         }
 
         /// <inheritdoc/>
-        public void AddDeleteKey(object hashKey, object rangeKey, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddDeleteKey(object hashKey, object rangeKey)
         {
-            AddDeleteKey(hashKey, rangeKey, conditionExpression: null, returnConsumedCapacity);
+            AddDeleteKey(hashKey, rangeKey, conditionExpression: null);
         }
 
         /// <inheritdoc/>
-        public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddDeleteKey(object hashKey, object rangeKey, Expression conditionExpression)
         {
             var operationConfig = conditionExpression != null
                 ? new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
                     ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                    ReturnConsumedCapacity = returnConsumedCapacity
                 }
                 : null;
 
@@ -339,7 +327,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddVersionCheckItem(T item, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddVersionCheckItem(T item)
         {
             CheckUseVersioning();
 
@@ -353,7 +341,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 ConditionalExpression = conditionExpression,
                 ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                ReturnConsumedCapacity = returnConsumedCapacity
             });
         }
 
@@ -367,13 +354,13 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public void AddVersionCheckKey(object hashKey, object version, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddVersionCheckKey(object hashKey, object version)
         {
-            AddVersionCheckKey(hashKey, rangeKey: null, version, returnConsumedCapacity);
+            AddVersionCheckKey(hashKey, rangeKey: null, version);
         }
 
         /// <inheritdoc/>
-        public void AddVersionCheckKey(object hashKey, object rangeKey, object version, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddVersionCheckKey(object hashKey, object rangeKey, object version)
         {
             CheckUseVersioning();
 
@@ -399,7 +386,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     ConditionalExpression = conditionExpression,
                     ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                    ReturnConsumedCapacity = returnConsumedCapacity
                 });
         }
 
@@ -455,7 +441,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return DynamoDBContext.CreateConditionExpressionForVersion(storage, conversionConfig);
         }
 
-        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression, ReturnConsumedCapacity returnConsumedCapacity = null)
+        private void AddDocumentTransaction(ItemStorage storage, Expression conditionExpression)
         {
             var hashKeyPropertyNames = storage.Config.HashKeyPropertyNames;
             var rangeKeyPropertyNames = storage.Config.RangeKeyPropertyNames;
@@ -476,7 +462,6 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 ConditionalExpression = conditionExpression,
                 ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
-                ReturnConsumedCapacity = returnConsumedCapacity
             };
 
             // If there are no attributes left, we need to use PutItem

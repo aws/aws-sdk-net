@@ -969,11 +969,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             {
-                var employeeTran = context.CreateTransactWrite<T>();
-                employeeTran.AddSaveItem(employee1, returnConsumedCapacity: ReturnConsumedCapacity.TOTAL);
-                employeeTran.AddSaveItem(employee2, returnConsumedCapacity: ReturnConsumedCapacity.TOTAL);
-                var productTran = context.CreateTransactWrite<VersionedProduct>();
-                productTran.AddSaveItem(product, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
+                var employeeTran = context.CreateTransactWrite<T>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL});
+                employeeTran.AddSaveItem(employee1);
+                employeeTran.AddSaveItem(employee2);
+                var productTran = context.CreateTransactWrite<VersionedProduct>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                productTran.AddSaveItem(product);
                 var tran = context.CreateMultiTableTransactWrite(employeeTran, productTran);
                 await tran.ExecuteAsync();
 
@@ -1014,11 +1014,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
 
             {
-                var employeeTran = context.CreateTransactGet<T>();
-                employeeTran.AddKey(employee1, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
-                employeeTran.AddKey(employee2, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
-                var productTran = context.CreateTransactGet<VersionedProduct>();
-                productTran.AddKey(product.Id, returnConsumedCapacity: ReturnConsumedCapacity.INDEXES);
+                var employeeTran = context.CreateTransactGet<T>(new TransactGetConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                employeeTran.AddKey(employee1);
+                employeeTran.AddKey(employee2);
+                var productTran = context.CreateTransactGet<VersionedProduct>(new TransactGetConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                productTran.AddKey(product.Id);
                 var tran = context.CreateMultiTableTransactGet(employeeTran, productTran);
                 await tran.ExecuteAsync();
 

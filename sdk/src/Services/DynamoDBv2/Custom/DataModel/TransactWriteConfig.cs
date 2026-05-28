@@ -35,12 +35,19 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool? SkipVersionCheck { get; set; }
 
+        /// <summary>
+        /// By default, is set to ReturnConsumedCapacity.NONE . 
+        /// When ReturnConsumedCapacity.TOTAL or ReturnConsumedCapacity.INDEXES are used, the consumed capacity by TransactWrite operation will be returned accordingly
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.IgnoreNullValues = IgnoreNullValues;
             config.SkipVersionCheck = SkipVersionCheck;
+            config.ReturnConsumedCapacity = ReturnConsumedCapacity;
 
             return config;
         }

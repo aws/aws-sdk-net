@@ -23,7 +23,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             };
 
             var mockTable = new Mock<ITable>();
-            mockTable.Setup(x => x.CreateTransactGet()).Returns(CreateDocumentTransactGetMock(dummyResults));
+            mockTable.Setup(x => x.CreateTransactGet(null)).Returns(CreateDocumentTransactGetMock(dummyResults));
             var table = mockTable.Object;
 
             var addressTransactGet = table.CreateTransactGet();

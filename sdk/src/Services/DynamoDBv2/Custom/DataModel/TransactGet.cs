@@ -65,23 +65,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Add a single item to get, identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity</param>
-        void AddKey(object hashKey, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddKey(object hashKey);
 
         /// <summary>
         /// Add a single item to get, identified by its hash-and-range primary key.
         /// </summary>
         /// <param name="hashKey">Hash key of the item to get.</param>
         /// <param name="rangeKey">Range key of the item to get.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity</param>
-        void AddKey(object hashKey, object rangeKey, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddKey(object hashKey, object rangeKey);
 
         /// <summary>
         /// Add a single item to get.
         /// </summary>
         /// <param name="keyObject">Object key of the item to get.</param>
-        /// <param name="returnConsumedCapacity">Constants used for properties of type ReturnConsumedCapacity</param>
-        void AddKey(T keyObject, ReturnConsumedCapacity returnConsumedCapacity = null);
+        void AddKey(T keyObject);
 
         /// <summary>
         /// Add multiple items to get.
@@ -135,23 +132,23 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<T> Results { get; } = new();
 
         /// <inheritdoc/>
-        public void AddKey(object hashKey, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddKey(object hashKey)
         {
-            AddKey(hashKey, rangeKey: null, returnConsumedCapacity);
+            AddKey(hashKey, rangeKey: null);
         }
 
         /// <inheritdoc/>
-        public void AddKey(object hashKey, object rangeKey, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddKey(object hashKey, object rangeKey)
         {
             Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
-            DocumentTransaction.AddKeyHelper(key, new TransactGetItemOperationConfig { ReturnConsumedCapacity = returnConsumedCapacity});
+            DocumentTransaction.AddKeyHelper(key);
         }
 
         /// <inheritdoc/>
-        public void AddKey(T keyObject, ReturnConsumedCapacity returnConsumedCapacity = null)
+        public void AddKey(T keyObject)
         {
             Key key = _context.MakeKey(keyObject, _storageConfig, _config);
-            DocumentTransaction.AddKeyHelper(key, new TransactGetItemOperationConfig { ReturnConsumedCapacity = returnConsumedCapacity});
+            DocumentTransaction.AddKeyHelper(key);
         }
 
         /// <inheritdoc/>
@@ -159,7 +156,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             foreach (var keyObject in keyObjects)
             {
-                AddKey(keyObject, returnConsumedCapacity:null);
+                AddKey(keyObject);
             }
         }
 

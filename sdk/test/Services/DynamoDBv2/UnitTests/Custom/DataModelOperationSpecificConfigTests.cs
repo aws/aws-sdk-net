@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(5, typeof(TransactGetConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(TransactGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(TransactWriteConfig).GetProperties().Length);
+            Assert.AreEqual(7, typeof(TransactWriteConfig).GetProperties().Length);
         }
 
         [TestMethod]

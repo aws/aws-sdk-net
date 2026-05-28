@@ -333,7 +333,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await transactWrite.ExecuteAsync();
 
             var transactGetModel1 = _context.CreateTransactGet<ModelA>();
-            transactGetModel1.AddKey(id, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL});
+            transactGetModel1.AddKey(id);
             await transactGetModel1.ExecuteAsync();
 
             Assert.Equal(1, transactGetModel1.Results.Count);

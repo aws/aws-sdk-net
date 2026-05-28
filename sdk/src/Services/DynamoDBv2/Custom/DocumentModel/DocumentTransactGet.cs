@@ -113,6 +113,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<TransactGetRequestItem> Items { get; private set; }
+        internal ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
         internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
@@ -135,12 +136,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Constructs a DocumentTransactGet instance for a specific table.
         /// </summary>
         /// <param name="targetTable">Table to get items from.</param>
-        public DocumentTransactGet(Table targetTable)
+        /// <param name="returnConsumedCapacity">Table to get items from.</param>
+        public DocumentTransactGet(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity = null)
         {
             TargetTable = targetTable;
             Items = new List<TransactGetRequestItem>();
             TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -223,7 +226,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new MultiTransactGet
             {
-                Items = Items.ToList()
+                Items = Items.ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
@@ -357,6 +361,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Properties
 
         public List<TransactGetRequestItem> Items { get; set; }
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         #endregion
 
@@ -412,15 +417,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private TransactGetItemsRequest ConstructRequest(bool isAsync)
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
-            var returnConsumedCapacity =
-                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
-                Items.Any(x => x.OperationConfig?.ReturnConsumedCapacity == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
-                ReturnConsumedCapacity.NONE;
 
             var request = new TransactGetItemsRequest 
             { 
                 TransactItems = transactItems,
-                ReturnConsumedCapacity = returnConsumedCapacity
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;

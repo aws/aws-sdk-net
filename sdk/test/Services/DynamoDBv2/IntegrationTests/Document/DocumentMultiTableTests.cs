@@ -377,8 +377,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             {
                 var transactWrite = hashRangeTable.CreateTransactWrite();
-                transactWrite.AddDocumentToPut(hrDoc1, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES});
-                transactWrite.AddDocumentToPut(hrDoc2, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                transactWrite.AddDocumentToPut(hrDoc1);
+                transactWrite.AddDocumentToPut(hrDoc2);
                 multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
             }
 
@@ -388,13 +388,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
 
                 var hTransactGet = hashTable.CreateTransactGet();
-                hTransactGet.AddKey(hashKey: 6011, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL });
-                hTransactGet.AddKey(hashKey: 6012, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                hTransactGet.AddKey(hashKey: 6011);
+                hTransactGet.AddKey(hashKey: 6012);
                 multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
 
                 var hrTransactGet = hashRangeTable.CreateTransactGet();
-                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.TOTAL });
-                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40, new TransactGetItemOperationConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
 
                 await multiTableDocumentTransactGet.ExecuteAsync();
@@ -449,8 +449,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             var transactWriteHDoc = hashTable.CreateTransactWrite();
-            transactWriteHDoc.AddDocumentToPut(hDoc1, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
-            transactWriteHDoc.AddDocumentToPut(hDoc2, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+            transactWriteHDoc.AddDocumentToPut(hDoc1);
+            transactWriteHDoc.AddDocumentToPut(hDoc2);
             multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHDoc);
             
             var hrDoc1 = new Document
@@ -472,8 +472,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
             
             var transactWriteHrDoc = hashRangeTable.CreateTransactWrite();
-            transactWriteHrDoc.AddDocumentToPut(hrDoc1, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
-            transactWriteHrDoc.AddDocumentToPut(hrDoc2, new TransactWriteItemOperationConfig { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
+            transactWriteHrDoc.AddDocumentToPut(hrDoc1);
+            transactWriteHrDoc.AddDocumentToPut(hrDoc2);
             multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHrDoc);
             
             await multiTableDocumentTransactWrite.ExecuteAsync();

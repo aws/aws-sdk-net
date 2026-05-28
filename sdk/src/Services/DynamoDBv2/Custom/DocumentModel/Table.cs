@@ -245,7 +245,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional get operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactGet object.</returns>
-        IDocumentTransactGet CreateTransactGet();
+        IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity = null);
 
         #endregion
 
@@ -256,7 +256,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// a transactional condition-check/put/update/delete operation against DynamoDB.
         /// </summary>
         /// <returns>Empty DocumentTransactWrite object.</returns>
-        IDocumentTransactWrite CreateTransactWrite();
+        IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity = null);
 
         #endregion
     }
@@ -1970,7 +1970,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region TransactGet
 
         /// <inheritdoc/>
-        public IDocumentTransactGet CreateTransactGet()
+        public IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity = null)
         {
             return new DocumentTransactGet(this);
         }
@@ -1981,9 +1981,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region TransactWrite
 
         /// <inheritdoc/>
-        public IDocumentTransactWrite CreateTransactWrite()
+        public IDocumentTransactWrite CreateTransactWrite(ReturnConsumedCapacity returnConsumedCapacity = null)
         {
-            return new DocumentTransactWrite(this);
+            return new DocumentTransactWrite(this, returnConsumedCapacity);
         }
         #endregion
   
