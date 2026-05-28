@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteCollectionDetail Object
+    /// Response Unmarshaller for CurrentCapacity Object
     /// </summary>  
-    public class DeleteCollectionDetailUnmarshaller : IJsonUnmarshaller<DeleteCollectionDetail, JsonUnmarshallerContext>
+    public class CurrentCapacityUnmarshaller : IJsonUnmarshaller<CurrentCapacity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeleteCollectionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CurrentCapacity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DeleteCollectionDetail unmarshalledObject = new DeleteCollectionDetail();
+            CurrentCapacity unmarshalledObject = new CurrentCapacity();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deletionProtection", targetDepth))
+                if (context.TestExpression("indexing", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CapacityDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Indexing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("search", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CapacityDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Search = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static DeleteCollectionDetailUnmarshaller _instance = new DeleteCollectionDetailUnmarshaller();        
+        private static CurrentCapacityUnmarshaller _instance = new CurrentCapacityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteCollectionDetailUnmarshaller Instance
+        public static CurrentCapacityUnmarshaller Instance
         {
             get
             {

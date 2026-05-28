@@ -37,7 +37,9 @@ namespace Amazon.OpenSearchServerless.Model
         private string _arn;
         private CollectionGroupCapacityLimits _capacityLimits;
         private long? _createdDate;
+        private CurrentCapacity _currentCapacity;
         private string _description;
+        private ServerlessGeneration _generation;
         private string _id;
         private string _name;
         private int? _numberOfCollections;
@@ -99,6 +101,24 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentCapacity. 
+        /// <para>
+        /// Current search and indexing capacity for the collection group.
+        /// </para>
+        /// </summary>
+        public CurrentCapacity CurrentCapacity
+        {
+            get { return this._currentCapacity; }
+            set { this._currentCapacity = value; }
+        }
+
+        // Check to see if CurrentCapacity property is set
+        internal bool IsSetCurrentCapacity()
+        {
+            return this._currentCapacity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the collection group.
@@ -114,6 +134,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Generation. 
+        /// <para>
+        /// The generation of Amazon OpenSearch Serverless for the collection group.
+        /// </para>
+        /// </summary>
+        public ServerlessGeneration Generation
+        {
+            get { return this._generation; }
+            set { this._generation = value; }
+        }
+
+        // Check to see if Generation property is set
+        internal bool IsSetGeneration()
+        {
+            return this._generation != null;
         }
 
         /// <summary>

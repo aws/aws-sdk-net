@@ -41,7 +41,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionRequest.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -509,7 +509,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionDetail.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -521,7 +521,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionErrorDetail.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -533,7 +533,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionFilters.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -546,11 +546,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupCapacityLimits.MinIndexingCapacityInOCU</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupCapacityLimits.MinSearchCapacityInOCU</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionGroupDetail.Id</property>
@@ -603,7 +603,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CollectionSummary.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -621,7 +621,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateCollectionDetail.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -663,7 +663,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.DeleteCollectionDetail.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -745,7 +745,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicyResourceIdentifier.Resource</property>
-    <pattern>index/[a-z][a-z0-9-]{3,32}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*)</pattern>
+    <pattern>index/[a-z][a-z0-9-]{3,63}/([a-z;0-9&amp;$%][+.~=\-_a-z;0-9&amp;$%]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.LifecyclePolicySummary.Description</property>
@@ -878,7 +878,7 @@
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateCollectionDetail.Name</property>
     <min>3</min>
-    <max>32</max>
+    <max>64</max>
     <pattern>[a-z][a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
