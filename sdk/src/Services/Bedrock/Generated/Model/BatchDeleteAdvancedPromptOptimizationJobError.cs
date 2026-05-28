@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Batch deletion error for an advanced prompt optimization job.
+    /// Contains information about an error that occurred when deleting an advanced prompt
+    /// optimization job.
     /// </summary>
     public partial class BatchDeleteAdvancedPromptOptimizationJobError
     {
@@ -41,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// Error code for the deletion failure.
+        /// The error code for the deletion failure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// Identifier of the job that failed to delete.
+        /// The identifier of the job that could not be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -79,7 +80,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Error message describing the deletion failure.
+        /// A message describing the error.
         /// </para>
         /// </summary>
         public string Message

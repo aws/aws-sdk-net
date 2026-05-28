@@ -30,29 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Contains the output data configuration for an advanced prompt optimization job.
+    /// The data source for a custom model. This is a union type that supports the following
+    /// member:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>modelPackageArnDataSource</c> — Specifies a SageMaker AI model package as the
+    /// data source.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
-    public partial class AdvancedPromptOptimizationOutputConfig
+    public partial class CustomModelDataSource
     {
-        private string _s3Uri;
+        private ModelPackageArnDataSource _modelPackageArnDataSource;
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property ModelPackageArnDataSource. 
         /// <para>
-        /// The S3 URI prefix where the optimization results will be written.
+        /// A SageMaker AI model package ARN as the data source for the custom model. When you
+        /// specify a model package ARN, Amazon Bedrock resolves the model package to retrieve
+        /// the model artifacts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
-        public string S3Uri
+        public ModelPackageArnDataSource ModelPackageArnDataSource
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._modelPackageArnDataSource; }
+            set { this._modelPackageArnDataSource = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if ModelPackageArnDataSource property is set
+        internal bool IsSetModelPackageArnDataSource()
         {
-            return this._s3Uri != null;
+            return this._modelPackageArnDataSource != null;
         }
 
     }

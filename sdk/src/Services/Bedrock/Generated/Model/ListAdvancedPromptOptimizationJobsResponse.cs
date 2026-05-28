@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobSummaries. 
         /// <para>
-        /// List of advanced prompt optimization job summaries.
+        /// A list of advanced prompt optimization job summaries.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token for the next page of results.
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token in a subsequent request to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

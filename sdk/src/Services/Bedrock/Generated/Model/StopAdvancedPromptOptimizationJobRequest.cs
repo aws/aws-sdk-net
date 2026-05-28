@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the StopAdvancedPromptOptimizationJob operation.
-    /// Stops an in-progress advanced prompt optimization job.
+    /// Stops an advanced prompt optimization job that is in progress.
     /// </summary>
     public partial class StopAdvancedPromptOptimizationJobRequest : AmazonBedrockRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// ARN or ID of the advanced prompt optimization job to stop.
+        /// The ARN or ID of the advanced prompt optimization job to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

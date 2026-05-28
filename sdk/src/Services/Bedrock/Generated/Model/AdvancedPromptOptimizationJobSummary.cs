@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Summary of an advanced prompt optimization job.
+    /// Contains a summary of an advanced prompt optimization job.
     /// </summary>
     public partial class AdvancedPromptOptimizationJobSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Creation time of the advanced prompt optimization job.
+        /// The time at which the job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// ARN of the advanced prompt optimization job.
+        /// The Amazon Resource Name (ARN) of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -81,7 +81,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the advanced prompt optimization job.
+        /// The name of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -100,7 +100,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// Status of the advanced prompt optimization job.
+        /// The status of the job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// Last modified time of the advanced prompt optimization job.
+        /// The time at which the job was last modified.
         /// </para>
         /// </summary>
         public DateTime? LastModifiedTime

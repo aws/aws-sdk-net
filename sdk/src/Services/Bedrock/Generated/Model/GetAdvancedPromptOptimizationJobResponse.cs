@@ -49,7 +49,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Creation time of the advanced prompt optimization job.
+        /// The time at which the advanced prompt optimization job was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,7 +68,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// KMS key ARN used for encrypting output data.
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt the output data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -87,7 +87,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// Failure message if the advanced prompt optimization job failed.
+        /// If the job failed, a message describing the reason for the failure.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -106,7 +106,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InputConfig. 
         /// <para>
-        /// Input data configuration for the advanced prompt optimization job.
+        /// The input data configuration for the optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +125,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// ARN of the advanced prompt optimization job.
+        /// The Amazon Resource Name (ARN) of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -144,7 +144,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobDescription. 
         /// <para>
-        /// Description of the advanced prompt optimization job.
+        /// The description of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -163,7 +163,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the advanced prompt optimization job.
+        /// The name of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -182,7 +182,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// Status of the advanced prompt optimization job.
+        /// The status of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +201,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// Last modified time of the advanced prompt optimization job.
+        /// The time at which the advanced prompt optimization job was last modified.
         /// </para>
         /// </summary>
         public DateTime? LastModifiedTime
@@ -219,7 +219,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelConfigurations. 
         /// <para>
-        /// Model configurations for advanced prompt optimization.
+        /// The model configurations used in the optimization job.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -243,7 +243,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// Output data configuration for the advanced prompt optimization job.
+        /// The output data configuration for the optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

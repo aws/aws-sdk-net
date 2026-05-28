@@ -36,6 +36,21 @@ namespace Amazon.Bedrock.Model
     /// 
     ///  
     /// <para>
+    /// You can provide the model data source in one of the following ways:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>customModelDataSource</c> — Specify a SageMaker AI model package ARN. Amazon Bedrock
+    /// resolves the model package to retrieve the model artifacts. This is the preferred
+    /// method for new SageMaker AI training outputs.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>modelSourceConfig</c> — Specify an Amazon S3 URI pointing to the Amazon-managed
+    /// Amazon S3 bucket containing your model artifacts.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// To use the model for inference, you must purchase Provisioned Throughput for it. You
     /// can't use On-demand inference with these custom models. For more information about
     /// Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
@@ -83,6 +98,7 @@ namespace Amazon.Bedrock.Model
     public partial class CreateCustomModelRequest : AmazonBedrockRequest
     {
         private string _clientRequestToken;
+        private CustomModelDataSource _customModelDataSource;
         private string _modelKmsKeyArn;
         private string _modelName;
         private ModelDataSource _modelSourceConfig;
@@ -109,6 +125,31 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomModelDataSource. 
+        /// <para>
+        /// The data source for the custom model. Use this field to specify a SageMaker AI model
+        /// package ARN as the source for your custom model. Amazon Bedrock resolves the model
+        /// package to retrieve the model artifacts.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either <c>customModelDataSource</c> or <c>modelSourceConfig</c>, but
+        /// not both.
+        /// </para>
+        /// </summary>
+        public CustomModelDataSource CustomModelDataSource
+        {
+            get { return this._customModelDataSource; }
+            set { this._customModelDataSource = value; }
+        }
+
+        // Check to see if CustomModelDataSource property is set
+        internal bool IsSetCustomModelDataSource()
+        {
+            return this._customModelDataSource != null;
         }
 
         /// <summary>
@@ -164,7 +205,6 @@ namespace Amazon.Bedrock.Model
         /// Amazon-managed Amazon S3 bucket containing your model artifacts.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ModelDataSource ModelSourceConfig
         {
             get { return this._modelSourceConfig; }
@@ -216,6 +256,12 @@ namespace Amazon.Bedrock.Model
         /// S3 bucket containing your model artifacts and the KMS key (if specified). For more
         /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html">Setting
         /// up an IAM service role for importing models</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is required when you use <c>modelSourceConfig</c> with an Amazon S3 data
+        /// source. It is not required when you use <c>customModelDataSource</c> with a model
+        /// package ARN, because Amazon Bedrock uses its own credentials to access the model artifacts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
