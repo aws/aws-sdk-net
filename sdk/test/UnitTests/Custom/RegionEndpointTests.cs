@@ -36,7 +36,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var config = new Amazon.DynamoDBv2.AmazonDynamoDBConfig();
 
-            var exception = Assert.ThrowsException<Amazon.Runtime.AmazonClientException>(() => config.ServiceURL = "fnoeiw;gh903ht9034gnofn");
+            var exception = Assert.ThrowsExactly<Amazon.Runtime.AmazonClientException>(() => config.ServiceURL = "fnoeiw;gh903ht9034gnofn");
             Assert.AreEqual("Value for ServiceURL is not a valid URL: fnoeiw;gh903ht9034gnofn", exception.Message);
         }
     }

@@ -130,6 +130,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.MetricsStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mlModelInferencePayerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MlModelInferencePayerAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

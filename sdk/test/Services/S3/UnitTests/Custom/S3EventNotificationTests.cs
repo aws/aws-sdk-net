@@ -96,10 +96,9 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Amazon.Runtime.AmazonClientException))]
         public void ParseS3EventInvalidJson()
         {
-            var eventRecords = S3EventNotification.ParseJson("{");
+            Assert.ThrowsExactly<Amazon.Runtime.AmazonClientException>(() => S3EventNotification.ParseJson("{"));
         }
     }
 }

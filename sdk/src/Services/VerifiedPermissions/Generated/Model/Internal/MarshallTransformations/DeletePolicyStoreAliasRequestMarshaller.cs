@@ -81,6 +81,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AliasName);
             }
 
+            if(publicRequest.IsSetDeletionMode())
+            {
+                context.Writer.WritePropertyName("deletionMode");
+                context.Writer.WriteStringValue(publicRequest.DeletionMode);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

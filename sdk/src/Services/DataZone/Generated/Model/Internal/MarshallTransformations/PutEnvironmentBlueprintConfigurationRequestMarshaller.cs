@@ -79,6 +79,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowUserProvidedConfigurations())
+            {
+                context.Writer.WritePropertyName("allowUserProvidedConfigurations");
+                context.Writer.WriteBooleanValue(publicRequest.AllowUserProvidedConfigurations.Value);
+            }
+
             if(publicRequest.IsSetEnabledRegions())
             {
                 context.Writer.WritePropertyName("enabledRegions");
@@ -158,6 +164,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceConfigurations())
+            {
+                context.Writer.WritePropertyName("resourceConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceConfigurationsListValue in publicRequest.ResourceConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PutResourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

@@ -102,6 +102,7 @@ namespace Amazon.SageMaker.Model
         private UserSettings _defaultUserSettings;
         private string _domainName;
         private DomainSettings _domainSettings;
+        private HomeEfsFileSystemCreation _homeEfsFileSystemCreation;
         private string _homeEfsFileSystemKmsKeyId;
         private string _kmsKeyId;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -257,6 +258,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainSettings()
         {
             return this._domainSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeEfsFileSystemCreation. 
+        /// <para>
+        /// Indicates whether to create a home EFS file system for the domain. Defaults to <c>Enabled</c>.
+        /// Set to <c>Disabled</c> to skip EFS creation and reduce domain creation time. You can
+        /// enable EFS later by calling <c>UpdateDomain</c>.
+        /// </para>
+        /// </summary>
+        public HomeEfsFileSystemCreation HomeEfsFileSystemCreation
+        {
+            get { return this._homeEfsFileSystemCreation; }
+            set { this._homeEfsFileSystemCreation = value; }
+        }
+
+        // Check to see if HomeEfsFileSystemCreation property is set
+        internal bool IsSetHomeEfsFileSystemCreation()
+        {
+            return this._homeEfsFileSystemCreation != null;
         }
 
         /// <summary>

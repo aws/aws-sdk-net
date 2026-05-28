@@ -182,6 +182,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("verificationScript", targetDepth))
+                {
+                    var unmarshaller = VerificationScriptUnmarshaller.Instance;
+                    unmarshalledObject.VerificationScript = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -213,7 +213,7 @@ namespace AWSSDK.UnitTests
             using (var resolver = new DefaultAWSCredentialsIdentityResolver())
             {
                 // First resolution attempt should fail
-                Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(clientConfig: null));
+                Assert.ThrowsExactly<AmazonClientException>(() => resolver.ResolveIdentity(clientConfig: null));
 
                 // Fix the provider and try again - should succeed
                 shouldFail = false;

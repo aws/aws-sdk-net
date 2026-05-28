@@ -36,6 +36,7 @@ namespace Amazon.PaymentCryptographyData.Model
     public partial class KekValidationRequest
     {
         private SymmetricKeyAlgorithm _deriveKeyAlgorithm;
+        private RandomKeyMaxLength _randomKeyMaxLength;
 
         /// <summary>
         /// Gets and sets the property DeriveKeyAlgorithm. 
@@ -54,6 +55,24 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetDeriveKeyAlgorithm()
         {
             return this._deriveKeyAlgorithm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RandomKeyMaxLength. 
+        /// <para>
+        /// The maximum length of the random key to generate for a KEK validation request.
+        /// </para>
+        /// </summary>
+        public RandomKeyMaxLength RandomKeyMaxLength
+        {
+            get { return this._randomKeyMaxLength; }
+            set { this._randomKeyMaxLength = value; }
+        }
+
+        // Check to see if RandomKeyMaxLength property is set
+        internal bool IsSetRandomKeyMaxLength()
+        {
+            return this._randomKeyMaxLength != null;
         }
 
     }

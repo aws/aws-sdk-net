@@ -30,7 +30,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class S3ControlArnExtensionsTests
     {
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3Control")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "op-01234567890123456", "myaccesspoint", null)]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "op-01234567890123456", "myaccesspoint", "foo.txt")]
@@ -60,7 +60,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(outpostArn, outpost.FullResourceName);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3Control")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accespoint:myaccesspoint")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-012345678.90123456:accesspoint:myaccesspoint")]
@@ -69,10 +69,9 @@ namespace AWSSDK.UnitTests
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:buckt:mybucket")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost::bucket:mybucket")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outposta:op-01234567890123456:accesspoint:myaccesspointt")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ParseOutpostBadInput(string input)
         {
-            Arn.Parse(input).ParseOutpost();
+            Assert.ThrowsExactly<AmazonClientException>(() => Arn.Parse(input).ParseOutpost());
         }
 
     }

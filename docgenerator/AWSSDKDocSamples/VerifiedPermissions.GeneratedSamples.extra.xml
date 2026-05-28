@@ -276,12 +276,31 @@
         <value>
             <example>
                 <para>
-                    The following example deletes the policy store alias with name example-policy-store.
+                    The following example soft deletes the policy store alias with name example-policy-store. The alias enters the PendingDeletion state.
                 </para>
                 <code
-                    title="DeletePolicyStoreAlias"
+                    title="Soft delete a policy store alias"
                     source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicyStoreAlias(Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicyStoreAlias(Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreAliasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example hard deletes the policy store alias with name example-policy-store. The alias is immediately deleted, bypassing the PendingDeletion state.
+                </para>
+                <code
+                    title="Hard delete a policy store alias"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>

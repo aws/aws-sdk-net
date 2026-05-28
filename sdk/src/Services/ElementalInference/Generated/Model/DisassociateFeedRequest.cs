@@ -31,8 +31,8 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateFeed operation.
-    /// Releases the resource (for example, an MediaLive channel) that is associated with
-    /// this feed. The outputs in the feed become disabled.
+    /// Releases the resource (the source media) that is associated with this feed. The outputs
+    /// in the feed become DISABLED.
     /// </summary>
     public partial class DisassociateFeedRequest : AmazonElementalInferenceRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property AssociatedResourceName. 
         /// <para>
-        /// The name of the resource currently associated with the feed'.
+        /// The name of the resource currently associated with the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -63,6 +63,12 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property DryRun. 
         /// <para>
         /// Set to true if you want to do a dry run of the disassociate action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Elemental Inference will validate that the real request would succeed without actually
+        /// making any changes. A dry run catches errors such as missing IAM permissions. If the
+        /// dry run fails, the action returns a 4xx error code. 
         /// </para>
         /// </summary>
         public bool? DryRun

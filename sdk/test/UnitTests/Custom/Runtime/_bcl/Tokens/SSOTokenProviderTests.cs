@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.SharedInterfaces;
@@ -38,8 +37,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
-        [DynamicData(nameof(TestCases), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(TestCases))]
         public void CachedTokenVariationCases(TestCase testCase)
         {
             // ARRANGE
@@ -142,8 +140,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
-        [DynamicData(nameof(TestCases), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(TestCases))]
         public async Task CachedTokenVariationCasesAsync(TestCase testCase)
         {
             // ARRANGE

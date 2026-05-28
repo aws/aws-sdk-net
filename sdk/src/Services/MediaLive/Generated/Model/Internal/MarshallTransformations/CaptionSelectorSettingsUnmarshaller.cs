@@ -92,6 +92,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Scte27SourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("smartSubtitleSourceSettings", targetDepth))
+                {
+                    var unmarshaller = SmartSubtitleSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SmartSubtitleSourceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("teletextSourceSettings", targetDepth))
                 {
                     var unmarshaller = TeletextSourceSettingsUnmarshaller.Instance;

@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.UnitTests
             AssertAllConvertersAreRegistered(DynamoDBEntryConversion.V2, "ConverterV2");
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
@@ -40,7 +40,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(DynamoDBEntryConversions))]
         public void ConvertToEntry_ByteArray(ConversionSchema schema)
         {
@@ -49,7 +49,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(new Primitive(ByteArray), actualPrimitive);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(DynamoDBEntryConversions))]
         public void ConvertFromEntry_ByteArray(ConversionSchema schema)
         {
@@ -58,7 +58,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(ByteArray, (byte[])actualValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
@@ -66,7 +66,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
@@ -74,7 +74,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertToEntry_MemoryStream(ConversionSchema schema)
         {
@@ -84,7 +84,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(new Primitive(ByteArray), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_MemoryStream(ConversionSchema schema)
         {
@@ -94,7 +94,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(ByteArray, memoryStream.ToArray());
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertToEntry_DateTime(ConversionSchema schema)
         {
@@ -104,7 +104,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(new Primitive("2024-07-03T01:31:47.000Z", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_DateTime(ConversionSchema schema)
         {
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedDateTime, actualDateTime);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertToEntry_Dictionary(ConversionSchema schema)
         {
@@ -144,7 +144,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedDocument, document);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_DynamoDbList_ToArray(ConversionSchema schema)
         {
@@ -157,7 +157,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_DynamoDbList_ToList(ConversionSchema schema)
         {
@@ -170,7 +170,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_PrimitiveList_ToArray(ConversionSchema schema)
         {
@@ -183,7 +183,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_PrimitiveList_ToList(ConversionSchema schema)
         {
@@ -196,7 +196,7 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_PrimitiveList_ToHashSet(ConversionSchema schema)
         {
@@ -273,7 +273,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
 #if NET8_0_OR_GREATER
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertToEntry_DateOnly(ConversionSchema schema)
         {
@@ -283,7 +283,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(new Primitive("2024-07-03", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_DateOnly(ConversionSchema schema)
         {
@@ -294,7 +294,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedDateOnly, actualDateOnly);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertToEntry_TimeOnly(ConversionSchema schema)
         {
@@ -304,7 +304,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(new Primitive("18:31:56.123", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_TimeOnly(ConversionSchema schema)
         {
@@ -315,7 +315,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedTimeOnly, actualTimeOnly);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
         public void ConvertFromEntry_ShouldBeAbleToReadDateOnlyAsDateTime(ConversionSchema schema)
         {

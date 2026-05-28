@@ -118,6 +118,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("HomeEfsFileSystemCreation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HomeEfsFileSystemCreation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("HomeEfsFileSystemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

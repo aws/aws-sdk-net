@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.CloudWatch;
+using Amazon.S3;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
@@ -48,7 +48,7 @@ namespace AWSSDK.UnitTests
         [DataRow(CoreChecksumAlgorithm.CRC64NVME, "abc", "BeXKuz/B+us=")]
         [DataRow(CoreChecksumAlgorithm.CRC64NVME, "Hello world", "OOJZ0D8xKts=")]
         [DataRow(CoreChecksumAlgorithm.SHA512, "Hello world", "t/eDuu2Cl/DbkXRiGE/08I5pwtXl95qUJgD5cl9Yzh8pwYE5v4CwbA//K900c4RS7PQMSIwip+PYDN9vnBwNRw==")]
-        [DataTestMethod]
+        [TestMethod]
         public void CalculateChecksumTest(CoreChecksumAlgorithm algorithm, string content, string expectedBase64Checksum)
         {
             var contentBytes = Encoding.Default.GetBytes(content);
@@ -61,7 +61,7 @@ namespace AWSSDK.UnitTests
         /// an algorithm is provided, and whether a precalculated checksum is provided
         /// to verify that the correct checksum is calculated for the request.
         /// </summary>
-        [DataTestMethod]
+        [TestMethod]
 
         // MD5 fallback test cases
         [DataRow(false, true, CoreChecksumAlgorithm.NONE, null, "", "Content-MD5")]
@@ -108,7 +108,7 @@ namespace AWSSDK.UnitTests
                 headers.Add(originalHeaderKey, "foo");
             }
 
-            ChecksumUtils.SetRequestChecksumV2(request, new AmazonCloudWatchConfig
+            ChecksumUtils.SetRequestChecksumV2(request, new AmazonS3Config
             {
                 RequestChecksumCalculation = requestChecksumCalculation
             });

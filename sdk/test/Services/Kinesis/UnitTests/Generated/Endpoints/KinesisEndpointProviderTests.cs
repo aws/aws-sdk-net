@@ -724,7 +724,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -732,7 +731,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -740,7 +742,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -748,7 +749,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -756,11 +760,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new KinesisEndpointParameters();
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -768,7 +774,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Failed to parse ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void Invalid_ARN_Failed_to_parse_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -776,7 +781,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -784,7 +792,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: partition missing from ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void Invalid_ARN_partition_missing_from_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -792,7 +799,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn::kinesis:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -800,7 +810,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: partitions mismatch.")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition: aws from ARN doesn't match with partition name: aws-us-gov.")]
         public void Invalid_ARN_partitions_mismatch_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -808,7 +817,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
         }
 
         [TestMethod]
@@ -816,7 +828,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Not Kinesis")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN was not for the Kinesis service, found: s3.")]
         public void Invalid_ARN_Not_Kinesis_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -824,7 +835,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:s3:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
         }
 
         [TestMethod]
@@ -832,7 +846,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Region is missing in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void Invalid_ARN_Region_is_missing_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -840,7 +853,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis::123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -848,7 +864,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Region is empty string in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void Invalid_ARN_Region_is_empty_string_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -856,7 +871,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:  :123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -864,7 +882,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void Invalid_ARN_Invalid_account_id_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -873,7 +890,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:us-east-1::stream/testStream";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -881,7 +901,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void Invalid_ARN_Invalid_account_id_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -890,7 +909,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:   :stream/testStream";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -898,7 +920,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Kinesis ARNs only support stream arn types")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")]
         public void Invalid_ARN_Kinesis_ARNs_only_support_stream_arn_types_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -906,7 +927,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
         }
 
         [TestMethod]
@@ -914,7 +938,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("OperationType not set")]
-        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void OperationType_not_set_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -922,7 +945,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
         }
 
         [TestMethod]
@@ -1203,7 +1229,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ConsumerARN: Failed to parse ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void Invalid_ConsumerARN_Failed_to_parse_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1211,7 +1236,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -1219,7 +1247,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ConsumerARN: partition missing from ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void Invalid_ConsumerARN_partition_missing_from_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1227,7 +1254,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -1235,7 +1265,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: partitions mismatch.")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition: aws from ARN doesn't match with partition name: aws-us-gov.")]
         public void Invalid_ARN_partitions_mismatch_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1243,7 +1272,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
         }
 
         [TestMethod]
@@ -1251,7 +1283,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Not Kinesis")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN was not for the Kinesis service, found: s3.")]
         public void Invalid_ARN_Not_Kinesis_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1259,7 +1290,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
         }
 
         [TestMethod]
@@ -1267,7 +1301,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Region is missing in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void Invalid_ARN_Region_is_missing_in_ARN_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1275,7 +1308,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -1283,7 +1319,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Region is empty string in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void Invalid_ARN_Region_is_empty_string_in_ARN_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1291,7 +1326,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -1299,7 +1337,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void Invalid_ARN_Invalid_account_id_2_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1308,7 +1345,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -1316,7 +1356,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void Invalid_ARN_Invalid_account_id_3_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1325,7 +1364,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -1333,7 +1375,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")]
         public void Invalid_ARN_Kinesis_ARNs_only_support_stream_arnconsumer_arn_types_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1341,7 +1382,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
         }
 
         [TestMethod]
@@ -1349,7 +1393,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("OperationType not set")]
-        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void OperationType_not_set_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1357,7 +1400,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ConsumerARN"] = "arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
         }
 
         [TestMethod]
@@ -1673,7 +1719,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN test: Invalid ARN: Failed to parse ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void ResourceARN_test_Invalid_ARN_Failed_to_parse_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1681,7 +1726,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -1689,7 +1737,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: partition missing from ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_partition_missing_from_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1697,7 +1744,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn::kinesis:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -1705,7 +1755,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: partitions mismatch.")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition: aws from ARN doesn't match with partition name: aws-us-gov.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_partitions_mismatch_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1713,7 +1762,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
         }
 
         [TestMethod]
@@ -1721,7 +1773,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Not Kinesis")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN was not for the Kinesis service, found: s3.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Not_Kinesis_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1729,7 +1780,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:s3:us-west-2:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
         }
 
         [TestMethod]
@@ -1737,7 +1791,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Region is missing in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Region_is_missing_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1745,7 +1798,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis::123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -1753,7 +1809,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Region is empty string in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Region_is_empty_string_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1761,7 +1816,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:  :123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -1769,7 +1827,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Invalid_account_id_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1778,7 +1835,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1::stream/testStream";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -1786,7 +1846,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Invalid_account_id_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1795,7 +1854,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:   :stream/testStream";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -1803,7 +1865,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")]
         public void ResourceARN_as_StreamARN_test_Invalid_ARN_Kinesis_ARNs_only_support_stream_arn_types_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1811,7 +1872,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
         }
 
         [TestMethod]
@@ -1819,7 +1883,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as StreamARN test: OperationType not set")]
-        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void ResourceARN_as_StreamARN_test_OperationType_not_set_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -1827,7 +1890,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:stream/testStream";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
         }
 
         [TestMethod]
@@ -2108,7 +2174,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: partition missing from ARN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Failed to parse ARN.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_partition_missing_from_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2116,7 +2181,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn::kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Failed to parse ARN.", exception.Message);
         }
 
         [TestMethod]
@@ -2124,7 +2192,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: partitions mismatch.")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition: aws from ARN doesn't match with partition name: aws-us-gov.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_partitions_mismatch_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2132,7 +2199,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
         }
 
         [TestMethod]
@@ -2140,7 +2210,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Not Kinesis")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The ARN was not for the Kinesis service, found: s3.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Not_Kinesis_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2148,7 +2217,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:s3:us-west-2:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
         }
 
         [TestMethod]
@@ -2156,7 +2228,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Region is missing in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Region_is_missing_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2164,7 +2235,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis::123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -2172,7 +2246,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Region is empty string in ARN")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid region.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Region_is_empty_string_in_ARN_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2180,7 +2253,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:  :123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid region.", exception.Message);
         }
 
         [TestMethod]
@@ -2188,7 +2264,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Invalid_account_id_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2197,7 +2272,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1::stream/testStream/consumer/test-consumer:1525898737";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -2205,7 +2283,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Invalid account id")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Invalid account id.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Invalid_account_id_1_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2214,7 +2291,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:   :stream/testStream/consumer/test-consumer:1525898737";
             parameters["OperationType"] = "control";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid account id.", exception.Message);
         }
 
         [TestMethod]
@@ -2222,7 +2302,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.")]
         public void ResourceARN_as_ConsumerARN_test_Invalid_ARN_Kinesis_ARNs_only_support_stream_arnconsumer_arn_types_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2230,7 +2309,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:accesspoint/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
         }
 
         [TestMethod]
@@ -2238,7 +2320,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("ResourceARN as ConsumerARN test: OperationType not set")]
-        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void ResourceARN_as_ConsumerARN_test_OperationType_not_set_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2246,7 +2327,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123456789012:stream/testStream/consumer/test-consumer:1525898737";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
         }
 
         [TestMethod]
@@ -2527,7 +2611,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Kinesis")]
         [Description("StreamId test: OperationType not set with StreamId")]
-        [ExpectedException(typeof(AmazonClientException), @"Operation Type is not set. Please contact service team for resolution.")]
         public void StreamId_test_OperationType_not_set_with_StreamId_Test()
         {
             var parameters = new KinesisEndpointParameters();
@@ -2535,7 +2618,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             parameters["StreamId"] = "af4lwng4k01746835071-xyz";
-            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
         }
 
         [TestMethod]

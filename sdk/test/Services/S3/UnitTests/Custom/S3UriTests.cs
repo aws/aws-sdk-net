@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void S3SchemeUriMissingBucketTest()
         {
-            Assert.ThrowsException<ArgumentException>(() => { var s3Uri = new AmazonS3Uri("s3:///file-name"); }, "Invalid S3 URI - no bucket present");
+            Assert.ThrowsExactly<ArgumentException>(() => { var s3Uri = new AmazonS3Uri("s3:///file-name"); }, "Invalid S3 URI - no bucket present");
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@ namespace AWSSDK.UnitTests
         /// <remarks>
         /// Verifies https://github.com/aws/aws-sdk-net/issues/3585 is resolved.
         /// </remarks>
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("180天OTB+(锦江）1216+-+sample+(1).xlsx")]
         [DataRow("テスト/ファイル.txt")]
         [DataRow("test/hello👋world.txt")]
@@ -184,7 +184,7 @@ namespace AWSSDK.UnitTests
         /// Test that various percent-encoded characters are decoded correctly.
         /// Ensures backward compatibility with existing encoding behavior.
         /// </summary>
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("my%20file.txt", "my file.txt")]
         [DataRow("my%20file%21%40%23%24.txt", "my file!@#$.txt")]
         [DataRow("folder/sub%20folder/file.txt", "folder/sub folder/file.txt")]

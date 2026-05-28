@@ -24,7 +24,6 @@ using System.Threading.Tasks;
 using Amazon.Runtime.Internal.Util;
 using Moq;
 using Amazon.Runtime.Internal;
-using Amazon.CloudFront.Model;
 using Castle.Core.Internal;
 
 namespace AWSSDK.UnitTests
@@ -34,7 +33,7 @@ namespace AWSSDK.UnitTests
     {
         [DataRow("foo", "foo,gzip")]
         [DataRow(null, "gzip")]
-        [DataTestMethod]
+        [TestMethod]
         public void SetRequestHeaderTest(string existingHeaderValue, string resultHeaderValue)
         {
             var mock = new Mock<IRequest>();
@@ -52,7 +51,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(request.Headers["Content-Encoding"], resultHeaderValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         public void SetRequestHeaderNoneTest()
         {
             var mock = new Mock<IRequest>();
@@ -60,14 +59,14 @@ namespace AWSSDK.UnitTests
             var request = mock.Object;
             mock.SetupGet(x => x.Headers).Returns(headers);
 
-            Assert.ThrowsException<ArgumentException>(
+            Assert.ThrowsExactly<ArgumentException>(
                 () => CompressionAlgorithmUtils.SetRequestHeader(request, CompressionEncodingAlgorithm.NONE)
             );
         }
 
         [DataRow(CompressionEncodingAlgorithm.gzip)]
         [DataRow(CompressionEncodingAlgorithm.NONE)]
-        [DataTestMethod]
+        [TestMethod]
         public void SetCompressionAlgorithmTest(CompressionEncodingAlgorithm encodingAlgorithm)
         {
             var mock = new Mock<IRequest>();

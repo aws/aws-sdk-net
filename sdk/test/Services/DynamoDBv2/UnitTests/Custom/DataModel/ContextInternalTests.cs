@@ -667,29 +667,25 @@ namespace AWSSDK_DotNet.UnitTests
             };
 
             // Act & Assert
-            var ex = Assert.ThrowsException<InvalidOperationException>(() =>
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
                 context.ConvertQueryByValue<ContextTestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
 
             Assert.IsTrue(ex.Message.Contains("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other."), "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void ConvertQueryConditional_WithNullQueryConditional_ThrowsArgumentNullException()
         {
-            // Act
-            context.ConvertQueryConditional<ContextTestEntity>(null, null);
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
+                context.ConvertQueryConditional<ContextTestEntity>(null, null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryConditional_WithNullHashKeys_ThrowsInvalidOperationException()
         {
-            // Arrange
             var queryConditional = QueryConditional.HashKeysEqual(null);
-
-            // Act
-            context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null));
         }
 
         [TestMethod]
@@ -733,10 +729,8 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryByValues_WithRangeKeyPropertiesNotInModel_ThrowsInvalidOperationException()
         {
-            // Arrange
             var hashKeys = 1;
             var operationConfig = new DynamoDBOperationConfig()
             {
@@ -746,40 +740,24 @@ namespace AWSSDK_DotNet.UnitTests
                     new ScanCondition("Name", ScanOperator.Equal, "test")
                 }
             };
-            try
-            {
-                // Act
-                context.ConvertQueryByValue<ContextTestEntity>(hashKeys, operationConfig, null);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("Unable to find storage information for property [ExtraRange]"));
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryByValue<ContextTestEntity>(hashKeys, operationConfig, null));
+            Assert.IsTrue(ex.Message.Contains("Unable to find storage information for property [ExtraRange]"));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryByValues_WithMoreThanOneRangeRangeKeyCondition_ThrowsInvalidOperationException()
         {
-            // Arrange
             var hashKeys = new Dictionary<string, object> { { "GsiHash", "GsiHash" } ,
             { "GsiHash2", "GsiHash2" }};
             var operationConfig = new DynamoDBOperationConfig()
             {
                 IndexName = "GSI1"
             };
-            try
-            {
-                // Act
-                context.ConvertQueryByValue<TestGSIEntity>("GsiHash", operationConfig, null);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("The number of hash key properties provided (1) does not match the number of hash key properties defined (2)." +
-                    " Index GSI1 has multiple hash keys. For multiple hash keys, use QueryConditional.KeyEqual() with a dictionary of key-value pairs."));
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryByValue<TestGSIEntity>("GsiHash", operationConfig, null));
+            Assert.IsTrue(ex.Message.Contains("The number of hash key properties provided (1) does not match the number of hash key properties defined (2)." +
+                " Index GSI1 has multiple hash keys. For multiple hash keys, use QueryConditional.KeyEqual() with a dictionary of key-value pairs."));
         }
 
         [TestMethod]
@@ -1142,7 +1120,6 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryConditional_WithTooManyRangeKeyConditions_ThrowsInvalidOperationException()
         {
             var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
@@ -1156,45 +1133,28 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            try
-            {
-                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("The number of range key properties provided (3) exceeds the number of range key properties defined (2)."),
-                    "Unexpected exception message: " + ex.Message);
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig));
+            Assert.IsTrue(ex.Message.Contains("The number of range key properties provided (3) exceeds the number of range key properties defined (2)."),
+                "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryConditional_WithMissingHashKeyProperty_ThrowsInvalidOperationException()
         {
-            // Arrange: provide a hash-keys dictionary that doesn't contain the expected attribute name "Id"
             var hashKeys = new Dictionary<string, object>
             {
                 { "MissingHashAttribute", 1 }
             };
             var queryConditional = QueryConditional.HashKeysEqual(hashKeys);
 
-            try
-            {
-                // Act
-                context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null);
-            }
-            catch (InvalidOperationException ex)
-            {
-                // Assert: ensure the exception mentions the missing hash key property name (Id)
-                Assert.IsTrue(ex.Message.Contains("The hash key property 'Id' was not found in the provided hash keys."),
-                    "Unexpected exception message: " + ex.Message);
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryConditional<ContextTestEntity>(queryConditional, null));
+            Assert.IsTrue(ex.Message.Contains("The hash key property 'Id' was not found in the provided hash keys."),
+                "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryConditional_WithNonContiguousRangeKeyConditions_ThrowsInvalidOperationException()
         {
             var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
@@ -1206,26 +1166,18 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            try
-            {
-                // Act
-                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("contiguous, left-to-right prefix"), "Unexpected exception message: " + ex.Message);
-                Assert.IsTrue(ex.Message.Contains("Missing condition for attribute 'GsiRange'"), "Unexpected exception message: " + ex.Message);
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig));
+            Assert.IsTrue(ex.Message.Contains("contiguous, left-to-right prefix"), "Unexpected exception message: " + ex.Message);
+            Assert.IsTrue(ex.Message.Contains("Missing condition for attribute 'GsiRange'"), "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ConvertQueryConditional_WithNonEqualityOperatorNotRightMost_ThrowsInvalidOperationException()
         {
             var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
                 .AndHashKeyEqualTo("GsiHash2", "hashValue2")
-                .AndRangeKeyGreaterThan("GsiRange", "m")    
+                .AndRangeKeyGreaterThan("GsiRange", "m")
                 .AndRangeKeyEqualTo("GsiRange2", "z");
 
             var operationConfig = new DynamoDBOperationConfig
@@ -1233,16 +1185,10 @@ namespace AWSSDK_DotNet.UnitTests
                 IndexName = "GSI1"
             };
 
-            try
-            {
-                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig);
-            }
-            catch (InvalidOperationException ex)
-            {
-                Assert.IsTrue(ex.Message.Contains("Only the right-most range key condition may use a non-equality operator"), "Unexpected exception message: " + ex.Message);
-                Assert.IsTrue(ex.Message.Contains("Operator 'GreaterThan'") && ex.Message.Contains("GsiRange"), "Unexpected exception message: " + ex.Message);
-                throw;
-            }
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ConvertQueryConditional<TestGSIEntity>(queryConditional, operationConfig));
+            Assert.IsTrue(ex.Message.Contains("Only the right-most range key condition may use a non-equality operator"), "Unexpected exception message: " + ex.Message);
+            Assert.IsTrue(ex.Message.Contains("Operator 'GreaterThan'") && ex.Message.Contains("GsiRange"), "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]

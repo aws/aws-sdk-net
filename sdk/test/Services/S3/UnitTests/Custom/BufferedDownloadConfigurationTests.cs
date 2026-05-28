@@ -147,83 +147,58 @@ namespace AWSSDK.UnitTests
         #region Validation Tests
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeConcurrentRequests_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(-1, 5, 8192, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(-1, 5, 8192, 8 * 1024 * 1024));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroConcurrentRequests_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(0, 5, 8192, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(0, 5, 8192, 8 * 1024 * 1024));
         }
 
         [TestMethod]
         public void Constructor_WithNullMaxInMemoryParts_AcceptsValue()
         {
-            // Arrange
-            int concurrentRequests = 10;
-            int? maxInMemoryParts = null;
-            int bufferSize = 8192;
-            long targetPartSize = 8 * 1024 * 1024; // 8MB
-
-            // Act
-            var config = new BufferedDownloadConfiguration(concurrentRequests, maxInMemoryParts, bufferSize, targetPartSize);
-
-            // Assert
+            var config = new BufferedDownloadConfiguration(10, null, 8192, 8 * 1024 * 1024);
             Assert.IsNull(config.MaxInMemoryParts);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeMaxInMemoryParts_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, -1, 8192, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, -1, 8192, 8 * 1024 * 1024));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroMaxInMemoryParts_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, 0, 8192, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, 0, 8192, 8 * 1024 * 1024));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeTargetPartSize_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, 5, 8192, -1L);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, 5, 8192, -1L));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroTargetPartSize_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, 5, 8192, 0L);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, 5, 8192, 0L));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeBufferSize_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, 5, -1, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, 5, -1, 8 * 1024 * 1024));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithZeroBufferSize_ThrowsException()
         {
-            // Act & Assert - ExpectedException
-            var config = new BufferedDownloadConfiguration(10, 5, 0, 8 * 1024 * 1024);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new BufferedDownloadConfiguration(10, 5, 0, 8 * 1024 * 1024));
         }
 
         #endregion

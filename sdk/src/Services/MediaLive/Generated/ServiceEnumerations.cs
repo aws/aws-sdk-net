@@ -2621,6 +2621,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type CaptionSynchronizationMode.
+    /// </summary>
+    public class CaptionSynchronizationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_VIDEO_DELAY for CaptionSynchronizationMode
+        /// </summary>
+        public static readonly CaptionSynchronizationMode NO_VIDEO_DELAY = new CaptionSynchronizationMode("NO_VIDEO_DELAY");
+        /// <summary>
+        /// Constant VIDEO_ALIGNED_CAPTIONS for CaptionSynchronizationMode
+        /// </summary>
+        public static readonly CaptionSynchronizationMode VIDEO_ALIGNED_CAPTIONS = new CaptionSynchronizationMode("VIDEO_ALIGNED_CAPTIONS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CaptionSynchronizationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CaptionSynchronizationMode FindValue(string value)
+        {
+            return FindValue<CaptionSynchronizationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CaptionSynchronizationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CdiInputResolution.
     /// </summary>
     public class CdiInputResolution : ConstantClass

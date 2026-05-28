@@ -15,7 +15,6 @@
 
 using System;
 using System.Net;
-using Amazon.EC2.Model;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;

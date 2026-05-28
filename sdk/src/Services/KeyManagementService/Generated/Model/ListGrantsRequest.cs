@@ -36,7 +36,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// You must specify the KMS key in all requests. You can filter the grant list by grant
-    /// ID or grantee principal.
+    /// ID, grantee principal, or grantee service principal.
     /// </para>
     ///  
     /// <para>
@@ -47,11 +47,19 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
-    /// the user or role designated as the grantee principal in the grant. However, when the
-    /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
-    /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-    /// principal</a>, which might represent several different grantee principals.
+    /// When a grant is created with the <c>GranteePrincipal</c> field, the <c>ListGrants</c>
+    /// response usually contains the user or role designated as the grantee principal in
+    /// the grant. However, if the grantee principal is an Amazon Web Services service, the
+    /// <c>GranteePrincipal</c> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+    /// principal</a>, which might correspond to several different grantee principals, such
+    /// as an IAM user, IAM role, or Amazon Web Services account.
+    /// </para>
+    ///  
+    /// <para>
+    /// When a grant is created with the <c>GranteeServicePrincipal</c> field, the <c>ListGrants</c>
+    /// response always includes a <c>GranteeServicePrincipal</c> that indicates the grantee
+    /// is actually an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+    /// principal</a>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -94,6 +102,7 @@ namespace Amazon.KeyManagementService.Model
     public partial class ListGrantsRequest : AmazonKeyManagementServiceRequest
     {
         private string _granteePrincipal;
+        private string _granteeServicePrincipal;
         private string _grantId;
         private string _keyId;
         private int? _limit;
@@ -104,6 +113,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Returns only grants where the specified principal is the grantee principal for the
         /// grant.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either <c>GranteePrincipal</c> or <c>GranteeServicePrincipal</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -117,6 +131,32 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetGranteePrincipal()
         {
             return this._granteePrincipal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GranteeServicePrincipal. 
+        /// <para>
+        /// Returns only grants where the specified Amazon Web Services service principal is the
+        /// grantee service principal for the grant. This filter is only usable by callers in
+        /// a service principal.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify either <c>GranteePrincipal</c> or <c>GranteeServicePrincipal</c>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string GranteeServicePrincipal
+        {
+            get { return this._granteeServicePrincipal; }
+            set { this._granteeServicePrincipal = value; }
+        }
+
+        // Check to see if GranteeServicePrincipal property is set
+        internal bool IsSetGranteeServicePrincipal()
+        {
+            return this._granteeServicePrincipal != null;
         }
 
         /// <summary>

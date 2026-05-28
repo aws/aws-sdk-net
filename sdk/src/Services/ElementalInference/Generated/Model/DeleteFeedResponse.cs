@@ -80,7 +80,7 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the feed. When deletion of the feed has succeeded, the status
-        /// will be DELETED.
+        /// will be DELETED. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -37,6 +37,14 @@ namespace Amazon.ElementalInference.Model
         }
 
         /// <summary>
+        /// Paginator for ListDictionaries operation
+        ///</summary>
+        public IListDictionariesPaginator ListDictionaries(ListDictionariesRequest request) 
+        {
+            return new ListDictionariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFeeds operation
         ///</summary>
         public IListFeedsPaginator ListFeeds(ListFeedsRequest request) 

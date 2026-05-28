@@ -43,6 +43,7 @@ namespace Amazon.Invoicing.Model
     /// </summary>
     public partial class PutProcurementPortalPreferenceRequest : AmazonInvoicingRequest
     {
+        private string _clientToken;
         private List<Contact> _contacts = AWSConfigs.InitializeCollections ? new List<Contact>() : null;
         private bool? _einvoiceDeliveryEnabled;
         private EinvoiceDeliveryPreference _einvoiceDeliveryPreference;
@@ -52,6 +53,26 @@ namespace Amazon.Invoicing.Model
         private bool? _purchaseOrderRetrievalEnabled;
         private ProcurementPortalPreferenceSelector _selector;
         private TestEnvPreferenceInput _testEnvPreference;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure idempotency of the
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Contacts. 

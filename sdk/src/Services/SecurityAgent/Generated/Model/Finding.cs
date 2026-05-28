@@ -57,6 +57,7 @@ namespace Amazon.SecurityAgent.Model
         private FindingStatus _status;
         private string _taskId;
         private DateTime? _updatedAt;
+        private VerificationScript _verificationScript;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -444,6 +445,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationScript. 
+        /// <para>
+        /// The verification script metadata for reproducing the finding, including download URL,
+        /// instructions, and required environment variables.
+        /// </para>
+        /// </summary>
+        public VerificationScript VerificationScript
+        {
+            get { return this._verificationScript; }
+            set { this._verificationScript = value; }
+        }
+
+        // Check to see if VerificationScript property is set
+        internal bool IsSetVerificationScript()
+        {
+            return this._verificationScript != null;
         }
 
     }

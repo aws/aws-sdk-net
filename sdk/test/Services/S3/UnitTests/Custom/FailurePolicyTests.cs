@@ -218,7 +218,7 @@ namespace AWSSDK.UnitTests
                 var tu = new TransferUtility(mockS3.Object);
                 var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("second.txt"));
                 // first file may or may not have downloaded depending on timing; ensure at least one file attempt occurred
                 Assert.IsTrue(Directory.GetFiles(localDir).Length <= 1);
@@ -250,7 +250,7 @@ namespace AWSSDK.UnitTests
                     throw new AmazonS3Exception("Stop processing immediately");
                 };
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Equals("Stop processing immediately"));
 
                 Assert.IsTrue(handlerInvoked, "ObjectDownloadFailedEvent handler was not invoked.");
@@ -279,7 +279,7 @@ namespace AWSSDK.UnitTests
                     throw new AmazonS3Exception("Stop processing immediately");
                 };
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Equals("Stop processing immediately"));
             }
             finally
@@ -352,7 +352,7 @@ namespace AWSSDK.UnitTests
                 };
 
                 var tu = new TransferUtility(mockS3.Object);
-                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
+                await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
 
                 // wait for event
                 invoked.Wait(1000);
@@ -490,7 +490,7 @@ namespace AWSSDK.UnitTests
                 var tu = new TransferUtility(mockS3.Object);
                 var request = CreateUploadRequest(localDir, FailurePolicy.AbortOnFailure);
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("second.txt"));
                 // first file may or may not have uploaded depending on timing; ensure at least one file attempt occurred
                 Assert.IsTrue(Directory.GetFiles(localDir).Length >= 1);
@@ -525,7 +525,7 @@ namespace AWSSDK.UnitTests
                     throw new AmazonS3Exception("Stop processing immediately");
                 };
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Equals("Stop processing immediately"));
 
                 Assert.IsTrue(handlerInvoked, "ObjectUploadFailedEvent handler was not invoked.");
@@ -607,7 +607,7 @@ namespace AWSSDK.UnitTests
                 };
 
                 var tu = new TransferUtility(mockS3.Object);
-                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
+                await Assert.ThrowsExactlyAsync<AmazonS3Exception>(() => tu.UploadDirectoryAsync(request));
 
                 // wait for event
                 invoked.Wait(1000);
@@ -698,7 +698,7 @@ namespace AWSSDK.UnitTests
                 var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
 
                 // Should throw on path validation failure
-                var ex = await Assert.ThrowsExceptionAsync<AmazonClientException>(
+                var ex = await Assert.ThrowsExactlyAsync<AmazonClientException>(
                     () => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("not allowed outside"));
             }
@@ -823,7 +823,7 @@ namespace AWSSDK.UnitTests
                 var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
                 request.DownloadFilesConcurrently = false; // Sequential mode
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(
                     () => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("fail-first"));
                 
@@ -905,7 +905,7 @@ namespace AWSSDK.UnitTests
                 var tu = new TransferUtility(mockS3.Object);
                 var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                var ex = await Assert.ThrowsExactlyAsync<AmazonS3Exception>(
                     () => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("file2-fail"));
                 
@@ -946,7 +946,7 @@ namespace AWSSDK.UnitTests
                     captured.Add(args);
                 };
 
-                var ex = await Assert.ThrowsExceptionAsync<AmazonClientException>(
+                var ex = await Assert.ThrowsExactlyAsync<AmazonClientException>(
                     () => tu.DownloadDirectoryAsync(request));
                 Assert.IsTrue(ex.Message.Contains("not allowed outside"));
                 

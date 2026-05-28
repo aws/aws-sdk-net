@@ -14592,6 +14592,10 @@
     <pattern>[a-z]+\-[0-9a-z\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ReservedCapacitySummary.AvailabilityZoneId</property>
+    <pattern>[a-z]{3}\d-az\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ReservedCapacitySummary.DurationHours</property>
     <min>0</min>
     <max>87600</max>

@@ -75,12 +75,6 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
-    <min>3</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
     <min>0</min>
     <max>255</max>

@@ -31,7 +31,10 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFeed operation.
-    /// Deletes the specified feed. The feed can be deleted at any time.
+    /// Deletes the specified feed. You can delete the feed at any time. Elemental Inference
+    /// doesn't block you from deleting a feed when the calling application is calling PutMedia
+    /// or GetMetadata on that feed, although both these calls will start to fail. For more
+    /// information about managing inactive feeds, see the Elemental Inference User Guide.
     /// </summary>
     public partial class DeleteFeedRequest : AmazonElementalInferenceRequest
     {

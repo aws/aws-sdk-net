@@ -754,7 +754,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -762,7 +761,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -770,7 +772,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -778,7 +779,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -786,11 +790,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -798,7 +804,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -808,7 +813,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -816,7 +824,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -826,7 +833,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -834,7 +844,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -844,7 +853,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1007,7 +1019,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1017,7 +1028,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1025,7 +1039,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1035,7 +1048,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1043,7 +1059,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1053,7 +1068,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1133,7 +1151,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1143,7 +1160,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1151,7 +1171,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1161,7 +1180,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1169,7 +1191,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1179,7 +1200,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1241,7 +1265,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1251,7 +1274,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1259,7 +1285,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1269,7 +1294,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1277,7 +1305,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1287,7 +1314,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1450,7 +1480,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1460,7 +1489,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1468,7 +1500,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1478,7 +1509,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1486,7 +1520,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1496,7 +1529,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1576,7 +1612,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1586,7 +1621,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1594,7 +1632,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1604,7 +1641,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1612,7 +1652,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1622,7 +1661,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1684,7 +1726,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1694,7 +1735,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1702,7 +1746,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1712,7 +1755,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1720,7 +1766,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1730,7 +1775,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1893,7 +1941,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1903,7 +1950,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1911,7 +1961,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1921,7 +1970,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1929,7 +1981,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -1939,7 +1990,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2019,7 +2073,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2029,7 +2082,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2037,7 +2093,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2047,7 +2102,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2055,7 +2113,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Endpointhttpsexamplecom_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2065,7 +2122,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2127,7 +2187,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2136,7 +2195,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2144,7 +2206,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2153,7 +2214,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2161,7 +2225,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2170,7 +2233,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2325,7 +2391,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2334,7 +2399,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2342,7 +2410,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2351,7 +2418,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2359,7 +2429,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2368,7 +2437,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2444,7 +2516,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2453,7 +2524,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2461,7 +2535,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2470,7 +2543,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2478,7 +2554,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2487,7 +2562,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2546,7 +2624,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2555,7 +2632,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2563,7 +2643,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2572,7 +2651,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2580,7 +2662,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2589,7 +2670,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2744,7 +2828,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2753,7 +2836,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2761,7 +2847,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2770,7 +2855,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2778,7 +2866,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2787,7 +2874,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2863,7 +2953,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2872,7 +2961,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2880,7 +2972,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2889,7 +2980,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2897,7 +2991,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModedisabled_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2906,7 +2999,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "disabled";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2965,7 +3061,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2974,7 +3069,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2982,7 +3080,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -2991,7 +3088,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2999,7 +3099,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3008,7 +3107,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3163,7 +3265,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3172,7 +3273,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3180,7 +3284,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3189,7 +3292,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3197,7 +3303,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3206,7 +3311,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3282,7 +3390,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3291,7 +3398,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3299,7 +3409,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and local endpoint are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3308,7 +3417,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3316,7 +3428,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and local endpoint are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionlocal_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3325,7 +3436,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "local";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and local endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3565,7 +3679,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Credentials-sourced account ID parameter is invalid")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId_AccountIdEndpointModepreferred_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3574,7 +3687,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "";
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Credentials-sourced account ID parameter is invalid", exception.Message);
         }
 
         [TestMethod]
@@ -3803,7 +3919,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3812,7 +3927,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3820,7 +3938,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3829,7 +3946,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -3984,7 +4104,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Credentials-sourced account ID parameter is invalid")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3993,7 +4112,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Credentials-sourced account ID parameter is invalid", exception.Message);
         }
 
         [TestMethod]
@@ -4001,7 +4123,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4010,7 +4131,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4018,7 +4142,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4027,7 +4150,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4069,7 +4195,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawsdynamodbuswest2222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4078,7 +4203,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-west-2:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
         }
 
         [TestMethod]
@@ -4086,7 +4214,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawss3uswest2222222222222streamtestStream_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4095,7 +4222,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:s3:us-west-2:222222222222:stream/testStream";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
         }
 
         [TestMethod]
@@ -4103,7 +4233,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArn_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4112,7 +4241,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
         }
 
         [TestMethod]
@@ -4120,7 +4252,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4129,7 +4260,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4137,7 +4271,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4146,7 +4279,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4206,7 +4342,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded")]
         public void UseFIPSfalse_UseDualStackfalse_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4214,7 +4349,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
         }
 
         [TestMethod]
@@ -4222,7 +4360,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4231,7 +4368,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4239,7 +4379,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4248,7 +4387,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4256,7 +4398,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4265,7 +4406,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4273,7 +4417,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4282,7 +4425,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "111111111111";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4290,7 +4436,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4300,7 +4445,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4308,7 +4456,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4319,7 +4466,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4327,7 +4477,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnarnawsdynamodbuswest2222222222222tabletable_name_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4338,7 +4487,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4346,7 +4498,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnarnawss3uswest2222222222222streamtestStream_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4357,7 +4508,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4365,7 +4519,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnarnawsdynamodbuswest2222222222222tabletable_name_ResourceArnListarnawsdynamodbuswest2333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4376,7 +4529,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-west-2:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4384,7 +4540,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId111111111111_ResourceArnarnawss3uswest2222222222222streamtestStream_ResourceArnListarnawss3useast1333333333333streamtestStream_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4395,7 +4550,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:s3:us-east-1:333333333333:stream/testStream" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4403,7 +4561,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountId_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4412,7 +4569,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountId"] = "";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4420,7 +4580,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4429,7 +4588,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4437,7 +4599,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4446,7 +4607,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4454,7 +4618,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4463,7 +4626,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4471,7 +4637,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4480,7 +4645,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-east-1:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4488,7 +4656,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawsdynamodbuswest2222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4497,7 +4664,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:dynamodb:us-west-2:222222222222:table/table_name";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4505,7 +4675,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawss3uswest2222222222222streamtestStream_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4514,7 +4683,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "arn:aws:s3:us-west-2:222222222222:stream/testStream";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4522,7 +4694,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArn_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4531,7 +4702,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArn"] = "";
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4539,7 +4713,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4548,7 +4721,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4556,7 +4732,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported")]
         public void UseFIPStrue_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4565,7 +4740,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -4573,7 +4751,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4582,7 +4759,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4590,7 +4770,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4599,7 +4778,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4607,7 +4789,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4617,7 +4798,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceArnList"] = new List<string> { "arn:aws:dynamodb:us-east-1:333333333333:table/table_name" };
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -4625,7 +4809,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStackfalse_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4633,7 +4816,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -6317,13 +6503,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
         public void Endpointhttpsdynamodbcnnorth1apiamazonwebservicescomcn_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
             parameters["Endpoint"] = "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn";
             parameters["Region"] = "cn-north-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html", exception.Message);
         }
 
         [TestMethod]
@@ -6331,13 +6519,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
         public void Endpointhttpsdynamodbusgoveast1apiaws_Regionusgoveast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
             parameters["Endpoint"] = "https://dynamodb.us-gov-east-1.api.aws";
             parameters["Region"] = "us-gov-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html", exception.Message);
         }
 
         [TestMethod]
@@ -6345,13 +6535,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
         public void Endpointhttpsdynamodbuseast1apiaws_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
             parameters["Endpoint"] = "https://dynamodb.us-east-1.api.aws";
             parameters["Region"] = "us-east-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html", exception.Message);
         }
 
         [TestMethod]
@@ -6387,13 +6579,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
         public void Endpointhttpsdynamodbeuwest1apiaws_Regioneuwest1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
             parameters["Endpoint"] = "https://dynamodb.eu-west-1.api.aws";
             parameters["Region"] = "eu-west-1";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html", exception.Message);
         }
 
         [TestMethod]
@@ -6401,13 +6595,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}")]
-        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
         public void Endpointhttpsdynamodbuswest2apiaws_Regionuswest2_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
             parameters["Endpoint"] = "https://dynamodb.us-west-2.api.aws";
             parameters["Region"] = "us-west-2";
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html", exception.Message);
         }
 
     }

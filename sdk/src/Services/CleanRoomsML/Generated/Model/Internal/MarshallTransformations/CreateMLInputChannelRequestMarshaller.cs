@@ -116,6 +116,17 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPayerConfiguration())
+            {
+                context.Writer.WritePropertyName("payerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PayerConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PayerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRetentionInDays())
             {
                 context.Writer.WritePropertyName("retentionInDays");

@@ -2513,6 +2513,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.GuardrailPolicyResult.Details</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.GuardrailRegexConfig.Description</property>
     <min>1</min>
     <max>1000</max>
@@ -3478,6 +3483,16 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanCitation.KnowledgeBaseId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanGuardrailAssessment.GuardrailId</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanGuardrailAssessment.GuardrailName</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanMessage.MessageId</property>

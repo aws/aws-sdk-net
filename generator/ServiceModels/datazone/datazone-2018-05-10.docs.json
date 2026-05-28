@@ -1102,12 +1102,14 @@
         "Deployment$isDeploymentComplete": "<p>Specifies whether the last deployment of the environment is complete.</p>",
         "DomainUnitFilterForProject$includeChildDomainUnits": "<p>Specifies whether to include child domain units.</p>",
         "DomainUnitTarget$includeChildDomainUnits": "<p>Specifies whether to apply a rule to the child domain units.</p>",
+        "EnvironmentBlueprintConfigurationItem$allowUserProvidedConfigurations": "<p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>",
         "EnvironmentConfigurationParameter$isEditable": "<p>Specifies whether the environment parameter is editable.</p>",
         "FormEntryInput$required": "<p>Specifies whether a form entry is required.</p>",
         "FormEntryOutput$required": "<p>Specifies whether a form entry is required.</p>",
         "GetConnectionInput$withSecret": "<p>Specifies whether a connection has a secret.</p>",
         "GetDataExportConfigurationOutput$isExportEnabled": "<p>Specifies whether the export is enabled.</p>",
         "GetDataSourceOutput$publishOnImport": "<p>Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.</p>",
+        "GetEnvironmentBlueprintConfigurationOutput$allowUserProvidedConfigurations": "<p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>",
         "GetProjectProfileOutput$allowCustomProjectResourceTags": "<p>Specifies whether custom project resource tags are supported.</p>",
         "GetSubscriptionOutput$retainPermissions": "<p>The retain permissions of the subscription.</p>",
         "GlueConnectionInput$validateCredentials": "<p>Speciefies whether to validate credentials of the Amazon Web Services Glue connection.</p>",
@@ -1126,6 +1128,8 @@
         "OverrideProjectOwnersPolicyGrantDetail$includeChildDomainUnits": "<p>Specifies whether the policy is inherited by child domain units.</p>",
         "PhysicalEndpoint$enableTrustedIdentityPropagation": "<p>Specified whether trusted identity propagation for the connection is enabled.</p>",
         "PutDataExportConfigurationInput$enableExport": "<p>Specifies that the export is to be enabled as part of creating data export configuration details.</p>",
+        "PutEnvironmentBlueprintConfigurationInput$allowUserProvidedConfigurations": "<p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>",
+        "PutEnvironmentBlueprintConfigurationOutput$allowUserProvidedConfigurations": "<p>Specifies whether user-provided resource configurations are allowed for the environment blueprint.</p>",
         "RecommendationConfiguration$enableBusinessNameGeneration": "<p>Specifies whether automatic business name generation is to be enabled or not as part of the recommendation configuration.</p>",
         "RedshiftLineageSyncConfigurationInput$enabled": "<p>Specifies whether the Amaon Redshift lineage sync configuration is enabled.</p>",
         "RedshiftLineageSyncConfigurationOutput$enabled": "<p>Specifies whether the Amaon Redshift lineage sync configuration is enabled.</p>",
@@ -1424,7 +1428,8 @@
         "GlueConnection$status": "<p>The status of the Amazon Web Services Glue connection.</p>",
         "GluePropertiesOutput$status": "<p>The status of a connection.</p>",
         "RedshiftPropertiesOutput$status": "<p>The status in the Amazon Redshift properties.</p>",
-        "S3PropertiesOutput$status": "<p>The status of the Amazon S3 connection.</p>"
+        "S3PropertiesOutput$status": "<p>The status of the Amazon S3 connection.</p>",
+        "VpcPropertiesOutput$status": "<p>The status of the VPC connection.</p>"
       }
     },
     "ConnectionSummaries": {
@@ -4608,7 +4613,8 @@
       "refs": {
         "PhysicalEndpoint$glueConnectionNames": "<p>The Amazon Web Services Glue connection names in the physical endpoint.</p>",
         "SparkGluePropertiesInput$glueConnectionNames": "<p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties. Specify either <code>glueConnectionName</code> or <code>glueConnectionNames</code>, but not both.</p>",
-        "SparkGluePropertiesOutput$glueConnectionNames": "<p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>"
+        "SparkGluePropertiesOutput$glueConnectionNames": "<p>The Amazon Web Services Glue connection names in the Spark Amazon Web Services Glue properties.</p>",
+        "VpcPropertiesOutput$glueConnectionNames": "<p>The Amazon Web Services Glue connection names associated with the VPC connection.</p>"
       }
     },
     "GlueConnectionPatch": {
@@ -6918,6 +6924,24 @@
       "base": null,
       "refs": {}
     },
+    "PutResourceConfiguration": {
+      "base": "<p>The resource configuration that is used to configure the environment blueprint.</p>",
+      "refs": {
+        "PutResourceConfigurations$member": null
+      }
+    },
+    "PutResourceConfigurationNameString": {
+      "base": null,
+      "refs": {
+        "PutResourceConfiguration$name": "<p>The name of the resource configuration.</p>"
+      }
+    },
+    "PutResourceConfigurations": {
+      "base": null,
+      "refs": {
+        "PutEnvironmentBlueprintConfigurationInput$resourceConfigurations": "<p>The resource configurations of the environment blueprint.</p>"
+      }
+    },
     "QueryGraphInput": {
       "base": null,
       "refs": {}
@@ -7121,8 +7145,10 @@
       "base": null,
       "refs": {
         "EnabledRegionList$member": null,
+        "PutResourceConfiguration$region": "<p>The Amazon Web Services Region of the resource configuration.</p>",
         "Region$regionName": "<p>The Amazon Web Services Region name.</p>",
-        "RegionalParameterMap$key": null
+        "RegionalParameterMap$key": null,
+        "ResourceConfiguration$region": "<p>The Amazon Web Services Region of the resource configuration.</p>"
       }
     },
     "RegionalParameter": {
@@ -7293,6 +7319,27 @@
       "base": "<p>The details of a provisioned resource of this Amazon DataZone environment.</p>",
       "refs": {
         "ResourceList$member": null
+      }
+    },
+    "ResourceConfiguration": {
+      "base": "<p>The details of the resource configuration.</p>",
+      "refs": {
+        "ResourceConfigurations$member": null
+      }
+    },
+    "ResourceConfigurationParameterMap": {
+      "base": null,
+      "refs": {
+        "PutResourceConfiguration$parameters": "<p>The parameters of the resource configuration.</p>",
+        "ResourceConfiguration$parameters": "<p>The parameters of the resource configuration.</p>"
+      }
+    },
+    "ResourceConfigurations": {
+      "base": null,
+      "refs": {
+        "EnvironmentBlueprintConfigurationItem$resourceConfigurations": "<p>The resource configurations of the environment blueprint.</p>",
+        "GetEnvironmentBlueprintConfigurationOutput$resourceConfigurations": "<p>The resource configurations of the environment blueprint.</p>",
+        "PutEnvironmentBlueprintConfigurationOutput$resourceConfigurations": "<p>The resource configurations of the environment blueprint.</p>"
       }
     },
     "ResourceList": {
@@ -7867,6 +7914,14 @@
     "SearchUserProfilesOutput": {
       "base": null,
       "refs": {}
+    },
+    "SecurityGroupId": {
+      "base": null,
+      "refs": {
+        "VpcPropertiesInput$securityGroupId": "<p>The security group ID of the VPC connection. Must match the pattern <code>^sg-[a-z0-9]+$</code>. Maximum length of 32.</p>",
+        "VpcPropertiesOutput$securityGroupId": "<p>The security group ID of the VPC connection.</p>",
+        "VpcPropertiesPatch$securityGroupId": "<p>The security group ID of the VPC connection.</p>"
+      }
     },
     "SecurityGroupIdList": {
       "base": null,
@@ -8496,6 +8551,7 @@
         "ProjectDeletionError$message": "<p>The message of the project deletion error.</p>",
         "ProjectProfileList$member": null,
         "ProjectSummary$projectCategory": "<p>The category of the project.</p>",
+        "PutResourceConfiguration$description": "<p>The description of the resource configuration.</p>",
         "RedshiftLineageSyncConfigurationOutput$lineageJobId": "<p>The lineage job ID of the Amaon Redshift lineage sync configuration.</p>",
         "RedshiftPropertiesOutput$jdbcIamUrl": "<p>The jdbcIam URL of the Amazon Redshift properties.</p>",
         "RedshiftPropertiesOutput$jdbcUrl": "<p>The jdbcURL of the Amazon Redshift properties. </p>",
@@ -8511,6 +8567,11 @@
         "Resource$name": "<p>The name of a provisioned resource of this Amazon DataZone environment.</p>",
         "Resource$value": "<p>The value of a provisioned resource of this Amazon DataZone environment.</p>",
         "Resource$type": "<p>The type of a provisioned resource of this Amazon DataZone environment.</p>",
+        "ResourceConfiguration$identifier": "<p>The identifier of the resource configuration.</p>",
+        "ResourceConfiguration$name": "<p>The name of the resource configuration.</p>",
+        "ResourceConfiguration$description": "<p>The description of the resource configuration.</p>",
+        "ResourceConfigurationParameterMap$key": null,
+        "ResourceConfigurationParameterMap$value": null,
         "S3PropertiesOutput$errorMessage": "<p>The error message that gets displayed.</p>",
         "SecurityGroupIds$member": null,
         "SelfGrantStatusDetail$failureCause": "<p>The reason for why the operation failed.</p>",
@@ -8596,7 +8657,8 @@
       "base": null,
       "refs": {
         "PhysicalConnectionRequirements$subnetId": "<p>The subnet ID of the physical connection requirements of a connection. </p>",
-        "SubnetIdList$member": null
+        "SubnetIdList$member": null,
+        "VpcConnectionSubnetIdList$member": null
       }
     },
     "SubnetIdList": {
@@ -9836,6 +9898,40 @@
     "ValidationException": {
       "base": "<p>The input fails to satisfy the constraints specified by the Amazon Web Services service.</p>",
       "refs": {}
+    },
+    "VpcConnectionSubnetIdList": {
+      "base": null,
+      "refs": {
+        "VpcPropertiesInput$subnetIds": "<p>The subnet IDs of the VPC connection. You can specify between 1 and 16 subnet IDs.</p>",
+        "VpcPropertiesOutput$subnetIds": "<p>The subnet IDs of the VPC connection.</p>",
+        "VpcPropertiesPatch$subnetIds": "<p>The subnet IDs of the VPC connection.</p>"
+      }
+    },
+    "VpcId": {
+      "base": null,
+      "refs": {
+        "VpcPropertiesInput$vpcId": "<p>The identifier of the VPC. Must match the pattern <code>^vpc-[a-z0-9]+$</code>. Maximum length of 32.</p>",
+        "VpcPropertiesOutput$vpcId": "<p>The identifier of the VPC.</p>",
+        "VpcPropertiesPatch$vpcId": "<p>The identifier of the VPC.</p>"
+      }
+    },
+    "VpcPropertiesInput": {
+      "base": "<p>The VPC connection properties used when creating a connection.</p>",
+      "refs": {
+        "ConnectionPropertiesInput$vpcProperties": "<p>The VPC properties of a connection.</p>"
+      }
+    },
+    "VpcPropertiesOutput": {
+      "base": "<p>The VPC connection properties returned in responses.</p>",
+      "refs": {
+        "ConnectionPropertiesOutput$vpcProperties": "<p>The VPC properties of a connection.</p>"
+      }
+    },
+    "VpcPropertiesPatch": {
+      "base": "<p>The VPC connection properties used when updating a connection.</p>",
+      "refs": {
+        "ConnectionPropertiesPatch$vpcProperties": "<p>The VPC properties of a connection properties patch.</p>"
+      }
     },
     "WorkflowsMwaaPropertiesInput": {
       "base": "<p>The Amazon MWAA properties.</p>",

@@ -56,7 +56,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("key1=value1&key1=value2&key4=value4&key4=value5", result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("https://s3.amazonaws.com", "s3")]
         [DataRow("sqs.us-west-2.amazonaws.com", "sqs")]
         [DataRow("queue.amazonaws.com", "sqs")]
@@ -68,7 +68,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expectedService, service);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("value, with special chars!", "value%2C%20with%20special%20chars%21")]
         [DataRow("value, with special chars and path {/+:}", "value%2C%20with%20special%20chars%20and%20path%20%7B%2F%2B%3A%7D")]
         [DataRow("紙_一般_児童手当等の受給資格及び児童手当の額についての認定請求公金非対応", "%E7%B4%99_%E4%B8%80%E8%88%AC_%E5%85%90%E7%AB%A5%E6%89%8B%E5%BD%93%E7%AD%89%E3%81%AE%E5%8F%97%E7%B5%A6%E8%B3%87%E6%A0%BC%E5%8F%8A%E3%81%B3%E5%85%90%E7%AB%A5%E6%89%8B%E5%BD%93%E3%81%AE%E9%A1%8D%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E8%AA%8D%E5%AE%9A%E8%AB%8B%E6%B1%82%E5%85%AC%E9%87%91%E9%9D%9E%E5%AF%BE%E5%BF%9C")]
@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected, encoded);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("😂 value, with special chars!", "%F0%9F%98%82%20value,%20with%20special%20chars!")]
         [DataRow("value, with special chars!", "value,%20with%20special%20chars!")]
         [DataRow("value, with special chars and path {/+:}", "value,%20with%20special%20chars%20and%20path%20%7B/+%3A%7D")]
@@ -89,7 +89,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected, encoded);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("", true)]
         [DataRow("Hello, AWS SDK!", true)]
         [DataRow("{\"key\": \"value\"}", true)]
@@ -107,7 +107,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(new byte[] { 0x42 }, true)]
         [DataRow(new byte[] { 0x42 }, false)]
         [DataRow(new byte[] { 0x00, 0x01, 0x02, 0xFF, 0xFE, 0xFD }, true)]

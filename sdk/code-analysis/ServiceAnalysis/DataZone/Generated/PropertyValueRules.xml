@@ -6707,6 +6707,17 @@
     <pattern>[\w -]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.PutResourceConfiguration.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.PutResourceConfiguration.Region</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.RedshiftClusterStorage.ClusterName</property>
     <min>1</min>
     <max>63</max>
@@ -6803,6 +6814,12 @@
     <property>Amazon.DataZone.Model.RelationPattern.MaxPathLength</property>
     <min>1</min>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ResourceConfiguration.Region</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[a-z]{2}-?(iso|gov)?-{1}[a-z]*-{1}[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ResourceTag.Key</property>
@@ -7362,5 +7379,41 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.UserProfileSummary.Id</property>
     <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesInput.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesInput.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesOutput.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesOutput.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesPatch.SecurityGroupId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>sg-[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.VpcPropertiesPatch.VpcId</property>
+    <min>0</min>
+    <max>32</max>
+    <pattern>vpc-[a-z0-9]+</pattern>
   </property-value-rule>
 </property-value-rules>

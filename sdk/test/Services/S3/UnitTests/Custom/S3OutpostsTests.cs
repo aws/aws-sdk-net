@@ -249,7 +249,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: The Outpost Id was not set")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint", "us-west-2", S3ConfigFlags.ArnRegion, "", "Invalid ARN: Expected a 4-component resource")]
@@ -350,7 +350,6 @@ namespace AWSSDK.UnitTests
         
         [TestMethod]
         [TestCategory("S3")]
-        [DataTestMethod]
         [DataRow(
             "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "obj", "us-west-2", true,
             "*,us-west-2",

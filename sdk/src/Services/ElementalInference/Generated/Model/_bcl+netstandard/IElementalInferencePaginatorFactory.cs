@@ -28,6 +28,16 @@ namespace Amazon.ElementalInference.Model
     {
 
         /// <summary>
+        /// Paginator for ListDictionaries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDictionariesPaginator ListDictionaries(ListDictionariesRequest request);
+
+        /// <summary>
         /// Paginator for ListFeeds operation
         ///</summary>
         [AWSPaginator(

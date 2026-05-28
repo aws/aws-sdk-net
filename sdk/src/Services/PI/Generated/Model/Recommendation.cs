@@ -35,6 +35,7 @@ namespace Amazon.PI.Model
     public partial class Recommendation
     {
         private string _recommendationDescription;
+        private string _recommendationDetails;
         private string _recommendationId;
 
         /// <summary>
@@ -56,6 +57,26 @@ namespace Amazon.PI.Model
         internal bool IsSetRecommendationDescription()
         {
             return this._recommendationDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationDetails. 
+        /// <para>
+        /// Detailed information about the recommendation, including steps to resolve the performance
+        /// issue.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=8000)]
+        public string RecommendationDetails
+        {
+            get { return this._recommendationDetails; }
+            set { this._recommendationDetails = value; }
+        }
+
+        // Check to see if RecommendationDetails property is set
+        internal bool IsSetRecommendationDetails()
+        {
+            return this._recommendationDetails != null;
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace AWSSDK.UnitTests
                                                        [imds-bad-endpoint]
                                                        ec2_metadata_service_endpoint=notAnUri";
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(EC2MetadataServiceEndpointMode.IPv6, "imds-ipv4", EC2MetadataServiceEndpointMode.IPv6)]  // env var should supersede conflicting profile value
         [DataRow(EC2MetadataServiceEndpointMode.IPv4, "imds-ipv6", EC2MetadataServiceEndpointMode.IPv4)]
         [DataRow(null, "imds-ipv6", EC2MetadataServiceEndpointMode.IPv6)]   // profile should drive value
@@ -60,7 +60,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("", "", "http://169.254.169.254")]     // should default to existing IPv4 endpoint
         [DataRow("", "imds-ipv4", "http://169.254.169.254")]
         [DataRow("", "imds-ipv6", "http://[fd00:ec2::254]")]
@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("notAnUri")]
         [DataRow("[fd00:ec2::200]")]
         public void TestIMDSInvalidEndpointViaEnvVar(string envVarEndpoint)
@@ -90,7 +90,7 @@ namespace AWSSDK.UnitTests
                 {AWS_EC2_METADATA_SERVICE_ENDPOINT_ENVIRONMENT_VARIABLE, envVarEndpoint }
             };
 
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
             {
                 using (new FallbackFactoryTest.FallbackFactoryTestFixture(ProfileText, "default", envVariables)) { }
             });
@@ -102,7 +102,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestIMDSInvalidEndpointViaProfile()
         {
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
             {
                 using (new FallbackFactoryTest.FallbackFactoryTestFixture(ProfileText, "imds-bad-endpoint", null)) { }
             });
