@@ -79,6 +79,56 @@ namespace Amazon.ControlCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type ControlParameterRequirement.
+    /// </summary>
+    public class ControlParameterRequirement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPTIONAL for ControlParameterRequirement
+        /// </summary>
+        public static readonly ControlParameterRequirement OPTIONAL = new ControlParameterRequirement("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for ControlParameterRequirement
+        /// </summary>
+        public static readonly ControlParameterRequirement REQUIRED = new ControlParameterRequirement("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlParameterRequirement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlParameterRequirement FindValue(string value)
+        {
+            return FindValue<ControlParameterRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlParameterRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ControlRelationType.
     /// </summary>
     public class ControlRelationType : ConstantClass
@@ -288,6 +338,60 @@ namespace Amazon.ControlCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MappingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParameterRequirementSummary.
+    /// </summary>
+    public class ParameterRequirementSummary : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for ParameterRequirementSummary
+        /// </summary>
+        public static readonly ParameterRequirementSummary NONE = new ParameterRequirementSummary("NONE");
+        /// <summary>
+        /// Constant OPTIONAL for ParameterRequirementSummary
+        /// </summary>
+        public static readonly ParameterRequirementSummary OPTIONAL = new ParameterRequirementSummary("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for ParameterRequirementSummary
+        /// </summary>
+        public static readonly ParameterRequirementSummary REQUIRED = new ParameterRequirementSummary("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterRequirementSummary(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterRequirementSummary FindValue(string value)
+        {
+            return FindValue<ParameterRequirementSummary>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterRequirementSummary(string value)
         {
             return FindValue(value);
         }
