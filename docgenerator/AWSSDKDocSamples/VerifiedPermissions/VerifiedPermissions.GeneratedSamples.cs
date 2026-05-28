@@ -481,6 +481,21 @@ when {
             #endregion
         }
 
+        public void VerifiedPermissionsDeletePolicyStoreAlias()
+        {
+            #region example-2
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.DeletePolicyStoreAlias(new DeletePolicyStoreAliasRequest 
+            {
+                AliasName = "policy-store-alias/example-policy-store",
+                DeletionMode = "HardDelete"
+            });
+
+
+            #endregion
+        }
+
         public void VerifiedPermissionsDeletePolicyTemplate()
         {
             #region example-1
@@ -690,7 +705,7 @@ when {
             var response = client.IsAuthorized(new IsAuthorizedRequest 
             {
                 Action = new ActionIdentifier {
-                    ActionId = "view",
+                    ActionId = "updatePhoto",
                     ActionType = "Action"
                 },
                 PolicyStoreId = "C7v5xMplfFH3i3e4Jrzb1a",

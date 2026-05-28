@@ -76,7 +76,6 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("<#=this.Config.TestCategory#>")]
-        [ExpectedException(typeof(System.InvalidOperationException), "Paginator has already been consumed and cannot be reused. Please create a new instance.")]
         public void <#=operation.Name#>Test__OnlyUsedOnce()
         {
             var request = InstantiateClassGenerator.Execute<<#=operation.Name#>Request>();
@@ -94,8 +93,8 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
 #>
             response.<#=operation.Paginators.OutputTokens[0].PropertyName#>.Clear();
 <#
-            } 
-            else 
+            }
+            else
             {
 #>
             response.<#=operation.Paginators.OutputTokens[0].PropertyName#> = null;
@@ -110,7 +109,7 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             paginator.Responses.ToList();
 
             // Second time should throw an exception
-            paginator.Responses.ToList();
+            Assert.ThrowsExactly<System.InvalidOperationException>(() => paginator.Responses.ToList());
         }
 
 <#

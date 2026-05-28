@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Vocabulary. 
         /// <para>
-        /// A list of specific words that you want Contact Lens for Amazon Connect to recognize
+        /// A list of specific words that you want Contact Lens for Connect Customer to recognize
         /// in your audio input. They are generally domain-specific words and phrases, words that
         /// Contact Lens is not recognizing, or proper nouns.
         /// </para>

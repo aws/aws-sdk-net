@@ -57,7 +57,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(null, outpostId);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3Control")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "myaccesspoint", "myaccesspoint")]
         [DataRow("noArn", "", "noArn")]
@@ -69,7 +69,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expectedValue, testDict["value"]);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3Control")]
         [DataRow("", false)]
         [DataRow("1+1=3", false)]

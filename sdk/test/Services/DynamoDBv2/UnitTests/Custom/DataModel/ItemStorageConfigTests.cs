@@ -378,7 +378,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var config = new ItemStorageConfig(typeof(TestClass));
 
-            Assert.ThrowsException<InvalidOperationException>(() =>
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
             {
                 var _ = config.VersionPropertyStorage;
             });

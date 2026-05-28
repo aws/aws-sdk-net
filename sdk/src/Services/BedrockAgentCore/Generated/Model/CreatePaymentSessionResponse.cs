@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for creating a payment session
+    /// Response structure for creating a payment session.
     /// </summary>
     public partial class CreatePaymentSessionResponse : AmazonWebServiceResponse
     {
         private PaymentSession _paymentSession;
 
         /// <summary>
-        /// Gets and sets the property PaymentSession.
+        /// Gets and sets the property PaymentSession. 
+        /// <para>
+        /// The created payment session.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PaymentSession PaymentSession

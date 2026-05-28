@@ -35,6 +35,7 @@ namespace Amazon.BedrockDataAutomation.Model
     public partial class CustomOutputConfiguration
     {
         private List<BlueprintItem> _blueprints = AWSConfigs.InitializeCollections ? new List<BlueprintItem>() : null;
+        private DocumentCustomOutputConfiguration _document;
 
         /// <summary>
         /// Gets and sets the property Blueprints.
@@ -54,6 +55,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetBlueprints()
         {
             return this._blueprints != null && (this._blueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Document.
+        /// </summary>
+        public DocumentCustomOutputConfiguration Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
         }
 
     }

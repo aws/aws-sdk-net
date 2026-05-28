@@ -141,8 +141,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <c>fields</c> command, only the specified fields and their values are returned.
         /// The default is 10,000.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum value is 100,000.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=100000)]
         public int? Limit
         {
             get { return this._limit; }

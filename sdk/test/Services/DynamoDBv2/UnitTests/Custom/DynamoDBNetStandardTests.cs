@@ -43,7 +43,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2
             var mockClient = new Mock<IAmazonDynamoDB>();
             mockClient.Setup(x => x.Config).Returns(new AmazonDynamoDBConfig());
 
-            Assert.ThrowsException<InvalidOperationException>(() => Table.LoadTable(mockClient.Object, "TestTable"));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Table.LoadTable(mockClient.Object, "TestTable"));
         }
     }
 }

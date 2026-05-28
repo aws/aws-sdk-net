@@ -1705,9 +1705,25 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly IndicatorType MALICIOUS_IP = new IndicatorType("MALICIOUS_IP");
         /// <summary>
+        /// Constant MALICIOUS_PACKAGE for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType MALICIOUS_PACKAGE = new IndicatorType("MALICIOUS_PACKAGE");
+        /// <summary>
         /// Constant MALICIOUS_PROCESS for IndicatorType
         /// </summary>
         public static readonly IndicatorType MALICIOUS_PROCESS = new IndicatorType("MALICIOUS_PROCESS");
+        /// <summary>
+        /// Constant MISCONFIGURATION for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType MISCONFIGURATION = new IndicatorType("MISCONFIGURATION");
+        /// <summary>
+        /// Constant REACHABILITY for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType REACHABILITY = new IndicatorType("REACHABILITY");
+        /// <summary>
+        /// Constant SENSITIVE_DATA for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType SENSITIVE_DATA = new IndicatorType("SENSITIVE_DATA");
         /// <summary>
         /// Constant SUSPICIOUS_NETWORK for IndicatorType
         /// </summary>
@@ -1736,6 +1752,10 @@ namespace Amazon.GuardDuty
         /// Constant UNUSUAL_ASN_FOR_USER for IndicatorType
         /// </summary>
         public static readonly IndicatorType UNUSUAL_ASN_FOR_USER = new IndicatorType("UNUSUAL_ASN_FOR_USER");
+        /// <summary>
+        /// Constant VULNERABILITY for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType VULNERABILITY = new IndicatorType("VULNERABILITY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2194,6 +2214,10 @@ namespace Amazon.GuardDuty
         /// Constant S3_BUCKET for MalwareProtectionResourceType
         /// </summary>
         public static readonly MalwareProtectionResourceType S3_BUCKET = new MalwareProtectionResourceType("S3_BUCKET");
+        /// <summary>
+        /// Constant S3_POINT_IN_TIME_RECOVERY for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType S3_POINT_IN_TIME_RECOVERY = new MalwareProtectionResourceType("S3_POINT_IN_TIME_RECOVERY");
         /// <summary>
         /// Constant S3_RECOVERY_POINT for MalwareProtectionResourceType
         /// </summary>

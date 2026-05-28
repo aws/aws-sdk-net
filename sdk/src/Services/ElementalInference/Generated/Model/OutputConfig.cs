@@ -37,6 +37,7 @@ namespace Amazon.ElementalInference.Model
     {
         private ClippingConfig _clipping;
         private CroppingConfig _cropping;
+        private SubtitlingConfig _subtitling;
 
         /// <summary>
         /// Gets and sets the property Clipping. 
@@ -72,6 +73,24 @@ namespace Amazon.ElementalInference.Model
         internal bool IsSetCropping()
         {
             return this._cropping != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtitling. 
+        /// <para>
+        /// The output config type that applies to the smart subtitling feature.
+        /// </para>
+        /// </summary>
+        public SubtitlingConfig Subtitling
+        {
+            get { return this._subtitling; }
+            set { this._subtitling = value; }
+        }
+
+        // Check to see if Subtitling property is set
+        internal bool IsSetSubtitling()
+        {
+            return this._subtitling != null;
         }
 
     }

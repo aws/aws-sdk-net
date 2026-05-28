@@ -19,7 +19,7 @@ namespace AWSSDK.UnitTests
         [TestInitialize]
         public void Initialize() => _mockProvider = new MockTimeProvider();
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(59.5)]
         [DataRow(60)]
         [DataRow(75)]
@@ -50,7 +50,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(59.5)]
         [DataRow(60)]
         [DataRow(75)]
@@ -81,7 +81,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(15, 1, 60)]
         [DataRow(5, 10, 51)]
         public void CredentialsAreRefreshedImmediatelyWhenExpired(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(15, 1, 60)]
         [DataRow(5, 10, 51)]
         public async Task CredentialsAreRefreshedImmediatelyWhenExpiredAsync(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
@@ -121,7 +121,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(45.5)]
         [DataRow(50)]
         [DataRow(58.5)]
@@ -148,7 +148,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(2, mockCredentials.GeneratedTokenCount);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(45.5)]
         [DataRow(50)]
         [DataRow(58.5)]

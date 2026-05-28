@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Summary of a payment session for list operations
+    /// Summary information about a payment session.
     /// </summary>
     public partial class PaymentSessionSummary
     {
@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when this payment session was created.
+        /// The timestamp when the session was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentSessionId. 
         /// <para>
-        /// The unique identifier for this payment session.
+        /// The unique identifier of the payment session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=31, Max=31)]
@@ -120,7 +120,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp when this payment session was last updated.
+        /// The timestamp when the session was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +139,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The user ID associated with this payment session.
+        /// The user ID associated with this session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=120)]

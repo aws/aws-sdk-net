@@ -45,6 +45,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _membershipIdentifier;
         private MetricsStatus _metricsStatus;
         private string _metricsStatusDetails;
+        private string _mlModelTrainingPayerAccountId;
         private string _name;
         private ResourceConfig _resourceConfig;
         private TrainedModelStatus _status;
@@ -267,6 +268,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetMetricsStatusDetails()
         {
             return this._metricsStatusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlModelTrainingPayerAccountId. 
+        /// <para>
+        /// The account ID of the member that is responsible for paying for model training costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MlModelTrainingPayerAccountId
+        {
+            get { return this._mlModelTrainingPayerAccountId; }
+            set { this._mlModelTrainingPayerAccountId = value; }
+        }
+
+        // Check to see if MlModelTrainingPayerAccountId property is set
+        internal bool IsSetMlModelTrainingPayerAccountId()
+        {
+            return this._mlModelTrainingPayerAccountId != null;
         }
 
         /// <summary>

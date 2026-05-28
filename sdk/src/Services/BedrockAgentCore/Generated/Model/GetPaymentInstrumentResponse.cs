@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for getting a payment instrument
+    /// Response structure for getting a payment instrument.
     /// </summary>
     public partial class GetPaymentInstrumentResponse : AmazonWebServiceResponse
     {
         private PaymentInstrument _paymentInstrument;
 
         /// <summary>
-        /// Gets and sets the property PaymentInstrument.
+        /// Gets and sets the property PaymentInstrument. 
+        /// <para>
+        /// The payment instrument details.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PaymentInstrument PaymentInstrument

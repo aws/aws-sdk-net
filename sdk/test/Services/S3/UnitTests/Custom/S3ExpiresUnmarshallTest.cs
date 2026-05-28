@@ -24,12 +24,11 @@ namespace AWSSDK.UnitTests
         [DataRow("01 dec 2100", true)]
         [DataRow("Sun, 31 Aug 2031 20:56:53 GMT+00:00", false)]
         [DataRow("Sun, 22 Oct 23 00:45:02 UTC", false)]
-        [DataRow("access plus 1 month", false)]
         [DataRow("{ts '2023-10-10 09:27:14'}", false)]
         [DataRow("Tue, 01 Jan 2014 12:00:00 GMT", false)]
         [DataRow("Sat, 10 Jan 2049 00:00:00 GMT", false)]
         [DataRow("Thu, 31 Dec 2057 23:55:55 GMT", false)]
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         public void GetObjectMetadataUnmarshallHandleInvalidDates(string expiresValue, bool isValidDate)
         {

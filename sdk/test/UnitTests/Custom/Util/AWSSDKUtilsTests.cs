@@ -106,18 +106,15 @@ namespace AWSSDK.UnitTests
         [TestCategory("Util")]
         public void TestIsPropertySet()
         {
-            var shape = new Amazon.EC2.Model.CreateCapacityReservationRequest();
-            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EbsOptimized)));
-            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EndDate)));
-            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.ClientToken)));
+            var shape = new Amazon.DynamoDBv2.Model.CreateTableRequest();
+            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.DeletionProtectionEnabled)));
+            Assert.IsFalse(AWSSDKUtils.IsPropertySet(shape, nameof(shape.TableName)));
 
-            shape.EbsOptimized = true;
-            shape.EndDate = DateTime.UtcNow;
-            shape.ClientToken = "";
+            shape.DeletionProtectionEnabled = true;
+            shape.TableName = "";
 
-            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EbsOptimized)));
-            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.EndDate)));
-            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.ClientToken)));
+            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.DeletionProtectionEnabled)));
+            Assert.IsTrue(AWSSDKUtils.IsPropertySet(shape, nameof(shape.TableName)));
 
             try
             {
@@ -132,7 +129,7 @@ namespace AWSSDK.UnitTests
 
             try
             {
-                AWSSDKUtils.IsPropertySet(Amazon.EC2.PrincipalType.Account, "foo");
+                AWSSDKUtils.IsPropertySet(Amazon.DynamoDBv2.BillingMode.PAY_PER_REQUEST, "foo");
                 Assert.Fail();
             }
             catch (Exception e)
@@ -182,7 +179,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Util")]
         [DataRow("Hello World", true, "48656c6c6f20576f726c64")]
         [DataRow("Hello World", false, "48656C6C6F20576F726C64")]
-        [DataTestMethod]
+        [TestMethod]
         public void ToHex(string input, bool lowercase, string expectedResult)
         {
             var bytes = Encoding.UTF8.GetBytes(input);
@@ -193,7 +190,7 @@ namespace AWSSDK.UnitTests
 
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null, null)]
         [DataRow("no-delimiters-at-all", "")]
         [DataRow("delimiter-end-of-string.", "")]

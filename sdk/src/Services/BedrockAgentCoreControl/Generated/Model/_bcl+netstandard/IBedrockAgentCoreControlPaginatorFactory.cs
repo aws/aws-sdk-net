@@ -118,6 +118,36 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasetExamples operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetExamplesPaginator ListDatasetExamples(ListDatasetExamplesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetVersionsPaginator ListDatasetVersions(ListDatasetVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListEvaluators operation
         ///</summary>
         [AWSPaginator(

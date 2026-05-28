@@ -62,6 +62,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.Blueprints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("document", targetDepth))
+                {
+                    var unmarshaller = DocumentCustomOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

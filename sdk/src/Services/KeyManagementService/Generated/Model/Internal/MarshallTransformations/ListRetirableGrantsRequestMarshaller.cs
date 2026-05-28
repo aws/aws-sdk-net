@@ -93,6 +93,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RetiringPrincipal);
             }
 
+            if(publicRequest.IsSetRetiringServicePrincipal())
+            {
+                context.Writer.WritePropertyName("RetiringServicePrincipal");
+                context.Writer.WriteStringValue(publicRequest.RetiringServicePrincipal);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

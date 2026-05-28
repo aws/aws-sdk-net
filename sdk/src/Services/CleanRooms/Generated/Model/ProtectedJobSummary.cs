@@ -36,6 +36,7 @@ namespace Amazon.CleanRooms.Model
     {
         private DateTime? _createTime;
         private string _id;
+        private string _jobComputePayerAccountId;
         private string _membershipArn;
         private string _membershipId;
         private List<ProtectedJobReceiverConfiguration> _receiverConfigurations = AWSConfigs.InitializeCollections ? new List<ProtectedJobReceiverConfiguration>() : null;
@@ -77,6 +78,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobComputePayerAccountId. 
+        /// <para>
+        /// The account ID of the member that pays for the job compute costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string JobComputePayerAccountId
+        {
+            get { return this._jobComputePayerAccountId; }
+            set { this._jobComputePayerAccountId = value; }
+        }
+
+        // Check to see if JobComputePayerAccountId property is set
+        internal bool IsSetJobComputePayerAccountId()
+        {
+            return this._jobComputePayerAccountId != null;
         }
 
         /// <summary>

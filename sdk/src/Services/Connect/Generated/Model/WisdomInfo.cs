@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about Amazon Connect Wisdom.
+    /// Information about Connect Customer Wisdom.
     /// </summary>
     public partial class WisdomInfo
     {

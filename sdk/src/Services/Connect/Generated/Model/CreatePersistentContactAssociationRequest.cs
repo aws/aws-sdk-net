@@ -33,7 +33,7 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the CreatePersistentContactAssociation operation.
     /// Enables rehydration of chats for the lifespan of a contact. For more information about
     /// chat rehydration, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable
-    /// persistent chat</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// persistent chat</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </summary>
     public partial class CreatePersistentContactAssociationRequest : AmazonConnectRequest
     {
@@ -88,7 +88,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -115,8 +115,8 @@ namespace Amazon.Connect.Model
         ///  <c>ENTIRE_PAST_SESSION</c>: Rehydrates a chat from the most recently terminated past
         /// chat contact of the specified past ended chat session. To use this type, provide the
         /// <c>initialContactId</c> of the past ended chat session in the <c>sourceContactId</c>
-        /// field. In this type, Amazon Connect determines what the most recent chat contact on
-        /// the past ended chat session and uses it to start a persistent chat. 
+        /// field. In this type, Connect Customer determines what the most recent chat contact
+        /// on the past ended chat session and uses it to start a persistent chat. 
         /// </para>
         ///  </li> <li> 
         /// <para>

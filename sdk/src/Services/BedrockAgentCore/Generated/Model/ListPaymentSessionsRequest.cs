@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPaymentSessions operation.
-    /// List payment manager sessions
+    /// List payment sessions.
     /// </summary>
     public partial class ListPaymentSessionsRequest : AmazonBedrockAgentCoreRequest
     {

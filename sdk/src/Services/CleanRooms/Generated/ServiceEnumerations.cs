@@ -991,13 +991,37 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ChangeType ADD_MEMBER = new ChangeType("ADD_MEMBER");
         /// <summary>
+        /// Constant ADD_PAYER_CANDIDATE for ChangeType
+        /// </summary>
+        public static readonly ChangeType ADD_PAYER_CANDIDATE = new ChangeType("ADD_PAYER_CANDIDATE");
+        /// <summary>
         /// Constant EDIT_AUTO_APPROVED_CHANGE_TYPES for ChangeType
         /// </summary>
         public static readonly ChangeType EDIT_AUTO_APPROVED_CHANGE_TYPES = new ChangeType("EDIT_AUTO_APPROVED_CHANGE_TYPES");
         /// <summary>
+        /// Constant GRANT_CAN_RECEIVE_INFERENCE_OUTPUT for ChangeType
+        /// </summary>
+        public static readonly ChangeType GRANT_CAN_RECEIVE_INFERENCE_OUTPUT = new ChangeType("GRANT_CAN_RECEIVE_INFERENCE_OUTPUT");
+        /// <summary>
+        /// Constant GRANT_CAN_RECEIVE_MODEL_OUTPUT for ChangeType
+        /// </summary>
+        public static readonly ChangeType GRANT_CAN_RECEIVE_MODEL_OUTPUT = new ChangeType("GRANT_CAN_RECEIVE_MODEL_OUTPUT");
+        /// <summary>
         /// Constant GRANT_RECEIVE_RESULTS_ABILITY for ChangeType
         /// </summary>
         public static readonly ChangeType GRANT_RECEIVE_RESULTS_ABILITY = new ChangeType("GRANT_RECEIVE_RESULTS_ABILITY");
+        /// <summary>
+        /// Constant REMOVE_PAYER_CANDIDATE for ChangeType
+        /// </summary>
+        public static readonly ChangeType REMOVE_PAYER_CANDIDATE = new ChangeType("REMOVE_PAYER_CANDIDATE");
+        /// <summary>
+        /// Constant REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT for ChangeType
+        /// </summary>
+        public static readonly ChangeType REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT = new ChangeType("REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT");
+        /// <summary>
+        /// Constant REVOKE_CAN_RECEIVE_MODEL_OUTPUT for ChangeType
+        /// </summary>
+        public static readonly ChangeType REVOKE_CAN_RECEIVE_MODEL_OUTPUT = new ChangeType("REVOKE_CAN_RECEIVE_MODEL_OUTPUT");
         /// <summary>
         /// Constant REVOKE_RECEIVE_RESULTS_ABILITY for ChangeType
         /// </summary>

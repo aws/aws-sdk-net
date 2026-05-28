@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegrationAssociation operation.
-    /// Creates an Amazon Web Services resource association with an Amazon Connect instance.
+    /// Creates an Amazon Web Services resource association with an Connect Customer instance.
     /// </summary>
     public partial class CreateIntegrationAssociationRequest : AmazonConnectRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -70,8 +70,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When integrating with Amazon Web Services End User Messaging, the Amazon Connect and
-        /// Amazon Web Services End User Messaging instances must be in the same account.
+        /// When integrating with Amazon Web Services End User Messaging, the Connect Customer
+        /// and Amazon Web Services End User Messaging instances must be in the same account.
         /// </para>
         ///  </note>
         /// </summary>

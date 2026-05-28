@@ -208,7 +208,7 @@ namespace AWSSDK.UnitTests
         {
             _testFixture.WithCreateTokenException(new ExpiredTokenException("simulation"));
 
-            Assert.ThrowsException<AmazonSSOOIDCException>(() =>
+            Assert.ThrowsExactly<AmazonSSOOIDCException>(() =>
                 CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequest));
 
             _testFixture.AssertCreateTokenRequest(_testFixture.CreateTokenRequest);
@@ -220,7 +220,7 @@ namespace AWSSDK.UnitTests
         {
             _testFixture.WithCreateTokenException(new ExpiredTokenException("simulation"));
 
-            await Assert.ThrowsExceptionAsync<AmazonSSOOIDCException>(async () =>
+            await Assert.ThrowsExactlyAsync<AmazonSSOOIDCException>(async () =>
                 await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object,
                     _testFixture.GetSsoTokenRequest));
 
@@ -234,7 +234,7 @@ namespace AWSSDK.UnitTests
             var exception = new Exception("unexpected exception");
             _testFixture.WithCreateTokenException(exception);
 
-            var actualException = Assert.ThrowsException<Exception>(() =>
+            var actualException = Assert.ThrowsExactly<Exception>(() =>
                 CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequest));
 
             Assert.AreSame(exception, actualException);
@@ -248,7 +248,7 @@ namespace AWSSDK.UnitTests
             var exception = new Exception("unexpected exception");
             _testFixture.WithCreateTokenException(exception);
 
-            var actualException = await Assert.ThrowsExceptionAsync<Exception>(async () =>
+            var actualException = await Assert.ThrowsExactlyAsync<Exception>(async () =>
                 await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object,
                     _testFixture.GetSsoTokenRequest));
 
@@ -260,7 +260,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken_PkceFlow_RetrieveCodeException()
         {
-            Assert.ThrowsException<Exception>(() => CoreAmazonSSOOIDC.GetSsoToken(
+            Assert.ThrowsExactly<Exception>(() => CoreAmazonSSOOIDC.GetSsoToken(
                 _testFixture.OidcClient.Object,
                 _testFixture.GetSsoTokenRequestWithPkceError,
                 _testFixture.GetSsoTokenContext.Object
@@ -276,7 +276,7 @@ namespace AWSSDK.UnitTests
             var exception = new Exception("unexpected exception");
             _testFixture.WithCreateTokenException(exception);
 
-            var actualException = Assert.ThrowsException<Exception>(() =>
+            var actualException = Assert.ThrowsExactly<Exception>(() =>
                 CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequestWithPkceSuccess)
             );
 
@@ -288,7 +288,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoTokenAsync_PkceFlow_RetrieveCodeException()
         {
-            await Assert.ThrowsExceptionAsync<Exception>(async () => 
+            await Assert.ThrowsExactlyAsync<Exception>(async () => 
                 await CoreAmazonSSOOIDC.GetSsoTokenAsync(
                     _testFixture.OidcClient.Object,
                     _testFixture.GetSsoTokenRequestWithPkceError,
@@ -306,7 +306,7 @@ namespace AWSSDK.UnitTests
             var exception = new Exception("unexpected exception");
             _testFixture.WithCreateTokenException(exception);
 
-            var actualException = await Assert.ThrowsExceptionAsync<Exception>(async () =>
+            var actualException = await Assert.ThrowsExactlyAsync<Exception>(async () =>
                 await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object, _testFixture.GetSsoTokenRequestWithPkceSuccess)
             );
 

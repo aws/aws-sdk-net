@@ -85,7 +85,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.Storage.S3.IsSetUploadPolicy())
                         {
-                            request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicy", StringUtils.FromString(publicRequest.Storage.S3.UploadPolicy));
+                            request.Parameters.Add("Storage" + "." + "S3" + "." + "UploadPolicy", StringUtils.FromMemoryStream(publicRequest.Storage.S3.UploadPolicy));
                         }
                         if(publicRequest.Storage.S3.IsSetUploadPolicySignature())
                         {

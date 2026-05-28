@@ -11,6 +11,40 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 {
     class ECSSamples : ISample
     {
+        public void ECSContinueServiceDeployment()
+        {
+            #region example-1
+
+            var client = new AmazonECSClient();
+            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
+            {
+                Action = "CONTINUE",
+                HookId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+                ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
+            });
+
+            string serviceDeploymentArn = response.ServiceDeploymentArn;
+
+            #endregion
+        }
+
+        public void ECSContinueServiceDeployment()
+        {
+            #region example-2
+
+            var client = new AmazonECSClient();
+            var response = client.ContinueServiceDeployment(new ContinueServiceDeploymentRequest 
+            {
+                Action = "ROLLBACK",
+                HookId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567",
+                ServiceDeploymentArn = "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
+            });
+
+            string serviceDeploymentArn = response.ServiceDeploymentArn;
+
+            #endregion
+        }
+
         public void ECSCreateCapacityProvider()
         {
             #region example-1
@@ -111,6 +145,38 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
                 Role = "ecsServiceRole",
                 ServiceName = "ecs-simple-service-elb",
                 TaskDefinition = "console-sample-app-static"
+            });
+
+            Service service = response.Service;
+
+            #endregion
+        }
+
+        public void ECSCreateService()
+        {
+            #region example-3
+
+            var client = new AmazonECSClient();
+            var response = client.CreateService(new CreateServiceRequest 
+            {
+                DeploymentConfiguration = new DeploymentConfiguration {
+                    LifecycleHooks = new List<DeploymentLifecycleHook> {
+                        new DeploymentLifecycleHook {
+                            LifecycleStages = new List<string> {
+                                "POST_PRODUCTION_TRAFFIC_SHIFT"
+                            },
+                            TargetType = "PAUSE",
+                            TimeoutConfiguration = new DeploymentLifecycleHookTimeoutConfiguration {
+                                Action = "ROLLBACK",
+                                TimeoutInMinutes = 60
+                            }
+                        }
+                    },
+                    Strategy = "BLUE_GREEN"
+                },
+                DesiredCount = 2,
+                ServiceName = "ecs-service-with-pause-hook",
+                TaskDefinition = "ecs-demo"
             });
 
             Service service = response.Service;
@@ -494,6 +560,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             #endregion
         }
 
+        public void ECSDescribeServiceDeployments()
+        {
+            #region example-2
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest 
+            {
+                ServiceDeploymentArns = new List<string> {
+                    "arn:aws:ecs:us-east-1:123456789012:service-deployment/MyCluster/MyService/r9i43YFjvgF_xlg7m2eJ1r"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<ServiceDeployment> serviceDeployments = response.ServiceDeployments;
+
+            #endregion
+        }
+
         public void ECSDescribeServiceRevisions()
         {
             #region example-1
@@ -521,6 +605,24 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             {
                 Services = new List<string> {
                     "ecs-simple-service"
+                }
+            });
+
+            List<Failure> failures = response.Failures;
+            List<Service> services = response.Services;
+
+            #endregion
+        }
+
+        public void ECSDescribeServices()
+        {
+            #region example-2
+
+            var client = new AmazonECSClient();
+            var response = client.DescribeServices(new DescribeServicesRequest 
+            {
+                Services = new List<string> {
+                    "ecs-service-with-pause-hook"
                 }
             });
 
@@ -1380,6 +1482,35 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
             {
                 DesiredCount = 10,
                 Service = "my-http-service"
+            });
+
+
+            #endregion
+        }
+
+        public void ECSUpdateService()
+        {
+            #region example-3
+
+            var client = new AmazonECSClient();
+            var response = client.UpdateService(new UpdateServiceRequest 
+            {
+                DeploymentConfiguration = new DeploymentConfiguration {
+                    LifecycleHooks = new List<DeploymentLifecycleHook> {
+                        new DeploymentLifecycleHook {
+                            LifecycleStages = new List<string> {
+                                "POST_PRODUCTION_TRAFFIC_SHIFT"
+                            },
+                            TargetType = "PAUSE",
+                            TimeoutConfiguration = new DeploymentLifecycleHookTimeoutConfiguration {
+                                Action = "CONTINUE",
+                                TimeoutInMinutes = 30
+                            }
+                        }
+                    },
+                    Strategy = "BLUE_GREEN"
+                },
+                Service = "my-blue-green-service"
             });
 
 

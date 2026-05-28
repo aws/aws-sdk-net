@@ -30,7 +30,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(platform.Contains("md/ARCH"));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(@"c:\a\b\c\test.txt", @"c:\a\b\c", true)]
         [DataRow(@"c:\a\b\c\..\test.txt", @"c:\a\b\c", false)]
         [DataRow(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c", false)]

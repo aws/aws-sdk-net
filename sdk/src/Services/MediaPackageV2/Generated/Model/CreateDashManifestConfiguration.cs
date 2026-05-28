@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class CreateDashManifestConfiguration
     {
+        private DashAvailabilityStartTimeConfiguration _availabilityStartTimeConfiguration;
         private List<DashBaseUrl> _baseUrls = AWSConfigs.InitializeCollections ? new List<DashBaseUrl>() : null;
         private DashCompactness _compactness;
         private DashDrmSignaling _drmSignaling;
@@ -52,6 +53,26 @@ namespace Amazon.MediaPackageV2.Model
         private int? _suggestedPresentationDelaySeconds;
         private UriPathType _uriPathType;
         private DashUtcTiming _utcTiming;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityStartTimeConfiguration. 
+        /// <para>
+        /// The configuration for the DASH <c>availabilityStartTime</c> attribute of the Media
+        /// Presentation Description (MPD). If you don't specify a value, MediaPackage uses the
+        /// default availability start time of <c>2024-01-01T00:00:00Z</c>.
+        /// </para>
+        /// </summary>
+        public DashAvailabilityStartTimeConfiguration AvailabilityStartTimeConfiguration
+        {
+            get { return this._availabilityStartTimeConfiguration; }
+            set { this._availabilityStartTimeConfiguration = value; }
+        }
+
+        // Check to see if AvailabilityStartTimeConfiguration property is set
+        internal bool IsSetAvailabilityStartTimeConfiguration()
+        {
+            return this._availabilityStartTimeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BaseUrls. 

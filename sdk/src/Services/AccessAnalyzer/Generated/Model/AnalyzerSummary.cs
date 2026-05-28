@@ -39,6 +39,7 @@ namespace Amazon.AccessAnalyzer.Model
         private DateTime? _createdAt;
         private string _lastResourceAnalyzed;
         private DateTime? _lastResourceAnalyzedAt;
+        private string _managedBy;
         private string _name;
         private AnalyzerStatus _status;
         private StatusReason _statusReason;
@@ -139,6 +140,26 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetLastResourceAnalyzedAt()
         {
             return this._lastResourceAnalyzedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The service principal that manages this analyzer (for example, <c>securityhubv2.amazonaws.com</c>).
+        /// This field is only present for service-linked analyzers and is not included for customer-managed
+        /// analyzers.
+        /// </para>
+        /// </summary>
+        public string ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

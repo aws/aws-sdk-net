@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet.UnitTests
             foreach(var subType in ddbeSubTypes)
             {
                 var equalsMethod = subType.GetMethod("Equals", new Type[] { typeof(object) });
-                Assert.IsTrue(equalsMethod.DeclaringType == subType, "Testing that type {0} implements Equals", subType.FullName);
+                Assert.IsTrue(equalsMethod.DeclaringType == subType, $"Testing that type {subType.FullName} implements Equals");
             }
 
             Console.WriteLine(ddbeSubTypes.Count);
@@ -460,7 +460,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
 
-            Assert.ThrowsException<InvalidOperationException>(() => context.QueryAsync<EmployeeMissingHashKey>("123"));
+            Assert.ThrowsExactly<InvalidOperationException>(() => context.QueryAsync<EmployeeMissingHashKey>("123"));
         }
 
         /// <summary>
@@ -479,11 +479,11 @@ namespace AWSSDK_DotNet.UnitTests
             var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
 
             // This is the table's range key, which is not attributed
-            Assert.ThrowsException<InvalidOperationException>(() =>
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
             context.QueryAsync<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new object[] { 5 }));
             
             // This is a GSI's range key, which is not attributed
-            Assert.ThrowsException<InvalidOperationException>(() =>
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
                 context.QueryAsync<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new List<object> { 5 }, new DynamoDBOperationConfig { IndexName = "GlobalIndex"}));
         }
 
@@ -583,7 +583,7 @@ namespace AWSSDK_DotNet.UnitTests
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
 
             // A boolean isn't valid as a primary key, so we expect an exception 
-            await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 await context.LoadAsync<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());

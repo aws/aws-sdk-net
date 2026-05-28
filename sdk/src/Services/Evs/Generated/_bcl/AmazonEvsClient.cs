@@ -592,7 +592,7 @@ namespace Amazon.Evs
 
         /// <summary>
         /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-        /// 4-16 hosts per environment.
+        /// 4-32 hosts per environment.
         /// 
         ///  
         /// <para>
@@ -648,7 +648,7 @@ namespace Amazon.Evs
 
         /// <summary>
         /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-        /// 4-16 hosts per environment.
+        /// 4-32 hosts per environment.
         /// 
         ///  
         /// <para>
@@ -1081,6 +1081,89 @@ namespace Amazon.Evs
             options.ResponseUnmarshaller = DisassociateEipFromVlanResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateEipFromVlanResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDepotUrl
+
+
+        /// <summary>
+        /// Returns a URL and authentication token for accessing the Amazon EVS Custom Addon depot.
+        /// Configure the depot URL as a download source in vSphere Lifecycle Manager (vLCM) to
+        /// sync and install the Amazon EVS Custom Addon.
+        /// 
+        ///  
+        /// <para>
+        /// The depot URL remains active until you rotate the authentication token by calling
+        /// this action with <c>rotate</c> set to <c>true</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDepotUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetDepotUrl service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetDepotUrl">REST API Reference for GetDepotUrl Operation</seealso>
+        public virtual GetDepotUrlResponse GetDepotUrl(GetDepotUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDepotUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDepotUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetDepotUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a URL and authentication token for accessing the Amazon EVS Custom Addon depot.
+        /// Configure the depot URL as a download source in vSphere Lifecycle Manager (vLCM) to
+        /// sync and install the Amazon EVS Custom Addon.
+        /// 
+        ///  
+        /// <para>
+        /// The depot URL remains active until you rotate the authentication token by calling
+        /// this action with <c>rotate</c> set to <c>true</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDepotUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDepotUrl service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.ResourceNotFoundException">
+        /// A service resource associated with the request could not be found. The resource might
+        /// not be specified correctly, or it may have a <c>state</c> of <c>DELETED</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetDepotUrl">REST API Reference for GetDepotUrl Operation</seealso>
+        public virtual Task<GetDepotUrlResponse> GetDepotUrlAsync(GetDepotUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDepotUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDepotUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDepotUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion

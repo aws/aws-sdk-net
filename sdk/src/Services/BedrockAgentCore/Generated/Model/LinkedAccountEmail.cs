@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// LinkedAccount using an email address.
+    /// Linked account using an email address.
     /// </summary>
     public partial class LinkedAccountEmail
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address used for linkedAccount. Must be a valid email format.
+        /// The email address used for the linked account. Must be a valid email format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=254)]

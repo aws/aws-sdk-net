@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchResourceTags operation.
-    /// Searches tags used in an Amazon Connect instance using optional search criteria.
+    /// Searches tags used in an Connect Customer instance using optional search criteria.
     /// </summary>
     public partial class SearchResourceTagsRequest : AmazonConnectRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// The identifier of the Connect Customer instance. You can find the instanceId in the
         /// Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

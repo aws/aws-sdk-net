@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePaymentSession operation.
-    /// Create a new payment manager session
+    /// Create a new payment session.
     /// </summary>
     public partial class CreatePaymentSessionRequest : AmazonBedrockAgentCoreRequest
     {
@@ -64,7 +64,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Idempotency token to ensure request uniqueness.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]

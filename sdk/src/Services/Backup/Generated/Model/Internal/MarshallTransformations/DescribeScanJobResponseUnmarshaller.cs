@@ -76,6 +76,18 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CompletionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ContinuousScanEndTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.ContinuousScanEndTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ContinuousScanStartTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.ContinuousScanStartTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedBy", targetDepth))
                 {
                     var unmarshaller = ScanJobCreatorUnmarshaller.Instance;

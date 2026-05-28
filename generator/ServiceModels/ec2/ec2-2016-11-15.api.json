@@ -3049,6 +3049,15 @@
       "input":{"shape":"DescribeIpamPoliciesRequest"},
       "output":{"shape":"DescribeIpamPoliciesResult"}
     },
+    "DescribeIpamPoolAllocations":{
+      "name":"DescribeIpamPoolAllocations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeIpamPoolAllocationsRequest"},
+      "output":{"shape":"DescribeIpamPoolAllocationsResult"}
+    },
     "DescribeIpamPools":{
       "name":"DescribeIpamPools",
       "http":{
@@ -5674,6 +5683,15 @@
       "input":{"shape":"ModifyIpamPoolRequest"},
       "output":{"shape":"ModifyIpamPoolResult"}
     },
+    "ModifyIpamPoolAllocation":{
+      "name":"ModifyIpamPoolAllocation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyIpamPoolAllocationRequest"},
+      "output":{"shape":"ModifyIpamPoolAllocationResult"}
+    },
     "ModifyIpamPrefixListResolver":{
       "name":"ModifyIpamPrefixListResolver",
       "http":{
@@ -7741,6 +7759,10 @@
         "DisallowedCidrs":{
           "shape":"IpamPoolAllocationDisallowedCidrs",
           "locationName":"DisallowedCidr"
+        },
+        "TagSpecifications":{
+          "shape":"TagSpecificationList",
+          "locationName":"TagSpecification"
         }
       }
     },
@@ -14045,7 +14067,7 @@
           "shape":"String",
           "idempotencyToken":true
         },
-        "LaunchTemplateName":{"shape":"LaunchTemplateName"},
+        "LaunchTemplateName":{"shape":"String"},
         "VersionDescription":{"shape":"VersionDescription"},
         "LaunchTemplateData":{"shape":"RequestLaunchTemplateData"},
         "Operator":{"shape":"OperatorRequest"},
@@ -21062,6 +21084,40 @@
         "IpamPolicies":{
           "shape":"IpamPolicySet",
           "locationName":"ipamPolicySet"
+        }
+      }
+    },
+    "DescribeIpamPoolAllocationsMaxResults":{
+      "type":"integer",
+      "max":100000,
+      "min":1000
+    },
+    "DescribeIpamPoolAllocationsRequest":{
+      "type":"structure",
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "IpamPoolAllocationIds":{
+          "shape":"ValueStringList",
+          "locationName":"IpamPoolAllocationId"
+        },
+        "Filters":{
+          "shape":"FilterList",
+          "locationName":"Filter"
+        },
+        "MaxResults":{"shape":"DescribeIpamPoolAllocationsMaxResults"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "DescribeIpamPoolAllocationsResult":{
+      "type":"structure",
+      "members":{
+        "IpamPoolAllocations":{
+          "shape":"IpamPoolAllocationSet",
+          "locationName":"ipamPoolAllocationSet"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "locationName":"nextToken"
         }
       }
     },
@@ -37542,6 +37598,10 @@
         "ResourceOwner":{
           "shape":"String",
           "locationName":"resourceOwner"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "locationName":"tagSet"
         }
       }
     },
@@ -41644,6 +41704,7 @@
       "required":["InstanceId"],
       "members":{
         "SourceDestCheck":{"shape":"AttributeBooleanValue"},
+        "EnclaveOptions":{"shape":"EnclaveOptionsRequest"},
         "DisableApiStop":{"shape":"AttributeBooleanValue"},
         "DryRun":{
           "shape":"Boolean",
@@ -41682,7 +41743,7 @@
           "locationName":"ramdisk"
         },
         "UserData":{
-          "shape":"BlobAttributeValue",
+          "shape":"SecureBlobAttributeValue",
           "locationName":"userData"
         },
         "InstanceInitiatedShutdownBehavior":{
@@ -42021,6 +42082,24 @@
         "IpamPolicyDocument":{
           "shape":"IpamPolicyDocument",
           "locationName":"ipamPolicyDocument"
+        }
+      }
+    },
+    "ModifyIpamPoolAllocationRequest":{
+      "type":"structure",
+      "required":["IpamPoolAllocationId"],
+      "members":{
+        "DryRun":{"shape":"Boolean"},
+        "IpamPoolAllocationId":{"shape":"IpamPoolAllocationId"},
+        "Description":{"shape":"String"}
+      }
+    },
+    "ModifyIpamPoolAllocationResult":{
+      "type":"structure",
+      "members":{
+        "IpamPoolAllocation":{
+          "shape":"IpamPoolAllocation",
+          "locationName":"ipamPoolAllocation"
         }
       }
     },
@@ -49033,7 +49112,8 @@
         "secondary-network",
         "secondary-subnet",
         "capacity-manager-data-export",
-        "vpn-concentrator"
+        "vpn-concentrator",
+        "ipam-pool-allocation"
       ]
     },
     "ResourceTypeOption":{
@@ -50520,7 +50600,7 @@
           "locationName":"prefix"
         },
         "UploadPolicy":{
-          "shape":"Blob",
+          "shape":"SecureBlob",
           "locationName":"uploadPolicy"
         },
         "UploadPolicySignature":{
@@ -51355,6 +51435,19 @@
     "SecretArn":{
       "type":"string",
       "pattern":"^(?=.{20,2048}$)arn:aws[a-z-]*:secretsmanager:[a-z0-9-]+:\\d{12}:secret:[a-zA-Z0-9/_+=.@-]+"
+    },
+    "SecureBlob":{
+      "type":"blob",
+      "sensitive":true
+    },
+    "SecureBlobAttributeValue":{
+      "type":"structure",
+      "members":{
+        "Value":{
+          "shape":"SecureBlob",
+          "locationName":"value"
+        }
+      }
     },
     "SecurityGroup":{
       "type":"structure",
@@ -58110,6 +58203,10 @@
         "EndTime":{
           "shape":"DateTime",
           "locationName":"endTime"
+        },
+        "Operator":{
+          "shape":"OperatorResponse",
+          "locationName":"operator"
         }
       }
     },

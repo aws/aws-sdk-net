@@ -29,6 +29,7 @@
     <property>Amazon.MediaConnect.Model.CreateRouterNetworkInterfaceRequest.Name</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterOutputRequest.Name</property>
@@ -366,6 +367,7 @@
     <property>Amazon.MediaConnect.Model.UpdateRouterNetworkInterfaceRequest.Name</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterOutputRequest.Arn</property>
@@ -452,6 +454,10 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MergeRouterInputConfiguration.NetworkInterfaceArn</property>
     <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.PublicRouterNetworkInterfaceRule.Cidr</property>
+    <pattern>(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RistRouterInputConfiguration.Port</property>

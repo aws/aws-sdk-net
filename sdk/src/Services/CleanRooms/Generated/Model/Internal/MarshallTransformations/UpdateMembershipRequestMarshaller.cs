@@ -104,6 +104,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.JobLogStatus);
             }
 
+            if(publicRequest.IsSetMembershipPaymentConfiguration())
+            {
+                context.Writer.WritePropertyName("membershipPaymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateMembershipPaymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MembershipPaymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetQueryLogStatus())
             {
                 context.Writer.WritePropertyName("queryLogStatus");

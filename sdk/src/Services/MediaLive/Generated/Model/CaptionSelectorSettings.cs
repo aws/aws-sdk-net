@@ -40,6 +40,7 @@ namespace Amazon.MediaLive.Model
         private EmbeddedSourceSettings _embeddedSourceSettings;
         private Scte20SourceSettings _scte20SourceSettings;
         private Scte27SourceSettings _scte27SourceSettings;
+        private SmartSubtitleSourceSettings _smartSubtitleSourceSettings;
         private TeletextSourceSettings _teletextSourceSettings;
 
         /// <summary>
@@ -130,6 +131,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetScte27SourceSettings()
         {
             return this._scte27SourceSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmartSubtitleSourceSettings.
+        /// </summary>
+        public SmartSubtitleSourceSettings SmartSubtitleSourceSettings
+        {
+            get { return this._smartSubtitleSourceSettings; }
+            set { this._smartSubtitleSourceSettings = value; }
+        }
+
+        // Check to see if SmartSubtitleSourceSettings property is set
+        internal bool IsSetSmartSubtitleSourceSettings()
+        {
+            return this._smartSubtitleSourceSettings != null;
         }
 
         /// <summary>

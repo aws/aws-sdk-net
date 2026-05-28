@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePredefinedAttribute operation.
-    /// Deletes a predefined attribute from the specified Amazon Connect instance.
+    /// Deletes a predefined attribute from the specified Connect Customer instance.
     /// </summary>
     public partial class DeletePredefinedAttributeRequest : AmazonConnectRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The identifier of the Amazon Connect instance. You can find the instance ID in the
-        /// Amazon Resource Name (ARN) of the instance.
+        ///  The identifier of the Connect Customer instance. You can find the instance ID in
+        /// the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

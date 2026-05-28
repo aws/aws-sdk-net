@@ -31,13 +31,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAuthenticationProfiles operation.
-    /// This API is in preview release for Amazon Connect and is subject to change. To request
+    /// This API is in preview release for Connect Customer and is subject to change. To request
     /// access to this API, contact Amazon Web Services Support.
     /// 
     ///  
     /// <para>
-    /// Provides summary information about the authentication profiles in a specified Amazon
-    /// Connect instance.
+    /// Provides summary information about the authentication profiles in a specified Connect
+    /// Customer instance.
     /// </para>
     /// </summary>
     public partial class ListAuthenticationProfilesRequest : AmazonConnectRequest
@@ -49,7 +49,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

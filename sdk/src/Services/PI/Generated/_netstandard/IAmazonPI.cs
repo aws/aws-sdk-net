@@ -351,6 +351,33 @@ namespace Amazon.PI
 
         #endregion
                 
+        #region  ListPerformanceAnalysisReportRecommendations
+
+
+
+        /// <summary>
+        /// Retrieves recommendations for a performance analysis report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReportRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPerformanceAnalysisReportRecommendations service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReportRecommendations">REST API Reference for ListPerformanceAnalysisReportRecommendations Operation</seealso>
+        Task<ListPerformanceAnalysisReportRecommendationsResponse> ListPerformanceAnalysisReportRecommendationsAsync(ListPerformanceAnalysisReportRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListPerformanceAnalysisReports
 
 

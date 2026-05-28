@@ -102,7 +102,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Batches = new List<DocumentBatchGet> { firstBatch, secondBatch }
             };
 
-            await Assert.ThrowsExceptionAsync<AmazonDynamoDBException>(() => multiBatchGet.GetItemsAsync());
+            await Assert.ThrowsExactlyAsync<AmazonDynamoDBException>(() => multiBatchGet.GetItemsAsync());
         }
 
         [TestMethod]

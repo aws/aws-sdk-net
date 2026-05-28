@@ -1133,6 +1133,60 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailAction.
+    /// </summary>
+    public class GuardrailAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction BLOCKED = new GuardrailAction("BLOCKED");
+        /// <summary>
+        /// Constant MASKED for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction MASKED = new GuardrailAction("MASKED");
+        /// <summary>
+        /// Constant NONE for GuardrailAction
+        /// </summary>
+        public static readonly GuardrailAction NONE = new GuardrailAction("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAction FindValue(string value)
+        {
+            return FindValue<GuardrailAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterType.
     /// </summary>
     public class GuardrailContentFilterType : ConstantClass
@@ -1519,6 +1573,72 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailPolicyType.
+    /// </summary>
+    public class GuardrailPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTENT_FILTER for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType CONTENT_FILTER = new GuardrailPolicyType("CONTENT_FILTER");
+        /// <summary>
+        /// Constant CONTEXTUAL_GROUNDING for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType CONTEXTUAL_GROUNDING = new GuardrailPolicyType("CONTEXTUAL_GROUNDING");
+        /// <summary>
+        /// Constant SENSITIVE_INFORMATION_PII for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType SENSITIVE_INFORMATION_PII = new GuardrailPolicyType("SENSITIVE_INFORMATION_PII");
+        /// <summary>
+        /// Constant SENSITIVE_INFORMATION_REGEX for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType SENSITIVE_INFORMATION_REGEX = new GuardrailPolicyType("SENSITIVE_INFORMATION_REGEX");
+        /// <summary>
+        /// Constant TOPIC for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType TOPIC = new GuardrailPolicyType("TOPIC");
+        /// <summary>
+        /// Constant WORD for GuardrailPolicyType
+        /// </summary>
+        public static readonly GuardrailPolicyType WORD = new GuardrailPolicyType("WORD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailPolicyType FindValue(string value)
+        {
+            return FindValue<GuardrailPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailSensitiveInformationAction.
     /// </summary>
     public class GuardrailSensitiveInformationAction : ConstantClass
@@ -1562,6 +1682,56 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailSensitiveInformationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailSource.
+    /// </summary>
+    public class GuardrailSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INPUT for GuardrailSource
+        /// </summary>
+        public static readonly GuardrailSource INPUT = new GuardrailSource("INPUT");
+        /// <summary>
+        /// Constant OUTPUT for GuardrailSource
+        /// </summary>
+        public static readonly GuardrailSource OUTPUT = new GuardrailSource("OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailSource FindValue(string value)
+        {
+            return FindValue<GuardrailSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailSource(string value)
         {
             return FindValue(value);
         }

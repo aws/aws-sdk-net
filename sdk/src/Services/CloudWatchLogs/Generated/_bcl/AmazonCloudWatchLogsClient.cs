@@ -6622,6 +6622,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// You can retrieve up to 100,000 log event results from a query, if available, by using
+        /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+        /// pages of results, with each page returning up to 10,000 log events.
+        /// </para>
+        ///  
+        /// <para>
         /// If you are using CloudWatch cross-account observability, you can use this operation
         /// in a monitoring account to start queries in linked source accounts. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
@@ -6679,6 +6685,12 @@ namespace Amazon.CloudWatchLogs
         /// This operation is used both for retrieving results from interactive queries and from
         /// automated scheduled query executions. Scheduled queries use <c>GetQueryResults</c>
         /// internally to retrieve query results for processing and delivery to configured destinations.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can retrieve up to 100,000 log event results from a query, if available, by using
+        /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+        /// pages of results, with each page returning up to 10,000 log events.
         /// </para>
         ///  
         /// <para>

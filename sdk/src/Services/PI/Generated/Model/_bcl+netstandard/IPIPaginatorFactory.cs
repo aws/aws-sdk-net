@@ -68,6 +68,16 @@ namespace Amazon.PI.Model
         IListAvailableResourceMetricsPaginator ListAvailableResourceMetrics(ListAvailableResourceMetricsRequest request);
 
         /// <summary>
+        /// Paginator for ListPerformanceAnalysisReportRecommendations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPerformanceAnalysisReportRecommendationsPaginator ListPerformanceAnalysisReportRecommendations(ListPerformanceAnalysisReportRecommendationsRequest request);
+
+        /// <summary>
         /// Paginator for ListPerformanceAnalysisReports operation
         ///</summary>
         [AWSPaginator(

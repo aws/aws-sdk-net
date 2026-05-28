@@ -21,8 +21,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
-        [DynamicData(nameof(TestCases), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(TestCases))]
         public void SharedProfileConfigurationAndResolutionTests(TestCase testCase)
         {
             using (var fixture = testCase.BuildTestFixture())
@@ -81,8 +80,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
-        [DynamicData(nameof(TestCases), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(TestCases))]
         public async Task SharedProfileConfigurationAndResolutionTestsAsync(TestCase testCase)
         {
             using (var fixture = testCase.BuildTestFixture())

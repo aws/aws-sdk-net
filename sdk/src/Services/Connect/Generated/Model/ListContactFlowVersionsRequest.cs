@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContactFlowVersions operation.
-    /// Returns all the available versions for the specified Amazon Connect instance and flow
-    /// identifier.
+    /// Returns all the available versions for the specified Connect Customer instance and
+    /// flow identifier.
     /// </summary>
     public partial class ListContactFlowVersionsRequest : AmazonConnectRequest
     {
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

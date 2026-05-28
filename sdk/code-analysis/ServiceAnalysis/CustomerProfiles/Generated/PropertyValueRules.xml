@@ -3231,7 +3231,7 @@
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.InferenceConfig.MinProvisionedTPS</property>
     <min>1</min>
-    <max>500</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.JobSchedule.Time</property>
@@ -3589,7 +3589,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.RecommenderConfig.TrainingFrequency</property>
-    <min>1</min>
+    <min>0</min>
     <max>30</max>
   </property-value-rule>
   <property-value-rule>

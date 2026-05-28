@@ -119,6 +119,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnaSupport.Value", StringUtils.FromBool(publicRequest.EnaSupport));
                 }
+                if(publicRequest.IsSetEnclaveOptions())
+                {
+                    if(publicRequest.EnclaveOptions.IsSetEnabled())
+                    {
+                        request.Parameters.Add("EnclaveOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.EnclaveOptions.Enabled));
+                    }
+                }
                 if(publicRequest.IsSetGroups())
                 {
                     if (publicRequest.Groups.Count == 0)
@@ -163,7 +170,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetUserData())
                 {
-                    request.Parameters.Add("UserData.Value", StringUtils.FromString(publicRequest.UserData));
+                    if(publicRequest.UserData.IsSetValue())
+                    {
+                        request.Parameters.Add("UserData" + "." + "Value", StringUtils.FromMemoryStream(publicRequest.UserData.Value));
+                    }
                 }
                 if(publicRequest.IsSetValue())
                 {

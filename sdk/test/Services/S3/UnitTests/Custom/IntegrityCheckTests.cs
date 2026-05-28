@@ -52,18 +52,11 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void TestS3Signer_Http_Request_DisablePayloadSigning_Is_True()
         {
-            try
-            {
-                var request = TestS3Signer(true, "http://does_not_matter.com");
-            }
-            catch(AmazonClientException e)
-            {
-                Assert.AreEqual("When DisablePayloadSigning is true, the request must be sent over HTTPS.", e.Message);
-                throw;
-            }
+            var e = Assert.ThrowsExactly<AmazonClientException>(() =>
+                TestS3Signer(true, "http://does_not_matter.com"));
+            Assert.AreEqual("When DisablePayloadSigning is true, the request must be sent over HTTPS.", e.Message);
         }
 
         [TestMethod]

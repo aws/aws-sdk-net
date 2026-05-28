@@ -30,7 +30,7 @@ namespace AWSSDK.UnitTests
         /// </summary>
         /// <param name="toEncode">Value of an XML element containing one or more characters expected to be encoded</param>
         /// <param name="expectedEncoding">Expected value of the XML element after encoding</param>
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3Control")]
         [DataRow("\n \n", "&#xA; &#xA;")]
         [DataRow("a\r\n b\n c\r", "a&#xD;&#xA; b&#xA; c&#xD;")]

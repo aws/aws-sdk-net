@@ -43,7 +43,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The default value is 1. A high MinProvisionedTPS will increase your cost.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Min=1, Max=1000)]
         public int? MinProvisionedTPS
         {
             get { return this._minProvisionedTPS; }

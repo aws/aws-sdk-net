@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private UserSettings _defaultUserSettings;
         private string _domainId;
         private DomainSettingsForUpdate _domainSettingsForUpdate;
+        private HomeEfsFileSystemCreation _homeEfsFileSystemCreation;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TagPropagation _tagPropagation;
         private string _vpcId;
@@ -172,6 +173,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainSettingsForUpdate()
         {
             return this._domainSettingsForUpdate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeEfsFileSystemCreation. 
+        /// <para>
+        /// Indicates whether to create a home EFS file system for the domain. You can change
+        /// from <c>Disabled</c> to <c>Enabled</c> to provision EFS on demand, but you cannot
+        /// change from <c>Enabled</c> to <c>Disabled</c>.
+        /// </para>
+        /// </summary>
+        public HomeEfsFileSystemCreation HomeEfsFileSystemCreation
+        {
+            get { return this._homeEfsFileSystemCreation; }
+            set { this._homeEfsFileSystemCreation = value; }
+        }
+
+        // Check to see if HomeEfsFileSystemCreation property is set
+        internal bool IsSetHomeEfsFileSystemCreation()
+        {
+            return this._homeEfsFileSystemCreation != null;
         }
 
         /// <summary>

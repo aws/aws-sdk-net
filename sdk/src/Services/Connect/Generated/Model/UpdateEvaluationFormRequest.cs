@@ -31,9 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEvaluationForm operation.
-    /// Updates details about a specific evaluation form version in the specified Amazon Connect
-    /// instance. Question and section identifiers cannot be duplicated within the same evaluation
-    /// form.
+    /// Updates details about a specific evaluation form version in the specified Connect
+    /// Customer instance. Question and section identifiers cannot be duplicated within the
+    /// same evaluation form.
     /// 
     ///  
     /// <para>
@@ -193,7 +193,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

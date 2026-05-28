@@ -42,9 +42,6 @@ namespace AWSSDK.UnitTests
             "Please use an assume role profile that doesn't require an MFA, or a different type of profile.";
         private const string UserIdentityCallbackErrorFormat = "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
             "Please use a SAML role profile without an explicit user identity, or a different type of profile.";
-        private const string SsoErrorFormat =
-            "The profile [{0}] is an SSO profile.  This type of profile is not allowed here.  " +
-            "Please use a different type of profile.";
 
         private const string InvalidErrorAnonymous = "The credential options provided are not valid.  Please ensure the options contain a valid combination of properties.";
         private const string SourceErrorFormatAnonymous = "Error reading source profile [{0}] for the credential options provided.";
@@ -52,9 +49,6 @@ namespace AWSSDK.UnitTests
             "Please use credential options for AssumeRoleAWSCredentials that don't require an MFA, or a different type of credentials.";
         private const string UserIdentityCallbackErrorAnonymous = "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
             "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials.";
-        private const string SsoErrorAnonymous =
-            "The credential options represent SSOAWSCredentials.  This is not allowed here.  " +
-            "Please use a different type of credentials.";
 
         private const string CredentialSourceErrorFormat = "Error reading credential source [{0}] for profile [{1}].";
         private const string InvalidCredentialSourceErrorFormat = "Credential source [{0}] is invalid.";
@@ -139,31 +133,6 @@ namespace AWSSDK.UnitTests
                 UserIdentity = "user_identity"
             });
 
-        private static readonly CredentialProfile SsoProfile =
-            new CredentialProfile("sso_profile", new CredentialProfileOptions
-            {
-                SsoAccountId = "account_id",
-                SsoRegion = "region",
-                SsoRoleName = "role_name",
-                SsoStartUrl = "start_url",
-            });
-
-        private static readonly CredentialProfile SsoProfileMissingFields =
-            new CredentialProfile("sso_profile_missing_fields", new CredentialProfileOptions
-            {
-                SsoStartUrl = "start_url",
-            });
-
-        private static readonly CredentialProfile SsoProfileMixedFields =
-            new CredentialProfile("sso_profile_mixed_fields", new CredentialProfileOptions
-            {
-                AccessKey = "aws_access_key_id",
-                SecretKey = "aws_secret_access_key",
-                SsoAccountId = "account_id",
-                SsoRegion = "region",
-                SsoRoleName = "role_name",
-                SsoStartUrl = "start_url",
-            });
 
         private static readonly CredentialProfile AssumeRoleProfileSAMLRoleSource =
             new CredentialProfile("assume_role_profile_source_not_basic_or_session", new CredentialProfileOptions
@@ -235,9 +204,6 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleChainedAssumeRoleSource.Name, AssumeRoleChainedAssumeRoleSource);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource1.Name, AssumeRoleLoopedAssumeRoleSource1);
             ProfileStore.Profiles.Add(AssumeRoleLoopedAssumeRoleSource2.Name, AssumeRoleLoopedAssumeRoleSource2);
-            ProfileStore.Profiles.Add(SsoProfile.Name, SsoProfile);
-            ProfileStore.Profiles.Add(SsoProfileMissingFields.Name, SsoProfileMissingFields);
-            ProfileStore.Profiles.Add(SsoProfileMixedFields.Name, SsoProfileMixedFields);
         }
 
         private static readonly BasicAWSCredentials BasicCredentials =
@@ -274,15 +240,6 @@ namespace AWSSDK.UnitTests
         private static readonly AssumeRoleAWSCredentials AssumeRoleChainedAssumeRoleCredentials =
             new AssumeRoleAWSCredentials(AssumeRoleCredentialsBasicSource, "second_role_arn", "role_session_name");
 
-        private static readonly SSOAWSCredentials SsoCredentials =
-            new SSOAWSCredentials(
-                SsoProfile.Options.SsoAccountId,
-                SsoProfile.Options.SsoRegion,
-                SsoProfile.Options.SsoRoleName,
-                SsoProfile.Options.SsoStartUrl,
-                new SSOAWSCredentialsOptions()
-                {
-                });
 
         private static readonly SAMLEndpoint SomeSAMLEndpoint = new SAMLEndpoint("endpoint_name", new Uri("https://samlendpoint.com"));
 
@@ -469,40 +426,6 @@ namespace AWSSDK.UnitTests
             }, typeof(InvalidOperationException), string.Format(UserIdentityCallbackErrorFormat, SAMLRoleUserIdentityProfile.Name));
         }
 
-        [TestMethod]
-        public void GetSsoCredentialsNoCallback()
-        {
-            AssertExtensions.ExpectException(() =>
-            {
-                AWSCredentialsFactory.GetAWSCredentials(SsoProfile, ProfileStore, true);
-            }, typeof(InvalidOperationException), string.Format(SsoErrorFormat, SsoProfile.Name));
-        }
-
-        [TestMethod]
-        public void GetSsoCredentials()
-        {
-            AssertSSOCredentialsAreEqual(
-                SsoCredentials,
-                AWSCredentialsFactory.GetAWSCredentials(SsoProfile, ProfileStore));
-        }
-
-        [TestMethod]
-        public void GetSsoCredentialsWithMissingFields()
-        {
-            // can not create SSO Credentials without the Region
-
-            AssertExtensions.ExpectException(() =>
-                    AWSCredentialsFactory.GetAWSCredentials(SsoProfileMissingFields, ProfileStore),
-                typeof(InvalidDataException)); 
-        }
-
-        [TestMethod]
-        public void GetSsoCredentialsWithMixedFields()
-        {
-            AssertSSOCredentialsAreEqual(
-                SsoCredentials,
-                AWSCredentialsFactory.GetAWSCredentials(SsoProfileMixedFields, ProfileStore));
-        }
 
         [TestMethod]
         public void GetAssumeRoleProfileSourceWithLoop()
@@ -651,15 +574,6 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void GetSsoCredentialsNoCallbackAnonymous()
-        {
-            AssertExtensions.ExpectException(() =>
-            {
-                AWSCredentialsFactory.GetAWSCredentials(SsoProfile.Options, ProfileStore, true);
-            }, typeof(InvalidOperationException), SsoErrorAnonymous);
-        }
-
-        [TestMethod]
         public void GetAssumeRoleCredentialSourceEnvironment()
         {
             using (new AWSCredentialsFactoryTestCredentialSourceFixture(AssumeRoleCredentialSourceEnvironment.Options, SessionCredentials))
@@ -761,21 +675,6 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
         }
 
-        private void AssertSSOCredentialsAreEqual(SSOAWSCredentials expected, AWSCredentials actualAWSCredentials)
-        {
-            var actual = actualAWSCredentials as SSOAWSCredentials;
-            Assert.IsNotNull(actual);
-
-            Assert.AreEqual(expected.AccountId, actual.AccountId);
-            Assert.AreEqual(expected.Region, actual.Region);
-            Assert.AreEqual(expected.RoleName, actual.RoleName);
-            Assert.AreEqual(expected.StartUrl, actual.StartUrl);
-            Assert.AreEqual(expected.PreemptExpiryTime, actual.PreemptExpiryTime);
-            
-            Assert.AreEqual(expected.Options.ClientName, actual.Options.ClientName);
-            Assert.AreEqual(expected.Options.SsoVerificationCallback, actual.Options.SsoVerificationCallback);
-            Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
-        }
 
         private void AssertFederatedCredentialsAreEqual(FederatedAWSCredentials expected, AWSCredentials actualAWSCredentials)
         {

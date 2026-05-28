@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Where to pull ground truth from
+    /// Where to pull ground truth from.
     /// </summary>
     public partial class GroundTruthSource
     {

@@ -39,7 +39,9 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property CallbackMetadata. 
         /// <para>
-        /// The metadata that is the result of the clip request to Elemental Inference. 
+        /// A string that you want Elemental Inference to always include in the event clipping
+        /// metadata for this output. The string might identify the sports event in the source
+        /// media, for example. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

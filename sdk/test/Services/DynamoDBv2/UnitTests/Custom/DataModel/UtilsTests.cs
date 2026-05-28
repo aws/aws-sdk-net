@@ -19,31 +19,27 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateTimestampType_WithDateTime_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(DateTime));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(DateTime)));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateTimestampType_WithDateTimeOffset_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(DateTimeOffset));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(DateTimeOffset)));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateTimestampType_WithString_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(string));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(string)));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateTimestampType_WithInt_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(int));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateTimestampType(typeof(int)));
         }
 
         [TestMethod]
@@ -65,17 +61,15 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateNumericType_WithInt_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateNumericType(typeof(int));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateNumericType(typeof(int)));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void ValidateNumericType_WithString_ThrowsException()
         {
-            Amazon.DynamoDBv2.DataModel.Utils.ValidateNumericType(typeof(string));
+            Assert.ThrowsExactly<InvalidOperationException>(() => Amazon.DynamoDBv2.DataModel.Utils.ValidateNumericType(typeof(string)));
         }
     }
 }

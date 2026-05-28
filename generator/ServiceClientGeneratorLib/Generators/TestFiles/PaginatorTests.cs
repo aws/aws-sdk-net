@@ -223,11 +223,9 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             
             #line default
             #line hidden
-            this.Write("\")]\r\n        [ExpectedException(typeof(System.InvalidOperationException), \"Pagina" +
-                    "tor has already been consumed and cannot be reused. Please create a new instance" +
-                    ".\")]\r\n        public void ");
+            this.Write("\")]\r\n        public void ");
             
-            #line 80 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 79 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -235,21 +233,21 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             this.Write("Test__OnlyUsedOnce()\r\n        {\r\n            var request = InstantiateClassGenera" +
                     "tor.Execute<");
             
-            #line 82 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 81 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>();\r\n\r\n            var response = InstantiateClassGenerator.Execute<");
             
-            #line 84 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 83 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response>();\r\n");
             
-            #line 85 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 84 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             if (operation.Paginators.MoreResults != null)
             {
@@ -259,14 +257,14 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             #line hidden
             this.Write("            response.");
             
-            #line 89 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 88 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.MoreResults.PropertyName));
             
             #line default
             #line hidden
             this.Write(" = false;\r\n");
             
-            #line 90 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 89 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
             else if (operation.Paginators.InputTokens[0].IsListOrDict)
@@ -277,17 +275,17 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             #line hidden
             this.Write("            response.");
             
-            #line 95 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 94 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
             
             #line default
             #line hidden
             this.Write(".Clear();\r\n");
             
-            #line 96 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 95 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
-            } 
-            else 
+            }
+            else
             {
 
             
@@ -295,14 +293,14 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             #line hidden
             this.Write("            response.");
             
-            #line 101 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 100 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Paginators.OutputTokens[0].PropertyName));
             
             #line default
             #line hidden
             this.Write(" = null;\r\n");
             
-            #line 102 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 101 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
 
@@ -311,7 +309,7 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             #line hidden
             this.Write("\r\n            _mockClient.Setup(x => x.");
             
-            #line 106 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 105 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -319,16 +317,23 @@ namespace AWSSDK_DotNet.UnitTests.PaginatorTests
             this.Write("(request)).Returns(response);\r\n            var paginator = _mockClient.Object.Pag" +
                     "inators.");
             
-            #line 107 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 106 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
-            this.Write("(request);\r\n\r\n            // Should work the first time\r\n            paginator.Re" +
-                    "sponses.ToList();\r\n\r\n            // Second time should throw an exception\r\n     " +
-                    "       paginator.Responses.ToList();\r\n        }\r\n\r\n");
+            this.Write(@"(request);
+
+            // Should work the first time
+            paginator.Responses.ToList();
+
+            // Second time should throw an exception
+            Assert.ThrowsExactly<System.InvalidOperationException>(() => paginator.Responses.ToList());
+        }
+
+");
             
-            #line 116 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
+            #line 115 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\TestFiles\PaginatorTests.tt"
 
             }
         }

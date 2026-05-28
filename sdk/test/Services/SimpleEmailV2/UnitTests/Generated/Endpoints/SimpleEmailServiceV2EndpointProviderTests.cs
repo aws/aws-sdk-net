@@ -634,7 +634,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
@@ -642,7 +641,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -650,7 +652,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
@@ -658,7 +659,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -666,11 +670,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -710,7 +716,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Valid EndpointId with FIPS set, dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
         public void Valid_EndpointId_with_FIPS_set_dualstack_disabled_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
@@ -718,7 +723,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-1";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
         }
 
         [TestMethod]
@@ -726,7 +734,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Valid EndpointId with both dualstack and FIPS enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
         public void Valid_EndpointId_with_both_dualstack_and_FIPS_enabled_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
@@ -734,7 +741,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
             parameters["Region"] = "ap-northeast-2";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
         }
 
         [TestMethod]
@@ -756,14 +766,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Invalid EndpointId (Invalid chars / format)")]
-        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label")]
         public void Invalid_EndpointId_Invalid_chars_format_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
             parameters["EndpointId"] = "badactor.com?foo=bar";
             parameters["UseDualStack"] = false;
             parameters["Region"] = "eu-west-2";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"EndpointId must be a valid host label", exception.Message);
         }
 
         [TestMethod]
@@ -771,14 +783,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Invalid EndpointId (Empty)")]
-        [ExpectedException(typeof(AmazonClientException), @"EndpointId must be a valid host label")]
         public void Invalid_EndpointId_Empty_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
             parameters["EndpointId"] = "";
             parameters["UseDualStack"] = false;
             parameters["Region"] = "ap-south-1";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"EndpointId must be a valid host label", exception.Message);
         }
 
         [TestMethod]
@@ -802,7 +816,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("SimpleEmailV2")]
         [Description("Valid EndpointId with custom sdk endpoint with FIPS enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported with multi-region endpoints")]
         public void Valid_EndpointId_with_custom_sdk_endpoint_with_FIPS_enabled_Test()
         {
             var parameters = new SimpleEmailServiceV2EndpointParameters();
@@ -811,7 +824,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
         }
 
     }

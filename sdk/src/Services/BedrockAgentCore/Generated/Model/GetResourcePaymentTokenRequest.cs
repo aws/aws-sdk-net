@@ -43,8 +43,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentTokenRequest. 
         /// <para>
-        /// Vendor-specific token request input Contains all request parameters in a type-safe,
-        /// vendor-specific structure
+        /// Vendor-specific token request input. Contains all request parameters in a type-safe,
+        /// vendor-specific structure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceCredentialProviderName. 
         /// <para>
-        /// Name of the payment credential provider to use
+        /// Name of the payment credential provider to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,8 +82,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityToken. 
         /// <para>
-        /// Workload access token for authorization. Named workloadIdentityToken for consistency
-        /// with APIKey and OAuth2CredentialProvider.
+        /// Workload access token for authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]

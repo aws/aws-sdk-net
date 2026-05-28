@@ -45,7 +45,7 @@ namespace Amazon.CustomerProfiles
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// Amazon Connect Customer Profiles <ul> <li> 
+    /// Connect Customer Customer Profiles <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
     /// Profiles actions</a> 
@@ -57,16 +57,17 @@ namespace Amazon.CustomerProfiles
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Amazon Connect Customer Profiles is a unified customer profile for your contact center
-    /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
-    /// information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM),
-    /// and your enterprise resource planning (ERP), with contact history from your Amazon
-    /// Connect contact center. 
+    /// Connect Customer Customer Profiles is a unified customer profile for your contact
+    /// center that has pre-built connectors powered by AppFlow that make it easy to combine
+    /// customer information from third party applications, such as Salesforce (CRM), ServiceNow
+    /// (ITSM), and your enterprise resource planning (ERP), with contact history from your
+    /// Connect Customer contact center. 
     /// </para>
     ///  
     /// <para>
-    /// For more information about the Amazon Connect Customer Profiles feature, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
-    /// Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. 
+    /// For more information about the Connect Customer Customer Profiles feature, see <a
+    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
+    /// Customer Profiles</a> in the <i>Connect Customer Administrator's Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AmazonCustomerProfilesClient : AmazonServiceClient, IAmazonCustomerProfiles
@@ -602,8 +603,8 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
-        /// Connect instances can be associated with one domain.
+        /// Each Connect Customer instance can be associated with only one domain. Multiple Connect
+        /// Customer instances can be associated with one domain.
         /// </para>
         ///  
         /// <para>
@@ -667,8 +668,8 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
-        /// Connect instances can be associated with one domain.
+        /// Each Connect Customer instance can be associated with only one domain. Multiple Connect
+        /// Customer instances can be associated with one domain.
         /// </para>
         ///  
         /// <para>
@@ -807,7 +808,7 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Creates an event stream, which is a subscription to real-time events, such as when
-        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// profiles are created and updated through Connect Customer Customer Profiles.
         /// 
         ///  
         /// <para>
@@ -846,7 +847,7 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Creates an event stream, which is a subscription to real-time events, such as when
-        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// profiles are created and updated through Connect Customer Customer Profiles.
         /// 
         ///  
         /// <para>

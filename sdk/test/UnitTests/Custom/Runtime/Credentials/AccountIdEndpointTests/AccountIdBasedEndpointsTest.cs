@@ -6,9 +6,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
-using Amazon.SSO;
-using Amazon.SSO.Internal;
-using Amazon.SSO.Model;
 using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -202,76 +199,8 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
             }
         }
-        /// <summary>
-        /// When calling Sso::GetCredentials successfully, find account ID in request
-        /// SSO:1
-        /// </summary>
-        [TestMethod]
-        public async Task SsoSuccessfulGetCredentialsFindsAccountIdInRequest()
-        {
-            var mockSsoClient = new Mock<IAmazonSSO>();
-            var getRoleCredentialsRequest = new GetRoleCredentialsRequest
-            {
-                AccountId = "123456789001",
-                RoleName = "anything",
-                AccessToken = "anything"
-            };
-            var expectedResponse = new GetRoleCredentialsResponse
-            {
-                RoleCredentials = new RoleCredentials
-                {
-                    AccessKeyId = "foo",
-                    SecretAccessKey = "bar",
-                    SessionToken = "baz"
-                }
-            };
-            mockSsoClient.Setup(client => client.GetRoleCredentialsAsync(It.IsAny<GetRoleCredentialsRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
-
-            var credentials = await CoreAmazonSSO.CredentialsFromSsoAccessTokenAsync(
-                mockSsoClient.Object,
-                getRoleCredentialsRequest.AccountId,
-                getRoleCredentialsRequest.RoleName,
-                getRoleCredentialsRequest.AccessToken,
-                null);
-
-            Assert.AreEqual("123456789001", credentials.AccountId);
-            Assert.AreEqual("foo", credentials.AccessKey);
-            Assert.AreEqual("bar", credentials.SecretKey);
-            Assert.AreEqual("baz", credentials.Token);
-        }
-        /// <summary>
-        /// SSO:2
-        /// When calling Sso::GetCredentials unsuccessfully, does not find account ID
-        /// </summary>
-        [TestMethod]
-        public async Task SsoUnsuccessfulCallDoesNotFindAccountIdInRequest()
-        {
-            var mockSsoClient = new Mock<IAmazonSSO>();
-            var getRoleCredentialsRequest = new GetRoleCredentialsRequest
-            {
-                AccountId = "123456789001",
-                RoleName = "anything",
-                AccessToken = "anything"
-            };
-            var expectedResponse = new ResourceNotFoundException("The request resource doesn't exist");
-            mockSsoClient.Setup(client => client.GetRoleCredentialsAsync(It.IsAny<GetRoleCredentialsRequest>(), It.IsAny<CancellationToken>())).ThrowsAsync(expectedResponse);
-            ImmutableCredentials credentials = null;
-            try
-            {
-                credentials = await CoreAmazonSSO.CredentialsFromSsoAccessTokenAsync(
-                    mockSsoClient.Object,
-                    getRoleCredentialsRequest.AccountId,
-                    getRoleCredentialsRequest.RoleName,
-                    getRoleCredentialsRequest.AccessToken,
-                    null);
-            }
-
-            catch (ResourceNotFoundException e)
-            {
-                Assert.IsNull(credentials);
-                Assert.IsNotNull(e);
-            }
-        }
+        //STS:4 (SKIP) none of our credential providers call GetFederationToken and there is no point in asserting a mocked response returns what is expected
+        // SSO:1 and SSO:2 moved to Services/SSO/UnitTests/Custom/AccountIdSSOTests.cs
 
         /// <summary>
         /// When profile is configured with role, accountid and call is successful, find account ID in call response

@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeView operation.
-    /// Retrieves the view for the specified Amazon Connect instance and view identifier.
+    /// Retrieves the view for the specified Connect Customer instance and view identifier.
     /// 
     ///  
     /// <para>
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     /// The view identifier can contain an optional qualifier, for example, <c>&lt;view-id&gt;:$SAVED</c>,
-    /// which is either an actual version number or an Amazon Connect managed qualifier <c>$SAVED
-    /// | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for customer
-    /// managed views and an error is returned if there is no published content available.
+    /// which is either an actual version number or an Connect Customer managed qualifier
+    /// <c>$SAVED | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for
+    /// customer managed views and an error is returned if there is no published content available.
     /// Version 1 is assumed for Amazon Web Services managed views.
     /// </para>
     /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// The identifier of the Connect Customer instance. You can find the instanceId in the
         /// ARN of the instance.
         /// </para>
         /// </summary>

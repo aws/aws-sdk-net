@@ -119,6 +119,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("PreviewNextCidr", StringUtils.FromBool(publicRequest.PreviewNextCidr));
                 }
+                if(publicRequest.IsSetTagSpecifications())
+                {
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
             }
 
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);

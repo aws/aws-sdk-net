@@ -39,14 +39,17 @@ namespace Amazon.Extensions.NETCore.Setup
         private static readonly object[] EMPTY_PARAMETERS = Array.Empty<object>();
 
         private AWSOptions _awsOptions;
+        private Action<ClientConfig, IServiceProvider> _configAction;
 
         /// <summary>
         /// Constructs an instance of the ClientFactory
         /// </summary>
         /// <param name="awsOptions">The AWS options used for creating service clients.</param>
-        internal ClientFactory(AWSOptions awsOptions)
+        /// <param name="configAction">An optional action to configure the ClientConfig using services from the IServiceProvider.</param>
+        internal ClientFactory(AWSOptions awsOptions, Action<ClientConfig, IServiceProvider> configAction = null)
         {
             _awsOptions = awsOptions;
+            _configAction = configAction;
         }
 
         /// <summary>
@@ -72,7 +75,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            return CreateServiceClient(logger, options);
+            return CreateServiceClient(logger, options, provider);
         }
 
         /// <summary>
@@ -81,8 +84,9 @@ namespace Amazon.Extensions.NETCore.Setup
         /// </summary>
         /// <param name="logger">Logger instance for writing diagnostic logs.</param>
         /// <param name="options">The AWS options used for creating the service client.</param>
+        /// <param name="provider">Optional service provider for resolving dependencies in the config action.</param>
         /// <returns>The AWS service client</returns>
-        internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options)
+        internal IAmazonService CreateServiceClient(ILogger logger, AWSOptions options, IServiceProvider provider = null)
         {
             PerformGlobalConfig(logger, options);
             var credentials = CreateCredentials(logger, options);
@@ -100,6 +104,10 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             var config = CreateConfig(options);
+            if (_configAction != null && provider != null)
+            {
+                _configAction(config, provider);
+            }
             var client = CreateClient(credentials, config);
             return client as IAmazonService;
         }

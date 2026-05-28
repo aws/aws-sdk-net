@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RTBFabric.Model
 {
     /// <summary>
-    /// Summary of a routing rule for list responses
+    /// A summary of a link routing rule.
     /// </summary>
     public partial class LinkRoutingRuleSummary
     {

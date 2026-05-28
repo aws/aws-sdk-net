@@ -33,7 +33,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestCategory("S3")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("NotImplemented")]
         [DataRow("expiry-date=, rule-id=")]
         [DataRow("expiry-date=\"foo\", rule-id=")]
@@ -57,7 +57,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestCategory("S3")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("ongoing-request=\"false\", expiry-date=\"Fri, 21 Dec 2012 00:00:00 GMT\"", false)]
         [DataRow("ongoing-request=\"true\"", true)]
         public void Restore_ValidHeader(string headerValue, bool isOngoingRequest)
@@ -82,7 +82,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestCategory("S3")]
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("")]
         [DataRow("NotImplemented")]
         [DataRow("ongoing-request=, expiry-date=")]

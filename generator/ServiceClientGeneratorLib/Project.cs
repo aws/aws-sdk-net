@@ -63,6 +63,11 @@ namespace ServiceClientGenerator
         public IEnumerable<string> CompileRemoveList { get; set; }
 
         /// <summary>
+        /// Used to generate conditional Compile Remove elements keyed by MSBuild condition
+        /// </summary>
+        public IDictionary<string, List<string>> ConditionalCompileRemoves { get; set; }
+
+        /// <summary>
         /// Used to generate the Include tag of the Compile elements of the project file for directories
         /// </summary>
         public IEnumerable<string> SourceDirectories { get; set; }

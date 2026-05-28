@@ -40,7 +40,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Feeds. 
         /// <para>
-        /// A list of feed summaries.
+        /// A list of FeedSummary objects.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,7 +67,7 @@ namespace Amazon.ElementalInference.Model
         /// The token that identifies the batch of results that you want to see. For example,
         /// you submit a list request with MaxResults set at 5. The service returns the first
         /// batch of results (up to 5) and a NextToken value. To see the next batch of results,
-        /// you can submit the list request a second time and specify the NextToken value.
+        /// you can submit the list request a second time and specify the NextToken value. 
         /// </para>
         /// </summary>
         public string NextToken

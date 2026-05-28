@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListQuickConnects operation.
-    /// Provides information about the quick connects for the specified Amazon Connect instance.
+    /// Provides information about the quick connects for the specified Connect Customer instance.
     /// </summary>
     public partial class ListQuickConnectsRequest : AmazonConnectRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. Both Instance
         /// ID and Instance ARN are supported input formats. 
         /// </para>
@@ -102,8 +102,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QuickConnectTypes. 
         /// <para>
-        /// The type of quick connect. In the Amazon Connect admin website, when you create a
-        /// quick connect, you are prompted to assign one of the following types: Agent (USER),
+        /// The type of quick connect. In the Connect Customer admin website, when you create
+        /// a quick connect, you are prompted to assign one of the following types: Agent (USER),
         /// External (PHONE_NUMBER), or Queue (QUEUE).
         /// </para>
         /// <para />

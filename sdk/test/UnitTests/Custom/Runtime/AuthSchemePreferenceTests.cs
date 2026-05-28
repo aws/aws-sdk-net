@@ -29,7 +29,7 @@ namespace AWSSDK.UnitTests.Runtime
     [TestClass]
     public class AuthSchemePreferenceTests : RuntimePipelineTestBase
     {
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("aws.auth#sigv4,aws.auth#sigv4a", null, "sigv4")]
         [DataRow("aws.auth#sigv4,aws.auth#sigv4a", "sigv4a", "sigv4a")]
         [DataRow("aws.auth#sigv4,aws.auth#sigv4a", "sigv4a,sigv4", "sigv4a")]
@@ -53,7 +53,7 @@ namespace AWSSDK.UnitTests.Runtime
             Assert.AreEqual(resolvedScheme, context.RequestContext.Request.ChosenAuthScheme.ShortName);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("aws.auth#sigv4", "*", null)]
         [DataRow("aws.auth#sigv4a", null, null)]
         [DataRow("aws.auth#sigv4a", "*", "*")]

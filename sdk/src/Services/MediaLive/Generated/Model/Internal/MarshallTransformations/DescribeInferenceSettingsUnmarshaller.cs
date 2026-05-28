@@ -56,6 +56,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("audioFeedInputs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AudioFeedInput, AudioFeedInputUnmarshaller>(AudioFeedInputUnmarshaller.Instance);
+                    unmarshalledObject.AudioFeedInputs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("feedArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

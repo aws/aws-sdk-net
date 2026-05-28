@@ -87,6 +87,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetQueryComputePayerAccountId())
+            {
+                context.Writer.WritePropertyName("queryComputePayerAccountId");
+                context.Writer.WriteStringValue(publicRequest.QueryComputePayerAccountId);
+            }
+
             if(publicRequest.IsSetResultConfiguration())
             {
                 context.Writer.WritePropertyName("resultConfiguration");

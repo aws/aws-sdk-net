@@ -979,6 +979,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.StartProtectedJobRequest.JobComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.StartProtectedJobRequest.MembershipIdentifier</property>
     <min>36</min>
     <max>36</max>
@@ -989,6 +995,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.StartProtectedQueryRequest.QueryComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.TagResourceRequest.ResourceArn</property>
@@ -2765,6 +2777,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedJob.JobComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedJob.MembershipArn</property>
     <min>0</min>
     <max>100</max>
@@ -2831,6 +2849,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedJobSummary.JobComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedJobSummary.MembershipArn</property>
     <min>0</min>
     <max>100</max>
@@ -2864,6 +2888,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedQuery.QueryComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.ProtectedQueryMemberOutputConfiguration.AccountId</property>
@@ -2917,6 +2947,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.ProtectedQuerySummary.QueryComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.S3Location.Bucket</property>

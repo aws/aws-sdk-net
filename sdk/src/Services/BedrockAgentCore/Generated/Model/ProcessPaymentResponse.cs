@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for processing a payment
+    /// Response structure for processing a payment.
     /// </summary>
     public partial class ProcessPaymentResponse : AmazonWebServiceResponse
     {
@@ -66,7 +66,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentInstrumentId. 
         /// <para>
-        /// The ID of the payment instrument used for this transaction.
+        /// The ID of the payment instrument used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]
@@ -85,7 +85,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentManagerArn. 
         /// <para>
-        /// The ARN of the payment manager that processed this payment.
+        /// The ARN of the payment manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=66, Max=2048)]
@@ -123,7 +123,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentSessionId. 
         /// <para>
-        /// The ID of the payment session for this transaction.
+        /// The ID of the payment session used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=31, Max=31)]
@@ -142,7 +142,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentType. 
         /// <para>
-        /// The type of payment that was processed.
+        /// The type of payment processed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +161,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ProcessPaymentId. 
         /// <para>
-        /// The unique ID of the processed payment transaction.
+        /// The unique identifier of the processed payment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -180,7 +180,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the payment transaction.
+        /// The status of the payment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

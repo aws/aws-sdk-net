@@ -70,6 +70,7 @@ namespace Amazon.BedrockRuntime.Model
         private string _guardrailVersion;
         private string _modelId;
         private PerformanceConfigLatency _performanceConfigLatency;
+        private string _requestMetadata;
         private ServiceTierType _serviceTier;
         private Trace _trace;
 
@@ -262,6 +263,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetPerformanceConfigLatency()
         {
             return this._performanceConfigLatency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestMetadata. 
+        /// <para>
+        /// Key-value pairs that you can use to filter invocation logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=8500)]
+        public string RequestMetadata
+        {
+            get { return this._requestMetadata; }
+            set { this._requestMetadata = value; }
+        }
+
+        // Check to see if RequestMetadata property is set
+        internal bool IsSetRequestMetadata()
+        {
+            return this._requestMetadata != null;
         }
 
         /// <summary>

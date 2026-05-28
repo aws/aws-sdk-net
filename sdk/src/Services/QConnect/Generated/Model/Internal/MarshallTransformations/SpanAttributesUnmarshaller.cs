@@ -128,6 +128,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("guardrailAssessments", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SpanGuardrailAssessment, SpanGuardrailAssessmentUnmarshaller>(SpanGuardrailAssessmentUnmarshaller.Instance);
+                    unmarshalledObject.GuardrailAssessments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("initialContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

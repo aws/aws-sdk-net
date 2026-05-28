@@ -92,7 +92,7 @@ namespace AWSSDK.UnitTests
 
                 // Since the specified profile does not exist, the identity resolver will throw an exception.
                 Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "non-existent-profile");
-                Assert.ThrowsException<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
+                Assert.ThrowsExactly<ProfileNotFoundException>(() => identityResolver.ResolveIdentity(clientConfig: null));
             }
         }
 
@@ -104,7 +104,7 @@ namespace AWSSDK.UnitTests
         /// move to the next provider in the chain (which in this test will be the access / secret key pair
         /// set in the environment variables).
         /// </summary>
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("")]
         [DataRow(null)]
         public void CredentialsResolver_HandlesEmptyProfileNameInConfig(string profileName)
@@ -249,7 +249,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(original);
 
                 // Mutate the credentials file.
-                File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("test-profile", "AKID_UPDATED", "SECRET_UPDATED"));
+                fixture.UpdateCredentialsFile(BasicProfileText("test-profile", "AKID_UPDATED", "SECRET_UPDATED"));
 
                 var updated = resolver.ResolveIdentity(config);
                 Assert.IsNotNull(updated);
@@ -277,7 +277,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(original);
 
                 // Mutate the credentials file.
-                File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("test-profile", "AKID_UPDATED", "SECRET_UPDATED"));
+                fixture.UpdateCredentialsFile(BasicProfileText("test-profile", "AKID_UPDATED", "SECRET_UPDATED"));
 
                 var updated = await resolver.ResolveIdentityAsync(config).ConfigureAwait(false);
                 Assert.IsNotNull(updated);
@@ -306,7 +306,7 @@ namespace AWSSDK.UnitTests
                 var v1 = resolver.ResolveIdentity(config);
 
                 // Modify file → cache invalidated.
-                File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("test-profile", "AKID_V2", "SECRET_V2"));
+                fixture.UpdateCredentialsFile(BasicProfileText("test-profile", "AKID_V2", "SECRET_V2"));
 
                 var v2 = resolver.ResolveIdentity(config);
                 Assert.AreNotSame(v1, v2, "Should have re-resolved after file change.");
@@ -333,11 +333,11 @@ namespace AWSSDK.UnitTests
                     Profile = new Profile("non-existent-profile", fixture.CredentialsFilePath)
                 };
 
-                Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(config));
+                Assert.ThrowsExactly<AmazonClientException>(() => resolver.ResolveIdentity(config));
 
                 // The zombie entry should have been removed, so calling again should
                 // still throw (not hang on a disposed semaphore).
-                Assert.ThrowsException<AmazonClientException>(() => resolver.ResolveIdentity(config));
+                Assert.ThrowsExactly<AmazonClientException>(() => resolver.ResolveIdentity(config));
             }
         }
 
@@ -536,10 +536,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(original);
 
                 // Modify the file so the cache is invalidated on next read.
-                File.WriteAllText(fixture.CredentialsFilePath, BasicProfileText("refresh-profile", "AKID_NEW", "SECRET_NEW"));
-
-                // Give the FileSystemWatcher time to deliver the change event on the threadpool.
-                Thread.Sleep(100);
+                fixture.UpdateCredentialsFile(BasicProfileText("refresh-profile", "AKID_NEW", "SECRET_NEW"));
 
                 // Now launch many threads that all compete to re-resolve.
                 var barrier = new ManualResetEventSlim(false);

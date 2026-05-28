@@ -121,7 +121,7 @@ namespace AWSSDK.UnitTests
 
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(ListHeaderTestData))]
         public void TestStringUtilsFromList(List<string> values, string expectedHeader)
         {

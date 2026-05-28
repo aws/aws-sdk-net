@@ -65,7 +65,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("S3Control")]
         [TestCategory("UnitTest")]
-        [DynamicData(nameof(S3OutpostsAccessPointARNTestsData), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(S3OutpostsAccessPointARNTestsData))]
         public void S3OutpostsAccessPointARNTests(string accesspointNameInput, string clientRegion, string additionalFlags, string useArnRegion, string expectedEndpoint, string expectedHeaders, string expectedSignedBy)
         {
             Console.WriteLine(string.Join(" | ", accesspointNameInput, clientRegion, additionalFlags, useArnRegion, expectedEndpoint, expectedHeaders, expectedSignedBy));

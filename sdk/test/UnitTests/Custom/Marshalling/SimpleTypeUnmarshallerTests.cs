@@ -19,7 +19,6 @@ using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
-using Amazon.KeyManagementService.Model;
 
 namespace AWSSDK.UnitTests
 {

@@ -28,9 +28,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("<#=this.Config.TestCategory#>")]
         [Description("<#=test.documentation#>")]
-<#if (test.expect.error != null) {#>
-        [ExpectedException(typeof(AmazonClientException), @"<#=test.expect.error.SanitizeQuotes()#>")]
-<#}#>
         public void <#=ToTestName(test.documentation)#>_Test()
         {
             var parameters = new <#=this.Config.ClassName#>EndpointParameters();
@@ -42,14 +39,26 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["<#=param.Key#>"] = <#=param.Value.ToNativeValue()#>;
 <#
             }
+            if (test.expect.error != null)
+            {
+#>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new Amazon<#=this.Config.ClassName#>EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"<#=test.expect.error.SanitizeQuotes()#>", exception.Message);
+<#
+            }
+            else
+            {
 #>
             var endpoint = new Amazon<#=this.Config.ClassName#>EndpointProvider().ResolveEndpoint(parameters);
 <#
-            if (test.expect.endpoint != null)
-            {
+                if (test.expect.endpoint != null)
+                {
 #>
             Assert.AreEqual("<#=test.expect.endpoint.url#>", endpoint.URL);
 <#
+                }
             }
 #>
         }
