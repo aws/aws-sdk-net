@@ -1,0 +1,7 @@
+{
+    "shapeSubstitutions":{
+        "System":{
+            "renameShape":"ResilienceHubSystem"
+        }
+    }
+}
