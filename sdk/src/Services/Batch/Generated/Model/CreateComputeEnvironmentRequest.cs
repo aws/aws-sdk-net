@@ -176,6 +176,12 @@ namespace Amazon.Batch.Model
         /// the Batch service-linked role doesn't exist in your account, and no role is specified
         /// here, the service attempts to create the Batch service-linked role in your account.
         /// </para>
+        ///  
+        /// <para>
+        /// This automatic service-linked role creation only applies to <c>MANAGED</c> compute
+        /// environments. For <c>UNMANAGED</c> compute environments, you must explicitly specify
+        /// a <c>serviceRole</c>.
+        /// </para>
         ///  </important> 
         /// <para>
         /// If your specified role has a path other than <c>/</c>, then you must specify either
@@ -208,8 +214,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the compute environment. If the state is <c>ENABLED</c>, then the compute
-        /// environment accepts jobs from a queue and can scale out automatically based on queues.
+        /// The state of the compute environment. A compute environment must be created in the
+        /// <c>ENABLED</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <c>ENABLED</c>, then the compute environment accepts jobs from a queue
+        /// and can scale out automatically based on queues.
         /// </para>
         ///  
         /// <para>
@@ -227,10 +238,10 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges.
-        /// To prevent additional charges, turn off and then delete the compute environment. For
-        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
-        /// in the <i>Batch User Guide</i>.
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges,
+        /// for example, if they have running instances due to jobs that are still executing or
+        /// a non-zero <c>minvCpus</c> setting. To prevent additional charges, disable and delete
+        /// the compute environment.
         /// </para>
         ///  </note> 
         /// <para>

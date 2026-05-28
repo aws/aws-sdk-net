@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         private string _ipamPoolId;
         private int? _netmaskLength;
         private bool? _previewNextCidr;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedCidrs. 
@@ -269,6 +270,37 @@ namespace Amazon.EC2.Model
         internal bool IsSetPreviewNextCidr()
         {
             return this._previewNextCidr.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The key/value combination of a tag assigned to the resource. Use the tag key in the
+        /// filter name and the tag value as the filter value. For example, to find all resources
+        /// that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>, specify <c>tag:Owner</c>
+        /// for the filter name and <c>TeamA</c> for the filter value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify tags, the request is authorized against the allocation resource in
+        /// addition to the pool resource.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

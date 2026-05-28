@@ -86,7 +86,7 @@ namespace AWSSDK.UnitTests
 
                 using (var resolver = new DefaultAWSCredentialsIdentityResolver())
                 {
-                    Assert.ThrowsException<OperationCanceledException>(
+                    Assert.ThrowsExactly<OperationCanceledException>(
                         () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
 
                     Assert.AreEqual(0, generatorCallCount, "Generator should not be called when token is already cancelled.");
@@ -117,7 +117,7 @@ namespace AWSSDK.UnitTests
 
                 using (var resolver = new DefaultAWSCredentialsIdentityResolver())
                 {
-                    var ex = await Assert.ThrowsExceptionAsync<TaskCanceledException>(
+                    var ex = await Assert.ThrowsExactlyAsync<TaskCanceledException>(
                         () => resolver.ResolveIdentityAsync(clientConfig: null, cts.Token));
                     Assert.IsInstanceOfType(ex, typeof(OperationCanceledException));
 
@@ -157,7 +157,7 @@ namespace AWSSDK.UnitTests
                 // Second thread tries to resolve with a short timeout — should be cancelled.
                 using (var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(200)))
                 {
-                    Assert.ThrowsException<OperationCanceledException>(
+                    Assert.ThrowsExactly<OperationCanceledException>(
                         () => resolver.ResolveIdentity(clientConfig: null, cts.Token));
                 }
 

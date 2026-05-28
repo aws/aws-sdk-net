@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void Constructor_ThrowsWhenTypeHasNoSupportedMembers()
         {
             // StorageConfig should throw when target type has no supported members
-            Assert.ThrowsException<InvalidOperationException>(() => new StorageConfig(typeof(EmptyType)));
+            Assert.ThrowsExactly<InvalidOperationException>(() => new StorageConfig(typeof(EmptyType)));
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace AWSSDK_DotNet.UnitTests
             config.AddPropertyStorage("Id", prop1);
 
             // second add with same attribute name should throw
-            Assert.ThrowsException<InvalidOperationException>(() => config.AddPropertyStorage("Name", prop2));
+            Assert.ThrowsExactly<InvalidOperationException>(() => config.AddPropertyStorage("Name", prop2));
         }
 
         [TestMethod]
@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreSame(prop, retrieved);
 
             // missing property should throw
-            Assert.ThrowsException<InvalidOperationException>(() => config.GetPropertyStorage("DoesNotExist"));
+            Assert.ThrowsExactly<InvalidOperationException>(() => config.GetPropertyStorage("DoesNotExist"));
         }
 
         [TestMethod]
@@ -116,7 +116,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             config.Properties.Add(p3);
 
-            Assert.ThrowsException<InvalidOperationException>(() => config.FindSinglePropertyByAttributeName("DupAttr", out found));
+            Assert.ThrowsExactly<InvalidOperationException>(() => config.FindSinglePropertyByAttributeName("DupAttr", out found));
         }
     }
 }

@@ -11291,6 +11291,14 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// rg.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.4xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.large
         /// </para>
         ///  </li> <li> 
@@ -11394,6 +11402,14 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// dc2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// rg.4xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>

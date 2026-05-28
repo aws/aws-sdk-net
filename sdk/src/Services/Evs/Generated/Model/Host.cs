@@ -33,7 +33,7 @@ namespace Amazon.Evs.Model
     /// An ESX host that runs on an Amazon EC2 bare metal instance. Four hosts are created
     /// in an Amazon EVS environment during environment creation. You can add hosts to an
     /// environment using the <c>CreateEnvironmentHost</c> operation. Amazon EVS supports
-    /// 4-16 hosts per environment.
+    /// 4-32 hosts per environment.
     /// </summary>
     public partial class Host
     {

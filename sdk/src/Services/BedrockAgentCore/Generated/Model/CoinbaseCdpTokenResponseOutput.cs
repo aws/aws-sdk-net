@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Coinbase CDP token response
+    /// Coinbase CDP token response.
     /// </summary>
     public partial class CoinbaseCdpTokenResponseOutput
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property BearerToken. 
         /// <para>
-        /// Bearer Token for Authorization header
+        /// Bearer Token for Authorization header.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=8192)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property WalletAuthToken. 
         /// <para>
-        /// Wallet Auth Token for X-Wallet-Auth header
+        /// Wallet Auth Token for X-Wallet-Auth header.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8192)]

@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(10, config.EndpointDiscoveryCacheLimit);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null, "https://test123.amazonaws.com/shared/")]
         [DataRow("http://test123.amazonaws.com/shared", "http://test123.amazonaws.com/shared/")]
         [DataRow("Http://test123.amazonaws.com/shared", "http://test123.amazonaws.com/shared/")]

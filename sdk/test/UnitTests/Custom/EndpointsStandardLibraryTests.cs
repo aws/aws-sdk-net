@@ -110,28 +110,25 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("Endpoints")]
         [TestCategory("StandardLibrary")]
-        [ExpectedException(typeof(ArgumentException), "template is missing closing }")]
         public void InterpolateTestTemplateMissingClosingBracket()
         {
-            Fn.Interpolate("{Region", refs);
+            Assert.ThrowsExactly<ArgumentException>(() => Fn.Interpolate("{Region", refs));
         }
 
         [TestMethod]
         [TestCategory("Endpoints")]
         [TestCategory("StandardLibrary")]
-        [ExpectedException(typeof(KeyNotFoundException))]
         public void InterpolateTestTemplateMissingKey()
         {
-            Fn.Interpolate("{BadKey}", refs);
+            Assert.ThrowsExactly<KeyNotFoundException>(() => Fn.Interpolate("{BadKey}", refs));
         }
 
         [TestMethod]
         [TestCategory("Endpoints")]
         [TestCategory("StandardLibrary")]
-        [ExpectedException(typeof(ArgumentException), "template has non-matching closing bracket, use }} to output }")]
         public void InterpolateTestTemplateLoneClosingBracket()
         {
-            Fn.Interpolate("{Region}}", refs);
+            Assert.ThrowsExactly<ArgumentException>(() => Fn.Interpolate("{Region}}", refs));
         }
     }
 }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// VENDOR-SPECIFIC TOKEN REQUEST CONFIGURATION - Input
+    /// Vendor-specific token request configuration.
     /// </summary>
     public partial class PaymentTokenRequestInput
     {
@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgentCore.Model
         private StripePrivyTokenRequestInput _stripePrivyTokenRequest;
 
         /// <summary>
-        /// Gets and sets the property CoinbaseCdpTokenRequest.
+        /// Gets and sets the property CoinbaseCdpTokenRequest. 
+        /// <para>
+        /// The Coinbase CDP token request.
+        /// </para>
         /// </summary>
         public CoinbaseCdpTokenRequestInput CoinbaseCdpTokenRequest
         {
@@ -53,7 +56,10 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StripePrivyTokenRequest.
+        /// Gets and sets the property StripePrivyTokenRequest. 
+        /// <para>
+        /// The Stripe Privy token request.
+        /// </para>
         /// </summary>
         public StripePrivyTokenRequestInput StripePrivyTokenRequest
         {

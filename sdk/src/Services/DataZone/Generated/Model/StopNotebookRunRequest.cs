@@ -31,7 +31,8 @@ namespace Amazon.DataZone.Model
 {
     /// <summary>
     /// Container for the parameters to the StopNotebookRun operation.
-    /// Stops a running notebook run in an Amazon DataZone domain.
+    /// Stops a running <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+    /// run</a> in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class StopNotebookRunRequest : AmazonDataZoneRequest
     {
@@ -62,7 +63,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which the notebook run is stopped.
+        /// The identifier of the Amazon SageMaker Unified Studio domain in which the notebook
+        /// run is stopped.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

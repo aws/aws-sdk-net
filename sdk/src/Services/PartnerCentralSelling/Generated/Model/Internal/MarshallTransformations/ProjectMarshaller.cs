@@ -98,6 +98,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetExpectedContractDuration())
+            {
+                context.Writer.WritePropertyName("ExpectedContractDuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExpectedContractDurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExpectedContractDuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExpectedCustomerSpend())
             {
                 context.Writer.WritePropertyName("ExpectedCustomerSpend");

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The information about a cell in a notebook run in Amazon DataZone.
+    /// The information about a cell in a notebook run in Amazon SageMaker Unified Studio.
     /// </summary>
     public partial class CellInformation
     {

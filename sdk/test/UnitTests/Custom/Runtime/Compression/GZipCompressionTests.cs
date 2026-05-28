@@ -28,7 +28,7 @@ namespace AWSSDK.UnitTests
             1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
             2, 3, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
         })]
-        [DataTestMethod]
+        [TestMethod]
         public void CompressWithGzipTest(byte[] inputData)
         {
             var gzipCompression = new GZipCompression();

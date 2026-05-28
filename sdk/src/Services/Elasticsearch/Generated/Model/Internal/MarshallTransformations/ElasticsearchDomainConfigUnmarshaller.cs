@@ -74,6 +74,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdvancedSecurityOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AutomatedSnapshotPauseOptions", targetDepth))
+                {
+                    var unmarshaller = AutomatedSnapshotPauseOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedSnapshotPauseOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AutoTuneOptions", targetDepth))
                 {
                     var unmarshaller = AutoTuneOptionsStatusUnmarshaller.Instance;

@@ -47,7 +47,7 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The email addresses must already exist in the Amazon Connect instance before they
+    /// The email addresses must already exist in the Connect Customer instance before they
     /// can be associated with a queue.
     /// </para>
     ///  </li> <li> 
@@ -125,7 +125,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

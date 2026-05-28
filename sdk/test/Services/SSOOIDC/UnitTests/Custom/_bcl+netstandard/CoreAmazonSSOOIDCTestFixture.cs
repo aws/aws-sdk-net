@@ -134,7 +134,9 @@ namespace AWSSDK.UnitTests
                     IssuerUrl = "issuer-url",
                     RedirectUri = "http://127.0.0.1:8000",
                     GrantTypes = new[] { "authorization_code", "refresh_token" },
+#if NETFRAMEWORK
                     RetrieveAuthorizationCodeCallback = RetrieveAuthorizationCodeCallback,
+#endif
                     RetrieveAuthorizationCodeCallbackAsync = RetrieveAuthorizationCodeCallbackAsync
                 },
             };
@@ -149,7 +151,9 @@ namespace AWSSDK.UnitTests
                     IssuerUrl = "issuer-url",
                     RedirectUri = "http://127.0.0.1:8000",
                     GrantTypes = new[] { "authorization_code", "refresh_token" },
+#if NETFRAMEWORK
                     RetrieveAuthorizationCodeCallback = RetrieveAuthorizationCodeExceptionCallback,
+#endif
                     RetrieveAuthorizationCodeCallbackAsync = RetrieveAuthorizationCodeExceptionCallbackAsync
                 },
             };
@@ -177,8 +181,10 @@ namespace AWSSDK.UnitTests
         // Sets up RegisterClient calls to succeed
         public CoreAmazonSSOOIDCTestFixture WithRegisterClientSuccess()
         {
+#if NETFRAMEWORK
             OidcClient.Setup(mock => mock.RegisterClient(It.IsAny<RegisterClientRequest>()))
                 .Returns(() => RegisterClientResponse);
+#endif
 
             OidcClient.Setup(mock =>
                     mock.RegisterClientAsync(It.IsAny<RegisterClientRequest>(), It.IsAny<CancellationToken>()))
@@ -187,10 +193,12 @@ namespace AWSSDK.UnitTests
             return this;
         }
 
+#if NETFRAMEWORK
         public void AssertRegisterClientRequest(RegisterClientRequest expectedRequest)
         {
             OidcClient.Verify(mock => mock.RegisterClient(It.Is<RegisterClientRequest>(MatchesRequest(expectedRequest))), Times.Once);
         }
+#endif
 
         public void AssertRegisterClientAsyncRequest(RegisterClientRequest expectedRequest)
         {
@@ -202,8 +210,10 @@ namespace AWSSDK.UnitTests
         // Sets up StartDeviceAuthorization calls to succeed
         public CoreAmazonSSOOIDCTestFixture WithStartDeviceAuthorizationSuccess()
         {
+#if NETFRAMEWORK
             OidcClient.Setup(mock => mock.StartDeviceAuthorization(It.IsAny<StartDeviceAuthorizationRequest>()))
                 .Returns(() => StartDeviceAuthorizationResponse);
+#endif
 
             OidcClient.Setup(mock =>
                     mock.StartDeviceAuthorizationAsync(It.IsAny<StartDeviceAuthorizationRequest>(),
@@ -213,10 +223,12 @@ namespace AWSSDK.UnitTests
             return this;
         }
 
+#if NETFRAMEWORK
         public void AssertStartDeviceAuthorizationRequest(StartDeviceAuthorizationRequest expectedRequest)
         {
             OidcClient.Verify(mock => mock.StartDeviceAuthorization(It.Is<StartDeviceAuthorizationRequest>(MatchesRequest(expectedRequest))), Times.Once);
         }
+#endif
 
         public void AssertStartDeviceAuthorizationAsyncRequest(StartDeviceAuthorizationRequest expectedRequest)
         {
@@ -229,8 +241,10 @@ namespace AWSSDK.UnitTests
         // Sets up CreateToken calls to succeed
         public CoreAmazonSSOOIDCTestFixture WithCreateTokenSuccess()
         {
+#if NETFRAMEWORK
             OidcClient.Setup(mock => mock.CreateToken(It.IsAny<CreateTokenRequest>()))
                 .Returns(() => CreateTokenResponse);
+#endif
 
             OidcClient.Setup(mock =>
                     mock.CreateTokenAsync(It.IsAny<CreateTokenRequest>(), It.IsAny<CancellationToken>()))
@@ -241,9 +255,11 @@ namespace AWSSDK.UnitTests
 
         public CoreAmazonSSOOIDCTestFixture WithCreateTokenExceptionThenSuccess(Exception exception)
         {
+#if NETFRAMEWORK
             OidcClient.SetupSequence(mock => mock.CreateToken(It.IsAny<CreateTokenRequest>()))
                 .Throws(exception)
                 .Returns(() => CreateTokenResponse);
+#endif
 
             OidcClient.SetupSequence(mock =>
                     mock.CreateTokenAsync(It.IsAny<CreateTokenRequest>(), It.IsAny<CancellationToken>()))
@@ -255,8 +271,10 @@ namespace AWSSDK.UnitTests
 
         public CoreAmazonSSOOIDCTestFixture WithCreateTokenException(Exception exception)
         {
+#if NETFRAMEWORK
             OidcClient.Setup(mock => mock.CreateToken(It.IsAny<CreateTokenRequest>()))
                 .Throws(exception);
+#endif
 
             OidcClient.Setup(mock =>
                     mock.CreateTokenAsync(It.IsAny<CreateTokenRequest>(), It.IsAny<CancellationToken>()))
@@ -265,10 +283,12 @@ namespace AWSSDK.UnitTests
             return this;
         }
 
+#if NETFRAMEWORK
         public void AssertCreateTokenRequest(CreateTokenRequest expectedRequest, int timesCalled = 1)
         {
             OidcClient.Verify(mock => mock.CreateToken(It.Is<CreateTokenRequest>(MatchesRequest(expectedRequest))), Times.Exactly(timesCalled));
         }
+#endif
 
         public void AssertCreateTokenAsyncRequest(CreateTokenRequest expectedRequest, int timesCalled = 1)
         {

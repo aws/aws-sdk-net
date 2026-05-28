@@ -265,6 +265,71 @@ namespace Amazon.Bedrock
         #endregion
 
 
+        #region  BatchDeleteAdvancedPromptOptimizationJob
+
+
+        /// <summary>
+        /// Batch delete the specified advanced prompt optimization jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAdvancedPromptOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJob">REST API Reference for BatchDeleteAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual BatchDeleteAdvancedPromptOptimizationJobResponse BatchDeleteAdvancedPromptOptimizationJob(BatchDeleteAdvancedPromptOptimizationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteAdvancedPromptOptimizationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Batch delete the specified advanced prompt optimization jobs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAdvancedPromptOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteAdvancedPromptOptimizationJob">REST API Reference for BatchDeleteAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual Task<BatchDeleteAdvancedPromptOptimizationJobResponse> BatchDeleteAdvancedPromptOptimizationJobAsync(BatchDeleteAdvancedPromptOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteAdvancedPromptOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteEvaluationJob
 
 
@@ -419,6 +484,101 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = CancelAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
             
             return InvokeAsync<CancelAutomatedReasoningPolicyBuildWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAdvancedPromptOptimizationJob
+
+
+        /// <summary>
+        /// Creates an asynchronous batch job for advanced prompt optimization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdvancedPromptOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAdvancedPromptOptimizationJob">REST API Reference for CreateAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual CreateAdvancedPromptOptimizationJobResponse CreateAdvancedPromptOptimizationJob(CreateAdvancedPromptOptimizationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAdvancedPromptOptimizationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an asynchronous batch job for advanced prompt optimization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAdvancedPromptOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAdvancedPromptOptimizationJob">REST API Reference for CreateAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual Task<CreateAdvancedPromptOptimizationJobResponse> CreateAdvancedPromptOptimizationJobAsync(CreateAdvancedPromptOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAdvancedPromptOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3743,6 +3903,79 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetAdvancedPromptOptimizationJob
+
+
+        /// <summary>
+        /// Retrieves the details and status of an advanced prompt optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdvancedPromptOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the GetAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAdvancedPromptOptimizationJob">REST API Reference for GetAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual GetAdvancedPromptOptimizationJobResponse GetAdvancedPromptOptimizationJob(GetAdvancedPromptOptimizationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetAdvancedPromptOptimizationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details and status of an advanced prompt optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdvancedPromptOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAdvancedPromptOptimizationJob">REST API Reference for GetAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual Task<GetAdvancedPromptOptimizationJobResponse> GetAdvancedPromptOptimizationJobAsync(GetAdvancedPromptOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAdvancedPromptOptimizationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutomatedReasoningPolicy
 
 
@@ -5638,6 +5871,71 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetUseCaseForModelAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAdvancedPromptOptimizationJobs
+
+
+        /// <summary>
+        /// Lists all advanced prompt optimization jobs for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdvancedPromptOptimizationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAdvancedPromptOptimizationJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAdvancedPromptOptimizationJobs">REST API Reference for ListAdvancedPromptOptimizationJobs Operation</seealso>
+        public virtual ListAdvancedPromptOptimizationJobsResponse ListAdvancedPromptOptimizationJobs(ListAdvancedPromptOptimizationJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAdvancedPromptOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdvancedPromptOptimizationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAdvancedPromptOptimizationJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all advanced prompt optimization jobs for the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdvancedPromptOptimizationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAdvancedPromptOptimizationJobs service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAdvancedPromptOptimizationJobs">REST API Reference for ListAdvancedPromptOptimizationJobs Operation</seealso>
+        public virtual Task<ListAdvancedPromptOptimizationJobsResponse> ListAdvancedPromptOptimizationJobsAsync(ListAdvancedPromptOptimizationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAdvancedPromptOptimizationJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAdvancedPromptOptimizationJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAdvancedPromptOptimizationJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7802,6 +8100,85 @@ namespace Amazon.Bedrock
             options.ResponseUnmarshaller = StartAutomatedReasoningPolicyTestWorkflowResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartAutomatedReasoningPolicyTestWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAdvancedPromptOptimizationJob
+
+
+        /// <summary>
+        /// Stops an in-progress advanced prompt optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAdvancedPromptOptimizationJob service method.</param>
+        /// 
+        /// <returns>The response from the StopAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopAdvancedPromptOptimizationJob">REST API Reference for StopAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual StopAdvancedPromptOptimizationJobResponse StopAdvancedPromptOptimizationJob(StopAdvancedPromptOptimizationJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopAdvancedPromptOptimizationJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops an in-progress advanced prompt optimization job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAdvancedPromptOptimizationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAdvancedPromptOptimizationJob service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopAdvancedPromptOptimizationJob">REST API Reference for StopAdvancedPromptOptimizationJob Operation</seealso>
+        public virtual Task<StopAdvancedPromptOptimizationJobResponse> StopAdvancedPromptOptimizationJobAsync(StopAdvancedPromptOptimizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopAdvancedPromptOptimizationJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopAdvancedPromptOptimizationJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopAdvancedPromptOptimizationJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

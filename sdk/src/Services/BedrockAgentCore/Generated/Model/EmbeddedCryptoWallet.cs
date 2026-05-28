@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Embedded Crypto wallet instrument details
+    /// Embedded crypto wallet instrument details.
     /// </summary>
     public partial class EmbeddedCryptoWallet
     {
@@ -42,9 +42,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property LinkedAccounts. 
         /// <para>
-        /// List of linkedAccounts linked to this wallet. Each linkedAccount represents a way
-        /// the end user can authenticate to this wallet. Can be empty when adding a new linkedAccount
-        /// to an existing wallet.
+        /// List of linked accounts linked to this wallet. Each represents a way the end user
+        /// can authenticate to this wallet.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -69,7 +68,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property Network. 
         /// <para>
         /// The blockchain network for this embedded crypto wallet. Supported networks: ETHEREUM,
-        /// SOLANA
+        /// SOLANA.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,8 +87,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RedirectUrl. 
         /// <para>
-        /// URL for the end user to complete a provider-specific action (e.g., wallet linking,
-        /// onboarding). Returned by the payment connector during instrument creation.
+        /// URL for the end user to complete a provider-specific action such as wallet linking
+        /// or onboarding.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

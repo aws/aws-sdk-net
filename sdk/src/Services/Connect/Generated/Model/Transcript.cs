@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// A structure that defines search criteria and matching logic to search for contacts
-    /// by matching text with transcripts analyzed by Amazon Connect Contact Lens.
+    /// by matching text with transcripts analyzed by Connect Customer Contact Lens.
     /// </summary>
     public partial class Transcript
     {

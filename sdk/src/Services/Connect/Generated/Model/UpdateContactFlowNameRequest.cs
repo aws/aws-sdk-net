@@ -35,8 +35,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
-    /// Connect Flow language</a>.
+    /// You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Connect
+    /// Customer Flow language</a>.
     /// </para>
     /// </summary>
     public partial class UpdateContactFlowNameRequest : AmazonConnectRequest
@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

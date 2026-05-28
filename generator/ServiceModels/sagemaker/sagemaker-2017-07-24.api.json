@@ -4795,7 +4795,8 @@
         "ml.p5.4xlarge",
         "ml.p5.48xlarge",
         "ml.p5e.48xlarge",
-        "ml.p5en.48xlarge"
+        "ml.p5en.48xlarge",
+        "ml.p6-b200.48xlarge"
       ]
     },
     "AIRecommendationInstanceTypeList":{
@@ -7982,8 +7983,17 @@
         "ResourceType":{"shape":"ClusterEventResourceType"},
         "EventTime":{"shape":"Timestamp"},
         "EventDetails":{"shape":"EventDetails"},
-        "Description":{"shape":"String"}
+        "Description":{"shape":"String"},
+        "EventLevel":{"shape":"ClusterEventLevel"}
       }
+    },
+    "ClusterEventLevel":{
+      "type":"string",
+      "enum":[
+        "Info",
+        "Warn",
+        "Error"
+      ]
     },
     "ClusterEventMaxResults":{
       "type":"integer",
@@ -8022,8 +8032,16 @@
         "InstanceId":{"shape":"String"},
         "ResourceType":{"shape":"ClusterEventResourceType"},
         "EventTime":{"shape":"Timestamp"},
-        "Description":{"shape":"String"}
+        "Description":{"shape":"String"},
+        "EventLevel":{"shape":"ClusterEventLevel"}
       }
+    },
+    "ClusterFSxLustreDeletionPolicy":{
+      "type":"string",
+      "enum":[
+        "DeleteIfNotUsed",
+        "Keep"
+      ]
     },
     "ClusterFsxLustreConfig":{
       "type":"structure",
@@ -8687,6 +8705,20 @@
       "max":100,
       "min":1
     },
+    "ClusterRestrictedInstanceGroupsConfig":{
+      "type":"structure",
+      "required":["SharedEnvironmentConfig"],
+      "members":{
+        "SharedEnvironmentConfig":{"shape":"ClusterSharedEnvironmentConfig"}
+      }
+    },
+    "ClusterRestrictedInstanceGroupsConfigOutput":{
+      "type":"structure",
+      "required":["SharedEnvironmentConfig"],
+      "members":{
+        "SharedEnvironmentConfig":{"shape":"ClusterSharedEnvironmentConfigDetails"}
+      }
+    },
     "ClusterSchedulerConfigArn":{
       "type":"string",
       "max":256,
@@ -8731,6 +8763,26 @@
     "ClusterSchedulerPriorityClassName":{
       "type":"string",
       "pattern":"[a-z0-9]([-a-z0-9]*[a-z0-9]){0,39}?"
+    },
+    "ClusterSharedEnvironmentConfig":{
+      "type":"structure",
+      "required":[
+        "FSxLustreDeletionPolicy",
+        "FSxLustreConfig"
+      ],
+      "members":{
+        "FSxLustreDeletionPolicy":{"shape":"ClusterFSxLustreDeletionPolicy"},
+        "FSxLustreConfig":{"shape":"FSxLustreConfig"}
+      }
+    },
+    "ClusterSharedEnvironmentConfigDetails":{
+      "type":"structure",
+      "members":{
+        "CurrentFSxLustreConfig":{"shape":"FSxLustreConfig"},
+        "DesiredFSxLustreConfig":{"shape":"FSxLustreConfig"},
+        "CurrentFSxLustreDeletionPolicy":{"shape":"ClusterFSxLustreDeletionPolicy"},
+        "DesiredFSxLustreDeletionPolicy":{"shape":"ClusterFSxLustreDeletionPolicy"}
+      }
     },
     "ClusterSlurmConfig":{
       "type":"structure",
@@ -9620,6 +9672,7 @@
         "ClusterName":{"shape":"ClusterName"},
         "InstanceGroups":{"shape":"ClusterInstanceGroupSpecifications"},
         "RestrictedInstanceGroups":{"shape":"ClusterRestrictedInstanceGroupSpecifications"},
+        "RestrictedInstanceGroupsConfig":{"shape":"ClusterRestrictedInstanceGroupsConfig"},
         "VpcConfig":{"shape":"VpcConfig"},
         "Tags":{"shape":"TagList"},
         "Orchestrator":{"shape":"ClusterOrchestrator"},
@@ -9827,6 +9880,7 @@
         },
         "KmsKeyId":{"shape":"KmsKeyId"},
         "AppSecurityGroupManagement":{"shape":"AppSecurityGroupManagement"},
+        "HomeEfsFileSystemCreation":{"shape":"HomeEfsFileSystemCreation"},
         "TagPropagation":{"shape":"TagPropagation"},
         "DefaultSpaceSettings":{"shape":"DefaultSpaceSettings"}
       }
@@ -10481,7 +10535,8 @@
       "members":{
         "ModelPackageGroupName":{"shape":"EntityName"},
         "ModelPackageGroupDescription":{"shape":"EntityDescription"},
-        "Tags":{"shape":"TagList"}
+        "Tags":{"shape":"TagList"},
+        "ManagedConfiguration":{"shape":"ManagedConfiguration"}
       }
     },
     "CreateModelPackageGroupOutput":{
@@ -10523,7 +10578,8 @@
         "SourceUri":{"shape":"ModelPackageSourceUri"},
         "SecurityConfig":{"shape":"ModelPackageSecurityConfig"},
         "ModelCard":{"shape":"ModelPackageModelCard"},
-        "ModelLifeCycle":{"shape":"ModelLifeCycle"}
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"},
+        "ManagedStorageType":{"shape":"ManagedStorageType"}
       }
     },
     "CreateModelPackageOutput":{
@@ -12632,6 +12688,7 @@
         "FailureMessage":{"shape":"String"},
         "InstanceGroups":{"shape":"ClusterInstanceGroupDetailsList"},
         "RestrictedInstanceGroups":{"shape":"ClusterRestrictedInstanceGroupDetailsList"},
+        "RestrictedInstanceGroupsConfig":{"shape":"ClusterRestrictedInstanceGroupsConfigOutput"},
         "VpcConfig":{"shape":"VpcConfig"},
         "Orchestrator":{"shape":"ClusterOrchestrator"},
         "TieredStorageConfig":{"shape":"ClusterTieredStorageConfig"},
@@ -12945,6 +13002,7 @@
         "VpcId":{"shape":"VpcId"},
         "KmsKeyId":{"shape":"KmsKeyId"},
         "AppSecurityGroupManagement":{"shape":"AppSecurityGroupManagement"},
+        "HomeEfsFileSystemCreation":{"shape":"HomeEfsFileSystemCreation"},
         "TagPropagation":{"shape":"TagPropagation"},
         "DefaultSpaceSettings":{"shape":"DefaultSpaceSettings"}
       }
@@ -13835,7 +13893,8 @@
         "ModelPackageGroupDescription":{"shape":"EntityDescription"},
         "CreationTime":{"shape":"CreationTime"},
         "CreatedBy":{"shape":"UserContext"},
-        "ModelPackageGroupStatus":{"shape":"ModelPackageGroupStatus"}
+        "ModelPackageGroupStatus":{"shape":"ModelPackageGroupStatus"},
+        "ManagedConfiguration":{"shape":"ManagedConfiguration"}
       }
     },
     "DescribeModelPackageInput":{
@@ -13888,7 +13947,8 @@
         "SourceUri":{"shape":"ModelPackageSourceUri"},
         "SecurityConfig":{"shape":"ModelPackageSecurityConfig"},
         "ModelCard":{"shape":"ModelPackageModelCard"},
-        "ModelLifeCycle":{"shape":"ModelLifeCycle"}
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"},
+        "ManagedStorageType":{"shape":"ManagedStorageType"}
       }
     },
     "DescribeModelQualityJobDefinitionRequest":{
@@ -15795,6 +15855,13 @@
         "DISABLED"
       ]
     },
+    "ExecutionRoleSessionNameMode":{
+      "type":"string",
+      "enum":[
+        "STATIC",
+        "USER_IDENTITY"
+      ]
+    },
     "ExecutionStatus":{
       "type":"string",
       "enum":[
@@ -16695,6 +16762,13 @@
       "members":{
         "CountryCode":{"shape":"CountryCode"}
       }
+    },
+    "HomeEfsFileSystemCreation":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
     },
     "HookParameters":{
       "type":"map",
@@ -18403,6 +18477,7 @@
       "members":{
         "CustomerEni":{"shape":"String"},
         "AdditionalEnis":{"shape":"AdditionalEnis"},
+        "InstanceRequirementsEniConfigurations":{"shape":"InstanceRequirementsEniConfigurations"},
         "CapacityReservation":{"shape":"CapacityReservation"},
         "FailureMessage":{"shape":"String"},
         "LcsExecutionState":{"shape":"String"},
@@ -18465,6 +18540,17 @@
       "type":"list",
       "member":{"shape":"InstancePoolSummary"},
       "min":1
+    },
+    "InstanceRequirementsEniConfiguration":{
+      "type":"structure",
+      "members":{
+        "CustomerEni":{"shape":"String"},
+        "AdditionalEnis":{"shape":"AdditionalEnis"}
+      }
+    },
+    "InstanceRequirementsEniConfigurations":{
+      "type":"list",
+      "member":{"shape":"InstanceRequirementsEniConfiguration"}
     },
     "InstanceType":{
       "type":"string",
@@ -18641,7 +18727,9 @@
         "ml.g6.12xlarge",
         "ml.g6.16xlarge",
         "ml.g6.24xlarge",
-        "ml.g6.48xlarge"
+        "ml.g6.48xlarge",
+        "ml.p5.4xlarge",
+        "ml.p5en.48xlarge"
       ]
     },
     "Integer":{"type":"integer"},
@@ -21195,6 +21283,12 @@
       "min":0,
       "pattern":"\\d+\\.\\d+"
     },
+    "ManagedConfiguration":{
+      "type":"structure",
+      "members":{
+        "ManagedStorageType":{"shape":"ManagedStorageType"}
+      }
+    },
     "ManagedInstanceScalingCooldownInMinutes":{
       "type":"integer",
       "box":true,
@@ -21230,6 +21324,10 @@
         "ENABLED",
         "DISABLED"
       ]
+    },
+    "ManagedStorageType":{
+      "type":"string",
+      "enum":["Restricted"]
     },
     "MapString2048":{
       "type":"map",
@@ -22366,7 +22464,8 @@
         "ModelPackageGroupArn":{"shape":"ModelPackageGroupArn"},
         "ModelPackageGroupDescription":{"shape":"EntityDescription"},
         "CreationTime":{"shape":"CreationTime"},
-        "ModelPackageGroupStatus":{"shape":"ModelPackageGroupStatus"}
+        "ModelPackageGroupStatus":{"shape":"ModelPackageGroupStatus"},
+        "ManagedConfiguration":{"shape":"ManagedConfiguration"}
       }
     },
     "ModelPackageGroupSummaryList":{
@@ -25817,7 +25916,7 @@
         "InstanceCount"
       ],
       "members":{
-        "InstanceType":{"shape":"InstanceType"},
+        "InstanceType":{"shape":"ProductionVariantInstanceType"},
         "InstanceCount":{"shape":"TaskCount"}
       }
     },
@@ -26393,6 +26492,7 @@
         "TotalInstanceCount":{"shape":"TotalInstanceCount"},
         "Status":{"shape":"ReservedCapacityStatus"},
         "AvailabilityZone":{"shape":"AvailabilityZone"},
+        "AvailabilityZoneId":{"shape":"AvailabilityZoneId"},
         "DurationHours":{"shape":"ReservedCapacityDurationHours"},
         "DurationMinutes":{"shape":"ReservedCapacityDurationMinutes"},
         "StartTime":{"shape":"Timestamp"},
@@ -26577,7 +26677,8 @@
         "SageMakerImageVersionArn":{"shape":"ImageVersionArn"},
         "SageMakerImageVersionAlias":{"shape":"ImageVersionAlias"},
         "InstanceType":{"shape":"AppInstanceType"},
-        "LifecycleConfigArn":{"shape":"StudioLifecycleConfigArn"}
+        "LifecycleConfigArn":{"shape":"StudioLifecycleConfigArn"},
+        "TrainingPlanArn":{"shape":"StudioResourceSpecTrainingPlanArn"}
       }
     },
     "ResourceType":{
@@ -26875,7 +26976,8 @@
       "enum":[
         "training-job",
         "hyperpod-cluster",
-        "endpoint"
+        "endpoint",
+        "studio-apps"
       ]
     },
     "SageMakerResourceNames":{
@@ -28206,6 +28308,12 @@
       "type":"list",
       "member":{"shape":"StudioLifecycleConfigDetails"}
     },
+    "StudioResourceSpecTrainingPlanArn":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:training-plan/.*|None)"
+    },
     "StudioWebPortal":{
       "type":"string",
       "enum":[
@@ -28219,7 +28327,8 @@
         "HiddenMlTools":{"shape":"HiddenMlToolsList"},
         "HiddenAppTypes":{"shape":"HiddenAppTypesList"},
         "HiddenInstanceTypes":{"shape":"HiddenInstanceTypesList"},
-        "HiddenSageMakerImageVersionAliases":{"shape":"HiddenSageMakerImageVersionAliasesList"}
+        "HiddenSageMakerImageVersionAliases":{"shape":"HiddenSageMakerImageVersionAliasesList"},
+        "ExecutionRoleSessionNameMode":{"shape":"ExecutionRoleSessionNameMode"}
       }
     },
     "SubnetId":{
@@ -29063,6 +29172,7 @@
         "InputDataConfig":{"shape":"InputDataConfig"},
         "OutputDataConfig":{"shape":"OutputDataConfig"},
         "ResourceConfig":{"shape":"ResourceConfig"},
+        "WarmPoolStatus":{"shape":"WarmPoolStatus"},
         "VpcConfig":{"shape":"VpcConfig"},
         "StoppingCondition":{"shape":"StoppingCondition"},
         "CreationTime":{"shape":"Timestamp"},
@@ -30246,6 +30356,7 @@
         "ClusterName":{"shape":"ClusterNameOrArn"},
         "InstanceGroups":{"shape":"ClusterInstanceGroupSpecifications"},
         "RestrictedInstanceGroups":{"shape":"ClusterRestrictedInstanceGroupSpecifications"},
+        "RestrictedInstanceGroupsConfig":{"shape":"ClusterRestrictedInstanceGroupsConfig"},
         "TieredStorageConfig":{"shape":"ClusterTieredStorageConfig"},
         "NodeRecovery":{"shape":"ClusterNodeRecovery"},
         "InstanceGroupsToDelete":{"shape":"ClusterInstanceGroupsToDelete"},
@@ -30422,6 +30533,7 @@
         "SubnetIds":{"shape":"Subnets"},
         "AppNetworkAccessType":{"shape":"AppNetworkAccessType"},
         "TagPropagation":{"shape":"TagPropagation"},
+        "HomeEfsFileSystemCreation":{"shape":"HomeEfsFileSystemCreation"},
         "VpcId":{"shape":"VpcId"}
       }
     },

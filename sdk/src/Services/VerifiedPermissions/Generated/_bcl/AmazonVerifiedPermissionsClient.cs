@@ -1975,9 +1975,8 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  <note> 
         /// <para>
-        /// Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar
-        /// supports multiple namespaces</a>, Verified Permissions currently supports only one
-        /// namespace per policy store.
+        /// As of May 2026, Verified Permissions has aligned with Cedar and now supports multiple
+        /// namespaces.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -2124,9 +2123,8 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  <note> 
         /// <para>
-        /// Although <a href="https://docs.cedarpolicy.com/schema/schema.html#namespace">Cedar
-        /// supports multiple namespaces</a>, Verified Permissions currently supports only one
-        /// namespace per policy store.
+        /// As of May 2026, Verified Permissions has aligned with Cedar and now supports multiple
+        /// namespaces.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -3768,12 +3766,25 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// When a policy store alias is deleted, it enters the <c>PendingDeletion</c> state.
-        /// When a policy store alias is in the <c>PendingDeletion</c> state, new policy store
-        /// aliases cannot be created with the same name. If the policy store alias is used in
-        /// an API that has a <c>policyStoreId</c> field, the operation will fail with a <c>ResourceNotFound</c>
+        /// By default, when a policy store alias is deleted, it enters the <c>PendingDeletion</c>
+        /// state. When a policy store alias is in the <c>PendingDeletion</c> state, new policy
+        /// store aliases cannot be created with the same name. If the policy store alias is used
+        /// in an API that has a <c>policyStoreId</c> field, the operation will fail with a <c>ResourceNotFound</c>
         /// exception.
         /// </para>
+        ///  
+        /// <para>
+        /// To immediately delete a policy store alias and bypass the <c>PendingDeletion</c> state,
+        /// set the <c>deletionMode</c> parameter to <c>HardDelete</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Verified Permissions is eventually consistent. If you hard delete a policy store alias
+        /// and then immediately recreate it to be associated with a different policy store, requests
+        /// that reference this alias may continue to be evaluated against the previously associated
+        /// policy store for a short period of time.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStoreAlias service method.</param>
         /// 
@@ -3914,12 +3925,25 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// When a policy store alias is deleted, it enters the <c>PendingDeletion</c> state.
-        /// When a policy store alias is in the <c>PendingDeletion</c> state, new policy store
-        /// aliases cannot be created with the same name. If the policy store alias is used in
-        /// an API that has a <c>policyStoreId</c> field, the operation will fail with a <c>ResourceNotFound</c>
+        /// By default, when a policy store alias is deleted, it enters the <c>PendingDeletion</c>
+        /// state. When a policy store alias is in the <c>PendingDeletion</c> state, new policy
+        /// store aliases cannot be created with the same name. If the policy store alias is used
+        /// in an API that has a <c>policyStoreId</c> field, the operation will fail with a <c>ResourceNotFound</c>
         /// exception.
         /// </para>
+        ///  
+        /// <para>
+        /// To immediately delete a policy store alias and bypass the <c>PendingDeletion</c> state,
+        /// set the <c>deletionMode</c> parameter to <c>HardDelete</c>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Verified Permissions is eventually consistent. If you hard delete a policy store alias
+        /// and then immediately recreate it to be associated with a different policy store, requests
+        /// that reference this alias may continue to be evaluated against the previously associated
+        /// policy store for a short period of time.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicyStoreAlias service method.</param>
         /// <param name="cancellationToken">

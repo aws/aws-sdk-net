@@ -105,25 +105,25 @@ namespace Amazon.Connect.Model
         /// <para>
         /// For valid values of metric-level filters <c>INITIATION_METHOD</c>, <c>DISCONNECT_REASON</c>,
         /// and <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>. 
+        /// in the <i>Connect Customer Administrator Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For valid values of the metric-level filter <c>FLOWS_OUTCOME_TYPE</c>, see the description
         /// for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome">Flow
-        /// outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.
+        /// outcome</a> metric in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For valid values of the metric-level filter <c>BOT_CONVERSATION_OUTCOME_TYPE</c>,
         /// see the description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed-metric">Bot
-        /// conversations completed</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// conversations completed</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// For valid values of the metric-level filter <c>BOT_INTENT_OUTCOME_TYPE</c>, see the
         /// description for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed-metric">Bot
-        /// intents completed</a> metric in the <i>Amazon Connect Administrator Guide</i>.
+        /// intents completed</a> metric in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

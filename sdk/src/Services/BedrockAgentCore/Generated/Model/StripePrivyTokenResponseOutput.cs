@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// StripePrivy token response containing appId, basicAuthToken, and optionally authorizationSignature
+    /// Stripe Privy token response containing appId, basicAuthToken, and optionally authorizationSignature.
     /// </summary>
     public partial class StripePrivyTokenResponseOutput
     {
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The Privy app ID for the privy-app-id header
+        /// The Privy app ID for the privy-app-id header.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -62,7 +62,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property AuthorizationSignature. 
         /// <para>
         /// Base64-encoded ECDSA P-256 authorization signature (only present when includeAuthorizationSignature
-        /// is true)
+        /// is true).
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8192)]
@@ -81,7 +81,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property BasicAuthToken. 
         /// <para>
-        /// Base64-encoded Basic Auth token (appId:appSecret) for the Authorization header
+        /// Base64-encoded Basic Auth token (appId:appSecret) for the Authorization header.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=8192)]
@@ -100,8 +100,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RequestExpiry. 
         /// <para>
-        /// Unix timestamp in milliseconds when the authorization signature expires. Set as privy-request-expiry
-        /// header.
+        /// Unix timestamp in milliseconds when the authorization signature expires.
         /// </para>
         /// </summary>
         public long? RequestExpiry

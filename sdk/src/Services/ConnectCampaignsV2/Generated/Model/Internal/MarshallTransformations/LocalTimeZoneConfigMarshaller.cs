@@ -63,6 +63,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetLocalTimeZoneDetectionScope())
+            {
+                context.Writer.WritePropertyName("localTimeZoneDetectionScope");
+                context.Writer.WriteStringValue(requestObject.LocalTimeZoneDetectionScope);
+            }
+
         }
 
         /// <summary>

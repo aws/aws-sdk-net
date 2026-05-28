@@ -81,6 +81,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.GranteePrincipal);
             }
 
+            if(publicRequest.IsSetGranteeServicePrincipal())
+            {
+                context.Writer.WritePropertyName("GranteeServicePrincipal");
+                context.Writer.WriteStringValue(publicRequest.GranteeServicePrincipal);
+            }
+
             if(publicRequest.IsSetGrantId())
             {
                 context.Writer.WritePropertyName("GrantId");

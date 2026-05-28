@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Coinbase CDP token request parameters
+    /// Coinbase CDP token request parameters.
     /// </summary>
     public partial class CoinbaseCdpTokenRequestInput
     {
@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property IncludeWalletAuthToken. 
         /// <para>
-        /// Set to true for wallet write operations (requires walletSecret configured)
+        /// Set to true for wallet write operations (requires walletSecret configured).
         /// </para>
         /// </summary>
         public bool? IncludeWalletAuthToken
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RequestBody. 
         /// <para>
-        /// Request body JSON - used to generate wallet auth JWT
+        /// Request body JSON — used to generate wallet auth JWT.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -80,7 +80,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RequestHost. 
         /// <para>
-        /// Optional - defaults to &quot;api.cdp.coinbase.com&quot;
+        /// The host for the payment API request. Defaults to "api.cdp.coinbase.com".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

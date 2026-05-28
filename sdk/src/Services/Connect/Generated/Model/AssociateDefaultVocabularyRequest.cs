@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateDefaultVocabulary operation.
-    /// Associates an existing vocabulary as the default. Contact Lens for Amazon Connect
+    /// Associates an existing vocabulary as the default. Contact Lens for Connect Customer
     /// uses the vocabulary in post-call and real-time analysis sessions for the given language.
     /// </summary>
     public partial class AssociateDefaultVocabularyRequest : AmazonConnectRequest
@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

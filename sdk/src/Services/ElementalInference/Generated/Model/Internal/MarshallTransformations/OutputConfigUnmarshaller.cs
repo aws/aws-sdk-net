@@ -68,6 +68,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cropping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("subtitling", targetDepth))
+                {
+                    var unmarshaller = SubtitlingConfigUnmarshaller.Instance;
+                    unmarshalledObject.Subtitling = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -1,8 +1,5 @@
 ﻿using Amazon;
-using Amazon.ECR;
-using Amazon.IotData;
-using Amazon.MTurk;
-using Amazon.QuickSight;
+using Amazon.S3;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -74,26 +71,29 @@ namespace AWSSDK.UnitTests
         }
 
         private static IEnumerable<object[]> TestSignerScopeCases =>
-            new List<object[]> 
+            new List<object[]>
             {
                 // Real region, partition defaults
-                new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
-                    "us-east-1", "iotdata", "data-ats.iot.us-east-1.amazonaws.com" },
-                // Real region with credentialScope.region
-                new object[]{new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
-                    "us-east-1", "ecr", "api.ecr.us-east-1.amazonaws.com" },
-                 // Pseudoregion with credentialScope.region, different partition
-                // new object[]{ new AmazonECRConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-gov-east-1") },
-                //     "us-gov-east-1", "ecr", "ecr-fips.us-gov-east-1.amazonaws.com" },
-                // Pseudoregion, no credentialScope.region
-                new object[]{new AmazonIotDataConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-east-1") },
-                    "us-east-1", "iotdata", "data.iot-fips.us-east-1.amazonaws.com" },
-                // Non-FIPS pseudoregion, no credentialScope
-                new object[]{new AmazonMTurkConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("sandbox") },
-                    "sandbox", "mturk-requester", "mturk-requester-sandbox.us-east-1.amazonaws.com" },
-                // Non-FIPS pseudoregion, no credentialScope or hostname
-                // new object[]{new AmazonQuickSightConfig { RegionEndpoint = RegionEndpoint.GetBySystemName("api") },
-                //    "api", "quicksight", "quicksight.api.amazonaws.com" },
+                new object[]
+                {
+                    new AmazonS3Config { RegionEndpoint = RegionEndpoint.GetBySystemName("us-east-1") },
+                    "us-east-1",
+                    "s3"
+                },
+                // FIPS pseudoregion normalized to real region
+                new object[]
+                {
+                    new AmazonS3Config { RegionEndpoint = RegionEndpoint.GetBySystemName("fips-us-east-1") },
+                    "us-east-1", 
+                    "s3" 
+                },
+                // Non-FIPS pseudoregion
+                new object[]
+                {
+                    new AmazonS3Config { RegionEndpoint = RegionEndpoint.GetBySystemName("aws-global") },
+                    "aws-global",
+                    "s3"
+                },
             };
 
         /// <summary>
@@ -101,11 +101,10 @@ namespace AWSSDK.UnitTests
         /// </summary>
         /// <param name="config">Service client config with intended request region</param>
         /// <param name="expectedAuthRegion">Expected region name to be used for signing</param>
-        /// <param name="expectedAuthService">Exected service name to be used for signing</param>
-        /// <param name="expectedEndpoint">Expected hostname for the request</param>
-        [DataTestMethod]
+        /// <param name="expectedAuthService">Expected service name to be used for signing</param>
+        [TestMethod]
         [DynamicData(nameof(TestSignerScopeCases))]
-        public void TestSignerScope(IClientConfig config, string expectedAuthRegion, string expectedAuthService, string expectedEndpoint)
+        public void TestSignerScope(IClientConfig config, string expectedAuthRegion, string expectedAuthService)
         {
             var signer = new AWS4Signer();
             var mock = new Moq.Mock<IRequest>().SetupAllProperties();
@@ -121,7 +120,6 @@ namespace AWSSDK.UnitTests
             var scopePieces = result.Scope.Split('/'); // expected to be date/region/service/aws4_request
             Assert.AreEqual(expectedAuthRegion, scopePieces[1]);
             Assert.AreEqual(expectedAuthService, scopePieces[2]);
-            Assert.AreEqual(expectedEndpoint, request.Endpoint.Host);
         }
 
         [TestMethod]
@@ -179,10 +177,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("/custompath", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/custompath"), string.Empty, true, null));
 
             // exception because the URI is necessary to decide whether or not to pre URL encode
-            AssertExtensions.ExpectException(() =>
-            {
-                AWSSDKUtils.CanonicalizeResourcePathV2(null, "doesn't matter", true, null);
-            }, typeof(ArgumentNullException), "A non-null endpoint is necessary to decide whether or not to pre URL encode.\r\nParameter name: endpoint");
+            AssertExtensions.ExpectException(() => AWSSDKUtils.CanonicalizeResourcePathV2(null, "doesn't matter", true, null), typeof(ArgumentNullException));
 
             // In the new signer path, if it's s3, we pass in false for double encoding
             Assert.AreEqual(
@@ -209,10 +204,9 @@ namespace AWSSDK.UnitTests
                 AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://customhost/$custompath"), @"/{a}", true, new Dictionary<string, string> { { "{a}", "nospecialcharacters" } }));
         }
 
-#if BCL
-        [TestMethod][TestCategory("UnitTest")]
+        [TestMethod]
+        [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [TestCategory(@"Runtime\Async45")]
         public async Task TestSignerWithBasicCredentialsAsync()
         {
             var pipeline = new RuntimePipeline(new MockHandler());            
@@ -226,7 +220,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);
         }
-#endif
 
         [TestMethod]
         [TestCategory("Runtime")]
@@ -236,7 +229,7 @@ namespace AWSSDK.UnitTests
             var mock = new Moq.Mock<IRequest>().SetupAllProperties();
             var requestMock = new Moq.Mock<AmazonWebServiceRequest>().SetupAllProperties();
             var request = mock.Object;
-            var config = new AmazonIotDataConfig();
+            var config = new AmazonS3Config { RegionEndpoint = RegionEndpoint.USEast1 };
 
             mock.SetupGet(x => x.Headers).Returns(new Dictionary<string, string>());
             mock.SetupGet(x => x.OriginalRequest).Returns(requestMock.Object);

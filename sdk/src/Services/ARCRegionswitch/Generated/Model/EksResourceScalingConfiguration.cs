@@ -131,7 +131,7 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property TargetPercent. 
         /// <para>
-        /// The target percentage for the configuration.
+        /// The target percentage for the configuration. The default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

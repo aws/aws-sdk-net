@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private UserContext _createdBy;
         private DateTime? _creationTime;
+        private ManagedConfiguration _managedConfiguration;
         private string _modelPackageGroupArn;
         private string _modelPackageGroupDescription;
         private string _modelPackageGroupName;
@@ -74,6 +75,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedConfiguration. 
+        /// <para>
+        /// The managed configuration of the model package group.
+        /// </para>
+        /// </summary>
+        public ManagedConfiguration ManagedConfiguration
+        {
+            get { return this._managedConfiguration; }
+            set { this._managedConfiguration = value; }
+        }
+
+        // Check to see if ManagedConfiguration property is set
+        internal bool IsSetManagedConfiguration()
+        {
+            return this._managedConfiguration != null;
         }
 
         /// <summary>

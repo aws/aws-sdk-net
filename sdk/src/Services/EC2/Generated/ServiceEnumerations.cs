@@ -22729,6 +22729,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType IpamPool = new ResourceType("ipam-pool");
         /// <summary>
+        /// Constant IpamPoolAllocation for ResourceType
+        /// </summary>
+        public static readonly ResourceType IpamPoolAllocation = new ResourceType("ipam-pool-allocation");
+        /// <summary>
         /// Constant IpamPrefixListResolver for ResourceType
         /// </summary>
         public static readonly ResourceType IpamPrefixListResolver = new ResourceType("ipam-prefix-list-resolver");

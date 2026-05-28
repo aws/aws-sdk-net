@@ -31,9 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEmailAddress operation.
-    /// Create new email address in the specified Amazon Connect instance. For more information
+    /// Create new email address in the specified Connect Customer instance. For more information
     /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
-    /// email addresses</a> in the Amazon Connect Administrator Guide.
+    /// email addresses</a> in the Connect Customer Administrator Guide.
     /// </summary>
     public partial class CreateEmailAddressRequest : AmazonConnectRequest
     {
@@ -126,7 +126,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

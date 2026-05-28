@@ -10,6 +10,7 @@ using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     /// <summary>
@@ -136,3 +137,4 @@ namespace AWSSDK.UnitTests
 
     }
 }
+#endif

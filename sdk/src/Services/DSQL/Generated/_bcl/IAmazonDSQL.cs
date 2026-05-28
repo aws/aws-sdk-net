@@ -264,6 +264,142 @@ namespace Amazon.DSQL
 
         #endregion
         
+        #region  CreateStream
+
+
+        /// <summary>
+        /// Creates a new change data capture (CDC) stream for a cluster. The stream captures
+        /// database changes and delivers them to the specified target destination.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:CreateStream</dt> <dd> 
+        /// <para>
+        /// Permission to create a new stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/cluster-id</c> 
+        /// </para>
+        ///  </dd> <dt>iam:PassRole</dt> <dd> 
+        /// <para>
+        /// Permission to pass the IAM role specified in the target definition to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the IAM role specified in <c>targetDefinition.kinesis.roleArn</c>
+        /// 
+        /// </para>
+        ///  </dd> <dt>kms:Decrypt</dt> <dd> 
+        /// <para>
+        /// Required when the cluster uses a customer managed KMS key (CMK). Permission to decrypt
+        /// data using the cluster's CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the KMS key used by the cluster
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
+        /// 
+        /// <returns>The response from the CreateStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        CreateStreamResponse CreateStream(CreateStreamRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new change data capture (CDC) stream for a cluster. The stream captures
+        /// database changes and delivers them to the specified target destination.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:CreateStream</dt> <dd> 
+        /// <para>
+        /// Permission to create a new stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/cluster-id</c> 
+        /// </para>
+        ///  </dd> <dt>iam:PassRole</dt> <dd> 
+        /// <para>
+        /// Permission to pass the IAM role specified in the target definition to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the IAM role specified in <c>targetDefinition.kinesis.roleArn</c>
+        /// 
+        /// </para>
+        ///  </dd> <dt>kms:Decrypt</dt> <dd> 
+        /// <para>
+        /// Required when the cluster uses a customer managed KMS key (CMK). Permission to decrypt
+        /// data using the cluster's CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the KMS key used by the cluster
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCluster
 
 
@@ -394,6 +530,70 @@ namespace Amazon.DSQL
 
         #endregion
         
+        #region  DeleteStream
+
+
+        /// <summary>
+        /// Deletes a stream from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        DeleteStreamResponse DeleteStream(DeleteStreamRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a stream from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCluster
 
 
@@ -512,6 +712,64 @@ namespace Amazon.DSQL
 
         #endregion
         
+        #region  GetStream
+
+
+        /// <summary>
+        /// Retrieves information about a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStream service method.</param>
+        /// 
+        /// <returns>The response from the GetStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetStream">REST API Reference for GetStream Operation</seealso>
+        GetStreamResponse GetStream(GetStreamRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetStream">REST API Reference for GetStream Operation</seealso>
+        Task<GetStreamResponse> GetStreamAsync(GetStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetVpcEndpointServiceName
 
 
@@ -625,6 +883,64 @@ namespace Amazon.DSQL
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListClusters">REST API Reference for ListClusters Operation</seealso>
         Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListStreams
+
+
+        /// <summary>
+        /// Retrieves information about a list of streams for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        ListStreamsResponse ListStreams(ListStreamsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a list of streams for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

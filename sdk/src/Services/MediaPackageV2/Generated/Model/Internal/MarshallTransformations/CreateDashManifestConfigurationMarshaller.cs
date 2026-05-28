@@ -46,6 +46,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAvailabilityStartTimeConfiguration())
+            {
+                context.Writer.WritePropertyName("AvailabilityStartTimeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DashAvailabilityStartTimeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AvailabilityStartTimeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetBaseUrls())
             {
                 context.Writer.WritePropertyName("BaseUrls");

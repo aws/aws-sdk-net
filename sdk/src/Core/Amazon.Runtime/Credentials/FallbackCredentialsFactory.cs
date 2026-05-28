@@ -34,7 +34,7 @@ namespace Amazon.Runtime
         internal const string AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_PROFILE";
         internal const string DefaultProfileName = "default";
 
-        private static readonly CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
         static FallbackCredentialsFactory()
         {
             Reset();

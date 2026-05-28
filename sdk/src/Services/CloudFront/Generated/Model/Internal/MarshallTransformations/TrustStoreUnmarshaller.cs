@@ -98,6 +98,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("UseClientCertificateOCSPEndpoint", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.UseClientCertificateOCSPEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

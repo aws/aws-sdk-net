@@ -31,12 +31,12 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricData operation.
-    /// Gets historical metric data from the specified Amazon Connect instance.
+    /// Gets historical metric data from the specified Connect Customer instance.
     /// 
     ///  
     /// <para>
     /// For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-    /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// definitions</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -159,7 +159,7 @@ namespace Amazon.Connect.Model
         /// The metrics to retrieve. Specify the name, unit, and statistic for each metric. The
         /// following historical metrics are available. For a description of each metric, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
-        /// definition</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// definition</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -523,7 +523,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

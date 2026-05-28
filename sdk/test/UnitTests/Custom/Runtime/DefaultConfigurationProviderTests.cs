@@ -65,7 +65,6 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [DataTestMethod]
         // Client Config wins
         [DataRow(
             DefaultConfigurationMode.CrossRegion, DefaultConfigurationMode.InRegion, DefaultConfigurationMode.Mobile,

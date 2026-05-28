@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AvailableNumbersList. 
         /// <para>
-        /// A list of available phone numbers that you can claim to your Amazon Connect instance
+        /// A list of available phone numbers that you can claim to your Connect Customer instance
         /// or traffic distribution group.
         /// </para>
         /// <para />

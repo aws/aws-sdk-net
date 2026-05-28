@@ -32,19 +32,13 @@ namespace Amazon.DevOpsAgent
     /// <summary>
     /// <para>Interface for accessing DevOpsAgent</para>
     ///
-    /// AWS DevOps Agent is a frontier agent that resolves and proactively prevents incidents,
-    /// continuously improving reliability and performance. AWS DevOps Agent investigates
-    /// incidents and identifies operational improvements as an experienced DevOps engineer.
-    /// 
-    ///  
-    /// <para>
-    /// The agent works by:
-    /// </para>
-    ///  <ul> <li>Learning your resources and their relationships.</li> <li>Working with your
-    /// observability tools, runbooks, code repositories, and CI/CD pipelines.</li> <li>Correlating
-    /// telemetry, code, and deployment data to understand relationships between your application
-    /// resources.</li> <li>Supporting applications in multicloud and hybrid environments.</li>
-    /// </ul>
+    /// AWS DevOps Agent is your always-available operations teammate. It resolves and proactively
+    /// prevents incidents, optimizes application reliability and performance, and handles
+    /// on-demand SRE tasks across AWS, multicloud, and on-premises environments. AWS DevOps
+    /// Agent investigates incidents as an experienced DevOps engineer would. It learns your
+    /// applications and their relationships. It works with your observability tools, runbooks,
+    /// code repositories, and CI/CD pipelines. The agent correlates telemetry, code, and
+    /// deployment data across all of them.
     /// </summary>
     public partial interface IAmazonDevOpsAgent : IAmazonService, IDisposable
     {
@@ -90,8 +84,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AssociateService">REST API Reference for AssociateService Operation</seealso>
         AssociateServiceResponse AssociateService(AssociateServiceRequest request);
@@ -133,8 +126,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/AssociateService">REST API Reference for AssociateService Operation</seealso>
         Task<AssociateServiceResponse> AssociateServiceAsync(AssociateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -176,8 +168,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAgentSpace">REST API Reference for CreateAgentSpace Operation</seealso>
         CreateAgentSpaceResponse CreateAgentSpace(CreateAgentSpaceRequest request);
@@ -219,8 +210,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateAgentSpace">REST API Reference for CreateAgentSpace Operation</seealso>
         Task<CreateAgentSpaceResponse> CreateAgentSpaceAsync(CreateAgentSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -261,8 +251,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateBacklogTask">REST API Reference for CreateBacklogTask Operation</seealso>
         CreateBacklogTaskResponse CreateBacklogTask(CreateBacklogTaskRequest request);
@@ -303,8 +292,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateBacklogTask">REST API Reference for CreateBacklogTask Operation</seealso>
         Task<CreateBacklogTaskResponse> CreateBacklogTaskAsync(CreateBacklogTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -345,8 +333,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateChat">REST API Reference for CreateChat Operation</seealso>
         CreateChatResponse CreateChat(CreateChatRequest request);
@@ -387,8 +374,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateChat">REST API Reference for CreateChat Operation</seealso>
         Task<CreateChatResponse> CreateChatAsync(CreateChatRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -429,8 +415,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreatePrivateConnection">REST API Reference for CreatePrivateConnection Operation</seealso>
         CreatePrivateConnectionResponse CreatePrivateConnection(CreatePrivateConnectionRequest request);
@@ -471,8 +456,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreatePrivateConnection">REST API Reference for CreatePrivateConnection Operation</seealso>
         Task<CreatePrivateConnectionResponse> CreatePrivateConnectionAsync(CreatePrivateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -514,8 +498,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAgentSpace">REST API Reference for DeleteAgentSpace Operation</seealso>
         DeleteAgentSpaceResponse DeleteAgentSpace(DeleteAgentSpaceRequest request);
@@ -557,8 +540,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteAgentSpace">REST API Reference for DeleteAgentSpace Operation</seealso>
         Task<DeleteAgentSpaceResponse> DeleteAgentSpaceAsync(DeleteAgentSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -600,8 +582,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeletePrivateConnection">REST API Reference for DeletePrivateConnection Operation</seealso>
         DeletePrivateConnectionResponse DeletePrivateConnection(DeletePrivateConnectionRequest request);
@@ -643,8 +624,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeletePrivateConnection">REST API Reference for DeletePrivateConnection Operation</seealso>
         Task<DeletePrivateConnectionResponse> DeletePrivateConnectionAsync(DeletePrivateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -685,8 +665,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeregisterService">REST API Reference for DeregisterService Operation</seealso>
         DeregisterServiceResponse DeregisterService(DeregisterServiceRequest request);
@@ -727,8 +706,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeregisterService">REST API Reference for DeregisterService Operation</seealso>
         Task<DeregisterServiceResponse> DeregisterServiceAsync(DeregisterServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -769,8 +747,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribePrivateConnection">REST API Reference for DescribePrivateConnection Operation</seealso>
         DescribePrivateConnectionResponse DescribePrivateConnection(DescribePrivateConnectionRequest request);
@@ -811,8 +788,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DescribePrivateConnection">REST API Reference for DescribePrivateConnection Operation</seealso>
         Task<DescribePrivateConnectionResponse> DescribePrivateConnectionAsync(DescribePrivateConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -856,8 +832,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisableOperatorApp">REST API Reference for DisableOperatorApp Operation</seealso>
         DisableOperatorAppResponse DisableOperatorApp(DisableOperatorAppRequest request);
@@ -901,8 +876,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisableOperatorApp">REST API Reference for DisableOperatorApp Operation</seealso>
         Task<DisableOperatorAppResponse> DisableOperatorAppAsync(DisableOperatorAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -944,8 +918,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisassociateService">REST API Reference for DisassociateService Operation</seealso>
         DisassociateServiceResponse DisassociateService(DisassociateServiceRequest request);
@@ -987,8 +960,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DisassociateService">REST API Reference for DisassociateService Operation</seealso>
         Task<DisassociateServiceResponse> DisassociateServiceAsync(DisassociateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1032,8 +1004,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EnableOperatorApp">REST API Reference for EnableOperatorApp Operation</seealso>
         EnableOperatorAppResponse EnableOperatorApp(EnableOperatorAppRequest request);
@@ -1077,8 +1048,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/EnableOperatorApp">REST API Reference for EnableOperatorApp Operation</seealso>
         Task<EnableOperatorAppResponse> EnableOperatorAppAsync(EnableOperatorAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1119,8 +1089,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAccountUsage">REST API Reference for GetAccountUsage Operation</seealso>
         GetAccountUsageResponse GetAccountUsage(GetAccountUsageRequest request);
@@ -1161,8 +1130,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAccountUsage">REST API Reference for GetAccountUsage Operation</seealso>
         Task<GetAccountUsageResponse> GetAccountUsageAsync(GetAccountUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1203,8 +1171,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAgentSpace">REST API Reference for GetAgentSpace Operation</seealso>
         GetAgentSpaceResponse GetAgentSpace(GetAgentSpaceRequest request);
@@ -1245,8 +1212,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAgentSpace">REST API Reference for GetAgentSpace Operation</seealso>
         Task<GetAgentSpaceResponse> GetAgentSpaceAsync(GetAgentSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1287,8 +1253,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssociation">REST API Reference for GetAssociation Operation</seealso>
         GetAssociationResponse GetAssociation(GetAssociationRequest request);
@@ -1329,8 +1294,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetAssociation">REST API Reference for GetAssociation Operation</seealso>
         Task<GetAssociationResponse> GetAssociationAsync(GetAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1371,8 +1335,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetBacklogTask">REST API Reference for GetBacklogTask Operation</seealso>
         GetBacklogTaskResponse GetBacklogTask(GetBacklogTaskRequest request);
@@ -1413,8 +1376,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetBacklogTask">REST API Reference for GetBacklogTask Operation</seealso>
         Task<GetBacklogTaskResponse> GetBacklogTaskAsync(GetBacklogTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1455,8 +1417,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetOperatorApp">REST API Reference for GetOperatorApp Operation</seealso>
         GetOperatorAppResponse GetOperatorApp(GetOperatorAppRequest request);
@@ -1497,8 +1458,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetOperatorApp">REST API Reference for GetOperatorApp Operation</seealso>
         Task<GetOperatorAppResponse> GetOperatorAppAsync(GetOperatorAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1539,8 +1499,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
         GetRecommendationResponse GetRecommendation(GetRecommendationRequest request);
@@ -1581,8 +1540,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
         Task<GetRecommendationResponse> GetRecommendationAsync(GetRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1623,8 +1581,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetService">REST API Reference for GetService Operation</seealso>
         GetServiceResponse GetService(GetServiceRequest request);
@@ -1665,8 +1622,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetService">REST API Reference for GetService Operation</seealso>
         Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1707,8 +1663,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAgentSpaces">REST API Reference for ListAgentSpaces Operation</seealso>
         ListAgentSpacesResponse ListAgentSpaces(ListAgentSpacesRequest request);
@@ -1749,8 +1704,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAgentSpaces">REST API Reference for ListAgentSpaces Operation</seealso>
         Task<ListAgentSpacesResponse> ListAgentSpacesAsync(ListAgentSpacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1791,8 +1745,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         ListAssociationsResponse ListAssociations(ListAssociationsRequest request);
@@ -1833,8 +1786,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1875,8 +1827,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListBacklogTasks">REST API Reference for ListBacklogTasks Operation</seealso>
         ListBacklogTasksResponse ListBacklogTasks(ListBacklogTasksRequest request);
@@ -1917,8 +1868,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListBacklogTasks">REST API Reference for ListBacklogTasks Operation</seealso>
         Task<ListBacklogTasksResponse> ListBacklogTasksAsync(ListBacklogTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1959,8 +1909,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListChats">REST API Reference for ListChats Operation</seealso>
         ListChatsResponse ListChats(ListChatsRequest request);
@@ -2001,8 +1950,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListChats">REST API Reference for ListChats Operation</seealso>
         Task<ListChatsResponse> ListChatsAsync(ListChatsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2043,8 +1991,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
@@ -2085,8 +2032,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2127,8 +2073,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListGoals">REST API Reference for ListGoals Operation</seealso>
         ListGoalsResponse ListGoals(ListGoalsRequest request);
@@ -2169,8 +2114,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListGoals">REST API Reference for ListGoals Operation</seealso>
         Task<ListGoalsResponse> ListGoalsAsync(ListGoalsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2211,8 +2155,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListJournalRecords">REST API Reference for ListJournalRecords Operation</seealso>
         ListJournalRecordsResponse ListJournalRecords(ListJournalRecordsRequest request);
@@ -2253,8 +2196,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListJournalRecords">REST API Reference for ListJournalRecords Operation</seealso>
         Task<ListJournalRecordsResponse> ListJournalRecordsAsync(ListJournalRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2295,8 +2237,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPendingMessages">REST API Reference for ListPendingMessages Operation</seealso>
         ListPendingMessagesResponse ListPendingMessages(ListPendingMessagesRequest request);
@@ -2337,8 +2278,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPendingMessages">REST API Reference for ListPendingMessages Operation</seealso>
         Task<ListPendingMessagesResponse> ListPendingMessagesAsync(ListPendingMessagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2379,8 +2319,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPrivateConnections">REST API Reference for ListPrivateConnections Operation</seealso>
         ListPrivateConnectionsResponse ListPrivateConnections(ListPrivateConnectionsRequest request);
@@ -2421,8 +2360,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListPrivateConnections">REST API Reference for ListPrivateConnections Operation</seealso>
         Task<ListPrivateConnectionsResponse> ListPrivateConnectionsAsync(ListPrivateConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2463,8 +2401,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request);
@@ -2505,8 +2442,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
         Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2547,8 +2483,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListServices">REST API Reference for ListServices Operation</seealso>
         ListServicesResponse ListServices(ListServicesRequest request);
@@ -2589,8 +2524,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListServices">REST API Reference for ListServices Operation</seealso>
         Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2631,8 +2565,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -2673,8 +2606,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2715,8 +2647,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         ListWebhooksResponse ListWebhooks(ListWebhooksRequest request);
@@ -2757,8 +2688,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListWebhooks">REST API Reference for ListWebhooks Operation</seealso>
         Task<ListWebhooksResponse> ListWebhooksAsync(ListWebhooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2799,8 +2729,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/RegisterService">REST API Reference for RegisterService Operation</seealso>
         RegisterServiceResponse RegisterService(RegisterServiceRequest request);
@@ -2841,8 +2770,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/RegisterService">REST API Reference for RegisterService Operation</seealso>
         Task<RegisterServiceResponse> RegisterServiceAsync(RegisterServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2883,8 +2811,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/SendMessage">REST API Reference for SendMessage Operation</seealso>
         SendMessageResponse SendMessage(SendMessageRequest request);
@@ -2925,8 +2852,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/SendMessage">REST API Reference for SendMessage Operation</seealso>
         Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2967,8 +2893,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -3009,8 +2934,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3051,8 +2975,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -3093,8 +3016,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3135,8 +3057,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAgentSpace">REST API Reference for UpdateAgentSpace Operation</seealso>
         UpdateAgentSpaceResponse UpdateAgentSpace(UpdateAgentSpaceRequest request);
@@ -3177,8 +3098,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAgentSpace">REST API Reference for UpdateAgentSpace Operation</seealso>
         Task<UpdateAgentSpaceResponse> UpdateAgentSpaceAsync(UpdateAgentSpaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3221,8 +3141,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request);
@@ -3265,8 +3184,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         Task<UpdateAssociationResponse> UpdateAssociationAsync(UpdateAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3307,8 +3225,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateBacklogTask">REST API Reference for UpdateBacklogTask Operation</seealso>
         UpdateBacklogTaskResponse UpdateBacklogTask(UpdateBacklogTaskRequest request);
@@ -3349,8 +3266,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateBacklogTask">REST API Reference for UpdateBacklogTask Operation</seealso>
         Task<UpdateBacklogTaskResponse> UpdateBacklogTaskAsync(UpdateBacklogTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3391,8 +3307,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateGoal">REST API Reference for UpdateGoal Operation</seealso>
         UpdateGoalResponse UpdateGoal(UpdateGoalRequest request);
@@ -3433,8 +3348,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateGoal">REST API Reference for UpdateGoal Operation</seealso>
         Task<UpdateGoalResponse> UpdateGoalAsync(UpdateGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3475,8 +3389,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateOperatorAppIdpConfig">REST API Reference for UpdateOperatorAppIdpConfig Operation</seealso>
         UpdateOperatorAppIdpConfigResponse UpdateOperatorAppIdpConfig(UpdateOperatorAppIdpConfigRequest request);
@@ -3517,8 +3430,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateOperatorAppIdpConfig">REST API Reference for UpdateOperatorAppIdpConfig Operation</seealso>
         Task<UpdateOperatorAppIdpConfigResponse> UpdateOperatorAppIdpConfigAsync(UpdateOperatorAppIdpConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3559,8 +3471,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdatePrivateConnectionCertificate">REST API Reference for UpdatePrivateConnectionCertificate Operation</seealso>
         UpdatePrivateConnectionCertificateResponse UpdatePrivateConnectionCertificate(UpdatePrivateConnectionCertificateRequest request);
@@ -3601,8 +3512,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdatePrivateConnectionCertificate">REST API Reference for UpdatePrivateConnectionCertificate Operation</seealso>
         Task<UpdatePrivateConnectionCertificateResponse> UpdatePrivateConnectionCertificateAsync(UpdatePrivateConnectionCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3643,8 +3553,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateRecommendation">REST API Reference for UpdateRecommendation Operation</seealso>
         UpdateRecommendationResponse UpdateRecommendation(UpdateRecommendationRequest request);
@@ -3685,8 +3594,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateRecommendation">REST API Reference for UpdateRecommendation Operation</seealso>
         Task<UpdateRecommendationResponse> UpdateRecommendationAsync(UpdateRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3728,8 +3636,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ValidateAwsAssociations">REST API Reference for ValidateAwsAssociations Operation</seealso>
         ValidateAwsAssociationsResponse ValidateAwsAssociations(ValidateAwsAssociationsRequest request);
@@ -3771,8 +3678,7 @@ namespace Amazon.DevOpsAgent
         /// The request was throttled due to too many requests. Please slow down and try again.
         /// </exception>
         /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ValidateAwsAssociations">REST API Reference for ValidateAwsAssociations Operation</seealso>
         Task<ValidateAwsAssociationsResponse> ValidateAwsAssociationsAsync(ValidateAwsAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));

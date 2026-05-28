@@ -41,6 +41,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _membershipIdentifier;
         private string _mlInputChannelArn;
         private string _name;
+        private PayerConfiguration _payerConfiguration;
         private string _protectedQueryIdentifier;
         private MLInputChannelStatus _status;
         private DateTime? _updateTime;
@@ -181,6 +182,24 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerConfiguration. 
+        /// <para>
+        /// The payer configuration for the ML input channel.
+        /// </para>
+        /// </summary>
+        public PayerConfiguration PayerConfiguration
+        {
+            get { return this._payerConfiguration; }
+            set { this._payerConfiguration = value; }
+        }
+
+        // Check to see if PayerConfiguration property is set
+        internal bool IsSetPayerConfiguration()
+        {
+            return this._payerConfiguration != null;
         }
 
         /// <summary>

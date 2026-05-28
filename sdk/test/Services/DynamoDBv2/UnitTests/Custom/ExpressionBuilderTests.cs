@@ -9,11 +9,10 @@ namespace AWSSDK_DotNet.UnitTests
     {
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         [TestCategory("DynamoDBv2")]
         public void Build_ShouldThrowExceptionWhenNoOperation()
         {
-            var builder = UpdateExpressionBuilder.New().Build();
+            Assert.ThrowsExactly<InvalidOperationException>(() => UpdateExpressionBuilder.New().Build());
         }
 
         [TestMethod]
@@ -70,12 +69,14 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void BuildForRemoveOperation_WithInvalidName_ShouldThrowException()
         {
-            var builder = UpdateExpressionBuilder.New();
-            builder.Remove(NameBuilder.New(""));
-            builder.Build();
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+            {
+                var builder = UpdateExpressionBuilder.New();
+                builder.Remove(NameBuilder.New(""));
+                builder.Build();
+            });
         }
 
         [TestMethod]
@@ -905,11 +906,13 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void BuildProjectionExpressionBuilder_WithNoAttributeNames_ShouldThrowException()
         {
-            var projectionBuilder = ProjectionExpressionBuilder.New();
-            projectionBuilder.Build();
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+            {
+                var projectionBuilder = ProjectionExpressionBuilder.New();
+                projectionBuilder.Build();
+            });
         }
     }
 }

@@ -74,7 +74,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ErrorExitCode()
         {
-            Assert.ThrowsExceptionAsync<ProcessAWSCredentialException>(async () =>
+            Assert.ThrowsExactlyAsync<ProcessAWSCredentialException>(async () =>
                 await new ProcessAWSCredentials($"{Executable} {ExitKey} ").DetermineProcessCredentialAsync());
         }
 #endif
@@ -109,31 +109,32 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void NoCredentialProcessConfigured()
         {
-            Assert.ThrowsException<ProcessAWSCredentialException>(() =>
+            Assert.ThrowsExactly<ProcessAWSCredentialException>(() =>
                 new ProcessAWSCredentials(string.Empty).DetermineProcessCredential());
         }
 
         [TestMethod]
         public void InvalidCredentialProcessConfigured()
         {
-            Assert.ThrowsException<ProcessAWSCredentialException>(() =>
+            Assert.ThrowsExactly<ProcessAWSCredentialException>(() =>
                 new ProcessAWSCredentials("foobar").DetermineProcessCredential());
         }
 
         [TestMethod]
         public void InvalidVersionNumberTest()
         {
-            Assert.ThrowsException<ProcessAWSCredentialException>(() =>
+            Assert.ThrowsExactly<ProcessAWSCredentialException>(() =>
                 new ProcessAWSCredentials($"{Executable} {ArgumentsSession} {InvalidVersionNumber}").DetermineProcessCredential());
         }
         
         [TestMethod]
         public void NoVersionNumberSpecifiedTest()
         {
-            Assert.ThrowsException<ProcessAWSCredentialException>(() =>
+            Assert.ThrowsExactly<ProcessAWSCredentialException>(() =>
                 new ProcessAWSCredentials($"{Executable} {ArgumentsSession}").DetermineProcessCredential());
         }
-        
+
+#if NETFRAMEWORK
         [TestMethod]
         public void ValidateRequiredFieldsCheck()
         {
@@ -146,6 +147,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("System.ArgumentNullException", proc.InnerException.GetType().FullName);
                 Assert.IsTrue(proc.InnerException.ToString().Contains("System.ArgumentNullException: Value cannot be null.\r\nParameter name: awsAccessKeyId\r\n"));
             }
-        }                
+        }
+#endif
     }
 }

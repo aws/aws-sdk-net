@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Apple. 
         /// <para>
-        /// Apple OAuth2 authentication
+        /// Apple OAuth2 authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Github. 
         /// <para>
-        /// GitHub OAuth2 authentication
+        /// GitHub OAuth2 authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Google. 
         /// <para>
-        /// Google OAuth2 authentication
+        /// Google OAuth2 authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Telegram. 
         /// <para>
-        /// Telegram OAuth2 authentication
+        /// Telegram OAuth2 authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -120,7 +120,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property X. 
         /// <para>
-        /// X (formerly Twitter) OAuth2 authentication
+        /// X (formerly Twitter) OAuth2 authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

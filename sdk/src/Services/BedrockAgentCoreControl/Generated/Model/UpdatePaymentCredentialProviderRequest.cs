@@ -40,7 +40,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private PaymentProviderConfigurationInput _providerConfigurationInput;
 
         /// <summary>
-        /// Gets and sets the property CredentialProviderVendor.
+        /// Gets and sets the property CredentialProviderVendor. 
+        /// <para>
+        /// The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PaymentCredentialProviderVendorType CredentialProviderVendor
@@ -77,7 +80,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProviderConfigurationInput. 
         /// <para>
-        /// Configuration specific to the vendor, including API credentials
+        /// Configuration specific to the vendor, including API credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

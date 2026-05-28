@@ -62,9 +62,35 @@ namespace ServiceClientGenerator
                 }
             }
 
-            return new ProjectFileConfiguration { 
+            List<string> targetFrameworks;
+            Dictionary<string, string> targetFrameworkProjectTypes = null;
+
+            var tfData = projectNode.SafeGet(ProjectsSectionKeys.TargetFrameworksKey);
+            if (tfData != null && tfData.Count > 0 && tfData[0].IsObject)
+            {
+                targetFrameworks = new List<string>();
+                targetFrameworkProjectTypes = new Dictionary<string, string>();
+                for (int i = 0; i < tfData.Count; i++)
+                {
+                    var entry = tfData[i];
+                    var tfm = entry.SafeGetString("tfm");
+                    var projectType = entry.SafeGetString("projectType");
+                    targetFrameworks.Add(tfm);
+                    if (!string.IsNullOrEmpty(projectType))
+                    {
+                        targetFrameworkProjectTypes[tfm] = projectType;
+                    }
+                }
+            }
+            else
+            {
+                targetFrameworks = SafeGetStringList(projectNode, ProjectsSectionKeys.TargetFrameworksKey);
+            }
+
+            return new ProjectFileConfiguration {
                 Name = projectNode.SafeGetString(ProjectsSectionKeys.NameKey),
-                TargetFrameworkVersions = SafeGetStringList(projectNode, ProjectsSectionKeys.TargetFrameworksKey),
+                TargetFrameworkVersions = targetFrameworks,
+                TargetFrameworkProjectTypes = targetFrameworkProjectTypes,
                 CompilationConstants = SafeGetStringList(projectNode, ProjectsSectionKeys.DefineConstantsKey),
                 BinSubFolder = projectNode.SafeGetString(ProjectsSectionKeys.BinSubFolderKey),
                 Template = projectNode.SafeGetString(ProjectsSectionKeys.TemplateKey),
@@ -99,6 +125,13 @@ namespace ServiceClientGenerator
         /// against.
         /// </summary>
         public IEnumerable<string> TargetFrameworkVersions { get; private set; }
+
+        /// <summary>
+        /// Maps each target framework to the project type suffix (e.g. "NetFramework" or "NetStandard")
+        /// used to select the correct service project reference. Only populated when the manifest
+        /// uses the object form of targetFrameworks.
+        /// </summary>
+        public IReadOnlyDictionary<string, string> TargetFrameworkProjectTypes { get; private set; }
 
         /// <summary>
         /// The #define constants to be set at compile time. These are used for all

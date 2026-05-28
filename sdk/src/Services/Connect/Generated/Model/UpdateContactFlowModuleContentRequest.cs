@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContactFlowModuleContent operation.
-    /// Updates specified flow module for the specified Amazon Connect instance. 
+    /// Updates specified flow module for the specified Connect Customer instance. 
     /// 
     ///  
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
+        /// flow in Connect Customer Flow language</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256000)]
@@ -90,7 +90,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

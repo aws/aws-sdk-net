@@ -60,35 +60,25 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullS3Client_ThrowsArgumentNullException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
                 filePath: Path.Combine(_testDirectory, "test.dat"));
-
-            // Act
-            var command = new MultipartDownloadCommand(null, request, _config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new MultipartDownloadCommand(null, request, _config));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullRequest_ThrowsArgumentNullException()
         {
-            // Act
-            var command = new MultipartDownloadCommand(_mockS3Client.Object, null, _config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new MultipartDownloadCommand(_mockS3Client.Object, null, _config));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullConfig_ThrowsArgumentNullException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
                 filePath: Path.Combine(_testDirectory, "test.dat"));
-
-            // Act
-            var command = new MultipartDownloadCommand(_mockS3Client.Object, request, null);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new MultipartDownloadCommand(_mockS3Client.Object, request, null));
         }
 
         [TestMethod]
@@ -132,84 +122,62 @@ namespace AWSSDK.UnitTests
         #region ValidateRequest Tests
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingBucketName_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                bucketName: null,
-                filePath: Path.Combine(_testDirectory, "test.dat"));
+                bucketName: null, filePath: Path.Combine(_testDirectory, "test.dat"));
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithEmptyBucketName_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                bucketName: "",
-                filePath: Path.Combine(_testDirectory, "test.dat"));
+                bucketName: "", filePath: Path.Combine(_testDirectory, "test.dat"));
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingKey_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                key: null,
-                filePath: Path.Combine(_testDirectory, "test.dat"));
+                key: null, filePath: Path.Combine(_testDirectory, "test.dat"));
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithEmptyKey_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                key: "",
-                filePath: Path.Combine(_testDirectory, "test.dat"));
+                key: "", filePath: Path.Combine(_testDirectory, "test.dat"));
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
-#if BCL
+#if NETFRAMEWORK
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingFilePath_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(filePath: null);
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithEmptyFilePath_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = MultipartDownloadTestHelpers.CreateDownloadRequest(filePath: "");
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 #endif
 
@@ -546,23 +514,16 @@ namespace AWSSDK.UnitTests
         #region ExecuteAsync Tests - Error Handling
 
         [TestMethod]
-        [ExpectedException(typeof(AmazonS3Exception))]
         public async Task ExecuteAsync_S3ClientThrows_PropagatesException()
         {
-            // Arrange
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
-            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                filePath: destinationPath);
-
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(filePath: destinationPath);
             _mockS3Client.Setup(c => c.GetObjectAsync(
-                It.IsAny<GetObjectRequest>(),
-                It.IsAny<CancellationToken>()))
+                It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()))
                 .ThrowsAsync(new AmazonS3Exception("S3 error"));
-
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<AmazonS3Exception>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
@@ -601,21 +562,15 @@ namespace AWSSDK.UnitTests
         #region ExecuteAsync Tests - Cancellation
 
         [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
         public async Task ExecuteAsync_WithCancelledToken_ThrowsOperationCanceledException()
         {
-            // Arrange
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
-            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(
-                filePath: destinationPath);
-
+            var request = MultipartDownloadTestHelpers.CreateDownloadRequest(filePath: destinationPath);
             var cts = new CancellationTokenSource();
             cts.Cancel();
-
             var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config);
-
-            // Act
-            await command.ExecuteAsync(cts.Token);
+            await Assert.ThrowsExactlyAsync<OperationCanceledException>(async () =>
+                await command.ExecuteAsync(cts.Token));
         }
 
         [TestMethod]
@@ -917,7 +872,7 @@ namespace AWSSDK.UnitTests
                 var command = new MultipartDownloadCommand(_mockS3Client.Object, request, _config, sharedThrottler);
 
                 // Act & Assert
-                await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                await Assert.ThrowsExactlyAsync<AmazonS3Exception>(
                     async () => await command.ExecuteAsync(CancellationToken.None));
 
                 // Throttler should be back to initial state even after exception

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// StripePrivy token request parameters
+    /// Stripe Privy token request parameters.
     /// </summary>
     public partial class StripePrivyTokenRequestInput
     {
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property IncludeAuthorizationSignature. 
         /// <para>
-        /// Set to true to generate privy-authorization-signature
+        /// Set to true to generate privy-authorization-signature.
         /// </para>
         /// </summary>
         public bool? IncludeAuthorizationSignature
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RequestBody. 
         /// <para>
-        /// Request body JSON for the Privy API call
+        /// Request body JSON for the Privy API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=16384)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property RequestHost. 
         /// <para>
-        /// Optional - defaults to &quot;api.privy.io&quot;
+        /// The host for the Privy API request. Defaults to "api.privy.io".
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

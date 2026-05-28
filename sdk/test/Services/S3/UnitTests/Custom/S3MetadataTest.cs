@@ -18,7 +18,7 @@ namespace AWSSDK.UnitTests
         [DataRow("bucket", "key", "metadata", "£", "%C2%A3")]
         [DataRow("bucket", "key", "metadata", "no non ascii characters %", "no non ascii characters %")]
         [DataRow("bucket", "key", "metadata", "1 non ascii character £ %", "1 non ascii character %C2%A3 %")]
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         public void PutObjectWithMetadataTest(string bucket, string key, string metadataKey,
             string metadataValue, string escapedMetadataValue)
@@ -36,7 +36,7 @@ namespace AWSSDK.UnitTests
         [DataRow("metadata", "£", "%C2%A3")]
         [DataRow("metadata", "no non ascii characters %", "no non ascii characters %")]
         [DataRow("metadata", "1 non ascii character £ %", "1 non ascii character %C2%A3 %")]
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         public void GetObjectMetadataUnmarshallerTest(string metadataKey, 
             string metadataValue, string escapedMetadataValue)

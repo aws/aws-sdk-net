@@ -79,7 +79,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CredentialProviderVendor.
+        /// Gets and sets the property CredentialProviderVendor. 
+        /// <para>
+        /// The vendor type for the payment credential provider.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PaymentCredentialProviderVendorType CredentialProviderVendor

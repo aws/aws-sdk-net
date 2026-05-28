@@ -37,7 +37,7 @@ namespace Amazon.VerifiedPermissions.Model
     ///  
     /// <para>
     /// This data type is part of a <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_OpenIdConnectConfigurationItem.html">OpenIdConnectConfigurationItem</a>
-    /// structure, which is a parameter of <a href="http://amazonaws.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a>.
+    /// structure, which is a parameter of <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a>.
     /// </para>
     /// </summary>
     public partial class OpenIdConnectTokenSelectionItem

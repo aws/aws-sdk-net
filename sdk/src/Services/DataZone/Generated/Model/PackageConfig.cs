@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The package configuration for a notebook run environment in Amazon DataZone.
+    /// The package configuration for a notebook run environment in Amazon SageMaker Unified
+    /// Studio.
     /// </summary>
     public partial class PackageConfig
     {

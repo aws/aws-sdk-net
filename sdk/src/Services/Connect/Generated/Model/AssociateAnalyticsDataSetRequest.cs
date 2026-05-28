@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAnalyticsDataSet operation.
-    /// Associates the specified dataset for a Amazon Connect instance with the target account.
+    /// Associates the specified dataset for a Connect Customer instance with the target account.
     /// You can associate only one dataset in a single call.
     /// </summary>
     public partial class AssociateAnalyticsDataSetRequest : AmazonConnectRequest
@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -83,8 +83,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TargetAccountId. 
         /// <para>
         /// The identifier of the target account. Use to associate a dataset to a different account
-        /// than the one containing the Amazon Connect instance. If not specified, by default
-        /// this value is the Amazon Web Services account that has the Amazon Connect instance.
+        /// than the one containing the Connect Customer instance. If not specified, by default
+        /// this value is the Amazon Web Services account that has the Connect Customer instance.
         /// </para>
         /// </summary>
         public string TargetAccountId

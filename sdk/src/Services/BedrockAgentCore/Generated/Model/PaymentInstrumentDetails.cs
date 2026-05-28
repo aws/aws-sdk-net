@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Details specific to the instrument type
+    /// Details specific to the instrument type.
     /// </summary>
     public partial class PaymentInstrumentDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property EmbeddedCryptoWallet. 
         /// <para>
-        /// Embedded crypto wallet managed directly by end user
+        /// Embedded crypto wallet managed directly by end user.
         /// </para>
         /// </summary>
         public EmbeddedCryptoWallet EmbeddedCryptoWallet

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Represents different linkedAccounts that can be linked to an embedded wallet. This
-    /// union supports multiple linkedAccount approaches: email, SMS, JWT, and OAuth2.
+    /// Represents different linked accounts that can be linked to an embedded wallet. Supports
+    /// email, SMS, JWT, and OAuth2 approaches.
     /// </summary>
     public partial class LinkedAccount
     {
@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property DeveloperJwt. 
         /// <para>
-        /// Developer JWT linkedAccount with key ID and subject
+        /// Developer JWT linked account with key ID and subject.
         /// </para>
         /// </summary>
         public LinkedAccountDeveloperJwt DeveloperJwt
@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// Email-based linkedAccount
+        /// Email-based linked account.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -80,7 +80,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property OAuth2. 
         /// <para>
-        /// OAuth2 provider linkedAccount (Google, Apple, X, Telegram, GitHub)
+        /// OAuth2 provider linked account (Google, Apple, X, Telegram, GitHub).
         /// </para>
         /// </summary>
         public LinkedAccountOAuth2 OAuth2
@@ -98,7 +98,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Sms. 
         /// <para>
-        /// SMS-based linkedAccount using phone number
+        /// SMS-based linked account using phone number.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

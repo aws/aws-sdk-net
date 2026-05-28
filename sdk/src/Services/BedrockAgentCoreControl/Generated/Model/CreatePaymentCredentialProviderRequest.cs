@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CredentialProviderVendor. 
         /// <para>
-        /// The vendor type (e.g., CoinbaseCDP)
+        /// The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Unique name for the payment credential provider
+        /// Unique name for the payment credential provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,7 +82,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProviderConfigurationInput. 
         /// <para>
-        /// Configuration specific to the vendor, including API credentials
+        /// Configuration specific to the vendor, including API credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optional tags for resource organization
+        /// Optional tags for resource organization.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

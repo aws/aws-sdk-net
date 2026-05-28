@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ProcessPayment operation.
-    /// Process a payment transaction
+    /// Processes a payment using a payment instrument within a payment session.
     /// </summary>
     public partial class ProcessPaymentRequest : AmazonBedrockAgentCoreRequest
     {
@@ -66,7 +66,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Idempotency token to ensure request uniqueness.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -104,7 +105,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentInstrumentId. 
         /// <para>
-        /// The ID of the payment instrument to use for this transaction.
+        /// The ID of the payment instrument to use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]
@@ -123,7 +124,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentManagerArn. 
         /// <para>
-        /// The ARN of the payment manager handling this payment.
+        /// The ARN of the payment manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=66, Max=2048)]
@@ -142,7 +143,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentSessionId. 
         /// <para>
-        /// The ID of the payment session for this transaction.
+        /// The ID of the payment session.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=31, Max=31)]
@@ -161,7 +162,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property PaymentType. 
         /// <para>
-        /// The type of payment being processed.
+        /// The type of payment to process.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

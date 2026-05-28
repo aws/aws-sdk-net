@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This API is in preview release for Amazon Connect and is subject to change. To request
+    /// This API is in preview release for Connect Customer and is subject to change. To request
     /// access to this API, contact Amazon Web Services Support.
     /// 
     ///  
@@ -88,8 +88,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property IsDefault. 
         /// <para>
         /// Shows whether the authentication profile is the default authentication profile for
-        /// the Amazon Connect instance. The default authentication profile applies to all agents
-        /// in an Amazon Connect instance, unless overridden by another authentication profile.
+        /// the Connect Customer instance. The default authentication profile applies to all agents
+        /// in an Connect Customer instance, unless overridden by another authentication profile.
         /// </para>
         /// </summary>
         public bool? IsDefault

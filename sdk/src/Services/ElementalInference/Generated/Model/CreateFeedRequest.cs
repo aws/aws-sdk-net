@@ -31,9 +31,17 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFeed operation.
-    /// Creates a feed. The feed is the target for live streams being sent by the calling
-    /// application. An example of a calling application is AWS Elemental MediaLive. After
-    /// you create the feed, you can associate a resource with the feed.
+    /// Creates a feed. The feed is the target for the live media stream that is being sent
+    /// by the calling application. An example of a calling application is AWS Elemental MediaLive.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// The key contents of the feed is an array of outputs. Each output represents an Elemental
+    /// Inference feature. After you create the feed, you must associate a resource with the
+    /// feed. At that point, you will have a useable feed: resource - feed - output or outputs.
+    /// 
+    /// </para>
     /// </summary>
     public partial class CreateFeedRequest : AmazonElementalInferenceRequest
     {
@@ -44,7 +52,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A name for this feed.
+        /// A user-friendly name for this feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +72,9 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Outputs. 
         /// <para>
         /// An array of outputs for this feed. Each output represents a specific Elemental Inference
-        /// feature. For example, an output might represent the crop feature. 
+        /// feature. For example, there is one output type for the smart crop feature. You must
+        /// specify at least one output, but you can later add outputs using AssociateFeed, or
+        /// add, modify, and delete outputs using UpdateFeed. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -88,7 +98,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// If you want to include tags, add them now. You won't be able to add them later.
+        /// Optional tags. You can also add tags later, using TagResource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

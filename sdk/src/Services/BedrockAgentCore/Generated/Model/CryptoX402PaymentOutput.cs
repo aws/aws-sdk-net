@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// X402 payment requirement output
+    /// The output from a crypto X402 payment.
     /// </summary>
     public partial class CryptoX402PaymentOutput
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// This can hold any JSON-like object
+        /// The X402 payment response payload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The X402 protocol version (e.g., &quot;1&quot;, &quot;2&quot;)
+        /// The version of the X402 protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,13 +39,9 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullConfiguration_ThrowsArgumentNullException()
         {
-            // Act
-            var manager = new PartBufferManager(null);
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ArgumentNullException>(() => new PartBufferManager(null));
         }
 
         #endregion
@@ -274,24 +270,11 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void AddBuffer_WithNullBuffer_ThrowsArgumentNullException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Act
-                manager.AddDataSource((IPartDataSource)null);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => manager.AddDataSource((IPartDataSource)null));
         }
 
         [TestMethod]
@@ -367,60 +350,30 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void AddDataSource_WithNullDataSource_ThrowsArgumentNullException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Act
-                manager.AddDataSource(null);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => manager.AddDataSource(null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task AddDataSource_WithDuplicatePartNumber_ThrowsInvalidOperationException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
+            using var manager = new PartBufferManager(config);
+            byte[] testData1 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+            var chunkedStream1 = new ChunkedBufferStream(512);
+            await chunkedStream1.WriteAsync(testData1, 0, 512);
+            chunkedStream1.SwitchToReadMode();
+            manager.AddDataSource(new ChunkedPartDataSource(1, chunkedStream1));
 
-            try
-            {
-                // Add part 1
-                byte[] testData1 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream1 = new ChunkedBufferStream(512);
-                await chunkedStream1.WriteAsync(testData1, 0, 512);
-                chunkedStream1.SwitchToReadMode();
-                var dataSource1 = new ChunkedPartDataSource(1, chunkedStream1);
-                manager.AddDataSource(dataSource1);
-
-                // Try to add duplicate part 1
-                byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
-                var chunkedStream2 = new ChunkedBufferStream(512);
-                await chunkedStream2.WriteAsync(testData2, 0, 512);
-                chunkedStream2.SwitchToReadMode();
-                var dataSource2 = new ChunkedPartDataSource(1, chunkedStream2);
-
-                // Act
-                manager.AddDataSource(dataSource2);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+            var chunkedStream2 = new ChunkedBufferStream(512);
+            await chunkedStream2.WriteAsync(testData2, 0, 512);
+            chunkedStream2.SwitchToReadMode();
+            var dataSource2 = new ChunkedPartDataSource(1, chunkedStream2);
+            Assert.ThrowsExactly<InvalidOperationException>(() => manager.AddDataSource(dataSource2));
         }
 
         #endregion
@@ -494,90 +447,39 @@ namespace AWSSDK.UnitTests
         #region ReadAsync Tests - Parameter Validation
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public async Task ReadAsync_WithNullBuffer_ThrowsArgumentNullException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Act
-                await manager.ReadAsync(null, 0, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            await Assert.ThrowsExactlyAsync<ArgumentNullException>(async () =>
+                await manager.ReadAsync(null, 0, 512, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public async Task ReadAsync_WithNegativeOffset_ThrowsArgumentOutOfRangeException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-            byte[] readBuffer = new byte[512];
-
-            try
-            {
-                // Act
-                await manager.ReadAsync(readBuffer, -1, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(async () =>
+                await manager.ReadAsync(new byte[512], -1, 512, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public async Task ReadAsync_WithNegativeCount_ThrowsArgumentOutOfRangeException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-            byte[] readBuffer = new byte[512];
-
-            try
-            {
-                // Act
-                await manager.ReadAsync(readBuffer, 0, -1, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(async () =>
+                await manager.ReadAsync(new byte[512], 0, -1, CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public async Task ReadAsync_WithOffsetCountExceedingBounds_ThrowsArgumentException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-            byte[] readBuffer = new byte[512];
-
-            try
-            {
-                // Act
-                await manager.ReadAsync(readBuffer, 400, 200, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            await Assert.ThrowsExactlyAsync<ArgumentException>(async () =>
+                await manager.ReadAsync(new byte[512], 400, 200, CancellationToken.None));
         }
 
         #endregion
@@ -649,29 +551,13 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ReadAsync_WhenDownloadFailed_ThrowsException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Mark download as failed
-                var testException = new Exception("Download failed");
-                manager.MarkDownloadComplete(testException);
-
-                // Act
-                byte[] readBuffer = new byte[512];
-                await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            manager.MarkDownloadComplete(new Exception("Download failed"));
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await manager.ReadAsync(new byte[512], 0, 512, CancellationToken.None));
         }
 
         #endregion
@@ -887,18 +773,12 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void ReleaseBufferSpace_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             manager.Dispose();
-
-            // Act
-            manager.ReleaseBufferSpace();
-
-            // Assert - ExpectedException
+            Assert.ThrowsExactly<ObjectDisposedException>(() => manager.ReleaseBufferSpace());
         }
 
         #endregion
@@ -943,7 +823,7 @@ namespace AWSSDK.UnitTests
 
                 // Assert - Reading should throw
                 byte[] readBuffer = new byte[512];
-                var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                var ex = await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
                 {
                     await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
                 });
@@ -1061,24 +941,11 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void AddBufferAsync_IPartDataSource_WithNull_ThrowsArgumentNullException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var manager = new PartBufferManager(config);
-
-            try
-            {
-                // Act
-                manager.AddDataSource((IPartDataSource)null);
-
-                // Assert - ExpectedException
-            }
-            finally
-            {
-                manager.Dispose();
-            }
+            using var manager = new PartBufferManager(config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => manager.AddDataSource((IPartDataSource)null));
         }
 
         [TestMethod]
@@ -1310,7 +1177,7 @@ namespace AWSSDK.UnitTests
             manager.Dispose();
 
             // Assert - The underlying chunked stream should be disposed
-            Assert.ThrowsException<ObjectDisposedException>(() => chunkedStream.Position);
+            Assert.ThrowsExactly<ObjectDisposedException>(() => chunkedStream.Position);
         }
 
         [TestMethod]
@@ -1350,18 +1217,13 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public async Task Operations_AfterDispose_ThrowObjectDisposedException()
         {
-            // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var manager = new PartBufferManager(config);
             manager.Dispose();
-
-            // Act
-            await manager.WaitForBufferSpaceAsync(CancellationToken.None);
-
-            // Assert - ExpectedException
+            await Assert.ThrowsExactlyAsync<ObjectDisposedException>(async () =>
+                await manager.WaitForBufferSpaceAsync(CancellationToken.None));
         }
 
         #endregion
@@ -1519,13 +1381,13 @@ namespace AWSSDK.UnitTests
                 }
 
                 // Attempt to release beyond maxCount (should throw)
-                Assert.ThrowsException<SemaphoreFullException>(() =>
+                Assert.ThrowsExactly<SemaphoreFullException>(() =>
                 {
                     manager.ReleaseBufferSpace();
                 }, "Releasing beyond maxCount should throw SemaphoreFullException");
 
                 // Attempt one more release to confirm protection is consistent
-                Assert.ThrowsException<SemaphoreFullException>(() =>
+                Assert.ThrowsExactly<SemaphoreFullException>(() =>
                 {
                     manager.ReleaseBufferSpace();
                 }, "Second excessive release should also throw SemaphoreFullException");

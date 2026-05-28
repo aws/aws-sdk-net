@@ -38,6 +38,7 @@ namespace Amazon.Elasticsearch.Model
         private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AdvancedSecurityOptions _advancedSecurityOptions;
         private string _arn;
+        private AutomatedSnapshotPauseOptions _automatedSnapshotPauseOptions;
         private AutoTuneOptionsOutput _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
         private CognitoOptions _cognitoOptions;
@@ -141,6 +142,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedSnapshotPauseOptions. 
+        /// <para>
+        /// The current status of the Elasticsearch domain's automated snapshot pause options.
+        /// </para>
+        /// </summary>
+        public AutomatedSnapshotPauseOptions AutomatedSnapshotPauseOptions
+        {
+            get { return this._automatedSnapshotPauseOptions; }
+            set { this._automatedSnapshotPauseOptions = value; }
+        }
+
+        // Check to see if AutomatedSnapshotPauseOptions property is set
+        internal bool IsSetAutomatedSnapshotPauseOptions()
+        {
+            return this._automatedSnapshotPauseOptions != null;
         }
 
         /// <summary>

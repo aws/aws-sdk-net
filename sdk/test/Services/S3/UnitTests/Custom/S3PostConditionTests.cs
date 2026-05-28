@@ -53,7 +53,7 @@ namespace AWSSDK.UnitTests
             string expectedValue = "public-read";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 new ExactMatchCondition(fieldName, expectedValue));
         }
 
@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
             string expectedValue = null;
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 new ExactMatchCondition(fieldName, expectedValue));
         }
 
@@ -79,7 +79,7 @@ namespace AWSSDK.UnitTests
             string expectedValue = "public-read";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 new ExactMatchCondition(fieldName, expectedValue));
         }
 
@@ -92,7 +92,7 @@ namespace AWSSDK.UnitTests
             string expectedValue = "";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 new ExactMatchCondition(fieldName, expectedValue));
         }
 
@@ -163,7 +163,7 @@ namespace AWSSDK.UnitTests
             string prefix = "user-uploads/";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 new StartsWithCondition(fieldName, prefix));
         }
 
@@ -176,7 +176,7 @@ namespace AWSSDK.UnitTests
             string prefix = null;
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 new StartsWithCondition(fieldName, prefix));
         }
 
@@ -189,7 +189,7 @@ namespace AWSSDK.UnitTests
             string prefix = "user-uploads/";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 new StartsWithCondition(fieldName, prefix));
         }
 
@@ -302,7 +302,7 @@ namespace AWSSDK.UnitTests
             long maxLength = 5242880;
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 new ContentLengthRangeCondition(minLength, maxLength));
         }
 
@@ -315,7 +315,7 @@ namespace AWSSDK.UnitTests
             long maxLength = 1024;
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 new ContentLengthRangeCondition(minLength, maxLength));
         }
 
@@ -453,21 +453,21 @@ namespace AWSSDK.UnitTests
         public void S3PostCondition_FactoryMethods_ValidateParameters()
         {
             // Test ExactMatch validation
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 S3PostCondition.ExactMatch(null, "value"));
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 S3PostCondition.ExactMatch("field", null));
 
             // Test StartsWith validation
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 S3PostCondition.StartsWith(null, "prefix"));
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 S3PostCondition.StartsWith("field", null));
 
             // Test ContentLengthRange validation
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostCondition.ContentLengthRange(-1, 100));
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostCondition.ContentLengthRange(100, 50));
         }
 

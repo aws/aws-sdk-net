@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
     /// their email address. This poses a security risk to your organization. They can change
     /// the email address of a user to the attacker's email address, and then reset the password
     /// through email. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best
-    /// Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Practices for Security Profiles</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

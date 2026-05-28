@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class BatchGetTests
     {
         [TestMethod]
-        public void TestMockability_BatchGet()
+        public async Task TestMockability_BatchGet()
         {
             var mockContext = new Mock<IDynamoDBContext>();
             mockContext
@@ -28,14 +30,14 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             addressBatchGet.AddKey("CA");
             Assert.AreEqual(1, addressBatchGet.TotalKeys);
 
-            addressBatchGet.Execute();
+            await addressBatchGet.ExecuteAsync();
             Assert.AreEqual(1, addressBatchGet.Results.Count);
             Assert.AreEqual("CA", addressBatchGet.Results[0].State);
             Assert.AreEqual("12345", addressBatchGet.Results[0].Zip);
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableBatchGet()
+        public async Task TestMockability_MultiTableBatchGet()
         {
             var mockContext = new Mock<IDynamoDBContext>();
             mockContext
@@ -66,7 +68,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             personBatchGet.AddKey("John");
             Assert.AreEqual(2, multiBatchGet.TotalKeys);
 
-            multiBatchGet.Execute();
+            await multiBatchGet.ExecuteAsync();
             Assert.AreEqual(1, addressBatchGet.Results.Count);
             Assert.AreEqual("CA", addressBatchGet.Results[0].State);
             Assert.AreEqual("12345", addressBatchGet.Results[0].Zip);
@@ -82,7 +84,8 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var keys = new List<string>();
 
             batchGet
-                .Setup(x => x.Execute())
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     dummyResults.Clear();
@@ -120,12 +123,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var batches = new List<IBatchGet>();
 
             multiBatchGet
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in batches)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync();
                     }
                 });
 
@@ -147,7 +150,6 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
                     }
                     return totalKeys;
                 });
-            
 
             return multiBatchGet.Object;
         }

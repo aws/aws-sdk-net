@@ -87,22 +87,18 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullS3Client_ThrowsArgumentNullException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
-
-            // Act
-            var command = new DownloadDirectoryCommand(null, request, _config, useMultipartDownload: false);
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
+                new DownloadDirectoryCommand(null, request, _config, useMultipartDownload: false));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullRequest_ThrowsArgumentNullException()
         {
-            // Act
-            var command = new DownloadDirectoryCommand(_mockS3Client.Object, null, _config, useMultipartDownload: false);
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
+                new DownloadDirectoryCommand(_mockS3Client.Object, null, _config, useMultipartDownload: false));
         }
 
         #endregion
@@ -110,68 +106,53 @@ namespace AWSSDK.UnitTests
         #region ValidateRequest Tests
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingBucketName_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.BucketName = null;
             var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithEmptyBucketName_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.BucketName = "";
             var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingS3Directory_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.S3Directory = null;
             var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithEmptyS3Directory_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.S3Directory = "";
             var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ExecuteAsync_WithMissingLocalDirectory_ThrowsInvalidOperationException()
         {
-            // Arrange
             var request = CreateDownloadDirectoryRequest();
             request.LocalDirectory = null;
             var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
-
-            // Act
-            await command.ExecuteAsync(CancellationToken.None);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await command.ExecuteAsync(CancellationToken.None));
         }
 
         #endregion

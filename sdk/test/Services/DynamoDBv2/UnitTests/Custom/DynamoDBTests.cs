@@ -3,7 +3,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
-using Amazon.Util.Internal;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet.UnitTests
             foreach(var subType in ddbeSubTypes)
             {
                 var equalsMethod = subType.GetMethod("Equals", new Type[] { typeof(object) });
-                Assert.IsTrue(equalsMethod.DeclaringType == subType, "Testing that type {0} implements Equals", subType.FullName);
+                Assert.IsTrue(equalsMethod.DeclaringType == subType, $"Testing that type {subType.FullName} implements Equals");
             }
 
             Console.WriteLine(ddbeSubTypes.Count);
@@ -230,7 +230,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             foreach (var property in jsonOriginal.RootElement.EnumerateObject())
             {
-                Assert.AreEqual(property.Value.ToString(), jsonNew.RootElement.GetProperty(property.Name).ToString());
+                Assert.IsTrue(string.Equals(property.Value.ToString(), jsonNew.RootElement.GetProperty(property.Name).ToString(), StringComparison.OrdinalIgnoreCase));
             }
         }
 
@@ -261,7 +261,7 @@ namespace AWSSDK_DotNet.UnitTests
                 DateFromString = dateWithDecimals
             });
 
-            using (var dynamoDBContext = new DynamoDBContext())
+            using (var dynamoDBContext = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object))
             {
                 var noDecimalDoc = Document.FromJson(jsonDateWithNoDecimals);
                 var decimalDoc = Document.FromJson(jsonDateWithDecimals);
@@ -460,7 +460,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
 
-            Assert.ThrowsException<InvalidOperationException>(() => context.Query<EmployeeMissingHashKey>("123"));
+            Assert.ThrowsExactly<InvalidOperationException>(() => context.QueryAsync<EmployeeMissingHashKey>("123"));
         }
 
         /// <summary>
@@ -479,12 +479,12 @@ namespace AWSSDK_DotNet.UnitTests
             var context = new DynamoDBContext(new Mock<IAmazonDynamoDB>().Object, config);
 
             // This is the table's range key, which is not attributed
-            Assert.ThrowsException<InvalidOperationException>(() => 
-            context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, 5));
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+            context.QueryAsync<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new object[] { 5 }));
             
             // This is a GSI's range key, which is not attributed
-            Assert.ThrowsException<InvalidOperationException>(() =>
-                context.Query<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new List<object> { 5 }, new DynamoDBOperationConfig { IndexName = "GlobalIndex"}));
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.QueryAsync<EmployeeMissingRangeKeys>("123", QueryOperator.GreaterThan, new List<object> { 5 }, new DynamoDBOperationConfig { IndexName = "GlobalIndex"}));
         }
 
         /// <summary>
@@ -493,21 +493,21 @@ namespace AWSSDK_DotNet.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToString()
+        public async Task DisableFetchingTableMetadata_KeyWithConverter_DateTimeToString()
         {
             var mock = new Mock<IAmazonDynamoDB>();
-            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+            mock.Setup(x => x.GetItemAsync(It.IsAny<GetItemRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(
                 new GetItemResponse() {  Item = new Dictionary<string, AttributeValue>()});
 
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
             
-            context.Load<HashKeyConverter_DateTimeToString>(DateTime.MinValue);
+            await context.LoadAsync<HashKeyConverter_DateTimeToString>(DateTime.MinValue);
 
             // Verify that the DateTime was cast to a string attribute correctly
-            mock.Verify(x => 
-                x.GetItem(It.Is<GetItemRequest>(request => 
-                    request.Key.ContainsKey("CreationDate") && 
-                    request.Key["CreationDate"].S == "0001-01-01T00:00:00.000Z")));
+            mock.Verify(x =>
+                x.GetItemAsync(It.Is<GetItemRequest>(request =>
+                    request.Key.ContainsKey("CreationDate") &&
+                    request.Key["CreationDate"].S == "0001-01-01T00:00:00.000Z"), It.IsAny<CancellationToken>()));
 
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
@@ -521,21 +521,21 @@ namespace AWSSDK_DotNet.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToNumber()
+        public async Task DisableFetchingTableMetadata_KeyWithConverter_DateTimeToNumber()
         {
             var mock = new Mock<IAmazonDynamoDB>();
-            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+            mock.Setup(x => x.GetItemAsync(It.IsAny<GetItemRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(
                 new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
 
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
 
-            context.Load<HashKeyConverter_DateTimeToNumber>(new DateTime(1024, DateTimeKind.Utc));
+            await context.LoadAsync<HashKeyConverter_DateTimeToNumber>(new DateTime(1024, DateTimeKind.Utc));
 
             // Verify that the DateTime was cast to a number attribute correctly
-            mock.Verify(x => 
-                x.GetItem(It.Is<GetItemRequest>(request =>
+            mock.Verify(x =>
+                x.GetItemAsync(It.Is<GetItemRequest>(request =>
                     request.Key.ContainsKey("CreationDate") &&
-                    request.Key["CreationDate"].N == "1024")));
+                    request.Key["CreationDate"].N == "1024"), It.IsAny<CancellationToken>()));
 
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
@@ -549,21 +549,21 @@ namespace AWSSDK_DotNet.UnitTests
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBinary()
+        public async Task DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBinary()
         {
             var mock = new Mock<IAmazonDynamoDB>();
-            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+            mock.Setup(x => x.GetItemAsync(It.IsAny<GetItemRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(
                 new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
 
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
 
-            context.Load<HashKeyConverter_DateTimeToBinary>(new DateTime(1024, DateTimeKind.Utc));
+            await context.LoadAsync<HashKeyConverter_DateTimeToBinary>(new DateTime(1024, DateTimeKind.Utc));
 
             // Verify that the DateTime was cast to a binary attribute correctly (converts to a string just for the comparison)
-            mock.Verify(x => 
-                x.GetItem(It.Is<GetItemRequest>(request =>
+            mock.Verify(x =>
+                x.GetItemAsync(It.Is<GetItemRequest>(request =>
                     request.Key.ContainsKey("CreationDate") &&
-                    BitConverter.ToString(request.Key["CreationDate"].B.ToArray()) == "00-04-00-00-00-00-00-40")));
+                    BitConverter.ToString(request.Key["CreationDate"].B.ToArray()) == "00-04-00-00-00-00-00-40"), It.IsAny<CancellationToken>()));
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
 
@@ -574,17 +574,17 @@ namespace AWSSDK_DotNet.UnitTests
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public void DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBool_ThrowsException()
+        public async Task DisableFetchingTableMetadata_KeyWithConverter_DateTimeToBool_ThrowsException()
         {
             var mock = new Mock<IAmazonDynamoDB>();
-            mock.Setup(x => x.GetItem(It.IsAny<GetItemRequest>())).Returns(
+            mock.Setup(x => x.GetItemAsync(It.IsAny<GetItemRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(
                 new GetItemResponse() { Item = new Dictionary<string, AttributeValue>() });
 
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { DisableFetchingTableMetadata = true });
 
             // A boolean isn't valid as a primary key, so we expect an exception 
-            Assert.ThrowsException<InvalidOperationException>(() => 
-                context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await context.LoadAsync<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
 
@@ -605,7 +605,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
 
-            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var json = JsonSerializer.Serialize(obj);
             var document = Document.FromJson(json);
             var result = context.FromDocument<NullableDateTime>(document);
 
@@ -624,7 +624,7 @@ namespace AWSSDK_DotNet.UnitTests
             };
             var context = new DynamoDBContext(mock.Object, new DynamoDBContextConfig() { RetrieveDateTimeInUtc = true, DisableFetchingTableMetadata = true });
 
-            var json = JsonSerializerHelper.Serialize<NullableDateTime>(obj, new JsonSerializerContext());
+            var json = JsonSerializer.Serialize(obj);
             var document = Document.FromJson(json);
             var result = context.FromDocument<NullableDateTime>(document);
 

@@ -34,14 +34,14 @@ namespace AWSSDK.UnitTests
         [DataRow("bucket", "")]
         [DataRow("", "key")]
         [DataRow("bucket", "key")]
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         public void RequiredUriParameters(string bucket, string key)
         {
             var request = new DeleteObjectRequest() { BucketName = bucket, Key = key };
             if (string.IsNullOrEmpty(bucket) || string.IsNullOrEmpty(key))
             {
-                Assert.ThrowsException<ArgumentException>(() => DeleteObjectRequestMarshaller.Instance.Marshall(request));
+                Assert.ThrowsExactly<ArgumentException>(() => DeleteObjectRequestMarshaller.Instance.Marshall(request));
             }
             else
             {

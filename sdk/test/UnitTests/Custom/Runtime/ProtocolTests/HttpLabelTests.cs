@@ -14,33 +14,25 @@
  */
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.IO;
-using System.Net;
-using static AWSSDK.UnitTests.HttpHandlerTests;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.S3.Model;
-using Amazon.S3;
-using System.Globalization;
 
 namespace AWSSDK.UnitTests
 {
-    //This test class aligns with:
-    //https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restJson1/http-labels.smithy#L43
+    /// <summary>
+    /// This test class aligns with:
+    /// https://github.com/smithy-lang/smithy/blob/main/smithy-aws-protocol-tests/model/restJson1/http-labels.smithy#L43
+    /// </summary>
     [TestClass]
     public class HttpLabelTests
     {
-        //Smithy Tests asssume UNIX epoch time with no milliseconds in the ISO8601 format
+        // Smithy Tests asssume UNIX epoch time with no milliseconds in the ISO8601 format
         private static readonly DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         DateTime StartDate = epoch.AddSeconds(1576540098);
+
         [TestMethod]
         public void RestJsonInputWithHeadersAndAllParamsSigV4()
         {
@@ -59,9 +51,10 @@ namespace AWSSDK.UnitTests
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
-            Assert.AreEqual(expectedUrl, actualUrl);
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         [TestMethod]
         public void RestJsonInputWithHeadersAndAllParamsSigV2()
         {
@@ -80,9 +73,10 @@ namespace AWSSDK.UnitTests
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
-            Assert.AreEqual(expectedUrl, actualUrl);
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/string/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         [TestMethod]
         public void RestJsonHttpRequestLabelEscapingSigV4()
         {
@@ -99,10 +93,11 @@ namespace AWSSDK.UnitTests
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            Assert.AreEqual(expectedUrl,actualUrl);
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         [TestMethod]
         public void RestJsonHttpRequestLabelEscapingSigV2()
         {
@@ -119,10 +114,11 @@ namespace AWSSDK.UnitTests
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z");
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/%20%25%3A%2F%3F%23%5B%5D%40%21%24%26%27%28%29%2A%2B%2C%3B%3D%F0%9F%98%B9/2/3/4.1/5.1/true/2019-12-16T23%3A48%3A18Z";
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            Assert.AreEqual(expectedUrl, actualUrl);
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         [TestMethod]
         public void HttpRequestWithGreedyLabelInPathSigV4()
         {
@@ -134,10 +130,11 @@ namespace AWSSDK.UnitTests
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV4;
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy");
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy";
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            Assert.AreEqual(expectedUrl, actualUrl);
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         [TestMethod]
         public void HttpRequestWithGreedyLabelInPathSigV2()
         {
@@ -149,10 +146,11 @@ namespace AWSSDK.UnitTests
             };
             var requestContext = CreateRequestContextForHttpRequestWithLabelsInput(request);
             requestContext.Request.SignatureVersion = SignatureVersion.SigV2;
-            var expectedUrl = new Uri("http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy");
+            var expectedUrl = "http://testendpoint/HttpRequestWithLabels/foo/hello%2Fescape/baz/there/guy";
             var actualUrl = AmazonServiceClient.ComposeUrl(requestContext.Request);
-            Assert.AreEqual(expectedUrl, actualUrl);
+            Assert.AreEqual(expectedUrl, actualUrl.AbsoluteUri);
         }
+
         private IRequestContext CreateRequestContextForHttpRequestWithLabelsInput(HttpRequestWithLabelsInput request)
         {
             //no un marshaller necessary because we are only interested in the url
@@ -166,6 +164,7 @@ namespace AWSSDK.UnitTests
             requestContext.Request.Endpoint = new Uri(@"http://testendpoint");
             return requestContext;
         }
+
         public class HttpRequestWithLabelsInput : AmazonWebServiceRequest
         {
             public string StringProperty { get; set; }
@@ -228,5 +227,4 @@ namespace AWSSDK.UnitTests
             }
         }
     }
-    
 }

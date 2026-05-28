@@ -80,6 +80,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("targetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("timeoutConfiguration", targetDepth))
+                {
+                    var unmarshaller = DeploymentLifecycleHookTimeoutConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

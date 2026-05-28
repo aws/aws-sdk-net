@@ -100,7 +100,13 @@ namespace Amazon.KeyManagementService.Model
     /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
     /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
-    ///  
+    ///  <note> 
+    /// <para>
+    /// When using grants with <c>SourceArn</c> constraints for <c>ReEncrypt</c> operations,
+    /// the grants on both the source KMS key (for <c>ReEncryptFrom</c>) and the destination
+    /// KMS key (for <c>ReEncryptTo</c>) must specify the same <c>SourceArn</c> value. 
+    /// </para>
+    ///  </note> 
     /// <para>
     ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
     /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different

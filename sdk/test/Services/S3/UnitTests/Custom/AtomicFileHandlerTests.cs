@@ -136,25 +136,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void CreateTemporaryFile_WithNullDestinationPath_ThrowsArgumentException()
         {
-            // Arrange
             var handler = new AtomicFileHandler();
-
-            // Act
-            handler.CreateTemporaryFile(null);
+            Assert.ThrowsExactly<ArgumentException>(() => handler.CreateTemporaryFile(null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void CreateTemporaryFile_WithEmptyDestinationPath_ThrowsArgumentException()
         {
-            // Arrange
             var handler = new AtomicFileHandler();
-
-            // Act
-            handler.CreateTemporaryFile("");
+            Assert.ThrowsExactly<ArgumentException>(() => handler.CreateTemporaryFile(""));
         }
 
         #endregion
@@ -282,41 +274,29 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void CommitFile_WithNullTempPath_ThrowsArgumentException()
         {
-            // Arrange
             var handler = new AtomicFileHandler();
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
-
-            // Act
-            handler.CommitFile(null, destinationPath);
+            Assert.ThrowsExactly<ArgumentException>(() => handler.CommitFile(null, destinationPath));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void CommitFile_WithNullDestinationPath_ThrowsArgumentException()
         {
-            // Arrange
             var handler = new AtomicFileHandler();
             var tempPath = Path.Combine(_testDirectory, "temp.dat");
             File.Create(tempPath).Dispose();
-
-            // Act
-            handler.CommitFile(tempPath, null);
+            Assert.ThrowsExactly<ArgumentException>(() => handler.CommitFile(tempPath, null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(FileNotFoundException))]
         public void CommitFile_WithMissingTempFile_ThrowsFileNotFoundException()
         {
-            // Arrange
             var handler = new AtomicFileHandler();
             var tempPath = Path.Combine(_testDirectory, "nonexistent.s3tmp.ABCD1234");
             var destinationPath = Path.Combine(_testDirectory, "test.dat");
-
-            // Act
-            handler.CommitFile(tempPath, destinationPath);
+            Assert.ThrowsExactly<FileNotFoundException>(() => handler.CommitFile(tempPath, destinationPath));
         }
 
         [TestMethod]

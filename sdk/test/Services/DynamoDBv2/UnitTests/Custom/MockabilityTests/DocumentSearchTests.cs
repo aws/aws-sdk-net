@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class DocumentSearchTests
     {
         [TestMethod]
-        public void TestMockability_DocumentScan()
+        public async Task TestMockability_DocumentScan()
         {
             var mockTable = new Mock<ITable>();
             mockTable
@@ -23,7 +25,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 
             var search = table.Scan((ScanOperationConfig)null);
 
-            var results = search.GetNextSet();
+            var results = await search.GetNextSetAsync(CancellationToken.None);
             Assert.AreEqual(2, results.Count);
 
             Assert.AreEqual(1, results[0]["id"].AsInt());
@@ -34,7 +36,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
         }
 
         [TestMethod]
-        public void TestMockability_DocumentQuery()
+        public async Task TestMockability_DocumentQuery()
         {
             var mockTable = new Mock<ITable>();
             mockTable
@@ -48,7 +50,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 
             var search = table.Query((QueryOperationConfig)null);
 
-            var results = search.GetNextSet();
+            var results = await search.GetNextSetAsync(CancellationToken.None);
             Assert.AreEqual(2, results.Count);
 
             Assert.AreEqual(1, results[0]["id"].AsInt());
@@ -63,10 +65,10 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var search = new Mock<ISearch>();
 
             search
-                .Setup(x => x.GetNextSet())
-                .Returns(dummyResults);
+                .Setup(x => x.GetNextSetAsync(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(dummyResults);
 
             return search.Object;
-         }
+        }
     }
 }

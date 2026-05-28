@@ -177,7 +177,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("gov cloud with fips@cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Gov_cloud_with_fipscnnorth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -187,7 +186,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -427,7 +429,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN: must be include outpost ID@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
         public void Invalid_ARN_must_be_include_outpost_IDuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -437,7 +438,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The Outpost Id was not set", exception.Message);
         }
 
         [TestMethod]
@@ -445,7 +449,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN: must specify access point@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_must_specify_access_pointuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -454,7 +457,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a 4-component resource", exception.Message);
         }
 
         [TestMethod]
@@ -462,7 +468,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid ARN@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARNuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -471,7 +476,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a 4-component resource", exception.Message);
         }
 
         [TestMethod]
@@ -516,7 +524,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Account ID set inline and in ARN and they do not match@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)")]
         public void Account_ID_set_inline_and_in_ARN_and_they_do_not_matchuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -527,7 +534,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseArnRegion"] = false;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: the accountId specified in the ARN (`123456789012`) does not match the parameter (`999999999999`)", exception.Message);
         }
 
         [TestMethod]
@@ -573,7 +583,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("access point name with a bucket arn@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Expected an outpost type `accesspoint`, found `bucket`")]
         public void Access_point_name_with_a_bucket_arnuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -583,7 +592,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Expected an outpost type `accesspoint`, found `bucket`", exception.Message);
         }
 
         [TestMethod]
@@ -591,7 +603,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket arn with access point name@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected an outpost type `bucket`, found `accesspoint`")]
         public void Bucket_arn_with_access_point_nameuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -601,7 +612,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected an outpost type `bucket`, found `accesspoint`", exception.Message);
         }
 
         [TestMethod]
@@ -721,7 +735,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("dualstack cannot be used with outposts when an endpoint URL is set@us-west-2.")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Dualstack_cannot_be_used_with_outposts_when_an_endpoint_URL_is_setuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -731,7 +744,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1028,7 +1044,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing outpost id and bucket@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
         public void Invalid_ARN_missing_outpost_id_and_bucketuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1037,7 +1052,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The Outpost Id was not set", exception.Message);
         }
 
         [TestMethod]
@@ -1045,7 +1063,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing bucket@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_missing_bucketuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1054,7 +1071,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a 4-component resource", exception.Message);
         }
 
         [TestMethod]
@@ -1062,7 +1082,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing outpost and bucket ids@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
         public void Invalid_ARN_missing_outpost_and_bucket_idsuswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1071,7 +1090,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Expected a 4-component resource", exception.Message);
         }
 
         [TestMethod]
@@ -1079,7 +1101,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Invalid ARN: missing bucket id@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: expected a bucket name")]
         public void Invalid_ARN_missing_bucket_iduswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1088,7 +1109,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: expected a bucket name", exception.Message);
         }
 
         [TestMethod]
@@ -1233,14 +1257,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("fips @ cn-north-1")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Fips_cnnorth1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Region"] = "cn-north-1";
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1265,7 +1291,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid account id prefix @us-east-1")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void Invalid_account_id_prefix_useast1_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1274,7 +1299,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId must only contain a-z, A-Z, 0-9 and `-`.", exception.Message);
         }
 
         [TestMethod]
@@ -1332,13 +1360,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with AccountId unset")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void RequiresAccountId_with_AccountId_unset_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["RequiresAccountId"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId is required but not set", exception.Message);
         }
 
         [TestMethod]
@@ -1346,14 +1376,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with AccountId unset and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void RequiresAccountId_with_AccountId_unset_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["RequiresAccountId"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId is required but not set", exception.Message);
         }
 
         [TestMethod]
@@ -1361,7 +1393,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("RequiresAccountId with invalid AccountId and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void RequiresAccountId_with_invalid_AccountId_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1369,7 +1400,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "https://beta.example.com";
             parameters["AccountId"] = "/?invalid&not-host*label";
             parameters["RequiresAccountId"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId must only contain a-z, A-Z, 0-9 and `-`.", exception.Message);
         }
 
         [TestMethod]
@@ -1424,7 +1458,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("custom endpoint, DualStack")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Custom_endpoint_DualStack_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1432,7 +1465,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1440,11 +1476,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("region not set")]
-        [ExpectedException(typeof(AmazonClientException), @"Region must be set")]
         public void Region_not_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Region must be set", exception.Message);
         }
 
         [TestMethod]
@@ -1452,12 +1490,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("invalid partition")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void Invalid_partition_Test()
         {
             var parameters = new S3ControlEndpointParameters();
             parameters["Region"] = "invalid-region 42";
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -1465,7 +1505,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId without accountId set.")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void ListRegionalBuckets_OutpostId_without_accountId_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1474,7 +1513,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId is required but not set", exception.Message);
         }
 
         [TestMethod]
@@ -1482,7 +1524,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId with invalid accountId set.")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void ListRegionalBuckets_OutpostId_with_invalid_accountId_set_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1492,7 +1533,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId must only contain a-z, A-Z, 0-9 and `-`.", exception.Message);
         }
 
         [TestMethod]
@@ -1500,7 +1544,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("accesspoint set but missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"AccountId is required but not set")]
         public void Accesspoint_set_but_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1509,7 +1552,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountId is required but not set", exception.Message);
         }
 
         [TestMethod]
@@ -1517,7 +1563,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("outpost accesspoint ARN with missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: missing account ID")]
         public void Outpost_accesspoint_ARN_with_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1526,7 +1571,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: missing account ID", exception.Message);
         }
 
         [TestMethod]
@@ -1534,7 +1582,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with missing accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: missing account ID")]
         public void Bucket_ARN_with_missing_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1543,7 +1590,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: missing account ID", exception.Message);
         }
 
         [TestMethod]
@@ -1588,7 +1638,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("DualStack + Custom endpoint is not supported(non-arn)")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void DualStack_Custom_endpoint_is_not_supportednonarn_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1599,7 +1648,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1607,7 +1659,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("get bucket with custom endpoint and dualstack is not supported@us-west-2")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Get_bucket_with_custom_endpoint_and_dualstack_is_not_supporteduswest2_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1617,7 +1668,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -1625,7 +1679,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + OutpostId with fips in CN.")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void ListRegionalBuckets_OutpostId_with_fips_in_CN_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1635,7 +1688,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1643,7 +1699,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("ListRegionalBuckets + invalid OutpostId.")]
-        [ExpectedException(typeof(AmazonClientException), @"OutpostId must only contain a-z, A-Z, 0-9 and `-`.")]
         public void ListRegionalBuckets_invalid_OutpostId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1653,7 +1708,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"OutpostId must only contain a-z, A-Z, 0-9 and `-`.", exception.Message);
         }
 
         [TestMethod]
@@ -1661,7 +1719,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("bucket ARN with mismatched accountId")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)")]
         public void Bucket_ARN_with_mismatched_accountId_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1671,7 +1728,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: the accountId specified in the ARN (`999999`) does not match the parameter (`012345678912`)", exception.Message);
         }
 
         [TestMethod]
@@ -1679,7 +1739,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("OutpostId with invalid region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
         public void OutpostId_with_invalid_region_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1689,7 +1748,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid region: region was not a valid DNS name.", exception.Message);
         }
 
         [TestMethod]
@@ -1713,7 +1775,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Accesspoint ARN with arn region and client region mismatch with UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outpost_Accesspoint_ARN_with_arn_region_and_client_region_mismatch_with_UseArnRegionfalse_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1724,7 +1785,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseArnRegion"] = false;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -1732,7 +1796,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Bucket ARN with arn region and client region mismatch with UseArnRegion=false")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Outpost_Bucket_ARN_with_arn_region_and_client_region_mismatch_with_UseArnRegionfalse_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1743,7 +1806,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseArnRegion"] = false;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `us-east-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -1786,7 +1852,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Outpost Bucket ARN with partition mismatch with UseArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN has `aws-cn`")]
         public void Outpost_Bucket_ARN_with_partition_mismatch_with_UseArnRegiontrue_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1796,7 +1861,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseArnRegion"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but ARN has `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -1804,7 +1872,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Accesspoint ARN with partition mismatch and UseArnRegion=true")]
-        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN has `aws-cn`")]
         public void Accesspoint_ARN_with_partition_mismatch_and_UseArnRegiontrue_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1815,7 +1882,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseArnRegion"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Client was configured for partition `aws` but ARN has `aws-cn`", exception.Message);
         }
 
         [TestMethod]
@@ -1823,7 +1893,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Accesspoint ARN with region mismatch, UseArnRegion=false and custom endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`")]
         public void Accesspoint_ARN_with_region_mismatch_UseArnRegionfalse_and_custom_endpoint_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1834,7 +1903,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["UseArnRegion"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`", exception.Message);
         }
 
         [TestMethod]
@@ -1926,7 +1998,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("S3 Snow Control with FIPS enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Snow does not support FIPS")]
         public void S3_Snow_Control_with_FIPS_enabled_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1935,7 +2006,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "https://10.0.1.12:433";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Snow does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -1943,7 +2017,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("S3 Snow Control with Dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"S3 Snow does not support DualStack")]
         public void S3_Snow_Control_with_Dualstack_enabled_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -1952,7 +2025,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Endpoint"] = "https://10.0.1.12:433";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3 Snow does not support DualStack", exception.Message);
         }
 
         [TestMethod]
@@ -2032,7 +2108,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Tagging on express bucket cn routed to s3express-control china endpoint with FIPS")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Tagging_on_express_bucket_cn_routed_to_s3expresscontrol_china_endpoint_with_FIPS_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2042,7 +2117,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2088,7 +2166,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Tagging on express bucket with dualstack and custom endpoint fails")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Tagging_on_express_bucket_with_dualstack_and_custom_endpoint_fails_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2099,7 +2176,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2215,7 +2295,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error when Access Point APIs on express bucket routed to s3express-control for china and FIPS")]
-        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
         public void Error_when_Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_for_china_and_FIPS_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2224,7 +2303,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition does not support FIPS", exception.Message);
         }
 
         [TestMethod]
@@ -2232,7 +2314,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error Access Point APIs on express bucket routed to s3express-control invalid zone")]
-        [ExpectedException(typeof(AmazonClientException), @"Unrecognized S3Express Access Point name format.")]
         public void Error_Access_Point_APIs_on_express_bucket_routed_to_s3expresscontrol_invalid_zone_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2242,7 +2323,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Unrecognized S3Express Access Point name format.", exception.Message);
         }
 
         [TestMethod]
@@ -2288,7 +2372,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error on Access Point APIs on express bucket for dual stack")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support Dual-stack.")]
         public void Error_on_Access_Point_APIs_on_express_bucket_for_dual_stack_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2298,7 +2381,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express does not support Dual-stack.", exception.Message);
         }
 
         [TestMethod]
@@ -2306,7 +2392,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error Access Point APIs on express bucket for dual stack for List")]
-        [ExpectedException(typeof(AmazonClientException), @"S3Express does not support Dual-stack.")]
         public void Error_Access_Point_APIs_on_express_bucket_for_dual_stack_for_List_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2316,7 +2401,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"S3Express does not support Dual-stack.", exception.Message);
         }
 
         [TestMethod]
@@ -2324,7 +2412,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error on Access Point APIs on express bucket for custom endpoint and dual stack")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Error_on_Access_Point_APIs_on_express_bucket_for_custom_endpoint_and_dual_stack_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2335,7 +2422,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -2343,7 +2433,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("S3Control")]
         [Description("Error Access Point APIs on express bucket for custom endpoint and dual stack for List")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: DualStack and custom endpoint are not supported")]
         public void Error_Access_Point_APIs_on_express_bucket_for_custom_endpoint_and_dual_stack_for_List_Test()
         {
             var parameters = new S3ControlEndpointParameters();
@@ -2354,7 +2443,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["RequiresAccountId"] = true;
             parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonS3ControlEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: DualStack and custom endpoint are not supported", exception.Message);
         }
 
     }

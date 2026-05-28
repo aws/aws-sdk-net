@@ -46,6 +46,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetExecutionRoleSessionNameMode())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleSessionNameMode");
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleSessionNameMode);
+            }
+
             if(requestObject.IsSetHiddenAppTypes())
             {
                 context.Writer.WritePropertyName("HiddenAppTypes");

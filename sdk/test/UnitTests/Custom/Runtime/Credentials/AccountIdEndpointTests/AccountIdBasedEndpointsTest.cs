@@ -6,9 +6,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
-using Amazon.SSO;
-using Amazon.SSO.Internal;
-using Amazon.SSO.Model;
 using Amazon.Util.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -19,6 +16,7 @@ using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
@@ -54,7 +52,7 @@ namespace AWSSDK.UnitTests
 
         //STS:1
         [TestMethod]
-        public void StsAssumeRoleAccountId()
+        public async Task StsAssumeRoleAccountId()
         {
             var request = new AssumeRoleRequest
             {
@@ -77,10 +75,9 @@ namespace AWSSDK.UnitTests
                 }
             };
             var mockStsClient = new Mock<IAmazonSecurityTokenService>();
-            mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
+            mockStsClient.Setup(x => x.AssumeRoleAsync(It.IsAny<AssumeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-            //doesn't matter what we pass in here since the assumerole call is mocked
-            var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("arn:aws:sts::123456789001:assumed-role/assume-role-integration-test-role/Name", "testSession", new AssumeRoleAWSCredentialsOptions());
+            var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleAuthenticationAsync("arn:aws:sts::123456789001:assumed-role/assume-role-integration-test-role/Name", "testSession", new AssumeRoleAWSCredentialsOptions());
 
             Assert.AreEqual("123456789001", actualCreds.AccountId);
             Assert.AreEqual("foo", actualCreds.AccessKey);
@@ -90,7 +87,7 @@ namespace AWSSDK.UnitTests
 
         //STS:2
         [TestMethod]
-        public void StsAssumeRoleWithSamlAccountId()
+        public async Task StsAssumeRoleWithSamlAccountId()
         {
             var expectedResponse = new AssumeRoleWithSAMLResponse
             {
@@ -107,10 +104,10 @@ namespace AWSSDK.UnitTests
                 }
             };
             var mockStsClient = new Mock<IAmazonSecurityTokenService>();
-            mockStsClient.Setup(x => x.AssumeRoleWithSAML(It.IsAny<AssumeRoleWithSAMLRequest>())).Returns(expectedResponse);
+            mockStsClient.Setup(x => x.AssumeRoleWithSAMLAsync(It.IsAny<AssumeRoleWithSAMLRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
 
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-            var actualCreds = testableAmazonStsClient.CredentialsFromSAMLAuthentication("foo", "bar", "fizz", TimeSpan.FromHours(1), null);
+            var actualCreds = await testableAmazonStsClient.CredentialsFromSAMLAuthenticationAsync("foo", "bar", "fizz", TimeSpan.FromHours(1), null);
             Assert.AreEqual("123456789001", actualCreds.AccountId);
             Assert.AreEqual("foo", actualCreds.AccessKey);
             Assert.AreEqual("bar", actualCreds.SecretKey);
@@ -122,7 +119,7 @@ namespace AWSSDK.UnitTests
         /// When calling Sts::AssumeRoleWithWebIdentity successfully, find account ID in response
         /// </summary>
         [TestMethod]
-        public void StsAssumeRoleWithWebIdentityAccountId()
+        public async Task StsAssumeRoleWithWebIdentityAccountId()
         {
             var expectedResponse = new AssumeRoleWithWebIdentityResponse
             {
@@ -139,10 +136,10 @@ namespace AWSSDK.UnitTests
                 }
             };
             var mockStsClient = new Mock<IAmazonSecurityTokenService>();
-            mockStsClient.Setup(x => x.AssumeRoleWithWebIdentity(It.IsAny<AssumeRoleWithWebIdentityRequest>())).Returns(expectedResponse);
+            mockStsClient.Setup(x => x.AssumeRoleWithWebIdentityAsync(It.IsAny<AssumeRoleWithWebIdentityRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
 
             var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-            var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("token", "any-arn", "test-arn", null);
+            var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync("token", "any-arn", "test-arn", null);
             Assert.AreEqual("123456789001", actualCreds.AccountId);
             Assert.AreEqual("foo", actualCreds.AccessKey);
             Assert.AreEqual("bar", actualCreds.SecretKey);
@@ -157,7 +154,7 @@ namespace AWSSDK.UnitTests
         /// </summary>
         // STS:5"
         [TestMethod]
-        public void EnvironmentVariableConfiguredWithWebIdentitySetsAccountId()
+        public async Task EnvironmentVariableConfiguredWithWebIdentitySetsAccountId()
         {
             var beforeAwsWebIdentityTokenFileEnvVar = Environment.GetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable);
             var beforeAwsRoleArn = Environment.GetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable);
@@ -187,9 +184,9 @@ namespace AWSSDK.UnitTests
                         AssumedRoleId = "roleId"
                     }
                 };
-                mockStsClient.Setup(x => x.AssumeRoleWithWebIdentity(It.IsAny<AssumeRoleWithWebIdentityRequest>())).Returns(expectedResponse);
+                mockStsClient.Setup(x => x.AssumeRoleWithWebIdentityAsync(It.IsAny<AssumeRoleWithWebIdentityRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("token", "any-arn", "test-arn", null);
+                var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync("token", "any-arn", "test-arn", null);
 
                 Assert.AreEqual("123456789001", actualCreds.AccountId);
             }
@@ -202,76 +199,8 @@ namespace AWSSDK.UnitTests
                 Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, beforeAwsSecretAccessKey);
             }
         }
-        /// <summary>
-        /// When calling Sso::GetCredentials successfully, find account ID in request
-        /// SSO:1
-        /// </summary>
-        [TestMethod]
-        public void SsoSuccessfulGetCredentialsFindsAccountIdInRequest()
-        {
-            var mockSsoClient = new Mock<IAmazonSSO>();
-            var getRoleCredentialsRequest = new GetRoleCredentialsRequest
-            {
-                AccountId = "123456789001",
-                RoleName = "anything",
-                AccessToken = "anything"
-            };
-            var expectedResponse = new GetRoleCredentialsResponse
-            {
-                RoleCredentials = new RoleCredentials
-                {
-                    AccessKeyId = "foo",
-                    SecretAccessKey = "bar",
-                    SessionToken = "baz"
-                }
-            };
-            mockSsoClient.Setup(client => client.GetRoleCredentials(It.IsAny<GetRoleCredentialsRequest>())).Returns(expectedResponse);
-
-            var credentials = CoreAmazonSSO.CredentialsFromSsoAccessToken(
-                mockSsoClient.Object,
-                getRoleCredentialsRequest.AccountId,
-                getRoleCredentialsRequest.RoleName,
-                getRoleCredentialsRequest.AccessToken,
-          null);
-
-            Assert.AreEqual("123456789001", credentials.AccountId);
-            Assert.AreEqual("foo", credentials.AccessKey);
-            Assert.AreEqual("bar", credentials.SecretKey);
-            Assert.AreEqual("baz", credentials.Token);
-        }
-        /// <summary>
-        /// SSO:2
-        /// When calling Sso::GetCredentials unsuccessfully, does not find account ID
-        /// </summary>
-        [TestMethod]
-        public void SsoUnsuccessfulCallDoesNotFindAccountIdInRequest()
-        {
-            var mockSsoClient = new Mock<IAmazonSSO>();
-            var getRoleCredentialsRequest = new GetRoleCredentialsRequest
-            {
-                AccountId = "123456789001",
-                RoleName = "anything",
-                AccessToken = "anything"
-            };
-            var expectedResponse = new ResourceNotFoundException("The request resource doesn't exist");
-            mockSsoClient.Setup(client => client.GetRoleCredentials(It.IsAny<GetRoleCredentialsRequest>())).Throws(expectedResponse);
-            ImmutableCredentials credentials = null;
-            try
-            {
-                credentials = CoreAmazonSSO.CredentialsFromSsoAccessToken(
-                    mockSsoClient.Object,
-                    getRoleCredentialsRequest.AccountId,
-                    getRoleCredentialsRequest.RoleName,
-                    getRoleCredentialsRequest.AccessToken,
-                    null);
-            }
-                
-            catch (ResourceNotFoundException e)
-            {
-                Assert.IsNull(credentials);
-                Assert.IsNotNull(e);
-            }
-        }
+        //STS:4 (SKIP) none of our credential providers call GetFederationToken and there is no point in asserting a mocked response returns what is expected
+        // SSO:1 and SSO:2 moved to Services/SSO/UnitTests/Custom/AccountIdSSOTests.cs
 
         /// <summary>
         /// When profile is configured with role, accountid and call is successful, find account ID in call response
@@ -285,7 +214,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
         [TestMethod]
-        public void AssumeRoleProfileReturnsCorrectAccountId()
+        public async Task AssumeRoleProfileReturnsCorrectAccountId()
         {
             using (var sharedCredentialsFile = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: cfg1))
             {
@@ -293,7 +222,6 @@ namespace AWSSDK.UnitTests
                 var chain = new CredentialProfileStoreChain(sharedCredentialsFile.ConfigFilePath);
                 chain.TryGetAWSCredentials("assume-role", out AWSCredentials creds);
                 Assert.IsInstanceOfType(creds, typeof(AssumeRoleAWSCredentials));
-                //AssumeRoleAWSCredentials.GetCredentials() will call CredentialsFromAssumeRoleAuthentication
                 var mockStsClient = new Mock<IAmazonSecurityTokenService>();
                 var expectedResponse = new AssumeRoleResponse
                 {
@@ -309,9 +237,9 @@ namespace AWSSDK.UnitTests
                         AssumedRoleId = "roleId"
                     }
                 };
-                mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
+                mockStsClient.Setup(x => x.AssumeRoleAsync(It.IsAny<AssumeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
+                var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleAuthenticationAsync("anything", "anything", null);
                 Assert.AreEqual("123456789002", actualCreds.AccountId);
                 Assert.AreEqual("foo", actualCreds.AccessKey);
                 Assert.AreEqual("bar", actualCreds.SecretKey);
@@ -334,7 +262,7 @@ namespace AWSSDK.UnitTests
         /// When profile is configured with chained roles, accountid and calls are successful, find account ID in call response
         /// </summary>
         [TestMethod]
-        public void AssumeRoleChainedProfilesReturnCorrectAccountId()
+        public async Task AssumeRoleChainedProfilesReturnCorrectAccountId()
         {
             using (var sharedCredentialsFile = new SharedCredentialsFileTestFixture(credentialsFileContents: null, configFileContents: cfg2))
             {
@@ -358,9 +286,9 @@ namespace AWSSDK.UnitTests
                         AssumedRoleId = "roleId"
                     }
                 };
-                mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
+                mockStsClient.Setup(x => x.AssumeRoleAsync(It.IsAny<AssumeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
                 var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
+                var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleAuthenticationAsync("anything", "anything", null);
                 Assert.AreEqual("123456789003", actualCreds.AccountId);
                 Assert.AreEqual("foo", actualCreds.AccessKey);
                 Assert.AreEqual("bar", actualCreds.SecretKey);
@@ -378,7 +306,7 @@ namespace AWSSDK.UnitTests
         /// When profile is configured with role, accountid and env var credentials_source, find account ID in call response
         /// </summary>
         [TestMethod]
-        public void AccountIdInResponseTakesPrecedenceOverEnvVariables()
+        public async Task AccountIdInResponseTakesPrecedenceOverEnvVariables()
         {
             var beforeAwsAccountId = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID);
             var beforeAwsAccessKeyId = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY);
@@ -411,9 +339,9 @@ namespace AWSSDK.UnitTests
                         }
                     };
 
-                    mockStsClient.Setup(x => x.AssumeRole(It.IsAny<AssumeRoleRequest>())).Returns(expectedResponse);
+                    mockStsClient.Setup(x => x.AssumeRoleAsync(It.IsAny<AssumeRoleRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
                     var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                    var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleAuthentication("anything", "anything", null);
+                    var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleAuthenticationAsync("anything", "anything", null);
                     Assert.AreEqual("123456789003", actualCreds.AccountId);
                     Assert.AreEqual("foo", actualCreds.AccessKey);
                     Assert.AreEqual("bar", actualCreds.SecretKey);
@@ -440,7 +368,7 @@ namespace AWSSDK.UnitTests
         /// When profile is configured with web identity, find account ID in response
         /// </summary>
         [TestMethod]
-        public void FindAccountIdInResponseWhenProfileIsConfiguredWithWebIdentity()
+        public async Task FindAccountIdInResponseWhenProfileIsConfiguredWithWebIdentity()
         {
             var beforeAwsAccountId = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCOUNT_ID);
             var beforeAwsAccessKeyId = Environment.GetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY);
@@ -474,9 +402,9 @@ namespace AWSSDK.UnitTests
                     };
 
                     var mockStsClient = new Mock<IAmazonSecurityTokenService>();
-                    mockStsClient.Setup(client => client.AssumeRoleWithWebIdentity(It.IsAny<AssumeRoleWithWebIdentityRequest>())).Returns(expectedResponse);
+                    mockStsClient.Setup(client => client.AssumeRoleWithWebIdentityAsync(It.IsAny<AssumeRoleWithWebIdentityRequest>(), It.IsAny<CancellationToken>())).ReturnsAsync(expectedResponse);
                     var testableAmazonStsClient = new TestableAmazonSTSClient(mockStsClient.Object);
-                    var actualCreds = testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthentication("any", "any", "any", null);
+                    var actualCreds = await testableAmazonStsClient.CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync("any", "any", "any", null);
                     Assert.AreEqual("123456789003", actualCreds.AccountId);
                 }
             }
@@ -759,7 +687,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("\"AccessKeyId\":\"foo\",")
             .AppendLine("\"SecretAccessKey\":\"bar\",")
             .AppendLine("\"SessionToken\":\"baz\",")
-            .AppendLine("\"AccountId\":\"123456789001\",")
+            .AppendLine("\"AccountId\":\"123456789001\"")
             .AppendLine("}")
             .ToString();
 
@@ -770,7 +698,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ProcessCredentialsProviderWithAccountIdWorks()
         {
-            ProcessCredentialVersion1 processCreds = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(process1, JsonSerializerContext.Default);
+            ProcessCredentialVersion1 processCreds = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(process1, ProcessCredentialVersion1JsonSerializerContexts.Default);
             ImmutableCredentials immutableCreds = new ImmutableCredentials(processCreds.AccessKeyId, processCreds.SecretAccessKey, processCreds.SessionToken, processCreds.AccountId);
             Assert.AreEqual("123456789001", immutableCreds.AccountId);
             Assert.AreEqual("foo", immutableCreds.AccessKey);
@@ -781,7 +709,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("{\"Version\": 1,")
             .AppendLine("\"AccessKeyId\":\"foo\",")
             .AppendLine("\"SecretAccessKey\":\"bar\",")
-            .AppendLine("\"SessionToken\":\"baz\",")
+            .AppendLine("\"SessionToken\":\"baz\"")
             .AppendLine("}")
             .ToString();
 
@@ -994,21 +922,29 @@ namespace AWSSDK.UnitTests
         private static void WriteLinuxProcessCredentialScript(ProcessScript processScript)
         {
             string expirationDate = DateTime.UtcNow.AddDays(5).ToString("yyyy-MM-ddTHH:mm:ssZ");
+            bool hasToken = !string.IsNullOrEmpty(processScript.Token);
+            bool hasAccountId = !string.IsNullOrEmpty(processScript.AccountId);
             using (var streamWriter = File.CreateText(Executable))
             {
                 streamWriter.WriteLine("#!/usr/bin/env bash");
                 streamWriter.WriteLine("echo \'{\';");
                 streamWriter.WriteLine("echo \'\"Version\":{0},\';", processScript.Version);
-                streamWriter.WriteLine("echo \'\"AccessKeyId\":\"{0}\"\',;", processScript.AccessKey);
-                streamWriter.WriteLine("echo \'\"SecretAccessKey\": \"{0}\"\',;", processScript.SecretKey);
-                if (!string.IsNullOrEmpty(processScript.Token))
+                streamWriter.WriteLine("echo \'\"AccessKeyId\":\"{0}\",\';", processScript.AccessKey);
+                if (!hasToken && !hasAccountId)
+                    streamWriter.WriteLine("echo \'\"SecretAccessKey\": \"{0}\"\';", processScript.SecretKey);
+                else
+                    streamWriter.WriteLine("echo \'\"SecretAccessKey\": \"{0}\",\';", processScript.SecretKey);
+                if (hasToken)
                 {
-                    streamWriter.WriteLine("echo \'\"SessionToken\": \"{0}\"\',;",processScript.Token);
-                    streamWriter.WriteLine("echo \'\"Expiration\": \"{0}\"\',;", expirationDate);
+                    streamWriter.WriteLine("echo \'\"SessionToken\": \"{0}\",\';", processScript.Token);
+                    if (!hasAccountId)
+                        streamWriter.WriteLine("echo \'\"Expiration\": \"{0}\"\';", expirationDate);
+                    else
+                        streamWriter.WriteLine("echo \'\"Expiration\": \"{0}\",\';", expirationDate);
                 }
-                if (!string.IsNullOrEmpty(processScript.AccountId))
+                if (hasAccountId)
                 {
-                    streamWriter.WriteLine("echo \'\"AccountId\": \"{0}\"\',;", processScript.AccountId);
+                    streamWriter.WriteLine("echo \'\"AccountId\": \"{0}\"\';", processScript.AccountId);
                 }
                 streamWriter.WriteLine("echo \'}\';");
             }
@@ -1017,19 +953,27 @@ namespace AWSSDK.UnitTests
         private static void WriteWindowsProcessCredentialScript(ProcessScript processScript)
         {
             string expirationDate = DateTime.UtcNow.AddDays(5).ToString("yyyy-MM-ddTHH:mm:ssZ");
+            bool hasToken = !string.IsNullOrEmpty(processScript.Token);
+            bool hasAccountId = !string.IsNullOrEmpty(processScript.AccountId);
             using (var streamWriter = File.CreateText(Executable))
             {
                 streamWriter.WriteLine("@echo off");
                 streamWriter.WriteLine("echo {");
                 streamWriter.WriteLine("echo \"Version\":{0},", processScript.Version);
                 streamWriter.WriteLine("echo \"AccessKeyId\":\"{0}\",", processScript.AccessKey);
-                streamWriter.WriteLine("echo \"SecretAccessKey\": \"{0}\",", processScript.SecretKey);
-                if (!string.IsNullOrEmpty(processScript.Token))
+                if (!hasToken && !hasAccountId)
+                    streamWriter.WriteLine("echo \"SecretAccessKey\": \"{0}\"", processScript.SecretKey);
+                else
+                    streamWriter.WriteLine("echo \"SecretAccessKey\": \"{0}\",", processScript.SecretKey);
+                if (hasToken)
                 {
                     streamWriter.WriteLine("echo \"SessionToken\": \"{0}\",", processScript.Token);
-                    streamWriter.WriteLine("echo \"Expiration\": \"{0}\",", expirationDate);
+                    if (!hasAccountId)
+                        streamWriter.WriteLine("echo \"Expiration\": \"{0}\"", expirationDate);
+                    else
+                        streamWriter.WriteLine("echo \"Expiration\": \"{0}\",", expirationDate);
                 }
-                if (!string.IsNullOrEmpty(processScript.AccountId))
+                if (hasAccountId)
                 {
                     streamWriter.WriteLine("echo \"AccountId\": \"{0}\"", processScript.AccountId);
                 }
@@ -1046,11 +990,6 @@ namespace AWSSDK.UnitTests
         }
     }
 
-    // It felt more correct to mock the API Call given the test case definitions, rather than mock these methods
-    // to return the correct immutable credentials so I went with this path
-    // instead of creating a testable credential inheriting from the base class. The test cases explicitly call out
-    // API call. It isn't an exact 1:1 mapping of the logic, but it does the important part of making the API call.
-    // A testable implementation of ICoreAmazonSTS which can accept an injected mocked client
     public class TestableAmazonSTSClient : ICoreAmazonSTS
     {
         private readonly IAmazonSecurityTokenService _stsClient;
@@ -1060,6 +999,7 @@ namespace AWSSDK.UnitTests
             _stsClient = stsClient;
         }
 
+#if NETFRAMEWORK
         public AssumeRoleImmutableCredentials CredentialsFromAssumeRoleAuthentication(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
         {
             try
@@ -1110,10 +1050,6 @@ namespace AWSSDK.UnitTests
                 throw exception;
             }
         }
-        public Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleAuthenticationAsync(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
-        {
-            throw new NotImplementedException();
-        }
 
         public AssumeRoleImmutableCredentials CredentialsFromAssumeRoleWithWebIdentityAuthentication(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
         {
@@ -1128,12 +1064,6 @@ namespace AWSSDK.UnitTests
                 response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault(), Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
         }
 
-        public Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
-        {
-            throw new NotImplementedException();
-        }
-
-        //What we really want to test is if the account id is properly populated after an AssumeRoleWithSAML call and not all the SAML assertion logic, so skip that.
         public SAMLImmutableCredentials CredentialsFromSAMLAuthentication(string endpoint, string authenticationType, string roleArn, TimeSpan credentialDuration, ICredentials userCredential)
         {
             var assumeSamlRequest = new AssumeRoleWithSAMLRequest
@@ -1151,19 +1081,104 @@ namespace AWSSDK.UnitTests
                                                 response.Subject,
                                                 Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
         }
+#else
+        public AssumeRoleImmutableCredentials CredentialsFromAssumeRoleAuthentication(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+            => throw new NotImplementedException();
 
-        public Task<SAMLImmutableCredentials> CredentialsFromSAMLAuthenticationAsync(string endpoint,
+        public AssumeRoleImmutableCredentials CredentialsFromAssumeRoleWithWebIdentityAuthentication(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
+            => throw new NotImplementedException();
+
+        public SAMLImmutableCredentials CredentialsFromSAMLAuthentication(string endpoint, string authenticationType, string roleArn, TimeSpan credentialDuration, ICredentials userCredential)
+            => throw new NotImplementedException();
+#endif
+
+        public async Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleAuthenticationAsync(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            try
+            {
+                var request = new AssumeRoleRequest
+                {
+                    RoleArn = roleArn,
+                    RoleSessionName = roleSessionName
+                };
+                if (options != null)
+                {
+                    request.ExternalId = options.ExternalId;
+                    request.SerialNumber = options.MfaSerialNumber;
+                    request.TokenCode = options.MfaTokenCode;
+                    request.Policy = options.Policy;
+                    request.SourceIdentity = options.SourceIdentity;
+
+                    if (options.DurationSeconds.HasValue)
+                    {
+                        request.DurationSeconds = options.DurationSeconds.Value;
+                    }
+
+                    if (options.Tags != null && options.Tags.Count > 0)
+                    {
+                        request.Tags = options.Tags.Select(kv => new Tag() { Key = kv.Key, Value = kv.Value }).ToList();
+                    }
+
+                    if (options.TransitiveTagKeys != null && options.TransitiveTagKeys.Count > 0)
+                    {
+                        request.TransitiveTagKeys = options.TransitiveTagKeys;
+                    }
+                }
+                var response = await _stsClient.AssumeRoleAsync(request, CancellationToken.None);
+
+                return new AssumeRoleImmutableCredentials(
+                    response.Credentials.AccessKeyId,
+                    response.Credentials.SecretAccessKey,
+                    response.Credentials.SessionToken,
+                    response.Credentials.Expiration.GetValueOrDefault(),
+                    Arn.Parse(response.AssumedRoleUser.Arn).AccountId
+                    );
+            }
+            catch (Exception e)
+            {
+                var msg = "Error calling AssumeRole for role " + roleArn;
+                var exception = new AmazonClientException(msg, e);
+                throw exception;
+            }
+        }
+
+        public async Task<AssumeRoleImmutableCredentials> CredentialsFromAssumeRoleWithWebIdentityAuthenticationAsync(string webIdentityToken, string roleArn, string roleSessionName, AssumeRoleWithWebIdentityCredentialsOptions options)
+        {
+            var request = new AssumeRoleWithWebIdentityRequest
+            {
+                WebIdentityToken = webIdentityToken,
+                RoleArn = roleArn,
+                RoleSessionName = roleSessionName
+            };
+            var response = await _stsClient.AssumeRoleWithWebIdentityAsync(request, CancellationToken.None);
+            return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
+                response.Credentials.SessionToken, response.Credentials.Expiration.GetValueOrDefault(), Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
+        }
+
+        public async Task<SAMLImmutableCredentials> CredentialsFromSAMLAuthenticationAsync(string endpoint,
                                                                    string authenticationType,
-                                                                   string roleARN,
+                                                                   string roleArn,
                                                                    TimeSpan credentialDuration,
                                                                    ICredentials userCredential)
         {
-            throw new NotImplementedException();
+            var assumeSamlRequest = new AssumeRoleWithSAMLRequest
+            {
+                SAMLAssertion = "AssertionDocument",
+                RoleArn = roleArn,
+                PrincipalArn = "prinicpalArn",
+                DurationSeconds = 0
+            };
+
+            var response = await _stsClient.AssumeRoleWithSAMLAsync(assumeSamlRequest, CancellationToken.None);
+
+            return new SAMLImmutableCredentials(response.Credentials.GetCredentials(),
+                                                response.Credentials.Expiration.GetValueOrDefault().ToUniversalTime(),
+                                                response.Subject,
+                                                Arn.Parse(response.AssumedRoleUser.Arn).AccountId);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
         }
     }
 }

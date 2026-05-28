@@ -62,6 +62,18 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentSpaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("codeReviewId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeReviewId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("codeReviewJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CodeReviewJobId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("confidence", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

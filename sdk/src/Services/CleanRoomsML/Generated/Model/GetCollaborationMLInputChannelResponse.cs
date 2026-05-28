@@ -43,6 +43,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _mlInputChannelArn;
         private string _name;
         private long? _numberOfRecords;
+        private PayerConfiguration _payerConfiguration;
         private PrivacyBudgets _privacyBudgets;
         private int? _retentionInDays;
         private MLInputChannelStatus _status;
@@ -225,6 +226,24 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetNumberOfRecords()
         {
             return this._numberOfRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerConfiguration. 
+        /// <para>
+        /// The payer configuration for the ML input channel.
+        /// </para>
+        /// </summary>
+        public PayerConfiguration PayerConfiguration
+        {
+            get { return this._payerConfiguration; }
+            set { this._payerConfiguration = value; }
+        }
+
+        // Check to see if PayerConfiguration property is set
+        internal bool IsSetPayerConfiguration()
+        {
+            return this._payerConfiguration != null;
         }
 
         /// <summary>

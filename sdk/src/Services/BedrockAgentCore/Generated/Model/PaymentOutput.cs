@@ -30,15 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Payment response payload union. We will support versioning by introducing other model
-    /// in this union
+    /// The payment output details, which vary by payment type.
     /// </summary>
     public partial class PaymentOutput
     {
         private CryptoX402PaymentOutput _cryptox402;
 
         /// <summary>
-        /// Gets and sets the property CryptoX402.
+        /// Gets and sets the property CryptoX402. 
+        /// <para>
+        /// Output from a crypto X402 payment.
+        /// </para>
         /// </summary>
         public CryptoX402PaymentOutput CryptoX402
         {

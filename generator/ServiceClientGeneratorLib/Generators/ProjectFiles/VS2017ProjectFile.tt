@@ -58,7 +58,9 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
 <#
-    if (this.Project.TargetFrameworks.Contains("netcoreapp3.1") && this.ServiceConfiguration.ServiceModel.Type == ServiceType.Cbor) 
+    if (this.Project.TargetFrameworks.Contains("netcoreapp3.1") &&
+        ((this.ServiceConfiguration != null && this.ServiceConfiguration.ServiceModel.Type == ServiceType.Cbor) ||
+         this.Project.AssemblyName.Contains("UnitTests")))
     {
 #>
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
@@ -89,7 +91,7 @@
 #>
   </PropertyGroup>
 <#
-    if (this.Project.TargetFrameworks.Contains("netstandard2.0"))
+    if (this.ServiceConfiguration != null && this.Project.TargetFrameworks.Contains("netstandard2.0"))
     {
 #>
   <!-- Async Enumerable Compatibility -->
@@ -99,7 +101,7 @@
 <#
     }
 
-    if (this.Project.TargetFrameworks.Contains("net8.0"))
+    if (this.ServiceConfiguration != null && this.Project.TargetFrameworks.Contains("net8.0"))
     {
 #>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
@@ -149,28 +151,17 @@
     <When Condition=" '$(AWSKeyFile)' == '' ">
       <PropertyGroup>
 <#
-    if (this.Project.AssemblyName == "AWSSDK.UnitTests.NetFramework")
+    if (!string.IsNullOrEmpty(this.Project.KeyFilePath))
     {
 #>
-        <AssemblyOriginatorKeyFile>../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
+        <AssemblyOriginatorKeyFile><#=this.Project.KeyFilePath#></AssemblyOriginatorKeyFile>
 <#
     }
-#>
-<#
     else
     {
-        if(this.Project.AssemblyName.StartsWith("AWSSDK.UnitTests."))
-        {
-        #>
-        <AssemblyOriginatorKeyFile>../../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
-<#
-}
-        else
-        {
 #>
         <AssemblyOriginatorKeyFile>../../../awssdk.dll.snk</AssemblyOriginatorKeyFile>
 <#
-        }
     }
 #>
       </PropertyGroup>
@@ -223,6 +214,13 @@
 <#
     continue;
         }
+        if (compileRemoveEntry.Contains("/"))
+        {
+#>
+    <Compile Remove="<#=compileRemoveEntry #>"/>
+<#
+    continue;
+        }
 #>
     <Compile Remove="**/<#=compileRemoveEntry #>/**"/>
 <#
@@ -232,51 +230,90 @@
 
 <#
     }
+    if (this.Project.ConditionalCompileRemoves != null)
+    {
+        foreach (var entry in this.Project.ConditionalCompileRemoves)
+        {
+#>
+  <ItemGroup Condition="<#=entry.Key#>">
+<#
+            foreach (var folder in entry.Value)
+            {
+#>
+    <Compile Remove="**/<#=folder#>/**"/>
+<#
+            }
+#>
+  </ItemGroup>
+<#
+        }
+    }
 #>
 <#
     if (this.Project.ProjectReferences != null)
     {
-#>
-  <ItemGroup>
-<#
-    foreach (var projectReference in this.Project.ProjectReferences)
-    {
-#>
-    <ProjectReference Include="<#=projectReference.IncludePath #>"/>
-<#
-    }
-#>
-  </ItemGroup>
+        var refsByCondition = this.Project.ProjectReferences
+            .GroupBy(r => r.Condition ?? string.Empty)
+            .OrderBy(g => g.Key);
 
-<#
-    }
-#>
-<#
-    if (this.Project.PackageReferences != null)
-    {
-#>
-  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
-<#
-        foreach(var package in this.Project.PackageReferences.Where(p => p.IsAnalyzer))
+        foreach (var group in refsByCondition)
         {
-            if(package.HasPrivateAssets)
+            if (string.IsNullOrEmpty(group.Key))
             {
 #>
-        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
-            <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
-        </PackageReference>
+  <ItemGroup>
 <#
             }
             else
             {
 #>
-        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+  <ItemGroup Condition="<#=group.Key#>">
 <#
             }
+            foreach (var projectReference in group)
+            {
+#>
+    <ProjectReference Include="<#=projectReference.IncludePath #>"/>
+<#
+            }
+#>
+  </ItemGroup>
+
+<#
         }
+    }
+#>
+<#
+    if (this.Project.PackageReferences != null)
+    {
+        var analyzerPackages = this.Project.PackageReferences.Where(p => p.IsAnalyzer).ToList();
+        if (analyzerPackages.Any())
+        {
+#>
+  <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
+<#
+            foreach(var package in analyzerPackages)
+            {
+                if(package.HasPrivateAssets)
+                {
+#>
+        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>">
+            <PrivateAssets><#=package.PrivateAssets#></PrivateAssets>
+        </PackageReference>
+<#
+                }
+                else
+                {
+#>
+        <PackageReference Include="<#=package.Include#>" Version="<#=package.Version#>"/>
+<#
+                }
+            }
 #>
   </ItemGroup>
 <#
+        }
+
         var nonAnalyzerPackages = this.Project.PackageReferences.Where(p => !p.IsAnalyzer);
         var nonAnalyzerPackagesConditionGroup = nonAnalyzerPackages.GroupBy(p => p.Condition);
 
@@ -320,32 +357,50 @@
 
 <#
     }
-    if (this.Project.ReferenceDependencies != null)
+    if (this.Project.ReferenceDependencies != null && this.Project.ReferenceDependencies.Any())
     {
-#>
-  <ItemGroup>
-<#
-        foreach (var reference in this.Project.ReferenceDependencies)
+        var refsByTarget = this.Project.ReferenceDependencies
+            .GroupBy(r => r.Targets != null && r.Targets.Any()
+                ? string.Join(";", r.Targets.Select(t => $"'$(TargetFramework)' == '{t}'"))
+                : string.Empty);
+
+        foreach (var group in refsByTarget)
         {
-            if (string.IsNullOrEmpty(reference.HintPath))
+            if (string.IsNullOrEmpty(group.Key))
             {
 #>
-    <Reference Include="<#=reference.Name #>"/>
+  <ItemGroup>
 <#
             }
             else
             {
+                var condition = group.Key.Contains(";") ? group.Key.Replace(";", " Or ") : group.Key;
+#>
+  <ItemGroup Condition="<#=condition#>">
+<#
+            }
+            foreach (var reference in group)
+            {
+                if (string.IsNullOrEmpty(reference.HintPath))
+                {
+#>
+    <Reference Include="<#=reference.Name #>"/>
+<#
+                }
+                else
+                {
 #>
     <Reference Include="<#=reference.Name #>">
         <HintPath><#=reference.HintPath #></HintPath>
     </Reference>
 <#
+                }
             }
-        }
 #>
   </ItemGroup>
 
 <#
+        }
     }
     if (this.Project.EmbeddedResources != null)
     {

@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ConnectUserArn. 
         /// <para>
-        /// Represents the Amazon Connect ARN of the user.
+        /// Represents the Connect Customer ARN of the user.
         /// </para>
         /// </summary>
         public string ConnectUserArn

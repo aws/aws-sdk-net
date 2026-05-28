@@ -57,6 +57,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetExcludedColumns())
+            {
+                context.Writer.WritePropertyName("ExcludedColumns");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectExcludedColumnsKvp in requestObject.ExcludedColumns)
+                {
+                    context.Writer.WritePropertyName(requestObjectExcludedColumnsKvp.Key);
+                    var requestObjectExcludedColumnsValue = requestObjectExcludedColumnsKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var requestObjectExcludedColumnsValueListValue in requestObjectExcludedColumnsValue)
+                    {
+                            context.Writer.WriteStringValue(requestObjectExcludedColumnsValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetIncludedColumns())
             {
                 context.Writer.WritePropertyName("IncludedColumns");

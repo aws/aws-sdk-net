@@ -28,6 +28,16 @@ namespace Amazon.Bedrock.Model
     {
 
         /// <summary>
+        /// Paginator for ListAdvancedPromptOptimizationJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAdvancedPromptOptimizationJobsPaginator ListAdvancedPromptOptimizationJobs(ListAdvancedPromptOptimizationJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListAutomatedReasoningPolicies operation
         ///</summary>
         [AWSPaginator(

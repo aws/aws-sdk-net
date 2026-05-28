@@ -647,6 +647,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType VERTICA = new ConnectionType("VERTICA");
         /// <summary>
+        /// Constant VPC for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VPC = new ConnectionType("VPC");
+        /// <summary>
         /// Constant WORKFLOWS_MWAA for ConnectionType
         /// </summary>
         public static readonly ConnectionType WORKFLOWS_MWAA = new ConnectionType("WORKFLOWS_MWAA");
@@ -1724,6 +1728,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EnvironmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileFormat.
+    /// </summary>
+    public class FileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPYNB for FileFormat
+        /// </summary>
+        public static readonly FileFormat IPYNB = new FileFormat("IPYNB");
+        /// <summary>
+        /// Constant PDF for FileFormat
+        /// </summary>
+        public static readonly FileFormat PDF = new FileFormat("PDF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileFormat FindValue(string value)
+        {
+            return FindValue<FileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileFormat(string value)
         {
             return FindValue(value);
         }
@@ -3195,6 +3249,60 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type NotebookExportStatus.
+    /// </summary>
+    public class NotebookExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for NotebookExportStatus
+        /// </summary>
+        public static readonly NotebookExportStatus FAILED = new NotebookExportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for NotebookExportStatus
+        /// </summary>
+        public static readonly NotebookExportStatus IN_PROGRESS = new NotebookExportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for NotebookExportStatus
+        /// </summary>
+        public static readonly NotebookExportStatus SUCCEEDED = new NotebookExportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookExportStatus FindValue(string value)
+        {
+            return FindValue<NotebookExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotebookRunStatus.
     /// </summary>
     public class NotebookRunStatus : ConstantClass
@@ -3258,6 +3366,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotebookRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotebookStatus.
+    /// </summary>
+    public class NotebookStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for NotebookStatus
+        /// </summary>
+        public static readonly NotebookStatus ACTIVE = new NotebookStatus("ACTIVE");
+        /// <summary>
+        /// Constant ARCHIVED for NotebookStatus
+        /// </summary>
+        public static readonly NotebookStatus ARCHIVED = new NotebookStatus("ARCHIVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotebookStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotebookStatus FindValue(string value)
+        {
+            return FindValue<NotebookStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotebookStatus(string value)
         {
             return FindValue(value);
         }

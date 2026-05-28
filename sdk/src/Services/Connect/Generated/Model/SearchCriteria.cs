@@ -157,7 +157,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactAnalysis. 
         /// <para>
-        /// Search criteria based on analysis outputs from Amazon Connect Contact Lens.
+        /// Search criteria based on analysis outputs from Connect Customer Contact Lens.
         /// </para>
         /// </summary>
         public ContactAnalysis ContactAnalysis
@@ -275,13 +275,13 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The search criteria based on user-defined contact attributes that have been configured
         /// for contact search. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/search-custom-attributes.html">Search
-        /// by custom contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// by custom contact attributes</a> in the <i>Connect Customer Administrator Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
         /// To use <c>SearchableContactAttributes</c> in a search request, the <c>GetContactAttributes</c>
         /// action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
-        /// defined by Amazon Connect.
+        /// defined by Connect Customer.
         /// </para>
         ///  </important>
         /// </summary>

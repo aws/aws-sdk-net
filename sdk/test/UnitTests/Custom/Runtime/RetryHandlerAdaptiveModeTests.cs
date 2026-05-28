@@ -39,14 +39,11 @@ namespace AWSSDK.UnitTests
 
                 var retryPolicy = new MockAdaptiveRetryPolicy(config);
                 Handler = new RetryHandler(retryPolicy);
-                if (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
+                while (RuntimePipeline.Handlers.Find(h => h is RetryHandler) != null)
                 {
-                    RuntimePipeline.ReplaceHandler<RetryHandler>(Handler);
+                    RuntimePipeline.RemoveHandler<RetryHandler>();
                 }
-                else
-                {
-                    RuntimePipeline.AddHandler(Handler);
-                }
+                RuntimePipeline.AddHandler(Handler);
 
                 var executionContext = CreateTestContext(null, null, config);
 

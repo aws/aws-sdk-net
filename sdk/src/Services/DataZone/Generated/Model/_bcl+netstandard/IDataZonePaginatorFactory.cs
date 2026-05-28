@@ -248,6 +248,16 @@ namespace Amazon.DataZone.Model
         IListNotebookRunsPaginator ListNotebookRuns(ListNotebookRunsRequest request);
 
         /// <summary>
+        /// Paginator for ListNotebooks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListNotebooksPaginator ListNotebooks(ListNotebooksRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifications operation
         ///</summary>
         [AWSPaginator(

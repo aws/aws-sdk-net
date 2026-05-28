@@ -462,6 +462,7 @@ namespace ServiceClientGenerator
             public string IncludePath { get; set; }
             public string ProjectGuid { get; set; }
             public string Name { get; set; }
+            public string Condition { get; set; }
 
             int IComparable<ProjectReference>.CompareTo(ProjectReference that)
             {

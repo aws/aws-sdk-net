@@ -31,23 +31,23 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInstance operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
+    /// This API is in preview release for Connect Customer and is subject to change.
     /// 
     ///  
     /// <para>
-    /// Initiates an Amazon Connect instance with all the supported channels enabled. It does
-    /// not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or Amazon
-    /// Kinesis. It also does not allow for any configurations on features, such as Contact
-    /// Lens for Amazon Connect. 
+    /// Initiates an Connect Customer instance with all the supported channels enabled. It
+    /// does not attach any storage, such as Amazon Simple Storage Service (Amazon S3) or
+    /// Amazon Kinesis. It also does not allow for any configurations on features, such as
+    /// Contact Lens for Connect Customer. 
     /// </para>
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-instances.html">Create
-    /// an Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// an Connect Customer instance</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// Amazon Connect enforces a limit on the total number of instances that you can create
+    /// Connect Customer enforces a limit on the total number of instances that you can create
     /// or delete in 30 days. If you exceed this limit, you will get an error message indicating
     /// there has been an excessive number of attempts at creating or deleting instances.
     /// You must wait 30 days before you can restart creating and deleting instances in your
@@ -105,7 +105,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IdentityManagementType. 
         /// <para>
-        /// The type of identity management for your Amazon Connect users.
+        /// The type of identity management for your Connect Customer users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

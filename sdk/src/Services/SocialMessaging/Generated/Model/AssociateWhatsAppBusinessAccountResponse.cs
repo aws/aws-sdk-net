@@ -34,8 +34,29 @@ namespace Amazon.SocialMessaging.Model
     /// </summary>
     public partial class AssociateWhatsAppBusinessAccountResponse : AmazonWebServiceResponse
     {
+        private string _linkedWhatsAppBusinessAccountId;
         private WhatsAppSignupCallbackResult _signupCallbackResult;
         private int? _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property LinkedWhatsAppBusinessAccountId. 
+        /// <para>
+        /// The ID of the WhatsApp Business Account that was linked to your Amazon Web Services
+        /// account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=115)]
+        public string LinkedWhatsAppBusinessAccountId
+        {
+            get { return this._linkedWhatsAppBusinessAccountId; }
+            set { this._linkedWhatsAppBusinessAccountId = value; }
+        }
+
+        // Check to see if LinkedWhatsAppBusinessAccountId property is set
+        internal bool IsSetLinkedWhatsAppBusinessAccountId()
+        {
+            return this._linkedWhatsAppBusinessAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SignupCallbackResult. 

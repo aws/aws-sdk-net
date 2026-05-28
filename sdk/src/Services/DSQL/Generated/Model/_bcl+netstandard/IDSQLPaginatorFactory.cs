@@ -36,5 +36,15 @@ namespace Amazon.DSQL.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListClustersPaginator ListClusters(ListClustersRequest request);
+
+        /// <summary>
+        /// Paginator for ListStreams operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListStreamsPaginator ListStreams(ListStreamsRequest request);
     }
 }

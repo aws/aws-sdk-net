@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using Amazon.Runtime.EventStreams;
@@ -11,9 +12,9 @@ using Amazon.Runtime.EventStreams.Internal;
 using Amazon.S3.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Ploeh.AutoFixture;
-using Ploeh.AutoFixture.AutoMoq;
-using Ploeh.AutoFixture.Kernel;
+using AutoFixture;
+using AutoFixture.AutoMoq;
+using AutoFixture.Kernel;
 using UnknownEventStreamEvent = Amazon.S3.Model.UnknownEventStreamEvent;
 
 namespace AWSSDK.UnitTests
@@ -75,18 +76,15 @@ namespace AWSSDK.UnitTests
 
 
         [TestMethod]
-        [ExpectedException(typeof(S3EventStreamException))]
         public void TestEnumerationException()
         {
             CommonStreamMockSetup(1);
-
             _eventStreamDecoderMock.Setup(esd => esd.ProcessData(It.IsAny<byte[]>(), It.IsAny<int>(), It.IsAny<int>()))
                 .Throws(new Exception("What?"));
-
-            foreach (var ev in _sut)
+            Assert.ThrowsExactly<S3EventStreamException>(() =>
             {
-                //Exception!
-            }
+                foreach (var ev in _sut) { }
+            });
         }
 
         #endregion
@@ -342,37 +340,33 @@ namespace AWSSDK.UnitTests
         #region Edge Cases
 
         [TestMethod]
-        [ExpectedException(typeof(XmlException))]
         public void StatsInvalidXml()
         {
             var notXml = _fixture.Create<string>();
             var statsMessage = CreateEventStreamMessage(EventType.Stats, notXml);
-            new StatsEvent(statsMessage);
+            Assert.ThrowsExactly<XmlException>(() => new StatsEvent(statsMessage));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
         public void StatsNull()
         {
             var statsMessage = CreateEventStreamMessage(EventType.Stats);
-            new StatsEvent(statsMessage);
+            Assert.ThrowsExactly<NullReferenceException>(() => new StatsEvent(statsMessage));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(XmlException))]
         public void ProgressInvalidXml()
         {
             var notXml = _fixture.Create<string>();
             var progressMessage = CreateEventStreamMessage(EventType.Progress, notXml);
-            new ProgressEvent(progressMessage);
+            Assert.ThrowsExactly<XmlException>(() => new ProgressEvent(progressMessage));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
         public void ProgressNull()
         {
             var progressMessage = CreateEventStreamMessage(EventType.Progress);
-            new ProgressEvent(progressMessage);
+            Assert.ThrowsExactly<NullReferenceException>(() => new ProgressEvent(progressMessage));
         }
 
         [TestMethod]
@@ -388,31 +382,31 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void AlreadyProcessingThroughEventsExceptionThrown()
         {
+            _streamMock
+                .Setup(st => st.ReadAsync(It.IsAny<byte[]>(), It.IsAny<int>(), It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .Returns(new TaskCompletionSource<int>().Task);
             _sut.StartProcessing();
-            foreach (var ev in _sut)
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
             {
-                // Exception
-            }
+                foreach (var ev in _sut) { }
+            });
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void AlreadyProcessingThroughEnumerationExceptionThrown()
         {
             CommonStreamMockSetup(1);
-
             var endEvent = CreateEventStreamMessageEvent(EventType.End);
-
             CommonDecoderMockSetup(endEvent);
-
-            foreach (var ev in _sut)
+            Assert.ThrowsExactly<InvalidOperationException>(() =>
             {
-                _sut.StartProcessing();
-                // Exception
-            }
+                foreach (var ev in _sut)
+                {
+                    _sut.StartProcessing();
+                }
+            });
         }
 
         [TestMethod]

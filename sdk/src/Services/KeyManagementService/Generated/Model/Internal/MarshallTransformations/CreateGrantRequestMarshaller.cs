@@ -98,6 +98,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.GranteePrincipal);
             }
 
+            if(publicRequest.IsSetGranteeServicePrincipal())
+            {
+                context.Writer.WritePropertyName("GranteeServicePrincipal");
+                context.Writer.WriteStringValue(publicRequest.GranteeServicePrincipal);
+            }
+
             if(publicRequest.IsSetGrantTokens())
             {
                 context.Writer.WritePropertyName("GrantTokens");
@@ -136,6 +142,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RetiringPrincipal");
                 context.Writer.WriteStringValue(publicRequest.RetiringPrincipal);
+            }
+
+            if(publicRequest.IsSetRetiringServicePrincipal())
+            {
+                context.Writer.WritePropertyName("RetiringServicePrincipal");
+                context.Writer.WriteStringValue(publicRequest.RetiringServicePrincipal);
             }
 
             writer.WriteEndObject();

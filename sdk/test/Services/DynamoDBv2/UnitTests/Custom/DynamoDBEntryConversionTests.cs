@@ -24,7 +24,7 @@ namespace AWSSDK_DotNet.UnitTests
             AssertAllConvertersAreRegistered(DynamoDBEntryConversion.V2, "ConverterV2");
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V1PrimitiveData))]
         public void V1_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
@@ -40,7 +40,25 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
+        [DynamicData(nameof(DynamoDBEntryConversions))]
+        public void ConvertToEntry_ByteArray(ConversionSchema schema)
+        {
+            var conversion = ResolveConversion(schema);
+            var actualPrimitive = conversion.ConvertToEntry(typeof(byte[]), ByteArray);
+            Assert.AreEqual(new Primitive(ByteArray), actualPrimitive);
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(DynamoDBEntryConversions))]
+        public void ConvertFromEntry_ByteArray(ConversionSchema schema)
+        {
+            var conversion = ResolveConversion(schema);
+            var actualValue = conversion.ConvertFromEntry(typeof(byte[]), new Primitive(ByteArray));
+            CollectionAssert.AreEqual(ByteArray, (byte[])actualValue);
+        }
+
+        [TestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertToEntry_Primitives(object value, DynamoDBEntry expectedPrimitive)
         {
@@ -48,7 +66,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedPrimitive, actualPrimitive);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(V2PrimitiveData))]
         public void V2_ConvertFromEntry_Primitives(object expectedValue, DynamoDBEntry primitive)
         {
@@ -56,47 +74,52 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedValue, actualValue);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertToEntry_MemoryStream(DynamoDBEntryConversion conversion)
+        public void ConvertToEntry_MemoryStream(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var memoryStream = new MemoryStream(ByteArray);
             var entry = conversion.ConvertToEntry(memoryStream);
             Assert.AreEqual(new Primitive(ByteArray), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_MemoryStream(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_MemoryStream(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var entry = new Primitive(ByteArray);
             var memoryStream = conversion.ConvertFromEntry<MemoryStream>(entry);
             CollectionAssert.AreEqual(ByteArray, memoryStream.ToArray());
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertToEntry_DateTime(DynamoDBEntryConversion conversion)
+        public void ConvertToEntry_DateTime(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dateTime = new DateTime(2024, 07, 03, 01, 31, 47, DateTimeKind.Utc);
             var entry = conversion.ConvertToEntry(dateTime);
             Assert.AreEqual(new Primitive("2024-07-03T01:31:47.000Z", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_DateTime(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_DateTime(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var entry = new Primitive("2024-07-03T01:31:47.000Z", false);
             var actualDateTime = conversion.ConvertFromEntry<DateTime>(entry);
             var expectedDateTime = new DateTime(2024, 07, 03, 01, 31, 47, DateTimeKind.Utc);
             Assert.AreEqual(expectedDateTime, actualDateTime);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertToEntry_Dictionary(DynamoDBEntryConversion conversion)
+        public void ConvertToEntry_Dictionary(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dictionary = new Dictionary<string, object>
             {
                 ["key1"] = "str",
@@ -121,10 +144,11 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(expectedDocument, document);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_DynamoDbList_ToArray(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_DynamoDbList_ToArray(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dynamoDbList = new DynamoDBList(new DynamoDBEntry[]
             {
                 new Primitive("A"), new Primitive("B"), new Primitive("C")
@@ -133,10 +157,11 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_DynamoDbList_ToList(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_DynamoDbList_ToList(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dynamoDbList = new DynamoDBList(new DynamoDBEntry[]
             {
                 new Primitive("1", true), new Primitive("2", true), new Primitive("3", true)
@@ -145,10 +170,11 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_PrimitiveList_ToArray(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_PrimitiveList_ToArray(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var primitiveList = new PrimitiveList(DynamoDBEntryType.String)
             {
                 Entries = { "A", "B", "C" }
@@ -157,10 +183,11 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { "A", "B", "C" }, convertedArray);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_PrimitiveList_ToList(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_PrimitiveList_ToList(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric)
             {
                 Entries = { 1, 2, 3 }
@@ -169,10 +196,11 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.AreEqual(new[] { 1, 2, 3 }, convertedList);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_PrimitiveList_ToHashSet(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_PrimitiveList_ToHashSet(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var primitiveList = new PrimitiveList(DynamoDBEntryType.Numeric)
             {
                 Entries = { 0, 1, 2 }
@@ -245,48 +273,53 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
 #if NET8_0_OR_GREATER
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertToEntry_DateOnly(DynamoDBEntryConversion conversion)
+        public void ConvertToEntry_DateOnly(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dateOnly = new DateOnly(2024, 07, 03);
             var entry = conversion.ConvertToEntry(dateOnly);
             Assert.AreEqual(new Primitive("2024-07-03", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_DateOnly(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_DateOnly(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var entry = new Primitive("2024-07-03", false);
             var actualDateOnly = conversion.ConvertFromEntry<DateOnly>(entry);
             var expectedDateOnly = new DateOnly(2024, 07, 03);
             Assert.AreEqual(expectedDateOnly, actualDateOnly);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertToEntry_TimeOnly(DynamoDBEntryConversion conversion)
+        public void ConvertToEntry_TimeOnly(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var timeOnly = new TimeOnly(18, 31, 56, 123);
             var entry = conversion.ConvertToEntry(timeOnly);
             Assert.AreEqual(new Primitive("18:31:56.123", false), entry);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_TimeOnly(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_TimeOnly(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var entry = new Primitive("18:31:56.123", false);
             var actualTimeOnly = conversion.ConvertFromEntry<TimeOnly>(entry);
             var expectedTimeOnly = new TimeOnly(18, 31, 56, 123);
             Assert.AreEqual(expectedTimeOnly, actualTimeOnly);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData((nameof(DynamoDBEntryConversions)))]
-        public void ConvertFromEntry_ShouldBeAbleToReadDateOnlyAsDateTime(DynamoDBEntryConversion conversion)
+        public void ConvertFromEntry_ShouldBeAbleToReadDateOnlyAsDateTime(ConversionSchema schema)
         {
+            var conversion = ResolveConversion(schema);
             var dateOnly = new DateOnly(2024, 07, 03);
             var entry = conversion.ConvertToEntry(dateOnly);
 
@@ -347,9 +380,12 @@ namespace AWSSDK_DotNet.UnitTests
 
         private static IEnumerable<object[]> DynamoDBEntryConversions { get; } = new object[][]
         {
-            new object[] { DynamoDBEntryConversion.V1 },
-            new object[] { DynamoDBEntryConversion.V2 },
+            new object[] { ConversionSchema.V1 },
+            new object[] { ConversionSchema.V2 },
         };
+
+        private static DynamoDBEntryConversion ResolveConversion(ConversionSchema schema) =>
+            schema == ConversionSchema.V1 ? DynamoDBEntryConversion.V1 : DynamoDBEntryConversion.V2;
 
         private static IEnumerable<object[]> CommonPrimitiveData { get; } = new object[][]
         {
@@ -368,8 +404,7 @@ namespace AWSSDK_DotNet.UnitTests
             new object[] { "stringValue", new Primitive("stringValue", false) },
             new object[] { new Guid("6a34ff83-9d2b-4893-950f-1da35414f9b0"), new Primitive("6a34ff83-9d2b-4893-950f-1da35414f9b0", false) },
             new object[] { TestEnum.A, new Primitive("0", true) },
-            new object[] { TestEnum.B, new Primitive("1", true) },
-            new object[] { ByteArray, new Primitive(ByteArray) }
+            new object[] { TestEnum.B, new Primitive("1", true) }
         };
 
         public static IEnumerable<object[]> V1PrimitiveData { get; } = CommonPrimitiveData.Concat(new object[][]

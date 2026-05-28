@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Available session limits. Currently only budget is supported.
+    /// The available spending limits for a payment session.
     /// </summary>
     public partial class AvailableLimits
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property AvailableSpendAmount. 
         /// <para>
-        /// The available spend amount for this session.
+        /// The remaining available amount that can be spent.
         /// </para>
         /// </summary>
         public Amount AvailableSpendAmount

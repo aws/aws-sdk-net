@@ -89,7 +89,7 @@ namespace AWSSDK.UnitTests
         }
 
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
         [DataRow("arn", "ARN is in incorrect format. ARN format is: arn:<partition>:<service>:<region>:<account-id>:<resource>")]
@@ -116,7 +116,7 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(message, caught.Message);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
         [DataRow("arn:partition:service:region:account?-id:resource", "AccountId is invalid. The AccountId should be '*' or must only contain alphanumeric characters and dashes.")]
@@ -140,19 +140,17 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
-        [ExpectedException(typeof(ArgumentException))]
         public void IncorrectArnPrefix()
         {
-            Arn.Parse("foo:aws:s3:::mybucket");
+            Assert.ThrowsExactly<ArgumentException>(() => Arn.Parse("foo:aws:s3:::mybucket"));
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Util")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void NullArn()
         {
-            Arn.Parse(null);
+            Assert.ThrowsExactly<ArgumentNullException>(() => Arn.Parse(null));
         }
     }
 }

@@ -30,12 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for deleting a payment session
-    /// 
-    ///  
-    /// <para>
-    /// Returns the deletion status with HTTP 200 status code on successful deletion.
-    /// </para>
+    /// Response structure for deleting a payment session.
     /// </summary>
     public partial class DeletePaymentSessionResponse : AmazonWebServiceResponse
     {

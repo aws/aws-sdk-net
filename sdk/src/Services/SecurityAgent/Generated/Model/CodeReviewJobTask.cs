@@ -1,0 +1,274 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityagent-2025-09-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityAgent.Model
+{
+    /// <summary>
+    /// Represents an individual security test task within a code review job. Each task targets
+    /// a specific risk type and executes independently.
+    /// </summary>
+    public partial class CodeReviewJobTask
+    {
+        private string _agentSpaceId;
+        private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
+        private string _codeReviewId;
+        private string _codeReviewJobId;
+        private DateTime? _createdAt;
+        private string _description;
+        private TaskExecutionStatus _executionStatus;
+        private LogLocation _logsLocation;
+        private RiskType _riskType;
+        private string _taskId;
+        private string _title;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier of the agent space.
+        /// </para>
+        /// </summary>
+        public string AgentSpaceId
+        {
+            get { return this._agentSpaceId; }
+            set { this._agentSpaceId = value; }
+        }
+
+        // Check to see if AgentSpaceId property is set
+        internal bool IsSetAgentSpaceId()
+        {
+            return this._agentSpaceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Categories. 
+        /// <para>
+        /// The list of categories assigned to the task.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Category> Categories
+        {
+            get { return this._categories; }
+            set { this._categories = value; }
+        }
+
+        // Check to see if Categories property is set
+        internal bool IsSetCategories()
+        {
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewId. 
+        /// <para>
+        /// The unique identifier of the code review associated with the task.
+        /// </para>
+        /// </summary>
+        public string CodeReviewId
+        {
+            get { return this._codeReviewId; }
+            set { this._codeReviewId = value; }
+        }
+
+        // Check to see if CodeReviewId property is set
+        internal bool IsSetCodeReviewId()
+        {
+            return this._codeReviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job that contains the task.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time the task was created, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the task.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionStatus. 
+        /// <para>
+        /// The current execution status of the task.
+        /// </para>
+        /// </summary>
+        public TaskExecutionStatus ExecutionStatus
+        {
+            get { return this._executionStatus; }
+            set { this._executionStatus = value; }
+        }
+
+        // Check to see if ExecutionStatus property is set
+        internal bool IsSetExecutionStatus()
+        {
+            return this._executionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogsLocation. 
+        /// <para>
+        /// The location of the task execution logs.
+        /// </para>
+        /// </summary>
+        public LogLocation LogsLocation
+        {
+            get { return this._logsLocation; }
+            set { this._logsLocation = value; }
+        }
+
+        // Check to see if LogsLocation property is set
+        internal bool IsSetLogsLocation()
+        {
+            return this._logsLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RiskType. 
+        /// <para>
+        /// The type of security risk the task is testing for.
+        /// </para>
+        /// </summary>
+        public RiskType RiskType
+        {
+            get { return this._riskType; }
+            set { this._riskType = value; }
+        }
+
+        // Check to see if RiskType property is set
+        internal bool IsSetRiskType()
+        {
+            return this._riskType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskId. 
+        /// <para>
+        /// The unique identifier of the task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string TaskId
+        {
+            get { return this._taskId; }
+            set { this._taskId = value; }
+        }
+
+        // Check to see if TaskId property is set
+        internal bool IsSetTaskId()
+        {
+            return this._taskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        /// The title of the task.
+        /// </para>
+        /// </summary>
+        public string Title
+        {
+            get { return this._title; }
+            set { this._title = value; }
+        }
+
+        // Check to see if Title property is set
+        internal bool IsSetTitle()
+        {
+            return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time the task was last updated, in UTC format.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+    }
+}

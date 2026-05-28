@@ -54,23 +54,23 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void Execute_MultiTableBatch_MapsRetrievedItemsToDocuments()
+        public async Task Execute_MultiTableBatch_MapsRetrievedItemsToDocuments()
         {
             ddbClientMock
-                .Setup(c => c.BatchGetItem(It.IsAny<BatchGetItemRequest>()))
-                .Returns(CreateBatchGetItemResponse());
+                .Setup(c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(CreateBatchGetItemResponse());
 
             var (addressBatch, personBatch) = CreateBatches(addressTable, personTable);
 
             var multiBatch = new MultiTableDocumentBatchGet(addressBatch, personBatch);
 
-            multiBatch.Execute();
+            await multiBatch.ExecuteAsync();
 
             AssertBatchResults(addressBatch, "A1", "A2");
             AssertBatchResults(personBatch, "P1", "P2");
 
             ddbClientMock.Verify(
-                c => c.BatchGetItem(It.IsAny<BatchGetItemRequest>()),
+                c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()),
                 Times.Once);
         }
 
@@ -102,7 +102,7 @@ namespace AWSSDK_DotNet.UnitTests
                 Batches = new List<DocumentBatchGet> { firstBatch, secondBatch }
             };
 
-            await Assert.ThrowsExceptionAsync<AmazonDynamoDBException>(() => multiBatchGet.GetItemsAsync());
+            await Assert.ThrowsExactlyAsync<AmazonDynamoDBException>(() => multiBatchGet.GetItemsAsync());
         }
 
         [TestMethod]

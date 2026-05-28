@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Response structure for getting payment instrument balance
+    /// Response structure for getting payment instrument balance.
     /// </summary>
     public partial class GetPaymentInstrumentBalanceResponse : AmazonWebServiceResponse
     {

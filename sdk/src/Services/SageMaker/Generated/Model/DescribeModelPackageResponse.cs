@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private InferenceSpecification _inferenceSpecification;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private ManagedStorageType _managedStorageType;
         private MetadataProperties _metadataProperties;
         private ModelApprovalStatus _modelApprovalStatus;
         private ModelPackageModelCard _modelCard;
@@ -276,6 +277,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedStorageType. 
+        /// <para>
+        /// The storage type of the model package.
+        /// </para>
+        /// </summary>
+        public ManagedStorageType ManagedStorageType
+        {
+            get { return this._managedStorageType; }
+            set { this._managedStorageType = value; }
+        }
+
+        // Check to see if ManagedStorageType property is set
+        internal bool IsSetManagedStorageType()
+        {
+            return this._managedStorageType != null;
         }
 
         /// <summary>

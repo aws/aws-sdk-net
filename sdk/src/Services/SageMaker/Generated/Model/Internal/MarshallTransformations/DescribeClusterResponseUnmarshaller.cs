@@ -124,6 +124,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.RestrictedInstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RestrictedInstanceGroupsConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterRestrictedInstanceGroupsConfigOutputUnmarshaller.Instance;
+                    response.RestrictedInstanceGroupsConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TieredStorageConfig", targetDepth))
                 {
                     var unmarshaller = ClusterTieredStorageConfigUnmarshaller.Instance;

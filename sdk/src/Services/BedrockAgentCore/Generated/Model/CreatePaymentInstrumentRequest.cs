@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePaymentInstrument operation.
-    /// Create a new payment instrument for a connector
+    /// Create a new payment instrument for a connector.
     /// </summary>
     public partial class CreatePaymentInstrumentRequest : AmazonBedrockAgentCoreRequest
     {
@@ -65,7 +65,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Idempotency token to ensure request uniqueness.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]

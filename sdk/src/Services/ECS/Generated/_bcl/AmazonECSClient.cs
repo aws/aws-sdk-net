@@ -288,6 +288,129 @@ namespace Amazon.ECS
         #endregion
 
 
+        #region  ContinueServiceDeployment
+
+
+        /// <summary>
+        /// Continues or rolls back an Amazon ECS service deployment that is paused at a lifecycle
+        /// hook.
+        /// 
+        ///  
+        /// <para>
+        /// When a service deployment reaches a lifecycle stage that has a <c>PAUSE</c> hook configured,
+        /// the deployment pauses and waits for an explicit action. Use this API to either continue
+        /// the deployment to the next stage or roll back to the previous service revision.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>hookId</c> of the paused hook, call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
+        /// and inspect the <c>lifecycleHookDetails</c> field.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContinueServiceDeployment service method.</param>
+        /// 
+        /// <returns>The response from the ContinueServiceDeployment service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
+        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
+        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// ARNs.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContinueServiceDeployment">REST API Reference for ContinueServiceDeployment Operation</seealso>
+        public virtual ContinueServiceDeploymentResponse ContinueServiceDeployment(ContinueServiceDeploymentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ContinueServiceDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContinueServiceDeploymentResponseUnmarshaller.Instance;
+
+            return Invoke<ContinueServiceDeploymentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Continues or rolls back an Amazon ECS service deployment that is paused at a lifecycle
+        /// hook.
+        /// 
+        ///  
+        /// <para>
+        /// When a service deployment reaches a lifecycle stage that has a <c>PAUSE</c> hook configured,
+        /// the deployment pauses and waits for an explicit action. Use this API to either continue
+        /// the deployment to the next stage or roll back to the previous service revision.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>hookId</c> of the paused hook, call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
+        /// and inspect the <c>lifecycleHookDetails</c> field.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ContinueServiceDeployment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ContinueServiceDeployment service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
+        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
+        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// ARNs.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContinueServiceDeployment">REST API Reference for ContinueServiceDeployment Operation</seealso>
+        public virtual Task<ContinueServiceDeploymentResponse> ContinueServiceDeploymentAsync(ContinueServiceDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ContinueServiceDeploymentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ContinueServiceDeploymentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ContinueServiceDeploymentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCapacityProvider
 
 

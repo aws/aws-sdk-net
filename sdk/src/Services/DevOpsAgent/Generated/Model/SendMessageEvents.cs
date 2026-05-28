@@ -37,13 +37,9 @@ namespace Amazon.DevOpsAgent.Model
     /// <summary>
     /// Event stream for chat message responses using the content block model. Events follow
     /// a lifecycle: responseCreated -&gt; responseInProgress -&gt; (contentBlockStart/contentBlockDelta/contentBlockStop
-    /// events) -&gt; responseCompleted|responseFailed
-    /// 
-    ///  
-    /// <para>
-    /// SendMessage always uses content block mode — legacy per-field events (outputTextDelta,
-    /// functionCallArgumentsDelta, etc.) are not emitted.
-    /// </para>
+    /// events) -&gt; responseCompleted|responseFailed SendMessage always uses content block
+    /// mode — legacy per-field events (outputTextDelta, functionCallArgumentsDelta, etc.)
+    /// are not emitted.
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "SendMessageEventsCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]

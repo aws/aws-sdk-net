@@ -81,10 +81,9 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// A typed property for an output in a feed. It is used in the CreateFeed and AssociateFeed
-        /// actions. It identifies the action for Elemental Inference to perform. It also provides
-        /// a repository for the results of that action. For example, CroppingConfig output will
-        /// contain the metadata for the crop feature. 
+        /// A typed property for an output in a feed. It identifies the action for Elemental Inference
+        /// to perform. It also provides a repository for the results of that action. For example,
+        /// CroppingConfig output will contain the metadata for the crop feature. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -104,6 +104,17 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAutomatedSnapshotPauseOptions())
+            {
+                context.Writer.WritePropertyName("AutomatedSnapshotPauseOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomatedSnapshotPauseRequestOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutomatedSnapshotPauseOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAutoTuneOptions())
             {
                 context.Writer.WritePropertyName("AutoTuneOptions");

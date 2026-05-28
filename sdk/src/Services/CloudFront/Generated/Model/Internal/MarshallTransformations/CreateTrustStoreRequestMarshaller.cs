@@ -108,6 +108,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     xmlWriter.WriteEndElement();
                 }
+                if(publicRequest.IsSetUseClientCertificateOCSPEndpoint())
+                    xmlWriter.WriteElementString("UseClientCertificateOCSPEndpoint", StringUtils.FromBool(publicRequest.UseClientCertificateOCSPEndpoint.Value));
+
 
                 xmlWriter.WriteEndElement();
             }

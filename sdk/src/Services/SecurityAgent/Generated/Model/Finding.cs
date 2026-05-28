@@ -38,7 +38,10 @@ namespace Amazon.SecurityAgent.Model
     {
         private string _agentSpaceId;
         private string _attackScript;
+        private List<CodeLocation> _codeLocations = AWSConfigs.InitializeCollections ? new List<CodeLocation>() : null;
         private CodeRemediationTask _codeRemediationTask;
+        private string _codeReviewId;
+        private string _codeReviewJobId;
         private ConfidenceLevel _confidence;
         private DateTime? _createdAt;
         private string _description;
@@ -54,6 +57,7 @@ namespace Amazon.SecurityAgent.Model
         private FindingStatus _status;
         private string _taskId;
         private DateTime? _updatedAt;
+        private VerificationScript _verificationScript;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -93,6 +97,29 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CodeLocations. 
+        /// <para>
+        /// The file locations involved in the vulnerability, as reported by the code scanner.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CodeLocation> CodeLocations
+        {
+            get { return this._codeLocations; }
+            set { this._codeLocations = value; }
+        }
+
+        // Check to see if CodeLocations property is set
+        internal bool IsSetCodeLocations()
+        {
+            return this._codeLocations != null && (this._codeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property CodeRemediationTask. 
         /// <para>
         /// The code remediation task associated with the finding, if code remediation was initiated.
@@ -108,6 +135,42 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetCodeRemediationTask()
         {
             return this._codeRemediationTask != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewId. 
+        /// <para>
+        /// The unique identifier of the code review associated with the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewId
+        {
+            get { return this._codeReviewId; }
+            set { this._codeReviewId = value; }
+        }
+
+        // Check to see if CodeReviewId property is set
+        internal bool IsSetCodeReviewId()
+        {
+            return this._codeReviewId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeReviewJobId. 
+        /// <para>
+        /// The unique identifier of the code review job that produced the finding.
+        /// </para>
+        /// </summary>
+        public string CodeReviewJobId
+        {
+            get { return this._codeReviewJobId; }
+            set { this._codeReviewJobId = value; }
+        }
+
+        // Check to see if CodeReviewJobId property is set
+        internal bool IsSetCodeReviewJobId()
+        {
+            return this._codeReviewJobId != null;
         }
 
         /// <summary>
@@ -382,6 +445,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VerificationScript. 
+        /// <para>
+        /// The verification script metadata for reproducing the finding, including download URL,
+        /// instructions, and required environment variables.
+        /// </para>
+        /// </summary>
+        public VerificationScript VerificationScript
+        {
+            get { return this._verificationScript; }
+            set { this._verificationScript = value; }
+        }
+
+        // Check to see if VerificationScript property is set
+        internal bool IsSetVerificationScript()
+        {
+            return this._verificationScript != null;
         }
 
     }

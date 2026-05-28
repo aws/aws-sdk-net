@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the SendChatIntegrationEvent operation.
     /// Processes chat integration events from Amazon Web Services or external integrations
-    /// to Amazon Connect. A chat integration event includes:
+    /// to Connect Customer. A chat integration event includes:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -68,9 +68,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property DestinationId. 
         /// <para>
         /// Chat system identifier, used in part to uniquely identify chat. This is associated
-        /// with the Amazon Connect instance and flow to be used to start chats. For Server Migration
-        /// Service, this is the phone number destination of inbound Server Migration Service
-        /// messages represented by an Amazon Web Services End User Messaging phone number ARN.
+        /// with the Connect Customer instance and flow to be used to start chats. For Server
+        /// Migration Service, this is the phone number destination of inbound Server Migration
+        /// Service messages represented by an Amazon Web Services End User Messaging phone number
+        /// ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
