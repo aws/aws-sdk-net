@@ -16,35 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the iot-data-2015-05-28.normal.json service model.
  */
-using Amazon.Runtime.Internal;
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IotData.Model
 {
     /// <summary>
-    /// Paginators for the IotData service
+    /// Paginator for the ListSubscriptions operation
     ///</summary>
-    public interface IIotDataPaginatorFactory
+    public interface IListSubscriptionsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListSubscriptionsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListRetainedMessages operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListRetainedMessagesPaginator ListRetainedMessages(ListRetainedMessagesRequest request);
-
-        /// <summary>
-        /// Paginator for ListSubscriptions operation
-        ///</summary>
-        [AWSPaginator(
-            InputToken = new[] { "NextToken" },
-            LimitKey = "MaxResults",
-            OutputToken = new[] { "NextToken" }
-        )]
-        IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request);
+        /// Enumerable containing all of the Subscriptions
+        /// </summary>
+        IPaginatedEnumerable<SubscriptionSummary> Subscriptions { get; }
     }
 }
