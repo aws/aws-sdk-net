@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceManagedEc2FleetConfiguration Object
+    /// Response Unmarshaller for VolumeSummary Object
     /// </summary>  
-    public class ServiceManagedEc2FleetConfigurationUnmarshaller : IJsonUnmarshaller<ServiceManagedEc2FleetConfiguration, JsonUnmarshallerContext>
+    public class VolumeSummaryUnmarshaller : IJsonUnmarshaller<VolumeSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceManagedEc2FleetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VolumeSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServiceManagedEc2FleetConfiguration unmarshalledObject = new ServiceManagedEc2FleetConfiguration();
+            VolumeSummary unmarshalledObject = new VolumeSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,46 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
-                {
-                    var unmarshaller = ServiceManagedEc2AutoScalingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceCapabilities", targetDepth))
-                {
-                    var unmarshaller = ServiceManagedEc2InstanceCapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCapabilities = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("instanceMarketOptions", targetDepth))
-                {
-                    var unmarshaller = ServiceManagedEc2InstanceMarketOptionsUnmarshaller.Instance;
-                    unmarshalledObject.InstanceMarketOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("persistentVolumeConfiguration", targetDepth))
-                {
-                    var unmarshaller = PersistentVolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PersistentVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("storageProfileId", targetDepth))
+                if (context.TestExpression("attachedWorkerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AttachedWorkerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("availabilityZoneId", targetDepth))
                 {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("farmId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FarmId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("fleetId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sizeGiB", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SizeGiB = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("volumeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +103,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServiceManagedEc2FleetConfigurationUnmarshaller _instance = new ServiceManagedEc2FleetConfigurationUnmarshaller();        
+        private static VolumeSummaryUnmarshaller _instance = new VolumeSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceManagedEc2FleetConfigurationUnmarshaller Instance
+        public static VolumeSummaryUnmarshaller Instance
         {
             get
             {
