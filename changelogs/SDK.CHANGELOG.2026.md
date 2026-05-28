@@ -1,3 +1,121 @@
+### 4.0.257.0 (2026-05-28 18:29 UTC)
+* AccessAnalyzer (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* AmplifyUIBuilder (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppStream (4.0.12.0)
+	* Amazon WorkSpaces Applications now supports BYOL (Bring Your Own License). This enables customers to import their own WorkSpaces images and use them in WorkSpaces Applications.
+* ARCRegionswitch (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Artifact (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* AugmentedAIRuntime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* BackupSearch (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.28.0)
+	* Add support for ModelPackageArn in Bedrock's CreateCustomModel API
+* BedrockAgentCore (4.0.26.0)
+	* Added Harness support for LiteLLM model configuration for third-party model providers. Added S3 and Git skill source types. Added Responses API format for OpenAI and Bedrock models. Added runtimeUserId and runtimeClientError to InvokeHarness.
+* BedrockAgentCoreControl (4.0.39.0)
+	* Added Harness support for LiteLLM model configuration for third-party model providers. Added S3 and Git skill source types. Added Responses API format for OpenAI and Bedrock models. Added runtimeUserId parameter to InvokeHarness for end-user identification.
+* BedrockDataAutomationRuntime (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockRuntime (4.0.20.0)
+	* Support system role in message
+* BillingConductor (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Braket (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Chatbot (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMeetings (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMessaging (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudFrontKeyValueStore (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruReviewer (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeStarconnections (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlCatalog (4.0.6.0)
+	* AWS Control Catalog - Added GovernedProviders response field and inclusion filter to GetControl and ListControls APIs to identify and filter by cloud provider. Added ParameterRequirementSummary response field indicating parameter requirements.
+* CostOptimizationHub (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* CustomerProfiles (4.0.14.0)
+	* BatchPutProfileObject API adds multiple profile objects to a domain of a given ObjectType in a single API call.
+* Deadline (4.0.20.0)
+	* Added support for persistent storage on Service-Managed Fleets, allowing customers to configure persistent storage that preserves data across worker sessions which reduces job startup times for workloads with large software installations or asset caches.
+* Detective (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FinSpaceData (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* GeoRoutes (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* GroundStation (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoT (4.0.8.0)
+	* Adds new connectivity-related fields to Fleet Indexing API requests and responses.
+* IotData (4.0.3.0)
+	* Adding GetConnection, ListSubscriptions, and SendDirectMessage APIs to IoT Data Plane
+* IoTTwinMaker (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IVS (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Keyspaces (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisAnalyticsV2 (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoSignalingChannels (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LookoutEquipment (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceReporting (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubStrategyRecommendations (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* NeptuneGraph (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkMonitor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* OpenSearchServerless (4.0.8.0)
+	* Adds support for deletion protection on collections, ability to create NEXTGEN collection groups and autoscaling visibility for NEXTGEN collection groups
+* PCS (4.0.15.0)
+	* This release adds support for configuring scaleDownIdleTimeInSeconds at the compute node group level, allowing customers to set different idle timeouts per node group. Previously this setting was only available at the cluster level.
+* PinpointSMSVoiceV2 (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* PrometheusService (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* RedshiftDataAPIService (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Resiliencehubv2 (4.0.0.0)
+	* This is the initial SDK release for the next generation of Resilience Hub.
+* Route53RecoveryControlConfig (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Control (4.0.12.0)
+	* Update the minimum value of MinStorageBytesPercentage in StorageLensPrefixLevel.SelectionCriteria from 0.1 to 1, aligning the model with the documented contract.
+* SageMakerRuntime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityAgent (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Signin (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SocialMessaging (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMIncidents (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SupplyChain (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TimestreamInfluxDB (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* TrustedAdvisor (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* VerifiedPermissions (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Wickr (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.256.0 (2026-05-27 18:22 UTC)
 * BCMDashboards (4.0.4.0)
 	* Adding new BDD representation of endpoint ruleset
