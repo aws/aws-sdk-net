@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IndexingFilter Marshaller
+    /// ConnectivityFilter Marshaller
     /// </summary>
-    public class IndexingFilterMarshaller : IRequestMarshaller<IndexingFilter, JsonMarshallerContext> 
+    public class ConnectivityFilterMarshaller : IRequestMarshaller<ConnectivityFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,44 +42,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IndexingFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(ConnectivityFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectivity())
+            if(requestObject.IsSetIncludeSocketInformation())
             {
-                context.Writer.WritePropertyName("connectivity");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ConnectivityFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Connectivity, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetGeoLocations())
-            {
-                context.Writer.WritePropertyName("geoLocations");
+                context.Writer.WritePropertyName("includeSocketInformation");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectGeoLocationsListValue in requestObject.GeoLocations)
+                foreach(var requestObjectIncludeSocketInformationListValue in requestObject.IncludeSocketInformation)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = GeoLocationTargetMarshaller.Instance;
-                    marshaller.Marshall(requestObjectGeoLocationsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetNamedShadowNames())
-            {
-                context.Writer.WritePropertyName("namedShadowNames");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectNamedShadowNamesListValue in requestObject.NamedShadowNames)
-                {
-                        context.Writer.WriteStringValue(requestObjectNamedShadowNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeSocketInformationListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -89,7 +62,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IndexingFilterMarshaller Instance = new IndexingFilterMarshaller();
+        public readonly static ConnectivityFilterMarshaller Instance = new ConnectivityFilterMarshaller();
 
     }
 }

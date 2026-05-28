@@ -34,9 +34,50 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ThingConnectivity
     {
+        private bool? _cleanSession;
+        private string _clientId;
         private bool? _connected;
         private string _disconnectReason;
+        private int? _keepAliveDuration;
+        private long? _sessionExpiry;
         private long? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property CleanSession. 
+        /// <para>
+        /// Indicates whether the client is using a clean session. Returns <c>true</c> for clean
+        /// sessions.
+        /// </para>
+        /// </summary>
+        public bool? CleanSession
+        {
+            get { return this._cleanSession; }
+            set { this._cleanSession = value; }
+        }
+
+        // Check to see if CleanSession property is set
+        internal bool IsSetCleanSession()
+        {
+            return this._cleanSession.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The unique identifier of the MQTT client.
+        /// </para>
+        /// </summary>
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Connected. 
@@ -60,8 +101,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The reason why the client is disconnected. If the thing has been disconnected for
-        /// approximately an hour, the <c>disconnectReason</c> value might be missing.
+        /// The reason why the client is disconnected. When you enable or update the indexing
+        /// configuration, this value might be missing for devices that have never connected or
+        /// have been disconnected for more than an hour.
         /// </para>
         /// </summary>
         public string DisconnectReason
@@ -77,11 +119,51 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KeepAliveDuration. 
+        /// <para>
+        /// The keep-alive interval in seconds that the client specified when establishing the
+        /// connection.
+        /// </para>
+        /// </summary>
+        public int? KeepAliveDuration
+        {
+            get { return this._keepAliveDuration; }
+            set { this._keepAliveDuration = value; }
+        }
+
+        // Check to see if KeepAliveDuration property is set
+        internal bool IsSetKeepAliveDuration()
+        {
+            return this._keepAliveDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionExpiry. 
+        /// <para>
+        /// The session expiry interval in seconds for the MQTT client connection. This value
+        /// indicates how long the session will remain active after the client disconnects.
+        /// </para>
+        /// </summary>
+        public long? SessionExpiry
+        {
+            get { return this._sessionExpiry; }
+            set { this._sessionExpiry = value; }
+        }
+
+        // Check to see if SessionExpiry property is set
+        internal bool IsSetSessionExpiry()
+        {
+            return this._sessionExpiry.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The epoch time (in milliseconds) when the thing last connected or disconnected. If
         /// the thing has been disconnected for approximately an hour, the time value might be
-        /// missing.
+        /// missing. When you enable or update the indexing configuration, this value might be
+        /// <c>0</c> (the Unix epoch time) for devices that have never connected or have been
+        /// disconnected for more than an hour.
         /// </para>
         /// </summary>
         public long? Timestamp

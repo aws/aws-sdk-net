@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IndexingFilter Object
+    /// Response Unmarshaller for ConnectivityFilter Object
     /// </summary>  
-    public class IndexingFilterUnmarshaller : IJsonUnmarshaller<IndexingFilter, JsonUnmarshallerContext>
+    public class ConnectivityFilterUnmarshaller : IJsonUnmarshaller<ConnectivityFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IndexingFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConnectivityFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            IndexingFilter unmarshalledObject = new IndexingFilter();
+            ConnectivityFilter unmarshalledObject = new ConnectivityFilter();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectivity", targetDepth))
-                {
-                    var unmarshaller = ConnectivityFilterUnmarshaller.Instance;
-                    unmarshalledObject.Connectivity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("geoLocations", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<GeoLocationTarget, GeoLocationTargetUnmarshaller>(GeoLocationTargetUnmarshaller.Instance);
-                    unmarshalledObject.GeoLocations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("namedShadowNames", targetDepth))
+                if (context.TestExpression("includeSocketInformation", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NamedShadowNames = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.IncludeSocketInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static IndexingFilterUnmarshaller _instance = new IndexingFilterUnmarshaller();        
+        private static ConnectivityFilterUnmarshaller _instance = new ConnectivityFilterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IndexingFilterUnmarshaller Instance
+        public static ConnectivityFilterUnmarshaller Instance
         {
             get
             {

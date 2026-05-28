@@ -30,24 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetThingConnectivityData operation.
-    /// Retrieves the live connectivity status per device.
+    /// Provides connectivity filter selections for the fleet indexing configuration.
     /// </summary>
-    public partial class GetThingConnectivityDataRequest : AmazonIoTRequest
+    public partial class ConnectivityFilter
     {
-        private bool? _includeSocketInformation;
-        private string _thingName;
+        private List<string> _includeSocketInformation = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IncludeSocketInformation. 
         /// <para>
-        /// Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId)
-        /// should be included in the GetThingConnectivityData response. Set to <c>true</c> to
-        /// include socket information. Set to <c>false</c> to omit socket information. By default,
-        /// this is set to <c>false</c>.
+        /// A list of fleet indexing APIs for which to enable socket information retrieval. Currently,
+        /// the only supported value is <c>GET_THING_CONNECTIVITY_DATA</c>.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public bool? IncludeSocketInformation
+        public List<string> IncludeSocketInformation
         {
             get { return this._includeSocketInformation; }
             set { this._includeSocketInformation = value; }
@@ -56,26 +57,7 @@ namespace Amazon.IoT.Model
         // Check to see if IncludeSocketInformation property is set
         internal bool IsSetIncludeSocketInformation()
         {
-            return this._includeSocketInformation.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ThingName. 
-        /// <para>
-        /// The name of your IoT thing.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
-        public string ThingName
-        {
-            get { return this._thingName; }
-            set { this._thingName = value; }
-        }
-
-        // Check to see if ThingName property is set
-        internal bool IsSetThingName()
-        {
-            return this._thingName != null;
+            return this._includeSocketInformation != null && (this._includeSocketInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
