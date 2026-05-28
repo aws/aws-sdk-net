@@ -68,6 +68,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetLiteLlmModelConfig())
+            {
+                context.Writer.WritePropertyName("liteLlmModelConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessLiteLlmModelConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.LiteLlmModelConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOpenAiModelConfig())
             {
                 context.Writer.WritePropertyName("openAiModelConfig");

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HarnessOpenAiModelConfig Marshaller
+    /// HarnessLiteLlmModelConfig Marshaller
     /// </summary>
-    public class HarnessOpenAiModelConfigMarshaller : IRequestMarshaller<HarnessOpenAiModelConfig, JsonMarshallerContext> 
+    public class HarnessLiteLlmModelConfigMarshaller : IRequestMarshaller<HarnessLiteLlmModelConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HarnessOpenAiModelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(HarnessLiteLlmModelConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -52,10 +52,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalParams);
             }
 
-            if(requestObject.IsSetApiFormat())
+            if(requestObject.IsSetApiBase())
             {
-                context.Writer.WritePropertyName("apiFormat");
-                context.Writer.WriteStringValue(requestObject.ApiFormat);
+                context.Writer.WritePropertyName("apiBase");
+                context.Writer.WriteStringValue(requestObject.ApiBase);
             }
 
             if(requestObject.IsSetApiKeyArn())
@@ -107,7 +107,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HarnessOpenAiModelConfigMarshaller Instance = new HarnessOpenAiModelConfigMarshaller();
+        public readonly static HarnessLiteLlmModelConfigMarshaller Instance = new HarnessLiteLlmModelConfigMarshaller();
 
     }
 }

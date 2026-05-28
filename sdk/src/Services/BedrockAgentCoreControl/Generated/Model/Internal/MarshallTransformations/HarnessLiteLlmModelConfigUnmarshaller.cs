@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HarnessOpenAiModelConfig Object
+    /// Response Unmarshaller for HarnessLiteLlmModelConfig Object
     /// </summary>  
-    public class HarnessOpenAiModelConfigUnmarshaller : IJsonUnmarshaller<HarnessOpenAiModelConfig, JsonUnmarshallerContext>
+    public class HarnessLiteLlmModelConfigUnmarshaller : IJsonUnmarshaller<HarnessLiteLlmModelConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HarnessOpenAiModelConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HarnessLiteLlmModelConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            HarnessOpenAiModelConfig unmarshalledObject = new HarnessOpenAiModelConfig();
+            HarnessLiteLlmModelConfig unmarshalledObject = new HarnessLiteLlmModelConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -62,10 +62,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiFormat", targetDepth))
+                if (context.TestExpression("apiBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiFormat = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ApiBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("apiKeyArn", targetDepth))
@@ -103,12 +103,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static HarnessOpenAiModelConfigUnmarshaller _instance = new HarnessOpenAiModelConfigUnmarshaller();        
+        private static HarnessLiteLlmModelConfigUnmarshaller _instance = new HarnessLiteLlmModelConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HarnessOpenAiModelConfigUnmarshaller Instance
+        public static HarnessLiteLlmModelConfigUnmarshaller Instance
         {
             get
             {

@@ -56,10 +56,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("git", targetDepth))
+                {
+                    var unmarshaller = HarnessSkillGitSourceUnmarshaller.Instance;
+                    unmarshalledObject.Git = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("s3", targetDepth))
+                {
+                    var unmarshaller = HarnessSkillS3SourceUnmarshaller.Instance;
+                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -30,12 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Configuration for an Amazon Bedrock model provider.
+    /// Configuration for a LiteLLM model provider, enabling connection to third-party model
+    /// providers.
     /// </summary>
-    public partial class HarnessBedrockModelConfig
+    public partial class HarnessLiteLlmModelConfig
     {
         private Amazon.Runtime.Documents.Document _additionalParams;
-        private HarnessBedrockApiFormat _apiFormat;
+        private string _apiBase;
+        private string _apiKeyArn;
         private int? _maxTokens;
         private string _modelId;
         private float? _temperature;
@@ -60,27 +62,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApiFormat. 
+        /// Gets and sets the property ApiBase. 
         /// <para>
-        /// The API format to use when calling the Bedrock provider.
+        /// The base URL for the model provider's API endpoint.
         /// </para>
         /// </summary>
-        public HarnessBedrockApiFormat ApiFormat
+        [AWSProperty(Sensitive=true, Min=1, Max=16383)]
+        public string ApiBase
         {
-            get { return this._apiFormat; }
-            set { this._apiFormat = value; }
+            get { return this._apiBase; }
+            set { this._apiBase = value; }
         }
 
-        // Check to see if ApiFormat property is set
-        internal bool IsSetApiFormat()
+        // Check to see if ApiBase property is set
+        internal bool IsSetApiBase()
         {
-            return this._apiFormat != null;
+            return this._apiBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiKeyArn. 
+        /// <para>
+        /// The ARN of the API key in AgentCore Identity for authenticating with the model provider.
+        /// </para>
+        /// </summary>
+        public string ApiKeyArn
+        {
+            get { return this._apiKeyArn; }
+            set { this._apiKeyArn = value; }
+        }
+
+        // Check to see if ApiKeyArn property is set
+        internal bool IsSetApiKeyArn()
+        {
+            return this._apiKeyArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property MaxTokens. 
         /// <para>
-        /// The maximum number of tokens to allow in the generated response per model call.
+        /// The maximum number of tokens to allow in the generated response per iteration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -99,7 +120,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The Bedrock model ID.
+        /// The LiteLLM model identifier (e.g., "anthropic/claude-3-sonnet").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
