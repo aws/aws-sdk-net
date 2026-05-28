@@ -287,6 +287,10 @@ namespace Amazon.BedrockRuntime
         /// </summary>
         public static readonly ConversationRole Assistant = new ConversationRole("assistant");
         /// <summary>
+        /// Constant System for ConversationRole
+        /// </summary>
+        public static readonly ConversationRole System = new ConversationRole("system");
+        /// <summary>
         /// Constant User for ConversationRole
         /// </summary>
         public static readonly ConversationRole User = new ConversationRole("user");
