@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Configuration for an OpenAI model provider. Requires an API key stored in AgentCore
-    /// Identity.
+    /// Configuration for a LiteLLM model provider, enabling connection to third-party model
+    /// providers.
     /// </summary>
-    public partial class HarnessOpenAiModelConfig
+    public partial class HarnessLiteLlmModelConfig
     {
         private Amazon.Runtime.Documents.Document _additionalParams;
-        private HarnessOpenAiApiFormat _apiFormat;
+        private string _apiBase;
         private string _apiKeyArn;
         private int? _maxTokens;
         private string _modelId;
@@ -62,30 +62,30 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ApiFormat. 
+        /// Gets and sets the property ApiBase. 
         /// <para>
-        /// The API format to use when calling the OpenAI provider.
+        /// The base URL for the model provider's API endpoint.
         /// </para>
         /// </summary>
-        public HarnessOpenAiApiFormat ApiFormat
+        [AWSProperty(Sensitive=true, Min=1, Max=16383)]
+        public string ApiBase
         {
-            get { return this._apiFormat; }
-            set { this._apiFormat = value; }
+            get { return this._apiBase; }
+            set { this._apiBase = value; }
         }
 
-        // Check to see if ApiFormat property is set
-        internal bool IsSetApiFormat()
+        // Check to see if ApiBase property is set
+        internal bool IsSetApiBase()
         {
-            return this._apiFormat != null;
+            return this._apiBase != null;
         }
 
         /// <summary>
         /// Gets and sets the property ApiKeyArn. 
         /// <para>
-        /// The ARN of your OpenAI API key on AgentCore Identity.
+        /// The ARN of the API key in AgentCore Identity for authenticating with the model provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ApiKeyArn
         {
             get { return this._apiKeyArn; }
@@ -120,7 +120,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The OpenAI model ID.
+        /// The LiteLLM model identifier (e.g., "anthropic/claude-3-sonnet").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

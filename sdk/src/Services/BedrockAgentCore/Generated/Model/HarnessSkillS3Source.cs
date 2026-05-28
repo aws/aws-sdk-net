@@ -30,28 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Configuration for the data source used in evaluation.
+    /// An S3 source for a skill.
     /// </summary>
-    public partial class DataSourceConfig
+    public partial class HarnessSkillS3Source
     {
-        private CloudWatchLogsSource _cloudWatchLogs;
+        private string _uri;
 
         /// <summary>
-        /// Gets and sets the property CloudWatchLogs. 
+        /// Gets and sets the property Uri. 
         /// <para>
-        /// Configuration for pulling agent session traces from CloudWatch Logs.
+        /// The S3 URI pointing to the skill directory (e.g., s3://bucket/skills/my-skill/).
         /// </para>
         /// </summary>
-        public CloudWatchLogsSource CloudWatchLogs
+        [AWSProperty(Required=true, Min=5)]
+        public string Uri
         {
-            get { return this._cloudWatchLogs; }
-            set { this._cloudWatchLogs = value; }
+            get { return this._uri; }
+            set { this._uri = value; }
         }
 
-        // Check to see if CloudWatchLogs property is set
-        internal bool IsSetCloudWatchLogs()
+        // Check to see if Uri property is set
+        internal bool IsSetUri()
         {
-            return this._cloudWatchLogs != null;
+            return this._uri != null;
         }
 
     }

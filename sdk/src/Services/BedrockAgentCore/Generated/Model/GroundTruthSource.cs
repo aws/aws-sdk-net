@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Inline. 
         /// <para>
-        /// Provide ground truth inline
+        /// Inline ground truth data provided directly in the request.
         /// </para>
         /// </summary>
         public InlineGroundTruth Inline

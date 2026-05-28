@@ -34,10 +34,48 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class HarnessBedrockModelConfig
     {
+        private Amazon.Runtime.Documents.Document _additionalParams;
+        private HarnessBedrockApiFormat _apiFormat;
         private int? _maxTokens;
         private string _modelId;
         private float? _temperature;
         private float? _topp;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalParams. 
+        /// <para>
+        /// Provider-specific parameters passed through to the model provider unchanged.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalParams
+        {
+            get { return this._additionalParams; }
+            set { this._additionalParams = value; }
+        }
+
+        // Check to see if AdditionalParams property is set
+        internal bool IsSetAdditionalParams()
+        {
+            return !this._additionalParams.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiFormat. 
+        /// <para>
+        /// The API format to use when calling the Bedrock provider.
+        /// </para>
+        /// </summary>
+        public HarnessBedrockApiFormat ApiFormat
+        {
+            get { return this._apiFormat; }
+            set { this._apiFormat = value; }
+        }
+
+        // Check to see if ApiFormat property is set
+        internal bool IsSetApiFormat()
+        {
+            return this._apiFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxTokens. 

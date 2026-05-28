@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HarnessSkill Marshaller
+    /// HarnessSkillGitSource Marshaller
     /// </summary>
-    public class HarnessSkillMarshaller : IRequestMarshaller<HarnessSkill, JsonMarshallerContext> 
+    public class HarnessSkillGitSourceMarshaller : IRequestMarshaller<HarnessSkillGitSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,17 +42,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HarnessSkill requestObject, JsonMarshallerContext context)
+        public void Marshall(HarnessSkillGitSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGit())
+            if(requestObject.IsSetAuth())
             {
-                context.Writer.WritePropertyName("git");
+                context.Writer.WritePropertyName("auth");
                 context.Writer.WriteStartObject();
 
-                var marshaller = HarnessSkillGitSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Git, context);
+                var marshaller = HarnessSkillGitAuthMarshaller.Instance;
+                marshaller.Marshall(requestObject.Auth, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -63,15 +63,10 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Path);
             }
 
-            if(requestObject.IsSetS3())
+            if(requestObject.IsSetUrl())
             {
-                context.Writer.WritePropertyName("s3");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HarnessSkillS3SourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("url");
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }
@@ -79,7 +74,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HarnessSkillMarshaller Instance = new HarnessSkillMarshaller();
+        public readonly static HarnessSkillGitSourceMarshaller Instance = new HarnessSkillGitSourceMarshaller();
 
     }
 }

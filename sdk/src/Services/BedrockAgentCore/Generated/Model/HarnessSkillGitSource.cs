@@ -30,39 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// A skill available to the agent.
+    /// A git repository source for a skill.
     /// </summary>
-    public partial class HarnessSkill
+    public partial class HarnessSkillGitSource
     {
-        private HarnessSkillGitSource _git;
+        private HarnessSkillGitAuth _auth;
         private string _path;
-        private HarnessSkillS3Source _s3;
+        private string _url;
 
         /// <summary>
-        /// Gets and sets the property Git. 
+        /// Gets and sets the property Auth. 
         /// <para>
-        /// A git repository containing the skill.
+        /// Authentication configuration for private repositories.
         /// </para>
         /// </summary>
-        public HarnessSkillGitSource Git
+        public HarnessSkillGitAuth Auth
         {
-            get { return this._git; }
-            set { this._git = value; }
+            get { return this._auth; }
+            set { this._auth = value; }
         }
 
-        // Check to see if Git property is set
-        internal bool IsSetGit()
+        // Check to see if Auth property is set
+        internal bool IsSetAuth()
         {
-            return this._git != null;
+            return this._auth != null;
         }
 
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The filesystem path to the skill definition.
+        /// Subdirectory within the repository containing the skill.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string Path
         {
             get { return this._path; }
@@ -76,21 +75,22 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3. 
+        /// Gets and sets the property Url. 
         /// <para>
-        /// An S3 source containing the skill.
+        /// The HTTPS URL of the git repository.
         /// </para>
         /// </summary>
-        public HarnessSkillS3Source S3
+        [AWSProperty(Required=true, Min=8)]
+        public string Url
         {
-            get { return this._s3; }
-            set { this._s3 = value; }
+            get { return this._url; }
+            set { this._url = value; }
         }
 
-        // Check to see if S3 property is set
-        internal bool IsSetS3()
+        // Check to see if Url property is set
+        internal bool IsSetUrl()
         {
-            return this._s3 != null;
+            return this._url != null;
         }
 
     }

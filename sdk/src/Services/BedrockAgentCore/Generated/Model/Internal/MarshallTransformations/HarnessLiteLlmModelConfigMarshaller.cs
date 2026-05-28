@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HarnessBedrockModelConfig Marshaller
+    /// HarnessLiteLlmModelConfig Marshaller
     /// </summary>
-    public class HarnessBedrockModelConfigMarshaller : IRequestMarshaller<HarnessBedrockModelConfig, JsonMarshallerContext> 
+    public class HarnessLiteLlmModelConfigMarshaller : IRequestMarshaller<HarnessLiteLlmModelConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HarnessBedrockModelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(HarnessLiteLlmModelConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -52,10 +52,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalParams);
             }
 
-            if(requestObject.IsSetApiFormat())
+            if(requestObject.IsSetApiBase())
             {
-                context.Writer.WritePropertyName("apiFormat");
-                context.Writer.WriteStringValue(requestObject.ApiFormat);
+                context.Writer.WritePropertyName("apiBase");
+                context.Writer.WriteStringValue(requestObject.ApiBase);
+            }
+
+            if(requestObject.IsSetApiKeyArn())
+            {
+                context.Writer.WritePropertyName("apiKeyArn");
+                context.Writer.WriteStringValue(requestObject.ApiKeyArn);
             }
 
             if(requestObject.IsSetMaxTokens())
@@ -101,7 +107,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HarnessBedrockModelConfigMarshaller Instance = new HarnessBedrockModelConfigMarshaller();
+        public readonly static HarnessLiteLlmModelConfigMarshaller Instance = new HarnessLiteLlmModelConfigMarshaller();
 
     }
 }
