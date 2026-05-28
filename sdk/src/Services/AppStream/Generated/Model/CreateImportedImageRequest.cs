@@ -47,6 +47,7 @@ namespace Amazon.AppStream.Model
         private RuntimeValidationConfig _runtimeValidationConfig;
         private string _sourceAmiId;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _workspaceImageId;
 
         /// <summary>
         /// Gets and sets the property AgentSoftwareVersion. 
@@ -161,7 +162,6 @@ namespace Amazon.AppStream.Model
         /// trust relationship allowing appstream.amazonaws.com to assume the role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string IamRoleArn
         {
             get { return this._iamRoleArn; }
@@ -217,11 +217,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SourceAmiId. 
         /// <para>
-        /// The ID of the EC2 AMI to import. The AMI must meet specific requirements including
-        /// Windows Server 2022 Full Base, UEFI boot mode, TPM 2.0 support, and proper drivers.
+        /// The ID of the EC2 AMI to import.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceAmiId
         {
             get { return this._sourceAmiId; }
@@ -257,6 +255,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceImageId. 
+        /// <para>
+        /// The ID of the Workspaces Image to import.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=67)]
+        public string WorkspaceImageId
+        {
+            get { return this._workspaceImageId; }
+            set { this._workspaceImageId = value; }
+        }
+
+        // Check to see if WorkspaceImageId property is set
+        internal bool IsSetWorkspaceImageId()
+        {
+            return this._workspaceImageId != null;
         }
 
     }

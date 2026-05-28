@@ -778,6 +778,10 @@ namespace Amazon.AppStream
         /// Constant FAILED for ExportImageTaskState
         /// </summary>
         public static readonly ExportImageTaskState FAILED = new ExportImageTaskState("FAILED");
+        /// <summary>
+        /// Constant TIMED_OUT for ExportImageTaskState
+        /// </summary>
+        public static readonly ExportImageTaskState TIMED_OUT = new ExportImageTaskState("TIMED_OUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1506,6 +1510,10 @@ namespace Amazon.AppStream
     public class ImageType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BYOL for ImageType
+        /// </summary>
+        public static readonly ImageType BYOL = new ImageType("BYOL");
         /// <summary>
         /// Constant CUSTOM for ImageType
         /// </summary>

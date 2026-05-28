@@ -1748,6 +1748,9 @@ namespace Amazon.AppStream
         /// The resource cannot be created because your AWS account is suspended. For assistance,
         /// contact AWS Support.
         /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
+        /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
         /// </exception>
@@ -1796,6 +1799,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
         /// The resource cannot be created because your AWS account is suspended. For assistance,
         /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.
