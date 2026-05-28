@@ -1,13 +1,14 @@
-﻿using Amazon.Runtime.Internal;
-using System;
+using Amazon.Runtime.Internal;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using Xunit;
 
-namespace AWSSDK.CSMUtilitiesTests.NetFramework
+namespace AWSSDK.UnitTests.Runtime.CSM
 {
+    [TestClass]
     public class CSMUtilitiesTests
     {
-        [Fact]
+        [TestMethod]
+        [TestCategory("CSM")]
         public void TestGetApiNameFromRequestWithMapping()
         {
             var apiNameMapping = new Dictionary<string, string>(1)
@@ -23,13 +24,14 @@ namespace AWSSDK.CSMUtilitiesTests.NetFramework
                 { "RequestApirequest", string.Empty }
             };
 
-            foreach(var requestName in requestNameApiName.Keys)
+            foreach (var requestName in requestNameApiName.Keys)
             {
-                Assert.Equal(requestNameApiName[requestName], CSMUtilities.GetApiNameFromRequest(requestName, apiNameMapping, "foobar"));
+                Assert.AreEqual(requestNameApiName[requestName], CSMUtilities.GetApiNameFromRequest(requestName, apiNameMapping, "foobar"));
             }
         }
 
-        [Fact]
+        [TestMethod]
+        [TestCategory("CSM")]
         public void TestGetApiNameFromRequest()
         {
             var apiNameMapping = new Dictionary<string, string>(0)
@@ -45,7 +47,7 @@ namespace AWSSDK.CSMUtilitiesTests.NetFramework
 
             foreach (var requestName in requestNameApiName.Keys)
             {
-                Assert.Equal(requestNameApiName[requestName], CSMUtilities.GetApiNameFromRequest(requestName, apiNameMapping, "foobar"));
+                Assert.AreEqual(requestNameApiName[requestName], CSMUtilities.GetApiNameFromRequest(requestName, apiNameMapping, "foobar"));
             }
         }
     }

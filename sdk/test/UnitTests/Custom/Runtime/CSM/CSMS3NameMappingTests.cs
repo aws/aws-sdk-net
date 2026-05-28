@@ -1,26 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
+#if NETFRAMEWORK
+using System;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
 using Amazon.S3.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
-using Newtonsoft.Json;
-using Xunit;
 
-namespace AWSSDK.CSM.IntegrationTests
+namespace AWSSDK.UnitTests.Runtime.CSM
 {
-    public class CSMS3NameMappingTest
+    [TestClass]
+    public class CSMS3NameMappingTests
     {
-        [Fact]
-        public async Task IoExceptionRetryableRequestsTestAsync()
+        [TestInitialize]
+        public void Setup()
+        {
+            AWSConfigs.CSMConfig.CSMEnabled = true;
+            DeterminedCSMConfiguration.Instance.CSMConfiguration = new CSMFallbackConfigChain().GetCSMConfig();
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            AWSConfigs.CSMConfig.CSMEnabled = null;
+            DeterminedCSMConfiguration.Instance.CSMConfiguration = new CSMFallbackConfigChain().GetCSMConfig();
+        }
+
+        [TestMethod]
+        [TestCategory("CSM")]
+        public async Task S3PutBucketMapsToCreateBucketInCSM()
         {
             AmazonS3Config config = new AmazonS3Config
             {
@@ -28,7 +40,7 @@ namespace AWSSDK.CSM.IntegrationTests
                 MaxErrorRetry = 2,
                 ForcePathStyle = true
             };
-            CSMTestUtilities testUtils = new CSMTestUtilities
+            CSMMonitoringValidator validator = new CSMMonitoringValidator
             {
                 Service = "S3",
                 ApiCall = "CreateBucket",
@@ -40,21 +52,23 @@ namespace AWSSDK.CSM.IntegrationTests
                 MaxRetriesExceeded = 1,
                 StashCount = config.MaxErrorRetry + 3
             };
-            var task = Task.Run(() => testUtils.UDPListener());
+            var ready = new ManualResetEventSlim(false);
+            var task = Task.Run(() => validator.UDPListener(ready));
+            Assert.IsTrue(ready.Wait(TimeSpan.FromSeconds(5)), "UDP listener failed to bind within timeout.");
 
             AmazonS3Client client = new MockS3Client(config);
 
-            var exception = await Record.ExceptionAsync(async () => await client.PutBucketAsync(new PutBucketRequest
+            await Assert.ThrowsExactlyAsync<IOException>(async () => await client.PutBucketAsync(new PutBucketRequest
             {
                 BucketName = "TestBucket"
             }));
-            Assert.NotNull(exception);
-            Assert.IsType<IOException>(exception);
+
             Thread.Sleep(10);
-            testUtils.EndTest();
+            validator.EndTest();
             task.Wait();
-            testUtils.Validate(task.Result);
+            validator.Validate(task.Result);
         }
+
         class MockS3Client : AmazonS3Client
         {
             public Mock<IHttpRequestFactory<Stream>> MockFactory { get; private set; }
@@ -74,7 +88,7 @@ namespace AWSSDK.CSM.IntegrationTests
                     {
                         var request = new Mock<IHttpRequest<Stream>>();
                         request.Setup(foo => foo.GetResponseAsync(new CancellationToken()))
-                        .Throws(new IOException());
+                            .Throws(new IOException());
                         return request.Object;
                     })
                     .Callback((Uri uri) => this.LastRequestUri = uri);
@@ -83,3 +97,4 @@ namespace AWSSDK.CSM.IntegrationTests
         }
     }
 }
+#endif
