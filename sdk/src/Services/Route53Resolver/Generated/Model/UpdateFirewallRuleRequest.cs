@@ -45,6 +45,7 @@ namespace Amazon.Route53Resolver.Model
         private string _firewallDomainListId;
         private FirewallDomainRedirectionAction _firewallDomainRedirectionAction;
         private string _firewallRuleGroupId;
+        private FirewallRuleType _firewallRuleType;
         private string _firewallThreatProtectionId;
         private string _name;
         private int? _priority;
@@ -314,6 +315,25 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirewallRuleType. 
+        /// <para>
+        /// The rule type configuration for the firewall rule. This setting is mutually exclusive
+        /// with the top-level <c>FirewallDomainListId</c> and <c>DnsThreatProtection</c> fields.
+        /// </para>
+        /// </summary>
+        public FirewallRuleType FirewallRuleType
+        {
+            get { return this._firewallRuleType; }
+            set { this._firewallRuleType = value; }
+        }
+
+        // Check to see if FirewallRuleType property is set
+        internal bool IsSetFirewallRuleType()
+        {
+            return this._firewallRuleType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FirewallThreatProtectionId. 
         /// <para>
         ///  The DNS Firewall Advanced rule ID. 
@@ -438,7 +458,7 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         /// A query type you define by using the DNS type ID, for example 28 for AAAA. The values
-        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28.
+        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28.
         /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
         /// of DNS record types</a>.
         /// </para>
