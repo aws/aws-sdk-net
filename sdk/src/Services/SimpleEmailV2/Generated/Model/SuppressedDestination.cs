@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains information about an email address that is on the suppression
-    /// list for your account.
+    /// list for your account or for a specific tenant.
     /// </summary>
     public partial class SuppressedDestination
     {
@@ -39,12 +39,13 @@ namespace Amazon.SimpleEmailV2.Model
         private string _emailAddress;
         private DateTime? _lastUpdateTime;
         private SuppressionListReason _reason;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
         /// An optional value that can contain additional information about the reasons that the
-        /// address was added to the suppression list for your account.
+        /// address was added to the suppression list for your account or for a specific tenant.
         /// </para>
         /// </summary>
         public SuppressedDestinationAttributes Attributes
@@ -62,7 +63,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address that is on the suppression list for your account.
+        /// The email address that is on the suppression list for your account or for a specific
+        /// tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +103,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason that the address was added to the suppression list for your account.
+        /// The reason that the address was added to the suppression list for your account or
+        /// for a specific tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -115,6 +118,26 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant that the suppressed destination belongs to. This field is present
+        /// only when the suppressed destination is on a tenant's suppression list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

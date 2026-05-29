@@ -30,37 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetEmailTemplate operation.
-    /// Displays the template object (which includes the subject line, HTML part and text
-    /// part) for the template you specify.
-    /// 
-    ///  
-    /// <para>
-    /// You can execute this operation no more than 50 times per second.
-    /// </para>
+    /// If the action is successful, the service sends back an HTTP 200 response with an empty
+    /// HTTP body.
     /// </summary>
-    public partial class GetEmailTemplateRequest : AmazonSimpleEmailServiceV2Request
+    public partial class PutTenantSuppressionAttributesResponse : AmazonWebServiceResponse
     {
-        private string _templateName;
-
-        /// <summary>
-        /// Gets and sets the property TemplateName. 
-        /// <para>
-        /// The name of the template.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1)]
-        public string TemplateName
-        {
-            get { return this._templateName; }
-            set { this._templateName = value; }
-        }
-
-        // Check to see if TemplateName property is set
-        internal bool IsSetTemplateName()
-        {
-            return this._templateName != null;
-        }
 
     }
 }

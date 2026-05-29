@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateTenant operation
+    /// Response Unmarshaller for PutTenantSuppressionAttributes operation
     /// </summary>  
-    public class CreateTenantResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutTenantSuppressionAttributesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,55 +46,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateTenantResponse response = new CreateTenantResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SendingStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SendingStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SuppressionAttributes", targetDepth))
-                {
-                    var unmarshaller = TenantSuppressionAttributesUnmarshaller.Instance;
-                    response.SuppressionAttributes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TenantArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TenantArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TenantId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TenantId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TenantName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TenantName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            PutTenantSuppressionAttributesResponse response = new PutTenantSuppressionAttributesResponse();
 
             return response;
         }
@@ -119,17 +71,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
-                {
-                    return AlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
                     return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return NotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
                 {
@@ -139,9 +87,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateTenantResponseUnmarshaller _instance = new CreateTenantResponseUnmarshaller();        
+        private static PutTenantSuppressionAttributesResponseUnmarshaller _instance = new PutTenantSuppressionAttributesResponseUnmarshaller();        
 
-        internal static CreateTenantResponseUnmarshaller GetInstance()
+        internal static PutTenantSuppressionAttributesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +97,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTenantResponseUnmarshaller Instance
+        public static PutTenantSuppressionAttributesResponseUnmarshaller Instance
         {
             get
             {

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SuppressionOptions Marshaller
+    /// TenantSuppressionAttributes Marshaller
     /// </summary>
-    public class SuppressionOptionsMarshaller : IRequestMarshaller<SuppressionOptions, JsonMarshallerContext> 
+    public class TenantSuppressionAttributesMarshaller : IRequestMarshaller<TenantSuppressionAttributes, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SuppressionOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(TenantSuppressionAttributes requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -63,23 +63,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SuppressionScope);
             }
 
-            if(requestObject.IsSetValidationOptions())
-            {
-                context.Writer.WritePropertyName("ValidationOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ValidationOptions, context);
-
-                context.Writer.WriteEndObject();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SuppressionOptionsMarshaller Instance = new SuppressionOptionsMarshaller();
+        public readonly static TenantSuppressionAttributesMarshaller Instance = new TenantSuppressionAttributesMarshaller();
 
     }
 }

@@ -30,55 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutConfigurationSetSuppressionOptions operation.
-    /// Specify the suppression list preferences for a configuration set. You can also use
-    /// this operation to specify a <c>SuppressionScope</c> to override the suppression scope
-    /// of the tenant or account for emails sent using this configuration set.
+    /// Container for the parameters to the PutTenantSuppressionAttributes operation.
+    /// Configure the suppression list preferences for a tenant. Use this operation to enable
+    /// or disable tenant-level suppression, or to change the suppressed reasons for a tenant.
+    /// 
+    ///  
+    /// <para>
+    /// When you set the suppression scope to <c>TENANT</c>, Amazon SES maintains a separate
+    /// suppression list for the tenant. When you set the scope to <c>ACCOUNT</c>, the tenant
+    /// uses the account-level suppression list.
+    /// </para>
     /// </summary>
-    public partial class PutConfigurationSetSuppressionOptionsRequest : AmazonSimpleEmailServiceV2Request
+    public partial class PutTenantSuppressionAttributesRequest : AmazonSimpleEmailServiceV2Request
     {
-        private string _configurationSetName;
         private List<string> _suppressedReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SuppressionListScope _suppressionScope;
-        private SuppressionValidationOptions _validationOptions;
-
-        /// <summary>
-        /// Gets and sets the property ConfigurationSetName. 
-        /// <para>
-        /// The name of the configuration set to change the suppression list preferences for.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ConfigurationSetName
-        {
-            get { return this._configurationSetName; }
-            set { this._configurationSetName = value; }
-        }
-
-        // Check to see if ConfigurationSetName property is set
-        internal bool IsSetConfigurationSetName()
-        {
-            return this._configurationSetName != null;
-        }
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property SuppressedReasons. 
         /// <para>
         /// A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account or for a specific tenant. This list can contain
-        /// any or all of the following:
+        /// suppression list for the tenant. This list can contain any or all of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>COMPLAINT</c> – Amazon SES adds an email address to the suppression list for your
-        /// account or for a specific tenant when a message sent to that address results in a
-        /// complaint.
+        ///  <c>COMPLAINT</c> – Amazon SES adds an email address to the suppression list when
+        /// a message sent to that address results in a complaint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BOUNCE</c> – Amazon SES adds an email address to the suppression list for your
-        /// account or for a specific tenant when a message sent to that address results in a
-        /// hard bounce.
+        ///  <c>BOUNCE</c> – Amazon SES adds an email address to the suppression list when a message
+        /// sent to that address results in a hard bounce.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -102,19 +85,15 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SuppressionScope. 
         /// <para>
-        /// The suppression scope for the configuration set. This overrides the tenant or account
-        /// suppression scope for emails sent using this configuration set. Can be one of the
-        /// following:
+        /// The suppression scope for the tenant. Specify <c>TENANT</c> to use the tenant's own
+        /// suppression list, or <c>ACCOUNT</c> to use the account-level suppression list.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        ///  <c>TENANT</c> – Use the tenant's suppression list.
+        /// If you don't specify a suppression scope, the tenant defaults to <c>ACCOUNT</c> scope
+        /// and uses the account-level suppression list.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ACCOUNT</c> – Use the account-level suppression list.
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         public SuppressionListScope SuppressionScope
         {
@@ -129,22 +108,22 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidationOptions. 
+        /// Gets and sets the property TenantName. 
         /// <para>
-        /// An object that contains information about the email address suppression preferences
-        /// for the configuration set in the current Amazon Web Services Region.
+        /// The name of the tenant to configure suppression list preferences for.
         /// </para>
         /// </summary>
-        public SuppressionValidationOptions ValidationOptions
+        [AWSProperty(Required=true, Min=1)]
+        public string TenantName
         {
-            get { return this._validationOptions; }
-            set { this._validationOptions = value; }
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
         }
 
-        // Check to see if ValidationOptions property is set
-        internal bool IsSetValidationOptions()
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
         {
-            return this._validationOptions != null;
+            return this._tenantName != null;
         }
 
     }

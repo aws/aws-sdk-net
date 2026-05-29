@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutConfigurationSetSuppressionOptions Request Marshaller
+    /// PutTenantSuppressionAttributes Request Marshaller
     /// </summary>       
-    public class PutConfigurationSetSuppressionOptionsRequestMarshaller : IMarshaller<IRequest, PutConfigurationSetSuppressionOptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutTenantSuppressionAttributesRequestMarshaller : IMarshaller<IRequest, PutTenantSuppressionAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutConfigurationSetSuppressionOptionsRequest)input);
+            return this.Marshall((PutTenantSuppressionAttributesRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,14 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutConfigurationSetSuppressionOptionsRequest publicRequest)
+        public IRequest Marshall(PutTenantSuppressionAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetConfigurationSetName())
-                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ConfigurationSetName set");
-            request.AddPathResource("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
-            request.ResourcePath = "/v2/email/configuration-sets/{ConfigurationSetName}/suppression-options";
+            request.ResourcePath = "/v2/email/tenant/suppression";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -93,15 +90,10 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SuppressionScope);
             }
 
-            if(publicRequest.IsSetValidationOptions())
+            if(publicRequest.IsSetTenantName())
             {
-                context.Writer.WritePropertyName("ValidationOptions");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SuppressionValidationOptionsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ValidationOptions, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("TenantName");
+                context.Writer.WriteStringValue(publicRequest.TenantName);
             }
 
             writer.WriteEndObject();
@@ -117,9 +109,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutConfigurationSetSuppressionOptionsRequestMarshaller _instance = new PutConfigurationSetSuppressionOptionsRequestMarshaller();        
+        private static PutTenantSuppressionAttributesRequestMarshaller _instance = new PutTenantSuppressionAttributesRequestMarshaller();        
 
-        internal static PutConfigurationSetSuppressionOptionsRequestMarshaller GetInstance()
+        internal static PutTenantSuppressionAttributesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +119,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutConfigurationSetSuppressionOptionsRequestMarshaller Instance
+        public static PutTenantSuppressionAttributesRequestMarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SuppressedDestination Object
+    /// Response Unmarshaller for TenantSuppressionAttributes Object
     /// </summary>  
-    public class SuppressedDestinationUnmarshaller : IJsonUnmarshaller<SuppressedDestination, JsonUnmarshallerContext>
+    public class TenantSuppressionAttributesUnmarshaller : IJsonUnmarshaller<TenantSuppressionAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuppressedDestination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TenantSuppressionAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SuppressedDestination unmarshalledObject = new SuppressedDestination();
+            TenantSuppressionAttributes unmarshalledObject = new TenantSuppressionAttributes();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("SuppressedReasons", targetDepth))
                 {
-                    var unmarshaller = SuppressedDestinationAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmailAddress", targetDepth))
+                if (context.TestExpression("SuppressionScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmailAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastUpdateTime", targetDepth))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TenantName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TenantName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SuppressionScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuppressedDestinationUnmarshaller _instance = new SuppressedDestinationUnmarshaller();        
+        private static TenantSuppressionAttributesUnmarshaller _instance = new TenantSuppressionAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuppressedDestinationUnmarshaller Instance
+        public static TenantSuppressionAttributesUnmarshaller Instance
         {
             get
             {

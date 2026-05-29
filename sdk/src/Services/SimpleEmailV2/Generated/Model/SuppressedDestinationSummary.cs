@@ -41,7 +41,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address that's on the suppression list for your account.
+        /// The email address that's on the suppression list for your account or for a specific
+        /// tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason that the address was added to the suppression list for your account.
+        /// The reason that the address was added to the suppression list for your account or
+        /// for a specific tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
