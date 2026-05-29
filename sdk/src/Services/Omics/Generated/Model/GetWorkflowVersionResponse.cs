@@ -46,6 +46,8 @@ namespace Amazon.Omics.Model
         private string _main;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
+        private Dictionary<string, Dictionary<string, WorkflowParameter>> _profileParameterTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, WorkflowParameter>>() : null;
+        private List<string> _profiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _readme;
         private string _readmePath;
         private WorkflowStatus _status;
@@ -292,6 +294,54 @@ namespace Amazon.Omics.Model
         internal bool IsSetParameterTemplate()
         {
             return this._parameterTemplate != null && (this._parameterTemplate.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileParameterTemplates. 
+        /// <para>
+        /// A mapping of profile names to their parameter templates. Each profile defines its
+        /// own set of parameters that you can use when starting a run with that profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, Dictionary<string, WorkflowParameter>> ProfileParameterTemplates
+        {
+            get { return this._profileParameterTemplates; }
+            set { this._profileParameterTemplates = value; }
+        }
+
+        // Check to see if ProfileParameterTemplates property is set
+        internal bool IsSetProfileParameterTemplates()
+        {
+            return this._profileParameterTemplates != null && (this._profileParameterTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profiles. 
+        /// <para>
+        /// The list of Nextflow profiles that are available for this workflow version. Profiles
+        /// allow you to select predefined configuration settings at runtime.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Profiles
+        {
+            get { return this._profiles; }
+            set { this._profiles = value; }
+        }
+
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
+        {
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
