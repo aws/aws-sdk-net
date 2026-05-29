@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutomatedReasoningPolicyWorkflowTypeContent Marshaller
+    /// AutomatedReasoningPolicyIterativeRefinementContent Marshaller
     /// </summary>
-    public class AutomatedReasoningPolicyWorkflowTypeContentMarshaller : IRequestMarshaller<AutomatedReasoningPolicyWorkflowTypeContent, JsonMarshallerContext> 
+    public class AutomatedReasoningPolicyIterativeRefinementContentMarshaller : IRequestMarshaller<AutomatedReasoningPolicyIterativeRefinementContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutomatedReasoningPolicyWorkflowTypeContent requestObject, JsonMarshallerContext context)
+        public void Marshall(AutomatedReasoningPolicyIterativeRefinementContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -62,37 +62,10 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetGenerateFidelityReportContent())
+            if(requestObject.IsSetFeedback())
             {
-                context.Writer.WritePropertyName("generateFidelityReportContent");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.GenerateFidelityReportContent, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetIterativeRefinementContent())
-            {
-                context.Writer.WritePropertyName("iterativeRefinementContent");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutomatedReasoningPolicyIterativeRefinementContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.IterativeRefinementContent, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPolicyRepairAssets())
-            {
-                context.Writer.WritePropertyName("policyRepairAssets");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutomatedReasoningPolicyBuildWorkflowRepairContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.PolicyRepairAssets, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("feedback");
+                context.Writer.WriteStringValue(requestObject.Feedback);
             }
 
         }
@@ -100,7 +73,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutomatedReasoningPolicyWorkflowTypeContentMarshaller Instance = new AutomatedReasoningPolicyWorkflowTypeContentMarshaller();
+        public readonly static AutomatedReasoningPolicyIterativeRefinementContentMarshaller Instance = new AutomatedReasoningPolicyIterativeRefinementContentMarshaller();
 
     }
 }

@@ -2643,6 +2643,11 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyIterativeRefinementContent.Feedback</property>
+    <min>0</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyReportSourceDocument.DocumentHash</property>
     <min>64</min>
     <max>64</max>

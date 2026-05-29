@@ -755,9 +755,17 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType INGEST_CONTENT = new AutomatedReasoningPolicyBuildWorkflowType("INGEST_CONTENT");
         /// <summary>
+        /// Constant ITERATIVELY_REFINE_POLICY for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType ITERATIVELY_REFINE_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("ITERATIVELY_REFINE_POLICY");
+        /// <summary>
         /// Constant REFINE_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildWorkflowType REFINE_POLICY = new AutomatedReasoningPolicyBuildWorkflowType("REFINE_POLICY");
+        /// <summary>
+        /// Constant RESOLVE_POLICY_AMBIGUITIES for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType RESOLVE_POLICY_AMBIGUITIES = new AutomatedReasoningPolicyBuildWorkflowType("RESOLVE_POLICY_AMBIGUITIES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
