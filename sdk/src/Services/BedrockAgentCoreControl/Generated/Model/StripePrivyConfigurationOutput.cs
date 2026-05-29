@@ -36,8 +36,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _appId;
         private Secret _appSecretArn;
+        private string _appSecretJsonKey;
+        private SecretSourceType _appSecretSource;
         private string _authorizationId;
         private Secret _authorizationPrivateKeyArn;
+        private string _authorizationPrivateKeyJsonKey;
+        private SecretSourceType _authorizationPrivateKeySource;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -75,6 +79,44 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AppSecretJsonKey. 
+        /// <para>
+        /// The JSON key used to extract the app secret value from the AWS Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AppSecretJsonKey
+        {
+            get { return this._appSecretJsonKey; }
+            set { this._appSecretJsonKey = value; }
+        }
+
+        // Check to see if AppSecretJsonKey property is set
+        internal bool IsSetAppSecretJsonKey()
+        {
+            return this._appSecretJsonKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppSecretSource. 
+        /// <para>
+        /// The source type of the app secret. Either <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType AppSecretSource
+        {
+            get { return this._appSecretSource; }
+            set { this._appSecretSource = value; }
+        }
+
+        // Check to see if AppSecretSource property is set
+        internal bool IsSetAppSecretSource()
+        {
+            return this._appSecretSource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AuthorizationId. 
         /// <para>
         /// The authorization ID for the Stripe Privy integration.
@@ -107,6 +149,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAuthorizationPrivateKeyArn()
         {
             return this._authorizationPrivateKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationPrivateKeyJsonKey. 
+        /// <para>
+        /// The JSON key used to extract the authorization private key value from the AWS Secrets
+        /// Manager secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AuthorizationPrivateKeyJsonKey
+        {
+            get { return this._authorizationPrivateKeyJsonKey; }
+            set { this._authorizationPrivateKeyJsonKey = value; }
+        }
+
+        // Check to see if AuthorizationPrivateKeyJsonKey property is set
+        internal bool IsSetAuthorizationPrivateKeyJsonKey()
+        {
+            return this._authorizationPrivateKeyJsonKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationPrivateKeySource. 
+        /// <para>
+        /// The source type of the authorization private key. Either <c>MANAGED</c> if the secret
+        /// is managed by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets
+        /// Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType AuthorizationPrivateKeySource
+        {
+            get { return this._authorizationPrivateKeySource; }
+            set { this._authorizationPrivateKeySource = value; }
+        }
+
+        // Check to see if AuthorizationPrivateKeySource property is set
+        internal bool IsSetAuthorizationPrivateKeySource()
+        {
+            return this._authorizationPrivateKeySource != null;
         }
 
     }

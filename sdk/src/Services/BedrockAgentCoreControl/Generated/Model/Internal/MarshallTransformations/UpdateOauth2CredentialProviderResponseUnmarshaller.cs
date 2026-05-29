@@ -64,6 +64,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.ClientSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("clientSecretJsonKey", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClientSecretJsonKey = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("clientSecretSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClientSecretSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

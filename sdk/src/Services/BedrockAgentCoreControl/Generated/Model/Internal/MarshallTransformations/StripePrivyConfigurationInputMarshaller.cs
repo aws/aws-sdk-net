@@ -58,6 +58,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AppSecret);
             }
 
+            if(requestObject.IsSetAppSecretConfig())
+            {
+                context.Writer.WritePropertyName("appSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AppSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetAppSecretSource())
+            {
+                context.Writer.WritePropertyName("appSecretSource");
+                context.Writer.WriteStringValue(requestObject.AppSecretSource);
+            }
+
             if(requestObject.IsSetAuthorizationId())
             {
                 context.Writer.WritePropertyName("authorizationId");
@@ -68,6 +85,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("authorizationPrivateKey");
                 context.Writer.WriteStringValue(requestObject.AuthorizationPrivateKey);
+            }
+
+            if(requestObject.IsSetAuthorizationPrivateKeyConfig())
+            {
+                context.Writer.WritePropertyName("authorizationPrivateKeyConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthorizationPrivateKeyConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetAuthorizationPrivateKeySource())
+            {
+                context.Writer.WritePropertyName("authorizationPrivateKeySource");
+                context.Writer.WriteStringValue(requestObject.AuthorizationPrivateKeySource);
             }
 
         }

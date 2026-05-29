@@ -4341,6 +4341,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type SecretSourceType.
+    /// </summary>
+    public class SecretSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL for SecretSourceType
+        /// </summary>
+        public static readonly SecretSourceType EXTERNAL = new SecretSourceType("EXTERNAL");
+        /// <summary>
+        /// Constant MANAGED for SecretSourceType
+        /// </summary>
+        public static readonly SecretSourceType MANAGED = new SecretSourceType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecretSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecretSourceType FindValue(string value)
+        {
+            return FindValue<SecretSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecretSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServerProtocol.
     /// </summary>
     public class ServerProtocol : ConstantClass

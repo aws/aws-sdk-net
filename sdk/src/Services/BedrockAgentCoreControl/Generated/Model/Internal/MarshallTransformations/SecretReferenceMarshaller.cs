@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LinkedinOauth2ProviderConfigInput Marshaller
+    /// SecretReference Marshaller
     /// </summary>
-    public class LinkedinOauth2ProviderConfigInputMarshaller : IRequestMarshaller<LinkedinOauth2ProviderConfigInput, JsonMarshallerContext> 
+    public class SecretReferenceMarshaller : IRequestMarshaller<SecretReference, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,20 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LinkedinOauth2ProviderConfigInput requestObject, JsonMarshallerContext context)
+        public void Marshall(SecretReference requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetClientId())
+            if(requestObject.IsSetJsonKey())
             {
-                context.Writer.WritePropertyName("clientId");
-                context.Writer.WriteStringValue(requestObject.ClientId);
+                context.Writer.WritePropertyName("jsonKey");
+                context.Writer.WriteStringValue(requestObject.JsonKey);
             }
 
-            if(requestObject.IsSetClientSecret())
+            if(requestObject.IsSetSecretId())
             {
-                context.Writer.WritePropertyName("clientSecret");
-                context.Writer.WriteStringValue(requestObject.ClientSecret);
-            }
-
-            if(requestObject.IsSetClientSecretConfig())
-            {
-                context.Writer.WritePropertyName("clientSecretConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SecretReferenceMarshaller.Instance;
-                marshaller.Marshall(requestObject.ClientSecretConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetClientSecretSource())
-            {
-                context.Writer.WritePropertyName("clientSecretSource");
-                context.Writer.WriteStringValue(requestObject.ClientSecretSource);
+                context.Writer.WritePropertyName("secretId");
+                context.Writer.WriteStringValue(requestObject.SecretId);
             }
 
         }
@@ -80,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LinkedinOauth2ProviderConfigInputMarshaller Instance = new LinkedinOauth2ProviderConfigInputMarshaller();
+        public readonly static SecretReferenceMarshaller Instance = new SecretReferenceMarshaller();
 
     }
 }
