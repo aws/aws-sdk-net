@@ -1,0 +1,10 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Fix CryptoUtil.ComputeMD5Hash failure in FIPS-enforced environments."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
