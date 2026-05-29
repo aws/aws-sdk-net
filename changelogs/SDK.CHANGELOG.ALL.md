@@ -1,3 +1,109 @@
+### 4.0.258.0 (2026-05-29 18:23 UTC)
+* Account (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationInsights (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ARCZonalShift (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Athena (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* AutoScaling (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* AutoScalingPlans (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* BackupGateway (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.29.0)
+	* Automated Reasoning checks - Added two build workflows for policies. Iterative Refine Policy uses AI to update policy definitions based on test results and feedback. Resolve Policy Ambiguities consolidates ambiguous variables in Automated Reasoning policies, a common source of ambiguous validation.
+* BedrockAgentCoreControl (4.0.40.0)
+	* Reference your own AWS Secrets Manager secrets when configuring credential providers, giving you control over encryption, rotation, and access policies instead of using service-managed secrets.
+* Budgets (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Chime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudDirectory (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudHSM (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudHSMV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudSearch (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudSearchDomain (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudTrail (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeBuild (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeCatalyst (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeCommit (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeDeploy (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruSecurity (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectCampaignsV2 (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectContactLens (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* DirectoryServiceData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Drs (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* EntityResolution (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* GroundStation (4.0.6.0)
+	* Adds support for Alpha-5 satellite number encoding in the Two-Line Element ephemeris format.
+* InspectorScan (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexModelsV2 (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexRuntimeV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MailManager (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ManagedGrafana (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MWAA (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkFlowMonitor (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Omics (4.0.10.0)
+	* Add engineSettings to StartRun and GetRun. Add profiles and profileParameterTemplates to GetWorkflow and GetWorkflowVersion.
+* PaymentCryptographyData (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* PCS (4.0.16.0)
+	* Adding new BDD representation of endpoint ruleset
+* PersonalizeEvents (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Proton (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* QBusiness (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.24.0)
+	* Adds support for creating, updating, describing, listing, and deleting an OAuthClientApplication resource, a new quicksight resource that allows customers to store OAuth configurations to connect to their databases via 3 Legged OAuth.
+* RDSDataService (4.0.3.0)
+	* RDS Data API arrays (longValues, doubleValues, stringValues, booleanValues) in ExecuteStatement responses now correctly support null elements. Runtime change for JS v3 and .NET. Compile-time change for C plus plus, .NET, Kotlin, Rust. No impact for Java, Python, Ruby, PHP, Go.
+	* `ArrayValue` members `LongValues`, `DoubleValues`, and `BooleanValues` are now `List<long?>`, `List<double?>`, and `List<bool?>`, and preserve null elements returned in SQL arrays. Previously, null elements were coerced to `0`, `0.0`, and `false` (for example, `SELECT ARRAY[1, NULL, 3]::bigint[]` returned `[1, 0, 3]` and now returns `[1, null, 3]`). `StringValues` and nested `ArrayValues` are unchanged -- reference types already preserved null. Existing code that assigns value-type elements to non-nullable variables won't compile; migrate by unwrapping with `.GetValueOrDefault()`, changing the target type to nullable, or using `??` to supply a default.
+* Route53RecoveryCluster (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Resolver (4.0.8.0)
+	* Added BatchCreateFirewallRule, BatchUpdateFirewallRule, BatchDeleteFirewallRule, and ListFirewallRuleTypes APIs. Added FirewallRuleType support to Firewall Rule APIs.
+* SimpleEmailV2 (4.0.14.0)
+	* This release introduces support for Tenant Suppression Lists
+* SSMGuiConnect (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Synthetics (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* WAFV2 (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkspacesInstances (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Core 4.0.7.4
+	* Fix CryptoUtil.ComputeMD5Hash failure in FIPS-enforced environments.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.257.0 (2026-05-28 18:29 UTC)
 * AccessAnalyzer (4.0.8.0)
 	* Adding new BDD representation of endpoint ruleset
