@@ -68,7 +68,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectBooleanValuesListValue in requestObject.BooleanValues)
                 {
-                        context.Writer.WriteBooleanValue(requestObjectBooleanValuesListValue);
+                           if (requestObjectBooleanValuesListValue != null)
+                               context.Writer.WriteBooleanValue(requestObjectBooleanValuesListValue.Value);
+                           else
+                               context.Writer.WriteNullValue();
                 }
                 context.Writer.WriteEndArray();
             }
@@ -79,7 +82,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectDoubleValuesListValue in requestObject.DoubleValues)
                 {
-                        context.Writer.WriteNumberValue(requestObjectDoubleValuesListValue);
+                           if (requestObjectDoubleValuesListValue != null)
+                               context.Writer.WriteNumberValue(requestObjectDoubleValuesListValue.Value);
+                           else
+                               context.Writer.WriteNullValue();
                 }
                 context.Writer.WriteEndArray();
             }
@@ -90,7 +96,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectLongValuesListValue in requestObject.LongValues)
                 {
-                        context.Writer.WriteNumberValue(requestObjectLongValuesListValue);
+                           if (requestObjectLongValuesListValue != null)
+                               context.Writer.WriteNumberValue(requestObjectLongValuesListValue.Value);
+                           else
+                               context.Writer.WriteNullValue();
                 }
                 context.Writer.WriteEndArray();
             }

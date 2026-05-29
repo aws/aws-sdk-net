@@ -181,7 +181,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -247,8 +247,23 @@ namespace Amazon.RDSDataService.Model
         /// For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
         /// a database secret</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you use the CLI on Linux to reference a secret created in the RDS console, the
+        /// ARN might include special characters like <c>rds!cluster</c>. If you enclose the ARN
+        /// in double quotes, the <c>!</c> character might trigger a shell expansion error, such
+        /// as <c>-bash: !cluster: event not found</c>. To avoid this, escape the exclamation
+        /// mark (\!) in the ARN or enclose the entire ARN in single quotes (') instead of double
+        /// quotes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Alternatively, disable shell history expansion by running <c>set +H</c> before you
+        /// execute the command.
+        /// </para>
+        ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string SecretArn
         {
             get { return this._secretArn; }
