@@ -1527,6 +1527,66 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  CreateOAuthClientApplication
+
+        internal virtual CreateOAuthClientApplicationResponse CreateOAuthClientApplication(CreateOAuthClientApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateOAuthClientApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an OAuthClientApplication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOAuthClientApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOAuthClientApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateOAuthClientApplication">REST API Reference for CreateOAuthClientApplication Operation</seealso>
+        public virtual Task<CreateOAuthClientApplicationResponse> CreateOAuthClientApplicationAsync(CreateOAuthClientApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateOAuthClientApplicationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateRefreshSchedule
 
         internal virtual CreateRefreshScheduleResponse CreateRefreshSchedule(CreateRefreshScheduleRequest request)
@@ -3332,6 +3392,60 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteOAuthClientApplication
+
+        internal virtual DeleteOAuthClientApplicationResponse DeleteOAuthClientApplication(DeleteOAuthClientApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteOAuthClientApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an OAuthClientApplication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOAuthClientApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteOAuthClientApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteOAuthClientApplication">REST API Reference for DeleteOAuthClientApplication Operation</seealso>
+        public virtual Task<DeleteOAuthClientApplicationResponse> DeleteOAuthClientApplicationAsync(DeleteOAuthClientApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteOAuthClientApplicationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -6359,6 +6473,57 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DescribeOAuthClientApplication
+
+        internal virtual DescribeOAuthClientApplicationResponse DescribeOAuthClientApplication(DescribeOAuthClientApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOAuthClientApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an OAuthClientApplication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOAuthClientApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeOAuthClientApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeOAuthClientApplication">REST API Reference for DescribeOAuthClientApplication Operation</seealso>
+        public virtual Task<DescribeOAuthClientApplicationResponse> DescribeOAuthClientApplicationAsync(DescribeOAuthClientApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeOAuthClientApplicationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeQPersonalizationConfiguration
 
         internal virtual DescribeQPersonalizationConfigurationResponse DescribeQPersonalizationConfiguration(DescribeQPersonalizationConfigurationRequest request)
@@ -9326,6 +9491,61 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = ListNamespacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNamespacesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListOAuthClientApplications
+
+        internal virtual ListOAuthClientApplicationsResponse ListOAuthClientApplications(ListOAuthClientApplicationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOAuthClientApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOAuthClientApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOAuthClientApplicationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all OAuthClientApplications in the current Amazon Web Services Region that belong
+        /// to this Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOAuthClientApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOAuthClientApplications service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListOAuthClientApplications">REST API Reference for ListOAuthClientApplications Operation</seealso>
+        public virtual Task<ListOAuthClientApplicationsResponse> ListOAuthClientApplicationsAsync(ListOAuthClientApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOAuthClientApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOAuthClientApplicationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOAuthClientApplicationsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -13445,6 +13665,63 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateKeyRegistrationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateKeyRegistrationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateOAuthClientApplication
+
+        internal virtual UpdateOAuthClientApplicationResponse UpdateOAuthClientApplication(UpdateOAuthClientApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOAuthClientApplicationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an OAuthClientApplication.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOAuthClientApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOAuthClientApplication service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateOAuthClientApplication">REST API Reference for UpdateOAuthClientApplication Operation</seealso>
+        public virtual Task<UpdateOAuthClientApplicationResponse> UpdateOAuthClientApplicationAsync(UpdateOAuthClientApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOAuthClientApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOAuthClientApplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOAuthClientApplicationResponse>(request, options, cancellationToken);
         }
         #endregion
         
