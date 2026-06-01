@@ -234,6 +234,38 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderCreateUserPoolReplica()
+        {
+            #region example-create-a-replica-of-a-user-pool-in-a-new-region-1745281038615
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.CreateUserPoolReplica(new CreateUserPoolReplicaRequest 
+            {
+                RegionName = "ap-south-1",
+                UserPoolId = "us-east-1_abcd12345"
+            });
+
+            UserPoolReplicaType userPoolReplica = response.UserPoolReplica;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderDeleteUserPoolReplica()
+        {
+            #region example-delete-a-user-pool-replica-1745281451065
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.DeleteUserPoolReplica(new DeleteUserPoolReplicaRequest 
+            {
+                RegionName = "us-east-2",
+                UserPoolId = "us-west-2_abcd12345"
+            });
+
+            UserPoolReplicaType userPoolReplica = response.UserPoolReplica;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderInitiateAuth()
         {
             #region example-username-and-password-sign-in-for-a-user-who-has-totp-mfa-1689887395219
@@ -265,6 +297,21 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderListUserPoolReplicas()
+        {
+            #region example-list-the-replicas-of-a-user-pool-1745281209294
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.ListUserPoolReplicas(new ListUserPoolReplicasRequest 
+            {
+                UserPoolId = "eu-north-1_abcd12345"
+            });
+
+            List<UserPoolReplicaType> userPoolReplicas = response.UserPoolReplicas;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderListUsers()
         {
             #region a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246
@@ -284,6 +331,23 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
 
             string paginationToken = response.PaginationToken;
             List<UserType> users = response.Users;
+
+            #endregion
+        }
+
+        public void CognitoIdentityProviderUpdateUserPoolReplica()
+        {
+            #region example-update-a-user-pool-replica-1745281323439
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.UpdateUserPoolReplica(new UpdateUserPoolReplicaRequest 
+            {
+                RegionName = "us-east-1",
+                Status = "ACTIVE",
+                UserPoolId = "ap-south-1_abcd12345"
+            });
+
+            UserPoolReplicaType userPoolReplica = response.UserPoolReplica;
 
             #endregion
         }
