@@ -1,3 +1,99 @@
+### 4.0.259.0 (2026-06-01 18:19 UTC)
+* Amplify (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationDiscoveryService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppMesh (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppSync (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* AWSHealth (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudWatchEvents (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodePipeline (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CognitoIdentity (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CognitoIdentityProvider (4.0.9.0)
+	* Add support for multi-region replication, enabling synchronization of user data and configurations to a secondary user pool in a standby Region. Add support for customer managed keys (CMK) in AWS KMS for encrypting user pool data at rest.
+* CognitoSync (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConfigService (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* CostAndUsageReport (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* DatabaseMigrationService (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataPipeline (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* DeviceFarm (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DirectoryService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* DocDB (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECR (4.0.14.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECS (4.0.23.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElastiCache (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticBeanstalk (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticLoadBalancing (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticLoadBalancingV2 (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticMapReduce (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Elasticsearch (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* GameLift (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* Glacier (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Greengrass (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IdentityManagement (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Inspector (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoT (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTEventsData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* KeyManagementService (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisAnalytics (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideo (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoMedia (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Lambda (4.0.16.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexModelBuildingService (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManager (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Lightsail (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* MachineLearning (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceAgreement (4.0.8.0)
+	* Adding Entitlements in SearchAgreements Response
+* MarketplaceCatalog (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaStoreData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Personalize (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.25.0)
+	* This release adds public APIs for Amazon QuickSight Spaces, Agents, and Flows. Spaces APIs enable management of curated resource collections. Agents APIs provide lifecycle control over AI-powered agents that leverage Spaces. Flows APIs add CRUDL APIs for automated workflows.
+* S3 (4.0.23.6)
+	* Fixed issue where calling `UploadPart` with an unseekable stream and `DisablePayloadSigning` set to true would fail (https://github.com/aws/aws-sdk-net/issues/4010). If the stream reports its length it is used directly (capped at `PartSize` when one is set); `PartSize` is only required for a forward-only stream that cannot report its length.
+
 ### 4.0.258.0 (2026-05-29 18:23 UTC)
 * Account (4.0.5.0)
 	* Adding new BDD representation of endpoint ruleset
