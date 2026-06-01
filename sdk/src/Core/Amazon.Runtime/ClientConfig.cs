@@ -339,22 +339,22 @@ namespace Amazon.Runtime
         /// </summary>
         public string ServiceURL
         {
-            get 
+            get
             {
                 if (!didProcessServiceURL && this.serviceURL == null && IgnoreConfiguredEndpointUrls == false && ServiceId != null)
                 {
-                    
+
                     string serviceSpecificTransformedEnvironmentVariable = TransformServiceId.TransformServiceIdToEnvVariable(ServiceId);
                     string transformedConfigServiceId = TransformServiceId.TransformServiceIdToConfigVariable(ServiceId);
 
                     if (Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable) != null)
                     {
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific environment variable: {serviceSpecificTransformedEnvironmentVariable}.");
-                        this.ServiceURL = Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable);                    
+                        this.serviceURL = NormalizeServiceURL(Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable));
                     }
                     else if (Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE) != null)
                     {
-                        this.ServiceURL = Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE);
+                        this.serviceURL = NormalizeServiceURL(Environment.GetEnvironmentVariable(EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE));
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global environment variable: {EnvironmentVariables.GLOBAL_ENDPOINT_ENVIRONMENT_VARIABLE}.");
                     }
                     else
@@ -378,7 +378,7 @@ namespace Amazon.Runtime
                                 {
                                     Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific endpoint url in " +
                                     $"profile {profile.Name} from key {transformedConfigServiceId}.");
-                                    this.ServiceURL = endpointUrlValue;
+                                    this.serviceURL = NormalizeServiceURL(endpointUrlValue);
                                 }
 
                             }
@@ -386,7 +386,7 @@ namespace Amazon.Runtime
                             {
                                 Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from global endpoint url" +
                                     $"in profile {profile.Name} from key {SettingsConstants.EndpointUrl}.");
-                                this.ServiceURL = profile.EndpointUrl;
+                                this.serviceURL = NormalizeServiceURL(profile.EndpointUrl);
                             }
                         }
 
@@ -403,32 +403,33 @@ namespace Amazon.Runtime
                         $"ServiceUrl was set last, ServiceUrl: {value} will be used to make the request and RegionEndpoint: {this.regionEndpoint} has been set to null.");
                 this.regionEndpoint = null;
                 this.probeForRegionEndpoint = false;
-                
-                if(!string.IsNullOrEmpty(value))
+
+                this.serviceURL = NormalizeServiceURL(value);
+            }
+        }
+
+        private static string NormalizeServiceURL(string value)
+        {
+            if(!string.IsNullOrEmpty(value))
+            {
+                try
                 {
-                    // If the URL passed in only has a host name make sure there is an ending "/" to avoid signature mismatch issues.
-                    // If there is a resource path do not add a "/" because the marshallers are relying on the URL to be in format without the "/".
-                    // API Gateway Management API is an example of a service that vends its own URL that users have to set which has a resource path.
-                    // The marshallers add new segments to the resource path with the "/".
-                    try
+                    var path = new Uri(value).PathAndQuery;
+                    if (string.IsNullOrEmpty(path) || path == "/")
                     {
-                        var path = new Uri(value).PathAndQuery;
-                        if (string.IsNullOrEmpty(path) || path == "/")
+                        if (!value.EndsWith("/"))
                         {
-                            if (!string.IsNullOrEmpty(value) && !value.EndsWith("/"))
-                            {
-                                value += "/";
-                            }
+                            value += "/";
                         }
                     }
-                    catch(UriFormatException)
-                    {
-                        throw new AmazonClientException("Value for ServiceURL is not a valid URL: " + value);
-                    }
                 }
-
-                this.serviceURL = value;
+                catch(UriFormatException)
+                {
+                    throw new AmazonClientException("Value for ServiceURL is not a valid URL: " + value);
+                }
             }
+
+            return value;
         }
 
         /// <summary>
