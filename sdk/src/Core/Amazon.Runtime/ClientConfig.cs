@@ -343,7 +343,6 @@ namespace Amazon.Runtime
             {
                 if (!didProcessServiceURL && this.serviceURL == null && IgnoreConfiguredEndpointUrls == false && ServiceId != null)
                 {
-
                     string serviceSpecificTransformedEnvironmentVariable = TransformServiceId.TransformServiceIdToEnvVariable(ServiceId);
                     string transformedConfigServiceId = TransformServiceId.TransformServiceIdToConfigVariable(ServiceId);
 
