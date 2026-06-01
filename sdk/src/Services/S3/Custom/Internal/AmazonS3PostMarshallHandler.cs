@@ -124,15 +124,38 @@ namespace Amazon.S3.Internal
         {
             if (uploadPartRequest.InputStream != null)
             {
-                // Wrap input stream in partial wrapper (to upload only part of the stream)
-                var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault());
-                if (partialStream.Length > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
+                Stream wrappedStream;
+                long contentLength;
+
+                if (!uploadPartRequest.InputStream.CanSeek && (uploadPartRequest.DisablePayloadSigning ?? false))
+                {
+                    // Not seekable + payload signing disabled: use a read-only wrapper that
+                    // doesn't require seeking. PartSize is the ceiling - when the stream reports
+                    // its length the part is capped to it (the last part may be shorter); a
+                    // forward-only stream falls back to PartSize, which must then equal the
+                    // stream's byte count.
+                    wrappedStream = GetStreamWithLength(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault(), chooseMin: true);
+                    contentLength = wrappedStream.Length - wrappedStream.Position;
+                    if (contentLength <= 0)
+                    {
+                        throw new AmazonS3Exception("Could not determine the part's content length on UploadPartRequest. When using a non-seekable stream that does not report its length and DisablePayloadSigning is true, PartSize must be set to the exact number of bytes in the stream.");
+                    }
+                }
+                else
+                {
+                    // Wrap input stream in partial wrapper (to upload only part of the stream)
+                    var partialStream = new PartialWrapperStream(uploadPartRequest.InputStream, uploadPartRequest.PartSize.GetValueOrDefault());
+                    wrappedStream = partialStream;
+                    contentLength = partialStream.Length;
+                }
+
+                if (contentLength > 0 && !(uploadPartRequest.DisablePayloadSigning ?? false))
                     request.UseChunkEncoding = uploadPartRequest.UseChunkEncoding;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
-                    request.Headers.Add(HeaderKeys.ContentLengthHeader, partialStream.Length.ToString(CultureInfo.InvariantCulture));
+                    request.Headers.Add(HeaderKeys.ContentLengthHeader, contentLength.ToString(CultureInfo.InvariantCulture));
 
                 request.DisablePayloadSigning = uploadPartRequest.DisablePayloadSigning;
-                uploadPartRequest.InputStream = partialStream;
+                uploadPartRequest.InputStream = wrappedStream;
             }
 
             var defaultChecksumValidationDisabled = uploadPartRequest.DisableDefaultChecksumValidation ?? AWSConfigsS3.DisableDefaultChecksumValidation;
@@ -190,7 +213,7 @@ namespace Amazon.S3.Internal
         /// If the stream supports seeking, returns stream.
         /// Otherwise, uses hintLength to create a read-only, non-seekable stream of given length
         /// </summary>
-        private static Stream GetStreamWithLength(Stream baseStream, long hintLength)
+        private static Stream GetStreamWithLength(Stream baseStream, long hintLength, bool chooseMin = false)
         {
             Stream result = baseStream;
             bool shouldWrapStream = false;
@@ -198,6 +221,14 @@ namespace Amazon.S3.Internal
             try
             {
                 length = baseStream.Length - baseStream.Position;
+
+                // For UploadPart, hintLength (PartSize) is the maximum number of bytes to read
+                // from the stream, so cap the length and wrap to enforce the boundary.
+                if (chooseMin && hintLength > 0 && length > hintLength)
+                {
+                    shouldWrapStream = true;
+                    length = hintLength;
+                }
             }
             catch (NotSupportedException)
             {
