@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Updated NuGet package descriptions to note that AWS SDK for .NET V3 has reached end of support."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
