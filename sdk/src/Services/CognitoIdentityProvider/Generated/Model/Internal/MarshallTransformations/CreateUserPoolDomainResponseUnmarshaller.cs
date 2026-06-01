@@ -64,6 +64,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.ManagedLoginVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Routing", targetDepth))
+                {
+                    var unmarshaller = RoutingTypeUnmarshaller.Instance;
+                    response.Routing = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;
@@ -112,6 +118,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotEnabledException"))
+                {
+                    return OperationNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

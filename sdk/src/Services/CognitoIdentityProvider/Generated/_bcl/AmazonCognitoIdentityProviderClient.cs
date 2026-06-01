@@ -361,6 +361,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -425,6 +430,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -576,6 +586,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -638,6 +653,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -718,6 +738,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -809,6 +834,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -948,6 +978,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -1093,6 +1128,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
         /// </exception>
@@ -1173,6 +1213,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1233,6 +1278,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -1298,6 +1348,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1360,6 +1415,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -1462,6 +1522,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1562,6 +1627,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1625,6 +1695,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1686,6 +1761,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -1749,6 +1829,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1809,6 +1894,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -1878,6 +1968,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -1944,6 +2039,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -2012,6 +2112,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2074,6 +2179,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -2139,6 +2249,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -2206,6 +2321,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -2317,6 +2437,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -2446,6 +2571,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -2558,6 +2688,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2651,6 +2786,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2720,6 +2860,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2785,6 +2930,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2846,6 +2996,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -2911,6 +3066,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -2974,6 +3134,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -3040,6 +3205,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -3110,6 +3280,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -3174,6 +3349,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -3287,6 +3467,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -3407,6 +3592,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -3547,6 +3737,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
@@ -3701,6 +3896,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
         /// comply with the password-history policy.
@@ -3789,6 +3989,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -3856,6 +4061,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -3960,6 +4170,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
         /// comply with the password-history policy.
@@ -4063,6 +4278,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
         /// comply with the password-history policy.
@@ -4130,6 +4350,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4188,6 +4413,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -4259,6 +4489,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -4336,6 +4571,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4410,6 +4650,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4479,6 +4724,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -4599,6 +4849,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -4727,6 +4982,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4829,6 +5089,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4922,6 +5187,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -4987,6 +5257,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -5048,6 +5323,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -5112,6 +5392,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
@@ -5188,6 +5473,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
         /// comply with the password-history policy.
@@ -5251,6 +5541,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -5323,6 +5618,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -5419,6 +5719,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -5504,6 +5809,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -5584,6 +5894,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
@@ -5673,6 +5988,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
@@ -5778,6 +6098,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -5874,6 +6199,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -5958,6 +6288,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -6025,6 +6360,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -6253,6 +6593,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -6340,6 +6685,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -6406,6 +6756,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -6470,6 +6825,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -6557,6 +6917,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -6648,6 +7013,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -6717,6 +7087,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
         /// </exception>
@@ -6783,6 +7158,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -7091,6 +7471,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7175,6 +7560,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -7265,6 +7655,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7347,6 +7742,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7359,6 +7759,161 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = CreateUserPoolDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateUserPoolDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUserPoolReplica
+
+
+        /// <summary>
+        /// Creates a replica of an existing user pool in a specified Amazon Web Services Region.
+        /// The replica enables multi-region replication for high availability and disaster recovery.
+        /// To create a replica, you must have permissions to create user pools in the target
+        /// Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolReplica service method.</param>
+        /// 
+        /// <returns>The response from the CreateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception is thrown when a user pool tag can't be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolReplica">REST API Reference for CreateUserPoolReplica Operation</seealso>
+        public virtual CreateUserPoolReplicaResponse CreateUserPoolReplica(CreateUserPoolReplicaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserPoolReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserPoolReplicaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a replica of an existing user pool in a specified Amazon Web Services Region.
+        /// The replica enables multi-region replication for high availability and disaster recovery.
+        /// To create a replica, you must have permissions to create user pools in the target
+        /// Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserPoolTaggingException">
+        /// This exception is thrown when a user pool tag can't be set or updated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolReplica">REST API Reference for CreateUserPoolReplica Operation</seealso>
+        public virtual Task<CreateUserPoolReplicaResponse> CreateUserPoolReplicaAsync(CreateUserPoolReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateUserPoolReplicaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateUserPoolReplicaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7406,6 +7961,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -7468,6 +8028,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -7669,6 +8234,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7732,6 +8302,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -7799,6 +8374,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7864,6 +8444,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7926,6 +8511,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -7987,6 +8577,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8043,6 +8638,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -8108,6 +8708,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -8176,6 +8781,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -8242,6 +8852,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -8304,6 +8919,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8360,6 +8980,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8405,6 +9030,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8444,6 +9074,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -8564,6 +9199,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8602,6 +9242,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8614,6 +9259,135 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = DeleteUserPoolDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUserPoolDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteUserPoolReplica
+
+
+        /// <summary>
+        /// Deletes a secondary replica user pool. You can only delete replicas that are in the
+        /// INACTIVE status. This operation must be called from the primary Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolReplica service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolReplica">REST API Reference for DeleteUserPoolReplica Operation</seealso>
+        public virtual DeleteUserPoolReplicaResponse DeleteUserPoolReplica(DeleteUserPoolReplicaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserPoolReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUserPoolReplicaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a secondary replica user pool. You can only delete replicas that are in the
+        /// INACTIVE status. This operation must be called from the primary Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolReplica">REST API Reference for DeleteUserPoolReplica Operation</seealso>
+        public virtual Task<DeleteUserPoolReplicaResponse> DeleteUserPoolReplicaAsync(DeleteUserPoolReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteUserPoolReplicaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteUserPoolReplicaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8659,6 +9433,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -8722,6 +9501,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -8837,6 +9621,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8873,6 +9662,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -8912,6 +9706,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -8948,6 +9747,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -8987,6 +9791,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9023,6 +9832,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9064,6 +9878,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9107,6 +9926,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9172,6 +9996,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9232,6 +10061,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9270,6 +10104,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9306,6 +10145,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9367,6 +10211,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9430,6 +10279,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9497,6 +10351,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9559,6 +10418,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9618,6 +10482,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -9672,6 +10541,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -9730,6 +10604,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -9799,6 +10678,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -9917,6 +10801,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -10037,6 +10926,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10113,6 +11007,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10177,6 +11076,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10237,6 +11141,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -10306,6 +11215,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -10380,6 +11294,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10442,6 +11361,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -10713,6 +11637,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10777,6 +11706,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10821,6 +11755,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.RefreshTokenReuseException">
         /// This exception is throw when your application requests token refresh with a refresh
@@ -10884,6 +11823,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.RefreshTokenReuseException">
         /// This exception is throw when your application requests token refresh with a refresh
         /// token that has been invalidated by refresh-token rotation.
@@ -10941,6 +11885,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -10981,6 +11930,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -11037,6 +11991,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -11101,6 +12060,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -11212,6 +12176,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -11331,6 +12300,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -11412,6 +12386,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -11483,6 +12462,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -11732,6 +12716,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -11824,6 +12813,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -11925,6 +12919,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -12041,6 +13040,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -12123,6 +13127,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -12192,6 +13201,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -12260,6 +13274,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12317,6 +13336,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -12500,6 +13524,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12560,6 +13589,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12599,6 +13633,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12636,6 +13675,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -12696,6 +13740,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12753,6 +13802,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -12816,6 +13870,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12876,6 +13935,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -12939,6 +14003,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -12999,6 +14068,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -13098,6 +14172,135 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = ListUserPoolClientSecretsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListUserPoolClientSecretsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserPoolReplicas
+
+
+        /// <summary>
+        /// Lists all replicas for a user pool, including both primary and secondary replicas.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserPoolReplicas service method.</param>
+        /// 
+        /// <returns>The response from the ListUserPoolReplicas service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolReplicas">REST API Reference for ListUserPoolReplicas Operation</seealso>
+        public virtual ListUserPoolReplicasResponse ListUserPoolReplicas(ListUserPoolReplicasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserPoolReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserPoolReplicasResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserPoolReplicasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all replicas for a user pool, including both primary and secondary replicas.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserPoolReplicas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUserPoolReplicas service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolReplicas">REST API Reference for ListUserPoolReplicas Operation</seealso>
+        public virtual Task<ListUserPoolReplicasResponse> ListUserPoolReplicasAsync(ListUserPoolReplicasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserPoolReplicasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserPoolReplicasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUserPoolReplicasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13257,6 +14460,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -13321,6 +14529,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -13382,6 +14595,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -13441,6 +14659,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -13503,6 +14726,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -13561,6 +14789,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -13659,6 +14892,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -13768,6 +15006,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -13900,6 +15143,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
@@ -14046,6 +15294,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordHistoryPolicyViolationException">
         /// The message returned when a user's new password matches a previous password and doesn't
         /// comply with the password-history policy.
@@ -14121,6 +15374,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -14176,6 +15434,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
@@ -14323,6 +15586,13 @@ namespace Amazon.CognitoIdentityProvider
         /// your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
         /// Plus tier</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// In secondary regions for user pools with multi-region replication, only the <c>SourceARN</c>
+        /// and <c>From</c> attributes of <c>NotifyConfiguration</c> can be modified to configure
+        /// region-specific SES integration. All other risk configuration settings must match
+        /// the existing values to maintain consistency across replicas.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
         /// 
@@ -14342,6 +15612,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -14394,6 +15669,13 @@ namespace Amazon.CognitoIdentityProvider
         /// your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
         /// Plus tier</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// In secondary regions for user pools with multi-region replication, only the <c>SourceARN</c>
+        /// and <c>From</c> attributes of <c>NotifyConfiguration</c> can be modified to configure
+        /// region-specific SES integration. All other risk configuration settings must match
+        /// the existing values to maintain consistency across replicas.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -14416,6 +15698,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -14486,6 +15773,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -14551,6 +15843,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -14614,6 +15911,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -14683,6 +15985,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -14770,6 +16077,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -14849,6 +16161,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -14906,6 +16223,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -14969,6 +16291,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -15081,6 +16408,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -15199,6 +16531,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -15251,6 +16588,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
         /// </exception>
@@ -15292,6 +16634,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -15349,6 +16696,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -15409,6 +16761,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -15455,6 +16812,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
         /// </exception>
@@ -15496,6 +16858,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
         /// This exception is thrown when a precondition is not met.
@@ -15560,6 +16927,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -15619,6 +16991,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -15656,6 +17033,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -15691,6 +17073,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -15752,6 +17139,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -15818,6 +17210,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -15889,6 +17286,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -15963,6 +17365,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -16033,6 +17440,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -16092,6 +17504,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -16306,6 +17723,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -16381,6 +17803,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -16446,6 +17873,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -16509,6 +17941,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -16592,6 +18029,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -16678,6 +18120,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -16798,6 +18245,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -16931,6 +18383,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -16977,10 +18434,17 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <important> 
         /// <para>
-        /// With the exception of <c>UserPoolTier</c>, if you don't provide a value for an attribute,
-        /// Amazon Cognito sets it to its default value.
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
         /// </para>
-        ///  </important> <note> 
+        ///  </important> 
+        /// <para>
+        /// In secondary regions for user pools with multi-region replication, regional configurations
+        /// for email, SMS, Lambda functions, and tags can be updated. Both global and regional
+        /// settings must be provided as inputs, with global settings required to match existing
+        /// values to maintain consistency across replicas.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -17056,6 +18520,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -17092,10 +18561,17 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <important> 
         /// <para>
-        /// With the exception of <c>UserPoolTier</c>, if you don't provide a value for an attribute,
-        /// Amazon Cognito sets it to its default value.
+        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+        /// value.
         /// </para>
-        ///  </important> <note> 
+        ///  </important> 
+        /// <para>
+        /// In secondary regions for user pools with multi-region replication, regional configurations
+        /// for email, SMS, Lambda functions, and tags can be updated. Both global and regional
+        /// settings must be provided as inputs, with global settings required to match existing
+        /// values to maintain consistency across replicas.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
         /// carriers require you to register an origination phone number before you can send SMS
@@ -17173,6 +18649,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -17268,6 +18749,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -17352,6 +18838,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -17453,6 +18944,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -17549,6 +19045,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
@@ -17564,6 +19065,137 @@ namespace Amazon.CognitoIdentityProvider
             options.ResponseUnmarshaller = UpdateUserPoolDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateUserPoolDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateUserPoolReplica
+
+
+        /// <summary>
+        /// Updates replica-specific settings for a user pool replica. You can modify the status
+        /// to activate or deactivate the replica. This request can be made in both primary and
+        /// secondary regions of the user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolReplica service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolReplica">REST API Reference for UpdateUserPoolReplica Operation</seealso>
+        public virtual UpdateUserPoolReplicaResponse UpdateUserPoolReplica(UpdateUserPoolReplicaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserPoolReplicaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserPoolReplicaResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates replica-specific settings for a user pool replica. You can modify the status
+        /// to activate or deactivate the replica. This request can be made in both primary and
+        /// secondary regions of the user pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolReplica service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolReplica">REST API Reference for UpdateUserPoolReplica Operation</seealso>
+        public virtual Task<UpdateUserPoolReplicaResponse> UpdateUserPoolReplicaAsync(UpdateUserPoolReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserPoolReplicaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserPoolReplicaResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserPoolReplicaResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17612,6 +19244,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -17688,6 +19325,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
@@ -17782,6 +19424,11 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.
         /// </exception>
@@ -17869,6 +19516,11 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
         /// This exception is thrown when a password reset is required.

@@ -152,6 +152,18 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IssuerConfiguration", targetDepth))
+                {
+                    var unmarshaller = IssuerConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.IssuerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("KeyConfiguration", targetDepth))
+                {
+                    var unmarshaller = KeyConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.KeyConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LambdaConfig", targetDepth))
                 {
                     var unmarshaller = LambdaConfigTypeUnmarshaller.Instance;

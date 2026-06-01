@@ -758,6 +758,17 @@
     <pattern>^[a-z0-9](?:[a-z0-9\-]{0,61}[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest.RegionName</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DeleteGroupRequest.GroupName</property>
     <min>1</min>
     <max>128</max>
@@ -864,6 +875,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DeleteUserPoolDomainRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest.RegionName</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest.UserPoolId</property>
     <min>1</min>
     <max>55</max>
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
@@ -1352,6 +1374,22 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListUserPoolsRequest.MaxResults</property>
     <min>1</min>
     <max>60</max>
@@ -1833,6 +1871,17 @@
     <pattern>^[a-z0-9](?:[a-z0-9\-]{0,61}[a-z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest.RegionName</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.VerifySoftwareTokenRequest.AccessToken</property>
     <pattern>[A-Za-z0-9-_=.]+</pattern>
   </property-value-rule>
@@ -2123,6 +2172,15 @@
     <max>131072</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.FailoverType.PrimaryRoute53HealthCheckId</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.FailoverType.SecondaryRegion</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.FirehoseConfigurationType.StreamArn</property>
     <min>20</min>
     <max>2048</max>
@@ -2178,6 +2236,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.InboundFederationLambdaType.LambdaArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.KeyConfigurationType.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?</pattern>
@@ -2650,6 +2714,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w\s+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolReplicaType.RegionName</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.UserPoolReplicaType.UserPoolArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:([\w+=/,.@-]*)?:[0-9]+:[\w+=/,.@-]+(:[\w+=/,.@-]+)?(:[\w+=/,.@-]+)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.UserPoolType.Arn</property>
