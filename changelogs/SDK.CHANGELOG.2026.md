@@ -1,3 +1,8 @@
+### 3.7.1252.1 (2026-06-01 22:26 UTC)
+* Core 3.7.501.1
+	* Updated NuGet package descriptions to note that AWS SDK for .NET V3 has reached end of support.
+	* All services packages updated to require new Core
+
 ### 3.7.1252.0 (2026-05-14 17:09 UTC)
 * Core 3.7.501.0
 	* On Unix/macOS, SSO token and Login token cache files are now created with 0600 (owner read/write only) and cache directories with 0700 (owner only). Behavior is configurable via AWSConfigs.RestrictFilePermissions.

@@ -32,7 +32,7 @@ namespace Amazon.ApplicationSignals
     public partial class AmazonApplicationSignalsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Application Signals", "3.7.506.3");
+            InternalSDKUtils.BuildUserAgentString("Application Signals", "3.7.506.4");
 
         private string _userAgent = UserAgentString;
         ///<summary>

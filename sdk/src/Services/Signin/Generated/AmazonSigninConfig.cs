@@ -32,7 +32,7 @@ namespace Amazon.Signin
     public partial class AmazonSigninConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Signin", "3.7.500.49");
+            InternalSDKUtils.BuildUserAgentString("Signin", "3.7.500.50");
 
         private string _userAgent = UserAgentString;
         ///<summary>

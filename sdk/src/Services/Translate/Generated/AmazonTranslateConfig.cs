@@ -32,7 +32,7 @@ namespace Amazon.Translate
     public partial class AmazonTranslateConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Translate", "3.7.501.58");
+            InternalSDKUtils.BuildUserAgentString("Translate", "3.7.501.59");
 
         private string _userAgent = UserAgentString;
         ///<summary>

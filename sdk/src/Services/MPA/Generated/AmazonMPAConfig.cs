@@ -32,7 +32,7 @@ namespace Amazon.MPA
     public partial class AmazonMPAConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MPA", "3.7.504.10");
+            InternalSDKUtils.BuildUserAgentString("MPA", "3.7.504.11");
 
         private string _userAgent = UserAgentString;
         ///<summary>
