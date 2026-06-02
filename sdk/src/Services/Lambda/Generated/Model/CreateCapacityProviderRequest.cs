@@ -40,6 +40,7 @@ namespace Amazon.Lambda.Model
         private InstanceRequirements _instanceRequirements;
         private string _kmsKeyArn;
         private CapacityProviderPermissionsConfig _permissionsConfig;
+        private PropagateTags _propagateTags;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CapacityProviderVpcConfig _vpcConfig;
 
@@ -137,6 +138,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPermissionsConfig()
         {
             return this._permissionsConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags. 
+        /// <para>
+        /// The tag propagation configuration for the capacity provider. Specifies tags to apply
+        /// to managed resources at launch.
+        /// </para>
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
         }
 
         /// <summary>
