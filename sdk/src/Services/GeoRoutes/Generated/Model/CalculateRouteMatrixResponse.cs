@@ -112,8 +112,8 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When request routing boundary was set as AutoCircle, the response routing boundary
-        /// will return Circle derived from the AutoCircle settings.
+        /// When <c>AutoCircle</c> is set in the request, the response routing boundary will return
+        /// <c>Circle</c> derived from the <c>AutoCircle</c> settings.
         /// </para>
         ///  </note>
         /// </summary>

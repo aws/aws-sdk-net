@@ -34,11 +34,32 @@ namespace Amazon.GeoRoutes.Model
     /// </summary>
     public partial class RoutePedestrianPlace
     {
+        private RouteAccessPointDetails _accessPointDetails;
         private string _name;
         private List<double> _originalPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private RouteSideOfStreet _sideOfStreet;
+        private RouteStationDetails _stationDetails;
+        private RoutePedestrianPlaceType _type;
         private int? _waypointIndex;
+
+        /// <summary>
+        /// Gets and sets the property AccessPointDetails. 
+        /// <para>
+        /// Details of the access point.
+        /// </para>
+        /// </summary>
+        public RouteAccessPointDetails AccessPointDetails
+        {
+            get { return this._accessPointDetails; }
+            set { this._accessPointDetails = value; }
+        }
+
+        // Check to see if AccessPointDetails property is set
+        internal bool IsSetAccessPointDetails()
+        {
+            return this._accessPointDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -124,6 +145,43 @@ namespace Amazon.GeoRoutes.Model
         internal bool IsSetSideOfStreet()
         {
             return this._sideOfStreet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StationDetails. 
+        /// <para>
+        /// Details about the station.
+        /// </para>
+        /// </summary>
+        public RouteStationDetails StationDetails
+        {
+            get { return this._stationDetails; }
+            set { this._stationDetails = value; }
+        }
+
+        // Check to see if StationDetails property is set
+        internal bool IsSetStationDetails()
+        {
+            return this._stationDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the place.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RoutePedestrianPlaceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

@@ -45,34 +45,30 @@ namespace Amazon.GeoRoutes
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// With the Amazon Location Routes API you can calculate routes and estimate travel time
-    /// based on up-to-date road network and live traffic information.
+    /// With the Routes API you can calculate routes and estimate travel time based on up-to-date
+    /// road network and live traffic information. Key features include:
     /// 
-    ///  
-    /// <para>
-    /// Calculate optimal travel routes and estimate travel times using up-to-date road network
-    /// and traffic data. Key features include:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Point-to-point routing with estimated travel time, distance, and turn-by-turn directions
+    /// Point-to-point routing with estimated travel time, distance, and turn-by-turn directions.
+    /// See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRoutes.html">CalculateRoutes</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Multi-point route optimization to minimize travel time or distance
+    /// Multi-point route optimization to minimize travel time or distance. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_OptimizeWaypoints.html">OptimizeWaypoints</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Route matrices for efficient multi-destination planning
+    /// Route matrices for efficient multi-destination planning. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateRouteMatrix.html">CalculateRouteMatrix</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Isoline calculations to determine reachable areas within specified time or distance
-    /// thresholds
+    /// thresholds. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_CalculateIsolines.html">CalculateIsolines</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Map-matching to align GPS traces with the road network
+    /// Map-matching to align GPS traces with the road network. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_SnapToRoads.html">SnapToRoads</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

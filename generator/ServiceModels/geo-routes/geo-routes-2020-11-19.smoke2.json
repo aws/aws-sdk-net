@@ -1,8 +1,8 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "CalculateRoutesSuccess",
-    "operationName" : "CalculateRoutes",
+    "id" : "OptimizeWaypointsSuccess",
+    "operationName" : "OptimizeWaypoints",
     "input" : {
       "Origin" : [ -123.253374, 49.351673 ],
       "Destination" : [ -123.930756, 49.1314 ]
@@ -59,11 +59,13 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "OptimizeWaypointsSuccess",
-    "operationName" : "OptimizeWaypoints",
+    "id" : "CalculateIsolinesSuccess",
+    "operationName" : "CalculateIsolines",
     "input" : {
-      "Origin" : [ -123.253374, 49.351673 ],
-      "Destination" : [ -123.930756, 49.1314 ]
+      "Thresholds" : {
+        "Time" : [ 60 ]
+      },
+      "Origin" : [ -123.116796, 49.281476 ]
     },
     "expectation" : {
       "success" : { }
@@ -75,13 +77,11 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "CalculateIsolinesSuccess",
-    "operationName" : "CalculateIsolines",
+    "id" : "CalculateRoutesSuccess",
+    "operationName" : "CalculateRoutes",
     "input" : {
-      "Thresholds" : {
-        "Time" : [ 60 ]
-      },
-      "Origin" : [ -123.116796, 49.281476 ]
+      "Origin" : [ -123.253374, 49.351673 ],
+      "Destination" : [ -123.930756, 49.1314 ]
     },
     "expectation" : {
       "success" : { }

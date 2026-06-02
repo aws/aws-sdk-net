@@ -56,6 +56,12 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AfterTravelSteps", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RouteVehicleAfterTravelStep, RouteVehicleAfterTravelStepUnmarshaller>(RouteVehicleAfterTravelStepUnmarshaller.Instance);
+                    unmarshalledObject.AfterTravelSteps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Arrival", targetDepth))
                 {
                     var unmarshaller = RouteVehicleArrivalUnmarshaller.Instance;
