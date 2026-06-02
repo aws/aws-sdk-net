@@ -218,6 +218,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="transactionPart">TransactGet to add.</param>
         public void AddTransactionPart(ITransactGet transactionPart);
+
+        /// <summary>
+        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
+        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
     }
 
     /// <summary>
@@ -227,6 +233,7 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class MultiTableTransactGet : IMultiTableTransactGet
     {
         private readonly List<ITransactGet> allTransactionParts;
+        private ReturnConsumedCapacity ReturnConsumedCapacity;
 
         internal TracerProvider TracerProvider { get; set; }
 
@@ -255,6 +262,11 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts.Add(transactionPart);
         }
 
+        /// <inheritdoc/>
+        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            ReturnConsumedCapacity = returnConsumedCapacity;
+        }
         private void ExecuteHelper()
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();
@@ -281,6 +293,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
+            transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             foreach (var transactionPart in allTransactionParts)
             {

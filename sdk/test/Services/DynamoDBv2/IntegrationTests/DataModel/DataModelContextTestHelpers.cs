@@ -975,6 +975,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var productTran = context.CreateTransactWrite<VersionedProduct>(new TransactWriteConfig() { ReturnConsumedCapacity = ReturnConsumedCapacity.INDEXES });
                 productTran.AddSaveItem(product);
                 var tran = context.CreateMultiTableTransactWrite(employeeTran, productTran);
+                tran.SetReturnConsumedCapacity(ReturnConsumedCapacity.INDEXES);
                 await tran.ExecuteAsync();
 
                 Assert.Equal(2, employeeTran.ConsumedCapacity.Count);

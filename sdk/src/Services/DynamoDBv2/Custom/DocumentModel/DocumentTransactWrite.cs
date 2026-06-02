@@ -581,10 +581,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<IDocumentTransactWrite> TransactionParts { get; }
 
         /// <summary>
+        /// List of DocumentTransactWrite objects to include in the multi-table
+        /// transaction request.
+        /// </summary>
+        ReturnConsumedCapacity ReturnConsumedCapacity { get; }
+
+        /// <summary>
+        /// List of DocumentTransactWrite objects to include in the multi-table
+        /// transaction request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
+        /// <summary>
         /// Add a DocumentTransactWrite object to the multi-table transaction request.
         /// </summary>
         /// <param name="transactionPart">DocumentTransactWrite to add.</param>
         void AddTransactionPart(IDocumentTransactWrite transactionPart);
+
+        /// <summary>
+        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// </summary>
+        /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
+        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
     }
 
     /// <summary>
@@ -599,6 +617,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
+
+        /// <inheritdoc/>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
 
         #endregion
 
@@ -628,6 +652,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public void AddTransactionPart(IDocumentTransactWrite transactionPart)
         {
             TransactionParts.Add(transactionPart);
+        }
+
+        /// <inheritdoc/>
+        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -662,6 +692,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
                 var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
+                var x = ConsumedCapacity;
             }
             finally
             {
@@ -684,7 +715,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     var docTransactWrite = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
                     return docTransactWrite.Items;
-                }).ToList()
+                }).ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
@@ -711,6 +743,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<ITransactWriteRequestItem> Items { get; set; }
 
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
 
         #endregion
 
@@ -789,8 +823,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             foreach (var item in Items)
             {
                 item.CommitChanges();
-                item.TransactionPart.ConsumedCapacity = consumedCapacity;
+                //item.TransactionPart.ConsumedCapacity = consumedCapacity;
             }
+            ConsumedCapacity = consumedCapacity;
         }
 
         private TransactWriteItemsRequest ConstructRequest(bool isAsync)
@@ -850,6 +885,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         TransactWriteItemOperationConfig OperationConfig { get; }
 
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
         #endregion
 
 
@@ -867,6 +904,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public DocumentTransactWrite TransactionPart { get; set; }
 
         public TransactWriteItemOperationConfig OperationConfig { get; set; }
+
+        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
 
         public abstract TransactWriteItem GetRequest();
 

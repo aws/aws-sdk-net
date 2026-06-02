@@ -250,6 +250,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="transactionPart">DocumentTransactGet to add.</param>
         void AddTransactionPart(IDocumentTransactGet transactionPart);
+
+        /// <summary>
+        /// List of DocumentTransactWrite objects to include in the multi-table
+        /// transaction request.
+        /// </summary>
+        ReturnConsumedCapacity ReturnConsumedCapacity { get; }
+
+        /// <summary>
+        /// List of DocumentTransactWrite objects to include in the multi-table
+        /// transaction request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -263,6 +275,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactGet> TransactionParts { get; private set; }
+
+        /// <inheritdoc/>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
 
         #endregion
 
@@ -292,6 +310,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public void AddTransactionPart(IDocumentTransactGet transactionPart)
         {
             TransactionParts.Add(transactionPart);
+        }
+
+        /// <inheritdoc/>
+        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -336,7 +360,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     var docTransactGet = x as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
                     return docTransactGet.Items;
-                }).ToList()
+                }).ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
