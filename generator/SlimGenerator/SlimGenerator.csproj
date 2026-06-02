@@ -7,7 +7,7 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>slim-generator</ToolCommandName>
     <PackageId>SlimGenerator</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <IsPackable>true</IsPackable>
     <Description>CLI tool to generate an AWS service client DLL from service model files.</Description>
 	<PackageOutputPath>./nupkg</PackageOutputPath>
