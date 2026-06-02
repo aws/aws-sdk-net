@@ -26,21 +26,63 @@ namespace AWSSDK.Benchmarks.Serde;
 /// Entry point for the serde benchmark runner using BenchmarkDotNet.
 /// 
 /// Usage:
-///   dotnet run -c Release                              # Run all serde benchmarks
-///   dotnet run -c Release -- --filter *RestJson1*      # Run only RestJson1 benchmarks
-///   dotnet run -c Release -- --filter *AwsJson*        # Run only AwsJson1.0 benchmarks
-///   dotnet run -c Release -- --filter *RpcV2Cbor*      # Run only RpcV2Cbor benchmarks
-///   dotnet run -c Release -- --filter *RestXml*        # Run only RestXml benchmarks
-///   dotnet run -c Release -- --filter *AwsQuery*       # Run only AwsQuery benchmarks
+///   dotnet run -c Release -- --filter '*'                    # Run E2E benchmarks (default)
+///   dotnet run -c Release -- --suite e2e --filter '*'        # Run E2E benchmarks (explicit)
+///   dotnet run -c Release -- --suite serde --filter '*'      # Run only marshal/unmarshal benchmarks
+///   dotnet run -c Release -- --filter '*RestJson1*'          # Run only RestJson1 benchmarks
+///   dotnet run -c Release -- --suite serde --filter '*RestJson1*'  # Serde RestJson1 only
+///
+/// Suites:
+///   e2e    - Full SDK client pipeline with mocked HTTP (default)
+///   serde  - Isolated marshaller/unmarshaller micro-benchmarks
 ///
 /// Results are output to BenchmarkDotNet.Artifacts/results/ in CSV, GitHub Markdown, and HTML formats.
-/// Each benchmark class uses [SimpleJob] with explicit warmupCount=10 and iterationCount=1000
-/// to ensure verifiable, reproducible iteration counts meeting the minimum 1,000 requirement.
 /// </summary>
 internal class Program
 {
+    private static readonly Type[] SerdeBenchmarkTypes = new[]
+    {
+        typeof(RestJson1Benchmarks),
+        typeof(AwsJson10Benchmarks),
+        typeof(RpcV2CborBenchmarks),
+        typeof(RestXmlBenchmarks),
+        typeof(AwsQueryBenchmarks)
+    };
+
+    private static readonly Type[] E2EBenchmarkTypes = new[]
+    {
+        typeof(RestJson1E2EBenchmarks),
+        typeof(AwsJson10E2EBenchmarks),
+        typeof(RpcV2CborE2EBenchmarks),
+        typeof(RestXmlE2EBenchmarks),
+        typeof(AwsQueryE2EBenchmarks)
+    };
+
     static void Main(string[] args)
     {
+        // Parse --suite argument before passing remaining args to BDN
+        var suite = "e2e";
+        var bdnArgs = new List<string>();
+        for (int i = 0; i < args.Length; i++)
+        {
+            if (args[i] == "--suite" && i + 1 < args.Length)
+            {
+                suite = args[++i].ToLowerInvariant();
+            }
+            else
+            {
+                bdnArgs.Add(args[i]);
+            }
+        }
+
+        var types = suite switch
+        {
+            "e2e" => E2EBenchmarkTypes,
+            "serde" => SerdeBenchmarkTypes,
+            "all" => SerdeBenchmarkTypes.Concat(E2EBenchmarkTypes).ToArray(),
+            _ => throw new ArgumentException($"Unknown suite '{suite}'. Valid: e2e, serde, all")
+        };
+
         var config = ManualConfig.Create(DefaultConfig.Instance);
 
         // Configure summary style for nanosecond reporting
@@ -65,14 +107,7 @@ internal class Program
         config.AddColumn(StatisticColumn.P95);
         config.AddColumn(StatisticColumn.Max);  // P100 = Max, upper-bound outlier indicator
 
-        // Run all serde benchmark classes via BenchmarkSwitcher
-        BenchmarkSwitcher.FromTypes(new[]
-        {
-            typeof(RestJson1Benchmarks),
-            typeof(AwsJson10Benchmarks),
-            typeof(RpcV2CborBenchmarks),
-            typeof(RestXmlBenchmarks),
-            typeof(AwsQueryBenchmarks)
-        }).Run(args, config);
+        Console.WriteLine($"Running suite: {suite} ({types.Length} benchmark classes)");
+        BenchmarkSwitcher.FromTypes(types).Run(bdnArgs.ToArray(), config);
     }
 }

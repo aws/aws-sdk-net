@@ -23,34 +23,26 @@ using Perfolizer.Horology;
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
-/// Shared BenchmarkDotNet configuration for serde benchmarks.
-/// 
-/// Configures RunStrategy.Throughput with 5 warmup iterations and max 20 measurement
-/// iterations, letting BenchmarkDotNet automatically determine invocation counts for
-/// accurate measurement of fast micro-benchmarks (μs-scale serde operations).
-/// With 71 tests, this configuration targets ~12-18 minutes total runtime.
-/// 
-/// BDN Throughput mode reports P50, P90, P95 from per-iteration averages.
-/// Max is included as an upper-bound outlier indicator.
+/// BenchmarkDotNet configuration for E2E benchmarks.
+/// Uses InProcessEmitToolchain so benchmarks can run from a published DLL
+/// without needing the source .csproj or dotnet SDK for child process generation.
+/// BDN auto-determines warmup and iteration counts for statistically stable results.
 /// </summary>
-public class SerdeBenchmarkConfig : ManualConfig
+public class E2EBenchmarkConfig : ManualConfig
 {
-    public SerdeBenchmarkConfig()
+    public E2EBenchmarkConfig()
     {
-        // Performance Baselines Report used: WarmupCount=10, no Min/MaxIterationCount (BDN auto)
-        // Optimized for CI/build system runtime: WarmupCount=5, MinIter=5, MaxIter=20
+        // InProcessEmitToolchain runs benchmarks in the same process.
+        // This avoids BDN's need to find the .csproj and spawn child processes,
+        // making it compatible with published/deployed artifacts.
         AddJob(Job.Default
-            .WithToolchain(InProcessEmitToolchain.Instance)
-            .WithStrategy(BenchmarkDotNet.Engines.RunStrategy.Throughput)
-            .WithWarmupCount(5)
-            .WithMinIterationCount(5)
-            .WithMaxIterationCount(20));
+            .WithToolchain(InProcessEmitToolchain.Instance));
 
         // Add percentile columns
         AddColumn(StatisticColumn.P50);
         AddColumn(StatisticColumn.P90);
         AddColumn(StatisticColumn.P95);
-        AddColumn(StatisticColumn.Max);  // P100 = Max, useful as upper-bound outlier indicator
+        AddColumn(StatisticColumn.Max);
 
         WithSummaryStyle(SummaryStyle.Default
             .WithTimeUnit(TimeUnit.Nanosecond)
