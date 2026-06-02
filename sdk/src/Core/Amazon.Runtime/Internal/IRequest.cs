@@ -32,7 +32,7 @@ namespace Amazon.Runtime.Internal
     /// </para>
     /// </summary>
     [AWSIsBackwardsCompatible]
-    public interface IRequest
+    public interface IRequest : IDisposable
     {
         /// <summary>
         /// A publisher provided by consumers of the SDK to provide events that the SDK will pull from to stream to the service.

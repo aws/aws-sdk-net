@@ -134,11 +134,29 @@ namespace AWSSDK.ProtocolTests.Utils
             public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
                 where T : AmazonWebServiceResponse, new()
             {
+#if !NETFRAMEWORK
+                // Materialize ContentStream before it's accessed by test assertions,
+                // since Marshaller.Dispose() returns the pooled buffer to the pool.
+                if (executionContext.RequestContext.Request.ContentStream is PooledContentStream pooledContentStream)
+                {
+                    executionContext.RequestContext.Request.Content 
+                        = pooledContentStream.Content.ToArray();
+                }
+#endif
                 return null;
             }
 
             public void InvokeSync(IExecutionContext executionContext)
             {
+#if !NETFRAMEWORK
+                // Materialize ContentStream before it's accessed by test assertions,
+                // since Marshaller.Dispose() returns the pooled buffer to the pool.
+                if (executionContext.RequestContext.Request.ContentStream is PooledContentStream pooledContentStream)
+                {
+                    executionContext.RequestContext.Request.Content 
+                        = pooledContentStream.Content.ToArray();
+                }
+#endif
             }
         }
 
