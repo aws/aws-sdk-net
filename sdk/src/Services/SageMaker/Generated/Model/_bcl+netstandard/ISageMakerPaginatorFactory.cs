@@ -438,6 +438,26 @@ namespace Amazon.SageMaker.Model
         IListInferenceRecommendationsJobStepsPaginator ListInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request);
 
         /// <summary>
+        /// Paginator for ListJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListJobSchemaVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListJobSchemaVersionsPaginator ListJobSchemaVersions(ListJobSchemaVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         [AWSPaginator(
