@@ -1505,6 +1505,111 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(propY.CounterDelta, result.ExpressionAttributeValues[":PropYDelta"].AsInt());
             Assert.AreEqual(propY.CounterStartValue - propY.CounterDelta, result.ExpressionAttributeValues[":PropYStart"].AsInt());
         }
+
+        [TestMethod]
+        public void Save_WithVersion_SetsVersionConditionAndIncrementsVersion()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItem(It.Is<UpdateItemRequest>(request =>
+                    request.TableName == "TableNameWithVersion" &&
+                    request.ConditionExpression != null &&
+                    request.ConditionExpression.Contains("=") &&
+                    request.ExpressionAttributeNames.Values.Contains("V") &&
+                    request.ExpressionAttributeValues.Values.Any(v => v.N == "1") &&
+                    request.ExpressionAttributeValues.Values.Any(v => v.N == "2"))))
+               .Returns(new UpdateItemResponse())
+               .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            context.Save(new VersionedDataModel { Id = "123", Name = "Name", Version = 1 }, new SaveConfig());
+
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public void Save_WithUpdateIfNotExists_UsesReturnedDocumentToPopulateInstance()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItem(It.IsAny<UpdateItemRequest>()))
+               .Returns(new UpdateItemResponse
+               {
+                   Attributes = new()
+                   {
+                { "Id", new AttributeValue { S = "123" } },
+                { "Prop1", new AttributeValue { S = "server-value" } }
+                   }
+               })
+               .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            var item = new UpdateIfNotExistsDataModel
+            {
+                Id = "123",
+                Prop1 = "client-value"
+            };
+
+            context.Save(item, new SaveConfig());
+
+            Assert.AreEqual("server-value", item.Prop1);
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public void Save_WithNullVersion_SetsAttributeNotExistsConditionAndInitializesVersion()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItem(It.Is<UpdateItemRequest>(request =>
+                    request.TableName == "TableNameWithVersion" &&
+                    request.ConditionExpression != null &&
+                    request.ConditionExpression.Contains("attribute_not_exists") &&
+                    request.ExpressionAttributeNames.Values.Contains("V") &&
+                    request.ExpressionAttributeValues.Values.Any(v => v.N == "0"))))
+               .Returns(new UpdateItemResponse())
+               .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            context.Save(new VersionedDataModel { Id = "123", Name = "Name", Version = null }, new SaveConfig());
+
+            mockClient.VerifyAll();
+        }
+
+        [DynamoDBTable("TableNameWithVersion")]
+        private class VersionedDataModel
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBRangeKey]
+            public string Name { get; set; }
+
+            [DynamoDBVersion(AttributeName = "V")]
+            public int? Version { get; set; }
+        }
+
+        [DynamoDBTable("TableNameWithUpdateIfNotExists")]
+        private class UpdateIfNotExistsDataModel
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBProperty("Prop1")]
+            [DynamoDbUpdateBehavior(UpdateBehavior.IfNotExists)]
+            public string Prop1 { get; set; }
+        }
+
+        public TestContext TestContext { get; set; }
     }
 }
 

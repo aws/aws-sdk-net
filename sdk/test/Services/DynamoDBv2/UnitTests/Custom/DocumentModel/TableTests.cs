@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow(null, null, "A key must be provided when Document is not set.", true)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", true)]
         [DataRow(null, null, "A key must be provided when Document is not set.", false)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", false)]

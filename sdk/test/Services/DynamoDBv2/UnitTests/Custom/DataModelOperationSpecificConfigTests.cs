@@ -601,6 +601,43 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public async Task SaveConfig_OverridesTableName_Async_TypeOverload()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItemAsync(
+                    It.Is<UpdateItemRequest>(request => request.TableName == "OperationPrefix-TableName"),
+                    It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new UpdateItemResponse())
+               .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var saveConfig = new SaveConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            await context.SaveAsync(typeof(DataModel), new DataModel { Id = "123", Name = "Name" }, saveConfig, CancellationToken.None);
+
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public async Task SaveAsync_TypeOverload_WithNullValue_DoesNotCallUpdateItemAsync()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            await context.SaveAsync(valueType: typeof(DataModel), value: null, cancellationToken: CancellationToken.None);
+
+            mockClient.Verify(client => client.UpdateItemAsync(It.IsAny<UpdateItemRequest>(), It.IsAny<CancellationToken>()), Times.Never);
+        }
+
+        [TestMethod]
         public void LoadConfig()
         {
             // If this fails because you've added a property, be sure to add it to
@@ -686,30 +723,6 @@ namespace AWSSDK_DotNet.UnitTests
 
             [DynamoDBRangeKey]
             public string Name { get; set; }
-        }
-
-        [DynamoDBTable("TableNameWithVersion")]
-        private class VersionedDataModel
-        {
-            [DynamoDBHashKey]
-            public string Id { get; set; }
-
-            [DynamoDBRangeKey]
-            public string Name { get; set; }
-
-            [DynamoDBVersion(AttributeName = "V")]
-            public int? Version { get; set; }
-        }
-
-        [DynamoDBTable("TableNameWithUpdateIfNotExists")]
-        private class UpdateIfNotExistsDataModel
-        {
-            [DynamoDBHashKey]
-            public string Id { get; set; }
-
-            [DynamoDBProperty("Prop1")]
-            [DynamoDbUpdateBehavior(UpdateBehavior.IfNotExists)]
-            public string Prop1 { get; set; }
         }
     }
 }
