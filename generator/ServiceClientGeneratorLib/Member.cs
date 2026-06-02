@@ -230,7 +230,7 @@ namespace ServiceClientGenerator
                 if (OwningShape.IsException && _name.ToUpperFirstCharacter() == "ErrorType")
                     return "RequestErrorType";
 
-                return _name.ToUpperFirstCharacter();
+                return _name;
             }
         }
 
