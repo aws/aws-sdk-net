@@ -126,6 +126,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetHomeEfsFileSystemCreation())
+            {
+                context.Writer.WritePropertyName("HomeEfsFileSystemCreation");
+                context.Writer.WriteStringValue(publicRequest.HomeEfsFileSystemCreation);
+            }
+
             if(publicRequest.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");

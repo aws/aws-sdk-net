@@ -17,9 +17,9 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
-using Amazon.CloudWatch.Model.Internal.MarshallTransformations;
-using Amazon.CloudWatch.Model;
-using Amazon.CloudWatch;
+using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3.Model;
+using Amazon.S3;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
@@ -57,7 +57,7 @@ namespace AWSSDK.UnitTests
         [DataRow(true, false, "SHA1", false, false, null, false, RequestChecksumCalculation.WHEN_REQUIRED)]
         [DataRow(true, false, "NONE", false, false, null, false, RequestChecksumCalculation.WHEN_REQUIRED)]
 
-        [DataTestMethod]
+        [TestMethod]
         public async Task TestChecksumInvokeAsync(
             bool checksumDataExists, 
             bool checksumHeaderAlreadyExists, 
@@ -117,17 +117,19 @@ namespace AWSSDK.UnitTests
 
         private ExecutionContext CreateTestContext(RequestChecksumCalculation requestChecksumCalculation)
         {
-            var putMetricDataRequest = new PutMetricDataRequest
+            var putObjectRequest = new PutObjectRequest
             {
-                Namespace = "compression-test",
+                BucketName = "test-bucket",
+                Key = "test-key",
             };
 
             var requestContext = new RequestContext(true, new NullSigner())
             {
-                OriginalRequest = putMetricDataRequest,
-                Request = new PutMetricDataRequestMarshaller().Marshall(putMetricDataRequest),
-                ClientConfig = new AmazonCloudWatchConfig
+                OriginalRequest = putObjectRequest,
+                Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
+                ClientConfig = new AmazonS3Config
                 {
+                    RegionEndpoint = Amazon.RegionEndpoint.USEast1,
                     RequestChecksumCalculation = requestChecksumCalculation,
                 },
                 Identity = new BasicAWSCredentials("access key", "secret"),

@@ -73,6 +73,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIterativeRefinementContent())
+            {
+                context.Writer.WritePropertyName("iterativeRefinementContent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomatedReasoningPolicyIterativeRefinementContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.IterativeRefinementContent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPolicyRepairAssets())
             {
                 context.Writer.WritePropertyName("policyRepairAssets");

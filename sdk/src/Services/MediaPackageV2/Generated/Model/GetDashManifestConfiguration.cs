@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class GetDashManifestConfiguration
     {
+        private DashAvailabilityStartTimeConfiguration _availabilityStartTimeConfiguration;
         private List<DashBaseUrl> _baseUrls = AWSConfigs.InitializeCollections ? new List<DashBaseUrl>() : null;
         private DashCompactness _compactness;
         private DashDrmSignaling _drmSignaling;
@@ -50,8 +51,28 @@ namespace Amazon.MediaPackageV2.Model
         private DashSegmentTemplateFormat _segmentTemplateFormat;
         private DashSubtitleConfiguration _subtitleConfiguration;
         private int? _suggestedPresentationDelaySeconds;
+        private UriPathType _uriPathType;
         private string _url;
         private DashUtcTiming _utcTiming;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityStartTimeConfiguration. 
+        /// <para>
+        /// The configuration for the DASH <c>availabilityStartTime</c> attribute of the Media
+        /// Presentation Description (MPD).
+        /// </para>
+        /// </summary>
+        public DashAvailabilityStartTimeConfiguration AvailabilityStartTimeConfiguration
+        {
+            get { return this._availabilityStartTimeConfiguration; }
+            set { this._availabilityStartTimeConfiguration = value; }
+        }
+
+        // Check to see if AvailabilityStartTimeConfiguration property is set
+        internal bool IsSetAvailabilityStartTimeConfiguration()
+        {
+            return this._availabilityStartTimeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BaseUrls. 
@@ -378,6 +399,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetSuggestedPresentationDelaySeconds()
         {
             return this._suggestedPresentationDelaySeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriPathType. 
+        /// <para>
+        /// The type of path used in manifest URIs. <c>LEAF</c> indicates leaf-relative paths.
+        /// <c>ROOT</c> indicates root-relative paths that include the full path from root.
+        /// </para>
+        /// </summary>
+        public UriPathType UriPathType
+        {
+            get { return this._uriPathType; }
+            set { this._uriPathType = value; }
+        }
+
+        // Check to see if UriPathType property is set
+        internal bool IsSetUriPathType()
+        {
+            return this._uriPathType != null;
         }
 
         /// <summary>

@@ -68,6 +68,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SendingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SuppressionAttributes", targetDepth))
+                {
+                    var unmarshaller = TenantSuppressionAttributesUnmarshaller.Instance;
+                    unmarshalledObject.SuppressionAttributes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);

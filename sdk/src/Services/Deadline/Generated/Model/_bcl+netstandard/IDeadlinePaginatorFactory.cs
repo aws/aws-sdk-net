@@ -308,6 +308,16 @@ namespace Amazon.Deadline.Model
         IListTasksPaginator ListTasks(ListTasksRequest request);
 
         /// <summary>
+        /// Paginator for ListVolumes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListVolumesPaginator ListVolumes(ListVolumesRequest request);
+
+        /// <summary>
         /// Paginator for ListWorkers operation
         ///</summary>
         [AWSPaginator(

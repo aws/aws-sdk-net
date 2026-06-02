@@ -39,6 +39,11 @@ namespace Amazon.Organizations
 {
     /// <summary>
     /// <para>Implementation for accessing Organizations</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Organizations is a web service that enables you to consolidate your multiple Amazon
     /// Web Services accounts into an <i>organization</i> and centrally manage your accounts
@@ -417,6 +422,17 @@ namespace Amazon.Organizations
         /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_accept-decline-invite.html">Responding
         /// to invitations</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/manage-begin-all-features-standard-migration.html#manage-approve-all-features-invite">Enabling
         /// all features</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a handshake is accepted, Organizations logs membership events in CloudTrail,
+        /// available only in the management account's event history. If the account was standalone
+        /// and joined a new organization, an <c>AccountJoinedOrganization</c> event is logged
+        /// with <c>joinedMethod:Invited</c> and <c>joinedTime</c> fields. If the account departed
+        /// one organization and joined another, both an <c>AccountDepartedOrganization</c> event
+        /// with <c>departedMethod:Left</c> and <c>departedTime</c> and an <c>AccountJoinedOrganization</c>
+        /// event with <c>joinedMethod:Invited</c> and <c>joinedTime</c> are logged in their respective
+        /// management accounts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptHandshake service method.</param>
@@ -857,8 +873,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1468,8 +1487,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1744,8 +1766,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1990,7 +2015,13 @@ namespace Amazon.Organizations
         /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
         /// GovCloud User Guide</i>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> 
+        /// <para>
+        /// After the permanent termination of the account after the 90-day waiting period, Organizations
+        /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
+        /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
+        /// only in the management account's event history.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseAccount service method.</param>
         /// <param name="cancellationToken">
@@ -2341,8 +2372,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2553,6 +2587,13 @@ namespace Amazon.Organizations
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// Additionally, the <c>AccountJoinedOrganization</c> event is logged in CloudTrail and
+        /// is available only in the management account's event history. This event includes <c>joinedMethod:Created</c>
+        /// and <c>joinedTime</c> fields to provide context on how and when the account joined
+        /// the organization.
+        /// </para>
+        ///  
         /// <para>
         /// The user who calls the API to create an account must have the <c>organizations:CreateAccount</c>
         /// permission. If you enabled all features in the organization, Organizations creates
@@ -2967,8 +3008,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3243,7 +3287,14 @@ namespace Amazon.Organizations
         /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
-        ///  </li> </ul>  
+        ///  </li> </ul> 
+        /// <para>
+        /// Additionally, the <c>AccountJoinedOrganization</c> event is logged in CloudTrail and
+        /// is available only in the management account's event history only for the linked commercial
+        /// account. This event includes <c>joinedMethod:Created</c> and <c>joinedTime</c> fields
+        /// to provide context on how and when the account joined the organization.
+        /// </para>
+        ///   
         /// <para>
         /// When you call the <c>CreateGovCloudAccount</c> action, you create two accounts: a
         /// standalone account in the Amazon Web Services GovCloud (US) Region and an associated
@@ -3653,8 +3704,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3863,6 +3917,13 @@ namespace Amazon.Organizations
         /// enabled in the root. If you instead choose to create the organization supporting only
         /// the consolidated billing features by setting the <c>FeatureSet</c> parameter to <c>CONSOLIDATED_BILLING</c>,
         /// no policy types are enabled by default and you can't use organization policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>AccountJoinedOrganization</c> event is logged in CloudTrail and is available
+        /// only in the management account's event history. This event includes <c>joinedMethod:Invited</c>
+        /// and <c>joinedTime</c> fields to provide context on how and when the account joined
+        /// the organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
@@ -4208,8 +4269,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4760,8 +4824,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5313,8 +5380,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5585,8 +5655,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5777,6 +5850,14 @@ namespace Amazon.Organizations
         /// <summary>
         /// Deletes the organization. You can delete an organization only by using credentials
         /// from the management account. The organization must be empty of member accounts.
+        /// 
+        ///  
+        /// <para>
+        /// When an organization is deleted, Organizations logs a membership event in CloudTrail.
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
+        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// event history.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOrganization service method.</param>
         /// <param name="cancellationToken">
@@ -6116,8 +6197,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6364,8 +6448,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6616,8 +6703,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7550,8 +7640,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7798,8 +7891,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8042,8 +8138,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8595,8 +8694,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8849,8 +8951,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9162,8 +9267,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9405,8 +9513,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10008,8 +10119,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10568,8 +10682,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11186,8 +11303,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11742,8 +11862,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12409,8 +12532,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12965,8 +13091,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13518,8 +13647,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14189,8 +14321,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14816,8 +14951,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15016,6 +15154,13 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// You can only call from operation from a member account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When an account leaves an organization, Organizations logs a membership event in CloudTrail.
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
+        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// event history.
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
@@ -15422,8 +15567,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15676,8 +15824,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15928,8 +16079,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16472,8 +16626,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17016,8 +17173,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17269,8 +17429,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17521,8 +17684,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18057,8 +18223,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18602,8 +18771,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19149,8 +19321,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19405,8 +19580,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19663,8 +19841,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20200,8 +20381,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20454,8 +20638,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20995,8 +21182,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21257,8 +21447,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21505,8 +21698,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21758,8 +21954,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22021,8 +22220,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22281,8 +22483,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22533,8 +22738,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22795,8 +23003,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23333,8 +23544,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23891,8 +24105,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24097,6 +24314,13 @@ namespace Amazon.Organizations
         /// <para>
         /// You can only call this operation from the management account. Member accounts can
         /// remove themselves with <a>LeaveOrganization</a> instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// When an account is removed from an organization, Organizations logs a membership event
+        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Removed</c>
+        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// event history.
         /// </para>
         ///  <important> <ul> <li> 
         /// <para>
@@ -24465,8 +24689,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25026,8 +25253,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25560,8 +25790,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26129,8 +26362,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26379,8 +26615,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26922,8 +27161,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27470,8 +27712,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-        /// to end.
+        /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
         /// </para>
         ///  </li> <li> 
         /// <para>

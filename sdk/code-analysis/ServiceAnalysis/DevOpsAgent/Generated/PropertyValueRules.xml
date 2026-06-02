@@ -678,7 +678,7 @@
     <property>Amazon.DevOpsAgent.Model.DynatraceOAuthClientCredentialsConfig.ClientId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DynatraceOAuthClientCredentialsConfig.ClientName</property>
@@ -777,7 +777,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerNewRelicConfiguration.AccountId</property>
-    <min>6</min>
+    <min>3</min>
+    <max>7</max>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -792,7 +793,7 @@
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuth3LOConfig.ClientId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuth3LOConfig.ClientName</property>
@@ -818,7 +819,7 @@
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuthClientCredentialsConfig.ClientId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerOAuthClientCredentialsConfig.ClientName</property>
@@ -837,7 +838,40 @@
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Region</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>(\*|[a-z]{2,4}(-[a-z]+)+-\d+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Service</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Endpoint</property>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Name</property>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.NewRelicApiKeyConfig.AccountId</property>
+    <min>3</min>
+    <max>7</max>
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -853,7 +887,7 @@
     <property>Amazon.DevOpsAgent.Model.PagerDutyOAuthClientCredentialsConfig.ClientId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.PagerDutyOAuthClientCredentialsConfig.ClientName</property>
@@ -896,6 +930,10 @@
     <min>5</min>
     <max>50</max>
     <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Recommendation.RankPosition</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RecommendationContent.Spec</property>
@@ -956,6 +994,37 @@
     <min>1</min>
     <max>1000</max>
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Description</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Endpoint</property>
+    <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Name</property>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Region</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>(\*|[a-z]{2,4}(-[a-z]+)+-\d+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Service</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredNewRelicDetails.Description</property>
@@ -1029,7 +1098,7 @@
     <property>Amazon.DevOpsAgent.Model.ServiceNowOAuthClientCredentialsConfig.ClientId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>[\u0020-\u007E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ServiceNowOAuthClientCredentialsConfig.ClientName</property>

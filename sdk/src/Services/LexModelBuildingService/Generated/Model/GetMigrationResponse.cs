@@ -32,6 +32,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// <summary>
     /// This is the response object from the GetMigration operation.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetMigrationResponse : AmazonWebServiceResponse
     {
         private List<MigrationAlert> _alerts = AWSConfigs.InitializeCollections ? new List<MigrationAlert>() : null;

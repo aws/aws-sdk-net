@@ -104,6 +104,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InstancePools", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<InstancePoolSummary, InstancePoolSummaryUnmarshaller>(InstancePoolSummaryUnmarshaller.Instance);
+                    unmarshalledObject.InstancePools = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ManagedInstanceScaling", targetDepth))
                 {
                     var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;

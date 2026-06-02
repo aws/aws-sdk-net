@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the DescribeUser operation.
     /// Describes the specified user. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-    /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
+    /// the instance ID in the Connect Customer console</a> (it’s the final part of the ARN).
     /// The console does not display the user IDs. Instead, list the users and note the IDs
     /// provided in the output.
     /// </summary>
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

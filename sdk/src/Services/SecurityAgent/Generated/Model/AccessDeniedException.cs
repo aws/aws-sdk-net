@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Request denied due to insufficient permissions
+    /// You do not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

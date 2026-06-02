@@ -46,6 +46,17 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGovernedProviders())
+            {
+                context.Writer.WritePropertyName("GovernedProviders");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGovernedProvidersListValue in requestObject.GovernedProviders)
+                {
+                        context.Writer.WriteStringValue(requestObjectGovernedProvidersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetImplementations())
             {
                 context.Writer.WritePropertyName("Implementations");

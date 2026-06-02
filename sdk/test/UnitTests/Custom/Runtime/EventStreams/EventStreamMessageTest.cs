@@ -257,7 +257,7 @@ namespace AWSSDK.UnitTests
 
                 //create the message, and serialize it, it should equal the original encoded data.
                 var message = new EventStreamMessage(headersList, payload);
-                CollectionAssert.Equals(_positiveEncodedTestCases[entry.Key], message.ToByteArray());
+                CollectionAssert.AreEqual(_positiveEncodedTestCases[entry.Key], message.ToByteArray());
             }
         }
 

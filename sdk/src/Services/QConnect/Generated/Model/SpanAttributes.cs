@@ -47,6 +47,7 @@ namespace Amazon.QConnect.Model
         private int? _cacheWriteInputTokens;
         private string _contactId;
         private string _errorType;
+        private List<SpanGuardrailAssessment> _guardrailAssessments = AWSConfigs.InitializeCollections ? new List<SpanGuardrailAssessment>() : null;
         private string _initialContactId;
         private List<SpanMessage> _inputMessages = AWSConfigs.InitializeCollections ? new List<SpanMessage>() : null;
         private string _instanceArn;
@@ -65,6 +66,7 @@ namespace Amazon.QConnect.Model
         private string _sessionName;
         private List<SpanMessageValue> _systemInstructions = AWSConfigs.InitializeCollections ? new List<SpanMessageValue>() : null;
         private float? _temperature;
+        private int? _timeToFirstTokenMs;
         private float? _topp;
         private int? _usageInputTokens;
         private int? _usageOutputTokens;
@@ -288,6 +290,31 @@ namespace Amazon.QConnect.Model
         internal bool IsSetErrorType()
         {
             return this._errorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailAssessments. 
+        /// <para>
+        /// Guardrail assessments for the inference span. Absent on other span types and when
+        /// no AI Guardrail is attached to the AI Agent.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<SpanGuardrailAssessment> GuardrailAssessments
+        {
+            get { return this._guardrailAssessments; }
+            set { this._guardrailAssessments = value; }
+        }
+
+        // Check to see if GuardrailAssessments property is set
+        internal bool IsSetGuardrailAssessments()
+        {
+            return this._guardrailAssessments != null && (this._guardrailAssessments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -644,6 +671,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetTemperature()
         {
             return this._temperature.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeToFirstTokenMs. 
+        /// <para>
+        /// Time to first token in milliseconds, measured from when Amazon Bedrock was invoked
+        /// to when the first token was returned
+        /// </para>
+        /// </summary>
+        public int? TimeToFirstTokenMs
+        {
+            get { return this._timeToFirstTokenMs; }
+            set { this._timeToFirstTokenMs = value; }
+        }
+
+        // Check to see if TimeToFirstTokenMs property is set
+        internal bool IsSetTimeToFirstTokenMs()
+        {
+            return this._timeToFirstTokenMs.HasValue; 
         }
 
         /// <summary>

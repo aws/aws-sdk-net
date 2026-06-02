@@ -34,10 +34,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomOauth2ProviderConfigOutput
     {
+        private ClientAuthenticationMethodType _clientAuthenticationMethod;
         private string _clientId;
         private Oauth2Discovery _oauthDiscovery;
+        private OnBehalfOfTokenExchangeConfigType _onBehalfOfTokenExchangeConfig;
         private PrivateEndpoint _privateEndpoint;
         private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ClientAuthenticationMethod. 
+        /// <para>
+        /// The client authentication method used when authenticating with the token endpoint.
+        /// </para>
+        /// </summary>
+        public ClientAuthenticationMethodType ClientAuthenticationMethod
+        {
+            get { return this._clientAuthenticationMethod; }
+            set { this._clientAuthenticationMethod = value; }
+        }
+
+        // Check to see if ClientAuthenticationMethod property is set
+        internal bool IsSetClientAuthenticationMethod()
+        {
+            return this._clientAuthenticationMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -78,6 +98,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnBehalfOfTokenExchangeConfig. 
+        /// <para>
+        /// The configuration for on-behalf-of token exchange.
+        /// </para>
+        /// </summary>
+        public OnBehalfOfTokenExchangeConfigType OnBehalfOfTokenExchangeConfig
+        {
+            get { return this._onBehalfOfTokenExchangeConfig; }
+            set { this._onBehalfOfTokenExchangeConfig = value; }
+        }
+
+        // Check to see if OnBehalfOfTokenExchangeConfig property is set
+        internal bool IsSetOnBehalfOfTokenExchangeConfig()
+        {
+            return this._onBehalfOfTokenExchangeConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateEndpoint. 
         /// <para>
         /// The default private endpoint for the custom OAuth2 provider, enabling secure connectivity
@@ -99,9 +137,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property PrivateEndpointOverrides. 
         /// <para>
-        /// The list of private endpoint overrides for the custom OAuth2 provider. Each override
-        /// maps a specific domain to a private endpoint, enabling secure connectivity through
-        /// VPC Lattice resource configurations.
+        /// The private endpoint overrides for the custom OAuth2 provider configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

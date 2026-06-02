@@ -52,6 +52,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.BackupVaultName);
             }
 
+            if(requestObject.IsSetContinuousScanDetails())
+            {
+                context.Writer.WritePropertyName("continuousScanDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContinuousScanDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContinuousScanDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -69,6 +69,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSemanticMetadata())
+            {
+                context.Writer.WritePropertyName("SemanticMetadata");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TableSemanticMetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.SemanticMetadata, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

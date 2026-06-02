@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents dns txt verification details
+    /// Contains DNS verification details for a target domain, including the DNS record to
+    /// create for domain ownership verification.
     /// </summary>
     public partial class DnsVerification
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DnsRecordName. 
         /// <para>
-        /// Record name to be added in DNS for target domain
+        /// The name of the DNS record to create for verification.
         /// </para>
         /// </summary>
         public string DnsRecordName
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DnsRecordType. 
         /// <para>
-        /// Type of record to be added in DNS for target domain
+        /// The type of DNS record to create. Currently, only TXT is supported.
         /// </para>
         /// </summary>
         public DNSRecordType DnsRecordType
@@ -77,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
-        /// Token used to verify domain ownership
+        /// The verification token to include in the DNS record value.
         /// </para>
         /// </summary>
         public string Token

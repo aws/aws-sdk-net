@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists tags for a Security Agent resource
+    /// Returns the tags associated with the specified resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// ARN of the resource to list tags for
+        /// The Amazon Resource Name (ARN) of the resource to list tags for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

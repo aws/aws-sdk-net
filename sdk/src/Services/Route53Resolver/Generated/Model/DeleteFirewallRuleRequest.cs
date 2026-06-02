@@ -159,7 +159,7 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         /// A query type you define by using the DNS type ID, for example 28 for AAAA. The values
-        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28.
+        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28.
         /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
         /// of DNS record types</a>.
         /// </para>

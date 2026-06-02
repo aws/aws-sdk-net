@@ -88,7 +88,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The unique identifier of the Amazon Connect instance.
+        /// The unique identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

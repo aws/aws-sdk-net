@@ -125,6 +125,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetRecommendedPolicyV2 operation
+        ///</summary>
+        public IGetRecommendedPolicyV2Paginator GetRecommendedPolicyV2(GetRecommendedPolicyV2Request request) 
+        {
+            return new GetRecommendedPolicyV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetResourcesTrendsV2 operation
         ///</summary>
         public IGetResourcesTrendsV2Paginator GetResourcesTrendsV2(GetResourcesTrendsV2Request request) 

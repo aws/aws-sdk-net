@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetIncludeUnsupportedInRegion())
+                {
+                    request.Parameters.Add("IncludeUnsupportedInRegion", StringUtils.FromBool(publicRequest.IncludeUnsupportedInRegion));
+                }
                 if(publicRequest.IsSetInstanceTypes())
                 {
                     if (publicRequest.InstanceTypes.Count == 0)

@@ -39,9 +39,11 @@ namespace Amazon.ControlCatalog.Model
         private ControlBehavior _behavior;
         private DateTime? _createTime;
         private string _description;
+        private List<string> _governedProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _governedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ImplementationSummary _implementation;
         private string _name;
+        private ParameterRequirementSummary _parameterRequirementSummary;
         private ControlSeverity _severity;
 
         /// <summary>
@@ -146,14 +148,39 @@ namespace Amazon.ControlCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GovernedProviders. 
+        /// <para>
+        /// A list of providers whose resources are governed by this control. For example, a value
+        /// of <c>AWS</c> indicates that the control governs Amazon Web Services resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> GovernedProviders
+        {
+            get { return this._governedProviders; }
+            set { this._governedProviders = value; }
+        }
+
+        // Check to see if GovernedProviders property is set
+        internal bool IsSetGovernedProviders()
+        {
+            return this._governedProviders != null && (this._governedProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property GovernedResources. 
         /// <para>
-        /// A list of Amazon Web Services resource types that are governed by this control. This
-        /// information helps you understand which controls can govern certain types of resources,
-        /// and conversely, which resources are affected when the control is implemented. The
-        /// resources are represented as Amazon Web Services CloudFormation resource types. If
-        /// <c>GovernedResources</c> cannot be represented by available CloudFormation resource
-        /// types, it’s returned as an empty list.
+        /// A list of resource types that are governed by this control. This information helps
+        /// you understand which controls can govern certain types of resources, and conversely,
+        /// which resources are affected when the control is implemented. For Amazon Web Services
+        /// controls, the resources are represented as CloudFormation resource types. For non-Amazon
+        /// Web Services controls, the resources are represented in a provider-specific format.
+        /// If <c>GovernedResources</c> cannot be represented by available resource types, it’s
+        /// returned as an empty list.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -208,6 +235,26 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterRequirementSummary. 
+        /// <para>
+        /// A summary that indicates whether the control requires parameters, accepts optional
+        /// parameters, or does not support parameters. Use this field to determine whether you
+        /// need to supply parameter values when you enable the control.
+        /// </para>
+        /// </summary>
+        public ParameterRequirementSummary ParameterRequirementSummary
+        {
+            get { return this._parameterRequirementSummary; }
+            set { this._parameterRequirementSummary = value; }
+        }
+
+        // Check to see if ParameterRequirementSummary property is set
+        internal bool IsSetParameterRequirementSummary()
+        {
+            return this._parameterRequirementSummary != null;
         }
 
         /// <summary>

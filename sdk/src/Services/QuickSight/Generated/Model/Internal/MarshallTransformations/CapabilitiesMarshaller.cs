@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessAppsNativeDataStore())
+            {
+                context.Writer.WritePropertyName("AccessAppsNativeDataStore");
+                context.Writer.WriteStringValue(requestObject.AccessAppsNativeDataStore);
+            }
+
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
@@ -92,6 +98,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ApproveFlowShareRequests");
                 context.Writer.WriteStringValue(requestObject.ApproveFlowShareRequests);
+            }
+
+            if(requestObject.IsSetApps())
+            {
+                context.Writer.WritePropertyName("Apps");
+                context.Writer.WriteStringValue(requestObject.Apps);
             }
 
             if(requestObject.IsSetAsanaAction())
@@ -176,6 +188,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateAndUpdateAmazonSThreeAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateAmazonSThreeAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateApps())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateApps");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateApps);
             }
 
             if(requestObject.IsSetCreateAndUpdateAsanaAction())
@@ -586,6 +604,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.IntercomAction);
             }
 
+            if(requestObject.IsSetInvokeAppsAIInference())
+            {
+                context.Writer.WritePropertyName("InvokeAppsAIInference");
+                context.Writer.WriteStringValue(requestObject.InvokeAppsAIInference);
+            }
+
             if(requestObject.IsSetJiraAction())
             {
                 context.Writer.WritePropertyName("JiraAction");
@@ -742,6 +766,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SAPProductMasterDataAction);
             }
 
+            if(requestObject.IsSetScenario())
+            {
+                context.Writer.WritePropertyName("Scenario");
+                context.Writer.WriteStringValue(requestObject.Scenario);
+            }
+
             if(requestObject.IsSetSelfUpgradeUserRole())
             {
                 context.Writer.WritePropertyName("SelfUpgradeUserRole");
@@ -782,6 +812,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareAnalyses");
                 context.Writer.WriteStringValue(requestObject.ShareAnalyses);
+            }
+
+            if(requestObject.IsSetShareApps())
+            {
+                context.Writer.WritePropertyName("ShareApps");
+                context.Writer.WriteStringValue(requestObject.ShareApps);
             }
 
             if(requestObject.IsSetShareAsanaAction())
@@ -1070,6 +1106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Space");
                 context.Writer.WriteStringValue(requestObject.Space);
+            }
+
+            if(requestObject.IsSetStory())
+            {
+                context.Writer.WritePropertyName("Story");
+                context.Writer.WriteStringValue(requestObject.Story);
             }
 
             if(requestObject.IsSetSubscribeDashboardEmailReports())

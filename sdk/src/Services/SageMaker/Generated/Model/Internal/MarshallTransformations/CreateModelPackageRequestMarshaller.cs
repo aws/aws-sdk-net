@@ -150,6 +150,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetManagedStorageType())
+            {
+                context.Writer.WritePropertyName("ManagedStorageType");
+                context.Writer.WriteStringValue(publicRequest.ManagedStorageType);
+            }
+
             if(publicRequest.IsSetMetadataProperties())
             {
                 context.Writer.WritePropertyName("MetadataProperties");

@@ -69,28 +69,26 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("EventBridge")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void UseBadEndpointId()
         {
             var request = new PutEventsRequest
             {
                 EndpointId = "badactor.com?foo=bar"
             };
-
-            var internalRequest = EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance));
         }
 
         [TestMethod]
         [TestCategory("EventBridge")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void UseEmptyEndpointId()
         {
             var request = new PutEventsRequest
             {
                 EndpointId = ""
             };
-
-            var internalRequest = EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance));
         }
 
         [TestMethod]
@@ -157,21 +155,19 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("EventBridge")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void UseFIPSEndpointWithEndpointIdSet()
         {
             var request = new PutEventsRequest
             {
                 EndpointId = "abc123.456def"
             };
-
             var config = new AmazonEventBridgeConfig
             {
                 RegionEndpoint = RegionEndpoint.USEast1,
                 UseFIPSEndpoint = true
             };
-
-            var internalRequest = EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance, config));
         }
 
         [TestMethod]
@@ -197,22 +193,20 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("EventBridge")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void UseFIPSAndDualStackEndpointWithEndpointIdSet()
         {
             var request = new PutEventsRequest
             {
                 EndpointId = "abc123.456def"
             };
-
             var config = new AmazonEventBridgeConfig
             {
                 RegionEndpoint = RegionEndpoint.USEast1,
                 UseFIPSEndpoint = true,
                 UseDualstackEndpoint = true
             };
-
-            var internalRequest = EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                EventBridgeTestUtils.RunMockRequest(request, PutEventsRequestMarshaller.Instance, config));
         }
 
         [TestMethod]

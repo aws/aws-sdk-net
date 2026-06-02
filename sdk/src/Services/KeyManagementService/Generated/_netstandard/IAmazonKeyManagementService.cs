@@ -1200,6 +1200,13 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// You can create a grant for an Amazon Web Services principal (IAM user, IAM role, or
+        /// Amazon Web Services account) by specifying the <c>GranteePrincipal</c> parameter.
+        /// You can also create a grant for an Amazon Web Services service principal by specifying
+        /// the <c>GranteeServicePrincipal</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
         /// For detailed information about grants, including grant terminology, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants
         /// in KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. For examples
         /// of creating grants in several programming languages, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/example_kms_CreateGrant_section.html">Use
@@ -6916,7 +6923,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// You must specify the KMS key in all requests. You can filter the grant list by grant
-        /// ID or grantee principal.
+        /// ID, grantee principal, or grantee service principal.
         /// </para>
         ///  
         /// <para>
@@ -6927,11 +6934,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
-        /// the user or role designated as the grantee principal in the grant. However, when the
-        /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
-        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.
+        /// When a grant is created with the <c>GranteePrincipal</c> field, the <c>ListGrants</c>
+        /// response usually contains the user or role designated as the grantee principal in
+        /// the grant. However, if the grantee principal is an Amazon Web Services service, the
+        /// <c>GranteePrincipal</c> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might correspond to several different grantee principals, such
+        /// as an IAM user, IAM role, or Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a grant is created with the <c>GranteeServicePrincipal</c> field, the <c>ListGrants</c>
+        /// response always includes a <c>GranteeServicePrincipal</c> that indicates the grantee
+        /// is actually an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7387,7 +7402,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -7419,11 +7434,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7452,7 +7473,7 @@ namespace Amazon.KeyManagementService
         /// eventual consistency</a>.
         /// </para>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>. You must specify either <c>RetiringPrincipal</c> or <c>RetiringServicePrincipal</c>, but not both.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7481,7 +7502,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -7513,11 +7534,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7575,7 +7602,7 @@ namespace Amazon.KeyManagementService
 
         /// <summary>
         /// Returns information about all grants in the Amazon Web Services account and Region
-        /// that have the specified retiring principal. 
+        /// that have the specified retiring principal or retiring service principal. 
         /// 
         ///  
         /// <para>
@@ -7607,11 +7634,17 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
-        /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
-        /// calls is the retiring principal specified in the request. KMS does not evaluate the
-        /// caller's permissions to verify their access to any KMS keys or grants that might be
-        /// returned by the <c>ListRetirableGrants</c> call.
+        /// When listing retirable grants by <c>RetiringPrincipal</c>, KMS authorizes <c>ListRetirableGrants</c>
+        /// requests by evaluating the caller account's kms:ListRetirableGrants permissions. The
+        /// authorized resource in <c>ListRetirableGrants</c> calls is the retiring principal
+        /// specified in the request. KMS does not evaluate the caller's permissions to verify
+        /// their access to any KMS keys or grants that might be returned by the <c>ListRetirableGrants</c>
+        /// call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>RetiringServicePrincipal</c> filter is only usable by callers in a service
+        /// principal.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7945,7 +7978,13 @@ namespace Amazon.KeyManagementService
         /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
         /// states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// When using grants with <c>SourceArn</c> constraints for <c>ReEncrypt</c> operations,
+        /// the grants on both the source KMS key (for <c>ReEncryptFrom</c>) and the destination
+        /// KMS key (for <c>ReEncryptTo</c>) must specify the same <c>SourceArn</c> value. 
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key can be
         /// in different Amazon Web Services accounts. Either or both KMS keys can be in a different

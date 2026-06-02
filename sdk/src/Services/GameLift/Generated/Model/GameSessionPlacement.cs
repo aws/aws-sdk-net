@@ -161,8 +161,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionArn. 
         /// <para>
-        /// Identifier for the game session created by this placement request. This identifier
-        /// is unique across all Regions. This value isn't final until placement status is <c>FULFILLED</c>.
+        /// An identifier for the game session that is unique across all regions. The value is
+        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionId</c>. This
+        /// value isn't final until placement status is <c>FULFILLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -203,8 +205,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// A unique identifier for the game session. This value isn't final until placement status
-        /// is <c>FULFILLED</c>.
+        /// An identifier for the game session that is unique across all regions. The value is
+        /// always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;</c>. This value is the same as <c>GameSessionArn</c>. This
+        /// value isn't final until placement status is <c>FULFILLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

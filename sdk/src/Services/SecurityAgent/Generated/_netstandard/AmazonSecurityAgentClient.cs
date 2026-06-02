@@ -39,8 +39,22 @@ namespace Amazon.SecurityAgent
 {
     /// <summary>
     /// <para>Implementation for accessing SecurityAgent</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
-    /// AWS Security Agent service documentation.
+    /// AWS Security Agent is a frontier agent that proactively secures your applications
+    /// throughout the development lifecycle. It conducts automated security reviews tailored
+    /// to your organizational requirements and delivers context-aware penetration testing
+    /// on demand. By continuously validating security from design to deployment, AWS Security
+    /// Agent helps prevent vulnerabilities early across all your environments. Key capabilities
+    /// include design security review for architecture documents, code security review for
+    /// pull requests in connected repositories, and on-demand penetration testing that discovers,
+    /// validates, and remediates security vulnerabilities through tailored multi-step attack
+    /// scenarios. For more information, see the <a href="https://docs.aws.amazon.com/securityagent/latest/userguide/what-is.html">AWS
+    /// Security Agent User Guide</a>.
     /// </summary>
     public partial class AmazonSecurityAgentClient : AmazonServiceClient, IAmazonSecurityAgent
     {
@@ -277,7 +291,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Adds an Artifact for the given agent space
+        /// Uploads an artifact to an agent space. Artifacts provide additional context for security
+        /// testing, such as architecture diagrams, API specifications, or configuration files.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -286,20 +301,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the AddArtifact service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/AddArtifact">REST API Reference for AddArtifact Operation</seealso>
         public virtual Task<AddArtifactResponse> AddArtifactAsync(AddArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -309,6 +324,39 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = AddArtifactResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddArtifactResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchDeleteCodeReviews
+
+        internal virtual BatchDeleteCodeReviewsResponse BatchDeleteCodeReviews(BatchDeleteCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteCodeReviewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes one or more code reviews from an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteCodeReviews">REST API Reference for BatchDeleteCodeReviews Operation</seealso>
+        public virtual Task<BatchDeleteCodeReviewsResponse> BatchDeleteCodeReviewsAsync(BatchDeleteCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCodeReviewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteCodeReviewsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -326,7 +374,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Deletes multiple pentests in a single request
+        /// Deletes one or more pentests from an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeletePentests service method.</param>
         /// <param name="cancellationToken">
@@ -359,7 +407,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple agent spaces in a single request
+        /// Retrieves information about one or more agent spaces.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetAgentSpaces service method.</param>
         /// <param name="cancellationToken">
@@ -392,7 +440,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieve the list of artifact metadata for the given agent space
+        /// Retrieves metadata for one or more artifacts in an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetArtifactMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -401,20 +449,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the BatchGetArtifactMetadata service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetArtifactMetadata">REST API Reference for BatchGetArtifactMetadata Operation</seealso>
         public virtual Task<BatchGetArtifactMetadataResponse> BatchGetArtifactMetadataAsync(BatchGetArtifactMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -424,6 +472,105 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = BatchGetArtifactMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetArtifactMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetCodeReviewJobs
+
+        internal virtual BatchGetCodeReviewJobsResponse BatchGetCodeReviewJobs(BatchGetCodeReviewJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewJobsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about one or more code review jobs in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobs">REST API Reference for BatchGetCodeReviewJobs Operation</seealso>
+        public virtual Task<BatchGetCodeReviewJobsResponse> BatchGetCodeReviewJobsAsync(BatchGetCodeReviewJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCodeReviewJobsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetCodeReviewJobTasks
+
+        internal virtual BatchGetCodeReviewJobTasksResponse BatchGetCodeReviewJobTasks(BatchGetCodeReviewJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewJobTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about one or more tasks within a code review job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviewJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviewJobTasks">REST API Reference for BatchGetCodeReviewJobTasks Operation</seealso>
+        public virtual Task<BatchGetCodeReviewJobTasksResponse> BatchGetCodeReviewJobTasksAsync(BatchGetCodeReviewJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCodeReviewJobTasksResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetCodeReviews
+
+        internal virtual BatchGetCodeReviewsResponse BatchGetCodeReviews(BatchGetCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetCodeReviewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about one or more code reviews in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetCodeReviews">REST API Reference for BatchGetCodeReviews Operation</seealso>
+        public virtual Task<BatchGetCodeReviewsResponse> BatchGetCodeReviewsAsync(BatchGetCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetCodeReviewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetCodeReviewsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -441,7 +588,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple findings in a single request
+        /// Retrieves information about one or more security findings in an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetFindings service method.</param>
         /// <param name="cancellationToken">
@@ -474,7 +621,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple pentest jobs in a single request
+        /// Retrieves information about one or more pentest jobs in an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetPentestJobs service method.</param>
         /// <param name="cancellationToken">
@@ -507,7 +654,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple tasks for a pentest job in a single request
+        /// Retrieves information about one or more tasks within a pentest job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetPentestJobTasks service method.</param>
         /// <param name="cancellationToken">
@@ -540,7 +687,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple pentests in a single request
+        /// Retrieves information about one or more pentests in an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetPentests service method.</param>
         /// <param name="cancellationToken">
@@ -573,7 +720,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves multiple target domains in a single request
+        /// Retrieves information about one or more target domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetTargetDomains service method.</param>
         /// <param name="cancellationToken">
@@ -606,7 +753,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Creates an agent space record
+        /// Creates a new agent space. An agent space is a dedicated workspace for securing a
+        /// specific application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentSpace service method.</param>
         /// <param name="cancellationToken">
@@ -639,7 +787,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Creates a new application
+        /// Creates a new application. An application is the top-level organizational unit that
+        /// supports IAM Identity Center integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -658,6 +807,40 @@ namespace Amazon.SecurityAgent
         }
         #endregion
         
+        #region  CreateCodeReview
+
+        internal virtual CreateCodeReviewResponse CreateCodeReview(CreateCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCodeReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new code review configuration in an agent space. A code review defines the
+        /// parameters for automated security-focused code analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateCodeReview">REST API Reference for CreateCodeReview Operation</seealso>
+        public virtual Task<CreateCodeReviewResponse> CreateCodeReviewAsync(CreateCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCodeReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCodeReviewResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateIntegration
 
         internal virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
@@ -672,7 +855,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Creates the Integration of the Security Agent App with an external Provider
+        /// Creates a new integration with a third-party provider, such as GitHub, for code review
+        /// and remediation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -681,23 +865,24 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the CreateIntegration service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
-        /// Request conflicts with current resource state
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -724,7 +909,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Adds a single member to an agent space with specified role
+        /// Creates a new membership, granting a user access to an agent space within an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -757,7 +942,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Creates a new pentest configuration
+        /// Creates a new pentest configuration in an agent space. A pentest defines the security
+        /// test parameters, including target assets, risk type exclusions, and logging configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePentest service method.</param>
         /// <param name="cancellationToken">
@@ -790,7 +976,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Creates a target domain record
+        /// Creates a new target domain for penetration testing. A target domain is a web domain
+        /// that must be registered and verified before it can be tested.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetDomain service method.</param>
         /// <param name="cancellationToken">
@@ -823,7 +1010,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Deletes an agent space record
+        /// Deletes an agent space and all of its associated resources, including pentests, findings,
+        /// and artifacts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentSpace service method.</param>
         /// <param name="cancellationToken">
@@ -856,7 +1044,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Deletes an application
+        /// Deletes an application and its associated configuration, including IAM Identity Center
+        /// settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -889,7 +1078,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Delete an Artifact from the given agent space
+        /// Deletes an artifact from an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -898,20 +1087,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the DeleteArtifact service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteArtifact">REST API Reference for DeleteArtifact Operation</seealso>
         public virtual Task<DeleteArtifactResponse> DeleteArtifactAsync(DeleteArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -938,7 +1127,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Deletes the Integration of the Security Agent App with an external Provider
+        /// Deletes an integration with a third-party provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -947,23 +1136,24 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
-        /// Request conflicts with current resource state
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -990,7 +1180,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Removes a single member associated to an agent space
+        /// Deletes a membership, revoking a user's access to an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembership service method.</param>
         /// <param name="cancellationToken">
@@ -1023,7 +1213,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Deletes a target domain record
+        /// Deletes a target domain registration. After deletion, the domain can no longer be
+        /// used for penetration testing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTargetDomain service method.</param>
         /// <param name="cancellationToken">
@@ -1056,7 +1247,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves application details by application ID
+        /// Retrieves information about an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
         /// <param name="cancellationToken">
@@ -1089,7 +1280,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieve an Artifact for the given agent space
+        /// Retrieves an artifact from an agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetArtifact service method.</param>
         /// <param name="cancellationToken">
@@ -1098,20 +1289,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the GetArtifact service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/GetArtifact">REST API Reference for GetArtifact Operation</seealso>
         public virtual Task<GetArtifactResponse> GetArtifactAsync(GetArtifactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1138,7 +1329,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Gets Integration metadata from the provided id
+        /// Retrieves information about an integration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -1147,20 +1338,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the GetIntegration service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
         public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1187,7 +1378,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Initiates the registration of Security Agent App for an external Provider
+        /// Initiates the OAuth registration flow with a third-party provider. Returns a redirect
+        /// URL and CSRF state token for completing the authorization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitiateProviderRegistration service method.</param>
         /// <param name="cancellationToken">
@@ -1196,23 +1388,24 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the InitiateProviderRegistration service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
-        /// Request conflicts with current resource state
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/InitiateProviderRegistration">REST API Reference for InitiateProviderRegistration Operation</seealso>
         public virtual Task<InitiateProviderRegistrationResponse> InitiateProviderRegistrationAsync(InitiateProviderRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1239,7 +1432,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists agent spaces
+        /// Returns a paginated list of agent space summaries in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentSpaces service method.</param>
         /// <param name="cancellationToken">
@@ -1272,7 +1465,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists all applications in the account
+        /// Returns a paginated list of application summaries in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// <param name="cancellationToken">
@@ -1305,7 +1498,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists the artifacts for the associated agent space
+        /// Returns a paginated list of artifact summaries for the specified agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListArtifacts service method.</param>
         /// <param name="cancellationToken">
@@ -1314,20 +1507,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the ListArtifacts service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListArtifacts">REST API Reference for ListArtifacts Operation</seealso>
         public virtual Task<ListArtifactsResponse> ListArtifactsAsync(ListArtifactsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1337,6 +1530,107 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = ListArtifactsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListArtifactsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCodeReviewJobsForCodeReview
+
+        internal virtual ListCodeReviewJobsForCodeReviewResponse ListCodeReviewJobsForCodeReview(ListCodeReviewJobsForCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobsForCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobsForCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewJobsForCodeReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of code review job summaries for the specified code review
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobsForCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobsForCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobsForCodeReview">REST API Reference for ListCodeReviewJobsForCodeReview Operation</seealso>
+        public virtual Task<ListCodeReviewJobsForCodeReviewResponse> ListCodeReviewJobsForCodeReviewAsync(ListCodeReviewJobsForCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobsForCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobsForCodeReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCodeReviewJobsForCodeReviewResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCodeReviewJobTasks
+
+        internal virtual ListCodeReviewJobTasksResponse ListCodeReviewJobTasks(ListCodeReviewJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewJobTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of task summaries for the specified code review job, optionally
+        /// filtered by step name or category.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviewJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviewJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviewJobTasks">REST API Reference for ListCodeReviewJobTasks Operation</seealso>
+        public virtual Task<ListCodeReviewJobTasksResponse> ListCodeReviewJobTasksAsync(ListCodeReviewJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewJobTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCodeReviewJobTasksResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCodeReviews
+
+        internal virtual ListCodeReviewsResponse ListCodeReviews(ListCodeReviewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeReviewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a paginated list of code review summaries for the specified agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeReviews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodeReviews service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListCodeReviews">REST API Reference for ListCodeReviews Operation</seealso>
+        public virtual Task<ListCodeReviewsResponse> ListCodeReviewsAsync(ListCodeReviewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCodeReviewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodeReviewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCodeReviewsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1354,8 +1648,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists discovered endpoints associated with a pentest job with optional URI prefix
-        /// filtering
+        /// Returns a paginated list of endpoints discovered during a pentest job execution.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDiscoveredEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -1388,8 +1681,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists findings with filtering and pagination support. When filters are applied, the
-        /// actual number of results returned may be less than the specified limit
+        /// Lists the security findings for a pentest job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindings service method.</param>
         /// <param name="cancellationToken">
@@ -1422,7 +1714,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists the integrated resources for an agent space
+        /// Lists the integrated resources for an agent space, optionally filtered by integration
+        /// or resource type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegratedResources service method.</param>
         /// <param name="cancellationToken">
@@ -1431,20 +1724,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the ListIntegratedResources service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListIntegratedResources">REST API Reference for ListIntegratedResources Operation</seealso>
         public virtual Task<ListIntegratedResourcesResponse> ListIntegratedResourcesAsync(ListIntegratedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1471,7 +1764,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Retrieves the Integrations associated with the user's account
+        /// Lists the integrations in your account, optionally filtered by provider or provider
+        /// type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntegrations service method.</param>
         /// <param name="cancellationToken">
@@ -1480,16 +1774,20 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the ListIntegrations service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
         public virtual Task<ListIntegrationsResponse> ListIntegrationsAsync(ListIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1516,7 +1814,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists all members associated to an agent space with pagination support
+        /// Returns a paginated list of membership summaries for the specified agent space within
+        /// an application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -1549,7 +1848,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists pentest jobs associated with a pentest
+        /// Returns a paginated list of pentest job summaries for the specified pentest configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPentestJobsForPentest service method.</param>
         /// <param name="cancellationToken">
@@ -1582,7 +1881,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists tasks associated with a specific pentest job
+        /// Returns a paginated list of task summaries for the specified pentest job, optionally
+        /// filtered by step name or category.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPentestJobTasks service method.</param>
         /// <param name="cancellationToken">
@@ -1615,7 +1915,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists pentests with optional filtering by status
+        /// Returns a paginated list of pentest summaries for the specified agent space.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPentests service method.</param>
         /// <param name="cancellationToken">
@@ -1648,7 +1948,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists tags for a Security Agent resource
+        /// Returns the tags associated with the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1681,7 +1981,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Lists target domains
+        /// Returns a paginated list of target domain summaries in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTargetDomains service method.</param>
         /// <param name="cancellationToken">
@@ -1714,7 +2014,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Starts code remediation for the specified findings
+        /// Initiates code remediation for one or more security findings. This creates pull requests
+        /// in integrated repositories to fix the identified vulnerabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCodeRemediation service method.</param>
         /// <param name="cancellationToken">
@@ -1733,6 +2034,40 @@ namespace Amazon.SecurityAgent
         }
         #endregion
         
+        #region  StartCodeReviewJob
+
+        internal virtual StartCodeReviewJobResponse StartCodeReviewJob(StartCodeReviewJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodeReviewJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartCodeReviewJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a new code review job for a code review configuration. The job executes the
+        /// security-focused code analysis defined in the code review.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodeReviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartCodeReviewJob">REST API Reference for StartCodeReviewJob Operation</seealso>
+        public virtual Task<StartCodeReviewJobResponse> StartCodeReviewJobAsync(StartCodeReviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodeReviewJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartCodeReviewJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartPentestJob
 
         internal virtual StartPentestJobResponse StartPentestJob(StartPentestJobRequest request)
@@ -1747,7 +2082,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Initiates the execution of a pentest
+        /// Starts a new pentest job for a pentest configuration. The job executes the security
+        /// tests defined in the pentest.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartPentestJob service method.</param>
         /// <param name="cancellationToken">
@@ -1766,6 +2102,40 @@ namespace Amazon.SecurityAgent
         }
         #endregion
         
+        #region  StopCodeReviewJob
+
+        internal virtual StopCodeReviewJobResponse StopCodeReviewJob(StopCodeReviewJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCodeReviewJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopCodeReviewJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a running code review job. The job transitions to a stopping state and then
+        /// to stopped after cleanup completes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopCodeReviewJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopCodeReviewJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopCodeReviewJob">REST API Reference for StopCodeReviewJob Operation</seealso>
+        public virtual Task<StopCodeReviewJobResponse> StopCodeReviewJobAsync(StopCodeReviewJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopCodeReviewJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopCodeReviewJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopCodeReviewJobResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopPentestJob
 
         internal virtual StopPentestJobResponse StopPentestJob(StopPentestJobRequest request)
@@ -1780,7 +2150,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Stops the execution of a running pentest
+        /// Stops a running pentest job. The job transitions to a stopping state and then to stopped
+        /// after cleanup completes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopPentestJob service method.</param>
         /// <param name="cancellationToken">
@@ -1813,7 +2184,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Adds tags to a Security Agent resource
+        /// Adds tags to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1846,7 +2217,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Removes tags from a Security Agent resource
+        /// Removes tags from a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1879,7 +2250,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates an agent space record
+        /// Updates the configuration of an existing agent space, including its name, description,
+        /// AWS resources, target domains, and code review settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentSpace service method.</param>
         /// <param name="cancellationToken">
@@ -1912,7 +2284,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates application configuration
+        /// Updates the configuration of an existing application, including the IAM role and default
+        /// KMS key.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -1931,6 +2304,39 @@ namespace Amazon.SecurityAgent
         }
         #endregion
         
+        #region  UpdateCodeReview
+
+        internal virtual UpdateCodeReviewResponse UpdateCodeReview(UpdateCodeReviewRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeReviewResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCodeReviewResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing code review configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeReview service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCodeReview service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateCodeReview">REST API Reference for UpdateCodeReview Operation</seealso>
+        public virtual Task<UpdateCodeReviewResponse> UpdateCodeReviewAsync(UpdateCodeReviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCodeReviewRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCodeReviewResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCodeReviewResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateFinding
 
         internal virtual UpdateFindingResponse UpdateFinding(UpdateFindingRequest request)
@@ -1945,7 +2351,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates an existing security finding with new details or status
+        /// Updates the status or risk level of a security finding.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFinding service method.</param>
         /// <param name="cancellationToken">
@@ -1978,7 +2384,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates the integrated resources for an agent space
+        /// Updates the integrated resources for an agent space, including their capabilities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIntegratedResources service method.</param>
         /// <param name="cancellationToken">
@@ -1987,23 +2393,24 @@ namespace Amazon.SecurityAgent
         /// 
         /// <returns>The response from the UpdateIntegratedResources service method, as returned by SecurityAgent.</returns>
         /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
-        /// Request denied due to insufficient permissions
+        /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
-        /// Request conflicts with current resource state
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
-        /// Unexpected server error occurred
+        /// An unexpected error occurred during the processing of your request.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
-        /// Specified resource was not found
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
-        /// Request denied due to throttling
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
-        /// A standard error for input validation failures. This should be thrown by services
-        /// when a member of the input structure falls outside of the modeled or documented constraints.
+        /// The input fails to satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateIntegratedResources">REST API Reference for UpdateIntegratedResources Operation</seealso>
         public virtual Task<UpdateIntegratedResourcesResponse> UpdateIntegratedResourcesAsync(UpdateIntegratedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2030,7 +2437,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates an existing pentest with new configuration or settings
+        /// Updates an existing pentest configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePentest service method.</param>
         /// <param name="cancellationToken">
@@ -2063,7 +2470,7 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Updates a target domain record
+        /// Updates the verification method for a target domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTargetDomain service method.</param>
         /// <param name="cancellationToken">
@@ -2096,7 +2503,8 @@ namespace Amazon.SecurityAgent
 
 
         /// <summary>
-        /// Verifies ownership for a registered target domain
+        /// Initiates verification of a target domain. This checks whether the domain ownership
+        /// verification token has been properly configured.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyTargetDomain service method.</param>
         /// <param name="cancellationToken">

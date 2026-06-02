@@ -203,26 +203,26 @@ namespace AWSSDK.UnitTests
         {
             // ensure all AsX() when Type is null
             var doc = new Document();
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsBool());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsDictionary());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsDouble());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsInt());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsList());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsLong());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsString());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsBool());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsDictionary());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsDouble());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsInt());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsList());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsLong());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsString());
             
             // ensure all AsX() except AsInt() throw when Type is Int
             doc = new Document(42);
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsBool());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsDictionary());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsDouble());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsList());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsLong());
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsString());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsBool());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsDictionary());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsDouble());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsList());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsLong());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsString());
             
             // ensure AsInt() throws when type is not Int 
             doc = new Document("hello");
-            Assert.ThrowsException<InvalidDocumentTypeConversionException>(() => doc.AsInt());
+            Assert.ThrowsExactly<InvalidDocumentTypeConversionException>(() => doc.AsInt());
         }
         
         private void AssertIsDocumentType(Document doc, DocumentType t)

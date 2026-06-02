@@ -93,6 +93,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
+        private IssuerConfigurationType _issuerConfiguration;
+        private KeyConfigurationType _keyConfiguration;
         private LambdaConfigType _lambdaConfig;
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
@@ -321,6 +323,43 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetEmailVerificationSubject()
         {
             return this._emailVerificationSubject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerConfiguration. 
+        /// <para>
+        /// The issuer configuration for the user pool. Specifies the issuer type for token generation.
+        /// </para>
+        /// </summary>
+        public IssuerConfigurationType IssuerConfiguration
+        {
+            get { return this._issuerConfiguration; }
+            set { this._issuerConfiguration = value; }
+        }
+
+        // Check to see if IssuerConfiguration property is set
+        internal bool IsSetIssuerConfiguration()
+        {
+            return this._issuerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyConfiguration. 
+        /// <para>
+        /// The key configuration for the user pool. Specifies the key type and KMS key ARN for
+        /// encryption.
+        /// </para>
+        /// </summary>
+        public KeyConfigurationType KeyConfiguration
+        {
+            get { return this._keyConfiguration; }
+            set { this._keyConfiguration = value; }
+        }
+
+        // Check to see if KeyConfiguration property is set
+        internal bool IsSetKeyConfiguration()
+        {
+            return this._keyConfiguration != null;
         }
 
         /// <summary>

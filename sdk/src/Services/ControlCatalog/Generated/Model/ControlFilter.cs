@@ -36,7 +36,32 @@ namespace Amazon.ControlCatalog.Model
     /// </summary>
     public partial class ControlFilter
     {
+        private List<string> _governedProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ImplementationFilter _implementations;
+
+        /// <summary>
+        /// Gets and sets the property GovernedProviders. 
+        /// <para>
+        /// A filter that narrows the results to controls that govern a specific provider's resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> GovernedProviders
+        {
+            get { return this._governedProviders; }
+            set { this._governedProviders = value; }
+        }
+
+        // Check to see if GovernedProviders property is set
+        internal bool IsSetGovernedProviders()
+        {
+            return this._governedProviders != null && (this._governedProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Implementations. 

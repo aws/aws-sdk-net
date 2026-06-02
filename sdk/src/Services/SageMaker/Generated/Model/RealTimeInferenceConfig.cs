@@ -36,7 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class RealTimeInferenceConfig
     {
         private int? _instanceCount;
-        private InstanceType _instanceType;
+        private ProductionVariantInstanceType _instanceType;
 
         /// <summary>
         /// Gets and sets the property InstanceCount. 
@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public InstanceType InstanceType
+        public ProductionVariantInstanceType InstanceType
         {
             get { return this._instanceType; }
             set { this._instanceType = value; }

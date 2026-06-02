@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property OutboundAuth. 
         /// <para>
-        /// How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.
+        /// How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if omitted.
         /// </para>
         /// </summary>
         public HarnessGatewayOutboundAuth OutboundAuth

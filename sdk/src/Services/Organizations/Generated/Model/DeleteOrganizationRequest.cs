@@ -33,6 +33,14 @@ namespace Amazon.Organizations.Model
     /// Container for the parameters to the DeleteOrganization operation.
     /// Deletes the organization. You can delete an organization only by using credentials
     /// from the management account. The organization must be empty of member accounts.
+    /// 
+    ///  
+    /// <para>
+    /// When an organization is deleted, Organizations logs a membership event in CloudTrail.
+    /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
+    /// and <c>departedTime</c>. This event is available only in the management account's
+    /// event history.
+    /// </para>
     /// </summary>
     public partial class DeleteOrganizationRequest : AmazonOrganizationsRequest
     {

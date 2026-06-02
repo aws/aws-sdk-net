@@ -47,13 +47,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ARCRegionswitch")]
         [Description("For custom endpoint with fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new ARCRegionswitchEndpointParameters();
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -145,11 +147,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ARCRegionswitch")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new ARCRegionswitchEndpointParameters();
-            var endpoint = new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
         [TestMethod]
@@ -301,14 +305,16 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ARCRegionswitch")]
         [Description("Control plane operation with FIPS in CN returns an error")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS is not supported in this partition")]
         public void Control_plane_operation_with_FIPS_in_CN_returns_an_error_Test()
         {
             var parameters = new ARCRegionswitchEndpointParameters();
             parameters["Region"] = "cn-north-1";
             parameters["UseControlPlaneEndpoint"] = true;
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported in this partition", exception.Message);
         }
 
         [TestMethod]
@@ -316,7 +322,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ARCRegionswitch")]
         [Description("Control plane operation with endpoint set using FIPS in us-east-1 errors")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void Control_plane_operation_with_endpoint_set_using_FIPS_in_useast1_errors_Test()
         {
             var parameters = new ARCRegionswitchEndpointParameters();
@@ -324,7 +329,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseControlPlaneEndpoint"] = true;
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://amazonaws.com";
-            var endpoint = new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -332,7 +340,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("ARCRegionswitch")]
         [Description("Control plane operation with endpoint set using FIPS in us-west-2 routes to provided endpoint")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void Control_plane_operation_with_endpoint_set_using_FIPS_in_uswest2_routes_to_provided_endpoint_Test()
         {
             var parameters = new ARCRegionswitchEndpointParameters();
@@ -340,7 +347,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseControlPlaneEndpoint"] = true;
             parameters["UseFIPS"] = true;
             parameters["Endpoint"] = "https://amazonaws.com";
-            var endpoint = new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonARCRegionswitchEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
     }

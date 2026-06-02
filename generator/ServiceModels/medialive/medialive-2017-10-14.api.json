@@ -5977,6 +5977,10 @@
         "TeletextSourceSettings": {
           "shape": "TeletextSourceSettings",
           "locationName": "teletextSourceSettings"
+        },
+        "SmartSubtitleSourceSettings": {
+          "shape": "SmartSubtitleSourceSettings",
+          "locationName": "smartSubtitleSourceSettings"
         }
       }
     },
@@ -13874,6 +13878,10 @@
         "ChannelEngineVersion": {
           "shape": "ChannelEngineVersionResponse",
           "locationName": "channelEngineVersion"
+        },
+        "MediaConnectRouterOutputConnectionMap": {
+          "shape": "MediaConnectRouterOutputConnections",
+          "locationName": "mediaConnectRouterOutputConnectionMap"
         }
       }
     },
@@ -25591,6 +25599,10 @@
         "FeedArn": {
           "shape": "__string",
           "locationName": "feedArn"
+        },
+        "AudioFeedInputs": {
+          "shape": "__listOfAudioFeedInput",
+          "locationName": "audioFeedInputs"
         }
       }
     },
@@ -25600,6 +25612,10 @@
         "FeedArn": {
           "shape": "__string",
           "locationName": "feedArn"
+        },
+        "AudioFeedInputs": {
+          "shape": "__listOfAudioFeedInput",
+          "locationName": "audioFeedInputs"
         }
       }
     },
@@ -25679,6 +25695,69 @@
       "type": "list",
       "member": {
         "shape": "MediaConnectRouterOutputDestinationSettings"
+      }
+    },
+    "__listOfOutputLocationRef": {
+      "type": "list",
+      "member": {
+        "shape": "OutputLocationRef"
+      }
+    },
+    "MediaConnectRouterOutputConnection": {
+      "type": "structure",
+      "members": {
+        "RouterInputArn": {
+          "shape": "__string",
+          "locationName": "routerInputArn"
+        }
+      }
+    },
+    "MediaConnectRouterOutputConnections": {
+      "type": "map",
+      "key": {
+        "shape": "__string"
+      },
+      "value": {
+        "shape": "MediaConnectRouterOutputConnection"
+      }
+    },
+    "AudioFeedInput": {
+      "type": "structure",
+      "members": {
+        "AudioSelectorName": {
+          "shape": "__string",
+          "locationName": "audioSelectorName"
+        },
+        "FeedInput": {
+          "shape": "__string",
+          "locationName": "feedInput"
+        }
+      }
+    },
+    "CaptionSynchronizationMode": {
+      "type": "string",
+      "enum": [
+        "NO_VIDEO_DELAY",
+        "VIDEO_ALIGNED_CAPTIONS"
+      ]
+    },
+    "SmartSubtitleSourceSettings": {
+      "type": "structure",
+      "members": {
+        "CaptionSynchronizationMode": {
+          "shape": "CaptionSynchronizationMode",
+          "locationName": "captionSynchronizationMode"
+        },
+        "InferenceFeedOutput": {
+          "shape": "__string",
+          "locationName": "inferenceFeedOutput"
+        }
+      }
+    },
+    "__listOfAudioFeedInput": {
+      "type": "list",
+      "member": {
+        "shape": "AudioFeedInput"
       }
     }
   }

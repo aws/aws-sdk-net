@@ -43,6 +43,10 @@ namespace Amazon.Deadline
         /// </summary>
         public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
         /// <summary>
+        /// Constant RtxProServer6000 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName RtxProServer6000 = new AcceleratorName("rtx-pro-server-6000");
+        /// <summary>
         /// Constant T4 for AcceleratorName
         /// </summary>
         public static readonly AcceleratorName T4 = new AcceleratorName("t4");
@@ -1308,6 +1312,52 @@ namespace Amazon.Deadline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DesiredWorkerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EbsVolumeType.
+    /// </summary>
+    public class EbsVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gp3 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Gp3 = new EbsVolumeType("gp3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbsVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbsVolumeType FindValue(string value)
+        {
+            return FindValue<EbsVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbsVolumeType(string value)
         {
             return FindValue(value);
         }
@@ -3828,6 +3878,68 @@ namespace Amazon.Deadline
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeState.
+    /// </summary>
+    public class VolumeState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for VolumeState
+        /// </summary>
+        public static readonly VolumeState AVAILABLE = new VolumeState("AVAILABLE");
+        /// <summary>
+        /// Constant IN_USE for VolumeState
+        /// </summary>
+        public static readonly VolumeState IN_USE = new VolumeState("IN_USE");
+        /// <summary>
+        /// Constant PENDING_ATTACHMENT for VolumeState
+        /// </summary>
+        public static readonly VolumeState PENDING_ATTACHMENT = new VolumeState("PENDING_ATTACHMENT");
+        /// <summary>
+        /// Constant PENDING_CREATION for VolumeState
+        /// </summary>
+        public static readonly VolumeState PENDING_CREATION = new VolumeState("PENDING_CREATION");
+        /// <summary>
+        /// Constant PENDING_DELETION for VolumeState
+        /// </summary>
+        public static readonly VolumeState PENDING_DELETION = new VolumeState("PENDING_DELETION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeState FindValue(string value)
+        {
+            return FindValue<VolumeState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeState(string value)
         {
             return FindValue(value);
         }

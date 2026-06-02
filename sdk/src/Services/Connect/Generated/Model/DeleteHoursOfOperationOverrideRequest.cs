@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHoursOfOperationOverride operation.
-    /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
+    /// Deletes an hours of operation override in an Connect Customer hours of operation resource.
     /// </summary>
     public partial class DeleteHoursOfOperationOverrideRequest : AmazonConnectRequest
     {
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance.
+        /// The identifier of the Connect Customer instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

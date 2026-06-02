@@ -35,25 +35,19 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullStream_ThrowsException()
         {
-            // Act - Should throw
-            var dataSource = new ChunkedPartDataSource(1, null);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new ChunkedPartDataSource(1, null));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Constructor_WithStreamNotInReadMode_ThrowsException()
         {
-            // Arrange
             byte[] testData = Encoding.UTF8.GetBytes("Test data");
             var stream = new ChunkedBufferStream(testData.Length);
             stream.Write(testData, 0, testData.Length);
-            // Don't call SwitchToReadMode()
 
-            // Act - Should throw
-            var dataSource = new ChunkedPartDataSource(1, stream);
+            Assert.ThrowsExactly<InvalidOperationException>(() => new ChunkedPartDataSource(1, stream));
         }
 
         [TestMethod]

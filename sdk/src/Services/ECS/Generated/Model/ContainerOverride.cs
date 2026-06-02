@@ -209,7 +209,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
         /// The type and amount of a resource to assign to a container, instead of the default
-        /// value from the task definition. The only supported resource is a GPU.
+        /// value from the task definition. The supported resources are GPUs and Neuron devices.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

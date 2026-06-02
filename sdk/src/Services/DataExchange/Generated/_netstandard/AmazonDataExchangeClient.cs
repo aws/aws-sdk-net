@@ -39,6 +39,11 @@ namespace Amazon.DataExchange
 {
     /// <summary>
     /// <para>Implementation for accessing DataExchange</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS Data Exchange is a service that makes it easy for AWS customers to exchange data
     /// in the cloud. You can use the AWS Data Exchange APIs to create, update, manage, and

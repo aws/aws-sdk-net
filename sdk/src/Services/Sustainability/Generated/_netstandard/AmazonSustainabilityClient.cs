@@ -39,6 +39,11 @@ namespace Amazon.Sustainability
 {
     /// <summary>
     /// <para>Implementation for accessing Sustainability</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The AWS Sustainability service provides programmatic access to estimated carbon emissions
     /// data for your Amazon Web Services usage. Use the AWS Sustainability service to retrieve,

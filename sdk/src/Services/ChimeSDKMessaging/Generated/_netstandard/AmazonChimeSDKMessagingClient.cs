@@ -39,6 +39,11 @@ namespace Amazon.ChimeSDKMessaging
 {
     /// <summary>
     /// <para>Implementation for accessing ChimeSDKMessaging</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks

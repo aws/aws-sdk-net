@@ -39,6 +39,11 @@ namespace Amazon.IoTEvents
 {
     /// <summary>
     /// <para>Implementation for accessing IoTEvents</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AWS IoT Events monitors your equipment or device fleets for failures or changes in
     /// operation, and triggers actions when such events occur. You can use AWS IoT Events

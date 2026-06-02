@@ -58,6 +58,36 @@ namespace Amazon.SecurityAgent.Model
         IListArtifactsPaginator ListArtifacts(ListArtifactsRequest request);
 
         /// <summary>
+        /// Paginator for ListCodeReviewJobsForCodeReview operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCodeReviewJobsForCodeReviewPaginator ListCodeReviewJobsForCodeReview(ListCodeReviewJobsForCodeReviewRequest request);
+
+        /// <summary>
+        /// Paginator for ListCodeReviewJobTasks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCodeReviewJobTasksPaginator ListCodeReviewJobTasks(ListCodeReviewJobTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListCodeReviews operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCodeReviewsPaginator ListCodeReviews(ListCodeReviewsRequest request);
+
+        /// <summary>
         /// Paginator for ListDiscoveredEndpoints operation
         ///</summary>
         [AWSPaginator(

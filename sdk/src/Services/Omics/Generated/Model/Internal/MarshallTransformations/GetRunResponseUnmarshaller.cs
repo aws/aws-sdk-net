@@ -106,6 +106,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Digest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("engineSettings", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    response.EngineSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("engineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

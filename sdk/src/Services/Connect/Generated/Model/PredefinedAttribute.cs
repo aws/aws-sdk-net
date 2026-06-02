@@ -46,7 +46,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Custom metadata that is associated to predefined attributes to control behavior in
         /// upstream services, such as controlling how a predefined attribute should be displayed
-        /// in the Amazon Connect admin website.
+        /// in the Connect Customer admin website.
         /// </para>
         /// </summary>
         public PredefinedAttributeConfiguration AttributeConfiguration
@@ -120,7 +120,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Purposes. 
         /// <para>
         /// Values that enable you to categorize your predefined attributes. You can use them
-        /// in custom UI elements across the Amazon Connect admin website.
+        /// in custom UI elements across the Connect Customer admin website.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

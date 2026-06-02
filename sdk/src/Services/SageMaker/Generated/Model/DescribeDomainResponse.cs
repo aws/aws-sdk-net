@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private string _domainName;
         private DomainSettings _domainSettings;
         private string _failureReason;
+        private HomeEfsFileSystemCreation _homeEfsFileSystemCreation;
         private string _homeEfsFileSystemId;
         private string _homeEfsFileSystemKmsKeyId;
         private string _kmsKeyId;
@@ -272,6 +273,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HomeEfsFileSystemCreation. 
+        /// <para>
+        /// Indicates whether a home EFS file system is created for the domain.
+        /// </para>
+        /// </summary>
+        public HomeEfsFileSystemCreation HomeEfsFileSystemCreation
+        {
+            get { return this._homeEfsFileSystemCreation; }
+            set { this._homeEfsFileSystemCreation = value; }
+        }
+
+        // Check to see if HomeEfsFileSystemCreation property is set
+        internal bool IsSetHomeEfsFileSystemCreation()
+        {
+            return this._homeEfsFileSystemCreation != null;
         }
 
         /// <summary>

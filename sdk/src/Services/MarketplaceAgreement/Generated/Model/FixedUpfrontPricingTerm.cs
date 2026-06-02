@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceAgreement.Model
         private string _currencyCode;
         private string _duration;
         private List<GrantItem> _grants = AWSConfigs.InitializeCollections ? new List<GrantItem>() : null;
+        private string _id;
         private string _price;
         private string _type;
 
@@ -99,6 +100,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetGrants()
         {
             return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the term.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
         }
 
         /// <summary>

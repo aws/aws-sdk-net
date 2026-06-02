@@ -35,7 +35,29 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetThingConnectivityDataRequest : AmazonIoTRequest
     {
+        private bool? _includeSocketInformation;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property IncludeSocketInformation. 
+        /// <para>
+        /// Specifies if socket information (sourcePort, targetPort, sourceIp, targetIp, vpcEndpointId)
+        /// should be included in the GetThingConnectivityData response. Set to <c>true</c> to
+        /// include socket information. Set to <c>false</c> to omit socket information. By default,
+        /// this is set to <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? IncludeSocketInformation
+        {
+            get { return this._includeSocketInformation; }
+            set { this._includeSocketInformation = value; }
+        }
+
+        // Check to see if IncludeSocketInformation property is set
+        internal bool IsSetIncludeSocketInformation()
+        {
+            return this._includeSocketInformation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ThingName. 

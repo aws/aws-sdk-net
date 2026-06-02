@@ -34,11 +34,33 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomOauth2ProviderConfigInput
     {
+        private ClientAuthenticationMethodType _clientAuthenticationMethod;
         private string _clientId;
         private string _clientSecret;
+        private SecretReference _clientSecretConfig;
+        private SecretSourceType _clientSecretSource;
         private Oauth2Discovery _oauthDiscovery;
+        private OnBehalfOfTokenExchangeConfigType _onBehalfOfTokenExchangeConfig;
         private PrivateEndpoint _privateEndpoint;
         private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ClientAuthenticationMethod. 
+        /// <para>
+        /// The client authentication method to use when authenticating with the token endpoint.
+        /// </para>
+        /// </summary>
+        public ClientAuthenticationMethodType ClientAuthenticationMethod
+        {
+            get { return this._clientAuthenticationMethod; }
+            set { this._clientAuthenticationMethod = value; }
+        }
+
+        // Check to see if ClientAuthenticationMethod property is set
+        internal bool IsSetClientAuthenticationMethod()
+        {
+            return this._clientAuthenticationMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -46,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The client ID for the custom OAuth2 provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -65,7 +87,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The client secret for the custom OAuth2 provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -76,6 +98,46 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientSecret()
         {
             return this._clientSecret != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretConfig. 
+        /// <para>
+        /// A reference to the AWS Secrets Manager secret that stores the client secret. This
+        /// includes the secret ID and the JSON key used to extract the client secret value from
+        /// the secret. Required when <c>clientSecretSource</c> is set to <c>EXTERNAL</c>.
+        /// </para>
+        /// </summary>
+        public SecretReference ClientSecretConfig
+        {
+            get { return this._clientSecretConfig; }
+            set { this._clientSecretConfig = value; }
+        }
+
+        // Check to see if ClientSecretConfig property is set
+        internal bool IsSetClientSecretConfig()
+        {
+            return this._clientSecretConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretSource. 
+        /// <para>
+        /// The source type of the client secret. Use <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if you manage the secret yourself in AWS Secrets
+        /// Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ClientSecretSource
+        {
+            get { return this._clientSecretSource; }
+            set { this._clientSecretSource = value; }
+        }
+
+        // Check to see if ClientSecretSource property is set
+        internal bool IsSetClientSecretSource()
+        {
+            return this._clientSecretSource != null;
         }
 
         /// <summary>
@@ -95,6 +157,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOauthDiscovery()
         {
             return this._oauthDiscovery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnBehalfOfTokenExchangeConfig. 
+        /// <para>
+        /// The configuration for on-behalf-of token exchange. This enables authentication flows
+        /// that use RFC 8693 token exchange or RFC 7523 JWT authorization grants.
+        /// </para>
+        /// </summary>
+        public OnBehalfOfTokenExchangeConfigType OnBehalfOfTokenExchangeConfig
+        {
+            get { return this._onBehalfOfTokenExchangeConfig; }
+            set { this._onBehalfOfTokenExchangeConfig = value; }
+        }
+
+        // Check to see if OnBehalfOfTokenExchangeConfig property is set
+        internal bool IsSetOnBehalfOfTokenExchangeConfig()
+        {
+            return this._onBehalfOfTokenExchangeConfig != null;
         }
 
         /// <summary>
@@ -119,9 +200,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property PrivateEndpointOverrides. 
         /// <para>
-        /// The list of private endpoint overrides for the custom OAuth2 provider. Each override
-        /// maps a specific domain to a private endpoint, enabling secure connectivity through
-        /// VPC Lattice resource configurations.
+        /// The private endpoint overrides for the custom OAuth2 provider configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

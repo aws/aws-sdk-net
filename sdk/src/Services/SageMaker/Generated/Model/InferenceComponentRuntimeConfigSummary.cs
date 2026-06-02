@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _currentCopyCount;
         private int? _desiredCopyCount;
+        private List<InferenceComponentPlacementStatus> _placementStatus = AWSConfigs.InitializeCollections ? new List<InferenceComponentPlacementStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentCopyCount. 
@@ -75,6 +76,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredCopyCount()
         {
             return this._desiredCopyCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStatus. 
+        /// <para>
+        /// The placement status of the inference component across instance types. Shows how the
+        /// inference component copies are distributed across instance types.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<InferenceComponentPlacementStatus> PlacementStatus
+        {
+            get { return this._placementStatus; }
+            set { this._placementStatus = value; }
+        }
+
+        // Check to see if PlacementStatus property is set
+        internal bool IsSetPlacementStatus()
+        {
+            return this._placementStatus != null && (this._placementStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

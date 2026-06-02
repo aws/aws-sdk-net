@@ -41,10 +41,12 @@ namespace Amazon.Route53Resolver.Model
     public partial class FirewallDomainList
     {
         private string _arn;
+        private string _category;
         private string _creationTime;
         private string _creatorRequestId;
         private int? _domainCount;
         private string _id;
+        private DomainListType _managedListType;
         private string _managedOwnerName;
         private string _modificationTime;
         private string _name;
@@ -68,6 +70,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category of the domain list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
         }
 
         /// <summary>
@@ -146,6 +167,24 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedListType. 
+        /// <para>
+        /// The type of the managed domain list, for example <c>THREAT</c>.
+        /// </para>
+        /// </summary>
+        public DomainListType ManagedListType
+        {
+            get { return this._managedListType; }
+            set { this._managedListType = value; }
+        }
+
+        // Check to see if ManagedListType property is set
+        internal bool IsSetManagedListType()
+        {
+            return this._managedListType != null;
         }
 
         /// <summary>

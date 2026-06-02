@@ -86,7 +86,7 @@ namespace AWSSDK.UnitTests
             var malformedJson = @"{""policy"":""testPolicy123"", BAD JSON HERE";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostUploadSignedPolicy.GetSignedPolicyFromJson(malformedJson));
         }
 
@@ -96,17 +96,17 @@ namespace AWSSDK.UnitTests
         {
             // Test missing Policy field
             var missingPolicy = @"{""signature"":""abc123signature"",""access_key"":""AKIAIOSFODNN7EXAMPLE""}";
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostUploadSignedPolicy.GetSignedPolicyFromJson(missingPolicy));
 
             // Test missing Signature field
             var missingSignature = @"{""policy"":""testPolicy123"",""access_key"":""AKIAIOSFODNN7EXAMPLE""}";
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostUploadSignedPolicy.GetSignedPolicyFromJson(missingSignature));
 
             // Test missing AccessKey field
             var missingAccessKey = @"{""policy"":""testPolicy123"",""signature"":""abc123signature""}";
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostUploadSignedPolicy.GetSignedPolicyFromJson(missingAccessKey));
         }
 
@@ -160,7 +160,7 @@ namespace AWSSDK.UnitTests
             var malformedXml = "<S3PostUploadSignedPolicy><Policy>test</Malformed>";
 
             // Act & Assert
-            Assert.ThrowsException<ArgumentException>(() => 
+            Assert.ThrowsExactly<ArgumentException>(() => 
                 S3PostUploadSignedPolicy.GetSignedPolicyFromXml(malformedXml));
         }
 
@@ -182,7 +182,7 @@ namespace AWSSDK.UnitTests
                 var xml = sw.ToString();
 
                 // Act & Assert
-                Assert.ThrowsException<ArgumentException>(() => 
+                Assert.ThrowsExactly<ArgumentException>(() => 
                     S3PostUploadSignedPolicy.GetSignedPolicyFromXml(xml));
             }
         }

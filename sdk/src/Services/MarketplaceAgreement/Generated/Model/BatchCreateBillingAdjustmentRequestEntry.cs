@@ -66,9 +66,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AdjustmentReasonCode. 
         /// <para>
-        /// The reason code for the billing adjustment. Valid values include <c>INCORRECT_TERMS_ACCEPTED</c>,
-        /// <c>INCORRECT_METERING</c>, <c>TEST_ENVIRONMENT_CHARGES</c>, <c>ALTERNATIVE_PROCUREMENT_CHANNEL</c>,
-        /// <c>UNINTENDED_RENEWAL</c>, <c>BUYER_DISSATISFACTION</c>, and <c>OTHER</c>.
+        /// The reason code for the billing adjustment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +124,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The 3-letter ISO 4217 currency code for the adjustment amount (e.g., <c>USD</c>).
+        /// The 3-letter ISO 4217 currency code for the adjustment amount. Must match the currency
+        /// code of the offer associated with the agreement (e.g., <c>USD</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=3)]
@@ -148,7 +147,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// An optional detailed description of the adjustment reason.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=1, Max=500)]
         public string Description
         {
             get { return this._description; }

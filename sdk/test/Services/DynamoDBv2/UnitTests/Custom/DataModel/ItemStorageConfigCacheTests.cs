@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Amazon;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
@@ -9,6 +10,8 @@ using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
+
+#if NETFRAMEWORK
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -240,7 +243,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(cached);
 
             // subsequent call with null flatConfig should throw ArgumentNullException per implementation
-            Assert.ThrowsException<ArgumentNullException>(() =>
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
             {
                 var _ = context.StorageConfigCache.GetConfig(typeof(TestEntity), null, conversionOnly: false);
             });
@@ -373,3 +376,5 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+
+#endif

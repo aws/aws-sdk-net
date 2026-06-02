@@ -46,7 +46,7 @@ namespace Amazon.Evs.Model
         /// instance-type-specific minimum core requirements.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SolutionKey
         {
             get { return this._solutionKey; }
@@ -66,7 +66,7 @@ namespace Amazon.Evs.Model
         /// meet the instance-type-specific minimum capacity requirements.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string VsanKey
         {
             get { return this._vsanKey; }

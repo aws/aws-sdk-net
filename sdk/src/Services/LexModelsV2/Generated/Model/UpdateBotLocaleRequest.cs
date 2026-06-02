@@ -35,6 +35,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class UpdateBotLocaleRequest : AmazonLexModelsV2Request
     {
+        private AudioFillerSettings _audioFillerSettings;
         private string _botId;
         private string _botVersion;
         private string _description;
@@ -45,6 +46,25 @@ namespace Amazon.LexModelsV2.Model
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
         private VoiceSettings _voiceSettings;
+
+        /// <summary>
+        /// Gets and sets the property AudioFillerSettings. 
+        /// <para>
+        /// Updated audio filler settings to apply to the bot locale. When enabled, requires <c>unifiedSpeechSettings</c>
+        /// (speech-to-speech) to be configured on the bot locale.
+        /// </para>
+        /// </summary>
+        public AudioFillerSettings AudioFillerSettings
+        {
+            get { return this._audioFillerSettings; }
+            set { this._audioFillerSettings = value; }
+        }
+
+        // Check to see if AudioFillerSettings property is set
+        internal bool IsSetAudioFillerSettings()
+        {
+            return this._audioFillerSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BotId. 

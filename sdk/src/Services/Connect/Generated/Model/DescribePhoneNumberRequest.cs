@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePhoneNumber operation.
-    /// Gets details and status of a phone number that’s claimed to your Amazon Connect instance
-    /// or traffic distribution group.
+    /// Gets details and status of a phone number that’s claimed to your Connect Customer
+    /// instance or traffic distribution group.
     /// 
     ///  <important> 
     /// <para>

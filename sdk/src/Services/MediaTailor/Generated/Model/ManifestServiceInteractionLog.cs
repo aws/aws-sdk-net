@@ -43,6 +43,7 @@ namespace Amazon.MediaTailor.Model
     public partial class ManifestServiceInteractionLog
     {
         private List<string> _excludeEventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _publishOptInEventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludeEventTypes. 
@@ -66,6 +67,31 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetExcludeEventTypes()
         {
             return this._excludeEventTypes != null && (this._excludeEventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishOptInEventTypes. 
+        /// <para>
+        /// Indicates that MediaTailor will emit the selected events in the logs for playback
+        /// sessions that are initialized with this configuration. These events are not emitted
+        /// by default and must be explicitly opted in.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> PublishOptInEventTypes
+        {
+            get { return this._publishOptInEventTypes; }
+            set { this._publishOptInEventTypes = value; }
+        }
+
+        // Check to see if PublishOptInEventTypes property is set
+        internal bool IsSetPublishOptInEventTypes()
+        {
+            return this._publishOptInEventTypes != null && (this._publishOptInEventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

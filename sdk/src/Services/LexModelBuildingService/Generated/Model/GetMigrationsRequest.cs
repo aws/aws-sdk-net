@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the GetMigrations operation.
     /// Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetMigrationsRequest : AmazonLexModelBuildingServiceRequest
     {
         private int? _maxResults;

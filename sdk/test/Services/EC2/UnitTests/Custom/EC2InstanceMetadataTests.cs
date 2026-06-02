@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if NETFRAMEWORK
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Reflection;
@@ -42,13 +43,13 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                     {
                         value = pi.GetValue(null);
                         // all properties should return null on non-EC2 instances
-                        Assert.IsNull(value, "Property {0} should be null", pi.Name);
+                        Assert.IsNull(value, $"Property {pi.Name} should be null");
                     }
                     else if (fi != null)
                     {
                         value = fi.GetValue(null);
                         // all fields should return non-null on non-EC2 instances
-                        Assert.IsNotNull(value, "Field {0} should not be null", fi.Name);
+                        Assert.IsNotNull(value, $"Field {fi.Name} should not be null");
                     }
                 }
             }
@@ -57,52 +58,41 @@ namespace AWSSDK_DotNet.UnitTests.EC2
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
-        [ExpectedException(typeof(WebException))]
         public void TestEC2InstanceMetadata401Unauthorized()
         {
             var token = "ValidToken";
-           
+
             using (var servlet = new EC2InstanceMetadataServlet())
             {
                 servlet.AddTokenFetchResponse(token);
                 servlet.AddMetadataGetSecurityCredentialsResponse(new IAMSecurityCredentialMetadata(), token, HttpStatusCode.Unauthorized);
-                try
+                var wex = Assert.ThrowsExactly<WebException>(() =>
                 {
                     var metadata = EC2InstanceMetadata.IAMSecurityCredentials;
-                }
-                catch (WebException wex)
-                {
-                    var response = wex.Response as HttpWebResponse;
-                    Assert.IsNotNull(response);
-                    Assert.AreEqual(HttpStatusCode.Unauthorized, response.StatusCode);
-                    throw;
-                }
+                });
+                var response = wex.Response as HttpWebResponse;
+                Assert.IsNotNull(response);
+                Assert.AreEqual(HttpStatusCode.Unauthorized, response.StatusCode);
             }
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("EC2")]
-        [ExpectedException(typeof(WebException))]
         public void TestEC2InstanceMetadataAPIToken400BadRequest()
         {
             using (var servlet = new EC2InstanceMetadataServlet())
             {
-                //DEFAULT_RETRIES of 3 for the metadata call for getting a token when BadRequest is used.
                 servlet.AddTokenFetchResponse(string.Empty, HttpStatusCode.BadRequest);
                 servlet.AddTokenFetchResponse(string.Empty, HttpStatusCode.BadRequest);
                 servlet.AddTokenFetchResponse(string.Empty, HttpStatusCode.BadRequest);
-                try
+                var wex = Assert.ThrowsExactly<WebException>(() =>
                 {
                     var metadata = EC2InstanceMetadata.FetchApiToken();
-                }
-                catch(WebException wex)
-                {
-                    var response = wex.Response as HttpWebResponse;
-                    Assert.IsNotNull(response);
-                    Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-                    throw;
-                }
+                });
+                var response = wex.Response as HttpWebResponse;
+                Assert.IsNotNull(response);
+                Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
             }
         }
 
@@ -178,7 +168,7 @@ namespace AWSSDK_DotNet.UnitTests.EC2
                 {
                     servlet.AddTokenFetchResponse(token, failFastStatusCode);
 
-                    Assert.ThrowsException<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken(), "IMDS rejected request to get API token.");
+                    Assert.ThrowsExactly<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken(), "IMDS rejected request to get API token.");
                 }
             }
         }
@@ -195,7 +185,7 @@ namespace AWSSDK_DotNet.UnitTests.EC2
             {
                 servlet.AddTokenFetchResponse(token, HttpStatusCode.NotFound);
 
-                Assert.ThrowsException<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken());
+                Assert.ThrowsExactly<InvalidOperationException>(() => EC2InstanceMetadata.FetchApiToken());
             }
         }
 
@@ -228,3 +218,4 @@ namespace AWSSDK_DotNet.UnitTests.EC2
         }
     }
 }
+#endif

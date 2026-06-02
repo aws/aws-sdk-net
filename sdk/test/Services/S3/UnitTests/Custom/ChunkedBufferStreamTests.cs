@@ -33,31 +33,21 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithEstimatedSizeZero_ThrowsArgumentOutOfRangeException()
         {
-            // Act - Should throw
-            var stream = new ChunkedBufferStream(0);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new ChunkedBufferStream(0));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithNegativeEstimatedSize_ThrowsArgumentOutOfRangeException()
         {
-            // Act - Should throw
-            var stream = new ChunkedBufferStream(-100);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new ChunkedBufferStream(-100));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Constructor_WithChunkSizeExceedingEstimatedSize_ThrowsArgumentOutOfRangeException()
         {
-            // Arrange
-            long estimatedSize = 1024;
-            int chunkSize = 2048; // Larger than estimated size
-
-            // Act - Should throw
-            var stream = new ChunkedBufferStream(estimatedSize, chunkSize);
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new ChunkedBufferStream(1024, 2048));
         }
 
         [TestMethod]
@@ -171,31 +161,23 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void SwitchToReadMode_CalledTwice_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
-
-                // Act - Should throw
-                stream.SwitchToReadMode();
+                Assert.ThrowsExactly<InvalidOperationException>(() => stream.SwitchToReadMode());
             }
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void Write_AfterSwitchToReadMode_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
                 byte[] testData = new byte[100];
-
-                // Act - Should throw
-                stream.Write(testData, 0, testData.Length);
+                Assert.ThrowsExactly<NotSupportedException>(() => stream.Write(testData, 0, testData.Length));
             }
         }
 
@@ -310,57 +292,31 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Write_NullBuffer_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                // Act - Should throw
-                stream.Write(null, 0, 100);
-            }
+                Assert.ThrowsExactly<ArgumentNullException>(() => stream.Write(null, 0, 100));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Write_NegativeOffset_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Write(buffer, -1, 50);
-            }
+                Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => stream.Write(new byte[100], -1, 50));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Write_NegativeCount_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Write(buffer, 0, -1);
-            }
+                Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => stream.Write(new byte[100], 0, -1));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Write_OffsetAndCountExceedBufferBounds_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Write(buffer, 50, 60); // 50 + 60 = 110 > 100
-            }
+                Assert.ThrowsExactly<ArgumentException>(() => stream.Write(new byte[100], 50, 60));
         }
 
         #endregion
@@ -516,61 +472,42 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Read_NullBuffer_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
-
-                // Act - Should throw
-                stream.Read(null, 0, 100);
+                Assert.ThrowsExactly<ArgumentNullException>(() => stream.Read(null, 0, 100));
             }
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Read_NegativeOffset_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Read(buffer, -1, 50);
+                Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => stream.Read(new byte[100], -1, 50));
             }
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Read_NegativeCount_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Read(buffer, 0, -1);
+                Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => stream.Read(new byte[100], 0, -1));
             }
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void Read_OffsetAndCountExceedBufferBounds_ThrowsException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
             {
                 stream.SwitchToReadMode();
-                byte[] buffer = new byte[100];
-
-                // Act - Should throw
-                stream.Read(buffer, 50, 60); // 50 + 60 = 110 > 100
+                Assert.ThrowsExactly<ArgumentException>(() => stream.Read(new byte[100], 50, 60));
             }
         }
 
@@ -675,15 +612,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void Position_Set_ThrowsNotSupportedException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                // Act - Should throw
-                stream.Position = 100;
-            }
+                Assert.ThrowsExactly<NotSupportedException>(() => stream.Position = 100);
         }
 
         #endregion
@@ -691,27 +623,17 @@ namespace AWSSDK.UnitTests
         #region Not Supported Operations
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void Seek_ThrowsNotSupportedException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                // Act - Should throw
-                stream.Seek(0, SeekOrigin.Begin);
-            }
+                Assert.ThrowsExactly<NotSupportedException>(() => stream.Seek(0, SeekOrigin.Begin));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public void SetLength_ThrowsNotSupportedException()
         {
-            // Arrange
             using (var stream = new ChunkedBufferStream(1024))
-            {
-                // Act - Should throw
-                stream.SetLength(1000);
-            }
+                Assert.ThrowsExactly<NotSupportedException>(() => stream.SetLength(1000));
         }
 
         [TestMethod]
@@ -775,66 +697,44 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void Write_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
-
-            // Act - Should throw
-            byte[] testData = new byte[100];
-            stream.Write(testData, 0, testData.Length);
+            Assert.ThrowsExactly<ObjectDisposedException>(() => stream.Write(new byte[100], 0, 100));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void Read_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var stream = new ChunkedBufferStream(1024);
             stream.SwitchToReadMode();
             stream.Dispose();
-
-            // Act - Should throw
-            byte[] buffer = new byte[100];
-            stream.Read(buffer, 0, 100);
+            Assert.ThrowsExactly<ObjectDisposedException>(() => stream.Read(new byte[100], 0, 100));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void Length_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
-
-            // Act - Should throw
-            var length = stream.Length;
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = stream.Length);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void Position_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
-
-            // Act - Should throw
-            var position = stream.Position;
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = stream.Position);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public void SwitchToReadMode_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var stream = new ChunkedBufferStream(1024);
             stream.Dispose();
-
-            // Act - Should throw
-            stream.SwitchToReadMode();
+            Assert.ThrowsExactly<ObjectDisposedException>(() => stream.SwitchToReadMode());
         }
 
         #endregion

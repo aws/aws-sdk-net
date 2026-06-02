@@ -34,8 +34,28 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </summary>
     public partial class SupportTerm
     {
+        private string _id;
         private string _refundPolicy;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique identifier for the term.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RefundPolicy. 

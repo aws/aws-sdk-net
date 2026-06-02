@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Custom metadata that is associated to predefined attributes to control behavior in
     /// upstream services, such as controlling how a predefined attribute should be displayed
-    /// in the Amazon Connect admin website.
+    /// in the Connect Customer admin website.
     /// </summary>
     public partial class PredefinedAttributeConfiguration
     {
@@ -42,9 +42,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EnableValueValidationOnAssociation. 
         /// <para>
-        /// When this parameter is set to true, Amazon Connect enforces strict validation on the
-        /// specific values, if the values are predefined in attributes. The contact will store
-        /// only valid and predefined values for teh predefined attribute key.
+        /// When this parameter is set to true, Connect Customer enforces strict validation on
+        /// the specific values, if the values are predefined in attributes. The contact will
+        /// store only valid and predefined values for teh predefined attribute key.
         /// </para>
         /// </summary>
         public bool? EnableValueValidationOnAssociation
@@ -63,7 +63,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property IsReadOnly. 
         /// <para>
         /// A boolean flag used to indicate whether a predefined attribute should be displayed
-        /// in the Amazon Connect admin website.
+        /// in the Connect Customer admin website.
         /// </para>
         /// </summary>
         public bool? IsReadOnly

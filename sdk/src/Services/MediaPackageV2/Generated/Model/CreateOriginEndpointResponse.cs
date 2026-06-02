@@ -51,6 +51,7 @@ namespace Amazon.MediaPackageV2.Model
         private Segment _segment;
         private int? _startoverWindowSeconds;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UriSeparator _uriSeparator;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -400,6 +401,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UriSeparator. 
+        /// <para>
+        /// The separator character used in generated URIs for this origin endpoint.
+        /// </para>
+        /// </summary>
+        public UriSeparator UriSeparator
+        {
+            get { return this._uriSeparator; }
+            set { this._uriSeparator = value; }
+        }
+
+        // Check to see if UriSeparator property is set
+        internal bool IsSetUriSeparator()
+        {
+            return this._uriSeparator != null;
         }
 
     }

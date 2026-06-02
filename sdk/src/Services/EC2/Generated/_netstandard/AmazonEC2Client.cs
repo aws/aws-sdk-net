@@ -39,13 +39,72 @@ namespace Amazon.EC2
 {
     /// <summary>
     /// <para>Implementation for accessing EC2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>
-    /// You can access the features of Amazon Elastic Compute Cloud (Amazon EC2) programmatically.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon
-    /// EC2 Developer Guide</a>.
+    /// This is the <i>Amazon EC2 API Reference</i>. It provides descriptions, API request
+    /// parameters, and the XML response for each of the Amazon EC2 Query API actions. Note
+    /// that the Amazon EC2 API includes actions for Amazon EC2 plus additional services,
+    /// such as Amazon EBS and Amazon VPC.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To learn about using the Query API, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html">Using
+    /// the API for Amazon EC2</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To learn about the permissions required to call an Amazon EC2 API action, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html">Actions,
+    /// resources, and condition keys for Amazon EC2</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get the list of API actions by service and resource, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html">Actions
+    /// by service</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get the alphabetical list of API actions, see .
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get descriptions of the API error codes, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html">Error
+    /// codes for the Amazon EC2 API</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Alternatively, use one of the following methods to access the Amazon EC2 API, instead
+    /// of using the Query API directly:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/">Amazon Web Services
+    /// CLI Command Reference - ec2 commands</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html">CloudFormation
+    /// - Amazon EC2 resource type reference</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html">Amazon
+    /// Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://builder.aws.com/build/tools">Amazon Web Services SDKs</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
@@ -14979,7 +15038,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified instance types. By default, all instance types for the current
-        /// Region are described. Alternatively, you can filter the results.
+        /// Region are described. Alternatively, you can filter the results. To include instance
+        /// types that are not supported in the current Region, set <c>IncludeUnsupportedInRegion</c>
+        /// to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceTypes service method.</param>
         /// <param name="cancellationToken">
@@ -15171,6 +15232,54 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DescribeIpamPoliciesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeIpamPoliciesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeIpamPoolAllocations
+
+        internal virtual DescribeIpamPoolAllocationsResponse DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolAllocationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIpamPoolAllocationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes IPAM pool allocations. You can describe all allocations owned by you across
+        /// all pools, or you can describe specific allocations by ID.
+        /// 
+        ///  
+        /// <para>
+        /// If you specify <c>IpamPoolAllocationIds</c>, the results include only the specified
+        /// allocations. If you do not specify <c>IpamPoolAllocationIds</c>, the results include
+        /// all allocations owned by you. You can use <c>Filters</c> to narrow the results.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This action returns only allocations directly owned by you. To view all allocations
+        /// in a pool you own or that has been shared with you, including allocations owned by
+        /// other accounts, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetIpamPoolAllocations.html">GetIpamPoolAllocations</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPoolAllocations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPoolAllocations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPoolAllocations">REST API Reference for DescribeIpamPoolAllocations Operation</seealso>
+        public virtual Task<DescribeIpamPoolAllocationsResponse> DescribeIpamPoolAllocationsAsync(DescribeIpamPoolAllocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIpamPoolAllocationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIpamPoolAllocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIpamPoolAllocationsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -27843,6 +27952,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyIpamPoolResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyIpamPoolResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ModifyIpamPoolAllocation
+
+        internal virtual ModifyIpamPoolAllocationResponse ModifyIpamPoolAllocation(ModifyIpamPoolAllocationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolAllocationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIpamPoolAllocationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the description of an IPAM pool allocation. For more information, see <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/ipam/modify-alloc-ipam.html">Modify an
+        /// IPAM pool allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPoolAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPoolAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPoolAllocation">REST API Reference for ModifyIpamPoolAllocation Operation</seealso>
+        public virtual Task<ModifyIpamPoolAllocationResponse> ModifyIpamPoolAllocationAsync(ModifyIpamPoolAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyIpamPoolAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIpamPoolAllocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIpamPoolAllocationResponse>(request, options, cancellationToken);
         }
         #endregion
         

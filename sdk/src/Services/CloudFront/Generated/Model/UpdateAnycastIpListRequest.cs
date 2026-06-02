@@ -113,8 +113,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IpamCidrConfigs. 
         /// <para>
-        ///  A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool
-        /// settings for updating the Anycast static IP list. 
+        /// A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool
+        /// settings for updating the Anycast static IP list.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

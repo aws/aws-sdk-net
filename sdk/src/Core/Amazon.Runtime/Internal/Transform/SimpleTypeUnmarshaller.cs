@@ -521,7 +521,8 @@ namespace Amazon.Runtime.Internal.Transform
         }
         public string Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return SimpleTypeUnmarshaller<string>.Unmarshall(context, ref reader);
+            context.Read(ref reader);
+            return context.ReadText(ref reader);
         }
     }
 

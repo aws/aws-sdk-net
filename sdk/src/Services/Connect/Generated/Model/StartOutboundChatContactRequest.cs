@@ -49,8 +49,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about using SMS or WhatsApp in Amazon Connect, see the following
-    /// topics in the <i>Amazon Connect Administrator Guide</i>:
+    /// For more information about using SMS or WhatsApp in Connect Customer, see the following
+    /// topics in the <i>Connect Customer Administrator Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -89,8 +89,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
-        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// A custom key-value pair using an attribute map. The attributes are standard Connect
+        /// Customer attributes, and can be accessed in flows just like any other contact attributes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -157,7 +157,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFlowId. 
         /// <para>
-        /// The identifier of the flow for the call. To see the ContactFlowId in the Amazon Connect
+        /// The identifier of the flow for the call. To see the ContactFlowId in the Connect Customer
         /// console user interface, on the navigation menu go to <b>Routing, Contact Flows</b>.
         /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
         /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
@@ -232,7 +232,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instance ID in the
+        /// The identifier of the Connect Customer instance. You can find the instance ID in the
         /// Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -267,8 +267,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property RelatedContactId. 
         /// <para>
-        /// The unique identifier for an Amazon Connect contact. This identifier is related to
-        /// the contact starting.
+        /// The unique identifier for an Connect Customer contact. This identifier is related
+        /// to the contact starting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -288,7 +288,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
         /// A set of system defined key-value pairs stored on individual contact segments using
-        /// an attribute map. The attributes are standard Amazon Connect attributes. They can
+        /// an attribute map. The attributes are standard Connect Customer attributes. They can
         /// be accessed in flows.
         /// </para>
         ///  <ul> <li> 

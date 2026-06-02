@@ -39,6 +39,11 @@ namespace Amazon.DataZone
 {
     /// <summary>
     /// <para>Implementation for accessing DataZone</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon DataZone is a data management service that enables you to catalog, discover,
     /// govern, share, and analyze your data. With Amazon DataZone, you can share and access
@@ -3457,6 +3462,99 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateNotebook
+
+
+        /// <summary>
+        /// Creates a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio. A notebook is a collaborative document within
+        /// a project that contains code cells for interactive computing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebook service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        public virtual CreateNotebookResponse CreateNotebook(CreateNotebookRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotebookResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio. A notebook is a collaborative document within
+        /// a project that contains code cells for interactive computing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateNotebook">REST API Reference for CreateNotebook Operation</seealso>
+        public virtual Task<CreateNotebookResponse> CreateNotebookAsync(CreateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotebookResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateNotebookResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateProject
 
 
@@ -6032,6 +6130,85 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DeleteListingResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteListingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteNotebook
+
+
+        /// <summary>
+        /// Deletes a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebook service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        public virtual DeleteNotebookResponse DeleteNotebook(DeleteNotebookRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotebookResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteNotebook">REST API Reference for DeleteNotebook Operation</seealso>
+        public virtual Task<DeleteNotebookResponse> DeleteNotebookAsync(DeleteNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotebookResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteNotebookResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9357,6 +9534,241 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetNotebook
+
+
+        /// <summary>
+        /// Gets the details of a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebook service method.</param>
+        /// 
+        /// <returns>The response from the GetNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebook">REST API Reference for GetNotebook Operation</seealso>
+        public virtual GetNotebookResponse GetNotebook(GetNotebookRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookResponseUnmarshaller.Instance;
+
+            return Invoke<GetNotebookResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the details of a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebook">REST API Reference for GetNotebook Operation</seealso>
+        public virtual Task<GetNotebookResponse> GetNotebookAsync(GetNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNotebookResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNotebookExport
+
+
+        /// <summary>
+        /// Gets the details of a notebook export in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookExport service method.</param>
+        /// 
+        /// <returns>The response from the GetNotebookExport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookExport">REST API Reference for GetNotebookExport Operation</seealso>
+        public virtual GetNotebookExportResponse GetNotebookExport(GetNotebookExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookExportResponseUnmarshaller.Instance;
+
+            return Invoke<GetNotebookExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the details of a notebook export in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotebookExport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookExport">REST API Reference for GetNotebookExport Operation</seealso>
+        public virtual Task<GetNotebookExportResponse> GetNotebookExportAsync(GetNotebookExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNotebookExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetNotebookRun
+
+
+        /// <summary>
+        /// Gets the details of a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// run</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookRun service method.</param>
+        /// 
+        /// <returns>The response from the GetNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookRun">REST API Reference for GetNotebookRun Operation</seealso>
+        public virtual GetNotebookRunResponse GetNotebookRun(GetNotebookRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetNotebookRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the details of a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// run</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetNotebookRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetNotebookRun">REST API Reference for GetNotebookRun Operation</seealso>
+        public virtual Task<GetNotebookRunResponse> GetNotebookRunAsync(GetNotebookRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetNotebookRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetNotebookRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProject
 
 
@@ -11833,6 +12245,152 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListMetadataGenerationRunsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListMetadataGenerationRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNotebookRuns
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// runs</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookRuns service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebookRuns service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebookRuns">REST API Reference for ListNotebookRuns Operation</seealso>
+        public virtual ListNotebookRunsResponse ListNotebookRuns(ListNotebookRunsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotebookRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookRunsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebookRunsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// runs</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebookRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebookRuns service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebookRuns">REST API Reference for ListNotebookRuns Operation</seealso>
+        public virtual Task<ListNotebookRunsResponse> ListNotebookRunsAsync(ListNotebookRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotebookRunsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebookRunsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNotebookRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListNotebooks
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebooks</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebooks service method.</param>
+        /// 
+        /// <returns>The response from the ListNotebooks service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebooks">REST API Reference for ListNotebooks Operation</seealso>
+        public virtual ListNotebooksResponse ListNotebooks(ListNotebooksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotebooksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebooksResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotebooksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebooks</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotebooks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListNotebooks service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotebooks">REST API Reference for ListNotebooks Operation</seealso>
+        public virtual Task<ListNotebooksResponse> ListNotebooksAsync(ListNotebooksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotebooksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotebooksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListNotebooksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14540,6 +15098,370 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  StartNotebookExport
+
+
+        /// <summary>
+        /// Starts a notebook export in Amazon SageMaker Unified Studio. This operation exports
+        /// a notebook to a specified file format and stores the output in Amazon Simple Storage
+        /// Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExport service method.</param>
+        /// 
+        /// <returns>The response from the StartNotebookExport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookExport">REST API Reference for StartNotebookExport Operation</seealso>
+        public virtual StartNotebookExportResponse StartNotebookExport(StartNotebookExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartNotebookExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a notebook export in Amazon SageMaker Unified Studio. This operation exports
+        /// a notebook to a specified file format and stores the output in Amazon Simple Storage
+        /// Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNotebookExport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookExport">REST API Reference for StartNotebookExport Operation</seealso>
+        public virtual Task<StartNotebookExportResponse> StartNotebookExportAsync(StartNotebookExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNotebookExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNotebookImport
+
+
+        /// <summary>
+        /// Starts a notebook import in Amazon SageMaker Unified Studio. This operation imports
+        /// a notebook from an Amazon Simple Storage Service location into a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookImport service method.</param>
+        /// 
+        /// <returns>The response from the StartNotebookImport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookImport">REST API Reference for StartNotebookImport Operation</seealso>
+        public virtual StartNotebookImportResponse StartNotebookImport(StartNotebookImportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartNotebookImportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a notebook import in Amazon SageMaker Unified Studio. This operation imports
+        /// a notebook from an Amazon Simple Storage Service location into a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNotebookImport service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookImport">REST API Reference for StartNotebookImport Operation</seealso>
+        public virtual Task<StartNotebookImportResponse> StartNotebookImportAsync(StartNotebookImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookImportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNotebookImportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartNotebookRun
+
+
+        /// <summary>
+        /// Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents
+        /// the execution of an <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">Amazon
+        /// SageMaker notebook</a> within a project. You can configure compute, network, timeout,
+        /// and environment settings for the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookRun service method.</param>
+        /// 
+        /// <returns>The response from the StartNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookRun">REST API Reference for StartNotebookRun Operation</seealso>
+        public virtual StartNotebookRunResponse StartNotebookRun(StartNotebookRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookRunResponseUnmarshaller.Instance;
+
+            return Invoke<StartNotebookRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents
+        /// the execution of an <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">Amazon
+        /// SageMaker notebook</a> within a project. You can configure compute, network, timeout,
+        /// and environment settings for the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNotebookRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartNotebookRun">REST API Reference for StartNotebookRun Operation</seealso>
+        public virtual Task<StartNotebookRunResponse> StartNotebookRunAsync(StartNotebookRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartNotebookRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartNotebookRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopNotebookRun
+
+
+        /// <summary>
+        /// Stops a running <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// run</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookRun service method.</param>
+        /// 
+        /// <returns>The response from the StopNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StopNotebookRun">REST API Reference for StopNotebookRun Operation</seealso>
+        public virtual StopNotebookRunResponse StopNotebookRun(StopNotebookRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookRunResponseUnmarshaller.Instance;
+
+            return Invoke<StopNotebookRunResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook
+        /// run</a> in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopNotebookRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopNotebookRun service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StopNotebookRun">REST API Reference for StopNotebookRun Operation</seealso>
+        public virtual Task<StopNotebookRunResponse> StopNotebookRunAsync(StopNotebookRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopNotebookRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopNotebookRunResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopNotebookRunResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -15921,6 +16843,91 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateGroupProfileResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGroupProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNotebook
+
+
+        /// <summary>
+        /// Updates a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebook service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        public virtual UpdateNotebookResponse UpdateNotebook(UpdateNotebookRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotebookResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a <a href="https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html">notebook</a>
+        /// in Amazon SageMaker Unified Studio.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotebook service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateNotebook service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateNotebook">REST API Reference for UpdateNotebook Operation</seealso>
+        public virtual Task<UpdateNotebookResponse> UpdateNotebookAsync(UpdateNotebookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotebookRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotebookResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateNotebookResponse>(request, options, cancellationToken);
         }
 
         #endregion

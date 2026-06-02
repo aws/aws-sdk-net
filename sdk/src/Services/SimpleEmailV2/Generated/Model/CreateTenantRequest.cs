@@ -41,11 +41,38 @@ namespace Amazon.SimpleEmailV2.Model
     /// isolate and manage email sending for different customers or business units within
     /// your Amazon SES API v2 account.
     /// </para>
+    ///  
+    /// <para>
+    /// You can optionally specify <c>SuppressionAttributes</c> to configure tenant-level
+    /// suppression at creation time. When tenant-level suppression is enabled, Amazon SES
+    /// maintains a separate suppression list for the tenant instead of using the account-level
+    /// suppression list.
+    /// </para>
     /// </summary>
     public partial class CreateTenantRequest : AmazonSimpleEmailServiceV2Request
     {
+        private TenantSuppressionAttributes _suppressionAttributes;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tenantName;
+
+        /// <summary>
+        /// Gets and sets the property SuppressionAttributes. 
+        /// <para>
+        /// An object that contains information about the suppression list preferences for the
+        /// tenant. Use this to configure tenant-level suppression at creation time.
+        /// </para>
+        /// </summary>
+        public TenantSuppressionAttributes SuppressionAttributes
+        {
+            get { return this._suppressionAttributes; }
+            set { this._suppressionAttributes = value; }
+        }
+
+        // Check to see if SuppressionAttributes property is set
+        internal bool IsSetSuppressionAttributes()
+        {
+            return this._suppressionAttributes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tags. 

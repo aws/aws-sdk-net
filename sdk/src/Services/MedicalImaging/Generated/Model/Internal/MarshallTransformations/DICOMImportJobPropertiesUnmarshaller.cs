@@ -74,6 +74,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("importConfiguration", targetDepth))
+                {
+                    var unmarshaller = ImportConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ImportConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("inputS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -26,7 +26,7 @@ namespace AWSSDK.UnitTests.S3.Custom
     {
         private const string AwsS3RegionalEndpointEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("legacy", "https://s3.amazonaws.com/")]
         [DataRow("regional", "https://s3.us-east-1.amazonaws.com/")]
         [TestCategory("S3")]
@@ -54,7 +54,7 @@ namespace AWSSDK.UnitTests.S3.Custom
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("legacy", S3UsEast1RegionalEndpointValue.Legacy, S3UsEast1RegionalEndpointValue.Legacy, "https://s3.amazonaws.com/")]
         [DataRow("legacy", S3UsEast1RegionalEndpointValue.Regional, S3UsEast1RegionalEndpointValue.Regional, "https://s3.us-east-1.amazonaws.com/")]
         [TestCategory("S3")]
@@ -84,7 +84,7 @@ namespace AWSSDK.UnitTests.S3.Custom
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null)]
         [DataRow(S3UsEast1RegionalEndpointValue.Legacy)]
         [DataRow(S3UsEast1RegionalEndpointValue.Regional)]
@@ -110,7 +110,7 @@ namespace AWSSDK.UnitTests.S3.Custom
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("invalid")]
         [DataRow("999999999999999999999999999999999999999999999999999999999999999999")]
@@ -125,7 +125,7 @@ namespace AWSSDK.UnitTests.S3.Custom
                 Environment.SetEnvironmentVariable(AwsS3RegionalEndpointEnvironmentVariable, invalidValue);
 
                 // Use ListBucketsRequest as it is the most basic S3 request
-                Assert.ThrowsException<InvalidOperationException>(() => new AmazonS3Config().DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())));
+                Assert.ThrowsExactly<InvalidOperationException>(() => new AmazonS3Config().DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())));
             }
             finally
             {

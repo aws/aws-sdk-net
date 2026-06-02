@@ -28,6 +28,26 @@ namespace Amazon.RTBFabric.Model
     {
 
         /// <summary>
+        /// Paginator for ListCertificateAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCertificateAssociationsPaginator ListCertificateAssociations(ListCertificateAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListLinkRoutingRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListLinkRoutingRulesPaginator ListLinkRoutingRules(ListLinkRoutingRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListLinks operation
         ///</summary>
         [AWSPaginator(

@@ -39,6 +39,11 @@ namespace Amazon.MedicalImaging
 {
     /// <summary>
     /// <para>Implementation for accessing MedicalImaging</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the <i>AWS HealthImaging API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/healthimaging/latest/devguide/what-is.html">What
@@ -1402,9 +1407,10 @@ namespace Amazon.MedicalImaging
 
         /// <summary>
         /// Start importing bulk data into an <c>ACTIVE</c> data store. The import job imports
-        /// DICOM P10 files found in the S3 prefix specified by the <c>inputS3Uri</c> parameter.
-        /// The import job stores processing results in the file specified by the <c>outputS3Uri</c>
-        /// parameter.
+        /// DICOM P10 files or enhances existing DICOM files with JSON metadata. The <c>importConfiguration</c>
+        /// parameter specifies the import type. The data is found in the S3 prefix specified
+        /// by the <c>inputS3Uri</c> parameter. The import job stores processing results in the
+        /// file specified by the <c>outputS3Uri</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDICOMImportJob service method.</param>
         /// 
@@ -1443,9 +1449,10 @@ namespace Amazon.MedicalImaging
 
         /// <summary>
         /// Start importing bulk data into an <c>ACTIVE</c> data store. The import job imports
-        /// DICOM P10 files found in the S3 prefix specified by the <c>inputS3Uri</c> parameter.
-        /// The import job stores processing results in the file specified by the <c>outputS3Uri</c>
-        /// parameter.
+        /// DICOM P10 files or enhances existing DICOM files with JSON metadata. The <c>importConfiguration</c>
+        /// parameter specifies the import type. The data is found in the S3 prefix specified
+        /// by the <c>inputS3Uri</c> parameter. The import job stores processing results in the
+        /// file specified by the <c>outputS3Uri</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDICOMImportJob service method.</param>
         /// <param name="cancellationToken">

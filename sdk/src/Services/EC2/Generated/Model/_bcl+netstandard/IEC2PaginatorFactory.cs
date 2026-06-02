@@ -518,6 +518,16 @@ namespace Amazon.EC2.Model
         IDescribeInternetGatewaysPaginator DescribeInternetGateways(DescribeInternetGatewaysRequest request);
 
         /// <summary>
+        /// Paginator for DescribeIpamPoolAllocations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPoolAllocationsPaginator DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeIpamPools operation
         ///</summary>
         [AWSPaginator(

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Represents a category classification for tasks
+    /// Represents a category assigned to a security testing task.
     /// </summary>
     public partial class Category
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IsPrimary. 
         /// <para>
-        /// Whether this is the primary category for the task
+        /// Indicates whether this is the primary category for the task.
         /// </para>
         /// </summary>
         public bool? IsPrimary
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the category
+        /// The name of the category.
         /// </para>
         /// </summary>
         public string Name

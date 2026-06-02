@@ -43,7 +43,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// Contains information about the Amazon Web Services account.
+        /// Contains information about the Amazon Web Services account within which the activity
+        /// took place. This is not necessarily the account that owns the user identity.
         /// </para>
         /// </summary>
         public Account Account

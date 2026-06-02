@@ -102,6 +102,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetResourceConfigDnsResolution())
+            {
+                context.Writer.WritePropertyName("resourceConfigDnsResolution");
+                context.Writer.WriteStringValue(publicRequest.ResourceConfigDnsResolution);
+            }
+
             if(publicRequest.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

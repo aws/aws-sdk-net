@@ -32,7 +32,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <EmbeddedResource Include="Tests/ListObjectsResponse.xml" />
     <EmbeddedResource Include="../Services/S3/IntegrationTests/EmbeddedResource/*" />
   </ItemGroup>
 

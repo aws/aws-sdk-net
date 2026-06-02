@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateIntegratedResources operation.
-    /// Updates the integrated resources for an agent space
+    /// Updates the integrated resources for an agent space, including their capabilities.
     /// </summary>
     public partial class UpdateIntegratedResourcesRequest : AmazonSecurityAgentRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// List of integrated resources to update
+        /// The list of integrated resource items to update.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

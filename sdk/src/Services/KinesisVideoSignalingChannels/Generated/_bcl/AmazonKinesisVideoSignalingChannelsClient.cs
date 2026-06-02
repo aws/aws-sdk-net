@@ -39,6 +39,11 @@ namespace Amazon.KinesisVideoSignalingChannels
 {
     /// <summary>
     /// <para>Implementation for accessing KinesisVideoSignalingChannels</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Kinesis Video Streams Signaling Service is a intermediate service that establishes
     /// a communication channel for discovering peers, transmitting offers and answers in

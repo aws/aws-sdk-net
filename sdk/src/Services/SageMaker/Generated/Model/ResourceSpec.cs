@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private string _sageMakerImageArn;
         private string _sageMakerImageVersionAlias;
         private string _sageMakerImageVersionArn;
+        private string _trainingPlanArn;
 
         /// <summary>
         /// Gets and sets the property InstanceType. 
@@ -155,6 +156,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetSageMakerImageVersionArn()
         {
             return this._sageMakerImageVersionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The ARN of the SageMaker AI Training Plan to use for this app. When you specify a
+        /// training plan, the app launches on reserved GPU capacity. This field is supported
+        /// for JupyterLab and CodeEditor app types.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity with SageMaker AI Training
+        /// Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/training-plan-utilization-for-studio-apps.html">Using
+        /// training plans in Studio applications</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
     }

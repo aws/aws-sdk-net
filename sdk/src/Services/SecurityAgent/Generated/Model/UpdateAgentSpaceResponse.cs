@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the UpdateAgentSpace operation
+    /// Output for the UpdateAgentSpace operation.
     /// </summary>
     public partial class UpdateAgentSpaceResponse : AmazonWebServiceResponse
     {
@@ -46,7 +46,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the agent space
+        /// The unique identifier of the updated agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AwsResources. 
         /// <para>
-        /// AWS resource configurations associated with the agent space
+        /// The AWS resources associated with the agent space.
         /// </para>
         /// </summary>
         public AWSResources AwsResources
@@ -83,8 +83,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CodeReviewSettings. 
         /// <para>
-        /// Configuration for code review analysis, including controls scanning and general purpose
-        /// scanning settings
+        /// The code review settings for the agent space.
         /// </para>
         /// </summary>
         public CodeReviewSettings CodeReviewSettings
@@ -102,7 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Timestamp when the agent space was created
+        /// The date and time the agent space was created, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -120,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the agent space
+        /// The description of the agent space.
         /// </para>
         /// </summary>
         public string Description
@@ -138,7 +137,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the agent space
+        /// The name of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +156,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainIds. 
         /// <para>
-        /// List of target domain IDs registered with the agent space
+        /// The list of target domain identifiers associated with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -180,7 +179,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// Timestamp when the agent space was last updated
+        /// The date and time the agent space was last updated, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

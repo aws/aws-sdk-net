@@ -39,6 +39,11 @@ namespace Amazon.WorkSpacesWeb
 {
     /// <summary>
     /// <para>Implementation for accessing WorkSpacesWeb</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon WorkSpaces Secure Browser is a low cost, fully managed WorkSpace built specifically
     /// to facilitate secure, web-based workloads. WorkSpaces Secure Browser makes it easy

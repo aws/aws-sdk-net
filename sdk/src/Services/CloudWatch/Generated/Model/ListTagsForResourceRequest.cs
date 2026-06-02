@@ -31,8 +31,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Displays the tags associated with a CloudWatch resource. Currently, alarms and Contributor
-    /// Insights rules support tagging.
+    /// Displays the tags associated with a CloudWatch resource. Currently, alarms, dashboards,
+    /// metric streams and Contributor Insights rules support tagging.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonCloudWatchRequest
     {
@@ -51,6 +51,16 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// The ARN format of a Contributor Insights rule is <c>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i>
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of a dashboard is <c>arn:aws:cloudwatch::<i>account-id</i>:dashboard/<i>dashboard-name</i>
+        /// </c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN format of a metric stream is <c>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:metric-stream/<i>metric-stream-name</i>
         /// </c> 
         /// </para>
         ///  

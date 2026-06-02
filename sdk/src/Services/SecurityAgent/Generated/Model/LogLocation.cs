@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Location information for execution logs
+    /// The log location for a task, specifying where task execution logs are stored.
     /// </summary>
     public partial class LogLocation
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLog. 
         /// <para>
-        /// CloudWatch log information if logs are stored in CloudWatch
+        /// The CloudWatch Logs location for the task logs.
         /// </para>
         /// </summary>
         public CloudWatchLog CloudWatchLog
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// Type of log storage
+        /// The type of log storage. Currently, only CLOUDWATCH is supported.
         /// </para>
         /// </summary>
         public LogType LogType

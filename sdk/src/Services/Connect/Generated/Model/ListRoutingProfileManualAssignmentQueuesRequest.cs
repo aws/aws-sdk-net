@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// For information about how manual contact assignment works in the agent workspace,
     /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-    /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+    /// the Worklist app in the Connect Customer agent workspace</a> in the <i>Connect Customer
     /// Administrator Guide</i>. 
     /// </para>
     ///  </li> </ul> 
@@ -67,8 +67,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     /// </summary>
     public partial class ListRoutingProfileManualAssignmentQueuesRequest : AmazonConnectRequest
@@ -81,7 +81,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

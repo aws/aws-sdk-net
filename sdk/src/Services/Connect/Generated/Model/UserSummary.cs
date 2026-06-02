@@ -115,7 +115,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The Amazon Connect user name of the user account.
+        /// The Connect Customer user name of the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

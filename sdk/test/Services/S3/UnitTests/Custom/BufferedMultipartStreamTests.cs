@@ -97,19 +97,15 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(stream.CanWrite);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null, "bufferManager", DisplayName = "Null Coordinator")]
         [DataRow("coordinator", null, DisplayName = "Null Buffer Manager")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Constructor_WithNullParameter_ThrowsArgumentNullException(
             string coordinatorKey, string bufferManagerKey)
         {
-            // Arrange
             var coordinator = coordinatorKey != null ? _mockCoordinator.Object : null;
             var bufferManager = bufferManagerKey != null ? _mockBufferManager.Object : null;
-
-            // Act
-            var stream = new BufferedMultipartStream(coordinator, bufferManager);
+            Assert.ThrowsExactly<ArgumentNullException>(() => new BufferedMultipartStream(coordinator, bufferManager));
         }
 
         #endregion
@@ -132,21 +128,17 @@ namespace AWSSDK.UnitTests
             Assert.IsNull(stream.DiscoveryResult); // Not initialized yet
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null, "request", "config", DisplayName = "Null S3 Client")]
         [DataRow("client", null, "config", DisplayName = "Null Request")]
         [DataRow("client", "request", null, DisplayName = "Null Transfer Config")]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Create_WithNullParameter_ThrowsArgumentNullException(
             string clientKey, string requestKey, string configKey)
         {
-            // Arrange
             var client = clientKey != null ? MultipartDownloadTestHelpers.CreateMockS3Client().Object : null;
             var request = requestKey != null ? MultipartDownloadTestHelpers.CreateOpenStreamRequest() : null;
             var config = configKey != null ? new TransferUtilityConfig() : null;
-
-            // Act
-            var stream = BufferedMultipartStream.Create(client, request, config);
+            Assert.ThrowsExactly<ArgumentNullException>(() => BufferedMultipartStream.Create(client, request, config));
         }
 
         #endregion
@@ -307,29 +299,24 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task InitializeAsync_CalledTwice_ThrowsInvalidOperationException()
         {
-            // Arrange
             var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
-            var discoveryResult = new DownloadResult 
+            var discoveryResult = new DownloadResult
             {
                 TotalParts = 1,
                 ObjectSize = 1024,
                 InitialResponse = mockResponse
             };
-
             var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.StartDownloadAsync(
                 It.IsAny<EventHandler<WriteObjectProgressArgs>>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
-
             var mockBufferManager = new Mock<IPartBufferManager>();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object);
-
-            // Act
             await stream.InitializeAsync(CancellationToken.None);
-            await stream.InitializeAsync(CancellationToken.None); // Second call should throw
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await stream.InitializeAsync(CancellationToken.None));
         }
 
         #endregion
@@ -337,34 +324,26 @@ namespace AWSSDK.UnitTests
         #region ReadAsync Tests
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public async Task ReadAsync_BeforeInitialize_ThrowsInvalidOperationException()
         {
-            // Arrange
             var mockCoordinator = new Mock<IDownloadManager>();
             var mockBufferManager = new Mock<IPartBufferManager>();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object);
-
             var buffer = new byte[1024];
-
-            // Act
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await stream.ReadAsync(buffer, 0, buffer.Length));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ObjectDisposedException))]
         public async Task ReadAsync_AfterDispose_ThrowsObjectDisposedException()
         {
-            // Arrange
             var mockCoordinator = new Mock<IDownloadManager>();
             var mockBufferManager = new Mock<IPartBufferManager>();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object);
-
             stream.Dispose();
             var buffer = new byte[1024];
-
-            // Act
-            await stream.ReadAsync(buffer, 0, buffer.Length);
+            await Assert.ThrowsExactlyAsync<ObjectDisposedException>(async () =>
+                await stream.ReadAsync(buffer, 0, buffer.Length));
         }
 
         #endregion
@@ -378,7 +357,7 @@ namespace AWSSDK.UnitTests
             var stream = await CreateInitializedStreamAsync();
 
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(
+            await Assert.ThrowsExactlyAsync<ArgumentNullException>(
                 async () => await stream.ReadAsync(null, 0, MEDIUM_OBJECT_SIZE));
 
             // Cleanup
@@ -393,7 +372,7 @@ namespace AWSSDK.UnitTests
             var buffer = new byte[MEDIUM_OBJECT_SIZE];
 
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(
                 async () => await stream.ReadAsync(buffer, -1, MEDIUM_OBJECT_SIZE));
 
             // Cleanup
@@ -408,7 +387,7 @@ namespace AWSSDK.UnitTests
             var buffer = new byte[MEDIUM_OBJECT_SIZE];
 
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(
+            await Assert.ThrowsExactlyAsync<ArgumentOutOfRangeException>(
                 async () => await stream.ReadAsync(buffer, 0, -1));
 
             // Cleanup
@@ -423,7 +402,7 @@ namespace AWSSDK.UnitTests
             var buffer = new byte[MEDIUM_OBJECT_SIZE];
 
             // Act & Assert
-            await Assert.ThrowsExceptionAsync<ArgumentException>(
+            await Assert.ThrowsExactlyAsync<ArgumentException>(
                 async () => await stream.ReadAsync(buffer, 100, 1000)); // 100 + 1000 > 1024
 
             // Cleanup
@@ -447,14 +426,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Length_BeforeInitialization_ThrowsInvalidOperationException()
         {
-            // Arrange
             var stream = CreateStream();
-
-            // Act
-            _ = stream.Length;
+            Assert.ThrowsExactly<InvalidOperationException>(() => _ = stream.Length);
         }
 
         [TestMethod]
@@ -492,14 +467,10 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Position_BeforeInitialization_ThrowsInvalidOperationException()
         {
-            // Arrange
             var stream = CreateStream();
-
-            // Act
-            _ = stream.Position;
+            Assert.ThrowsExactly<InvalidOperationException>(() => _ = stream.Position);
         }
 
         [TestMethod]
@@ -720,21 +691,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
         public async Task Position_Setter_ThrowsNotSupportedException()
         {
-            // Arrange
             var stream = await CreateInitializedStreamAsync();
-
-            // Act
-            stream.Position = 100;
+            Assert.ThrowsExactly<NotSupportedException>(() => stream.Position = 100);
         }
 
         #endregion
 
         #region Unsupported Operation Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("Seek", DisplayName = "Seek Operation")]
         [DataRow("SetLength", DisplayName = "SetLength Operation")]
         [DataRow("Write", DisplayName = "Write Operation")]
@@ -745,7 +712,7 @@ namespace AWSSDK.UnitTests
             var buffer = new byte[MEDIUM_OBJECT_SIZE];
 
             // Act & Assert
-            Assert.ThrowsException<NotSupportedException>(() =>
+            Assert.ThrowsExactly<NotSupportedException>(() =>
             {
                 switch (operation)
                 {
@@ -870,7 +837,7 @@ namespace AWSSDK.UnitTests
             stream.Dispose();
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(1, DisplayName = "Minimum MaxInMemoryParts (1)")]
         [DataRow(10, DisplayName = "Small MaxInMemoryParts (10)")]
         [DataRow(512, DisplayName = "Medium MaxInMemoryParts (512)")]
@@ -910,15 +877,11 @@ namespace AWSSDK.UnitTests
         #region Synchronous Read Tests
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidOperationException))]
         public void Read_BeforeInitialize_ThrowsInvalidOperationException()
         {
-            // Arrange
             var stream = CreateStream();
             var buffer = new byte[MEDIUM_OBJECT_SIZE];
-
-            // Act
-            stream.Read(buffer, 0, buffer.Length);
+            Assert.ThrowsExactly<InvalidOperationException>(() => stream.Read(buffer, 0, buffer.Length));
         }
 
         #endregion

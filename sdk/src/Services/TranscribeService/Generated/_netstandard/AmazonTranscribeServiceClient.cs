@@ -39,6 +39,11 @@ namespace Amazon.TranscribeService
 {
     /// <summary>
     /// <para>Implementation for accessing TranscribeService</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Transcribe offers three main types of batch transcription: <b>Standard</b>,
     /// <b>Medical</b>, and <b>Call Analytics</b>.

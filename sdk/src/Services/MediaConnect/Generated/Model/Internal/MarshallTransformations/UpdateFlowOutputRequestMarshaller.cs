@@ -141,6 +141,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MinLatency.Value);
             }
 
+            if(publicRequest.IsSetNdiOutputTimecodeSource())
+            {
+                context.Writer.WritePropertyName("ndiOutputTimecodeSource");
+                context.Writer.WriteStringValue(publicRequest.NdiOutputTimecodeSource);
+            }
+
             if(publicRequest.IsSetNdiProgramName())
             {
                 context.Writer.WritePropertyName("ndiProgramName");

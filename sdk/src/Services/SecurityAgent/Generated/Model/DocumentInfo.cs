@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Information about a document relevant to security testing
+    /// Represents a document that provides context for security testing.
     /// </summary>
     public partial class DocumentInfo
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        /// Artifact ID of the document
+        /// The unique identifier of the artifact associated with the document.
         /// </para>
         /// </summary>
         public string ArtifactId
@@ -58,7 +58,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property S3Location. 
         /// <para>
-        /// S3 storage location of the document
+        /// The Amazon S3 location of the document.
         /// </para>
         /// </summary>
         public string S3Location

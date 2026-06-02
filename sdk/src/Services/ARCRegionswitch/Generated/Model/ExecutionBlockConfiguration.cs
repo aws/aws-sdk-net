@@ -43,6 +43,7 @@ namespace Amazon.ARCRegionswitch.Model
         private EksResourceScalingConfiguration _eksResourceScalingConfig;
         private ExecutionApprovalConfiguration _executionApprovalConfig;
         private GlobalAuroraConfiguration _globalAuroraConfig;
+        private LambdaEventSourceMappingConfiguration _lambdaEventSourceMappingConfig;
         private ParallelExecutionBlockConfiguration _parallelConfig;
         private RdsCreateCrossRegionReplicaConfiguration _rdsCreateCrossRegionReadReplicaConfig;
         private RdsPromoteReadReplicaConfiguration _rdsPromoteReadReplicaConfig;
@@ -188,6 +189,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetGlobalAuroraConfig()
         {
             return this._globalAuroraConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaEventSourceMappingConfig. 
+        /// <para>
+        /// A Lambda event source mapping execution block.
+        /// </para>
+        /// </summary>
+        public LambdaEventSourceMappingConfiguration LambdaEventSourceMappingConfig
+        {
+            get { return this._lambdaEventSourceMappingConfig; }
+            set { this._lambdaEventSourceMappingConfig = value; }
+        }
+
+        // Check to see if LambdaEventSourceMappingConfig property is set
+        internal bool IsSetLambdaEventSourceMappingConfig()
+        {
+            return this._lambdaEventSourceMappingConfig != null;
         }
 
         /// <summary>

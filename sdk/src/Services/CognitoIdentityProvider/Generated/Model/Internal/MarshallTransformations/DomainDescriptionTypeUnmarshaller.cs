@@ -86,6 +86,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.ManagedLoginVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Routing", targetDepth))
+                {
+                    var unmarshaller = RoutingTypeUnmarshaller.Instance;
+                    unmarshalledObject.Routing = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("S3Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

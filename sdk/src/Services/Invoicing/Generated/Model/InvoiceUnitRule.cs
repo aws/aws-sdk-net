@@ -41,10 +41,10 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Gets and sets the property BillSourceAccounts. 
         /// <para>
-        ///  A list of Amazon Web Services account account IDs that have delegated their billing
-        /// responsibility to the receiver account through transfer billing. Unlike linked accounts,
-        /// these bill source accounts can be payer accounts from other organizations that have
-        /// authorized billing transfer to this account. 
+        ///  A list of Amazon Web Services account IDs that have delegated their billing responsibility
+        /// to the receiver account through transfer billing. Unlike linked accounts, these bill
+        /// source accounts can be payer accounts from other organizations that have authorized
+        /// billing transfer to this account. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

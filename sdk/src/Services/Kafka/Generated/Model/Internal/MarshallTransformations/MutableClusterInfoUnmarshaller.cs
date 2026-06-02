@@ -140,6 +140,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("zookeeperAccess", targetDepth))
+                {
+                    var unmarshaller = ZookeeperAccessUnmarshaller.Instance;
+                    unmarshalledObject.ZookeeperAccess = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -46,6 +46,8 @@ namespace Amazon.ECS.Model
         private string _hookTargetArn;
         private List<string> _lifecycleStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
+        private DeploymentLifecycleHookTargetType _targetType;
+        private DeploymentLifecycleHookTimeoutConfiguration _timeoutConfiguration;
 
         /// <summary>
         /// Gets and sets the property HookDetails. 
@@ -230,6 +232,57 @@ namespace Amazon.ECS.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The type of action the lifecycle hook performs. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS_LAMBDA</c> - Invokes a Lambda function at the specified lifecycle stage. This
+        /// is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PAUSE</c> - Pauses the deployment at the specified lifecycle stage until you call
+        /// <c>ContinueServiceDeployment</c> to continue or roll back.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This field is optional. If not specified, the default value is <c>AWS_LAMBDA</c>.
+        /// </para>
+        /// </summary>
+        public DeploymentLifecycleHookTargetType TargetType
+        {
+            get { return this._targetType; }
+            set { this._targetType = value; }
+        }
+
+        // Check to see if TargetType property is set
+        internal bool IsSetTargetType()
+        {
+            return this._targetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeoutConfiguration. 
+        /// <para>
+        /// The timeout configuration for the lifecycle hook. This specifies how long Amazon ECS
+        /// waits before taking the timeout action if the hook is not resolved.
+        /// </para>
+        /// </summary>
+        public DeploymentLifecycleHookTimeoutConfiguration TimeoutConfiguration
+        {
+            get { return this._timeoutConfiguration; }
+            set { this._timeoutConfiguration = value; }
+        }
+
+        // Check to see if TimeoutConfiguration property is set
+        internal bool IsSetTimeoutConfiguration()
+        {
+            return this._timeoutConfiguration != null;
         }
 
     }

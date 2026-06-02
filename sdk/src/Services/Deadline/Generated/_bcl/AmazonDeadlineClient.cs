@@ -39,6 +39,11 @@ namespace Amazon.Deadline
 {
     /// <summary>
     /// <para>Implementation for accessing Deadline</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon Web Services Deadline Cloud API provides infrastructure and centralized
     /// management for your projects. Use the Deadline Cloud API to onboard users, assign
@@ -3856,6 +3861,87 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  DeleteVolume
+
+
+        /// <summary>
+        /// Deletes a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
+        public virtual DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVolumeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
+        public virtual Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVolumeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteVolumeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWorker
 
 
@@ -5634,6 +5720,79 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = GetTaskResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetVolume
+
+
+        /// <summary>
+        /// Gets a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVolume service method.</param>
+        /// 
+        /// <returns>The response from the GetVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetVolume">REST API Reference for GetVolume Operation</seealso>
+        public virtual GetVolumeResponse GetVolume(GetVolumeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVolumeResponseUnmarshaller.Instance;
+
+            return Invoke<GetVolumeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a persistent volume.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVolume service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVolume service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetVolume">REST API Reference for GetVolume Operation</seealso>
+        public virtual Task<GetVolumeResponse> GetVolumeAsync(GetVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetVolumeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVolumeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetVolumeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7703,6 +7862,79 @@ namespace Amazon.Deadline
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVolumes
+
+
+        /// <summary>
+        /// Lists the persistent volumes in a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumes service method.</param>
+        /// 
+        /// <returns>The response from the ListVolumes service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
+        public virtual ListVolumesResponse ListVolumes(ListVolumesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesResponseUnmarshaller.Instance;
+
+            return Invoke<ListVolumesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the persistent volumes in a fleet.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVolumes service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListVolumes">REST API Reference for ListVolumes Operation</seealso>
+        public virtual Task<ListVolumesResponse> ListVolumesAsync(ListVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListVolumesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVolumesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListVolumesResponse>(request, options, cancellationToken);
         }
 
         #endregion

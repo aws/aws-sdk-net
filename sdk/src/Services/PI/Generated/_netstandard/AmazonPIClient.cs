@@ -39,6 +39,11 @@ namespace Amazon.PI
 {
     /// <summary>
     /// <para>Implementation for accessing PI</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon RDS Performance Insights 
     /// <para>
@@ -703,6 +708,48 @@ namespace Amazon.PI
             options.ResponseUnmarshaller = ListAvailableResourceMetricsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAvailableResourceMetricsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListPerformanceAnalysisReportRecommendations
+
+        internal virtual ListPerformanceAnalysisReportRecommendationsResponse ListPerformanceAnalysisReportRecommendations(ListPerformanceAnalysisReportRecommendationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPerformanceAnalysisReportRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPerformanceAnalysisReportRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPerformanceAnalysisReportRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves recommendations for a performance analysis report.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPerformanceAnalysisReportRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPerformanceAnalysisReportRecommendations service method, as returned by PI.</returns>
+        /// <exception cref="Amazon.PI.Model.InternalServiceErrorException">
+        /// The request failed due to an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.InvalidArgumentException">
+        /// One of the arguments provided is invalid for this request.
+        /// </exception>
+        /// <exception cref="Amazon.PI.Model.NotAuthorizedException">
+        /// The user is not authorized to perform this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/ListPerformanceAnalysisReportRecommendations">REST API Reference for ListPerformanceAnalysisReportRecommendations Operation</seealso>
+        public virtual Task<ListPerformanceAnalysisReportRecommendationsResponse> ListPerformanceAnalysisReportRecommendationsAsync(ListPerformanceAnalysisReportRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPerformanceAnalysisReportRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPerformanceAnalysisReportRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPerformanceAnalysisReportRecommendationsResponse>(request, options, cancellationToken);
         }
         #endregion
         

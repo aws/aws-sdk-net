@@ -39,6 +39,11 @@ namespace Amazon.VPCLattice
 {
     /// <summary>
     /// <para>Implementation for accessing VPCLattice</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon VPC Lattice is a fully managed application networking service that you use
     /// to connect, secure, and monitor all of your services across multiple accounts and

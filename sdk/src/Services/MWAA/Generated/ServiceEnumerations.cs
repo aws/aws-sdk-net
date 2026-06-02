@@ -503,6 +503,10 @@ namespace Amazon.MWAA
         /// </summary>
         public static readonly WebserverAccessMode PRIVATE_ONLY = new WebserverAccessMode("PRIVATE_ONLY");
         /// <summary>
+        /// Constant PUBLIC_AND_PRIVATE for WebserverAccessMode
+        /// </summary>
+        public static readonly WebserverAccessMode PUBLIC_AND_PRIVATE = new WebserverAccessMode("PUBLIC_AND_PRIVATE");
+        /// <summary>
         /// Constant PUBLIC_ONLY for WebserverAccessMode
         /// </summary>
         public static readonly WebserverAccessMode PUBLIC_ONLY = new WebserverAccessMode("PUBLIC_ONLY");

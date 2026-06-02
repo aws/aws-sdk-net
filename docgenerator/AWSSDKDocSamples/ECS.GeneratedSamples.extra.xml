@@ -2,6 +2,44 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
+            <member name="T:Amazon.ECS.Model.ContinueServiceDeploymentRequest" />
+            <member name="T:Amazon.ECS.Model.ContinueServiceDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example continues a service deployment that is paused at a lifecycle hook, using the CONTINUE action to proceed to the next deployment stage.
+                </para>
+                <code
+                    title="To continue a paused service deployment"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.ContinueServiceDeployment(Amazon.ECS.Model.ContinueServiceDeploymentRequest)" />
+            <member name="T:Amazon.ECS.Model.ContinueServiceDeploymentRequest" />
+            <member name="T:Amazon.ECS.Model.ContinueServiceDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example rolls back a service deployment that is paused at a lifecycle hook, using the ROLLBACK action to revert to the previous service revision.
+                </para>
+                <code
+                    title="To roll back a paused service deployment"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.CreateCapacityProvider(Amazon.ECS.Model.CreateCapacityProviderRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.CreateCapacityProvider(Amazon.ECS.Model.CreateCapacityProviderRequest)" />
             <member name="T:Amazon.ECS.Model.CreateCapacityProviderRequest" />
@@ -92,6 +130,25 @@
                     title="To create a new service behind a load balancer"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.CreateService(Amazon.ECS.Model.CreateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.CreateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.CreateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a service with a blue/green deployment strategy that includes a pause lifecycle hook at the POST_PRODUCTION_TRAFFIC_SHIFT stage. The deployment will pause at that stage until you explicitly continue or roll back using the ContinueServiceDeployment API, or until the 60-minute timeout expires and triggers a rollback.
+                </para>
+                <code
+                    title="To create a service with a pause lifecycle hook"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-3" />
             </example>
         </value>
     </doc>
@@ -515,6 +572,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceDeployments(Amazon.ECS.Model.DescribeServiceDeploymentsRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceDeploymentsRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServiceDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes a service deployment that is currently paused at a lifecycle hook. The lifecycleHookDetails field shows the status of the pause hook, including when it will expire and what action will be taken if the timeout is reached.
+                </para>
+                <code
+                    title="To describe a service deployment with a paused lifecycle hook"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECS.IAmazonECS.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
             <member name="M:Amazon.ECS.AmazonECSClient.DescribeServiceRevisions(Amazon.ECS.Model.DescribeServiceRevisionsRequest)" />
             <member name="T:Amazon.ECS.Model.DescribeServiceRevisionsRequest" />
@@ -548,6 +624,25 @@
                     title="To describe a service"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.DescribeServices(Amazon.ECS.Model.DescribeServicesRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.DescribeServices(Amazon.ECS.Model.DescribeServicesRequest)" />
+            <member name="T:Amazon.ECS.Model.DescribeServicesRequest" />
+            <member name="T:Amazon.ECS.Model.DescribeServicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example provides descriptive information about the service ``ecs-service-with-pause-hook``, which is configured with a pause lifecycle hook in its deployment configuration.
+                </para>
+                <code
+                    title="To describe a service with a pause lifecycle hook"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -1422,6 +1517,25 @@
                     title="To change the number of tasks in a service"
                     source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECS.IAmazonECS.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="M:Amazon.ECS.AmazonECSClient.UpdateService(Amazon.ECS.Model.UpdateServiceRequest)" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceRequest" />
+            <member name="T:Amazon.ECS.Model.UpdateServiceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example updates the my-blue-green-service service to add a pause lifecycle hook at the POST_PRODUCTION_TRAFFIC_SHIFT stage. The deployment will pause at that stage until you explicitly continue or roll back using the ContinueServiceDeployment API, or until the 30-minute timeout expires and triggers a continue.
+                </para>
+                <code
+                    title="To update a service to add a pause lifecycle hook"
+                    source=".\AWSSDKDocSamples\ECS\ECS.GeneratedSamples.cs"
+                    region="example-3" />
             </example>
         </value>
     </doc>

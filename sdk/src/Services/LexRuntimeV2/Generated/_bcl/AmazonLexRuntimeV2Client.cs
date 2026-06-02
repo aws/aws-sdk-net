@@ -39,6 +39,11 @@ namespace Amazon.LexRuntimeV2
 {
     /// <summary>
     /// <para>Implementation for accessing LexRuntimeV2</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>

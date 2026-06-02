@@ -1082,7 +1082,7 @@
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.SlaInputConfiguration.TargetSlaMinutes</property>
     <min>1</min>
-    <max>129600</max>
+    <max>1051200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCases.Model.Sort.FieldId</property>

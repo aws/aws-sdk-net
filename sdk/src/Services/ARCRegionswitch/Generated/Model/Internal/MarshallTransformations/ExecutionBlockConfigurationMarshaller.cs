@@ -134,6 +134,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetLambdaEventSourceMappingConfig())
+            {
+                context.Writer.WritePropertyName("lambdaEventSourceMappingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LambdaEventSourceMappingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LambdaEventSourceMappingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetParallelConfig())
             {
                 context.Writer.WritePropertyName("parallelConfig");

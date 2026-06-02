@@ -102,7 +102,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The amount of time of the specified unit.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=24)]
+        [AWSProperty(Required=true, Min=1, Max=60)]
         public int? Value
         {
             get { return this._value; }

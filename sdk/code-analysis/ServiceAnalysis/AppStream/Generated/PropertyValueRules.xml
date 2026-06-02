@@ -249,6 +249,12 @@
     <pattern>^ami-[a-z0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.WorkspaceImageId</property>
+    <min>12</min>
+    <max>67</max>
+    <pattern>^wsi-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Description</property>
     <max>256</max>
   </property-value-rule>
@@ -939,6 +945,14 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.AdminAppLicenseUsageRecord.UserId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AgentAccessConfig.S3BucketArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:s3:::[a-z0-9][a-z0-9.\-]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.AgentAccessConfigForUpdate.S3BucketArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:s3:::[a-z0-9][a-z0-9.\-]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.AppBlock.Arn</property>

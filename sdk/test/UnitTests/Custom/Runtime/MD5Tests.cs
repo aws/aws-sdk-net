@@ -1,19 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿#if NETFRAMEWORK
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Amazon.Runtime;
-using System.IO;
 using AWSSDK_DotNet.UnitTests;
-using Amazon.S3.Model;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.Internal.Util;
-using System.Threading;
-using System.Net;
-using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal;
 
 namespace AWSSDK.UnitTests
 {
@@ -49,16 +38,11 @@ namespace AWSSDK.UnitTests
             var bytes1 = Encoding.UTF8.GetBytes(data1);
             var bytes2 = Encoding.UTF8.GetBytes(data2);
 
-            //CollectionAssert.AreEqual(md5.Hash, md5m.Hash);
             CollectionAssert.AreEqual(md5.ComputeHash(bytes1), md5m.ComputeHash(bytes1));
 
             HashMultiple(md5, bytes1, bytes2);
             HashMultiple(md5m, bytes1, bytes2);
             CollectionAssert.AreEqual(md5.Hash, md5m.Hash);
-
-            //HashMultiple(md5, bytes1, bytes2);
-            //HashMultiple(md5m, bytes1, bytes2);
-            //CollectionAssert.AreEqual(md5.Hash, md5m.Hash);
 
             md5.Initialize();
             md5m.Initialize();
@@ -88,3 +72,4 @@ namespace AWSSDK.UnitTests
         }
     }
 }
+#endif

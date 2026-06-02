@@ -39,6 +39,11 @@ namespace Amazon.CloudControlApi
 {
     /// <summary>
     /// <para>Implementation for accessing CloudControlApi</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// For more information about Amazon Web Services Cloud Control API, see the <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html">Amazon
     /// Web Services Cloud Control API User Guide</a>.

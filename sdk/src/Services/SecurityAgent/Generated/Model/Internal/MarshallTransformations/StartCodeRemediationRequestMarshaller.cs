@@ -79,6 +79,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AgentSpaceId);
             }
 
+            if(publicRequest.IsSetCodeReviewJobId())
+            {
+                context.Writer.WritePropertyName("codeReviewJobId");
+                context.Writer.WriteStringValue(publicRequest.CodeReviewJobId);
+            }
+
             if(publicRequest.IsSetFindingIds())
             {
                 context.Writer.WritePropertyName("findingIds");

@@ -285,8 +285,9 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-    /// Services accounts.
+    ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+    /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+    /// policies</a>.
     /// </para>
     ///  
     /// <para>
@@ -310,6 +311,7 @@ namespace Amazon.PaymentCryptography.Model
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private ImportKeyMaterial _keyMaterial;
         private List<string> _replicationRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _requesterComment;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -394,6 +396,31 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetReplicationRegions()
         {
             return this._replicationRegions != null && (this._replicationRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequesterComment. 
+        /// <para>
+        /// The comment from the requester explaining the reason for the import.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Don't include personal, confidential or sensitive information in this field. This
+        /// field may be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
+        public string RequesterComment
+        {
+            get { return this._requesterComment; }
+            set { this._requesterComment = value; }
+        }
+
+        // Check to see if RequesterComment property is set
+        internal bool IsSetRequesterComment()
+        {
+            return this._requesterComment != null;
         }
 
         /// <summary>

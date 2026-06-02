@@ -35,15 +35,41 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class GetResourceOauth2TokenRequest : AmazonBedrockAgentCoreRequest
     {
+        private List<string> _audiences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _customParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _customState;
         private bool? _forceAuthentication;
         private Oauth2FlowType _oauth2Flow;
         private string _resourceCredentialProviderName;
         private string _resourceOauth2ReturnUrl;
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionUri;
         private string _workloadIdentityToken;
+
+        /// <summary>
+        /// Gets and sets the property Audiences. 
+        /// <para>
+        /// The audiences to include in the token request. These are used to specify the intended
+        /// recipients of the OAuth2 token.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Audiences
+        {
+            get { return this._audiences; }
+            set { this._audiences = value; }
+        }
+
+        // Check to see if Audiences property is set
+        internal bool IsSetAudiences()
+        {
+            return this._audiences != null && (this._audiences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CustomParameters. 
@@ -166,6 +192,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetResourceOauth2ReturnUrl()
         {
             return this._resourceOauth2ReturnUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resources. 
+        /// <para>
+        /// The resources to include in the token request. These are used to specify the target
+        /// resources for which the OAuth2 token is being requested.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Resources
+        {
+            get { return this._resources; }
+            set { this._resources = value; }
+        }
+
+        // Check to see if Resources property is set
+        internal bool IsSetResources()
+        {
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private ServiceDeploymentCircuitBreaker _deploymentCircuitBreaker;
         private DeploymentConfiguration _deploymentConfiguration;
         private DateTime? _finishedAt;
+        private List<DeploymentLifecycleHookDetail> _lifecycleHookDetails = AWSConfigs.InitializeCollections ? new List<DeploymentLifecycleHookDetail>() : null;
         private ServiceDeploymentLifecycleStage _lifecycleStage;
         private Rollback _rollback;
         private string _serviceArn;
@@ -163,6 +164,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetFinishedAt()
         {
             return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LifecycleHookDetails. 
+        /// <para>
+        /// The details of the lifecycle hooks for the current service deployment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DeploymentLifecycleHookDetail> LifecycleHookDetails
+        {
+            get { return this._lifecycleHookDetails; }
+            set { this._lifecycleHookDetails = value; }
+        }
+
+        // Check to see if LifecycleHookDetails property is set
+        internal bool IsSetLifecycleHookDetails()
+        {
+            return this._lifecycleHookDetails != null && (this._lifecycleHookDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _definition;
         private string _digest;
+        private Amazon.Runtime.Documents.Document _engineSettings;
         private string _engineVersion;
         private string _failureReason;
         private string _id;
@@ -242,6 +243,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetDigest()
         {
             return this._digest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineSettings. 
+        /// <para>
+        /// The engine-specific settings for the workflow run.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document EngineSettings
+        {
+            get { return this._engineSettings; }
+            set { this._engineSettings = value; }
+        }
+
+        // Check to see if EngineSettings property is set
+        internal bool IsSetEngineSettings()
+        {
+            return !this._engineSettings.IsNull();
         }
 
         /// <summary>

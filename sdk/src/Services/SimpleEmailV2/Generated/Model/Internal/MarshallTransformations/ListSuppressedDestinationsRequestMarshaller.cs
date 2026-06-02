@@ -77,6 +77,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
+            
+            if (publicRequest.IsSetTenantName())
+                request.Parameters.Add("TenantName", StringUtils.FromString(publicRequest.TenantName));
             request.ResourcePath = "/v2/email/suppression/addresses";
             request.UseQueryString = true;
 

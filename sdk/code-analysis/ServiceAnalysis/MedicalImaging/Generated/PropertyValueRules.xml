@@ -441,6 +441,24 @@
     <pattern>[\w -:`]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DicomMetadataMapping.MetadataFilePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9!-~]+([a-zA-Z0-9!-~ ]*[a-zA-Z0-9!-~]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DicomMetadataMapping.SeriesInstanceUID</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[0-9.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MedicalImaging.Model.DicomMetadataMapping.StudyInstanceUID</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>[0-9.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MedicalImaging.Model.DICOMStudyDateAndTime.DICOMStudyDate</property>
     <min>0</min>
     <max>36</max>

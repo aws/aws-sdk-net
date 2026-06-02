@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// It can contain no more than 256 characters.
+        /// It can contain no more than 255 characters.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// It can contain no more than 256 characters.
+        /// It can contain no more than 255 characters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,6 +39,11 @@ namespace Amazon.Scheduler
 {
     /// <summary>
     /// <para>Implementation for accessing Scheduler</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon EventBridge Scheduler is a serverless scheduler that allows you to create,
     /// run, and manage tasks from one central, managed service. EventBridge Scheduler delivers

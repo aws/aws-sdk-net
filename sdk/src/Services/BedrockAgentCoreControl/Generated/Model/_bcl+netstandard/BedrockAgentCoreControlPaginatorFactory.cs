@@ -93,11 +93,59 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationBundles operation
+        ///</summary>
+        public IListConfigurationBundlesPaginator ListConfigurationBundles(ListConfigurationBundlesRequest request) 
+        {
+            return new ListConfigurationBundlesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationBundleVersions operation
+        ///</summary>
+        public IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request) 
+        {
+            return new ListConfigurationBundleVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetExamples operation
+        ///</summary>
+        public IListDatasetExamplesPaginator ListDatasetExamples(ListDatasetExamplesRequest request) 
+        {
+            return new ListDatasetExamplesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetVersions operation
+        ///</summary>
+        public IListDatasetVersionsPaginator ListDatasetVersions(ListDatasetVersionsRequest request) 
+        {
+            return new ListDatasetVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluators operation
         ///</summary>
         public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request) 
         {
             return new ListEvaluatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRules operation
+        ///</summary>
+        public IListGatewayRulesPaginator ListGatewayRules(ListGatewayRulesRequest request) 
+        {
+            return new ListGatewayRulesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -149,6 +197,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListPaymentConnectors operation
+        ///</summary>
+        public IListPaymentConnectorsPaginator ListPaymentConnectors(ListPaymentConnectorsRequest request) 
+        {
+            return new ListPaymentConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentCredentialProviders operation
+        ///</summary>
+        public IListPaymentCredentialProvidersPaginator ListPaymentCredentialProviders(ListPaymentCredentialProvidersRequest request) 
+        {
+            return new ListPaymentCredentialProvidersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPaymentManagers operation
+        ///</summary>
+        public IListPaymentManagersPaginator ListPaymentManagers(ListPaymentManagersRequest request) 
+        {
+            return new ListPaymentManagersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 
@@ -165,6 +237,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyEngineSummaries operation
+        ///</summary>
+        public IListPolicyEngineSummariesPaginator ListPolicyEngineSummaries(ListPolicyEngineSummariesRequest request) 
+        {
+            return new ListPolicyEngineSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicyGenerationAssets operation
         ///</summary>
         public IListPolicyGenerationAssetsPaginator ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request) 
@@ -178,6 +258,22 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListPolicyGenerationsPaginator ListPolicyGenerations(ListPolicyGenerationsRequest request) 
         {
             return new ListPolicyGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGenerationSummaries operation
+        ///</summary>
+        public IListPolicyGenerationSummariesPaginator ListPolicyGenerationSummaries(ListPolicyGenerationSummariesRequest request) 
+        {
+            return new ListPolicyGenerationSummariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicySummaries operation
+        ///</summary>
+        public IListPolicySummariesPaginator ListPolicySummaries(ListPolicySummariesRequest request) 
+        {
+            return new ListPolicySummariesPaginator(this.client, request);
         }
 
         /// <summary>

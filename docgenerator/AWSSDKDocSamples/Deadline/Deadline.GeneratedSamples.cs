@@ -229,6 +229,22 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
             #endregion
         }
 
+        public void DeadlineDeleteVolume()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.DeleteVolume(new DeleteVolumeRequest 
+            {
+                FarmId = "farm-1234567890abcdef1234567890abcdef",
+                FleetId = "fleet-1234567890abcdef1234567890abcdef",
+                VolumeId = "volume-1234567890abcdef1234567890abcdef"
+            });
+
+
+            #endregion
+        }
+
         public void DeadlineGetMonitorSettings()
         {
             #region example-1
@@ -237,6 +253,37 @@ namespace AWSSDKDocSamples.Amazon.Deadline.Generated
             var response = client.GetMonitorSettings(new GetMonitorSettingsRequest 
             {
                 MonitorId = "monitor-1234567890abcdef1234567890abcdef"
+            });
+
+
+            #endregion
+        }
+
+        public void DeadlineGetVolume()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.GetVolume(new GetVolumeRequest 
+            {
+                FarmId = "farm-1234567890abcdef1234567890abcdef",
+                FleetId = "fleet-1234567890abcdef1234567890abcdef",
+                VolumeId = "volume-1234567890abcdef1234567890abcdef"
+            });
+
+
+            #endregion
+        }
+
+        public void DeadlineListVolumes()
+        {
+            #region example-1
+
+            var client = new AmazonDeadlineClient();
+            var response = client.ListVolumes(new ListVolumesRequest 
+            {
+                FarmId = "farm-1234567890abcdef1234567890abcdef",
+                FleetId = "fleet-1234567890abcdef1234567890abcdef"
             });
 
 

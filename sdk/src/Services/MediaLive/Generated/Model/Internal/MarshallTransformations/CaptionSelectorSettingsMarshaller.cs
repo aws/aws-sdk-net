@@ -112,6 +112,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSmartSubtitleSourceSettings())
+            {
+                context.Writer.WritePropertyName("smartSubtitleSourceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SmartSubtitleSourceSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SmartSubtitleSourceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTeletextSourceSettings())
             {
                 context.Writer.WritePropertyName("teletextSourceSettings");

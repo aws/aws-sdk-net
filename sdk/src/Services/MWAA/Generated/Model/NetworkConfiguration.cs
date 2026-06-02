@@ -32,7 +32,7 @@ namespace Amazon.MWAA.Model
     /// <summary>
     /// Describes the VPC networking components used to secure and enable network traffic
     /// between the Amazon Web Services resources for your environment. For more information,
-    /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+    /// refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
     /// networking on Amazon MWAA</a>.
     /// </summary>
     public partial class NetworkConfiguration
@@ -43,7 +43,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// A list of security group IDs. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
+        /// A list of security group IDs. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security
         /// in your VPC on Amazon MWAA</a>.
         /// </para>
         /// <para />
@@ -68,7 +68,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of subnet IDs. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
+        /// A list of subnet IDs. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
         /// networking on Amazon MWAA</a>.
         /// </para>
         /// <para />

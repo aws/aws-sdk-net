@@ -36,6 +36,7 @@ namespace Amazon.Invoicing.Model
     {
         private BillingPeriod _billingPeriod;
         private string _invoicingEntity;
+        private ReceiverRole _receiverRole;
         private DateInterval _timeInterval;
 
         /// <summary>
@@ -73,6 +74,39 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetInvoicingEntity()
         {
             return this._invoicingEntity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReceiverRole. 
+        /// <para>
+        /// The role of the invoice receiver to filter by.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When <c>ReceiverRole</c> is specified:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Data is available starting <c>2025-06-01</c>. Queries for periods before <c>2025-06-01</c>
+        /// return a validation error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TimeInterval</c> supports a time interval of up to 5 years. Without <c>ReceiverRole</c>,
+        /// <c>TimeInterval</c> is limited to one month.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public ReceiverRole ReceiverRole
+        {
+            get { return this._receiverRole; }
+            set { this._receiverRole = value; }
+        }
+
+        // Check to see if ReceiverRole property is set
+        internal bool IsSetReceiverRole()
+        {
+            return this._receiverRole != null;
         }
 
         /// <summary>

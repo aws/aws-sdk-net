@@ -62,6 +62,12 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecommendationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RecommendationDetails", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecommendationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RecommendationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

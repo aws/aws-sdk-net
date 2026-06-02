@@ -39,6 +39,11 @@ namespace Amazon.GuardDuty
 {
     /// <summary>
     /// <para>Implementation for accessing GuardDuty</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon GuardDuty is a continuous security monitoring service that analyzes and processes
     /// the following foundational data sources - VPC flow logs, Amazon Web Services CloudTrail
@@ -1016,9 +1021,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Creates a new threat entity set. In a threat entity set, you can provide known malicious
-        /// IP addresses and domains for your Amazon Web Services environment. GuardDuty generates
-        /// findings based on the entries in the threat entity sets. Only users of the administrator
-        /// account can manage entity sets, which automatically apply to member accounts.
+        /// threat entities for your Amazon Web Services environment. GuardDuty generates findings
+        /// based on the entries in the threat entity sets. Only users of the administrator account
+        /// can manage entity sets, which automatically apply to member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet service method.</param>
         /// 
@@ -1042,9 +1047,9 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Creates a new threat entity set. In a threat entity set, you can provide known malicious
-        /// IP addresses and domains for your Amazon Web Services environment. GuardDuty generates
-        /// findings based on the entries in the threat entity sets. Only users of the administrator
-        /// account can manage entity sets, which automatically apply to member accounts.
+        /// threat entities for your Amazon Web Services environment. GuardDuty generates findings
+        /// based on the entries in the threat entity sets. Only users of the administrator account
+        /// can manage entity sets, which automatically apply to member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThreatEntitySet service method.</param>
         /// <param name="cancellationToken">

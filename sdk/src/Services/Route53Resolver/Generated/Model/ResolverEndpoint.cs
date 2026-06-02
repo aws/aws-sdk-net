@@ -43,9 +43,11 @@ namespace Amazon.Route53Resolver.Model
         private string _creationTime;
         private string _creatorRequestId;
         private ResolverEndpointDirection _direction;
+        private bool? _dns64Enabled;
         private string _hostVPCId;
         private string _id;
         private int? _ipAddressCount;
+        private bool? _ipv6InternetAccessEnabled;
         private string _modificationTime;
         private string _name;
         private string _outpostArn;
@@ -151,6 +153,26 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Dns64Enabled. 
+        /// <para>
+        /// Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When <c>true</c>,
+        /// Route 53 Resolver synthesizes AAAA (IPv6) records for IPv4-only services by prepending
+        /// the <c>64:ff9b::/96</c> prefix to the IPv4 address.
+        /// </para>
+        /// </summary>
+        public bool? Dns64Enabled
+        {
+            get { return this._dns64Enabled; }
+            set { this._dns64Enabled = value; }
+        }
+
+        // Check to see if Dns64Enabled property is set
+        internal bool IsSetDns64Enabled()
+        {
+            return this._dns64Enabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HostVPCId. 
         /// <para>
         /// The ID of the VPC that you want to create the Resolver endpoint in.
@@ -204,6 +226,26 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetIpAddressCount()
         {
             return this._ipAddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6InternetAccessEnabled. 
+        /// <para>
+        /// Indicates whether IPv6 internet access is enabled for the outbound Resolver endpoint.
+        /// When <c>true</c>, the endpoint elastic network interfaces (ENIs) can forward DNS queries
+        /// to public IPv6 targets through an internet gateway.
+        /// </para>
+        /// </summary>
+        public bool? Ipv6InternetAccessEnabled
+        {
+            get { return this._ipv6InternetAccessEnabled; }
+            set { this._ipv6InternetAccessEnabled = value; }
+        }
+
+        // Check to see if Ipv6InternetAccessEnabled property is set
+        internal bool IsSetIpv6InternetAccessEnabled()
+        {
+            return this._ipv6InternetAccessEnabled.HasValue; 
         }
 
         /// <summary>

@@ -124,6 +124,18 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.ParameterTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("profileParameterTemplates", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, WorkflowParameter>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, WorkflowParameter, StringUnmarshaller, WorkflowParameterUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, WorkflowParameter, StringUnmarshaller, WorkflowParameterUnmarshaller>(StringUnmarshaller.Instance, WorkflowParameterUnmarshaller.Instance));
+                    response.ProfileParameterTemplates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("profiles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Profiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("readme", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

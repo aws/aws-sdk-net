@@ -44,8 +44,10 @@ namespace Amazon.CloudWatchLogs.Model
         private List<string> _allowedSuffixPathFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConfigurationTemplateDeliveryConfigValues _defaultDeliveryConfigValues;
         private DeliveryDestinationType _deliveryDestinationType;
+        private List<DeliverySourceConfigurationSchema> _deliverySourceConfiguration = AWSConfigs.InitializeCollections ? new List<DeliverySourceConfigurationSchema>() : null;
         private string _logType;
         private string _resourceType;
+        private S3TablesIntegration _s3TablesIntegration;
         private string _service;
 
         /// <summary>
@@ -204,6 +206,31 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeliverySourceConfiguration. 
+        /// <para>
+        /// The schema of the delivery source configuration that is available for this log type.
+        /// Each element describes a configuration that can be set when calling <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>,
+        /// including the configuration name, type, and default value.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DeliverySourceConfigurationSchema> DeliverySourceConfiguration
+        {
+            get { return this._deliverySourceConfiguration; }
+            set { this._deliverySourceConfiguration = value; }
+        }
+
+        // Check to see if DeliverySourceConfiguration property is set
+        internal bool IsSetDeliverySourceConfiguration()
+        {
+            return this._deliverySourceConfiguration != null && (this._deliverySourceConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
         /// A string specifying which log type this configuration template applies to.
@@ -239,6 +266,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TablesIntegration. 
+        /// <para>
+        /// The S3 Tables integration configuration for this configuration template, including
+        /// the datasource name and type.
+        /// </para>
+        /// </summary>
+        public S3TablesIntegration S3TablesIntegration
+        {
+            get { return this._s3TablesIntegration; }
+            set { this._s3TablesIntegration = value; }
+        }
+
+        // Check to see if S3TablesIntegration property is set
+        internal bool IsSetS3TablesIntegration()
+        {
+            return this._s3TablesIntegration != null;
         }
 
         /// <summary>

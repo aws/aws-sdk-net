@@ -33,6 +33,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// Container for the parameters to the GetImport operation.
     /// Gets information about an import job started with the <c>StartImport</c> operation.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetImportRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _importId;

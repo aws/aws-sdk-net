@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         /// Determines the font family settings.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string FontFamily
         {
             get { return this._fontFamily; }

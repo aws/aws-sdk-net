@@ -36,7 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// 
     ///  
     /// <para>
-    /// You can execute this operation no more than once per second.
+    /// You can execute this operation no more than 50 times per second.
     /// </para>
     /// </summary>
     public partial class GetEmailTemplateRequest : AmazonSimpleEmailServiceV2Request

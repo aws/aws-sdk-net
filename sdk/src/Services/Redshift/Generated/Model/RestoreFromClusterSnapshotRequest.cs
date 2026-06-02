@@ -191,8 +191,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't disable automated snapshots for RA3 node types. Set the automated retention
-        /// period from 1-35 days.
+        /// You can't disable automated snapshots for RG or RA3 node types. Set the automated
+        /// retention period from 1-35 days.
         /// </para>
         ///  
         /// <para>
@@ -829,8 +829,8 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Valid values: For clusters with DC2 nodes, must be within the range <c>1150</c>-<c>65535</c>.
-        /// For clusters with ra3 nodes, must be within the ranges <c>5431</c>-<c>5455</c> or
-        /// <c>8191</c>-<c>8215</c>.
+        /// For clusters with RG or RA3 nodes, must be within the ranges <c>5431</c>-<c>5455</c>
+        /// or <c>8191</c>-<c>8215</c>.
         /// </para>
         /// </summary>
         public int? Port

@@ -46,7 +46,7 @@ namespace AWSSDK.UnitTests
         {
             if (!isValid)
             {
-                Assert.ThrowsException<ArgumentException>( 
+                Assert.ThrowsExactly<ArgumentException>( 
                     () => new TestClientConfig { RequestMinCompressionSizeBytes = requestMinCompression }
                 );
             }
@@ -59,7 +59,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("@external.com#")]
         [DataRow("us-east-1-")]
         [DataRow("-us-east-1")]
@@ -67,14 +67,14 @@ namespace AWSSDK.UnitTests
         [DataRow("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")] // Over 63 characters
         public void TestThrowsForInvalidRegion(string region)
         {
-            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            Assert.ThrowsExactly<AmazonClientException>(() => new TestClientConfig
             {
                 RegionEndpoint = RegionEndpoint.GetBySystemName(region),
             });
 
             // The endpoint resolvers will check the AuthenticationRegion property as well,
             // so we validate it too.
-            Assert.ThrowsException<AmazonClientException>(() => new TestClientConfig
+            Assert.ThrowsExactly<AmazonClientException>(() => new TestClientConfig
             {
                 AuthenticationRegion = region,
             });
@@ -84,17 +84,20 @@ namespace AWSSDK.UnitTests
             try
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", region);
+                FallbackRegionFactory.Reset();
+
                 var config = new TestClientConfig();
                 
                 // Throws as expected here.
-                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+                Assert.ThrowsExactly<AmazonClientException>(() => config.RegionEndpoint);
 
                 // This verifies a second get (which could happen in another component) also fails.
-                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+                Assert.ThrowsExactly<AmazonClientException>(() => config.RegionEndpoint);
             }
             finally
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", currentRegion);
+                FallbackRegionFactory.Reset();
             }
         }
 

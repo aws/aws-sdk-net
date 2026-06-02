@@ -69,7 +69,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
     /// for the query. The <c>SOURCE</c> command can select log groups based on log group
     /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-    /// in LogsQL, PPL, and SQL. 
+    /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+    /// by log group tags. 
     /// </para>
     ///  
     /// <para>
@@ -140,8 +141,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// the <c>fields</c> command, only the specified fields and their values are returned.
         /// The default is 10,000.
         /// </para>
+        ///  
+        /// <para>
+        /// The maximum value is 100,000.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=100000)]
         public int? Limit
         {
             get { return this._limit; }

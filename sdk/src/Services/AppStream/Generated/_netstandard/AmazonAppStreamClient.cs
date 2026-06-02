@@ -39,6 +39,11 @@ namespace Amazon.AppStream
 {
     /// <summary>
     /// <para>Implementation for accessing AppStream</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon WorkSpaces Applications 
     /// <para>
@@ -1269,6 +1274,9 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.InvalidAccountStatusException">
         /// The resource cannot be created because your AWS account is suspended. For assistance,
         /// contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.AppStream.Model.InvalidParameterCombinationException">
+        /// Indicates an incorrect combination of parameters, or a missing parameter.
         /// </exception>
         /// <exception cref="Amazon.AppStream.Model.InvalidRoleException">
         /// The specified role is invalid.

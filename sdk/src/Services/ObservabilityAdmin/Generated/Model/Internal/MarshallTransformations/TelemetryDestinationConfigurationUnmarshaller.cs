@@ -86,6 +86,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogDeliveryParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MskMonitoringParameters", targetDepth))
+                {
+                    var unmarshaller = MskMonitoringParametersUnmarshaller.Instance;
+                    unmarshalledObject.MskMonitoringParameters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RetentionInDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

@@ -40,15 +40,15 @@ namespace Amazon.Connect.Model
     /// the customer called. You can add notes about steps that the agent took during the
     /// call that display to the next agent that takes the call. You can also update attributes
     /// for a contact using data from your CRM application and save the data with the contact
-    /// in Amazon Connect. You could also flag calls for additional analysis, such as legal
+    /// in Connect Customer. You could also flag calls for additional analysis, such as legal
     /// review or to identify abusive callers.
     /// </para>
     ///  
     /// <para>
-    /// Contact attributes are available in Amazon Connect for 24 months, and are then deleted.
+    /// Contact attributes are available in Connect Customer for 24 months, and are then deleted.
     /// For information about contact record retention and the maximum size of the contact
     /// record attributes section, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
-    /// specifications</a> in the <i>Amazon Connect Administrator Guide</i>. 
+    /// specifications</a> in the <i>Connect Customer Administrator Guide</i>. 
     /// </para>
     /// </summary>
     public partial class UpdateContactAttributesRequest : AmazonConnectRequest
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The Amazon Connect attributes. These attributes can be accessed in flows just like
+        /// The Connect Customer attributes. These attributes can be accessed in flows just like
         /// any other contact attributes.
         /// </para>
         ///  
@@ -85,7 +85,7 @@ namespace Amazon.Connect.Model
         /// of that flow (for example, by a Lambda or another flow), then use flow attributes.
         /// This way you aren't needlessly persisting the 32 KB of information from one flow to
         /// another. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-contact-attributes.html">Flow
-        /// block: Set contact attributes</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// block: Set contact attributes</a> in the <i>Connect Customer Administrator Guide</i>.
         /// 
         /// </para>
         ///  </li> </ul>
@@ -131,7 +131,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

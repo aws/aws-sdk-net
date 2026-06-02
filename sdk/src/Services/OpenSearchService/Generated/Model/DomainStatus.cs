@@ -39,6 +39,7 @@ namespace Amazon.OpenSearchService.Model
         private AdvancedSecurityOptions _advancedSecurityOptions;
         private AIMLOptionsOutput _aimlOptions;
         private string _arn;
+        private AutomatedSnapshotPauseOptions _automatedSnapshotPauseOptions;
         private AutoTuneOptionsOutput _autoTuneOptions;
         private ChangeProgressDetails _changeProgressDetails;
         private ClusterConfig _clusterConfig;
@@ -168,6 +169,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetARN()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomatedSnapshotPauseOptions. 
+        /// <para>
+        /// The current status of the domain's automated snapshot pause options.
+        /// </para>
+        /// </summary>
+        public AutomatedSnapshotPauseOptions AutomatedSnapshotPauseOptions
+        {
+            get { return this._automatedSnapshotPauseOptions; }
+            set { this._automatedSnapshotPauseOptions = value; }
+        }
+
+        // Check to see if AutomatedSnapshotPauseOptions property is set
+        internal bool IsSetAutomatedSnapshotPauseOptions()
+        {
+            return this._automatedSnapshotPauseOptions != null;
         }
 
         /// <summary>

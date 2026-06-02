@@ -79,15 +79,17 @@
     <Analyzer Include="..\..\..\buildtools\CustomRoslynAnalyzers.dll" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <!-- Powershell (pwsh) will have a preloaded version of System.Text.Json that is older than
+      the version we will ship in core nuget packages and dlls, so we compile with an  older version of STJ
+      but ship nuget packages and dlls with newer versions of STJ. If we don't do this then sdk assemblies will fail
+      to load in powershell due to unsupported versions -->
+    <SystemTextJsonVersion Condition="'$(SystemTextJsonVersion)' == ''">6.0.11</SystemTextJsonVersion>
+  </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
-      <!-- Powershell 7+ already has a preloaded version of system text json which is older than the version 
-      we ship in nuget packages and dlls. To ensure SDK assemblies can be loaded in powershell, we must compile with 
-      an older version of System.Text.Json.  -->
-    <PackageReference Include="System.Text.Json" Version="6.0.11" />
+    <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
   </ItemGroup>
-    <Import Project="overrides.targets"/>
-
 </Project>

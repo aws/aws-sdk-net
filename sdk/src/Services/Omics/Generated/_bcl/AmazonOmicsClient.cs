@@ -39,6 +39,11 @@ namespace Amazon.Omics
 {
     /// <summary>
     /// <para>Implementation for accessing Omics</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Web Services HealthOmics is a service that helps users such as bioinformaticians,
     /// researchers, and scientists to store, query, analyze, and generate insights from genomics

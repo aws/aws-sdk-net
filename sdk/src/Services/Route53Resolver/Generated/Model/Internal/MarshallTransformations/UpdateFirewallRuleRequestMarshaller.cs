@@ -135,6 +135,17 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FirewallRuleGroupId);
             }
 
+            if(publicRequest.IsSetFirewallRuleType())
+            {
+                context.Writer.WritePropertyName("FirewallRuleType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FirewallRuleTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FirewallRuleType, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetFirewallThreatProtectionId())
             {
                 context.Writer.WritePropertyName("FirewallThreatProtectionId");

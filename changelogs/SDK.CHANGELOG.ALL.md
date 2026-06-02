@@ -1,3 +1,1031 @@
+### 4.0.259.0 (2026-06-01 18:19 UTC)
+* Amplify (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationDiscoveryService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppMesh (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppSync (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* AWSHealth (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudWatchEvents (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodePipeline (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CognitoIdentity (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CognitoIdentityProvider (4.0.9.0)
+	* Add support for multi-region replication, enabling synchronization of user data and configurations to a secondary user pool in a standby Region. Add support for customer managed keys (CMK) in AWS KMS for encrypting user pool data at rest.
+* CognitoSync (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConfigService (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* CostAndUsageReport (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* DatabaseMigrationService (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataPipeline (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* DeviceFarm (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DirectoryService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* DocDB (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECR (4.0.14.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECS (4.0.23.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElastiCache (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticBeanstalk (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticLoadBalancing (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticLoadBalancingV2 (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticMapReduce (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Elasticsearch (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* GameLift (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* Glacier (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Greengrass (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IdentityManagement (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Inspector (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoT (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTEventsData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* KeyManagementService (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisAnalytics (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideo (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoMedia (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Lambda (4.0.16.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexModelBuildingService (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManager (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Lightsail (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* MachineLearning (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceAgreement (4.0.8.0)
+	* Adding Entitlements in SearchAgreements Response
+* MarketplaceCatalog (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaStoreData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Personalize (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.25.0)
+	* This release adds public APIs for Amazon QuickSight Spaces, Agents, and Flows. Spaces APIs enable management of curated resource collections. Agents APIs provide lifecycle control over AI-powered agents that leverage Spaces. Flows APIs add CRUDL APIs for automated workflows.
+* S3 (4.0.23.6)
+	* Fixed issue where calling `UploadPart` with an unseekable stream and `DisablePayloadSigning` set to true would fail (https://github.com/aws/aws-sdk-net/issues/4010). If the stream reports its length it is used directly (capped at `PartSize` when one is set); `PartSize` is only required for a forward-only stream that cannot report its length.
+
+### 4.0.258.0 (2026-05-29 18:23 UTC)
+* Account (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationInsights (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ARCZonalShift (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Athena (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* AutoScaling (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* AutoScalingPlans (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* BackupGateway (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.29.0)
+	* Automated Reasoning checks - Added two build workflows for policies. Iterative Refine Policy uses AI to update policy definitions based on test results and feedback. Resolve Policy Ambiguities consolidates ambiguous variables in Automated Reasoning policies, a common source of ambiguous validation.
+* BedrockAgentCoreControl (4.0.40.0)
+	* Reference your own AWS Secrets Manager secrets when configuring credential providers, giving you control over encryption, rotation, and access policies instead of using service-managed secrets.
+* Budgets (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Chime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudDirectory (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudHSM (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudHSMV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudSearch (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudSearchDomain (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudTrail (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeBuild (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeCatalyst (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeCommit (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeDeploy (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruSecurity (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectCampaignsV2 (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectContactLens (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* DirectoryServiceData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Drs (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* EntityResolution (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* GroundStation (4.0.6.0)
+	* Adds support for Alpha-5 satellite number encoding in the Two-Line Element ephemeris format.
+* InspectorScan (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexModelsV2 (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* LexRuntimeV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MailManager (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ManagedGrafana (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MWAA (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkFlowMonitor (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Omics (4.0.10.0)
+	* Add engineSettings to StartRun and GetRun. Add profiles and profileParameterTemplates to GetWorkflow and GetWorkflowVersion.
+* PaymentCryptographyData (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* PCS (4.0.16.0)
+	* Adding new BDD representation of endpoint ruleset
+* PersonalizeEvents (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Proton (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* QBusiness (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.24.0)
+	* Adds support for creating, updating, describing, listing, and deleting an OAuthClientApplication resource, a new quicksight resource that allows customers to store OAuth configurations to connect to their databases via 3 Legged OAuth.
+* RDSDataService (4.0.3.0)
+	* RDS Data API arrays (longValues, doubleValues, stringValues, booleanValues) in ExecuteStatement responses now correctly support null elements. Runtime change for JS v3 and .NET. Compile-time change for C plus plus, .NET, Kotlin, Rust. No impact for Java, Python, Ruby, PHP, Go.
+	* `ArrayValue` members `LongValues`, `DoubleValues`, and `BooleanValues` are now `List<long?>`, `List<double?>`, and `List<bool?>`, and preserve null elements returned in SQL arrays. Previously, null elements were coerced to `0`, `0.0`, and `false` (for example, `SELECT ARRAY[1, NULL, 3]::bigint[]` returned `[1, 0, 3]` and now returns `[1, null, 3]`). `StringValues` and nested `ArrayValues` are unchanged -- reference types already preserved null. Existing code that assigns value-type elements to non-nullable variables won't compile; migrate by unwrapping with `.GetValueOrDefault()`, changing the target type to nullable, or using `??` to supply a default.
+* Route53RecoveryCluster (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Resolver (4.0.8.0)
+	* Added BatchCreateFirewallRule, BatchUpdateFirewallRule, BatchDeleteFirewallRule, and ListFirewallRuleTypes APIs. Added FirewallRuleType support to Firewall Rule APIs.
+* SimpleEmailV2 (4.0.14.0)
+	* This release introduces support for Tenant Suppression Lists
+* SSMGuiConnect (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Synthetics (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* WAFV2 (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkspacesInstances (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Core 4.0.7.4
+	* Fix CryptoUtil.ComputeMD5Hash failure in FIPS-enforced environments.
+	* All service and extension packages updated to require new Core
+
+### 4.0.257.0 (2026-05-28 18:29 UTC)
+* AccessAnalyzer (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* AmplifyUIBuilder (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppStream (4.0.12.0)
+	* Amazon WorkSpaces Applications now supports BYOL (Bring Your Own License). This enables customers to import their own WorkSpaces images and use them in WorkSpaces Applications.
+* ARCRegionswitch (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Artifact (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* AugmentedAIRuntime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* BackupSearch (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.28.0)
+	* Add support for ModelPackageArn in Bedrock's CreateCustomModel API
+* BedrockAgentCore (4.0.26.0)
+	* Added Harness support for LiteLLM model configuration for third-party model providers. Added S3 and Git skill source types. Added Responses API format for OpenAI and Bedrock models. Added runtimeUserId and runtimeClientError to InvokeHarness.
+* BedrockAgentCoreControl (4.0.39.0)
+	* Added Harness support for LiteLLM model configuration for third-party model providers. Added S3 and Git skill source types. Added Responses API format for OpenAI and Bedrock models. Added runtimeUserId parameter to InvokeHarness for end-user identification.
+* BedrockDataAutomationRuntime (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockRuntime (4.0.20.0)
+	* Support system role in message
+* BillingConductor (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Braket (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Chatbot (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMeetings (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMessaging (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudFrontKeyValueStore (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruReviewer (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeStarconnections (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlCatalog (4.0.6.0)
+	* AWS Control Catalog - Added GovernedProviders response field and inclusion filter to GetControl and ListControls APIs to identify and filter by cloud provider. Added ParameterRequirementSummary response field indicating parameter requirements.
+* CostOptimizationHub (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* CustomerProfiles (4.0.14.0)
+	* BatchPutProfileObject API adds multiple profile objects to a domain of a given ObjectType in a single API call.
+* Deadline (4.0.20.0)
+	* Added support for persistent storage on Service-Managed Fleets, allowing customers to configure persistent storage that preserves data across worker sessions which reduces job startup times for workloads with large software installations or asset caches.
+* Detective (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FinSpaceData (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* GeoRoutes (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* GroundStation (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoT (4.0.8.0)
+	* Adds new connectivity-related fields to Fleet Indexing API requests and responses.
+* IotData (4.0.3.0)
+	* Adding GetConnection, ListSubscriptions, and SendDirectMessage APIs to IoT Data Plane
+* IoTTwinMaker (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IVS (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Keyspaces (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisAnalyticsV2 (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoSignalingChannels (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LookoutEquipment (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceReporting (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubStrategyRecommendations (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* NeptuneGraph (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkMonitor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* OpenSearchServerless (4.0.8.0)
+	* Adds support for deletion protection on collections, ability to create NEXTGEN collection groups and autoscaling visibility for NEXTGEN collection groups
+* PCS (4.0.15.0)
+	* This release adds support for configuring scaleDownIdleTimeInSeconds at the compute node group level, allowing customers to set different idle timeouts per node group. Previously this setting was only available at the cluster level.
+* PinpointSMSVoiceV2 (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* PrometheusService (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* RedshiftDataAPIService (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Resiliencehubv2 (4.0.0.0)
+	* This is the initial SDK release for the next generation of Resilience Hub.
+* Route53RecoveryControlConfig (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Control (4.0.12.0)
+	* Update the minimum value of MinStorageBytesPercentage in StorageLensPrefixLevel.SelectionCriteria from 0.1 to 1, aligning the model with the documented contract.
+* SageMakerRuntime (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityAgent (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Signin (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SocialMessaging (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMIncidents (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SupplyChain (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TimestreamInfluxDB (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* TrustedAdvisor (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* VerifiedPermissions (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Wickr (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+
+### 4.0.256.0 (2026-05-27 18:22 UTC)
+* BCMDashboards (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockDataAutomation (4.0.10.0)
+	* Matcher Fallback extends the CustomOutputConfiguration for the Document modality in DataAutomationProjects, enabling a fallback blueprint when no match is found. A FALLBACK match status is returned, improving the matching experience and guaranteeing customers always receive CustomOutputResults.
+* CloudWatchRUM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComputeOptimizer (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComputeOptimizerAutomation (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectCases (4.0.15.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataExchange (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* DevOpsAgent (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DocDBElastic (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* EBS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECRPublic (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ECS (4.0.22.0)
+	* Add support for Neuron device resource requirements for Amazon ECS
+* EKSAuth (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElementalInference (4.0.1.0)
+	* Added support for smart subtitles in Elemental Inference, enabling automatic generation of subtitles for media content. Available in English, Spanish, French, German, Italian, and Portuguese.
+* EventBridge (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Finspace (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FIS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Imagebuilder (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Inspector2 (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTDeviceAdvisor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTFleetWise (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTThingsGraph (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LaunchWizard (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LocationService (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* MainframeModernization (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceDeployment (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaLive (4.0.21.0)
+	* AWS Elemental MediaLive now supports Smart Subtitles, a new caption source that uses AWS Elemental Inference to automatically generate WebVTT and TTML captions from source audio. Available in English, Spanish, French, German, Italian, and Portuguese.
+* MemoryDB (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Mgn (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* MPA (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NovaAct (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* Omics (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* OpenSearchService (4.0.22.0)
+	* OpenSearch will now support multi-segment paths in JWKS URLs.
+* Organizations (4.0.11.13)
+	* AWS Organizations now emits CloudTrail events (AccountJoinedOrganization, AccountDepartedOrganization) to the management account for membership changes, including join and departure method and timestamp.
+* PartnerCentralBenefits (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralSelling (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* PaymentCryptography (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* PcaConnectorAd (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceExplorer2 (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* RTBFabric (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.60.0)
+	* Adds shared environment support for Restricted Instance Groups (RIGs) on SageMaker HyperPod, enabling cross-RIG workload scheduling and FSx sharing. This unlocks shared CPU-GPU environments needed for cost-efficient RL training (e.g., Nova Forge). Adds p6 instance support for recommendation jobs
+* SageMakerFeatureStoreRuntime (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SavingsPlans (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityIR (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleDBv2 (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMContacts (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SsmSap (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* SupportApp (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* VoiceID (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WellArchitected (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkMailMessageFlow (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkSpacesWeb (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+
+### 4.0.255.0 (2026-05-26 18:33 UTC)
+* AIOps (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationCostProfiler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppRunner (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Backup (4.0.13.0)
+	* Launching S3 PITR malware scanning support for AWS Backup
+* Batch (4.0.10.0)
+	* Increase the maximum value of jobExecutionTimeoutMinutes to support longer job timeouts during compute environment infrastructure updates.
+* BCMDataExports (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCore (4.0.25.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCoreControl (4.0.38.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockDataAutomation (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Billing (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Budgets (4.0.9.20)
+	* AWS Budget Name Validation Documentation Updates.
+* ChimeSDKIdentity (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKMediaPipelines (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRooms (4.0.18.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRoomsML (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeConnections (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectHealth (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlCatalog (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataZone (4.0.30.0)
+	* Added resourceConfigurations and allowUserProvidedConfigurations fields to environment blueprint configuration APIs, enabling customers who migrated from V1 to V2 domains to update resource configurations (such as lineage schedules) programmatically via the SDK.
+* DevOpsGuru (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* EMRServerless (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* Evs (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* GreengrassV2 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GuardDuty (4.0.21.0)
+	* Add malware scan support for Continuous Backups, also known as Point-In-Time Recovery Points (PITR).
+* IAMRolesAnywhere (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IdentityStore (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTManagedIntegrations (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* Ivschat (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* KeyspacesStreams (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoWebRTCStorage (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ManagedBlockchainQuery (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceAgreement (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaPackageV2 (4.0.14.0)
+	* Adding new BDD representation of endpoint ruleset
+* MedicalImaging (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* Notifications (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ObservabilityAdmin (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Odb (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* OSIS (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralChannel (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* PcaConnectorScep (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Pipes (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* RedshiftServerless (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResilienceHub (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceGroupsTaggingAPI (4.0.3.0)
+	* The GetResources API now returns MissingTagKeys in ComplianceDetails, listing tag keys defined as required in the ReportRequiredTagBlock block of the effective tag policy that are absent from the resource.
+* Route53GlobalResolver (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Tables (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* SagemakerEdgeManager (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMakerGeospatial (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Scheduler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServiceDiscovery (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServiceQuotas (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSMQuickSetup (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkSpacesThinClient (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+
+### 4.0.254.0 (2026-05-22 18:21 UTC)
+* AppConfig (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationSignals (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* B2bi (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* BCMPricingCalculator (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* BCMRecommendedActions (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.27.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentRuntime (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudControlApi (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeStarNotifications (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ControlTower (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CustomerProfiles (4.0.13.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataZone (4.0.29.0)
+	* Add support for VPC connection
+* DSQL (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* DynamoDBv2 (4.0.18.5)
+	* Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+* EC2 (4.0.90.0)
+	* The ModifyInstanceAttribute API now supports modification of EnclaveOptions for the instance as a typed parameter.
+* EMRContainers (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ForecastQueryService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ForecastService (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* FraudDetector (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FreeTier (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GameLiftStreams (4.0.7.16)
+	* Added new Gen6 stream classes based on the EC2 G6e instance family. These classes are designed for streaming high-fidelity, graphically demanding games and applications that benefit from additional GPU memory and performance.
+* GeoPlaces (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* GlueDataBrew (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* InternetMonitor (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Invoicing (4.0.8.0)
+	* Adds support for idempotency with a new ClientToken field for the CreateInvoiceUnit, DeleteInvoiceUnit, UpdateInvoiceUnit, DeleteProcurementPortalPreference, PutProcurementPortalPreference, and UpdateProcurementPortalPreferenceStatus APIs.
+* IoTWireless (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* IVSRealTime (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* KafkaConnect (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManagerLinuxSubscriptions (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* LicenseManagerUserSubscriptions (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceDiscovery (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubRefactorSpaces (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Neptunedata (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkFirewall (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* NotificationsContacts (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* OAM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Outposts (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Panorama (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* PartnerCentralAccount (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* PI (4.0.3.0)
+	* Added ListPerformanceAnalysisReportRecommendations API to retrieve recommendations for a performance analysis report. Added analysis configuration support to CreatePerformanceAnalysisReport for enhanced analysis types such as vacuum analysis.
+* QConnect (4.0.12.0)
+	* Added guardrail assessment results to inference spans in the ListSpans API. You can now see which AI Guardrail policies were evaluated, whether content was blocked or masked, and per-policy details for each Bedrock Converse call
+* RecycleBin (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Repostspace (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3 (4.0.23.4)
+	* Updated InternalsVisibleTo entries to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+* S3Vectors (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Schemas (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityAgent (4.0.3.0)
+	* Adds support for verification scripts on penetration test findings. Customers can now download executable scripts to independently reproduce confirmed vulnerabilities, with instructions and required environment variables provided for each finding.
+* SimpleEmailV2 (4.0.13.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimSpaceWeaver (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSOOIDC (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Tnb (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Core 4.0.7.3
+	* Updated InternalsVisibleTo entries in Core to reflect the renamed unit-test project assemblies. No customer-visible behavior change.
+	* All service and extension packages updated to require new Core
+
+### 4.0.253.0 (2026-05-21 20:23 UTC)
+* ACMPCA (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* APIGateway (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApiGatewayV2 (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppRegistry (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppStream (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* Backup (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+* Batch (4.0.9.6)
+	* Clarified CreateComputeEnvironment parameter requirements - serviceRole is required for UNMANAGED compute environments, allocationStrategy is required for EKS compute environments, and compute environments must be created in the ENABLED state.
+* BedrockAgent (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCoreControl (4.0.37.0)
+	* Adds dataset management APIs for creating, versioning, and managing evaluation datasets.
+* BedrockRuntime (4.0.19.0)
+	* Adding new BDD representation of endpoint ruleset
+* CertificateManager (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* CleanRooms (4.0.17.0)
+	* Collaboration creators can update payment configurations without recreating the collaboration. When multiple payer candidates are configured for a cost type, analysis runners can specify the actual payer at submission time, providing granular control over billing.
+* CleanRoomsML (4.0.10.0)
+	* Collaboration creators can update payment configurations without recreating the collaboration. When multiple payer candidates are configured for a cost type, analysis runners can specify the actual payer at submission time, providing granular control over billing.
+* Cloud9 (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeArtifact (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CodeGuruProfiler (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Comprehend (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComprehendMedical (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Connect (4.0.46.0)
+	* Adding new BDD representation of endpoint ruleset
+* DataSync (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* DLM (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* EKS (4.0.17.0)
+	* Adding new BDD representation of endpoint ruleset
+* Evs (4.0.8.0)
+	* A new GetDepotUrl API has been added to retrieve a URL for accessing Amazon EVS custom addon packages. Customers can use this URL to configure vSphere Lifecycle Manager (vLCM) as an online depot source, enabling upgrades of addon components across ESXi hosts.
+* FMS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* FSx (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* GlobalAccelerator (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* GuardDuty (4.0.20.0)
+	* Adding new BDD representation of endpoint ruleset
+* HealthLake (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTJobsDataPlane (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Kafka (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* KendraRanking (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisVideoArchivedMedia (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MarketplaceEntitlementService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaConnect (4.0.8.0)
+	* Adds support for controlling the timecode source of NDI flow outputs.
+* MediaTailor (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubConfig (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHubOrchestrator (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* NetworkManager (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Pricing (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* QApps (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* QuickSight (4.0.23.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Resolver (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.59.0)
+	* Add support for disabling home EFS file system creation on SageMaker domains.
+* SageMakerMetrics (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityHub (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServerlessApplicationRepository (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* Signer (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSOAdmin (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Textract (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TranscribeService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Translate (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* VerifiedPermissions (4.0.8.0)
+	* Support hard deleting policy store aliases. Users can now delete an alias and immediately reassign it to a different policy store without waiting for the soft-delete retention period.
+* WorkMail (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+
+### 4.0.252.0 (2026-05-20 18:24 UTC)
+* BedrockRuntime (4.0.18.0)
+	* Supporting Request Metadata for Invoke Model and Invoke Model with Response Stream
+* CustomerProfiles (4.0.12.0)
+	* Amazon Connect Customer Profiles adds support for item catalog columns in RecommenderSchema, ExcludedColumns in Create and Update Recommender to specify columns to exclude from training, and the ability to disable automatic retraining by setting TrainingFrequency to 0.
+* KeyManagementService (4.0.11.0)
+	* AWS KMS now supports creating grants for AWS service principals using new GranteeServicePrincipal and RetiringServicePrincipal parameters. This release adds SourceArn grant constraint and three condition keys for controlling CreateGrant access. For more information, see Grants in AWS KMS.
+* MWAA (4.0.4.4)
+	* Updated API documentation to describe the PublicAndPrivate webserver access mode.
+* PaymentCryptographyData (4.0.7.0)
+	* GenerateAuthRequestCryptogram API launch.
+* Extensions.NETCore.Setup (4.0.4.0)
+	* Added new callback for the `AddAWSService` and similar methods allowing customization of the service client config before being used to create the service client. For example the callback can be used to configure the `HttpClientFactory` with an implementation coming from the DI using the `IHttpClientFactory` provided by Microsoft.
+	* Note: Callers passing a literal null as the second argument to AddAWSService or AddKeyedAWSService may need to cast (e.g., (AWSOptions)null) to resolve overload ambiguity.
+* Core 4.0.7.2
+	* Remove outdated xamarin links on httpClientFactory docs.
+
+### 4.0.251.0 (2026-05-19 18:24 UTC)
+* BedrockAgentCore (4.0.24.0)
+	* Add RetryableConflictException (HTTP 409) to InvokeAgentRuntime and StopRuntimeSession to prevent orphaned VMs during concurrent session access. The SDK automatically retries this exception with backoff. Enforcement is not yet active and will be enabled in a future service update.
+* DevOpsAgent (4.0.4.0)
+	* Added a new serviceType mcpserversigv4 service and association. This provides feature to register MCP sigv4 authorization based MCPs
+* GuardDuty (4.0.19.0)
+	* Adding support for exposure and vulnerability context from AWS Security Hub in GuardDuty Extended Threat Detection attack sequence findings.
+* ManagedGrafana (4.0.5.0)
+	* Introduce degraded workspace status as a possible Amazon Managed Grafana workspace status, and a new field named degraded workspace reason which informs customers why the workspace is degraded in the DescribeWorkspace API response.
+* RTBFabric (4.0.6.0)
+	* This release is to deprecate 'inboundLinksCount' field in GetResponderGateway response and introduce the new field 'linksRequestedCount' to replace it.
+* SageMaker (4.0.58.0)
+	* Add support for ml.p5.4xlarge and ml.p5en.48xlarge instances on SageMaker Notebook Instances Platform.
+
+### 4.0.250.0 (2026-05-18 18:30 UTC)
+* AccessAnalyzer (4.0.7.0)
+	* Services manage service-linked analyzers through dedicated APIs - CreateServiceLinkedAnalyzer and DeleteServiceLinkedAnalyzer that separate service-linked specific operations from customer-managed operations. It also shows up in ListAnalyzers and GetAnalyzer responses.
+* Connect (4.0.45.0)
+	* Amazon Connect Cases now supports SLA durations of up to 2 years (1,051,200 minutes), increased from the previous maximum of 90 days (129,600 minutes). This enables you to track long-running service level agreements for cases that require extended resolution timelines.
+* EC2 (4.0.89.0)
+	* Amazon VPC IP Address Manager (IPAM) now supports tags on IPAM pool allocations, enabling all standard tagging features for allocations including tag-on-create.
+* ECS (4.0.21.0)
+	* Amazon ECS now supports Pause lifecycle hooks for service deployments, allowing customers to automatically pause deployments at specified stages and use the new ContinueServiceDeployment API to continue or roll back with confidence.
+* Evs (4.0.7.5)
+	* Amazon EVS now supports up to 32 hosts per EVS environment, increasing the previous host limit to allow a larger scale of VMware workload deployments and reduce operational overhead.
+* IVS (4.0.5.0)
+	* Adds support for up to 3 mediaTailorPlaybackConfiguration objects in an ad configuration resource
+* QuickSight (4.0.22.0)
+	* Support for dataset enrichment and geo spatial in new data preparation experience
+
+### 4.0.249.0 (2026-05-15 19:41 UTC)
+* CloudWatchLogs (4.0.25.0)
+	* Updating the max limit for start query api parameter.
+* MediaPackageV2 (4.0.13.0)
+	* This release adds support for AvailabilityStartTimeConfiguration in MediaPackageV2 DASH manifests
+* PartnerCentralSelling (4.0.11.0)
+	* Enable TCV intake on Opportunity to improve Opportunities Hygiene and downstream revenue attribution.
+* Core 4.0.7.1
+	* Reduced CPU on the JSON unmarshalling hot path by removing a redundant Convert.ChangeType conversion in StringUnmarshaller.
+	* Reduced per-response allocations in JSON unmarshalling by deferring StreamReader construction in JsonUnmarshallerContext until Peek() is called.
+	* All service and extension packages updated to require new Core
+
+### 4.0.248.0 (2026-05-14 18:18 UTC)
+* Bedrock (4.0.26.0)
+	* Advanced Prompt Optimization (AdvPO) allows you to optimize and migrate your prompts for any model on Bedrock by automatically evaluating responses and rewriting prompts to improve performance. This release provides a programmatic way to create, get, list, stop, and delete AdvPO jobs.
+* CloudFront (4.0.16.0)
+	* Adding a new boolean for OCSP Revocations in Viewer mTLS Create and Update APIs, and adding a new 'Passthrough' option for TrustStore modes
+* DatabaseMigrationService (4.0.9.0)
+	* Add 9 SDK waiters for DMS Schema Conversion async operations. Eliminates manual polling for import, assessment, conversion, export, and creation jobs.
+* DataZone (4.0.28.0)
+	* Adds support for SageMaker Unified Studio notebook operations, including notebook import and export
+* Glue (4.0.30.0)
+	* Release --has-databases parameter for AWS Glue get-catalogs API, which filters catalog responses to include only those capable of containing databases, excluding parent catalogs that hold only other catalogs. Remove model-level validation on partition index list size for AWS Glue tables.
+* ManagedGrafana (4.0.4.0)
+	* Adds support for dual-stack (IPv4 and IPv6) connectivity to Amazon Managed Grafana workspaces. Customers can configure the ipAddressType parameter when creating or updating a workspace to choose between IPv4-only or dual-stack (IPv4 and IPv6) access.
+* Mgn (4.0.7.0)
+	* Introducing new option for security groups mapping - with MAP-DHCP the service translates security rules from your source environment with DHCP compatibility.
+* QConnect (4.0.11.0)
+	* ListModels is an API that returns the available AI models for a Connect Assistant based on its region and AI prompt type.
+* Core 4.0.7.0
+	* Fixed JSON deserialization of settings files with trailing commas on .NET 8 by adding AllowTrailingCommas to source-generated serializer contexts.
+	* On Unix/macOS, SSO token and Login token cache files are now created with 0600 (owner read/write only) and cache directories with 0700 (owner only). Behavior is configurable via AWSConfigs.RestrictFilePermissions.
+	* All service and extension packages updated to require new Core
+
+### 4.0.247.0 (2026-05-13 18:21 UTC)
+* ARCRegionswitch (4.0.6.0)
+	* Adds support for enabling and disabling Lambda event source mappings in Region switch plans.
+* Batch (4.0.9.3)
+	* Adds a billing callout to docs regarding using the CE Scale Down Delay feature
+* BedrockAgentCoreControl (4.0.36.0)
+	* Adds support for read-only summary APIs for Policy Engine, Policy, and Policy Generation resources, enabling metadata retrieval without KMS decryption for AWS Config integration.
+* BillingConductor (4.0.6.0)
+	* Add ConflictException to UpdateCustomLineItem operation.
+* Connect (4.0.44.0)
+	* This change added three new EventSourceName for schedule notification feature
+* ConnectCampaignsV2 (4.0.8.0)
+	* This release added support for Outbound Campaign timezone detection using all available contact methods
+* ConnectCases (4.0.14.0)
+	* Amazon Connect Cases now supports SLA durations of up to 2 years (1,051,200 minutes), increased from the previous maximum of 90 days (129,600 minutes). This enables you to track long-running service level agreements for cases that require extended resolution timelines.
+* DSQL (4.0.10.0)
+	* Added support for Amazon Aurora DSQL change data capture (CDC) streams that deliver row-level database changes to Amazon Kinesis in JSON format. Includes CreateStream, GetStream, ListStreams, and DeleteStream operations.
+* EC2 (4.0.88.0)
+	* Include length limits in the SDK and documentation for text fields in Image (AMI) APIs such as the image name and description
+* Elasticsearch (4.0.6.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* Glue (4.0.29.1)
+	* AWS Glue now defaults the job timeout to 480 minutes for Glue version 5.0 and later when no timeout value is specified. The default remains 2,880 minutes for Glue version 4.0 and earlier.
+* Lightsail (4.0.8.0)
+	* Added OriginIpAddressTypeEnum (ipv4, ipv6, dualstack) and ipAddressType field to Origin and InputOrigin structures for Lightsail CDN distributions. Allows customers to specify how the distribution connects to origins, using IPv4, IPv6, or dualstack networking
+* OpenSearchService (4.0.21.0)
+	* Adds support for AutomatedSnapshotPauseOptions.
+* PartnerCentralAccount (4.0.3.0)
+	* Added ServiceQuotaExceededExceptions for Profile operations
+* PCS (4.0.14.0)
+	* Add support for Amazon EC2 Interruptible-ODCR
+* QuickSight (4.0.21.0)
+	* Adds five new custom permission option for Quick Apps so that these capabilities can be controlled by public SDK and CLI.
+* Redshift (4.0.6.19)
+	* Added rg.xlarge and rg.4xlarge to valid NodeType values and updated documentation for CreateCluster, ModifyCluster, ResizeCluster, and RestoreFromClusterSnapshot APIs to reflect RG node type support.
+* RTBFabric (4.0.5.0)
+	* Customers can now configure custom domain names for their RTB Fabric gateways. This enables partners to use their own branded domain for RTB traffic instead of the default rtbfabric endpoint
+* SageMaker (4.0.57.0)
+	* Adds execution role session name mode to reflect user identity in Studio. Adds Flexible Training Plans on Studio apps. Adds restricted model packages to control access to proprietary model artifacts via IAM. Fixed instance type parity between inference endpoints and managed shadow tests.
+* SecurityAgent (4.0.2.0)
+	* Add support for code reviews, a new resource type that enables automated security-focused static analysis of source code repositories.
+* SocialMessaging (4.0.5.0)
+	* Adds parameters to call the GetWhatsAppMessageTemplate and UpdateWhatsAppMessageTemplate APIs with a template name and language code in place of the template ID. Linked WhatsApp accounts also describe whether the WABA is onboarded to Meta's Marketing Messages API.
+* StepFunctions (4.0.3.0)
+	* Updated default SDK endpoints for AWS Step Functions in AWS GovCloud (US) regions. The default Dual-Stack endpoints now resolve to "states-fips" prefixed hostnames. There are no changes to service behavior. No customer action is required.
+* Core 4.0.6.2
+	* Cache credentials sourced from profiles when calling using the DefaultAWSCredentialsIdentityResolver's ResolveIdentity rather than doing a full file read every time a profile is specified on the config.
+	* Introduce a new internal CredentialsGenerator CachedProfileCredentialResolver which handles caching of profiles and resolving of credentials via profile.
+	* All service and extension packages updated to require new Core
+
+### 4.0.246.0 (2026-05-07 18:38 UTC)
+* BCMDataExports (4.0.4.0)
+	* With this release, customers can configure their data exports to generate additional integration artifacts for Athena and Redshift.
+* BedrockAgentCore (4.0.23.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* BedrockAgentCoreControl (4.0.35.0)
+	* Launching AgentCore payments - a capability that provides secure, instant microtransaction payments for AI agents to access paid APIs, MCP servers, and content. It handles payment processing for x402 protocol, payment limits, and 3P wallet integrations with Coinbase CDP and Stripe (Privy).
+* EC2 (4.0.87.0)
+	* DescribeInstanceTypes now accepts an IncludeUnsupportedInRegion parameter. When set, the response also lists instance types that are not available in the current Region. Each instance type includes a SupportedInRegion field indicating its regional availability.
+* GuardDuty (4.0.18.6)
+	* This is a documentation update
+* Invoicing (4.0.7.0)
+	* Updated ListInvoiceSummaries API to add new ReceiverRole filter in Request and Response
+* Route53Resolver (4.0.6.0)
+	* Adds supports for DNS64 on inbound endpoints and IPv6 forwarding through the internet gateway (IGW) on outbound endpoints, making it easier to manage hybrid DNS across IPv4 and IPv6 networks.
+* Extensions.NETCore.Setup (4.0.3.37)
+	* Fix #3538. Allow service specific endpoints to work with SSO profiles.
+
+### 4.0.245.0 (2026-05-06 18:38 UTC)
+* BedrockAgentCoreControl (4.0.34.0)
+	* Adds support for bring-your-own file system in AgentCore Runtime. Developers can mount Amazon S3 Files and Amazon EFS access points directly into agent sessions using filesystemConfigurations.
+* Glue (4.0.29.0)
+	* Adds support for a CustomLogGroupPrefix parameter in StartDataQualityRulesetEvaluationRun to specify custom CloudWatch log group paths, and a RulesetName filter in ListDataQualityRulesetEvaluationRuns to filter evaluation runs by ruleset name.
+* Imagebuilder (4.0.11.0)
+	* The ImportDiskImage API now enforces a maximum character limit of 128 characters on the image name field.
+* LexModelsV2 (4.0.7.0)
+	* Amazon Lex V2 introduces audio filler support for speech-to-speech bots. Configure melody or typing sounds that play during backend processing to reduce perceived latency and maintain a natural conversational experience for callers.
+* MWAA (4.0.4.0)
+	* Amazon MWAA now supports a PublicAndPrivate webserver access mode. The Airflow web server is accessible over both public and private endpoints, enabling workers in VPCs without internet access to reach the Task API privately while retaining public access to the Airflow UI.
+* S3 (4.0.23.0)
+	* Validate outpost access point resource name
+* SageMaker (4.0.56.0)
+	* Amazon SageMaker HyperPod now returns ImageVersionStatus in DescribeCluster, DescribeClusterNode, and ListClusterNodes responses, indicating whether cluster instances are running the latest available image version.
+* SecurityHub (4.0.10.0)
+	* Release GenerateRecommendedPolicyV2 and GetRecommendedPolicyV2 APIs. This supports generating and retrieving policy recommendations to remediate unused permissions findings that are now being supported on Security Hub.
+* Extensions.Bedrock.MEAI (4.0.8.0)
+	* (Preview) Add Bedrock Nova Sonic realtime provider implementing `IRealtimeClient` / `IRealtimeClientSession` for real-time bidirectional audio conversations with tool calling support.
+
+### 4.0.244.0 (2026-05-05 18:16 UTC)
+* CleanRoomsML (4.0.9.0)
+	* Increase max configurable output limits in the Clean Rooms ML configured model algorithm association resource.
+* CloudFront (4.0.15.0)
+	* Adds support for tagging CloudFront Functions and KeyValueStores resources.
+* MarketplaceAgreement (4.0.6.0)
+	* With this release, Agreements API provides a programmatic way to generate quotes, accept offers, track charges and entitlements, manage renewals and cancellations, and streamline operations entirely through APIs without navigating to the AWS Marketplace website or AWS Management Console.
+* MediaTailor (4.0.8.0)
+	* Added support for Monetization Functions. Monetization Functions let you enrich ad requests with external data and transform session parameters using JSONata expressions, without deploying custom infrastructure.
+* MedicalImaging (4.0.7.0)
+	* Add support for DICOM Json Metadata Override features in startDICOMImportJob API
+* OpenSearchService (4.0.20.0)
+	* Amazon OpenSearch Service now supports VPC egress, enabling outbound traffic from your OpenSearch domain to route privately through your VPC instead of the public internet.
+* Route53Domains (4.0.4.0)
+	* This release adds the TLDInMaintenance exception.
+* SageMaker (4.0.55.0)
+	* Adds support for ml.p5.4xlarge instance type for SageMaker Studio JupyterLab and CodeEditor apps for IAD (us-east-1), NRT (ap-northeast-1), BOM (ap-south-1), CGK (ap-southeast-3), GRU (sa-east-1), PDX (us-west-2), CMH (us-east-2).
+
+### 4.0.243.0 (2026-05-04 18:24 UTC)
+* BedrockAgentCoreControl (4.0.33.0)
+	* Amazon Bedrock AgentCore gateways now support MCP Sessions and response streaming from MCP targets. Session timeouts can be set between 15 minutes and 8 hours, and response streaming enables forwarding stream events sent by MCP targets to gateway users.
+* CloudWatchLogs (4.0.24.0)
+	* Adding an additional optional deliverySourceConfiguration field to PutDeliverySource API. This enables customers to pass service-specific configurations through IngestionHub such as tracing enablement or sampling rates that will be propagated to the source resource.
+* EC2 (4.0.86.0)
+	* This feature allows customers to change the tunnel bandwidth on existing VPN connections using the ModifyVpnConnectionOptions API
+* GeoRoutes (4.0.4.0)
+	* Added support for TravelTimeExceedsDriverWorkHours, ViolatedBlockedRoad, and ViolatedVehicleRestriction notice codes to the CalculateRoutes API response.
+* LexModelBuildingService (4.0.3.0)
+	* Lex V1 is deprecated, use Lex V2 instead
+* MediaLive (4.0.20.0)
+	* Updates the type of the MediaLiveRouterOutputConnectionMap.
+* SecurityAgent (4.0.1.0)
+	* AWS Security Agent is adding a new target domain verification method for private VPC penetration testing. Additionally, the target domain resource will now have a verification status reason field to surface additional details about domain verification
+* VPCLattice (4.0.5.0)
+	* Amazon VPC Lattice now supports privately resolvable DNS resources
+* Extensions.Bedrock.MEAI (4.0.7.0)
+	* Update `IChatClient` with latest `BedrockRuntime` / M.E.AI (adding support for multi-modal tool returns and citations with URIs)
+* Core 4.0.6.1
+	* Add thread safety note to all generated service client classes (https://github.com/aws/aws-sdk-net/issues/2098)
+	* All service and extension packages updated to require new Core
+
+### 4.0.242.0 (2026-05-01 18:26 UTC)
+* AppStream (4.0.10.0)
+	* Amazon WorkSpaces Applications now enables AI agents to securely operate desktop applications. Administrators configure stacks to provide agents access to WorkSpaces. Agents can click, type, and take screenshots. Agents authenticate with AWS IAM credentials with activity logged in AWS CloudTrail.
+* CloudWatch (4.0.10.0)
+	* This release adds tag support for CloudWatch Dashboards. The PutDashboard API now accepts a Tags parameter, allowing you to tag dashboards at creation time. Additionally, the TagResource, UntagResource, and ListTagsForResource APIs now support dashboard ARNs as resources.
+* CloudWatchLogs (4.0.23.0)
+	* Adds support for filtering log groups by tags in the ListLogGroups API via the new logGroupTags parameter.
+* DynamoDBv2 (4.0.18.0)
+	* Replace AttributesToGet usage with ProjectionExpression for batch get requests
+* EntityResolution (4.0.7.0)
+	* Add support for transitive matching in AWS Entity Resolution rule-based matching workflows. When enabled, records that match through different rules are grouped together into the same match group, allowing related records to be connected across rule levels.
+* IdentityManagement (4.0.9.21)
+	* Added guidance for CreateOpenIDConnectProvider to include multiple thumbprints when OIDC discovery and JWKS endpoints use different hosts or certificates
+* IoT (4.0.7.0)
+	* AWS IoT HTTP rule actions now support cross-topic batching, combining messages from different MQTT topics into single HTTP requests.
+* QConnect (4.0.10.0)
+	* Added reasoning details, statusDescription, and timeToFirstTokenMs fields to the ListSpans response in Amazon Q in Connect to provide visibility into model thinking, error diagnostics, and inference latency metrics.
+* QuickSight (4.0.20.0)
+	* Add IdentityProviderCACertificatesBundleS3Uri for private CA certs with OAuth datasources. 256-char limit for FontFamily in themes. ControlTitleFormatText on all 13 filters. ControlTitleFontConfiguration. ContextRegion for cross-region identity context. Story,scenario in CreateCustomCapability API.
+* Extensions.Bedrock.MEAI (4.0.6.12)
+	* Fixed TypeInitializationException crash in BedrockChatClient tool calling under NativeAOT caused by circular static initialization in BedrockJsonContext
+
+### 4.0.241.0 (2026-04-30 18:16 UTC)
+* BedrockAgentCore (4.0.22.0)
+	* AgentCore Identity now supports on-behalf-of token exchange OAuth2. AgentCore Memory now supports metadata for LongTerm Memory Records.
+* BedrockAgentCoreControl (4.0.32.0)
+	* AgentCore Identity now supports on-behalf-of token exchange OAuth2. AgentCore Memory now supports metadata for LongTerm Memory Records.
+* DataZone (4.0.27.0)
+	* Adds support for asynchronous notebook runs
+* EKS (4.0.16.0)
+	* Vended logs update param for capability vended logs feature
+* Kafka (4.0.9.0)
+	* Adds support for ZookeeperAccess field to control the Client-Zookeeper connectivity.
+* ObservabilityAdmin (4.0.11.0)
+	* Observability Admin enablement launch for AWS Kafka, Bedrock Agent Core Workload Identity and OTel metric enablement.
+* PaymentCryptography (4.0.9.0)
+	* Adds support for resource-based policies on AWS Payment Cryptography keys, enabling cross-account key sharing. Also adds Multi-Party Approval (MPA) team association APIs for protecting sensitive import root public key operations.
+* Route53GlobalResolver (4.0.2.0)
+	* Adds support for regions in the UpdateGlobalResolver input.
+* SageMaker (4.0.54.0)
+	* Add InstancePools support to Endpoint for flexible provisioning across a prioritized list of instance types. Add Specifications support to InferenceComponent for per-instance-type model configurations.
+* SSOAdmin (4.0.6.0)
+	* Add InstanceArn and IdentityStoreArn in the response of CreateApplication API and IdentityStoreArn in the response of DescribeApplication API
+* Core 4.0.6.0
+	* [Breaking Change] The AWSSDK ZIP artifact now organizes extension assemblies into dedicated subfolders under `extensions/` (for example, `extensions\CrtIntegration\AWSSDK.Extensions.CrtIntegration.dll`). Each subfolder contains only the extension DLL and its third-party dependencies - transitive `AWSSDK` service DLLs remain in the root directory and are not duplicated. There is no impact for customers installing the SDK via NuGet, which is the recommended installation method as described in our [developer guide](https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-install-assemblies.html).
+	* Update `System.Text.Json` dependency to `8.0.6` (for `net472` and `netstandard2.0` frameworks)
+
+### 4.0.240.0 (2026-04-29 18:16 UTC)
+* Account (4.0.4.0)
+	* Adds AccountState in the response for the GetAccountInformation API. Each state represents a specific phase in the account lifecycle. Use this information to manage account access, automate workflows, or trigger actions based on account state changes.
+* BedrockAgentCore (4.0.21.0)
+	* Adds batch evaluation for running evaluators against multiple agent sessions with server-side orchestration, AI-powered recommendations for optimizing system prompts and tool descriptions, and AB testing with controlled traffic splitting and statistical significance reporting
+* BedrockAgentCoreControl (4.0.31.0)
+	* Adds configuration bundles for versioned, immutable agent configuration snapshots with branch-based lineage
+* CloudFront (4.0.14.0)
+	* Amazon CloudFront now supports cache tag. Tag objects via response headers and invalidate all matching objects in a single request, replacing manual URL tracking and broad wildcards.
+* Deadline (4.0.19.0)
+	* Adds support for rtx-pro-server-6000 GPU accelerator for service-managed fleets.
+* ECR (4.0.13.4)
+	* Removes support for registry policy V1
+* GameLift (4.0.10.0)
+	* Amazon GameLift Servers adds a new DescribeContainerGroupPortMappings API for container fleets, making it easy to discover which connection ports map to your container ports without needing to remotely access the compute.
+* MediaPackageV2 (4.0.12.0)
+	* This feature adds configuration for specifying SCTE marker handling and allow greater control over generated manifest and segment URIs
+* Transfer (4.0.9.0)
+	* This launch will increase the limits for customers to list the contents from the remote directories from 10k to 200k.
+* WorkSpacesWeb (4.0.9.0)
+	* Allow admins to configure IPv6 ranges on IP Access Settings.
+
 ### 4.0.239.0 (2026-04-27 19:22 UTC)
 * ApplicationSignals (4.0.8.0)
 	* Application Signals now supports creating composite Service Level Objectives on Service Operations. Users can now create service SLO on multiple operations.

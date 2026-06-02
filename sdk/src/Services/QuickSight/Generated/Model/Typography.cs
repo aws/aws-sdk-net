@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private FontConfiguration _axisLabelFontConfiguration;
         private FontConfiguration _axisTitleFontConfiguration;
+        private ControlTitleFontConfiguration _controlTitleFontConfiguration;
         private FontConfiguration _dataLabelFontConfiguration;
         private List<Font> _fontFamilies = AWSConfigs.InitializeCollections ? new List<Font>() : null;
         private FontConfiguration _legendTitleFontConfiguration;
@@ -71,6 +72,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAxisTitleFontConfiguration()
         {
             return this._axisTitleFontConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlTitleFontConfiguration. 
+        /// <para>
+        /// Configures the display properties of the control title.
+        /// </para>
+        /// </summary>
+        public ControlTitleFontConfiguration ControlTitleFontConfiguration
+        {
+            get { return this._controlTitleFontConfiguration; }
+            set { this._controlTitleFontConfiguration = value; }
+        }
+
+        // Check to see if ControlTitleFontConfiguration property is set
+        internal bool IsSetControlTitleFontConfiguration()
+        {
+            return this._controlTitleFontConfiguration != null;
         }
 
         /// <summary>

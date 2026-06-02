@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Output for the DeleteAgentSpace operation
+    /// Output for the DeleteAgentSpace operation.
     /// </summary>
     public partial class DeleteAgentSpaceResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Unique identifier of the deleted agent space
+        /// The unique identifier of the deleted agent space.
         /// </para>
         /// </summary>
         public string AgentSpaceId

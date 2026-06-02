@@ -42,6 +42,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _kmsKeyArn;
         private string _membershipIdentifier;
         private string _name;
+        private PayerConfiguration _payerConfiguration;
         private int? _retentionInDays;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -163,6 +164,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerConfiguration. 
+        /// <para>
+        /// The payer configuration for the ML input channel. Determines which member account
+        /// pays for compute and synthetic data costs.
+        /// </para>
+        /// </summary>
+        public PayerConfiguration PayerConfiguration
+        {
+            get { return this._payerConfiguration; }
+            set { this._payerConfiguration = value; }
+        }
+
+        // Check to see if PayerConfiguration property is set
+        internal bool IsSetPayerConfiguration()
+        {
+            return this._payerConfiguration != null;
         }
 
         /// <summary>

@@ -39,6 +39,11 @@ namespace Amazon.CodeCatalyst
 {
     /// <summary>
     /// <para>Implementation for accessing CodeCatalyst</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions
     /// of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst

@@ -40,10 +40,11 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property RandomKeySend. 
         /// <para>
-        /// The random key for generating a KEK validation response.
+        /// The random key send value received from the initiating node to generate a KEK validation
+        /// response.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=32, Max=48)]
+        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=48)]
         public string RandomKeySend
         {
             get { return this._randomKeySend; }

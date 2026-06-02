@@ -66,7 +66,11 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Context.
+        /// Gets and sets the property Context. 
+        /// <para>
+        ///  The span context that identifies which session or trace this reference input applies
+        /// to, used for correlating ground truth with agent output. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Context Context

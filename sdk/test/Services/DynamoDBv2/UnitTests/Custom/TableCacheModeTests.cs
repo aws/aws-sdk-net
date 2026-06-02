@@ -8,6 +8,7 @@ using Amazon.Runtime.Internal.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests
 {
     /// <summary>
@@ -28,7 +29,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// <summary>
         /// Asserts that DescribeTable is called twice for different credentials for default behavior
         /// </summary>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         [DataRow(null)]
         [DataRow(MetadataCachingMode.Default)]
         public void DataModel_DefaultWithDifferentCredentials_DescribeTableCalledTwice(MetadataCachingMode? metadataCachingMode)
@@ -52,7 +53,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// Asserts that DescribeTable is called once for the same credentials for default behavior
         /// </summary>
         /// <param name="metadataCachingMode"></param>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         [DataRow(null)]
         [DataRow(MetadataCachingMode.Default)]
         public void DataModel_DefaultWithSameCredentials_DescribeTableCalledOnce(MetadataCachingMode? metadataCachingMode)
@@ -139,7 +140,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// <summary>
         /// Asserts that DescribeTable is called twice for different credentials for default behavior
         /// </summary>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         [DataRow(null)]
         [DataRow(MetadataCachingMode.Default)]
         public void DocumentModel_DefaultWithDifferentCredentials_DescribeTableCalledTwice(MetadataCachingMode? metadataCachingMode)
@@ -162,7 +163,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// <summary>
         /// Asserts that DescribeTable is called once for the same credentials for default behavior
         /// </summary>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         [DataRow(null)]
         [DataRow(MetadataCachingMode.Default)]
         public void DocumentModel_DefaultWithSameCredentials_DescribeTableCalledOnce(MetadataCachingMode? metadataCachingMode)
@@ -185,7 +186,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// <summary>
         /// Asserts that DescribeTable is called once for different credentials when using <see cref="MetadataCachingMode.TableNameOnly"/>
         /// </summary>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         public void DocumentModel_TableNameOnlyWithDifferentCredentials_DescribeTableCalledOnce()
         {
             var tableConfig = new TableConfig("MockTable")
@@ -206,7 +207,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// <summary>
         /// Asserts that DescribeTable is called once for the same credentials when using <see cref="MetadataCachingMode.TableNameOnly"/>
         /// </summary>
-        [DataTestMethod, TestCategory("DynamoDBv2")]
+        [TestMethod, TestCategory("DynamoDBv2")]
         public void DocumentModel_TableNameOnlyWithSameCredentials_DescribeTableCalledOnce()
         {
             var tableConfig = new TableConfig("MockTable")
@@ -245,3 +246,4 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+#endif

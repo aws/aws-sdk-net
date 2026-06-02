@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+#if NETFRAMEWORK
 namespace AWSSDK.UnitTests.CloudFormation
 {
     /// <summary>
@@ -102,3 +103,4 @@ namespace AWSSDK.UnitTests.CloudFormation
         }
     }
 }
+#endif

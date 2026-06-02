@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetFindings operation.
-    /// Retrieves multiple findings in a single request
+    /// Retrieves information about one or more security findings in an agent space.
     /// </summary>
     public partial class BatchGetFindingsRequest : AmazonSecurityAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space where the findings exist
+        /// The unique identifier of the agent space that contains the findings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FindingIds. 
         /// <para>
-        /// List of finding IDs to retrieve
+        /// The list of finding identifiers to retrieve.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

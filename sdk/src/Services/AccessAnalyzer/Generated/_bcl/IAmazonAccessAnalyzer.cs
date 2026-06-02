@@ -632,6 +632,88 @@ namespace Amazon.AccessAnalyzer
 
         #endregion
         
+        #region  CreateServiceLinkedAnalyzer
+
+
+        /// <summary>
+        /// Creates a service-linked analyzer managed by an Amazon Web Services service. This
+        /// operation can only be invoked by authorized Amazon Web Services services. Direct customer
+        /// invocation returns <c>AccessDeniedException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Service-linked analyzers enable Amazon Web Services services to create and manage
+        /// analyzers on behalf of customers. The lifecycle of these analyzers is managed by the
+        /// calling service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedAnalyzer service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceLinkedAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ServiceQuotaExceededException">
+        /// Service quote met error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateServiceLinkedAnalyzer">REST API Reference for CreateServiceLinkedAnalyzer Operation</seealso>
+        CreateServiceLinkedAnalyzerResponse CreateServiceLinkedAnalyzer(CreateServiceLinkedAnalyzerRequest request);
+
+
+
+        /// <summary>
+        /// Creates a service-linked analyzer managed by an Amazon Web Services service. This
+        /// operation can only be invoked by authorized Amazon Web Services services. Direct customer
+        /// invocation returns <c>AccessDeniedException</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Service-linked analyzers enable Amazon Web Services services to create and manage
+        /// analyzers on behalf of customers. The lifecycle of these analyzers is managed by the
+        /// calling service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceLinkedAnalyzer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceLinkedAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ServiceQuotaExceededException">
+        /// Service quote met error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateServiceLinkedAnalyzer">REST API Reference for CreateServiceLinkedAnalyzer Operation</seealso>
+        Task<CreateServiceLinkedAnalyzerResponse> CreateServiceLinkedAnalyzerAsync(CreateServiceLinkedAnalyzerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteAnalyzer
 
 
@@ -749,6 +831,86 @@ namespace Amazon.AccessAnalyzer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteArchiveRule">REST API Reference for DeleteArchiveRule Operation</seealso>
         Task<DeleteArchiveRuleResponse> DeleteArchiveRuleAsync(DeleteArchiveRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteServiceLinkedAnalyzer
+
+
+        /// <summary>
+        /// Deletes a service-linked analyzer. This operation can be invoked by both authorized
+        /// Amazon Web Services services and customers.
+        /// 
+        ///  
+        /// <para>
+        /// When invoked by a customer, IAM Access Analyzer performs a callback to the managing
+        /// service to verify whether the analyzer is still in use and can be deleted. If the
+        /// service indicates the analyzer is still in use, the deletion is rejected with <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedAnalyzer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceLinkedAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteServiceLinkedAnalyzer">REST API Reference for DeleteServiceLinkedAnalyzer Operation</seealso>
+        DeleteServiceLinkedAnalyzerResponse DeleteServiceLinkedAnalyzer(DeleteServiceLinkedAnalyzerRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a service-linked analyzer. This operation can be invoked by both authorized
+        /// Amazon Web Services services and customers.
+        /// 
+        ///  
+        /// <para>
+        /// When invoked by a customer, IAM Access Analyzer performs a callback to the managing
+        /// service to verify whether the analyzer is still in use and can be deleted. If the
+        /// service indicates the analyzer is still in use, the deletion is rejected with <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceLinkedAnalyzer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceLinkedAnalyzer service method, as returned by AccessAnalyzer.</returns>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ConflictException">
+        /// A conflict exception error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.InternalServerException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ThrottlingException">
+        /// Throttling limit exceeded error.
+        /// </exception>
+        /// <exception cref="Amazon.AccessAnalyzer.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/DeleteServiceLinkedAnalyzer">REST API Reference for DeleteServiceLinkedAnalyzer Operation</seealso>
+        Task<DeleteServiceLinkedAnalyzerResponse> DeleteServiceLinkedAnalyzerAsync(DeleteServiceLinkedAnalyzerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

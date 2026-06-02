@@ -33,12 +33,6 @@ namespace Amazon.MarketplaceAgreement.Model
     /// Container for the parameters to the ListBillingAdjustmentRequests operation.
     /// Lists billing adjustment requests for a specific agreement. Sellers (proposers) can
     /// use this operation to view all billing adjustment requests associated with an agreement.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Pagination is supported through <c>maxResults</c> and <c>nextToken</c> parameters.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListBillingAdjustmentRequestsRequest : AmazonMarketplaceAgreementRequest
     {
@@ -113,7 +107,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property CreatedAfter. 
         /// <para>
         /// An optional filter to return billing adjustment requests created after the specified
-        /// POSIX timestamp (Unix epoch seconds).
+        /// timestamp.
         /// </para>
         /// </summary>
         public DateTime? CreatedAfter
@@ -132,7 +126,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property CreatedBefore. 
         /// <para>
         /// An optional filter to return billing adjustment requests created before the specified
-        /// POSIX timestamp (Unix epoch seconds).
+        /// timestamp.
         /// </para>
         /// </summary>
         public DateTime? CreatedBefore
@@ -169,8 +163,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start pagination. Use the <c>nextToken</c> value from
-        /// a previous response to retrieve the next page of results.
+        /// A token to specify where to start pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

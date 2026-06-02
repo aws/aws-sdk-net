@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Additional context about a pentest or task execution
+    /// Contains contextual information about the execution of a pentest job, such as errors,
+    /// warnings, or informational messages.
     /// </summary>
     public partial class ExecutionContext
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Context. 
         /// <para>
-        /// Context associated with a pentest or task execution
+        /// The context message.
         /// </para>
         /// </summary>
         public string Context
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ContextType. 
         /// <para>
-        /// The category of context
+        /// The type of context. Valid values include ERROR, CLIENT_ERROR, WARNING, and INFO.
         /// </para>
         /// </summary>
         public ContextType ContextType
@@ -77,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// Timestamp associated with a pentest or task execution
+        /// The date and time the context was recorded, in UTC format.
         /// </para>
         /// </summary>
         public DateTime? Timestamp

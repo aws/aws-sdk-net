@@ -39,8 +39,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Steps. 
         /// <para>
-        /// When Amazon Connect does not find an available agent meeting the requirements in a
-        /// step for a given step duration, the routing criteria will move on to the next step
+        /// When Connect Customer does not find an available agent meeting the requirements in
+        /// a step for a given step duration, the routing criteria will move on to the next step
         /// sequentially until a join is completed with an agent. When all steps are exhausted,
         /// the contact will be offered to any agent in the queue.
         /// </para>

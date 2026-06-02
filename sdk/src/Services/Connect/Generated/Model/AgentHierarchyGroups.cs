@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// A structure that defines search criteria for contacts using agent hierarchy group
     /// levels. For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set
-    /// Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.
+    /// Up Agent Hierarchies</a> in the <i>Connect Customer Administrator Guide</i>.
     /// </summary>
     public partial class AgentHierarchyGroups
     {

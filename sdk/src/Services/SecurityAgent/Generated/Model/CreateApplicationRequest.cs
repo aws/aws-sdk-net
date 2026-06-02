@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates a new application
+    /// Creates a new application. An application is the top-level organizational unit that
+    /// supports IAM Identity Center integration.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonSecurityAgentRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property DefaultKmsKeyId. 
         /// <para>
-        /// Default KMS key identifier used to encrypt application data
+        /// The identifier of the default AWS KMS key to use for encrypting data in the application.
         /// </para>
         /// </summary>
         public string DefaultKmsKeyId
@@ -61,8 +62,8 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IdcInstanceArn. 
         /// <para>
-        /// ARN of the IAM Identity Center instance used for user authentication. Optional for
-        /// non-IdC applications
+        /// The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with
+        /// the application.
         /// </para>
         /// </summary>
         public string IdcInstanceArn
@@ -80,7 +81,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// ARN of the IAM role that the application uses to access AWS resources on your behalf
+        /// The Amazon Resource Name (ARN) of the IAM role to associate with the application.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -98,7 +99,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the application
+        /// The tags to associate with the application.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

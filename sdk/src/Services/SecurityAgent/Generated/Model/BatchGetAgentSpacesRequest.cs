@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetAgentSpaces operation.
-    /// Retrieves multiple agent spaces in a single request
+    /// Retrieves information about one or more agent spaces.
     /// </summary>
     public partial class BatchGetAgentSpacesRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceIds. 
         /// <para>
-        /// List of agent space IDs to retrieve
+        /// The list of agent space identifiers to retrieve.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

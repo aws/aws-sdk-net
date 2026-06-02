@@ -31,13 +31,13 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePredefinedAttribute operation.
-    /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
-    /// attribute</i> is made up of a name and a value.
+    /// Creates a new predefined attribute for the specified Connect Customer instance. A
+    /// <i>predefined attribute</i> is made up of a name and a value.
     /// 
     ///  
     /// <para>
-    /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
-    /// Connect quotas</a>.
+    /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Connect
+    /// Customer quotas</a>.
     /// </para>
     ///  
     /// <para>
@@ -63,8 +63,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     /// </summary>
     public partial class CreatePredefinedAttributeRequest : AmazonConnectRequest
@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Custom metadata that is associated to predefined attributes to control behavior in
         /// upstream services, such as controlling how a predefined attribute should be displayed
-        /// in the Amazon Connect admin website.
+        /// in the Connect Customer admin website.
         /// </para>
         /// </summary>
         public InputPredefinedAttributeConfiguration AttributeConfiguration
@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instance ID in the
+        /// The identifier of the Connect Customer instance. You can find the instance ID in the
         /// Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
@@ -138,7 +138,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Purposes. 
         /// <para>
         /// Values that enable you to categorize your predefined attributes. You can use them
-        /// in custom UI elements across the Amazon Connect admin website.
+        /// in custom UI elements across the Connect Customer admin website.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

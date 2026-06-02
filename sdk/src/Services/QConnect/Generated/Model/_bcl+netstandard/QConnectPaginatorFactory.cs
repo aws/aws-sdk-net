@@ -157,6 +157,14 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListModels operation
+        ///</summary>
+        public IListModelsPaginator ListModels(ListModelsRequest request) 
+        {
+            return new ListModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
         public IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request) 

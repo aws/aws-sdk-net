@@ -56,6 +56,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AvailabilityStartTimeConfiguration", targetDepth))
+                {
+                    var unmarshaller = DashAvailabilityStartTimeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityStartTimeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BaseUrls", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DashBaseUrl, DashBaseUrlUnmarshaller>(DashBaseUrlUnmarshaller.Instance);
@@ -150,6 +156,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuggestedPresentationDelaySeconds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UriPathType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UriPathType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Url", targetDepth))

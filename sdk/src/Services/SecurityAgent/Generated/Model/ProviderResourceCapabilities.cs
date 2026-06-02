@@ -30,14 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Provider-specific capabilities for integrated resources
+    /// The capabilities for an integrated resource from a third-party provider. This is a
+    /// union type that contains provider-specific capabilities.
     /// </summary>
     public partial class ProviderResourceCapabilities
     {
         private GitHubResourceCapabilities _github;
 
         /// <summary>
-        /// Gets and sets the property Github.
+        /// Gets and sets the property Github. 
+        /// <para>
+        /// The GitHub-specific resource capabilities.
+        /// </para>
         /// </summary>
         public GitHubResourceCapabilities Github
         {

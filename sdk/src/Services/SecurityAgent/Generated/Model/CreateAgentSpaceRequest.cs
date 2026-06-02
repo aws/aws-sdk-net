@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentSpace operation.
-    /// Creates an agent space record
+    /// Creates a new agent space. An agent space is a dedicated workspace for securing a
+    /// specific application.
     /// </summary>
     public partial class CreateAgentSpaceRequest : AmazonSecurityAgentRequest
     {
@@ -46,7 +47,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AwsResources. 
         /// <para>
-        /// AWS resource configurations associated with the agent space
+        /// The AWS resources to associate with the agent space.
         /// </para>
         /// </summary>
         public AWSResources AwsResources
@@ -64,8 +65,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CodeReviewSettings. 
         /// <para>
-        /// Configuration for code review analysis, including controls scanning and general purpose
-        /// scanning settings
+        /// The code review settings for the agent space.
         /// </para>
         /// </summary>
         public CodeReviewSettings CodeReviewSettings
@@ -83,7 +83,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the agent space
+        /// A description of the agent space.
         /// </para>
         /// </summary>
         public string Description
@@ -101,8 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Identifier of the KMS key used to encrypt data. Can be a key ID, key ARN, alias name,
-        /// or alias ARN. If not specified, an AWS managed key is used.
+        /// The identifier of the AWS KMS key to use for encrypting data in the agent space.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -120,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the agent space
+        /// The name of the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -139,7 +138,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the agent space
+        /// The tags to associate with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -162,7 +161,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainIds. 
         /// <para>
-        /// Target domain IDs to associate with the agent space
+        /// The list of target domain identifiers to associate with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

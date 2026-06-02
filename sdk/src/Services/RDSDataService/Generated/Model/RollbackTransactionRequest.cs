@@ -45,7 +45,7 @@ namespace Amazon.RDSDataService.Model
         /// The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string ResourceArn
         {
             get { return this._resourceArn; }
@@ -64,7 +64,7 @@ namespace Amazon.RDSDataService.Model
         /// The name or ARN of the secret that enables access to the DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string SecretArn
         {
             get { return this._secretArn; }

@@ -41,7 +41,7 @@ namespace Amazon.Deadline.Model
         /// Gets and sets the property MonitorId. 
         /// <para>
         /// The unique identifier of the monitor. This ID is returned by the <c>CreateMonitor</c>
-        /// operation, and is included in the response to the <c>GetMonitor</c> operation.
+        /// operation, and is included in the response to the <c>ListMonitors</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

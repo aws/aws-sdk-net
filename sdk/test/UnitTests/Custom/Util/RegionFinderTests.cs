@@ -48,7 +48,6 @@ namespace AWSSDK.UnitTests
         [DataRow("us-iso-east-1", "https://s3.us-iso-east-1.amazonaws.com/")]
         [DataRow("us-gov-west-1", "https://s3.us-gov-west-1.amazonaws.com")]
         [DataRow("us-gov-east-1", "https://s3.us-gov-east-1.amazonaws.com")]
-        [DataRow("us-gov-east-1", "https://s3.us-gov-east-1.amazonaws.com")]
         [DataRow("us-isob-east-1", "https://s3.us-isob-east-1.amazonaws.com/")]
         [DataRow("us-west-2", ("https://vpce-example.elasticloadbalancing.us-west-2.vpce.amazonaws.com"))]
         public void FindRegion_Endpoint_ReturnsRegion(string expectedRegion, string url)

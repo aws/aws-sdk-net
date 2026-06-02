@@ -39,6 +39,11 @@ namespace Amazon.TimestreamInfluxDB
 {
     /// <summary>
     /// <para>Implementation for accessing TimestreamInfluxDB</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Timestream for InfluxDB is a managed time-series database engine that makes
     /// it easy for application developers and DevOps teams to run InfluxDB databases on Amazon

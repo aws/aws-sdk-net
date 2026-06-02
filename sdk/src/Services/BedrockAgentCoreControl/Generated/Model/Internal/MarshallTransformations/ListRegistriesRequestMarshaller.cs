@@ -63,6 +63,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAuthorizerType())
+                request.Parameters.Add("authorizerType", StringUtils.FromString(publicRequest.AuthorizerType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

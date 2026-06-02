@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _localIpv6NetworkCidr;
         private string _remoteIpv4NetworkCidr;
         private string _remoteIpv6NetworkCidr;
+        private VpnTunnelBandwidth _tunnelBandwidth;
         private string _vpnConnectionId;
 
         /// <summary>
@@ -155,6 +156,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetRemoteIpv6NetworkCidr()
         {
             return this._remoteIpv6NetworkCidr != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TunnelBandwidth. 
+        /// <para>
+        /// The desired bandwidth specification for the VPN connection. <c>standard</c> supports
+        /// up to 1.25 Gbps per tunnel, while <c>large</c> supports up to 5 Gbps per tunnel. Large
+        /// bandwidth is only available for VPN connections attached to a transit gateway or to
+        /// Cloud WAN. The default value is <c>standard</c>.
+        /// </para>
+        /// </summary>
+        public VpnTunnelBandwidth TunnelBandwidth
+        {
+            get { return this._tunnelBandwidth; }
+            set { this._tunnelBandwidth = value; }
+        }
+
+        // Check to see if TunnelBandwidth property is set
+        internal bool IsSetTunnelBandwidth()
+        {
+            return this._tunnelBandwidth != null;
         }
 
         /// <summary>

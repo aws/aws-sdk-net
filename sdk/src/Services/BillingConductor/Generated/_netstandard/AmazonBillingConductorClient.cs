@@ -39,6 +39,11 @@ namespace Amazon.BillingConductor
 {
     /// <summary>
     /// <para>Implementation for accessing BillingConductor</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Billing Conductor is a fully managed service that you can use to customize a <a href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
     /// forma</a> version of your billing data each month, to accurately show or chargeback
@@ -1752,6 +1757,9 @@ namespace Amazon.BillingConductor
         /// <returns>The response from the UpdateCustomLineItem service method, as returned by BillingConductor.</returns>
         /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ConflictException">
+        /// You can cause an inconsistent state by updating or deleting a resource.
         /// </exception>
         /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
         /// An unexpected error occurred while processing a request.

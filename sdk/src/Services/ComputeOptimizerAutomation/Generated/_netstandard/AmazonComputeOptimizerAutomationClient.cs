@@ -39,6 +39,11 @@ namespace Amazon.ComputeOptimizerAutomation
 {
     /// <summary>
     /// <para>Implementation for accessing ComputeOptimizerAutomation</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Automation is a feature within Amazon Web Services Compute Optimizer that enables
     /// you to apply optimization recommendations to your Amazon Web Services resources, reducing

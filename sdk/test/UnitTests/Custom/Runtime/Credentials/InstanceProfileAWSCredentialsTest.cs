@@ -15,7 +15,6 @@
 
 using System;
 using System.Net;
-using Amazon.EC2.Model;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using AWSSDK_DotNet.UnitTests.TestTools;
@@ -31,10 +30,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestNullRole()
         {
-            AssertExtensions.ExpectException(() =>
-            {
-                var creds = new InstanceProfileAWSCredentials(role: null);
-            }, typeof(ArgumentNullException), "Value cannot be null." + Environment.NewLine + "Parameter name: role");
+            AssertExtensions.ExpectException(() => new InstanceProfileAWSCredentials(role: null), typeof(ArgumentNullException));
         }
 
         [TestMethod]

@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private HarnessBedrockModelConfig _bedrockModelConfig;
         private HarnessGeminiModelConfig _geminiModelConfig;
+        private HarnessLiteLlmModelConfig _liteLlmModelConfig;
         private HarnessOpenAiModelConfig _openAiModelConfig;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetGeminiModelConfig()
         {
             return this._geminiModelConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LiteLlmModelConfig. 
+        /// <para>
+        /// The LiteLLM model configuration for connecting to third-party model providers.
+        /// </para>
+        /// </summary>
+        public HarnessLiteLlmModelConfig LiteLlmModelConfig
+        {
+            get { return this._liteLlmModelConfig; }
+            set { this._liteLlmModelConfig = value; }
+        }
+
+        // Check to see if LiteLlmModelConfig property is set
+        internal bool IsSetLiteLlmModelConfig()
+        {
+            return this._liteLlmModelConfig != null;
         }
 
         /// <summary>

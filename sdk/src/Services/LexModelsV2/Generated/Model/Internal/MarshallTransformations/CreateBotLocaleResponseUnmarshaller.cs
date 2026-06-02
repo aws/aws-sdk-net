@@ -52,6 +52,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("audioFillerSettings", targetDepth))
+                {
+                    var unmarshaller = AudioFillerSettingsUnmarshaller.Instance;
+                    response.AudioFillerSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("botId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

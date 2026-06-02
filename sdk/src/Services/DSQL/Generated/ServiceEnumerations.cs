@@ -215,6 +215,238 @@ namespace Amazon.DSQL
 
 
     /// <summary>
+    /// Constants used for properties of type StreamFailureErrorCode.
+    /// </summary>
+    public class StreamFailureErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER_CMK_INACCESSIBLE for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode CLUSTER_CMK_INACCESSIBLE = new StreamFailureErrorCode("CLUSTER_CMK_INACCESSIBLE");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode INTERNAL_ERROR = new StreamFailureErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant KINESIS_ACCESS_DENIED for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode KINESIS_ACCESS_DENIED = new StreamFailureErrorCode("KINESIS_ACCESS_DENIED");
+        /// <summary>
+        /// Constant KINESIS_KMS_ACCESS_DENIED for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode KINESIS_KMS_ACCESS_DENIED = new StreamFailureErrorCode("KINESIS_KMS_ACCESS_DENIED");
+        /// <summary>
+        /// Constant KINESIS_OVERSIZE_RECORD for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode KINESIS_OVERSIZE_RECORD = new StreamFailureErrorCode("KINESIS_OVERSIZE_RECORD");
+        /// <summary>
+        /// Constant KINESIS_STREAM_NOT_FOUND for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode KINESIS_STREAM_NOT_FOUND = new StreamFailureErrorCode("KINESIS_STREAM_NOT_FOUND");
+        /// <summary>
+        /// Constant KINESIS_THROUGHPUT_EXCEEDED for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode KINESIS_THROUGHPUT_EXCEEDED = new StreamFailureErrorCode("KINESIS_THROUGHPUT_EXCEEDED");
+        /// <summary>
+        /// Constant ROLE_ACCESS_DENIED for StreamFailureErrorCode
+        /// </summary>
+        public static readonly StreamFailureErrorCode ROLE_ACCESS_DENIED = new StreamFailureErrorCode("ROLE_ACCESS_DENIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamFailureErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamFailureErrorCode FindValue(string value)
+        {
+            return FindValue<StreamFailureErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamFailureErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamFormat.
+    /// </summary>
+    public class StreamFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for StreamFormat
+        /// </summary>
+        public static readonly StreamFormat JSON = new StreamFormat("JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamFormat FindValue(string value)
+        {
+            return FindValue<StreamFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamOrdering.
+    /// </summary>
+    public class StreamOrdering : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNORDERED for StreamOrdering
+        /// </summary>
+        public static readonly StreamOrdering UNORDERED = new StreamOrdering("UNORDERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamOrdering(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamOrdering FindValue(string value)
+        {
+            return FindValue<StreamOrdering>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamOrdering(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamStatus.
+    /// </summary>
+    public class StreamStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus ACTIVE = new StreamStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus CREATING = new StreamStatus("CREATING");
+        /// <summary>
+        /// Constant DELETED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus DELETED = new StreamStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus DELETING = new StreamStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus FAILED = new StreamStatus("FAILED");
+        /// <summary>
+        /// Constant IMPAIRED for StreamStatus
+        /// </summary>
+        public static readonly StreamStatus IMPAIRED = new StreamStatus("IMPAIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamStatus FindValue(string value)
+        {
+            return FindValue<StreamStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass

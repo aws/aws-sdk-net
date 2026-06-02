@@ -39,8 +39,13 @@ namespace Amazon.CustomerProfiles
 {
     /// <summary>
     /// <para>Implementation for accessing CustomerProfiles</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
-    /// Amazon Connect Customer Profiles <ul> <li> 
+    /// Connect Customer Customer Profiles <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html">Customer
     /// Profiles actions</a> 
@@ -52,16 +57,17 @@ namespace Amazon.CustomerProfiles
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Amazon Connect Customer Profiles is a unified customer profile for your contact center
-    /// that has pre-built connectors powered by AppFlow that make it easy to combine customer
-    /// information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM),
-    /// and your enterprise resource planning (ERP), with contact history from your Amazon
-    /// Connect contact center. 
+    /// Connect Customer Customer Profiles is a unified customer profile for your contact
+    /// center that has pre-built connectors powered by AppFlow that make it easy to combine
+    /// customer information from third party applications, such as Salesforce (CRM), ServiceNow
+    /// (ITSM), and your enterprise resource planning (ERP), with contact history from your
+    /// Connect Customer contact center. 
     /// </para>
     ///  
     /// <para>
-    /// For more information about the Amazon Connect Customer Profiles feature, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
-    /// Customer Profiles</a> in the <i>Amazon Connect Administrator's Guide</i>. 
+    /// For more information about the Connect Customer Customer Profiles feature, see <a
+    /// href="https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html">Use
+    /// Customer Profiles</a> in the <i>Connect Customer Administrator's Guide</i>. 
     /// </para>
     /// </summary>
     public partial class AmazonCustomerProfilesClient : AmazonServiceClient, IAmazonCustomerProfiles
@@ -506,6 +512,113 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  BatchPutProfileObject
+
+
+        /// <summary>
+        /// Adds multiple profile objects to a domain of a given ObjectType in a single API call.
+        /// 
+        ///  
+        /// <para>
+        /// When adding a specific profile object, like a Contact Record, an inferred profile
+        /// can get created if it is not mapped to an existing profile. The resulting profile
+        /// will only have a phone number populated in the standard ProfileObject. Any additional
+        /// Contact Records with the same phone number will be mapped to the same inferred profile.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a ProfileObject is created and if a ProfileObjectType already exists for the
+        /// ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType
+        /// definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// BatchPutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutProfileObject service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutProfileObject service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchPutProfileObject">REST API Reference for BatchPutProfileObject Operation</seealso>
+        public virtual BatchPutProfileObjectResponse BatchPutProfileObject(BatchPutProfileObjectRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchPutProfileObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutProfileObjectResponseUnmarshaller.Instance;
+
+            return Invoke<BatchPutProfileObjectResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds multiple profile objects to a domain of a given ObjectType in a single API call.
+        /// 
+        ///  
+        /// <para>
+        /// When adding a specific profile object, like a Contact Record, an inferred profile
+        /// can get created if it is not mapped to an existing profile. The resulting profile
+        /// will only have a phone number populated in the standard ProfileObject. Any additional
+        /// Contact Records with the same phone number will be mapped to the same inferred profile.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a ProfileObject is created and if a ProfileObjectType already exists for the
+        /// ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType
+        /// definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// BatchPutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutProfileObject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutProfileObject service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchPutProfileObject">REST API Reference for BatchPutProfileObject Operation</seealso>
+        public virtual Task<BatchPutProfileObjectResponse> BatchPutProfileObjectAsync(BatchPutProfileObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchPutProfileObjectRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchPutProfileObjectResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchPutProfileObjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCalculatedAttributeDefinition
 
 
@@ -597,8 +710,8 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
-        /// Connect instances can be associated with one domain.
+        /// Each Connect Customer instance can be associated with only one domain. Multiple Connect
+        /// Customer instances can be associated with one domain.
         /// </para>
         ///  
         /// <para>
@@ -662,8 +775,8 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  
         /// <para>
-        /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
-        /// Connect instances can be associated with one domain.
+        /// Each Connect Customer instance can be associated with only one domain. Multiple Connect
+        /// Customer instances can be associated with one domain.
         /// </para>
         ///  
         /// <para>
@@ -802,7 +915,7 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Creates an event stream, which is a subscription to real-time events, such as when
-        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// profiles are created and updated through Connect Customer Customer Profiles.
         /// 
         ///  
         /// <para>
@@ -841,7 +954,7 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Creates an event stream, which is a subscription to real-time events, such as when
-        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// profiles are created and updated through Connect Customer Customer Profiles.
         /// 
         ///  
         /// <para>

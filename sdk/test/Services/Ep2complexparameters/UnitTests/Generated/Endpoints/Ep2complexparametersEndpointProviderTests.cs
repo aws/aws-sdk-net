@@ -45,12 +45,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("Ep2complexparameters")]
         [Description("Empty array")]
-        [ExpectedException(typeof(AmazonClientException), @"no array values set")]
         public void Empty_array_Test()
         {
             var parameters = new Ep2complexparametersEndpointParameters();
             parameters["stringArrayParam"] = new List<string> {};
-            var endpoint = new AmazonEp2complexparametersEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonEp2complexparametersEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"no array values set", exception.Message);
         }
 
         [TestMethod]

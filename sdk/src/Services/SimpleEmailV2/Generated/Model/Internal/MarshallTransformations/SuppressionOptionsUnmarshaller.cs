@@ -62,6 +62,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SuppressionScope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SuppressionScope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ValidationOptions", targetDepth))
                 {
                     var unmarshaller = SuppressionValidationOptionsUnmarshaller.Instance;

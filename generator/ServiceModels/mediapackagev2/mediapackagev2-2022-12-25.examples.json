@@ -186,7 +186,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "ROOT"
             },
             {
               "ChildManifestName": "exampleManifest2",
@@ -195,7 +196,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "ROOT"
             }
           ],
           "LowLatencyHlsManifests": [
@@ -256,7 +258,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "output": {
           "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointTS",
@@ -283,6 +286,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest1.m3u8"
             },
             {
@@ -293,6 +297,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest2.m3u8"
             }
           ],
@@ -305,6 +310,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest1.m3u8"
             },
             {
@@ -315,6 +321,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest2.m3u8"
             }
           ],
@@ -357,7 +364,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "id": "example-1",
         "title": "Creating an OriginEndpoint with container type TS, and encryption enabled"
@@ -420,6 +428,9 @@
               }
             },
             {
+              "AvailabilityStartTimeConfiguration": {
+                "FixedAvailabilityStartTime": "2026-04-17T23:00:00.00Z"
+              },
               "BaseUrls": [
                 {
                   "DvbPriority": 2,
@@ -559,7 +570,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "output": {
           "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointCMAF",
@@ -614,6 +626,7 @@
               },
               "SegmentTemplateFormat": "NUMBER_WITH_TIMELINE",
               "SuggestedPresentationDelaySeconds": 2,
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleDashManifest1.mpd",
               "UtcTiming": {
                 "TimingMode": "HTTP_HEAD",
@@ -621,6 +634,9 @@
               }
             },
             {
+              "AvailabilityStartTimeConfiguration": {
+                "FixedAvailabilityStartTime": "2026-04-17T23:00:00.00Z"
+              },
               "BaseUrls": [
                 {
                   "DvbPriority": 2,
@@ -669,6 +685,7 @@
               },
               "SegmentTemplateFormat": "NUMBER_WITH_TIMELINE",
               "SuggestedPresentationDelaySeconds": 12,
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleDashManifest2.mpd",
               "UtcTiming": {
                 "TimingMode": "HTTP_HEAD",
@@ -694,6 +711,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleManifest1.m3u8"
             },
             {
@@ -704,6 +722,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleManifest2.m3u8"
             }
           ],
@@ -716,6 +735,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleLLManifest1.m3u8"
             },
             {
@@ -726,6 +746,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointCMAF/exampleLLManifest2.m3u8"
             }
           ],
@@ -767,7 +788,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "id": "example-2",
         "title": "Creating an OriginEndpoint with container type CMAF, and encryption enabled"
@@ -819,7 +841,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "output": {
           "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointISM",
@@ -872,7 +895,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "id": "example-3",
         "title": "Creating an OriginEndpoint with container type ISM, and encryption enabled"
@@ -1092,6 +1116,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest1.m3u8"
             },
             {
@@ -1102,6 +1127,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest2.m3u8"
             }
           ],
@@ -1114,6 +1140,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest1.m3u8"
             },
             {
@@ -1124,6 +1151,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest2.m3u8"
             }
           ],
@@ -1166,7 +1194,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "id": "example-1",
         "title": "Getting an OriginEndpoint"
@@ -1234,7 +1263,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "UNDERSCORE"
         },
         "id": "example-2",
         "title": "Getting an OriginEndpoint with ISM container"
@@ -1656,7 +1686,8 @@
                 }
               ],
               "ModifiedAt": "2022-10-18T09:36:00.00Z",
-              "OriginEndpointName": "exampleOriginEndpointTS"
+              "OriginEndpointName": "exampleOriginEndpointTS",
+              "UriSeparator": "UNDERSCORE"
             },
             {
               "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointCMAF",
@@ -1707,7 +1738,8 @@
                 }
               ],
               "ModifiedAt": "2022-10-18T09:36:00.00Z",
-              "OriginEndpointName": "exampleOriginEndpointCMAF"
+              "OriginEndpointName": "exampleOriginEndpointCMAF",
+              "UriSeparator": "UNDERSCORE"
             },
             {
               "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointISM",
@@ -1735,7 +1767,8 @@
                   "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointISM/exampleMssManifest2.ism/Manifest"
                 }
               ],
-              "OriginEndpointName": "exampleOriginEndpointISM"
+              "OriginEndpointName": "exampleOriginEndpointISM",
+              "UriSeparator": "UNDERSCORE"
             }
           ]
         },
@@ -1926,7 +1959,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "LEAF"
             },
             {
               "ChildManifestName": "exampleManifest2",
@@ -1935,7 +1969,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "LEAF"
             }
           ],
           "LowLatencyHlsManifests": [
@@ -1946,7 +1981,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "ROOT"
             },
             {
               "ChildManifestName": "exampleLLManifest2",
@@ -1955,7 +1991,8 @@
               "ProgramDateTimeIntervalSeconds": 60,
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
-              }
+              },
+              "UriPathType": "ROOT"
             }
           ],
           "OriginEndpointName": "exampleOriginEndpointTS",
@@ -1991,7 +2028,8 @@
             "TsIncludeDvbSubtitles": false,
             "TsUseAudioRenditionGroup": true
           },
-          "StartoverWindowSeconds": 600
+          "StartoverWindowSeconds": 600,
+          "UriSeparator": "HYPHEN"
         },
         "output": {
           "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointTS",
@@ -2018,6 +2056,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest1.m3u8"
             },
             {
@@ -2028,6 +2067,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "LEAF",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleManifest2.m3u8"
             }
           ],
@@ -2040,6 +2080,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest1.m3u8"
             },
             {
@@ -2050,6 +2091,7 @@
               "ScteHls": {
                 "AdMarkerHls": "DATERANGE"
               },
+              "UriPathType": "ROOT",
               "Url": "https://abcde.egress.vwxyz.mediapackagev2.us-west-2.amazonaws.com/out/v1/exampleChannelGroup/exampleChannel/exampleOriginEndpointTS/exampleLLManifest2.m3u8"
             }
           ],
@@ -2091,7 +2133,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "HYPHEN"
         },
         "id": "example-1",
         "title": "Updating an OriginEndpoint"
@@ -2144,7 +2187,8 @@
             "SegmentDurationSeconds": 2,
             "SegmentName": "segmentName2"
           },
-          "StartoverWindowSeconds": 600
+          "StartoverWindowSeconds": 600,
+          "UriSeparator": "HYPHEN"
         },
         "output": {
           "Arn": "arn:aws:mediapackagev2:us-west-2:123456789012:channelGroup/exampleChannelGroup/channel/exampleChannel/originEndpoint/exampleOriginEndpointISM",
@@ -2203,7 +2247,8 @@
           "Tags": {
             "key1": "value1",
             "key2": "value2"
-          }
+          },
+          "UriSeparator": "HYPHEN"
         },
         "id": "example-2",
         "title": "Updating an OriginEndpoint with ISM container"

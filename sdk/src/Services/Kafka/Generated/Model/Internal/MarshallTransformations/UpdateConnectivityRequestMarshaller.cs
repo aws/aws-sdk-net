@@ -93,6 +93,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CurrentVersion);
             }
 
+            if(publicRequest.IsSetZookeeperAccess())
+            {
+                context.Writer.WritePropertyName("zookeeperAccess");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ZookeeperAccessMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ZookeeperAccess, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

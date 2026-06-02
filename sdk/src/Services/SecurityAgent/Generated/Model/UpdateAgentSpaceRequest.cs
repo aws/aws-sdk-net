@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentSpace operation.
-    /// Updates an agent space record
+    /// Updates the configuration of an existing agent space, including its name, description,
+    /// AWS resources, target domains, and code review settings.
     /// </summary>
     public partial class UpdateAgentSpaceRequest : AmazonSecurityAgentRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// ID of the agent space to update
+        /// The unique identifier of the agent space to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +65,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AwsResources. 
         /// <para>
-        /// AWS resource configurations associated with the agent space
+        /// The updated AWS resources to associate with the agent space.
         /// </para>
         /// </summary>
         public AWSResources AwsResources
@@ -82,8 +83,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CodeReviewSettings. 
         /// <para>
-        /// Configuration for code review analysis, including controls scanning and general purpose
-        /// scanning settings
+        /// The updated code review settings for the agent space.
         /// </para>
         /// </summary>
         public CodeReviewSettings CodeReviewSettings
@@ -101,7 +101,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Description of the agent space
+        /// The updated description of the agent space.
         /// </para>
         /// </summary>
         public string Description
@@ -119,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the agent space
+        /// The updated name of the agent space.
         /// </para>
         /// </summary>
         public string Name
@@ -137,7 +137,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainIds. 
         /// <para>
-        /// Target domain IDs to associate with the agent space
+        /// The updated list of target domain identifiers to associate with the agent space.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

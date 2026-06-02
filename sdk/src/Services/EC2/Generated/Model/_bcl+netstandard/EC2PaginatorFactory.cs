@@ -429,6 +429,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeIpamPoolAllocations operation
+        ///</summary>
+        public IDescribeIpamPoolAllocationsPaginator DescribeIpamPoolAllocations(DescribeIpamPoolAllocationsRequest request) 
+        {
+            return new DescribeIpamPoolAllocationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeIpamPools operation
         ///</summary>
         public IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request) 

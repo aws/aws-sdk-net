@@ -947,6 +947,56 @@ namespace Amazon.ConnectCampaignsV2
 
 
     /// <summary>
+    /// Constants used for properties of type LocalTimeZoneDetectionScope.
+    /// </summary>
+    public class LocalTimeZoneDetectionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_AVAILABLE for LocalTimeZoneDetectionScope
+        /// </summary>
+        public static readonly LocalTimeZoneDetectionScope ALL_AVAILABLE = new LocalTimeZoneDetectionScope("ALL_AVAILABLE");
+        /// <summary>
+        /// Constant PRIMARY_ONLY for LocalTimeZoneDetectionScope
+        /// </summary>
+        public static readonly LocalTimeZoneDetectionScope PRIMARY_ONLY = new LocalTimeZoneDetectionScope("PRIMARY_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocalTimeZoneDetectionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocalTimeZoneDetectionScope FindValue(string value)
+        {
+            return FindValue<LocalTimeZoneDetectionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocalTimeZoneDetectionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocalTimeZoneDetectionType.
     /// </summary>
     public class LocalTimeZoneDetectionType : ConstantClass

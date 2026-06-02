@@ -19,6 +19,24 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IotData.Model.GetConnectionRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[^$].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.GetConnectionResponse.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[^$].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.GetConnectionResponse.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IotData.Model.GetRetainedMessageResponse.Qos</property>
     <min>0</min>
     <max>1</max>
@@ -52,9 +70,26 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IotData.Model.ListSubscriptionsRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[^$].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.ListSubscriptionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IotData.Model.PublishRequest.Qos</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.SendDirectMessageRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[^$].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.UpdateThingShadowRequest.ShadowName</property>
@@ -70,6 +105,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.RetainedMessageSummary.Qos</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IotData.Model.SubscriptionSummary.Qos</property>
     <min>0</min>
     <max>1</max>
   </property-value-rule>

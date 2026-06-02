@@ -31,7 +31,24 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFeed operation.
-    /// Updates the name and/or outputs in a feed.
+    /// Updates the name and/or outputs in a feed. 
+    /// 
+    ///  
+    /// <para>
+    /// UpdateFeed is a PUT operation, which means that the payload that you specify completely
+    /// overwrites the existing payload. 
+    /// </para>
+    ///  
+    /// <para>
+    /// This means that if you want to touch the array of outputs, you must pass in the full
+    /// new list. So you must omit outputs you want to delete, and include outputs you want
+    /// to add or modify. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you want to patch the array of outputs to make selective additions, use AssociateFeed.
+    /// 
+    /// </para>
     /// </summary>
     public partial class UpdateFeedRequest : AmazonElementalInferenceRequest
     {
@@ -62,6 +79,7 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// Required. You can specify the existing name (to leave it unchanged) or a new name.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

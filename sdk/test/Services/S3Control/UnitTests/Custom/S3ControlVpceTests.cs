@@ -40,10 +40,9 @@ namespace AWSSDK.UnitTests
         [Flags]
         public enum Flags { None = 0, Dualstack = 2, UseArnRegion = 4 }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("apname", "https://beta.example.com", Flags.None, "https://123456789012.beta.example.com", USEast1, S3)]
         [DataRow("apname", "https://s3.us-west-2.amazonaws.com", Flags.None, "https://123456789012.s3.us-west-2.amazonaws.com", USWest2, S3)]        
-        [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "https://s3-outposts.eu-west-1.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.eu-west-1.amazonaws.com", USWest2, S3Outposts)] //This will produce a signing error for a real request but are the expected values
         [TestCategory("S3Control")]
@@ -61,7 +60,7 @@ namespace AWSSDK.UnitTests
                 expectedUri, expectedRegion, expectedService);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("bucketname", "https://beta.example.com", Flags.None, "https://beta.example.com", USEast1, S3Outposts)]
         [DataRow("bucketname", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
         [TestCategory("S3Control")]
@@ -79,7 +78,7 @@ namespace AWSSDK.UnitTests
                 expectedUri, expectedRegion, expectedService);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://beta.example.com", Flags.None, "https://beta.example.com", USEast1, S3Outposts)]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.None, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket", "https://s3-outposts.us-west-2.amazonaws.com", Flags.UseArnRegion, "https://s3-outposts.us-west-2.amazonaws.com", USWest2, S3Outposts)]
@@ -100,47 +99,41 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3Control")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionGetAccessPointCustomEndpointAndOutpostsCrossRegionRequest()
         {
             var request = new GetAccessPointRequest
             {
                 Name = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"
             };
-
             var config = CreateConfig("https://beta.example.com", Flags.None);
-
-            S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config));
         }
 
         [TestMethod]
         [TestCategory("S3Control")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionGetAccessPointCustomEndpointAndOutpostsDualstackNotSupported()
         {
             var request = new GetAccessPointRequest
-            {                
+            {
                 Name = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"
             };
-
             var config = CreateConfig("https://beta.example.com", Flags.Dualstack);
-
-            S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config);
-        }                
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ControlArnTestUtils.RunMockRequest(request, GetAccessPointRequestMarshaller.Instance, config));
+        }
 
         [TestMethod]
         [TestCategory("S3Control")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionGetBucketCustomEndpointAndOutpostsDualstackNotSupported()
         {
             var request = new GetBucketRequest
-            {                
+            {
                 Bucket = "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"
             };
-
             var config = CreateConfig("https://beta.example.com", Flags.Dualstack);
-
-            S3ControlArnTestUtils.RunMockRequest(request, GetBucketRequestMarshaller.Instance, config);
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ControlArnTestUtils.RunMockRequest(request, GetBucketRequestMarshaller.Instance, config));
         }
 
         private AmazonS3ControlConfig CreateConfig(string serviceUrl, Flags flags)

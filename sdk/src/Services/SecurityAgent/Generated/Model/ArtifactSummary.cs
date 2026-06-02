@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Summary information about an artifact
+    /// Contains summary information about an artifact.
     /// </summary>
     public partial class ArtifactSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactId. 
         /// <para>
-        /// Unique identifier of the artifact
+        /// The unique identifier of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ArtifactType. 
         /// <para>
-        /// Type of the artifact file
+        /// The file type of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// Name of the artifact file
+        /// The file name of the artifact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

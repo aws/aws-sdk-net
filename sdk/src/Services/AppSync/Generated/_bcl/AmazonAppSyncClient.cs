@@ -39,6 +39,11 @@ namespace Amazon.AppSync
 {
     /// <summary>
     /// <para>Implementation for accessing AppSync</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// AppSync provides API actions for creating and interacting with data sources using
     /// GraphQL from your application.

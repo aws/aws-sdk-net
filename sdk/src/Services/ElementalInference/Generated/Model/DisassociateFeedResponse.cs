@@ -40,7 +40,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ID of the feed where you deleted the associated resource.
+        /// The ARN of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ARN of the resource that you deleted.
+        /// The ID of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

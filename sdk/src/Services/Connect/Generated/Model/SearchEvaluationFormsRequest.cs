@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchEvaluationForms operation.
-    /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+    /// Searches evaluation forms in an Connect Customer instance, with optional filtering.
     /// 
     ///  
     /// <para>
@@ -66,8 +66,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-    /// Connect endpoints and quotas</a>.
+    ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+    /// Customer endpoints and quotas</a>.
     /// </para>
     /// </summary>
     public partial class SearchEvaluationFormsRequest : AmazonConnectRequest
@@ -81,7 +81,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

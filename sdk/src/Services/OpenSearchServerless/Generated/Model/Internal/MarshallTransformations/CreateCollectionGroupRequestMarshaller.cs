@@ -103,6 +103,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetGeneration())
+            {
+                context.Writer.WritePropertyName("generation");
+                context.Writer.WriteStringValue(publicRequest.Generation);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

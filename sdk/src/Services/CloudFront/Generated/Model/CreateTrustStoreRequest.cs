@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
         private CaCertificatesBundleSource _caCertificatesBundleSource;
         private string _name;
         private Tags _tags;
+        private bool? _useClientCertificateOCSPEndpoint;
 
         /// <summary>
         /// Gets and sets the property CaCertificatesBundleSource. 
@@ -90,6 +91,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetTags()
         {
             return this._tags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseClientCertificateOCSPEndpoint. 
+        /// <para>
+        /// A Boolean that determines whether to use the CA certificate's OCSP endpoint to check
+        /// certificate revocation status.
+        /// </para>
+        /// </summary>
+        public bool? UseClientCertificateOCSPEndpoint
+        {
+            get { return this._useClientCertificateOCSPEndpoint; }
+            set { this._useClientCertificateOCSPEndpoint = value; }
+        }
+
+        // Check to see if UseClientCertificateOCSPEndpoint property is set
+        internal bool IsSetUseClientCertificateOCSPEndpoint()
+        {
+            return this._useClientCertificateOCSPEndpoint.HasValue; 
         }
 
     }

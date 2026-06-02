@@ -39,6 +39,11 @@ namespace Amazon.ApiGatewayManagementApi
 {
     /// <summary>
     /// <para>Implementation for accessing ApiGatewayManagementApi</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The Amazon API Gateway Management API allows you to directly manage runtime aspects
     /// of your deployed APIs. To use it, you must explicitly set the SDK's endpoint to point

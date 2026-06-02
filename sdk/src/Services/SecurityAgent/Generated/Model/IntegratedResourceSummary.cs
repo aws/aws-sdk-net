@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Summary information about an integrated resource
+    /// Contains summary information about an integrated resource.
     /// </summary>
     public partial class IntegratedResourceSummary
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// Capabilities of the integrated resource
+        /// The capabilities enabled for the integrated resource.
         /// </para>
         /// </summary>
         public ProviderResourceCapabilities Capabilities
@@ -59,7 +59,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property IntegrationId. 
         /// <para>
-        /// Unique identifier of the integration
+        /// The unique identifier of the integration that provides access to the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The integrated resource details
+        /// The metadata for the integrated resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

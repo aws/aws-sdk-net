@@ -36,15 +36,18 @@ namespace Amazon.BedrockAgentCore.Model
     /// </summary>
     public partial class MemoryMetadataFilterExpression
     {
-        private LeftExpression _left;
-        private OperatorType _operator;
-        private RightExpression _right;
+        private MemoryRecordLeftExpression _left;
+        private MemoryRecordOperatorType _operator;
+        private MemoryRecordRightExpression _right;
 
         /// <summary>
-        /// Gets and sets the property Left.
+        /// Gets and sets the property Left. 
+        /// <para>
+        /// The metadata key to evaluate.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public LeftExpression Left
+        public MemoryRecordLeftExpression Left
         {
             get { return this._left; }
             set { this._left = value; }
@@ -64,7 +67,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public OperatorType Operator
+        public MemoryRecordOperatorType Operator
         {
             get { return this._operator; }
             set { this._operator = value; }
@@ -77,9 +80,12 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Right.
+        /// Gets and sets the property Right. 
+        /// <para>
+        /// The value to compare against. Required for all operators except EXISTS and NOT_EXISTS.
+        /// </para>
         /// </summary>
-        public RightExpression Right
+        public MemoryRecordRightExpression Right
         {
             get { return this._right; }
             set { this._right = value; }

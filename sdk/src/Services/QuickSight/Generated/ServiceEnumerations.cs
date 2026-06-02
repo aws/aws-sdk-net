@@ -291,6 +291,172 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AgentLifecycle.
+    /// </summary>
+    public class AgentLifecycle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PREVIEW for AgentLifecycle
+        /// </summary>
+        public static readonly AgentLifecycle PREVIEW = new AgentLifecycle("PREVIEW");
+        /// <summary>
+        /// Constant PUBLISHED for AgentLifecycle
+        /// </summary>
+        public static readonly AgentLifecycle PUBLISHED = new AgentLifecycle("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentLifecycle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentLifecycle FindValue(string value)
+        {
+            return FindValue<AgentLifecycle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentLifecycle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgentOwnershipFilterAttribute.
+    /// </summary>
+    public class AgentOwnershipFilterAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT_NAME for AgentOwnershipFilterAttribute
+        /// </summary>
+        public static readonly AgentOwnershipFilterAttribute AGENT_NAME = new AgentOwnershipFilterAttribute("AGENT_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for AgentOwnershipFilterAttribute
+        /// </summary>
+        public static readonly AgentOwnershipFilterAttribute DIRECT_QUICKSIGHT_OWNER = new AgentOwnershipFilterAttribute("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for AgentOwnershipFilterAttribute
+        /// </summary>
+        public static readonly AgentOwnershipFilterAttribute DIRECT_QUICKSIGHT_SOLE_OWNER = new AgentOwnershipFilterAttribute("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for AgentOwnershipFilterAttribute
+        /// </summary>
+        public static readonly AgentOwnershipFilterAttribute DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new AgentOwnershipFilterAttribute("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentOwnershipFilterAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentOwnershipFilterAttribute FindValue(string value)
+        {
+            return FindValue<AgentOwnershipFilterAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentOwnershipFilterAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgentStatus.
+    /// </summary>
+    public class AgentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus ACTIVE = new AgentStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus CREATING = new AgentStatus("CREATING");
+        /// <summary>
+        /// Constant FAILED for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus FAILED = new AgentStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus UPDATING = new AgentStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatus FindValue(string value)
+        {
+            return FindValue<AgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggType.
     /// </summary>
     public class AggType : ConstantClass
@@ -3186,6 +3352,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonMethodType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StringEquals for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringEquals = new ComparisonOperator("StringEquals");
+        /// <summary>
+        /// Constant StringLike for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator StringLike = new ComparisonOperator("StringLike");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
         {
             return FindValue(value);
         }
@@ -9927,6 +10143,52 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type OAuthClientAuthenticationType.
+    /// </summary>
+    public class OAuthClientAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOKEN for OAuthClientAuthenticationType
+        /// </summary>
+        public static readonly OAuthClientAuthenticationType TOKEN = new OAuthClientAuthenticationType("TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OAuthClientAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OAuthClientAuthenticationType FindValue(string value)
+        {
+            return FindValue<OAuthClientAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OAuthClientAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OtherCategories.
     /// </summary>
     public class OtherCategories : ConstantClass
@@ -13426,6 +13688,204 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpaceQuickSightResourceType.
+    /// </summary>
+    public class SpaceQuickSightResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_CONNECTOR for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType ACTION_CONNECTOR = new SpaceQuickSightResourceType("ACTION_CONNECTOR");
+        /// <summary>
+        /// Constant ARTIFACT for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType ARTIFACT = new SpaceQuickSightResourceType("ARTIFACT");
+        /// <summary>
+        /// Constant DASHBOARD for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType DASHBOARD = new SpaceQuickSightResourceType("DASHBOARD");
+        /// <summary>
+        /// Constant DATA_SET for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType DATA_SET = new SpaceQuickSightResourceType("DATA_SET");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType KNOWLEDGE_BASE = new SpaceQuickSightResourceType("KNOWLEDGE_BASE");
+        /// <summary>
+        /// Constant SPACE for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType SPACE = new SpaceQuickSightResourceType("SPACE");
+        /// <summary>
+        /// Constant TOPIC for SpaceQuickSightResourceType
+        /// </summary>
+        public static readonly SpaceQuickSightResourceType TOPIC = new SpaceQuickSightResourceType("TOPIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpaceQuickSightResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpaceQuickSightResourceType FindValue(string value)
+        {
+            return FindValue<SpaceQuickSightResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpaceQuickSightResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpaceQuickSightSearchFilterName.
+    /// </summary>
+    public class SpaceQuickSightSearchFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSUMED_SOURCE_SIZE for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName CONSUMED_SOURCE_SIZE = new SpaceQuickSightSearchFilterName("CONSUMED_SOURCE_SIZE");
+        /// <summary>
+        /// Constant CONTRIBUTED_BY for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName CONTRIBUTED_BY = new SpaceQuickSightSearchFilterName("CONTRIBUTED_BY");
+        /// <summary>
+        /// Constant CREATED_BY for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName CREATED_BY = new SpaceQuickSightSearchFilterName("CREATED_BY");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName DIRECT_QUICKSIGHT_OWNER = new SpaceQuickSightSearchFilterName("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName DIRECT_QUICKSIGHT_SOLE_OWNER = new SpaceQuickSightSearchFilterName("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new SpaceQuickSightSearchFilterName("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant SPACE_ID for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName SPACE_ID = new SpaceQuickSightSearchFilterName("SPACE_ID");
+        /// <summary>
+        /// Constant SPACE_NAME for SpaceQuickSightSearchFilterName
+        /// </summary>
+        public static readonly SpaceQuickSightSearchFilterName SPACE_NAME = new SpaceQuickSightSearchFilterName("SPACE_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpaceQuickSightSearchFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpaceQuickSightSearchFilterName FindValue(string value)
+        {
+            return FindValue<SpaceQuickSightSearchFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpaceQuickSightSearchFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SpaceSearchOperator.
+    /// </summary>
+    public class SpaceSearchOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NUMBER_RANGE for SpaceSearchOperator
+        /// </summary>
+        public static readonly SpaceSearchOperator NUMBER_RANGE = new SpaceSearchOperator("NUMBER_RANGE");
+        /// <summary>
+        /// Constant STRING_EQUALS for SpaceSearchOperator
+        /// </summary>
+        public static readonly SpaceSearchOperator STRING_EQUALS = new SpaceSearchOperator("STRING_EQUALS");
+        /// <summary>
+        /// Constant STRING_LIKE for SpaceSearchOperator
+        /// </summary>
+        public static readonly SpaceSearchOperator STRING_LIKE = new SpaceSearchOperator("STRING_LIKE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SpaceSearchOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpaceSearchOperator FindValue(string value)
+        {
+            return FindValue<SpaceSearchOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpaceSearchOperator(string value)
         {
             return FindValue(value);
         }

@@ -158,6 +158,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWorkspaceImageId())
+            {
+                context.Writer.WritePropertyName("WorkspaceImageId");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceImageId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

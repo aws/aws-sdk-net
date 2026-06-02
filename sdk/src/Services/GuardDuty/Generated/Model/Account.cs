@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the account.
+    /// Contains information about the Amazon Web Services account within which the activity
+    /// took place.
     /// </summary>
     public partial class Account
     {
@@ -58,7 +59,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Uid. 
         /// <para>
-        /// ID of the member's Amazon Web Services account
+        /// The Amazon Web Services account ID within which the activity took place. This may
+        /// differ from the account that owns the user identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

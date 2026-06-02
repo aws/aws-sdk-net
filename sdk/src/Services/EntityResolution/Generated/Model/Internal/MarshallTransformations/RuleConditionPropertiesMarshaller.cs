@@ -46,6 +46,17 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMatchingConfig())
+            {
+                context.Writer.WritePropertyName("matchingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MatchingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MatchingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("rules");

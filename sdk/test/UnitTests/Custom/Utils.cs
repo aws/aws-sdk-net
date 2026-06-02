@@ -137,7 +137,6 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-#if NETFRAMEWORK
         public static async Task<Exception> AssertExceptionExpectedAsync(Func<Task> func, Type expectedExceptionType, string expectedExceptionMessage = null)
         {
             try
@@ -173,7 +172,7 @@ namespace AWSSDK_DotNet.UnitTests
                 return e;
             }
         }
-#endif
+
         public static Stream GetResourceStream(string resourceName)
         {
             Assembly assembly = typeof(Utils).Assembly;

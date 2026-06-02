@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembership operation.
-    /// Adds a single member to an agent space with specified role
+    /// Creates a new membership, granting a user access to an agent space within an application.
     /// </summary>
     public partial class CreateMembershipRequest : AmazonSecurityAgentRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
         /// <para>
-        /// Agent space identifier
+        /// The unique identifier of the agent space to grant access to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// Application identifier
+        /// The unique identifier of the application that contains the agent space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// Membership details (user or agent specific)
+        /// The configuration for the membership, such as the user role.
         /// </para>
         /// </summary>
         public MembershipConfig Config
@@ -100,7 +100,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// Member identifier (userId or agentSpaceId)
+        /// The unique identifier for the membership.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +119,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// Type of member (USER or AGENT_SPACE)
+        /// The type of member. Currently, only USER is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

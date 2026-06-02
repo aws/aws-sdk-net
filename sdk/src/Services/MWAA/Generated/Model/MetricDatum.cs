@@ -107,7 +107,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  <b>Internal only</b>. The time the metric data was received.
+        ///  <b>Internal only</b>. The time the metric data was received, expressed as an ISO
+        /// 8601 datetime string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

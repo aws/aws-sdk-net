@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTargetDomain operation.
-    /// Deletes a target domain record
+    /// Deletes a target domain registration. After deletion, the domain can no longer be
+    /// used for penetration testing.
     /// </summary>
     public partial class DeleteTargetDomainRequest : AmazonSecurityAgentRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the target domain to delete
+        /// The unique identifier of the target domain to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

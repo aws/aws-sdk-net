@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Code remediation details for a single repository
+    /// Contains details about a code remediation task, including links to the code diff and
+    /// pull request.
     /// </summary>
     public partial class CodeRemediationTaskDetails
     {
@@ -41,7 +42,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property CodeDiffLink. 
         /// <para>
-        /// Link to the code diff for the remediation
+        /// The link to the code diff for the remediation.
         /// </para>
         /// </summary>
         public string CodeDiffLink
@@ -59,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property PullRequestLink. 
         /// <para>
-        /// Link to the pull request for the remediation
+        /// The link to the pull request created for the remediation.
         /// </para>
         /// </summary>
         public string PullRequestLink
@@ -77,7 +78,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property RepoName. 
         /// <para>
-        /// Name of the repository
+        /// The name of the repository where the remediation was applied.
         /// </para>
         /// </summary>
         public string RepoName

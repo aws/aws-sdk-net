@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
 {
@@ -9,7 +11,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
     public class TransactGetTests
     {
         [TestMethod]
-        public void TestMockability_TransactGet()
+        public async Task TestMockability_TransactGet()
         {
             var mockContext = new Mock<IDynamoDBContext>();
             mockContext
@@ -22,17 +24,16 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var ddbContext = mockContext.Object;
             var addressTransactGet = ddbContext.CreateTransactGet<Address>();
 
-
             Assert.AreEqual(0, addressTransactGet.Results.Count);
 
-            addressTransactGet.Execute();
+            await addressTransactGet.ExecuteAsync();
             Assert.AreEqual(1, addressTransactGet.Results.Count);
             Assert.AreEqual("CA", addressTransactGet.Results[0].State);
             Assert.AreEqual("12345", addressTransactGet.Results[0].Zip);
         }
 
         [TestMethod]
-        public void TestMockability_MultiTableTransactGet()
+        public async Task TestMockability_MultiTableTransactGet()
         {
             var mockContext = new Mock<IDynamoDBContext>();
             mockContext
@@ -58,8 +59,7 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             Assert.AreEqual(0, addressTransactGet.Results.Count);
             Assert.AreEqual(0, personTransactGet.Results.Count);
 
-
-            multiTransactGet.Execute();
+            await multiTransactGet.ExecuteAsync();
             Assert.AreEqual(1, addressTransactGet.Results.Count);
             Assert.AreEqual("CA", addressTransactGet.Results[0].State);
             Assert.AreEqual("12345", addressTransactGet.Results[0].Zip);
@@ -72,10 +72,10 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
         {
             var transactGet = new Mock<ITransactGet<T>>();
             var dummyResults = new List<T>();
-            var keys = new List<string>();
 
             transactGet
-                .Setup(x => x.Execute())
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask)
                 .Callback(() =>
                 {
                     dummyResults.Clear();
@@ -95,12 +95,12 @@ namespace AWSSDK.UnitTests.DynamoDBv2.NetFramework.Custom.MockabilityTests
             var batches = new List<ITransactGet>();
 
             multiTransactGet
-                .Setup(x => x.Execute())
-                .Callback(() =>
+                .Setup(x => x.ExecuteAsync(It.IsAny<CancellationToken>()))
+                .Returns(async () =>
                 {
                     foreach (var batch in batches)
                     {
-                        batch.Execute();
+                        await batch.ExecuteAsync();
                     }
                 });
 

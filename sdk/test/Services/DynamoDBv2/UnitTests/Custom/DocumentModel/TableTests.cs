@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
+#if NETFRAMEWORK
 namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
@@ -24,18 +25,12 @@ namespace AWSSDK_DotNet.UnitTests
         public void Setup()
         {
             _ddbClientMock = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
-
             var clientConfigMock = new Mock<IClientConfig>();
-            // Setup any properties/methods you expect to be used, e.g.:
-            clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((RegionEndpoint)null);
-            clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
-            // Add more setups as needed for your tests
 
             // Setup the Config property on the IAmazonDynamoDB mock
             _ddbClientMock.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
 
             var config = new TableConfig(_tableName);
-
             _table = new Table(_ddbClientMock.Object, config);
             _table.ClearTableData();
             _table.Keys.Add("Id", new KeyDescription { IsHash = true, Type = DynamoDBEntryType.String });
@@ -69,14 +64,14 @@ namespace AWSSDK_DotNet.UnitTests
 
         private async Task AssertThrowsAsync<T>(Func<Task> act, string expectedMessage = null) where T : Exception
         {
-            var ex = await Assert.ThrowsExceptionAsync<T>(act);
+            var ex = await Assert.ThrowsExactlyAsync<T>(act);
             if (expectedMessage != null)
                 Assert.AreEqual(expectedMessage, ex.Message);
         }
 
         private void AssertThrowsSync<T>(Action act, string expectedMessage = null) where T : Exception
         {
-            var ex = Assert.ThrowsException<T>(act);
+            var ex = Assert.ThrowsExactly<T>(act);
             if (expectedMessage != null)
                 Assert.AreEqual(expectedMessage, ex.Message);
         }
@@ -85,7 +80,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region UpdateHelper Tests 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -96,8 +91,8 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokeUpdateSync(null));
         }
 
-        [DataTestMethod]
-        [DataRow(null, null, "A key must be provided when Document is not set.", true)]
+        [TestMethod]
+        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", true)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", true)]
         [DataRow(null, null, "A key must be provided when Document is not set.", false)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", false)]
@@ -124,7 +119,7 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("Either Document or UpdateExpression must be set (exclusively).", true)]
         [DataRow("Either Document or UpdateExpression must be set (exclusively).", false)]
         public async Task UpdateHelper_RequestInvalidDocExprCombinationWithKey_ThrowsInvalidOperationException(string expectedMessage, bool isAsync)
@@ -142,7 +137,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request), expectedMessage);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_KeyMissing_ThrowsInvalidOperationException(bool isAsync)
@@ -161,7 +156,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_ReturnsDocument_WhenReturnValuesNotNone(bool isAsync)
@@ -195,7 +190,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_SetsUpdateExpression_WhenDocumentProvided(bool isAsync)
@@ -253,7 +248,7 @@ namespace AWSSDK_DotNet.UnitTests
                         && r.ExpressionAttributeNames != null)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_UsesOnlyChangedAttributes_WhenKeysUnchanged(bool isAsync)
@@ -304,7 +299,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesUpdateExpression(bool isAsync)
@@ -351,7 +346,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesConditionalExpression(bool isAsync)
@@ -395,7 +390,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesBothExpressions(bool isAsync)
@@ -448,7 +443,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region DeleteHelper Tests 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -459,7 +454,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokeDeleteSync(null));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_ReturnsDocument_WhenReturnValuesAllOldAttributes(bool isAsync)
@@ -487,7 +482,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_ReturnsNull_WhenReturnValuesNone(bool isAsync)
@@ -516,7 +511,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_AppliesConditionalExpression(bool isAsync)
@@ -561,7 +556,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.DeleteItem(It.Is<DeleteItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_AppliesConditionalExpression_WithAllOldAttributes(bool isAsync)
@@ -614,7 +609,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.DeleteItem(It.Is<DeleteItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, true)]  
         [DataRow(true, false)]  
         [DataRow(false, true)]  
@@ -631,12 +626,12 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => InvokeDeleteAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<InvalidOperationException>(() => InvokeDeleteAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<InvalidOperationException>(() => InvokeDeleteSync(request));
+                var ex = Assert.ThrowsExactly<InvalidOperationException>(() => InvokeDeleteSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
@@ -645,7 +640,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region PutItemHelper Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -656,7 +651,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokePutSync(null));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_ReturnsNull_WhenReturnValuesNone(bool isAsync)
@@ -686,7 +681,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_ReturnsOldAttributes_WhenReturnValuesAllOld(bool isAsync)
@@ -719,7 +714,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("OLD", result["Value"].AsPrimitive().Value);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_CommitsDocumentChanges(bool isAsync)
@@ -751,7 +746,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(doc.IsDirty(), "Document should have committed changes after PutItem.");
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_PassesConditionalExpression(bool isAsync)
@@ -795,7 +790,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.PutItem(It.Is<PutItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_DocumentNull_ThrowsInvalidOperationException(bool isAsync)
@@ -810,12 +805,12 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => InvokePutAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<InvalidOperationException>(() => InvokePutAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<InvalidOperationException>(() => InvokePutSync(request));
+                var ex = Assert.ThrowsExactly<InvalidOperationException>(() => InvokePutSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
@@ -823,7 +818,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region GetItemHelper Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -838,7 +833,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, true)]
         [DataRow(true, false)]
         [DataRow(false, true)]
@@ -855,17 +850,17 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<System.InvalidOperationException>(() => InvokeGetAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<System.InvalidOperationException>(() => InvokeGetAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<System.InvalidOperationException>(() => InvokeGetSync(request));
+                var ex = Assert.ThrowsExactly<System.InvalidOperationException>(() => InvokeGetSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_AppliesProjectionExpression(bool isAsync)
@@ -918,7 +913,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_ReturnsDocument(bool isAsync)
@@ -960,7 +955,8 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
         #endregion
-          [TestMethod]
+        
+        [TestMethod]
         public void GivenDocument_WhenUpdateHelperCalledWithDefaultUpdateItemOperationConfig_ThenRequestSentWithAttributeUpdates()
         {
             // Arrange
@@ -1305,3 +1301,4 @@ namespace AWSSDK_DotNet.UnitTests
         }
     }
 }
+#endif

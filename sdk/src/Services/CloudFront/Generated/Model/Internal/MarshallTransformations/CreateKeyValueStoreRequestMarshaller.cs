@@ -79,6 +79,29 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetName())
                     xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Name));
 
+                if (publicRequest.IsSetTags())
+                {
+                    xmlWriter.WriteStartElement("Tags");
+                    var publicRequestTagsItems = publicRequest.Tags.Items;
+                    if (publicRequest.Tags.IsSetItems()) 
+                    {
+                        xmlWriter.WriteStartElement("Items");
+                        foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
+                        {
+                            if (publicRequestTagsItemsValue != null)
+                            {
+                                xmlWriter.WriteStartElement("Tag");
+                                if(publicRequestTagsItemsValue.IsSetKey())
+                                    xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsItemsValue.Key));
+                                if(publicRequestTagsItemsValue.IsSetValue())
+                                    xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsItemsValue.Value));
+                                xmlWriter.WriteEndElement();
+                            }
+                        }            
+                        xmlWriter.WriteEndElement();            
+                    }
+                    xmlWriter.WriteEndElement();
+                }
 
                 xmlWriter.WriteEndElement();
             }

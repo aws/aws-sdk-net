@@ -85,8 +85,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time when the cancellation request was created, as a POSIX timestamp
-        /// (Unix epoch seconds).
+        /// The date and time when the cancellation request was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -141,8 +140,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the cancellation request. Possible values include <c>PENDING_APPROVAL</c>,
-        /// <c>APPROVED</c>, <c>REJECTED</c>, <c>CANCELLED</c>, and <c>VALIDATION_FAILED</c>.
+        /// The current status of the cancellation request.
         /// </para>
         /// </summary>
         public AgreementCancellationRequestStatus Status
@@ -179,8 +177,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time when the cancellation request was last updated, as a POSIX timestamp
-        /// (Unix epoch seconds).
+        /// The date and time when the cancellation request was last updated.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

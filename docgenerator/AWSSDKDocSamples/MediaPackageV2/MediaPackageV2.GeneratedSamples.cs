@@ -159,14 +159,16 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         ManifestName = "exampleManifest1",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "ROOT"
                     },
                     new CreateHlsManifestConfiguration {
                         ChildManifestName = "exampleManifest2",
                         ManifestName = "exampleManifest2",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "ROOT"
                     }
                 },
                 LowLatencyHlsManifests = new List<CreateLowLatencyHlsManifestConfiguration> {
@@ -219,7 +221,8 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                 Tags = new Dictionary<string, string> {
                     { "key1", "value1" },
                     { "key2", "value2" }
-                }
+                },
+                UriSeparator = "UNDERSCORE"
             });
 
             string arn = response.Arn;
@@ -237,6 +240,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -302,6 +306,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         }
                     },
                     new CreateDashManifestConfiguration {
+                        AvailabilityStartTimeConfiguration = new DashAvailabilityStartTimeConfiguration { FixedAvailabilityStartTime = new DateTime(2026, 4, 17, 11, 0, 0, DateTimeKind.Utc) },
                         BaseUrls = new List<DashBaseUrl> {
                             new DashBaseUrl {
                                 DvbPriority = 2,
@@ -425,7 +430,8 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                 Tags = new Dictionary<string, string> {
                     { "key1", "value1" },
                     { "key2", "value2" }
-                }
+                },
+                UriSeparator = "UNDERSCORE"
             });
 
             string arn = response.Arn;
@@ -443,6 +449,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -495,7 +502,8 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                 Tags = new Dictionary<string, string> {
                     { "key1", "value1" },
                     { "key2", "value2" }
-                }
+                },
+                UriSeparator = "UNDERSCORE"
             });
 
             string arn = response.Arn;
@@ -512,6 +520,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -715,6 +724,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -745,6 +755,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -1096,14 +1107,16 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         ManifestName = "exampleManifest1",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "LEAF"
                     },
                     new CreateHlsManifestConfiguration {
                         ChildManifestName = "exampleManifest2",
                         ManifestName = "exampleManifest2",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "LEAF"
                     }
                 },
                 LowLatencyHlsManifests = new List<CreateLowLatencyHlsManifestConfiguration> {
@@ -1112,14 +1125,16 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         ManifestName = "exampleLLManifest1",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "ROOT"
                     },
                     new CreateLowLatencyHlsManifestConfiguration {
                         ChildManifestName = "exampleLLManifest2",
                         ManifestName = "exampleLLManifest2",
                         ManifestWindowSeconds = 30,
                         ProgramDateTimeIntervalSeconds = 60,
-                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" }
+                        ScteHls = new ScteHls { AdMarkerHls = "DATERANGE" },
+                        UriPathType = "ROOT"
                     }
                 },
                 OriginEndpointName = "exampleOriginEndpointTS",
@@ -1151,7 +1166,8 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                     TsIncludeDvbSubtitles = false,
                     TsUseAudioRenditionGroup = true
                 },
-                StartoverWindowSeconds = 600
+                StartoverWindowSeconds = 600,
+                UriSeparator = "HYPHEN"
             });
 
             string arn = response.Arn;
@@ -1169,6 +1185,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }
@@ -1222,7 +1239,8 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                     SegmentDurationSeconds = 2,
                     SegmentName = "segmentName2"
                 },
-                StartoverWindowSeconds = 600
+                StartoverWindowSeconds = 600,
+                UriSeparator = "HYPHEN"
             });
 
             string arn = response.Arn;
@@ -1239,6 +1257,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
             Dictionary<string, string> tags = response.Tags;
+            string uriSeparator = response.UriSeparator;
 
             #endregion
         }

@@ -39,6 +39,11 @@ namespace Amazon.AugmentedAIRuntime
 {
     /// <summary>
     /// <para>Implementation for accessing AugmentedAIRuntime</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine
     /// learning application. When an AI application can't evaluate data with a high degree

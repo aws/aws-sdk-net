@@ -48,6 +48,7 @@ namespace Amazon.ECS.Model
         private string _name;
         private List<NetworkBinding> _networkBindings = AWSConfigs.InitializeCollections ? new List<NetworkBinding>() : null;
         private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
+        private List<string> _neuronDeviceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _reason;
         private string _runtimeId;
         private string _taskArn;
@@ -324,6 +325,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeuronDeviceIds. 
+        /// <para>
+        /// The IDs of each Neuron device assigned to the container.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> NeuronDeviceIds
+        {
+            get { return this._neuronDeviceIds; }
+            set { this._neuronDeviceIds = value; }
+        }
+
+        // Check to see if NeuronDeviceIds property is set
+        internal bool IsSetNeuronDeviceIds()
+        {
+            return this._neuronDeviceIds != null && (this._neuronDeviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

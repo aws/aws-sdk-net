@@ -39,6 +39,11 @@ namespace Amazon.DSQL
 {
     /// <summary>
     /// <para>Implementation for accessing DSQL</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is an interface reference for Amazon Aurora DSQL. It contains documentation for
     /// one of the programming or command line interfaces you can use to manage Amazon Aurora
@@ -398,6 +403,93 @@ namespace Amazon.DSQL
         }
         #endregion
         
+        #region  CreateStream
+
+        internal virtual CreateStreamResponse CreateStream(CreateStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new change data capture (CDC) stream for a cluster. The stream captures
+        /// database changes and delivers them to the specified target destination.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions</b> 
+        /// </para>
+        ///  <dl> <dt>dsql:CreateStream</dt> <dd> 
+        /// <para>
+        /// Permission to create a new stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: <c>arn:aws:dsql:region:account-id:cluster/cluster-id</c> 
+        /// </para>
+        ///  </dd> <dt>iam:PassRole</dt> <dd> 
+        /// <para>
+        /// Permission to pass the IAM role specified in the target definition to the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the IAM role specified in <c>targetDefinition.kinesis.roleArn</c>
+        /// 
+        /// </para>
+        ///  </dd> <dt>kms:Decrypt</dt> <dd> 
+        /// <para>
+        /// Required when the cluster uses a customer managed KMS key (CMK). Permission to decrypt
+        /// data using the cluster's CMK.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resources: ARN of the KMS key used by the cluster
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ServiceQuotaExceededException">
+        /// The service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/CreateStream">REST API Reference for CreateStream Operation</seealso>
+        public virtual Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteCluster
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -501,6 +593,57 @@ namespace Amazon.DSQL
         }
         #endregion
         
+        #region  DeleteStream
+
+        internal virtual DeleteStreamResponse DeleteStream(DeleteStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a stream from a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/DeleteStream">REST API Reference for DeleteStream Operation</seealso>
+        public virtual Task<DeleteStreamResponse> DeleteStreamAsync(DeleteStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCluster
 
         internal virtual GetClusterResponse GetCluster(GetClusterRequest request)
@@ -598,6 +741,54 @@ namespace Amazon.DSQL
         }
         #endregion
         
+        #region  GetStream
+
+        internal virtual GetStreamResponse GetStream(GetStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStream service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/GetStream">REST API Reference for GetStream Operation</seealso>
+        public virtual Task<GetStreamResponse> GetStreamAsync(GetStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetVpcEndpointServiceName
 
         internal virtual GetVpcEndpointServiceNameResponse GetVpcEndpointServiceName(GetVpcEndpointServiceNameRequest request)
@@ -691,6 +882,54 @@ namespace Amazon.DSQL
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListStreams
+
+        internal virtual ListStreamsResponse ListStreams(ListStreamsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a list of streams for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreams service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreams service method, as returned by DSQL.</returns>
+        /// <exception cref="Amazon.DSQL.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DSQL.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dsql-2018-05-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
+        public virtual Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStreamsResponse>(request, options, cancellationToken);
         }
         #endregion
         

@@ -31,14 +31,14 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFederationToken operation.
-    /// Supports SAML sign-in for Amazon Connect. Retrieves a token for federation. The token
-    /// is for the Amazon Connect user which corresponds to the IAM credentials that were
-    /// used to invoke this action. 
+    /// Supports SAML sign-in for Connect Customer. Retrieves a token for federation. The
+    /// token is for the Connect Customer user which corresponds to the IAM credentials that
+    /// were used to invoke this action. 
     /// 
     ///  
     /// <para>
-    /// For more information about how SAML sign-in works in Amazon Connect, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
-    /// ">Configure SAML with IAM for Amazon Connect in the <i>Amazon Connect Administrator
+    /// For more information about how SAML sign-in works in Connect Customer, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/configure-saml.html
+    /// ">Configure SAML with IAM for Connect Customer in the <i>Connect Customer Administrator
     /// Guide</i>.</a> 
     /// </para>
     ///  <note> 
@@ -49,7 +49,7 @@ namespace Amazon.Connect.Model
     ///  
     /// <para>
     ///  <c>Provided identity: Principal: .... User: .... cannot be used for federation with
-    /// Amazon Connect</c> 
+    /// Connect Customer</c> 
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// The identifier of the Connect Customer instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>

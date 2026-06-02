@@ -35,6 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings
     /// related to the migration.
     /// </summary>
+    [Obsolete("Amazon Lex V1 is deprecated. Use Amazon Lex V2 instead.")]
     public partial class GetMigrationRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _migrationId;

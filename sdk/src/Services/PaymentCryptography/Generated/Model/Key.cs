@@ -46,6 +46,7 @@ namespace Amazon.PaymentCryptography.Model
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private KeyOrigin _keyOrigin;
         private KeyState _keyState;
+        private MpaStatus _mpaStatus;
         private MultiRegionKeyType _multiRegionKeyType;
         private string _primaryRegion;
         private Dictionary<string, ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, ReplicationStatusType>() : null;
@@ -293,6 +294,24 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyState()
         {
             return this._keyState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MpaStatus. 
+        /// <para>
+        /// The Multi-Party Approval (MPA) status for the key, if applicable.
+        /// </para>
+        /// </summary>
+        public MpaStatus MpaStatus
+        {
+            get { return this._mpaStatus; }
+            set { this._mpaStatus = value; }
+        }
+
+        // Check to see if MpaStatus property is set
+        internal bool IsSetMpaStatus()
+        {
+            return this._mpaStatus != null;
         }
 
         /// <summary>

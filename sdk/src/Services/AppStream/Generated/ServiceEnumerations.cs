@@ -145,6 +145,56 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type AgentAction.
+    /// </summary>
+    public class AgentAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPUTER_INPUT for AgentAction
+        /// </summary>
+        public static readonly AgentAction COMPUTER_INPUT = new AgentAction("COMPUTER_INPUT");
+        /// <summary>
+        /// Constant COMPUTER_VISION for AgentAction
+        /// </summary>
+        public static readonly AgentAction COMPUTER_VISION = new AgentAction("COMPUTER_VISION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentAction FindValue(string value)
+        {
+            return FindValue<AgentAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentSoftwareVersion.
     /// </summary>
     public class AgentSoftwareVersion : ConstantClass
@@ -728,6 +778,10 @@ namespace Amazon.AppStream
         /// Constant FAILED for ExportImageTaskState
         /// </summary>
         public static readonly ExportImageTaskState FAILED = new ExportImageTaskState("FAILED");
+        /// <summary>
+        /// Constant TIMED_OUT for ExportImageTaskState
+        /// </summary>
+        public static readonly ExportImageTaskState TIMED_OUT = new ExportImageTaskState("TIMED_OUT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1457,6 +1511,10 @@ namespace Amazon.AppStream
     {
 
         /// <summary>
+        /// Constant BYOL for ImageType
+        /// </summary>
+        public static readonly ImageType BYOL = new ImageType("BYOL");
+        /// <summary>
         /// Constant CUSTOM for ImageType
         /// </summary>
         public static readonly ImageType CUSTOM = new ImageType("CUSTOM");
@@ -1883,6 +1941,102 @@ namespace Amazon.AppStream
 
 
     /// <summary>
+    /// Constants used for properties of type ScreenImageFormat.
+    /// </summary>
+    public class ScreenImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JPEG for ScreenImageFormat
+        /// </summary>
+        public static readonly ScreenImageFormat JPEG = new ScreenImageFormat("JPEG");
+        /// <summary>
+        /// Constant PNG for ScreenImageFormat
+        /// </summary>
+        public static readonly ScreenImageFormat PNG = new ScreenImageFormat("PNG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScreenImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScreenImageFormat FindValue(string value)
+        {
+            return FindValue<ScreenImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScreenImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScreenResolution.
+    /// </summary>
+    public class ScreenResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant W_1280xH_720 for ScreenResolution
+        /// </summary>
+        public static readonly ScreenResolution W_1280xH_720 = new ScreenResolution("W_1280xH_720");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScreenResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScreenResolution FindValue(string value)
+        {
+            return FindValue<ScreenResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScreenResolution(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SessionConnectionState.
     /// </summary>
     public class SessionConnectionState : ConstantClass
@@ -2012,6 +2166,10 @@ namespace Amazon.AppStream
         /// Constant ACCESS_ENDPOINTS for StackAttribute
         /// </summary>
         public static readonly StackAttribute ACCESS_ENDPOINTS = new StackAttribute("ACCESS_ENDPOINTS");
+        /// <summary>
+        /// Constant AGENT_ACCESS_CONFIG for StackAttribute
+        /// </summary>
+        public static readonly StackAttribute AGENT_ACCESS_CONFIG = new StackAttribute("AGENT_ACCESS_CONFIG");
         /// <summary>
         /// Constant CONTENT_REDIRECTION for StackAttribute
         /// </summary>

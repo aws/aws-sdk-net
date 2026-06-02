@@ -61,6 +61,14 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Paginator for ListFunctions operation
+        ///</summary>
+        public IListFunctionsPaginator ListFunctions(ListFunctionsRequest request) 
+        {
+            return new ListFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLiveSources operation
         ///</summary>
         public IListLiveSourcesPaginator ListLiveSources(ListLiveSourcesRequest request) 

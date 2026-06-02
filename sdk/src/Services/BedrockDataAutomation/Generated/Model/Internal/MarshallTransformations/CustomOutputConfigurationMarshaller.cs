@@ -62,6 +62,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetDocument())
+            {
+                context.Writer.WritePropertyName("document");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentCustomOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Document, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

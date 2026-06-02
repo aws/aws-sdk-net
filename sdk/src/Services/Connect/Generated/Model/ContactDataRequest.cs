@@ -122,8 +122,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property QueueId. 
         /// <para>
-        /// The identifier of the queue associated with the Amazon Connect instance in which contacts
-        /// that are created will be queued.
+        /// The identifier of the queue associated with the Connect Customer instance in which
+        /// contacts that are created will be queued.
         /// </para>
         /// </summary>
         public string QueueId
@@ -160,8 +160,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SystemEndpoint. 
         /// <para>
-        /// Endpoint associated with the Amazon Connect instance from which outbound contact will
-        /// be initiated for the campaign.
+        /// Endpoint associated with the Connect Customer instance from which outbound contact
+        /// will be initiated for the campaign.
         /// </para>
         /// </summary>
         public Endpoint SystemEndpoint

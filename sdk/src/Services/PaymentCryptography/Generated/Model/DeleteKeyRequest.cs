@@ -54,8 +54,9 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use:</b> This operation can't be used across different Amazon Web
-    /// Services accounts.
+    ///  <b>Cross-account use:</b> This operation supports cross-account use when the key
+    /// has a resource-based policy that grants access. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security_iam_resource-based-policies.html">Resource-based
+    /// policies</a>.
     /// </para>
     ///  
     /// <para>

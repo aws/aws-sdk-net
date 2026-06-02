@@ -128,6 +128,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("guardrailAssessments", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SpanGuardrailAssessment, SpanGuardrailAssessmentUnmarshaller>(SpanGuardrailAssessmentUnmarshaller.Instance);
+                    unmarshalledObject.GuardrailAssessments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("initialContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -234,6 +240,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Temperature = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("timeToFirstTokenMs", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TimeToFirstTokenMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("topP", targetDepth))

@@ -39,6 +39,11 @@ namespace Amazon.HealthLake
 {
     /// <summary>
     /// <para>Implementation for accessing HealthLake</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// This is the <i>AWS HealthLake API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What

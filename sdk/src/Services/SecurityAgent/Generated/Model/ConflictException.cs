@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
-    /// Request conflicts with current resource state
+    /// The request could not be completed due to a conflict with the current state of the
+    /// resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -3090,6 +3090,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// You can retrieve up to 100,000 log event results from a query, if available, by using
+        /// pagination. Use the <c>nextToken</c> returned in the response to request additional
+        /// pages of results, with each page returning up to 10,000 log events.
+        /// </para>
+        ///  
+        /// <para>
         /// If you are using CloudWatch cross-account observability, you can use this operation
         /// in a monitoring account to start queries in linked source accounts. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
@@ -3367,11 +3373,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can optionally filter the list by log group class, by using regular expressions
-        /// in your request to match strings in the log group names, by using the fieldIndexes
-        /// parameter to filter log groups based on which field indexes are configured, by using
-        /// the dataSources parameter to filter log groups by data source types, and by using
-        /// the fieldIndexNames parameter to filter by specific field index names.
+        /// You can optionally filter the results by log group class, log group name pattern,
+        /// field indexes, data sources, field index names, or log group tags. If you specify
+        /// more than one filter type, the results include log groups that satisfy all filters.
         /// </para>
         ///  
         /// <para>
@@ -5417,7 +5421,8 @@ namespace Amazon.CloudWatchLogs
         /// Or the <c>queryString</c> must include a <c>SOURCE</c> command to select log groups
         /// for the query. The <c>SOURCE</c> command can select log groups based on log group
         /// name prefix, account ID, and log class, or select data sources using dataSource syntax
-        /// in LogsQL, PPL, and SQL. 
+        /// in LogsQL, PPL, and SQL. In LogsQL, the <c>SOURCE</c> command also supports filtering
+        /// by log group tags. 
         /// </para>
         ///  
         /// <para>

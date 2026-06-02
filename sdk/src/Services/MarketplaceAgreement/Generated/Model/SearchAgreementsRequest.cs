@@ -31,8 +31,8 @@ namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchAgreements operation.
-    /// Searches across all agreements that a proposer has in AWS Marketplace. The search
-    /// returns a list of agreements with basic agreement information.
+    /// Searches across all agreements that a proposer or an acceptor has in AWS Marketplace.
+    /// The search returns a list of agreements with basic agreement information.
     /// 
     ///  
     /// <para>
@@ -64,19 +64,20 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceId</c> 
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>EndTime</c> 
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>EndTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> 
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceId</c> + <c>Status</c> + <c>EndTime</c> 
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> + <c>EndTime</c>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -116,21 +117,21 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> 
+    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>Status</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>EndTime</c>
+    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>EndTime</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceId</c> + <c>Status</c>
+    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>Status</c>
     /// + <c>EndTime</c> 
     /// </para>
     ///  </li> <li> 
@@ -194,10 +195,87 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    ///  To filter by <c>EndTime</c>, you can use either <c>BeforeEndTime</c> or <c>AfterEndTime</c>.
+    ///  To filter by <c>EndTime</c>, you can use <c>BeforeEndTime</c> and/or <c>AfterEndTime</c>.
     /// Only <c>EndTime</c> is supported for sorting.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// The following filter combinations are supported when the <c>PartyType</c> is <c>Acceptor</c>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> + <c>EndTime</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceType</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferId</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferSetId</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SearchAgreementsRequest : AmazonMarketplaceAgreementRequest
     {
@@ -247,8 +325,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartyType</c> – The party type of the caller. For agreements where the caller
-        /// is the proposer, use the <c>Proposer</c> filter.
+        ///  <c>PartyType</c> – The party type of the caller. Use <c>Proposer</c> or <c>Acceptor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

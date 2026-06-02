@@ -30,13 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// Message content value - can be text, tool invocation, or tool result
+    /// Message content value - can be text, tool invocation, tool result, or reasoning
     /// </summary>
     public partial class SpanMessageValue
     {
+        private SpanReasoningValue _reasoning;
         private SpanTextValue _text;
         private SpanToolResultValue _toolResult;
         private SpanToolUseValue _toolUse;
+
+        /// <summary>
+        /// Gets and sets the property Reasoning.
+        /// </summary>
+        public SpanReasoningValue Reasoning
+        {
+            get { return this._reasoning; }
+            set { this._reasoning = value; }
+        }
+
+        // Check to see if Reasoning property is set
+        internal bool IsSetReasoning()
+        {
+            return this._reasoning != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

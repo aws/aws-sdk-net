@@ -92,6 +92,8 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             
 
+            
+            request.HostPrefix = $"cp.";
 
             return request;
         }

@@ -42,6 +42,12 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </summary>
         public IPaginatedEnumerable<SearchAgreementsResponse> Responses => new PaginatedResponse<SearchAgreementsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the AgreementViewSummaries
+        /// </summary>
+        public IPaginatedEnumerable<AgreementViewSummary> AgreementViewSummaries => 
+            new PaginatedResultKeyResponse<SearchAgreementsResponse, AgreementViewSummary>(this, (i) => i.AgreementViewSummaries ?? new List<AgreementViewSummary>());
+
         internal SearchAgreementsPaginator(IAmazonMarketplaceAgreement client, SearchAgreementsRequest request)
         {
             this._client = client;

@@ -687,6 +687,10 @@ namespace Amazon.DevOpsAgent
         /// </summary>
         public static readonly PostRegisterServiceSupportedService Mcpservernewrelic = new PostRegisterServiceSupportedService("mcpservernewrelic");
         /// <summary>
+        /// Constant Mcpserversigv4 for PostRegisterServiceSupportedService
+        /// </summary>
+        public static readonly PostRegisterServiceSupportedService Mcpserversigv4 = new PostRegisterServiceSupportedService("mcpserversigv4");
+        /// <summary>
         /// Constant Mcpserversplunk for PostRegisterServiceSupportedService
         /// </summary>
         public static readonly PostRegisterServiceSupportedService Mcpserversplunk = new PostRegisterServiceSupportedService("mcpserversplunk");
@@ -1128,6 +1132,10 @@ namespace Amazon.DevOpsAgent
         /// Constant Mcpservernewrelic for Service
         /// </summary>
         public static readonly Service Mcpservernewrelic = new Service("mcpservernewrelic");
+        /// <summary>
+        /// Constant Mcpserversigv4 for Service
+        /// </summary>
+        public static readonly Service Mcpserversigv4 = new Service("mcpserversigv4");
         /// <summary>
         /// Constant Mcpserversplunk for Service
         /// </summary>

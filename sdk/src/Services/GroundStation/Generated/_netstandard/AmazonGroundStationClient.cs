@@ -39,6 +39,11 @@ namespace Amazon.GroundStation
 {
     /// <summary>
     /// <para>Implementation for accessing GroundStation</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// Welcome to the AWS Ground Station API Reference. AWS Ground Station is a fully managed
     /// service that enables you to control satellite communications, downlink and process

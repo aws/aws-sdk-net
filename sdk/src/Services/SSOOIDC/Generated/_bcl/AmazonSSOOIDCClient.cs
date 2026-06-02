@@ -39,6 +39,11 @@ namespace Amazon.SSOOIDC
 {
     /// <summary>
     /// <para>Implementation for accessing SSOOIDC</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// IAM Identity Center OpenID Connect (OIDC) is a web service that enables a client (such
     /// as CLI or a native application) to register with IAM Identity Center. The service

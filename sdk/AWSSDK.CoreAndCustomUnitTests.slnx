@@ -1,0 +1,34 @@
+<!--
+  This solution is intended for local development only.
+  It is NOT used by the build system. It provides a lightweight way to build and test
+  AWSSDK.UnitTests.Core without loading the full repo solution.
+
+  DO NOT add new service projects here. AWSSDK.UnitTests.Core is included in every
+  service's preview build solution, and those solutions will not reference any service
+  added here.
+-->
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+    <Project Path="../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
+    <Project Path="src/Core/AWSSDK.Core.NetFramework.csproj" />
+    <Project Path="src/Core/AWSSDK.Core.NetStandard.csproj" />
+  </Folder>
+  <Folder Name="/Services/">
+    <Project Path="src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
+    <Project Path="src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
+    <Project Path="src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
+    <Project Path="src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
+    <Project Path="src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
+    <Project Path="src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
+    <Project Path="src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
+    <Project Path="src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
+    <Project Path="src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
+    <Project Path="src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />
+  </Folder>
+  <Folder Name="/UnitTests/">
+    <Project Path="../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
+    <Project Path="test/Common/AWSSDK.CommonTest.csproj" />
+    <Project Path="test/UnitTests/AWSSDK.UnitTests.Core.csproj" />
+  </Folder>
+</Solution>

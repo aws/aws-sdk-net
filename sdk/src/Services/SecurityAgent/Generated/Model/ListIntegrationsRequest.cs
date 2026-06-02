@@ -31,7 +31,8 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIntegrations operation.
-    /// Retrieves the Integrations associated with the user's account
+    /// Lists the integrations in your account, optionally filtered by provider or provider
+    /// type.
     /// </summary>
     public partial class ListIntegrationsRequest : AmazonSecurityAgentRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// Filter criteria for integrations
+        /// A filter to apply to the list of integrations.
         /// </para>
         /// </summary>
         public IntegrationFilter Filter
@@ -60,7 +61,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return
+        /// The maximum number of results to return in a single call.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -78,7 +79,9 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for pagination
+        /// A token to use for paginating results that are returned in the response. Set the value
+        /// of this parameter to null for the first request. For subsequent calls, use the nextToken
+        /// value returned from the previous request.
         /// </para>
         /// </summary>
         public string NextToken

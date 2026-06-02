@@ -31,7 +31,7 @@ namespace Amazon.SecurityAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTargetDomain operation.
-    /// Updates a target domain record
+    /// Updates the verification method for a target domain.
     /// </summary>
     public partial class UpdateTargetDomainRequest : AmazonSecurityAgentRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property TargetDomainId. 
         /// <para>
-        /// Unique identifier of the target domain to update
+        /// The unique identifier of the target domain to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VerificationMethod. 
         /// <para>
-        /// Verification method for the target domain
+        /// The updated verification method for the target domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

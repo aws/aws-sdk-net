@@ -39,6 +39,11 @@ namespace Amazon.AIOps
 {
     /// <summary>
     /// <para>Implementation for accessing AIOps</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// The CloudWatch investigations feature is a generative AI-powered assistant that can
     /// help you respond to incidents in your system. It uses generative AI to scan your system's

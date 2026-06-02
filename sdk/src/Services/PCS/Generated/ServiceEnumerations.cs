@@ -357,6 +357,10 @@ namespace Amazon.PCS
         /// </summary>
         public static readonly PurchaseOption CAPACITY_BLOCK = new PurchaseOption("CAPACITY_BLOCK");
         /// <summary>
+        /// Constant INTERRUPTIBLE_CAPACITY_RESERVATION for PurchaseOption
+        /// </summary>
+        public static readonly PurchaseOption INTERRUPTIBLE_CAPACITY_RESERVATION = new PurchaseOption("INTERRUPTIBLE_CAPACITY_RESERVATION");
+        /// <summary>
         /// Constant ONDEMAND for PurchaseOption
         /// </summary>
         public static readonly PurchaseOption ONDEMAND = new PurchaseOption("ONDEMAND");

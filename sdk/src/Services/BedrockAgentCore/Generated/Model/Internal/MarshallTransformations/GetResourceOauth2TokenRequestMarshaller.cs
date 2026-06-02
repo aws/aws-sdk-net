@@ -73,6 +73,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAudiences())
+            {
+                context.Writer.WritePropertyName("audiences");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAudiencesListValue in publicRequest.Audiences)
+                {
+                        context.Writer.WriteStringValue(publicRequestAudiencesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCustomParameters())
             {
                 context.Writer.WritePropertyName("customParameters");
@@ -115,6 +126,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("resourceOauth2ReturnUrl");
                 context.Writer.WriteStringValue(publicRequest.ResourceOauth2ReturnUrl);
+            }
+
+            if(publicRequest.IsSetResources())
+            {
+                context.Writer.WritePropertyName("resources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourcesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetScopes())

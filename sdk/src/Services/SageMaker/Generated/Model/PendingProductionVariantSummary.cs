@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private int? _desiredInstanceCount;
         private ProductionVariantServerlessConfig _desiredServerlessConfig;
         private float? _desiredWeight;
+        private List<InstancePoolSummary> _instancePools = AWSConfigs.InitializeCollections ? new List<InstancePoolSummary>() : null;
         private ProductionVariantInstanceType _instanceType;
         private ProductionVariantManagedInstanceScaling _managedInstanceScaling;
         private ProductionVariantRoutingConfig _routingConfig;
@@ -214,6 +215,31 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredWeight()
         {
             return this._desiredWeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstancePools. 
+        /// <para>
+        /// A list of instance pools for the production variant. Each pool indicates the instance
+        /// type and the current number of instances of that type.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<InstancePoolSummary> InstancePools
+        {
+            get { return this._instancePools; }
+            set { this._instancePools = value; }
+        }
+
+        // Check to see if InstancePools property is set
+        internal bool IsSetInstancePools()
+        {
+            return this._instancePools != null && (this._instancePools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

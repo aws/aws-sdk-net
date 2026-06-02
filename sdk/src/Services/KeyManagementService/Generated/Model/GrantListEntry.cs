@@ -37,18 +37,20 @@ namespace Amazon.KeyManagementService.Model
         private GrantConstraints _constraints;
         private DateTime? _creationDate;
         private string _granteePrincipal;
+        private string _granteeServicePrincipal;
         private string _grantId;
         private string _issuingAccount;
         private string _keyId;
         private string _name;
         private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _retiringPrincipal;
+        private string _retiringServicePrincipal;
 
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// A list of key-value pairs that must be present in the encryption context of certain
-        /// subsequent operations that the grant allows.
+        /// The constraints on the grant, such as encryption context pairs or a SourceArn, that
+        /// restrict the subsequent operations the grant allows.
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -88,11 +90,12 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
-        /// the user or role designated as the grantee principal in the grant. However, when the
-        /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
-        /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
-        /// principal</a>, which might represent several different grantee principals.
+        /// When a grant is created with the <c>GranteePrincipal</c> field, the <c>ListGrants</c>
+        /// response usually contains the user or role designated as the grantee principal in
+        /// the grant. However, if the grantee principal is an Amazon Web Services service, the
+        /// <c>GranteePrincipal</c> field contains an Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a>, which might correspond to several different grantee principals, such
+        /// as an IAM user, IAM role, or Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -106,6 +109,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetGranteePrincipal()
         {
             return this._granteePrincipal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GranteeServicePrincipal. 
+        /// <para>
+        /// The Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a> that gets the permissions in the grant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string GranteeServicePrincipal
+        {
+            get { return this._granteeServicePrincipal; }
+            set { this._granteeServicePrincipal = value; }
+        }
+
+        // Check to see if GranteeServicePrincipal property is set
+        internal bool IsSetGranteeServicePrincipal()
+        {
+            return this._granteeServicePrincipal != null;
         }
 
         /// <summary>
@@ -225,6 +248,26 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetRetiringPrincipal()
         {
             return this._retiringPrincipal != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetiringServicePrincipal. 
+        /// <para>
+        /// The Amazon Web Services <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
+        /// principal</a> that can retire the grant.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string RetiringServicePrincipal
+        {
+            get { return this._retiringServicePrincipal; }
+            set { this._retiringServicePrincipal = value; }
+        }
+
+        // Check to see if RetiringServicePrincipal property is set
+        internal bool IsSetRetiringServicePrincipal()
+        {
+            return this._retiringServicePrincipal != null;
         }
 
     }

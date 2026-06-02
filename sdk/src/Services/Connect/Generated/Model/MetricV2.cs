@@ -73,7 +73,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property MetricId. 
         /// <para>
         /// Historical metrics or custom metrics can be referenced via this field. This field
-        /// is a valid Amazon Connect Arn or a UUID
+        /// is a valid Connect Customer Arn or a UUID
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=150)]

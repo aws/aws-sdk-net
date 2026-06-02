@@ -167,6 +167,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetVpcProperties())
+            {
+                context.Writer.WritePropertyName("vpcProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.VpcProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetWorkflowsMwaaProperties())
             {
                 context.Writer.WritePropertyName("workflowsMwaaProperties");

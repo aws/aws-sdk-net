@@ -39,6 +39,11 @@ namespace Amazon.Route53Profiles
 {
     /// <summary>
     /// <para>Implementation for accessing Route53Profiles</para>
+    /// <para>
+    /// Service client instances are thread-safe and can be shared across multiple threads.
+    /// For a given service configuration, it is recommended to reuse a client instance
+    /// for the lifetime of your application.
+    /// </para>
     ///
     /// With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and
     /// AWS accounts

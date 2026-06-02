@@ -46,6 +46,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEgressEnabled())
+            {
+                context.Writer.WritePropertyName("EgressEnabled");
+                context.Writer.WriteBooleanValue(requestObject.EgressEnabled.Value);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
