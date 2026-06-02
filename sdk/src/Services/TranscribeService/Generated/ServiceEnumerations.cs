@@ -363,6 +363,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode AfZA = new LanguageCode("af-ZA");
         /// <summary>
+        /// Constant AmET for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode AmET = new LanguageCode("am-ET");
+        /// <summary>
         /// Constant ArAE for LanguageCode
         /// </summary>
         public static readonly LanguageCode ArAE = new LanguageCode("ar-AE");
@@ -414,6 +418,10 @@ namespace Amazon.TranscribeService
         /// Constant CsCZ for LanguageCode
         /// </summary>
         public static readonly LanguageCode CsCZ = new LanguageCode("cs-CZ");
+        /// <summary>
+        /// Constant CyGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
         /// <summary>
         /// Constant CyWL for LanguageCode
         /// </summary>
@@ -475,6 +483,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode EsES = new LanguageCode("es-ES");
         /// <summary>
+        /// Constant EsMX for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsMX = new LanguageCode("es-MX");
+        /// <summary>
         /// Constant EsUS for LanguageCode
         /// </summary>
         public static readonly LanguageCode EsUS = new LanguageCode("es-US");
@@ -491,6 +503,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode EuES = new LanguageCode("eu-ES");
         /// <summary>
+        /// Constant FaAF for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FaAF = new LanguageCode("fa-AF");
+        /// <summary>
         /// Constant FaIR for LanguageCode
         /// </summary>
         public static readonly LanguageCode FaIR = new LanguageCode("fa-IR");
@@ -506,6 +522,14 @@ namespace Amazon.TranscribeService
         /// Constant FrFR for LanguageCode
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+        /// <summary>
+        /// Constant GaIE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GaIE = new LanguageCode("ga-IE");
+        /// <summary>
+        /// Constant GdGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GdGB = new LanguageCode("gd-GB");
         /// <summary>
         /// Constant GlES for LanguageCode
         /// </summary>
@@ -531,6 +555,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode HrHR = new LanguageCode("hr-HR");
         /// <summary>
+        /// Constant HtHT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HtHT = new LanguageCode("ht-HT");
+        /// <summary>
         /// Constant HuHU for LanguageCode
         /// </summary>
         public static readonly LanguageCode HuHU = new LanguageCode("hu-HU");
@@ -555,6 +583,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
         /// <summary>
+        /// Constant JvID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JvID = new LanguageCode("jv-ID");
+        /// <summary>
         /// Constant KabDZ for LanguageCode
         /// </summary>
         public static readonly LanguageCode KabDZ = new LanguageCode("kab-DZ");
@@ -566,6 +598,10 @@ namespace Amazon.TranscribeService
         /// Constant KkKZ for LanguageCode
         /// </summary>
         public static readonly LanguageCode KkKZ = new LanguageCode("kk-KZ");
+        /// <summary>
+        /// Constant KmKH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KmKH = new LanguageCode("km-KH");
         /// <summary>
         /// Constant KnIN for LanguageCode
         /// </summary>
@@ -622,6 +658,14 @@ namespace Amazon.TranscribeService
         /// Constant MtMT for LanguageCode
         /// </summary>
         public static readonly LanguageCode MtMT = new LanguageCode("mt-MT");
+        /// <summary>
+        /// Constant MyMM for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MyMM = new LanguageCode("my-MM");
+        /// <summary>
+        /// Constant NeNP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NeNP = new LanguageCode("ne-NP");
         /// <summary>
         /// Constant NlNL for LanguageCode
         /// </summary>
@@ -682,6 +726,10 @@ namespace Amazon.TranscribeService
         /// Constant SoSO for LanguageCode
         /// </summary>
         public static readonly LanguageCode SoSO = new LanguageCode("so-SO");
+        /// <summary>
+        /// Constant SqAL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SqAL = new LanguageCode("sq-AL");
         /// <summary>
         /// Constant SrRS for LanguageCode
         /// </summary>
