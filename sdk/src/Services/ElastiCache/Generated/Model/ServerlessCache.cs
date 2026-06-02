@@ -50,6 +50,7 @@ namespace Amazon.ElastiCache.Model
         private string _serverlessCacheName;
         private int? _snapshotRetentionLimit;
         private string _status;
+        private StorageEncryptionType _storageEncryptionType;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userGroupId;
 
@@ -347,6 +348,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// Indicates the type of encryption for data stored at rest in the serverless cache.
+        /// Serverless caches are always encrypted at rest. The value is <c>sse-elasticache</c>
+        /// if an ElastiCache service-managed key is used, or <c>sse-kms</c> if a customer-managed
+        /// KMS key is used.
+        /// </para>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>
