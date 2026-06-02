@@ -81,7 +81,7 @@ namespace SlimGenerator
 
                 // 6. Compile into DLL
                 var generatedRoot = Path.Combine(tempSdkRoot, "src", "Services", serviceConfig.ServiceFolderName);
-                var dllName = $"AWSSDK.{serviceConfig.ServiceFolderName}.dll";
+                var dllName = $"{serviceConfig.ServiceId.Replace(" ", "")}.dll";
                 var outputDllPath = Path.Combine(outputDir, dllName);
 
                 Console.Error.WriteLine($"Compiling {serviceConfig.ServiceFolderName}...");
