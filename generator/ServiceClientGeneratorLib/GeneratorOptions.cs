@@ -101,6 +101,12 @@ namespace ServiceClientGenerator
         public string SelfServiceEndpointPrefix { get; set; }
         public string SelfServiceSigV4Name { get; set; }
 
+        /// <summary>
+        /// When true, generates only the service client and model code (NetStandard).
+        /// Skips tests, nuspec, project files, code analysis, and NetFramework variants.
+        /// </summary>
+        public bool SlimMode { get; set; }
+
         public GeneratorOptions()
         {
             Verbose = false;

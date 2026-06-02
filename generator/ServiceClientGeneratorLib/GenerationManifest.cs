@@ -587,5 +587,26 @@ namespace ServiceClientGenerator
         {
 
         }
+
+        /// <summary>
+        /// Creates a minimal GenerationManifest suitable for slim/single-service generation
+        /// without requiring _manifest.json or _sdk-versions.json files.
+        /// </summary>
+        public static GenerationManifest CreateMinimal(DefaultConfiguration.DefaultConfigurationModel defaultConfig = null)
+        {
+            var manifest = new GenerationManifest();
+            manifest.ServiceConfigurations = new List<ServiceConfiguration>();
+            manifest.ExtensionConfigurations = new List<ExtensionConfiguration>();
+            manifest.ProjectFileConfigurations = new List<ProjectFileConfiguration>();
+            manifest.UnitTestProjectFileConfigurations = new List<ProjectFileConfiguration>();
+            manifest.CoreFileVersion = "4.0.0.0";
+            manifest.CoreVersion = "4.0";
+            manifest.DefaultToPreview = false;
+            manifest.DefaultConfiguration = defaultConfig ?? new DefaultConfiguration.DefaultConfigurationModel
+            {
+                Modes = new System.Collections.Generic.List<DefaultConfiguration.DefaultConfigurationMode>()
+            };
+            return manifest;
+        }
     }
 }

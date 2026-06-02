@@ -150,15 +150,18 @@ namespace ServiceClientGenerator
                 Directory.CreateDirectory(GeneratedFilesRoot);
             }
 
-            // .NET Framework version
-            ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", BclSubFolder);
-            ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", BclSubFolder);
+            if (!Options.SlimMode)
+            {
+                // .NET Framework version
+                ExecuteGenerator(new ServiceClientsNetFramework(), "Amazon" + Configuration.ClassName + "Client.cs", BclSubFolder);
+                ExecuteGenerator(new ServiceInterfaceNetFramework(), "IAmazon" + Configuration.ClassName + ".cs", BclSubFolder);
+            }
 
             // .NET Standard version
             ExecuteGenerator(new ServiceClientsNetStandard(), "Amazon" + Configuration.ClassName + "Client.cs", NetStandardSubFolder);
             ExecuteGenerator(new ServiceInterfaceNetStandard(), "IAmazon" + Configuration.ClassName + ".cs", NetStandardSubFolder);
 
-            if (string.IsNullOrEmpty(Options.SelfServiceModel))
+            if (!Options.SlimMode && string.IsNullOrEmpty(Options.SelfServiceModel))
             {
                 // Do not generate AssemblyInfo.cs and nuspec file for child model.
                 // Use the one generated for the parent model.
@@ -170,7 +173,7 @@ namespace ServiceClientGenerator
                 }
             }
 
-            if (!this.Configuration.IsChildConfig)
+            if (!Options.SlimMode && !this.Configuration.IsChildConfig)
             {
                 ExecuteGeneratorAssemblyInfo();
             }
@@ -186,7 +189,7 @@ namespace ServiceClientGenerator
                 ExecuteGenerator(new EndpointProvider(), "Amazon" + Configuration.ClassName + "EndpointProvider.cs", "Internal");
                 ExecuteGenerator(new EndpointResolver(), "Amazon" + Configuration.ClassName + "EndpointResolver.cs", "Internal");
             }
-            if (Configuration.EndpointTests != null)
+            if (!Options.SlimMode && Configuration.EndpointTests != null)
             {
                 ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
             }
@@ -257,22 +260,29 @@ namespace ServiceClientGenerator
             // Generate any missed structures that are not defined or referenced by a request, response, marshaller, unmarshaller, or exception of an operation
             GenerateStructures(null);
 
-            //Generate endpoint discovery tests for classes that have an endpoint operation
-            if (Configuration.ServiceModel.FindEndpointOperation() != null)
+            if (!Options.SlimMode)
             {
-                var fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
-                ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
-            }
-            ExecuteProjectFileGenerators();
-            // Test that simple customizations were generated correctly
-            if (this.Configuration.ServiceId != "S3")
-            {
-                GenerateCustomizationTests();
-                if (this.Configuration.ServiceModel.Customizations.HasExamples)
+                //Generate endpoint discovery tests for classes that have an endpoint operation
+                if (Configuration.ServiceModel.FindEndpointOperation() != null)
                 {
-                    var servicename = Configuration.Namespace.Split('.').Last();
-                    ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
-                    ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                    var fileName = string.Format("{0}EndpointDiscoveryMarshallingTests.cs", Configuration.ClassName);
+                    ExecuteTestGenerator(new EndpointDiscoveryMarshallingTests(), fileName, "Marshalling");
+                }
+                ExecuteProjectFileGenerators();
+            }
+
+            if (!Options.SlimMode)
+            {
+                // Test that simple customizations were generated correctly
+                if (this.Configuration.ServiceId != "S3")
+                {
+                    GenerateCustomizationTests();
+                    if (this.Configuration.ServiceModel.Customizations.HasExamples)
+                    {
+                        var servicename = Configuration.Namespace.Split('.').Last();
+                        ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
+                        ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+                    }
                 }
             }
 
