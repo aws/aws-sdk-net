@@ -345,7 +345,7 @@ namespace Amazon.Runtime
                 {
                     string serviceSpecificTransformedEnvironmentVariable = TransformServiceId.TransformServiceIdToEnvVariable(ServiceId);
                     string transformedConfigServiceId = TransformServiceId.TransformServiceIdToConfigVariable(ServiceId);
-
+                    // the backing field this.serviceURL is used on purpose here to avoid calling the setter which would nullify the region.
                     if (Environment.GetEnvironmentVariable(serviceSpecificTransformedEnvironmentVariable) != null)
                     {
                         Logger.GetLogger(GetType()).InfoFormat($"ServiceURL configured from service specific environment variable: {serviceSpecificTransformedEnvironmentVariable}.");
