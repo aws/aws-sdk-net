@@ -31,7 +31,10 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the GetThingConnectivityData operation.
-    /// Retrieves the live connectivity status per device.
+    /// Retrieves the live connectivity status per device. If a device has never connected
+    /// to IoT Core or was disconnected for more than 1 hour before fleet indexing's <c>thingConnectivityIndexingMode</c>
+    /// was enabled, the response will have the <c>connected</c> field set to <c>false</c>
+    /// with no additional session details.
     /// </summary>
     public partial class GetThingConnectivityDataRequest : AmazonIoTRequest
     {
