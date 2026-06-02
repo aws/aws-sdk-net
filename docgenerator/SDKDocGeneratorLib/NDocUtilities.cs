@@ -971,14 +971,47 @@ namespace SDKDocGenerator
             return -1;
         }
 
+        // The code-sample ".extra.xml" content is platform-independent, so the parsed examples map is
+        // identical across a service's 4 platform docs. Building it once per service (instead of once
+        // per platform) avoids re-reading + re-parsing those sample files 4x. Value is null when the
+        // service has no sample files.
+        private static readonly ConcurrentDictionary<string, IDictionary<string, string>> _exampleMapCache =
+            new ConcurrentDictionary<string, IDictionary<string, string>>(StringComparer.Ordinal);
+
         public static XDocument LoadAssemblyDocumentationWithSamples(string filePath, string samplesDir, string serviceName)
         {
-            if (!string.IsNullOrEmpty(samplesDir))
+            var examplesMap = GetExamplesMap(samplesDir, serviceName);
+
+            // Parse the (potentially multi-MB) SDK XML exactly once. The previous implementation parsed
+            // it into an XmlDocument, mutated it, then re-parsed the whole DOM into an XDocument via an
+            // XmlNodeReader - i.e. two full XML object models per file. We now load straight into an
+            // XDocument and merge samples in place, halving the parse cost on the doc-load critical path.
+            var sdkDoc = XDocument.Load(filePath, LoadOptions.PreserveWhitespace);
+
+            if (examplesMap != null && examplesMap.Count > 0)
+            {
+                Trace.WriteLine(String.Format("Merging {0} code samples into {1}", serviceName, filePath));
+                ProcessExtraDoc(sdkDoc, examplesMap);
+            }
+
+            return sdkDoc;
+        }
+
+        /// <summary>
+        /// Returns the (cached) member-spec -&gt; example-content map for a service, or null if the
+        /// service has no code-sample files. The map is platform-independent and built once per service.
+        /// </summary>
+        private static IDictionary<string, string> GetExamplesMap(string samplesDir, string serviceName)
+        {
+            if (string.IsNullOrEmpty(samplesDir))
+                return null;
+
+            return _exampleMapCache.GetOrAdd(serviceName, svc =>
             {
                 var extraDocNodes = new List<XmlNode>();
                 foreach (var pattern in new[] { ".extra.xml", ".GeneratedSamples.extra.xml" })
                 {
-                    var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
+                    var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, svc + pattern);
                     if (File.Exists(extraFile))
                     {
                         var extraDoc = new XmlDocument();
@@ -990,21 +1023,8 @@ namespace SDKDocGenerator
                     }
                 }
 
-                if (extraDocNodes.Any())
-                {
-                    Trace.WriteLine(String.Format("Merging {0} code samples into {1}", serviceName, filePath));
-
-                    var sdkDoc = new XmlDocument();
-                    sdkDoc.Load(filePath);
-
-                    var examplesMap = BuildExamplesMap(extraDocNodes);
-                    ProcessExtraDoc(sdkDoc, examplesMap);
-
-                    return XDocument.Load(new XmlNodeReader(sdkDoc), LoadOptions.PreserveWhitespace);
-                }
-            }
-
-            return XDocument.Load(filePath, LoadOptions.PreserveWhitespace);
+                return extraDocNodes.Any() ? BuildExamplesMap(extraDocNodes) : null;
+            });
         }
 
         private static IDictionary<string, string> BuildExamplesMap(List<XmlNode> docNodes)
@@ -1035,27 +1055,30 @@ namespace SDKDocGenerator
             return map;
         }
 
-        private static void ProcessExtraDoc(XmlDocument sdkDocument, IDictionary<string, string> examplesMap)
+        private static void ProcessExtraDoc(XDocument sdkDocument, IDictionary<string, string> examplesMap)
         {
             foreach (var memberSpec in examplesMap.Keys)
             {
-                var docNode = sdkDocument.SelectSingleNode(string.Format("doc/members/member[@name='{0}']", memberSpec));
-                if (null == docNode)
+                var docNode = sdkDocument.XPathSelectElement(string.Format("doc/members/member[@name='{0}']", memberSpec));
+                if (docNode == null)
                 {
                     Trace.WriteLine(String.Format("** member name not found, skipping: {0}", memberSpec), "verbose");
                     continue;
                 }
 
-                XmlNode sdkExampleNode = docNode.SelectSingleNode("example");
-                if (null != sdkExampleNode)
+                // The sample content is an XML fragment (the InnerXml of an <example> element). Wrap it
+                // so it parses, then transplant its child nodes. This mirrors the old XmlDocument
+                // InnerXml assignment: replace the existing <example> body, or append a new <example>.
+                var parsedExample = XElement.Parse("<example>" + examplesMap[memberSpec] + "</example>", LoadOptions.PreserveWhitespace);
+
+                var existingExample = docNode.Element("example");
+                if (existingExample != null)
                 {
-                    sdkExampleNode.InnerXml = examplesMap[memberSpec];
+                    existingExample.ReplaceNodes(parsedExample.Nodes());
                 }
                 else
                 {
-                    string sdkXml = docNode.InnerXml;
-                    sdkXml += String.Format("<example>{0}</example>", examplesMap[memberSpec]);
-                    docNode.InnerXml = sdkXml;
+                    docNode.Add(parsedExample);
                 }
 
                 Trace.WriteLine(string.Format("Successfully updated SDK XML for member {0}", memberSpec), "verbose");
