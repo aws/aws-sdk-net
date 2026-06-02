@@ -409,8 +409,12 @@ namespace Amazon.Runtime
 
         private static string NormalizeServiceURL(string value)
         {
-            if(!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value))
             {
+                // If the URL passed in only has a host name make sure there is an ending "/" to avoid signature mismatch issues.
+                // If there is a resource path do not add a "/" because the marshallers are relying on the URL to be in format without the "/".
+                // API Gateway Management API is an example of a service that vends its own URL that users have to set which has a resource path.
+                // The marshallers add new segments to the resource path with the "/".
                 try
                 {
                     var path = new Uri(value).PathAndQuery;
