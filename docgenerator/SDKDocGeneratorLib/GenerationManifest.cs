@@ -477,10 +477,14 @@ namespace SDKDocGenerator
             var writer = new NamespaceWriter(this, version, namespaceName);
             writer.Write();
 
-            foreach (var type in ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName))
-            {
-                WriteType(version, type);
-            }
+            // Fan the per-type work across spare gate slots. This is the dominant tail cost: a few
+            // services are overwhelmingly concentrated in a single namespace (e.g. EC2's
+            // Amazon.EC2.Model has ~5,000 types), so when such a service is the last one running, a
+            // serial type loop here pins it to one core while the rest idle. Each WriteType is
+            // independent (writes its own files; shared-file cases are guarded write-once), so it is
+            // safe to gate. Borrow-or-inline keeps total concurrency capped at the global degree.
+            var types = ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName).ToList();
+            RunGated(types, type => WriteType(version, type));
         }
 
         void WriteType(FrameworkVersion version, TypeWrapper type)
