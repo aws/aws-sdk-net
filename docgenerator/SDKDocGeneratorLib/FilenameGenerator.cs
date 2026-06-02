@@ -49,8 +49,11 @@ namespace SDKDocGenerator
                     .Replace("&gt;", "!")
                     .Replace("Amazon", "")
                     .Replace("_Model_", "")
-                    .Replace("_Begin", "")
-                    .Replace("_End", "")
+                    // NOTE: previously also stripped "_Begin" and "_End" here. That was intended for
+                    // the legacy APM Begin*/End* method pairs (gone from the v4 SDK), but it
+                    // indiscriminately mangled any member whose name segment started with Begin/End -
+                    // e.g. it collapsed the distinct events EndEventReceived and EventReceived onto a
+                    // single page filename. Removing the strip gives each member a distinct filename.
                     .Replace("Client_", "")
                     .Replace("+", "")
                     .Replace("_", "");
