@@ -92,6 +92,33 @@ namespace SDKDocGenerator.PlatformMap
 
         #endregion
 
+        #region Query Methods (platform availability)
+
+        /// <summary>
+        /// Returns the set of platforms a member (identified by its NDoc signature) is available on,
+        /// or <c>null</c> if the signature was not indexed.
+        ///
+        /// "Available" means the symbol is compiled into that platform's assembly (as scanned by
+        /// <see cref="PlatformMapBuilder"/>), which is the authoritative availability statement used
+        /// to render a member's "Version Information" section. A null return lets callers preserve the
+        /// historical "no data ⇒ assume all platforms" fallback.
+        ///
+        /// Safe to call after <see cref="Dispose"/>: only the assembly contexts are released on
+        /// disposal; the signature → platforms index remains intact.
+        /// </summary>
+        /// <param name="signature">The NDoc member signature (e.g. "T:Amazon.S3.AmazonS3Client").</param>
+        public IReadOnlyCollection<string> GetPlatformsForSignature(string signature)
+        {
+            if (string.IsNullOrEmpty(signature))
+                return null;
+
+            return _memberIndex.TryGetValue(signature, out var entry)
+                ? entry.Platforms
+                : null;
+        }
+
+        #endregion
+
         #region Query Methods (for exclusive page generation)
 
         /// <summary>

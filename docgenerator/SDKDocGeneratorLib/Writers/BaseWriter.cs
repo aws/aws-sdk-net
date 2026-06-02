@@ -500,47 +500,35 @@ namespace SDKDocGenerator.Writers
 
         protected void AddRemarksDocumentation(TextWriter writer)
         {
-            var element = GetSummaryDocumentation();
-            if (element != null)
-            {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "remarks", TypeProvider, this._version);
-                if (string.IsNullOrEmpty(htmlDocs))
-                    return;
-
-                AddSectionHeader(writer, "Remarks");
-                writer.WriteLine(htmlDocs);
-                AddSectionClosing(writer);
-            }
+            WriteDocSection(writer, rootNodeName: "remarks", title: "Remarks");
         }
 
         protected void AddExamples(TextWriter writer)
         {
-            var element = GetSummaryDocumentation();
-            if (element != null)
-            {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "example", TypeProvider, this._version);
-                if (string.IsNullOrEmpty(htmlDocs))
-                    return;
-
-                AddSectionHeader(writer, "Examples");
-                writer.WriteLine(htmlDocs);
-                AddSectionClosing(writer);
-            }
+            WriteDocSection(writer, rootNodeName: "example", title: "Examples");
         }
 
         protected void AddSeeAlso(TextWriter writer)
         {
-            var element = GetSummaryDocumentation();
-            if (element != null)
-            {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "seealso", TypeProvider, this._version);
-                if (string.IsNullOrEmpty(htmlDocs))
-                    return;
+            WriteDocSection(writer, rootNodeName: "seealso", title: "See Also");
+        }
 
-                AddSectionHeader(writer, "See Also");
-                writer.WriteLine(htmlDocs);
-                AddSectionClosing(writer);
-            }
+        // Emits a documentation-derived section (header + transformed HTML body + closing) for the
+        // given XML doc root node, or nothing when there is no summary element or the transform
+        // yields no content. Remarks/Examples/See Also share this exact shape.
+        private void WriteDocSection(TextWriter writer, string rootNodeName, string title)
+        {
+            var element = GetSummaryDocumentation();
+            if (element == null)
+                return;
+
+            var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, rootNodeName, TypeProvider, this._version);
+            if (string.IsNullOrEmpty(htmlDocs))
+                return;
+
+            AddSectionHeader(writer, title);
+            writer.WriteLine(htmlDocs);
+            AddSectionClosing(writer);
         }
 
         protected void AddNamespace(TextWriter writer, string ns, string moduleName)
@@ -559,23 +547,26 @@ namespace SDKDocGenerator.Writers
         protected void AddVersionInformation(TextWriter writer, AbstractWrapper wrapper)
         {
             AddSectionHeader(writer, "Version Information");
-            
-            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper, TypeProvider);
-            var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper, TypeProvider);
-            var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper, TypeProvider);
-            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper, TypeProvider);
 
-            // If there is no documentation then assume it is available for all platforms.
-            var boolNoDocs = docs472 == null && docsCore20 == null && docsNetCoreApp31 == null
-                && docsNet80 == null;
+            // Platform availability is sourced from the unified PlatformAvailabilityMap, which records
+            // a member as available on a platform when its symbol is compiled into that platform's
+            // assembly. (This supersedes the previous heuristic of "has an XML doc comment in that
+            // platform's .xml file", which under-reported members that were present but undocumented
+            // on a given platform.) A null result means the member was not indexed for this service's
+            // map, in which case we fall back to assuming availability on all platforms.
+            var platforms = GetMemberPlatforms(wrapper);
+            var assumeAllPlatforms = platforms == null;
+
+            bool AvailableOn(string platform) =>
+                assumeAllPlatforms || platforms.Any(p => string.Equals(p, platform, StringComparison.OrdinalIgnoreCase));
 
             // .NET Core / .NET
             var netAppVersions = new List<string>();
 
-            if (boolNoDocs || (wrapper != null && docsNet80 != null))
+            if (AvailableOn("net8.0"))
                 netAppVersions.Add("8.0 and newer");
 
-            if (boolNoDocs || (wrapper != null && docsNetCoreApp31 != null))
+            if (AvailableOn("netcoreapp3.1"))
                 netAppVersions.Add("Core 3.1");
 
             if (netAppVersions.Count > 0)
@@ -584,9 +575,9 @@ namespace SDKDocGenerator.Writers
             }
 
             // .NET Standard
-            var netstandardVersions = new List<string>();            
-            if (boolNoDocs || (wrapper != null && docsCore20 != null))
-                netstandardVersions.Add("2.0");            
+            var netstandardVersions = new List<string>();
+            if (AvailableOn("netstandard2.0"))
+                netstandardVersions.Add("2.0");
 
             if(netstandardVersions.Count > 0)
             {
@@ -595,15 +586,44 @@ namespace SDKDocGenerator.Writers
 
             // .NET Framework
             var netframeworkVersions = new List<string>();
-            if (boolNoDocs || (wrapper != null && docs472 != null))
+            if (AvailableOn("net472"))
                 netframeworkVersions.Add("4.7.2 and newer");
 
             if (netframeworkVersions.Count > 0)
             {
                 writer.WriteLine("<p><strong>.NET Framework: </strong><br/>Supported in: {0}<br/>", string.Join(", ", netframeworkVersions));
-            }                        
+            }
 
             AddSectionClosing(writer);
+        }
+
+        // Resolves the set of platforms a documented member is available on, via the service's
+        // PlatformAvailabilityMap. Returns null when there is no map or the member's signature was
+        // not indexed (callers treat null as "assume all platforms").
+        private IReadOnlyCollection<string> GetMemberPlatforms(AbstractWrapper wrapper)
+        {
+            var map = Artifacts?.PlatformMap;
+            if (map == null)
+                return null;
+
+            var signature = DeterminePlatformSignature(wrapper);
+            return signature == null ? null : map.GetPlatformsForSignature(signature);
+        }
+
+        // Computes the NDoc member signature used as the PlatformAvailabilityMap key. Uses the same
+        // PlatformMap.MemberSignature helpers the map was built with, so the keys match exactly.
+        private static string DeterminePlatformSignature(AbstractWrapper wrapper)
+        {
+            switch (wrapper)
+            {
+                case TypeWrapper t: return PlatformMap.MemberSignature.ForType(t);
+                case PropertyInfoWrapper p: return PlatformMap.MemberSignature.ForProperty(p);
+                case MethodInfoWrapper m: return PlatformMap.MemberSignature.ForMethod(m);
+                case ConstructorInfoWrapper c: return PlatformMap.MemberSignature.ForConstructor(c);
+                case FieldInfoWrapper f: return PlatformMap.MemberSignature.ForField(f);
+                case EventInfoWrapper e: return PlatformMap.MemberSignature.ForEvent(e);
+                default: return null;
+            }
         }
 
         protected void AddSyntax(TextWriter writer, string csharpSyntax)

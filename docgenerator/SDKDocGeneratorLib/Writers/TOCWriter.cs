@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Json;
-using Json.LitJson;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace SDKDocGenerator.Writers
 {
@@ -33,7 +33,7 @@ namespace SDKDocGenerator.Writers
         /// one single master toc at the end of processing of all namespaces.
         /// </summary>
         /// <example>
-        /// An partial and annotated example of what one data file looks like for the 
+        /// An partial and annotated example of what one data file looks like for the
         /// 'Amazon' namespace:
         /// {
         ///     "Amazon" :                              // this is used as the display name of the root for the entries
@@ -56,14 +56,18 @@ namespace SDKDocGenerator.Writers
         /// </example>
         public void BuildNamespaceToc(string nameSpace, AssemblyWrapper sdkAssemblyWrapper)
         {
-            var sb = new StringBuilder();
-            var jsonWriter = new JsonWriter(sb);
+            string nsTocContents;
+            using (var stream = new MemoryStream())
+            {
+                using (var jsonWriter = new Utf8JsonWriter(stream))
+                {
+                    jsonWriter.WriteStartObject();
+                    WriteNamespaceToc(jsonWriter, nameSpace, sdkAssemblyWrapper);
+                    jsonWriter.WriteEndObject();
+                }
+                nsTocContents = Encoding.UTF8.GetString(stream.ToArray());
+            }
 
-            jsonWriter.WriteObjectStart();
-            WriteNamespaceToc(jsonWriter, nameSpace, sdkAssemblyWrapper);
-            jsonWriter.WriteObjectEnd();
-
-            var nsTocContents = sb.ToString();
             lock (_tocLock)
             {
                 _namespaceTocs[nameSpace] = nsTocContents;
@@ -83,7 +87,7 @@ namespace SDKDocGenerator.Writers
             return finalBody;
         }
 
-        void WriteNamespaceToc(JsonWriter writer, string ns, AssemblyWrapper sdkAssemblyWrapper)
+        void WriteNamespaceToc(Utf8JsonWriter writer, string ns, AssemblyWrapper sdkAssemblyWrapper)
         {
             var tocId = ns.Replace(".", "_");
 
@@ -91,17 +95,12 @@ namespace SDKDocGenerator.Writers
                                           GenerationManifest.OutputSubFolderFromNamespace(ns),
                                           FilenameGenerator.GenerateNamespaceFilename(ns)).Replace('\\', '/');
 
-            writer.WritePropertyName(ns);
-            writer.WriteObjectStart();
+            writer.WriteStartObject(ns);
 
-            writer.WritePropertyName(TocIdFieldName);
-            writer.Write(tocId);
+            writer.WriteString(TocIdFieldName, tocId);
+            writer.WriteString(TocHrefFieldName, nsFilePath);
 
-            writer.WritePropertyName(TocHrefFieldName);
-            writer.Write(nsFilePath);
-
-            writer.WritePropertyName(TocNodesFieldName);
-            writer.WriteObjectStart();
+            writer.WriteStartObject(TocNodesFieldName);
 
             foreach (var type in sdkAssemblyWrapper.GetTypesForNamespace(ns).OrderBy(x => x.Name))
             {
@@ -109,19 +108,15 @@ namespace SDKDocGenerator.Writers
                                             GenerationManifest.OutputSubFolderFromNamespace(type.Namespace),
                                             FilenameGenerator.GenerateFilename(type)).Replace('\\', '/');
 
-                writer.WritePropertyName(type.GetDisplayName(false));
-                writer.WriteObjectStart();
-                writer.WritePropertyName(TocIdFieldName);
-                writer.Write(type.GetDisplayName(true).Replace(".", "_"));
-
-                writer.WritePropertyName(TocHrefFieldName);
-                writer.Write(filePath);
-                writer.WriteObjectEnd();
+                writer.WriteStartObject(type.GetDisplayName(false));
+                writer.WriteString(TocIdFieldName, type.GetDisplayName(true).Replace(".", "_"));
+                writer.WriteString(TocHrefFieldName, filePath);
+                writer.WriteEndObject();
             }
 
-            writer.WriteObjectEnd();
+            writer.WriteEndObject();
 
-            writer.WriteObjectEnd();
+            writer.WriteEndObject();
         }
 
         /// <summary>
@@ -135,11 +130,12 @@ namespace SDKDocGenerator.Writers
             writer.Write("<ul class=\"awstoc\">");
             foreach (var ns in _namespaceTocs.Keys.OrderBy(x => x))
             {
-                var nsJson = JsonMapper.ToObject(new JsonReader(_namespaceTocs[ns]));
+                var nsJson = (JsonObject)JsonNode.Parse(_namespaceTocs[ns]);
 
-                var nsName = nsJson.PropertyNames.First();
-                var nsData = nsJson[0];
-                var nsId = (string) nsData["id"];
+                var nsProperty = nsJson.First();
+                var nsName = nsProperty.Key;
+                var nsData = (JsonObject)nsProperty.Value;
+                var nsId = (string)nsData["id"];
                 var nsFilePath = (string)nsData["href"];
 
                 writer.Write(@"<li class=""nav"" id=""{0}"">
@@ -150,15 +146,16 @@ namespace SDKDocGenerator.Writers
                              nsName);
                 writer.Write("<ul role=\"region\" aria-labelledby=\"{0}\"/>",nsName);
 
-                var nsNodes = nsData["nodes"];
-                foreach (var p in nsNodes.PropertyNames)
+                var nsNodes = (JsonObject)nsData["nodes"];
+                foreach (var node in nsNodes)
                 {
-                    var nodeObj = nsNodes[p];
+                    var p = node.Key;
+                    var nodeObj = (JsonObject)node.Value;
                     writer.Write("<li class=\"nav leaf\" id=\"{0}\"><a class=\"nav leaf\" href=\"{1}\" target=\"contentpane\">{2}</a></li>",
-                                 nodeObj["id"],
-                                 nodeObj["href"],
+                                 (string)nodeObj["id"],
+                                 (string)nodeObj["href"],
                                  p);
-                } 
+                }
 
                 writer.Write("</ul></li>");
             }
