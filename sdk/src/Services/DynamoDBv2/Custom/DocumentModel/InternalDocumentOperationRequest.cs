@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
-   
-
     /// <summary>
     /// Represents a request to get a single item from a DynamoDB table using the Document Model.
     /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
