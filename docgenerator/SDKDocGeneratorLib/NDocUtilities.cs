@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -59,7 +60,10 @@ namespace SDKDocGenerator
         // The reason we cache the doc data on the side instead of directly referencing doc instances from
         // the type information is becasue we are loading the assemblies for reflection in a separate app domain.
 
-        private static IDictionary<string, IDictionary<string, XElement>> _ndocCache = new Dictionary<string, IDictionary<string, XElement>>();
+        // ConcurrentDictionary so documentation can be loaded/looked up safely when services
+        // are generated in parallel. Each (service, platform) docId is unique, so concurrent
+        // LoadDocumentation calls populate distinct keys.
+        private static readonly ConcurrentDictionary<string, IDictionary<string, XElement>> _ndocCache = new ConcurrentDictionary<string, IDictionary<string, XElement>>();
 
         public static string GenerateDocId(string serviceName, string platform)
         {
@@ -78,17 +82,14 @@ namespace SDKDocGenerator
                 // the same (service, platform) pair (e.g., during Generate() and again during
                 // GenerateExclusivePagesFromMap()). Each docId is unique per service+platform,
                 // so this only prevents redundant re-parsing of the same XML file.
-                if (!_ndocCache.ContainsKey(docId))
-                {
-                    _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
-                }
+                _ndocCache.GetOrAdd(docId, _ => CreateNDocTable(platformSpecificNdocFile, serviceName, options));
             }
         }
 
         public static void UnloadDocumentation(string serviceName, string platform)
         {
             var docId = GenerateDocId(serviceName, platform);
-            _ndocCache.Remove(docId);
+            _ndocCache.TryRemove(docId, out _);
         }
 
         public static IDictionary<string, XElement> GetDocumentationInstance(string serviceName, string platform)
@@ -98,8 +99,7 @@ namespace SDKDocGenerator
 
         public static IDictionary<string, XElement> GetDocumentationInstance(string docId)
         {
-            IDictionary<string, XElement> doc = null;
-            if (_ndocCache.TryGetValue(docId, out doc))
+            if (_ndocCache.TryGetValue(docId, out var doc))
             {
                 return doc;
             }

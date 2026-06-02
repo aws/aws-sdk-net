@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
 
@@ -13,6 +14,51 @@ namespace SDKDocGenerator
     public class SdkDocGenerator
     {
         private long? _startTimeTicks;
+
+        // Per-phase wall-clock timings, recorded via TimePhase, printed at the end of a run
+        // so we can see where build time is actually spent before optimizing.
+        private readonly List<KeyValuePair<string, TimeSpan>> _phaseTimings = new List<KeyValuePair<string, TimeSpan>>();
+
+        /// <summary>
+        /// Times the supplied phase, recording its elapsed wall-clock time for the
+        /// end-of-run breakdown printed by <see cref="PrintPhaseTimings"/>.
+        /// </summary>
+        private void TimePhase(string name, Action body)
+        {
+            var sw = Stopwatch.StartNew();
+            try
+            {
+                body();
+            }
+            finally
+            {
+                sw.Stop();
+                _phaseTimings.Add(new KeyValuePair<string, TimeSpan>(name, sw.Elapsed));
+            }
+        }
+
+        /// <summary>
+        /// Prints the per-phase wall-clock breakdown collected during the run.
+        /// </summary>
+        private void PrintPhaseTimings()
+        {
+            if (_phaseTimings.Count == 0)
+                return;
+
+            var total = TimeSpan.Zero;
+            foreach (var p in _phaseTimings)
+                total += p.Value;
+
+            Console.WriteLine();
+            Console.WriteLine("Phase timing breakdown:");
+            foreach (var p in _phaseTimings)
+            {
+                var pct = total.TotalMilliseconds > 0 ? (p.Value.TotalMilliseconds / total.TotalMilliseconds) * 100.0 : 0.0;
+                Console.WriteLine("  {0,-40} {1,8:N1}s  ({2,5:N1}%)", p.Key, p.Value.TotalSeconds, pct);
+            }
+            Console.WriteLine("  {0,-40} {1,8:N1}s", "TOTAL (sum of phases)", total.TotalSeconds);
+            Console.WriteLine();
+        }
         // These may be packaged in the assemblies folder for non-NuGet users,
         // but shouldn't appear in the SDK's API reference
         private static readonly IEnumerable<string> _assembliesToSkip = new HashSet<string> 
@@ -97,14 +143,16 @@ namespace SDKDocGenerator
 
             // use the sdk root and primary platform to determine the set of
             // service manifests to process
-            var manifests = ConstructGenerationManifests();
+            IList<GenerationManifest> manifests = null;
+            TimePhase("Construct manifests", () => manifests = ConstructGenerationManifests());
             TOCWriter = new TOCWriter(options);
 
             GenerationManifest coreManifest = null;
             DeferredTypesProvider deferredTypes = new DeferredTypesProvider(null);
 
             // Generate the Code Examples fragments for all services
-            ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile);
+            TimePhase("Generate example fragments",
+                () => ExampleMetadataParser.GenerateExampleFragments(options.ExampleMetaJson, options.ExamplesErrorFile));
 
             // Find Core manifest first - we need to pre-load its documentation
             // because service types may inherit from Core types and need to look up
@@ -121,7 +169,7 @@ namespace SDKDocGenerator
             // Pre-load Core documentation for all platforms before generating service docs
             if (coreManifest != null)
             {
-                coreManifest.PreloadDocumentation();
+                TimePhase("Preload Core documentation", () => coreManifest.PreloadDocumentation());
             }
 
             // Build platform availability maps for all services
@@ -131,114 +179,156 @@ namespace SDKDocGenerator
 
             Info("Building platform availability maps for all services...");
 
-            foreach (var manifest in manifests)
+            TimePhase("Build platform maps", () =>
             {
-                PlatformMap.PlatformAvailabilityMap map = null;
-                try
+                // Building a service's platform map is independent of every other service (it loads
+                // that service's assemblies and writes only to its own manifest), so this is safe to
+                // parallelize when requested.
+                Action<GenerationManifest> buildMapFor = manifest =>
                 {
-                    map = PlatformMap.PlatformMapBuilder.BuildMap(
-                        manifest.ServiceName,
-                        manifest.AssemblyName,
-                        availablePlatforms,
-                        Options.Platform,
-                        Options.SDKAssembliesRoot,
-                        Options.Verbose);
-
-                    manifest.AttachPlatformMap(map);
-
-                    if (Options.Verbose)
+                    PlatformMap.PlatformAvailabilityMap map = null;
+                    try
                     {
-                        Info("  Built platform map for {0}: {1} members across {2} platforms ({3} restricted)",
+                        map = PlatformMap.PlatformMapBuilder.BuildMap(
                             manifest.ServiceName,
-                            map.MemberCount,
-                            map.AllPlatforms.Count,
-                            map.PlatformRestrictedMemberCount);
+                            manifest.AssemblyName,
+                            availablePlatforms,
+                            Options.Platform,
+                            Options.SDKAssembliesRoot,
+                            Options.Verbose);
+
+                        manifest.AttachPlatformMap(map);
+
+                        if (Options.Verbose)
+                        {
+                            Info("  Built platform map for {0}: {1} members across {2} platforms ({3} restricted)",
+                                manifest.ServiceName,
+                                map.MemberCount,
+                                map.AllPlatforms.Count,
+                                map.PlatformRestrictedMemberCount);
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Dispose the map if it was built but attachment failed (C2)
-                    map?.Dispose();
-                    // Log but don't fail entire generation if one service fails
-                    Info("  WARNING: Failed to build platform map for {0}: {1}",
-                        manifest.ServiceName, ex.Message);
-                }
-            }
+                    catch (Exception ex)
+                    {
+                        // Dispose the map if it was built but attachment failed (C2)
+                        map?.Dispose();
+                        // Log but don't fail entire generation if one service fails
+                        Info("  WARNING: Failed to build platform map for {0}: {1}",
+                            manifest.ServiceName, ex.Message);
+                    }
+                };
+
+                var degree = Options.MaxDegreeOfParallelism;
+                if (degree > 1)
+                    Parallel.ForEach(OrderLargestFirst(manifests), new ParallelOptions { MaxDegreeOfParallelism = degree }, buildMapFor);
+                else
+                    foreach (var manifest in manifests)
+                        buildMapFor(manifest);
+            });
 
             try
             {
-                foreach (var m in manifests)
+                TimePhase("Generate service pages", () =>
                 {
-                    if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        continue;
-                    }
+                    var serviceManifests = manifests
+                        .Where(m => !m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
+                        .ToList();
 
-                    m.Generate(deferredTypes, TOCWriter);
-                }
+                    var degree = Options.MaxDegreeOfParallelism;
+                    if (degree > 1)
+                    {
+                        Info("Generating service pages in parallel (max degree {0})...", degree);
+                        Parallel.ForEach(
+                            OrderLargestFirst(serviceManifests),
+                            new ParallelOptions { MaxDegreeOfParallelism = degree },
+                            m => m.Generate(deferredTypes, TOCWriter));
+                    }
+                    else
+                    {
+                        foreach (var m in serviceManifests)
+                        {
+                            m.Generate(deferredTypes, TOCWriter);
+                        }
+                    }
+                });
 
                 // now all service assemblies are processed, handle core plus any types in those assemblies that
                 // we elected to defer until we processed core.
                 if (coreManifest != null)
                 {
-                    coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
-                    coreManifest.Generate(null, TOCWriter);
+                    TimePhase("Generate Core pages", () =>
+                    {
+                        coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
+                        coreManifest.Generate(null, TOCWriter);
+                    });
                 }
 
                 // Generate pages for platform-exclusive APIs (e.g., H2 methods only in net8.0)
                 // The unified platform map already contains wrappers for exclusive members
                 Info("Generating exclusive member pages from unified platform map...");
 
-                // Re-load Core documentation before exclusive page generation.
-                // Class pages may contain properties inherited from Core (e.g., ReadWriteTimeout).
-                if (coreManifest != null)
+                TimePhase("Generate exclusive pages", () =>
                 {
-                    coreManifest.PreloadDocumentation();
-                }
+                    // Re-load Core documentation before exclusive page generation.
+                    // Class pages may contain properties inherited from Core (e.g., ReadWriteTimeout).
+                    if (coreManifest != null)
+                    {
+                        coreManifest.PreloadDocumentation();
+                    }
 
-                // Process service manifests first, then Core.
-                // Core is processed last because it may depend on deferred types
-                // from service assemblies, and its exclusive members (e.g.,
-                // ClientConfig.SetWebProxy(IWebProxy)) need page generation too.
-                foreach (var manifest in manifests)
-                {
-                    if (manifest.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
-                        continue;
+                    // Process service manifests first, then Core.
+                    // Core is processed last because it may depend on deferred types
+                    // from service assemblies, and its exclusive members (e.g.,
+                    // ClientConfig.SetWebProxy(IWebProxy)) need page generation too.
+                    var exclusiveServiceManifests = manifests
+                        .Where(m => !m.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase))
+                        .ToList();
 
-                    manifest.GenerateExclusivePagesFromMap(TOCWriter);
-                }
+                    var exclusiveDegree = Options.MaxDegreeOfParallelism;
+                    if (exclusiveDegree > 1)
+                        Parallel.ForEach(
+                            OrderLargestFirst(exclusiveServiceManifests),
+                            new ParallelOptions { MaxDegreeOfParallelism = exclusiveDegree },
+                            m => m.GenerateExclusivePagesFromMap(TOCWriter));
+                    else
+                        foreach (var manifest in exclusiveServiceManifests)
+                            manifest.GenerateExclusivePagesFromMap(TOCWriter);
 
-                // Now process Core's exclusive members
-                if (coreManifest != null)
-                {
-                    coreManifest.GenerateExclusivePagesFromMap(TOCWriter);
-                }
+                    // Now process Core's exclusive members (serial, after services join)
+                    if (coreManifest != null)
+                    {
+                        coreManifest.GenerateExclusivePagesFromMap(TOCWriter);
+                    }
+                });
 
                 Info("Generating table of contents entries...");
-                TOCWriter.Write();
+                TimePhase("Write TOC", () => TOCWriter.Write());
 
-                CopyVersionInfoManifest();
-
-                if (options.WriteStaticContent)
+                TimePhase("Copy version + static content", () =>
                 {
-                    Info("Generating/copying static content:");
-                    Info("...creating landing page");
-                    var lpWriter = new LandingPageWriter(options);
-                    lpWriter.Write();
+                    CopyVersionInfoManifest();
 
-                    Info("...copying static resources");
-                    var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
-                    FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
-                }
+                    if (options.WriteStaticContent)
+                    {
+                        Info("Generating/copying static content:");
+                        Info("...creating landing page");
+                        var lpWriter = new LandingPageWriter(options);
+                        lpWriter.Write();
 
-                // Write out all the redirect rules for doc cross-linking.
-                using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
-                {
-                    SDKDocRedirectWriter.Write(stream);
-                }
+                        Info("...copying static resources");
+                        var sourceLocation = Directory.GetParent(typeof(SdkDocGenerator).Assembly.Location).FullName;
+                        FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
+                    }
 
-                // Remove example fragments
-                ExampleMetadataParser.CleanupExampleFragments();
+                    // Write out all the redirect rules for doc cross-linking.
+                    using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
+                    {
+                        SDKDocRedirectWriter.Write(stream);
+                    }
+
+                    // Remove example fragments
+                    ExampleMetadataParser.CleanupExampleFragments();
+                });
             }
             finally
             {
@@ -249,6 +339,8 @@ namespace SDKDocGenerator
                     manifest.DisposePlatformMap();
                 }
             }
+
+            PrintPhaseTimings();
 
             return 0;
         }
@@ -361,6 +453,24 @@ namespace SDKDocGenerator
         {
             var platformSubfolders = Directory.GetDirectories(Options.SDKAssembliesRoot, "*", SearchOption.TopDirectoryOnly);
             return platformSubfolders.Select(Path.GetFileName).ToList();
+        }
+
+        /// <summary>
+        /// Orders manifests largest-first so the biggest services start at the front of a parallel
+        /// run. This minimizes the "long pole" tail where one huge service finishes long after the
+        /// worker pool would otherwise have drained. Assembly file size is a cheap, stable proxy for
+        /// how much work a service represents and is available before platform maps are built.
+        /// Ordering only affects scheduling, not output (pages are independent; the TOC is sorted).
+        /// </summary>
+        private static IEnumerable<GenerationManifest> OrderLargestFirst(IEnumerable<GenerationManifest> manifests)
+        {
+            return manifests
+                .OrderByDescending(m =>
+                {
+                    try { return new FileInfo(m.AssemblyPath).Length; }
+                    catch { return 0L; }
+                })
+                .ToList();
         }
 
         private void Info(string message)

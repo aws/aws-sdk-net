@@ -107,6 +107,14 @@ namespace SDKDocGenerator
         public string CodeSamplesRootFolder { get; set; }
 
         /// <summary>
+        /// Maximum number of services to process concurrently during page generation.
+        /// 1 (the default) means fully serial/deterministic generation. A value &gt; 1
+        /// (or 0/negative to mean "use all available cores") enables parallel generation
+        /// across services. Output is identical regardless of this setting.
+        /// </summary>
+        public int MaxDegreeOfParallelism { get; set; } = 1;
+
+        /// <summary>
         /// Returns the concatenation of the output folder and the content subfolder
         /// </summary>
         public string ComputedContentFolder

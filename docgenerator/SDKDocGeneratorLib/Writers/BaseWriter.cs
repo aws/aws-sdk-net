@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -12,6 +13,19 @@ namespace SDKDocGenerator.Writers
 {
     public abstract class BaseWriter
     {
+        // Tracks output directories we've already created so we don't stat + (re)create the
+        // filesystem entry on every one of the 100k+ pages. Thousands of pages share a directory,
+        // so this turns one filesystem hit per page into one per unique directory. ConcurrentDictionary
+        // keeps it safe under parallel generation.
+        private static readonly ConcurrentDictionary<string, bool> _ensuredDirectories =
+            new ConcurrentDictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+
+        // A per-thread reusable buffer for assembling each page, so we don't allocate a fresh
+        // (potentially large) StringBuilder for every one of the 100k+ pages. [ThreadStatic] keeps
+        // it isolated per worker thread under parallel generation; the in-use guard falls back to a
+        // throwaway buffer in the unlikely event Write() is ever re-entered on the same thread.
+        [ThreadStatic] private static StringBuilder _pageBuffer;
+        [ThreadStatic] private static bool _pageBufferInUse;
         protected FrameworkVersion _version;        
 
         public static readonly List<TableColumnHeader> FieldTableColumnHeaders = new List<TableColumnHeader>
@@ -103,16 +117,38 @@ namespace SDKDocGenerator.Writers
                 throw;
             }
 
-            var directory = new FileInfo(filename).Directory.FullName;
+            var directory = Path.GetDirectoryName(filename);
 
-            if (!Directory.Exists(directory))
+            // Ensure the directory exists, but only touch the filesystem the first time we see it.
+            _ensuredDirectories.GetOrAdd(directory, dir =>
             {
-                Console.WriteLine("\t\tcreating directory: {0}", directory);
-                Directory.CreateDirectory(directory);
+                if (!Directory.Exists(dir))
+                {
+                    Console.WriteLine("\t\tcreating directory: {0}", dir);
+                    Directory.CreateDirectory(dir);
+                }
+                return true;
+            });
+
+            // Reuse a per-thread StringBuilder to assemble the page rather than allocating one per
+            // page. If this thread is somehow already mid-Write (re-entrancy), fall back to a fresh
+            // buffer so we never corrupt an in-progress page.
+            var reuseBuffer = !_pageBufferInUse;
+            StringBuilder buffer;
+            if (reuseBuffer)
+            {
+                buffer = _pageBuffer ?? (_pageBuffer = new StringBuilder(8 * 1024));
+                buffer.Clear();
+                _pageBufferInUse = true;
+            }
+            else
+            {
+                buffer = new StringBuilder(8 * 1024);
             }
 
-            using (var writer = new StringWriter())
+            try
             {
+                var writer = new StringWriter(buffer);
                 writer.WriteLine("<html>");
                 writer.WriteLine("<head>");
                
@@ -158,22 +194,28 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("</body>");
                 writer.WriteLine("</html>");
 
+                // Operate directly on the buffer to avoid extra full-string copies of every
+                // (potentially large) page.
+
                 // normalize all line endings so any docs committed into Git present a consistent
                 // set of line terminators for core.autocrlf to work with
-                var content = new StringBuilder(writer.ToString());
-                content.Replace("\r\n", "\n").Replace("\n", "\r\n");
+                buffer.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
                 // The XML documentation will use the "<c>" tag, but the corresponding HTML tag is "<code>".
                 // There's also a "<code>" tag in XML docs, but it has a different meaning (multiple lines of code); this can cause formatting issues such as
                 // https://github.com/aws/aws-sdk-net/issues/1934 and https://github.com/aws/aws-sdk-net/issues/1954
-                content
+                buffer
                     .Replace("<c>", "<code>")
                     .Replace("</c>", "</code>");
 
-                using (var fileWriter = new StreamWriter(filename))
-                {
-                    fileWriter.Write(content);
-                }
+                // File.WriteAllText uses UTF-8 without a BOM, matching the previous StreamWriter
+                // default, so the bytes on disk are unchanged.
+                File.WriteAllText(filename, buffer.ToString());
+            }
+            finally
+            {
+                if (reuseBuffer)
+                    _pageBufferInUse = false;
             }
         }
 

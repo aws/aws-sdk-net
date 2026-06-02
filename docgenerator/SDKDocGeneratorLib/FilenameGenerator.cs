@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,45 +29,44 @@ namespace SDKDocGenerator
         // HttpHeader in CognitoIdentityProvider vs HTTPHeader in WAF/WAFRegional. We also use
         // case sensitive comparison in the unlikely event a service introduces shapes with
         // the same name differing only in case.
-        private static readonly Dictionary<string, string> FixedupNameDictionary = new Dictionary<string, string>(StringComparer.Ordinal);
+        // ConcurrentDictionary so filename generation is safe when services are generated in
+        // parallel. The Fixup computation is pure, so if two threads race on the same key they
+        // produce identical results; GetOrAdd keeps the cache consistent.
+        private static readonly ConcurrentDictionary<string, string> FixedupNameDictionary = new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
 
         private static string Fixup(string name, TypeWrapper type = null)
         {
             var lookupKey = type == null ? name : string.Concat(type.Namespace, ".", name);
-            string fixedUpName;
-            if (FixedupNameDictionary.TryGetValue(lookupKey, out fixedUpName))
+
+            return FixedupNameDictionary.GetOrAdd(lookupKey, _ =>
             {
-                return fixedUpName;
-            }
+                var sb = new StringBuilder(name);
 
-            var sb = new StringBuilder(name);
+                // don't use encoded <> in filename, as browsers re-encode it in links to %3C
+                // and the link fails
+                sb.Replace('.', '_')
+                    .Replace("&lt;", "!")
+                    .Replace("&gt;", "!")
+                    .Replace("Amazon", "")
+                    .Replace("_Model_", "")
+                    .Replace("_Begin", "")
+                    .Replace("_End", "")
+                    .Replace("Client_", "")
+                    .Replace("+", "")
+                    .Replace("_", "");
 
-            // don't use encoded <> in filename, as browsers re-encode it in links to %3C
-            // and the link fails
-            sb.Replace('.', '_')
-                .Replace("&lt;", "!")
-                .Replace("&gt;", "!")
-                .Replace("Amazon", "")
-                .Replace("_Model_", "")
-                .Replace("_Begin", "")
-                .Replace("_End", "")
-                .Replace("Client_", "")
-                .Replace("+", "")
-                .Replace("_", "");
+                foreach (var k in ServiceNamespaceContractions.Keys)
+                {
+                    sb.Replace(k, ServiceNamespaceContractions[k]);
+                }
 
-            foreach (var k in ServiceNamespaceContractions.Keys)
-            {
-                sb.Replace(k, ServiceNamespaceContractions[k]);
-            }
+                if (sb.Length > MAX_FILE_SIZE)
+                {
+                    throw new ApplicationException(string.Format("Filename: {0} is too long", sb));
+                }
 
-            if (sb.Length > MAX_FILE_SIZE)
-            {
-                throw new ApplicationException(string.Format("Filename: {0} is too long", sb));
-            }
-
-            fixedUpName = sb.ToString();
-            FixedupNameDictionary[lookupKey] = fixedUpName;
-            return fixedUpName;
+                return sb.ToString();
+            });
         }
 
         public static string GenerateParametersTail(IList<ParameterInfoWrapper> parameters)

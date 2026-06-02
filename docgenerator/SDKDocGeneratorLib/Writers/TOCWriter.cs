@@ -10,10 +10,13 @@ namespace SDKDocGenerator.Writers
 {
     public class TOCWriter : BaseTemplateWriter
     {
-        private readonly Dictionary<string, string> _namespaceTocs = new Dictionary<string, string>(); 
-
-        private const string TocFilesFolderName = "_tocfiles";
-        private const string TocFilenameSuffix = ".toc.json";
+        private readonly Dictionary<string, string> _namespaceTocs = new Dictionary<string, string>();
+        // A single TOCWriter instance is shared across all manifests and BuildNamespaceToc may be
+        // called concurrently when services are generated in parallel. This guards the shared
+        // _namespaceTocs collection and the per-namespace file persistence. Write() runs after all
+        // generation completes, and TransformNamespaceTocsToHtml orders by namespace, so the
+        // emitted TOC is identical regardless of the order namespaces were processed.
+        private readonly object _tocLock = new object();
 
         private const string TocIdFieldName = "id";
         private const string TocHrefFieldName = "href";
@@ -61,12 +64,10 @@ namespace SDKDocGenerator.Writers
             jsonWriter.WriteObjectEnd();
 
             var nsTocContents = sb.ToString();
-            if (_namespaceTocs.ContainsKey(nameSpace))
+            lock (_tocLock)
+            {
                 _namespaceTocs[nameSpace] = nsTocContents;
-            else
-                _namespaceTocs.Add(nameSpace, nsTocContents);
-
-            PersistNamespaceToc(nameSpace);
+            }
         }
 
         protected override string GetTemplateName()
@@ -81,27 +82,6 @@ namespace SDKDocGenerator.Writers
             var finalBody = templateBody.Replace("{TOC}", tocContent);
             return finalBody;
         }
-
-        /// <summary>
-        /// Loads the toc snippet file for the specified namespace, adding it to the managed
-        /// collection for later collation into the overall toc file.
-        /// </summary>
-        //void LoadNamespaceToc(string nameSpace)
-        //{
-        //    var filePath = Path.Combine(Options.ComputedContentFolder, tocFilesFolderName);
-        //    if (!Directory.Exists(filePath))
-        //        return;
-
-        //    var tocFile = Path.Combine(filePath, nameSpace + extensionPattern);
-        //    if (File.Exists(tocFile))
-        //    {
-        //        using (var reader = File.OpenText(tocFile))
-        //        {
-        //            var tocContent = reader.ReadToEnd();
-        //            _namespaceTocs.Add(nameSpace, tocContent);
-        //        }
-        //    }
-        //}
 
         void WriteNamespaceToc(JsonWriter writer, string ns, AssemblyWrapper sdkAssemblyWrapper)
         {
@@ -142,22 +122,6 @@ namespace SDKDocGenerator.Writers
             writer.WriteObjectEnd();
 
             writer.WriteObjectEnd();
-        }
-
-        /// <summary>
-        /// Persists a toc snippet file, in json format, from the managed collection.
-        /// </summary>
-        void PersistNamespaceToc(string nameSpace)
-        {
-            var tocFilesSubfolder = Path.Combine(Options.ComputedContentFolder, TocFilesFolderName);
-            if (!Directory.Exists(tocFilesSubfolder))
-                Directory.CreateDirectory(tocFilesSubfolder);
-
-            var filePath = Path.Combine(tocFilesSubfolder, nameSpace + TocFilenameSuffix);
-            using (var writer = File.CreateText(filePath))
-            {
-                writer.Write(_namespaceTocs[nameSpace]);                    
-            }
         }
 
         /// <summary>

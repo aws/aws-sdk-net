@@ -10,6 +10,13 @@
     <FileVersion>1.0.0.0</FileVersion>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <NuGetAuditMode>direct</NuGetAuditMode>
+
+    <!-- Doc generation is highly parallel and allocation-heavy (100k+ pages of string building).
+         Server GC uses a per-core heap + dedicated GC threads, which significantly improves
+         throughput under that load on multi-core machines. Concurrent GC keeps collections off
+         the critical path. Output is unaffected. -->
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SDKDocGeneratorLib\SDKDocGeneratorLib.csproj" />

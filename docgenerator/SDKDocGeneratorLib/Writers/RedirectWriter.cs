@@ -44,6 +44,10 @@ namespace SDKDocGenerator
         
         private static Regex UrlPattern = new Regex(".*/WebAPI/(.*)/(.*)");
         private static IDictionary<string, ISet<RewriteRule>> _rulesForServices = new SortedDictionary<string, ISet<RewriteRule>>();
+        // Guards mutation of _rulesForServices (and its nested sets) so redirect rules can be
+        // added safely while services are generated in parallel. The collections stay sorted,
+        // so the emitted file is identical regardless of the order rules are added.
+        private static readonly object _rulesLock = new object();
 
         public static void Write(Stream stream)
         {
@@ -94,14 +98,17 @@ namespace SDKDocGenerator
         {
             string requestedPath = string.Format("^/goto/{0}/{1}/{2}$", ToolId, serviceId, shape);
 
-            ISet<RewriteRule> set;
-            if (!_rulesForServices.TryGetValue(serviceId, out set))
+            lock (_rulesLock)
             {
-                set = new SortedSet<RewriteRule>();
-                _rulesForServices.Add(serviceId, set);
-            }
+                ISet<RewriteRule> set;
+                if (!_rulesForServices.TryGetValue(serviceId, out set))
+                {
+                    set = new SortedSet<RewriteRule>();
+                    _rulesForServices.Add(serviceId, set);
+                }
 
-            set.Add(new RewriteRule(requestedPath, docPath));
+                set.Add(new RewriteRule(requestedPath, docPath));
+            }
         }
     }
 }

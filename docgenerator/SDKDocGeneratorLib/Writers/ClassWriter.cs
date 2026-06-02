@@ -100,12 +100,11 @@ namespace SDKDocGenerator.Writers
         private void AddCodeExamples(TextWriter writer)
         {
             var serviceId = GetServiceIdFromNamespace();
-            var fragmentPath = Path.Combine(ExampleMetadataParser.ExampleFragmentsFullPath,$"{serviceId}.fragment.html"
-            );
+            var fragmentContent = ExampleMetadataParser.GetFragmentHtml(serviceId);
 
-            if (!File.Exists(fragmentPath))
+            if (fragmentContent == null)
                 return;
-                        
+
             writer.WriteLine("<div>");
             writer.WriteLine("<div class=\"collapsibleSection\">");
             writer.WriteLine("<h2 id=\"codeexamples\" class=\"title\">Code Examples</h2>");
@@ -113,7 +112,6 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</div>");
             writer.WriteLine("<div class=\"sectionbody\">");
 
-            var fragmentContent = File.ReadAllText(fragmentPath);
             writer.WriteLine(fragmentContent);
 
             writer.WriteLine("</div>");

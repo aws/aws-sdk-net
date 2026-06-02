@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,8 +13,31 @@ namespace SDKDocGenerator
     public class ExampleMetadataParser
     {
         private const string FragmentOutputDirectory = "ExampleFragments";
-        private const string BaseCodeLibraryUrl = "https://docs.aws.amazon.com/code-library/latest/ug/dotnet_4";        
-        public static string ExampleFragmentsFullPath { get; private set; } = string.Empty;        
+        private const string BaseCodeLibraryUrl = "https://docs.aws.amazon.com/code-library/latest/ug/dotnet_4";
+        public static string ExampleFragmentsFullPath { get; private set; } = string.Empty;
+
+        // Caches each service's example-fragment HTML so the (small) fragment files are read from
+        // disk at most once instead of once per class page. A null value records "no fragment file"
+        // so we don't repeatedly probe the filesystem for services that have no examples.
+        // ConcurrentDictionary so this is safe once page generation is parallelized.
+        private static readonly ConcurrentDictionary<string, string> _fragmentCache =
+            new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
+
+        /// <summary>
+        /// Returns the cached example-fragment HTML for a service, or null if the service has no
+        /// fragment file. The fragment file is read from disk at most once per service.
+        /// </summary>
+        public static string GetFragmentHtml(string serviceId)
+        {
+            if (string.IsNullOrEmpty(serviceId))
+                return null;
+
+            return _fragmentCache.GetOrAdd(serviceId, id =>
+            {
+                var fragmentPath = Path.Combine(ExampleFragmentsFullPath, $"{id}.fragment.html");
+                return File.Exists(fragmentPath) ? File.ReadAllText(fragmentPath) : null;
+            });
+        }
 
         public static void GenerateExampleFragments(string examplesMetaJsonFile, string examplesErrorFile = "examples_failure.txt")
         {
@@ -197,6 +221,8 @@ namespace SDKDocGenerator
 
         public static void CleanupExampleFragments()
         {
+            _fragmentCache.Clear();
+
             if (!string.IsNullOrEmpty(ExampleFragmentsFullPath) && Directory.Exists(ExampleFragmentsFullPath))
             {
                 try

@@ -255,6 +255,33 @@ namespace SDKDocGenerator
                 Parse = (arguments, argValue) => arguments.ParsedOptions.ExamplesErrorFile = argValue,
                 HelpText = "The path and filename for the examples error file. Defaults to 'examples_failure.txt'."
             },
+            new ArgDeclaration
+            {
+                OptionName = "parallel",
+                ShortName = "par",
+                Parse = (arguments, argValue) => {
+                    // Bare -parallel means "use all available cores".
+                    if (arguments.ParsedOptions.MaxDegreeOfParallelism <= 1)
+                        arguments.ParsedOptions.MaxDegreeOfParallelism = Environment.ProcessorCount;
+                },
+                HelpText = "Generate service documentation across multiple services concurrently using all available cores. "
+                            + "Use -degree to set an explicit limit. Output is identical to a serial run."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "degree",
+                ShortName = "deg",
+                HasValue = true,
+                Parse = (arguments, argValue) => {
+                    if (int.TryParse(argValue, out var degree))
+                    {
+                        // 0 or negative is treated as "all available cores".
+                        arguments.ParsedOptions.MaxDegreeOfParallelism = degree <= 0 ? Environment.ProcessorCount : degree;
+                    }
+                },
+                HelpText = "The maximum number of services to process concurrently during generation. "
+                            + "Implies -parallel. '0' uses all available cores. Defaults to 1 (serial)."
+            },
         };
 
         static readonly char[] ArgumentPrefixes = { '-', '/' };

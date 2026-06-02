@@ -255,6 +255,11 @@ namespace SDKDocGenerator
     {
         private readonly IDictionary<string, TypeWrapper> _typeDictionary = new Dictionary<string, TypeWrapper>();
         private readonly IDictionary<string, IList<TypeWrapper>> _namespaceToTypeNames = new Dictionary<string, IList<TypeWrapper>>();
+        // A single DeferredTypesProvider instance is shared across all service manifests, which may
+        // call AddTypes concurrently when generation is parallelized. Guards the collections below.
+        // Deferred types are only consumed later (when Core is generated, after the parallel phase
+        // joins), and output is per-file with a name-sorted TOC, so order of addition is irrelevant.
+        private readonly object _deferredLock = new object();
 
         // Types implemented in service assemblies (such as AmazonS3Config) that exist in the namespaces below are output when we 
         // process the awssdk.core manifest (which is done last), so they appear under the Amazon tree root in the docs. We 
@@ -280,19 +285,22 @@ namespace SDKDocGenerator
         /// <param name="types"></param>
         public void AddTypes(IEnumerable<TypeWrapper> types)
         {
-            foreach (var type in types)
+            lock (_deferredLock)
             {
-                IList<TypeWrapper> list;
-                if (_namespaceToTypeNames.TryGetValue(type.Namespace, out list))
+                foreach (var type in types)
                 {
-                    list.Add(type);
-                }
-                else
-                {
-                    _namespaceToTypeNames.Add(type.Namespace, new List<TypeWrapper> { type });
-                }
+                    IList<TypeWrapper> list;
+                    if (_namespaceToTypeNames.TryGetValue(type.Namespace, out list))
+                    {
+                        list.Add(type);
+                    }
+                    else
+                    {
+                        _namespaceToTypeNames.Add(type.Namespace, new List<TypeWrapper> { type });
+                    }
 
-                _typeDictionary.Add(type.FullName, type);
+                    _typeDictionary[type.FullName] = type;
+                }
             }
         }
 
