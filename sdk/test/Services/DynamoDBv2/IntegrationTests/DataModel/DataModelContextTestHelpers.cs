@@ -27,16 +27,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         internal static async Task TestHashRangeObjectsHelper<T>(DynamoDBContext context) where T : Employee, new()
         {
+            var alanName = UtilityMethods.GenerateName("Alan");
+            var chuckName = UtilityMethods.GenerateName("Chuck");
+            var dianeName = UtilityMethods.GenerateName("Diane");
+
             // Create and save item
             T employee = new T
             {
-                Name = "Alan",
+                Name = alanName,
                 Age = 31,
                 CompanyName = "Big River",
                 CurrentStatus = Status.Active,
                 Score = 120,
                 ManagerName = "Barbara",
-                InternalId = "Alan@BigRiver",
+                InternalId = alanName + "@BigRiver",
                 Aliases = new List<string> { "Al", "Steve" },
                 Data = Encoding.UTF8.GetBytes("Some binary data"),
             };
@@ -50,7 +54,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(employee.CurrentStatus, retrieved.CurrentStatus);
 
             // Create and save new item
-            employee.Name = "Chuck";
+            employee.Name = chuckName;
             employee.Age = 30;
             employee.CurrentStatus = Status.Inactive;
             employee.Aliases = new List<string> { "Charles" };
@@ -69,48 +73,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Create more items
             T employee2 = new T
             {
-                Name = "Diane",
+                Name = dianeName,
                 Age = 40,
                 CompanyName = "Madeira",
                 Score = 140,
                 ManagerName = "Eva",
                 Data = new byte[] { 1, 2, 3 },
                 CurrentStatus = Status.Upcoming,
-                InternalId = "Diane@Madeira",
+                InternalId = dianeName + "@Madeira",
             };
             await context.SaveAsync(employee2);
             employee2.Age = 24;
             employee2.Score = 101;
             await context.SaveAsync(employee2);
 
-            retrieved = await context.LoadAsync<T>("Alan", 31);
-            Assert.Equal(retrieved.Name, "Alan");
+            retrieved = await context.LoadAsync<T>(alanName, 31);
+            Assert.Equal(retrieved.Name, alanName);
             retrieved = await context.LoadAsync(employee);
-            Assert.Equal(retrieved.Name, "Chuck");
+            Assert.Equal(retrieved.Name, chuckName);
             retrieved = await context.LoadAsync(employee2, new LoadConfig { ConsistentRead = true });
-            Assert.Equal(retrieved.Name, "Diane");
+            Assert.Equal(retrieved.Name, dianeName);
             Assert.Equal(retrieved.Age, 24);
 
             // Scan for all items
             var employees = await context.ScanAsync<T>(new List<ScanCondition>()).GetRemainingAsync();
             Assert.Equal(4, employees.Count);
 
-            // Query for items with Hash-Key = "Diane"
-            employees = await context.QueryAsync<T>("Diane").GetNextSetAsync();
+            // Query for items with Hash-Key = dianeName
+            employees = await context.QueryAsync<T>(dianeName).GetNextSetAsync();
             Assert.Equal(2, employees.Count);
 
-            // Query for items with Hash-Key = "Diane" and Range-Key > 30
-            employees = await context.QueryAsync<T>("Diane", QueryOperator.GreaterThan, new object[] { 30 }).GetNextSetAsync();
+            // Query for items with Hash-Key = dianeName and Range-Key > 30
+            employees = await context.QueryAsync<T>(dianeName, QueryOperator.GreaterThan, new object[] { 30 }).GetNextSetAsync();
             Assert.Equal(1, employees.Count);
 
             // Index Query
-            // Query local index for items with Hash-Key = "Diane"
-            employees = await context.QueryAsync<T>("Diane", new QueryConfig { IndexName = "LocalIndex" }).GetNextSetAsync();
+            // Query local index for items with Hash-Key = dianeName
+            employees = await context.QueryAsync<T>(dianeName, new QueryConfig { IndexName = "LocalIndex" }).GetNextSetAsync();
             Assert.Equal(2, employees.Count);
 
-            // Query local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
+            // Query local index for items with Hash-Key = dianeName and Range-Key = "Eva"
             employees = await context.QueryAsync<T>(
-                "Diane",
+                dianeName,
                 QueryOperator.Equal,
                 new object[] { "Eva" },
                 new QueryConfig { IndexName = "LocalIndex" }
@@ -141,17 +145,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, employees.Count);
 
             // Index Scan
-            // Scan local index for items with Hash-Key = "Diane"
+            // Scan local index for items with Hash-Key = dianeName
             employees = await context.ScanAsync<T>(
-                new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, "Diane") },
+                new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, dianeName) },
                 new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
             Assert.Equal(2, employees.Count);
 
-            // Scan local index for items with Hash-Key = "Diane" and Range-Key = "Eva"
+            // Scan local index for items with Hash-Key = dianeName and Range-Key = "Eva"
             employees = await context.ScanAsync<T>(
                 new List<ScanCondition>
                 {
-                    new ScanCondition("Name", ScanOperator.Equal, "Diane"),
+                    new ScanCondition("Name", ScanOperator.Equal, dianeName),
                     new ScanCondition("ManagerName", ScanOperator.Equal, "Eva")
                 },
                 new ScanConfig { IndexName = "LocalIndex" }).GetRemainingAsync();
@@ -181,7 +185,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var product = new Product
             {
-                Id = 1,
+                Id = UtilityMethods.GenerateId(),
                 Name = string.Empty,
                 Map = new Dictionary<string, string> // M
                 {
@@ -204,9 +208,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             await context.SaveAsync(product);
-            var savedProduct = await context.LoadAsync<Product>(1);
+            var savedProduct = await context.LoadAsync<Product>(product.Id, new LoadConfig { ConsistentRead = true });
 
-            Assert.Equal(1, savedProduct.Id);
+            Assert.Equal(product.Id, savedProduct.Id);
             Assert.Equal(string.Empty, savedProduct.Map["Position"]);
             Assert.Equal(string.Empty, savedProduct.Components[0]);
             Assert.Equal(string.Empty, savedProduct.CompanyInfo.AllProducts[0].Name);
@@ -250,7 +254,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Create and save item
             Product product = new Product
             {
-                Id = 1,
+                Id = UtilityMethods.GenerateId(),
                 Map = new Dictionary<string, string>()
             };
             if (!isV1)
@@ -259,7 +263,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await context.SaveAsync(product);
 
             // Load and test the item
-            var retrieved = await context.LoadAsync(product);
+            var retrieved = await context.LoadAsync(product, new LoadConfig { ConsistentRead = true });
             if (!isV1)
             {
                 Assert.NotNull(retrieved.Components);
@@ -309,12 +313,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
             var s3Client = new Amazon.S3.AmazonS3Client();
             await s3Client.PutBucketAsync(bucketName);
+            var baseId = UtilityMethods.GenerateId();
             try
             {
                 // Create and save item
                 Product product = new Product
                 {
-                    Id = 1,
+                    Id = baseId,
                     Name = "CloudSpotter",
                     CompanyName = "CloudsAreGrate",
                     Price = 1200,
@@ -384,7 +389,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.NotNull(doc["Supports"]);
 
                 // Load item
-                Product retrieved = await context.LoadAsync<Product>(1);
+                Product retrieved = await context.LoadAsync<Product>(baseId, new LoadConfig { ConsistentRead = true });
                 Assert.Equal(product.Id, retrieved.Id);
                 Assert.Equal(product.TagSet.Count, retrieved.TagSet.Count);
                 Assert.Equal(product.Components.Count, retrieved.Components.Count);
@@ -449,7 +454,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 await context.SaveAsync(product);
 
                 // Load new item
-                retrieved = await context.LoadAsync(product);
+                retrieved = await context.LoadAsync(product, new LoadConfig { ConsistentRead = true });
                 Assert.Equal(product.Id, retrieved.Id);
                 Assert.Null(retrieved.TagSet);
                 Assert.Null(retrieved.Components);
@@ -471,7 +476,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Load first product
                 var firstId = productIds[0];
-                product = await context.LoadAsync<Product>(firstId);
+                product = await context.LoadAsync<Product>(firstId, new LoadConfig { ConsistentRead = true });
                 Assert.NotNull(product);
                 Assert.Equal(firstId, product.Id);
 
@@ -529,7 +534,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Test a versioned product
                 VersionedProduct vp = new VersionedProduct
                 {
-                    Id = 3,
+                    Id = baseId + 2,
                     Name = "CloudDebugger",
                     CompanyName = "CloudsAreGrate",
                     Price = 9000,
@@ -546,7 +551,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 await Assert.ThrowsAsync<ConditionalCheckFailedException>(() => context.SaveAsync(vp));
 
                 // Load and save
-                vp = await context.LoadAsync(vp);
+                vp = await context.LoadAsync(vp, new LoadConfig { ConsistentRead = true });
                 await context.SaveAsync(vp);
             }
             finally
@@ -597,8 +602,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             int itemCount = 10;
             string employeePrefix = UtilityMethods.GenerateName("Employee-");
             int employeeAgeStart = 20;
-            int productIdStart = 90;
-            string productPrefix = "Product-";
+            int productIdStart = UtilityMethods.GenerateId();
+            string productPrefix = UtilityMethods.GenerateName("Product-");
 
             var allEmployees = new List<Employee>();
             var batchWrite1 = context.CreateBatchWrite<Employee>();

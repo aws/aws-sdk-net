@@ -2,6 +2,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 using System;
 using System.Collections.Generic;
@@ -640,11 +641,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             );
 
             // 5. ExpressionFilter with index
-            var resultIndex = await _context.QueryAsync<Employee>("Big River", new QueryConfig
+            // GSI updates are eventually consistent; wait until both items are indexed before querying.
+            List<Employee> resultIndex = null;
+            await UtilityMethods.WaitUntilAsync(async () =>
             {
-                IndexName = "GlobalIndex",
-                Expression = contextExpression
-            }).GetNextSetAsync();
+                resultIndex = await _context.QueryAsync<Employee>("Big River", new QueryConfig
+                {
+                    IndexName = "GlobalIndex",
+                    Expression = contextExpression
+                }).GetNextSetAsync();
+                return resultIndex.Count >= 2;
+            }, sleepSeconds: 1, maxWaitSeconds: 30);
             Assert.Equal(2, resultIndex.Count);
             Assert.True(resultIndex.All(e => e.ManagerName == "Eva"));
         }

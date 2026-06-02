@@ -46,9 +46,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             var messages = task.Result;
 
-            Assert.Equal(3, messages.Count);
-            ValidateMessage(messages[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(messages[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
+            // Filter out the "Exit" sentinel and any stale messages from prior tests
+            var relevant = messages.Where(m => m != "Exit" && m.Contains("ListTables")).ToList();
+            Assert.Equal(2, relevant.Count);
+            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
+            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
         }
 
         [Fact]
@@ -66,9 +68,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             var messages = task.Result;
 
-            Assert.Equal(3, messages.Count);
-            ValidateMessage(messages[0], "ApiCallAttempt", "DynamoDB", "DeleteTable", "us-east-1", 400, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(messages[1], "ApiCall", "DynamoDB", "DeleteTable", "us-east-1", 400, attemptCount: 1);
+            // Filter out the "Exit" sentinel and any stale messages from prior tests
+            var relevant = messages.Where(m => m != "Exit" && m.Contains("DeleteTable")).ToList();
+            Assert.Equal(2, relevant.Count);
+            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "DeleteTable", "us-east-1", 400, domain: "dynamodb.us-east-1.amazonaws.com");
+            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "DeleteTable", "us-east-1", 400, attemptCount: 1);
         }
 
 #if NETFRAMEWORK
@@ -98,9 +102,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.CSM
             SendEndMessage();
             Thread.Sleep(50);
 
-            Assert.Equal(3, stash.Count);
-            ValidateMessage(stash[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
-            ValidateMessage(stash[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
+            // Filter out the "Exit" sentinel and any stale messages from prior tests
+            var relevant = stash.Where(m => m != "Exit" && m.Contains("ListTables")).ToList();
+            Assert.Equal(2, relevant.Count);
+            ValidateMessage(relevant[0], "ApiCallAttempt", "DynamoDB", "ListTables", "us-east-1", 200, domain: "dynamodb.us-east-1.amazonaws.com");
+            ValidateMessage(relevant[1], "ApiCall", "DynamoDB", "ListTables", "us-east-1", 200, attemptCount: 1);
         }
 #endif
 
