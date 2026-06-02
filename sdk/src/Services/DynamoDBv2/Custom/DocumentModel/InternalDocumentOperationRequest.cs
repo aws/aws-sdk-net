@@ -16,7 +16,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Gets or sets the key identifying the item in the table.
         /// All key components (partition and sort key, if the table has one) must be provided.
         /// </summary>
-        internal IDictionary<string, AttributeValue> Key { get; set; }
+        internal Dictionary<string, AttributeValue> Key { get; set; }
 
     }
 }

@@ -250,7 +250,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return new GetItemRequest
                     {
                         TableName = Table.TableName,
-                        Key =  new Dictionary<string, AttributeValue>(internalGetItemRequest.Key),
+                        Key = internalGetItemRequest.Key,
                         ConsistentRead = request.ConsistentRead
                     };
                 default:
