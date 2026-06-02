@@ -83,6 +83,20 @@ namespace Amazon.Runtime.Internal
             }
 
             var compressionAlgorithm = CompressionFactory.GetCompressionAlgorithm(request.CompressionAlgorithm);
+#if !NETFRAMEWORK
+            // PooledContentStream holds all data in memory and compress as a whole buffer
+            // rather than wrapping in CompressionWrapperStream with chunked encoding.
+            if (request.ContentStream is PooledContentStream pooledStream)
+            {
+                if (CompressBufferContent(executionContext, request, pooledStream.Content, compressionAlgorithm, minCompressionSize))
+                {
+                    // Dispose after Compress has fully consumed the pooled buffer
+                    request.ContentStream.Dispose();
+                    request.ContentStream = null;
+                }
+            }
+            else
+#endif
             if (request.ContentStream != null)
             {
                 request.ContentStream = new CompressionWrapperStream(request.ContentStream, compressionAlgorithm);
@@ -93,18 +107,33 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                var input = AWSSDKUtils.GetRequestPayloadBytes(request);
-                if (input.Length >= minCompressionSize)
-                {
-                    executionContext.RequestContext.Metrics.AddProperty(Metric.UncompressedRequestSize, input.Length);
-                    using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.RequestCompressionSpanName))
-                    using (executionContext.RequestContext.Metrics.StartEvent(Metric.RequestCompressionTime))
-                    {
-                        request.Content = compressionAlgorithm.Compress(input);
-                    }
-                    CompressionAlgorithmUtils.SetRequestHeader(request, compressionAlgorithm.AlgorithmId);
-                }
+                CompressBufferContent(executionContext, request, AWSSDKUtils.GetRequestPayloadBytes(request), compressionAlgorithm, minCompressionSize);
             }
+        }
+
+        private static bool CompressBufferContent(
+            IExecutionContext executionContext,
+            IRequest request,
+#if !NETFRAMEWORK
+            ReadOnlyMemory<byte> input,
+#else
+            byte[] input,
+#endif
+            ICompressionAlgorithm compressionAlgorithm,
+            long minCompressionSize)
+        {
+
+            if (input.Length < minCompressionSize)
+                return false;
+
+            executionContext.RequestContext.Metrics.AddProperty(Metric.UncompressedRequestSize, input.Length);
+            using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.RequestCompressionSpanName))
+            using (executionContext.RequestContext.Metrics.StartEvent(Metric.RequestCompressionTime))
+            {
+                request.Content = compressionAlgorithm.Compress(input);
+            }
+            CompressionAlgorithmUtils.SetRequestHeader(request, compressionAlgorithm.AlgorithmId);
+            return true;
         }
     }
 }

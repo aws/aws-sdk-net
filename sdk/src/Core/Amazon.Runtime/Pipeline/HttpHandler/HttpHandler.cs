@@ -292,6 +292,13 @@ namespace Amazon.Runtime.Internal
             // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
             // the StreamContent code path.
+#if !NETFRAMEWORK
+            else if (wrappedRequest.ContentStream is PooledContentStream pooledStream && pooledStream.Content.Length > 0)
+            {
+                requestContext.Metrics.AddProperty(Metric.RequestSize, pooledStream.Content.Length);
+                httpRequest.WriteToRequestBody(requestContent, pooledStream.Content, requestContext.Request.Headers);
+            }
+#endif
             else if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;

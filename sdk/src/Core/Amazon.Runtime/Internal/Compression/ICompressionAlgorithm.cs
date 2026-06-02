@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.IO;
 
 namespace Amazon.Runtime.Internal.Compression
@@ -20,6 +21,7 @@ namespace Amazon.Runtime.Internal.Compression
     /// <summary>
     /// Interface for an implementation of compression algorithms
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public interface ICompressionAlgorithm
     {
         /// <summary>
@@ -34,6 +36,15 @@ namespace Amazon.Runtime.Internal.Compression
         /// <param name="content"> Request payload content represented in byte array </param>
         /// <returns> Compressed data in a byte array format </returns>
         byte[] Compress(byte[] content);
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Compresses request payload content from a read-only memory
+        /// </summary>
+        /// <param name="content"> Request payload content </param>
+        /// <returns> Compressed data in a byte array format </returns>
+        byte[] Compress(ReadOnlyMemory<byte> content);
+#endif
 
         /// <summary>
         /// Wraps <paramref name="inputStream"/> with an instance object of the compression stream algorithm

@@ -128,18 +128,18 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	{
 #>
 #if !NETFRAMEWORK
-			using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-			using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
-			using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
-<#		
+<#
 		if (shouldMarshallPayload)
 		{
 #>
 			var context = new JsonMarshallerContext(request, writer);
-<#		
+<#
 			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape, isSparse: requestStructure.IsSparse);
 #>
 			writer.Flush();
@@ -150,7 +150,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 			writer.WriteStartObject();
 			var context = new JsonMarshallerContext(request, writer);
-<#		
+<#
 			ProcessMembers(0, "publicRequest", this.Operation.RequestBodyMembers);
 #>
 			writer.WriteEndObject();
@@ -158,10 +158,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 		}
 #>
-			// ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-			request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
 			request.Content = memoryStream.ToArray();
 #endif
 <#
