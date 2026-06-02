@@ -1,66 +1,58 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AWS SDK for .NET Version 4 Documentation</title>
+    <meta name="description" content="AWS SDK for .NET Version 4 API Reference Documentation">
+    <meta name="guide-name" content="API Reference">
+    <meta name="service-name" content="AWS SDK for .NET Version 4">
+    <link rel="canonical" href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./resources/shell.css" media="screen">
+    <script type="text/javascript" src="./resources/jquery.min.js"></script>
+</head>
 
-    <head>
-        <title>AWS SDK for .NET Version 4 Documentation</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <meta name="description" content="AWS SDK for .NET Version 4 API Reference Documentation">
-        <meta name="guide-name" content="API Reference">
-        <meta name="service-name" content="AWS SDK for .NET Version 4">
-        <link rel="canonical" href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html">
-        <link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css" media="screen">
-		<link rel="shortcut icon" href="favicon.ico"/>
-        <script type="text/javascript" src="./resources/jquery.min.js"></script>
+<body class="docfx-shell">
 
-        <script>
-            var LARGE_WINDOW_BREAKPOINT = 992;
+    <!-- Top navbar -->
+    <header class="navbar">
+        <button id="navToggle" class="navbar-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <a class="navbar-brand" href="https://docs.aws.amazon.com/" target="_top" rel="noopener noreferrer">
+            AWS SDK for .NET <span class="navbar-brand-sub">Version 4 API Reference</span>
+        </a>
+        <div class="navbar-search">
+            <input id="navSearch" type="search" placeholder="Filter by name..." aria-label="Filter API navigation" autocomplete="off" />
+        </div>
+    </header>
 
-            jQuery(function () {
-                jQuery(window).resize(function () {
-                    windowWidthUpdated();
-                });
-                windowWidthUpdated();
-            });
+    <!-- 3-column body: left nav | article | right rail -->
+    <div class="shell-body">
+        <nav id="leftnav" aria-label="API navigation">
+            <iframe id="TOC" name="TOC" title="Table of Contents" src="./TOC.html"></iframe>
+        </nav>
 
-            function windowWidthUpdated() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth <= LARGE_WINDOW_BREAKPOINT) {
-                    jQuery('#contentFrameset')[0].cols = '0,*';
-                    jQuery('#mainFrameset')[0].rows = '40,*';
-                } else {
-                    jQuery('#contentFrameset')[0].cols = '250,*';
-                    jQuery('#mainFrameset')[0].rows = '0,*';
-                }
+        <main id="contentcol">
+            <iframe id="contentpane" name="contentpane" title="Main content" tabindex="-1"></iframe>
+        </main>
 
-                return windowWidth;
-            }
+        <aside id="rightrail" aria-label="In this article">
+            <div id="inThisArticle">
+                <h2>In this article</h2>
+                <ul id="railList"></ul>
+            </div>
+        </aside>
+    </div>
 
-            function showTOC() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
+    <div id="navScrim" aria-hidden="true"></div>
 
-                jQuery('#contentFrameset')[0].cols = '*,0';
-                window.parent.frames["mobileNavBar"].showCrossButton();
-            }
+    <script type="text/javascript" src="./resources/parseuri.js"></script>
+    <script type="text/javascript" src="./resources/shell.js"></script>
+</body>
 
-            function showContentPane() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
-
-                jQuery('#contentFrameset')[0].cols = '0,*';
-                window.parent.frames["mobileNavBar"].showHamburgerButton();
-            }
-
-        </script>
-    </head>
-
-    <frameset id="mainFrameset" rows="0,*" border="0">
-        <frame title="Mobile navigation bar" id="mobileNavBar" name="mobileNavBar" src="./MobileNavBar.html" />
-        <frameset id="contentFrameset" cols="250,*">
-            <frame title="Table of Content" id="TOC" name="TOC" src="./TOC.html" />
-            <frame title="Main content pane" id="contentpane" name="contentpane" tabindex="-1" />
-        </frameset>
-    </frameset>
 </html>
