@@ -20,6 +20,18 @@ namespace SDKDocGenerator.Writers
         private static readonly ConcurrentDictionary<string, bool> _ensuredDirectories =
             new ConcurrentDictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
 
+        // Tracks output paths already claimed by a writer, so each page file is written exactly once.
+        // Some members surface from more than one documented type (e.g. an event declared on an
+        // interface and re-exposed by its implementing class, both in the same namespace), and the
+        // member-page filename is keyed on the declaring member - so both types would emit the same
+        // file. That was a harmless last-write-wins overwrite when generation was serial, but a
+        // concurrent write to the same path once member pages fan out in parallel. Since a member
+        // page's content depends only on the member (not the iterating type), the duplicate write is
+        // redundant: the first claimant produces the file and any later claimant safely skips it,
+        // leaving the on-disk result identical to the previous serial behavior.
+        private static readonly ConcurrentDictionary<string, bool> _writtenFiles =
+            new ConcurrentDictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+
         // A per-thread reusable buffer for assembling each page, so we don't allocate a fresh
         // (potentially large) StringBuilder for every one of the 100k+ pages. [ThreadStatic] keeps
         // it isolated per worker thread under parallel generation; the in-use guard falls back to a
@@ -107,6 +119,13 @@ namespace SDKDocGenerator.Writers
         public void Write()
         {
             var filename = Path.Combine(Artifacts.OutputFolder, GenerateFilepath(), GenerateFilename());
+
+            // Claim this output path; if another writer already owns it, skip. See _writtenFiles.
+            // The page content is independent of which type triggered the write, so skipping a
+            // duplicate leaves the same bytes on disk while preventing concurrent writes to one file.
+            if (!_writtenFiles.TryAdd(filename, true))
+                return;
+
             try
             {
                 RootRelativePath = ComputeRelativePathToRoot(filename);
