@@ -107,6 +107,12 @@ namespace SDKDocGenerator
         public string CodeSamplesRootFolder { get; set; }
 
         /// <summary>
+        /// If set, enables the opt-in sub-operation profiler (GenProfiler) which attributes time
+        /// within page generation to coarse buckets and prints a breakdown at the end of the run.
+        /// </summary>
+        public bool Profile { get; set; }
+
+        /// <summary>
         /// Maximum number of services to process concurrently during page generation.
         /// 1 (the default) means fully serial/deterministic generation. A value &gt; 1
         /// (or 0/negative to mean "use all available cores") enables parallel generation

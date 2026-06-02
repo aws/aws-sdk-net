@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
@@ -18,6 +19,49 @@ namespace SDKDocGenerator
         // Per-phase wall-clock timings, recorded via TimePhase, printed at the end of a run
         // so we can see where build time is actually spent before optimizing.
         private readonly List<KeyValuePair<string, TimeSpan>> _phaseTimings = new List<KeyValuePair<string, TimeSpan>>();
+
+        // Per-service wall-clock for the (parallel) service-page generation phase. Lets us see which
+        // services are the "long pole" once that phase dominates. ConcurrentBag is safe for the
+        // parallel adds; we sort/print at the end.
+        private readonly System.Collections.Concurrent.ConcurrentBag<KeyValuePair<string, TimeSpan>> _serviceTimings =
+            new System.Collections.Concurrent.ConcurrentBag<KeyValuePair<string, TimeSpan>>();
+
+        /// <summary>
+        /// Times one service's page generation and records it for the end-of-run "slowest services"
+        /// report. Wraps the call so the timing is captured whether the loop is serial or parallel.
+        /// </summary>
+        private void GenerateTimed(GenerationManifest manifest, DeferredTypesProvider deferredTypes, TOCWriter tocWriter, ConcurrencyGate gate)
+        {
+            var sw = Stopwatch.StartNew();
+            try
+            {
+                manifest.Generate(deferredTypes, tocWriter, gate);
+            }
+            finally
+            {
+                sw.Stop();
+                _serviceTimings.Add(new KeyValuePair<string, TimeSpan>(manifest.ServiceName, sw.Elapsed));
+            }
+        }
+
+        /// <summary>
+        /// Prints the slowest services in the service-page phase. When that phase dominates and is
+        /// parallelized across services, the wall-clock is bounded by the single slowest service, so
+        /// this identifies the next bottleneck (and the candidates for intra-service parallelism).
+        /// </summary>
+        private void PrintSlowestServices(int top = 15)
+        {
+            if (_serviceTimings.IsEmpty)
+                return;
+
+            var ordered = _serviceTimings.OrderByDescending(t => t.Value).Take(top).ToList();
+
+            Console.WriteLine();
+            Console.WriteLine("Slowest services (service-page generation):");
+            foreach (var t in ordered)
+                Console.WriteLine("  {0,-40} {1,8:N1}s", t.Key, t.Value.TotalSeconds);
+            Console.WriteLine();
+        }
 
         /// <summary>
         /// Times the supplied phase, recording its elapsed wall-clock time for the
@@ -105,6 +149,7 @@ namespace SDKDocGenerator
             _startTimeTicks = DateTime.Now.Ticks;
 
             Options = options;
+            GenProfiler.Enabled = options.Profile;
 
             Trace.Listeners.Add(new ConditionalConsoleTraceListener(Options.Verbose));
 
@@ -226,6 +271,22 @@ namespace SDKDocGenerator
                         buildMapFor(manifest);
             });
 
+            // Single shared budget across the outer (service) and inner (namespace) loops, used for
+            // the whole generation pass (services + Core). Each actively-generating thread holds
+            // exactly one slot, so total concurrency never exceeds 'degree'. Null when running serial.
+            ConcurrencyGate gate = null;
+            if (Options.MaxDegreeOfParallelism > 1)
+            {
+                gate = new ConcurrencyGate(Options.MaxDegreeOfParallelism);
+
+                // Give the ThreadPool plenty of warm threads. Generation nests up to three levels
+                // (service -> namespace -> member), and a parent waiting on Task.WaitAll occupies a
+                // pool thread while its gated children run, so we provision generously beyond the
+                // degree to avoid the pool's slow ramp-up stalling progress.
+                ThreadPool.GetMinThreads(out var minWorker, out var minIo);
+                ThreadPool.SetMinThreads(Math.Max(minWorker, Options.MaxDegreeOfParallelism * 4), minIo);
+            }
+
             try
             {
                 TimePhase("Generate service pages", () =>
@@ -238,16 +299,33 @@ namespace SDKDocGenerator
                     if (degree > 1)
                     {
                         Info("Generating service pages in parallel (max degree {0})...", degree);
+
+                        // The inner namespace fan-out (inside Generate) only borrows slots that are
+                        // momentarily free - which happens in the tail of the run when a few huge
+                        // services (e.g. EC2) are finishing while other cores would otherwise idle.
                         Parallel.ForEach(
                             OrderLargestFirst(serviceManifests),
                             new ParallelOptions { MaxDegreeOfParallelism = degree },
-                            m => m.Generate(deferredTypes, TOCWriter));
+                            m =>
+                            {
+                                // Each service holds one slot for the duration of its own generation;
+                                // its inner namespace loop may additionally borrow free slots.
+                                gate.Acquire();
+                                try
+                                {
+                                    GenerateTimed(m, deferredTypes, TOCWriter, gate);
+                                }
+                                finally
+                                {
+                                    gate.Release();
+                                }
+                            });
                     }
                     else
                     {
                         foreach (var m in serviceManifests)
                         {
-                            m.Generate(deferredTypes, TOCWriter);
+                            GenerateTimed(m, deferredTypes, TOCWriter, gate: null);
                         }
                     }
                 });
@@ -259,7 +337,9 @@ namespace SDKDocGenerator
                     TimePhase("Generate Core pages", () =>
                     {
                         coreManifest.ManifestAssemblyContext.SdkAssembly.DeferredTypesProvider = deferredTypes;
-                        coreManifest.Generate(null, TOCWriter);
+                        // Core runs alone after the services join, so the whole budget is free for its
+                        // namespaces to fan out across.
+                        coreManifest.Generate(null, TOCWriter, gate);
                     });
                 }
 
@@ -341,6 +421,8 @@ namespace SDKDocGenerator
             }
 
             PrintPhaseTimings();
+            PrintSlowestServices();
+            GenProfiler.PrintReport();
 
             return 0;
         }

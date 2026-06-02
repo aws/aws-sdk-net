@@ -186,7 +186,7 @@ namespace SDKDocGenerator.Writers
                     this.WriteToolbar(writer);
 
                     writer.WriteLine("<div id=\"pageContent\">");
-                        this.WriteContent(writer);
+                        GenProfiler.Measure(GenProfiler.PageBuild, () => this.WriteContent(writer));
                     writer.WriteLine("</div>");
 
                     this.WriteFooter(writer);
@@ -196,21 +196,24 @@ namespace SDKDocGenerator.Writers
 
                 // Operate directly on the buffer to avoid extra full-string copies of every
                 // (potentially large) page.
+                GenProfiler.Measure(GenProfiler.PageFinalize, () =>
+                {
+                    // normalize all line endings so any docs committed into Git present a consistent
+                    // set of line terminators for core.autocrlf to work with
+                    buffer.Replace("\r\n", "\n").Replace("\n", "\r\n");
 
-                // normalize all line endings so any docs committed into Git present a consistent
-                // set of line terminators for core.autocrlf to work with
-                buffer.Replace("\r\n", "\n").Replace("\n", "\r\n");
-
-                // The XML documentation will use the "<c>" tag, but the corresponding HTML tag is "<code>".
-                // There's also a "<code>" tag in XML docs, but it has a different meaning (multiple lines of code); this can cause formatting issues such as
-                // https://github.com/aws/aws-sdk-net/issues/1934 and https://github.com/aws/aws-sdk-net/issues/1954
-                buffer
-                    .Replace("<c>", "<code>")
-                    .Replace("</c>", "</code>");
+                    // The XML documentation will use the "<c>" tag, but the corresponding HTML tag is "<code>".
+                    // There's also a "<code>" tag in XML docs, but it has a different meaning (multiple lines of code); this can cause formatting issues such as
+                    // https://github.com/aws/aws-sdk-net/issues/1934 and https://github.com/aws/aws-sdk-net/issues/1954
+                    buffer
+                        .Replace("<c>", "<code>")
+                        .Replace("</c>", "</code>");
+                });
 
                 // File.WriteAllText uses UTF-8 without a BOM, matching the previous StreamWriter
                 // default, so the bytes on disk are unchanged.
-                File.WriteAllText(filename, buffer.ToString());
+                var finalContent = buffer.ToString();
+                GenProfiler.Measure(GenProfiler.FileWrite, () => File.WriteAllText(filename, finalContent));
             }
             finally
             {

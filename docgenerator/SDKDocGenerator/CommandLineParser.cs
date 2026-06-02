@@ -257,6 +257,15 @@ namespace SDKDocGenerator
             },
             new ArgDeclaration
             {
+                OptionName = "profile",
+                ShortName = "prof",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Profile = true,
+                HelpText = "Enable the sub-operation profiler that breaks down where time is spent within "
+                            + "page generation (reflection, XML doc parse, doc lookup, HTML transform, file write). "
+                            + "Best run serially (without -parallel) for clean numbers."
+            },
+            new ArgDeclaration
+            {
                 OptionName = "parallel",
                 ShortName = "par",
                 Parse = (arguments, argValue) => {

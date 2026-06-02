@@ -108,28 +108,34 @@ namespace SDKDocGenerator
         
         private static IDictionary<string, XElement> CreateNDocTable(string filePath, string serviceName, GeneratorOptions options)
         {
-            var dict = new Dictionary<string, XElement>();
-            var document = LoadAssemblyDocumentationWithSamples(filePath, options.CodeSamplesRootFolder, serviceName);
-            PreprocessCodeBlocksToPreTags(options, document);
-
-            foreach (var element in document.XPathSelectElements("//members/member"))
+            return GenProfiler.Measure(GenProfiler.XmlDocParse, () =>
             {
-                var xattribute = element.Attributes().FirstOrDefault(x => x.Name.LocalName == "name");
-                if (xattribute == null)
-                    continue;
+                var dict = new Dictionary<string, XElement>();
+                var document = LoadAssemblyDocumentationWithSamples(filePath, options.CodeSamplesRootFolder, serviceName);
+                PreprocessCodeBlocksToPreTags(options, document);
 
-                dict[xattribute.Value] = element;
-            }
+                foreach (var element in document.XPathSelectElements("//members/member"))
+                {
+                    var xattribute = element.Attributes().FirstOrDefault(x => x.Name.LocalName == "name");
+                    if (xattribute == null)
+                        continue;
 
-            return dict;
+                    dict[xattribute.Value] = element;
+                }
+
+                return dict;
+            });
         }
         #endregion
 
 
         public static XElement FindDocumentation(AbstractWrapper wrapper, AbstractTypeProvider typeProvider)
         {
-            var ndoc = GetDocumentationInstance(wrapper.DocId);
-            return FindDocumentation(ndoc, wrapper, typeProvider);
+            return GenProfiler.Measure(GenProfiler.DocLookup, () =>
+            {
+                var ndoc = GetDocumentationInstance(wrapper.DocId);
+                return FindDocumentation(ndoc, wrapper, typeProvider);
+            });
         }
 
         public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, AbstractWrapper wrapper, AbstractTypeProvider typeProvider)
@@ -579,13 +585,16 @@ namespace SDKDocGenerator
             if (element == null)
                 return string.Empty;
 
-            var rootNode = element.XPathSelectElement(rootNodeName);
-            if (rootNode == null)       return string.Empty;
-            
-            if (rootNodeName.Equals("seealso", StringComparison.OrdinalIgnoreCase))
-                return SeeAlsoElementToHTML(rootNode, typeProvider, version);
-            else
-                return DocBlobToHTML(rootNode, typeProvider, version);
+            return GenProfiler.Measure(GenProfiler.DocToHtml, () =>
+            {
+                var rootNode = element.XPathSelectElement(rootNodeName);
+                if (rootNode == null) return string.Empty;
+
+                if (rootNodeName.Equals("seealso", StringComparison.OrdinalIgnoreCase))
+                    return SeeAlsoElementToHTML(rootNode, typeProvider, version);
+                else
+                    return DocBlobToHTML(rootNode, typeProvider, version);
+            });
         }
 
         private static XElement FindCrefDocumentation(IDictionary<string, XElement> ndoc, AbstractTypeProvider typeProvider, XElement inheritdocElement)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.Runtime.Loader;
+using System.Threading;
 
 namespace SDKDocGenerator
 {
@@ -103,6 +104,8 @@ namespace SDKDocGenerator
         /// </param>
         public void LoadAssembly(string path, bool useIsolatedContext = false)
         {
+            GenProfiler.Measure(GenProfiler.Reflection, () =>
+            {
             if (useIsolatedContext)
             {
                 _isolatedContext = new IsolatedAssemblyLoadContext(path);
@@ -160,6 +163,7 @@ namespace SDKDocGenerator
                 }
                 namespaceTypes.Add(wrapper);
             }
+            });
         }
 
         public string AssemblyVersion
@@ -340,66 +344,93 @@ namespace SDKDocGenerator
     {
         private CustomAttributeData _data;
 
+        // Lazy + thread-safe so a shared wrapper can be read concurrently during parallel generation.
+        private readonly Lazy<string> _name;
+        private readonly Lazy<IEnumerable<string>> _arguments;
+
         public AttributeWrapper(CustomAttributeData data, string docId) : base(docId)
         {
             _data = data;
-        }
 
-        private string _name;
-        public string Name
-        {
-            get
+            _name = new Lazy<string>(() =>
             {
-                if (string.IsNullOrEmpty(_name))
-                {
-                    var attributeLastIndex = _data.AttributeType.Name.LastIndexOf("Attribute", StringComparison.Ordinal);
-                    if (attributeLastIndex != -1)
-                    {
-                        _name = _data.AttributeType.Name.Substring(0, attributeLastIndex);
-                    }
-                    else
-                    {
-                        _name = _data.AttributeType.Name;
+                var attributeLastIndex = _data.AttributeType.Name.LastIndexOf("Attribute", StringComparison.Ordinal);
+                return attributeLastIndex != -1
+                    ? _data.AttributeType.Name.Substring(0, attributeLastIndex)
+                    : _data.AttributeType.Name;
+            }, LazyThreadSafetyMode.ExecutionAndPublication);
 
+            _arguments = new Lazy<IEnumerable<string>>(() =>
+                _data.ConstructorArguments.Select(argument =>
+                {
+                    switch (argument.ArgumentType.FullName)
+                    {
+                        case "System.String":
+                            return $"\"{argument.Value}\"";
+                        case "System.Boolean":
+                            return argument.Value.ToString().ToLower();
+                        default:
+                            throw new NotImplementedException($"{argument.ArgumentType.FullName} is not implemented");
                     }
-                }
-                return _name;
-            }
+                }).ToList(),
+                LazyThreadSafetyMode.ExecutionAndPublication);
         }
 
-        private IEnumerable<string> _arguments;
-        public IEnumerable<string> Arguments
-        {
-            get
-            {
-                if (_arguments == null)
-                {
-                    _arguments = _data.ConstructorArguments.Select(argument =>
-                    {
-                        switch(argument.ArgumentType.FullName)
-                        {
-                            case "System.String":
-                                return $"\"{argument.Value}\"";
-                            case "System.Boolean":
-                                return argument.Value.ToString().ToLower();
-                            default:
-                                throw new NotImplementedException($"{argument.ArgumentType.FullName} is not implemented");
-                        }
-                    }).ToList();
-                }
-                return _arguments;
-            }
-        }
+        public string Name => _name.Value;
+
+        public IEnumerable<string> Arguments => _arguments.Value;
     }
 
     public class TypeWrapper : AbstractWrapper
     {
         readonly Type _type;
 
+        // Lazy + thread-safe so a shared TypeWrapper (the same instance is returned by both
+        // GetTypesForNamespace and GetType, and base/related types are resolved to shared instances)
+        // can be read concurrently during parallel page generation without racing on these caches.
+        private readonly Lazy<string> _fullName;
+        private readonly Lazy<IEnumerable<AttributeWrapper>> _attributes;
+        private readonly Lazy<IList<ConstructorInfoWrapper>> _constructors;
+        private readonly Lazy<IList<FieldInfoWrapper>> _fields;
+        private readonly Lazy<IList<TypeWrapper>> _genericTypeArguments;
+
         public TypeWrapper(Type type, string docId)
             : base(docId)
         {
             this._type = type;
+
+            _fullName = new Lazy<string>(() =>
+            {
+                // _type can be of generic type T in which case FullName is null
+                if (this._type.FullName != null && this._type.IsNested)
+                    return new StringBuilder(this._type.FullName).Replace("+", ".").ToString();
+                return this._type.FullName;
+            }, LazyThreadSafetyMode.ExecutionAndPublication);
+
+            _attributes = new Lazy<IEnumerable<AttributeWrapper>>(() =>
+                _type.CustomAttributes
+                    .Where(attribute => attribute.AttributeType.FullName.Equals("System.ObsoleteAttribute"))
+                    .Select(customAttribute => new AttributeWrapper(customAttribute, DocId))
+                    .ToList(),
+                LazyThreadSafetyMode.ExecutionAndPublication);
+
+            _constructors = new Lazy<IList<ConstructorInfoWrapper>>(() =>
+                this._type.GetConstructors()
+                    .Select(info => new ConstructorInfoWrapper(info, DocId))
+                    .ToList<ConstructorInfoWrapper>(),
+                LazyThreadSafetyMode.ExecutionAndPublication);
+
+            _fields = new Lazy<IList<FieldInfoWrapper>>(() =>
+                this._type.GetFields().Where(x => x.IsPublic)
+                    .Select(info => new FieldInfoWrapper(info, DocId))
+                    .ToList<FieldInfoWrapper>(),
+                LazyThreadSafetyMode.ExecutionAndPublication);
+
+            _genericTypeArguments = new Lazy<IList<TypeWrapper>>(() =>
+                this._type.GenericTypeArguments
+                    .Select(t => new TypeWrapper(t, DocId))
+                    .ToList<TypeWrapper>(),
+                LazyThreadSafetyMode.ExecutionAndPublication);
         }
 
         public override bool Equals(object obj)
@@ -447,40 +478,9 @@ namespace SDKDocGenerator
             get { return this._type.Namespace; }
         }
 
-        private string _fullName;
-        public string FullName
-        {
-            get {
-                if (string.IsNullOrEmpty(_fullName))
-                {
-                    // _type can be of generic type T in which case FullName is null
-                    if (this._type.FullName != null && this._type.IsNested)
-                    {
-                        _fullName = new StringBuilder(this._type.FullName).Replace("+", ".").ToString();
-                    }
-                    else
-                    {
-                        _fullName = this._type.FullName;
-                    }
-                }
+        public string FullName => _fullName.Value;
 
-                return _fullName;
-            }
-        }
-
-        private IEnumerable<AttributeWrapper> _attributes;
-        public IEnumerable<AttributeWrapper> Attributes {
-            get 
-            {
-                if (_attributes == null)
-                {
-                    _attributes = _type.CustomAttributes.Where(attribute => attribute.AttributeType.FullName.Equals("System.ObsoleteAttribute"))
-                        .Select(customAttribute => new AttributeWrapper(customAttribute, DocId))
-                        .ToList();
-                }
-                return _attributes;
-            } 
-        }
+        public IEnumerable<AttributeWrapper> Attributes => _attributes.Value;
 
         public string ManifestModuleName
         {
@@ -552,19 +552,9 @@ namespace SDKDocGenerator
             return name;
         }
 
-        IList<ConstructorInfoWrapper> _constructors;
         public IList<ConstructorInfoWrapper> GetConstructors()
         {
-            if (this._constructors == null)
-            {
-                this._constructors = new List<ConstructorInfoWrapper>();
-                foreach (var info in this._type.GetConstructors())
-                {
-                    this._constructors.Add(new ConstructorInfoWrapper(info, DocId));
-                }
-            }
-
-            return this._constructors;
+            return this._constructors.Value;
         }
 
         public TypeWrapper BaseType
@@ -657,19 +647,9 @@ namespace SDKDocGenerator
             return wrappers;
         }
 
-        IList<FieldInfoWrapper> _fields;
         public IList<FieldInfoWrapper> GetFields()
         {
-            if (this._fields == null)
-            {
-                this._fields = new List<FieldInfoWrapper>();
-                foreach (var info in this._type.GetFields().Where(x => x.IsPublic))
-                {
-                    this._fields.Add(new FieldInfoWrapper(info, DocId));
-                }
-            }
-
-            return this._fields;
+            return this._fields.Value;
         }
 
         public string CreateReferenceHtml(bool fullTypeName)
@@ -873,19 +853,9 @@ namespace SDKDocGenerator
             return this._type.FullName;
         }
 
-        IList<TypeWrapper> _genericTypeArguments;
         public IList<TypeWrapper> GenericTypeArguments()
         {
-            if (this._genericTypeArguments == null)
-            {
-                this._genericTypeArguments = new List<TypeWrapper>();
-                foreach (var type in this._type.GenericTypeArguments)
-                {
-                    this._genericTypeArguments.Add(new TypeWrapper(type, DocId));
-                }
-            }
-
-            return this._genericTypeArguments;
+            return this._genericTypeArguments.Value;
         }
 
         public IList<TypeWrapper> GetGenericArguments()
@@ -927,11 +897,16 @@ namespace SDKDocGenerator
     public class FieldInfoWrapper : MemberInfoWrapper
     {
         readonly FieldInfo _info;
+        // Lazy + thread-safe so a shared wrapper can be read concurrently during parallel generation.
+        private readonly Lazy<TypeWrapper> _fieldType;
 
         public FieldInfoWrapper(FieldInfo info, string docId)
             : base(info, docId)
         {
             this._info = info;
+            this._fieldType = new Lazy<TypeWrapper>(
+                () => new TypeWrapper(this._info.FieldType, DocId),
+                LazyThreadSafetyMode.ExecutionAndPublication);
         }
 
         public bool IsPublic
@@ -954,10 +929,9 @@ namespace SDKDocGenerator
             get { return this._info.IsLiteral; }
         }
 
-        TypeWrapper _fieldType;
         public TypeWrapper FieldType
         {
-            get { return this._fieldType ?? (this._fieldType = new TypeWrapper(this._info.FieldType, DocId)); }
+            get { return this._fieldType.Value; }
         }
     }
 

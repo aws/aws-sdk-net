@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.XPath;
 using SDKDocGenerator.PlatformMap;
@@ -101,6 +103,11 @@ namespace SDKDocGenerator
         /// throughout documentation generation.
         /// </summary>
         public PlatformMap.PlatformAvailabilityMap PlatformMap { get; private set; }
+
+        // The shared concurrency budget for this generation pass (null when running serially). Set at
+        // the start of Generate() and used to opportunistically parallelize both the namespace loop
+        // and the per-type member loops without exceeding the global degree.
+        private ConcurrencyGate _gate;
 
         /// <summary>
         /// Attaches a platform availability map to this manifest.
@@ -219,10 +226,29 @@ namespace SDKDocGenerator
         public void PreloadDocumentation()
         {
             Trace.WriteLine($"\tpre-loading documentation for {ServiceName}");
-            foreach (var platform in AllPlatforms)
+            LoadDocumentationForAllPlatforms();
+        }
+
+        /// <summary>
+        /// Parses and caches the XML documentation for every platform of this service. Each platform's
+        /// XML file is large and independent, and the underlying cache (NDocUtilities._ndocCache) is a
+        /// ConcurrentDictionary keyed by a per-(service, platform) docId, so the parses run in parallel.
+        /// This matters because the parse sits on the critical path at the start of Generate (before the
+        /// namespace fan-out) - serializing 4 multi-MB XML parses there was a measurable bottleneck for
+        /// large services like EC2.
+        /// </summary>
+        private void LoadDocumentationForAllPlatforms()
+        {
+            var platforms = AllPlatforms.ToList();
+            if (platforms.Count <= 1)
             {
-                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+                foreach (var platform in platforms)
+                    NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
+                return;
             }
+
+            Parallel.ForEach(platforms, platform =>
+                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options));
         }
 
         /// <summary>
@@ -239,49 +265,47 @@ namespace SDKDocGenerator
         /// <param name="tocWriter">
         /// Toc generation handler to which each processed namespace is registered
         /// </param>
-        public void Generate(DeferredTypesProvider deferrableTypes, TOCWriter tocWriter)
+        public void Generate(DeferredTypesProvider deferrableTypes, TOCWriter tocWriter, ConcurrencyGate gate = null)
         {
+            _gate = gate;
             Trace.WriteLine($"\tgenerating from {Options.Platform}/{Path.GetFileName(AssemblyPath)}");
 
             // load the assembly and ndoc dataset for the service we're about to generate; assuming
             // they contain no deferrable types we'll release them when done
             var discardAssemblyOnExit = true;
 
-            foreach (var platform in AllPlatforms)
-            {
-                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
-            }
+            LoadDocumentationForAllPlatforms();
 
             var namespaceNames = ManifestAssemblyContext.SdkAssembly.GetNamespaces();
 
             var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
-            var processed = 0;
 
+            // Serial pre-pass: handle deferred namespaces (Core-only) and collect the namespaces we
+            // will actually write. This stays serial because it mutates discardAssemblyOnExit and
+            // feeds the shared DeferredTypesProvider; it's cheap (no page writes).
+            var namespacesToWrite = new List<string>();
             foreach (var namespaceName in namespaceNames)
             {
-                // when processing awssdk.core, we don't get handed a collection to hold
-                // deferrable types
-                if (deferrableTypes != null)
+                if (deferrableTypes != null && deferrableTypes.Namespaces.Contains(namespaceName))
                 {
-                    if (deferrableTypes.Namespaces.Contains(namespaceName))
+                    var types = ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName);
+                    if (types.Any())
                     {
-                        var types = ManifestAssemblyContext.SdkAssembly.GetTypesForNamespace(namespaceName);
-                        if (types.Any())
-                        {
-                            Trace.WriteLine($"\t\tdeferring processing of types in namespace {namespaceName} for {Path.GetFileName(AssemblyPath)}");
-                            deferrableTypes.AddTypes(types);
-                            discardAssemblyOnExit = false;
-                        }
-
-                        continue;
+                        Trace.WriteLine($"\t\tdeferring processing of types in namespace {namespaceName} for {Path.GetFileName(AssemblyPath)}");
+                        deferrableTypes.AddTypes(types);
+                        discardAssemblyOnExit = false;
                     }
+                    continue;
                 }
 
-                WriteNamespace(frameworkVersion, namespaceName);
-                tocWriter.BuildNamespaceToc(namespaceName, ManifestAssemblyContext.SdkAssembly);
-
-                Trace.WriteLine($"\t\t{namespaceName} processed ({++processed} of {namespaceNames.Count()})");
+                namespacesToWrite.Add(namespaceName);
             }
+
+            // Generate each namespace's pages. Namespaces within a service are independent (each owns
+            // its own shared type wrappers; cross-references create fresh wrappers), and WriteNamespace
+            // + BuildNamespaceToc only touch already-thread-safe shared state, so this is safe to run
+            // concurrently. We only borrow spare slots from the shared budget so we never oversubscribe.
+            ProcessNamespaces(namespacesToWrite, frameworkVersion, tocWriter, gate);
 
             // Don't discard if this manifest has exclusive members that need page generation
             if (PlatformMap?.ExclusiveMemberCount > 0)
@@ -298,6 +322,64 @@ namespace SDKDocGenerator
                 ManifestAssemblyContext.Dispose();
                 ManifestAssemblyContext = null;
             }
+        }
+
+        /// <summary>
+        /// Writes the pages + TOC entry for each namespace. Runs serially when no concurrency gate is
+        /// supplied. When a gate is supplied, each namespace tries to borrow a spare slot from the
+        /// shared budget and run on a worker thread; if no slot is free it is processed inline on the
+        /// current thread. Borrowing-or-inline guarantees forward progress (no deadlock) and means the
+        /// extra parallelism only materializes when cores would otherwise be idle (the run's tail).
+        /// </summary>
+        private void ProcessNamespaces(IList<string> namespacesToWrite, FrameworkVersion frameworkVersion, TOCWriter tocWriter, ConcurrencyGate gate)
+        {
+            RunGated(namespacesToWrite, ns => WriteNamespaceAndToc(frameworkVersion, ns, tocWriter));
+        }
+
+        /// <summary>
+        /// Runs <paramref name="action"/> over each item. When the shared concurrency gate has a spare
+        /// slot, the item runs on a worker thread (slot released on completion); otherwise it runs
+        /// inline on the current thread. Borrow-or-inline guarantees forward progress (no deadlock) and
+        /// caps total concurrency at the global degree, so the extra fan-out only appears when cores
+        /// would otherwise be idle (e.g. the run's tail, where one huge service/type is finishing).
+        /// Used for both the namespace loop and the per-type member loops.
+        /// </summary>
+        private void RunGated<T>(IList<T> items, Action<T> action)
+        {
+            if (_gate == null || items.Count <= 1)
+            {
+                foreach (var item in items)
+                    action(item);
+                return;
+            }
+
+            var tasks = new List<Task>();
+            foreach (var item in items)
+            {
+                var captured = item;
+                if (_gate.TryAcquire())
+                {
+                    tasks.Add(Task.Run(() =>
+                    {
+                        try { action(captured); }
+                        finally { _gate.Release(); }
+                    }));
+                }
+                else
+                {
+                    action(captured);
+                }
+            }
+
+            if (tasks.Count > 0)
+                Task.WaitAll(tasks.ToArray());
+        }
+
+        private void WriteNamespaceAndToc(FrameworkVersion frameworkVersion, string namespaceName, TOCWriter tocWriter)
+        {
+            WriteNamespace(frameworkVersion, namespaceName);
+            tocWriter.BuildNamespaceToc(namespaceName, ManifestAssemblyContext.SdkAssembly);
+            Trace.WriteLine($"\t\t{namespaceName} processed");
         }
 
         /// <summary>
@@ -331,10 +413,7 @@ namespace SDKDocGenerator
             Trace.WriteLine($"\tgenerating exclusive method pages from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
 
             // Load NDoc documentation for all platforms
-            foreach (var platform in AllPlatforms)
-            {
-                NDocUtilities.LoadDocumentation(AssemblyName, ServiceName, platform, Options);
-            }
+            LoadDocumentationForAllPlatforms();
 
             var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
 
@@ -423,31 +502,23 @@ namespace SDKDocGenerator
             var writer = new ClassWriter(this, version, type, methods);
             writer.Write();
 
-            foreach (var item in type.GetConstructors().Where(x => x.IsPublic))
-            {
-                var itemWriter = new ConstructorWriter(this, version, item);
-                itemWriter.Write();
-            }
+            // The per-member pages are independent of one another (each writes its own file and only
+            // reads the now-thread-safe shared wrappers + caches), so we emit them through the shared
+            // gate. This is the dominant cost for "mega" types like AmazonEC2Client (~1,788 methods),
+            // which can now fan their method pages across idle cores in the tail of a run.
+            var constructorItems = type.GetConstructors().Where(x => x.IsPublic).ToList();
+            RunGated(constructorItems, item => new ConstructorWriter(this, version, item).Write());
 
-            foreach (var item in type.GetMethodsToDocument())
-            {
-                // If a method is in another namespace, it is inherited and should not be overwritten
-                if (item.DeclaringType.Namespace == type.Namespace)
-                {
-                    var itemWriter = new MethodWriter(this, version, item);
-                    itemWriter.Write();
-                }
-            }
+            // If a member is in another namespace, it is inherited and should not be overwritten.
+            var methodItems = type.GetMethodsToDocument()
+                .Where(item => item.DeclaringType.Namespace == type.Namespace)
+                .ToList();
+            RunGated(methodItems, item => new MethodWriter(this, version, item).Write());
 
-            foreach (var item in type.GetEvents())
-            {
-                // If an event is in another namespace, it is inherited and should not be overwritten
-                if (item.DeclaringType.Namespace == type.Namespace)
-                {
-                    var itemWriter = new EventWriter(this, version, item);
-                    itemWriter.Write();
-                }
-            }
+            var eventItems = type.GetEvents()
+                .Where(item => item.DeclaringType.Namespace == type.Namespace)
+                .ToList();
+            RunGated(eventItems, item => new EventWriter(this, version, item).Write());
         }
 
         public class ManifestAssemblyWrapper : IDisposable
