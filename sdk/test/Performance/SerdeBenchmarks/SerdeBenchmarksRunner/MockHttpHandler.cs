@@ -39,10 +39,11 @@ public class MockHttpHandler : HttpMessageHandler
         _responseHeaders = responseHeaders ?? new Dictionary<string, string>();
     }
 
-    protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        // Drain the request content to simulate full serialization
-        request.Content?.ReadAsByteArrayAsync(cancellationToken);
+        // Drain the request content to ensure full serialization cost is measured
+        if (request.Content != null)
+            await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 
         var response = new HttpResponseMessage(_statusCode)
         {
@@ -59,7 +60,7 @@ public class MockHttpHandler : HttpMessageHandler
         if (!response.Headers.Contains("x-amzn-RequestId"))
             response.Headers.TryAddWithoutValidation("x-amzn-RequestId", "benchmark-request-id");
 
-        return Task.FromResult(response);
+        return response;
     }
 }
 
