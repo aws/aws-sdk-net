@@ -1,0 +1,23 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "UpdateRewardFailure",
+    "operationName" : "UpdateReward",
+    "input" : {
+      "JobArn" : "arn:aws:sagemaker:us-east-1:123456789012:job/AgentRFT/nonexistent-job",
+      "TrajectoryId" : "nonexistent-trajectory",
+      "Rewards" : [ 1.0 ]
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "AccessDeniedException"
+      }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}

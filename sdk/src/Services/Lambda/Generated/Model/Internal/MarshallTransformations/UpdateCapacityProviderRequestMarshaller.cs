@@ -87,6 +87,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetPropagateTags())
+            {
+                context.Writer.WritePropertyName("PropagateTags");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PropagateTagsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PropagateTags, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

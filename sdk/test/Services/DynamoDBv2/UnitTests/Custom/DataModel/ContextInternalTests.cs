@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
 
@@ -1339,6 +1341,87 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(2, result.Count);
             Assert.IsTrue(result.Contains("PropX"));
             Assert.IsTrue(result.Contains("PropY"));
+        }
+
+        [TestMethod]
+        public async Task LoadAsync_WithProjectionExpression()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.GetItemAsync(
+                It.Is<GetItemRequest>(r =>
+                    r.TableName == "OperationPrefix-TableName" &&
+                    r.Key != null &&
+                    r.Key.Count == 2 &&
+                    r.ExpressionAttributeNames.Count == 2 &&
+                    r.ExpressionAttributeNames["#P0"] == "Id" &&
+                    r.ExpressionAttributeNames["#P1"] == "Name" &&
+                    r.ProjectionExpression == "#P0, #P1" &&
+                    r.AttributesToGet == null
+                    ),
+                It.IsAny<CancellationToken>()))
+               .ReturnsAsync(new GetItemResponse() 
+               {
+                   Item = new Dictionary<string, AttributeValue>
+                   {
+                       ["Id"] = new AttributeValue { N = "123" },
+                       ["Name"] = new AttributeValue { S = "Name" }
+                   }
+               })
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var loadConfig = new LoadConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            var result = await context.LoadAsync<DataModel>("123", "Name", loadConfig);
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public void Load_WithProjectionExpression()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.GetItem(
+                It.Is<GetItemRequest>(r =>
+                    r.TableName == "OperationPrefix-TableName" &&
+                    r.Key != null &&
+                    r.Key.Count == 2 &&
+                    r.ExpressionAttributeNames.Count == 2 &&
+                    r.ExpressionAttributeNames["#P0"] == "Id" &&
+                    r.ExpressionAttributeNames["#P1"] == "Name" &&
+                    r.ProjectionExpression == "#P0, #P1" && 
+                    r.AttributesToGet == null
+                    )))
+               .Returns(new GetItemResponse()
+               {
+                   Item = new Dictionary<string, AttributeValue>
+                   {
+                       ["Id"] = new AttributeValue { N = "123" },
+                       ["Name"] = new AttributeValue { S = "Name" }
+                   }
+               })
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var loadConfig = new LoadConfig() { TableNamePrefix = "OperationPrefix-" };
+
+            var result = context.Load<DataModel>("123", "Name", loadConfig);
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
         }
 
         [TestMethod]

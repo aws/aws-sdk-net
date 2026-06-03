@@ -1,3 +1,106 @@
+### 4.0.261.0 (2026-06-03 05:56 UTC)
+* DynamoDBv2 (4.0.19.0)
+	* Replace legacy parameter AttributesToGet with ProjectionExpression and ExpressionAttributeNames in LoadAsync flow
+* GeoRoutes (4.0.7.0)
+	* Add "standardRegionalEndpoints" back to fix 'Could not connect to the endpoint URL'
+
+### 4.0.260.0 (2026-06-02 18:32 UTC)
+* AWSMarketplaceMetering (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudWatch (4.0.11.0)
+	* Adding new BDD representation of endpoint ruleset
+* EC2 (4.0.91.0)
+	* Amazon EC2 now supports self-service cancellation of future-dated Capacity Reservations. A cancellation charge applies based on remaining commitment. Customers can generate a cancellation quote to review charges before confirming.
+* ElastiCache (4.0.5.0)
+	* Amazon ElastiCache for Valkey now supports durability. This new capability is enabled through a Multi-AZ transactional log, enabling fast recovery and restart during failures.
+* GeoRoutes (4.0.6.0)
+	* Added Transit and Intermodal travel modes to CalculateRoutes. Plan routes using public transit (bus, subway, train, ferry) or combine transit with driving, taxi, and rental car segments in a single multi-modal route.
+* GuardDuty (4.0.22.0)
+	* Amazon GuardDuty Runtime Monitoring now supports 3 new SensitiveFileModified finding types (Persistence, PrivilegeEscalation, DefenseEvasion) that detect when security-sensitive system files are modified on EC2 instances or containers, indicating potential compromise through file tampering.
+* IoT (4.0.9.1)
+	* Fleet indexing documentation update
+* KeyspacesStreams (4.0.5.0)
+	* Added iterator description to the GetRecords API response for Amazon Keyspaces Change Data Capture (CDC) streams, enabling consumers to track their current position within the stream.
+* Lambda (4.0.17.0)
+	* Adds configuration for tag propagation to Lambda-managed resources.
+* Lex (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* ManagedBlockchain (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaConvert (4.0.18.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaLive (4.0.22.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaStore (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MigrationHub (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MTurk (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Neptune (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* PersonalizeRuntime (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* PI (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Pinpoint (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* PinpointEmail (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Polly (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* RAM (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Redshift (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* Rekognition (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceGroupsTaggingAPI (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53 (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Domains (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3 (4.0.24.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.61.0)
+	* Amazon SageMaker Job is a new service to help you manage various workloads related to model fine tuning, evaluation etc. Two job categories are supported today, AgentRFT for multi-turn agentic reinforcement fine tuning, and AgentRFTEvaluation for evaluating base model or trained model from AgentRFT.
+* SagemakerJobRuntime (4.0.0.0)
+	* Amazon SageMaker Job Runtime is a new service for managing trajectory data during multi-turn customization jobs. It provides APIs to send inference requests to models during job execution, mark rollouts as complete, and submit reward values for training trajectories.
+* SecretsManager (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityToken (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* ServiceCatalog (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Shield (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleSystemsManagement (4.0.8.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleWorkflow (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Snowball (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SQS (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SSO (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* StepFunctions (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* StorageGateway (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TranscribeService (4.0.7.0)
+	* Release new Language locales including am-ET, es-MX, fa-AF, ht-HT, jv-ID, km-KH, my-MM, sq-AL, ne-NP. The commit shows past locales that have already been release which include cy-gb, ga-ie, gd-gb.
+* Transfer (4.0.10.0)
+	* Adding new BDD representation of endpoint ruleset
+* WAF (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* XRay (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Core 4.0.7.5
+	* Fix: Fix an issue where AWS_REGION and AWS_ENDPOINT_URL both being set would cause the region to be nullified.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.259.0 (2026-06-01 18:19 UTC)
 * Amplify (4.0.4.0)
 	* Adding new BDD representation of endpoint ruleset

@@ -30,7 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Provides the circle that was used while calculating the route.
+    /// <c>AutoCircle</c> requests the route matrix service to define a <c>Circle</c> boundary
+    /// that best attempts to include most waypoints (<c>Origins</c> and <c>Destinations</c>)
+    /// using the <c>AutoCircle</c> settings. Any waypoints outside of the auto-defined <c>Circle</c>
+    /// boundary will be considered out of the routing boundary, which results in a route
+    /// matrix entry error.
+    /// 
+    ///  
+    /// <para>
+    ///  <c>AutoCircle</c> is only used in the request to configure a <c>Circle</c> for the
+    /// route calculation. The derived <c>Circle</c> will also be provided in the response.
+    /// </para>
     /// </summary>
     public partial class RouteMatrixAutoCircle
     {
@@ -40,7 +50,15 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Margin. 
         /// <para>
-        /// The margin provided for the calculation.
+        /// The minimal distance, in meters, between any waypoint and the perimeter of the circle
+        /// auto-defined for the boundary. Some margin is usually recommended so that the routing
+        /// has enough leeway to travel from one waypoint to another optimally without conflicting
+        /// with the routing boundary.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total of <c>MaxRadius</c> and <c>Margin</c> must be less than or equal to 200,000
+        /// meters.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=200000)]
@@ -59,7 +77,13 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property MaxRadius. 
         /// <para>
-        /// The maximum size of the radius provided for the calculation.
+        /// The maximum radius, in meters, that the auto-defined <c>Circle</c> boundary should
+        /// have, before the <c>Margin</c> distance is added to the circle.
+        /// </para>
+        ///  
+        /// <para>
+        /// The total of <c>MaxRadius</c> and <c>Margin</c> must be less than or equal to 200,000
+        /// meters.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=200000)]

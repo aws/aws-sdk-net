@@ -365,6 +365,22 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobs operation
+        ///</summary>
+        public IListJobsPaginator ListJobs(ListJobsRequest request) 
+        {
+            return new ListJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListJobSchemaVersions operation
+        ///</summary>
+        public IListJobSchemaVersionsPaginator ListJobSchemaVersions(ListJobSchemaVersionsRequest request) 
+        {
+            return new ListJobSchemaVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLabelingJobs operation
         ///</summary>
         public IListLabelingJobsPaginator ListLabelingJobs(ListLabelingJobsRequest request) 

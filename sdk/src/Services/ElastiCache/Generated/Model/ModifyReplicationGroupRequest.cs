@@ -61,6 +61,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterMode _clusterMode;
+        private Durability _durability;
         private string _engine;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
@@ -322,6 +323,26 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetClusterMode()
         {
             return this._clusterMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Durability. 
+        /// <para>
+        /// Specifies the durability setting for the replication group. Use this parameter to
+        /// change the durability mode of an existing replication group, for example from <c>sync</c>
+        /// to <c>async</c> or vice versa. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// </para>
+        /// </summary>
+        public Durability Durability
+        {
+            get { return this._durability; }
+            set { this._durability = value; }
+        }
+
+        // Check to see if Durability property is set
+        internal bool IsSetDurability()
+        {
+            return this._durability != null;
         }
 
         /// <summary>

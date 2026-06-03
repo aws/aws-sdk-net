@@ -37,6 +37,7 @@ namespace Amazon.Lambda.Model
     {
         private string _capacityProviderName;
         private CapacityProviderScalingConfig _capacityProviderScalingConfig;
+        private PropagateTags _propagateTags;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderName. 
@@ -73,6 +74,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCapacityProviderScalingConfig()
         {
             return this._capacityProviderScalingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags.
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
         }
 
     }

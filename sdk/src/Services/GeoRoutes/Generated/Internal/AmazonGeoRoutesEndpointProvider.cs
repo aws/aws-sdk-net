@@ -70,35 +70,35 @@ namespace Amazon.GeoRoutes.Internal
                 {
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.us-gov.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.us-gov.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.us-gov.{PartitionResult#dnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo-fips.{Region}.us-gov.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}/v2", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://routes.geo.{Region}.us-gov.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {

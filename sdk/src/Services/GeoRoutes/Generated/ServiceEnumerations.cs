@@ -819,6 +819,160 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteAccessibilityAttribute.
+    /// </summary>
+    public class RouteAccessibilityAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Wheelchair for RouteAccessibilityAttribute
+        /// </summary>
+        public static readonly RouteAccessibilityAttribute Wheelchair = new RouteAccessibilityAttribute("Wheelchair");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAccessibilityAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAccessibilityAttribute FindValue(string value)
+        {
+            return FindValue<RouteAccessibilityAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAccessibilityAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteAccessibilityAvailability.
+    /// </summary>
+    public class RouteAccessibilityAvailability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for RouteAccessibilityAvailability
+        /// </summary>
+        public static readonly RouteAccessibilityAvailability Available = new RouteAccessibilityAvailability("Available");
+        /// <summary>
+        /// Constant Limited for RouteAccessibilityAvailability
+        /// </summary>
+        public static readonly RouteAccessibilityAvailability Limited = new RouteAccessibilityAvailability("Limited");
+        /// <summary>
+        /// Constant Unavailable for RouteAccessibilityAvailability
+        /// </summary>
+        public static readonly RouteAccessibilityAvailability Unavailable = new RouteAccessibilityAvailability("Unavailable");
+        /// <summary>
+        /// Constant Unknown for RouteAccessibilityAvailability
+        /// </summary>
+        public static readonly RouteAccessibilityAvailability Unknown = new RouteAccessibilityAvailability("Unknown");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAccessibilityAvailability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAccessibilityAvailability FindValue(string value)
+        {
+            return FindValue<RouteAccessibilityAvailability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAccessibilityAvailability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteAttributionType.
+    /// </summary>
+    public class RouteAttributionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disclaimer for RouteAttributionType
+        /// </summary>
+        public static readonly RouteAttributionType Disclaimer = new RouteAttributionType("Disclaimer");
+        /// <summary>
+        /// Constant Tariff for RouteAttributionType
+        /// </summary>
+        public static readonly RouteAttributionType Tariff = new RouteAttributionType("Tariff");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteAttributionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteAttributionType FindValue(string value)
+        {
+            return FindValue<RouteAttributionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteAttributionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteDirection.
     /// </summary>
     public class RouteDirection : ConstantClass
@@ -1241,11 +1395,73 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteIntermodalEnabledLegs.
+    /// </summary>
+    public class RouteIntermodalEnabledLegs : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EntireRoute for RouteIntermodalEnabledLegs
+        /// </summary>
+        public static readonly RouteIntermodalEnabledLegs EntireRoute = new RouteIntermodalEnabledLegs("EntireRoute");
+        /// <summary>
+        /// Constant FirstLeg for RouteIntermodalEnabledLegs
+        /// </summary>
+        public static readonly RouteIntermodalEnabledLegs FirstLeg = new RouteIntermodalEnabledLegs("FirstLeg");
+        /// <summary>
+        /// Constant LastLeg for RouteIntermodalEnabledLegs
+        /// </summary>
+        public static readonly RouteIntermodalEnabledLegs LastLeg = new RouteIntermodalEnabledLegs("LastLeg");
+        /// <summary>
+        /// Constant None for RouteIntermodalEnabledLegs
+        /// </summary>
+        public static readonly RouteIntermodalEnabledLegs None = new RouteIntermodalEnabledLegs("None");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteIntermodalEnabledLegs(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteIntermodalEnabledLegs FindValue(string value)
+        {
+            return FindValue<RouteIntermodalEnabledLegs>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteIntermodalEnabledLegs(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteLegAdditionalFeature.
     /// </summary>
     public class RouteLegAdditionalFeature : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Bookings for RouteLegAdditionalFeature
+        /// </summary>
+        public static readonly RouteLegAdditionalFeature Bookings = new RouteLegAdditionalFeature("Bookings");
         /// <summary>
         /// Constant Elevation for RouteLegAdditionalFeature
         /// </summary>
@@ -1254,6 +1470,14 @@ namespace Amazon.GeoRoutes
         /// Constant Incidents for RouteLegAdditionalFeature
         /// </summary>
         public static readonly RouteLegAdditionalFeature Incidents = new RouteLegAdditionalFeature("Incidents");
+        /// <summary>
+        /// Constant IntermediateStops for RouteLegAdditionalFeature
+        /// </summary>
+        public static readonly RouteLegAdditionalFeature IntermediateStops = new RouteLegAdditionalFeature("IntermediateStops");
+        /// <summary>
+        /// Constant NextDepartures for RouteLegAdditionalFeature
+        /// </summary>
+        public static readonly RouteLegAdditionalFeature NextDepartures = new RouteLegAdditionalFeature("NextDepartures");
         /// <summary>
         /// Constant PassThroughWaypoints for RouteLegAdditionalFeature
         /// </summary>
@@ -1325,6 +1549,22 @@ namespace Amazon.GeoRoutes
     {
 
         /// <summary>
+        /// Constant AerialTramway for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode AerialTramway = new RouteLegTravelMode("AerialTramway");
+        /// <summary>
+        /// Constant Airplane for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode Airplane = new RouteLegTravelMode("Airplane");
+        /// <summary>
+        /// Constant Bus for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode Bus = new RouteLegTravelMode("Bus");
+        /// <summary>
+        /// Constant BusRapidTransit for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode BusRapidTransit = new RouteLegTravelMode("BusRapidTransit");
+        /// <summary>
         /// Constant Car for RouteLegTravelMode
         /// </summary>
         public static readonly RouteLegTravelMode Car = new RouteLegTravelMode("Car");
@@ -1333,17 +1573,57 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteLegTravelMode CarShuttleTrain = new RouteLegTravelMode("CarShuttleTrain");
         /// <summary>
+        /// Constant CityTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode CityTrain = new RouteLegTravelMode("CityTrain");
+        /// <summary>
         /// Constant Ferry for RouteLegTravelMode
         /// </summary>
         public static readonly RouteLegTravelMode Ferry = new RouteLegTravelMode("Ferry");
+        /// <summary>
+        /// Constant FunicularRailway for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode FunicularRailway = new RouteLegTravelMode("FunicularRailway");
+        /// <summary>
+        /// Constant HighSpeedTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode HighSpeedTrain = new RouteLegTravelMode("HighSpeedTrain");
+        /// <summary>
+        /// Constant IntercityTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode IntercityTrain = new RouteLegTravelMode("IntercityTrain");
+        /// <summary>
+        /// Constant InterregionalTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode InterregionalTrain = new RouteLegTravelMode("InterregionalTrain");
+        /// <summary>
+        /// Constant LightRail for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode LightRail = new RouteLegTravelMode("LightRail");
+        /// <summary>
+        /// Constant Monorail for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode Monorail = new RouteLegTravelMode("Monorail");
         /// <summary>
         /// Constant Pedestrian for RouteLegTravelMode
         /// </summary>
         public static readonly RouteLegTravelMode Pedestrian = new RouteLegTravelMode("Pedestrian");
         /// <summary>
+        /// Constant PrivateBus for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode PrivateBus = new RouteLegTravelMode("PrivateBus");
+        /// <summary>
+        /// Constant RegionalTrain for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode RegionalTrain = new RouteLegTravelMode("RegionalTrain");
+        /// <summary>
         /// Constant Scooter for RouteLegTravelMode
         /// </summary>
         public static readonly RouteLegTravelMode Scooter = new RouteLegTravelMode("Scooter");
+        /// <summary>
+        /// Constant Subway for RouteLegTravelMode
+        /// </summary>
+        public static readonly RouteLegTravelMode Subway = new RouteLegTravelMode("Subway");
         /// <summary>
         /// Constant Truck for RouteLegTravelMode
         /// </summary>
@@ -1398,6 +1678,18 @@ namespace Amazon.GeoRoutes
         /// Constant Pedestrian for RouteLegType
         /// </summary>
         public static readonly RouteLegType Pedestrian = new RouteLegType("Pedestrian");
+        /// <summary>
+        /// Constant Rental for RouteLegType
+        /// </summary>
+        public static readonly RouteLegType Rental = new RouteLegType("Rental");
+        /// <summary>
+        /// Constant Taxi for RouteLegType
+        /// </summary>
+        public static readonly RouteLegType Taxi = new RouteLegType("Taxi");
+        /// <summary>
+        /// Constant Transit for RouteLegType
+        /// </summary>
+        public static readonly RouteLegType Transit = new RouteLegType("Transit");
         /// <summary>
         /// Constant Vehicle for RouteLegType
         /// </summary>
@@ -1819,6 +2111,52 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RoutePedestrianAfterTravelStepType.
+    /// </summary>
+    public class RoutePedestrianAfterTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Wait for RoutePedestrianAfterTravelStepType
+        /// </summary>
+        public static readonly RoutePedestrianAfterTravelStepType Wait = new RoutePedestrianAfterTravelStepType("Wait");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutePedestrianAfterTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutePedestrianAfterTravelStepType FindValue(string value)
+        {
+            return FindValue<RoutePedestrianAfterTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutePedestrianAfterTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RoutePedestrianNoticeCode.
     /// </summary>
     public class RoutePedestrianNoticeCode : ConstantClass
@@ -1878,6 +2216,64 @@ namespace Amazon.GeoRoutes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RoutePedestrianNoticeCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoutePedestrianPlaceType.
+    /// </summary>
+    public class RoutePedestrianPlaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessPoint for RoutePedestrianPlaceType
+        /// </summary>
+        public static readonly RoutePedestrianPlaceType AccessPoint = new RoutePedestrianPlaceType("AccessPoint");
+        /// <summary>
+        /// Constant DockingStation for RoutePedestrianPlaceType
+        /// </summary>
+        public static readonly RoutePedestrianPlaceType DockingStation = new RoutePedestrianPlaceType("DockingStation");
+        /// <summary>
+        /// Constant ParkingLot for RoutePedestrianPlaceType
+        /// </summary>
+        public static readonly RoutePedestrianPlaceType ParkingLot = new RoutePedestrianPlaceType("ParkingLot");
+        /// <summary>
+        /// Constant Station for RoutePedestrianPlaceType
+        /// </summary>
+        public static readonly RoutePedestrianPlaceType Station = new RoutePedestrianPlaceType("Station");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutePedestrianPlaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutePedestrianPlaceType FindValue(string value)
+        {
+            return FindValue<RoutePedestrianPlaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutePedestrianPlaceType(string value)
         {
             return FindValue(value);
         }
@@ -1959,6 +2355,292 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteRentalAfterTravelStepType.
+    /// </summary>
+    public class RouteRentalAfterTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Park for RouteRentalAfterTravelStepType
+        /// </summary>
+        public static readonly RouteRentalAfterTravelStepType Park = new RouteRentalAfterTravelStepType("Park");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteRentalAfterTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteRentalAfterTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteRentalAfterTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteRentalAfterTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteRentalBeforeTravelStepType.
+    /// </summary>
+    public class RouteRentalBeforeTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Setup for RouteRentalBeforeTravelStepType
+        /// </summary>
+        public static readonly RouteRentalBeforeTravelStepType Setup = new RouteRentalBeforeTravelStepType("Setup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteRentalBeforeTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteRentalBeforeTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteRentalBeforeTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteRentalBeforeTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteRentalMode.
+    /// </summary>
+    public class RouteRentalMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for RouteRentalMode
+        /// </summary>
+        public static readonly RouteRentalMode All = new RouteRentalMode("All");
+        /// <summary>
+        /// Constant Car for RouteRentalMode
+        /// </summary>
+        public static readonly RouteRentalMode Car = new RouteRentalMode("Car");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteRentalMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteRentalMode FindValue(string value)
+        {
+            return FindValue<RouteRentalMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteRentalMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteRentalPlaceType.
+    /// </summary>
+    public class RouteRentalPlaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessPoint for RouteRentalPlaceType
+        /// </summary>
+        public static readonly RouteRentalPlaceType AccessPoint = new RouteRentalPlaceType("AccessPoint");
+        /// <summary>
+        /// Constant DockingStation for RouteRentalPlaceType
+        /// </summary>
+        public static readonly RouteRentalPlaceType DockingStation = new RouteRentalPlaceType("DockingStation");
+        /// <summary>
+        /// Constant ParkingLot for RouteRentalPlaceType
+        /// </summary>
+        public static readonly RouteRentalPlaceType ParkingLot = new RouteRentalPlaceType("ParkingLot");
+        /// <summary>
+        /// Constant Station for RouteRentalPlaceType
+        /// </summary>
+        public static readonly RouteRentalPlaceType Station = new RouteRentalPlaceType("Station");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteRentalPlaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteRentalPlaceType FindValue(string value)
+        {
+            return FindValue<RouteRentalPlaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteRentalPlaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteRentalTravelStepType.
+    /// </summary>
+    public class RouteRentalTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Arrive for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Arrive = new RouteRentalTravelStepType("Arrive");
+        /// <summary>
+        /// Constant Continue for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Continue = new RouteRentalTravelStepType("Continue");
+        /// <summary>
+        /// Constant Depart for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Depart = new RouteRentalTravelStepType("Depart");
+        /// <summary>
+        /// Constant Exit for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Exit = new RouteRentalTravelStepType("Exit");
+        /// <summary>
+        /// Constant Keep for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Keep = new RouteRentalTravelStepType("Keep");
+        /// <summary>
+        /// Constant Ramp for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Ramp = new RouteRentalTravelStepType("Ramp");
+        /// <summary>
+        /// Constant RoundaboutEnter for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType RoundaboutEnter = new RouteRentalTravelStepType("RoundaboutEnter");
+        /// <summary>
+        /// Constant RoundaboutExit for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType RoundaboutExit = new RouteRentalTravelStepType("RoundaboutExit");
+        /// <summary>
+        /// Constant RoundaboutPass for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType RoundaboutPass = new RouteRentalTravelStepType("RoundaboutPass");
+        /// <summary>
+        /// Constant Turn for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType Turn = new RouteRentalTravelStepType("Turn");
+        /// <summary>
+        /// Constant UTurn for RouteRentalTravelStepType
+        /// </summary>
+        public static readonly RouteRentalTravelStepType UTurn = new RouteRentalTravelStepType("UTurn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteRentalTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteRentalTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteRentalTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteRentalTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteResponseNoticeCode.
     /// </summary>
     public class RouteResponseNoticeCode : ConstantClass
@@ -1969,9 +2651,21 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteResponseNoticeCode MainLanguageNotFound = new RouteResponseNoticeCode("MainLanguageNotFound");
         /// <summary>
+        /// Constant NoTransitStationsFound for RouteResponseNoticeCode
+        /// </summary>
+        public static readonly RouteResponseNoticeCode NoTransitStationsFound = new RouteResponseNoticeCode("NoTransitStationsFound");
+        /// <summary>
         /// Constant Other for RouteResponseNoticeCode
         /// </summary>
         public static readonly RouteResponseNoticeCode Other = new RouteResponseNoticeCode("Other");
+        /// <summary>
+        /// Constant TransitDataUnavailable for RouteResponseNoticeCode
+        /// </summary>
+        public static readonly RouteResponseNoticeCode TransitDataUnavailable = new RouteResponseNoticeCode("TransitDataUnavailable");
+        /// <summary>
+        /// Constant TransitRouteUnavailable for RouteResponseNoticeCode
+        /// </summary>
+        public static readonly RouteResponseNoticeCode TransitRouteUnavailable = new RouteResponseNoticeCode("TransitRouteUnavailable");
         /// <summary>
         /// Constant TravelTimeExceedsDriverWorkHours for RouteResponseNoticeCode
         /// </summary>
@@ -2731,6 +3425,334 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteTaxiAfterTravelStepType.
+    /// </summary>
+    public class RouteTaxiAfterTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Park for RouteTaxiAfterTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiAfterTravelStepType Park = new RouteTaxiAfterTravelStepType("Park");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiAfterTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiAfterTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTaxiAfterTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiAfterTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTaxiBeforeTravelStepType.
+    /// </summary>
+    public class RouteTaxiBeforeTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Wait for RouteTaxiBeforeTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiBeforeTravelStepType Wait = new RouteTaxiBeforeTravelStepType("Wait");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiBeforeTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiBeforeTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTaxiBeforeTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiBeforeTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTaxiMode.
+    /// </summary>
+    public class RouteTaxiMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for RouteTaxiMode
+        /// </summary>
+        public static readonly RouteTaxiMode All = new RouteTaxiMode("All");
+        /// <summary>
+        /// Constant Car for RouteTaxiMode
+        /// </summary>
+        public static readonly RouteTaxiMode Car = new RouteTaxiMode("Car");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiMode FindValue(string value)
+        {
+            return FindValue<RouteTaxiMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTaxiNoticeCode.
+    /// </summary>
+    public class RouteTaxiNoticeCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccuratePolylineUnavailable for RouteTaxiNoticeCode
+        /// </summary>
+        public static readonly RouteTaxiNoticeCode AccuratePolylineUnavailable = new RouteTaxiNoticeCode("AccuratePolylineUnavailable");
+        /// <summary>
+        /// Constant Other for RouteTaxiNoticeCode
+        /// </summary>
+        public static readonly RouteTaxiNoticeCode Other = new RouteTaxiNoticeCode("Other");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiNoticeCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiNoticeCode FindValue(string value)
+        {
+            return FindValue<RouteTaxiNoticeCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiNoticeCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTaxiPlaceType.
+    /// </summary>
+    public class RouteTaxiPlaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessPoint for RouteTaxiPlaceType
+        /// </summary>
+        public static readonly RouteTaxiPlaceType AccessPoint = new RouteTaxiPlaceType("AccessPoint");
+        /// <summary>
+        /// Constant Station for RouteTaxiPlaceType
+        /// </summary>
+        public static readonly RouteTaxiPlaceType Station = new RouteTaxiPlaceType("Station");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiPlaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiPlaceType FindValue(string value)
+        {
+            return FindValue<RouteTaxiPlaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiPlaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTaxiTravelStepType.
+    /// </summary>
+    public class RouteTaxiTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Arrive for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Arrive = new RouteTaxiTravelStepType("Arrive");
+        /// <summary>
+        /// Constant Continue for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Continue = new RouteTaxiTravelStepType("Continue");
+        /// <summary>
+        /// Constant Depart for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Depart = new RouteTaxiTravelStepType("Depart");
+        /// <summary>
+        /// Constant Exit for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Exit = new RouteTaxiTravelStepType("Exit");
+        /// <summary>
+        /// Constant Keep for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Keep = new RouteTaxiTravelStepType("Keep");
+        /// <summary>
+        /// Constant Ramp for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Ramp = new RouteTaxiTravelStepType("Ramp");
+        /// <summary>
+        /// Constant RoundaboutEnter for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType RoundaboutEnter = new RouteTaxiTravelStepType("RoundaboutEnter");
+        /// <summary>
+        /// Constant RoundaboutExit for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType RoundaboutExit = new RouteTaxiTravelStepType("RoundaboutExit");
+        /// <summary>
+        /// Constant RoundaboutPass for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType RoundaboutPass = new RouteTaxiTravelStepType("RoundaboutPass");
+        /// <summary>
+        /// Constant Turn for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType Turn = new RouteTaxiTravelStepType("Turn");
+        /// <summary>
+        /// Constant UTurn for RouteTaxiTravelStepType
+        /// </summary>
+        public static readonly RouteTaxiTravelStepType UTurn = new RouteTaxiTravelStepType("UTurn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTaxiTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTaxiTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTaxiTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTaxiTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteTollPassValidityPeriodType.
     /// </summary>
     public class RouteTollPassValidityPeriodType : ConstantClass
@@ -2913,6 +3935,654 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteTransitAfterTravelStepType.
+    /// </summary>
+    public class RouteTransitAfterTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deboard for RouteTransitAfterTravelStepType
+        /// </summary>
+        public static readonly RouteTransitAfterTravelStepType Deboard = new RouteTransitAfterTravelStepType("Deboard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitAfterTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitAfterTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTransitAfterTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitAfterTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitBeforeTravelStepType.
+    /// </summary>
+    public class RouteTransitBeforeTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Board for RouteTransitBeforeTravelStepType
+        /// </summary>
+        public static readonly RouteTransitBeforeTravelStepType Board = new RouteTransitBeforeTravelStepType("Board");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitBeforeTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitBeforeTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTransitBeforeTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitBeforeTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitIncidentEffect.
+    /// </summary>
+    public class RouteTransitIncidentEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Delayed for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect Delayed = new RouteTransitIncidentEffect("Delayed");
+        /// <summary>
+        /// Constant Detoured for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect Detoured = new RouteTransitIncidentEffect("Detoured");
+        /// <summary>
+        /// Constant Other for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect Other = new RouteTransitIncidentEffect("Other");
+        /// <summary>
+        /// Constant ServiceAdded for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect ServiceAdded = new RouteTransitIncidentEffect("ServiceAdded");
+        /// <summary>
+        /// Constant ServiceCancelled for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect ServiceCancelled = new RouteTransitIncidentEffect("ServiceCancelled");
+        /// <summary>
+        /// Constant ServiceModified for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect ServiceModified = new RouteTransitIncidentEffect("ServiceModified");
+        /// <summary>
+        /// Constant ServiceReduced for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect ServiceReduced = new RouteTransitIncidentEffect("ServiceReduced");
+        /// <summary>
+        /// Constant StopMoved for RouteTransitIncidentEffect
+        /// </summary>
+        public static readonly RouteTransitIncidentEffect StopMoved = new RouteTransitIncidentEffect("StopMoved");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitIncidentEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitIncidentEffect FindValue(string value)
+        {
+            return FindValue<RouteTransitIncidentEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitIncidentEffect(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitIncidentType.
+    /// </summary>
+    public class RouteTransitIncidentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accident for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Accident = new RouteTransitIncidentType("Accident");
+        /// <summary>
+        /// Constant Construction for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Construction = new RouteTransitIncidentType("Construction");
+        /// <summary>
+        /// Constant Demonstration for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Demonstration = new RouteTransitIncidentType("Demonstration");
+        /// <summary>
+        /// Constant Holiday for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Holiday = new RouteTransitIncidentType("Holiday");
+        /// <summary>
+        /// Constant Maintenance for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Maintenance = new RouteTransitIncidentType("Maintenance");
+        /// <summary>
+        /// Constant MedicalEmergency for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType MedicalEmergency = new RouteTransitIncidentType("MedicalEmergency");
+        /// <summary>
+        /// Constant Other for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Other = new RouteTransitIncidentType("Other");
+        /// <summary>
+        /// Constant PoliceActivity for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType PoliceActivity = new RouteTransitIncidentType("PoliceActivity");
+        /// <summary>
+        /// Constant Strike for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Strike = new RouteTransitIncidentType("Strike");
+        /// <summary>
+        /// Constant TechnicalProblem for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType TechnicalProblem = new RouteTransitIncidentType("TechnicalProblem");
+        /// <summary>
+        /// Constant Weather for RouteTransitIncidentType
+        /// </summary>
+        public static readonly RouteTransitIncidentType Weather = new RouteTransitIncidentType("Weather");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitIncidentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitIncidentType FindValue(string value)
+        {
+            return FindValue<RouteTransitIncidentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitIncidentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitIntermediateStopAttribute.
+    /// </summary>
+    public class RouteTransitIntermediateStopAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoEntry for RouteTransitIntermediateStopAttribute
+        /// </summary>
+        public static readonly RouteTransitIntermediateStopAttribute NoEntry = new RouteTransitIntermediateStopAttribute("NoEntry");
+        /// <summary>
+        /// Constant NoExit for RouteTransitIntermediateStopAttribute
+        /// </summary>
+        public static readonly RouteTransitIntermediateStopAttribute NoExit = new RouteTransitIntermediateStopAttribute("NoExit");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitIntermediateStopAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitIntermediateStopAttribute FindValue(string value)
+        {
+            return FindValue<RouteTransitIntermediateStopAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitIntermediateStopAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitMode.
+    /// </summary>
+    public class RouteTransitMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AerialTramway for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode AerialTramway = new RouteTransitMode("AerialTramway");
+        /// <summary>
+        /// Constant Airplane for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode Airplane = new RouteTransitMode("Airplane");
+        /// <summary>
+        /// Constant All for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode All = new RouteTransitMode("All");
+        /// <summary>
+        /// Constant Bus for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode Bus = new RouteTransitMode("Bus");
+        /// <summary>
+        /// Constant BusRapidTransit for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode BusRapidTransit = new RouteTransitMode("BusRapidTransit");
+        /// <summary>
+        /// Constant CityTrain for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode CityTrain = new RouteTransitMode("CityTrain");
+        /// <summary>
+        /// Constant Ferry for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode Ferry = new RouteTransitMode("Ferry");
+        /// <summary>
+        /// Constant FunicularRailway for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode FunicularRailway = new RouteTransitMode("FunicularRailway");
+        /// <summary>
+        /// Constant HighSpeedTrain for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode HighSpeedTrain = new RouteTransitMode("HighSpeedTrain");
+        /// <summary>
+        /// Constant IntercityTrain for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode IntercityTrain = new RouteTransitMode("IntercityTrain");
+        /// <summary>
+        /// Constant InterregionalTrain for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode InterregionalTrain = new RouteTransitMode("InterregionalTrain");
+        /// <summary>
+        /// Constant LightRail for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode LightRail = new RouteTransitMode("LightRail");
+        /// <summary>
+        /// Constant Monorail for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode Monorail = new RouteTransitMode("Monorail");
+        /// <summary>
+        /// Constant PrivateBus for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode PrivateBus = new RouteTransitMode("PrivateBus");
+        /// <summary>
+        /// Constant RegionalTrain for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode RegionalTrain = new RouteTransitMode("RegionalTrain");
+        /// <summary>
+        /// Constant Subway for RouteTransitMode
+        /// </summary>
+        public static readonly RouteTransitMode Subway = new RouteTransitMode("Subway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitMode FindValue(string value)
+        {
+            return FindValue<RouteTransitMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitNoticeCode.
+    /// </summary>
+    public class RouteTransitNoticeCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccuratePolylineUnavailable for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode AccuratePolylineUnavailable = new RouteTransitNoticeCode("AccuratePolylineUnavailable");
+        /// <summary>
+        /// Constant IntermediateStopsUnavailable for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode IntermediateStopsUnavailable = new RouteTransitNoticeCode("IntermediateStopsUnavailable");
+        /// <summary>
+        /// Constant NoSchedule for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode NoSchedule = new RouteTransitNoticeCode("NoSchedule");
+        /// <summary>
+        /// Constant Other for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode Other = new RouteTransitNoticeCode("Other");
+        /// <summary>
+        /// Constant PotentialViolatedVehicleRestrictionUsage for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode PotentialViolatedVehicleRestrictionUsage = new RouteTransitNoticeCode("PotentialViolatedVehicleRestrictionUsage");
+        /// <summary>
+        /// Constant ScheduledTimes for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ScheduledTimes = new RouteTransitNoticeCode("ScheduledTimes");
+        /// <summary>
+        /// Constant SeasonalClosure for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode SeasonalClosure = new RouteTransitNoticeCode("SeasonalClosure");
+        /// <summary>
+        /// Constant ViolatedAvoidAreas for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ViolatedAvoidAreas = new RouteTransitNoticeCode("ViolatedAvoidAreas");
+        /// <summary>
+        /// Constant ViolatedAvoidFerry for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ViolatedAvoidFerry = new RouteTransitNoticeCode("ViolatedAvoidFerry");
+        /// <summary>
+        /// Constant ViolatedAvoidRailFerry for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ViolatedAvoidRailFerry = new RouteTransitNoticeCode("ViolatedAvoidRailFerry");
+        /// <summary>
+        /// Constant ViolatedExcludedTransitMode for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ViolatedExcludedTransitMode = new RouteTransitNoticeCode("ViolatedExcludedTransitMode");
+        /// <summary>
+        /// Constant ViolatedVehicleRestriction for RouteTransitNoticeCode
+        /// </summary>
+        public static readonly RouteTransitNoticeCode ViolatedVehicleRestriction = new RouteTransitNoticeCode("ViolatedVehicleRestriction");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitNoticeCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitNoticeCode FindValue(string value)
+        {
+            return FindValue<RouteTransitNoticeCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitNoticeCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitPlaceType.
+    /// </summary>
+    public class RouteTransitPlaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Station for RouteTransitPlaceType
+        /// </summary>
+        public static readonly RouteTransitPlaceType Station = new RouteTransitPlaceType("Station");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitPlaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitPlaceType FindValue(string value)
+        {
+            return FindValue<RouteTransitPlaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitPlaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitTravelStepType.
+    /// </summary>
+    public class RouteTransitTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Depart for RouteTransitTravelStepType
+        /// </summary>
+        public static readonly RouteTransitTravelStepType Depart = new RouteTransitTravelStepType("Depart");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteTransitTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteTransitTripStatus.
+    /// </summary>
+    public class RouteTransitTripStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Added for RouteTransitTripStatus
+        /// </summary>
+        public static readonly RouteTransitTripStatus Added = new RouteTransitTripStatus("Added");
+        /// <summary>
+        /// Constant Cancelled for RouteTransitTripStatus
+        /// </summary>
+        public static readonly RouteTransitTripStatus Cancelled = new RouteTransitTripStatus("Cancelled");
+        /// <summary>
+        /// Constant Replaced for RouteTransitTripStatus
+        /// </summary>
+        public static readonly RouteTransitTripStatus Replaced = new RouteTransitTripStatus("Replaced");
+        /// <summary>
+        /// Constant Scheduled for RouteTransitTripStatus
+        /// </summary>
+        public static readonly RouteTransitTripStatus Scheduled = new RouteTransitTripStatus("Scheduled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteTransitTripStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteTransitTripStatus FindValue(string value)
+        {
+            return FindValue<RouteTransitTripStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteTransitTripStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteTravelMode.
     /// </summary>
     public class RouteTravelMode : ConstantClass
@@ -2923,6 +4593,10 @@ namespace Amazon.GeoRoutes
         /// </summary>
         public static readonly RouteTravelMode Car = new RouteTravelMode("Car");
         /// <summary>
+        /// Constant Intermodal for RouteTravelMode
+        /// </summary>
+        public static readonly RouteTravelMode Intermodal = new RouteTravelMode("Intermodal");
+        /// <summary>
         /// Constant Pedestrian for RouteTravelMode
         /// </summary>
         public static readonly RouteTravelMode Pedestrian = new RouteTravelMode("Pedestrian");
@@ -2930,6 +4604,10 @@ namespace Amazon.GeoRoutes
         /// Constant Scooter for RouteTravelMode
         /// </summary>
         public static readonly RouteTravelMode Scooter = new RouteTravelMode("Scooter");
+        /// <summary>
+        /// Constant Transit for RouteTravelMode
+        /// </summary>
+        public static readonly RouteTravelMode Transit = new RouteTravelMode("Transit");
         /// <summary>
         /// Constant Truck for RouteTravelMode
         /// </summary>
@@ -3129,6 +4807,52 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteVehicleAfterTravelStepType.
+    /// </summary>
+    public class RouteVehicleAfterTravelStepType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Park for RouteVehicleAfterTravelStepType
+        /// </summary>
+        public static readonly RouteVehicleAfterTravelStepType Park = new RouteVehicleAfterTravelStepType("Park");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteVehicleAfterTravelStepType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteVehicleAfterTravelStepType FindValue(string value)
+        {
+            return FindValue<RouteVehicleAfterTravelStepType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteVehicleAfterTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteVehicleIncidentSeverity.
     /// </summary>
     public class RouteVehicleIncidentSeverity : ConstantClass
@@ -3266,6 +4990,56 @@ namespace Amazon.GeoRoutes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteVehicleIncidentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteVehicleMode.
+    /// </summary>
+    public class RouteVehicleMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for RouteVehicleMode
+        /// </summary>
+        public static readonly RouteVehicleMode All = new RouteVehicleMode("All");
+        /// <summary>
+        /// Constant Car for RouteVehicleMode
+        /// </summary>
+        public static readonly RouteVehicleMode Car = new RouteVehicleMode("Car");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteVehicleMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteVehicleMode FindValue(string value)
+        {
+            return FindValue<RouteVehicleMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteVehicleMode(string value)
         {
             return FindValue(value);
         }
@@ -3427,6 +5201,64 @@ namespace Amazon.GeoRoutes
 
 
     /// <summary>
+    /// Constants used for properties of type RouteVehiclePlaceType.
+    /// </summary>
+    public class RouteVehiclePlaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessPoint for RouteVehiclePlaceType
+        /// </summary>
+        public static readonly RouteVehiclePlaceType AccessPoint = new RouteVehiclePlaceType("AccessPoint");
+        /// <summary>
+        /// Constant DockingStation for RouteVehiclePlaceType
+        /// </summary>
+        public static readonly RouteVehiclePlaceType DockingStation = new RouteVehiclePlaceType("DockingStation");
+        /// <summary>
+        /// Constant ParkingLot for RouteVehiclePlaceType
+        /// </summary>
+        public static readonly RouteVehiclePlaceType ParkingLot = new RouteVehiclePlaceType("ParkingLot");
+        /// <summary>
+        /// Constant Station for RouteVehiclePlaceType
+        /// </summary>
+        public static readonly RouteVehiclePlaceType Station = new RouteVehiclePlaceType("Station");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteVehiclePlaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteVehiclePlaceType FindValue(string value)
+        {
+            return FindValue<RouteVehiclePlaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteVehiclePlaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RouteVehicleTravelStepType.
     /// </summary>
     public class RouteVehicleTravelStepType : ConstantClass
@@ -3514,6 +5346,60 @@ namespace Amazon.GeoRoutes
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteVehicleTravelStepType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouteWebLinkDeviceType.
+    /// </summary>
+    public class RouteWebLinkDeviceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Android for RouteWebLinkDeviceType
+        /// </summary>
+        public static readonly RouteWebLinkDeviceType Android = new RouteWebLinkDeviceType("Android");
+        /// <summary>
+        /// Constant Ios for RouteWebLinkDeviceType
+        /// </summary>
+        public static readonly RouteWebLinkDeviceType Ios = new RouteWebLinkDeviceType("Ios");
+        /// <summary>
+        /// Constant Web for RouteWebLinkDeviceType
+        /// </summary>
+        public static readonly RouteWebLinkDeviceType Web = new RouteWebLinkDeviceType("Web");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouteWebLinkDeviceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouteWebLinkDeviceType FindValue(string value)
+        {
+            return FindValue<RouteWebLinkDeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouteWebLinkDeviceType(string value)
         {
             return FindValue(value);
         }

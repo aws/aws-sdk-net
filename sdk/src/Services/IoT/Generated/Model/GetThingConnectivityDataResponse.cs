@@ -106,9 +106,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The reason why the client is disconnecting. When you enable or update the indexing
-        /// configuration, this value might be <c>UNKNOWN</c> for devices that have never connected
-        /// or have been disconnected for more than an hour.
+        /// The reason that the client is disconnected.
         /// </para>
         /// </summary>
         public DisconnectReasonValue DisconnectReason
@@ -261,9 +259,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The timestamp of when the event occurred. When you enable or update the indexing configuration,
-        /// this value might be the Unix epoch time (0) for devices that have never connected
-        /// or have been disconnected for more than an hour.
+        /// The timestamp of when the device connected or disconnected.
         /// </para>
         /// </summary>
         public DateTime? Timestamp

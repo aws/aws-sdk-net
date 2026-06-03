@@ -66,7 +66,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
-            request.ResourcePath = "/routes";
+            request.ResourcePath = "/v2/routes";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);

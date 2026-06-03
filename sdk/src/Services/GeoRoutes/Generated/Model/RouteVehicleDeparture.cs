@@ -40,7 +40,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Place. 
         /// <para>
-        /// The place details.
+        /// Place details corresponding to the departure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

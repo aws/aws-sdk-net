@@ -109,6 +109,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.DataTiering = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Durability", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Durability = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Engine", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -15633,7 +15633,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Retrieves the live connectivity status per device.
+        /// Retrieves the live connectivity status per device. If a device has never connected
+        /// to IoT Core or was disconnected for more than 1 hour before fleet indexing's <c>thingConnectivityIndexingMode</c>
+        /// was enabled, the response will have the <c>connected</c> field set to <c>false</c>
+        /// with no additional session details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetThingConnectivityData service method.</param>
         /// 
@@ -15671,7 +15674,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Retrieves the live connectivity status per device.
+        /// Retrieves the live connectivity status per device. If a device has never connected
+        /// to IoT Core or was disconnected for more than 1 hour before fleet indexing's <c>thingConnectivityIndexingMode</c>
+        /// was enabled, the response will have the <c>connected</c> field set to <c>false</c>
+        /// with no additional session details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetThingConnectivityData service method.</param>
         /// <param name="cancellationToken">
@@ -22971,8 +22977,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// The query search index.
+        /// Searches the specified index.
         /// 
+        ///  
+        /// <para>
+        /// If a device has never connected to IoT Core or was disconnected for more than 1 hour
+        /// before fleet indexing's <c>thingConnectivityIndexingMode</c> was enabled, the <c>connectivity</c>
+        /// object for this device in the response will have the <c>connected</c> field set to
+        /// <c>false</c> with no additional session details.
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
@@ -23018,8 +23031,15 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// The query search index.
+        /// Searches the specified index.
         /// 
+        ///  
+        /// <para>
+        /// If a device has never connected to IoT Core or was disconnected for more than 1 hour
+        /// before fleet indexing's <c>thingConnectivityIndexingMode</c> was enabled, the <c>connectivity</c>
+        /// object for this device in the response will have the <c>connected</c> field set to
+        /// <c>false</c> with no additional session details.
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SearchIndex</a>
