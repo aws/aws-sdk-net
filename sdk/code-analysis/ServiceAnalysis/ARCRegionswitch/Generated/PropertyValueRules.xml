@@ -152,7 +152,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.ListRoute53HealthChecksRequest.MaxResults</property>
-    <min>10</min>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -311,6 +311,34 @@
     <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraProvisionedScalingConfiguration.TimeoutMinutes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.AuroraServerlessScalingConfiguration.TimeoutMinutes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.CustomActionLambdaConfiguration.TimeoutMinutes</property>
     <min>1</min>
   </property-value-rule>
@@ -402,6 +430,20 @@
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Lambdas.CrossAccountRole</property>
     <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z][0-9A-Za-z-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.NeptuneGlobalDatabaseConfiguration.TimeoutMinutes</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.Plan.Arn</property>

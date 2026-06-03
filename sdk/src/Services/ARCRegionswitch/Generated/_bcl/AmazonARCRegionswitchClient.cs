@@ -1152,6 +1152,9 @@ namespace Amazon.ARCRegionswitch
         /// HTTP Status Code: 403
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
+        /// </exception>
         /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// 
@@ -1195,6 +1198,9 @@ namespace Amazon.ARCRegionswitch
         /// <para>
         /// HTTP Status Code: 403
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
+        /// The request processing has an invalid argument.
         /// </exception>
         /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
