@@ -77,9 +77,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequestPaymentRequest.BucketName");
             request.ResourcePath = "/";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 if (publicRequest.IsSetRequestPaymentConfiguration())
                 {
                     xmlWriter.WriteStartElement("RequestPaymentConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
@@ -93,8 +100,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
                 ChecksumUtils.SetChecksumData(
                     request,
@@ -103,7 +112,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     isRequestChecksumRequired: true,
                     headerName: "x-amz-sdk-checksum-algorithm"
                 );
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2006-03-01";
             } 
             catch (EncoderFallbackException e) 
             {

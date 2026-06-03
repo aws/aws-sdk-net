@@ -63,9 +63,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             request.AddPathResource("{HealthCheckId}", StringUtils.FromString(publicRequest.HealthCheckId));
             request.ResourcePath = "/2013-04-01/healthcheck/{HealthCheckId}";
 
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            {
+#else
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
-            {   
+            {
+#endif
                 xmlWriter.WriteStartElement("UpdateHealthCheckRequest", "https://route53.amazonaws.com/doc/2013-04-01/");
                 if(publicRequest.IsSetHealthCheckVersion())
                     xmlWriter.WriteElementString("HealthCheckVersion", StringUtils.FromLong(publicRequest.HealthCheckVersion.Value));
@@ -154,10 +161,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             PostMarshallCustomization(request, publicRequest);
             try 
             {
+#if NETFRAMEWORK
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
+#endif
                 request.Headers["Content-Type"] = "application/xml";
-                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-01";            
+                request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2013-04-01";
             } 
             catch (EncoderFallbackException e) 
             {

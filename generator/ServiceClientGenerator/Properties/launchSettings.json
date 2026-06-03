@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ServiceClientGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "/sro /sm route53;s3;restxml-tests-client;restxmlwithnamespace-tests-client;restxmldataplane"
+    }
+  }
+}
