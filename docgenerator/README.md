@@ -50,48 +50,6 @@ prebuilt release assemblies (recommended — much faster).
 
 ## Getting the assemblies
 
-### Option A — Download prebuilt release assemblies via Catapult (recommended)
-
-The Catapult release pipeline already publishes fully-built, signed assemblies.
-The **`dotnet4.zip`** artifact is self-contained: it includes every platform's
-assemblies in the exact layout the generator expects, plus the third-party
-dependency DLLs, the `.xml` doc files, and a matching `_sdk-versions.json`.
-
-> Use `dotnet4.zip`, **not** the per-TFM zips (`net472.zip`, `net80.zip`, ...).
-> The per-TFM zips contain the AWSSDK DLLs and XML but omit the third-party
-> dependency DLLs, so reflection fails (e.g. on `Microsoft.Bcl.AsyncInterfaces`).
-
-The product/stage for the v4 SDK is `dotnetv4` / `prod`.
-
-```bash
-# 1. Find the most recent successful release build
-catapult list-builds --product dotnetv4 --stage prod \
-  --build-type release --build-status SUCCEEDED --max-results 5
-
-# 2. Download the self-contained assemblies artifact for that build id
-catapult artifact download --product dotnetv4 --stage prod \
-  --build-id <BUILD_ID> \
-  --artifact-name dotnet4.zip \
-  --destination ./dotnet4.zip
-
-# 3. Unpack into the locations the generator expects (run from the repo root)
-unzip -q dotnet4.zip -d ./_artifacts
-mv ./_artifacts/assemblies          ./Deployment/assemblies
-cp ./_artifacts/_sdk-versions.json  ./Deployment/_sdk-versions.json
-```
-
-To see everything an individual build produced:
-
-```bash
-catapult artifact list --product dotnetv4 --stage prod --build-id <BUILD_ID>
-```
-
-> The release pipeline also publishes `docsBrazilImportArtifact.zip`, which is
-> the already-generated doc output. Download that if you just want the finished
-> site and don't need to run the generator at all.
-
-### Option B — Build the SDK locally
-
 Build the SDK so its assemblies land under `Deployment/assemblies`, then point
 the generator at that folder. See `buildtools/build.proj` for the SDK build
 targets.
