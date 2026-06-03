@@ -1668,6 +1668,16 @@ namespace AWSSDK_DotNet.UnitTests
             mockClient.VerifyAll();
         }
 
+        [DynamoDBTable("TableName")]
+        private class DataModel
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBRangeKey]
+            public string Name { get; set; }
+        }
+
         [DynamoDBTable("TableNameWithVersion")]
         private class VersionedDataModel
         {
