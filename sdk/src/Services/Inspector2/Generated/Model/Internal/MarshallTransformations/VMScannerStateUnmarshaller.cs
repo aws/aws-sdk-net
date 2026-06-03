@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Ec2ConfigurationState Object
+    /// Response Unmarshaller for VMScannerState Object
     /// </summary>  
-    public class Ec2ConfigurationStateUnmarshaller : IJsonUnmarshaller<Ec2ConfigurationState, JsonUnmarshallerContext>
+    public class VMScannerStateUnmarshaller : IJsonUnmarshaller<VMScannerState, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Ec2ConfigurationState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VMScannerState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Ec2ConfigurationState unmarshalledObject = new Ec2ConfigurationState();
+            VMScannerState unmarshalledObject = new VMScannerState();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scanModeState", targetDepth))
+                if (context.TestExpression("activated", targetDepth))
                 {
-                    var unmarshaller = Ec2ScanModeStateUnmarshaller.Instance;
-                    unmarshalledObject.ScanModeState = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Activated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vmScannerState", targetDepth))
+                if (context.TestExpression("activatedAt", targetDepth))
                 {
-                    var unmarshaller = VMScannerStateUnmarshaller.Instance;
-                    unmarshalledObject.VmScannerState = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ActivatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         }
 
 
-        private static Ec2ConfigurationStateUnmarshaller _instance = new Ec2ConfigurationStateUnmarshaller();        
+        private static VMScannerStateUnmarshaller _instance = new VMScannerStateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static Ec2ConfigurationStateUnmarshaller Instance
+        public static VMScannerStateUnmarshaller Instance
         {
             get
             {

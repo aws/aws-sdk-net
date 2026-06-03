@@ -34,7 +34,26 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class Ec2Configuration
     {
+        private bool? _activatevmScanner;
         private Ec2ScanMode _scanMode;
+
+        /// <summary>
+        /// Gets and sets the property ActivateVMScanner. 
+        /// <para>
+        /// Whether to activate Amazon Inspector VM scanner for Amazon EC2 scanning.
+        /// </para>
+        /// </summary>
+        public bool? ActivateVMScanner
+        {
+            get { return this._activatevmScanner; }
+            set { this._activatevmScanner = value; }
+        }
+
+        // Check to see if ActivateVMScanner property is set
+        internal bool IsSetActivateVMScanner()
+        {
+            return this._activatevmScanner.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ScanMode. 
