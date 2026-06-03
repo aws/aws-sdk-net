@@ -1,3 +1,73 @@
+### 4.0.262.0 (2026-06-03 18:17 UTC)
+* ApiGatewayManagementApi (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppConfigData (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppFabric (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ApplicationAutoScaling (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ARCRegionswitch (4.0.8.0)
+	* ARC Region Switch now supports three new execution blocks for multi-Region database workloads-Amazon Aurora Serverless scaling, Amazon Aurora Provisioned scaling, and Amazon Neptune Global Database failover.
+* CloudFront (4.0.17.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudTrailData (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudWatchLogs (4.0.26.0)
+	* Adding new BDD representation of endpoint ruleset
+* ComputeOptimizer (4.0.7.0)
+	* This release lets customers extend the lookback period for Amazon EBS volume and Amazon ECS rightsizing recommendations to 32 days.
+* Connect (4.0.47.0)
+	* SearchContacts Connect API now supports filtering contacts by the AI Agents involved in handling them
+* ConnectCampaignService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConnectWisdomService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* CostExplorer (4.0.12.0)
+	* Added support for target-coverage-based Savings Plans purchase analysis. The StartCommitmentPurchaseAnalysis API now accepts a new TARGET AVERAGE COVERAGE value for AnalysisType, as well as an optional SavingsPlansTargetCoverage field in SavingsPlansPurchaseAnalysisConfiguration
+* DAX (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* DirectConnect (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* Inspector2 (4.0.11.0)
+	* Inspector support for enhanced scanning
+* IoTEvents (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* IoTSecureTunneling (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Kinesis (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* KinesisFirehose (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* LakeFormation (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Macie2 (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* PinpointSMSVoice (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* RDS (4.0.21.0)
+	* Adding new BDD representation of endpoint ruleset
+* ResourceGroups (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53Profiles (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Outposts (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SecurityLake (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleEmail (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SnowDeviceManagement (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* SocialMessaging (4.0.7.0)
+	* Adding support for WhatsApp flow APIs and adding AccessDeniedByMetaException for Template APIs
+* TranscribeStreaming (4.0.7.0)
+	* Adding new BDD representation of endpoint ruleset
+* VPCLattice (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* WAFRegional (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.261.0 (2026-06-03 05:56 UTC)
 * DynamoDBv2 (4.0.19.0)
 	* Replace legacy parameter AttributesToGet with ProjectionExpression and ExpressionAttributeNames in LoadAsync flow
