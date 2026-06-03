@@ -408,7 +408,7 @@ namespace Amazon.GeoRoutes.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=9)]
+        [AWSProperty(Min=0, Max=12)]
         public List<string> LegAdditionalFeatures
         {
             get { return this._legAdditionalFeatures; }

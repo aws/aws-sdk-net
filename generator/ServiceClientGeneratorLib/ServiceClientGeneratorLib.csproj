@@ -19,7 +19,10 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <SignAssembly>true</SignAssembly>
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
+
+    <!-- NuGet audit vulnerabilities are handled by a separate CI pipeline, not the build -->
     <NuGetAuditMode>direct</NuGetAuditMode>
+    <WarningsNotAsErrors>$(WarningsNotAsErrors);NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
   </PropertyGroup> 
     <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">

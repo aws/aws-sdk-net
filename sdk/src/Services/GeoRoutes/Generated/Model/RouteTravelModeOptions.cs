@@ -35,8 +35,10 @@ namespace Amazon.GeoRoutes.Model
     public partial class RouteTravelModeOptions
     {
         private RouteCarOptions _car;
+        private RouteIntermodalOptions _intermodal;
         private RoutePedestrianOptions _pedestrian;
         private RouteScooterOptions _scooter;
+        private RouteTransitOptions _transit;
         private RouteTruckOptions _truck;
 
         /// <summary>
@@ -55,6 +57,30 @@ namespace Amazon.GeoRoutes.Model
         internal bool IsSetCar()
         {
             return this._car != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Intermodal. 
+        /// <para>
+        /// Travel mode options when the provided travel mode is <c>Intermodal</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteIntermodalOptions Intermodal
+        {
+            get { return this._intermodal; }
+            set { this._intermodal = value; }
+        }
+
+        // Check to see if Intermodal property is set
+        internal bool IsSetIntermodal()
+        {
+            return this._intermodal != null;
         }
 
         /// <summary>
@@ -97,6 +123,30 @@ namespace Amazon.GeoRoutes.Model
         internal bool IsSetScooter()
         {
             return this._scooter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Transit. 
+        /// <para>
+        /// Travel mode options when the provided travel mode is <c>Transit</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public RouteTransitOptions Transit
+        {
+            get { return this._transit; }
+            set { this._transit = value; }
+        }
+
+        // Check to see if Transit property is set
+        internal bool IsSetTransit()
+        {
+            return this._transit != null;
         }
 
         /// <summary>

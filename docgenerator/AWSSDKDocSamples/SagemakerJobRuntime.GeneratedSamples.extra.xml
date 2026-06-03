@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SagemakerJobRuntime.IAmazonSagemakerJobRuntime.CompleteRollout(Amazon.SagemakerJobRuntime.Model.CompleteRolloutRequest)" />
+            <member name="M:Amazon.SagemakerJobRuntime.AmazonSagemakerJobRuntimeClient.CompleteRollout(Amazon.SagemakerJobRuntime.Model.CompleteRolloutRequest)" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.CompleteRolloutRequest" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.CompleteRolloutResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Marks a rollout as complete so the trajectory is sealed and eligible for reward submission.
+                </para>
+                <code
+                    title="Invoke CompleteRollout"
+                    source=".\AWSSDKDocSamples\SagemakerJobRuntime\SagemakerJobRuntime.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SagemakerJobRuntime.IAmazonSagemakerJobRuntime.Sample(Amazon.SagemakerJobRuntime.Model.SampleRequest)" />
+            <member name="M:Amazon.SagemakerJobRuntime.AmazonSagemakerJobRuntimeClient.Sample(Amazon.SagemakerJobRuntime.Model.SampleRequest)" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.SampleRequest" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.SampleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Sends an inference request to the model and receives the response.
+                </para>
+                <code
+                    title="Invoke Sample"
+                    source=".\AWSSDKDocSamples\SagemakerJobRuntime\SagemakerJobRuntime.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SagemakerJobRuntime.IAmazonSagemakerJobRuntime.SampleWithResponseStream(Amazon.SagemakerJobRuntime.Model.SampleWithResponseStreamRequest)" />
+            <member name="M:Amazon.SagemakerJobRuntime.AmazonSagemakerJobRuntimeClient.SampleWithResponseStream(Amazon.SagemakerJobRuntime.Model.SampleWithResponseStreamRequest)" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.SampleWithResponseStreamRequest" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.SampleWithResponseStreamResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Sends a streaming inference request and receives the response as a stream of payload chunks.
+                </para>
+                <code
+                    title="Invoke SampleWithResponseStream"
+                    source=".\AWSSDKDocSamples\SagemakerJobRuntime\SagemakerJobRuntime.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SagemakerJobRuntime.IAmazonSagemakerJobRuntime.UpdateReward(Amazon.SagemakerJobRuntime.Model.UpdateRewardRequest)" />
+            <member name="M:Amazon.SagemakerJobRuntime.AmazonSagemakerJobRuntimeClient.UpdateReward(Amazon.SagemakerJobRuntime.Model.UpdateRewardRequest)" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.UpdateRewardRequest" />
+            <member name="T:Amazon.SagemakerJobRuntime.Model.UpdateRewardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the reward values for a completed trajectory.
+                </para>
+                <code
+                    title="Invoke UpdateReward"
+                    source=".\AWSSDKDocSamples\SagemakerJobRuntime\SagemakerJobRuntime.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

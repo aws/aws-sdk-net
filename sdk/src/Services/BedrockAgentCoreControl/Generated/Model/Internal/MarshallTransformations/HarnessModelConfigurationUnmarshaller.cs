@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.GeminiModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("liteLlmModelConfig", targetDepth))
+                {
+                    var unmarshaller = HarnessLiteLlmModelConfigUnmarshaller.Instance;
+                    unmarshalledObject.LiteLlmModelConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("openAiModelConfig", targetDepth))
                 {
                     var unmarshaller = HarnessOpenAiModelConfigUnmarshaller.Instance;

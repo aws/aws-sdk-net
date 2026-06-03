@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Successfully deleted advanced prompt optimization job.
+    /// Contains information about a successfully deleted advanced prompt optimization job.
     /// </summary>
     public partial class BatchDeleteAdvancedPromptOptimizationJobItem
     {
@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// Identifier of the deleted job.
+        /// The identifier of the deleted job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]
@@ -59,7 +59,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// Status of the deleted job.
+        /// The status of the deleted job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -85,6 +85,14 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Paginator for ListFirewallRuleTypes operation
+        ///</summary>
+        public IListFirewallRuleTypesPaginator ListFirewallRuleTypes(ListFirewallRuleTypesRequest request) 
+        {
+            return new ListFirewallRuleTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOutpostResolvers operation
         ///</summary>
         public IListOutpostResolversPaginator ListOutpostResolvers(ListOutpostResolversRequest request) 

@@ -64,9 +64,14 @@ The `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021
 
 ### Namespace Derivation
 
-From the `aws.api#service` trait's `sdkId` value:
-1. Remove spaces → `CloudTrailData`
-2. Prefix with `Amazon.` → `Amazon.CloudTrailData`
+From the `aws.api#service` trait's `sdkId` value, using `SdkNaming.NormalizeSdkId()` in `SmithyDotNet.Generator.Generation`:
+1. Strip leading "AWS" or "Amazon" prefix (case-sensitive)
+2. Remove all non-alphanumeric characters
+3. Capitalize first character
+
+Examples: `"CloudTrail Data"` → `"CloudTrailData"`, `"AWS IoT 1-Click Projects"` → `"IoT1ClickProjects"`, `"Amazon Pinpoint"` → `"Pinpoint"`
+
+Then prefix with `Amazon.` for namespace → `Amazon.CloudTrailData`
 
 Model classes go in `Amazon.{ServiceName}.Model`.
 

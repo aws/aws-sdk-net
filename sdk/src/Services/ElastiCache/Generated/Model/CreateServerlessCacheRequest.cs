@@ -168,7 +168,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// The IP protocol version used by the serverless cache. Must be either <c>ipv4</c> |
-        /// <c>ipv6</c> | <c>dual_stack</c>. <c>ipv6</c> is only supported with ipv6-only subnets.
+        /// <c>ipv6</c> | <c>dual_stack</c>. <c>ipv6</c> is only supported with IPv6-only subnets.
         /// If not specified, defaults to <c>ipv4</c>, unless all provided subnets are IPv6-only,
         /// in which case it defaults to <c>ipv6</c>. 
         /// </para>

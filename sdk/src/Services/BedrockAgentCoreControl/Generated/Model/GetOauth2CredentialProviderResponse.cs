@@ -36,6 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _callbackUrl;
         private Secret _clientSecretArn;
+        private string _clientSecretJsonKey;
+        private SecretSourceType _clientSecretSource;
         private DateTime? _createdTime;
         private string _credentialProviderArn;
         private CredentialProviderVendorType _credentialProviderVendor;
@@ -82,6 +84,45 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientSecretArn()
         {
             return this._clientSecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretJsonKey. 
+        /// <para>
+        /// The JSON key used to extract the client secret value from the AWS Secrets Manager
+        /// secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ClientSecretJsonKey
+        {
+            get { return this._clientSecretJsonKey; }
+            set { this._clientSecretJsonKey = value; }
+        }
+
+        // Check to see if ClientSecretJsonKey property is set
+        internal bool IsSetClientSecretJsonKey()
+        {
+            return this._clientSecretJsonKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecretSource. 
+        /// <para>
+        /// The source type of the client secret. Either <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ClientSecretSource
+        {
+            get { return this._clientSecretSource; }
+            set { this._clientSecretSource = value; }
+        }
+
+        // Check to see if ClientSecretSource property is set
+        internal bool IsSetClientSecretSource()
+        {
+            return this._clientSecretSource != null;
         }
 
         /// <summary>

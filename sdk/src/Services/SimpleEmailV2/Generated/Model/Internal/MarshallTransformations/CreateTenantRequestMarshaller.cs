@@ -73,6 +73,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSuppressionAttributes())
+            {
+                context.Writer.WritePropertyName("SuppressionAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TenantSuppressionAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SuppressionAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

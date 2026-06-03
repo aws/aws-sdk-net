@@ -64,19 +64,19 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("booleanValues", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<bool, BoolUnmarshaller>(BoolUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<bool?, NullableBoolUnmarshaller>(NullableBoolUnmarshaller.Instance);
                     unmarshalledObject.BooleanValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("doubleValues", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<double?, NullableDoubleUnmarshaller>(NullableDoubleUnmarshaller.Instance);
                     unmarshalledObject.DoubleValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("longValues", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
+                    var unmarshaller = new JsonListUnmarshaller<long?, NullableLongUnmarshaller>(NullableLongUnmarshaller.Instance);
                     unmarshalledObject.LongValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

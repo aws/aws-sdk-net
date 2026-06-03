@@ -84,6 +84,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCustomModelDataSource())
+            {
+                context.Writer.WritePropertyName("customModelDataSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomModelDataSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetModelKmsKeyArn())
             {
                 context.Writer.WritePropertyName("modelKmsKeyArn");

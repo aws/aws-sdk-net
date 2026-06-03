@@ -58,10 +58,44 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ApiKeySecret);
             }
 
+            if(requestObject.IsSetApiKeySecretConfig())
+            {
+                context.Writer.WritePropertyName("apiKeySecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApiKeySecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetApiKeySecretSource())
+            {
+                context.Writer.WritePropertyName("apiKeySecretSource");
+                context.Writer.WriteStringValue(requestObject.ApiKeySecretSource);
+            }
+
             if(requestObject.IsSetWalletSecret())
             {
                 context.Writer.WritePropertyName("walletSecret");
                 context.Writer.WriteStringValue(requestObject.WalletSecret);
+            }
+
+            if(requestObject.IsSetWalletSecretConfig())
+            {
+                context.Writer.WritePropertyName("walletSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.WalletSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWalletSecretSource())
+            {
+                context.Writer.WritePropertyName("walletSecretSource");
+                context.Writer.WriteStringValue(requestObject.WalletSecretSource);
             }
 
         }

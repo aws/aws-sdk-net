@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for the next generation of Resilience Hub.",
+  "generate-client-constructors": true
+}

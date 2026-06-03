@@ -79,6 +79,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPersistentVolumeConfiguration())
+            {
+                context.Writer.WritePropertyName("persistentVolumeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PersistentVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PersistentVolumeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStorageProfileId())
             {
                 context.Writer.WritePropertyName("storageProfileId");

@@ -87,7 +87,7 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public double? MinStorageBytesPercentage
         {
             get { return this._minStorageBytesPercentage; }

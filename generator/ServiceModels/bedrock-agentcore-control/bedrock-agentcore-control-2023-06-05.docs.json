@@ -474,7 +474,9 @@
       "base": null,
       "refs": {
         "HarnessGeminiModelConfig$apiKeyArn": "<p>The ARN of your Gemini API key on AgentCore Identity.</p>",
-        "HarnessOpenAiModelConfig$apiKeyArn": "<p>The ARN of your OpenAI API key on AgentCore Identity.</p>"
+        "HarnessLiteLlmModelConfig$apiKeyArn": "<p>The ARN of the API key in AgentCore Identity for authenticating with the model provider.</p>",
+        "HarnessOpenAiModelConfig$apiKeyArn": "<p>The ARN of your OpenAI API key on AgentCore Identity.</p>",
+        "HarnessSkillGitAuth$credentialArn": "<p>The ARN of the credential in AgentCore Identity containing the password or personal access token.</p>"
       }
     },
     "ApiKeyCredentialLocation": {
@@ -526,13 +528,6 @@
       "base": null,
       "refs": {
         "ListApiKeyCredentialProvidersResponse$credentialProviders": "<p>The list of API key credential providers.</p>"
-      }
-    },
-    "ApiKeyType": {
-      "base": null,
-      "refs": {
-        "CreateApiKeyCredentialProviderRequest$apiKey": "<p>The API key to use for authentication. This value is encrypted and stored securely.</p>",
-        "UpdateApiKeyCredentialProviderRequest$apiKey": "<p>The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.</p>"
       }
     },
     "ApiSchemaConfiguration": {
@@ -691,8 +686,7 @@
       "refs": {
         "BrowserSummary$browserArn": "<p>The Amazon Resource Name (ARN) of the browser.</p>",
         "CreateBrowserResponse$browserArn": "<p>The Amazon Resource Name (ARN) of the created browser.</p>",
-        "GetBrowserResponse$browserArn": "<p>The Amazon Resource Name (ARN) of the browser.</p>",
-        "HarnessAgentCoreBrowserConfig$browserArn": "<p>If not populated, the built-in Browser ARN is used.</p>"
+        "GetBrowserResponse$browserArn": "<p>The Amazon Resource Name (ARN) of the browser.</p>"
       }
     },
     "BrowserEnterprisePolicies": {
@@ -916,19 +910,6 @@
         "SlackOauth2ProviderConfigOutput$clientId": "<p>The client ID for the Slack OAuth2 provider.</p>"
       }
     },
-    "ClientSecretType": {
-      "base": null,
-      "refs": {
-        "AtlassianOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Atlassian OAuth2 provider. This secret is assigned by Atlassian and used along with the client ID to authenticate your application.</p>",
-        "GithubOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the GitHub OAuth2 provider.</p>",
-        "GoogleOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Google OAuth2 provider.</p>",
-        "IncludedOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the supported OAuth2 provider. This secret is assigned by the OAuth2 provider and used along with the client ID to authenticate your application.</p>",
-        "LinkedinOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the LinkedIn OAuth2 provider. This secret is assigned by LinkedIn and used along with the client ID to authenticate your application.</p>",
-        "MicrosoftOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Microsoft OAuth2 provider.</p>",
-        "SalesforceOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Salesforce OAuth2 provider.</p>",
-        "SlackOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Slack OAuth2 provider.</p>"
-      }
-    },
     "ClientToken": {
       "base": null,
       "refs": {
@@ -1028,8 +1009,7 @@
       "refs": {
         "CodeInterpreterSummary$codeInterpreterArn": "<p>The Amazon Resource Name (ARN) of the code interpreter.</p>",
         "CreateCodeInterpreterResponse$codeInterpreterArn": "<p>The Amazon Resource Name (ARN) of the created code interpreter.</p>",
-        "GetCodeInterpreterResponse$codeInterpreterArn": "<p>The Amazon Resource Name (ARN) of the code interpreter.</p>",
-        "HarnessAgentCoreCodeInterpreterConfig$codeInterpreterArn": "<p>If not populated, the built-in Code Interpreter ARN is used.</p>"
+        "GetCodeInterpreterResponse$codeInterpreterArn": "<p>The Amazon Resource Name (ARN) of the code interpreter.</p>"
       }
     },
     "CodeInterpreterId": {
@@ -1084,12 +1064,6 @@
         "CoinbaseCdpConfigurationOutput$apiKeyId": "<p>The API key identifier provided by Coinbase Developer Platform.</p>"
       }
     },
-    "CoinbaseCdpApiKeySecretType": {
-      "base": null,
-      "refs": {
-        "CoinbaseCdpConfigurationInput$apiKeySecret": "<p>The API key secret provided by Coinbase Developer Platform.</p>"
-      }
-    },
     "CoinbaseCdpConfigurationInput": {
       "base": "<p>Coinbase CDP configuration — credentials provided by Coinbase Developer Platform.</p>",
       "refs": {
@@ -1100,12 +1074,6 @@
       "base": "<p>Coinbase CDP configuration output with secret ARNs.</p>",
       "refs": {
         "PaymentProviderConfigurationOutput$coinbaseCdpConfiguration": "<p>The Coinbase CDP configuration.</p>"
-      }
-    },
-    "CoinbaseCdpWalletSecretType": {
-      "base": null,
-      "refs": {
-        "CoinbaseCdpConfigurationInput$walletSecret": "<p>The wallet secret provided by Coinbase Developer Platform.</p>"
       }
     },
     "ComponentConfiguration": {
@@ -1997,6 +1965,13 @@
       "base": "<p>Exception thrown when decryption of a secret fails.</p>",
       "refs": {}
     },
+    "DefaultApiKeyType": {
+      "base": null,
+      "refs": {
+        "CreateApiKeyCredentialProviderRequest$apiKey": "<p>The API key to use for authentication. This value is encrypted and stored securely.</p>",
+        "UpdateApiKeyCredentialProviderRequest$apiKey": "<p>The new API key to use for authentication. This value replaces the existing API key and is encrypted and stored securely.</p>"
+      }
+    },
     "DefaultClientIdType": {
       "base": null,
       "refs": {
@@ -2006,7 +1981,39 @@
     "DefaultClientSecretType": {
       "base": null,
       "refs": {
-        "CustomOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the custom OAuth2 provider.</p>"
+        "AtlassianOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Atlassian OAuth2 provider. This secret is assigned by Atlassian and used along with the client ID to authenticate your application.</p>",
+        "CustomOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the custom OAuth2 provider.</p>",
+        "GithubOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the GitHub OAuth2 provider.</p>",
+        "GoogleOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Google OAuth2 provider.</p>",
+        "IncludedOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the supported OAuth2 provider. This secret is assigned by the OAuth2 provider and used along with the client ID to authenticate your application.</p>",
+        "LinkedinOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the LinkedIn OAuth2 provider. This secret is assigned by LinkedIn and used along with the client ID to authenticate your application.</p>",
+        "MicrosoftOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Microsoft OAuth2 provider.</p>",
+        "SalesforceOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Salesforce OAuth2 provider.</p>",
+        "SlackOauth2ProviderConfigInput$clientSecret": "<p>The client secret for the Slack OAuth2 provider.</p>"
+      }
+    },
+    "DefaultCoinbaseCdpApiKeySecretType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationInput$apiKeySecret": "<p>The API key secret provided by Coinbase Developer Platform.</p>"
+      }
+    },
+    "DefaultCoinbaseCdpWalletSecretType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationInput$walletSecret": "<p>The wallet secret provided by Coinbase Developer Platform.</p>"
+      }
+    },
+    "DefaultStripePrivyAppSecretType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$appSecret": "<p>The app secret provided by Privy.</p>"
+      }
+    },
+    "DefaultStripePrivyAuthorizationPrivateKeyType": {
+      "base": null,
+      "refs": {
+        "StripePrivyConfigurationInput$authorizationPrivateKey": "<p>The authorization private key for the Stripe Privy integration.</p>"
       }
     },
     "Definition": {
@@ -2330,7 +2337,10 @@
     "Document": {
       "base": null,
       "refs": {
-        "ComponentConfiguration$configuration": "<p>The configuration values as a flexible JSON document.</p>"
+        "ComponentConfiguration$configuration": "<p>The configuration values as a flexible JSON document.</p>",
+        "HarnessBedrockModelConfig$additionalParams": "<p>Provider-specific parameters passed through to the model provider unchanged.</p>",
+        "HarnessLiteLlmModelConfig$additionalParams": "<p>Provider-specific parameters passed through to the model provider unchanged.</p>",
+        "HarnessOpenAiModelConfig$additionalParams": "<p>Provider-specific parameters passed through to the model provider unchanged.</p>"
       }
     },
     "DomainName": {
@@ -3349,10 +3359,28 @@
         "HarnessSummary$arn": "<p>The ARN of the harness.</p>"
       }
     },
+    "HarnessBedrockApiFormat": {
+      "base": null,
+      "refs": {
+        "HarnessBedrockModelConfig$apiFormat": "<p>The API format to use when calling the Bedrock provider.</p>"
+      }
+    },
     "HarnessBedrockModelConfig": {
       "base": "<p>Configuration for an Amazon Bedrock model provider.</p>",
       "refs": {
         "HarnessModelConfiguration$bedrockModelConfig": "<p>Configuration for an Amazon Bedrock model.</p>"
+      }
+    },
+    "HarnessBrowserArn": {
+      "base": "<p>Browser ARN for Harness tool configuration. Accepts both managed (aws.browser.v1) and custom browser ARNs.</p>",
+      "refs": {
+        "HarnessAgentCoreBrowserConfig$browserArn": "<p>If not populated, the built-in Browser ARN is used.</p>"
+      }
+    },
+    "HarnessCodeInterpreterArn": {
+      "base": "<p>Code Interpreter ARN for Harness tool configuration. Accepts both managed (aws.codeinterpreter.v1) and custom code interpreter ARNs.</p>",
+      "refs": {
+        "HarnessAgentCoreCodeInterpreterConfig$codeInterpreterArn": "<p>If not populated, the built-in Code Interpreter ARN is used.</p>"
       }
     },
     "HarnessEnvironmentArtifact": {
@@ -3410,6 +3438,18 @@
         "HarnessInlineFunctionConfig$description": "<p>Description of what the tool does, provided to the model.</p>"
       }
     },
+    "HarnessLiteLlmApiBase": {
+      "base": null,
+      "refs": {
+        "HarnessLiteLlmModelConfig$apiBase": "<p>The base URL for the model provider's API endpoint.</p>"
+      }
+    },
+    "HarnessLiteLlmModelConfig": {
+      "base": "<p>Configuration for a LiteLLM model provider, enabling connection to third-party model providers.</p>",
+      "refs": {
+        "HarnessModelConfiguration$liteLlmModelConfig": "<p>The LiteLLM model configuration for connecting to third-party model providers.</p>"
+      }
+    },
     "HarnessMemoryConfiguration": {
       "base": "<p>The memory configuration for a harness.</p>",
       "refs": {
@@ -3432,6 +3472,12 @@
         "CreateHarnessRequest$harnessName": "<p>The name of the harness. Must start with a letter and contain only alphanumeric characters and underscores.</p>",
         "Harness$harnessName": "<p>The name of the Harness.</p>",
         "HarnessSummary$harnessName": "<p>The name of the harness.</p>"
+      }
+    },
+    "HarnessOpenAiApiFormat": {
+      "base": null,
+      "refs": {
+        "HarnessOpenAiModelConfig$apiFormat": "<p>The API format to use when calling the OpenAI provider.</p>"
       }
     },
     "HarnessOpenAiModelConfig": {
@@ -3458,10 +3504,40 @@
         "HarnessSkills$member": null
       }
     },
+    "HarnessSkillGitAuth": {
+      "base": "<p>Authentication configuration for accessing a private git repository.</p>",
+      "refs": {
+        "HarnessSkillGitSource$auth": "<p>Authentication configuration for private repositories.</p>"
+      }
+    },
+    "HarnessSkillGitSource": {
+      "base": "<p>A git repository source for a skill.</p>",
+      "refs": {
+        "HarnessSkill$git": "<p>A git repository containing the skill.</p>"
+      }
+    },
+    "HarnessSkillGitUrl": {
+      "base": null,
+      "refs": {
+        "HarnessSkillGitSource$url": "<p>The HTTPS URL of the git repository.</p>"
+      }
+    },
     "HarnessSkillPath": {
       "base": null,
       "refs": {
         "HarnessSkill$path": "<p>The filesystem path to the skill definition.</p>"
+      }
+    },
+    "HarnessSkillS3Source": {
+      "base": "<p>An S3 source for a skill.</p>",
+      "refs": {
+        "HarnessSkill$s3": "<p>An S3 source containing the skill.</p>"
+      }
+    },
+    "HarnessSkillS3Uri": {
+      "base": null,
+      "refs": {
+        "HarnessSkillS3Source$uri": "<p>The S3 URI pointing to the skill directory (e.g., s3://bucket/skills/my-skill/).</p>"
       }
     },
     "HarnessSkills": {
@@ -4431,6 +4507,7 @@
       "refs": {
         "HarnessBedrockModelConfig$maxTokens": "<p>The maximum number of tokens to allow in the generated response per model call.</p>",
         "HarnessGeminiModelConfig$maxTokens": "<p>The maximum number of tokens to allow in the generated response per model call.</p>",
+        "HarnessLiteLlmModelConfig$maxTokens": "<p>The maximum number of tokens to allow in the generated response per iteration.</p>",
         "HarnessOpenAiModelConfig$maxTokens": "<p>The maximum number of tokens to allow in the generated response per model call.</p>"
       }
     },
@@ -4685,6 +4762,7 @@
         "BedrockEvaluatorModelConfig$modelId": "<p> The identifier of the Amazon Bedrock model to use for evaluation. Must be a supported foundation model available in your region. </p>",
         "HarnessBedrockModelConfig$modelId": "<p>The Bedrock model ID.</p>",
         "HarnessGeminiModelConfig$modelId": "<p>The Gemini model ID.</p>",
+        "HarnessLiteLlmModelConfig$modelId": "<p>The LiteLLM model identifier (e.g., \"anthropic/claude-3-sonnet\").</p>",
         "HarnessOpenAiModelConfig$modelId": "<p>The OpenAI model ID.</p>"
       }
     },
@@ -4942,7 +5020,7 @@
       "base": "<p>An OAuth credential provider for gateway authentication. This structure contains the configuration for authenticating with the target endpoint using OAuth.</p>",
       "refs": {
         "CredentialProvider$oauthCredentialProvider": "<p>The OAuth credential provider. This provider uses OAuth authentication to access the target endpoint.</p>",
-        "HarnessGatewayOutboundAuth$oauth": null
+        "HarnessGatewayOutboundAuth$oauth": "<p>Use OAuth credentials for outbound authentication to the gateway.</p>"
       }
     },
     "OAuthCredentialProviderArn": {
@@ -6295,6 +6373,78 @@
         "Secret$secretArn": "<p>The Amazon Resource Name (ARN) of the secret in AWS Secrets Manager.</p>"
       }
     },
+    "SecretIdType": {
+      "base": null,
+      "refs": {
+        "SecretReference$secretId": "<p>The ID of the AWS Secrets Manager secret that stores the secret value.</p>"
+      }
+    },
+    "SecretJsonKeyType": {
+      "base": null,
+      "refs": {
+        "CoinbaseCdpConfigurationOutput$apiKeySecretJsonKey": "<p>The JSON key used to extract the API key secret value from the AWS Secrets Manager secret.</p>",
+        "CoinbaseCdpConfigurationOutput$walletSecretJsonKey": "<p>The JSON key used to extract the wallet secret value from the AWS Secrets Manager secret.</p>",
+        "CreateApiKeyCredentialProviderResponse$apiKeySecretJsonKey": "<p>The JSON key used to extract the API key value from the AWS Secrets Manager secret.</p>",
+        "CreateOauth2CredentialProviderResponse$clientSecretJsonKey": "<p>The JSON key used to extract the client secret value from the AWS Secrets Manager secret.</p>",
+        "GetApiKeyCredentialProviderResponse$apiKeySecretJsonKey": "<p>The JSON key used to extract the API key value from the AWS Secrets Manager secret.</p>",
+        "GetOauth2CredentialProviderResponse$clientSecretJsonKey": "<p>The JSON key used to extract the client secret value from the AWS Secrets Manager secret.</p>",
+        "SecretReference$jsonKey": "<p>The JSON key used to extract the secret value from the AWS Secrets Manager secret.</p>",
+        "StripePrivyConfigurationOutput$appSecretJsonKey": "<p>The JSON key used to extract the app secret value from the AWS Secrets Manager secret.</p>",
+        "StripePrivyConfigurationOutput$authorizationPrivateKeyJsonKey": "<p>The JSON key used to extract the authorization private key value from the AWS Secrets Manager secret.</p>",
+        "UpdateApiKeyCredentialProviderResponse$apiKeySecretJsonKey": "<p>The JSON key used to extract the API key value from the AWS Secrets Manager secret.</p>",
+        "UpdateOauth2CredentialProviderResponse$clientSecretJsonKey": "<p>The JSON key used to extract the client secret value from the AWS Secrets Manager secret.</p>"
+      }
+    },
+    "SecretReference": {
+      "base": "<p>Contains a reference to a secret stored in AWS Secrets Manager.</p>",
+      "refs": {
+        "AtlassianOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "CoinbaseCdpConfigurationInput$apiKeySecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the API key secret. This includes the secret ID and the JSON key used to extract the API key secret value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "CoinbaseCdpConfigurationInput$walletSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the wallet secret. This includes the secret ID and the JSON key used to extract the wallet secret value from the secret. Required when <code>walletSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "CreateApiKeyCredentialProviderRequest$apiKeySecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "CustomOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "GithubOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "GoogleOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "IncludedOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "LinkedinOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "MicrosoftOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "SalesforceOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "SlackOauth2ProviderConfigInput$clientSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the client secret. This includes the secret ID and the JSON key used to extract the client secret value from the secret. Required when <code>clientSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "StripePrivyConfigurationInput$appSecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the app secret. This includes the secret ID and the JSON key used to extract the app secret value from the secret. Required when <code>appSecretSource</code> is set to <code>EXTERNAL</code>.</p>",
+        "StripePrivyConfigurationInput$authorizationPrivateKeyConfig": "<p>A reference to the AWS Secrets Manager secret that stores the authorization private key. This includes the secret ID and the JSON key used to extract the authorization private key value from the secret. Required when <code>authorizationPrivateKeySource</code> is set to <code>EXTERNAL</code>.</p>",
+        "UpdateApiKeyCredentialProviderRequest$apiKeySecretConfig": "<p>A reference to the AWS Secrets Manager secret that stores the API key. This includes the secret ID and the JSON key used to extract the API key value from the secret. Required when <code>apiKeySecretSource</code> is set to <code>EXTERNAL</code>.</p>"
+      }
+    },
+    "SecretSourceType": {
+      "base": null,
+      "refs": {
+        "AtlassianOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret for the Atlassian OAuth2 provider. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "CoinbaseCdpConfigurationInput$apiKeySecretSource": "<p>The source type of the API key secret for the Coinbase Developer Platform. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "CoinbaseCdpConfigurationInput$walletSecretSource": "<p>The source type of the wallet secret for the Coinbase Developer Platform. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "CoinbaseCdpConfigurationOutput$apiKeySecretSource": "<p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "CoinbaseCdpConfigurationOutput$walletSecretSource": "<p>The source type of the wallet secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "CreateApiKeyCredentialProviderRequest$apiKeySecretSource": "<p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "CreateApiKeyCredentialProviderResponse$apiKeySecretSource": "<p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "CreateOauth2CredentialProviderResponse$clientSecretSource": "<p>The source type of the client secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "CustomOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "GetApiKeyCredentialProviderResponse$apiKeySecretSource": "<p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "GetOauth2CredentialProviderResponse$clientSecretSource": "<p>The source type of the client secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "GithubOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "GoogleOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "IncludedOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "LinkedinOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "MicrosoftOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "SalesforceOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "SlackOauth2ProviderConfigInput$clientSecretSource": "<p>The source type of the client secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "StripePrivyConfigurationInput$appSecretSource": "<p>The source type of the app secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "StripePrivyConfigurationInput$authorizationPrivateKeySource": "<p>The source type of the authorization private key. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "StripePrivyConfigurationOutput$appSecretSource": "<p>The source type of the app secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "StripePrivyConfigurationOutput$authorizationPrivateKeySource": "<p>The source type of the authorization private key. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "UpdateApiKeyCredentialProviderRequest$apiKeySecretSource": "<p>The source type of the API key secret. Use <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if you manage the secret yourself in AWS Secrets Manager.</p>",
+        "UpdateApiKeyCredentialProviderResponse$apiKeySecretSource": "<p>The source type of the API key secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>",
+        "UpdateOauth2CredentialProviderResponse$clientSecretSource": "<p>The source type of the client secret. Either <code>MANAGED</code> if the secret is managed by the service, or <code>EXTERNAL</code> if managed by the user in AWS Secrets Manager.</p>"
+      }
+    },
     "SecretsManagerLocation": {
       "base": "<p>The Amazon Web Services Secrets Manager location configuration.</p>",
       "refs": {
@@ -6630,6 +6780,8 @@
         "HarnessAgentCoreMemoryRetrievalConfigs$key": null,
         "HarnessAgentCoreRuntimeEnvironment$agentRuntimeName": "<p>The name of the underlying AgentCore Runtime.</p>",
         "HarnessAgentCoreRuntimeEnvironment$agentRuntimeId": "<p>The ID of the underlying AgentCore Runtime.</p>",
+        "HarnessSkillGitAuth$username": "<p>Username for authentication. Defaults to 'oauth2' if not specified.</p>",
+        "HarnessSkillGitSource$path": "<p>Subdirectory within the repository containing the skill.</p>",
         "HarnessSummarizationConfiguration$summarizationSystemPrompt": "<p>The system prompt used for generating summaries.</p>",
         "InvocationConfiguration$payloadDeliveryBucketName": "<p>The S3 bucket name for event payload delivery.</p>",
         "ListApiKeyCredentialProvidersRequest$nextToken": "<p>Pagination token.</p>",
@@ -6721,23 +6873,11 @@
         "StripePrivyConfigurationOutput$appId": "<p>The app ID provided by Privy.</p>"
       }
     },
-    "StripePrivyAppSecretType": {
-      "base": null,
-      "refs": {
-        "StripePrivyConfigurationInput$appSecret": "<p>The app secret provided by Privy.</p>"
-      }
-    },
     "StripePrivyAuthorizationIdType": {
       "base": null,
       "refs": {
         "StripePrivyConfigurationInput$authorizationId": "<p>The authorization ID for the Stripe Privy integration.</p>",
         "StripePrivyConfigurationOutput$authorizationId": "<p>The authorization ID for the Stripe Privy integration.</p>"
-      }
-    },
-    "StripePrivyAuthorizationPrivateKeyType": {
-      "base": null,
-      "refs": {
-        "StripePrivyConfigurationInput$authorizationPrivateKey": "<p>The authorization private key for the Stripe Privy integration.</p>"
       }
     },
     "StripePrivyConfigurationInput": {
@@ -7049,6 +7189,7 @@
       "refs": {
         "HarnessBedrockModelConfig$temperature": "<p>The temperature to set when calling the model.</p>",
         "HarnessGeminiModelConfig$temperature": "<p>The temperature to set when calling the model.</p>",
+        "HarnessLiteLlmModelConfig$temperature": "<p>The temperature to set when calling the model.</p>",
         "HarnessOpenAiModelConfig$temperature": "<p>The temperature to set when calling the model.</p>"
       }
     },
@@ -7090,6 +7231,7 @@
         "AddDatasetExamplesResponse$updatedAt": "<p> The timestamp when the examples were added. </p>",
         "ApiKeyCredentialProviderItem$createdTime": "<p>The timestamp when the API key credential provider was created.</p>",
         "ApiKeyCredentialProviderItem$lastUpdatedTime": "<p>The timestamp when the API key credential provider was last updated.</p>",
+        "ConfigurationBundleSummary$createdAt": "<p>The timestamp when the configuration bundle was created.</p>",
         "ConfigurationBundleVersionSummary$versionCreatedAt": "<p>The timestamp when this version was created.</p>",
         "CreateConfigurationBundleResponse$createdAt": "<p>The timestamp when the configuration bundle was created.</p>",
         "CreateDatasetResponse$createdAt": "<p> The timestamp when the dataset was created. </p>",
@@ -7245,6 +7387,7 @@
       "refs": {
         "HarnessBedrockModelConfig$topP": "<p>The topP set when calling the model.</p>",
         "HarnessGeminiModelConfig$topP": "<p>The topP set when calling the model.</p>",
+        "HarnessLiteLlmModelConfig$topP": "<p>The topP set when calling the model.</p>",
         "HarnessOpenAiModelConfig$topP": "<p>The topP set when calling the model.</p>"
       }
     },

@@ -11383,6 +11383,228 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type JobCategory.
+    /// </summary>
+    public class JobCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AgentRFT for JobCategory
+        /// </summary>
+        public static readonly JobCategory AgentRFT = new JobCategory("AgentRFT");
+        /// <summary>
+        /// Constant AgentRFTEvaluation for JobCategory
+        /// </summary>
+        public static readonly JobCategory AgentRFTEvaluation = new JobCategory("AgentRFTEvaluation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobCategory FindValue(string value)
+        {
+            return FindValue<JobCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobSecondaryStatus.
+    /// </summary>
+    public class JobSecondaryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Completed = new JobSecondaryStatus("Completed");
+        /// <summary>
+        /// Constant DeleteFailed for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus DeleteFailed = new JobSecondaryStatus("DeleteFailed");
+        /// <summary>
+        /// Constant Deleting for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Deleting = new JobSecondaryStatus("Deleting");
+        /// <summary>
+        /// Constant Downloading for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Downloading = new JobSecondaryStatus("Downloading");
+        /// <summary>
+        /// Constant Evaluating for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Evaluating = new JobSecondaryStatus("Evaluating");
+        /// <summary>
+        /// Constant Failed for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Failed = new JobSecondaryStatus("Failed");
+        /// <summary>
+        /// Constant Interrupted for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Interrupted = new JobSecondaryStatus("Interrupted");
+        /// <summary>
+        /// Constant MaxRuntimeExceeded for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus MaxRuntimeExceeded = new JobSecondaryStatus("MaxRuntimeExceeded");
+        /// <summary>
+        /// Constant Pending for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Pending = new JobSecondaryStatus("Pending");
+        /// <summary>
+        /// Constant Restarting for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Restarting = new JobSecondaryStatus("Restarting");
+        /// <summary>
+        /// Constant Starting for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Starting = new JobSecondaryStatus("Starting");
+        /// <summary>
+        /// Constant Stopped for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Stopped = new JobSecondaryStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Stopping = new JobSecondaryStatus("Stopping");
+        /// <summary>
+        /// Constant Training for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Training = new JobSecondaryStatus("Training");
+        /// <summary>
+        /// Constant Uploading for JobSecondaryStatus
+        /// </summary>
+        public static readonly JobSecondaryStatus Uploading = new JobSecondaryStatus("Uploading");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobSecondaryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobSecondaryStatus FindValue(string value)
+        {
+            return FindValue<JobSecondaryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobSecondaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JobStatus.
+    /// </summary>
+    public class JobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Completed for JobStatus
+        /// </summary>
+        public static readonly JobStatus Completed = new JobStatus("Completed");
+        /// <summary>
+        /// Constant DeleteFailed for JobStatus
+        /// </summary>
+        public static readonly JobStatus DeleteFailed = new JobStatus("DeleteFailed");
+        /// <summary>
+        /// Constant Deleting for JobStatus
+        /// </summary>
+        public static readonly JobStatus Deleting = new JobStatus("Deleting");
+        /// <summary>
+        /// Constant Failed for JobStatus
+        /// </summary>
+        public static readonly JobStatus Failed = new JobStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for JobStatus
+        /// </summary>
+        public static readonly JobStatus InProgress = new JobStatus("InProgress");
+        /// <summary>
+        /// Constant Stopped for JobStatus
+        /// </summary>
+        public static readonly JobStatus Stopped = new JobStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for JobStatus
+        /// </summary>
+        public static readonly JobStatus Stopping = new JobStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatus FindValue(string value)
+        {
+            return FindValue<JobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobType.
     /// </summary>
     public class JobType : ConstantClass

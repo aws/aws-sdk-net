@@ -233,6 +233,16 @@
     <pattern>(?!pcs_)^[A-Za-z][A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PCS.Model.ComputeNodeGroupSlurmConfiguration.ScaleDownIdleTimeInSeconds</property>
+    <min>-1</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PCS.Model.ComputeNodeGroupSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
+    <min>-1</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PCS.Model.ComputeNodeGroupSummary.Name</property>
     <min>3</min>
     <max>25</max>
@@ -274,6 +284,11 @@
   <property-value-rule>
     <property>Amazon.PCS.Model.UpdateClusterSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
     <min>1</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PCS.Model.UpdateComputeNodeGroupSlurmConfigurationRequest.ScaleDownIdleTimeInSeconds</property>
+    <min>-1</min>
     <max>10000000</max>
   </property-value-rule>
 </property-value-rules>

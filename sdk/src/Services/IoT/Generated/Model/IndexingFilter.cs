@@ -59,8 +59,27 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class IndexingFilter
     {
+        private ConnectivityFilter _connectivity;
         private List<GeoLocationTarget> _geoLocations = AWSConfigs.InitializeCollections ? new List<GeoLocationTarget>() : null;
         private List<string> _namedShadowNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Connectivity. 
+        /// <para>
+        /// Provides additional connectivity filter selections for the fleet indexing configuration.
+        /// </para>
+        /// </summary>
+        public ConnectivityFilter Connectivity
+        {
+            get { return this._connectivity; }
+            set { this._connectivity = value; }
+        }
+
+        // Check to see if Connectivity property is set
+        internal bool IsSetConnectivity()
+        {
+            return this._connectivity != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GeoLocations. 

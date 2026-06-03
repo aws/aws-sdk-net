@@ -35,15 +35,15 @@ namespace Amazon.RDSDataService.Model
     public partial class ArrayValue
     {
         private List<ArrayValue> _arrayValues = AWSConfigs.InitializeCollections ? new List<ArrayValue>() : null;
-        private List<bool> _booleanValues = AWSConfigs.InitializeCollections ? new List<bool>() : null;
-        private List<double> _doubleValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
-        private List<long> _longValues = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private List<bool?> _booleanValues = AWSConfigs.InitializeCollections ? new List<bool?>() : null;
+        private List<double?> _doubleValues = AWSConfigs.InitializeCollections ? new List<double?>() : null;
+        private List<long?> _longValues = AWSConfigs.InitializeCollections ? new List<long?>() : null;
         private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ArrayValues. 
         /// <para>
-        /// An array of arrays.
+        /// An array of arrays. Can contain null values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,7 +66,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property BooleanValues. 
         /// <para>
-        /// An array of Boolean values.
+        /// An array of Boolean values. Can contain null values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -74,7 +74,7 @@ namespace Amazon.RDSDataService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<bool> BooleanValues
+        public List<bool?> BooleanValues
         {
             get { return this._booleanValues; }
             set { this._booleanValues = value; }
@@ -89,7 +89,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property DoubleValues. 
         /// <para>
-        /// An array of floating-point numbers.
+        /// An array of floating-point numbers. Can contain null values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -97,7 +97,7 @@ namespace Amazon.RDSDataService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<double> DoubleValues
+        public List<double?> DoubleValues
         {
             get { return this._doubleValues; }
             set { this._doubleValues = value; }
@@ -112,7 +112,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property LongValues. 
         /// <para>
-        /// An array of integers.
+        /// An array of integers. Can contain null values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -120,7 +120,7 @@ namespace Amazon.RDSDataService.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<long> LongValues
+        public List<long?> LongValues
         {
             get { return this._longValues; }
             set { this._longValues = value; }
@@ -135,7 +135,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property StringValues. 
         /// <para>
-        /// An array of strings.
+        /// An array of strings. Can contain null values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

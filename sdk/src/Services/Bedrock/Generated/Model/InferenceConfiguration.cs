@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Inference configuration for a model.
+    /// Base inference parameters to pass to a model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+    /// parameters for foundation models</a>.
     /// </summary>
     public partial class InferenceConfiguration
     {
@@ -42,7 +43,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property MaxTokens. 
         /// <para>
-        /// The maximum number of tokens to generate.
+        /// The maximum number of tokens to allow in the generated response. The default value
+        /// is the maximum allowed value for the model that you are using.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -61,7 +63,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property StopSequences. 
         /// <para>
-        /// Stop sequences that end generation.
+        /// A list of stop sequences. A stop sequence is a sequence of characters that causes
+        /// the model to stop generating the response.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -85,7 +88,10 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Temperature. 
         /// <para>
-        /// The temperature for sampling.
+        /// The likelihood of the model selecting higher-probability options while generating
+        /// a response. A lower value makes the model more likely to choose higher-probability
+        /// options, while a higher value makes the model more likely to choose lower-probability
+        /// options.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -104,7 +110,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property TopP. 
         /// <para>
-        /// The top-p value for nucleus sampling.
+        /// The percentage of most-likely candidates that the model considers for the next token.
+        /// For example, if you choose a value of 0.8 for <c>topP</c>, the model selects from
+        /// the top 80% of the probability distribution of tokens that could be next in the sequence.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

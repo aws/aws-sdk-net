@@ -13,6 +13,12 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,12 +30,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
-using Amazon.Util.Internal;
 using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel

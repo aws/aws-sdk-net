@@ -79,6 +79,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ApiKey);
             }
 
+            if(publicRequest.IsSetApiKeySecretConfig())
+            {
+                context.Writer.WritePropertyName("apiKeySecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ApiKeySecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetApiKeySecretSource())
+            {
+                context.Writer.WritePropertyName("apiKeySecretSource");
+                context.Writer.WriteStringValue(publicRequest.ApiKeySecretSource);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -2064,6 +2064,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
         /// happens when you exceed the allowed request rate for an operation. Reduce the frequency

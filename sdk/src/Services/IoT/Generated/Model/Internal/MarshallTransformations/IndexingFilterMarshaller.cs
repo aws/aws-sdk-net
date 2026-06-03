@@ -46,6 +46,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConnectivity())
+            {
+                context.Writer.WritePropertyName("connectivity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConnectivityFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.Connectivity, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetGeoLocations())
             {
                 context.Writer.WritePropertyName("geoLocations");

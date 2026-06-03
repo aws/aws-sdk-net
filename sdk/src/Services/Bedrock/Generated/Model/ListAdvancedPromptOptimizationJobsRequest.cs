@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAdvancedPromptOptimizationJobs operation.
-    /// Lists all advanced prompt optimization jobs for the account.
+    /// Lists the advanced prompt optimization jobs in your account.
     /// </summary>
     public partial class ListAdvancedPromptOptimizationJobsRequest : AmazonBedrockRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return.
+        /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -62,7 +62,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token for the next page of results.
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token in a subsequent request to get the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -81,7 +82,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Field to sort by in the returned list of jobs.
+        /// The field to sort the results by.
         /// </para>
         /// </summary>
         public SortJobsBy SortBy
@@ -99,7 +100,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Sort order for the results.
+        /// The sort order for the results.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

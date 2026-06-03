@@ -118,6 +118,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetPropagateTags())
+            {
+                context.Writer.WritePropertyName("PropagateTags");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PropagateTagsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PropagateTags, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

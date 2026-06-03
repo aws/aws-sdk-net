@@ -97,6 +97,7 @@ namespace Amazon.ControlCatalog.Model
     public partial class ControlParameter
     {
         private string _name;
+        private ControlParameterRequirement _requirement;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -117,6 +118,24 @@ namespace Amazon.ControlCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Requirement. 
+        /// <para>
+        /// Indicates whether the parameter is required or optional when you enable the control.
+        /// </para>
+        /// </summary>
+        public ControlParameterRequirement Requirement
+        {
+            get { return this._requirement; }
+            set { this._requirement = value; }
+        }
+
+        // Check to see if Requirement property is set
+        internal bool IsSetRequirement()
+        {
+            return this._requirement != null;
         }
 
     }

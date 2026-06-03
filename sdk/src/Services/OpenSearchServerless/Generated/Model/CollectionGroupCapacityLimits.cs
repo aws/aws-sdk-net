@@ -85,7 +85,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The minimum indexing capacity for collections in the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public float? MinIndexingCapacityInOCU
         {
             get { return this._minIndexingCapacityInOCU; }
@@ -104,7 +104,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The minimum search capacity for collections in the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public float? MinSearchCapacityInOCU
         {
             get { return this._minSearchCapacityInOCU; }

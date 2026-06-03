@@ -2598,6 +2598,12 @@
       "min":0,
       "sensitive":true
     },
+    "AutomatedReasoningPolicyBuildFeedback":{
+      "type":"string",
+      "max":4000,
+      "min":0,
+      "sensitive":true
+    },
     "AutomatedReasoningPolicyBuildLog":{
       "type":"structure",
       "required":["entries"],
@@ -2813,7 +2819,9 @@
         "REFINE_POLICY",
         "IMPORT_POLICY",
         "GENERATE_FIDELITY_REPORT",
-        "GENERATE_POLICY_SCENARIOS"
+        "GENERATE_POLICY_SCENARIOS",
+        "RESOLVE_POLICY_AMBIGUITIES",
+        "ITERATIVELY_REFINE_POLICY"
       ]
     },
     "AutomatedReasoningPolicyConflictedRuleIdList":{
@@ -3195,6 +3203,20 @@
       "members":{
         "content":{"shape":"AutomatedReasoningPolicyAnnotationIngestContent"}
       }
+    },
+    "AutomatedReasoningPolicyIterativeRefinementContent":{
+      "type":"structure",
+      "required":["documents"],
+      "members":{
+        "documents":{"shape":"AutomatedReasoningPolicyIterativeRefinementDocumentList"},
+        "feedback":{"shape":"AutomatedReasoningPolicyBuildFeedback"}
+      }
+    },
+    "AutomatedReasoningPolicyIterativeRefinementDocumentList":{
+      "type":"list",
+      "member":{"shape":"AutomatedReasoningPolicyBuildWorkflowDocument"},
+      "max":5,
+      "min":1
     },
     "AutomatedReasoningPolicyJustificationList":{
       "type":"list",
@@ -3604,7 +3626,8 @@
       "members":{
         "documents":{"shape":"AutomatedReasoningPolicyBuildWorkflowDocumentList"},
         "policyRepairAssets":{"shape":"AutomatedReasoningPolicyBuildWorkflowRepairContent"},
-        "generateFidelityReportContent":{"shape":"AutomatedReasoningPolicyGenerateFidelityReportContent"}
+        "generateFidelityReportContent":{"shape":"AutomatedReasoningPolicyGenerateFidelityReportContent"},
+        "iterativeRefinementContent":{"shape":"AutomatedReasoningPolicyIterativeRefinementContent"}
       },
       "union":true
     },
@@ -4005,13 +4028,11 @@
     },
     "CreateCustomModelRequest":{
       "type":"structure",
-      "required":[
-        "modelName",
-        "modelSourceConfig"
-      ],
+      "required":["modelName"],
       "members":{
         "modelName":{"shape":"CustomModelName"},
         "modelSourceConfig":{"shape":"ModelDataSource"},
+        "customModelDataSource":{"shape":"CustomModelDataSource"},
         "modelKmsKeyArn":{"shape":"KmsKeyArn"},
         "roleArn":{"shape":"RoleArn"},
         "modelTags":{"shape":"TagList"},
@@ -4415,6 +4436,13 @@
       "max":1011,
       "min":20,
       "pattern":"arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:[a-z0-9-]{1,20}:[0-9]{12}:custom-model/(imported|[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2})/[a-z0-9]{12}"
+    },
+    "CustomModelDataSource":{
+      "type":"structure",
+      "members":{
+        "modelPackageArnDataSource":{"shape":"ModelPackageArnDataSource"}
+      },
+      "union":true
     },
     "CustomModelDeploymentArn":{
       "type":"string",
@@ -8800,6 +8828,17 @@
       "max":63,
       "min":1,
       "pattern":"([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63})"
+    },
+    "ModelPackageArn":{
+      "type":"string",
+      "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]{9,16}:[0-9]{12}:model-package/[\\S]{1,2048}"
+    },
+    "ModelPackageArnDataSource":{
+      "type":"structure",
+      "required":["modelPackageArn"],
+      "members":{
+        "modelPackageArn":{"shape":"ModelPackageArn"}
+      }
     },
     "ModelSourceIdentifier":{
       "type":"string",

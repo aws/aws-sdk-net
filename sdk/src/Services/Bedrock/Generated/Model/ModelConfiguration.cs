@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Configuration for a model used in advanced prompt optimization.
+    /// Contains the configuration for a model used in an advanced prompt optimization job,
+    /// including the model ID and inference parameters.
     /// </summary>
     public partial class ModelConfiguration
     {
@@ -41,7 +42,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property AdditionalModelRequestFields. 
         /// <para>
-        /// Additional model request fields.
+        /// Additional model request fields. Use this to pass model-specific parameters that are
+        /// not included in the standard inference configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +66,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InferenceConfig. 
         /// <para>
-        /// Inference configuration for the model.
+        /// The inference configuration for the model, including parameters such as maximum tokens,
+        /// temperature, and top-p.
         /// </para>
         /// </summary>
         public InferenceConfiguration InferenceConfig
@@ -82,7 +85,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The model ID.
+        /// The ID of the model to use for optimization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=140)]

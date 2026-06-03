@@ -203,6 +203,11 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             {
                 request.Headers["X-Amzn-Bedrock-AgentCore-Runtime-Session-Id"] = publicRequest.RuntimeSessionId;
             }
+        
+            if (publicRequest.IsSetRuntimeUserId()) 
+            {
+                request.Headers["X-Amzn-Bedrock-AgentCore-Runtime-User-Id"] = publicRequest.RuntimeUserId;
+            }
             request.UseQueryString = true;
 
             return request;

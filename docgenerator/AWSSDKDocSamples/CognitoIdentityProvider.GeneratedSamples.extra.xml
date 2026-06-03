@@ -59,6 +59,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.CreateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.CreateUserPoolReplicaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a replica of a user pool in the ap-south-1 Region.
+                </para>
+                <code
+                    title="Example create a replica of a user pool in a new Region"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-create-a-replica-of-a-user-pool-in-a-new-region-1745281038615" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.DeleteUserPoolReplica(Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.DeleteUserPoolReplicaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a user pool replica in the us-east-2 Region.
+                </para>
+                <code
+                    title="Example delete a user pool replica"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-delete-a-user-pool-replica-1745281451065" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
             <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.InitiateAuth(Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest)" />
             <member name="T:Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest" />
@@ -78,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUserPoolReplicas(Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.ListUserPoolReplicasResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the replicas of a user pool that has a replica in the ap-south-1 Region.
+                </para>
+                <code
+                    title="Example list the replicas of a user pool"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-list-the-replicas-of-a-user-pool-1745281209294" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
             <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.ListUsers(Amazon.CognitoIdentityProvider.Model.ListUsersRequest)" />
             <member name="T:Amazon.CognitoIdentityProvider.Model.ListUsersRequest" />
@@ -92,6 +149,25 @@
                     title="A ListUsers request for the next 3 users whose email address starts with &quot;testuser.&quot;"
                     source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
                     region="a-listusers-request-for-the-next-3-users-whose-email-address-starts-with-testuser-1689977648246" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.UpdateUserPoolReplica(Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.UpdateUserPoolReplicaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the status of a user pool replica in the us-east-1 Region to ACTIVE.
+                </para>
+                <code
+                    title="Example update a user pool replica"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-update-a-user-pool-replica-1745281323439" />
             </example>
         </value>
     </doc>

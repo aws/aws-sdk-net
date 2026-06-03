@@ -171,6 +171,57 @@ namespace Amazon.CustomerProfiles
 
         #endregion
                 
+        #region  BatchPutProfileObject
+
+
+
+        /// <summary>
+        /// Adds multiple profile objects to a domain of a given ObjectType in a single API call.
+        /// 
+        ///  
+        /// <para>
+        /// When adding a specific profile object, like a Contact Record, an inferred profile
+        /// can get created if it is not mapped to an existing profile. The resulting profile
+        /// will only have a phone number populated in the standard ProfileObject. Any additional
+        /// Contact Records with the same phone number will be mapped to the same inferred profile.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a ProfileObject is created and if a ProfileObjectType already exists for the
+        /// ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType
+        /// definition.
+        /// </para>
+        ///  
+        /// <para>
+        /// BatchPutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutProfileObject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutProfileObject service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/BatchPutProfileObject">REST API Reference for BatchPutProfileObject Operation</seealso>
+        Task<BatchPutProfileObjectResponse> BatchPutProfileObjectAsync(BatchPutProfileObjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCalculatedAttributeDefinition
 
 

@@ -46,10 +46,32 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGit())
+            {
+                context.Writer.WritePropertyName("git");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessSkillGitSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Git, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
                 context.Writer.WriteStringValue(requestObject.Path);
+            }
+
+            if(requestObject.IsSetS3())
+            {
+                context.Writer.WritePropertyName("s3");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HarnessSkillS3SourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -17,6 +17,7 @@ using BenchmarkDotNet.Columns;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Reports;
+using BenchmarkDotNet.Toolchains.InProcess.Emit;
 using Perfolizer.Horology;
 
 namespace AWSSDK.Benchmarks.Serde;
@@ -39,6 +40,7 @@ public class SerdeBenchmarkConfig : ManualConfig
         // Performance Baselines Report used: WarmupCount=10, no Min/MaxIterationCount (BDN auto)
         // Optimized for CI/build system runtime: WarmupCount=5, MinIter=5, MaxIter=20
         AddJob(Job.Default
+            .WithToolchain(InProcessEmitToolchain.Instance)
             .WithStrategy(BenchmarkDotNet.Engines.RunStrategy.Throughput)
             .WithWarmupCount(5)
             .WithMinIterationCount(5)

@@ -36,6 +36,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _cloudFrontDomain;
         private int? _managedLoginVersion;
+        private RoutingType _routing;
 
         /// <summary>
         /// Gets and sets the property CloudFrontDomain. 
@@ -79,6 +80,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetManagedLoginVersion()
         {
             return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Routing. 
+        /// <para>
+        /// The updated routing configuration for the user pool domain.
+        /// </para>
+        /// </summary>
+        public RoutingType Routing
+        {
+            get { return this._routing; }
+            set { this._routing = value; }
+        }
+
+        // Check to see if Routing property is set
+        internal bool IsSetRouting()
+        {
+            return this._routing != null;
         }
 
     }

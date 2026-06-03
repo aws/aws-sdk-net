@@ -60,7 +60,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Place. 
         /// <para>
-        /// The place details.
+        /// Place details corresponding to the pass-through waypoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

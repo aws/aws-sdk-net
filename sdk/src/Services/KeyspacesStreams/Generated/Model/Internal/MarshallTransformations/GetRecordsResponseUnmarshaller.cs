@@ -58,6 +58,12 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
                     response.ChangeRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("iteratorDescription", targetDepth))
+                {
+                    var unmarshaller = IteratorDescriptionUnmarshaller.Instance;
+                    response.IteratorDescription = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("nextShardIterator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

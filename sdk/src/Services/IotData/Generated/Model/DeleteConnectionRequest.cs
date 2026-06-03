@@ -34,6 +34,12 @@ namespace Amazon.IotData.Model
     /// Disconnects a connected MQTT client from Amazon Web Services IoT Core. When you disconnect
     /// a client, Amazon Web Services IoT Core closes the client's network connection and
     /// optionally cleans the session state.
+    /// 
+    ///  
+    /// <para>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteConnection</a>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteConnectionRequest : AmazonIotDataRequest
     {
@@ -44,10 +50,11 @@ namespace Amazon.IotData.Model
         /// <summary>
         /// Gets and sets the property CleanSession. 
         /// <para>
-        /// Specifies whether to remove the client's session state when disconnecting. Set to
-        /// <c>TRUE</c> to delete all session information, including subscriptions and queued
-        /// messages. Set to <c>FALSE</c> to preserve the session state. By default, this is set
-        /// to <c>FALSE</c> (preserves the session state).
+        /// Specifies whether to remove the client's persistent session state when disconnecting.
+        /// Set to <c>TRUE</c> to delete all session information, including subscriptions and
+        /// queued messages. Set to <c>FALSE</c> to preserve the session state for <a href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html#mqtt-persistent-sessions">persistent
+        /// sessions</a>. For clean sessions this parameter will be ignored. By default, this
+        /// is set to <c>FALSE</c> (preserves the session state).
         /// </para>
         /// </summary>
         public bool? CleanSession
@@ -68,6 +75,12 @@ namespace Amazon.IotData.Model
         /// The unique identifier of the MQTT client to disconnect. The client ID can't start
         /// with a dollar sign ($).
         /// </para>
+        ///  
+        /// <para>
+        /// MQTT client IDs must be URL encoded (percent-encoded) when they contain characters
+        /// that are not valid in HTTP requests, such as spaces, forward slashes (/), and UTF-8
+        /// characters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ClientId
@@ -87,8 +100,8 @@ namespace Amazon.IotData.Model
         /// <para>
         /// Controls if Amazon Web Services IoT Core publishes the client's Last Will and Testament
         /// (LWT) message upon disconnection. Set to <c>TRUE</c> to prevent publishing the LWT
-        /// message. Set to <c>FALSE</c> to allow publishing. By default, this is set to <c>FALSE</c>
-        /// (allows publishing the LWT message).
+        /// message. Set to <c>FALSE</c> to ensure that LWT is published. By default, this is
+        /// set to <c>FALSE</c> (LWT message is published).
         /// </para>
         /// </summary>
         public bool? PreventWillMessage

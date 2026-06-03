@@ -44,9 +44,19 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>scheduled</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>active</c> and there is no commitment duration or the commitment duration has
-    /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
-    /// duration.
+    /// elapsed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
+    /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
+    /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
+    /// charges are applied.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -69,8 +79,30 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelCapacityReservationRequest : AmazonEC2Request
     {
+        private ApplyCancellationCharges _applyCancellationCharges;
         private string _capacityReservationId;
         private bool? _dryRun;
+        private string _quoteId;
+
+        /// <summary>
+        /// Gets and sets the property ApplyCancellationCharges. 
+        /// <para>
+        /// Specifies the cancellation charge type to apply when cancelling a future-dated Capacity
+        /// Reservation during its commitment duration. Possible values include <c>commitment-wind-down</c>,
+        /// which continues billing for the remaining commitment duration without delivering capacity.
+        /// </para>
+        /// </summary>
+        public ApplyCancellationCharges ApplyCancellationCharges
+        {
+            get { return this._applyCancellationCharges; }
+            set { this._applyCancellationCharges = value; }
+        }
+
+        // Check to see if ApplyCancellationCharges property is set
+        internal bool IsSetApplyCancellationCharges()
+        {
+            return this._applyCancellationCharges != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 
@@ -109,6 +141,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuoteId. 
+        /// <para>
+        /// The ID of the cancellation quote to use for the cancellation. You can generate a cancellation
+        /// quote by using the <c>CreateCapacityReservationCancellationQuote</c> action. The cancellation
+        /// quote must be in an <c>active</c> state.
+        /// </para>
+        /// </summary>
+        public string QuoteId
+        {
+            get { return this._quoteId; }
+            set { this._quoteId = value; }
+        }
+
+        // Check to see if QuoteId property is set
+        internal bool IsSetQuoteId()
+        {
+            return this._quoteId != null;
         }
 
     }

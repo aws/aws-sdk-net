@@ -66,7 +66,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ExpectedTrajectory. 
         /// <para>
-        /// expectedTrajectory for evaluation, reuses common model EvaluationExpectedTrajectory
+        /// The expected tool call sequence for trajectory evaluation.
         /// </para>
         /// </summary>
         public EvaluationExpectedTrajectory ExpectedTrajectory

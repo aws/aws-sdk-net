@@ -71,6 +71,12 @@ namespace Amazon.IotData
         /// Disconnects a connected MQTT client from Amazon Web Services IoT Core. When you disconnect
         /// a client, Amazon Web Services IoT Core closes the client's network connection and
         /// optionally cleans the session state.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteConnection</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
         /// 
@@ -99,6 +105,12 @@ namespace Amazon.IotData
         /// Disconnects a connected MQTT client from Amazon Web Services IoT Core. When you disconnect
         /// a client, Amazon Web Services IoT Core closes the client's network connection and
         /// optionally cleans the session state.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteConnection</a>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
         /// <param name="cancellationToken">
@@ -221,6 +233,76 @@ namespace Amazon.IotData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetConnection
+
+
+        /// <summary>
+        /// Retrieves connection information for the specified MQTT client.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetConnection</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        GetConnectionResponse GetConnection(GetConnectionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves connection information for the specified MQTT client.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetConnection</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnection service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetConnection">REST API Reference for GetConnection Operation</seealso>
+        Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -614,6 +696,78 @@ namespace Amazon.IotData
 
         #endregion
         
+        #region  ListSubscriptions
+
+
+        /// <summary>
+        /// Returns a list of all subscriptions for MQTT clients with active sessions, including
+        /// offline clients with persistent sessions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSubscriptions</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
+        ListSubscriptionsResponse ListSubscriptions(ListSubscriptionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of all subscriptions for MQTT clients with active sessions, including
+        /// offline clients with persistent sessions.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSubscriptions</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
+        Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  Publish
 
 
@@ -701,6 +855,118 @@ namespace Amazon.IotData
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         Task<PublishResponse> PublishAsync(PublishRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SendDirectMessage
+
+
+        /// <summary>
+        /// Sends an MQTT message directly to a specific client identified by its client ID.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>SendDirectMessage</c> targets a single client ID. The receiving client does not
+        /// need to subscribe to the topic, but the receiver's policy must allow <c>iot:Receive</c>
+        /// on the specified topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SendDirectMessage</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/">Amazon
+        /// Web Services IoT Core pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDirectMessage service method.</param>
+        /// 
+        /// <returns>The response from the SendDirectMessage service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.GatewayTimeoutException">
+        /// The delivery confirmation was not received from the client within the specified timeout
+        /// period.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.RequestEntityTooLargeException">
+        /// The payload exceeds the maximum size allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/SendDirectMessage">REST API Reference for SendDirectMessage Operation</seealso>
+        SendDirectMessageResponse SendDirectMessage(SendDirectMessageRequest request);
+
+
+
+        /// <summary>
+        /// Sends an MQTT message directly to a specific client identified by its client ID.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>SendDirectMessage</c> targets a single client ID. The receiving client does not
+        /// need to subscribe to the topic, but the receiver's policy must allow <c>iot:Receive</c>
+        /// on the specified topic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SendDirectMessage</a>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about messaging costs, see <a href="http://aws.amazon.com/iot-core/pricing/">Amazon
+        /// Web Services IoT Core pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDirectMessage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendDirectMessage service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.GatewayTimeoutException">
+        /// The delivery confirmation was not received from the client within the specified timeout
+        /// period.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.RequestEntityTooLargeException">
+        /// The payload exceeds the maximum size allowed.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/SendDirectMessage">REST API Reference for SendDirectMessage Operation</seealso>
+        Task<SendDirectMessageResponse> SendDirectMessageAsync(SendDirectMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
