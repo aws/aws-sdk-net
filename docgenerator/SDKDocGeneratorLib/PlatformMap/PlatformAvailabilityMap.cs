@@ -122,6 +122,28 @@ namespace SDKDocGenerator.PlatformMap
         #region Query Methods (for exclusive page generation)
 
         /// <summary>
+        /// Returns the distinct set of platforms that host members NOT present on the primary platform
+        /// (i.e. the platforms that contribute platform-exclusive members). These platforms' XML docs
+        /// must be parsed even on the main generation path, because exclusive members - and their
+        /// documentation - are surfaced on class pages and only exist in their own platform's XML.
+        /// Empty for the common case of a service with no exclusive members.
+        /// </summary>
+        public IEnumerable<string> GetPlatformsWithExclusiveMembers()
+        {
+            ThrowIfDisposed();
+
+            var result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var entry in _memberIndex.Values)
+            {
+                if (entry.Platforms.Contains(PrimaryPlatform))
+                    continue; // present on primary => not exclusive
+                foreach (var platform in entry.Platforms)
+                    result.Add(platform);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Gets all exclusive methods for a specific type.
         /// Used for generating class pages that include exclusive methods.
         /// </summary>

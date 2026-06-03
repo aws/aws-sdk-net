@@ -31,6 +31,12 @@ namespace SDKDocGenerator
         /// </summary>
         public const string PreferredPlatform = "net472";
 
+        // The only non-preferred platform whose parsed XML doc is still consumed during generation:
+        // MethodWriter reads it to detect whether a method has an async (CancellationToken) variant.
+        // (Platform *availability* is sourced from the assembly-based PlatformAvailabilityMap, not XML,
+        // so netstandard2.0 / net8.0 docs are never read - we must not waste time parsing them.)
+        private const string AsyncProbePlatform = "netcoreapp3.1";
+
         /// <summary>
         /// Represents a single service, supported on one or more platforms, that we will be
         /// generating documentation for.
@@ -237,9 +243,35 @@ namespace SDKDocGenerator
         /// namespace fan-out) - serializing 4 multi-MB XML parses there was a measurable bottleneck for
         /// large services like EC2.
         /// </summary>
+        /// <summary>
+        /// Parses and caches only the NDoc XML docs this manifest actually reads:
+        ///   - the preferred platform (all page content, keyed on Options.Platform);
+        ///   - the async-probe platform (MethodWriter's async-variant detection);
+        ///   - any platform contributing platform-exclusive members, whose docs are surfaced on
+        ///     class pages (and the exclusive method pages) and exist only in that platform's XML.
+        ///
+        /// The remaining platforms' XML was historically loaded for AddVersionInformation, but that
+        /// now derives availability from the assembly-based PlatformAvailabilityMap. Parsing those
+        /// large XML files - the single biggest CPU cost in the run - is dead work, so we skip them.
+        /// For the common service with no exclusive members this loads just 2 of the 4 platforms.
+        /// </summary>
         private void LoadDocumentationForAllPlatforms()
         {
-            var platforms = AllPlatforms.ToList();
+            var needed = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            {
+                Options.Platform,
+                AsyncProbePlatform
+            };
+
+            // Exclusive members (and their docs) live only in their own platform's XML; include those.
+            if (PlatformMap != null)
+            {
+                foreach (var platform in PlatformMap.GetPlatformsWithExclusiveMembers())
+                    needed.Add(platform);
+            }
+
+            var platforms = AllPlatforms.Where(needed.Contains).ToList();
+
             if (platforms.Count <= 1)
             {
                 foreach (var platform in platforms)
@@ -412,7 +444,6 @@ namespace SDKDocGenerator
             var exclusiveCount = PlatformMap.ExclusiveMemberCount;
             Trace.WriteLine($"\tgenerating exclusive method pages from unified map for {ServiceName} ({exclusiveCount} methods across {typesWithExclusive.Count} types)");
 
-            // Load NDoc documentation for all platforms
             LoadDocumentationForAllPlatforms();
 
             var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
