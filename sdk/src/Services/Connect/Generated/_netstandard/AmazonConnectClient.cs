@@ -45,26 +45,31 @@ namespace Amazon.Connect
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// <ul> <li> 
+    /// <note> 
+    /// <para>
+    /// Amazon Connect now refers to a portfolio of agentic solutions for business functions.
+    /// The legacy product is now called Amazon Connect Customer, or simply Customer. The
+    /// legacy name is used interchangeably in this documentation.
+    /// </para>
+    ///  </note> <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html">Connect
-    /// Customer actions</a> 
+    /// Customer Customer actions</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html">Connect
-    /// Customer data types</a> 
+    /// Customer Customer data types</a> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Connect Customer is a cloud-based contact center solution that you use to set up and
-    /// manage a customer contact center and provide reliable customer engagement at any scale.
+    /// Connect Customer Customer engages customers at every touchpoint and creates deeper
+    /// relationships with AI powered capabilities.
     /// </para>
     ///  
     /// <para>
-    /// Connect Customer provides metrics and real-time reporting that enable you to optimize
-    /// contact routing. You can also resolve customer issues more efficiently by getting
-    /// customers in touch with the appropriate agents.
+    /// Build and manage customer communication experiences. Connect customers to agents,
+    /// enable intelligent routing, and track performance in real-time.
     /// </para>
     ///  
     /// <para>

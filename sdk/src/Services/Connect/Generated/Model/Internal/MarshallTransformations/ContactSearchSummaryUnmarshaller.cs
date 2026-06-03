@@ -62,6 +62,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AiAgentInfo", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ContactSearchSummaryAiAgentInfo, ContactSearchSummaryAiAgentInfoUnmarshaller>(ContactSearchSummaryAiAgentInfoUnmarshaller.Instance);
+                    unmarshalledObject.AiAgentInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

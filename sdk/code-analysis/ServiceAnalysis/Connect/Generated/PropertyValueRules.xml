@@ -5246,6 +5246,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AiAgentSearchCriteria.Id</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AliasConfiguration.EmailAddressId</property>
     <min>1</min>
     <max>500</max>
@@ -5806,6 +5811,11 @@
     <property>Amazon.Connect.Model.ContactSearchSummaryAgentInfo.Id</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactSearchSummaryAiAgentInfo.AiAgentVersionId</property>
+    <min>0</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactSearchSummarySegmentAttributeValue.ValueString</property>
