@@ -1,3 +1,9 @@
+### 4.0.261.0 (2026-06-03 05:56 UTC)
+* DynamoDBv2 (4.0.19.0)
+	* Replace legacy parameter AttributesToGet with ProjectionExpression and ExpressionAttributeNames in LoadAsync flow
+* GeoRoutes (4.0.7.0)
+	* Add "standardRegionalEndpoints" back to fix 'Could not connect to the endpoint URL'
+
 ### 4.0.260.0 (2026-06-02 18:32 UTC)
 * AWSMarketplaceMetering (4.0.5.0)
 	* Adding new BDD representation of endpoint ruleset
