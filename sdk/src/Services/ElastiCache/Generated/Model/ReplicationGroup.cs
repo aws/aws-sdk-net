@@ -46,6 +46,8 @@ namespace Amazon.ElastiCache.Model
         private Endpoint _configurationEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
+        private Durability _durability;
+        private EffectiveDurability _effectiveDurability;
         private string _engine;
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private IpDiscovery _ipDiscovery;
@@ -63,6 +65,7 @@ namespace Amazon.ElastiCache.Model
         private string _snapshottingClusterId;
         private string _snapshotWindow;
         private string _status;
+        private StorageEncryptionType _storageEncryptionType;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
         private List<string> _userGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -88,22 +91,18 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
         /// <para>
-        /// A flag that enables encryption at-rest when set to <c>true</c>.
+        /// A flag that enables encryption at-rest on the cluster when set to <c>true</c>. In
+        /// some cases, encryption at-rest may be enabled even when this value is false. Use <c>StorageEncryptionType</c>
+        /// to view the effective encryption state of a cluster.
         /// </para>
         ///  
         /// <para>
         /// You cannot modify the value of <c>AtRestEncryptionEnabled</c> after the cluster is
-        /// created. To enable encryption at-rest on a cluster you must set <c>AtRestEncryptionEnabled</c>
-        /// to <c>true</c> when you create a cluster.
+        /// created.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using Redis OSS version <c>3.2.6</c>, <c>4.x</c> or later.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <c>false</c> 
+        /// Default: <c>true</c> when using Valkey, <c>false</c> when using Redis OSS
         /// </para>
         /// </summary>
         public bool? AtRestEncryptionEnabled
@@ -318,6 +317,46 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Durability. 
+        /// <para>
+        /// The durability setting of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// </para>
+        /// </summary>
+        public Durability Durability
+        {
+            get { return this._durability; }
+            set { this._durability = value; }
+        }
+
+        // Check to see if Durability property is set
+        internal bool IsSetDurability()
+        {
+            return this._durability != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveDurability. 
+        /// <para>
+        /// The effective durability of the replication group. When <c>Durability</c> is set to
+        /// <c>default</c>, the service resolves the actual durability based on the engine version,
+        /// cluster mode, and other parameters. This field reflects the resolved value. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/ConfiguringDurability.html">Configuring
+        /// Durability</a>.
+        /// </para>
+        /// </summary>
+        public EffectiveDurability EffectiveDurability
+        {
+            get { return this._effectiveDurability; }
+            set { this._effectiveDurability = value; }
+        }
+
+        // Check to see if EffectiveDurability property is set
+        internal bool IsSetEffectiveDurability()
+        {
+            return this._effectiveDurability != null;
         }
 
         /// <summary>
@@ -681,6 +720,27 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// Indicates the type of encryption for data stored at rest in the replication group.
+        /// The value is <c>none</c> if at-rest encryption is not enabled, <c>sse-elasticache</c>
+        /// if an ElastiCache service-managed key is used, or <c>sse-kms</c> if a customer-managed
+        /// KMS key is used.
+        /// </para>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>

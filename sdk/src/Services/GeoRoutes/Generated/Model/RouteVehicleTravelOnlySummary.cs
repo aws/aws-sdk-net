@@ -88,7 +88,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property TypicalDuration. 
         /// <para>
-        /// Duration of the computed span under typical traffic congestion.
+        /// Duration of the leg under typical traffic congestion.
         /// </para>
         ///  
         /// <para>

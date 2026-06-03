@@ -109,6 +109,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DataTieringEnabled", StringUtils.FromBool(publicRequest.DataTieringEnabled));
                 }
+                if(publicRequest.IsSetDurability())
+                {
+                    request.Parameters.Add("Durability", StringUtils.FromString(publicRequest.Durability));
+                }
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));

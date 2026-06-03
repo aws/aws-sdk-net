@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon SageMaker Job Runtime is a new service for managing trajectory data during multi-turn customization jobs. It provides APIs to send inference requests to models during job execution, mark rollouts as complete, and submit reward values for training trajectories.",
+  "generate-client-constructors": true
+}

@@ -40,6 +40,7 @@ namespace Amazon.Lambda.Model
         private string _kmsKeyArn;
         private string _lastModified;
         private CapacityProviderPermissionsConfig _permissionsConfig;
+        private PropagateTags _propagateTags;
         private CapacityProviderState _state;
         private CapacityProviderVpcConfig _vpcConfig;
 
@@ -151,6 +152,21 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPermissionsConfig()
         {
             return this._permissionsConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PropagateTags.
+        /// </summary>
+        public PropagateTags PropagateTags
+        {
+            get { return this._propagateTags; }
+            set { this._propagateTags = value; }
+        }
+
+        // Check to see if PropagateTags property is set
+        internal bool IsSetPropagateTags()
+        {
+            return this._propagateTags != null;
         }
 
         /// <summary>

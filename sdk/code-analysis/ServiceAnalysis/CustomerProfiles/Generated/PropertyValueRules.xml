@@ -41,6 +41,18 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectRequest.ObjectTypeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionRequest.CalculatedAttributeName</property>
     <min>1</min>
     <max>255</max>
@@ -2914,6 +2926,44 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectErrorItem.Code</property>
+    <min>200</min>
+    <max>599</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectErrorItem.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectErrorItem.Message</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectRequestItem.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectRequestItem.Object</property>
+    <min>1</min>
+    <max>256000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectResponseItem.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.BatchPutProfileObjectResponseItem.ProfileObjectUniqueKey</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CalculatedAttributeValue.CalculatedAttributeName</property>
     <min>1</min>
     <max>255</max>
@@ -3451,7 +3501,7 @@
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Period.Value</property>
     <min>1</min>
-    <max>24</max>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Profile.AccountNumber</property>

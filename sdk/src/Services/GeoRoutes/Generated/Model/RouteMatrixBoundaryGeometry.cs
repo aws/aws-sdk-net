@@ -42,7 +42,16 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property AutoCircle. 
         /// <para>
-        /// Provides the circle that was used while calculating the route.
+        ///  <c>AutoCircle</c> requests the route matrix service to define a <c>Circle</c> boundary
+        /// that best attempts to include most waypoints (<c>Origins</c> and <c>Destinations</c>)
+        /// using the <c>AutoCircle</c> settings. Any waypoints outside of the auto-defined <c>Circle</c>
+        /// boundary will be considered out of the routing boundary, which results in a route
+        /// matrix entry error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>AutoCircle</c> is only used in the request to configure a <c>Circle</c> for the
+        /// route calculation. The derived <c>Circle</c> will also be provided in the response.
         /// </para>
         /// </summary>
         public RouteMatrixAutoCircle AutoCircle
@@ -64,6 +73,10 @@ namespace Amazon.GeoRoutes.Model
         /// (longitude and latitude,) of the southwest corner of the bounding box; the second
         /// pair represents the X and Y coordinates (longitude and latitude) of the northeast
         /// corner.
+        /// </para>
+        ///  
+        /// <para>
+        /// Diagonal distance of the bounding box must be less than or equal to 400,000 meters.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -87,8 +100,14 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Circle. 
         /// <para>
-        /// Geometry defined as a circle. When request routing boundary was set as <c>AutoCircle</c>,
-        /// the response routing boundary will return <c>Circle</c> derived from the <c>AutoCircle</c>
+        /// Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints
+        /// outside the circle will result in a route matrix entry error.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a <c>Circle</c> directly in the request, or it will be auto-derived
+        /// when <c>AutoCircle</c> is used. When <c>AutoCircle</c> is set in the request, the
+        /// response routing boundary will return <c>Circle</c> derived from the <c>AutoCircle</c>
         /// settings.
         /// </para>
         /// </summary>
@@ -108,7 +127,20 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        /// Geometry defined as a polygon with only one linear ring.
+        /// Geometry defined as a polygon with only one linear ring. A linear ring is a closed
+        /// sequence of four or more coordinates. The first and last coordinates are the same,
+        /// forming a closed boundary. Each coordinate is a position in [longitude, latitude]
+        /// format.
+        /// </para>
+        ///  
+        /// <para>
+        /// The structure is an array of linear rings (only 1 allowed). Each linear ring is an
+        /// array of coordinates (minimum 4), and each coordinate is an array of two doubles [longitude,
+        /// latitude].
+        /// </para>
+        ///  
+        /// <para>
+        /// Maximum distance between any two vertices must be less than or equal to 400,000 meters.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

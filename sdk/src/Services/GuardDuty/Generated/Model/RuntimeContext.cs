@@ -36,6 +36,8 @@ namespace Amazon.GuardDuty.Model
     {
         private string _addressFamily;
         private string _commandLineExample;
+        private string _fileOperation;
+        private string _filePath;
         private string _fileSystemType;
         private List<string> _flags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _ianaProtocolNumber;
@@ -49,6 +51,7 @@ namespace Amazon.GuardDuty.Model
         private string _moduleSha256;
         private string _mountSource;
         private string _mountTarget;
+        private List<string> _relatedFilePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _releaseAgentPath;
         private string _runcBinaryPath;
         private string _scriptPath;
@@ -95,6 +98,44 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCommandLineExample()
         {
             return this._commandLineExample != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FileOperation. 
+        /// <para>
+        /// Represents the type of file operation that triggered the finding, such as Write, Delete,
+        /// Rename, Link, or Symlink.
+        /// </para>
+        /// </summary>
+        public string FileOperation
+        {
+            get { return this._fileOperation; }
+            set { this._fileOperation = value; }
+        }
+
+        // Check to see if FileOperation property is set
+        internal bool IsSetFileOperation()
+        {
+            return this._fileOperation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilePath. 
+        /// <para>
+        /// The path of the sensitive file that was modified. Modification includes write, delete,
+        /// rename, link, or symlink operations. This field is indexed for filtering.
+        /// </para>
+        /// </summary>
+        public string FilePath
+        {
+            get { return this._filePath; }
+            set { this._filePath = value; }
+        }
+
+        // Check to see if FilePath property is set
+        internal bool IsSetFilePath()
+        {
+            return this._filePath != null;
         }
 
         /// <summary>
@@ -344,6 +385,31 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetMountTarget()
         {
             return this._mountTarget != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedFilePaths. 
+        /// <para>
+        /// All file paths modified by the same process that triggered the finding, up to a maximum
+        /// of 25 paths.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=25)]
+        public List<string> RelatedFilePaths
+        {
+            get { return this._relatedFilePaths; }
+            set { this._relatedFilePaths = value; }
+        }
+
+        // Check to see if RelatedFilePaths property is set
+        internal bool IsSetRelatedFilePaths()
+        {
+            return this._relatedFilePaths != null && (this._relatedFilePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

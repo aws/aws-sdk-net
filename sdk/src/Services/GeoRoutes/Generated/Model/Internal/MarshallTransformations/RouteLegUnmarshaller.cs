@@ -80,6 +80,24 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                     unmarshalledObject.PedestrianLegDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RentalLegDetails", targetDepth))
+                {
+                    var unmarshaller = RouteRentalLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RentalLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TaxiLegDetails", targetDepth))
+                {
+                    var unmarshaller = RouteTaxiLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.TaxiLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TransitLegDetails", targetDepth))
+                {
+                    var unmarshaller = RouteTransitLegDetailsUnmarshaller.Instance;
+                    unmarshalledObject.TransitLegDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TravelMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

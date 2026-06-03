@@ -1309,6 +1309,56 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type EncryptionKeyType.
+    /// </summary>
+    public class EncryptionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED_KEY for EncryptionKeyType
+        /// </summary>
+        public static readonly EncryptionKeyType AWS_OWNED_KEY = new EncryptionKeyType("AWS_OWNED_KEY");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED_KEY for EncryptionKeyType
+        /// </summary>
+        public static readonly EncryptionKeyType CUSTOMER_MANAGED_KEY = new EncryptionKeyType("CUSTOMER_MANAGED_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionKeyType FindValue(string value)
+        {
+            return FindValue<EncryptionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventFilterType.
     /// </summary>
     public class EventFilterType : ConstantClass
@@ -1819,6 +1869,56 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type IssuerType.
+    /// </summary>
+    public class IssuerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ORIGINAL for IssuerType
+        /// </summary>
+        public static readonly IssuerType ORIGINAL = new IssuerType("ORIGINAL");
+        /// <summary>
+        /// Constant UPDATED for IssuerType
+        /// </summary>
+        public static readonly IssuerType UPDATED = new IssuerType("UPDATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IssuerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IssuerType FindValue(string value)
+        {
+            return FindValue<IssuerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IssuerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -2131,6 +2231,114 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type ReplicaRoleType.
+    /// </summary>
+    public class ReplicaRoleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY for ReplicaRoleType
+        /// </summary>
+        public static readonly ReplicaRoleType PRIMARY = new ReplicaRoleType("PRIMARY");
+        /// <summary>
+        /// Constant SECONDARY for ReplicaRoleType
+        /// </summary>
+        public static readonly ReplicaRoleType SECONDARY = new ReplicaRoleType("SECONDARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicaRoleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicaRoleType FindValue(string value)
+        {
+            return FindValue<ReplicaRoleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicaRoleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicaStatusType.
+    /// </summary>
+    public class ReplicaStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ReplicaStatusType
+        /// </summary>
+        public static readonly ReplicaStatusType ACTIVE = new ReplicaStatusType("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ReplicaStatusType
+        /// </summary>
+        public static readonly ReplicaStatusType CREATING = new ReplicaStatusType("CREATING");
+        /// <summary>
+        /// Constant DELETING for ReplicaStatusType
+        /// </summary>
+        public static readonly ReplicaStatusType DELETING = new ReplicaStatusType("DELETING");
+        /// <summary>
+        /// Constant INACTIVE for ReplicaStatusType
+        /// </summary>
+        public static readonly ReplicaStatusType INACTIVE = new ReplicaStatusType("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicaStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicaStatusType FindValue(string value)
+        {
+            return FindValue<ReplicaStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicaStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RiskDecisionType.
     /// </summary>
     public class RiskDecisionType : ConstantClass
@@ -2432,6 +2640,56 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeUnitsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateReplicaStatusType.
+    /// </summary>
+    public class UpdateReplicaStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for UpdateReplicaStatusType
+        /// </summary>
+        public static readonly UpdateReplicaStatusType ACTIVE = new UpdateReplicaStatusType("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for UpdateReplicaStatusType
+        /// </summary>
+        public static readonly UpdateReplicaStatusType INACTIVE = new UpdateReplicaStatusType("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateReplicaStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateReplicaStatusType FindValue(string value)
+        {
+            return FindValue<UpdateReplicaStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateReplicaStatusType(string value)
         {
             return FindValue(value);
         }

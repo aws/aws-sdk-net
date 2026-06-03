@@ -31,7 +31,10 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSuppressedDestinations operation.
-    /// Retrieves a list of email addresses that are on the suppression list for your account.
+    /// Retrieves a list of email addresses that are on the suppression list for your account
+    /// or for a specific tenant. To target a tenant's suppression list, specify the <c>TenantName</c>
+    /// parameter. If you omit <c>TenantName</c>, the operation targets the account-level
+    /// suppression list.
     /// </summary>
     public partial class ListSuppressedDestinationsRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -40,6 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         private int? _pageSize;
         private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startDate;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property EndDate. 
@@ -103,7 +107,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Reasons. 
         /// <para>
-        /// The factors that caused the email address to be added to .
+        /// The factors that caused the email address to be added to the suppression list for
+        /// your account or for a specific tenant.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -140,6 +145,26 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetStartDate()
         {
             return this._startDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant whose suppression list you want to retrieve. If you omit this
+        /// parameter, the operation targets the account-level suppression list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

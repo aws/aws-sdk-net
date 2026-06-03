@@ -37,13 +37,15 @@ public class ServiceIndex
     private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
     {
         // TODO: walk service.Resources recursively to collect lifecycle operations
-        var operations = new List<OperationShape>();
+        var operations = new List<OperationShape>(service.Operations.Count);
         foreach (var operationId in service.Operations)
         {
-            if (model.Shapes.TryGetValue(operationId.AbsoluteName, out var shape) && shape is OperationShape operation)
+            if (!model.Shapes.TryGetValue(operationId.AbsoluteName, out var shape) || shape is not OperationShape operation)
             {
-                operations.Add(operation);
+                throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
+
+            operations.Add(operation);
         }
 
         return operations;

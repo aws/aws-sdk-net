@@ -159,6 +159,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EmailVerificationSubject);
             }
 
+            if(publicRequest.IsSetIssuerConfiguration())
+            {
+                context.Writer.WritePropertyName("IssuerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IssuerConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IssuerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKeyConfiguration())
+            {
+                context.Writer.WritePropertyName("KeyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KeyConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KeyConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetLambdaConfig())
             {
                 context.Writer.WritePropertyName("LambdaConfig");

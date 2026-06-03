@@ -86,6 +86,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("entitlements", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);
+                    unmarshalledObject.Entitlements = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("proposalSummary", targetDepth))
                 {
                     var unmarshaller = ProposalSummaryUnmarshaller.Instance;

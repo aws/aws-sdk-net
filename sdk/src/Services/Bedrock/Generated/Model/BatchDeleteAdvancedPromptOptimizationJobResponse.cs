@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property AdvancedPromptOptimizationJobs. 
         /// <para>
-        /// List of successfully deleted advanced prompt optimization jobs.
+        /// A list of successfully deleted advanced prompt optimization jobs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -64,7 +64,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// List of errors encountered during batch deletion.
+        /// A list of errors encountered during batch deletion.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

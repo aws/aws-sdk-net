@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Output data configuration for the advanced prompt optimization job.
+    /// Contains the output data configuration for an advanced prompt optimization job.
     /// </summary>
     public partial class AdvancedPromptOptimizationOutputConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// S3 URI prefix for the output location.
+        /// The S3 URI prefix where the optimization results will be written.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

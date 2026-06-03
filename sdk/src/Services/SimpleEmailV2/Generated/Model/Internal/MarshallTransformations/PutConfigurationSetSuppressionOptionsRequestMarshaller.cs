@@ -87,6 +87,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetSuppressionScope())
+            {
+                context.Writer.WritePropertyName("SuppressionScope");
+                context.Writer.WriteStringValue(publicRequest.SuppressionScope);
+            }
+
             if(publicRequest.IsSetValidationOptions())
             {
                 context.Writer.WritePropertyName("ValidationOptions");

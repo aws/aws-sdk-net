@@ -154,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.DeleteVolume(Amazon.Deadline.Model.DeleteVolumeRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.DeleteVolume(Amazon.Deadline.Model.DeleteVolumeRequest)" />
+            <member name="T:Amazon.Deadline.Model.DeleteVolumeRequest" />
+            <member name="T:Amazon.Deadline.Model.DeleteVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Delete a volume"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Deadline.IAmazonDeadline.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
             <member name="M:Amazon.Deadline.AmazonDeadlineClient.GetMonitorSettings(Amazon.Deadline.Model.GetMonitorSettingsRequest)" />
             <member name="T:Amazon.Deadline.Model.GetMonitorSettingsRequest" />
@@ -166,6 +185,44 @@
                 </para>
                 <code
                     title="Get monitor settings"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.GetVolume(Amazon.Deadline.Model.GetVolumeRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.GetVolume(Amazon.Deadline.Model.GetVolumeRequest)" />
+            <member name="T:Amazon.Deadline.Model.GetVolumeRequest" />
+            <member name="T:Amazon.Deadline.Model.GetVolumeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get a volume"
+                    source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Deadline.IAmazonDeadline.ListVolumes(Amazon.Deadline.Model.ListVolumesRequest)" />
+            <member name="M:Amazon.Deadline.AmazonDeadlineClient.ListVolumes(Amazon.Deadline.Model.ListVolumesRequest)" />
+            <member name="T:Amazon.Deadline.Model.ListVolumesRequest" />
+            <member name="T:Amazon.Deadline.Model.ListVolumesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List volumes for a fleet"
                     source=".\AWSSDKDocSamples\Deadline\Deadline.GeneratedSamples.cs"
                     region="example-1" />
             </example>

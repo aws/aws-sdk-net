@@ -248,6 +248,16 @@ namespace Amazon.QuickSight.Model
         IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request);
 
         /// <summary>
+        /// Paginator for ListOAuthClientApplications operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListOAuthClientApplicationsPaginator ListOAuthClientApplications(ListOAuthClientApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for ListRoleMemberships operation
         ///</summary>
         [AWSPaginator(

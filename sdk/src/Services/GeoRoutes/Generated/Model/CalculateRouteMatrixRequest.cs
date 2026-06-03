@@ -155,7 +155,8 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// List of destinations for the route.
+        /// List of destinations for the route in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude].
         /// </para>
         ///  <note> 
         /// <para>
@@ -164,7 +165,41 @@ namespace Amazon.GeoRoutes.Model
         /// information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
         /// pricing</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The maximum number of destinations depends on the routing boundary configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c> set: maximum 500 destinations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c> set to <c>true</c>: maximum 100 destinations
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: maximum 350 destinations
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The total matrix size (origins × destinations) must not exceed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c>: 160,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c>: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: 122,500
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -250,7 +285,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Origins. 
         /// <para>
-        /// The position for the origin in World Geodetic System (WGS 84) format: [longitude,
+        /// List of origins for the route in World Geodetic System (WGS 84) format: [longitude,
         /// latitude].
         /// </para>
         ///  <note> 
@@ -260,7 +295,41 @@ namespace Amazon.GeoRoutes.Model
         /// information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html">Routes
         /// pricing</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// The maximum number of origins depends on the routing boundary configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c> set: maximum 500 origins
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c> set to <c>true</c>: maximum 15 origins
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: maximum 350 origins
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The total matrix size (origins × destinations) must not exceed:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Geometry</c>: 160,000
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// With <c>RoutingBoundary.Unbounded</c>: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>: 122,500
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -294,8 +363,8 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When request routing boundary was set as AutoCircle, the response routing boundary
-        /// will return Circle derived from the AutoCircle settings.
+        /// When <c>AutoCircle</c> is set in the request, the response routing boundary will return
+        /// <c>Circle</c> derived from the <c>AutoCircle</c> settings.
         /// </para>
         ///  </note>
         /// </summary>

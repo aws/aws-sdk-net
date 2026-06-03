@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Provides a summary of a pedestrian route step.
+    /// Summary including duration and distance for the entire leg.
     /// </summary>
     public partial class RoutePedestrianOverviewSummary
     {
@@ -40,7 +40,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Distance. 
         /// <para>
-        /// Distance of the step.
+        /// Distance of the entire leg.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Unit</b>: <c>meters</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
@@ -59,7 +63,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// Duration of the step.
+        /// Duration of the entire leg.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]

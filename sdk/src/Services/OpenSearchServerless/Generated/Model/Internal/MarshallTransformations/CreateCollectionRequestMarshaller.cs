@@ -92,6 +92,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CollectionGroupName);
             }
 
+            if(publicRequest.IsSetDeletionProtection())
+            {
+                context.Writer.WritePropertyName("deletionProtection");
+                context.Writer.WriteStringValue(publicRequest.DeletionProtection);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogs. 
         /// <para>
-        /// Pull session spans from CloudWatch
+        /// Configuration for pulling agent session traces from CloudWatch Logs.
         /// </para>
         /// </summary>
         public CloudWatchLogsSource CloudWatchLogs

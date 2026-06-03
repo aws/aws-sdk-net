@@ -91,6 +91,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConfigurationName);
             }
 
+            if(publicRequest.IsSetEngineSettings())
+            {
+                context.Writer.WritePropertyName("engineSettings");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.EngineSettings);
+            }
+
             if(publicRequest.IsSetLogLevel())
             {
                 context.Writer.WritePropertyName("logLevel");

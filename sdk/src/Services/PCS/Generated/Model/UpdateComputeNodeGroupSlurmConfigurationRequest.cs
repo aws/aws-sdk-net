@@ -34,7 +34,30 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class UpdateComputeNodeGroupSlurmConfigurationRequest
     {
+        private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ScaleDownIdleTimeInSeconds. 
+        /// <para>
+        /// The time (in seconds) before an idle node is scaled down. If not specified, the cluster-level
+        /// setting applies. This overrides the cluster-level <c>scaleDownIdleTimeInSeconds</c>
+        /// setting. A value of <c>-1</c> removes the override and applies the cluster-level setting
+        /// to this compute node group. Requires Slurm version 25.11 or later.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1, Max=10000000)]
+        public int? ScaleDownIdleTimeInSeconds
+        {
+            get { return this._scaleDownIdleTimeInSeconds; }
+            set { this._scaleDownIdleTimeInSeconds = value; }
+        }
+
+        // Check to see if ScaleDownIdleTimeInSeconds property is set
+        internal bool IsSetScaleDownIdleTimeInSeconds()
+        {
+            return this._scaleDownIdleTimeInSeconds.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SlurmCustomSettings. 

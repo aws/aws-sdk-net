@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class HarnessSkill
     {
+        private HarnessSkillGitSource _git;
         private string _path;
+        private HarnessSkillS3Source _s3;
+
+        /// <summary>
+        /// Gets and sets the property Git. 
+        /// <para>
+        /// A git repository containing the skill.
+        /// </para>
+        /// </summary>
+        public HarnessSkillGitSource Git
+        {
+            get { return this._git; }
+            set { this._git = value; }
+        }
+
+        // Check to see if Git property is set
+        internal bool IsSetGit()
+        {
+            return this._git != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -53,6 +73,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPath()
         {
             return this._path != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// An S3 source containing the skill.
+        /// </para>
+        /// </summary>
+        public HarnessSkillS3Source S3
+        {
+            get { return this._s3; }
+            set { this._s3 = value; }
+        }
+
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
+        {
+            return this._s3 != null;
         }
 
     }

@@ -32,16 +32,20 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the GetSuppressedDestination operation.
     /// Retrieves information about a specific email address that's on the suppression list
-    /// for your account.
+    /// for your account or for a specific tenant. To target a tenant's suppression list,
+    /// specify the <c>TenantName</c> parameter. If you omit <c>TenantName</c>, the operation
+    /// targets the account-level suppression list.
     /// </summary>
     public partial class GetSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _emailAddress;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address that's on the account suppression list.
+        /// The email address that's on the suppression list for your account or for the specified
+        /// tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -55,6 +59,26 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetEmailAddress()
         {
             return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant whose suppression list you want to query. If you omit this
+        /// parameter, the operation targets the account-level suppression list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

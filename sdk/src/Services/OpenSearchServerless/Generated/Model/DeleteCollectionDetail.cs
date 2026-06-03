@@ -34,9 +34,29 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class DeleteCollectionDetail
     {
+        private DeletionProtection _deletionProtection;
         private string _id;
         private string _name;
         private CollectionStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates whether deletion protection is <c>ENABLED</c> or <c>DISABLED</c> for the
+        /// collection.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -63,7 +83,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The name of the collection.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }

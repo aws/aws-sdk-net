@@ -128,6 +128,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallRuleGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FirewallRuleType", targetDepth))
+                {
+                    var unmarshaller = FirewallRuleTypeUnmarshaller.Instance;
+                    unmarshalledObject.FirewallRuleType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("FirewallThreatProtectionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

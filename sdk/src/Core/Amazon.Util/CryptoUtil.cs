@@ -111,6 +111,10 @@ namespace Amazon.Util
 
         partial class CryptoUtil : ICryptoUtil
         {
+#if NET8_0_OR_GREATER
+            private static bool _md5HashDataAvailable = true;
+#endif
+
             internal CryptoUtil()
             {
             }
@@ -205,11 +209,20 @@ namespace Amazon.Util
             public byte[] ComputeMD5Hash(byte[] data)
             {
 #if NET8_0_OR_GREATER
-                return MD5.HashData(data);
-#else
+                if (_md5HashDataAvailable)
+                {
+                    try
+                    {
+                        return MD5.HashData(data);
+                    }
+                    catch (CryptographicException)
+                    {
+                        _md5HashDataAvailable = false;
+                    }
+                }
+#endif
                 var hashed = new MD5Managed().ComputeHash(data);
                 return hashed;
-#endif
             }
 
             /// <summary>
@@ -220,11 +233,20 @@ namespace Amazon.Util
             public byte[] ComputeMD5Hash(Stream steam)
             {
 #if NET8_0_OR_GREATER
-                return MD5.HashData(steam);
-#else
+                if (_md5HashDataAvailable)
+                {
+                    try
+                    {
+                        return MD5.HashData(steam);
+                    }
+                    catch (CryptographicException)
+                    {
+                        _md5HashDataAvailable = false;
+                    }
+                }
+#endif
                 var hashed = new MD5Managed().ComputeHash(steam);
                 return hashed;
-#endif
             }
 
             /// <summary>

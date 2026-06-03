@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private DateTime? _createdTimestamp;
         private SendingStatus _sendingStatus;
+        private TenantSuppressionAttributes _suppressionAttributes;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tenantArn;
         private string _tenantId;
@@ -75,6 +76,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSendingStatus()
         {
             return this._sendingStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressionAttributes. 
+        /// <para>
+        /// An object that contains information about the suppression list preferences for the
+        /// tenant.
+        /// </para>
+        /// </summary>
+        public TenantSuppressionAttributes SuppressionAttributes
+        {
+            get { return this._suppressionAttributes; }
+            set { this._suppressionAttributes = value; }
+        }
+
+        // Check to see if SuppressionAttributes property is set
+        internal bool IsSetSuppressionAttributes()
+        {
+            return this._suppressionAttributes != null;
         }
 
         /// <summary>

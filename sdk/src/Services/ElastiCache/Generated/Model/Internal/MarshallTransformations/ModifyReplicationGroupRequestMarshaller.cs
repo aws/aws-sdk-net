@@ -105,6 +105,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterMode", StringUtils.FromString(publicRequest.ClusterMode));
                 }
+                if(publicRequest.IsSetDurability())
+                {
+                    request.Parameters.Add("Durability", StringUtils.FromString(publicRequest.Durability));
+                }
                 if(publicRequest.IsSetEngine())
                 {
                     request.Parameters.Add("Engine", StringUtils.FromString(publicRequest.Engine));

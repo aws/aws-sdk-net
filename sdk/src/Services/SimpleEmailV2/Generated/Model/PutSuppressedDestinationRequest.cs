@@ -31,17 +31,22 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSuppressedDestination operation.
-    /// Adds an email address to the suppression list for your account.
+    /// Adds an email address to the suppression list for your account or for a specific tenant.
+    /// To target a tenant's suppression list, specify the <c>TenantName</c> parameter. If
+    /// you omit <c>TenantName</c>, the address is added to the account-level suppression
+    /// list.
     /// </summary>
     public partial class PutSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _emailAddress;
         private SuppressionListReason _reason;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The email address that should be added to the suppression list for your account.
+        /// The email address that should be added to the suppression list for your account or
+        /// for the specified tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +66,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Reason. 
         /// <para>
         /// The factors that should cause the email address to be added to the suppression list
-        /// for your account.
+        /// for your account or for the specified tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,6 +80,26 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetReason()
         {
             return this._reason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant whose suppression list you want to add the address to. If you
+        /// omit this parameter, the address is added to the account-level suppression list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

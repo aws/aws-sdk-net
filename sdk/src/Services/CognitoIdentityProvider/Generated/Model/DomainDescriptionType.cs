@@ -40,6 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
         private int? _managedLoginVersion;
+        private RoutingType _routing;
         private string _s3Bucket;
         private DomainStatusType _status;
         private string _userPoolId;
@@ -146,6 +147,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetManagedLoginVersion()
         {
             return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Routing. 
+        /// <para>
+        /// The routing configuration for the domain, including failover settings for multi-region
+        /// deployments. Currently only <c>Failover</c> configurations are allowed.
+        /// </para>
+        /// </summary>
+        public RoutingType Routing
+        {
+            get { return this._routing; }
+            set { this._routing = value; }
+        }
+
+        // Check to see if Routing property is set
+        internal bool IsSetRouting()
+        {
+            return this._routing != null;
         }
 
         /// <summary>

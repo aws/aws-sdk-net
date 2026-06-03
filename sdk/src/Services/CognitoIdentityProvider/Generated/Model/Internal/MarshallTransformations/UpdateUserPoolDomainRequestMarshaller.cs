@@ -98,6 +98,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.ManagedLoginVersion.Value);
             }
 
+            if(publicRequest.IsSetRouting())
+            {
+                context.Writer.WritePropertyName("Routing");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RoutingTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Routing, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetUserPoolId())
             {
                 context.Writer.WritePropertyName("UserPoolId");

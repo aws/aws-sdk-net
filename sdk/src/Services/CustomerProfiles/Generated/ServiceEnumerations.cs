@@ -1893,6 +1893,10 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly PeriodUnit HOURS = new PeriodUnit("HOURS");
         /// <summary>
+        /// Constant MINUTES for PeriodUnit
+        /// </summary>
+        public static readonly PeriodUnit MINUTES = new PeriodUnit("MINUTES");
+        /// <summary>
         /// Constant MONTHS for PeriodUnit
         /// </summary>
         public static readonly PeriodUnit MONTHS = new PeriodUnit("MONTHS");

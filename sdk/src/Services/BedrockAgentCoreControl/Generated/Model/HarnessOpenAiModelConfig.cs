@@ -35,11 +35,49 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class HarnessOpenAiModelConfig
     {
+        private Amazon.Runtime.Documents.Document _additionalParams;
+        private HarnessOpenAiApiFormat _apiFormat;
         private string _apiKeyArn;
         private int? _maxTokens;
         private string _modelId;
         private float? _temperature;
         private float? _topp;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalParams. 
+        /// <para>
+        /// Provider-specific parameters passed through to the model provider unchanged.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalParams
+        {
+            get { return this._additionalParams; }
+            set { this._additionalParams = value; }
+        }
+
+        // Check to see if AdditionalParams property is set
+        internal bool IsSetAdditionalParams()
+        {
+            return !this._additionalParams.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiFormat. 
+        /// <para>
+        /// The API format to use when calling the OpenAI provider.
+        /// </para>
+        /// </summary>
+        public HarnessOpenAiApiFormat ApiFormat
+        {
+            get { return this._apiFormat; }
+            set { this._apiFormat = value; }
+        }
+
+        // Check to see if ApiFormat property is set
+        internal bool IsSetApiFormat()
+        {
+            return this._apiFormat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApiKeyArn. 

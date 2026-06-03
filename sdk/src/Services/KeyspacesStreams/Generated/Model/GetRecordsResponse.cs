@@ -35,6 +35,7 @@ namespace Amazon.KeyspacesStreams.Model
     public partial class GetRecordsResponse : AmazonWebServiceResponse
     {
         private List<Record> _changeRecords = AWSConfigs.InitializeCollections ? new List<Record>() : null;
+        private IteratorDescription _iteratorDescription;
         private string _nextShardIterator;
 
         /// <summary>
@@ -61,6 +62,25 @@ namespace Amazon.KeyspacesStreams.Model
         internal bool IsSetChangeRecords()
         {
             return this._changeRecords != null && (this._changeRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IteratorDescription. 
+        /// <para>
+        ///  Provides information about the current iterator at the time GetRecords request was
+        /// processed by Keyspaces. 
+        /// </para>
+        /// </summary>
+        public IteratorDescription IteratorDescription
+        {
+            get { return this._iteratorDescription; }
+            set { this._iteratorDescription = value; }
+        }
+
+        // Check to see if IteratorDescription property is set
+        internal bool IsSetIteratorDescription()
+        {
+            return this._iteratorDescription != null;
         }
 
         /// <summary>

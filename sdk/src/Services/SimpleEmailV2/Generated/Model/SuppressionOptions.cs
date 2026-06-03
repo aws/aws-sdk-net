@@ -31,28 +31,32 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains information about the suppression list preferences for your
-    /// account.
+    /// account or for a specific tenant.
     /// </summary>
     public partial class SuppressionOptions
     {
         private List<string> _suppressedReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SuppressionListScope _suppressionScope;
         private SuppressionValidationOptions _validationOptions;
 
         /// <summary>
         /// Gets and sets the property SuppressedReasons. 
         /// <para>
         /// A list that contains the reasons that email addresses are automatically added to the
-        /// suppression list for your account. This list can contain any or all of the following:
+        /// suppression list for your account or for a specific tenant. This list can contain
+        /// any or all of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>COMPLAINT</c> – Amazon SES adds an email address to the suppression list for your
-        /// account when a message sent to that address results in a complaint.
+        /// account or for a specific tenant when a message sent to that address results in a
+        /// complaint.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>BOUNCE</c> – Amazon SES adds an email address to the suppression list for your
-        /// account when a message sent to that address results in a hard bounce.
+        /// account or for a specific tenant when a message sent to that address results in a
+        /// hard bounce.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -71,6 +75,35 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSuppressedReasons()
         {
             return this._suppressedReasons != null && (this._suppressedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuppressionScope. 
+        /// <para>
+        /// The suppression scope for the configuration set. This overrides the tenant or account
+        /// suppression scope for emails sent using this configuration set. Can be one of the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TENANT</c> – Use the tenant's suppression list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACCOUNT</c> – Use the account-level suppression list.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SuppressionListScope SuppressionScope
+        {
+            get { return this._suppressionScope; }
+            set { this._suppressionScope = value; }
+        }
+
+        // Check to see if SuppressionScope property is set
+        internal bool IsSetSuppressionScope()
+        {
+            return this._suppressionScope != null;
         }
 
         /// <summary>

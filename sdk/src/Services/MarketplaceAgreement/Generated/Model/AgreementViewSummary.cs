@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceAgreement.Model
         private string _agreementId;
         private string _agreementType;
         private DateTime? _endTime;
+        private List<Entitlement> _entitlements = AWSConfigs.InitializeCollections ? new List<Entitlement>() : null;
         private ProposalSummary _proposalSummary;
         private Proposer _proposer;
         private DateTime? _startTime;
@@ -137,6 +138,29 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Entitlements. 
+        /// <para>
+        /// A list of entitlements associated with the agreement.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Entitlement> Entitlements
+        {
+            get { return this._entitlements; }
+            set { this._entitlements = value; }
+        }
+
+        // Check to see if Entitlements property is set
+        internal bool IsSetEntitlements()
+        {
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -56,6 +56,12 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AccessPointDetails", targetDepth))
+                {
+                    var unmarshaller = RouteAccessPointDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AccessPointDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +84,18 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SideOfStreet = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StationDetails", targetDepth))
+                {
+                    var unmarshaller = RouteStationDetailsUnmarshaller.Instance;
+                    unmarshalledObject.StationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WaypointIndex", targetDepth))

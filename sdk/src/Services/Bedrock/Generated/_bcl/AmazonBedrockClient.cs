@@ -269,7 +269,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Batch delete the specified advanced prompt optimization jobs.
+        /// Deletes one or more advanced prompt optimization jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAdvancedPromptOptimizationJob service method.</param>
         /// 
@@ -298,7 +298,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Batch delete the specified advanced prompt optimization jobs.
+        /// Deletes one or more advanced prompt optimization jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAdvancedPromptOptimizationJob service method.</param>
         /// <param name="cancellationToken">
@@ -492,7 +492,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates an asynchronous batch job for advanced prompt optimization.
+        /// Creates an advanced prompt optimization job. The job optimizes your prompt templates
+        /// for specific models using your evaluation dataset and criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAdvancedPromptOptimizationJob service method.</param>
         /// 
@@ -536,7 +537,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates an asynchronous batch job for advanced prompt optimization.
+        /// Creates an advanced prompt optimization job. The job optimizes your prompt templates
+        /// for specific models using your evaluation dataset and criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAdvancedPromptOptimizationJob service method.</param>
         /// <param name="cancellationToken">
@@ -893,6 +895,21 @@ namespace Amazon.Bedrock
         /// 
         ///  
         /// <para>
+        /// You can provide the model data source in one of the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>customModelDataSource</c> — Specify a SageMaker AI model package ARN. Amazon Bedrock
+        /// resolves the model package to retrieve the model artifacts. This is the preferred
+        /// method for new SageMaker AI training outputs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>modelSourceConfig</c> — Specify an Amazon S3 URI pointing to the Amazon-managed
+        /// Amazon S3 bucket containing your model artifacts.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// To use the model for inference, you must purchase Provisioned Throughput for it. You
         /// can't use On-demand inference with these custom models. For more information about
         /// Provisioned Throughput, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
@@ -983,6 +1000,21 @@ namespace Amazon.Bedrock
         /// it for inference.
         /// 
         ///  
+        /// <para>
+        /// You can provide the model data source in one of the following ways:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>customModelDataSource</c> — Specify a SageMaker AI model package ARN. Amazon Bedrock
+        /// resolves the model package to retrieve the model artifacts. This is the preferred
+        /// method for new SageMaker AI training outputs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>modelSourceConfig</c> — Specify an Amazon S3 URI pointing to the Amazon-managed
+        /// Amazon S3 bucket containing your model artifacts.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To use the model for inference, you must purchase Provisioned Throughput for it. You
         /// can't use On-demand inference with these custom models. For more information about
@@ -3907,7 +3939,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the details and status of an advanced prompt optimization job.
+        /// Gets information about an advanced prompt optimization job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdvancedPromptOptimizationJob service method.</param>
         /// 
@@ -3940,7 +3972,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the details and status of an advanced prompt optimization job.
+        /// Gets information about an advanced prompt optimization job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdvancedPromptOptimizationJob service method.</param>
         /// <param name="cancellationToken">
@@ -5879,7 +5911,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all advanced prompt optimization jobs for the account.
+        /// Lists the advanced prompt optimization jobs in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAdvancedPromptOptimizationJobs service method.</param>
         /// 
@@ -5908,7 +5940,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all advanced prompt optimization jobs for the account.
+        /// Lists the advanced prompt optimization jobs in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAdvancedPromptOptimizationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -8108,7 +8140,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Stops an in-progress advanced prompt optimization job.
+        /// Stops an advanced prompt optimization job that is in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAdvancedPromptOptimizationJob service method.</param>
         /// 
@@ -8144,7 +8176,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Stops an in-progress advanced prompt optimization job.
+        /// Stops an advanced prompt optimization job that is in progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopAdvancedPromptOptimizationJob service method.</param>
         /// <param name="cancellationToken">

@@ -134,6 +134,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InferenceComponent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Job", targetDepth))
+                {
+                    var unmarshaller = JobStepMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Job = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Lambda", targetDepth))
                 {
                     var unmarshaller = LambdaStepMetadataUnmarshaller.Instance;

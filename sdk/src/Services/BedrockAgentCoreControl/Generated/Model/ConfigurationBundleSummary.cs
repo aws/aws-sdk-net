@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _bundleArn;
         private string _bundleId;
         private string _bundleName;
+        private DateTime? _createdAt;
         private string _description;
 
         /// <summary>
@@ -94,6 +95,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetBundleName()
         {
             return this._bundleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp when the configuration bundle was created.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>

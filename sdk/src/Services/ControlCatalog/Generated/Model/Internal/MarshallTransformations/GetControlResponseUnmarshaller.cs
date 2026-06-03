@@ -82,6 +82,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("GovernedProviders", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.GovernedProviders = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("GovernedResources", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -98,6 +104,12 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ParameterRequirementSummary", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParameterRequirementSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))

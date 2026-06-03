@@ -112,7 +112,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterRegion. 
         /// <para>
-        /// The AWS Region where IAM Identity Center is enabled. Required when IAM Identity Center
+        /// The Region where IAM Identity Center is enabled. Required when IAM Identity Center
         /// is in a different Region than the monitor.
         /// </para>
         /// </summary>

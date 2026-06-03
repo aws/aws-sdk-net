@@ -33,7 +33,7 @@ namespace Amazon.AuditManager
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AuditManager", "4.0.5.31");
+            InternalSDKUtils.BuildUserAgentString("AuditManager", "4.0.5.33");
 
         private static readonly AmazonAuditManagerEndpointResolver EndpointResolver =
             new AmazonAuditManagerEndpointResolver();

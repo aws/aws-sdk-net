@@ -95,6 +95,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 {
                     return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotEnabledException"))
+                {
+                    return OperationNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionNotMetException"))
                 {
                     return PreconditionNotMetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

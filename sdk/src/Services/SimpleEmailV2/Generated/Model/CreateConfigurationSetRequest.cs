@@ -146,7 +146,12 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuppressionOptions.
+        /// Gets and sets the property SuppressionOptions. 
+        /// <para>
+        /// An object that contains information about the suppression list preferences for the
+        /// configuration set. You can optionally include a <c>SuppressionScope</c> to override
+        /// the tenant or account suppression scope for emails sent using this configuration set.
+        /// </para>
         /// </summary>
         public SuppressionOptions SuppressionOptions
         {

@@ -213,6 +213,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListOAuthClientApplications operation
+        ///</summary>
+        public IListOAuthClientApplicationsPaginator ListOAuthClientApplications(ListOAuthClientApplicationsRequest request) 
+        {
+            return new ListOAuthClientApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRoleMemberships operation
         ///</summary>
         public IListRoleMembershipsPaginator ListRoleMemberships(ListRoleMembershipsRequest request) 

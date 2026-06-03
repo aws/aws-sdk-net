@@ -52,6 +52,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("cleanSession", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.CleanSession = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("clientId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClientId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("connected", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -64,6 +76,42 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.DisconnectReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("keepAliveDuration", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.KeepAliveDuration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sessionExpiry", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.SessionExpiry = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourceIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceIp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourcePort", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.SourcePort = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetIp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TargetIp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetPort", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.TargetPort = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("thingName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +122,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Timestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vpcEndpointId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

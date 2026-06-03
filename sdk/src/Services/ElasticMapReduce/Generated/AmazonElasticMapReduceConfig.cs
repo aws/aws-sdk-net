@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce
     public partial class AmazonElasticMapReduceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EMR", "4.0.9.13");
+            InternalSDKUtils.BuildUserAgentString("EMR", "4.0.10.1");
 
         private static readonly AmazonElasticMapReduceEndpointResolver EndpointResolver =
             new AmazonElasticMapReduceEndpointResolver();

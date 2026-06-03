@@ -75,7 +75,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Oauth.
+        /// Gets and sets the property Oauth. 
+        /// <para>
+        /// Use OAuth credentials for outbound authentication to the gateway.
+        /// </para>
         /// </summary>
         public OAuthCredentialProvider Oauth
         {
