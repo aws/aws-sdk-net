@@ -155,17 +155,44 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
-        /// resource types. 
+        /// You can only set this preference for the Amazon EC2 instance, Auto Scaling group,
+        /// Amazon EBS volume, Amazon ECS service on Fargate, Amazon RDS DB instance, and Aurora
+        /// DB cluster storage resource types. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Amazon EC2 instance lookback preferences can be set at the organization, account,
-        /// and resource levels.
+        /// Lookback period preferences for Amazon EC2 instances, Amazon EBS volumes, Amazon ECS
+        /// services, Amazon RDS DB instances, and Aurora DB cluster storage resource types can
+        /// be set at the organization, account, and resource levels.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Auto Scaling group lookback preferences can only be set at the resource level.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon EBS volume lookback preferences can be set at the organization, account, and
+        /// resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon ECS service on Fargate lookback preferences can be set at the organization,
+        /// account, and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon RDS DB instance lookback preferences can be set at the organization, account,
+        /// and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Aurora DB cluster storage lookback preferences can be set at the organization, account,
+        /// and resource levels.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changing the lookback period for Amazon EBS volumes to 14 days does not affect the
+        /// 32-day lookback period used to determine whether an Amazon EBS volume is unattached.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -191,8 +218,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
-        /// resource types.
+        /// You can only set this preference for the Amazon EC2 instance, Auto Scaling group,
+        /// Amazon EBS volume, Amazon ECS service, Amazon RDS DB instance, and Aurora DB cluster
+        /// storage resource types.
         /// </para>
         ///  </note>
         /// <para />

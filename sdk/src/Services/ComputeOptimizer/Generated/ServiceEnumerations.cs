@@ -1583,6 +1583,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableECSServiceField CurrentServiceContainerConfigurations = new ExportableECSServiceField("CurrentServiceContainerConfigurations");
         /// <summary>
+        /// Constant EffectiveRecommendationPreferencesLookBackPeriod for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField EffectiveRecommendationPreferencesLookBackPeriod = new ExportableECSServiceField("EffectiveRecommendationPreferencesLookBackPeriod");
+        /// <summary>
         /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField EffectiveRecommendationPreferencesSavingsEstimationMode = new ExportableECSServiceField("EffectiveRecommendationPreferencesSavingsEstimationMode");
@@ -2870,6 +2874,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant CurrentPerformanceRisk for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField CurrentPerformanceRisk = new ExportableVolumeField("CurrentPerformanceRisk");
+        /// <summary>
+        /// Constant EffectiveRecommendationPreferencesLookBackPeriod for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField EffectiveRecommendationPreferencesLookBackPeriod = new ExportableVolumeField("EffectiveRecommendationPreferencesLookBackPeriod");
         /// <summary>
         /// Constant EffectiveRecommendationPreferencesSavingsEstimationMode for ExportableVolumeField
         /// </summary>
