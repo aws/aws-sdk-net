@@ -68,7 +68,6 @@ namespace SDKDocGenerator.Writers
         protected override void WriteContent(TextWriter writer)
         {
             AddSummaryDocumentation(writer);
-            AddPageTOC(writer);
             AddInheritanceHierarchy(writer);
             AddNamespace(writer, this._versionType.Namespace, this._versionType.ManifestModuleName);
 
@@ -96,54 +95,6 @@ namespace SDKDocGenerator.Writers
             AddCodeExamples(writer);
 
             AddVersionInformation(writer, this._versionType);
-        }
-
-        private void AddPageTOC(TextWriter writer)
-        {
-            writer.WriteLine("<div id=\"pageTOC\" class=\"collapsible-toc collapsed\">");
-            writer.WriteLine("<h2 onclick=\"toggleTOC()\">In this article <span id=\"tocToggle\">▶</span></h2>");
-            writer.WriteLine("<ul id=\"tocList\" style=\"display: none;\">");
-            
-            writer.WriteLine("<li><a href=\"#inheritancehierarchy\">Inheritance Hierarchy</a></li>");
-            writer.WriteLine("<li><a href=\"#syntax\">Syntax</a></li>");
-            
-            if (!this._versionType.IsEnum)
-            {
-                var constructors = this._versionType.GetConstructors().Where(x => x.IsPublic);
-                if (constructors.Any())
-                    writer.WriteLine("<li><a href=\"#constructors\">Constructors</a></li>");
-                
-                var properties = this._versionType.GetProperties();
-                if (properties.Any())
-                    writer.WriteLine("<li><a href=\"#properties\">Properties</a></li>");
-                
-                if (_allMethods.Any())
-                    writer.WriteLine("<li><a href=\"#methods\">Methods</a></li>");
-                
-                var events = this._versionType.GetEvents();
-                if (events.Any())
-                    writer.WriteLine("<li><a href=\"#events\">Events</a></li>");
-                
-                var fields = this._versionType.GetFields();
-                if (fields.Any())
-                    writer.WriteLine("<li><a href=\"#fields\">Fields</a></li>");
-
-                var serviceId = GetServiceIdFromNamespace();
-                var fragmentPath = Path.Combine(ExampleMetadataParser.ExampleFragmentsFullPath, $"{serviceId}.fragment.html");
-                if (File.Exists(fragmentPath))
-                    writer.WriteLine("<li><a href=\"#codeexamples\">Code Examples</a></li>");
-            }
-            else
-            {
-                var enumNames = this._versionType.GetEnumNames();
-                if (enumNames.Any())
-                    writer.WriteLine("<li><a href=\"#members\">Members</a></li>");
-            }
-                        
-            
-            writer.WriteLine("<li><a href=\"#versioninformation\">Version Information</a></li>");
-            writer.WriteLine("</ul>");
-            writer.WriteLine("</div>");
         }
 
         private void AddCodeExamples(TextWriter writer)

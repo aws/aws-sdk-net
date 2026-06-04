@@ -68,22 +68,19 @@
     <Content Include="output-files\resources\style.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushCSharp.js">
+    <Content Include="output-files\resources\shell.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushPlain.js">
+    <Content Include="output-files\resources\shell.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushXml.js">
+    <Content Include="output-files\resources\highlightjs\highlight.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shCore.css">
+    <Content Include="output-files\resources\highlightjs\csharp.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shCore.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shThemeDefault.css">
+    <Content Include="output-files\resources\highlightjs\github.min.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="output-files\resources\tocscript.js">
