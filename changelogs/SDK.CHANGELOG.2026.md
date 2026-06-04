@@ -1,3 +1,79 @@
+### 4.0.263.0 (2026-06-04 18:21 UTC)
+* AmplifyBackend (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Appflow (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* AppIntegrationsService (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* AuditManager (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* ChimeSDKVoice (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* CloudFormation (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* ConfigService (4.0.9.0)
+	* AWS Config now supports internal service-linked rules, allowing AWS service partners to deploy Config rules for customers and use the evaluation results to build enhanced features.
+* ConnectParticipant (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* CostExplorer (4.0.13.0)
+	* Adding new BDD representation of endpoint ruleset
+* DynamoDBv2 (4.0.19.1)
+	* Replace legacy parameters with Expression API in DataModel Save operations
+* EC2InstanceConnect (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticFileSystem (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* ElasticMapReduce (4.0.11.0)
+	* Added support for Spark Connect interactive sessions on Amazon EMR on EC2 with new APIs - StartSession, GetSession, GetSessionEndpoint, ListSessions, and TerminateSession. Added sessionEnabled field in RunJobFlow and DescribeCluster to enable Spark Connect endpoints on EMR clusters.
+* GeoMaps (4.0.6.0)
+	* Adding new BDD representation of endpoint ruleset
+* Glue (4.0.31.0)
+	* AWS Glue Interactive Sessions now supports Apache Spark Connect, enabling remote Spark execution over gRPC with minimal client-side dependencies. Adds GetSessionEndpoint and GetDashboardUrl APIs. Modifies CreateSession now accepts SPARK CONNECT session type.
+* GuardDuty (4.0.22.1)
+	* Remove unsupported RDS field for filter
+* Interconnect (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* IVS (4.0.7.0)
+	* adds UpdateAdConfiguration operation to AWS IVS low-latency APIs
+* Kendra (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaConnect (4.0.9.0)
+	* BDD bulk update change rollout
+* MediaPackage (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* MediaPackageVod (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* MQ (4.0.4.0)
+	* BDD bulk update change rollout
+* MWAAServerless (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* OpenSearchServerless (4.0.9.0)
+	* Adding new BDD representation of endpoint ruleset
+* Route53RecoveryReadiness (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* S3Files (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SageMaker (4.0.62.0)
+	* Adds the IncludedData parameter to DescribeModelCard and DescribeModelPackage. Set it to MetadataOnly to retrieve a model card without decrypt permission on the customer managed AWS KMS key (default AllData returns full content). Adds support for the MTRL Job resource in SageMaker Search.
+* SageMakerRuntimeHTTP2 (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SignerData (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* SimpleNotificationService (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Sustainability (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* TaxSettings (4.0.2.0)
+	* Adding new BDD representation of endpoint ruleset
+* Uxc (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* Wickr (4.0.3.0)
+	* AWS Wickr now allows network administrators to configure a maximum session duration for non-SSO users in security groups, and display customizable consent popups to users at login for terms of use or compliance acknowledgements.
+* WorkDocs (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* WorkSpaces (4.0.12.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.262.0 (2026-06-03 18:17 UTC)
 * ApiGatewayManagementApi (4.0.3.0)
 	* Adding new BDD representation of endpoint ruleset
