@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\SQS\AWSSDK.SQS.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\S3\AWSSDK.S3.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\Route53\AWSSDK.Route53.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
+  </ItemGroup>
+</Project>
