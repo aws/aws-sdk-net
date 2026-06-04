@@ -60,6 +60,7 @@ namespace Amazon.Wickr.Model
         private int? _lockoutThreshold;
         private long? _maxAutoDownloadSize;
         private int? _maxBor;
+        private int? _maxNonSsoSessionMinutes;
         private long? _maxTtl;
         private bool? _messageForwardingEnabled;
         private PasswordRequirements _passwordRequirements;
@@ -525,6 +526,26 @@ namespace Amazon.Wickr.Model
         internal bool IsSetMaxBor()
         {
             return this._maxBor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxNonSsoSessionMinutes. 
+        /// <para>
+        /// Maximum session duration in minutes for non-SSO users. Set to 0 to disable. Valid
+        /// range is 60 to 525600 (1 hour to 365 days).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=525600)]
+        public int? MaxNonSsoSessionMinutes
+        {
+            get { return this._maxNonSsoSessionMinutes; }
+            set { this._maxNonSsoSessionMinutes = value; }
+        }
+
+        // Check to see if MaxNonSsoSessionMinutes property is set
+        internal bool IsSetMaxNonSsoSessionMinutes()
+        {
+            return this._maxNonSsoSessionMinutes.HasValue; 
         }
 
         /// <summary>

@@ -46,6 +46,17 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetConsentPopup())
+            {
+                context.Writer.WritePropertyName("consentPopup");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConsentPopupConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConsentPopup, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDataRetention())
             {
                 context.Writer.WritePropertyName("dataRetention");

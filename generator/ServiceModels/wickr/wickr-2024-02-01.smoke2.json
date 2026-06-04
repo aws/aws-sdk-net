@@ -1,165 +1,8 @@
 {
   "version" : 2,
   "testCases" : [ {
-    "id" : "ListBotsUnauthorized",
-    "operationName" : "ListBots",
-    "input" : {
-      "networkId" : "00000000",
-      "maxResults" : 10
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListSecurityGroupsUnauthorized",
-    "operationName" : "ListSecurityGroups",
-    "input" : {
-      "networkId" : "00000000",
-      "maxResults" : 10
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
     "id" : "GetOpentdfConfigUnauthorized",
     "operationName" : "GetOpentdfConfig",
-    "input" : {
-      "networkId" : "00000000"
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetBotUnauthorized",
-    "operationName" : "GetBot",
-    "input" : {
-      "networkId" : "00000000",
-      "botId" : "00000000"
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListGuestUsersUnauthorized",
-    "operationName" : "ListGuestUsers",
-    "input" : {
-      "networkId" : "00000000",
-      "maxResults" : 10
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListBlockedGuestUsersUnauthorized",
-    "operationName" : "ListBlockedGuestUsers",
-    "input" : {
-      "networkId" : "00000000",
-      "maxResults" : 10
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetSecurityGroupUnauthorized",
-    "operationName" : "GetSecurityGroup",
-    "input" : {
-      "networkId" : "00000000",
-      "groupId" : "00000000"
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetDataRetentionBotUnauthorized",
-    "operationName" : "GetDataRetentionBot",
-    "input" : {
-      "networkId" : "00000000"
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListUsersUnauthorized",
-    "operationName" : "ListUsers",
-    "input" : {
-      "networkId" : "00000000",
-      "maxResults" : 10
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetOidcInfoUnauthorized",
-    "operationName" : "GetOidcInfo",
-    "input" : {
-      "networkId" : "00000000"
-    },
-    "expectation" : {
-      "failure" : { }
-    },
-    "config" : {
-      "region" : "us-east-1",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "GetNetworkSettingsUnauthorized",
-    "operationName" : "GetNetworkSettings",
     "input" : {
       "networkId" : "00000000"
     },
@@ -178,6 +21,21 @@
     "input" : { },
     "expectation" : {
       "success" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetNetworkSettingsUnauthorized",
+    "operationName" : "GetNetworkSettings",
+    "input" : {
+      "networkId" : "00000000"
+    },
+    "expectation" : {
+      "failure" : { }
     },
     "config" : {
       "region" : "us-east-1",
@@ -216,12 +74,154 @@
       "useAccountIdRouting" : true
     }
   }, {
+    "id" : "GetOidcInfoUnauthorized",
+    "operationName" : "GetOidcInfo",
+    "input" : {
+      "networkId" : "00000000"
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListBlockedGuestUsersUnauthorized",
+    "operationName" : "ListBlockedGuestUsers",
+    "input" : {
+      "networkId" : "00000000",
+      "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListUsersUnauthorized",
+    "operationName" : "ListUsers",
+    "input" : {
+      "networkId" : "00000000",
+      "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
     "id" : "GetPagedSecurityUsersUnauthorized",
     "operationName" : "ListSecurityGroupUsers",
     "input" : {
       "networkId" : "00000000",
       "groupId" : "00000000",
       "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListGuestUsersUnauthorized",
+    "operationName" : "ListGuestUsers",
+    "input" : {
+      "networkId" : "00000000",
+      "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListSecurityGroupsUnauthorized",
+    "operationName" : "ListSecurityGroups",
+    "input" : {
+      "networkId" : "00000000",
+      "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListBotsUnauthorized",
+    "operationName" : "ListBots",
+    "input" : {
+      "networkId" : "00000000",
+      "maxResults" : 10
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetDataRetentionBotUnauthorized",
+    "operationName" : "GetDataRetentionBot",
+    "input" : {
+      "networkId" : "00000000"
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetSecurityGroupUnauthorized",
+    "operationName" : "GetSecurityGroup",
+    "input" : {
+      "networkId" : "00000000",
+      "groupId" : "00000000"
+    },
+    "expectation" : {
+      "failure" : { }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetBotUnauthorized",
+    "operationName" : "GetBot",
+    "input" : {
+      "networkId" : "00000000",
+      "botId" : "00000000"
     },
     "expectation" : {
       "failure" : { }
