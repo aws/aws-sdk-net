@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RunStatement operation
+    /// Response Unmarshaller for GetDashboardUrl operation
     /// </summary>  
-    public class RunStatementResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetDashboardUrlResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,16 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RunStatementResponse response = new RunStatementResponse();
+            GetDashboardUrlResponse response = new GetDashboardUrlResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,10 +91,6 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("IllegalSessionStateException"))
-                {
-                    return IllegalSessionStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -107,29 +103,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return OperationNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationTimeoutException"))
-                {
-                    return OperationTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNumberLimitExceededException"))
-                {
-                    return ResourceNumberLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("SessionBusyException"))
-                {
-                    return SessionBusyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
             }
             return new AmazonGlueException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RunStatementResponseUnmarshaller _instance = new RunStatementResponseUnmarshaller();        
+        private static GetDashboardUrlResponseUnmarshaller _instance = new GetDashboardUrlResponseUnmarshaller();        
 
-        internal static RunStatementResponseUnmarshaller GetInstance()
+        internal static GetDashboardUrlResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +117,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RunStatementResponseUnmarshaller Instance
+        public static GetDashboardUrlResponseUnmarshaller Instance
         {
             get
             {

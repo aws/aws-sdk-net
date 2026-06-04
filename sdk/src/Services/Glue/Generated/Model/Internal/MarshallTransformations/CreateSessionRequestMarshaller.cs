@@ -172,6 +172,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.SecurityConfiguration);
             }
 
+            if(publicRequest.IsSetSessionType())
+            {
+                context.Writer.WritePropertyName("SessionType");
+                context.Writer.WriteStringValue(publicRequest.SessionType);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");
