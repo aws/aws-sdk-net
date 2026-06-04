@@ -33,11 +33,58 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the DescribeModelCard operation.
     /// Describes the content, creation time, and security configuration of an Amazon SageMaker
     /// Model Card.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// To retrieve only metadata about a model card without requiring <c>kms:Decrypt</c>
+    /// permission on the associated customer-managed Amazon Web Services KMS key, set <c>IncludedData</c>
+    /// to <c>MetadataOnly</c>. The default is <c>AllData</c>, which returns the full model
+    /// card <c>Content</c> and requires <c>kms:Decrypt</c> permission when a customer-managed
+    /// key is configured.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeModelCardRequest : AmazonSageMakerRequest
     {
+        private IncludedData _includedData;
         private string _modelCardName;
         private int? _modelCardVersion;
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// Specifies the level of model card data to include in the response. Use this parameter
+        /// to call <c>DescribeModelCard</c> without requiring <c>kms:Decrypt</c> permission on
+        /// the customer-managed Amazon Web Services KMS key.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AllData</c>: Returns the full model card <c>Content</c>. This option requires
+        /// <c>kms:Decrypt</c> permission on the customer-managed key, if one is associated with
+        /// the model card. This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MetadataOnly</c>: Returns the model card with sanitized <c>Content</c> that includes
+        /// only a small set of unencrypted metadata fields. This option does not require <c>kms:Decrypt</c>
+        /// permission. For the list of fields preserved in the response, see <c>Content</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, SageMaker returns <c>AllData</c>.
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData
+        {
+            get { return this._includedData; }
+            set { this._includedData = value; }
+        }
+
+        // Check to see if IncludedData property is set
+        internal bool IsSetIncludedData()
+        {
+            return this._includedData != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ModelCardName. 

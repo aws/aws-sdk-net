@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIncludedData())
+            {
+                context.Writer.WritePropertyName("IncludedData");
+                context.Writer.WriteStringValue(publicRequest.IncludedData);
+            }
+
             if(publicRequest.IsSetModelCardName())
             {
                 context.Writer.WritePropertyName("ModelCardName");

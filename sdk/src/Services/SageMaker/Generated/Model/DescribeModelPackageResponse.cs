@@ -343,6 +343,41 @@ namespace Amazon.SageMaker.Model
         /// with the model package, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html">View
         /// the Details of a Model Version</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// When you set <c>IncludedData</c> to <c>MetadataOnly</c> in the request, <c>ModelCardStatus</c>
+        /// is preserved and <c>ModelCardContent</c> is sanitized to include only the following
+        /// JSON paths, when present in the model card:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>model_overview.model_id</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_overview.model_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>intended_uses.risk_rating</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_package_details.model_package_group_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_package_details.model_package_arn</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Because the <c>ModelPackageModelCard</c> schema does not include <c>model_package_details</c>
+        /// and limits <c>model_overview</c> to <c>model_creator</c> and <c>model_artifact</c>,
+        /// the sanitized <c>ModelCardContent</c> for a model package typically contains only
+        /// <c>intended_uses.risk_rating</c> if it was provided when the model card was created.
+        /// To retrieve the complete <c>ModelCardContent</c>, set <c>IncludedData</c> to <c>AllData</c>
+        /// or omit the parameter.
+        /// </para>
         /// </summary>
         public ModelPackageModelCard ModelCard
         {
