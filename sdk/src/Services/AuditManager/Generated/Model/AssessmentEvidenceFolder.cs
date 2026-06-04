@@ -226,7 +226,7 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceByTypeComplianceCheckCount. 
         /// <para>
         ///  The number of evidence that falls under the compliance check category. This evidence
-        /// is collected from Config or Security Hub. 
+        /// is collected from Config or Security Hub CSPM. 
         /// </para>
         /// </summary>
         public int? EvidenceByTypeComplianceCheckCount
@@ -244,7 +244,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceByTypeComplianceCheckIssuesCount. 
         /// <para>
-        ///  The total number of issues that were reported directly from Security Hub, Config,
+        ///  The total number of issues that were reported directly from Security Hub CSPM, Config,
         /// or both. 
         /// </para>
         /// </summary>

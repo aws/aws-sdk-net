@@ -69,7 +69,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property CustomerProfiles. 
         /// <para>
-        ///  The properties required to query Amazon Connect Customer Profiles. 
+        ///  The properties required to query Connect Customer Customer Profiles. 
         /// </para>
         /// </summary>
         public CustomerProfilesDestinationProperties CustomerProfiles

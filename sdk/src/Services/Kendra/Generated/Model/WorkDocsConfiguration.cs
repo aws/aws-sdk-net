@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Provides the configuration information to connect to Amazon WorkDocs as your data
-    /// source.
+    /// Provides the configuration information to connect to WorkDocs as your data source.
     /// 
     ///  
     /// <para>
-    /// Amazon WorkDocs connector is available in Oregon, North Virginia, Sydney, Singapore
-    /// and Ireland regions.
+    /// WorkDocs connector is available in Oregon, North Virginia, Sydney, Singapore and Ireland
+    /// regions.
     /// </para>
     /// </summary>
     public partial class WorkDocsConfiguration
@@ -74,11 +73,11 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
-        /// A list of regular expression patterns to exclude certain files in your Amazon WorkDocs
-        /// site repository. Files that match the patterns are excluded from the index. Files
-        /// that don’t match the patterns are included in the index. If a file matches both an
-        /// inclusion and exclusion pattern, the exclusion pattern takes precedence and the file
-        /// isn't included in the index.
+        /// A list of regular expression patterns to exclude certain files in your WorkDocs site
+        /// repository. Files that match the patterns are excluded from the index. Files that
+        /// don’t match the patterns are included in the index. If a file matches both an inclusion
+        /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
+        /// in the index.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -102,12 +101,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map Amazon WorkDocs data
-        /// source attributes or field names to Amazon Kendra index field names. To create custom
-        /// fields, use the <c>UpdateIndex</c> API before you map to Amazon WorkDocs fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-        /// data source fields</a>. The Amazon WorkDocs data source field names must exist in
-        /// your Amazon WorkDocs custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map WorkDocs data source
+        /// attributes or field names to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to WorkDocs fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// data source fields</a>. The WorkDocs data source field names must exist in your WorkDocs
+        /// custom metadata.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -131,9 +130,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property InclusionPatterns. 
         /// <para>
-        /// A list of regular expression patterns to include certain files in your Amazon WorkDocs
-        /// site repository. Files that match the patterns are included in the index. Files that
-        /// don't match the patterns are excluded from the index. If a file matches both an inclusion
+        /// A list of regular expression patterns to include certain files in your WorkDocs site
+        /// repository. Files that match the patterns are included in the index. Files that don't
+        /// match the patterns are excluded from the index. If a file matches both an inclusion
         /// and exclusion pattern, the exclusion pattern takes precedence and the file isn't included
         /// in the index.
         /// </para>
@@ -159,15 +158,15 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The identifier of the directory corresponding to your Amazon WorkDocs site repository.
+        /// The identifier of the directory corresponding to your WorkDocs site repository.
         /// </para>
         ///  
         /// <para>
         /// You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory
-        /// Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon
-        /// WorkDocs site directory has an ID, which is the organization ID. You can also set
-        /// up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon
-        /// WorkDocs site for the directory in the Amazon WorkDocs console.
+        /// Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your WorkDocs
+        /// site directory has an ID, which is the organization ID. You can also set up a new
+        /// WorkDocs directory in the Directory Service console and enable a WorkDocs site for
+        /// the directory in the WorkDocs console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -186,9 +185,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <c>TRUE</c> to use the Amazon WorkDocs change log to determine which documents require
-        /// updating in the index. Depending on the change log's size, it may take longer for
-        /// Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.
+        ///  <c>TRUE</c> to use the WorkDocs change log to determine which documents require updating
+        /// in the index. Depending on the change log's size, it may take longer for Amazon Kendra
+        /// to use the change log than to scan all of your documents in WorkDocs.
         /// </para>
         /// </summary>
         public bool? UseChangeLog
