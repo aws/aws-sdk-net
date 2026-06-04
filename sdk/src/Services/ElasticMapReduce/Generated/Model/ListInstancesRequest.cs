@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the cluster for which to list the instances.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -71,6 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier of the instance fleet.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string InstanceFleetId
         {
             get { return this._instanceFleetId; }
@@ -107,6 +108,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The identifier of the instance group for which to list the instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string InstanceGroupId
         {
             get { return this._instanceGroupId; }

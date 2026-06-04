@@ -101,6 +101,14 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSteps operation
         ///</summary>
         public IListStepsPaginator ListSteps(ListStepsRequest request) 

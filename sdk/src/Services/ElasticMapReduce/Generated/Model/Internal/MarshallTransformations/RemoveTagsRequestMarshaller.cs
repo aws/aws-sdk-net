@@ -75,6 +75,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClusterId())
+            {
+                context.Writer.WritePropertyName("ClusterId");
+                context.Writer.WriteStringValue(publicRequest.ClusterId);
+            }
+
             if(publicRequest.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");

@@ -318,6 +318,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ServiceRole);
             }
 
+            if(publicRequest.IsSetSessionEnabled())
+            {
+                context.Writer.WritePropertyName("SessionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SessionEnabled.Value);
+            }
+
             if(publicRequest.IsSetStepConcurrencyLevel())
             {
                 context.Writer.WritePropertyName("StepConcurrencyLevel");
