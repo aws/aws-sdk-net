@@ -1,0 +1,16 @@
+
+{
+  "core": {
+    "changeLogMessages": [
+      "Eliminate byte[] copy in JSON marshalling pipeline by keeping pooled buffer in request"
+    ],
+    "type": "minor",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [ 
+      "Amazon.Runtime.Internal.Compression.GZipCompression/MethodOverloadAdded",
+      "Amazon.Runtime.IHttpRequest/MethodAbstractMethodAdded",
+      "Amazon.Runtime.HttpWebRequestMessage/MethodOverloadAdded",
+      "Amazon.Util.ICryptoUtil/MethodAbstractMethodAdded"
+    ]
+  }
+}

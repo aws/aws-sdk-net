@@ -40,6 +40,7 @@ namespace Amazon.Runtime
     /// The interface for an HTTP request that is agnostic of the underlying HTTP API.
     /// </summary>
     /// <typeparam name="TRequestContent">The type used by the underlying HTTP API to represent the HTTP request content.</typeparam>
+    [AWSIsBackwardsCompatible]
     public interface IHttpRequest<TRequestContent> : IDisposable
     {
         /// <summary>
@@ -92,6 +93,16 @@ namespace Amazon.Runtime
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
         void WriteToRequestBody(TRequestContent requestContent, byte[] content, IDictionary<string,string> contentHeaders);
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Writes a ReadOnlyMemory to the request body without copying.
+        /// </summary>
+        /// <param name="requestContent">The destination where the content is written.</param>
+        /// <param name="content">The content memory to be written.</param>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        void WriteToRequestBody(TRequestContent requestContent, System.ReadOnlyMemory<byte> content, IDictionary<string, string> contentHeaders);
+#endif
 
         /// <summary>
         /// Configures the HttpRequest for streaming data to the service after the initial request is complete. Data is pulled from

@@ -56,6 +56,7 @@
     <Compile Include="Runtime/RuntimePipelineTestBase.cs" />
     <Compile Include="Runtime/TerminatePipeline.cs" />
     <Compile Include="Runtime/UserAgentTests.cs" />
+    <Compile Include="Runtime/PooledContentStreamTests.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="ConstantClassTestBase.cs" />
     <Compile Include="CapacityManagerTests.cs" />

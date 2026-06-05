@@ -358,13 +358,37 @@ namespace Amazon.Runtime.Internal
 
             if (this.contentStreamHash == null)
             {
-                var seekableStream = WrapperStream.SearchWrappedStream(this.contentStream, s => s.CanSeek);
-                if (seekableStream != null)
+#if !NETFRAMEWORK
+                // Fast path: hash directly from the pooled buffer without stream seek overhead.
+                if (this.contentStream is PooledContentStream pooledStream)
                 {
-                    var position = seekableStream.Position;
-                    byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(seekableStream);
+                    var memory = pooledStream.Content;
+#if NET8_0_OR_GREATER
+                    byte[] payloadHashBytes = System.Security.Cryptography.SHA256.HashData(memory.Span);
+#else
+                    byte[] payloadHashBytes;
+                    if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(segment.Array, segment.Offset, segment.Count);
+                    }
+                    else
+                    {
+                        payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(memory.ToArray());
+                    }
+#endif
                     this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
-                    seekableStream.Seek(position, SeekOrigin.Begin);
+                }
+                else
+#endif
+                {
+                    var seekableStream = WrapperStream.SearchWrappedStream(this.contentStream, s => s.CanSeek);
+                    if (seekableStream != null)
+                    {
+                        var position = seekableStream.Position;
+                        byte[] payloadHashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(seekableStream);
+                        this.contentStreamHash = AWSSDKUtils.ToHex(payloadHashBytes, true);
+                        seekableStream.Seek(position, SeekOrigin.Begin);
+                    }
                 }
             }
 
@@ -589,5 +613,28 @@ namespace Amazon.Runtime.Internal
         /// Auth scheme chosen for the current request.
         /// </summary>
         public IAuthSchemeOption ChosenAuthScheme { get; set; }
+
+        /// <summary>
+        /// Disposes pooled resources held by this request.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
+        /// Disposes managed resources.
+        /// </summary>
+        protected virtual void Dispose(bool disposing)
+        {
+#if !NETFRAMEWORK
+            if (disposing && contentStream is PooledContentStream)
+            {
+                contentStream.Dispose();
+                contentStream = null;
+            }
+#endif
+        }
     }
 }
