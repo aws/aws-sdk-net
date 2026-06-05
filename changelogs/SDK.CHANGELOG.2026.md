@@ -1,3 +1,20 @@
+### 4.0.264.0 (2026-06-05 18:18 UTC)
+* DynamoDBv2 (4.0.20.0)
+	* Adding new BDD representation of endpoint ruleset
+* EMRServerless (4.0.11.0)
+	* Adds support for updating max capacity and custom fields while application is started
+* MediaConvert (4.0.19.0)
+	* Adds support for configurable number of Clear Lead segments at the beginning of encrypted output. Adds support for multiple trickplay variants.
+* PaymentCryptography (4.0.11.0)
+	* Adds CloudFormation support for resource-based policies on AWS Payment Cryptography keys.
+* QuickSight (4.0.26.0)
+	* Adds support for Knowledge Base APIs and Index Capacity API
+* SageMaker (4.0.63.0)
+	* This release adds support for MLflow experiment tracking in SageMaker inference optimization. CreateAIRecommendationJob and CreateAIBenchmarkJob now accept an optional OutputConfig.MlflowConfig (MLflow App ARN, experiment, run name) to stream benchmark metrics and artifacts to your own MLflow App.
+* Core 4.0.8.0
+	* Eliminate byte[] copy in JSON marshalling pipeline by keeping pooled buffer in request
+	* All service and extension packages updated to require new Core
+
 ### 4.0.263.0 (2026-06-04 18:21 UTC)
 * AmplifyBackend (4.0.3.0)
 	* Adding new BDD representation of endpoint ruleset
