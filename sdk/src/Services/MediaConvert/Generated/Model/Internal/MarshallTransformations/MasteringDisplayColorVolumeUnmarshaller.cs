@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VideoProperties Object
+    /// Response Unmarshaller for MasteringDisplayColorVolume Object
     /// </summary>  
-    public class VideoPropertiesUnmarshaller : IJsonUnmarshaller<VideoProperties, JsonUnmarshallerContext>
+    public class MasteringDisplayColorVolumeUnmarshaller : IJsonUnmarshaller<MasteringDisplayColorVolume, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MasteringDisplayColorVolume Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            VideoProperties unmarshalledObject = new VideoProperties();
+            MasteringDisplayColorVolume unmarshalledObject = new MasteringDisplayColorVolume();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,70 +56,64 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bitDepth", targetDepth))
+                if (context.TestExpression("bluePrimaryX", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BitDepth = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BluePrimaryX = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bitRate", targetDepth))
+                if (context.TestExpression("bluePrimaryY", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.BluePrimaryY = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("greenPrimaryX", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.GreenPrimaryX = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("greenPrimaryY", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.GreenPrimaryY = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxLuminance", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.BitRate = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MaxLuminance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codecMetadata", targetDepth))
+                if (context.TestExpression("minLuminance", targetDepth))
                 {
-                    var unmarshaller = CodecMetadataUnmarshaller.Instance;
-                    unmarshalledObject.CodecMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.MinLuminance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorPrimaries", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ColorPrimaries = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("frameRate", targetDepth))
-                {
-                    var unmarshaller = FrameRateUnmarshaller.Instance;
-                    unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("hdrMetadata", targetDepth))
-                {
-                    var unmarshaller = HdrMetadataUnmarshaller.Instance;
-                    unmarshalledObject.HdrMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("height", targetDepth))
+                if (context.TestExpression("redPrimaryX", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RedPrimaryX = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matrixCoefficients", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MatrixCoefficients = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rotation", targetDepth))
+                if (context.TestExpression("redPrimaryY", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Rotation = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RedPrimaryY = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transferCharacteristics", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransferCharacteristics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("width", targetDepth))
+                if (context.TestExpression("whitePointX", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.WhitePointX = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("whitePointY", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.WhitePointY = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -127,12 +121,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static VideoPropertiesUnmarshaller _instance = new VideoPropertiesUnmarshaller();        
+        private static MasteringDisplayColorVolumeUnmarshaller _instance = new MasteringDisplayColorVolumeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VideoPropertiesUnmarshaller Instance
+        public static MasteringDisplayColorVolumeUnmarshaller Instance
         {
             get
             {

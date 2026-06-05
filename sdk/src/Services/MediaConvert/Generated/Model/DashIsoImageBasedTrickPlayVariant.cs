@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    /// Settings for one image-based trick play variant. Each variant produces its own set
+    /// of JPEG tile images and corresponding manifest entries.
     /// </summary>
-    public partial class HlsImageBasedTrickPlaySettings
+    public partial class DashIsoImageBasedTrickPlayVariant
     {
-        private HlsIntervalCadence _intervalCadence;
+        private DashIsoIntervalCadence _intervalCadence;
         private int? _thumbnailHeight;
         private double? _thumbnailInterval;
         private int? _thumbnailWidth;
@@ -49,7 +50,7 @@ namespace Amazon.MediaConvert.Model
         /// set to FOLLOW_SEGMENTATION, MediaConvert generates thumbnail playlist entries that
         /// align exactly with video segment boundaries. FOLLOW_SEGMENTATION requires 1x1 tiling.
         /// </summary>
-        public HlsIntervalCadence IntervalCadence
+        public DashIsoIntervalCadence IntervalCadence
         {
             get { return this._intervalCadence; }
             set { this._intervalCadence = value; }

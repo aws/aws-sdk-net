@@ -356,6 +356,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafEncryptionSettings.ClearLeadSegments</property>
+    <min>1</min>
+    <max>9999</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafEncryptionSettings.ConstantInitializationVector</property>
     <min>32</min>
     <max>32</max>
@@ -402,6 +407,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -514,6 +539,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.DashIsoImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>
@@ -1117,6 +1162,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlaySettings.TileWidth</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.ThumbnailHeight</property>
+    <min>2</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.ThumbnailWidth</property>
+    <min>8</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.TileHeight</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.HlsImageBasedTrickPlayVariant.TileWidth</property>
     <min>1</min>
     <max>512</max>
   </property-value-rule>

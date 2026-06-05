@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
+    /// Settings for one image-based trick play variant. Each variant produces its own set
+    /// of JPEG tile images and corresponding manifest entries.
     /// </summary>
-    public partial class HlsImageBasedTrickPlaySettings
+    public partial class HlsImageBasedTrickPlayVariant
     {
         private HlsIntervalCadence _intervalCadence;
         private int? _thumbnailHeight;

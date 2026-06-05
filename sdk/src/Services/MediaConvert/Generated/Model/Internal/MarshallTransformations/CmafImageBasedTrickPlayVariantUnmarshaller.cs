@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CmafEncryptionSettings Object
+    /// Response Unmarshaller for CmafImageBasedTrickPlayVariant Object
     /// </summary>  
-    public class CmafEncryptionSettingsUnmarshaller : IJsonUnmarshaller<CmafEncryptionSettings, JsonUnmarshallerContext>
+    public class CmafImageBasedTrickPlayVariantUnmarshaller : IJsonUnmarshaller<CmafImageBasedTrickPlayVariant, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CmafEncryptionSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CmafImageBasedTrickPlayVariant Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CmafEncryptionSettings unmarshalledObject = new CmafEncryptionSettings();
+            CmafImageBasedTrickPlayVariant unmarshalledObject = new CmafImageBasedTrickPlayVariant();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,46 +56,40 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clearLeadSegments", targetDepth))
+                if (context.TestExpression("intervalCadence", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntervalCadence = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("thumbnailHeight", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ClearLeadSegments = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ThumbnailHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("constantInitializationVector", targetDepth))
+                if (context.TestExpression("thumbnailInterval", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.ThumbnailInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionMethod", targetDepth))
+                if (context.TestExpression("thumbnailWidth", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ThumbnailWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initializationVectorInManifest", targetDepth))
+                if (context.TestExpression("tileHeight", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InitializationVectorInManifest = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TileHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                if (context.TestExpression("tileWidth", targetDepth))
                 {
-                    var unmarshaller = SpekeKeyProviderCmafUnmarshaller.Instance;
-                    unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("staticKeyProvider", targetDepth))
-                {
-                    var unmarshaller = StaticKeyProviderUnmarshaller.Instance;
-                    unmarshalledObject.StaticKeyProvider = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TileWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +97,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static CmafEncryptionSettingsUnmarshaller _instance = new CmafEncryptionSettingsUnmarshaller();        
+        private static CmafImageBasedTrickPlayVariantUnmarshaller _instance = new CmafImageBasedTrickPlayVariantUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CmafEncryptionSettingsUnmarshaller Instance
+        public static CmafImageBasedTrickPlayVariantUnmarshaller Instance
         {
             get
             {
