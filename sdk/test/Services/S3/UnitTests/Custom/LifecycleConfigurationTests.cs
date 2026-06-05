@@ -208,7 +208,12 @@ namespace AWSSDK.UnitTests
                 },
             };
             IRequest iRequest = PutLifecycleConfigurationRequestMarshaller.Instance.Marshall(request);
-            string content = Encoding.UTF8.GetString(iRequest.Content);
+            var contentBytes = iRequest.Content
+#if !NETFRAMEWORK
+                ?? ((PooledContentStream)iRequest.ContentStream).Content.ToArray()
+#endif
+                ;
+            string content = Encoding.UTF8.GetString(contentBytes);
             XDocument actualDoc = XDocument.Parse(content);
             //raw string literals not available in lang version 9
             #region expectedBody
