@@ -134,6 +134,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionTimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("imageConfiguration", targetDepth))
+                {
+                    var unmarshaller = ImageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ImageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("jobDriver", targetDepth))
                 {
                     var unmarshaller = JobDriverUnmarshaller.Instance;
@@ -222,6 +228,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("workerTypeSpecifications", targetDepth))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, WorkerTypeSpecification, StringUnmarshaller, WorkerTypeSpecificationUnmarshaller>(StringUnmarshaller.Instance, WorkerTypeSpecificationUnmarshaller.Instance);
+                    unmarshalledObject.WorkerTypeSpecifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
