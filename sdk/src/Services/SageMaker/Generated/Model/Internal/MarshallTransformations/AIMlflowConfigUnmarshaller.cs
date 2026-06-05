@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AIRecommendationOutputResult Object
+    /// Response Unmarshaller for AIMlflowConfig Object
     /// </summary>  
-    public class AIRecommendationOutputResultUnmarshaller : IJsonUnmarshaller<AIRecommendationOutputResult, JsonUnmarshallerContext>
+    public class AIMlflowConfigUnmarshaller : IJsonUnmarshaller<AIMlflowConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AIRecommendationOutputResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AIMlflowConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AIRecommendationOutputResult unmarshalledObject = new AIRecommendationOutputResult();
+            AIMlflowConfig unmarshalledObject = new AIMlflowConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MlflowConfig", targetDepth))
-                {
-                    var unmarshaller = AIMlflowConfigUnmarshaller.Instance;
-                    unmarshalledObject.MlflowConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ModelPackageGroupIdentifier", targetDepth))
+                if (context.TestExpression("MlflowExperimentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageGroupIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MlflowExperimentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OutputLocation", targetDepth))
+                if (context.TestExpression("MlflowResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3OutputLocation = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MlflowResourceArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MlflowRunName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MlflowRunName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AIRecommendationOutputResultUnmarshaller _instance = new AIRecommendationOutputResultUnmarshaller();        
+        private static AIMlflowConfigUnmarshaller _instance = new AIMlflowConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AIRecommendationOutputResultUnmarshaller Instance
+        public static AIMlflowConfigUnmarshaller Instance
         {
             get
             {

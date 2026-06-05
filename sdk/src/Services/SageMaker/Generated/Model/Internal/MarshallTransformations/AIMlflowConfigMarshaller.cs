@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AIBenchmarkOutputConfig Marshaller
+    /// AIMlflowConfig Marshaller
     /// </summary>
-    public class AIBenchmarkOutputConfigMarshaller : IRequestMarshaller<AIBenchmarkOutputConfig, JsonMarshallerContext> 
+    public class AIMlflowConfigMarshaller : IRequestMarshaller<AIMlflowConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,26 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AIBenchmarkOutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AIMlflowConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMlflowConfig())
+            if(requestObject.IsSetMlflowExperimentName())
             {
-                context.Writer.WritePropertyName("MlflowConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AIMlflowConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.MlflowConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("MlflowExperimentName");
+                context.Writer.WriteStringValue(requestObject.MlflowExperimentName);
             }
 
-            if(requestObject.IsSetS3OutputLocation())
+            if(requestObject.IsSetMlflowResourceArn())
             {
-                context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.WriteStringValue(requestObject.S3OutputLocation);
+                context.Writer.WritePropertyName("MlflowResourceArn");
+                context.Writer.WriteStringValue(requestObject.MlflowResourceArn);
+            }
+
+            if(requestObject.IsSetMlflowRunName())
+            {
+                context.Writer.WritePropertyName("MlflowRunName");
+                context.Writer.WriteStringValue(requestObject.MlflowRunName);
             }
 
         }
@@ -68,7 +69,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AIBenchmarkOutputConfigMarshaller Instance = new AIBenchmarkOutputConfigMarshaller();
+        public readonly static AIMlflowConfigMarshaller Instance = new AIMlflowConfigMarshaller();
 
     }
 }

@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MlflowConfig", targetDepth))
+                {
+                    var unmarshaller = AIMlflowConfigUnmarshaller.Instance;
+                    unmarshalledObject.MlflowConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("S3OutputLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
