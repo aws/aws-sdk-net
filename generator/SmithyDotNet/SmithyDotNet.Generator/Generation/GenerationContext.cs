@@ -34,11 +34,11 @@ public class GenerationContext
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
-    /// <summary>Reachable structures excluding input, output, and error shapes. Sorted by shape ID for deterministic output.</summary>
-    public IReadOnlyList<StructureShape> Structures { get; }
+    /// <summary>Reachable structures excluding input, output, and error shapes, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
+    public IReadOnlyDictionary<ShapeId, StructureShape> Structures { get; }
 
-    /// <summary>Reachable structures that carry the <c>@error</c> trait. Sorted by shape ID for deterministic output.</summary>
-    public IReadOnlyList<StructureShape> Errors { get; }
+    /// <summary>Reachable structures that carry the <c>@error</c> trait, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
+    public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
     private readonly ServiceIndex _index;
 
@@ -56,10 +56,10 @@ public class GenerationContext
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
 
-        var structures = new List<StructureShape>();
-        var errors = new List<StructureShape>();
+        var structures = new Dictionary<ShapeId, StructureShape>();
+        var errors = new Dictionary<ShapeId, StructureShape>();
 
-        foreach (var (_, shape) in index.Shapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
+        foreach (var (shapeId, shape) in index.Shapes.OrderBy(kvp => kvp.Key.AbsoluteName, StringComparer.Ordinal))
         {
             if (shape is not StructureShape structure)
             {
@@ -68,11 +68,11 @@ public class GenerationContext
 
             if (structure.IsError())
             {
-                errors.Add(structure);
+                errors[shapeId] = structure;
             }
             else if (!structure.IsInput() && !structure.IsOutput())
             {
-                structures.Add(structure);
+                structures[shapeId] = structure;
             }
         }
 
@@ -80,7 +80,13 @@ public class GenerationContext
         Errors = errors;
     }
 
-    /// <summary>Looks up a reachable shape by its <see cref="ShapeId"/>.</summary>
+    /// <summary>
+    /// Looks up a shape by its <see cref="ShapeId"/>. 
+    /// <para />
+    /// Prelude shapes (e.g. <c>smithy.api#String</c>)
+    /// are not in the index but resolve via <see cref="PreludeShapes"/>, so callers never need to
+    /// special-case them. Throws if the shape is genuinely absent.
+    /// </summary>
     public Shape Resolve(ShapeId shapeId)
     {
         if (_index.Shapes.TryGetValue(shapeId, out var shape))
@@ -88,7 +94,7 @@ public class GenerationContext
             return shape;
         }
 
-        throw new GeneratorException($"Shape '{shapeId}' not found in reachable shapes.");
+        return PreludeShapes.Resolve(shapeId) ?? throw new GeneratorException($"Shape '{shapeId}' not found.");
     }
 
     /// <summary>

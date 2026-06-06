@@ -120,7 +120,7 @@ public record MemberShape : Shape
 
 ### Prelude Shapes
 
-Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`, `smithy.api#Integer`) are prelude shapes. They are **not** present in the model JSON — they are implicit. The generator skips them during shape traversal.
+Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`, `smithy.api#Integer`) are prelude shapes. They are **not** present in the model JSON — they are implicit. `ServiceIndex` skips them during shape traversal (they aren't part of a service's own shape closure), but they are still *resolvable*: `GenerationContext.Resolve` falls back to the `PreludeShapes` table, so callers map a member's target without special-casing prelude references.
 
 ## Traits
 

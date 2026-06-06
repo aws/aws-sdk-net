@@ -7,7 +7,7 @@ namespace SmithyDotNet.Generator.Tests.Model;
 [Collection(nameof(CloudTrailModelCollection))]
 public class ServiceIndexTests(CloudTrailModelFixture fixture)
 {
-    private readonly ServiceIndex _index = new(fixture.Model);
+    private readonly ServiceIndex _index = fixture.Index;
 
     [Fact]
     public void Service_IsCloudTrailDataService()

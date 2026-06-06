@@ -95,14 +95,16 @@ Error shapes have a `message` member in the Smithy model, but the generated exce
 To get the .NET type for a structure member:
 
 1. Get the member's `Target` shape ID
-2. Look up the target shape in the model
-3. If it's a prelude shape (`smithy.api#String`, etc.), map directly from the table above
-4. If it's a named shape in the service namespace:
+2. `GenerationContext.Resolve(target)` returns the shape. Prelude shapes (`smithy.api#String`,
+   etc.) are not in the model's shape map, but `Resolve` falls back to `PreludeShapes`, so
+   callers never special-case them — a prelude `String` comes back as a `StringShape` like any
+   other. Map the resolved shape's `type` from the table:
    - Simple/scalar shape → map its `type` from the table
    - Structure/union → use the generated class name
    - List → `List<{resolve member.Target}>`
    - Map → `Dictionary<{resolve key.Target}, {resolve value.Target}>`
    - Enum → `string` (Phase 1), `ConstantClass` subclass (Phase 2)
+   - Constrained string shapes (e.g. `Uuid`) resolve to a `StringShape` → `string` (no wrapper)
 
 ## Prelude Shape Mapping
 
