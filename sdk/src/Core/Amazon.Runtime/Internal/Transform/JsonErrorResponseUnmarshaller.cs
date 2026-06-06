@@ -170,17 +170,26 @@ namespace Amazon.Runtime.Internal.Transform
                     continue;
                 }
 
-                if (context.TestExpression("__type"))
+                // Match the error-shape keys directly against the reader instead of building a path
+                // string. The match is case-insensitive to preserve the previous behavior, and is
+                // restricted to property-name tokens so a string value that happens to equal one of
+                // these keys is never mistaken for the key itself.
+                if (context.CurrentTokenType != JsonTokenType.PropertyName)
+                {
+                    continue;
+                }
+
+                if (reader.ValueTextEqualsIgnoreCase("__type"))
                 {
                     type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message"))
+                if (reader.ValueTextEqualsIgnoreCase("message"))
                 {
                     message = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("code"))
+                if (reader.ValueTextEqualsIgnoreCase("code"))
                 {
                     code = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;

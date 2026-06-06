@@ -152,6 +152,24 @@ namespace Amazon.Runtime.Internal.Transform
         {
             return Read(ref reader) && this.CurrentDepth >= targetDepth;
         }
+
+        /// <summary>
+        /// Tests whether the current property name matches <paramref name="expression"/> at the
+        /// given depth, without allocating. This is the allocation-free equivalent of
+        /// <c>TestExpression(expression, targetDepth)</c> for single-segment JSON property names:
+        /// it compares directly against the reader's current token using
+        /// <see cref="StreamingUtf8JsonReader.ValueTextEquals(string)"/> instead of
+        /// building and matching the path string. The comparison is ordinal (case-sensitive) and
+        /// correctly handles escaped property names.
+        /// </summary>
+        /// <param name="expression">The single-segment property name to match (an interned string literal).</param>
+        /// <param name="targetDepth">The depth at which the property must appear.</param>
+        /// <param name="reader">The reader positioned on the property name token.</param>
+        /// <returns>True if the current property name matches at the target depth.</returns>
+        public bool TestExpression(string expression, int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return CurrentDepth == targetDepth && reader.ValueTextEquals(expression);
+        }
         #endregion
 
         #region Overrides
@@ -389,15 +407,18 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                 }
             }
-            // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
-            // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
-            // so we should just push the value so that it can be retrieved later.
-            else if (currentToken.Value == JsonTokenType.PropertyName || (stack.Count == 0 && currentToken == JsonTokenType.String))
+            // A raw top-level string (stack empty) is a Smithy document and must always be pushed so it
+            // can be retrieved later. Property names, on the other hand, are never pushed: they only
+            // ever existed to build CurrentPath for path-based matching, which JSON unmarshalling no
+            // longer uses (fields are matched directly against the reader). Skipping them avoids a
+            // GetString allocation and StringBuilder/stack churn per property. Depth is unaffected
+            // because property names are PathSegmentType.Value and never change CurrentDepth.
+            else if (stack.Count == 0 && currentToken == JsonTokenType.String)
             {
+                // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
+                // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
+                // so we should just push the value so that it can be retrieved later.
                 string t = ReadText(ref reader);
-
-                // Push property name, it's appended to the stack's CurrentPath,
-                // it this does not affect the depth.
                 stack.Push(new PathSegment
                 {
                     SegmentType = PathSegmentType.Value,
@@ -406,10 +427,10 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
-                // Pop if you encounter a simple data type or null
-                // This will pop the property name associated with it in cases like  {"a":"b"}.
-                // Exclude the case where it's a value in an array so we dont end poping the start of array and
-                // property name e.g. {"a":["1","2","3"]}
+                // Pop a previously pushed Value segment when a simple data type or null follows it.
+                // Property names are no longer pushed, so in practice the only Value segment on the
+                // stack is a raw top-level string; the Delimiter guard means scalars inside an object
+                // or array (where the stack top is the enclosing '/') do not pop anything.
                 stack.Pop();
             }
 

@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduced allocations when unmarshalling JSON responses by matching property names directly against the Utf8JsonReader instead of building a path string per property."
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}

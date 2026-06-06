@@ -64,45 +64,54 @@ namespace AWSSDK.UnitTests
         {
             var stream = Utils.CreateStreamFromString(json);
             JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
+            // Matches fields with the allocation-free reader-based TestExpression(name, depth, ref reader)
+            // overload, which is the same matching that generated JSON unmarshallers use.
             var reader = new StreamingUtf8JsonReader(stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             var model = new Model();
             bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false, 
                 isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
+            // Mirror the generated unmarshaller loop: each match unmarshalls its value and continues, so
+            // the reader-based TestExpression is only ever evaluated while positioned on a property name.
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Priority", targetDepth))
+                if (context.TestExpression("Priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     model.Priority = unmarshaller.Unmarshall(context, ref reader);
                     isSetPriority = true;
+                    continue;
                 }
-                if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
+                if (context.TestExpression("ReservoirQuotaTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     model.ReservoirQuotaTTL = unmarshaller.Unmarshall(context, ref reader);
                     isSetReservoirQuotaTTL = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeISO8601", targetDepth))
+                if (context.TestExpression("StartTimeISO8601", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeISO8601 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeISO8601 = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeEpoch", targetDepth))
+                if (context.TestExpression("StartTimeEpoch", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeEpoch = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeEpoch = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeRFC822", targetDepth))
+                if (context.TestExpression("StartTimeRFC822", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeRFC822 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeRFC822 = true;
+                    continue;
                 }
-                if (context.TestExpression("Stream", targetDepth))
+                if (context.TestExpression("Stream", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     model.Stream = unmarshaller.Unmarshall(context, ref reader);
@@ -114,6 +123,7 @@ namespace AWSSDK.UnitTests
                     }
 
                     isSetStream = true;
+                    continue;
                 }
             }
             if (!(isSetPriority && isSetReservoirQuotaTTL && isSetStartTimeISO8601 && isSetStartTimeEpoch && isSetStartTimeRFC822 && isSetStream))
