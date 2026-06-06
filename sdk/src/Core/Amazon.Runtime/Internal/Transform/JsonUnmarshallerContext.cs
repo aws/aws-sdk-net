@@ -160,7 +160,10 @@ namespace Amazon.Runtime.Internal.Transform
         /// it compares directly against the reader's current token using
         /// <see cref="StreamingUtf8JsonReader.ValueTextEquals(string)"/> instead of
         /// building and matching the path string. The comparison is ordinal (case-sensitive) and
-        /// correctly handles escaped property names.
+        /// correctly handles escaped property names. The match is restricted to property-name
+        /// tokens so that an unmodeled scalar value at the target depth is never compared (a number,
+        /// boolean or null value would otherwise cause <see cref="StreamingUtf8JsonReader.ValueTextEquals(string)"/>
+        /// to throw, and a string value equal to a member name would be mistaken for the key).
         /// </summary>
         /// <param name="expression">The single-segment property name to match (an interned string literal).</param>
         /// <param name="targetDepth">The depth at which the property must appear.</param>
@@ -168,7 +171,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>True if the current property name matches at the target depth.</returns>
         public bool TestExpression(string expression, int targetDepth, ref StreamingUtf8JsonReader reader)
         {
-            return CurrentDepth == targetDepth && reader.ValueTextEquals(expression);
+            return CurrentTokenType == JsonTokenType.PropertyName && CurrentDepth == targetDepth && reader.ValueTextEquals(expression);
         }
         #endregion
 
