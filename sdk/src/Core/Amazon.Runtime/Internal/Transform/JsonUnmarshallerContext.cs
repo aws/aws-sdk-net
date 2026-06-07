@@ -154,20 +154,14 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
-        /// Tests whether the current property name matches <paramref name="expression"/> at the
-        /// given depth, without allocating. This is the allocation-free equivalent of
-        /// <c>TestExpression(expression, targetDepth)</c> for single-segment JSON property names:
-        /// it compares directly against the reader's current token using
-        /// <see cref="StreamingUtf8JsonReader.ValueTextEquals(string)"/> instead of
-        /// building and matching the path string. The comparison is ordinal (case-sensitive) and
-        /// correctly handles escaped property names. The match is restricted to property-name
-        /// tokens so that an unmodeled scalar value at the target depth is never compared (a number,
-        /// boolean or null value would otherwise cause <see cref="StreamingUtf8JsonReader.ValueTextEquals(string)"/>
-        /// to throw, and a string value equal to a member name would be mistaken for the key).
+        ///     Tests whether the current token is a property name matching <paramref name="expression"/>
+        ///     at the given depth, comparing directly against the reader without allocating a path string.
+        ///     The match is restricted to property-name tokens so a scalar value at the same depth is never
+        ///     mistaken for a key. The comparison is ordinal (case-sensitive).
         /// </summary>
-        /// <param name="expression">The single-segment property name to match (an interned string literal).</param>
+        /// <param name="expression">The property name to match.</param>
         /// <param name="targetDepth">The depth at which the property must appear.</param>
-        /// <param name="reader">The reader positioned on the property name token.</param>
+        /// <param name="reader">The reader positioned on the current token.</param>
         /// <returns>True if the current property name matches at the target depth.</returns>
         public bool TestExpression(string expression, int targetDepth, ref StreamingUtf8JsonReader reader)
         {
@@ -403,19 +397,15 @@ namespace Amazon.Runtime.Internal.Transform
                     stack.Pop();
                     if (stack.Count > 0 && stack.Peek().SegmentType != PathSegmentType.Delimiter)
                     {
-                        // Pop the property name associated with the
-                        // object or array if present.
-                        // e.g. {"a":["1","2","3"]}
+                        // Pop a non-delimiter Value segment sitting beneath the closed scope. Property
+                        // names are no longer pushed, so in normal documents nothing is popped here.
                         stack.Pop();
                     }
                 }
             }
-            // A raw top-level string (stack empty) is a Smithy document and must always be pushed so it
-            // can be retrieved later. Property names, on the other hand, are never pushed: they only
-            // ever existed to build CurrentPath for path-based matching, which JSON unmarshalling no
-            // longer uses (fields are matched directly against the reader). Skipping them avoids a
-            // GetString allocation and StringBuilder/stack churn per property. Depth is unaffected
-            // because property names are PathSegmentType.Value and never change CurrentDepth.
+            // Property names are intentionally not pushed onto the stack; they only ever served to
+            // build CurrentPath for path-based matching, which JSON unmarshalling no longer uses.
+            // Depth is unaffected, as property names never carried a delimiter.
             else if (stack.Count == 0 && currentToken == JsonTokenType.String)
             {
                 // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
@@ -430,10 +420,9 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
-                // Pop a previously pushed Value segment when a simple data type or null follows it.
-                // Property names are no longer pushed, so in practice the only Value segment on the
-                // stack is a raw top-level string; the Delimiter guard means scalars inside an object
-                // or array (where the stack top is the enclosing '/') do not pop anything.
+                // Pop a previously pushed Value segment when a scalar or null follows it. Since property
+                // names are no longer pushed, the only such segment is a raw top-level string; the
+                // Delimiter guard leaves scalars nested inside an object or array untouched.
                 stack.Pop();
             }
 

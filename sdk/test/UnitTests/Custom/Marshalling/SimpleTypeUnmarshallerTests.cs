@@ -64,16 +64,14 @@ namespace AWSSDK.UnitTests
         {
             var stream = Utils.CreateStreamFromString(json);
             JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
-            // Matches fields with the allocation-free reader-based TestExpression(name, depth, ref reader)
-            // overload, which is the same matching that generated JSON unmarshallers use.
             var reader = new StreamingUtf8JsonReader(stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             var model = new Model();
-            bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false, 
+            bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false,
                 isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
-            // Mirror the generated unmarshaller loop: each match unmarshalls its value and continues, so
-            // the reader-based TestExpression is only ever evaluated while positioned on a property name.
+            // Mirror the generated unmarshaller loop, where each match continues so the reader-based
+            // TestExpression is only evaluated while positioned on a property name.
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Priority", targetDepth, ref reader))
