@@ -22,6 +22,7 @@
 
     <SignAssembly>True</SignAssembly>
 
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
@@ -69,8 +70,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Buffers" Version="4.5.1" />
-    <PackageReference Include="System.Memory" Version="4.5.5" />
+	  <PackageReference Include="System.Buffers" Version="4.6.1" />
+	  <PackageReference Include="System.Memory" Version="4.6.3" />
+	  <PackageReference Include="System.IO.Hashing" Version="11.0.0-preview.4.26230.115" />
+	  
       <!-- Powershell (pwsh) will have a preloaded version of System.Text.Json that is older than
       the version we will ship in core nuget packages and dlls, so we compile with an  older version of STJ
       but ship nuget packages and dlls with newer versions of STJ. If we don't do this then sdk assemblies will fail

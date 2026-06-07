@@ -61,10 +61,10 @@ namespace Amazon.Util
                     return new Crc32Managed();
 
                 case CoreChecksumAlgorithm.CRC32C:
-                    return new CrtCrc32c();
+                    return new Crc32cManaged();
 
                 case CoreChecksumAlgorithm.CRC64NVME:
-                    return new CrtCrc64NVME();
+                    return new Crc64NVMEManaged();
 
                 default:
                     throw new AmazonClientException($"Unable to instantiate checksum algorithm {algorithm}");
