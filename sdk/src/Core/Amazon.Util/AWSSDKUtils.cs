@@ -1117,6 +1117,12 @@ namespace Amazon.Util
         [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
+            // Null/empty inputs produce no output. Returning early also preserves the previous contract of
+            // returning an empty string (never null) for null input, now that the loops below return the
+            // original reference when nothing needs encoding.
+            if (string.IsNullOrEmpty(data))
+                return string.Empty;
+
             // O(1) ASCII membership table for the selected (scheme, path) combination. This replaces both the
             // per-call string.Concat that built the unreserved-character set and the linear IndexOf scan that
             // was previously performed for every byte.
