@@ -141,11 +141,9 @@ namespace Amazon.Util
             return sb.ToString();
         }
 
-        // Precomputed ASCII membership tables for UrlEncode. Every character in the valid sets is ASCII
-        // (< 128), so a 128-entry table gives O(1) membership testing instead of a linear scan over the
-        // character set string for each byte. There is one table per (RFC scheme, isPath) combination,
-        // built once here rather than concatenated into a fresh string on every UrlEncode call.
-        // These initializers run after ValidPathCharacters above (static fields initialize in textual order).
+        // Precomputed ASCII membership table per (RFC scheme, isPath) combination, so UrlEncode can test
+        // each byte with an O(1) lookup instead of scanning the character set string. Declared after
+        // ValidPathCharacters so it is initialized first (static fields initialize in textual order).
         private static readonly bool[] _urlEncodeLookup3986 = BuildUrlEncodeLookup(ValidUrlCharacters, false);
         private static readonly bool[] _urlEncodeLookup3986Path = BuildUrlEncodeLookup(ValidUrlCharacters, true);
         private static readonly bool[] _urlEncodeLookup1738 = BuildUrlEncodeLookup(ValidUrlCharactersRFC1738, false);
@@ -164,17 +162,15 @@ namespace Amazon.Util
 
         private static bool[] GetUrlEncodeLookup(int rfcNumber, bool path)
         {
-            // 1738 is the only alternative scheme; every other value (including unrecognised ones) uses 3986.
+            // 1738 is the only alternative scheme; everything else (including unrecognised values) uses 3986.
             if (rfcNumber == 1738)
                 return path ? _urlEncodeLookup1738Path : _urlEncodeLookup1738;
             return path ? _urlEncodeLookup3986Path : _urlEncodeLookup3986;
         }
 
 #if NET8_0_OR_GREATER
-        // On net8+ the same unreserved sets are also exposed as SearchValues<byte>, whose IndexOfAnyExcept is
-        // SIMD-accelerated. UrlEncode uses these only to vectorize the scan to the first byte needing encoding
-        // (and the common "nothing needs encoding" fast path); the per-byte encoding loop still uses the
-        // bool[] table above, which is faster than SearchValues once characters actually need escaping.
+        // SearchValues equivalents of the tables above, used by UrlEncode to vectorize the scan to the first
+        // byte that needs encoding via SIMD-accelerated IndexOfAnyExcept.
         private static readonly SearchValues<byte> _urlEncodeSearchValues3986 = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharacters, false));
         private static readonly SearchValues<byte> _urlEncodeSearchValues3986Path = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharacters, true));
         private static readonly SearchValues<byte> _urlEncodeSearchValues1738 = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharactersRFC1738, false));
@@ -1117,15 +1113,11 @@ namespace Amazon.Util
         [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
-            // Null/empty inputs produce no output. Returning early also preserves the previous contract of
-            // returning an empty string (never null) for null input, now that the loops below return the
-            // original reference when nothing needs encoding.
+            // Return empty (never null) for null/empty input, since the loops below return the original
+            // reference unchanged when nothing needs encoding.
             if (string.IsNullOrEmpty(data))
                 return string.Empty;
 
-            // O(1) ASCII membership table for the selected (scheme, path) combination. This replaces both the
-            // per-call string.Concat that built the unreserved-character set and the linear IndexOf scan that
-            // was previously performed for every byte.
             var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
 
             byte[] sharedDataBuffer = null;
@@ -1158,16 +1150,13 @@ namespace Amazon.Util
                 var startIndex = 0;
 
 #if NET8_0_OR_GREATER
-                // Vectorized scan to the first byte that needs encoding. When there is none the output is
-                // byte-for-byte identical to the input, so we return the original string and never touch the
-                // buffer again - this is the common case for already-safe keys, signatures and path segments.
+                // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
+                // the input, so return the original string - the common case for already-safe values.
                 var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
                 if (firstEncoded == -1)
                     return data;
 
-                // Bulk-copy the safe prefix in one go, then fall through to the per-byte loop for the remainder.
-                // The per-byte loop is used (rather than a fully SearchValues-driven loop) because once characters
-                // actually need escaping the simple table lookup beats repeated IndexOfAnyExcept calls.
+                // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
                 if (firstEncoded > 0)
                 {
                     encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
@@ -1198,9 +1187,8 @@ namespace Amazon.Util
                     }
                 }
 
-                // When nothing was percent-encoded the output is byte-for-byte identical to the input, so we can
-                // hand back the original string and skip allocating a new one entirely. (On net8+ this is already
-                // handled by the vectorized fast path above; this covers the other target frameworks.)
+                // Nothing was encoded, so the output equals the input; return the original string and skip the
+                // allocation. (On net8+ this case is already handled by the vectorized fast path above.)
                 if (!encoded)
                     return data;
 
