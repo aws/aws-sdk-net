@@ -171,25 +171,28 @@ namespace Amazon.Runtime.Internal.Transform
                 }
 
                 // Match the error-shape keys directly against the reader instead of building a path
-                // string. The match is case-insensitive to preserve the previous behavior, and is
-                // restricted to property-name tokens so a string value that happens to equal one of
-                // these keys is never mistaken for the key itself.
+                // string, and restrict the match to property-name tokens so a string value that
+                // happens to equal one of these keys is never mistaken for the key itself.
+                //
+                // The keys are matched against the exact casings AWS services actually emit, which
+                // mirrors the reference SDKs (botocore, aws-sdk-js-v3): "__type" is always lowercase,
+                // while the message and code fields appear as either lower- or PascalCase.
                 if (context.CurrentTokenType != JsonTokenType.PropertyName)
                 {
                     continue;
                 }
 
-                if (reader.ValueTextEqualsIgnoreCase("__type"))
+                if (reader.ValueTextEquals("__type"))
                 {
                     type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (reader.ValueTextEqualsIgnoreCase("message"))
+                if (reader.ValueTextEquals("message") || reader.ValueTextEquals("Message"))
                 {
                     message = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
-                if (reader.ValueTextEqualsIgnoreCase("code"))
+                if (reader.ValueTextEquals("code") || reader.ValueTextEquals("Code"))
                 {
                     code = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;

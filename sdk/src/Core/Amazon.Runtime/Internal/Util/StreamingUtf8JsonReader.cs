@@ -59,24 +59,6 @@ namespace Amazon.Runtime.Internal.Util
             return _reader.ValueTextEquals(text.AsSpan());
         }
 
-        /// <summary>
-        /// Compares the text of the current JSON token value (e.g. a property name) to the supplied
-        /// text for equality, ignoring case. This is the case-insensitive counterpart to
-        /// <see cref="ValueTextEquals(string)"/> and is only used on the cold error-response parsing
-        /// path (<c>JsonErrorResponseUnmarshaller</c>), which historically matched the "__type",
-        /// "message" and "code" keys case-insensitively. Because it runs once per error response and
-        /// never on the hot success path, decoding the token to a string here is acceptable; the
-        /// comparison uses <see cref="StringComparison.OrdinalIgnoreCase"/> to preserve the exact
-        /// semantics of the previous path-based match (which compared the unescaped path with
-        /// <c>EndsWith(..., OrdinalIgnoreCase)</c>).
-        /// </summary>
-        /// <param name="text">The text to compare against the current token value.</param>
-        /// <returns>True if the current token value matches <paramref name="text"/> ignoring case.</returns>
-        public bool ValueTextEqualsIgnoreCase(string text)
-        {
-            return string.Equals(_reader.GetString(), text, StringComparison.OrdinalIgnoreCase);
-        }
-
         private Stream _stream;
         private byte[] _buffer;
 

@@ -32,6 +32,9 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
         private const string ValidJson = "{\"__type\":\"type\",\"message\":\"message\",\"code\":\"code\",\"ignore\":\"ignore\"}";
         private const string InvalidJson = "{\"__type\":\"type\",[[[break parsing before all properties can be read]]]\"message\":\"message\",\"code\":\"code\",\"ignore\":\"ignore\"}";
         private const string ValidJsonNoCodeOrType = "{\"message\":\"message\"}";
+        // Some services (e.g. Glacier) emit the message and code fields in PascalCase rather than
+        // lowercase; both casings must be recognized. There is no "__type" here, so "Code" feeds the type.
+        private const string ValidJsonPascalCase = "{\"Message\":\"message\",\"Code\":\"code\"}";
         private const string ValidXml = "<Response><RequestId>xmlRequestId</RequestId><Error><Code>ServiceUnavailable</Code><Type>Receiver</Type>" +
             "<Message>xmlMessage</Message></Error></Response>";
         private const string InvalidXmlMissesTypeAndMessage = "<Response><RequestId>xmlRequestId</RequestId><Error><Code>ServiceUnavailable</Code><Type>Receiver" +
@@ -73,6 +76,15 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
         public void UnmarshalJsonErrorValidJsonHeaderCodeIfNoJsonCodeOrType()
         {
             RunJsonErrorUnmarshallingTest(ValidJsonNoCodeOrType, "header_type", null, "message", "header_type", ErrorType.Unknown);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void UnmarshalJsonErrorPascalCaseMessageAndCode()
+        {
+            // "Message"/"Code" (PascalCase) must be matched just like their lowercase forms;
+            // with no "__type" present, the "Code" value is used as the error code/type.
+            RunJsonErrorUnmarshallingTest(ValidJsonPascalCase, null, null, "message", "code", ErrorType.Unknown);
         }
 
         [TestMethod]
