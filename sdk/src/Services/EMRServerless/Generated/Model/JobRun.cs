@@ -48,6 +48,7 @@ namespace Amazon.EMRServerless.Model
         private JobRunExecutionIamPolicy _executionIamPolicy;
         private string _executionRole;
         private long? _executionTimeoutMinutes;
+        private ImageConfiguration _imageConfiguration;
         private JobDriver _jobDriver;
         private string _jobRunId;
         private JobRunMode _mode;
@@ -63,6 +64,7 @@ namespace Amazon.EMRServerless.Model
         private int? _totalExecutionDurationSeconds;
         private TotalResourceUtilization _totalResourceUtilization;
         private DateTime? _updatedAt;
+        private Dictionary<string, WorkerTypeSpecification> _workerTypeSpecifications = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkerTypeSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -304,6 +306,21 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetExecutionTimeoutMinutes()
         {
             return this._executionTimeoutMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageConfiguration.
+        /// </summary>
+        public ImageConfiguration ImageConfiguration
+        {
+            get { return this._imageConfiguration; }
+            set { this._imageConfiguration = value; }
+        }
+
+        // Check to see if ImageConfiguration property is set
+        internal bool IsSetImageConfiguration()
+        {
+            return this._imageConfiguration != null;
         }
 
         /// <summary>
@@ -586,6 +603,30 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerTypeSpecifications. 
+        /// <para>
+        /// The specification applied to each worker type. Includes the JobRun-level ImageConfiguration
+        /// when the applicationLevelDigestResolution is false for the application.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, WorkerTypeSpecification> WorkerTypeSpecifications
+        {
+            get { return this._workerTypeSpecifications; }
+            set { this._workerTypeSpecifications = value; }
+        }
+
+        // Check to see if WorkerTypeSpecifications property is set
+        internal bool IsSetWorkerTypeSpecifications()
+        {
+            return this._workerTypeSpecifications != null && (this._workerTypeSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

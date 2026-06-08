@@ -4430,6 +4430,10 @@ namespace Amazon.MediaConvert
         /// Constant THUMBNAIL_AND_FULLFRAME for CmafImageBasedTrickPlay
         /// </summary>
         public static readonly CmafImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new CmafImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+        /// <summary>
+        /// Constant VARIANTS for CmafImageBasedTrickPlay
+        /// </summary>
+        public static readonly CmafImageBasedTrickPlay VARIANTS = new CmafImageBasedTrickPlay("VARIANTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5883,6 +5887,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec MJPEG = new Codec("MJPEG");
         /// <summary>
+        /// Constant MP2 for Codec
+        /// </summary>
+        public static readonly Codec MP2 = new Codec("MP2");
+        /// <summary>
         /// Constant MP3 for Codec
         /// </summary>
         public static readonly Codec MP3 = new Codec("MP3");
@@ -6652,6 +6660,10 @@ namespace Amazon.MediaConvert
         /// Constant THUMBNAIL_AND_FULLFRAME for DashIsoImageBasedTrickPlay
         /// </summary>
         public static readonly DashIsoImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new DashIsoImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+        /// <summary>
+        /// Constant VARIANTS for DashIsoImageBasedTrickPlay
+        /// </summary>
+        public static readonly DashIsoImageBasedTrickPlay VARIANTS = new DashIsoImageBasedTrickPlay("VARIANTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10220,6 +10232,10 @@ namespace Amazon.MediaConvert
         /// Constant Mp4 for Format
         /// </summary>
         public static readonly Format Mp4 = new Format("mp4");
+        /// <summary>
+        /// Constant Mpegps for Format
+        /// </summary>
+        public static readonly Format Mpegps = new Format("mpegps");
         /// <summary>
         /// Constant Mpegts for Format
         /// </summary>
@@ -14035,56 +14051,6 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
-    /// Constants used for properties of type HlsClearLead.
-    /// </summary>
-    public class HlsClearLead : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant DISABLED for HlsClearLead
-        /// </summary>
-        public static readonly HlsClearLead DISABLED = new HlsClearLead("DISABLED");
-        /// <summary>
-        /// Constant ENABLED for HlsClearLead
-        /// </summary>
-        public static readonly HlsClearLead ENABLED = new HlsClearLead("ENABLED");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public HlsClearLead(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static HlsClearLead FindValue(string value)
-        {
-            return FindValue<HlsClearLead>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator HlsClearLead(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type HlsClientCache.
     /// </summary>
     public class HlsClientCache : ConstantClass
@@ -14410,6 +14376,10 @@ namespace Amazon.MediaConvert
         /// Constant THUMBNAIL_AND_FULLFRAME for HlsImageBasedTrickPlay
         /// </summary>
         public static readonly HlsImageBasedTrickPlay THUMBNAIL_AND_FULLFRAME = new HlsImageBasedTrickPlay("THUMBNAIL_AND_FULLFRAME");
+        /// <summary>
+        /// Constant VARIANTS for HlsImageBasedTrickPlay
+        /// </summary>
+        public static readonly HlsImageBasedTrickPlay VARIANTS = new HlsImageBasedTrickPlay("VARIANTS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

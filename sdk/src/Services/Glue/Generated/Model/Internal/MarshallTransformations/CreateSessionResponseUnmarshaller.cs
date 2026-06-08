@@ -103,6 +103,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotSupportedException"))
+                {
+                    return OperationNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationTimeoutException"))
                 {
                     return OperationTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

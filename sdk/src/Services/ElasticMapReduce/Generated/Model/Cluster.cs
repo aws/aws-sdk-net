@@ -64,6 +64,7 @@ namespace Amazon.ElasticMapReduce.Model
         private ScaleDownBehavior _scaleDownBehavior;
         private string _securityConfiguration;
         private string _serviceRole;
+        private bool? _sessionEnabled;
         private ClusterStatus _status;
         private int? _stepConcurrencyLevel;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -297,6 +298,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The unique identifier for the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -673,6 +675,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetServiceRole()
         {
             return this._serviceRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionEnabled. 
+        /// <para>
+        /// Indicates whether Spark Connect sessions are enabled on the cluster.
+        /// </para>
+        /// </summary>
+        public bool? SessionEnabled
+        {
+            get { return this._sessionEnabled; }
+            set { this._sessionEnabled = value; }
+        }
+
+        // Check to see if SessionEnabled property is set
+        internal bool IsSetSessionEnabled()
+        {
+            return this._sessionEnabled.HasValue; 
         }
 
         /// <summary>

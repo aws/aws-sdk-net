@@ -1761,6 +1761,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AudioExtractionStatus.
+    /// </summary>
+    public class AudioExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AudioExtractionStatus
+        /// </summary>
+        public static readonly AudioExtractionStatus DISABLED = new AudioExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AudioExtractionStatus
+        /// </summary>
+        public static readonly AudioExtractionStatus ENABLED = new AudioExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioExtractionStatus FindValue(string value)
+        {
+            return FindValue<AudioExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationMethodOption.
     /// </summary>
     public class AuthenticationMethodOption : ConstantClass
@@ -4863,6 +4913,68 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DataSetStatus.
+    /// </summary>
+    public class DataSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DataSetStatus
+        /// </summary>
+        public static readonly DataSetStatus ACTIVE = new DataSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for DataSetStatus
+        /// </summary>
+        public static readonly DataSetStatus CREATING = new DataSetStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for DataSetStatus
+        /// </summary>
+        public static readonly DataSetStatus DELETING = new DataSetStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for DataSetStatus
+        /// </summary>
+        public static readonly DataSetStatus FAILED = new DataSetStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for DataSetStatus
+        /// </summary>
+        public static readonly DataSetStatus UPDATING = new DataSetStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSetStatus FindValue(string value)
+        {
+            return FindValue<DataSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSetStringComparisonFilterOperator.
     /// </summary>
     public class DataSetStringComparisonFilterOperator : ConstantClass
@@ -7763,6 +7875,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type ImageExtractionStatus.
+    /// </summary>
+    public class ImageExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus DISABLED = new ImageExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus ENABLED = new ImageExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageExtractionStatus FindValue(string value)
+        {
+            return FindValue<ImageExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IncludeFolderMembers.
     /// </summary>
     public class IncludeFolderMembers : ConstantClass
@@ -8546,6 +8708,258 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JoinType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KbIngestionStatus.
+    /// </summary>
+    public class KbIngestionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus CANCELLED = new KbIngestionStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus CANCELLING = new KbIngestionStatus("CANCELLING");
+        /// <summary>
+        /// Constant COMPLETED for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus COMPLETED = new KbIngestionStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus FAILED = new KbIngestionStatus("FAILED");
+        /// <summary>
+        /// Constant INCOMPLETE for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus INCOMPLETE = new KbIngestionStatus("INCOMPLETE");
+        /// <summary>
+        /// Constant QUEUED for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus QUEUED = new KbIngestionStatus("QUEUED");
+        /// <summary>
+        /// Constant RUNNING for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus RUNNING = new KbIngestionStatus("RUNNING");
+        /// <summary>
+        /// Constant TIMEOUT for KbIngestionStatus
+        /// </summary>
+        public static readonly KbIngestionStatus TIMEOUT = new KbIngestionStatus("TIMEOUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KbIngestionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KbIngestionStatus FindValue(string value)
+        {
+            return FindValue<KbIngestionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KbIngestionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KnowledgeBaseSearchFilterName.
+    /// </summary>
+    public class KnowledgeBaseSearchFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName DIRECT_QUICKSIGHT_OWNER = new KnowledgeBaseSearchFilterName("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName DIRECT_QUICKSIGHT_SOLE_OWNER = new KnowledgeBaseSearchFilterName("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new KnowledgeBaseSearchFilterName("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE_ID for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName KNOWLEDGE_BASE_ID = new KnowledgeBaseSearchFilterName("KNOWLEDGE_BASE_ID");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE_NAME for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName KNOWLEDGE_BASE_NAME = new KnowledgeBaseSearchFilterName("KNOWLEDGE_BASE_NAME");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE_SIZE_BYTES for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName KNOWLEDGE_BASE_SIZE_BYTES = new KnowledgeBaseSearchFilterName("KNOWLEDGE_BASE_SIZE_BYTES");
+        /// <summary>
+        /// Constant PRIMARY_OWNER for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName PRIMARY_OWNER = new KnowledgeBaseSearchFilterName("PRIMARY_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KnowledgeBaseSearchFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KnowledgeBaseSearchFilterName FindValue(string value)
+        {
+            return FindValue<KnowledgeBaseSearchFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KnowledgeBaseSearchFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KnowledgeBaseSearchOperator.
+    /// </summary>
+    public class KnowledgeBaseSearchOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS for KnowledgeBaseSearchOperator
+        /// </summary>
+        public static readonly KnowledgeBaseSearchOperator GREATER_THAN_OR_EQUALS = new KnowledgeBaseSearchOperator("GREATER_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS for KnowledgeBaseSearchOperator
+        /// </summary>
+        public static readonly KnowledgeBaseSearchOperator LESS_THAN_OR_EQUALS = new KnowledgeBaseSearchOperator("LESS_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant STRING_EQUALS for KnowledgeBaseSearchOperator
+        /// </summary>
+        public static readonly KnowledgeBaseSearchOperator STRING_EQUALS = new KnowledgeBaseSearchOperator("STRING_EQUALS");
+        /// <summary>
+        /// Constant STRING_LIKE for KnowledgeBaseSearchOperator
+        /// </summary>
+        public static readonly KnowledgeBaseSearchOperator STRING_LIKE = new KnowledgeBaseSearchOperator("STRING_LIKE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KnowledgeBaseSearchOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KnowledgeBaseSearchOperator FindValue(string value)
+        {
+            return FindValue<KnowledgeBaseSearchOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KnowledgeBaseSearchOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KnowledgeBaseSortByField.
+    /// </summary>
+    public class KnowledgeBaseSortByField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_AT for KnowledgeBaseSortByField
+        /// </summary>
+        public static readonly KnowledgeBaseSortByField CREATED_AT = new KnowledgeBaseSortByField("CREATED_AT");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE_SIZE_BYTES for KnowledgeBaseSortByField
+        /// </summary>
+        public static readonly KnowledgeBaseSortByField KNOWLEDGE_BASE_SIZE_BYTES = new KnowledgeBaseSortByField("KNOWLEDGE_BASE_SIZE_BYTES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KnowledgeBaseSortByField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KnowledgeBaseSortByField FindValue(string value)
+        {
+            return FindValue<KnowledgeBaseSortByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KnowledgeBaseSortByField(string value)
         {
             return FindValue(value);
         }
@@ -13695,6 +14109,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SpaceQuickSightResourceType.
     /// </summary>
     public class SpaceQuickSightResourceType : ConstantClass
@@ -15977,6 +16441,102 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type UserIndexCapacitySortBy.
+    /// </summary>
+    public class UserIndexCapacitySortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOTAL_CAPACITY_BYTES for UserIndexCapacitySortBy
+        /// </summary>
+        public static readonly UserIndexCapacitySortBy TOTAL_CAPACITY_BYTES = new UserIndexCapacitySortBy("TOTAL_CAPACITY_BYTES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserIndexCapacitySortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserIndexCapacitySortBy FindValue(string value)
+        {
+            return FindValue<UserIndexCapacitySortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserIndexCapacitySortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserIndexCapacitySortOrder.
+    /// </summary>
+    public class UserIndexCapacitySortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for UserIndexCapacitySortOrder
+        /// </summary>
+        public static readonly UserIndexCapacitySortOrder ASC = new UserIndexCapacitySortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for UserIndexCapacitySortOrder
+        /// </summary>
+        public static readonly UserIndexCapacitySortOrder DESC = new UserIndexCapacitySortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserIndexCapacitySortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserIndexCapacitySortOrder FindValue(string value)
+        {
+            return FindValue<UserIndexCapacitySortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserIndexCapacitySortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UserRole.
     /// </summary>
     public class UserRole : ConstantClass
@@ -16202,6 +16762,106 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VerticalTextAlignment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoExtractionStatus.
+    /// </summary>
+    public class VideoExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for VideoExtractionStatus
+        /// </summary>
+        public static readonly VideoExtractionStatus DISABLED = new VideoExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for VideoExtractionStatus
+        /// </summary>
+        public static readonly VideoExtractionStatus ENABLED = new VideoExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoExtractionStatus FindValue(string value)
+        {
+            return FindValue<VideoExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoExtractionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VideoExtractionType.
+    /// </summary>
+    public class VideoExtractionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO_TRANSCRIPTION_ONLY for VideoExtractionType
+        /// </summary>
+        public static readonly VideoExtractionType AUDIO_TRANSCRIPTION_ONLY = new VideoExtractionType("AUDIO_TRANSCRIPTION_ONLY");
+        /// <summary>
+        /// Constant VISUAL_CONTENT_AND_AUDIO_TRANSCRIPTION for VideoExtractionType
+        /// </summary>
+        public static readonly VideoExtractionType VISUAL_CONTENT_AND_AUDIO_TRANSCRIPTION = new VideoExtractionType("VISUAL_CONTENT_AND_AUDIO_TRANSCRIPTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VideoExtractionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VideoExtractionType FindValue(string value)
+        {
+            return FindValue<VideoExtractionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VideoExtractionType(string value)
         {
             return FindValue(value);
         }

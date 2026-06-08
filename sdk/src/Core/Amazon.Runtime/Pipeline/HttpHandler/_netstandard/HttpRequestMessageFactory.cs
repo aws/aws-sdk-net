@@ -760,6 +760,34 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Writes a ReadOnlyMemory to the request body without copying.
+        /// </summary>
+        /// <param name="requestContent">The destination where the content stream is written.</param>
+        /// <param name="content">The content memory to be written.</param>
+        /// <param name="contentHeaders">HTTP content headers.</param>
+        public void WriteToRequestBody(HttpContent requestContent,
+            ReadOnlyMemory<byte> content, IDictionary<string, string> contentHeaders)
+        {
+            // Zero-copy: wrap the pooled buffer directly without allocating a new byte[].
+#if NET8_0_OR_GREATER
+            _request.Content = new ReadOnlyMemoryContent(content);
+#else
+            // ReadOnlyMemoryContent is not available before .NET 5.
+            // ByteArrayContent(byte[], offset, count) does not copy, it only holds a reference.
+            if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(content, out var segment))
+            {
+                _request.Content = new ByteArrayContent(segment.Array, segment.Offset, segment.Count);
+            }
+            else
+            {
+                _request.Content = new ByteArrayContent(content.ToArray());
+            }
+#endif
+            _request.Content.Headers.ContentLength = content.Length;
+            WriteContentHeaders(contentHeaders);
+        }
+
+        /// <summary>
         /// Gets a handle to the request content.
         /// </summary>
         /// <returns></returns>

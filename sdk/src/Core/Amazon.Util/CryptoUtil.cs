@@ -174,6 +174,18 @@ namespace Amazon.Util
             /// <summary>
             /// Computes a SHA256 hash
             /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <param name="offset">Offset into the byte array from which to begin using data</param>
+            /// <param name="count">Number of bytes in the array to use as data</param>
+            /// <returns>Computed hash code</returns>
+            public byte[] ComputeSHA256Hash(byte[] data, int offset, int count)
+            {
+                return SHA256HashAlgorithmInstance.ComputeHash(data, offset, count);
+            }
+
+            /// <summary>
+            /// Computes a SHA256 hash
+            /// </summary>
             /// <param name="steam">Input to compute the hash code for</param>
             /// <returns>Computed hash code</returns>
             public byte[] ComputeSHA256Hash(Stream steam)

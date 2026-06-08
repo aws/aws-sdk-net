@@ -90,6 +90,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetAiAgents())
+            {
+                context.Writer.WritePropertyName("AiAgents");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AiAgentsCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.AiAgents, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");

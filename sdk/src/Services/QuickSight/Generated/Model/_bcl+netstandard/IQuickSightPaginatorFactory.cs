@@ -238,6 +238,16 @@ namespace Amazon.QuickSight.Model
         IListIngestionsPaginator ListIngestions(ListIngestionsRequest request);
 
         /// <summary>
+        /// Paginator for ListKnowledgeBases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
+
+        /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
         [AWSPaginator(
@@ -436,6 +446,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchKnowledgeBases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchKnowledgeBasesPaginator SearchKnowledgeBases(SearchKnowledgeBasesRequest request);
 
         /// <summary>
         /// Paginator for SearchTopics operation

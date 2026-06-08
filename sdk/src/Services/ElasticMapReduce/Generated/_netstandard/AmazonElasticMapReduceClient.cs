@@ -1480,6 +1480,86 @@ namespace Amazon.ElasticMapReduce
         }
         #endregion
         
+        #region  GetSession
+
+        internal virtual GetSessionResponse GetSession(GetSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed information about a session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSession service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetSession">REST API Reference for GetSession Operation</seealso>
+        public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSessionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetSessionEndpoint
+
+        internal virtual GetSessionEndpointResponse GetSessionEndpoint(GetSessionEndpointRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<GetSessionEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the Spark Connect endpoint URL and a time-limited authentication token for
+        /// the specified session. Use the endpoint and token to connect a PySpark client to the
+        /// session. Call this operation again when the token expires to obtain a new one.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionEndpoint service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        public virtual Task<GetSessionEndpointResponse> GetSessionEndpointAsync(GetSessionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSessionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSessionEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSessionEndpointResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetStudioSessionMapping
 
         internal virtual GetStudioSessionMappingResponse GetStudioSessionMapping(GetStudioSessionMappingRequest request)
@@ -1958,6 +2038,46 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSecurityConfigurationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListSessions
+
+        internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the sessions on a cluster. You can filter the results by session state. Newer
+        /// sessions are returned first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2922,6 +3042,47 @@ namespace Amazon.ElasticMapReduce
         }
         #endregion
         
+        #region  StartSession
+
+        internal virtual StartSessionResponse StartSession(StartSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates and starts a new Spark Connect session on the specified cluster. The cluster
+        /// must be in the <c>RUNNING</c> or <c>WAITING</c> state and have sessions enabled. This
+        /// operation is supported in Amazon EMR Spark 8.0.0 and later.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSession service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartSession">REST API Reference for StartSession Operation</seealso>
+        public virtual Task<StartSessionResponse> StartSessionAsync(StartSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSessionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopNotebookExecution
 
         internal virtual StopNotebookExecutionResponse StopNotebookExecution(StopNotebookExecutionRequest request)
@@ -3007,6 +3168,46 @@ namespace Amazon.ElasticMapReduce
             options.ResponseUnmarshaller = TerminateJobFlowsResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateJobFlowsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  TerminateSession
+
+        internal virtual TerminateSessionResponse TerminateSession(TerminateSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Terminates an active session. After you call this operation, the session enters the
+        /// <c>TERMINATING</c> state and then transitions to <c>TERMINATED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TerminateSession service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Amazon EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/TerminateSession">REST API Reference for TerminateSession Operation</seealso>
+        public virtual Task<TerminateSessionResponse> TerminateSessionAsync(TerminateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateSessionResponse>(request, options, cancellationToken);
         }
         #endregion
         

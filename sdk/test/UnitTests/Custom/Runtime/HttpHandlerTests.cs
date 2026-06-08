@@ -301,6 +301,15 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(contentHeaders);
             }
 
+#if !NETFRAMEWORK
+            public void WriteToRequestBody(Stream requestContent, ReadOnlyMemory<byte> content, IDictionary<string, string> contentHeaders)
+            {
+                Assert.IsNotNull(requestContent);
+                Assert.IsFalse(content.IsEmpty);
+                Assert.IsNotNull(contentHeaders);
+            }
+#endif
+
             public void Abort()
             {
                 this.IsAborted = true;

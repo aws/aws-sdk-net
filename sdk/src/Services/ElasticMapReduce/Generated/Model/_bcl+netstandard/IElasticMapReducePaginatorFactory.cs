@@ -108,6 +108,16 @@ namespace Amazon.ElasticMapReduce.Model
         IListSecurityConfigurationsPaginator ListSecurityConfigurations(ListSecurityConfigurationsRequest request);
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListSteps operation
         ///</summary>
         [AWSPaginator(

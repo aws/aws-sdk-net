@@ -46,6 +46,7 @@ namespace Amazon.MediaConvert.Model
         private DashIsoHbbtvCompliance _hbbtvCompliance;
         private DashIsoImageBasedTrickPlay _imageBasedTrickPlay;
         private DashIsoImageBasedTrickPlaySettings _imageBasedTrickPlaySettings;
+        private List<DashIsoImageBasedTrickPlayVariant> _imageBasedTrickPlayVariants = AWSConfigs.InitializeCollections ? new List<DashIsoImageBasedTrickPlayVariant>() : null;
         private int? _minBufferTime;
         private double? _minFinalSegmentLength;
         private DashIsoMpdManifestBandwidthType _mpdManifestBandwidthType;
@@ -256,10 +257,13 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property ImageBasedTrickPlay. Specify whether MediaConvert generates
         /// images for trick play. Keep the default value, None, to not generate any images. Choose
         /// Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate
-        /// tiled thumbnails and full-resolution images of single frames. MediaConvert adds an
-        /// entry in the .mpd manifest for each set of images that you generate. A common application
-        /// for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert
-        /// creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+        /// tiled thumbnails and full-resolution images of single frames. Choose Advanced to customize
+        /// thumbnail and tile settings for a single trick play variant. Choose Variants to specify
+        /// multiple trick play variants, each with its own thumbnail and tile settings. MediaConvert
+        /// adds an entry in the .mpd manifest for each set of images that you generate. A common
+        /// application for these images is Roku trick mode. The thumbnails and full-frame images
+        /// that MediaConvert creates with this feature are compatible with this Roku specification:
+        /// https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
         /// </summary>
         public DashIsoImageBasedTrickPlay ImageBasedTrickPlay
         {
@@ -287,6 +291,29 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetImageBasedTrickPlaySettings()
         {
             return this._imageBasedTrickPlaySettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageBasedTrickPlayVariants. Specify multiple image-based
+        /// trick play variants. Each entry creates a separate set of JPEG tile images with its
+        /// own resolution, tile layout, and cadence settings. Set imageBasedTrickPlay to VARIANTS
+        /// when using this setting.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DashIsoImageBasedTrickPlayVariant> ImageBasedTrickPlayVariants
+        {
+            get { return this._imageBasedTrickPlayVariants; }
+            set { this._imageBasedTrickPlayVariants = value; }
+        }
+
+        // Check to see if ImageBasedTrickPlayVariants property is set
+        internal bool IsSetImageBasedTrickPlayVariants()
+        {
+            return this._imageBasedTrickPlayVariants != null && (this._imageBasedTrickPlayVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

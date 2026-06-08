@@ -2,6 +2,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 using System;
 using System.Collections.Generic;
@@ -122,7 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var employee = new AnnotatedNumericEpochEmployee
                 {
-                    Name = "Bob",
+                    Name = UtilityMethods.GenerateName("Bob"),
                     Age = 45,
                     CreationTime = currTime,
                     EpochDate2 = currTime,
@@ -183,7 +184,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Equal(employee.Age, storedEmployee.Age);
 
                 // Scan
-                storedEmployee = (await context.ScanAsync<AnnotatedNumericEpochEmployee>(new List<ScanCondition>()).GetRemainingAsync()).First();
+                storedEmployee = (await context.ScanAsync<AnnotatedNumericEpochEmployee>(
+                    new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, employee.Name) },
+                    new ScanConfig { ConsistentRead = true }
+                ).GetRemainingAsync()).First();
                 Assert.NotNull(storedEmployee);
                 ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
                 ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
@@ -228,7 +232,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var employee = new AnnotatedNumericEpochEmployee
                 {
-                    Name = "Bob",
+                    Name = UtilityMethods.GenerateName("Bob"),
                     Age = 45,
                     CreationTime = currTime,
                     EpochDate2 = currTime,
@@ -288,7 +292,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Equal(employee.Age, storedEmployee.Age);
 
                 // Scan
-                storedEmployee = (await context.ScanAsync<AnnotatedNumericEpochEmployee>(new List<ScanCondition>()).GetRemainingAsync()).First();
+                storedEmployee = (await context.ScanAsync<AnnotatedNumericEpochEmployee>(
+                    new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, employee.Name) },
+                    new ScanConfig { ConsistentRead = true }
+                ).GetRemainingAsync()).First();
                 Assert.NotNull(storedEmployee);
                 ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.CreationTime);
                 ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.EpochDate2);
@@ -321,7 +328,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 var employee = new AnnotatedNumericEpochEmployee
                 {
-                    Name = "Bob",
+                    Name = UtilityMethods.GenerateName("Bob"),
                     Age = 45,
                     CreationTime = currTime,
                     EpochDate2 = currTime,
@@ -378,8 +385,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 // Scan
                 storedEmployee = (await context.ScanAsync<AnnotatedNumericEpochEmployee>(
-                    new List<ScanCondition>(),
-                    new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc })
+                    new List<ScanCondition> { new ScanCondition("Name", ScanOperator.Equal, employee.Name) },
+                    new ScanConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc, ConsistentRead = true })
                     .GetRemainingAsync())
                     .First();
                 Assert.NotNull(storedEmployee);

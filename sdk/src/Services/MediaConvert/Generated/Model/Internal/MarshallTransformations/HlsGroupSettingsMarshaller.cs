@@ -176,6 +176,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetImageBasedTrickPlayVariants())
+            {
+                context.Writer.WritePropertyName("imageBasedTrickPlayVariants");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectImageBasedTrickPlayVariantsListValue in requestObject.ImageBasedTrickPlayVariants)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = HlsImageBasedTrickPlayVariantMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImageBasedTrickPlayVariantsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetManifestCompression())
             {
                 context.Writer.WritePropertyName("manifestCompression");

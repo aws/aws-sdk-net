@@ -36,8 +36,8 @@ namespace Amazon.ConnectParticipant.Model
     /// 
     ///  
     /// <para>
-    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Amazon
-    /// Connect Chat security best practices</a>.
+    /// For security recommendations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+    /// Customer Chat security best practices</a>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>

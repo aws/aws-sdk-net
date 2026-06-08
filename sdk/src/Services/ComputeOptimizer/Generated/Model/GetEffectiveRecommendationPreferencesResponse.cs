@@ -123,7 +123,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// To validate that the preference is applied to your last generated set of recommendations,
         /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
-        /// GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// GetAutoScalingGroupRecommendations, GetEC2InstanceRecommendations, GetEBSVolumeRecommendations,
+        /// GetECSServiceRecommendations, or GetRDSDatabaseRecommendations actions.
         /// </para>
         /// </summary>
         public LookBackPeriodPreference LookBackPeriod

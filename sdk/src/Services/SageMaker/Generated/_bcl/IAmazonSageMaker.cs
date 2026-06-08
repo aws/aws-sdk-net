@@ -10031,6 +10031,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Describes the content, creation time, and security configuration of an Amazon SageMaker
         /// Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To retrieve only metadata about a model card without requiring <c>kms:Decrypt</c>
+        /// permission on the associated customer-managed Amazon Web Services KMS key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>. The default is <c>AllData</c>, which returns the full model
+        /// card <c>Content</c> and requires <c>kms:Decrypt</c> permission when a customer-managed
+        /// key is configured.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
         /// 
@@ -10046,6 +10056,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Describes the content, creation time, and security configuration of an Amazon SageMaker
         /// Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To retrieve only metadata about a model card without requiring <c>kms:Decrypt</c>
+        /// permission on the associated customer-managed Amazon Web Services KMS key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>. The default is <c>AllData</c>, which returns the full model
+        /// card <c>Content</c> and requires <c>kms:Decrypt</c> permission when a customer-managed
+        /// key is configured.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
         /// <param name="cancellationToken">
@@ -10140,7 +10160,10 @@ namespace Amazon.SageMaker
         /// <para>
         /// If you provided a KMS Key ID when you created your model package, you will see the
         /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
-        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API. To call this operation
+        /// without requiring <c>kms:Decrypt</c> permission on the customer-managed key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>; the response is returned with the embedded <c>ModelCard.ModelCardContent</c>
+        /// field sanitized.
         /// </para>
         ///  </important> 
         /// <para>
@@ -10164,7 +10187,10 @@ namespace Amazon.SageMaker
         /// <para>
         /// If you provided a KMS Key ID when you created your model package, you will see the
         /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
-        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API. To call this operation
+        /// without requiring <c>kms:Decrypt</c> permission on the customer-managed key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>; the response is returned with the embedded <c>ModelCard.ModelCardContent</c>
+        /// field sanitized.
         /// </para>
         ///  </important> 
         /// <para>

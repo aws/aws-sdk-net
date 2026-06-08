@@ -33,7 +33,7 @@ namespace Amazon.Macie2
     public partial class AmazonMacie2Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Macie2", "4.0.3.9");
+            InternalSDKUtils.BuildUserAgentString("Macie2", "4.0.4.1");
 
         private static readonly AmazonMacie2EndpointResolver EndpointResolver =
             new AmazonMacie2EndpointResolver();

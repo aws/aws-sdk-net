@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private SearchContactsAdditionalTimeRange _additionalTimeRange;
         private AgentHierarchyGroups _agentHierarchyGroups;
         private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AiAgentsCriteria _aiAgents;
         private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactAnalysis _contactAnalysis;
         private ControlPlaneTagFilter _contactTags;
@@ -129,6 +130,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAgentIds()
         {
             return this._agentIds != null && (this._agentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AiAgents. 
+        /// <para>
+        /// AI Agent search criteria definitions.
+        /// </para>
+        /// </summary>
+        public AiAgentsCriteria AiAgents
+        {
+            get { return this._aiAgents; }
+            set { this._aiAgents = value; }
+        }
+
+        // Check to see if AiAgents property is set
+        internal bool IsSetAiAgents()
+        {
+            return this._aiAgents != null;
         }
 
         /// <summary>

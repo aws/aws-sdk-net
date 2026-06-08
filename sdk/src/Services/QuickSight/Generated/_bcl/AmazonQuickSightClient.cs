@@ -347,6 +347,97 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  BatchDeleteKnowledgeBase
+
+
+        /// <summary>
+        /// Deletes one or more knowledge bases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteKnowledgeBase service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteKnowledgeBase">REST API Reference for BatchDeleteKnowledgeBase Operation</seealso>
+        public virtual BatchDeleteKnowledgeBaseResponse BatchDeleteKnowledgeBase(BatchDeleteKnowledgeBaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteKnowledgeBaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes one or more knowledge bases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteKnowledgeBase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDeleteKnowledgeBase">REST API Reference for BatchDeleteKnowledgeBase Operation</seealso>
+        public virtual Task<BatchDeleteKnowledgeBaseResponse> BatchDeleteKnowledgeBaseAsync(BatchDeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteKnowledgeBaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteTopicReviewedAnswer
 
 
@@ -5655,6 +5746,109 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteKnowledgeBase
+
+
+        /// <summary>
+        /// Deletes a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
+        public virtual DeleteKnowledgeBaseResponse DeleteKnowledgeBase(DeleteKnowledgeBaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKnowledgeBaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteKnowledgeBase">REST API Reference for DeleteKnowledgeBase Operation</seealso>
+        public virtual Task<DeleteKnowledgeBaseResponse> DeleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteNamespace
 
 
@@ -10845,6 +11039,200 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeKnowledgeBase
+
+
+        /// <summary>
+        /// Describes a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBase service method.</param>
+        /// 
+        /// <returns>The response from the DescribeKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBase">REST API Reference for DescribeKnowledgeBase Operation</seealso>
+        public virtual DescribeKnowledgeBaseResponse DescribeKnowledgeBase(DescribeKnowledgeBaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeKnowledgeBaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBase">REST API Reference for DescribeKnowledgeBase Operation</seealso>
+        public virtual Task<DescribeKnowledgeBaseResponse> DescribeKnowledgeBaseAsync(DescribeKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKnowledgeBaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeKnowledgeBasePermissions
+
+
+        /// <summary>
+        /// Describes the resource permissions for a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBasePermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeKnowledgeBasePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBasePermissions">REST API Reference for DescribeKnowledgeBasePermissions Operation</seealso>
+        public virtual DescribeKnowledgeBasePermissionsResponse DescribeKnowledgeBasePermissions(DescribeKnowledgeBasePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeKnowledgeBasePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKnowledgeBasePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeKnowledgeBasePermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the resource permissions for a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKnowledgeBasePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKnowledgeBasePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKnowledgeBasePermissions">REST API Reference for DescribeKnowledgeBasePermissions Operation</seealso>
+        public virtual Task<DescribeKnowledgeBasePermissionsResponse> DescribeKnowledgeBasePermissionsAsync(DescribeKnowledgeBasePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeKnowledgeBasePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeKnowledgeBasePermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeKnowledgeBasePermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeNamespace
 
 
@@ -15922,6 +16310,91 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListKnowledgeBases
+
+
+        /// <summary>
+        /// Lists all knowledge bases in an Amazon QuickSight account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
+        /// 
+        /// <returns>The response from the ListKnowledgeBases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
+        public virtual ListKnowledgeBasesResponse ListKnowledgeBases(ListKnowledgeBasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListKnowledgeBasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all knowledge bases in an Amazon QuickSight account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKnowledgeBases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListKnowledgeBases">REST API Reference for ListKnowledgeBases Operation</seealso>
+        public virtual Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(ListKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListKnowledgeBasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListKnowledgeBasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListNamespaces
 
 
@@ -17575,6 +18048,91 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListUsersIndexCapacity
+
+
+        /// <summary>
+        /// Lists per-user index capacity consumption for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersIndexCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListUsersIndexCapacity service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsersIndexCapacity">REST API Reference for ListUsersIndexCapacity Operation</seealso>
+        public virtual ListUsersIndexCapacityResponse ListUsersIndexCapacity(ListUsersIndexCapacityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUsersIndexCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersIndexCapacityResponseUnmarshaller.Instance;
+
+            return Invoke<ListUsersIndexCapacityResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists per-user index capacity consumption for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUsersIndexCapacity service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListUsersIndexCapacity service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsersIndexCapacity">REST API Reference for ListUsersIndexCapacity Operation</seealso>
+        public virtual Task<ListUsersIndexCapacityResponse> ListUsersIndexCapacityAsync(ListUsersIndexCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUsersIndexCapacityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUsersIndexCapacityResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListUsersIndexCapacityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVPCConnections
 
 
@@ -18867,6 +19425,95 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = SearchGroupsResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchKnowledgeBases
+
+
+        /// <summary>
+        /// Searches for a subset of knowledge bases based on specified filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchKnowledgeBases service method.</param>
+        /// 
+        /// <returns>The response from the SearchKnowledgeBases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchKnowledgeBases">REST API Reference for SearchKnowledgeBases Operation</seealso>
+        public virtual SearchKnowledgeBasesResponse SearchKnowledgeBases(SearchKnowledgeBasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchKnowledgeBasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchKnowledgeBasesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchKnowledgeBasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for a subset of knowledge bases based on specified filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchKnowledgeBases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchKnowledgeBases service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchKnowledgeBases">REST API Reference for SearchKnowledgeBases Operation</seealso>
+        public virtual Task<SearchKnowledgeBasesResponse> SearchKnowledgeBasesAsync(SearchKnowledgeBasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchKnowledgeBasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchKnowledgeBasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchKnowledgeBasesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -23297,6 +23944,109 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateKeyRegistrationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateKeyRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateKnowledgeBasePermissions
+
+
+        /// <summary>
+        /// Updates the resource permissions for a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBasePermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKnowledgeBasePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBasePermissions">REST API Reference for UpdateKnowledgeBasePermissions Operation</seealso>
+        public virtual UpdateKnowledgeBasePermissionsResponse UpdateKnowledgeBasePermissions(UpdateKnowledgeBasePermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateKnowledgeBasePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKnowledgeBasePermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateKnowledgeBasePermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the resource permissions for a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBasePermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKnowledgeBasePermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBasePermissions">REST API Reference for UpdateKnowledgeBasePermissions Operation</seealso>
+        public virtual Task<UpdateKnowledgeBasePermissionsResponse> UpdateKnowledgeBasePermissionsAsync(UpdateKnowledgeBasePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateKnowledgeBasePermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKnowledgeBasePermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateKnowledgeBasePermissionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

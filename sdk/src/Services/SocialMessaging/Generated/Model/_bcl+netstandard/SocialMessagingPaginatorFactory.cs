@@ -45,6 +45,22 @@ namespace Amazon.SocialMessaging.Model
         }
 
         /// <summary>
+        /// Paginator for ListWhatsAppFlowAssets operation
+        ///</summary>
+        public IListWhatsAppFlowAssetsPaginator ListWhatsAppFlowAssets(ListWhatsAppFlowAssetsRequest request) 
+        {
+            return new ListWhatsAppFlowAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWhatsAppFlows operation
+        ///</summary>
+        public IListWhatsAppFlowsPaginator ListWhatsAppFlows(ListWhatsAppFlowsRequest request) 
+        {
+            return new ListWhatsAppFlowsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListWhatsAppMessageTemplates operation
         ///</summary>
         public IListWhatsAppMessageTemplatesPaginator ListWhatsAppMessageTemplates(ListWhatsAppMessageTemplatesRequest request) 

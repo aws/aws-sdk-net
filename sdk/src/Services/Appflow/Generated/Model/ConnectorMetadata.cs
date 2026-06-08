@@ -79,7 +79,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property CustomerProfiles. 
         /// <para>
-        ///  The connector metadata specific to Amazon Connect Customer Profiles. 
+        ///  The connector metadata specific to Connect Customer Customer Profiles. 
         /// </para>
         /// </summary>
         public CustomerProfilesMetadata CustomerProfiles

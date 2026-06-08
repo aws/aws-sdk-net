@@ -1324,9 +1324,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         private async Task TestSelectCountOnQueryHelper(ITable hashTable)
         {
+            var id = UtilityMethods.GenerateId();
             await hashTable.PutItemAsync(new Document
             {
-                ["Id"] = 1,
+                ["Id"] = id,
                 ["Data"] = Guid.NewGuid().ToString()
             });
 
@@ -1335,9 +1336,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 KeyExpression = new Expression
                 {
                     ExpressionStatement = "Id = :id",
-                    ExpressionAttributeValues = { [":id"] = 1 }
+                    ExpressionAttributeValues = { [":id"] = id }
                 },
-                Select = SelectValues.Count
+                Select = SelectValues.Count,
+                ConsistentRead = true
             });
 
             var docs = await search.GetRemainingAsync();

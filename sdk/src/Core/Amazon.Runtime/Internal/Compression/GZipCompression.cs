@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System;
 using System.IO;
 using System.IO.Compression;
 
@@ -41,6 +42,34 @@ namespace Amazon.Runtime.Internal.Compression
                 return outputStream.ToArray();
             }
         }
+
+#if !NETFRAMEWORK
+        /// <inheritdoc/>
+        public byte[] Compress(ReadOnlyMemory<byte> content)
+        {
+            using (var outputStream = new MemoryStream())
+            {
+                using (var gzip = new GZipStream(outputStream, CompressionMode.Compress))
+                {
+#if NET8_0_OR_GREATER
+                    gzip.Write(content.Span);
+#else
+                    if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(content, out var segment))
+                    {
+                        gzip.Write(segment.Array, segment.Offset, segment.Count);
+                    }
+                    else
+                    {
+                        var array = content.ToArray();
+                        gzip.Write(array, 0, array.Length);
+                    }
+#endif
+                    gzip.Close();
+                }
+                return outputStream.ToArray();
+            }
+        }
+#endif
 
         /// <inheritdoc/>
         public Stream GetCompressionStream(Stream inputStream)

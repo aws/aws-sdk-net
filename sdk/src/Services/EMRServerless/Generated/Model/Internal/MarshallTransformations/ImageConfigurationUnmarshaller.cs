@@ -56,6 +56,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("applicationLevelDigestResolution", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationLevelDigestResolution = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("imageUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

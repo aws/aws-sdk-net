@@ -200,6 +200,12 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxBor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("maxNonSsoSessionMinutes", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxNonSsoSessionMinutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("maxTtl", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;

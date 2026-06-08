@@ -13,8 +13,10 @@
 * permissions and limitations under the License.
 */
 
+using Amazon.Auth.AccessControlPolicy;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry.Tracing;
@@ -112,7 +114,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="changedAttributesOnly">If true, only attributes that have been changed will be in the map.</param>
         /// <returns></returns>
         Dictionary<string, AttributeValueUpdate> ToAttributeUpdateMap(Document doc, bool changedAttributesOnly);
-
 
         #endregion
 
@@ -1205,7 +1206,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return doc.ToAttributeUpdateMap(this.Conversion, changedAttributesOnly, this.StoreAsEpoch, this.StoreAsEpochLong, this.IsEmptyStringValueEnabled);
         }
 
-
         #endregion
 
         #region PutItem
@@ -1402,14 +1402,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region UpdateItem
 
-        internal Document UpdateHelper(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config,
-            HashSet<string> ifNotExistAttributeNames = null)
-        {
-            Key key = (hashKey != null || rangeKey != null) ? MakeKey(hashKey, rangeKey) : MakeKey(doc);
-            return UpdateHelper(doc, key, config, null, ifNotExistAttributeNames);
-        }
-
-
         internal Document UpdateHelper(UpdateItemDocumentOperationRequest request)
         {
             var pipeline = new UpdateItemPipeline(this);
@@ -1421,6 +1413,98 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             var pipeline = new UpdateItemPipeline(this);
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        internal Document UpdateHelper(Document doc, ReturnValues returnValues, Expression conditionExpression,
+            UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames = null)
+        {
+            var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
+            var pipeline = new UpdateItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> UpdateHelperAsync(Document doc, ReturnValues returnValues, Expression conditionExpression,
+            UpdateExpression updateExpression, CancellationToken cancellationToken, HashSet<string> ifNotExistAttributeNames = null)
+        {
+            var request = CreateUpdateItemDocumentOperationRequest(doc, returnValues, conditionExpression, updateExpression, ifNotExistAttributeNames);
+            var pipeline = new UpdateItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        private InternalUpdateItemDocumentOperationRequest CreateUpdateItemDocumentOperationRequest(Document doc, ReturnValues returnValues,
+            Expression conditionExpression, UpdateExpression updateExpression, HashSet<string> ifNotExistAttributeNames)
+        {
+            bool haveKeysChanged = HaveKeysChanged(doc);
+            bool updateChangedAttributesOnly = !haveKeysChanged;
+
+            var docUpdate = this.ToUpdateExpression(doc, updateExpression, updateChangedAttributesOnly,
+                ifNotExistAttributeNames);
+            
+            return new InternalUpdateItemDocumentOperationRequest
+            {
+                Key = this.MakeKey(doc),
+                UpdateExpression = docUpdate,
+                ConditionalExpression = conditionExpression,
+                ReturnValues = returnValues
+            };
+        }
+
+        private UpdateExpression ToUpdateExpression(Document doc, UpdateExpression updateExpression, bool updateChangedAttributesOnly, HashSet<string> ifNotExistAttributeNames)
+        {
+            if (updateExpression == null)
+            {
+                updateExpression = new UpdateExpression();
+            }
+
+            int attributeCount = 0;
+            var keyNames = new HashSet<string>(this.KeyNames, StringComparer.Ordinal);
+
+            foreach (var kvp in this.ToAttributeUpdateMap(doc, updateChangedAttributesOnly))
+            {
+                var attributeName = kvp.Key;
+                if (keyNames.Contains(attributeName))
+                    continue;
+
+                if (updateExpression.ExpressionAttributeNames != null &&
+                    updateExpression.ExpressionAttributeNames.Values.Contains(attributeName))
+                {
+                    continue;
+                }
+
+                var update = kvp.Value;
+                var createOnly = ifNotExistAttributeNames?.Contains(attributeName) ?? false;
+
+                string variableName = Common.GetVariableName(ref attributeCount);
+                var attributeReference = Common.GetAttributeReference(variableName);
+                var attributeValueReference = Common.GetAttributeValueReference(variableName);
+
+                if (update.Action == AttributeAction.DELETE)
+                {
+                    if (!createOnly)
+                    {
+                        updateExpression.AddStatement(UpdateExpression.OperationRemove, attributeReference);
+                        if (updateExpression.ExpressionAttributeNames != null)
+                            updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                    }
+                }
+                else
+                {
+                    string statement;
+                    if (createOnly)
+                    {
+                        statement = $"{attributeReference} = if_not_exists({attributeReference}, {attributeValueReference})";
+                    }
+                    else
+                    {
+                        statement = $"{attributeReference} = {attributeValueReference}";
+                    }
+                    updateExpression.AddStatement(UpdateExpression.OperationSet, statement);
+                    if (updateExpression.ExpressionAttributeNames != null)
+                        updateExpression.ExpressionAttributeNames[attributeReference] = attributeName;
+                    updateExpression.AttributeValues[attributeValueReference] = update.Value;
+                }               
+            }
+            return updateExpression;
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression, HashSet<string> ifNotExistAttributeNames = null)

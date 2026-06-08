@@ -86,6 +86,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("hdrMetadata", targetDepth))
+                {
+                    var unmarshaller = HdrMetadataUnmarshaller.Instance;
+                    unmarshalledObject.HdrMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("height", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -96,6 +102,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MatrixCoefficients = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("rotation", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Rotation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transferCharacteristics", targetDepth))

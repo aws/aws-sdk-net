@@ -82,10 +82,10 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of objects that you want to return with this call.
+        /// The maximum number of results to return in the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
         {
             get { return this._maxResults; }

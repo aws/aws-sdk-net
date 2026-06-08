@@ -62,6 +62,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScanModeState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("vmScannerState", targetDepth))
+                {
+                    var unmarshaller = VMScannerStateUnmarshaller.Instance;
+                    unmarshalledObject.VmScannerState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -207,6 +207,23 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>Calculated checksum for the given request</returns>
         private static string CalculateChecksumForRequest(HashAlgorithm algorithm, IRequest request)
         {
+#if !NETFRAMEWORK
+            if (request.ContentStream is PooledContentStream pooledStream)
+            {
+                var memory = pooledStream.Content;
+                if (System.Runtime.InteropServices.MemoryMarshal.TryGetArray(memory, out var segment))
+                {
+                    var checksumBytes = algorithm.ComputeHash(segment.Array, segment.Offset, segment.Count);
+                    return Convert.ToBase64String(checksumBytes);
+                }
+                else
+                {
+                    var checksumBytes = algorithm.ComputeHash(memory.ToArray());
+                    return Convert.ToBase64String(checksumBytes);
+                }
+            }
+            else
+#endif
             if (request.ContentStream != null)
             {
                 var seekableStream = WrapperStream.SearchWrappedStream(request.ContentStream, s => s.CanSeek);
