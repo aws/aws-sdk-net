@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Optimize AWSSDKUtils.UrlEncode with lookup tables and net8 SIMD fast path"
+    ]
+  }
+}
