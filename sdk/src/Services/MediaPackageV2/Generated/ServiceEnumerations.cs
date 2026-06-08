@@ -349,6 +349,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type DashAudioTimelinePattern.
+    /// </summary>
+    public class DashAudioTimelinePattern : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for DashAudioTimelinePattern
+        /// </summary>
+        public static readonly DashAudioTimelinePattern NONE = new DashAudioTimelinePattern("NONE");
+        /// <summary>
+        /// Constant PATTERNED for DashAudioTimelinePattern
+        /// </summary>
+        public static readonly DashAudioTimelinePattern PATTERNED = new DashAudioTimelinePattern("PATTERNED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DashAudioTimelinePattern(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashAudioTimelinePattern FindValue(string value)
+        {
+            return FindValue<DashAudioTimelinePattern>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashAudioTimelinePattern(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DashCompactness.
     /// </summary>
     public class DashCompactness : ConstantClass
@@ -1255,9 +1305,17 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ScteFilter BREAK = new ScteFilter("BREAK");
         /// <summary>
+        /// Constant CALL_AD_SERVER for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CALL_AD_SERVER = new ScteFilter("CALL_AD_SERVER");
+        /// <summary>
         /// Constant CHAPTER for ScteFilter
         /// </summary>
         public static readonly ScteFilter CHAPTER = new ScteFilter("CHAPTER");
+        /// <summary>
+        /// Constant CONTENT_IDENTIFICATION for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CONTENT_IDENTIFICATION = new ScteFilter("CONTENT_IDENTIFICATION");
         /// <summary>
         /// Constant DISTRIBUTOR_AD_BLOCK for ScteFilter
         /// </summary>

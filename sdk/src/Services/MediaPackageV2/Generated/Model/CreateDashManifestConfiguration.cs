@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class CreateDashManifestConfiguration
     {
+        private DashAudioTimelinePattern _audioTimelinePattern;
         private DashAvailabilityStartTimeConfiguration _availabilityStartTimeConfiguration;
         private List<DashBaseUrl> _baseUrls = AWSConfigs.InitializeCollections ? new List<DashBaseUrl>() : null;
         private DashCompactness _compactness;
@@ -53,6 +54,38 @@ namespace Amazon.MediaPackageV2.Model
         private int? _suggestedPresentationDelaySeconds;
         private UriPathType _uriPathType;
         private DashUtcTiming _utcTiming;
+
+        /// <summary>
+        /// Gets and sets the property AudioTimelinePattern. 
+        /// <para>
+        /// How MediaPackage represents the audio timeline in the DASH manifest. This setting
+        /// applies DASH Segment Duration Patternization, as defined in the MPEG-DASH specification,
+        /// to audio adaptation sets. When set to <c>PATTERNED</c>, MediaPackage uses a pattern-based
+        /// segment template for audio, which reduces manifest size by expressing repeating segment
+        /// durations as a pattern instead of listing each segment individually. When set to <c>NONE</c>,
+        /// the manifest contains an explicit timeline that lists each audio segment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>NONE</c> | <c>PATTERNED</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about audio timeline patterns, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-audio-timeline-pattern.html">DASH
+        /// audio timeline pattern</a> in the <i>Elemental MediaPackage v2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DashAudioTimelinePattern AudioTimelinePattern
+        {
+            get { return this._audioTimelinePattern; }
+            set { this._audioTimelinePattern = value; }
+        }
+
+        // Check to see if AudioTimelinePattern property is set
+        internal bool IsSetAudioTimelinePattern()
+        {
+            return this._audioTimelinePattern != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityStartTimeConfiguration. 
