@@ -35,18 +35,18 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IdleUtilizationMetric Object
+    /// Response Unmarshaller for IdleDimension Object
     /// </summary>  
-    public class IdleUtilizationMetricUnmarshaller : ICborUnmarshaller<IdleUtilizationMetric, CborUnmarshallerContext>
+    public class IdleDimensionUnmarshaller : ICborUnmarshaller<IdleDimension, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public IdleUtilizationMetric Unmarshall(CborUnmarshallerContext context)
+        public IdleDimension Unmarshall(CborUnmarshallerContext context)
         {
-            IdleUtilizationMetric unmarshalledObject = new IdleUtilizationMetric();
+            IdleDimension unmarshalledObject = new IdleDimension();
             if (context.IsEmptyResponse)
                 return null;
             var reader = context.Reader;
@@ -62,35 +62,19 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "dimensions":
+                    case "key":
                         {
-                            context.AddPathSegment("Dimensions");
-                            var unmarshaller = new CborListUnmarshaller<IdleDimension, IdleDimensionUnmarshaller>(IdleDimensionUnmarshaller.Instance);
-                            unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "name":
-                        {
-                            context.AddPathSegment("Name");
+                            context.AddPathSegment("Key");
                             var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }
-                    case "statistic":
+                    case "values":
                         {
-                            context.AddPathSegment("Statistic");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.Statistic = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "value":
-                        {
-                            context.AddPathSegment("Value");
-                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
-                            unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                            context.AddPathSegment("Values");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.Values = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }
@@ -104,12 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
         }
 
 
-        private static IdleUtilizationMetricUnmarshaller _instance = new IdleUtilizationMetricUnmarshaller();        
+        private static IdleDimensionUnmarshaller _instance = new IdleDimensionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IdleUtilizationMetricUnmarshaller Instance
+        public static IdleDimensionUnmarshaller Instance
         {
             get
             {

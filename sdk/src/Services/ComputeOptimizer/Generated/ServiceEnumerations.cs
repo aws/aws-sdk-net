@@ -1761,13 +1761,37 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsActiveConnectionCountMaximum = new ExportableIdleField("UtilizationMetricsActiveConnectionCountMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsCacheHitsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsCacheHitsSum = new ExportableIdleField("UtilizationMetricsCacheHitsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsCacheMissesSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsCacheMissesSum = new ExportableIdleField("UtilizationMetricsCacheMissesSum");
+        /// <summary>
+        /// Constant UtilizationMetricsConsumedReadCapacityUnitsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsConsumedReadCapacityUnitsSum = new ExportableIdleField("UtilizationMetricsConsumedReadCapacityUnitsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsConsumedWriteCapacityUnitsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsConsumedWriteCapacityUnitsSum = new ExportableIdleField("UtilizationMetricsConsumedWriteCapacityUnitsSum");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsCpuMaximum = new ExportableIdleField("UtilizationMetricsCpuMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsCurrConnectionsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsCurrConnectionsSum = new ExportableIdleField("UtilizationMetricsCurrConnectionsSum");
+        /// <summary>
         /// Constant UtilizationMetricsDatabaseConnectionsMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsDatabaseConnectionsMaximum = new ExportableIdleField("UtilizationMetricsDatabaseConnectionsMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsDatabaseConnectionsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsDatabaseConnectionsSum = new ExportableIdleField("UtilizationMetricsDatabaseConnectionsSum");
         /// <summary>
         /// Constant UtilizationMetricsEBSVolumeReadIOPSMaximum for ExportableIdleField
         /// </summary>
@@ -1776,6 +1800,34 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsEBSVolumeWriteIOPSMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsEBSVolumeWriteIOPSMaximum = new ExportableIdleField("UtilizationMetricsEBSVolumeWriteIOPSMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsElastiCacheProcessingUnitsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsElastiCacheProcessingUnitsSum = new ExportableIdleField("UtilizationMetricsElastiCacheProcessingUnitsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsEngineCPUUtilizationMaximum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsEngineCPUUtilizationMaximum = new ExportableIdleField("UtilizationMetricsEngineCPUUtilizationMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsGetTypeCmdsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsGetTypeCmdsSum = new ExportableIdleField("UtilizationMetricsGetTypeCmdsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsInvocationsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsInvocationsSum = new ExportableIdleField("UtilizationMetricsInvocationsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsIsIdleMinimum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsIsIdleMinimum = new ExportableIdleField("UtilizationMetricsIsIdleMinimum");
+        /// <summary>
+        /// Constant UtilizationMetricsKeyspaceHitsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsKeyspaceHitsSum = new ExportableIdleField("UtilizationMetricsKeyspaceHitsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsKeyspaceMissesSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsKeyspaceMissesSum = new ExportableIdleField("UtilizationMetricsKeyspaceMissesSum");
         /// <summary>
         /// Constant UtilizationMetricsMemoryMaximum for ExportableIdleField
         /// </summary>
@@ -1789,6 +1841,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsNetworkOutBytesPerSecondMaximum = new ExportableIdleField("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
         /// <summary>
+        /// Constant UtilizationMetricsNewConnectionsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsNewConnectionsSum = new ExportableIdleField("UtilizationMetricsNewConnectionsSum");
+        /// <summary>
         /// Constant UtilizationMetricsPacketsInFromDestinationMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsPacketsInFromDestinationMaximum = new ExportableIdleField("UtilizationMetricsPacketsInFromDestinationMaximum");
@@ -1796,6 +1852,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsPacketsInFromSourceMaximum for ExportableIdleField
         /// </summary>
         public static readonly ExportableIdleField UtilizationMetricsPacketsInFromSourceMaximum = new ExportableIdleField("UtilizationMetricsPacketsInFromSourceMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsSetTypeCmdsSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsSetTypeCmdsSum = new ExportableIdleField("UtilizationMetricsSetTypeCmdsSum");
+        /// <summary>
+        /// Constant UtilizationMetricsUserConnectedSum for ExportableIdleField
+        /// </summary>
+        public static readonly ExportableIdleField UtilizationMetricsUserConnectedSum = new ExportableIdleField("UtilizationMetricsUserConnectedSum");
         /// <summary>
         /// Constant UtilizationMetricsVolumeReadOpsPerSecondMaximum for ExportableIdleField
         /// </summary>
@@ -3481,9 +3545,33 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly IdleMetricName ActiveConnectionCount = new IdleMetricName("ActiveConnectionCount");
         /// <summary>
+        /// Constant CacheHits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName CacheHits = new IdleMetricName("CacheHits");
+        /// <summary>
+        /// Constant CacheMisses for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName CacheMisses = new IdleMetricName("CacheMisses");
+        /// <summary>
+        /// Constant ConsumedChangeDataCaptureUnits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName ConsumedChangeDataCaptureUnits = new IdleMetricName("ConsumedChangeDataCaptureUnits");
+        /// <summary>
+        /// Constant ConsumedReadCapacityUnits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName ConsumedReadCapacityUnits = new IdleMetricName("ConsumedReadCapacityUnits");
+        /// <summary>
+        /// Constant ConsumedWriteCapacityUnits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName ConsumedWriteCapacityUnits = new IdleMetricName("ConsumedWriteCapacityUnits");
+        /// <summary>
         /// Constant CPU for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName CPU = new IdleMetricName("CPU");
+        /// <summary>
+        /// Constant CurrConnections for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName CurrConnections = new IdleMetricName("CurrConnections");
         /// <summary>
         /// Constant DatabaseConnections for IdleMetricName
         /// </summary>
@@ -3497,6 +3585,34 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly IdleMetricName EBSVolumeWriteIOPS = new IdleMetricName("EBSVolumeWriteIOPS");
         /// <summary>
+        /// Constant ElastiCacheProcessingUnits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName ElastiCacheProcessingUnits = new IdleMetricName("ElastiCacheProcessingUnits");
+        /// <summary>
+        /// Constant EngineCPUUtilization for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName EngineCPUUtilization = new IdleMetricName("EngineCPUUtilization");
+        /// <summary>
+        /// Constant GetTypeCmds for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName GetTypeCmds = new IdleMetricName("GetTypeCmds");
+        /// <summary>
+        /// Constant Invocations for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName Invocations = new IdleMetricName("Invocations");
+        /// <summary>
+        /// Constant IsIdle for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName IsIdle = new IdleMetricName("IsIdle");
+        /// <summary>
+        /// Constant KeyspaceHits for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName KeyspaceHits = new IdleMetricName("KeyspaceHits");
+        /// <summary>
+        /// Constant KeyspaceMisses for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName KeyspaceMisses = new IdleMetricName("KeyspaceMisses");
+        /// <summary>
         /// Constant Memory for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName Memory = new IdleMetricName("Memory");
@@ -3509,6 +3625,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly IdleMetricName NetworkOutBytesPerSecond = new IdleMetricName("NetworkOutBytesPerSecond");
         /// <summary>
+        /// Constant NewConnections for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName NewConnections = new IdleMetricName("NewConnections");
+        /// <summary>
         /// Constant PacketsInFromDestination for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName PacketsInFromDestination = new IdleMetricName("PacketsInFromDestination");
@@ -3516,6 +3636,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant PacketsInFromSource for IdleMetricName
         /// </summary>
         public static readonly IdleMetricName PacketsInFromSource = new IdleMetricName("PacketsInFromSource");
+        /// <summary>
+        /// Constant SetTypeCmds for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName SetTypeCmds = new IdleMetricName("SetTypeCmds");
+        /// <summary>
+        /// Constant UserConnected for IdleMetricName
+        /// </summary>
+        public static readonly IdleMetricName UserConnected = new IdleMetricName("UserConnected");
         /// <summary>
         /// Constant VolumeReadOpsPerSecond for IdleMetricName
         /// </summary>
@@ -3621,6 +3749,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly IdleRecommendationResourceType AutoScalingGroup = new IdleRecommendationResourceType("AutoScalingGroup");
         /// <summary>
+        /// Constant DocumentDBCluster for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType DocumentDBCluster = new IdleRecommendationResourceType("DocumentDBCluster");
+        /// <summary>
+        /// Constant DynamoDBTable for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType DynamoDBTable = new IdleRecommendationResourceType("DynamoDBTable");
+        /// <summary>
         /// Constant EBSVolume for IdleRecommendationResourceType
         /// </summary>
         public static readonly IdleRecommendationResourceType EBSVolume = new IdleRecommendationResourceType("EBSVolume");
@@ -3633,6 +3769,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly IdleRecommendationResourceType ECSService = new IdleRecommendationResourceType("ECSService");
         /// <summary>
+        /// Constant ElastiCacheCluster for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType ElastiCacheCluster = new IdleRecommendationResourceType("ElastiCacheCluster");
+        /// <summary>
+        /// Constant MemoryDBCluster for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType MemoryDBCluster = new IdleRecommendationResourceType("MemoryDBCluster");
+        /// <summary>
         /// Constant NatGateway for IdleRecommendationResourceType
         /// </summary>
         public static readonly IdleRecommendationResourceType NatGateway = new IdleRecommendationResourceType("NatGateway");
@@ -3640,6 +3784,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RDSDBInstance for IdleRecommendationResourceType
         /// </summary>
         public static readonly IdleRecommendationResourceType RDSDBInstance = new IdleRecommendationResourceType("RDSDBInstance");
+        /// <summary>
+        /// Constant SageMakerEndpoint for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType SageMakerEndpoint = new IdleRecommendationResourceType("SageMakerEndpoint");
+        /// <summary>
+        /// Constant WorkSpaces for IdleRecommendationResourceType
+        /// </summary>
+        public static readonly IdleRecommendationResourceType WorkSpaces = new IdleRecommendationResourceType("WorkSpaces");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6189,6 +6341,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RecommendationSourceType AutoScalingGroup = new RecommendationSourceType("AutoScalingGroup");
         /// <summary>
+        /// Constant DocumentDBCluster for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType DocumentDBCluster = new RecommendationSourceType("DocumentDBCluster");
+        /// <summary>
+        /// Constant DynamoDBTable for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType DynamoDBTable = new RecommendationSourceType("DynamoDBTable");
+        /// <summary>
         /// Constant EbsVolume for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType EbsVolume = new RecommendationSourceType("EbsVolume");
@@ -6201,6 +6361,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly RecommendationSourceType EcsService = new RecommendationSourceType("EcsService");
         /// <summary>
+        /// Constant ElastiCacheCluster for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType ElastiCacheCluster = new RecommendationSourceType("ElastiCacheCluster");
+        /// <summary>
         /// Constant LambdaFunction for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType LambdaFunction = new RecommendationSourceType("LambdaFunction");
@@ -6208,6 +6372,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant License for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType License = new RecommendationSourceType("License");
+        /// <summary>
+        /// Constant MemoryDBCluster for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType MemoryDBCluster = new RecommendationSourceType("MemoryDBCluster");
         /// <summary>
         /// Constant NatGateway for RecommendationSourceType
         /// </summary>
@@ -6220,6 +6388,14 @@ namespace Amazon.ComputeOptimizer
         /// Constant RdsDBInstanceStorage for RecommendationSourceType
         /// </summary>
         public static readonly RecommendationSourceType RdsDBInstanceStorage = new RecommendationSourceType("RdsDBInstanceStorage");
+        /// <summary>
+        /// Constant SageMakerEndpoint for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType SageMakerEndpoint = new RecommendationSourceType("SageMakerEndpoint");
+        /// <summary>
+        /// Constant WorkSpaces for RecommendationSourceType
+        /// </summary>
+        public static readonly RecommendationSourceType WorkSpaces = new RecommendationSourceType("WorkSpaces");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
