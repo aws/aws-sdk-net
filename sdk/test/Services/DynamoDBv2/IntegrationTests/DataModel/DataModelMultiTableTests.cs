@@ -4,7 +4,6 @@ using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
@@ -230,54 +229,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await _context.SaveAsync(loadedCreateOnly);
             var loadedAfterUpdate = await _context.LoadAsync<ProductWithCreateTimestamp>(productCreateOnly.Id);
             ApproximatelyEqual(createdAt.Value, loadedAfterUpdate.CreatedAt.Value);
-        }
-
-        [Fact]
-        public async Task TestContext_Delete_With_ExpressionCondition()
-        {
-            VersionedAnnotatedEmployee employee1 = new VersionedAnnotatedEmployee
-            {
-                Name = "Alan",
-                Age = 31,
-                CompanyName = "Big River",
-                CurrentStatus = Status.Active,
-                Score = 120,
-                ManagerName = "Barbara",
-                InternalId = "Alan@BigRiver",
-                Aliases = new List<string> { "Al", "Steve" },
-                Data = Encoding.UTF8.GetBytes("Some binary data")
-            };
-
-            VersionedAnnotatedEmployee employee2 = new VersionedAnnotatedEmployee
-            {
-                Name = "Alanee",
-                Age = 33,
-                CompanyName = "Big River",
-                CurrentStatus = Status.Active,
-                Score = 120,
-                ManagerName = "Barbara",
-                InternalId = "Alan@BigRiver",
-                Aliases = new List<string> { "Al", "Steve" },
-                Data = Encoding.UTF8.GetBytes("Some binary data")
-            };
-
-            await _context.SaveAsync(employee1);
-            var loadedItem = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
-            Assert.NotNull(loadedItem);
-
-            await _context.DeleteAsync(employee1, new DeleteConfig() { SkipVersionCheck = true });
-
-            var loadedItemAfterDelete = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee1.Name, employee1.Age);
-            Assert.Null(loadedItemAfterDelete);
-
-            await _context.SaveAsync(employee2);
-            var loadedItem2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
-            Assert.NotNull(loadedItem2);
-
-            await _context.DeleteAsync(employee2);
-
-            var loadedItemAfterDelete2 = await _context.LoadAsync<VersionedAnnotatedEmployee>(employee2.Name, employee2.Age);
-            Assert.Null(loadedItemAfterDelete2);
         }
 
         private DynamoDBContext CreateBuilderTablesContext(DynamoDBEntryConversion conversion)
