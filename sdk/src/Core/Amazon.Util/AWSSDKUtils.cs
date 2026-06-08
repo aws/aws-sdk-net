@@ -141,6 +141,63 @@ namespace Amazon.Util
             return sb.ToString();
         }
 
+        // Precomputed ASCII membership table per (RFC scheme, isPath) combination, so UrlEncode can test
+        // each byte with an O(1) lookup instead of scanning the character set string. Declared after
+        // ValidPathCharacters so it is initialized first (static fields initialize in textual order).
+        private static readonly bool[] _urlEncodeLookup3986 = BuildUrlEncodeLookup(ValidUrlCharacters, false);
+        private static readonly bool[] _urlEncodeLookup3986Path = BuildUrlEncodeLookup(ValidUrlCharacters, true);
+        private static readonly bool[] _urlEncodeLookup1738 = BuildUrlEncodeLookup(ValidUrlCharactersRFC1738, false);
+        private static readonly bool[] _urlEncodeLookup1738Path = BuildUrlEncodeLookup(ValidUrlCharactersRFC1738, true);
+
+        private static bool[] BuildUrlEncodeLookup(string scheme, bool path)
+        {
+            var table = new bool[128];
+            foreach (var c in scheme)
+                if (c < 128) table[c] = true;
+            if (path)
+                foreach (var c in ValidPathCharacters)
+                    if (c < 128) table[c] = true;
+            return table;
+        }
+
+        private static bool[] GetUrlEncodeLookup(int rfcNumber, bool path)
+        {
+            // 1738 is the only alternative scheme; everything else (including unrecognised values) uses 3986.
+            if (rfcNumber == 1738)
+                return path ? _urlEncodeLookup1738Path : _urlEncodeLookup1738;
+            return path ? _urlEncodeLookup3986Path : _urlEncodeLookup3986;
+        }
+
+#if NET8_0_OR_GREATER
+        // SearchValues equivalents of the tables above, used by UrlEncode to vectorize the scan to the first
+        // byte that needs encoding via SIMD-accelerated IndexOfAnyExcept.
+        private static readonly SearchValues<byte> _urlEncodeSearchValues3986 = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharacters, false));
+        private static readonly SearchValues<byte> _urlEncodeSearchValues3986Path = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharacters, true));
+        private static readonly SearchValues<byte> _urlEncodeSearchValues1738 = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharactersRFC1738, false));
+        private static readonly SearchValues<byte> _urlEncodeSearchValues1738Path = SearchValues.Create(BuildUrlEncodeBytes(ValidUrlCharactersRFC1738, true));
+
+        private static byte[] BuildUrlEncodeBytes(string scheme, bool path)
+        {
+            var table = BuildUrlEncodeLookup(scheme, path);
+            var count = 0;
+            for (var i = 0; i < table.Length; i++)
+                if (table[i]) count++;
+
+            var bytes = new byte[count];
+            var index = 0;
+            for (var i = 0; i < table.Length; i++)
+                if (table[i]) bytes[index++] = (byte)i;
+            return bytes;
+        }
+
+        private static SearchValues<byte> GetUrlEncodeSearchValues(int rfcNumber, bool path)
+        {
+            if (rfcNumber == 1738)
+                return path ? _urlEncodeSearchValues1738Path : _urlEncodeSearchValues1738;
+            return path ? _urlEncodeSearchValues3986Path : _urlEncodeSearchValues3986;
+        }
+#endif
+
         /// <summary>
         /// The string representing Url Encoded Content in HTTP requests
         /// </summary>
@@ -1056,45 +1113,69 @@ namespace Amazon.Util
         [SkipLocalsInit]
         public static string UrlEncode(int rfcNumber, string data, bool path)
         {
+            // Return empty (never null) for null/empty input, since the loops below return the original
+            // reference unchanged when nothing needs encoding.
+            if (string.IsNullOrEmpty(data))
+                return string.Empty;
+
+            var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
+
             byte[] sharedDataBuffer = null;
             const int MaxStackLimit = 256;
             try
             {
-                if (!TryGetRFCEncodingSchemes(rfcNumber, out var validUrlCharacters))
-                    validUrlCharacters = ValidUrlCharacters;
-
-                var unreservedChars = string.Concat(validUrlCharacters, path ? ValidPathCharacters : string.Empty).AsSpan();
-
                 var dataAsSpan = data.AsSpan();
                 var encoding = Encoding.UTF8;
 
                 var dataByteLength = encoding.GetMaxByteCount(dataAsSpan.Length);
 
                 // The dataBuffer byte span will be used to store utf8 bytes of the data be encoded at the end and
-                // url encoded at the start of dataBuffer. As the utf8 bytes are iterated and percent encoded at the 
+                // url encoded at the start of dataBuffer. As the utf8 bytes are iterated and percent encoded at the
                 // beginning dataBuffer the utf8 bytes at the end will be overwritten by the percent encoding.
                 // The size of the dataBuffer needs to be 3 times the size utf8 max encoding to handle the worst
-                // case scenario of every character needing to be percent encoding taking 3 bytes. 
+                // case scenario of every character needing to be percent encoding taking 3 bytes.
                 var encodedByteLength = 3 * dataByteLength;
                 var dataBuffer = encodedByteLength <= MaxStackLimit
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
 
                 // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
-                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer 
+                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer
                 // for the encoded representation.
                 var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
                 var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
+                var encodingBytes = encodingBuffer.Slice(0, bytesWritten);
 
                 var index = 0;
-                foreach (var symbol in encodingBuffer.Slice(0, bytesWritten))
+                var startIndex = 0;
+
+#if NET8_0_OR_GREATER
+                // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
+                // the input, so return the original string - the common case for already-safe values.
+                var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
+                if (firstEncoded == -1)
+                    return data;
+
+                // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
+                if (firstEncoded > 0)
                 {
-                    if (unreservedChars.IndexOf((char)symbol) != -1)
+                    encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
+                    index = firstEncoded;
+                    startIndex = firstEncoded;
+                }
+#endif
+
+                var encoded = false;
+                for (var i = startIndex; i < encodingBytes.Length; i++)
+                {
+                    var symbol = encodingBytes[i];
+                    if (symbol < 128 && unreservedChars[symbol])
                     {
                         dataBuffer[index++] = symbol;
                     }
                     else
                     {
+                        encoded = true;
                         dataBuffer[index++] = (byte)'%';
 
                         // Break apart the byte into two four-bit components and
@@ -1105,6 +1186,11 @@ namespace Amazon.Util
                         dataBuffer[index++] = (byte)ToUpperHex(loNibble);
                     }
                 }
+
+                // Nothing was encoded, so the output equals the input; return the original string and skip the
+                // allocation. (On net8+ this case is already handled by the vectorized fast path above.)
+                if (!encoded)
+                    return data;
 
                 return encoding.GetString(dataBuffer.Slice(0, index));
             }
