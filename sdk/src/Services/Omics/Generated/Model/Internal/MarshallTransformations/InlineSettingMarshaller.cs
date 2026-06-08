@@ -46,6 +46,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEngineSettings())
+            {
+                context.Writer.WritePropertyName("engineSettings");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.EngineSettings);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

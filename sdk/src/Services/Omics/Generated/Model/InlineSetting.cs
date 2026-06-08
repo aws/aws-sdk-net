@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class InlineSetting
     {
+        private Amazon.Runtime.Documents.Document _engineSettings;
         private string _name;
         private string _outputBucketOwnerId;
         private string _outputUri;
@@ -42,6 +43,26 @@ namespace Amazon.Omics.Model
         private int? _priority;
         private string _runSettingId;
         private Dictionary<string, string> _runTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EngineSettings. 
+        /// <para>
+        /// Per-run engine-specific settings. Use this field to specify configuration options
+        /// that are specific to the workflow engine (for example, Nextflow profiles). Overrides
+        /// <c>defaultRunSetting.engineSettings</c> for this run.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document EngineSettings
+        {
+            get { return this._engineSettings; }
+            set { this._engineSettings = value; }
+        }
+
+        // Check to see if EngineSettings property is set
+        internal bool IsSetEngineSettings()
+        {
+            return !this._engineSettings.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
