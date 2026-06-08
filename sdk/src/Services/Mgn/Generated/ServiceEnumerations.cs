@@ -2803,6 +2803,10 @@ namespace Amazon.Mgn
     {
 
         /// <summary>
+        /// Constant AWS_DISCOVERY_COLLECTOR for SourceEnvironment
+        /// </summary>
+        public static readonly SourceEnvironment AWS_DISCOVERY_COLLECTOR = new SourceEnvironment("AWS_DISCOVERY_COLLECTOR");
+        /// <summary>
         /// Constant CISCO_ACI for SourceEnvironment
         /// </summary>
         public static readonly SourceEnvironment CISCO_ACI = new SourceEnvironment("CISCO_ACI");
