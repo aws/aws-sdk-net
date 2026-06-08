@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ItalyAdditionalInfo Object
+    /// Response Unmarshaller for ChileAdditionalInfo Object
     /// </summary>  
-    public class ItalyAdditionalInfoUnmarshaller : IJsonUnmarshaller<ItalyAdditionalInfo, JsonUnmarshallerContext>
+    public class ChileAdditionalInfoUnmarshaller : IJsonUnmarshaller<ChileAdditionalInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ItalyAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ChileAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ItalyAdditionalInfo unmarshalledObject = new ItalyAdditionalInfo();
+            ChileAdditionalInfo unmarshalledObject = new ChileAdditionalInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,16 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cigNumber", targetDepth))
+                if (context.TestExpression("businessActivity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CigNumber = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BusinessActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cupNumber", targetDepth))
+                if (context.TestExpression("documentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CupNumber = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("customerType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sdiAccountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SdiAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("taxCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaxCode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +73,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         }
 
 
-        private static ItalyAdditionalInfoUnmarshaller _instance = new ItalyAdditionalInfoUnmarshaller();        
+        private static ChileAdditionalInfoUnmarshaller _instance = new ChileAdditionalInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ItalyAdditionalInfoUnmarshaller Instance
+        public static ChileAdditionalInfoUnmarshaller Instance
         {
             get
             {

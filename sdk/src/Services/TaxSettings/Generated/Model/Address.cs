@@ -49,7 +49,7 @@ namespace Amazon.TaxSettings.Model
         /// The first line of the address. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=180)]
+        [AWSProperty(Min=1, Max=180)]
         public string AddressLine1
         {
             get { return this._addressLine1; }
@@ -109,7 +109,7 @@ namespace Amazon.TaxSettings.Model
         /// The city that the address is in. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=50)]
         public string City
         {
             get { return this._city; }

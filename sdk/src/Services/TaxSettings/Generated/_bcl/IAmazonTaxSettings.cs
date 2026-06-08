@@ -263,8 +263,8 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
-        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c> or <c>08</c>, you must specify
+        /// the <c>decisionNumber</c> in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
         /// object.
         /// </para>
         ///  </li> </ul> 
@@ -350,6 +350,20 @@ namespace Amazon.TaxSettings
         ///  
         /// <para>
         /// Digital services and electronic medium - 9907121690
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Mexico</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide a Constancia de Situación fiscal (CSF) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to provide address and legal name. These will be populated based on
+        /// your tax registration number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -450,6 +464,53 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Philippines</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
+        /// status with the Bureau of Internal Revenue (BIR).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Belgium</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Chile</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>documentType</c> and <c>businessActivity</c> in
+        /// the <c>chileAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>France</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
+        /// the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Poland</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
+        /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -556,8 +617,8 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
-        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c> or <c>08</c>, you must specify
+        /// the <c>decisionNumber</c> in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
         /// object.
         /// </para>
         ///  </li> </ul> 
@@ -643,6 +704,20 @@ namespace Amazon.TaxSettings
         ///  
         /// <para>
         /// Digital services and electronic medium - 9907121690
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Mexico</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide a Constancia de Situación fiscal (CSF) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to provide address and legal name. These will be populated based on
+        /// your tax registration number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -743,6 +818,53 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Philippines</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
+        /// status with the Bureau of Internal Revenue (BIR).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Belgium</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Chile</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>documentType</c> and <c>businessActivity</c> in
+        /// the <c>chileAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>France</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
+        /// the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Poland</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
+        /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1286,13 +1408,13 @@ namespace Amazon.TaxSettings
         /// 
         /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
         /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
-        /// The access is denied for the Amazon Web ServicesSupport API.
+        /// The access is denied for the Amazon Web Services Support API.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
-        /// Failed to upload the tax exemption document to Amazon Web ServicesSupport case.
+        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
-        /// You've exceeded the Amazon Web ServicesSupport case creation limit for your account.
+        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
         /// The exception thrown when an unexpected error occurs when processing a request.
@@ -1320,13 +1442,13 @@ namespace Amazon.TaxSettings
         /// 
         /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
         /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
-        /// The access is denied for the Amazon Web ServicesSupport API.
+        /// The access is denied for the Amazon Web Services Support API.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
-        /// Failed to upload the tax exemption document to Amazon Web ServicesSupport case.
+        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
-        /// You've exceeded the Amazon Web ServicesSupport case creation limit for your account.
+        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
         /// </exception>
         /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
         /// The exception thrown when an unexpected error occurs when processing a request.
@@ -1484,8 +1606,8 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
-        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c> or <c>08</c>, you must specify
+        /// the <c>decisionNumber</c> in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
         /// object.
         /// </para>
         ///  </li> </ul> 
@@ -1571,6 +1693,20 @@ namespace Amazon.TaxSettings
         ///  
         /// <para>
         /// Digital services and electronic medium - 9907121690
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Mexico</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide a Constancia de Situación fiscal (CSF) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to provide address and legal name. These will be populated based on
+        /// your tax registration number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1671,6 +1807,53 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Philippines</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
+        /// status with the Bureau of Internal Revenue (BIR).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Belgium</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Chile</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>documentType</c> and <c>businessActivity</c> in
+        /// the <c>chileAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>France</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
+        /// the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Poland</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
+        /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1776,8 +1959,8 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c>, you must specify the <c>decisionNumber</c>
-        /// in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
+        /// If <c>ppnExceptionDesignationCode</c> is <c>07</c> or <c>08</c>, you must specify
+        /// the <c>decisionNumber</c> in the <c>indonesiaAdditionalInfo</c> field of the <c>additionalTaxInformation</c>
         /// object.
         /// </para>
         ///  </li> </ul> 
@@ -1863,6 +2046,20 @@ namespace Amazon.TaxSettings
         ///  
         /// <para>
         /// Digital services and electronic medium - 9907121690
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Mexico</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must provide a Constancia de Situación fiscal (CSF) document in the <b>verificationDetails</b>
+        /// field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to provide address and legal name. These will be populated based on
+        /// your tax registration number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1963,6 +2160,53 @@ namespace Amazon.TaxSettings
         ///  <ul> <li> 
         /// <para>
         /// The sector valid values are <c>Business</c> and <c>Individual</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Philippines</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>isVatRegistered</c> in the <c>philippinesAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object to indicate your VAT registration
+        /// status with the Bureau of Internal Revenue (BIR).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Belgium</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>peppolId</c> in the <c>belgiumAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Chile</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>documentType</c> and <c>businessActivity</c> in
+        /// the <c>chileAdditionalInfo</c> field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>France</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
+        /// the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Poland</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can optionally specify the <c>taxRegistrationNumberType</c> in the <c>polandAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object. Valid values are <c>EUTaxRegistrationNumber</c>,
+        /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

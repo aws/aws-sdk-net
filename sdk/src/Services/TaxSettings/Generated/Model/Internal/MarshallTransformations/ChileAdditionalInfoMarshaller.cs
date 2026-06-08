@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ItalyAdditionalInfo Marshaller
+    /// ChileAdditionalInfo Marshaller
     /// </summary>
-    public class ItalyAdditionalInfoMarshaller : IRequestMarshaller<ItalyAdditionalInfo, JsonMarshallerContext> 
+    public class ChileAdditionalInfoMarshaller : IRequestMarshaller<ChileAdditionalInfo, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +42,20 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ItalyAdditionalInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(ChileAdditionalInfo requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCigNumber())
+            if(requestObject.IsSetBusinessActivity())
             {
-                context.Writer.WritePropertyName("cigNumber");
-                context.Writer.WriteStringValue(requestObject.CigNumber);
+                context.Writer.WritePropertyName("businessActivity");
+                context.Writer.WriteStringValue(requestObject.BusinessActivity);
             }
 
-            if(requestObject.IsSetCupNumber())
+            if(requestObject.IsSetDocumentType())
             {
-                context.Writer.WritePropertyName("cupNumber");
-                context.Writer.WriteStringValue(requestObject.CupNumber);
-            }
-
-            if(requestObject.IsSetCustomerType())
-            {
-                context.Writer.WritePropertyName("customerType");
-                context.Writer.WriteStringValue(requestObject.CustomerType);
-            }
-
-            if(requestObject.IsSetSdiAccountId())
-            {
-                context.Writer.WritePropertyName("sdiAccountId");
-                context.Writer.WriteStringValue(requestObject.SdiAccountId);
-            }
-
-            if(requestObject.IsSetTaxCode())
-            {
-                context.Writer.WritePropertyName("taxCode");
-                context.Writer.WriteStringValue(requestObject.TaxCode);
+                context.Writer.WritePropertyName("documentType");
+                context.Writer.WriteStringValue(requestObject.DocumentType);
             }
 
         }
@@ -81,7 +63,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ItalyAdditionalInfoMarshaller Instance = new ItalyAdditionalInfoMarshaller();
+        public readonly static ChileAdditionalInfoMarshaller Instance = new ChileAdditionalInfoMarshaller();
 
     }
 }
