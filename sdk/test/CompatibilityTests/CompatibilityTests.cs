@@ -18,37 +18,28 @@ namespace CompatibilityTests
     public class CompatibilityTests
     {
         [Fact]
-        public void TestS3ClientCreation()
+        public void TestS3SimpleCall()
         {
-            // Act & Assert
-            // This will trigger CLR type loading and method resolution
-            var exception = Record.Exception(() =>
+            using (var s3Client = new AmazonS3Client())
             {
-                var s3Client = new AmazonS3Client();
-                Assert.NotNull(s3Client);
-            });
-
-            if (exception != null)
-            {
-                Console.WriteLine($"S3 client creation failed with: {exception.GetType().Name}: {exception.Message}");
-                throw exception;
+                s3Client.ListBucketsAsync();
             }
         }
 
         [Fact]
-        public void TestDynamoDBClientCreation()
+        public void TestDynamoDBSimpleCall()
         {
-            // Act & Assert
-            var exception = Record.Exception(() =>
+            using (var ddbClient = new AmazonDynamoDBClient())
             {
-                var dynamoDbClient = new AmazonDynamoDBClient();
-                Assert.NotNull(dynamoDbClient);
-            });
-
-            if (exception != null)
-            {
-                Console.WriteLine($"DynamoDB client creation failed with: {exception.GetType().Name}: {exception.Message}");
-                throw exception;
+                try
+                {
+                    ddbClient.ListTablesAsync(5);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Simple ListTables creation failed with {ex.GetType().Name}: {ex.Message}");
+                    throw ex;
+                }
             }
         }
 
