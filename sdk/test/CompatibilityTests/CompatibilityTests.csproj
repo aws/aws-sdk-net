@@ -30,6 +30,14 @@
     <Exec Command="powershell -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\DownloadDlls.ps1&quot;" Condition="!Exists('$(DownloadedDllsPath)\AWSSDK.S3.dll')" />
   </Target>
 
+  <!-- Copy downloaded DLLs to output for reflection-based tests -->
+  <ItemGroup>
+    <None Include="$(DownloadedDllsPath)\AWSSDK.*.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>DownloadedDlls\%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
   <!-- Reference the downloaded service DLLs -->
   <ItemGroup>
     <Reference Include="AWSSDK.S3">
