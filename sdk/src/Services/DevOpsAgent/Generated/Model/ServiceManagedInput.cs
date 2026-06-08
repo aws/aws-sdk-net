@@ -35,6 +35,7 @@ namespace Amazon.DevOpsAgent.Model
     public partial class ServiceManagedInput
     {
         private string _certificate;
+        private ResourceConfigDnsResolution _dnsResolution;
         private string _hostAddress;
         private IpAddressType _ipAddressType;
         private int? _ipv4AddressesPerEni;
@@ -60,6 +61,24 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetCertificate()
         {
             return this._certificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsResolution. 
+        /// <para>
+        /// DNS resolution mode for the resource gateway. Defaults to PUBLIC when not set.
+        /// </para>
+        /// </summary>
+        public ResourceConfigDnsResolution DnsResolution
+        {
+            get { return this._dnsResolution; }
+            set { this._dnsResolution = value; }
+        }
+
+        // Check to see if DnsResolution property is set
+        internal bool IsSetDnsResolution()
+        {
+            return this._dnsResolution != null;
         }
 
         /// <summary>

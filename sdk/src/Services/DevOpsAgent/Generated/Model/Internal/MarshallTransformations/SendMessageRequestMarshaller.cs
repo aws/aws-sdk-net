@@ -76,6 +76,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssetIds())
+            {
+                context.Writer.WritePropertyName("assetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAssetIdsListValue in publicRequest.AssetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestAssetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetContent())
             {
                 context.Writer.WritePropertyName("content");

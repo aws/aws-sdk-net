@@ -60,6 +60,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMcpRoleArn())
+            {
+                context.Writer.WritePropertyName("mcpRoleArn");
+                context.Writer.WriteStringValue(requestObject.McpRoleArn);
+            }
+
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");

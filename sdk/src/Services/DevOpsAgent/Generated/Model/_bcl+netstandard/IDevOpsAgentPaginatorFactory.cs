@@ -38,6 +38,46 @@ namespace Amazon.DevOpsAgent.Model
         IListAgentSpacesPaginator ListAgentSpaces(ListAgentSpacesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetFiles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssetFilesPaginator ListAssetFiles(ListAssetFilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssetsPaginator ListAssets(ListAssetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetTypes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssetTypesPaginator ListAssetTypes(ListAssetTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssetVersionsPaginator ListAssetVersions(ListAssetVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAssociations operation
         ///</summary>
         [AWSPaginator(

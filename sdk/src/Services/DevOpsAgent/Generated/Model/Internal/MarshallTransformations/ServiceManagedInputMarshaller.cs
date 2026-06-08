@@ -52,6 +52,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
+            if(requestObject.IsSetDnsResolution())
+            {
+                context.Writer.WritePropertyName("dnsResolution");
+                context.Writer.WriteStringValue(requestObject.DnsResolution);
+            }
+
             if(requestObject.IsSetHostAddress())
             {
                 context.Writer.WritePropertyName("hostAddress");

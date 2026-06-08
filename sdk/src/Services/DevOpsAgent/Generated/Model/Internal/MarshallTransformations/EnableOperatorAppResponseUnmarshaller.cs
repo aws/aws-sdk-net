@@ -76,6 +76,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     response.Idp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("operatorAppUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperatorAppUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

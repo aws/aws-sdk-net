@@ -58,6 +58,18 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     response.CertificateExpiryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dnsResolution", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DnsResolution = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("failureMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("hostAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
