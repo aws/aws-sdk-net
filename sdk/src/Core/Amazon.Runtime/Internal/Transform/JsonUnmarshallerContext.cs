@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -55,6 +56,21 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonTokenType? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
+
+        // Property names are no longer pushed onto the path stack (that was the per-property string
+        // allocation we removed). But AWSSDK.Core must stay compatible with service packages that were
+        // generated before reader-based matching existed: those still call the legacy path-based
+        // TestExpression(string, int) overload, which matches against CurrentPath. To keep that working
+        // without re-introducing an allocation on the hot path, we capture the current property name as
+        // raw UTF-8 bytes into a reused, pooled buffer on each Read, and only materialize a string lazily
+        // when CurrentPath is actually read (i.e. by old packages or by exception diagnostics).
+        private byte[] currentPropertyNameBuffer = null;
+        private int currentPropertyNameLength = 0;
+        // Set only when a property name contains JSON escapes, where a raw-byte copy can't be compared
+        // against the unescaped expression the legacy overload expects.
+        private string currentPropertyNameEscaped = null;
+        private bool onPropertyName = false;
+        private string cachedCurrentPath = null;
         #endregion
 
         #region Constructors
@@ -214,11 +230,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// <summary>
         /// The current Json path that is being unmarshalled.
         /// </summary>
+        /// <remarks>
+        /// Property names are not tracked on the path stack, so the stack only contributes the depth
+        /// delimiters. When positioned on a property name we append the captured name lazily so the
+        /// legacy path-based <c>TestExpression(string, int)</c> overload (used by service packages
+        /// generated before reader-based matching) and exception diagnostics still see the field name.
+        /// The built string is cached until the next token is read.
+        /// </remarks>
         public override string CurrentPath
         {
-            get 
+            get
             {
-                return this.stack.CurrentPath; 
+                if (!onPropertyName)
+                    return this.stack.CurrentPath;
+
+                if (cachedCurrentPath == null)
+                {
+                    string name = currentPropertyNameEscaped
+                        ?? Encoding.UTF8.GetString(currentPropertyNameBuffer, 0, currentPropertyNameLength);
+                    cachedCurrentPath = this.stack.CurrentPath + name;
+                }
+
+                return cachedCurrentPath;
             }
         }
 
@@ -376,9 +409,54 @@ namespace Amazon.Runtime.Internal.Transform
             return peek;
         }
 
+        /// <summary>
+        /// Captures the current property name so the legacy path-based <c>TestExpression(string, int)</c>
+        /// overload can match against <see cref="CurrentPath"/> without us pushing names onto the stack.
+        /// The common (unescaped) case only copies bytes into a reused pooled buffer; no string is
+        /// allocated until <see cref="CurrentPath"/> is read.
+        /// </summary>
+        private void CaptureCurrentPropertyName(ref StreamingUtf8JsonReader reader)
+        {
+            // The position is changing, so any previously built path string is now stale.
+            cachedCurrentPath = null;
+
+            if (currentToken != JsonTokenType.PropertyName)
+            {
+                onPropertyName = false;
+                return;
+            }
+
+            onPropertyName = true;
+            currentPropertyNameEscaped = null;
+
+            ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
+
+            // Property names containing JSON escape sequences are vanishingly rare for AWS shapes. In that
+            // case decode to a string so the legacy comparison sees the unescaped name; the hot path for
+            // ordinary identifiers only copies the raw bytes.
+            if (name.IndexOf((byte)'\\') >= 0)
+            {
+                currentPropertyNameEscaped = reader.Reader.GetString();
+                currentPropertyNameLength = 0;
+                return;
+            }
+
+            if (currentPropertyNameBuffer == null || currentPropertyNameBuffer.Length < name.Length)
+            {
+                if (currentPropertyNameBuffer != null)
+                    ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
+                currentPropertyNameBuffer = ArrayPool<byte>.Shared.Rent(name.Length);
+            }
+
+            name.CopyTo(currentPropertyNameBuffer);
+            currentPropertyNameLength = name.Length;
+        }
+
         private void UpdateContext(ref StreamingUtf8JsonReader reader)
         {
             if (!currentToken.HasValue) return;
+
+            CaptureCurrentPropertyName(ref reader);
 
             if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
@@ -445,6 +523,12 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         baseStream.Dispose();
                         baseStream = null;
+                    }
+
+                    if (currentPropertyNameBuffer != null)
+                    {
+                        ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
+                        currentPropertyNameBuffer = null;
                     }
                 }
                 disposed = true;
