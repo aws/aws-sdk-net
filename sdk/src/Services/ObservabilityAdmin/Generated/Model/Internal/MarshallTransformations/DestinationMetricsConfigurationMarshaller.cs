@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CentralizationRuleDestination Marshaller
+    /// DestinationMetricsConfiguration Marshaller
     /// </summary>
-    public class CentralizationRuleDestinationMarshaller : IRequestMarshaller<CentralizationRuleDestination, JsonMarshallerContext> 
+    public class DestinationMetricsConfigurationMarshaller : IRequestMarshaller<DestinationMetricsConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,19 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CentralizationRuleDestination requestObject, JsonMarshallerContext context)
+        public void Marshall(DestinationMetricsConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccount())
+            if(requestObject.IsSetBackupConfiguration())
             {
-                context.Writer.WritePropertyName("Account");
-                context.Writer.WriteStringValue(requestObject.Account);
-            }
-
-            if(requestObject.IsSetDestinationLogsConfiguration())
-            {
-                context.Writer.WritePropertyName("DestinationLogsConfiguration");
+                context.Writer.WritePropertyName("BackupConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = DestinationLogsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DestinationLogsConfiguration, context);
+                var marshaller = MetricsBackupConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.BackupConfiguration, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetDestinationMetricsConfiguration())
-            {
-                context.Writer.WritePropertyName("DestinationMetricsConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DestinationMetricsConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DestinationMetricsConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetRegion())
-            {
-                context.Writer.WritePropertyName("Region");
-                context.Writer.WriteStringValue(requestObject.Region);
             }
 
         }
@@ -85,7 +62,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CentralizationRuleDestinationMarshaller Instance = new CentralizationRuleDestinationMarshaller();
+        public readonly static DestinationMetricsConfigurationMarshaller Instance = new DestinationMetricsConfigurationMarshaller();
 
     }
 }

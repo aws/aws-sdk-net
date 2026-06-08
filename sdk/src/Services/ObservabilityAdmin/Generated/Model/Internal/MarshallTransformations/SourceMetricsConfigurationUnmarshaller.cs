@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CentralizationRuleDestination Object
+    /// Response Unmarshaller for SourceMetricsConfiguration Object
     /// </summary>  
-    public class CentralizationRuleDestinationUnmarshaller : IJsonUnmarshaller<CentralizationRuleDestination, JsonUnmarshallerContext>
+    public class SourceMetricsConfigurationUnmarshaller : IJsonUnmarshaller<SourceMetricsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CentralizationRuleDestination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SourceMetricsConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CentralizationRuleDestination unmarshalledObject = new CentralizationRuleDestination();
+            SourceMetricsConfiguration unmarshalledObject = new SourceMetricsConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Account", targetDepth))
+                if (context.TestExpression("MetricsSelectionCriteria", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Account = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationLogsConfiguration", targetDepth))
-                {
-                    var unmarshaller = DestinationLogsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DestinationLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DestinationMetricsConfiguration", targetDepth))
-                {
-                    var unmarshaller = DestinationMetricsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DestinationMetricsConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MetricsSelectionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         }
 
 
-        private static CentralizationRuleDestinationUnmarshaller _instance = new CentralizationRuleDestinationUnmarshaller();        
+        private static SourceMetricsConfigurationUnmarshaller _instance = new SourceMetricsConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CentralizationRuleDestinationUnmarshaller Instance
+        public static SourceMetricsConfigurationUnmarshaller Instance
         {
             get
             {
