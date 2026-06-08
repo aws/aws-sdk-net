@@ -85,7 +85,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property IntegrationType. 
         /// <para>
-        /// The connectors for use with Amazon Connect.
+        /// The connectors for use with Connect Customer.
         /// </para>
         /// </summary>
         public VoiceConnectorIntegrationType IntegrationType

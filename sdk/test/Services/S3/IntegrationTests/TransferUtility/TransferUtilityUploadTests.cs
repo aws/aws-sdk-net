@@ -324,7 +324,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             var fileName = UtilityMethods.GenerateName(@"SimpleUploadTest\CancellationTest");
             var path = Path.Combine(_basePath, fileName);
-            UtilityMethods.GenerateFile(path, 10 * TransferUtilityTestHelpers.MEG_SIZE);
+            UtilityMethods.GenerateFile(path, 25 * TransferUtilityTestHelpers.MEG_SIZE);
 
             TransferUtilityUploadRequest uploadRequest = new TransferUtilityUploadRequest()
             {
@@ -340,7 +340,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             try
             {
                 uploadTask = _transfer.UploadAsync(uploadRequest, token);
-                tokenSource.CancelAfter(100);
+                tokenSource.CancelAfter(50);
                 await uploadTask;
             }
             catch (OperationCanceledException)

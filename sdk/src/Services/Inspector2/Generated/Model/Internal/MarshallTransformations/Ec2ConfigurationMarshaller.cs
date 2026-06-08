@@ -46,6 +46,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActivateVMScanner())
+            {
+                context.Writer.WritePropertyName("activateVMScanner");
+                context.Writer.WriteBooleanValue(requestObject.ActivateVMScanner.Value);
+            }
+
             if(requestObject.IsSetScanMode())
             {
                 context.Writer.WritePropertyName("scanMode");

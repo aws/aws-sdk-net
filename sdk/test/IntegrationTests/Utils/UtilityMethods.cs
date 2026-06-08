@@ -357,6 +357,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             return name + Guid.NewGuid().ToString("N");
         }
 
+        private static readonly Random _random = new Random();
+
+        public static int GenerateId()
+        {
+            return _random.Next(1, 10000);
+        }
+
         public class ListSleeper
         {
             private int attempt;

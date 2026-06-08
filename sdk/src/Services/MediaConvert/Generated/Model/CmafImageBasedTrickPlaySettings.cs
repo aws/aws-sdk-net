@@ -118,7 +118,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TileHeight. Number of thumbnails in each column of a tile
-        /// image. Set a value between 2 and 2048. Must be divisible by 2.
+        /// image. Set a value between 1 and 2048.
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public int? TileHeight

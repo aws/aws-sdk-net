@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMlflowConfig())
+            {
+                context.Writer.WritePropertyName("MlflowConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AIMlflowConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlflowConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetModelPackageGroupIdentifier())
             {
                 context.Writer.WritePropertyName("ModelPackageGroupIdentifier");

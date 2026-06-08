@@ -62,6 +62,18 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArcRoutingControlConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("auroraProvisionedScalingConfig", targetDepth))
+                {
+                    var unmarshaller = AuroraProvisionedScalingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuroraProvisionedScalingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("auroraServerlessScalingConfig", targetDepth))
+                {
+                    var unmarshaller = AuroraServerlessScalingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuroraServerlessScalingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("customActionLambdaConfig", targetDepth))
                 {
                     var unmarshaller = CustomActionLambdaConfigurationUnmarshaller.Instance;
@@ -108,6 +120,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LambdaEventSourceMappingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LambdaEventSourceMappingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("neptuneGlobalDatabaseConfig", targetDepth))
+                {
+                    var unmarshaller = NeptuneGlobalDatabaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NeptuneGlobalDatabaseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parallelConfig", targetDepth))

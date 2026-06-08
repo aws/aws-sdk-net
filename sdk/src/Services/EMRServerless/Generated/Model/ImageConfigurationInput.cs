@@ -34,7 +34,29 @@ namespace Amazon.EMRServerless.Model
     /// </summary>
     public partial class ImageConfigurationInput
     {
+        private bool? _applicationLevelDigestResolution;
         private string _imageUri;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationLevelDigestResolution. 
+        /// <para>
+        /// Boolean value indicating if the digest resolution is application level or workload
+        /// level. If true, a custom image URI is resolved at application start time and all workloads
+        /// submitted will use that image digest. If false, the custom image URI is resolved at
+        /// the workload submission time.
+        /// </para>
+        /// </summary>
+        public bool? ApplicationLevelDigestResolution
+        {
+            get { return this._applicationLevelDigestResolution; }
+            set { this._applicationLevelDigestResolution = value; }
+        }
+
+        // Check to see if ApplicationLevelDigestResolution property is set
+        internal bool IsSetApplicationLevelDigestResolution()
+        {
+            return this._applicationLevelDigestResolution.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ImageUri. 

@@ -36,6 +36,8 @@ namespace Amazon.ARCRegionswitch.Model
     public partial class ExecutionBlockConfiguration
     {
         private ArcRoutingControlConfiguration _arcRoutingControlConfig;
+        private AuroraProvisionedScalingConfiguration _auroraProvisionedScalingConfig;
+        private AuroraServerlessScalingConfiguration _auroraServerlessScalingConfig;
         private CustomActionLambdaConfiguration _customActionLambdaConfig;
         private DocumentDbConfiguration _documentDbConfig;
         private Ec2AsgCapacityIncreaseConfiguration _ec2AsgCapacityIncreaseConfig;
@@ -44,6 +46,7 @@ namespace Amazon.ARCRegionswitch.Model
         private ExecutionApprovalConfiguration _executionApprovalConfig;
         private GlobalAuroraConfiguration _globalAuroraConfig;
         private LambdaEventSourceMappingConfiguration _lambdaEventSourceMappingConfig;
+        private NeptuneGlobalDatabaseConfiguration _neptuneGlobalDatabaseConfig;
         private ParallelExecutionBlockConfiguration _parallelConfig;
         private RdsCreateCrossRegionReplicaConfiguration _rdsCreateCrossRegionReadReplicaConfig;
         private RdsPromoteReadReplicaConfiguration _rdsPromoteReadReplicaConfig;
@@ -66,6 +69,42 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetArcRoutingControlConfig()
         {
             return this._arcRoutingControlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuroraProvisionedScalingConfig. 
+        /// <para>
+        /// An Aurora provisioned cluster scaling execution block.
+        /// </para>
+        /// </summary>
+        public AuroraProvisionedScalingConfiguration AuroraProvisionedScalingConfig
+        {
+            get { return this._auroraProvisionedScalingConfig; }
+            set { this._auroraProvisionedScalingConfig = value; }
+        }
+
+        // Check to see if AuroraProvisionedScalingConfig property is set
+        internal bool IsSetAuroraProvisionedScalingConfig()
+        {
+            return this._auroraProvisionedScalingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuroraServerlessScalingConfig. 
+        /// <para>
+        /// An Aurora Serverless scaling execution block.
+        /// </para>
+        /// </summary>
+        public AuroraServerlessScalingConfiguration AuroraServerlessScalingConfig
+        {
+            get { return this._auroraServerlessScalingConfig; }
+            set { this._auroraServerlessScalingConfig = value; }
+        }
+
+        // Check to see if AuroraServerlessScalingConfig property is set
+        internal bool IsSetAuroraServerlessScalingConfig()
+        {
+            return this._auroraServerlessScalingConfig != null;
         }
 
         /// <summary>
@@ -207,6 +246,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetLambdaEventSourceMappingConfig()
         {
             return this._lambdaEventSourceMappingConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeptuneGlobalDatabaseConfig. 
+        /// <para>
+        /// A Neptune global database execution block.
+        /// </para>
+        /// </summary>
+        public NeptuneGlobalDatabaseConfiguration NeptuneGlobalDatabaseConfig
+        {
+            get { return this._neptuneGlobalDatabaseConfig; }
+            set { this._neptuneGlobalDatabaseConfig = value; }
+        }
+
+        // Check to see if NeptuneGlobalDatabaseConfig property is set
+        internal bool IsSetNeptuneGlobalDatabaseConfig()
+        {
+            return this._neptuneGlobalDatabaseConfig != null;
         }
 
         /// <summary>

@@ -211,7 +211,10 @@ namespace Amazon.IVS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExceptionMessage.
+        /// Gets and sets the property ExceptionMessage. 
+        /// <para>
+        /// The service is temporarily unavailable.
+        /// </para>
         /// </summary>
         public string ExceptionMessage
         {

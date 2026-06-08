@@ -116,8 +116,8 @@ namespace Amazon.AuditManager.Model
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as compliant
         /// on the <c>lastUpdated</c> date. This includes evidence that was collected from Security
-        /// Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.
-        /// 
+        /// Hub CSPM with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i>
+        /// ruling. 
         /// </para>
         /// </summary>
         public int? CompliantEvidenceCount
@@ -136,10 +136,10 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property InconclusiveEvidenceCount. 
         /// <para>
         /// The number of evidence without a compliance check ruling. Evidence is inconclusive
-        /// when the associated control uses Security Hub or Config as a data source but you didn't
-        /// enable those services. This is also the case when a control uses a data source that
-        /// doesn’t support compliance checks (for example: manual evidence, API calls, or CloudTrail).
-        /// 
+        /// when the associated control uses Security Hub CSPM or Config as a data source but
+        /// you didn't enable those services. This is also the case when a control uses a data
+        /// source that doesn’t support compliance checks (for example: manual evidence, API calls,
+        /// or CloudTrail). 
         /// </para>
         ///  <note> 
         /// <para>
@@ -183,7 +183,7 @@ namespace Amazon.AuditManager.Model
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as non-compliant
         /// on the <c>lastUpdated</c> date. This includes evidence that was collected from Security
-        /// Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i>
+        /// Hub CSPM with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i>
         /// ruling. 
         /// </para>
         /// </summary>

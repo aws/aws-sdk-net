@@ -49,7 +49,41 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the model card.
+        /// The content of the model card. Content is provided as a string in the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
+        /// card JSON schema</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set <c>IncludedData</c> to <c>MetadataOnly</c> in the request, SageMaker
+        /// returns a sanitized version of <c>Content</c> that includes only the following JSON
+        /// paths, when present in the model card:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>model_overview.model_id</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_overview.model_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>intended_uses.risk_rating</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_package_details.model_package_group_name</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>model_package_details.model_package_arn</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// All other fields are removed from <c>Content</c> when <c>IncludedData</c> is <c>MetadataOnly</c>,
+        /// including model description, training details, evaluation details, business details,
+        /// and additional information. To retrieve the complete <c>Content</c>, set <c>IncludedData</c>
+        /// to <c>AllData</c> or omit the parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=100000)]

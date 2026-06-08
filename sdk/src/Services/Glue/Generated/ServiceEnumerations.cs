@@ -3767,6 +3767,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type GlueResourceType.
+    /// </summary>
+    public class GlueResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JOB for GlueResourceType
+        /// </summary>
+        public static readonly GlueResourceType JOB = new GlueResourceType("JOB");
+        /// <summary>
+        /// Constant SESSION for GlueResourceType
+        /// </summary>
+        public static readonly GlueResourceType SESSION = new GlueResourceType("SESSION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GlueResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GlueResourceType FindValue(string value)
+        {
+            return FindValue<GlueResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GlueResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HTTPMethod.
     /// </summary>
     public class HTTPMethod : ConstantClass
@@ -6952,6 +7002,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionType.
+    /// </summary>
+    public class SessionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LIVY for SessionType
+        /// </summary>
+        public static readonly SessionType LIVY = new SessionType("LIVY");
+        /// <summary>
+        /// Constant SPARK_CONNECT for SessionType
+        /// </summary>
+        public static readonly SessionType SPARK_CONNECT = new SessionType("SPARK_CONNECT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionType FindValue(string value)
+        {
+            return FindValue<SessionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionType(string value)
         {
             return FindValue(value);
         }

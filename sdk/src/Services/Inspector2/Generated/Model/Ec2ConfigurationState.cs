@@ -35,6 +35,7 @@ namespace Amazon.Inspector2.Model
     public partial class Ec2ConfigurationState
     {
         private Ec2ScanModeState _scanModeState;
+        private VMScannerState _vmScannerState;
 
         /// <summary>
         /// Gets and sets the property ScanModeState. 
@@ -52,6 +53,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetScanModeState()
         {
             return this._scanModeState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmScannerState. 
+        /// <para>
+        /// An object that contains details about the state of the Amazon Inspector VM scanner.
+        /// </para>
+        /// </summary>
+        public VMScannerState VmScannerState
+        {
+            get { return this._vmScannerState; }
+            set { this._vmScannerState = value; }
+        }
+
+        // Check to see if VmScannerState property is set
+        internal bool IsSetVmScannerState()
+        {
+            return this._vmScannerState != null;
         }
 
     }

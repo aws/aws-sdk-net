@@ -57,6 +57,28 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAuroraProvisionedScalingConfig())
+            {
+                context.Writer.WritePropertyName("auroraProvisionedScalingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuroraProvisionedScalingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuroraProvisionedScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetAuroraServerlessScalingConfig())
+            {
+                context.Writer.WritePropertyName("auroraServerlessScalingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuroraServerlessScalingConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuroraServerlessScalingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCustomActionLambdaConfig())
             {
                 context.Writer.WritePropertyName("customActionLambdaConfig");
@@ -141,6 +163,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
 
                 var marshaller = LambdaEventSourceMappingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaEventSourceMappingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetNeptuneGlobalDatabaseConfig())
+            {
+                context.Writer.WritePropertyName("neptuneGlobalDatabaseConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NeptuneGlobalDatabaseConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NeptuneGlobalDatabaseConfig, context);
 
                 context.Writer.WriteEndObject();
             }

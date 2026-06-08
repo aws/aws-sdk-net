@@ -72,8 +72,8 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Not required when using Amazon Web Services
-        /// administrator credentials to access the API.
+        /// WorkDocs authentication token. Not required when using Amazon Web Services administrator
+        /// credentials to access the API.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8199)]

@@ -128,6 +128,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageBasedTrickPlaySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("imageBasedTrickPlayVariants", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DashIsoImageBasedTrickPlayVariant, DashIsoImageBasedTrickPlayVariantUnmarshaller>(DashIsoImageBasedTrickPlayVariantUnmarshaller.Instance);
+                    unmarshalledObject.ImageBasedTrickPlayVariants = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("minBufferTime", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

@@ -62,7 +62,8 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property AuthToken. 
         /// <para>
-        /// Authentication token for accessing the session endpoint.
+        /// The authentication token for connecting to the session endpoint. Call <c>GetSessionEndpoint</c>
+        /// again to obtain a new token before it expires.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=8000)]

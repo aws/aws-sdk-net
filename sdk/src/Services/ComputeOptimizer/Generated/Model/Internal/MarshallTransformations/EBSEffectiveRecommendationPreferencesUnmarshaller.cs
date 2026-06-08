@@ -62,6 +62,14 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "lookBackPeriod":
+                        {
+                            context.AddPathSegment("LookBackPeriod");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LookBackPeriod = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "savingsEstimationMode":
                         {
                             context.AddPathSegment("SavingsEstimationMode");

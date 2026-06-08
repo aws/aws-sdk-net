@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnectClientAddIn operation.
-    /// Deletes a client-add-in for Amazon Connect that is configured within a directory.
+    /// Deletes a client-add-in for Connect Customer that is configured within a directory.
     /// </summary>
     public partial class DeleteConnectClientAddInRequest : AmazonWorkSpacesRequest
     {

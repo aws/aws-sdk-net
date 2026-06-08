@@ -41,10 +41,12 @@ namespace Amazon.MediaConvert.Model
         private string _chromaSubsampling;
         private FrameRate _codedFrameRate;
         private ColorPrimaries _colorPrimaries;
+        private ContentLightLevel _contentLightLevel;
         private int? _height;
         private string _level;
         private MatrixCoefficients _matrixCoefficients;
         private string _profile;
+        private int? _rotation;
         private string _scanType;
         private TransferCharacteristics _transferCharacteristics;
         private int? _width;
@@ -119,6 +121,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContentLightLevel. Content light level information (CTA-861.3).
+        /// Describes the light level characteristics of the content.
+        /// </summary>
+        public ContentLightLevel ContentLightLevel
+        {
+            get { return this._contentLightLevel; }
+            set { this._contentLightLevel = value; }
+        }
+
+        // Check to see if ContentLightLevel property is set
+        internal bool IsSetContentLightLevel()
+        {
+            return this._contentLightLevel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Height. The height in pixels as coded by the codec. This
         /// represents the actual encoded video height as specified in the video stream headers.
         /// </summary>
@@ -184,6 +202,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetProfile()
         {
             return this._profile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rotation. The clockwise rotation angle of the video, in
+        /// degrees, as specified in the codec bitstream via a Display Orientation SEI message
+        /// (payload type 47 for both H.264 and H.265). This field is null when the video essence
+        /// does not contain a Display Orientation SEI message or when the rotation is 0 degrees.
+        /// </summary>
+        public int? Rotation
+        {
+            get { return this._rotation; }
+            set { this._rotation = value; }
+        }
+
+        // Check to see if Rotation property is set
+        internal bool IsSetRotation()
+        {
+            return this._rotation.HasValue; 
         }
 
         /// <summary>

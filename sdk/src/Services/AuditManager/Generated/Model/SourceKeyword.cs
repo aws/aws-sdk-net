@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
     ///  
     /// <para>
     /// For automated evidence, this keyword identifies a specific CloudTrail event, Config
-    /// rule, Security Hub control, or Amazon Web Services API name. 
+    /// rule, Security Hub CSPM control, or Amazon Web Services API name. 
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.AuditManager.Model
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security
-    /// Hub controls supported by Audit Manager</a> 
+    /// Hub CSPM controls supported by Audit Manager</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,8 +86,8 @@ namespace Amazon.AuditManager.Model
         /// <para>
         /// When <c>keywordInputType</c> is <c>SELECT_FROM_LIST</c>, a keyword must be selected
         /// to collect automated evidence. For example, this keyword can be a CloudTrail event
-        /// name, a rule name for Config, a Security Hub control, or the name of an Amazon Web
-        /// Services API call.
+        /// name, a rule name for Config, a Security Hub CSPM control, or the name of an Amazon
+        /// Web Services API call.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property KeywordValue. 
         /// <para>
         ///  The value of the keyword that's used when mapping a control data source. For example,
-        /// this can be a CloudTrail event name, a rule name for Config, a Security Hub control,
+        /// this can be a CloudTrail event name, a rule name for Config, a Security Hub CSPM control,
         /// or the name of an Amazon Web Services API call. 
         /// </para>
         ///  
@@ -229,9 +229,9 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// For Security Hub: The format varies for Security Hub control names. For accuracy,
-        /// we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
-        /// Security Hub controls</a>.
+        /// For Security Hub CSPM: The format varies for Security Hub CSPM control names. For
+        /// accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+        /// Security Hub CSPM controls</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

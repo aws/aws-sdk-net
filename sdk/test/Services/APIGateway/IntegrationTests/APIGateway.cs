@@ -198,7 +198,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private async Task<IEnumerable<RestApi>> GetRestApis()
         {
             var apis = new List<RestApi>();
-            var request = new GetRestApisRequest { Limit = 1 };
+            // Fetch a full page to avoid extra requests that can trigger throttling.
+            var request = new GetRestApisRequest { Limit = 500 };
             do
             {
                 var response = await _client.GetRestApisAsync(request);

@@ -34,7 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class CmafEncryptionSettings
     {
-        private HlsClearLead _clearLead;
+        private int? _clearLeadSegments;
         private string _constantInitializationVector;
         private CmafEncryptionType _encryptionMethod;
         private CmafInitializationVectorInManifest _initializationVectorInManifest;
@@ -43,29 +43,32 @@ namespace Amazon.MediaConvert.Model
         private CmafKeyProviderType _type;
 
         /// <summary>
-        /// Gets and sets the property ClearLead. Enable Clear Lead DRM to reduce video startup
-        /// latency by leaving the first segment unencrypted while DRM license retrieval occurs
-        /// in parallel. This optimization allows immediate playback startup while maintaining
-        /// content protection for the remainder of the stream. When enabled, the first output
-        /// segment remains fully unencrypted, and encryption begins at the start of the second
-        /// segment. The HLS manifest will omit #EXT-X-KEY tags during the clear segment and insert
-        /// the first #EXT-X-KEY immediately before the first encrypted fragment. This feature
-        /// is supported exclusively for CMAF HLS (fMP4) outputs and is compatible with all existing
-        /// key provider integrations (SPEKE v1, SPEKE v2, and Static Key encryption). Supported
-        /// codecs: H.264, H.265, and AV1 video codecs, and AAC audio codec. Choose Enabled to
-        /// activate Clear Lead DRM optimization. Choose Disabled to use standard encryption where
-        /// all segments are encrypted from the beginning.
+        /// Gets and sets the property ClearLeadSegments. Reduce video startup latency by leaving
+        /// initial segments unencrypted while DRM license retrieval occurs in parallel. This
+        /// optimization allows immediate playback startup while maintaining content protection
+        /// for the remainder of the stream. Specify the number of initial segments to leave unencrypted.
+        /// Omit this field to disable Clear Lead. The HLS manifest will omit #EXT-X-KEY tags
+        /// during clear segments and insert the first #EXT-X-KEY immediately before the first
+        /// encrypted segment. Because encryption is applied at the fragment level, the actual
+        /// duration of unencrypted content may be slightly longer than expected if the segment
+        /// length is not evenly divisible by the fragment length. In such cases, encryption begins
+        /// at the next fragment boundary after the specified clear lead segments, rather than
+        /// at the exact segment boundary. This feature is supported exclusively for CMAF HLS
+        /// (fMP4) outputs and is compatible with all existing key provider integrations (SPEKE
+        /// v1, SPEKE v2, and Static Key encryption). Supported codecs: H.264, H.265, and AV1
+        /// video codecs, and AAC audio codec.
         /// </summary>
-        public HlsClearLead ClearLead
+        [AWSProperty(Min=1, Max=9999)]
+        public int? ClearLeadSegments
         {
-            get { return this._clearLead; }
-            set { this._clearLead = value; }
+            get { return this._clearLeadSegments; }
+            set { this._clearLeadSegments = value; }
         }
 
-        // Check to see if ClearLead property is set
-        internal bool IsSetClearLead()
+        // Check to see if ClearLeadSegments property is set
+        internal bool IsSetClearLeadSegments()
         {
-            return this._clearLead != null;
+            return this._clearLeadSegments.HasValue; 
         }
 
         /// <summary>

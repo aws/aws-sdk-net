@@ -17,6 +17,12 @@
     <pattern>^[A-Za-z0-9-_.\\+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.BatchDeleteKnowledgeBaseRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.BatchDeleteTopicReviewedAnswerRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -957,6 +963,30 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteKnowledgeBaseRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteKnowledgeBaseRequest.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteKnowledgeBaseResponse.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteKnowledgeBaseResponse.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteNamespaceRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1895,6 +1925,42 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBaseRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBaseRequest.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBasePermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBasePermissionsRequest.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBasePermissionsResponse.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeKnowledgeBasePermissionsResponse.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeNamespaceRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2660,6 +2726,27 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListKnowledgeBasesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListKnowledgeBasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListKnowledgeBasesRequest.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListKnowledgeBasesResponse.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListNamespacesRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2947,6 +3034,22 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListUsersIndexCapacityRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListUsersIndexCapacityRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListUsersIndexCapacityRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListVPCConnectionsRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -3128,6 +3231,27 @@
     <property>Amazon.QuickSight.Model.SearchGroupsRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchKnowledgeBasesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchKnowledgeBasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchKnowledgeBasesRequest.NextToken</property>
+    <min>1</min>
+    <max>800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.SearchKnowledgeBasesResponse.NextToken</property>
+    <min>1</min>
+    <max>800</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.SearchSpacesRequest.AwsAccountId</property>
@@ -3850,6 +3974,30 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateKeyRegistrationResponse.RequestId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateKnowledgeBasePermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateKnowledgeBasePermissionsRequest.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateKnowledgeBasePermissionsResponse.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateKnowledgeBasePermissionsResponse.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateOAuthClientApplicationRequest.AwsAccountId</property>
@@ -4758,6 +4906,24 @@
     <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.BatchDeleteKnowledgeBaseFailure.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BatchDeleteKnowledgeBaseSuccess.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BatchDeleteKnowledgeBaseSuccess.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.BigQueryParameters.DataSetRegion</property>
     <min>1</min>
     <max>256</max>
@@ -4896,6 +5062,14 @@
     <property>Amazon.QuickSight.Model.CalculatedMeasureField.FieldId</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CapacityBytesRangeFilter.MaxBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CapacityBytesRangeFilter.MinBytes</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CastColumnTypeOperation.ColumnName</property>
@@ -6510,6 +6684,66 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.KeyPairCredentials.PrivateKeyPassphrase</property>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBase.DataSourceArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBase.Description</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>\P{C}*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBase.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBase.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBase.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{N}][\p{L}\p{N} _\-\.]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBaseIngestionSummary.IngestionId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBaseSummary.DataSourceArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBaseSummary.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBaseSummary.KnowledgeBaseId</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[0-9a-zA-Z-_=.+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.KnowledgeBaseSummary.Name</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{N}][\p{L}\p{N} _\-\.]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.KPISparklineOptions.Color</property>
@@ -8484,6 +8718,11 @@
     <property>Amazon.QuickSight.Model.User.UserName</property>
     <min>1</min>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UserNameOrEmailFilter.Prefix</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.VisualCustomAction.CustomActionId</property>

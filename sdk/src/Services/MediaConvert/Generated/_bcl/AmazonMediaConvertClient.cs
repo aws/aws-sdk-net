@@ -2901,8 +2901,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Add tags to a MediaConvert queue, preset, or job template. For information about tagging,
-        /// see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+        /// Add tags to a MediaConvert queue, preset, job, or job template. For information about
+        /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2943,8 +2943,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Add tags to a MediaConvert queue, preset, or job template. For information about tagging,
-        /// see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+        /// Add tags to a MediaConvert queue, preset, job, or job template. For information about
+        /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2992,8 +2992,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Remove tags from a MediaConvert queue, preset, or job template. For information about
-        /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+        /// Remove tags from a MediaConvert queue, preset, job, or job template. For information
+        /// about tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3034,8 +3034,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Remove tags from a MediaConvert queue, preset, or job template. For information about
-        /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+        /// Remove tags from a MediaConvert queue, preset, job, or job template. For information
+        /// about tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

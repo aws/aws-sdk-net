@@ -80,6 +80,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.LookBackTimePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SavingsPlansTargetCoverage", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SavingsPlansTargetCoverage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SavingsPlansToAdd", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavingsPlans, SavingsPlansUnmarshaller>(SavingsPlansUnmarshaller.Instance);

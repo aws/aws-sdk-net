@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private int? _channels;
         private FrameRate _frameRate;
         private string _languageCode;
+        private int? _objectCount;
         private int? _sampleRate;
 
         /// <summary>
@@ -116,6 +117,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectCount. The number of audio objects in an object-based
+        /// or immersive audio track. This field is present for codecs that support object-based
+        /// audio, such as E-AC-3 with Joint Object Coding (JOC) or IAMF. This field is null when
+        /// the audio track does not contain object-based audio metadata.
+        /// </summary>
+        public int? ObjectCount
+        {
+            get { return this._objectCount; }
+            set { this._objectCount = value; }
+        }
+
+        // Check to see if ObjectCount property is set
+        internal bool IsSetObjectCount()
+        {
+            return this._objectCount.HasValue; 
         }
 
         /// <summary>

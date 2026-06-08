@@ -38,6 +38,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeConfigRulesFilters
     {
         private EvaluationMode _evaluationMode;
+        private RuleEvaluationVisibility _ruleEvaluationVisibility;
 
         /// <summary>
         /// Gets and sets the property EvaluationMode. 
@@ -55,6 +56,24 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetEvaluationMode()
         {
             return this._evaluationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleEvaluationVisibility. 
+        /// <para>
+        /// Filters the results by <c>RuleEvaluationVisibility</c>.
+        /// </para>
+        /// </summary>
+        public RuleEvaluationVisibility RuleEvaluationVisibility
+        {
+            get { return this._ruleEvaluationVisibility; }
+            set { this._ruleEvaluationVisibility = value; }
+        }
+
+        // Check to see if RuleEvaluationVisibility property is set
+        internal bool IsSetRuleEvaluationVisibility()
+        {
+            return this._ruleEvaluationVisibility != null;
         }
 
     }

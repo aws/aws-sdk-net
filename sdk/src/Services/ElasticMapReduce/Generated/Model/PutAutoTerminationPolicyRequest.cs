@@ -75,7 +75,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// be attached.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }

@@ -34,8 +34,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AIRecommendationOutputConfig
     {
+        private AIMlflowConfig _mlflowConfig;
         private string _modelPackageGroupIdentifier;
         private string _s3OutputLocation;
+
+        /// <summary>
+        /// Gets and sets the property MlflowConfig. 
+        /// <para>
+        /// The MLflow tracking configuration for the job. If you don't specify this parameter,
+        /// MLflow tracking is disabled.
+        /// </para>
+        /// </summary>
+        public AIMlflowConfig MlflowConfig
+        {
+            get { return this._mlflowConfig; }
+            set { this._mlflowConfig = value; }
+        }
+
+        // Check to see if MlflowConfig property is set
+        internal bool IsSetMlflowConfig()
+        {
+            return this._mlflowConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ModelPackageGroupIdentifier. 

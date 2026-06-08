@@ -40,24 +40,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the chat message. 
+        /// The content of the chat message. Maximum of 16,384 bytes for all content types (<c>text/plain</c>,
+        /// <c>text/markdown</c>, <c>application/json</c>, and <c>application/vnd.amazonaws.connect.message.interactive.response</c>).
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// For <c>text/plain</c> and <c>text/markdown</c>, the Length Constraints are Minimum
-        /// of 1, Maximum of 1024. 
+        /// Some messaging channels enforce lower limits. For channel-specific message size limits,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html#chat-message-size-limits">Chat
+        /// message size limits by channel</a> in the <i>Amazon Connect Customer Administrator
+        /// Guide</i>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For <c>application/json</c>, the Length Constraints are Minimum of 1, Maximum of 12000.
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For <c>application/vnd.amazonaws.connect.message.interactive.response</c>, the Length
-        /// Constraints are Minimum of 1, Maximum of 12288.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16384)]
         public string Content

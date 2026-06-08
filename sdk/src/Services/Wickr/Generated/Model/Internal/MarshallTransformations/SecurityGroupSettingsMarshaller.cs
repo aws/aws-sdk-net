@@ -200,6 +200,12 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxBor.Value);
             }
 
+            if(requestObject.IsSetMaxNonSsoSessionMinutes())
+            {
+                context.Writer.WritePropertyName("maxNonSsoSessionMinutes");
+                context.Writer.WriteNumberValue(requestObject.MaxNonSsoSessionMinutes.Value);
+            }
+
             if(requestObject.IsSetMaxTtl())
             {
                 context.Writer.WritePropertyName("maxTtl");

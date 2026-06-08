@@ -1,6 +1,7 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,19 +28,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public async Task TestDataCalls()
         {
             // Test hash-key table
-            await TestHashTable(_fixture.HashTableName);
+            var (hashItemId, hashItemId2) = await TestHashTable(_fixture.HashTableName);
 
             // Test hash-and-range-key table
             await TestHashRangeTable(_fixture.HashRangeTableName);
 
             // Test batch gets and writes
-            await TestBatchWriteGet(_fixture.HashTableName, _fixture.HashRangeTableName);
+            await TestBatchWriteGet(_fixture.HashTableName, _fixture.HashRangeTableName, hashItemId, hashItemId2);
 
             // Test large batch gets and writes
             await TestLargeBatches(_fixture.HashTableName);
         }
 
-        private async Task TestHashTable(string hashTableName)
+        private async Task<(string, string)> TestHashTable(string hashTableName)
         {
             // Put item
             var nonEmptyListAV = new AttributeValue
@@ -76,9 +77,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             boolAV.BOOL = false;
             Assert.True(boolAV.IsBOOLSet);
 
+            var itemId = UtilityMethods.GenerateId().ToString();
             await _fixture.Client.PutItemAsync(hashTableName, new Dictionary<string, AttributeValue>
             {
-                { "Id", new AttributeValue { N = "1" } },
+                { "Id", new AttributeValue { N = itemId } },
                 { "Product", new AttributeValue { S = "CloudSpotter" } },
                 { "Company", new AttributeValue { S = "CloudsAreGrate" } },
                 { "Tags", new AttributeValue { SS = new List<string> { "Prod", "1.0" } } },
@@ -94,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Get item
             var key1 = new Dictionary<string, AttributeValue>
             {
-                { "Id", new AttributeValue { N = "1" } }
+                { "Id", new AttributeValue { N = itemId } }
             };
             var item = (await _fixture.Client.GetItemAsync(new GetItemRequest { TableName = hashTableName, Key = key1, ConsistentRead = true })).Item;
 
@@ -160,9 +162,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, items.Count);
 
             // Update non-existent item
+            var itemId2 = UtilityMethods.GenerateId().ToString();
             key2 = new Dictionary<string, AttributeValue>
             {
-                { "Id", new AttributeValue { N = "2" } }
+                { "Id", new AttributeValue { N = itemId2 } }
             };
             await _fixture.Client.UpdateItemAsync(hashTableName, key2,
                 new Dictionary<string, AttributeValueUpdate>
@@ -240,6 +243,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             })).Items;
             Assert.Equal(1, items.Count);
+
+            return (itemId, itemId2);
         }
 
         private async Task TestHashRangeTable(string hashRangeTableName)
@@ -593,8 +598,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(1, items.Count);
         }
 
-        private async Task TestBatchWriteGet(string hashTableName, string hashRangeTableName)
+        private async Task TestBatchWriteGet(string hashTableName, string hashRangeTableName, string hashItemId, string hashItemId2)
         {
+            var hashItemId3 = UtilityMethods.GenerateId().ToString();
+
             // Put 1 item and delete 2 items across 2 tables
             await _fixture.Client.BatchWriteItemAsync(new Dictionary<string, List<WriteRequest>>
             {
@@ -608,7 +615,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             {
                                 Item = new Dictionary<string,AttributeValue>
                                 {
-                                    { "Id", new AttributeValue { N = "6" } },
+                                    { "Id", new AttributeValue { N = hashItemId3 } },
                                     { "Product", new AttributeValue { S = "CloudVerifier" } },
                                     { "Company", new AttributeValue { S = "CloudsAreGrate" } },
                                 }
@@ -620,7 +627,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                             {
                                 Key = new Dictionary<string,AttributeValue>
                                 {
-                                    { "Id", new AttributeValue { N = "2" } }
+                                    { "Id", new AttributeValue { N = hashItemId2 } }
                                 }
                             }
                         }
@@ -656,11 +663,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                         {
                             new Dictionary<string, AttributeValue>
                             {
-                                { "Id", new AttributeValue { N = "1" } }
+                                { "Id", new AttributeValue { N = hashItemId } }
                             },
                             new Dictionary<string, AttributeValue>
                             {
-                                { "Id", new AttributeValue { N = "6" } }
+                                { "Id", new AttributeValue { N = hashItemId3 } }
                             }
                         }
                     }

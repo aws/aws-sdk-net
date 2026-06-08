@@ -75,6 +75,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSavingsPlansTargetCoverage())
+            {
+                context.Writer.WritePropertyName("SavingsPlansTargetCoverage");
+                context.Writer.WriteNumberValue(requestObject.SavingsPlansTargetCoverage.Value);
+            }
+
             if(requestObject.IsSetSavingsPlansToAdd())
             {
                 context.Writer.WritePropertyName("SavingsPlansToAdd");

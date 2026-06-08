@@ -63,10 +63,8 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <c>nextToken</c> response in the previous request. If you did, it indicates that
-        /// more output is available. Set this parameter to the value provided by the previous
-        /// call's <c>nextToken</c> response to request the next page of results.
+        /// A pagination token. A response may contain no results while still including a <c>nextToken</c>.
+        /// Continue paginating until <c>nextToken</c> is null to retrieve all results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

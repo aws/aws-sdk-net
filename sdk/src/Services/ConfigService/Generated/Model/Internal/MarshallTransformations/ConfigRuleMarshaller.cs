@@ -110,6 +110,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MaximumExecutionFrequency);
             }
 
+            if(requestObject.IsSetRuleEvaluationVisibility())
+            {
+                context.Writer.WritePropertyName("RuleEvaluationVisibility");
+                context.Writer.WriteStringValue(requestObject.RuleEvaluationVisibility);
+            }
+
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("Scope");

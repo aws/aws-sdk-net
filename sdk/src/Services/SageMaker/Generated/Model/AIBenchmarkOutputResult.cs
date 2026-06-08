@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class AIBenchmarkOutputResult
     {
         private List<AICloudWatchLogs> _cloudWatchLogs = AWSConfigs.InitializeCollections ? new List<AICloudWatchLogs>() : null;
+        private AIMlflowConfig _mlflowConfig;
         private string _s3OutputLocation;
 
         /// <summary>
@@ -59,6 +60,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCloudWatchLogs()
         {
             return this._cloudWatchLogs != null && (this._cloudWatchLogs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowConfig. 
+        /// <para>
+        /// The MLflow tracking configuration for the job.
+        /// </para>
+        /// </summary>
+        public AIMlflowConfig MlflowConfig
+        {
+            get { return this._mlflowConfig; }
+            set { this._mlflowConfig = value; }
+        }
+
+        // Check to see if MlflowConfig property is set
+        internal bool IsSetMlflowConfig()
+        {
+            return this._mlflowConfig != null;
         }
 
         /// <summary>

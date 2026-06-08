@@ -111,6 +111,24 @@ namespace Amazon.Wickr
     /// includes a brief discussion about HTTP status codes. We recommend looking there as
     /// part of your investigation when you get an error.
     /// </para>
+    ///  
+    /// <para>
+    ///  <i>Regional availability</i> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The Amazon Web Services Wickr API is available in several Amazon Web Services Regions
+    /// and it provides an endpoint for each of these Regions. For a list of all the Regions
+    /// and endpoints where the API is currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/wickr.html">Amazon
+    /// Web Services Wickr endpoints and quotas</a> in the <i>Amazon Web Services General
+    /// Reference Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Wickr API endpoints are region-specific and include a region code in the format: <c>https://admin.wickr.[regioncode].amazonaws.com</c>.
+    /// For example, for the US East (N.Virginia) <c>us-east-1</c>, the API endpoint is <c>https://admin.wickr.us-east-1.amazonaws.com</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonWickr : IAmazonService, IDisposable
     {

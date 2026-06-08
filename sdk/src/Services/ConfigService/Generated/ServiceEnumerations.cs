@@ -4165,6 +4165,56 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type RuleEvaluationVisibility.
+    /// </summary>
+    public class RuleEvaluationVisibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL for RuleEvaluationVisibility
+        /// </summary>
+        public static readonly RuleEvaluationVisibility EXTERNAL = new RuleEvaluationVisibility("EXTERNAL");
+        /// <summary>
+        /// Constant INTERNAL for RuleEvaluationVisibility
+        /// </summary>
+        public static readonly RuleEvaluationVisibility INTERNAL = new RuleEvaluationVisibility("INTERNAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleEvaluationVisibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleEvaluationVisibility FindValue(string value)
+        {
+            return FindValue<RuleEvaluationVisibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleEvaluationVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortBy.
     /// </summary>
     public class SortBy : ConstantClass
