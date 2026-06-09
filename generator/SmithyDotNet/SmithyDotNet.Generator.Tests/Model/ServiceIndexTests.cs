@@ -62,4 +62,39 @@ public class ServiceIndexTests(CloudTrailModelFixture fixture)
     {
         Assert.All(_index.Shapes.Values, s => Assert.False(s is ServiceShape or OperationShape));
     }
+
+    [Fact]
+    public void Shapes_ContainsServiceLevelErrors()
+    {
+        var modelJson = """
+        {
+          "smithy": "2.0",
+          "shapes": {
+            "test#TestService": {
+              "type": "service",
+              "version": "1.0",
+              "operations": [],
+              "errors": [
+                { "target": "test#ServiceError" }
+              ]
+            },
+            "test#ServiceError": {
+              "type": "structure",
+              "members": {
+                "message": { "target": "smithy.api#String" }
+              },
+              "traits": {
+                "smithy.api#error": "server"
+              }
+            }
+          }
+        }
+        """;
+
+        var model = System.Text.Json.JsonSerializer.Deserialize<SmithyModel>(
+            modelJson, CloudTrailModelFixture.Options)!;
+        var index = new ServiceIndex(model);
+
+        Assert.Contains("ServiceError", index.Shapes.Keys.Select(k => k.Name));
+    }
 }

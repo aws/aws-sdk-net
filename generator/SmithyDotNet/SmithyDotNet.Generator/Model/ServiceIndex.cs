@@ -8,8 +8,7 @@ namespace SmithyDotNet.Generator.Model;
 /// Combines operation discovery (similar to Java smithy-model's <c>TopDownIndex</c>) with
 /// recursive shape reachability (similar to the C2J generator's shape traversal).
 /// <para />
-/// Does not yet traverse resources or service-level errors and also assumes the model has been 
-/// validated by <see cref="ModelValidator"/>.
+/// Does not yet traverse resources. Assumes the model has been validated by <see cref="ModelValidator"/>.
 /// </summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/service-types.html" /></remarks>
 public class ServiceIndex
@@ -31,7 +30,7 @@ public class ServiceIndex
     {
         Service = model.Shapes.Values.OfType<ServiceShape>().Single();
         Operations = CollectOperations(model, Service);
-        Shapes = CollectReachableShapes(model, Operations);
+        Shapes = CollectReachableShapes(model, Service, Operations);
     }
 
     private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
@@ -51,11 +50,15 @@ public class ServiceIndex
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, IReadOnlyList<OperationShape> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
     {
-        // TODO: walk service.Errors for service-level error shapes
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();
+
+        foreach (var errorId in service.Errors)
+        {
+            WalkShapeId(model, errorId, reachable, visited);
+        }
 
         foreach (var operation in operations)
         {
