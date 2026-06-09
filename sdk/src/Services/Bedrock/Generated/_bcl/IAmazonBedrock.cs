@@ -3220,6 +3220,58 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  GetAccountDataRetention
+
+
+        /// <summary>
+        /// Returns the account-wide data retention mode for Amazon Bedrock.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountDataRetention service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountDataRetention service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetention">REST API Reference for GetAccountDataRetention Operation</seealso>
+        GetAccountDataRetentionResponse GetAccountDataRetention(GetAccountDataRetentionRequest request);
+
+
+
+        /// <summary>
+        /// Returns the account-wide data retention mode for Amazon Bedrock.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountDataRetention service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountDataRetention service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAccountDataRetention">REST API Reference for GetAccountDataRetention Operation</seealso>
+        Task<GetAccountDataRetentionResponse> GetAccountDataRetentionAsync(GetAccountDataRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAdvancedPromptOptimizationJob
 
 
@@ -6249,6 +6301,58 @@ namespace Amazon.Bedrock
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAccountDataRetention
+
+
+        /// <summary>
+        /// Sets the account-wide data retention mode for Amazon Bedrock.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDataRetention service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountDataRetention service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">REST API Reference for PutAccountDataRetention Operation</seealso>
+        PutAccountDataRetentionResponse PutAccountDataRetention(PutAccountDataRetentionRequest request);
+
+
+
+        /// <summary>
+        /// Sets the account-wide data retention mode for Amazon Bedrock.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountDataRetention service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountDataRetention service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutAccountDataRetention">REST API Reference for PutAccountDataRetention Operation</seealso>
+        Task<PutAccountDataRetentionResponse> PutAccountDataRetentionAsync(PutAccountDataRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

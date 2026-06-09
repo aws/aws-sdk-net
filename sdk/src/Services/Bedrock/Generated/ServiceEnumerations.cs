@@ -1181,6 +1181,64 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type DataRetentionMode.
+    /// </summary>
+    public class DataRetentionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Default = new DataRetentionMode("default");
+        /// <summary>
+        /// Constant Inherit for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Inherit = new DataRetentionMode("inherit");
+        /// <summary>
+        /// Constant None for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode None = new DataRetentionMode("none");
+        /// <summary>
+        /// Constant Provider_data_share for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Provider_data_share = new DataRetentionMode("provider_data_share");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataRetentionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataRetentionMode FindValue(string value)
+        {
+            return FindValue<DataRetentionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataRetentionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EntitlementAvailability.
     /// </summary>
     public class EntitlementAvailability : ConstantClass
