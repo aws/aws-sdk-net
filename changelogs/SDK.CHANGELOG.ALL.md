@@ -1,3 +1,29 @@
+### 4.0.266.0 (2026-06-09 18:18 UTC)
+* AWSMarketplaceCommerceAnalytics (4.0.3.0)
+	* Adding new BDD representation of endpoint ruleset
+* Bedrock (4.0.30.0)
+	* Adds support for the Amazon Bedrock account-level data retention APIs PutAccountDataRetention and GetAccountDataRetention.
+* BedrockAgentCore (4.0.27.0)
+	* Add RetryableConflictException (HTTP 409) to InvokeAgentRuntimeCommand and GetAgentCard to prevent orphaned VMs during concurrent session access. The SDK automatically retries this exception with backoff. Enforcement is not yet active and will be enabled in a future service update.
+* CloudWatch (4.0.12.0)
+	* This release adds the APIs (AssociateDatasetKmsKey, DisassociateDatasetKmsKey, GetDataset) to manage encryption at rest for OpenTelemetry metrics in CloudWatch using AWS KMS customer managed keys.
+* DynamoDBStreams (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* DynamoDBv2 (4.0.21.0)
+	* Replace legacy parameter Expected with ConditionExpression in DeleteItem and DeleteItemAsync flow
+* EC2 (4.0.92.0)
+	* Added TagFieldSpecifications to CreateFlowLogs and DescribeFlowLogs APIs. Customers can now specify tag keys in their Flow Logs subscriptions to capture associated EC2 resource tag values in their logs, enabling tag-based visibility.
+* IoTSiteWise (4.0.5.0)
+	* Adding new BDD representation of endpoint ruleset
+* Odb (4.0.8.0)
+	* Releases Autonomous Database Serverless APIs, autonomousDatabaseOciIntegrationIamRoles, linkedOciTenancyId, linkedOciCompartmentId, and subscriptionErrors fields in GetOciOnboardingStatus API response.
+* Outposts (4.0.8.0)
+	* Added AWS Outposts APIs for self-service Outposts quoting and ordering. New operations include CreateQuote, GetQuote, UpdateQuote, DeleteQuote, ListQuotes, and ListOrderableInstanceTypes.
+* TimestreamQuery (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+* TimestreamWrite (4.0.4.0)
+	* Adding new BDD representation of endpoint ruleset
+
 ### 4.0.265.0 (2026-06-08 18:32 UTC)
 * ComputeOptimizer (4.0.8.0)
 	* Adds new Idle Recommendation Resource types in the AWS Compute Optimizer API
