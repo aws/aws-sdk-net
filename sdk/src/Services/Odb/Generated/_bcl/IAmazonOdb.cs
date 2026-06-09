@@ -228,6 +228,232 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  CreateAutonomousDatabase
+
+
+        /// <summary>
+        /// Creates a new Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabase">REST API Reference for CreateAutonomousDatabase Operation</seealso>
+        CreateAutonomousDatabaseResponse CreateAutonomousDatabase(CreateAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabase">REST API Reference for CreateAutonomousDatabase Operation</seealso>
+        Task<CreateAutonomousDatabaseResponse> CreateAutonomousDatabaseAsync(CreateAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAutonomousDatabaseBackup
+
+
+        /// <summary>
+        /// Creates a new backup of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabaseBackup service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseBackup">REST API Reference for CreateAutonomousDatabaseBackup Operation</seealso>
+        CreateAutonomousDatabaseBackupResponse CreateAutonomousDatabaseBackup(CreateAutonomousDatabaseBackupRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new backup of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabaseBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseBackup">REST API Reference for CreateAutonomousDatabaseBackup Operation</seealso>
+        Task<CreateAutonomousDatabaseBackupResponse> CreateAutonomousDatabaseBackupAsync(CreateAutonomousDatabaseBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAutonomousDatabaseWallet
+
+
+        /// <summary>
+        /// Creates a new wallet for the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabaseWallet service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabaseWallet service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseWallet">REST API Reference for CreateAutonomousDatabaseWallet Operation</seealso>
+        CreateAutonomousDatabaseWalletResponse CreateAutonomousDatabaseWallet(CreateAutonomousDatabaseWalletRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new wallet for the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutonomousDatabaseWallet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutonomousDatabaseWallet service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateAutonomousDatabaseWallet">REST API Reference for CreateAutonomousDatabaseWallet Operation</seealso>
+        Task<CreateAutonomousDatabaseWalletResponse> CreateAutonomousDatabaseWalletAsync(CreateAutonomousDatabaseWalletRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCloudAutonomousVmCluster
 
 
@@ -615,6 +841,154 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbPeeringConnection">REST API Reference for CreateOdbPeeringConnection Operation</seealso>
         Task<CreateOdbPeeringConnectionResponse> CreateOdbPeeringConnectionAsync(CreateOdbPeeringConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAutonomousDatabase
+
+
+        /// <summary>
+        /// Deletes the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabase">REST API Reference for DeleteAutonomousDatabase Operation</seealso>
+        DeleteAutonomousDatabaseResponse DeleteAutonomousDatabase(DeleteAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabase">REST API Reference for DeleteAutonomousDatabase Operation</seealso>
+        Task<DeleteAutonomousDatabaseResponse> DeleteAutonomousDatabaseAsync(DeleteAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAutonomousDatabaseBackup
+
+
+        /// <summary>
+        /// Deletes the specified Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutonomousDatabaseBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabaseBackup">REST API Reference for DeleteAutonomousDatabaseBackup Operation</seealso>
+        DeleteAutonomousDatabaseBackupResponse DeleteAutonomousDatabaseBackup(DeleteAutonomousDatabaseBackupRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutonomousDatabaseBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteAutonomousDatabaseBackup">REST API Reference for DeleteAutonomousDatabaseBackup Operation</seealso>
+        Task<DeleteAutonomousDatabaseBackupResponse> DeleteAutonomousDatabaseBackupAsync(DeleteAutonomousDatabaseBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1047,6 +1421,278 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">REST API Reference for DisassociateIamRoleFromResource Operation</seealso>
         Task<DisassociateIamRoleFromResourceResponse> DisassociateIamRoleFromResourceAsync(DisassociateIamRoleFromResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  FailoverAutonomousDatabase
+
+
+        /// <summary>
+        /// Initiates a failover of the specified Autonomous Database to a standby peer database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the FailoverAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/FailoverAutonomousDatabase">REST API Reference for FailoverAutonomousDatabase Operation</seealso>
+        FailoverAutonomousDatabaseResponse FailoverAutonomousDatabase(FailoverAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Initiates a failover of the specified Autonomous Database to a standby peer database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the FailoverAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the FailoverAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/FailoverAutonomousDatabase">REST API Reference for FailoverAutonomousDatabase Operation</seealso>
+        Task<FailoverAutonomousDatabaseResponse> FailoverAutonomousDatabaseAsync(FailoverAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAutonomousDatabase
+
+
+        /// <summary>
+        /// Gets information about a specific Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabase">REST API Reference for GetAutonomousDatabase Operation</seealso>
+        GetAutonomousDatabaseResponse GetAutonomousDatabase(GetAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a specific Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabase">REST API Reference for GetAutonomousDatabase Operation</seealso>
+        Task<GetAutonomousDatabaseResponse> GetAutonomousDatabaseAsync(GetAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAutonomousDatabaseBackup
+
+
+        /// <summary>
+        /// Gets information about a specific Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabaseBackup service method.</param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseBackup">REST API Reference for GetAutonomousDatabaseBackup Operation</seealso>
+        GetAutonomousDatabaseBackupResponse GetAutonomousDatabaseBackup(GetAutonomousDatabaseBackupRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a specific Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabaseBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseBackup">REST API Reference for GetAutonomousDatabaseBackup Operation</seealso>
+        Task<GetAutonomousDatabaseBackupResponse> GetAutonomousDatabaseBackupAsync(GetAutonomousDatabaseBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAutonomousDatabaseWalletDetails
+
+
+        /// <summary>
+        /// Gets the wallet details for the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabaseWalletDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabaseWalletDetails service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseWalletDetails">REST API Reference for GetAutonomousDatabaseWalletDetails Operation</seealso>
+        GetAutonomousDatabaseWalletDetailsResponse GetAutonomousDatabaseWalletDetails(GetAutonomousDatabaseWalletDetailsRequest request);
+
+
+
+        /// <summary>
+        /// Gets the wallet details for the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutonomousDatabaseWalletDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutonomousDatabaseWalletDetails service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetAutonomousDatabaseWalletDetails">REST API Reference for GetAutonomousDatabaseWalletDetails Operation</seealso>
+        Task<GetAutonomousDatabaseWalletDetailsResponse> GetAutonomousDatabaseWalletDetailsAsync(GetAutonomousDatabaseWalletDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1693,6 +2339,380 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/InitializeService">REST API Reference for InitializeService Operation</seealso>
         Task<InitializeServiceResponse> InitializeServiceAsync(InitializeServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabaseBackups
+
+
+        /// <summary>
+        /// Lists the backups of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseBackups service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseBackups service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseBackups">REST API Reference for ListAutonomousDatabaseBackups Operation</seealso>
+        ListAutonomousDatabaseBackupsResponse ListAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the backups of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseBackups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseBackups service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseBackups">REST API Reference for ListAutonomousDatabaseBackups Operation</seealso>
+        Task<ListAutonomousDatabaseBackupsResponse> ListAutonomousDatabaseBackupsAsync(ListAutonomousDatabaseBackupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabaseCharacterSets
+
+
+        /// <summary>
+        /// Lists the available character sets for Autonomous Databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseCharacterSets service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseCharacterSets service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseCharacterSets">REST API Reference for ListAutonomousDatabaseCharacterSets Operation</seealso>
+        ListAutonomousDatabaseCharacterSetsResponse ListAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the available character sets for Autonomous Databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseCharacterSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseCharacterSets service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseCharacterSets">REST API Reference for ListAutonomousDatabaseCharacterSets Operation</seealso>
+        Task<ListAutonomousDatabaseCharacterSetsResponse> ListAutonomousDatabaseCharacterSetsAsync(ListAutonomousDatabaseCharacterSetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabaseClones
+
+
+        /// <summary>
+        /// Lists the clones of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseClones service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseClones service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseClones">REST API Reference for ListAutonomousDatabaseClones Operation</seealso>
+        ListAutonomousDatabaseClonesResponse ListAutonomousDatabaseClones(ListAutonomousDatabaseClonesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the clones of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseClones service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseClones service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseClones">REST API Reference for ListAutonomousDatabaseClones Operation</seealso>
+        Task<ListAutonomousDatabaseClonesResponse> ListAutonomousDatabaseClonesAsync(ListAutonomousDatabaseClonesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabasePeers
+
+
+        /// <summary>
+        /// Lists the peer databases of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabasePeers service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabasePeers service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabasePeers">REST API Reference for ListAutonomousDatabasePeers Operation</seealso>
+        ListAutonomousDatabasePeersResponse ListAutonomousDatabasePeers(ListAutonomousDatabasePeersRequest request);
+
+
+
+        /// <summary>
+        /// Lists the peer databases of the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabasePeers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabasePeers service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabasePeers">REST API Reference for ListAutonomousDatabasePeers Operation</seealso>
+        Task<ListAutonomousDatabasePeersResponse> ListAutonomousDatabasePeersAsync(ListAutonomousDatabasePeersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabases
+
+
+        /// <summary>
+        /// Returns information about the Autonomous Databases owned by your Amazon Web Services
+        /// account in the current Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabases service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabases service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabases">REST API Reference for ListAutonomousDatabases Operation</seealso>
+        ListAutonomousDatabasesResponse ListAutonomousDatabases(ListAutonomousDatabasesRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the Autonomous Databases owned by your Amazon Web Services
+        /// account in the current Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabases service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabases">REST API Reference for ListAutonomousDatabases Operation</seealso>
+        Task<ListAutonomousDatabasesResponse> ListAutonomousDatabasesAsync(ListAutonomousDatabasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAutonomousDatabaseVersions
+
+
+        /// <summary>
+        /// Lists the available Oracle Database software versions for Autonomous Databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseVersions service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseVersions">REST API Reference for ListAutonomousDatabaseVersions Operation</seealso>
+        ListAutonomousDatabaseVersionsResponse ListAutonomousDatabaseVersions(ListAutonomousDatabaseVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the available Oracle Database software versions for Autonomous Databases.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutonomousDatabaseVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutonomousDatabaseVersions service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousDatabaseVersions">REST API Reference for ListAutonomousDatabaseVersions Operation</seealso>
+        Task<ListAutonomousDatabaseVersionsResponse> ListAutonomousDatabaseVersionsAsync(ListAutonomousDatabaseVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2436,6 +3456,80 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  RebootAutonomousDatabase
+
+
+        /// <summary>
+        /// Reboots the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the RebootAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootAutonomousDatabase">REST API Reference for RebootAutonomousDatabase Operation</seealso>
+        RebootAutonomousDatabaseResponse RebootAutonomousDatabase(RebootAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Reboots the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RebootAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RebootAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootAutonomousDatabase">REST API Reference for RebootAutonomousDatabase Operation</seealso>
+        Task<RebootAutonomousDatabaseResponse> RebootAutonomousDatabaseAsync(RebootAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RebootDbNode
 
 
@@ -2499,6 +3593,228 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootDbNode">REST API Reference for RebootDbNode Operation</seealso>
         Task<RebootDbNodeResponse> RebootDbNodeAsync(RebootDbNodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestoreAutonomousDatabase
+
+
+        /// <summary>
+        /// Restores the specified Autonomous Database to a point in time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the RestoreAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RestoreAutonomousDatabase">REST API Reference for RestoreAutonomousDatabase Operation</seealso>
+        RestoreAutonomousDatabaseResponse RestoreAutonomousDatabase(RestoreAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Restores the specified Autonomous Database to a point in time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RestoreAutonomousDatabase">REST API Reference for RestoreAutonomousDatabase Operation</seealso>
+        Task<RestoreAutonomousDatabaseResponse> RestoreAutonomousDatabaseAsync(RestoreAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ShrinkAutonomousDatabase
+
+
+        /// <summary>
+        /// Shrinks the storage of the specified Autonomous Database to reclaim unused space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ShrinkAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the ShrinkAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ShrinkAutonomousDatabase">REST API Reference for ShrinkAutonomousDatabase Operation</seealso>
+        ShrinkAutonomousDatabaseResponse ShrinkAutonomousDatabase(ShrinkAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Shrinks the storage of the specified Autonomous Database to reclaim unused space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ShrinkAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ShrinkAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ShrinkAutonomousDatabase">REST API Reference for ShrinkAutonomousDatabase Operation</seealso>
+        Task<ShrinkAutonomousDatabaseResponse> ShrinkAutonomousDatabaseAsync(ShrinkAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartAutonomousDatabase
+
+
+        /// <summary>
+        /// Starts the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the StartAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartAutonomousDatabase">REST API Reference for StartAutonomousDatabase Operation</seealso>
+        StartAutonomousDatabaseResponse StartAutonomousDatabase(StartAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Starts the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartAutonomousDatabase">REST API Reference for StartAutonomousDatabase Operation</seealso>
+        Task<StartAutonomousDatabaseResponse> StartAutonomousDatabaseAsync(StartAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2568,6 +3884,80 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  StopAutonomousDatabase
+
+
+        /// <summary>
+        /// Stops the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the StopAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopAutonomousDatabase">REST API Reference for StopAutonomousDatabase Operation</seealso>
+        StopAutonomousDatabaseResponse StopAutonomousDatabase(StopAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Stops the specified Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopAutonomousDatabase">REST API Reference for StopAutonomousDatabase Operation</seealso>
+        Task<StopAutonomousDatabaseResponse> StopAutonomousDatabaseAsync(StopAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopDbNode
 
 
@@ -2631,6 +4021,80 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopDbNode">REST API Reference for StopDbNode Operation</seealso>
         Task<StopDbNodeResponse> StopDbNodeAsync(StopDbNodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SwitchoverAutonomousDatabase
+
+
+        /// <summary>
+        /// Performs a switchover of the specified Autonomous Database to a standby peer database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the SwitchoverAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/SwitchoverAutonomousDatabase">REST API Reference for SwitchoverAutonomousDatabase Operation</seealso>
+        SwitchoverAutonomousDatabaseResponse SwitchoverAutonomousDatabase(SwitchoverAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Performs a switchover of the specified Autonomous Database to a standby peer database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SwitchoverAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SwitchoverAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/SwitchoverAutonomousDatabase">REST API Reference for SwitchoverAutonomousDatabase Operation</seealso>
+        Task<SwitchoverAutonomousDatabaseResponse> SwitchoverAutonomousDatabaseAsync(SwitchoverAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2709,6 +4173,154 @@ namespace Amazon.Odb
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAutonomousDatabase
+
+
+        /// <summary>
+        /// Updates the properties of an Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutonomousDatabase service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabase">REST API Reference for UpdateAutonomousDatabase Operation</seealso>
+        UpdateAutonomousDatabaseResponse UpdateAutonomousDatabase(UpdateAutonomousDatabaseRequest request);
+
+
+
+        /// <summary>
+        /// Updates the properties of an Autonomous Database.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutonomousDatabase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutonomousDatabase service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabase">REST API Reference for UpdateAutonomousDatabase Operation</seealso>
+        Task<UpdateAutonomousDatabaseResponse> UpdateAutonomousDatabaseAsync(UpdateAutonomousDatabaseRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAutonomousDatabaseBackup
+
+
+        /// <summary>
+        /// Updates the properties of an Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutonomousDatabaseBackup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabaseBackup">REST API Reference for UpdateAutonomousDatabaseBackup Operation</seealso>
+        UpdateAutonomousDatabaseBackupResponse UpdateAutonomousDatabaseBackup(UpdateAutonomousDatabaseBackupRequest request);
+
+
+
+        /// <summary>
+        /// Updates the properties of an Autonomous Database backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutonomousDatabaseBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutonomousDatabaseBackup service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateAutonomousDatabaseBackup">REST API Reference for UpdateAutonomousDatabaseBackup Operation</seealso>
+        Task<UpdateAutonomousDatabaseBackupResponse> UpdateAutonomousDatabaseBackupAsync(UpdateAutonomousDatabaseBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

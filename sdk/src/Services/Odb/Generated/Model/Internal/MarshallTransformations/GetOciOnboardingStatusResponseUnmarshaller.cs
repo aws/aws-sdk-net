@@ -52,10 +52,28 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("autonomousDatabaseOciIntegrationIamRoles", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<OciIamRole, OciIamRoleUnmarshaller>(OciIamRoleUnmarshaller.Instance);
+                    response.AutonomousDatabaseOciIntegrationIamRoles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("existingTenancyActivationLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExistingTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("linkedOciCompartmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LinkedOciCompartmentId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("linkedOciTenancyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LinkedOciTenancyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("newTenancyActivationLink", targetDepth))
@@ -74,6 +92,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("subscriptionErrors", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SubscriptionError, SubscriptionErrorUnmarshaller>(SubscriptionErrorUnmarshaller.Instance);
+                    response.SubscriptionErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

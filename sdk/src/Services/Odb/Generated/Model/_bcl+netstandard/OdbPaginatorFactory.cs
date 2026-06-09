@@ -37,6 +37,54 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Paginator for ListAutonomousDatabaseBackups operation
+        ///</summary>
+        public IListAutonomousDatabaseBackupsPaginator ListAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest request) 
+        {
+            return new ListAutonomousDatabaseBackupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseCharacterSets operation
+        ///</summary>
+        public IListAutonomousDatabaseCharacterSetsPaginator ListAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest request) 
+        {
+            return new ListAutonomousDatabaseCharacterSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseClones operation
+        ///</summary>
+        public IListAutonomousDatabaseClonesPaginator ListAutonomousDatabaseClones(ListAutonomousDatabaseClonesRequest request) 
+        {
+            return new ListAutonomousDatabaseClonesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabasePeers operation
+        ///</summary>
+        public IListAutonomousDatabasePeersPaginator ListAutonomousDatabasePeers(ListAutonomousDatabasePeersRequest request) 
+        {
+            return new ListAutonomousDatabasePeersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabases operation
+        ///</summary>
+        public IListAutonomousDatabasesPaginator ListAutonomousDatabases(ListAutonomousDatabasesRequest request) 
+        {
+            return new ListAutonomousDatabasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseVersions operation
+        ///</summary>
+        public IListAutonomousDatabaseVersionsPaginator ListAutonomousDatabaseVersions(ListAutonomousDatabaseVersionsRequest request) 
+        {
+            return new ListAutonomousDatabaseVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAutonomousVirtualMachines operation
         ///</summary>
         public IListAutonomousVirtualMachinesPaginator ListAutonomousVirtualMachines(ListAutonomousVirtualMachinesRequest request) 
