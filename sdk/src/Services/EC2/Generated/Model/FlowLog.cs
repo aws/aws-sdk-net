@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         private string _logGroupName;
         private int? _maxAggregationInterval;
         private string _resourceId;
+        private List<TagFieldSpecificationResponse> _tagFieldSpecifications = AWSConfigs.InitializeCollections ? new List<TagFieldSpecificationResponse>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TrafficType _trafficType;
 
@@ -317,6 +318,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetResourceId()
         {
             return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagFieldSpecifications. 
+        /// <para>
+        /// The tag configuration associated with the Flow Logs Amazon EC2 Tags feature fields
+        /// in your custom log format.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<TagFieldSpecificationResponse> TagFieldSpecifications
+        {
+            get { return this._tagFieldSpecifications; }
+            set { this._tagFieldSpecifications = value; }
+        }
+
+        // Check to see if TagFieldSpecifications property is set
+        internal bool IsSetTagFieldSpecifications()
+        {
+            return this._tagFieldSpecifications != null && (this._tagFieldSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
