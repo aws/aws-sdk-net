@@ -462,11 +462,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             };
             switch (request)
             {
-                case DeleteItemDocumentOperationRequest deletetemRequest:
-                    req.Key = Table.MakeKey(deletetemRequest.Key);
+                case DeleteItemDocumentOperationRequest deleteItemRequest:
+                    req.Key = Table.MakeKey(deleteItemRequest.Key);
                     break;
                 case InternalDeleteItemDocumentOperationRequest internalDeleteItemRequest:
-                    req.Key = new Dictionary<string, AttributeValue>(internalDeleteItemRequest.Key);
+                    req.Key = internalDeleteItemRequest.Key;
                     break;
                 default:
                     throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");

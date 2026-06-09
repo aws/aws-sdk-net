@@ -1,12 +1,13 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
+using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
-using static AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.DataModelContextTestHelpers;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
