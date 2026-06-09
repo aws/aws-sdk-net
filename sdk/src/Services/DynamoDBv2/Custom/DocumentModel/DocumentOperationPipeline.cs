@@ -430,30 +430,50 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// invocation, and post-processing of results. The pipeline is intended for internal use within the document model.
     /// </remarks>
     internal sealed class DeleteItemPipeline :
-        DocumentOperationPipeline<DeleteItemDocumentOperationRequest, DeleteItemRequest, DeleteItemResponse, Document>
+        DocumentOperationPipeline<BaseDeleteItemDocumentOperationRequest, DeleteItemRequest, DeleteItemResponse, Document>
     {
         public DeleteItemPipeline(Table table) : base(table) { }
 
-        protected override void Validate(DeleteItemDocumentOperationRequest request)
+        protected override void Validate(BaseDeleteItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-            if (request.Key == null || request.Key.Count == 0)
-                throw new InvalidOperationException("DeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+
+            switch (request)
+            {
+                case DeleteItemDocumentOperationRequest deleteItemRequest:
+                    if (deleteItemRequest.Key == null || deleteItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("DeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                case InternalDeleteItemDocumentOperationRequest internalDeleteItemRequest:
+                    if (internalDeleteItemRequest.Key == null || internalDeleteItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("InternalDeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");
+            }
         }
 
-        protected override DeleteItemRequest Map(DeleteItemDocumentOperationRequest request)
+        protected override DeleteItemRequest Map(BaseDeleteItemDocumentOperationRequest request)
         {
             var req = new DeleteItemRequest
             {
                 TableName = Table.TableName,
-                Key = Table.MakeKey(request.Key)
             };
+
+            var key = request switch
+            {
+                DeleteItemDocumentOperationRequest r => r.Key != null ? Table.MakeKey(r.Key) : null,
+                InternalDeleteItemDocumentOperationRequest ir => ir.Key,
+                _ => null
+            };
+            req.Key = key;
+
             if (request.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(request.ReturnValues);
             return req;
         }
 
-        protected override void ApplyExpressions(DeleteItemDocumentOperationRequest request, DeleteItemRequest lowLevel)
+        protected override void ApplyExpressions(BaseDeleteItemDocumentOperationRequest request, DeleteItemRequest lowLevel)
         {
             if (request.ConditionalExpression is { IsSet: true })
                 request.ConditionalExpression.ApplyExpression(lowLevel, Table);
@@ -479,7 +499,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             await Table.DDBClient.DeleteItemAsync(lowLevel, ct).ConfigureAwait(false);
 
 
-        protected override Document PostProcess(DeleteItemDocumentOperationRequest request, DeleteItemResponse serviceResponse)
+        protected override Document PostProcess(BaseDeleteItemDocumentOperationRequest request, DeleteItemResponse serviceResponse)
         {
             var resp = (DeleteItemResponse)serviceResponse;
             if (request.ReturnValues == ReturnValues.AllOldAttributes && resp.Attributes != null)
