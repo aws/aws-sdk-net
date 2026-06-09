@@ -34,10 +34,29 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class SubscriptionPricingDetails
     {
+        private CurrencyCode _currency;
         private float? _monthlyRecurringPrice;
         private PaymentOption _paymentOption;
         private PaymentTerm _paymentTerm;
         private float? _upfrontPrice;
+
+        /// <summary>
+        /// Gets and sets the property Currency. 
+        /// <para>
+        /// The currency of the price. Currently only <c>USD</c> is supported.
+        /// </para>
+        /// </summary>
+        public CurrencyCode Currency
+        {
+            get { return this._currency; }
+            set { this._currency = value; }
+        }
+
+        // Check to see if Currency property is set
+        internal bool IsSetCurrency()
+        {
+            return this._currency != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MonthlyRecurringPrice. 

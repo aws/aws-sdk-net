@@ -1,0 +1,180 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the outposts-2019-12-03.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Outposts.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+namespace Amazon.Outposts.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateQuote Request Marshaller
+    /// </summary>       
+    public class UpdateQuoteRequestMarshaller : IMarshaller<IRequest, UpdateQuoteRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateQuoteRequest)input);
+        }
+
+        /// <summary>
+        /// Marshaller the request object to the HTTP request.
+        /// </summary>  
+        /// <param name="publicRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(UpdateQuoteRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Outposts");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-03";
+            request.HttpMethod = "PATCH";
+
+            if (!publicRequest.IsSetQuoteIdentifier())
+                throw new AmazonOutpostsException("Request object does not have required field QuoteIdentifier set");
+            request.AddPathResource("{QuoteIdentifier}", StringUtils.FromString(publicRequest.QuoteIdentifier));
+            request.ResourcePath = "/quotes/{QuoteIdentifier}";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCountryCode())
+            {
+                context.Writer.WritePropertyName("CountryCode");
+                context.Writer.WriteStringValue(publicRequest.CountryCode);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetOutpostIdentifier())
+            {
+                context.Writer.WritePropertyName("OutpostIdentifier");
+                context.Writer.WriteStringValue(publicRequest.OutpostIdentifier);
+            }
+
+            if(publicRequest.IsSetRequestedCapacities())
+            {
+                context.Writer.WritePropertyName("RequestedCapacities");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestedCapacitiesListValue in publicRequest.RequestedCapacities)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = QuoteCapacityMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRequestedCapacitiesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRequestedConstraints())
+            {
+                context.Writer.WritePropertyName("RequestedConstraints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestedConstraintsListValue in publicRequest.RequestedConstraints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = QuoteConstraintMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRequestedConstraintsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRequestedPaymentOptions())
+            {
+                context.Writer.WritePropertyName("RequestedPaymentOptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestedPaymentOptionsListValue in publicRequest.RequestedPaymentOptions)
+                {
+                        context.Writer.WriteStringValue(publicRequestRequestedPaymentOptionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRequestedPaymentTerms())
+            {
+                context.Writer.WritePropertyName("RequestedPaymentTerms");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestedPaymentTermsListValue in publicRequest.RequestedPaymentTerms)
+                {
+                        context.Writer.WriteStringValue(publicRequestRequestedPaymentTermsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
+
+            return request;
+        }
+        private static UpdateQuoteRequestMarshaller _instance = new UpdateQuoteRequestMarshaller();        
+
+        internal static UpdateQuoteRequestMarshaller GetInstance()
+        {
+            return _instance;
+        }
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>  
+        public static UpdateQuoteRequestMarshaller Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+
+    }
+}

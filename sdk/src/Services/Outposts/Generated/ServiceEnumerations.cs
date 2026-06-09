@@ -621,6 +621,52 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type CurrencyCode.
+    /// </summary>
+    public class CurrencyCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USD for CurrencyCode
+        /// </summary>
+        public static readonly CurrencyCode USD = new CurrencyCode("USD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CurrencyCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CurrencyCode FindValue(string value)
+        {
+            return FindValue<CurrencyCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CurrencyCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DecommissionRequestStatus.
     /// </summary>
     public class DecommissionRequestStatus : ConstantClass
@@ -718,6 +764,56 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FiberOpticCableType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FormFactor.
+    /// </summary>
+    public class FormFactor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RACK for FormFactor
+        /// </summary>
+        public static readonly FormFactor RACK = new FormFactor("RACK");
+        /// <summary>
+        /// Constant SERVER for FormFactor
+        /// </summary>
+        public static readonly FormFactor SERVER = new FormFactor("SERVER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FormFactor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FormFactor FindValue(string value)
+        {
+            return FindValue<FormFactor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FormFactor(string value)
         {
             return FindValue(value);
         }
@@ -959,6 +1055,170 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type OrderingRequirementStatus.
+    /// </summary>
+    public class OrderingRequirementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXEMPT for OrderingRequirementStatus
+        /// </summary>
+        public static readonly OrderingRequirementStatus EXEMPT = new OrderingRequirementStatus("EXEMPT");
+        /// <summary>
+        /// Constant FAIL for OrderingRequirementStatus
+        /// </summary>
+        public static readonly OrderingRequirementStatus FAIL = new OrderingRequirementStatus("FAIL");
+        /// <summary>
+        /// Constant PASS for OrderingRequirementStatus
+        /// </summary>
+        public static readonly OrderingRequirementStatus PASS = new OrderingRequirementStatus("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrderingRequirementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrderingRequirementStatus FindValue(string value)
+        {
+            return FindValue<OrderingRequirementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrderingRequirementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrderingRequirementType.
+    /// </summary>
+    public class OrderingRequirementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUNTRY_CODE_MISMATCH_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType COUNTRY_CODE_MISMATCH_CHECK_ERROR = new OrderingRequirementType("COUNTRY_CODE_MISMATCH_CHECK_ERROR");
+        /// <summary>
+        /// Constant ENTERPRISE_SUPPORT_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType ENTERPRISE_SUPPORT_ERROR = new OrderingRequirementType("ENTERPRISE_SUPPORT_ERROR");
+        /// <summary>
+        /// Constant MAXIMUM_ALLOWED_ORDERS_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType MAXIMUM_ALLOWED_ORDERS_CHECK_ERROR = new OrderingRequirementType("MAXIMUM_ALLOWED_ORDERS_CHECK_ERROR");
+        /// <summary>
+        /// Constant OPERATING_ADDRESS_EXISTENCE_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OPERATING_ADDRESS_EXISTENCE_CHECK_ERROR = new OrderingRequirementType("OPERATING_ADDRESS_EXISTENCE_CHECK_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_ACTIVE_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_ACTIVE_CHECK_ERROR = new OrderingRequirementType("OUTPOST_ACTIVE_CHECK_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_GENERATION_MISMATCH_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_GENERATION_MISMATCH_ERROR = new OrderingRequirementType("OUTPOST_GENERATION_MISMATCH_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_ID_MISSING_ON_QUOTE_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_ID_MISSING_ON_QUOTE_ERROR = new OrderingRequirementType("OUTPOST_ID_MISSING_ON_QUOTE_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_NOT_FOUND_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_NOT_FOUND_ERROR = new OrderingRequirementType("OUTPOST_NOT_FOUND_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_RENEWAL_REQUIRED_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_RENEWAL_REQUIRED_ERROR = new OrderingRequirementType("OUTPOST_RENEWAL_REQUIRED_ERROR");
+        /// <summary>
+        /// Constant OUTPOST_STATE_CHANGED_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType OUTPOST_STATE_CHANGED_ERROR = new OrderingRequirementType("OUTPOST_STATE_CHANGED_ERROR");
+        /// <summary>
+        /// Constant RACK_PHYSICAL_PROPERTIES_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType RACK_PHYSICAL_PROPERTIES_CHECK_ERROR = new OrderingRequirementType("RACK_PHYSICAL_PROPERTIES_CHECK_ERROR");
+        /// <summary>
+        /// Constant SHIPPING_ADDRESS_EXISTENCE_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType SHIPPING_ADDRESS_EXISTENCE_CHECK_ERROR = new OrderingRequirementType("SHIPPING_ADDRESS_EXISTENCE_CHECK_ERROR");
+        /// <summary>
+        /// Constant SHIPPING_ADDRESS_MISSING_CONTACT_INFO_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType SHIPPING_ADDRESS_MISSING_CONTACT_INFO_ERROR = new OrderingRequirementType("SHIPPING_ADDRESS_MISSING_CONTACT_INFO_ERROR");
+        /// <summary>
+        /// Constant SHIPPING_ADDRESS_MISSING_CONTACT_NAME_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType SHIPPING_ADDRESS_MISSING_CONTACT_NAME_ERROR = new OrderingRequirementType("SHIPPING_ADDRESS_MISSING_CONTACT_NAME_ERROR");
+        /// <summary>
+        /// Constant SHIPPING_ADDRESS_MISSING_CONTACT_NUMBER_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType SHIPPING_ADDRESS_MISSING_CONTACT_NUMBER_ERROR = new OrderingRequirementType("SHIPPING_ADDRESS_MISSING_CONTACT_NUMBER_ERROR");
+        /// <summary>
+        /// Constant UNSUPPORTED for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType UNSUPPORTED = new OrderingRequirementType("UNSUPPORTED");
+        /// <summary>
+        /// Constant VALID_ZIP_CODE_CHECK_ERROR for OrderingRequirementType
+        /// </summary>
+        public static readonly OrderingRequirementType VALID_ZIP_CODE_CHECK_ERROR = new OrderingRequirementType("VALID_ZIP_CODE_CHECK_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrderingRequirementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrderingRequirementType FindValue(string value)
+        {
+            return FindValue<OrderingRequirementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrderingRequirementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderStatus.
     /// </summary>
     public class OrderStatus : ConstantClass
@@ -1088,6 +1348,56 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutpostGeneration.
+    /// </summary>
+    public class OutpostGeneration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GENERATION_1 for OutpostGeneration
+        /// </summary>
+        public static readonly OutpostGeneration GENERATION_1 = new OutpostGeneration("GENERATION_1");
+        /// <summary>
+        /// Constant GENERATION_2 for OutpostGeneration
+        /// </summary>
+        public static readonly OutpostGeneration GENERATION_2 = new OutpostGeneration("GENERATION_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutpostGeneration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutpostGeneration FindValue(string value)
+        {
+            return FindValue<OutpostGeneration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutpostGeneration(string value)
         {
             return FindValue(value);
         }
@@ -1473,6 +1783,114 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type QuoteCapacityType.
+    /// </summary>
+    public class QuoteCapacityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS for QuoteCapacityType
+        /// </summary>
+        public static readonly QuoteCapacityType EBS = new QuoteCapacityType("EBS");
+        /// <summary>
+        /// Constant EC2 for QuoteCapacityType
+        /// </summary>
+        public static readonly QuoteCapacityType EC2 = new QuoteCapacityType("EC2");
+        /// <summary>
+        /// Constant S3 for QuoteCapacityType
+        /// </summary>
+        public static readonly QuoteCapacityType S3 = new QuoteCapacityType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuoteCapacityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuoteCapacityType FindValue(string value)
+        {
+            return FindValue<QuoteCapacityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuoteCapacityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuoteConstraintType.
+    /// </summary>
+    public class QuoteConstraintType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RACK_MAX_POWER_KVA for QuoteConstraintType
+        /// </summary>
+        public static readonly QuoteConstraintType RACK_MAX_POWER_KVA = new QuoteConstraintType("RACK_MAX_POWER_KVA");
+        /// <summary>
+        /// Constant RACK_MAX_WEIGHT_LBS for QuoteConstraintType
+        /// </summary>
+        public static readonly QuoteConstraintType RACK_MAX_WEIGHT_LBS = new QuoteConstraintType("RACK_MAX_WEIGHT_LBS");
+        /// <summary>
+        /// Constant RACK_MAXIMUM for QuoteConstraintType
+        /// </summary>
+        public static readonly QuoteConstraintType RACK_MAXIMUM = new QuoteConstraintType("RACK_MAXIMUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuoteConstraintType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuoteConstraintType FindValue(string value)
+        {
+            return FindValue<QuoteConstraintType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuoteConstraintType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QuotePricingType.
     /// </summary>
     public class QuotePricingType : ConstantClass
@@ -1512,6 +1930,222 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QuotePricingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuoteRackUseType.
+    /// </summary>
+    public class QuoteRackUseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPUTE for QuoteRackUseType
+        /// </summary>
+        public static readonly QuoteRackUseType COMPUTE = new QuoteRackUseType("COMPUTE");
+        /// <summary>
+        /// Constant NETWORKING for QuoteRackUseType
+        /// </summary>
+        public static readonly QuoteRackUseType NETWORKING = new QuoteRackUseType("NETWORKING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuoteRackUseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuoteRackUseType FindValue(string value)
+        {
+            return FindValue<QuoteRackUseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuoteRackUseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuoteSpecificationType.
+    /// </summary>
+    public class QuoteSpecificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXISTING_RACK for QuoteSpecificationType
+        /// </summary>
+        public static readonly QuoteSpecificationType EXISTING_RACK = new QuoteSpecificationType("EXISTING_RACK");
+        /// <summary>
+        /// Constant NEW_RACK for QuoteSpecificationType
+        /// </summary>
+        public static readonly QuoteSpecificationType NEW_RACK = new QuoteSpecificationType("NEW_RACK");
+        /// <summary>
+        /// Constant SERVER for QuoteSpecificationType
+        /// </summary>
+        public static readonly QuoteSpecificationType SERVER = new QuoteSpecificationType("SERVER");
+        /// <summary>
+        /// Constant UPDATED_RACK for QuoteSpecificationType
+        /// </summary>
+        public static readonly QuoteSpecificationType UPDATED_RACK = new QuoteSpecificationType("UPDATED_RACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuoteSpecificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuoteSpecificationType FindValue(string value)
+        {
+            return FindValue<QuoteSpecificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuoteSpecificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuoteStatus.
+    /// </summary>
+    public class QuoteStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for QuoteStatus
+        /// </summary>
+        public static readonly QuoteStatus CREATED = new QuoteStatus("CREATED");
+        /// <summary>
+        /// Constant EXPIRED for QuoteStatus
+        /// </summary>
+        public static readonly QuoteStatus EXPIRED = new QuoteStatus("EXPIRED");
+        /// <summary>
+        /// Constant ORDER_SUBMITTED for QuoteStatus
+        /// </summary>
+        public static readonly QuoteStatus ORDER_SUBMITTED = new QuoteStatus("ORDER_SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuoteStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuoteStatus FindValue(string value)
+        {
+            return FindValue<QuoteStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuoteStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RackUnitHeight.
+    /// </summary>
+    public class RackUnitHeight : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEIGHT_1U for RackUnitHeight
+        /// </summary>
+        public static readonly RackUnitHeight HEIGHT_1U = new RackUnitHeight("HEIGHT_1U");
+        /// <summary>
+        /// Constant HEIGHT_2U for RackUnitHeight
+        /// </summary>
+        public static readonly RackUnitHeight HEIGHT_2U = new RackUnitHeight("HEIGHT_2U");
+        /// <summary>
+        /// Constant HEIGHT_42U for RackUnitHeight
+        /// </summary>
+        public static readonly RackUnitHeight HEIGHT_42U = new RackUnitHeight("HEIGHT_42U");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RackUnitHeight(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RackUnitHeight FindValue(string value)
+        {
+            return FindValue<RackUnitHeight>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RackUnitHeight(string value)
         {
             return FindValue(value);
         }

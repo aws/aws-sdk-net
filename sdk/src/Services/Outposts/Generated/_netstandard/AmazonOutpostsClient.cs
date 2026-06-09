@@ -476,6 +476,54 @@ namespace Amazon.Outposts
         }
         #endregion
         
+        #region  CreateQuote
+
+        internal virtual CreateQuoteResponse CreateQuote(CreateQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQuoteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a quote for an Outpost. A quote provides pricing and configuration options
+        /// based on the requested capacity. You can optionally associate the quote with an existing
+        /// Outpost or create a standalone quote by specifying only the country code and requested
+        /// capacities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQuote service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateQuote">REST API Reference for CreateQuote Operation</seealso>
+        public virtual Task<CreateQuoteResponse> CreateQuoteAsync(CreateQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateQuoteResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateRenewal
 
         internal virtual CreateRenewalResponse CreateRenewal(CreateRenewalRequest request)
@@ -614,6 +662,51 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = DeleteOutpostResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOutpostResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteQuote
+
+        internal virtual DeleteQuoteResponse DeleteQuote(DeleteQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQuoteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified quote.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQuote service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteQuote">REST API Reference for DeleteQuote Operation</seealso>
+        public virtual Task<DeleteQuoteResponse> DeleteQuoteAsync(DeleteQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteQuoteResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1036,6 +1129,51 @@ namespace Amazon.Outposts
         }
         #endregion
         
+        #region  GetQuote
+
+        internal virtual GetQuoteResponse GetQuote(GetQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<GetQuoteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the specified quote.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQuote service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetQuote">REST API Reference for GetQuote Operation</seealso>
+        public virtual Task<GetQuoteResponse> GetQuoteAsync(GetQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQuoteResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetRenewalPricing
 
         internal virtual GetRenewalPricingResponse GetRenewalPricing(GetRenewalPricingRequest request)
@@ -1423,6 +1561,52 @@ namespace Amazon.Outposts
         }
         #endregion
         
+        #region  ListOrderableInstanceTypes
+
+        internal virtual ListOrderableInstanceTypesResponse ListOrderableInstanceTypes(ListOrderableInstanceTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrderableInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrderableInstanceTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOrderableInstanceTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the instance types that can be ordered for an Outpost. You can filter the results
+        /// by Outpost generation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrderableInstanceTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrderableInstanceTypes service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrderableInstanceTypes">REST API Reference for ListOrderableInstanceTypes Operation</seealso>
+        public virtual Task<ListOrderableInstanceTypesResponse> ListOrderableInstanceTypesAsync(ListOrderableInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOrderableInstanceTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOrderableInstanceTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListOrderableInstanceTypesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListOrders
 
         internal virtual ListOrdersResponse ListOrders(ListOrdersRequest request)
@@ -1515,6 +1699,45 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = ListOutpostsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListOutpostsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListQuotes
+
+        internal virtual ListQuotesResponse ListQuotes(ListQuotesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuotesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQuotesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the quotes for your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQuotes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQuotes service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListQuotes">REST API Reference for ListQuotes Operation</seealso>
+        public virtual Task<ListQuotesResponse> ListQuotesAsync(ListQuotesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQuotesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQuotesResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1897,6 +2120,52 @@ namespace Amazon.Outposts
             options.ResponseUnmarshaller = UpdateOutpostResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOutpostResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateQuote
+
+        internal virtual UpdateQuoteResponse UpdateQuote(UpdateQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQuoteResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified quote. You can modify the requested capacities, constraints,
+        /// payment options, payment terms, or Outpost association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQuote service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateQuote">REST API Reference for UpdateQuote Operation</seealso>
+        public virtual Task<UpdateQuoteResponse> UpdateQuoteAsync(UpdateQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQuoteResponse>(request, options, cancellationToken);
         }
         #endregion
         
