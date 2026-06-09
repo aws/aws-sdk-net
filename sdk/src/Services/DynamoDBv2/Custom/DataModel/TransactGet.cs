@@ -220,9 +220,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddTransactionPart(ITransactGet transactionPart);
 
         /// <summary>
-        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
         /// </summary>
-        /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
+        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
         public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
 
         /// <summary>
@@ -285,6 +285,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
+            transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             transaction.ExecuteHelper();
             ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)

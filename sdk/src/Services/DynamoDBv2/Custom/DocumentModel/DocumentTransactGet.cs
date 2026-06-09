@@ -136,7 +136,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Constructs a DocumentTransactGet instance for a specific table.
         /// </summary>
         /// <param name="targetTable">Table to get items from.</param>
-        /// <param name="returnConsumedCapacity">Table to get items from.</param>
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
         public DocumentTransactGet(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity = null)
         {
             TargetTable = targetTable;
@@ -252,14 +252,20 @@ namespace Amazon.DynamoDBv2.DocumentModel
         void AddTransactionPart(IDocumentTransactGet transactionPart);
 
         /// <summary>
+        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
+        /// </summary>
+        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
+        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
+
+        /// <summary>
         /// List of DocumentTransactWrite objects to include in the multi-table
         /// transaction request.
         /// </summary>
         ReturnConsumedCapacity ReturnConsumedCapacity { get; }
 
         /// <summary>
-        /// List of DocumentTransactWrite objects to include in the multi-table
-        /// transaction request.
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
         List<ConsumedCapacity> ConsumedCapacity { get; }
     }

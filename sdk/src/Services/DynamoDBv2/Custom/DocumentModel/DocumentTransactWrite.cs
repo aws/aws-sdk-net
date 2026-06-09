@@ -581,14 +581,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<IDocumentTransactWrite> TransactionParts { get; }
 
         /// <summary>
-        /// List of DocumentTransactWrite objects to include in the multi-table
-        /// transaction request.
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
         /// </summary>
         ReturnConsumedCapacity ReturnConsumedCapacity { get; }
 
         /// <summary>
-        /// List of DocumentTransactWrite objects to include in the multi-table
-        /// transaction request.
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
         /// </summary>
         List<ConsumedCapacity> ConsumedCapacity { get; }
 
@@ -599,9 +599,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         void AddTransactionPart(IDocumentTransactWrite transactionPart);
 
         /// <summary>
-        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
         /// </summary>
-        /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
+        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
         void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
     }
 

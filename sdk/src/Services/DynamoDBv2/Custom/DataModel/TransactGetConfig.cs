@@ -32,8 +32,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? RetrieveDateTimeInUtc { get; set; }
 
         /// <summary>
-        /// By default, is set to ReturnConsumedCapacity.NONE . 
-        /// When ReturnConsumedCapacity.TOTAL or ReturnConsumedCapacity.INDEXES are used, the consumed capacity by TransactGet operation will be returned accordingly
+        /// Type of ReturnConsumedCapacity to be returned after Execute call
         /// </summary>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 

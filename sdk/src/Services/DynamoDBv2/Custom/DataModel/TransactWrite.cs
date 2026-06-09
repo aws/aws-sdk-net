@@ -498,9 +498,9 @@ namespace Amazon.DynamoDBv2.DataModel
         void AddTransactionPart(ITransactWrite transactionPart);
 
         /// <summary>
-        /// Add a DocumentTransactWrite object to the multi-table transaction request.
+        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
         /// </summary>
-        /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
+        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
         void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
 
         /// <summary>

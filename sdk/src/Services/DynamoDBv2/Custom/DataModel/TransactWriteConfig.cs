@@ -36,8 +36,8 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? SkipVersionCheck { get; set; }
 
         /// <summary>
-        /// By default, is set to ReturnConsumedCapacity.NONE . 
-        /// When ReturnConsumedCapacity.TOTAL or ReturnConsumedCapacity.INDEXES are used, the consumed capacity by TransactWrite operation will be returned accordingly
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
         /// </summary>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
