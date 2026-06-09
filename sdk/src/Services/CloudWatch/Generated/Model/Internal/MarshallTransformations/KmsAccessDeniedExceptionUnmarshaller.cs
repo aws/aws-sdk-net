@@ -36,16 +36,16 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceNotFoundException Object
+    /// Response Unmarshaller for KmsAccessDeniedException Object
     /// </summary>  
-    public class ResourceNotFoundExceptionUnmarshaller : ICborErrorResponseUnmarshaller<ResourceNotFoundException, CborUnmarshallerContext>
+    public class KmsAccessDeniedExceptionUnmarshaller : ICborErrorResponseUnmarshaller<KmsAccessDeniedException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context)
+        public KmsAccessDeniedException Unmarshall(CborUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
@@ -56,34 +56,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ResourceNotFoundException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public KmsAccessDeniedException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException,
+            KmsAccessDeniedException unmarshalledObject = new KmsAccessDeniedException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
             var reader = context.Reader;
-            context.AddPathSegment("ResourceNotFoundException");
+            context.AddPathSegment("KmsAccessDeniedException");
             reader.ReadStartMap();
             while (reader.PeekState() != CborReaderState.EndMap)
             {
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "ResourceId":
-                        {
-                            context.AddPathSegment("ResourceId");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "ResourceType":
-                        {
-                            context.AddPathSegment("ResourceType");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
                     default:
                         reader.SkipValue();
                         break;
@@ -95,12 +79,12 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ResourceNotFoundExceptionUnmarshaller _instance = new ResourceNotFoundExceptionUnmarshaller();        
+        private static KmsAccessDeniedExceptionUnmarshaller _instance = new KmsAccessDeniedExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ResourceNotFoundExceptionUnmarshaller Instance
+        public static KmsAccessDeniedExceptionUnmarshaller Instance
         {
             get
             {
