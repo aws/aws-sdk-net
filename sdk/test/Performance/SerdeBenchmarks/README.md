@@ -1,6 +1,6 @@
 # Serde (Serialization/Deserialization) Performance Benchmarks
 
-Benchmarks for measuring serialization and deserialization performance across AWS protocol types using standardized mock service models from the [AwsSdkPerformanceBenchmarkModels](https://code.amazon.com/packages/AwsSdkPerformanceBenchmarkModels) package.
+Benchmarks for measuring serialization and deserialization performance across AWS protocol types using standardized mock service models from the AwsSdkPerformanceBenchmarkModels package.
 
 ## Test Suites
 
