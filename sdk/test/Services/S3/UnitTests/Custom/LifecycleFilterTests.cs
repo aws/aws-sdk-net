@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
@@ -156,7 +157,13 @@ namespace AWSSDK.UnitTests
                 }
             };
 
-            return Encoding.UTF8.GetString(new PutLifecycleConfigurationRequestMarshaller().Marshall(request).Content);
+            using var iRequest = new PutLifecycleConfigurationRequestMarshaller().Marshall(request);
+            var contentBytes = iRequest.Content
+#if !NETFRAMEWORK
+                ?? ((PooledContentStream)iRequest.ContentStream).Content.ToArray()
+#endif
+                ;
+            return Encoding.UTF8.GetString(contentBytes);
         }
     }
 }
