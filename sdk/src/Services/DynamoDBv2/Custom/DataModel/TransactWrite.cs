@@ -502,6 +502,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
         void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -515,6 +521,10 @@ namespace Amazon.DynamoDBv2.DataModel
         private ReturnConsumedCapacity ReturnConsumedCapacity;
 
         internal TracerProvider TracerProvider { get; set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
+
 
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
@@ -557,6 +567,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
             transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
+            ConsumedCapacity = transaction.ConsumedCapacity;
             transaction.ExecuteHelper();
             foreach (var transactionPart in allTransactionParts)
             {
@@ -576,6 +587,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);

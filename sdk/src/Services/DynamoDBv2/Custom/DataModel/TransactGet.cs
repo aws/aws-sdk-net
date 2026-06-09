@@ -223,7 +223,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Add a DocumentTransactWrite object to the multi-table transaction request.
         /// </summary>
         /// <param name="returnConsumedCapacity">DocumentTransactWrite to add.</param>
-        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
+        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -236,6 +242,9 @@ namespace Amazon.DynamoDBv2.DataModel
         private ReturnConsumedCapacity ReturnConsumedCapacity;
 
         internal TracerProvider TracerProvider { get; set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; set; }
 
         /// <summary>
         /// Constructs a MultiTableTransactGet object from a number of
@@ -277,6 +286,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
             transaction.ExecuteHelper();
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
@@ -295,6 +305,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             transaction.SetReturnConsumedCapacity(ReturnConsumedCapacity);
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);

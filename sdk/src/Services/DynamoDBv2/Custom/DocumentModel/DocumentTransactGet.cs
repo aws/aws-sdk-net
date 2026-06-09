@@ -333,8 +333,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var docTransactGet = transactionPart as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
                 items.TryGetValue(docTransactGet, out var results);
                 docTransactGet.Results = results ?? new List<Document>();
-                docTransactGet.ConsumedCapacity = consumedCapacity;
             }
+            ConsumedCapacity = consumedCapacity;
         }
 
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
@@ -347,8 +347,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var docTransactGet = transactionPart as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
                 items.TryGetValue(docTransactGet, out var results);
                 docTransactGet.Results = results ?? new List<Document>();
-                docTransactGet.ConsumedCapacity = consumedCapacity;
             }
+            ConsumedCapacity = consumedCapacity;
         }
 
         private MultiTransactGet GetMultiTransactGet()

@@ -2,6 +2,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -397,29 +398,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
                 multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
 
+                multiTableDocumentTransactGet.SetReturnConsumedCapacity(ReturnConsumedCapacity.TOTAL);
                 await multiTableDocumentTransactGet.ExecuteAsync();
                 Assert.Equal(2, hTransactGet.Results.Count);
                 Assert.Equal(2, hrTransactGet.Results.Count);
-                
-                Assert.Equal(2, hTransactGet.ConsumedCapacity.Count);
-                Assert.Equal(4, hTransactGet.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(hTransactGet.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(hTransactGet.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(hTransactGet.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(4, hTransactGet.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(hTransactGet.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(hTransactGet.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(hTransactGet.ConsumedCapacity[1].LocalSecondaryIndexes);
 
-                Assert.Equal(2, hrTransactGet.ConsumedCapacity.Count);
-                Assert.Equal(4, hrTransactGet.ConsumedCapacity[0].ReadCapacityUnits);
-                Assert.Null(hrTransactGet.ConsumedCapacity[0].WriteCapacityUnits);
-                Assert.Null(hrTransactGet.ConsumedCapacity[0].GlobalSecondaryIndexes);
-                Assert.Null(hrTransactGet.ConsumedCapacity[0].LocalSecondaryIndexes);
-                Assert.Equal(4, hrTransactGet.ConsumedCapacity[1].ReadCapacityUnits);
-                Assert.Null(hrTransactGet.ConsumedCapacity[1].WriteCapacityUnits);
-                Assert.Null(hrTransactGet.ConsumedCapacity[1].GlobalSecondaryIndexes);
-                Assert.Null(hrTransactGet.ConsumedCapacity[1].LocalSecondaryIndexes);
+                Assert.Equal(2, multiTableDocumentTransactGet.ConsumedCapacity.Count);
+                Assert.Collection(
+                    multiTableDocumentTransactGet.ConsumedCapacity.OrderBy(x => x.ReadCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
 
                 Assert.True(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
                 Assert.True(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
@@ -474,31 +474,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             var transactWriteHrDoc = hashRangeTable.CreateTransactWrite();
             transactWriteHrDoc.AddDocumentToPut(hrDoc1);
             transactWriteHrDoc.AddDocumentToPut(hrDoc2);
+
             multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHrDoc);
-            
+            multiTableDocumentTransactWrite.SetReturnConsumedCapacity(ReturnConsumedCapacity.TOTAL);
+
             await multiTableDocumentTransactWrite.ExecuteAsync();
 
             Assert.Equal(2, multiTableDocumentTransactWrite.TransactionParts.Count);
 
-            Assert.Equal(2, transactWriteHDoc.ConsumedCapacity.Count);
-            Assert.Equal(4, transactWriteHDoc.ConsumedCapacity[0].WriteCapacityUnits);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[0].ReadCapacityUnits);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[0].GlobalSecondaryIndexes);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[0].LocalSecondaryIndexes);
-            Assert.Equal(4, transactWriteHDoc.ConsumedCapacity[1].WriteCapacityUnits);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[1].ReadCapacityUnits);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[1].GlobalSecondaryIndexes);
-            Assert.Null(transactWriteHDoc.ConsumedCapacity[1].LocalSecondaryIndexes);
-
-            Assert.Equal(2, transactWriteHrDoc.ConsumedCapacity.Count);
-            Assert.Equal(4, transactWriteHrDoc.ConsumedCapacity[0].WriteCapacityUnits);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[0].ReadCapacityUnits);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[0].GlobalSecondaryIndexes);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[0].LocalSecondaryIndexes);
-            Assert.Equal(4, transactWriteHrDoc.ConsumedCapacity[1].WriteCapacityUnits);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[1].ReadCapacityUnits);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[1].GlobalSecondaryIndexes);
-            Assert.Null(transactWriteHrDoc.ConsumedCapacity[1].LocalSecondaryIndexes);
+            Assert.Equal(2, multiTableDocumentTransactWrite.ConsumedCapacity.Count);
+            Assert.Collection(
+                multiTableDocumentTransactWrite.ConsumedCapacity.OrderBy(x => x.WriteCapacityUnits),
+                capacity =>
+                {
+                    Assert.Equal(4, capacity.WriteCapacityUnits);
+                    Assert.Null(capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.GlobalSecondaryIndexes);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                },
+                capacity =>
+                {
+                    Assert.Equal(4, capacity.WriteCapacityUnits);
+                    Assert.Null(capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.GlobalSecondaryIndexes);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                });
         }
 
         private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)
