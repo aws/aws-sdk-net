@@ -451,7 +451,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 default:
                     throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");
             }
-           
         }
 
         protected override DeleteItemRequest Map(BaseDeleteItemDocumentOperationRequest request)
@@ -460,17 +459,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 TableName = Table.TableName,
             };
-            switch (request)
+
+            var key = request switch
             {
-                case DeleteItemDocumentOperationRequest deleteItemRequest:
-                    req.Key = Table.MakeKey(deleteItemRequest.Key);
-                    break;
-                case InternalDeleteItemDocumentOperationRequest internalDeleteItemRequest:
-                    req.Key = internalDeleteItemRequest.Key;
-                    break;
-                default:
-                    throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");
-            }
+                DeleteItemDocumentOperationRequest r => r.Key != null ? Table.MakeKey(r.Key) : null,
+                InternalDeleteItemDocumentOperationRequest ir => ir.Key,
+                _ => null
+            };
+            req.Key = key;
 
             if (request.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(request.ReturnValues);
