@@ -37,6 +37,12 @@ namespace Amazon.Signin
     /// </summary>
     public partial interface IAmazonSignin : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISigninPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateOAuth2Token
 
@@ -152,6 +158,640 @@ namespace Amazon.Signin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2Token">REST API Reference for CreateOAuth2Token Operation</seealso>
         Task<CreateOAuth2TokenResponse> CreateOAuth2TokenAsync(CreateOAuth2TokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteConsoleAuthorizationConfiguration
+
+
+
+        /// <summary>
+        /// Delete console authorization configuration with automatic scope detection
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConsoleAuthorizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConsoleAuthorizationConfiguration service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/DeleteConsoleAuthorizationConfiguration">REST API Reference for DeleteConsoleAuthorizationConfiguration Operation</seealso>
+        Task<DeleteConsoleAuthorizationConfigurationResponse> DeleteConsoleAuthorizationConfigurationAsync(DeleteConsoleAuthorizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteResourcePermissionStatement
+
+
+
+        /// <summary>
+        /// Remove a permission statement from the account's SignIn resource-based policy
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePermissionStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePermissionStatement service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/DeleteResourcePermissionStatement">REST API Reference for DeleteResourcePermissionStatement Operation</seealso>
+        Task<DeleteResourcePermissionStatementResponse> DeleteResourcePermissionStatementAsync(DeleteResourcePermissionStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetConsoleAuthorizationConfiguration
+
+
+
+        /// <summary>
+        /// Get console authorization configuration with automatic scope detection
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConsoleAuthorizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConsoleAuthorizationConfiguration service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/GetConsoleAuthorizationConfiguration">REST API Reference for GetConsoleAuthorizationConfiguration Operation</seealso>
+        Task<GetConsoleAuthorizationConfigurationResponse> GetConsoleAuthorizationConfigurationAsync(GetConsoleAuthorizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetResourcePolicy
+
+
+
+        /// <summary>
+        /// Retrieve the account's consolidated SignIn resource-based policy
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListResourcePermissionStatements
+
+
+
+        /// <summary>
+        /// Retrieve all permission statements in the account's SignIn resource-based policy
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResourcePermissionStatements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResourcePermissionStatements service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/ListResourcePermissionStatements">REST API Reference for ListResourcePermissionStatements Operation</seealso>
+        Task<ListResourcePermissionStatementsResponse> ListResourcePermissionStatementsAsync(ListResourcePermissionStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutConsoleAuthorizationConfiguration
+
+
+
+        /// <summary>
+        /// Enable console authorization configuration with automatic scope detection
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConsoleAuthorizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConsoleAuthorizationConfiguration service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ConflictException">
+        /// Error thrown when request conflicts with current state
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409 Conflict
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the request conflicts with the current state of the resource
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ResourceNotFoundException">
+        /// Error thrown when requested resource is not found
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 404 Not Found
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the specified resource does not exist
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/PutConsoleAuthorizationConfiguration">REST API Reference for PutConsoleAuthorizationConfiguration Operation</seealso>
+        Task<PutConsoleAuthorizationConfigurationResponse> PutConsoleAuthorizationConfigurationAsync(PutConsoleAuthorizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutResourcePermissionStatement
+
+
+
+        /// <summary>
+        /// Create a permission statement in the account's SignIn resource-based policy
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePermissionStatement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePermissionStatement service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ConflictException">
+        /// Error thrown when request conflicts with current state
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 409 Conflict
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the request conflicts with the current state of the resource
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ServiceQuotaExceededException">
+        /// Error thrown when service quota is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 402 Payment Required (used as quota exceeded indicator)
+        /// </para>
+        ///  
+        /// <para>
+        /// Used when the request would cause a service quota to be exceeded
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/PutResourcePermissionStatement">REST API Reference for PutResourcePermissionStatement Operation</seealso>
+        Task<PutResourcePermissionStatementResponse> PutResourcePermissionStatementAsync(PutResourcePermissionStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -51,7 +51,64 @@ namespace Amazon.Signin.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
                 ["Region"] = parameters["Region"],
+                ["IsControlPlane"] = parameters["IsControlPlane"],
             };
+            if (IsSet(refs["IsControlPlane"]) && Equals(refs["IsControlPlane"], true) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            {
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+                {
+                    return new Endpoint(Interpolate(@"https://signin.{Region}.api.aws", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
+                {
+                    return new Endpoint(Interpolate(@"https://signin.{Region}.api.amazonwebservices.com.cn", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+                }
+                return new Endpoint(Interpolate(@"https://signin.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""signin"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.aws.amazon.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-cn"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.amazonaws.cn", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.amazonaws-us-gov.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.c2shome.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.sc2shome.sgov.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-f"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.csphome.hci.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-e"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.csphome.adc-e.uk", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-eusc"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.amazonaws-eusc.eu", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false) && Equals(refs["Region"], "us-gov-west-1"))
+            {
+                return new Endpoint("https://signin-fips.amazonaws-us-gov.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin-fips.amazonaws-us-gov.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]) && !IsSet(refs["Endpoint"]) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            {
+                return new Endpoint(Interpolate(@"https://{Region}.signin.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
             if (IsSet(refs["Endpoint"]))
             {
                 if (Equals(refs["UseFIPS"], true))

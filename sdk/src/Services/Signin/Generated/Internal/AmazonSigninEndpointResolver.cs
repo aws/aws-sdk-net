@@ -86,6 +86,38 @@ namespace Amazon.Signin.Internal
 
 
             // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CreateOAuth2TokenRequest") {
+                result.IsControlPlane = false;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteConsoleAuthorizationConfigurationRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteResourcePermissionStatementRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "GetConsoleAuthorizationConfigurationRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "GetResourcePolicyRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "ListResourcePermissionStatementsRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "PutConsoleAuthorizationConfigurationRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
+            if (requestContext.RequestName == "PutResourcePermissionStatementRequest") {
+                result.IsControlPlane = true;
+                return result;
+            }
 
             return result;
         }
