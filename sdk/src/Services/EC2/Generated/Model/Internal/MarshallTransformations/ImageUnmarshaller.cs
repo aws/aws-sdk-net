@@ -150,6 +150,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ImageType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("imageWatermarkSet/item", targetDepth))
+                    {
+                        var unmarshaller = ImageWatermarkUnmarshaller.Instance;
+                        if (unmarshalledObject.ImageWatermarks == null)
+                        {
+                            unmarshalledObject.ImageWatermarks = new List<ImageWatermark>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ImageWatermarks.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("imdsSupport", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

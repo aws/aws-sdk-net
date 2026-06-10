@@ -2003,6 +2003,50 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachImageWatermark
+
+
+        /// <summary>
+        /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
+        /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can attach watermarks. Watermarks cannot be added to public AMIs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachImageWatermark service method.</param>
+        /// 
+        /// <returns>The response from the AttachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">REST API Reference for AttachImageWatermark Operation</seealso>
+        AttachImageWatermarkResponse AttachImageWatermark(AttachImageWatermarkRequest request);
+
+
+
+        /// <summary>
+        /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
+        /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can attach watermarks. Watermarks cannot be added to public AMIs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachImageWatermark service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">REST API Reference for AttachImageWatermark Operation</seealso>
+        Task<AttachImageWatermarkResponse> AttachImageWatermarkAsync(AttachImageWatermarkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AttachInternetGateway
 
 
@@ -22565,6 +22609,56 @@ namespace Amazon.EC2
         /// <returns>The response from the DetachClassicLinkVpc service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         Task<DetachClassicLinkVpcResponse> DetachClassicLinkVpcAsync(DetachClassicLinkVpcRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DetachImageWatermark
+
+
+        /// <summary>
+        /// Removes a watermark from the specified AMI. This is an idempotent operation. It succeeds
+        /// even if the watermark does not exist on the image.
+        /// 
+        ///  
+        /// <para>
+        /// Removing a watermark from an image does not affect derivative images that already
+        /// carry the watermark.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can detach watermarks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachImageWatermark service method.</param>
+        /// 
+        /// <returns>The response from the DetachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">REST API Reference for DetachImageWatermark Operation</seealso>
+        DetachImageWatermarkResponse DetachImageWatermark(DetachImageWatermarkRequest request);
+
+
+
+        /// <summary>
+        /// Removes a watermark from the specified AMI. This is an idempotent operation. It succeeds
+        /// even if the watermark does not exist on the image.
+        /// 
+        ///  
+        /// <para>
+        /// Removing a watermark from an image does not affect derivative images that already
+        /// carry the watermark.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can detach watermarks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachImageWatermark service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">REST API Reference for DetachImageWatermark Operation</seealso>
+        Task<DetachImageWatermarkResponse> DetachImageWatermarkAsync(DetachImageWatermarkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
