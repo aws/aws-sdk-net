@@ -93,7 +93,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             WriteJson(document, writer, DynamoDBEntryConversion.V2);
 
             writer.Flush();
-            return Encoding.UTF8.GetString(stream.ToArray());
+            return Encoding.UTF8.GetString(stream.GetBuffer(), 0, (int)stream.Length);
         }
 
 

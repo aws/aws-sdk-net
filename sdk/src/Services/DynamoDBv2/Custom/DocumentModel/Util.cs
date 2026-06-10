@@ -562,7 +562,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 WriteNextKey(nextKey, jsonWriter);
                 jsonWriter.Flush();
-                return Encoding.UTF8.GetString(memoryStream.ToArray());
+                return Encoding.UTF8.GetString(memoryStream.GetBuffer(), 0, (int)memoryStream.Length);
             }
         }
 
