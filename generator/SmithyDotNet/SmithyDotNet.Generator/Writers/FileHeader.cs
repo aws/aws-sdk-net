@@ -8,6 +8,26 @@ namespace SmithyDotNet.Generator.Writers;
 public static class FileHeader
 {
     /// <summary>
+    /// The default warning codes suppressed in model-level generated files.
+    /// </summary>
+    public static IReadOnlyList<string> ModelWarnings { get; } = ["CS0612", "CS0618", "CS1570"];
+
+    /// <summary>
+    /// Usings for model-level files (structures, exceptions, request/response).
+    /// </summary>
+    public static IReadOnlyList<string> ModelUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Xml.Serialization",
+        "System.Text",
+        "System.IO",
+        "System.Net",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+    ];
+    
+    /// <summary>
     /// Writes the Apache 2.0 license block and the "do not modify" generation notice,
     /// referencing <paramref name="modelFileName"/>.
     /// </summary>

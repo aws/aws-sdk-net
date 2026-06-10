@@ -25,6 +25,9 @@ public class GenerationContext
     /// <summary>The .NET namespace for generated code (e.g. "Amazon.CloudTrailData").</summary>
     public string Namespace { get; }
 
+    /// <summary>The service class name (e.g. "CloudTrailData"). Used to derive all other names.</summary>
+    public string ServiceName { get; }
+
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
 
@@ -50,9 +53,9 @@ public class GenerationContext
         _index = index;
 
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
-        var className = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
-        Namespace = $"Amazon.{className}";
-        ClientName = $"Amazon{className}";
+        ServiceName = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
+        Namespace = $"Amazon.{ServiceName}";
+        ClientName = $"Amazon{ServiceName}";
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
 

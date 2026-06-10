@@ -15,19 +15,6 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public sealed class StructureWriter(GenerationContext context, string modelFileName)
 {
-    private static readonly string[] Usings =
-    [
-        "System",
-        "System.Collections.Generic",
-        "System.Xml.Serialization",
-        "System.Text",
-        "System.IO",
-        "System.Net",
-        "Amazon.Runtime",
-        "Amazon.Runtime.Internal",
-    ];
-
-    private static readonly string[] SuppressedWarnings = ["CS0612", "CS0618", "CS1570"];
 
     /// <summary>
     /// Emits the complete formatted source file for one structure. The <paramref name="shapeId"/>
@@ -41,8 +28,8 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
-        FileHeader.WriteUsings(writer, Usings);
-        FileHeader.WritePragma(writer, SuppressedWarnings);
+        FileHeader.WriteUsings(writer, FileHeader.ModelUsings);
+        FileHeader.WritePragma(writer, FileHeader.ModelWarnings);
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
             WriteClassDocumentation(writer, structure);
