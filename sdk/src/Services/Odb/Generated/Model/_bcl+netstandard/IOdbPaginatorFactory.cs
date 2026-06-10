@@ -28,6 +28,66 @@ namespace Amazon.Odb.Model
     {
 
         /// <summary>
+        /// Paginator for ListAutonomousDatabaseBackups operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabaseBackupsPaginator ListAutonomousDatabaseBackups(ListAutonomousDatabaseBackupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseCharacterSets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabaseCharacterSetsPaginator ListAutonomousDatabaseCharacterSets(ListAutonomousDatabaseCharacterSetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseClones operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabaseClonesPaginator ListAutonomousDatabaseClones(ListAutonomousDatabaseClonesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabasePeers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabasePeersPaginator ListAutonomousDatabasePeers(ListAutonomousDatabasePeersRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabasesPaginator ListAutonomousDatabases(ListAutonomousDatabasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutonomousDatabaseVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutonomousDatabaseVersionsPaginator ListAutonomousDatabaseVersions(ListAutonomousDatabaseVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAutonomousVirtualMachines operation
         ///</summary>
         [AWSPaginator(

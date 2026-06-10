@@ -52,6 +52,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Currency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Currency = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MonthlyRecurringPrice", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;

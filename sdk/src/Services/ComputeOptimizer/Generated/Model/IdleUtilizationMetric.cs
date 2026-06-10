@@ -34,9 +34,33 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class IdleUtilizationMetric
     {
+        private List<IdleDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<IdleDimension>() : null;
         private IdleMetricName _name;
         private MetricStatistic _statistic;
         private double? _value;
+
+        /// <summary>
+        /// Gets and sets the property Dimensions. 
+        /// <para>
+        /// The dimensions of the utilization metric.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IdleDimension> Dimensions
+        {
+            get { return this._dimensions; }
+            set { this._dimensions = value; }
+        }
+
+        // Check to see if Dimensions property is set
+        internal bool IsSetDimensions()
+        {
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

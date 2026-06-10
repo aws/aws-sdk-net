@@ -37,6 +37,7 @@ namespace Amazon.DevOpsAgent.Model
         private Dictionary<string, string> _customHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private string _endpoint;
+        private string _mcpRoleArn;
         private string _name;
         private string _region;
         private string _roleArn;
@@ -91,7 +92,7 @@ namespace Amazon.DevOpsAgent.Model
         /// MCP server endpoint URL.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -105,12 +106,28 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property McpRoleArn.
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string McpRoleArn
+        {
+            get { return this._mcpRoleArn; }
+            set { this._mcpRoleArn = value; }
+        }
+
+        // Check to see if McpRoleArn property is set
+        internal bool IsSetMcpRoleArn()
+        {
+            return this._mcpRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// MCP server name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }
@@ -148,7 +165,8 @@ namespace Amazon.DevOpsAgent.Model
         /// IAM role ARN to assume for SigV4 signing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [Obsolete("Use mcpRoleArn instead.")]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string RoleArn
         {
             get { return this._roleArn; }

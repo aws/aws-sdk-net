@@ -74,6 +74,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSourceMetricsConfiguration())
+            {
+                context.Writer.WritePropertyName("SourceMetricsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceMetricsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceMetricsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

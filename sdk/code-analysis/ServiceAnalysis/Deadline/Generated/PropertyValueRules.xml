@@ -5,6 +5,12 @@
     <pattern>farm-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.IdentityCenterRegion</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFarmRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
@@ -25,6 +31,12 @@
     <pattern>fleet-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.IdentityCenterRegion</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToFleetRequest.IdentityStoreId</property>
     <min>1</min>
     <max>36</max>
@@ -39,6 +51,12 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.IdentityCenterRegion</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToJobRequest.IdentityStoreId</property>
@@ -63,6 +81,12 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.FarmId</property>
     <pattern>farm-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.IdentityCenterRegion</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.AssociateMemberToQueueRequest.IdentityStoreId</property>

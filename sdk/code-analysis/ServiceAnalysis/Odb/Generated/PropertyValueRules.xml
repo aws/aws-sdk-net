@@ -10,7 +10,118 @@
     <property>Amazon.Odb.Model.AssociateIamRoleToResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster)/[a-z0-9-_]+</pattern>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.AdminPassword</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ByolComputeCountLimit</property>
+    <min>2</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.CharacterSet</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ClientToken</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ComputeCount</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.CpuCoreCount</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DataStorageSizeInGBs</property>
+    <min>20</min>
+    <max>393216</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DataStorageSizeInTBs</property>
+    <min>1</min>
+    <max>384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DbName</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DbVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.NcharacterSet</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.OdbNetworkId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseRequest.ResourcePoolLeaderId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.ClientToken</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseBackupRequest.RetentionPeriodInDays</property>
+    <min>90</min>
+    <max>3650</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.ClientToken</property>
+    <min>8</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_\/.=-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateAutonomousDatabaseWalletRequest.Password</property>
+    <min>8</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.AutonomousDataStorageSizeInTBs</property>
@@ -256,6 +367,18 @@
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.DeleteAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.DeleteAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.DeleteCloudAutonomousVmClusterRequest.CloudAutonomousVmClusterId</property>
     <min>6</min>
     <max>64</max>
@@ -295,7 +418,37 @@
     <property>Amazon.Odb.Model.DisassociateIamRoleFromResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster)/[a-z0-9-_]+</pattern>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:(?:cloud-vm-cluster|cloud-autonomous-vm-cluster|exadb-vm-cluster)/[a-z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.FailoverAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.FailoverAutonomousDatabaseRequest.PeerDbArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.GetAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.GetAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.GetAutonomousDatabaseWalletDetailsRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudAutonomousVmClusterRequest.CloudAutonomousVmClusterId</property>
@@ -356,6 +509,84 @@
     <min>6</min>
     <max>2048</max>
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseBackupsRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseBackupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseBackupsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseCharacterSetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseCharacterSetsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseClonesRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseClonesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseClonesRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasePeersRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabasesRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListAutonomousDatabaseVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.ListAutonomousVirtualMachinesRequest.CloudAutonomousVmClusterId</property>
@@ -535,6 +766,12 @@
     <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.RebootAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.RebootDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
@@ -545,6 +782,24 @@
     <min>6</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.RestoreAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ShrinkAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.StartAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.StartDbNodeRequest.CloudVmClusterId</property>
@@ -559,6 +814,12 @@
     <pattern>[a-zA-Z0-9_~.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.StopAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.StopDbNodeRequest.CloudVmClusterId</property>
     <min>6</min>
     <max>64</max>
@@ -571,6 +832,18 @@
     <pattern>[a-zA-Z0-9_~.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.SwitchoverAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.SwitchoverAutonomousDatabaseRequest.PeerDbArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -581,6 +854,99 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AdminPassword</property>
+    <min>12</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutoRefreshFrequencyInSeconds</property>
+    <min>3600</min>
+    <max>604800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.AutoRefreshPointLagInSeconds</property>
+    <min>0</min>
+    <max>604800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.BackupRetentionPeriodInDays</property>
+    <min>1</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.ByolComputeCountLimit</property>
+    <min>2</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.ComputeCount</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.CpuCoreCount</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DataStorageSizeInGBs</property>
+    <min>20</min>
+    <max>393216</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DataStorageSizeInTBs</property>
+    <min>1</min>
+    <max>384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DbName</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DbVersion</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.LocalAdgAutoFailoverMaxDataLossLimit</property>
+    <min>0</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.PeerDbId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseRequest.ResourcePoolLeaderId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseBackupRequest.AutonomousDatabaseBackupId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateAutonomousDatabaseBackupRequest.RetentionPeriodInDays</property>
+    <min>90</min>
+    <max>3650</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateCloudExadataInfrastructureRequest.CloudExadataInfrastructureId</property>
@@ -628,6 +994,102 @@
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabase.AutonomousDatabaseArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabase.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabase.OdbNetworkArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabase.OdbNetworkId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseBackupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseBackupId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackup.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseBackupArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseBackupId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseBackupSummary.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabasePeerSummary.AutonomousDatabaseArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabasePeerSummary.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseSummary.AutonomousDatabaseArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseSummary.AutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseSummary.OdbNetworkArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-z0-9-_]{6,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AutonomousDatabaseSummary.OdbNetworkId</property>
+    <min>6</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousVirtualMachineSummary.AutonomousVirtualMachineId</property>
     <min>6</min>
     <max>64</max>
@@ -638,6 +1100,46 @@
     <min>6</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AwsEncryptionKeyConfiguration.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AwsEncryptionKeyConfiguration.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_:./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AwsEncryptionKeyConfigurationInput.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AwsEncryptionKeyConfigurationInput.KmsKeyId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9_:./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloneToRefreshableConfiguration.AutoRefreshFrequencyInSeconds</property>
+    <min>3600</min>
+    <max>604800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloneToRefreshableConfiguration.AutoRefreshPointLagInSeconds</property>
+    <min>0</min>
+    <max>604800</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CloneToRefreshableConfiguration.SourceAutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CloudAutonomousVmCluster.CloudAutonomousVmClusterId</property>
@@ -784,9 +1286,25 @@
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.CrossRegionDataGuardConfiguration.SourceAutonomousDatabaseArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CrossRegionDisasterRecoveryConfiguration.SourceAutonomousDatabaseArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.CustomerContact.Email</property>
     <min>1</min>
     <max>320</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.DatabaseCloneConfiguration.SourceAutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.DbNode.DbNodeArn</property>
@@ -843,6 +1361,11 @@
     <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.LongTermBackupSchedule.RetentionPeriodInDays</property>
+    <min>90</min>
+    <max>3650</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.MaintenanceWindow.CustomActionTimeoutInMins</property>
     <min>15</min>
     <max>120</max>
@@ -868,6 +1391,22 @@
     <property>Amazon.Odb.Model.OciDnsForwardingConfig.DomainName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.OciEncryptionKeyConfiguration.KmsKeyId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.OciEncryptionKeyConfiguration.VaultId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.OciIamRole.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbNetwork.AvailabilityZone</property>
@@ -969,6 +1508,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.OdbPeeringConnectionSummary.OdbPeeringConnectionId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.PointInTimeRestoreConfiguration.SourceAutonomousDatabaseId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.RestoreFromBackupConfiguration.AutonomousDatabaseBackupId</property>
     <min>6</min>
     <max>2048</max>
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>

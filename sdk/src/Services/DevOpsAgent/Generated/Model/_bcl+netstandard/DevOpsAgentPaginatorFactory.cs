@@ -45,6 +45,38 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetFiles operation
+        ///</summary>
+        public IListAssetFilesPaginator ListAssetFiles(ListAssetFilesRequest request) 
+        {
+            return new ListAssetFilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssets operation
+        ///</summary>
+        public IListAssetsPaginator ListAssets(ListAssetsRequest request) 
+        {
+            return new ListAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetTypes operation
+        ///</summary>
+        public IListAssetTypesPaginator ListAssetTypes(ListAssetTypesRequest request) 
+        {
+            return new ListAssetTypesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetVersions operation
+        ///</summary>
+        public IListAssetVersionsPaginator ListAssetVersions(ListAssetVersionsRequest request) 
+        {
+            return new ListAssetVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssociations operation
         ///</summary>
         public IListAssociationsPaginator ListAssociations(ListAssociationsRequest request) 

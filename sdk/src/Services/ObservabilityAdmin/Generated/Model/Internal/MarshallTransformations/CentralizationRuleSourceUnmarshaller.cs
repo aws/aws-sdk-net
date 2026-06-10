@@ -74,6 +74,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SourceMetricsConfiguration", targetDepth))
+                {
+                    var unmarshaller = SourceMetricsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SourceMetricsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

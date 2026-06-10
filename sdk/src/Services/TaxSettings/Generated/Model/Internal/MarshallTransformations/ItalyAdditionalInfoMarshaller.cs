@@ -58,6 +58,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CupNumber);
             }
 
+            if(requestObject.IsSetCustomerType())
+            {
+                context.Writer.WritePropertyName("customerType");
+                context.Writer.WriteStringValue(requestObject.CustomerType);
+            }
+
             if(requestObject.IsSetSdiAccountId())
             {
                 context.Writer.WritePropertyName("sdiAccountId");

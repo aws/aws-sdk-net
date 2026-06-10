@@ -40,6 +40,7 @@ namespace Amazon.Omics.Model
         private CacheBehavior _cacheBehavior;
         private string _cacheId;
         private string _configurationName;
+        private Amazon.Runtime.Documents.Document _engineSettings;
         private RunLogLevel _logLevel;
         private string _name;
         private NetworkingMode _networkingMode;
@@ -113,6 +114,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetConfigurationName()
         {
             return this._configurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineSettings. 
+        /// <para>
+        /// Engine-specific settings for the workflow run. Use this field to specify configuration
+        /// options that are specific to the workflow engine (for example, Nextflow profiles).
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document EngineSettings
+        {
+            get { return this._engineSettings; }
+            set { this._engineSettings = value; }
+        }
+
+        // Check to see if EngineSettings property is set
+        internal bool IsSetEngineSettings()
+        {
+            return !this._engineSettings.IsNull();
         }
 
         /// <summary>

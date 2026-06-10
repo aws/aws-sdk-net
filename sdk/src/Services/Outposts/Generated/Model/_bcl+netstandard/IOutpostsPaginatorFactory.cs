@@ -108,6 +108,16 @@ namespace Amazon.Outposts.Model
         IListCatalogItemsPaginator ListCatalogItems(ListCatalogItemsRequest request);
 
         /// <summary>
+        /// Paginator for ListOrderableInstanceTypes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListOrderableInstanceTypesPaginator ListOrderableInstanceTypes(ListOrderableInstanceTypesRequest request);
+
+        /// <summary>
         /// Paginator for ListOrders operation
         ///</summary>
         [AWSPaginator(
@@ -126,6 +136,16 @@ namespace Amazon.Outposts.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListOutpostsPaginator ListOutposts(ListOutpostsRequest request);
+
+        /// <summary>
+        /// Paginator for ListQuotes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListQuotesPaginator ListQuotes(ListQuotesRequest request);
 
         /// <summary>
         /// Paginator for ListSites operation

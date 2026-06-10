@@ -85,6 +85,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIdentityCenterRegion())
+            {
+                context.Writer.WritePropertyName("identityCenterRegion");
+                context.Writer.WriteStringValue(publicRequest.IdentityCenterRegion);
+            }
+
             if(publicRequest.IsSetIdentityStoreId())
             {
                 context.Writer.WritePropertyName("identityStoreId");

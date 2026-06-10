@@ -193,6 +193,7 @@ namespace Amazon.DevOpsAgent.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public List<string> Scopes
         {
             get { return this._scopes; }

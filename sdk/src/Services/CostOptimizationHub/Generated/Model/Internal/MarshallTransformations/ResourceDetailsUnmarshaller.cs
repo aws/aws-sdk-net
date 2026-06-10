@@ -68,10 +68,22 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComputeSavingsPlans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("documentDbCluster", targetDepth))
+                {
+                    var unmarshaller = DocumentDbClusterUnmarshaller.Instance;
+                    unmarshalledObject.DocumentDbCluster = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("dynamoDbReservedCapacity", targetDepth))
                 {
                     var unmarshaller = DynamoDbReservedCapacityUnmarshaller.Instance;
                     unmarshalledObject.DynamoDbReservedCapacity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("dynamoDbTable", targetDepth))
+                {
+                    var unmarshaller = DynamoDbTableUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDbTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ebsVolume", targetDepth))
@@ -110,6 +122,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcsService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("elastiCacheCluster", targetDepth))
+                {
+                    var unmarshaller = ElastiCacheClusterUnmarshaller.Instance;
+                    unmarshalledObject.ElastiCacheCluster = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("elastiCacheReservedInstances", targetDepth))
                 {
                     var unmarshaller = ElastiCacheReservedInstancesUnmarshaller.Instance;
@@ -120,6 +138,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LambdaFunctionUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("memoryDbCluster", targetDepth))
+                {
+                    var unmarshaller = MemoryDbClusterUnmarshaller.Instance;
+                    unmarshalledObject.MemoryDbCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memoryDbReservedInstances", targetDepth))
@@ -164,10 +188,22 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.RedshiftReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sageMakerEndpoint", targetDepth))
+                {
+                    var unmarshaller = SageMakerEndpointUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerEndpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sageMakerSavingsPlans", targetDepth))
                 {
                     var unmarshaller = SageMakerSavingsPlansUnmarshaller.Instance;
                     unmarshalledObject.SageMakerSavingsPlans = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("workSpaces", targetDepth))
+                {
+                    var unmarshaller = WorkSpacesUnmarshaller.Instance;
+                    unmarshalledObject.WorkSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

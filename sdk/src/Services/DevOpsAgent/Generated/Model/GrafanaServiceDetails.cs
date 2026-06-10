@@ -83,7 +83,7 @@ namespace Amazon.DevOpsAgent.Model
         /// MCP server endpoint URL.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -102,7 +102,7 @@ namespace Amazon.DevOpsAgent.Model
         /// MCP server name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

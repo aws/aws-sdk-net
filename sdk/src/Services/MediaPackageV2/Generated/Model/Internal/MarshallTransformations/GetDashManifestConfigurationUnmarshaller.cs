@@ -56,6 +56,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AudioTimelinePattern", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AudioTimelinePattern = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AvailabilityStartTimeConfiguration", targetDepth))
                 {
                     var unmarshaller = DashAvailabilityStartTimeConfigurationUnmarshaller.Instance;

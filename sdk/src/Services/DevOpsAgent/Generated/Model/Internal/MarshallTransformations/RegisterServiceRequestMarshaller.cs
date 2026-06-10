@@ -76,6 +76,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExchangeUrlPrivateConnectionName())
+            {
+                context.Writer.WritePropertyName("exchangeUrlPrivateConnectionName");
+                context.Writer.WriteStringValue(publicRequest.ExchangeUrlPrivateConnectionName);
+            }
+
             if(publicRequest.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("kmsKeyArn");
@@ -117,6 +123,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetUrlPrivateConnectionName())
+            {
+                context.Writer.WritePropertyName("targetUrlPrivateConnectionName");
+                context.Writer.WriteStringValue(publicRequest.TargetUrlPrivateConnectionName);
             }
 
             writer.WriteEndObject();

@@ -148,7 +148,7 @@ The public surface must match. Internal implementation can vary.
 public string EventData { get; set; }
 ```
 
-The current SDK uses explicit backing fields + `IsSet` methods internally. The generator can use auto-properties or backing fields — only the public signature matters.
+The generator emits auto-properties (`{ get; set; }`); only the public signature matters. The current SDK uses explicit backing fields + `IsSet` methods internally, but that form is preferred only if a later customization requires it (e.g. collection `IsSet` semantics).
 
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait
@@ -180,12 +180,21 @@ The new generator is a clean reimplementation, not a port — but the existing g
 
 ### HTML Sanitization
 
-The `@documentation` trait contains HTML. Transform before writing to XML doc comments:
-- `<p>...</p>` → `<para>...</para>`
+The `@documentation` trait contains HTML. `DocumentationFormatter.Cleanup` ports the existing
+generator's `CleanupDocumentation` (`ServiceClientGeneratorLib/Generators/BaseGenerator.cs`).
+The transform, in order:
+- Collapse runs of whitespace (the source doc's newlines + indentation) to single spaces. The
+  meaningful `<para>` line breaks are inserted afterward.
 - `<code>...</code>` → `<c>...</c>`
+- `<p>...</p>` → `<para>...</para>` (including `<p>` tags carrying attributes)
+- Strip `<br>`, `<fullname>`, `<function>`, `<p/>` (bare and attribute-carrying forms)
 - `<i>...</i>` → keep as-is
-- Strip other HTML tags
-- Decode HTML entities (`&amp;` → `&`)
+- Remove `<examples>...</examples>` and `<!-- ... -->` snippets
+- Drop the leading `<para>...</para>` wrapper (the summary's first paragraph is unwrapped)
+- Soft-wrap at ~80 columns (break at the next space after a line exceeds 80 chars)
+
+Note: HTML entities are NOT decoded (`&amp;` stays `&amp;`) — the existing generator does not
+decode them, so neither do we.
 
 ### Type-Specific Summaries
 

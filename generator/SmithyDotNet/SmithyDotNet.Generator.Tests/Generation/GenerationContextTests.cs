@@ -12,8 +12,7 @@ public class GenerationContextTests
 
     public GenerationContextTests(CloudTrailModelFixture fixture)
     {
-        var index = new ServiceIndex(fixture.Model);
-        _context = new GenerationContext(index);
+        _context = fixture.Context;
     }
 
     [Fact]
@@ -45,15 +44,29 @@ public class GenerationContextTests
     public void Structures_ExcludesInputOutputAndErrors()
     {
         Assert.Equal(5, _context.Structures.Count);
-        Assert.DoesNotContain(_context.Structures, s => s.IsInput());
-        Assert.DoesNotContain(_context.Structures, s => s.IsOutput());
-        Assert.DoesNotContain(_context.Structures, s => s.IsError());
+        Assert.DoesNotContain(_context.Structures.Values, s => s.IsInput());
+        Assert.DoesNotContain(_context.Structures.Values, s => s.IsOutput());
+        Assert.DoesNotContain(_context.Structures.Values, s => s.IsError());
     }
 
     [Fact]
     public void Errors_ContainsSixExceptions()
     {
         Assert.Equal(6, _context.Errors.Count);
+    }
+
+    [Fact]
+    public void Structures_AreOrderedByShapeId()
+    {
+        var keys = _context.Structures.Keys.Select(id => id.AbsoluteName).ToList();
+        Assert.Equal(keys.OrderBy(k => k, StringComparer.Ordinal), keys);
+    }
+
+    [Fact]
+    public void Errors_AreOrderedByShapeId()
+    {
+        var keys = _context.Errors.Keys.Select(id => id.AbsoluteName).ToList();
+        Assert.Equal(keys.OrderBy(k => k, StringComparer.Ordinal), keys);
     }
 
     [Fact]

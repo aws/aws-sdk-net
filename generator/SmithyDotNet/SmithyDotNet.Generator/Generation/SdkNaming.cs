@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 namespace SmithyDotNet.Generator.Generation;
 
 /// <summary>
-/// Pure string transforms for deriving .NET SDK names from Smithy sdkId values.
+/// String transforms for deriving .NET SDK names from Smithy names.
 /// </summary>
 public static partial class SdkNaming
 {
@@ -24,12 +24,22 @@ public static partial class SdkNaming
         }
 
         var result = AlphaNumericOnlyRegex().Replace(stripped, string.Empty);
-        if (result.Length > 0)
+        return ToUpperFirstCharacter(result);
+    }
+
+    /// <summary>
+    /// Returns the PascalCase .NET property name for a Smithy member name by uppercasing
+    /// only the first character and preserving the remainder verbatim:
+    /// <c>eventID</c> → <c>EventID</c>, <c>id</c> → <c>Id</c>, <c>eventData</c> → <c>EventData</c>.
+    /// </summary>
+    public static string ToUpperFirstCharacter(string name)
+    {
+        if (name.Length == 0)
         {
-            result = char.ToUpperInvariant(result[0]) + result[1..];
+            return name;
         }
 
-        return result;
+        return char.ToUpperInvariant(name[0]) + name[1..];
     }
 
     [GeneratedRegex("[^a-zA-Z0-9]")]

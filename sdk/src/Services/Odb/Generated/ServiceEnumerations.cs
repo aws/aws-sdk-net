@@ -75,6 +75,468 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type AutonomousDatabaseBackupStatus.
+    /// </summary>
+    public class AutonomousDatabaseBackupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AutonomousDatabaseBackupStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupStatus ACTIVE = new AutonomousDatabaseBackupStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AutonomousDatabaseBackupStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupStatus CREATING = new AutonomousDatabaseBackupStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for AutonomousDatabaseBackupStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupStatus DELETING = new AutonomousDatabaseBackupStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for AutonomousDatabaseBackupStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupStatus FAILED = new AutonomousDatabaseBackupStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for AutonomousDatabaseBackupStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupStatus UPDATING = new AutonomousDatabaseBackupStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutonomousDatabaseBackupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutonomousDatabaseBackupStatus FindValue(string value)
+        {
+            return FindValue<AutonomousDatabaseBackupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutonomousDatabaseBackupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutonomousDatabaseBackupType.
+    /// </summary>
+    public class AutonomousDatabaseBackupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUMULATIVE_INCREMENTAL for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType CUMULATIVE_INCREMENTAL = new AutonomousDatabaseBackupType("CUMULATIVE_INCREMENTAL");
+        /// <summary>
+        /// Constant FULL for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType FULL = new AutonomousDatabaseBackupType("FULL");
+        /// <summary>
+        /// Constant INCREMENTAL for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType INCREMENTAL = new AutonomousDatabaseBackupType("INCREMENTAL");
+        /// <summary>
+        /// Constant LONGTERM for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType LONGTERM = new AutonomousDatabaseBackupType("LONGTERM");
+        /// <summary>
+        /// Constant ROLL_FORWARD_IMAGE_COPY for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType ROLL_FORWARD_IMAGE_COPY = new AutonomousDatabaseBackupType("ROLL_FORWARD_IMAGE_COPY");
+        /// <summary>
+        /// Constant VIRTUAL_FULL for AutonomousDatabaseBackupType
+        /// </summary>
+        public static readonly AutonomousDatabaseBackupType VIRTUAL_FULL = new AutonomousDatabaseBackupType("VIRTUAL_FULL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutonomousDatabaseBackupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutonomousDatabaseBackupType FindValue(string value)
+        {
+            return FindValue<AutonomousDatabaseBackupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutonomousDatabaseBackupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutonomousDatabaseResourceStatus.
+    /// </summary>
+    public class AutonomousDatabaseResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus AVAILABLE = new AutonomousDatabaseResourceStatus("AVAILABLE");
+        /// <summary>
+        /// Constant AVAILABLE_NEEDS_ATTENTION for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus AVAILABLE_NEEDS_ATTENTION = new AutonomousDatabaseResourceStatus("AVAILABLE_NEEDS_ATTENTION");
+        /// <summary>
+        /// Constant BACKUP_IN_PROGRESS for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus BACKUP_IN_PROGRESS = new AutonomousDatabaseResourceStatus("BACKUP_IN_PROGRESS");
+        /// <summary>
+        /// Constant FAILED for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus FAILED = new AutonomousDatabaseResourceStatus("FAILED");
+        /// <summary>
+        /// Constant INACCESSIBLE for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus INACCESSIBLE = new AutonomousDatabaseResourceStatus("INACCESSIBLE");
+        /// <summary>
+        /// Constant MAINTENANCE_IN_PROGRESS for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus MAINTENANCE_IN_PROGRESS = new AutonomousDatabaseResourceStatus("MAINTENANCE_IN_PROGRESS");
+        /// <summary>
+        /// Constant PROVISIONING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus PROVISIONING = new AutonomousDatabaseResourceStatus("PROVISIONING");
+        /// <summary>
+        /// Constant RECREATING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus RECREATING = new AutonomousDatabaseResourceStatus("RECREATING");
+        /// <summary>
+        /// Constant RESTARTING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus RESTARTING = new AutonomousDatabaseResourceStatus("RESTARTING");
+        /// <summary>
+        /// Constant RESTORE_FAILED for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus RESTORE_FAILED = new AutonomousDatabaseResourceStatus("RESTORE_FAILED");
+        /// <summary>
+        /// Constant RESTORE_IN_PROGRESS for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus RESTORE_IN_PROGRESS = new AutonomousDatabaseResourceStatus("RESTORE_IN_PROGRESS");
+        /// <summary>
+        /// Constant ROLE_CHANGE_IN_PROGRESS for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus ROLE_CHANGE_IN_PROGRESS = new AutonomousDatabaseResourceStatus("ROLE_CHANGE_IN_PROGRESS");
+        /// <summary>
+        /// Constant SCALE_IN_PROGRESS for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus SCALE_IN_PROGRESS = new AutonomousDatabaseResourceStatus("SCALE_IN_PROGRESS");
+        /// <summary>
+        /// Constant STANDBY for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus STANDBY = new AutonomousDatabaseResourceStatus("STANDBY");
+        /// <summary>
+        /// Constant STARTING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus STARTING = new AutonomousDatabaseResourceStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus STOPPED = new AutonomousDatabaseResourceStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus STOPPING = new AutonomousDatabaseResourceStatus("STOPPING");
+        /// <summary>
+        /// Constant TERMINATED for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus TERMINATED = new AutonomousDatabaseResourceStatus("TERMINATED");
+        /// <summary>
+        /// Constant TERMINATING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus TERMINATING = new AutonomousDatabaseResourceStatus("TERMINATING");
+        /// <summary>
+        /// Constant UNAVAILABLE for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus UNAVAILABLE = new AutonomousDatabaseResourceStatus("UNAVAILABLE");
+        /// <summary>
+        /// Constant UPDATING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus UPDATING = new AutonomousDatabaseResourceStatus("UPDATING");
+        /// <summary>
+        /// Constant UPGRADING for AutonomousDatabaseResourceStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseResourceStatus UPGRADING = new AutonomousDatabaseResourceStatus("UPGRADING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutonomousDatabaseResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutonomousDatabaseResourceStatus FindValue(string value)
+        {
+            return FindValue<AutonomousDatabaseResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutonomousDatabaseResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutonomousDatabaseWalletStatus.
+    /// </summary>
+    public class AutonomousDatabaseWalletStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AutonomousDatabaseWalletStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseWalletStatus ACTIVE = new AutonomousDatabaseWalletStatus("ACTIVE");
+        /// <summary>
+        /// Constant UPDATING for AutonomousDatabaseWalletStatus
+        /// </summary>
+        public static readonly AutonomousDatabaseWalletStatus UPDATING = new AutonomousDatabaseWalletStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutonomousDatabaseWalletStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutonomousDatabaseWalletStatus FindValue(string value)
+        {
+            return FindValue<AutonomousDatabaseWalletStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutonomousDatabaseWalletStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutonomousMaintenanceScheduleType.
+    /// </summary>
+    public class AutonomousMaintenanceScheduleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EARLY for AutonomousMaintenanceScheduleType
+        /// </summary>
+        public static readonly AutonomousMaintenanceScheduleType EARLY = new AutonomousMaintenanceScheduleType("EARLY");
+        /// <summary>
+        /// Constant REGULAR for AutonomousMaintenanceScheduleType
+        /// </summary>
+        public static readonly AutonomousMaintenanceScheduleType REGULAR = new AutonomousMaintenanceScheduleType("REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutonomousMaintenanceScheduleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutonomousMaintenanceScheduleType FindValue(string value)
+        {
+            return FindValue<AutonomousMaintenanceScheduleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutonomousMaintenanceScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CharacterSetType.
+    /// </summary>
+    public class CharacterSetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATABASE for CharacterSetType
+        /// </summary>
+        public static readonly CharacterSetType DATABASE = new CharacterSetType("DATABASE");
+        /// <summary>
+        /// Constant NATIONAL for CharacterSetType
+        /// </summary>
+        public static readonly CharacterSetType NATIONAL = new CharacterSetType("NATIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CharacterSetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CharacterSetType FindValue(string value)
+        {
+            return FindValue<CharacterSetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CharacterSetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloneType.
+    /// </summary>
+    public class CloneType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL for CloneType
+        /// </summary>
+        public static readonly CloneType FULL = new CloneType("FULL");
+        /// <summary>
+        /// Constant METADATA for CloneType
+        /// </summary>
+        public static readonly CloneType METADATA = new CloneType("METADATA");
+        /// <summary>
+        /// Constant PARTIAL for CloneType
+        /// </summary>
+        public static readonly CloneType PARTIAL = new CloneType("PARTIAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloneType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloneType FindValue(string value)
+        {
+            return FindValue<CloneType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloneType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComputeModel.
     /// </summary>
     public class ComputeModel : ConstantClass
@@ -118,6 +580,296 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComputeModel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatabaseEdition.
+    /// </summary>
+    public class DatabaseEdition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTERPRISE_EDITION for DatabaseEdition
+        /// </summary>
+        public static readonly DatabaseEdition ENTERPRISE_EDITION = new DatabaseEdition("ENTERPRISE_EDITION");
+        /// <summary>
+        /// Constant STANDARD_EDITION for DatabaseEdition
+        /// </summary>
+        public static readonly DatabaseEdition STANDARD_EDITION = new DatabaseEdition("STANDARD_EDITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseEdition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseEdition FindValue(string value)
+        {
+            return FindValue<DatabaseEdition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseEdition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatabaseManagementStatus.
+    /// </summary>
+    public class DatabaseManagementStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLING for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus DISABLING = new DatabaseManagementStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus ENABLED = new DatabaseManagementStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus ENABLING = new DatabaseManagementStatus("ENABLING");
+        /// <summary>
+        /// Constant FAILED_DISABLING for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus FAILED_DISABLING = new DatabaseManagementStatus("FAILED_DISABLING");
+        /// <summary>
+        /// Constant FAILED_ENABLING for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus FAILED_ENABLING = new DatabaseManagementStatus("FAILED_ENABLING");
+        /// <summary>
+        /// Constant NOT_ENABLED for DatabaseManagementStatus
+        /// </summary>
+        public static readonly DatabaseManagementStatus NOT_ENABLED = new DatabaseManagementStatus("NOT_ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseManagementStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseManagementStatus FindValue(string value)
+        {
+            return FindValue<DatabaseManagementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseManagementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatabaseType.
+    /// </summary>
+    public class DatabaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLONE for DatabaseType
+        /// </summary>
+        public static readonly DatabaseType CLONE = new DatabaseType("CLONE");
+        /// <summary>
+        /// Constant REGULAR for DatabaseType
+        /// </summary>
+        public static readonly DatabaseType REGULAR = new DatabaseType("REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseType FindValue(string value)
+        {
+            return FindValue<DatabaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataGuardRole.
+    /// </summary>
+    public class DataGuardRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP_COPY for DataGuardRole
+        /// </summary>
+        public static readonly DataGuardRole BACKUP_COPY = new DataGuardRole("BACKUP_COPY");
+        /// <summary>
+        /// Constant DISABLED_STANDBY for DataGuardRole
+        /// </summary>
+        public static readonly DataGuardRole DISABLED_STANDBY = new DataGuardRole("DISABLED_STANDBY");
+        /// <summary>
+        /// Constant PRIMARY for DataGuardRole
+        /// </summary>
+        public static readonly DataGuardRole PRIMARY = new DataGuardRole("PRIMARY");
+        /// <summary>
+        /// Constant SNAPSHOT_STANDBY for DataGuardRole
+        /// </summary>
+        public static readonly DataGuardRole SNAPSHOT_STANDBY = new DataGuardRole("SNAPSHOT_STANDBY");
+        /// <summary>
+        /// Constant STANDBY for DataGuardRole
+        /// </summary>
+        public static readonly DataGuardRole STANDBY = new DataGuardRole("STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataGuardRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataGuardRole FindValue(string value)
+        {
+            return FindValue<DataGuardRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataGuardRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataSafeStatus.
+    /// </summary>
+    public class DataSafeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEREGISTERING for DataSafeStatus
+        /// </summary>
+        public static readonly DataSafeStatus DEREGISTERING = new DataSafeStatus("DEREGISTERING");
+        /// <summary>
+        /// Constant FAILED for DataSafeStatus
+        /// </summary>
+        public static readonly DataSafeStatus FAILED = new DataSafeStatus("FAILED");
+        /// <summary>
+        /// Constant NOT_REGISTERED for DataSafeStatus
+        /// </summary>
+        public static readonly DataSafeStatus NOT_REGISTERED = new DataSafeStatus("NOT_REGISTERED");
+        /// <summary>
+        /// Constant REGISTERED for DataSafeStatus
+        /// </summary>
+        public static readonly DataSafeStatus REGISTERED = new DataSafeStatus("REGISTERED");
+        /// <summary>
+        /// Constant REGISTERING for DataSafeStatus
+        /// </summary>
+        public static readonly DataSafeStatus REGISTERING = new DataSafeStatus("REGISTERING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSafeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSafeStatus FindValue(string value)
+        {
+            return FindValue<DataSafeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSafeStatus(string value)
         {
             return FindValue(value);
         }
@@ -377,6 +1129,114 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type DbWorkload.
+    /// </summary>
+    public class DbWorkload : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AJD for DbWorkload
+        /// </summary>
+        public static readonly DbWorkload AJD = new DbWorkload("AJD");
+        /// <summary>
+        /// Constant APEX for DbWorkload
+        /// </summary>
+        public static readonly DbWorkload APEX = new DbWorkload("APEX");
+        /// <summary>
+        /// Constant LH for DbWorkload
+        /// </summary>
+        public static readonly DbWorkload LH = new DbWorkload("LH");
+        /// <summary>
+        /// Constant OLTP for DbWorkload
+        /// </summary>
+        public static readonly DbWorkload OLTP = new DbWorkload("OLTP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DbWorkload(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DbWorkload FindValue(string value)
+        {
+            return FindValue<DbWorkload>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DbWorkload(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DisasterRecoveryType.
+    /// </summary>
+    public class DisasterRecoveryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADG for DisasterRecoveryType
+        /// </summary>
+        public static readonly DisasterRecoveryType ADG = new DisasterRecoveryType("ADG");
+        /// <summary>
+        /// Constant BACKUP_BASED for DisasterRecoveryType
+        /// </summary>
+        public static readonly DisasterRecoveryType BACKUP_BASED = new DisasterRecoveryType("BACKUP_BASED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DisasterRecoveryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DisasterRecoveryType FindValue(string value)
+        {
+            return FindValue<DisasterRecoveryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DisasterRecoveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiskRedundancy.
     /// </summary>
     public class DiskRedundancy : ConstantClass
@@ -420,6 +1280,168 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DiskRedundancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionKeyProvider.
+    /// </summary>
+    public class EncryptionKeyProvider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_KMS for EncryptionKeyProvider
+        /// </summary>
+        public static readonly EncryptionKeyProvider AWS_KMS = new EncryptionKeyProvider("AWS_KMS");
+        /// <summary>
+        /// Constant OCI for EncryptionKeyProvider
+        /// </summary>
+        public static readonly EncryptionKeyProvider OCI = new EncryptionKeyProvider("OCI");
+        /// <summary>
+        /// Constant OKV for EncryptionKeyProvider
+        /// </summary>
+        public static readonly EncryptionKeyProvider OKV = new EncryptionKeyProvider("OKV");
+        /// <summary>
+        /// Constant ORACLE_MANAGED for EncryptionKeyProvider
+        /// </summary>
+        public static readonly EncryptionKeyProvider ORACLE_MANAGED = new EncryptionKeyProvider("ORACLE_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionKeyProvider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionKeyProvider FindValue(string value)
+        {
+            return FindValue<EncryptionKeyProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionKeyProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionKeyProviderInput.
+    /// </summary>
+    public class EncryptionKeyProviderInput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_KMS for EncryptionKeyProviderInput
+        /// </summary>
+        public static readonly EncryptionKeyProviderInput AWS_KMS = new EncryptionKeyProviderInput("AWS_KMS");
+        /// <summary>
+        /// Constant ORACLE_MANAGED for EncryptionKeyProviderInput
+        /// </summary>
+        public static readonly EncryptionKeyProviderInput ORACLE_MANAGED = new EncryptionKeyProviderInput("ORACLE_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionKeyProviderInput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionKeyProviderInput FindValue(string value)
+        {
+            return FindValue<EncryptionKeyProviderInput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionKeyProviderInput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExternalIdType.
+    /// </summary>
+    public class ExternalIdType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Compartment_ocid for ExternalIdType
+        /// </summary>
+        public static readonly ExternalIdType Compartment_ocid = new ExternalIdType("compartment_ocid");
+        /// <summary>
+        /// Constant Database_ocid for ExternalIdType
+        /// </summary>
+        public static readonly ExternalIdType Database_ocid = new ExternalIdType("database_ocid");
+        /// <summary>
+        /// Constant Tenant_ocid for ExternalIdType
+        /// </summary>
+        public static readonly ExternalIdType Tenant_ocid = new ExternalIdType("tenant_ocid");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalIdType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalIdType FindValue(string value)
+        {
+            return FindValue<ExternalIdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalIdType(string value)
         {
             return FindValue(value);
         }
@@ -757,6 +1779,56 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type NetServicesArchitecture.
+    /// </summary>
+    public class NetServicesArchitecture : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEDICATED for NetServicesArchitecture
+        /// </summary>
+        public static readonly NetServicesArchitecture DEDICATED = new NetServicesArchitecture("DEDICATED");
+        /// <summary>
+        /// Constant SHARED for NetServicesArchitecture
+        /// </summary>
+        public static readonly NetServicesArchitecture SHARED = new NetServicesArchitecture("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetServicesArchitecture(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetServicesArchitecture FindValue(string value)
+        {
+            return FindValue<NetServicesArchitecture>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetServicesArchitecture(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Objective.
     /// </summary>
     public class Objective : ConstantClass
@@ -812,6 +1884,52 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Objective(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OciAwsIntegration.
+    /// </summary>
+    public class OciAwsIntegration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KmsTde for OciAwsIntegration
+        /// </summary>
+        public static readonly OciAwsIntegration KmsTde = new OciAwsIntegration("KmsTde");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OciAwsIntegration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OciAwsIntegration FindValue(string value)
+        {
+            return FindValue<OciAwsIntegration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OciAwsIntegration(string value)
         {
             return FindValue(value);
         }
@@ -909,6 +2027,122 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type OpenMode.
+    /// </summary>
+    public class OpenMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ_ONLY for OpenMode
+        /// </summary>
+        public static readonly OpenMode READ_ONLY = new OpenMode("READ_ONLY");
+        /// <summary>
+        /// Constant READ_WRITE for OpenMode
+        /// </summary>
+        public static readonly OpenMode READ_WRITE = new OpenMode("READ_WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpenMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpenMode FindValue(string value)
+        {
+            return FindValue<OpenMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpenMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationsInsightsStatus.
+    /// </summary>
+    public class OperationsInsightsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLING for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus DISABLING = new OperationsInsightsStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus ENABLED = new OperationsInsightsStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus ENABLING = new OperationsInsightsStatus("ENABLING");
+        /// <summary>
+        /// Constant FAILED_DISABLING for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus FAILED_DISABLING = new OperationsInsightsStatus("FAILED_DISABLING");
+        /// <summary>
+        /// Constant FAILED_ENABLING for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus FAILED_ENABLING = new OperationsInsightsStatus("FAILED_ENABLING");
+        /// <summary>
+        /// Constant NOT_ENABLED for OperationsInsightsStatus
+        /// </summary>
+        public static readonly OperationsInsightsStatus NOT_ENABLED = new OperationsInsightsStatus("NOT_ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationsInsightsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationsInsightsStatus FindValue(string value)
+        {
+            return FindValue<OperationsInsightsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationsInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PatchingModeType.
     /// </summary>
     public class PatchingModeType : ConstantClass
@@ -959,6 +2193,56 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type PermissionLevel.
+    /// </summary>
+    public class PermissionLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESTRICTED for PermissionLevel
+        /// </summary>
+        public static readonly PermissionLevel RESTRICTED = new PermissionLevel("RESTRICTED");
+        /// <summary>
+        /// Constant UNRESTRICTED for PermissionLevel
+        /// </summary>
+        public static readonly PermissionLevel UNRESTRICTED = new PermissionLevel("UNRESTRICTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionLevel FindValue(string value)
+        {
+            return FindValue<PermissionLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PreferenceType.
     /// </summary>
     public class PreferenceType : ConstantClass
@@ -1002,6 +2286,164 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PreferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RefreshableMode.
+    /// </summary>
+    public class RefreshableMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for RefreshableMode
+        /// </summary>
+        public static readonly RefreshableMode AUTOMATIC = new RefreshableMode("AUTOMATIC");
+        /// <summary>
+        /// Constant MANUAL for RefreshableMode
+        /// </summary>
+        public static readonly RefreshableMode MANUAL = new RefreshableMode("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RefreshableMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RefreshableMode FindValue(string value)
+        {
+            return FindValue<RefreshableMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RefreshableMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RefreshableStatus.
+    /// </summary>
+    public class RefreshableStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_REFRESHING for RefreshableStatus
+        /// </summary>
+        public static readonly RefreshableStatus NOT_REFRESHING = new RefreshableStatus("NOT_REFRESHING");
+        /// <summary>
+        /// Constant REFRESHING for RefreshableStatus
+        /// </summary>
+        public static readonly RefreshableStatus REFRESHING = new RefreshableStatus("REFRESHING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RefreshableStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RefreshableStatus FindValue(string value)
+        {
+            return FindValue<RefreshableStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RefreshableStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RepeatCadence.
+    /// </summary>
+    public class RepeatCadence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MONTHLY for RepeatCadence
+        /// </summary>
+        public static readonly RepeatCadence MONTHLY = new RepeatCadence("MONTHLY");
+        /// <summary>
+        /// Constant ONE_TIME for RepeatCadence
+        /// </summary>
+        public static readonly RepeatCadence ONE_TIME = new RepeatCadence("ONE_TIME");
+        /// <summary>
+        /// Constant WEEKLY for RepeatCadence
+        /// </summary>
+        public static readonly RepeatCadence WEEKLY = new RepeatCadence("WEEKLY");
+        /// <summary>
+        /// Constant YEARLY for RepeatCadence
+        /// </summary>
+        public static readonly RepeatCadence YEARLY = new RepeatCadence("YEARLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RepeatCadence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RepeatCadence FindValue(string value)
+        {
+            return FindValue<RepeatCadence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RepeatCadence(string value)
         {
             return FindValue(value);
         }
@@ -1130,6 +2572,130 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShapeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP_FROM_ID for SourceType
+        /// </summary>
+        public static readonly SourceType BACKUP_FROM_ID = new SourceType("BACKUP_FROM_ID");
+        /// <summary>
+        /// Constant BACKUP_FROM_TIMESTAMP for SourceType
+        /// </summary>
+        public static readonly SourceType BACKUP_FROM_TIMESTAMP = new SourceType("BACKUP_FROM_TIMESTAMP");
+        /// <summary>
+        /// Constant CLONE_TO_REFRESHABLE for SourceType
+        /// </summary>
+        public static readonly SourceType CLONE_TO_REFRESHABLE = new SourceType("CLONE_TO_REFRESHABLE");
+        /// <summary>
+        /// Constant CROSS_REGION_DATAGUARD for SourceType
+        /// </summary>
+        public static readonly SourceType CROSS_REGION_DATAGUARD = new SourceType("CROSS_REGION_DATAGUARD");
+        /// <summary>
+        /// Constant CROSS_REGION_DISASTER_RECOVERY for SourceType
+        /// </summary>
+        public static readonly SourceType CROSS_REGION_DISASTER_RECOVERY = new SourceType("CROSS_REGION_DISASTER_RECOVERY");
+        /// <summary>
+        /// Constant DATABASE for SourceType
+        /// </summary>
+        public static readonly SourceType DATABASE = new SourceType("DATABASE");
+        /// <summary>
+        /// Constant NONE for SourceType
+        /// </summary>
+        public static readonly SourceType NONE = new SourceType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StandbyAllowlistedIpsSource.
+    /// </summary>
+    public class StandbyAllowlistedIpsSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_APPLICABLE for StandbyAllowlistedIpsSource
+        /// </summary>
+        public static readonly StandbyAllowlistedIpsSource NOT_APPLICABLE = new StandbyAllowlistedIpsSource("NOT_APPLICABLE");
+        /// <summary>
+        /// Constant PRIMARY for StandbyAllowlistedIpsSource
+        /// </summary>
+        public static readonly StandbyAllowlistedIpsSource PRIMARY = new StandbyAllowlistedIpsSource("PRIMARY");
+        /// <summary>
+        /// Constant SEPARATE for StandbyAllowlistedIpsSource
+        /// </summary>
+        public static readonly StandbyAllowlistedIpsSource SEPARATE = new StandbyAllowlistedIpsSource("SEPARATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StandbyAllowlistedIpsSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandbyAllowlistedIpsSource FindValue(string value)
+        {
+            return FindValue<StandbyAllowlistedIpsSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandbyAllowlistedIpsSource(string value)
         {
             return FindValue(value);
         }
@@ -1280,6 +2846,56 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WalletType.
+    /// </summary>
+    public class WalletType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE for WalletType
+        /// </summary>
+        public static readonly WalletType INSTANCE = new WalletType("INSTANCE");
+        /// <summary>
+        /// Constant REGIONAL for WalletType
+        /// </summary>
+        public static readonly WalletType REGIONAL = new WalletType("REGIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WalletType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WalletType FindValue(string value)
+        {
+            return FindValue<WalletType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WalletType(string value)
         {
             return FindValue(value);
         }

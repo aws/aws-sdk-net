@@ -34,11 +34,30 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class CreateRenewalResponse : AmazonWebServiceResponse
     {
+        private CurrencyCode _currency;
         private float? _monthlyRecurringPrice;
         private string _outpostId;
         private PaymentOption _paymentOption;
         private PaymentTerm _paymentTerm;
         private float? _upfrontPrice;
+
+        /// <summary>
+        /// Gets and sets the property Currency. 
+        /// <para>
+        /// The currency of the renewal price.
+        /// </para>
+        /// </summary>
+        public CurrencyCode Currency
+        {
+            get { return this._currency; }
+            set { this._currency = value; }
+        }
+
+        // Check to see if Currency property is set
+        internal bool IsSetCurrency()
+        {
+            return this._currency != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MonthlyRecurringPrice. 

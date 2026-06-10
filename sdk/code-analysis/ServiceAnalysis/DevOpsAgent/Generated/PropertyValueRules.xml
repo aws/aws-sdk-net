@@ -40,6 +40,41 @@
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetRequest.AssetType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetFileRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetFileRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetFileRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateAssetFileRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.CreateBacklogTaskRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -76,6 +111,11 @@
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreatePrivateConnectionResponse.FailureMessage</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.CreatePrivateConnectionResponse.HostAddress</property>
     <min>3</min>
     <max>255</max>
@@ -110,6 +150,32 @@
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteAssetRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteAssetRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteAssetFileRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteAssetFileRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteAssetFileRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeletePrivateConnectionRequest.Name</property>
     <min>3</min>
     <max>30</max>
@@ -132,6 +198,11 @@
     <min>3</min>
     <max>30</max>
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DescribePrivateConnectionResponse.FailureMessage</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DescribePrivateConnectionResponse.HostAddress</property>
@@ -202,8 +273,62 @@
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.EnableOperatorAppResponse.OperatorAppUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GetAgentSpaceRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetRequest.AssetVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetContentRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetContentRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetContentRequest.AssetVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetFileRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetFileRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetFileRequest.AssetVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetAssetFileRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GetAssociationRequest.AgentSpaceId</property>
@@ -228,6 +353,12 @@
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GetOperatorAppRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetOperatorAppResponse.OperatorAppUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://[a-zA-Z0-9.-]+(/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GetRecommendationRequest.AgentSpaceId</property>
@@ -257,6 +388,99 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListAgentSpacesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesRequest.AssetVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetFilesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetsRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetsRequest.AssetType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetTypesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetTypesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetTypesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetVersionsRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetVersionsRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListAssetVersionsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -431,6 +655,12 @@
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.ExchangeUrlPrivateConnectionName</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.KmsKeyArn</property>
     <min>20</min>
     <pattern>arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:[0-9]{12}:key/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
@@ -443,6 +673,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.PrivateConnectionName</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisterServiceRequest.TargetUrlPrivateConnectionName</property>
     <min>3</min>
     <max>30</max>
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
@@ -469,9 +705,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SendMessageRequest.ExecutionId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SendMessageRequest.UserId</property>
@@ -508,6 +742,42 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetFileRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetFileRequest.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetFileRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateAssetFileRequest.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.UpdateAssociationRequest.AgentSpaceId</property>
@@ -556,6 +826,11 @@
     <min>3</min>
     <max>30</max>
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdatePrivateConnectionCertificateResponse.FailureMessage</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.UpdatePrivateConnectionCertificateResponse.HostAddress</property>
@@ -629,6 +904,60 @@
     <pattern>[\p{L}\p{N}\p{P}\p{S}\p{Z}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Asset.AssetId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Asset.AssetType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetFile.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetFileBody.Bytes</property>
+    <min>0</min>
+    <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetFileBody.Text</property>
+    <min>0</min>
+    <max>1572864</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetFileContent.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetFileSummary.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[a-zA-Z0-9_./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetTypeSummary.AssetType</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetTypeSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.AssetZipContent.ZipFile</property>
+    <min>0</min>
+    <max>6291456</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.Association.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -668,10 +997,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DatadogServiceDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DatadogServiceDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -718,10 +1051,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GrafanaServiceDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.GrafanaServiceDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -761,10 +1098,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -838,6 +1179,12 @@
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.McpRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Region</property>
     <min>1</min>
     <max>50</max>
@@ -845,9 +1192,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.RoleArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4AuthorizationConfig.Service</property>
@@ -862,10 +1208,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.MCPServerSigV4ServiceDetails.Name</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -900,6 +1250,11 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.PrivateConnectionSummary.FailureMessage</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.PrivateConnectionSummary.HostAddress</property>
@@ -987,6 +1342,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredGrafanaServerDetails.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1003,10 +1360,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Endpoint</property>
+    <min>1</min>
+    <max>2048</max>
     <pattern>https://[a-zA-Z0-9.-]+(?::[0-9]+)?(?:/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.McpRoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Name</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1017,9 +1384,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.RoleArn</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
-    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.RegisteredMCPServerSigV4Details.Service</property>
