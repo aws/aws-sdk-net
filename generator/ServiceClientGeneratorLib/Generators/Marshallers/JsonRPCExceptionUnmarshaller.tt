@@ -57,7 +57,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
         foreach (var member in this.Structure.Members)
         {
 #>
-                    if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
+                    if (context.TestExpression("<#=member.MarshallName#>", targetDepth, ref reader))
                     {
                         var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
                         unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);

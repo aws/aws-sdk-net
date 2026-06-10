@@ -44,6 +44,21 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+        /// <summary>
+        /// Compares the UTF-8 encoded text of the current JSON token value (e.g. a property name)
+        /// to the supplied text for equality, without allocating a string and without copying the
+        /// underlying <see cref="Utf8JsonReader"/>. Escaped characters in the JSON are unescaped
+        /// before comparison, and the comparison is ordinal (case-sensitive).
+        /// </summary>
+        /// <param name="text">The text to compare against the current token value.</param>
+        /// <returns>True if the current token value matches <paramref name="text"/>.</returns>
+        public bool ValueTextEquals(string text)
+        {
+            // Pass the chars as a span. netstandard2.0 has no implicit string -> ReadOnlySpan<char>
+            // conversion, so AsSpan() is used explicitly; it is allocation-free.
+            return _reader.ValueTextEquals(text.AsSpan());
+        }
+
         private Stream _stream;
         private byte[] _buffer;
 
