@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AudioTrack Marshaller
+    /// AudioPid Marshaller
     /// </summary>
-    public class AudioTrackMarshaller : IRequestMarshaller<AudioTrack, JsonMarshallerContext> 
+    public class AudioPidMarshaller : IRequestMarshaller<AudioPid, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,10 +42,27 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AudioTrack requestObject, JsonMarshallerContext context)
+        public void Marshall(AudioPid requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDolbyEDecode())
+            {
+                context.Writer.WritePropertyName("dolbyEDecode");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioDolbyEDecodeMarshaller.Instance;
+                marshaller.Marshall(requestObject.DolbyEDecode, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPid())
+            {
+                context.Writer.WritePropertyName("pid");
+                context.Writer.WriteNumberValue(requestObject.Pid.Value);
+            }
+
             if(requestObject.IsSetPremixSettings())
             {
                 context.Writer.WritePropertyName("premixSettings");
@@ -57,18 +74,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetTrack())
-            {
-                context.Writer.WritePropertyName("track");
-                context.Writer.WriteNumberValue(requestObject.Track.Value);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AudioTrackMarshaller Instance = new AudioTrackMarshaller();
+        public readonly static AudioPidMarshaller Instance = new AudioPidMarshaller();
 
     }
 }

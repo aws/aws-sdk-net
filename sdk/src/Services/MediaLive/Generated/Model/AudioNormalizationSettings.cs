@@ -36,11 +36,20 @@ namespace Amazon.MediaLive.Model
     {
         private AudioNormalizationAlgorithm _algorithm;
         private AudioNormalizationAlgorithmControl _algorithmControl;
+        private AudioNormalizationPeakCalculation _peakCalculation;
+        private double? _peakLimiterThreshold;
         private double? _targetLkfs;
 
         /// <summary>
-        /// Gets and sets the property Algorithm. Audio normalization algorithm to use. itu17701
-        /// conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.
+        /// Gets and sets the property Algorithm. Choose one of the following audio normalization
+        /// algorithms:ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness
+        /// for an entire piece of content,suitable for measurement of short-form content under
+        /// ATSC recommendation A/85. Supports up to 5.1 audio channels.ITU-R BS.1770-2: Gated
+        /// loudness. A measurement of gated average loudness compliant with the requirements
+        /// ofEBU-R128. Supports up to 5.1 audio channels.ITU-R BS.1770-3: Modified peak. The
+        /// same loudness measurement algorithm as 1770-2, with an updated true peakmeasurement.ITU-R
+        /// BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms,
+        /// includingconfigurations such as 7.1.
         /// </summary>
         public AudioNormalizationAlgorithm Algorithm
         {
@@ -69,6 +78,41 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAlgorithmControl()
         {
             return this._algorithmControl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeakCalculation. If set to TRUE_PEAK, calculate the TruePeak
+        /// for each output's audio track loudness.
+        /// </summary>
+        public AudioNormalizationPeakCalculation PeakCalculation
+        {
+            get { return this._peakCalculation; }
+            set { this._peakCalculation = value; }
+        }
+
+        // Check to see if PeakCalculation property is set
+        internal bool IsSetPeakCalculation()
+        {
+            return this._peakCalculation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeakLimiterThreshold. Peak limiter threshold in decibels
+        /// relative to true peak (dBTP) if TRUE_PEAK is enabled.If TRUE_PEAK is not enabled a
+        /// full scale (dbFS) value is used.The peak inter-audio sample loudness in your output
+        /// will be limited to the value that you specify,without affecting the overall target
+        /// LKFS. Leave blank to use the default value 0.
+        /// </summary>
+        public double? PeakLimiterThreshold
+        {
+            get { return this._peakLimiterThreshold; }
+            set { this._peakLimiterThreshold = value; }
+        }
+
+        // Check to see if PeakLimiterThreshold property is set
+        internal bool IsSetPeakLimiterThreshold()
+        {
+            return this._peakLimiterThreshold.HasValue; 
         }
 
         /// <summary>

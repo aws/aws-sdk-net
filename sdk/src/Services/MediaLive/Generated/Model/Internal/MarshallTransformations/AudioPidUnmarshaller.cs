@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioNormalizationSettings Object
+    /// Response Unmarshaller for AudioPid Object
     /// </summary>  
-    public class AudioNormalizationSettingsUnmarshaller : IJsonUnmarshaller<AudioNormalizationSettings, JsonUnmarshallerContext>
+    public class AudioPidUnmarshaller : IJsonUnmarshaller<AudioPid, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioNormalizationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AudioPid Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AudioNormalizationSettings unmarshalledObject = new AudioNormalizationSettings();
+            AudioPid unmarshalledObject = new AudioPid();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("algorithm", targetDepth, ref reader))
+                if (context.TestExpression("dolbyEDecode", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Algorithm = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AudioDolbyEDecodeUnmarshaller.Instance;
+                    unmarshalledObject.DolbyEDecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("algorithmControl", targetDepth, ref reader))
+                if (context.TestExpression("pid", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AlgorithmControl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Pid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("peakCalculation", targetDepth, ref reader))
+                if (context.TestExpression("premixSettings", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PeakCalculation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("peakLimiterThreshold", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PeakLimiterThreshold = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetLkfs", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetLkfs = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AudioPreMixerSettingsUnmarshaller.Instance;
+                    unmarshalledObject.PremixSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioNormalizationSettingsUnmarshaller _instance = new AudioNormalizationSettingsUnmarshaller();        
+        private static AudioPidUnmarshaller _instance = new AudioPidUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioNormalizationSettingsUnmarshaller Instance
+        public static AudioPidUnmarshaller Instance
         {
             get
             {

@@ -62,6 +62,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Pid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("pids", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AudioPid, AudioPidUnmarshaller>(AudioPidUnmarshaller.Instance);
+                    unmarshalledObject.Pids = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -1148,6 +1148,14 @@ namespace Amazon.MediaLive
         /// Constant ITU_1770_2 for AudioNormalizationAlgorithm
         /// </summary>
         public static readonly AudioNormalizationAlgorithm ITU_1770_2 = new AudioNormalizationAlgorithm("ITU_1770_2");
+        /// <summary>
+        /// Constant ITU_1770_3 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_1770_3 = new AudioNormalizationAlgorithm("ITU_1770_3");
+        /// <summary>
+        /// Constant ITU_1770_4 for AudioNormalizationAlgorithm
+        /// </summary>
+        public static readonly AudioNormalizationAlgorithm ITU_1770_4 = new AudioNormalizationAlgorithm("ITU_1770_4");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1224,6 +1232,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AudioNormalizationAlgorithmControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AudioNormalizationPeakCalculation.
+    /// </summary>
+    public class AudioNormalizationPeakCalculation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for AudioNormalizationPeakCalculation
+        /// </summary>
+        public static readonly AudioNormalizationPeakCalculation NONE = new AudioNormalizationPeakCalculation("NONE");
+        /// <summary>
+        /// Constant TRUE_PEAK for AudioNormalizationPeakCalculation
+        /// </summary>
+        public static readonly AudioNormalizationPeakCalculation TRUE_PEAK = new AudioNormalizationPeakCalculation("TRUE_PEAK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AudioNormalizationPeakCalculation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioNormalizationPeakCalculation FindValue(string value)
+        {
+            return FindValue<AudioNormalizationPeakCalculation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioNormalizationPeakCalculation(string value)
         {
             return FindValue(value);
         }

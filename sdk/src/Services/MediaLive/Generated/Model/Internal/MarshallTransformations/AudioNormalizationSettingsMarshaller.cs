@@ -58,6 +58,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AlgorithmControl);
             }
 
+            if(requestObject.IsSetPeakCalculation())
+            {
+                context.Writer.WritePropertyName("peakCalculation");
+                context.Writer.WriteStringValue(requestObject.PeakCalculation);
+            }
+
+            if(requestObject.IsSetPeakLimiterThreshold())
+            {
+                context.Writer.WritePropertyName("peakLimiterThreshold");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PeakLimiterThreshold.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PeakLimiterThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.PeakLimiterThreshold.Value);
+                }
+            }
+
             if(requestObject.IsSetTargetLkfs())
             {
                 context.Writer.WritePropertyName("targetLkfs");
