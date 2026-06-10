@@ -4591,6 +4591,10 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant ApEast1 for RegionName
+        /// </summary>
+        public static readonly RegionName ApEast1 = new RegionName("ap-east-1");
+        /// <summary>
         /// Constant ApNortheast1 for RegionName
         /// </summary>
         public static readonly RegionName ApNortheast1 = new RegionName("ap-northeast-1");
@@ -4631,6 +4635,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RegionName EuNorth1 = new RegionName("eu-north-1");
         /// <summary>
+        /// Constant EuSouth2 for RegionName
+        /// </summary>
+        public static readonly RegionName EuSouth2 = new RegionName("eu-south-2");
+        /// <summary>
         /// Constant EuWest1 for RegionName
         /// </summary>
         public static readonly RegionName EuWest1 = new RegionName("eu-west-1");
@@ -4642,6 +4650,10 @@ namespace Amazon.Lightsail
         /// Constant EuWest3 for RegionName
         /// </summary>
         public static readonly RegionName EuWest3 = new RegionName("eu-west-3");
+        /// <summary>
+        /// Constant SaEast1 for RegionName
+        /// </summary>
+        public static readonly RegionName SaEast1 = new RegionName("sa-east-1");
         /// <summary>
         /// Constant UsEast1 for RegionName
         /// </summary>
