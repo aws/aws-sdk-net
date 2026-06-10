@@ -56,43 +56,43 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Encryption", targetDepth))
+                if (context.TestExpression("Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeIframeOnlyStreams", targetDepth))
+                if (context.TestExpression("IncludeIframeOnlyStreams", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeIframeOnlyStreams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scte", targetDepth))
+                if (context.TestExpression("Scte", targetDepth, ref reader))
                 {
                     var unmarshaller = ScteUnmarshaller.Instance;
                     unmarshalledObject.Scte = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentDurationSeconds", targetDepth))
+                if (context.TestExpression("SegmentDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentName", targetDepth))
+                if (context.TestExpression("SegmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TsIncludeDvbSubtitles", targetDepth))
+                if (context.TestExpression("TsIncludeDvbSubtitles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TsIncludeDvbSubtitles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TsUseAudioRenditionGroup", targetDepth))
+                if (context.TestExpression("TsUseAudioRenditionGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TsUseAudioRenditionGroup = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetManifest", targetDepth))
+                if (context.TestExpression("assetManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyBuildResultAssetManifestUnmarshaller.Instance;
                     unmarshalledObject.AssetManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildLog", targetDepth))
+                if (context.TestExpression("buildLog", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyBuildLogUnmarshaller.Instance;
                     unmarshalledObject.BuildLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("document", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicySourceDocumentUnmarshaller.Instance;
                     unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fidelityReport", targetDepth))
+                if (context.TestExpression("fidelityReport", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyFidelityReportUnmarshaller.Instance;
                     unmarshalledObject.FidelityReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generatedTestCases", targetDepth))
+                if (context.TestExpression("generatedTestCases", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller.Instance;
                     unmarshalledObject.GeneratedTestCases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyDefinition", targetDepth))
+                if (context.TestExpression("policyDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDefinitionUnmarshaller.Instance;
                     unmarshalledObject.PolicyDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyScenarios", targetDepth))
+                if (context.TestExpression("policyScenarios", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyScenariosUnmarshaller.Instance;
                     unmarshalledObject.PolicyScenarios = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qualityReport", targetDepth))
+                if (context.TestExpression("qualityReport", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDefinitionQualityReportUnmarshaller.Instance;
                     unmarshalledObject.QualityReport = unmarshaller.Unmarshall(context, ref reader);

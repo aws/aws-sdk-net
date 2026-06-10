@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentIpAndPortAddress", targetDepth))
+                if (context.TestExpression("agentIpAndPortAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = RangedConnectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.AgentIpAndPortAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("egressAddressAndPort", targetDepth))
+                if (context.TestExpression("egressAddressAndPort", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.EgressAddressAndPort = unmarshaller.Unmarshall(context, ref reader);

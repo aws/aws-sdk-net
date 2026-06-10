@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseModelName", targetDepth))
+                if (context.TestExpression("BaseModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelAccessConfig", targetDepth))
+                if (context.TestExpression("ModelAccessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelAccessConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelAccessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextGenerationHyperParameters", targetDepth))
+                if (context.TestExpression("TextGenerationHyperParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TextGenerationHyperParameters = unmarshaller.Unmarshall(context, ref reader);

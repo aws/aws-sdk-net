@@ -56,7 +56,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManifestS3Object", targetDepth))
+                if (context.TestExpression("ManifestS3Object", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
                     unmarshalledObject.ManifestS3Object = unmarshaller.Unmarshall(context, ref reader);

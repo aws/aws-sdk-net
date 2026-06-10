@@ -56,25 +56,25 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crossAccountRole", targetDepth))
+                if (context.TestExpression("crossAccountRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CrossAccountRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalId", targetDepth))
+                if (context.TestExpression("externalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regionAndRoutingControls", targetDepth))
+                if (context.TestExpression("regionAndRoutingControls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ArcRoutingControlState>, StringUnmarshaller, JsonListUnmarshaller<ArcRoutingControlState,ArcRoutingControlStateUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ArcRoutingControlState, ArcRoutingControlStateUnmarshaller>(ArcRoutingControlStateUnmarshaller.Instance));
                     unmarshalledObject.RegionAndRoutingControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutMinutes", targetDepth))
+                if (context.TestExpression("timeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);

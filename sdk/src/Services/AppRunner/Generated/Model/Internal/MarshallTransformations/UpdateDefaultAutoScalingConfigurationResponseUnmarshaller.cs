@@ -52,7 +52,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoScalingConfiguration", targetDepth))
+                if (context.TestExpression("AutoScalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingConfigurationUnmarshaller.Instance;
                     response.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviderArn", targetDepth))
+                if (context.TestExpression("CapacityProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CapacityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionVersions", targetDepth))
+                if (context.TestExpression("FunctionVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FunctionVersionsByCapacityProviderListItem, FunctionVersionsByCapacityProviderListItemUnmarshaller>(FunctionVersionsByCapacityProviderListItemUnmarshaller.Instance);
                     response.FunctionVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

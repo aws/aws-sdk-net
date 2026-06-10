@@ -56,13 +56,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Error", targetDepth))
+                if (context.TestExpression("Error", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineOutputErrorUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Record", targetDepth))
+                if (context.TestExpression("Record", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordUnmarshaller.Instance;
                     unmarshalledObject.Record = unmarshaller.Unmarshall(context, ref reader);

@@ -52,91 +52,91 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetModelArn", targetDepth))
+                if (context.TestExpression("assetModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModels", targetDepth))
+                if (context.TestExpression("assetModelCompositeModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModel, AssetModelCompositeModelUnmarshaller>(AssetModelCompositeModelUnmarshaller.Instance);
                     response.AssetModelCompositeModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
                     response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCreationDate", targetDepth))
+                if (context.TestExpression("assetModelCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetModelCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelDescription", targetDepth))
+                if (context.TestExpression("assetModelDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelExternalId", targetDepth))
+                if (context.TestExpression("assetModelExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelHierarchies", targetDepth))
+                if (context.TestExpression("assetModelHierarchies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelHierarchy, AssetModelHierarchyUnmarshaller>(AssetModelHierarchyUnmarshaller.Instance);
                     response.AssetModelHierarchies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelId", targetDepth))
+                if (context.TestExpression("assetModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelLastUpdateDate", targetDepth))
+                if (context.TestExpression("assetModelLastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AssetModelLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelName", targetDepth))
+                if (context.TestExpression("assetModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelProperties", targetDepth))
+                if (context.TestExpression("assetModelProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
                     response.AssetModelProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelStatus", targetDepth))
+                if (context.TestExpression("assetModelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetModelStatusUnmarshaller.Instance;
                     response.AssetModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelType", targetDepth))
+                if (context.TestExpression("assetModelType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelVersion", targetDepth))
+                if (context.TestExpression("assetModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interfaceDetails", targetDepth))
+                if (context.TestExpression("interfaceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InterfaceRelationship, InterfaceRelationshipUnmarshaller>(InterfaceRelationshipUnmarshaller.Instance);
                     response.InterfaceDetails = unmarshaller.Unmarshall(context, ref reader);

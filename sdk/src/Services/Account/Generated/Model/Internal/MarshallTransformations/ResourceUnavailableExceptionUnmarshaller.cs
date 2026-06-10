@@ -72,7 +72,7 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RequestErrorType = unmarshaller.Unmarshall(context, ref reader);

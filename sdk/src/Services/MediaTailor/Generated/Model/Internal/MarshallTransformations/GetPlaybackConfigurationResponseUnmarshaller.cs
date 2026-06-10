@@ -52,139 +52,139 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdConditioningConfiguration", targetDepth))
+                if (context.TestExpression("AdConditioningConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AdConditioningConfigurationUnmarshaller.Instance;
                     response.AdConditioningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdDecisionServerConfiguration", targetDepth))
+                if (context.TestExpression("AdDecisionServerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AdDecisionServerConfigurationUnmarshaller.Instance;
                     response.AdDecisionServerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdDecisionServerUrl", targetDepth))
+                if (context.TestExpression("AdDecisionServerUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AdDecisionServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailSuppression", targetDepth))
+                if (context.TestExpression("AvailSuppression", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailSuppressionUnmarshaller.Instance;
                     response.AvailSuppression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Bumper", targetDepth))
+                if (context.TestExpression("Bumper", targetDepth, ref reader))
                 {
                     var unmarshaller = BumperUnmarshaller.Instance;
                     response.Bumper = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CdnConfiguration", targetDepth))
+                if (context.TestExpression("CdnConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CdnConfigurationUnmarshaller.Instance;
                     response.CdnConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationAliases", targetDepth))
+                if (context.TestExpression("ConfigurationAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                     response.ConfigurationAliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DashConfiguration", targetDepth))
+                if (context.TestExpression("DashConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DashConfigurationUnmarshaller.Instance;
                     response.DashConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionMapping", targetDepth))
+                if (context.TestExpression("FunctionMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.FunctionMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HlsConfiguration", targetDepth))
+                if (context.TestExpression("HlsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsConfigurationUnmarshaller.Instance;
                     response.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsertionMode", targetDepth))
+                if (context.TestExpression("InsertionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InsertionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LivePreRollConfiguration", targetDepth))
+                if (context.TestExpression("LivePreRollConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LivePreRollConfigurationUnmarshaller.Instance;
                     response.LivePreRollConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogConfiguration", targetDepth))
+                if (context.TestExpression("LogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
                     response.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestProcessingRules", targetDepth))
+                if (context.TestExpression("ManifestProcessingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = ManifestProcessingRulesUnmarshaller.Instance;
                     response.ManifestProcessingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PersonalizationThresholdSeconds", targetDepth))
+                if (context.TestExpression("PersonalizationThresholdSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PersonalizationThresholdSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaybackConfigurationArn", targetDepth))
+                if (context.TestExpression("PlaybackConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PlaybackConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlaybackEndpointPrefix", targetDepth))
+                if (context.TestExpression("PlaybackEndpointPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PlaybackEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionInitializationEndpointPrefix", targetDepth))
+                if (context.TestExpression("SessionInitializationEndpointPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionInitializationEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SlateAdUrl", targetDepth))
+                if (context.TestExpression("SlateAdUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlateAdUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranscodeProfileName", targetDepth))
+                if (context.TestExpression("TranscodeProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TranscodeProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VideoContentSourceUrl", targetDepth))
+                if (context.TestExpression("VideoContentSourceUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VideoContentSourceUrl = unmarshaller.Unmarshall(context, ref reader);

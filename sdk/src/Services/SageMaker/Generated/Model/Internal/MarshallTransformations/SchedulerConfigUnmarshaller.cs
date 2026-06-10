@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FairShare", targetDepth))
+                if (context.TestExpression("FairShare", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FairShare = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdleResourceSharing", targetDepth))
+                if (context.TestExpression("IdleResourceSharing", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdleResourceSharing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PriorityClasses", targetDepth))
+                if (context.TestExpression("PriorityClasses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PriorityClass, PriorityClassUnmarshaller>(PriorityClassUnmarshaller.Instance);
                     unmarshalledObject.PriorityClasses = unmarshaller.Unmarshall(context, ref reader);

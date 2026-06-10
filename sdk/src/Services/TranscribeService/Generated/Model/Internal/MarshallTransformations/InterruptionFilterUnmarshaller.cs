@@ -56,31 +56,31 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbsoluteTimeRange", targetDepth))
+                if (context.TestExpression("AbsoluteTimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = AbsoluteTimeRangeUnmarshaller.Instance;
                     unmarshalledObject.AbsoluteTimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Negate", targetDepth))
+                if (context.TestExpression("Negate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Negate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipantRole", targetDepth))
+                if (context.TestExpression("ParticipantRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParticipantRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeTimeRange", targetDepth))
+                if (context.TestExpression("RelativeTimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RelativeTimeRangeUnmarshaller.Instance;
                     unmarshalledObject.RelativeTimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Threshold", targetDepth))
+                if (context.TestExpression("Threshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnswerSource", targetDepth))
+                if (context.TestExpression("AnswerSource", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormQuestionAutomationAnswerSourceUnmarshaller.Instance;
                     unmarshalledObject.AnswerSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultOptionRefIds", targetDepth))
+                if (context.TestExpression("DefaultOptionRefIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DefaultOptionRefIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationFormMultiSelectQuestionAutomationOption, EvaluationFormMultiSelectQuestionAutomationOptionUnmarshaller>(EvaluationFormMultiSelectQuestionAutomationOptionUnmarshaller.Instance);
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);

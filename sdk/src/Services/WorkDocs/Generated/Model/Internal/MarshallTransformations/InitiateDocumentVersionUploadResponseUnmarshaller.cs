@@ -52,13 +52,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Metadata", targetDepth))
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadMetadata", targetDepth))
+                if (context.TestExpression("UploadMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = UploadMetadataUnmarshaller.Instance;
                     response.UploadMetadata = unmarshaller.Unmarshall(context, ref reader);

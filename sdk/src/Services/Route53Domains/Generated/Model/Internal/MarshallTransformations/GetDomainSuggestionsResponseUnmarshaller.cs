@@ -52,7 +52,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SuggestionsList", targetDepth))
+                if (context.TestExpression("SuggestionsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainSuggestion, DomainSuggestionUnmarshaller>(DomainSuggestionUnmarshaller.Instance);
                     response.SuggestionsList = unmarshaller.Unmarshall(context, ref reader);

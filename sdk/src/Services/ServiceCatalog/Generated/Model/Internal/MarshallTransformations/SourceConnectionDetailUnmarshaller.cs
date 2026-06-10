@@ -56,19 +56,19 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionParameters", targetDepth))
+                if (context.TestExpression("ConnectionParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceConnectionParametersUnmarshaller.Instance;
                     unmarshalledObject.ConnectionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSync", targetDepth))
+                if (context.TestExpression("LastSync", targetDepth, ref reader))
                 {
                     var unmarshaller = LastSyncUnmarshaller.Instance;
                     unmarshalledObject.LastSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

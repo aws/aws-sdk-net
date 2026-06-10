@@ -56,7 +56,7 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cancelRequested", targetDepth))
+                if (context.TestExpression("cancelRequested", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CancelRequested = unmarshaller.Unmarshall(context, ref reader);

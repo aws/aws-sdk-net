@@ -52,19 +52,19 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("outputConfiguration", targetDepth))
+                if (context.TestExpression("outputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputConfigurationUnmarshaller.Instance;
                     response.OutputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSegments", targetDepth))
+                if (context.TestExpression("outputSegments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputSegment, OutputSegmentUnmarshaller>(OutputSegmentUnmarshaller.Instance);
                     response.OutputSegments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("semanticModality", targetDepth))
+                if (context.TestExpression("semanticModality", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SemanticModality = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationEntities", targetDepth))
+                if (context.TestExpression("ReputationEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReputationEntity, ReputationEntityUnmarshaller>(ReputationEntityUnmarshaller.Instance);
                     response.ReputationEntities = unmarshaller.Unmarshall(context, ref reader);

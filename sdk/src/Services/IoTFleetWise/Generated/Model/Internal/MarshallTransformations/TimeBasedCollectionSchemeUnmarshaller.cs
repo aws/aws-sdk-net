@@ -56,7 +56,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("periodMs", targetDepth))
+                if (context.TestExpression("periodMs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PeriodMs = unmarshaller.Unmarshall(context, ref reader);

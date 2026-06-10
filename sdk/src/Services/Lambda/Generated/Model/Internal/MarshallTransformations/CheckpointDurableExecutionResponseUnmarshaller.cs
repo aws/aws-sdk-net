@@ -52,13 +52,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CheckpointToken", targetDepth))
+                if (context.TestExpression("CheckpointToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CheckpointToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewExecutionState", targetDepth))
+                if (context.TestExpression("NewExecutionState", targetDepth, ref reader))
                 {
                     var unmarshaller = CheckpointUpdatedExecutionStateUnmarshaller.Instance;
                     response.NewExecutionState = unmarshaller.Unmarshall(context, ref reader);

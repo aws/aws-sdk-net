@@ -56,19 +56,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Legs", targetDepth))
+                if (context.TestExpression("Legs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteLeg, RouteLegUnmarshaller>(RouteLegUnmarshaller.Instance);
                     unmarshalledObject.Legs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MajorRoadLabels", targetDepth))
+                if (context.TestExpression("MajorRoadLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteMajorRoadLabel, RouteMajorRoadLabelUnmarshaller>(RouteMajorRoadLabelUnmarshaller.Instance);
                     unmarshalledObject.MajorRoadLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteSummaryUnmarshaller.Instance;
                     unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);

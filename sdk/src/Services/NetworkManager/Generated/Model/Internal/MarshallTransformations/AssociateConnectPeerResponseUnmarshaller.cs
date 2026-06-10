@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectPeerAssociation", targetDepth))
+                if (context.TestExpression("ConnectPeerAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectPeerAssociationUnmarshaller.Instance;
                     response.ConnectPeerAssociation = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BinCount", targetDepth))
+                if (context.TestExpression("BinCount", targetDepth, ref reader))
                 {
                     var unmarshaller = BinCountOptionsUnmarshaller.Instance;
                     unmarshalledObject.BinCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BinWidth", targetDepth))
+                if (context.TestExpression("BinWidth", targetDepth, ref reader))
                 {
                     var unmarshaller = BinWidthOptionsUnmarshaller.Instance;
                     unmarshalledObject.BinWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedBinType", targetDepth))
+                if (context.TestExpression("SelectedBinType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectedBinType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartValue", targetDepth))
+                if (context.TestExpression("StartValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StartValue = unmarshaller.Unmarshall(context, ref reader);

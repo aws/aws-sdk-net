@@ -52,7 +52,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("trustAnchor", targetDepth))
+                if (context.TestExpression("trustAnchor", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustAnchorDetailUnmarshaller.Instance;
                     response.TrustAnchor = unmarshaller.Unmarshall(context, ref reader);

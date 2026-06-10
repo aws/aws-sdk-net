@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SharedEnvironmentConfig", targetDepth))
+                if (context.TestExpression("SharedEnvironmentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterSharedEnvironmentConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.SharedEnvironmentConfig = unmarshaller.Unmarshall(context, ref reader);

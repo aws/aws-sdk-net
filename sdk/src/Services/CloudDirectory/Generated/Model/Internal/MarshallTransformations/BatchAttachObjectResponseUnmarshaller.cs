@@ -56,7 +56,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachedObjectIdentifier", targetDepth))
+                if (context.TestExpression("attachedObjectIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachedObjectIdentifier = unmarshaller.Unmarshall(context, ref reader);

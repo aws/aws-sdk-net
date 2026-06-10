@@ -52,19 +52,19 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedProductPlanDetails", targetDepth))
+                if (context.TestExpression("ProvisionedProductPlanDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedProductPlanDetailsUnmarshaller.Instance;
                     response.ProvisionedProductPlanDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceChanges", targetDepth))
+                if (context.TestExpression("ResourceChanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceChange, ResourceChangeUnmarshaller>(ResourceChangeUnmarshaller.Instance);
                     response.ResourceChanges = unmarshaller.Unmarshall(context, ref reader);

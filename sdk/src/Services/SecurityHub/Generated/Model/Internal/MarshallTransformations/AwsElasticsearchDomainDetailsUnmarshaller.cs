@@ -56,79 +56,79 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessPolicies", targetDepth))
+                if (context.TestExpression("AccessPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainEndpointOptions", targetDepth))
+                if (context.TestExpression("DomainEndpointOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainDomainEndpointOptionsUnmarshaller.Instance;
                     unmarshalledObject.DomainEndpointOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainId", targetDepth))
+                if (context.TestExpression("DomainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElasticsearchClusterConfig", targetDepth))
+                if (context.TestExpression("ElasticsearchClusterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainElasticsearchClusterConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.ElasticsearchClusterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElasticsearchVersion", targetDepth))
+                if (context.TestExpression("ElasticsearchVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElasticsearchVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionAtRestOptions", targetDepth))
+                if (context.TestExpression("EncryptionAtRestOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainEncryptionAtRestOptionsUnmarshaller.Instance;
                     unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoint", targetDepth))
+                if (context.TestExpression("Endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Endpoints", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogPublishingOptions", targetDepth))
+                if (context.TestExpression("LogPublishingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainLogPublishingOptionsUnmarshaller.Instance;
                     unmarshalledObject.LogPublishingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth))
+                if (context.TestExpression("NodeToNodeEncryptionOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainNodeToNodeEncryptionOptionsUnmarshaller.Instance;
                     unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
+                if (context.TestExpression("ServiceSoftwareOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainServiceSoftwareOptionsUnmarshaller.Instance;
                     unmarshalledObject.ServiceSoftwareOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VPCOptions", targetDepth))
+                if (context.TestExpression("VPCOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainVPCOptionsUnmarshaller.Instance;
                     unmarshalledObject.VPCOptions = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchMetrics", targetDepth))
+                if (context.TestExpression("CloudWatchMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedCloudWatchMetricsSourceDetail, RecommendationRelatedCloudWatchMetricsSourceDetailUnmarshaller>(RecommendationRelatedCloudWatchMetricsSourceDetailUnmarshaller.Instance);
                     unmarshalledObject.CloudWatchMetrics = unmarshaller.Unmarshall(context, ref reader);

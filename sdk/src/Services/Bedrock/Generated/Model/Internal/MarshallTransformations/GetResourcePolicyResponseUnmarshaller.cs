@@ -52,7 +52,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourcePolicy", targetDepth))
+                if (context.TestExpression("resourcePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourcePolicy = unmarshaller.Unmarshall(context, ref reader);

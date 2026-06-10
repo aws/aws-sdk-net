@@ -56,73 +56,73 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amazonMachineImageFulfillmentOption", targetDepth))
+                if (context.TestExpression("amazonMachineImageFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonMachineImageFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.AmazonMachineImageFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiFulfillmentOption", targetDepth))
+                if (context.TestExpression("apiFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.ApiFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudFormationFulfillmentOption", targetDepth))
+                if (context.TestExpression("cloudFormationFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudFormationFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.CloudFormationFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerFulfillmentOption", targetDepth))
+                if (context.TestExpression("containerFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.ContainerFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataExchangeFulfillmentOption", targetDepth))
+                if (context.TestExpression("dataExchangeFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = DataExchangeFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.DataExchangeFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2ImageBuilderComponentFulfillmentOption", targetDepth))
+                if (context.TestExpression("ec2ImageBuilderComponentFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ImageBuilderComponentFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.Ec2ImageBuilderComponentFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksAddOnFulfillmentOption", targetDepth))
+                if (context.TestExpression("eksAddOnFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = EksAddOnFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.EksAddOnFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("helmFulfillmentOption", targetDepth))
+                if (context.TestExpression("helmFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = HelmFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.HelmFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("professionalServicesFulfillmentOption", targetDepth))
+                if (context.TestExpression("professionalServicesFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = ProfessionalServicesFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.ProfessionalServicesFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("saasFulfillmentOption", targetDepth))
+                if (context.TestExpression("saasFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = SaasFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.SaasFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sageMakerAlgorithmFulfillmentOption", targetDepth))
+                if (context.TestExpression("sageMakerAlgorithmFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerAlgorithmFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.SageMakerAlgorithmFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sageMakerModelFulfillmentOption", targetDepth))
+                if (context.TestExpression("sageMakerModelFulfillmentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerModelFulfillmentOptionUnmarshaller.Instance;
                     unmarshalledObject.SageMakerModelFulfillmentOption = unmarshaller.Unmarshall(context, ref reader);

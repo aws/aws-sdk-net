@@ -56,25 +56,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Connections", targetDepth))
+                if (context.TestExpression("Connections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IsolineConnection, IsolineConnectionUnmarshaller>(IsolineConnectionUnmarshaller.Instance);
                     unmarshalledObject.Connections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DistanceThreshold", targetDepth))
+                if (context.TestExpression("DistanceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DistanceThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geometries", targetDepth))
+                if (context.TestExpression("Geometries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IsolineShapeGeometry, IsolineShapeGeometryUnmarshaller>(IsolineShapeGeometryUnmarshaller.Instance);
                     unmarshalledObject.Geometries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeThreshold", targetDepth))
+                if (context.TestExpression("TimeThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeThreshold = unmarshaller.Unmarshall(context, ref reader);

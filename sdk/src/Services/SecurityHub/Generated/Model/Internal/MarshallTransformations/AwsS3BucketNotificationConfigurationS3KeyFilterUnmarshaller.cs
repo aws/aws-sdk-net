@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilterRules", targetDepth))
+                if (context.TestExpression("FilterRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketNotificationConfigurationS3KeyFilterRule, AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller>(AwsS3BucketNotificationConfigurationS3KeyFilterRuleUnmarshaller.Instance);
                     unmarshalledObject.FilterRules = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cause", targetDepth))
+                if (context.TestExpression("cause", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Cause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalInitiatedEventId", targetDepth))
+                if (context.TestExpression("externalInitiatedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExternalInitiatedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalWorkflowExecution", targetDepth))
+                if (context.TestExpression("externalWorkflowExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
                     unmarshalledObject.ExternalWorkflowExecution = unmarshaller.Unmarshall(context, ref reader);

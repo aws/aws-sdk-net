@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SamlConfigCount", targetDepth))
+                if (context.TestExpression("SamlConfigCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SamlConfigCount = unmarshaller.Unmarshall(context, ref reader);

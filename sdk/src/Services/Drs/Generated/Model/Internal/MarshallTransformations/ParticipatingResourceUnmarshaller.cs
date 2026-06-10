@@ -56,13 +56,13 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("launchStatus", targetDepth))
+                if (context.TestExpression("launchStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("participatingResourceID", targetDepth))
+                if (context.TestExpression("participatingResourceID", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipatingResourceIDUnmarshaller.Instance;
                     unmarshalledObject.ParticipatingResourceID = unmarshaller.Unmarshall(context, ref reader);

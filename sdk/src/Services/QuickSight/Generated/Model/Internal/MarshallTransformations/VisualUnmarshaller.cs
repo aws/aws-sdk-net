@@ -56,151 +56,151 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BarChartVisual", targetDepth))
+                if (context.TestExpression("BarChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = BarChartVisualUnmarshaller.Instance;
                     unmarshalledObject.BarChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoxPlotVisual", targetDepth))
+                if (context.TestExpression("BoxPlotVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = BoxPlotVisualUnmarshaller.Instance;
                     unmarshalledObject.BoxPlotVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComboChartVisual", targetDepth))
+                if (context.TestExpression("ComboChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = ComboChartVisualUnmarshaller.Instance;
                     unmarshalledObject.ComboChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomContentVisual", targetDepth))
+                if (context.TestExpression("CustomContentVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomContentVisualUnmarshaller.Instance;
                     unmarshalledObject.CustomContentVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmptyVisual", targetDepth))
+                if (context.TestExpression("EmptyVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = EmptyVisualUnmarshaller.Instance;
                     unmarshalledObject.EmptyVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilledMapVisual", targetDepth))
+                if (context.TestExpression("FilledMapVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = FilledMapVisualUnmarshaller.Instance;
                     unmarshalledObject.FilledMapVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunnelChartVisual", targetDepth))
+                if (context.TestExpression("FunnelChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = FunnelChartVisualUnmarshaller.Instance;
                     unmarshalledObject.FunnelChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GaugeChartVisual", targetDepth))
+                if (context.TestExpression("GaugeChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartVisualUnmarshaller.Instance;
                     unmarshalledObject.GaugeChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeospatialMapVisual", targetDepth))
+                if (context.TestExpression("GeospatialMapVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialMapVisualUnmarshaller.Instance;
                     unmarshalledObject.GeospatialMapVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeatMapVisual", targetDepth))
+                if (context.TestExpression("HeatMapVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = HeatMapVisualUnmarshaller.Instance;
                     unmarshalledObject.HeatMapVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HistogramVisual", targetDepth))
+                if (context.TestExpression("HistogramVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = HistogramVisualUnmarshaller.Instance;
                     unmarshalledObject.HistogramVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightVisual", targetDepth))
+                if (context.TestExpression("InsightVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = InsightVisualUnmarshaller.Instance;
                     unmarshalledObject.InsightVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KPIVisual", targetDepth))
+                if (context.TestExpression("KPIVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = KPIVisualUnmarshaller.Instance;
                     unmarshalledObject.KPIVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LayerMapVisual", targetDepth))
+                if (context.TestExpression("LayerMapVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = LayerMapVisualUnmarshaller.Instance;
                     unmarshalledObject.LayerMapVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineChartVisual", targetDepth))
+                if (context.TestExpression("LineChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartVisualUnmarshaller.Instance;
                     unmarshalledObject.LineChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PieChartVisual", targetDepth))
+                if (context.TestExpression("PieChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = PieChartVisualUnmarshaller.Instance;
                     unmarshalledObject.PieChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PivotTableVisual", targetDepth))
+                if (context.TestExpression("PivotTableVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = PivotTableVisualUnmarshaller.Instance;
                     unmarshalledObject.PivotTableVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PluginVisual", targetDepth))
+                if (context.TestExpression("PluginVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginVisualUnmarshaller.Instance;
                     unmarshalledObject.PluginVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RadarChartVisual", targetDepth))
+                if (context.TestExpression("RadarChartVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = RadarChartVisualUnmarshaller.Instance;
                     unmarshalledObject.RadarChartVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SankeyDiagramVisual", targetDepth))
+                if (context.TestExpression("SankeyDiagramVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = SankeyDiagramVisualUnmarshaller.Instance;
                     unmarshalledObject.SankeyDiagramVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScatterPlotVisual", targetDepth))
+                if (context.TestExpression("ScatterPlotVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = ScatterPlotVisualUnmarshaller.Instance;
                     unmarshalledObject.ScatterPlotVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableVisual", targetDepth))
+                if (context.TestExpression("TableVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = TableVisualUnmarshaller.Instance;
                     unmarshalledObject.TableVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TreeMapVisual", targetDepth))
+                if (context.TestExpression("TreeMapVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = TreeMapVisualUnmarshaller.Instance;
                     unmarshalledObject.TreeMapVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WaterfallVisual", targetDepth))
+                if (context.TestExpression("WaterfallVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = WaterfallVisualUnmarshaller.Instance;
                     unmarshalledObject.WaterfallVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WordCloudVisual", targetDepth))
+                if (context.TestExpression("WordCloudVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = WordCloudVisualUnmarshaller.Instance;
                     unmarshalledObject.WordCloudVisual = unmarshaller.Unmarshall(context, ref reader);

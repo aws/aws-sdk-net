@@ -56,7 +56,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportRevisionToS3", targetDepth))
+                if (context.TestExpression("ExportRevisionToS3", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoExportRevisionToS3RequestDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExportRevisionToS3 = unmarshaller.Unmarshall(context, ref reader);

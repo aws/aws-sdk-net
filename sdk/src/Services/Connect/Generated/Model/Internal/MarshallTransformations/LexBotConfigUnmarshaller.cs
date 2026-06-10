@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LexBot", targetDepth))
+                if (context.TestExpression("LexBot", targetDepth, ref reader))
                 {
                     var unmarshaller = LexBotUnmarshaller.Instance;
                     unmarshalledObject.LexBot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LexV2Bot", targetDepth))
+                if (context.TestExpression("LexV2Bot", targetDepth, ref reader))
                 {
                     var unmarshaller = LexV2BotUnmarshaller.Instance;
                     unmarshalledObject.LexV2Bot = unmarshaller.Unmarshall(context, ref reader);

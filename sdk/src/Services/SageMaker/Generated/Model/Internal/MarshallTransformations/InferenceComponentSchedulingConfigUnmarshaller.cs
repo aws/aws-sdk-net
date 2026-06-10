@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZoneBalance", targetDepth))
+                if (context.TestExpression("AvailabilityZoneBalance", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentAvailabilityZoneBalanceUnmarshaller.Instance;
                     unmarshalledObject.AvailabilityZoneBalance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementStrategy", targetDepth))
+                if (context.TestExpression("PlacementStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlacementStrategy = unmarshaller.Unmarshall(context, ref reader);

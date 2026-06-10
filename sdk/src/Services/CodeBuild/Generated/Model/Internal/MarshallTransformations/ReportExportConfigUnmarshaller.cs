@@ -56,13 +56,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("exportConfigType", targetDepth))
+                if (context.TestExpression("exportConfigType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExportConfigType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Destination", targetDepth))
+                if (context.TestExpression("s3Destination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ReportExportConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);

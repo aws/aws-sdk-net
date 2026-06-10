@@ -52,13 +52,13 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("openidConnectInfo", targetDepth))
+                if (context.TestExpression("openidConnectInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = OidcConfigInfoUnmarshaller.Instance;
                     response.OpenidConnectInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenInfo", targetDepth))
+                if (context.TestExpression("tokenInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = OidcTokenInfoUnmarshaller.Instance;
                     response.TokenInfo = unmarshaller.Unmarshall(context, ref reader);

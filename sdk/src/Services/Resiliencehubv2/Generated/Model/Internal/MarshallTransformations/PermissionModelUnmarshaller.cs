@@ -56,13 +56,13 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crossAccountRoles", targetDepth))
+                if (context.TestExpression("crossAccountRoles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CrossAccountRole, CrossAccountRoleUnmarshaller>(CrossAccountRoleUnmarshaller.Instance);
                     unmarshalledObject.CrossAccountRoles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invokerRoleName", targetDepth))
+                if (context.TestExpression("invokerRoleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvokerRoleName = unmarshaller.Unmarshall(context, ref reader);

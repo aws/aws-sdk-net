@@ -56,31 +56,31 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AreaOfInterest", targetDepth))
+                if (context.TestExpression("AreaOfInterest", targetDepth, ref reader))
                 {
                     var unmarshaller = AreaOfInterestUnmarshaller.Instance;
                     unmarshalledObject.AreaOfInterest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PropertyFilters", targetDepth))
+                if (context.TestExpression("PropertyFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = PropertyFiltersUnmarshaller.Instance;
                     unmarshalledObject.PropertyFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RasterDataCollectionArn", targetDepth))
+                if (context.TestExpression("RasterDataCollectionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RasterDataCollectionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RasterDataCollectionName", targetDepth))
+                if (context.TestExpression("RasterDataCollectionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RasterDataCollectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRangeFilter", targetDepth))
+                if (context.TestExpression("TimeRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeFilterOutputUnmarshaller.Instance;
                     unmarshalledObject.TimeRangeFilter = unmarshaller.Unmarshall(context, ref reader);

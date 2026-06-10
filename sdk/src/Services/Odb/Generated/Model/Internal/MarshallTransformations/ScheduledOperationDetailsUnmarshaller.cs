@@ -56,19 +56,19 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dayOfWeek", targetDepth))
+                if (context.TestExpression("dayOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = DayOfWeekUnmarshaller.Instance;
                     unmarshalledObject.DayOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduledStartTime", targetDepth))
+                if (context.TestExpression("scheduledStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduledStopTime", targetDepth))
+                if (context.TestExpression("scheduledStopTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStopTime = unmarshaller.Unmarshall(context, ref reader);

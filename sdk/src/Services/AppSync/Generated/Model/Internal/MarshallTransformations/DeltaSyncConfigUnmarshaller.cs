@@ -56,19 +56,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("baseTableTTL", targetDepth))
+                if (context.TestExpression("baseTableTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BaseTableTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deltaSyncTableName", targetDepth))
+                if (context.TestExpression("deltaSyncTableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeltaSyncTableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deltaSyncTableTTL", targetDepth))
+                if (context.TestExpression("deltaSyncTableTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DeltaSyncTableTTL = unmarshaller.Unmarshall(context, ref reader);

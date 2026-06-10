@@ -52,7 +52,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LicenseServerEndpoint", targetDepth))
+                if (context.TestExpression("LicenseServerEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = LicenseServerEndpointUnmarshaller.Instance;
                     response.LicenseServerEndpoint = unmarshaller.Unmarshall(context, ref reader);

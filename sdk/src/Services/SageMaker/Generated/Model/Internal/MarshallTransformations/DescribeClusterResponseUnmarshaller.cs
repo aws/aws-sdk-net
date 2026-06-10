@@ -52,91 +52,91 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoScaling", targetDepth))
+                if (context.TestExpression("AutoScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterAutoScalingConfigOutputUnmarshaller.Instance;
                     response.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterArn", targetDepth))
+                if (context.TestExpression("ClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("ClusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterRole", targetDepth))
+                if (context.TestExpression("ClusterRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterStatus", targetDepth))
+                if (context.TestExpression("ClusterStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureMessage", targetDepth))
+                if (context.TestExpression("FailureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroups", targetDepth))
+                if (context.TestExpression("InstanceGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterInstanceGroupDetails, ClusterInstanceGroupDetailsUnmarshaller>(ClusterInstanceGroupDetailsUnmarshaller.Instance);
                     response.InstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeProvisioningMode", targetDepth))
+                if (context.TestExpression("NodeProvisioningMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NodeProvisioningMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeRecovery", targetDepth))
+                if (context.TestExpression("NodeRecovery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NodeRecovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Orchestrator", targetDepth))
+                if (context.TestExpression("Orchestrator", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterOrchestratorUnmarshaller.Instance;
                     response.Orchestrator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestrictedInstanceGroups", targetDepth))
+                if (context.TestExpression("RestrictedInstanceGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterRestrictedInstanceGroupDetails, ClusterRestrictedInstanceGroupDetailsUnmarshaller>(ClusterRestrictedInstanceGroupDetailsUnmarshaller.Instance);
                     response.RestrictedInstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestrictedInstanceGroupsConfig", targetDepth))
+                if (context.TestExpression("RestrictedInstanceGroupsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterRestrictedInstanceGroupsConfigOutputUnmarshaller.Instance;
                     response.RestrictedInstanceGroupsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TieredStorageConfig", targetDepth))
+                if (context.TestExpression("TieredStorageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterTieredStorageConfigUnmarshaller.Instance;
                     response.TieredStorageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;
                     response.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

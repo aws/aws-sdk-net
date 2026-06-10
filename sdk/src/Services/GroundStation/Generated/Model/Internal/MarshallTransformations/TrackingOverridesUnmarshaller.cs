@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("programTrackSettings", targetDepth))
+                if (context.TestExpression("programTrackSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgramTrackSettingsUnmarshaller.Instance;
                     unmarshalledObject.ProgramTrackSettings = unmarshaller.Unmarshall(context, ref reader);

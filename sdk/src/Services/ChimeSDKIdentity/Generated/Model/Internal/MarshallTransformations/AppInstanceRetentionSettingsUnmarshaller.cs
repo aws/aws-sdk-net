@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelRetentionSettings", targetDepth))
+                if (context.TestExpression("ChannelRetentionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelRetentionSettingsUnmarshaller.Instance;
                     unmarshalledObject.ChannelRetentionSettings = unmarshaller.Unmarshall(context, ref reader);

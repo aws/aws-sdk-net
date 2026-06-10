@@ -56,13 +56,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ObservabilityConfigurationArn", targetDepth))
+                if (context.TestExpression("ObservabilityConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObservabilityEnabled", targetDepth))
+                if (context.TestExpression("ObservabilityEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ObservabilityEnabled = unmarshaller.Unmarshall(context, ref reader);

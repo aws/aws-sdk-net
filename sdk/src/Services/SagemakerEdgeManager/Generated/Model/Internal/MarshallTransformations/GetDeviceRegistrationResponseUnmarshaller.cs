@@ -52,13 +52,13 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CacheTTL", targetDepth))
+                if (context.TestExpression("CacheTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CacheTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceRegistration", targetDepth))
+                if (context.TestExpression("DeviceRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceRegistration = unmarshaller.Unmarshall(context, ref reader);

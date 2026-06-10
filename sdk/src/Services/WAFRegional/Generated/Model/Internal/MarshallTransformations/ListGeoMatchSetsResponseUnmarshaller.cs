@@ -52,13 +52,13 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GeoMatchSets", targetDepth))
+                if (context.TestExpression("GeoMatchSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeoMatchSetSummary, GeoMatchSetSummaryUnmarshaller>(GeoMatchSetSummaryUnmarshaller.Instance);
                     response.GeoMatchSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.BCMDataExports.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Export", targetDepth))
+                if (context.TestExpression("Export", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportUnmarshaller.Instance;
                     response.Export = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportStatus", targetDepth))
+                if (context.TestExpression("ExportStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportStatusUnmarshaller.Instance;
                     response.ExportStatus = unmarshaller.Unmarshall(context, ref reader);

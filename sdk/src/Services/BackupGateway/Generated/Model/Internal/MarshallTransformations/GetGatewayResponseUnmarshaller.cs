@@ -52,7 +52,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Gateway", targetDepth))
+                if (context.TestExpression("Gateway", targetDepth, ref reader))
                 {
                     var unmarshaller = GatewayDetailsUnmarshaller.Instance;
                     response.Gateway = unmarshaller.Unmarshall(context, ref reader);

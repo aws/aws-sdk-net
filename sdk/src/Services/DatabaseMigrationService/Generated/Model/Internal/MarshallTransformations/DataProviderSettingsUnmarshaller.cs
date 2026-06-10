@@ -56,67 +56,67 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocDbSettings", targetDepth))
+                if (context.TestExpression("DocDbSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DocDbDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IbmDb2LuwSettings", targetDepth))
+                if (context.TestExpression("IbmDb2LuwSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = IbmDb2LuwDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.IbmDb2LuwSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IbmDb2zOsSettings", targetDepth))
+                if (context.TestExpression("IbmDb2zOsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = IbmDb2zOsDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.IbmDb2zOsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MariaDbSettings", targetDepth))
+                if (context.TestExpression("MariaDbSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MariaDbDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.MariaDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MicrosoftSqlServerSettings", targetDepth))
+                if (context.TestExpression("MicrosoftSqlServerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MicrosoftSqlServerDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.MicrosoftSqlServerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MongoDbSettings", targetDepth))
+                if (context.TestExpression("MongoDbSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MongoDbDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MySqlSettings", targetDepth))
+                if (context.TestExpression("MySqlSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MySqlDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.MySqlSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OracleSettings", targetDepth))
+                if (context.TestExpression("OracleSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = OracleDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostgreSqlSettings", targetDepth))
+                if (context.TestExpression("PostgreSqlSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = PostgreSqlDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.PostgreSqlSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftSettings", targetDepth))
+                if (context.TestExpression("RedshiftSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SybaseAseSettings", targetDepth))
+                if (context.TestExpression("SybaseAseSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SybaseAseDataProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.SybaseAseSettings = unmarshaller.Unmarshall(context, ref reader);

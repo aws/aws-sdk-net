@@ -56,13 +56,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImportAssetFromSignedUrlJobErrorDetails", targetDepth))
+                if (context.TestExpression("ImportAssetFromSignedUrlJobErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetFromSignedUrlJobErrorDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetFromSignedUrlJobErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetsFromS3JobErrorDetails", targetDepth))
+                if (context.TestExpression("ImportAssetsFromS3JobErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetSourceEntry, AssetSourceEntryUnmarshaller>(AssetSourceEntryUnmarshaller.Instance);
                     unmarshalledObject.ImportAssetsFromS3JobErrorDetails = unmarshaller.Unmarshall(context, ref reader);

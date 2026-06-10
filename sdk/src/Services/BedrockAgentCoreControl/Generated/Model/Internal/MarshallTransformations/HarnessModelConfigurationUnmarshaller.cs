@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockModelConfig", targetDepth))
+                if (context.TestExpression("bedrockModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessBedrockModelConfigUnmarshaller.Instance;
                     unmarshalledObject.BedrockModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("geminiModelConfig", targetDepth))
+                if (context.TestExpression("geminiModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessGeminiModelConfigUnmarshaller.Instance;
                     unmarshalledObject.GeminiModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("liteLlmModelConfig", targetDepth))
+                if (context.TestExpression("liteLlmModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessLiteLlmModelConfigUnmarshaller.Instance;
                     unmarshalledObject.LiteLlmModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openAiModelConfig", targetDepth))
+                if (context.TestExpression("openAiModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessOpenAiModelConfigUnmarshaller.Instance;
                     unmarshalledObject.OpenAiModelConfig = unmarshaller.Unmarshall(context, ref reader);

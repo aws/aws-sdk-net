@@ -56,37 +56,37 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actions", targetDepth))
+                if (context.TestExpression("actions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionDeclaration, ActionDeclarationUnmarshaller>(ActionDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("beforeEntry", targetDepth))
+                if (context.TestExpression("beforeEntry", targetDepth, ref reader))
                 {
                     var unmarshaller = BeforeEntryConditionsUnmarshaller.Instance;
                     unmarshalledObject.BeforeEntry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockers", targetDepth))
+                if (context.TestExpression("blockers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BlockerDeclaration, BlockerDeclarationUnmarshaller>(BlockerDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Blockers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onFailure", targetDepth))
+                if (context.TestExpression("onFailure", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureConditionsUnmarshaller.Instance;
                     unmarshalledObject.OnFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onSuccess", targetDepth))
+                if (context.TestExpression("onSuccess", targetDepth, ref reader))
                 {
                     var unmarshaller = SuccessConditionsUnmarshaller.Instance;
                     unmarshalledObject.OnSuccess = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Identity", targetDepth))
+                if (context.TestExpression("Identity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartitionField, PartitionFieldUnmarshaller>(PartitionFieldUnmarshaller.Instance);
                     unmarshalledObject.Identity = unmarshaller.Unmarshall(context, ref reader);

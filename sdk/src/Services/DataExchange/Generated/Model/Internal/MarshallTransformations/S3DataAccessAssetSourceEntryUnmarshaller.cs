@@ -56,25 +56,25 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Bucket", targetDepth))
+                if (context.TestExpression("Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyPrefixes", targetDepth))
+                if (context.TestExpression("KeyPrefixes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.KeyPrefixes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Keys", targetDepth))
+                if (context.TestExpression("Keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeysToGrant", targetDepth))
+                if (context.TestExpression("KmsKeysToGrant", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KmsKeyToGrant, KmsKeyToGrantUnmarshaller>(KmsKeyToGrantUnmarshaller.Instance);
                     unmarshalledObject.KmsKeysToGrant = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SimpleClusterMarker", targetDepth))
+                if (context.TestExpression("SimpleClusterMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = SimpleClusterMarkerUnmarshaller.Instance;
                     unmarshalledObject.SimpleClusterMarker = unmarshaller.Unmarshall(context, ref reader);

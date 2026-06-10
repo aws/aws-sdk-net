@@ -56,13 +56,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorMetrics", targetDepth))
+                if (context.TestExpression("ErrorMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DashDvbMetricsReporting, DashDvbMetricsReportingUnmarshaller>(DashDvbMetricsReportingUnmarshaller.Instance);
                     unmarshalledObject.ErrorMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontDownload", targetDepth))
+                if (context.TestExpression("FontDownload", targetDepth, ref reader))
                 {
                     var unmarshaller = DashDvbFontDownloadUnmarshaller.Instance;
                     unmarshalledObject.FontDownload = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrendsValues", targetDepth))
+                if (context.TestExpression("TrendsValues", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourcesTrendsValuesUnmarshaller.Instance;
                     unmarshalledObject.TrendsValues = unmarshaller.Unmarshall(context, ref reader);

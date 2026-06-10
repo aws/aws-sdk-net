@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VpcEndpointSummary", targetDepth))
+                if (context.TestExpression("VpcEndpointSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcEndpointSummaryUnmarshaller.Instance;
                     response.VpcEndpointSummary = unmarshaller.Unmarshall(context, ref reader);

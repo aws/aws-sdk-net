@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorEntries", targetDepth))
+                if (context.TestExpression("ErrorEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchStartRecommendationsErrorEntry, BatchStartRecommendationsErrorEntryUnmarshaller>(BatchStartRecommendationsErrorEntryUnmarshaller.Instance);
                     response.ErrorEntries = unmarshaller.Unmarshall(context, ref reader);

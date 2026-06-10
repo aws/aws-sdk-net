@@ -56,31 +56,31 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeRepository", targetDepth))
+                if (context.TestExpression("codeRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryMetadataUnmarshaller.Instance;
                     unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2", targetDepth))
+                if (context.TestExpression("ec2", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2MetadataUnmarshaller.Instance;
                     unmarshalledObject.Ec2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrImage", targetDepth))
+                if (context.TestExpression("ecrImage", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrContainerImageMetadataUnmarshaller.Instance;
                     unmarshalledObject.EcrImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrRepository", targetDepth))
+                if (context.TestExpression("ecrRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrRepositoryMetadataUnmarshaller.Instance;
                     unmarshalledObject.EcrRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunction", targetDepth))
+                if (context.TestExpression("lambdaFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionMetadataUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);

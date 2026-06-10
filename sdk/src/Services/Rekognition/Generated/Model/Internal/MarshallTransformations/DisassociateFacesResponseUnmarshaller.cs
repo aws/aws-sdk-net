@@ -52,19 +52,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisassociatedFaces", targetDepth))
+                if (context.TestExpression("DisassociatedFaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DisassociatedFace, DisassociatedFaceUnmarshaller>(DisassociatedFaceUnmarshaller.Instance);
                     response.DisassociatedFaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnsuccessfulFaceDisassociations", targetDepth))
+                if (context.TestExpression("UnsuccessfulFaceDisassociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnsuccessfulFaceDisassociation, UnsuccessfulFaceDisassociationUnmarshaller>(UnsuccessfulFaceDisassociationUnmarshaller.Instance);
                     response.UnsuccessfulFaceDisassociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserStatus", targetDepth))
+                if (context.TestExpression("UserStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserStatus = unmarshaller.Unmarshall(context, ref reader);

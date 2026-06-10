@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PointsOfInterest", targetDepth))
+                if (context.TestExpression("PointsOfInterest", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RealTimeContactAnalysisPointOfInterest, RealTimeContactAnalysisPointOfInterestUnmarshaller>(RealTimeContactAnalysisPointOfInterestUnmarshaller.Instance);
                     unmarshalledObject.PointsOfInterest = unmarshaller.Unmarshall(context, ref reader);

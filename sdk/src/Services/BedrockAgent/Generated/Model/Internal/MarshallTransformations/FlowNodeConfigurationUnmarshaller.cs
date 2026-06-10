@@ -56,97 +56,97 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agent", targetDepth))
+                if (context.TestExpression("agent", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Agent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("collector", targetDepth))
+                if (context.TestExpression("collector", targetDepth, ref reader))
                 {
                     var unmarshaller = CollectorFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Collector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("condition", targetDepth))
+                if (context.TestExpression("condition", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inlineCode", targetDepth))
+                if (context.TestExpression("inlineCode", targetDepth, ref reader))
                 {
                     var unmarshaller = InlineCodeFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InlineCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("input", targetDepth, ref reader))
                 {
                     var unmarshaller = InputFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iterator", targetDepth))
+                if (context.TestExpression("iterator", targetDepth, ref reader))
                 {
                     var unmarshaller = IteratorFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Iterator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBase", targetDepth))
+                if (context.TestExpression("knowledgeBase", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunction", targetDepth))
+                if (context.TestExpression("lambdaFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lex", targetDepth))
+                if (context.TestExpression("lex", targetDepth, ref reader))
                 {
                     var unmarshaller = LexFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Lex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loop", targetDepth))
+                if (context.TestExpression("loop", targetDepth, ref reader))
                 {
                     var unmarshaller = LoopFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Loop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loopController", targetDepth))
+                if (context.TestExpression("loopController", targetDepth, ref reader))
                 {
                     var unmarshaller = LoopControllerFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LoopController = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loopInput", targetDepth))
+                if (context.TestExpression("loopInput", targetDepth, ref reader))
                 {
                     var unmarshaller = LoopInputFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LoopInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
+                if (context.TestExpression("output", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("prompt", targetDepth))
+                if (context.TestExpression("prompt", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Prompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrieval", targetDepth))
+                if (context.TestExpression("retrieval", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Retrieval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storage", targetDepth))
+                if (context.TestExpression("storage", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageFlowNodeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Storage = unmarshaller.Unmarshall(context, ref reader);

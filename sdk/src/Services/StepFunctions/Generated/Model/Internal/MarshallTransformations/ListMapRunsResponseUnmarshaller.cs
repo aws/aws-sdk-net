@@ -52,13 +52,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mapRuns", targetDepth))
+                if (context.TestExpression("mapRuns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MapRunListItem, MapRunListItemUnmarshaller>(MapRunListItemUnmarshaller.Instance);
                     response.MapRuns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

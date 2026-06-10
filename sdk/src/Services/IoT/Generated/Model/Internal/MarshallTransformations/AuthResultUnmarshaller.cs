@@ -56,31 +56,31 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowed", targetDepth))
+                if (context.TestExpression("allowed", targetDepth, ref reader))
                 {
                     var unmarshaller = AllowedUnmarshaller.Instance;
                     unmarshalledObject.Allowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authDecision", targetDepth))
+                if (context.TestExpression("authDecision", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthDecision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authInfo", targetDepth))
+                if (context.TestExpression("authInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthInfoUnmarshaller.Instance;
                     unmarshalledObject.AuthInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("denied", targetDepth))
+                if (context.TestExpression("denied", targetDepth, ref reader))
                 {
                     var unmarshaller = DeniedUnmarshaller.Instance;
                     unmarshalledObject.Denied = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("missingContextValues", targetDepth))
+                if (context.TestExpression("missingContextValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MissingContextValues = unmarshaller.Unmarshall(context, ref reader);

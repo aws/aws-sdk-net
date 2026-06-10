@@ -56,25 +56,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cancel", targetDepth))
+                if (context.TestExpression("cancel", targetDepth, ref reader))
                 {
                     var unmarshaller = FormButtonUnmarshaller.Instance;
                     unmarshalledObject.Cancel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clear", targetDepth))
+                if (context.TestExpression("clear", targetDepth, ref reader))
                 {
                     var unmarshaller = FormButtonUnmarshaller.Instance;
                     unmarshalledObject.Clear = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("position", targetDepth))
+                if (context.TestExpression("position", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("submit", targetDepth))
+                if (context.TestExpression("submit", targetDepth, ref reader))
                 {
                     var unmarshaller = FormButtonUnmarshaller.Instance;
                     unmarshalledObject.Submit = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DirectoryName", targetDepth))
+                if (context.TestExpression("DirectoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = ASN1SubjectUnmarshaller.Instance;
                     unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsName", targetDepth))
+                if (context.TestExpression("DnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdiPartyName", targetDepth))
+                if (context.TestExpression("EdiPartyName", targetDepth, ref reader))
                 {
                     var unmarshaller = EdiPartyNameUnmarshaller.Instance;
                     unmarshalledObject.EdiPartyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddress", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtherName", targetDepth))
+                if (context.TestExpression("OtherName", targetDepth, ref reader))
                 {
                     var unmarshaller = OtherNameUnmarshaller.Instance;
                     unmarshalledObject.OtherName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegisteredId", targetDepth))
+                if (context.TestExpression("RegisteredId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegisteredId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rfc822Name", targetDepth))
+                if (context.TestExpression("Rfc822Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Rfc822Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniformResourceIdentifier", targetDepth))
+                if (context.TestExpression("UniformResourceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UniformResourceIdentifier = unmarshaller.Unmarshall(context, ref reader);

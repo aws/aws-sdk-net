@@ -52,25 +52,25 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("integrationDetails", targetDepth))
+                if (context.TestExpression("integrationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = IntegrationDetailsUnmarshaller.Instance;
                     response.IntegrationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integrationName", targetDepth))
+                if (context.TestExpression("integrationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntegrationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integrationStatus", targetDepth))
+                if (context.TestExpression("integrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntegrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integrationType", targetDepth))
+                if (context.TestExpression("integrationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntegrationType = unmarshaller.Unmarshall(context, ref reader);

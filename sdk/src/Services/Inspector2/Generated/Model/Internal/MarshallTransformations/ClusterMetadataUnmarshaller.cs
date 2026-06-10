@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsEcsMetadataDetails", targetDepth))
+                if (context.TestExpression("awsEcsMetadataDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsMetadataDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEcsMetadataDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsEksMetadataDetails", targetDepth))
+                if (context.TestExpression("awsEksMetadataDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEksMetadataDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEksMetadataDetails = unmarshaller.Unmarshall(context, ref reader);

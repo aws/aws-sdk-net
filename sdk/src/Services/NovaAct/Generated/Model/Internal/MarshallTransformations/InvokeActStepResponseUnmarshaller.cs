@@ -52,13 +52,13 @@ namespace Amazon.NovaAct.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("calls", targetDepth))
+                if (context.TestExpression("calls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Call, CallUnmarshaller>(CallUnmarshaller.Instance);
                     response.Calls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stepId", targetDepth))
+                if (context.TestExpression("stepId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StepId = unmarshaller.Unmarshall(context, ref reader);

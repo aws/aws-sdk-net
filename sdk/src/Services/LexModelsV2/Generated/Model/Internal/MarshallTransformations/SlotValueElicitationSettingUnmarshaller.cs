@@ -56,43 +56,43 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultValueSpecification", targetDepth))
+                if (context.TestExpression("defaultValueSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotDefaultValueSpecificationUnmarshaller.Instance;
                     unmarshalledObject.DefaultValueSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptSpecification", targetDepth))
+                if (context.TestExpression("promptSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PromptSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleUtterances", targetDepth))
+                if (context.TestExpression("sampleUtterances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SampleUtterance, SampleUtteranceUnmarshaller>(SampleUtteranceUnmarshaller.Instance);
                     unmarshalledObject.SampleUtterances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotCaptureSetting", targetDepth))
+                if (context.TestExpression("slotCaptureSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotCaptureSettingUnmarshaller.Instance;
                     unmarshalledObject.SlotCaptureSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotConstraint", targetDepth))
+                if (context.TestExpression("slotConstraint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlotConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotResolutionSetting", targetDepth))
+                if (context.TestExpression("slotResolutionSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotResolutionSettingUnmarshaller.Instance;
                     unmarshalledObject.SlotResolutionSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("waitAndContinueSpecification", targetDepth))
+                if (context.TestExpression("waitAndContinueSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = WaitAndContinueSpecificationUnmarshaller.Instance;
                     unmarshalledObject.WaitAndContinueSpecification = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RuleCategory", targetDepth))
+                if (context.TestExpression("RuleCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = SingleSelectQuestionRuleCategoryAutomationUnmarshaller.Instance;
                     unmarshalledObject.RuleCategory = unmarshaller.Unmarshall(context, ref reader);

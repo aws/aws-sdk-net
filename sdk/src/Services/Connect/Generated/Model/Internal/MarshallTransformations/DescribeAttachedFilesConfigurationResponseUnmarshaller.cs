@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachedFilesConfiguration", targetDepth))
+                if (context.TestExpression("AttachedFilesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AttachedFilesConfigurationUnmarshaller.Instance;
                     response.AttachedFilesConfiguration = unmarshaller.Unmarshall(context, ref reader);

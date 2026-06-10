@@ -52,19 +52,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MilestoneSummaries", targetDepth))
+                if (context.TestExpression("MilestoneSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MilestoneSummary, MilestoneSummaryUnmarshaller>(MilestoneSummaryUnmarshaller.Instance);
                     response.MilestoneSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadId", targetDepth))
+                if (context.TestExpression("WorkloadId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkloadId = unmarshaller.Unmarshall(context, ref reader);

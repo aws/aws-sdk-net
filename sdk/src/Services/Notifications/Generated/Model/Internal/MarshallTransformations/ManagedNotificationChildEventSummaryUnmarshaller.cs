@@ -56,37 +56,37 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregationDetail", targetDepth))
+                if (context.TestExpression("aggregationDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregationDetailUnmarshaller.Instance;
                     unmarshalledObject.AggregationDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventStatus", targetDepth))
+                if (context.TestExpression("eventStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageComponents", targetDepth))
+                if (context.TestExpression("messageComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageComponentsSummaryUnmarshaller.Instance;
                     unmarshalledObject.MessageComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notificationType", targetDepth))
+                if (context.TestExpression("notificationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaVersion", targetDepth))
+                if (context.TestExpression("schemaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceEventMetadata", targetDepth))
+                if (context.TestExpression("sourceEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedSourceEventMetadataSummaryUnmarshaller.Instance;
                     unmarshalledObject.SourceEventMetadata = unmarshaller.Unmarshall(context, ref reader);

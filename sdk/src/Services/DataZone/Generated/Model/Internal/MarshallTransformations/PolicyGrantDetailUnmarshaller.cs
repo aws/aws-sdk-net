@@ -56,85 +56,85 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addToProjectMemberPool", targetDepth))
+                if (context.TestExpression("addToProjectMemberPool", targetDepth, ref reader))
                 {
                     var unmarshaller = AddToProjectMemberPoolPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.AddToProjectMemberPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createAssetType", targetDepth))
+                if (context.TestExpression("createAssetType", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateAssetTypePolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateAssetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createDomainUnit", targetDepth))
+                if (context.TestExpression("createDomainUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateDomainUnitPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateDomainUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createEnvironment", targetDepth))
+                if (context.TestExpression("createEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = UnitUnmarshaller.Instance;
                     unmarshalledObject.CreateEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createEnvironmentFromBlueprint", targetDepth))
+                if (context.TestExpression("createEnvironmentFromBlueprint", targetDepth, ref reader))
                 {
                     var unmarshaller = UnitUnmarshaller.Instance;
                     unmarshalledObject.CreateEnvironmentFromBlueprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createEnvironmentProfile", targetDepth))
+                if (context.TestExpression("createEnvironmentProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateEnvironmentProfilePolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateEnvironmentProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createFormType", targetDepth))
+                if (context.TestExpression("createFormType", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateFormTypePolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateFormType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createGlossary", targetDepth))
+                if (context.TestExpression("createGlossary", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateGlossaryPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateGlossary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createProject", targetDepth))
+                if (context.TestExpression("createProject", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateProjectPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateProject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createProjectFromProjectProfile", targetDepth))
+                if (context.TestExpression("createProjectFromProjectProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateProjectFromProjectProfilePolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.CreateProjectFromProjectProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("delegateCreateEnvironmentProfile", targetDepth))
+                if (context.TestExpression("delegateCreateEnvironmentProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = UnitUnmarshaller.Instance;
                     unmarshalledObject.DelegateCreateEnvironmentProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overrideDomainUnitOwners", targetDepth))
+                if (context.TestExpression("overrideDomainUnitOwners", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideDomainUnitOwnersPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.OverrideDomainUnitOwners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overrideProjectOwners", targetDepth))
+                if (context.TestExpression("overrideProjectOwners", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideProjectOwnersPolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.OverrideProjectOwners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("useAssetType", targetDepth))
+                if (context.TestExpression("useAssetType", targetDepth, ref reader))
                 {
                     var unmarshaller = UseAssetTypePolicyGrantDetailUnmarshaller.Instance;
                     unmarshalledObject.UseAssetType = unmarshaller.Unmarshall(context, ref reader);

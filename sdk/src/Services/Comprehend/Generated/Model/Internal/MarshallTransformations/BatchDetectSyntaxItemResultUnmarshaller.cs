@@ -56,13 +56,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Index", targetDepth))
+                if (context.TestExpression("Index", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SyntaxTokens", targetDepth))
+                if (context.TestExpression("SyntaxTokens", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SyntaxToken, SyntaxTokenUnmarshaller>(SyntaxTokenUnmarshaller.Instance);
                     unmarshalledObject.SyntaxTokens = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dbNodes", targetDepth))
+                if (context.TestExpression("dbNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DbNodeSummary, DbNodeSummaryUnmarshaller>(DbNodeSummaryUnmarshaller.Instance);
                     response.DbNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

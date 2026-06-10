@@ -56,7 +56,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identifierParts", targetDepth))
+                if (context.TestExpression("identifierParts", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentifierPartsUnmarshaller.Instance;
                     unmarshalledObject.IdentifierParts = unmarshaller.Unmarshall(context, ref reader);

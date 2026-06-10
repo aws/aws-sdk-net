@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("ARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludedRules", targetDepth))
+                if (context.TestExpression("ExcludedRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
                     unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleActionOverrides", targetDepth))
+                if (context.TestExpression("RuleActionOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleActionOverride, RuleActionOverrideUnmarshaller>(RuleActionOverrideUnmarshaller.Instance);
                     unmarshalledObject.RuleActionOverrides = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encoderConfigurationArns", targetDepth))
+                if (context.TestExpression("encoderConfigurationArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EncoderConfigurationArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingConfiguration", targetDepth))
+                if (context.TestExpression("recordingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RecordingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageConfigurationArn", targetDepth))
+                if (context.TestExpression("storageConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfigurations", targetDepth))
+                if (context.TestExpression("thumbnailConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompositionThumbnailConfiguration, CompositionThumbnailConfigurationUnmarshaller>(CompositionThumbnailConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ThumbnailConfigurations = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MappingParameters", targetDepth))
+                if (context.TestExpression("MappingParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = MappingParametersUnmarshaller.Instance;
                     unmarshalledObject.MappingParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordFormatType", targetDepth))
+                if (context.TestExpression("RecordFormatType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordFormatType = unmarshaller.Unmarshall(context, ref reader);

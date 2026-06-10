@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContentBlock, ContentBlockUnmarshaller>(ContentBlockUnmarshaller.Instance);
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isError", targetDepth))
+                if (context.TestExpression("isError", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("structuredContent", targetDepth))
+                if (context.TestExpression("structuredContent", targetDepth, ref reader))
                 {
                     var unmarshaller = ToolResultStructuredContentUnmarshaller.Instance;
                     unmarshalledObject.StructuredContent = unmarshaller.Unmarshall(context, ref reader);

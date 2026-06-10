@@ -52,13 +52,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityReservations", targetDepth))
+                if (context.TestExpression("CapacityReservations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CapacityReservation, CapacityReservationUnmarshaller>(CapacityReservationUnmarshaller.Instance);
                     response.CapacityReservations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

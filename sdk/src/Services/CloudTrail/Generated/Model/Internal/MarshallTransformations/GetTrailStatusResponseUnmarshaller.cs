@@ -52,103 +52,103 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IsLogging", targetDepth))
+                if (context.TestExpression("IsLogging", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsLogging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestCloudWatchLogsDeliveryError", targetDepth))
+                if (context.TestExpression("LatestCloudWatchLogsDeliveryError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestCloudWatchLogsDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestCloudWatchLogsDeliveryTime", targetDepth))
+                if (context.TestExpression("LatestCloudWatchLogsDeliveryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
+                if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestDeliveryAttemptSucceeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
+                if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestDeliveryAttemptTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDeliveryError", targetDepth))
+                if (context.TestExpression("LatestDeliveryError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDeliveryTime", targetDepth))
+                if (context.TestExpression("LatestDeliveryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDigestDeliveryError", targetDepth))
+                if (context.TestExpression("LatestDigestDeliveryError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestDigestDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestDigestDeliveryTime", targetDepth))
+                if (context.TestExpression("LatestDigestDeliveryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestDigestDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth))
+                if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestNotificationAttemptSucceeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestNotificationAttemptTime", targetDepth))
+                if (context.TestExpression("LatestNotificationAttemptTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestNotificationAttemptTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestNotificationError", targetDepth))
+                if (context.TestExpression("LatestNotificationError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestNotificationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestNotificationTime", targetDepth))
+                if (context.TestExpression("LatestNotificationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LatestNotificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartLoggingTime", targetDepth))
+                if (context.TestExpression("StartLoggingTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartLoggingTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StopLoggingTime", targetDepth))
+                if (context.TestExpression("StopLoggingTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StopLoggingTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeLoggingStarted", targetDepth))
+                if (context.TestExpression("TimeLoggingStarted", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TimeLoggingStarted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeLoggingStopped", targetDepth))
+                if (context.TestExpression("TimeLoggingStopped", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TimeLoggingStopped = unmarshaller.Unmarshall(context, ref reader);

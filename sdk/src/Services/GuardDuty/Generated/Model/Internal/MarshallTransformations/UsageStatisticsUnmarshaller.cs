@@ -56,37 +56,37 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sumByAccount", targetDepth))
+                if (context.TestExpression("sumByAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageAccountResult, UsageAccountResultUnmarshaller>(UsageAccountResultUnmarshaller.Instance);
                     unmarshalledObject.SumByAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sumByDataSource", targetDepth))
+                if (context.TestExpression("sumByDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageDataSourceResult, UsageDataSourceResultUnmarshaller>(UsageDataSourceResultUnmarshaller.Instance);
                     unmarshalledObject.SumByDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sumByFeature", targetDepth))
+                if (context.TestExpression("sumByFeature", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageFeatureResult, UsageFeatureResultUnmarshaller>(UsageFeatureResultUnmarshaller.Instance);
                     unmarshalledObject.SumByFeature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sumByResource", targetDepth))
+                if (context.TestExpression("sumByResource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
                     unmarshalledObject.SumByResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topAccountsByFeature", targetDepth))
+                if (context.TestExpression("topAccountsByFeature", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageTopAccountsResult, UsageTopAccountsResultUnmarshaller>(UsageTopAccountsResultUnmarshaller.Instance);
                     unmarshalledObject.TopAccountsByFeature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topResources", targetDepth))
+                if (context.TestExpression("topResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
                     unmarshalledObject.TopResources = unmarshaller.Unmarshall(context, ref reader);

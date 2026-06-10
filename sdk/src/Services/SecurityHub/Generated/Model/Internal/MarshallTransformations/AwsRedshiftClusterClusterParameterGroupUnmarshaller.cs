@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterParameterStatusList", targetDepth))
+                if (context.TestExpression("ClusterParameterStatusList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsRedshiftClusterClusterParameterStatus, AwsRedshiftClusterClusterParameterStatusUnmarshaller>(AwsRedshiftClusterClusterParameterStatusUnmarshaller.Instance);
                     unmarshalledObject.ClusterParameterStatusList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterApplyStatus", targetDepth))
+                if (context.TestExpression("ParameterApplyStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterApplyStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterGroupName", targetDepth))
+                if (context.TestExpression("ParameterGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterGroupName = unmarshaller.Unmarshall(context, ref reader);

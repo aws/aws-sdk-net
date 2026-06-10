@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UserConfirmationNecessary", targetDepth))
+                if (context.TestExpression("UserConfirmationNecessary", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.UserConfirmationNecessary = unmarshaller.Unmarshall(context, ref reader);

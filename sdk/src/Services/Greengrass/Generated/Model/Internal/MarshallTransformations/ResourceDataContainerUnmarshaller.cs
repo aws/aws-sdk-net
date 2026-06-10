@@ -56,31 +56,31 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LocalDeviceResourceData", targetDepth))
+                if (context.TestExpression("LocalDeviceResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalDeviceResourceDataUnmarshaller.Instance;
                     unmarshalledObject.LocalDeviceResourceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalVolumeResourceData", targetDepth))
+                if (context.TestExpression("LocalVolumeResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalVolumeResourceDataUnmarshaller.Instance;
                     unmarshalledObject.LocalVolumeResourceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3MachineLearningModelResourceData", targetDepth))
+                if (context.TestExpression("S3MachineLearningModelResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = S3MachineLearningModelResourceDataUnmarshaller.Instance;
                     unmarshalledObject.S3MachineLearningModelResourceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerMachineLearningModelResourceData", targetDepth))
+                if (context.TestExpression("SageMakerMachineLearningModelResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerMachineLearningModelResourceDataUnmarshaller.Instance;
                     unmarshalledObject.SageMakerMachineLearningModelResourceData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretsManagerSecretResourceData", targetDepth))
+                if (context.TestExpression("SecretsManagerSecretResourceData", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerSecretResourceDataUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerSecretResourceData = unmarshaller.Unmarshall(context, ref reader);

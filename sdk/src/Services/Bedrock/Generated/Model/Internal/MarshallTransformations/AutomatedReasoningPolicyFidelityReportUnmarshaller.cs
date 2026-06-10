@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accuracyScore", targetDepth))
+                if (context.TestExpression("accuracyScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AccuracyScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("coverageScore", targetDepth))
+                if (context.TestExpression("coverageScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.CoverageScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentSources", targetDepth))
+                if (context.TestExpression("documentSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyReportSourceDocument, AutomatedReasoningPolicyReportSourceDocumentUnmarshaller>(AutomatedReasoningPolicyReportSourceDocumentUnmarshaller.Instance);
                     unmarshalledObject.DocumentSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleReports", targetDepth))
+                if (context.TestExpression("ruleReports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AutomatedReasoningPolicyRuleReport, StringUnmarshaller, AutomatedReasoningPolicyRuleReportUnmarshaller>(StringUnmarshaller.Instance, AutomatedReasoningPolicyRuleReportUnmarshaller.Instance);
                     unmarshalledObject.RuleReports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variableReports", targetDepth))
+                if (context.TestExpression("variableReports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AutomatedReasoningPolicyVariableReport, StringUnmarshaller, AutomatedReasoningPolicyVariableReportUnmarshaller>(StringUnmarshaller.Instance, AutomatedReasoningPolicyVariableReportUnmarshaller.Instance);
                     unmarshalledObject.VariableReports = unmarshaller.Unmarshall(context, ref reader);

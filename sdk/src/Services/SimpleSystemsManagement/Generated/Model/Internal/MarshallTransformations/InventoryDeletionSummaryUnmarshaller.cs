@@ -56,19 +56,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RemainingCount", targetDepth))
+                if (context.TestExpression("RemainingCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RemainingCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SummaryItems", targetDepth))
+                if (context.TestExpression("SummaryItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InventoryDeletionSummaryItem, InventoryDeletionSummaryItemUnmarshaller>(InventoryDeletionSummaryItemUnmarshaller.Instance);
                     unmarshalledObject.SummaryItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCount", targetDepth))
+                if (context.TestExpression("TotalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context, ref reader);

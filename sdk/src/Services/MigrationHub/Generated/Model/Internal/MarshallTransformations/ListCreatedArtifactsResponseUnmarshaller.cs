@@ -52,13 +52,13 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedArtifactList", targetDepth))
+                if (context.TestExpression("CreatedArtifactList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CreatedArtifact, CreatedArtifactUnmarshaller>(CreatedArtifactUnmarshaller.Instance);
                     response.CreatedArtifactList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

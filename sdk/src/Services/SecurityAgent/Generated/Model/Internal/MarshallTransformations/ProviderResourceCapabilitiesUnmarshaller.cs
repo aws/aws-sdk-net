@@ -56,7 +56,7 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("github", targetDepth))
+                if (context.TestExpression("github", targetDepth, ref reader))
                 {
                     var unmarshaller = GitHubResourceCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.Github = unmarshaller.Unmarshall(context, ref reader);

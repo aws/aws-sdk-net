@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BatchTransformInput", targetDepth))
+                if (context.TestExpression("BatchTransformInput", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchTransformInputUnmarshaller.Instance;
                     unmarshalledObject.BatchTransformInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointInput", targetDepth))
+                if (context.TestExpression("EndpointInput", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointInputUnmarshaller.Instance;
                     unmarshalledObject.EndpointInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroundTruthS3Input", targetDepth))
+                if (context.TestExpression("GroundTruthS3Input", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringGroundTruthS3InputUnmarshaller.Instance;
                     unmarshalledObject.GroundTruthS3Input = unmarshaller.Unmarshall(context, ref reader);

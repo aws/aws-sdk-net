@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PasswordField", targetDepth))
+                if (context.TestExpression("PasswordField", targetDepth, ref reader))
                 {
                     var unmarshaller = PasswordFieldUnmarshaller.Instance;
                     unmarshalledObject.PasswordField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PayloadType", targetDepth))
+                if (context.TestExpression("PayloadType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PayloadType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsernameField", targetDepth))
+                if (context.TestExpression("UsernameField", targetDepth, ref reader))
                 {
                     var unmarshaller = UsernameFieldUnmarshaller.Instance;
                     unmarshalledObject.UsernameField = unmarshaller.Unmarshall(context, ref reader);

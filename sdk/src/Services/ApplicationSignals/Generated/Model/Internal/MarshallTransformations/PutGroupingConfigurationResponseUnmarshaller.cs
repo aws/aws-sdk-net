@@ -52,7 +52,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupingConfiguration", targetDepth))
+                if (context.TestExpression("GroupingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupingConfigurationUnmarshaller.Instance;
                     response.GroupingConfiguration = unmarshaller.Unmarshall(context, ref reader);

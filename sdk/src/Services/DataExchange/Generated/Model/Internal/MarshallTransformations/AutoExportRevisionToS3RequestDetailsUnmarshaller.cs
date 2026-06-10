@@ -56,13 +56,13 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Encryption", targetDepth))
+                if (context.TestExpression("Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RevisionDestination", targetDepth))
+                if (context.TestExpression("RevisionDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoExportRevisionDestinationEntryUnmarshaller.Instance;
                     unmarshalledObject.RevisionDestination = unmarshaller.Unmarshall(context, ref reader);

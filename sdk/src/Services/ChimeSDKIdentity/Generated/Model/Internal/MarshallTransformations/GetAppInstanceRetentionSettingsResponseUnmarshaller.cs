@@ -52,13 +52,13 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppInstanceRetentionSettings", targetDepth))
+                if (context.TestExpression("AppInstanceRetentionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AppInstanceRetentionSettingsUnmarshaller.Instance;
                     response.AppInstanceRetentionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitiateDeletionTimestamp", targetDepth))
+                if (context.TestExpression("InitiateDeletionTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.InitiateDeletionTimestamp = unmarshaller.Unmarshall(context, ref reader);

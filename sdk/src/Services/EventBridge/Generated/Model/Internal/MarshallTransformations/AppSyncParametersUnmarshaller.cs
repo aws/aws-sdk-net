@@ -56,7 +56,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GraphQLOperation", targetDepth))
+                if (context.TestExpression("GraphQLOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GraphQLOperation = unmarshaller.Unmarshall(context, ref reader);

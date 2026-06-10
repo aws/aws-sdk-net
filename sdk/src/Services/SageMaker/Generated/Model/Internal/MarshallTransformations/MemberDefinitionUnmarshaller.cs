@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CognitoMemberDefinition", targetDepth))
+                if (context.TestExpression("CognitoMemberDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = CognitoMemberDefinitionUnmarshaller.Instance;
                     unmarshalledObject.CognitoMemberDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OidcMemberDefinition", targetDepth))
+                if (context.TestExpression("OidcMemberDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = OidcMemberDefinitionUnmarshaller.Instance;
                     unmarshalledObject.OidcMemberDefinition = unmarshaller.Unmarshall(context, ref reader);

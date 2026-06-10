@@ -56,19 +56,19 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsManagedResources", targetDepth))
+                if (context.TestExpression("awsManagedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsManagedResourcesUnmarshaller.Instance;
                     unmarshalledObject.AwsManagedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noPreference", targetDepth))
+                if (context.TestExpression("noPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = NoManagementPreferenceUnmarshaller.Instance;
                     unmarshalledObject.NoPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfManageResources", targetDepth))
+                if (context.TestExpression("selfManageResources", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManageResourcesUnmarshaller.Instance;
                     unmarshalledObject.SelfManageResources = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LicenseConfigurationUsageList", targetDepth))
+                if (context.TestExpression("LicenseConfigurationUsageList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LicenseConfigurationUsage, LicenseConfigurationUsageUnmarshaller>(LicenseConfigurationUsageUnmarshaller.Instance);
                     response.LicenseConfigurationUsageList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

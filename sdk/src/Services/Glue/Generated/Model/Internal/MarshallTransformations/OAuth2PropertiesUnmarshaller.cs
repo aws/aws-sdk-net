@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OAuth2ClientApplication", targetDepth))
+                if (context.TestExpression("OAuth2ClientApplication", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2ClientApplicationUnmarshaller.Instance;
                     unmarshalledObject.OAuth2ClientApplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuth2GrantType", targetDepth))
+                if (context.TestExpression("OAuth2GrantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OAuth2GrantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TokenUrl", targetDepth))
+                if (context.TestExpression("TokenUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TokenUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TokenUrlParametersMap", targetDepth))
+                if (context.TestExpression("TokenUrlParametersMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.TokenUrlParametersMap = unmarshaller.Unmarshall(context, ref reader);

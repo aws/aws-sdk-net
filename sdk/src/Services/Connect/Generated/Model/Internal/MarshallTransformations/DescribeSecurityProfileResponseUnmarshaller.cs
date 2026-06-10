@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SecurityProfile", targetDepth))
+                if (context.TestExpression("SecurityProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityProfileUnmarshaller.Instance;
                     response.SecurityProfile = unmarshaller.Unmarshall(context, ref reader);

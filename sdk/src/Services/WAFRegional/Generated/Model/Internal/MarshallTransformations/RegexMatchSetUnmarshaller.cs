@@ -56,19 +56,19 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegexMatchSetId", targetDepth))
+                if (context.TestExpression("RegexMatchSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegexMatchSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegexMatchTuples", targetDepth))
+                if (context.TestExpression("RegexMatchTuples", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegexMatchTuple, RegexMatchTupleUnmarshaller>(RegexMatchTupleUnmarshaller.Instance);
                     unmarshalledObject.RegexMatchTuples = unmarshaller.Unmarshall(context, ref reader);

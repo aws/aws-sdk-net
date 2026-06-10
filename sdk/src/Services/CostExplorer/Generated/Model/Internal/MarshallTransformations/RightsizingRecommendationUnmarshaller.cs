@@ -56,37 +56,37 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentInstance", targetDepth))
+                if (context.TestExpression("CurrentInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = CurrentInstanceUnmarshaller.Instance;
                     unmarshalledObject.CurrentInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FindingReasonCodes", targetDepth))
+                if (context.TestExpression("FindingReasonCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.FindingReasonCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModifyRecommendationDetail", targetDepth))
+                if (context.TestExpression("ModifyRecommendationDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ModifyRecommendationDetailUnmarshaller.Instance;
                     unmarshalledObject.ModifyRecommendationDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RightsizingType", targetDepth))
+                if (context.TestExpression("RightsizingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RightsizingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminateRecommendationDetail", targetDepth))
+                if (context.TestExpression("TerminateRecommendationDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = TerminateRecommendationDetailUnmarshaller.Instance;
                     unmarshalledObject.TerminateRecommendationDetail = unmarshaller.Unmarshall(context, ref reader);

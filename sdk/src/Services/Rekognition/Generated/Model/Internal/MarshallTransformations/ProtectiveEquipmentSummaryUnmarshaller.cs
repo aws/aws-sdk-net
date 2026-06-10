@@ -56,19 +56,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PersonsIndeterminate", targetDepth))
+                if (context.TestExpression("PersonsIndeterminate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.PersonsIndeterminate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PersonsWithoutRequiredEquipment", targetDepth))
+                if (context.TestExpression("PersonsWithoutRequiredEquipment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.PersonsWithoutRequiredEquipment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PersonsWithRequiredEquipment", targetDepth))
+                if (context.TestExpression("PersonsWithRequiredEquipment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.PersonsWithRequiredEquipment = unmarshaller.Unmarshall(context, ref reader);

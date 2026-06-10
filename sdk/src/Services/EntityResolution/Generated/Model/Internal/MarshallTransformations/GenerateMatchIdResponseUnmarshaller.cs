@@ -52,13 +52,13 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedRecords", targetDepth))
+                if (context.TestExpression("failedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedRecord, FailedRecordUnmarshaller>(FailedRecordUnmarshaller.Instance);
                     response.FailedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchGroups", targetDepth))
+                if (context.TestExpression("matchGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MatchGroup, MatchGroupUnmarshaller>(MatchGroupUnmarshaller.Instance);
                     response.MatchGroups = unmarshaller.Unmarshall(context, ref reader);

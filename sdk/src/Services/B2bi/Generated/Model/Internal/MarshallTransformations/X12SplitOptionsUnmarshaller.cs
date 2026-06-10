@@ -56,7 +56,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("splitBy", targetDepth))
+                if (context.TestExpression("splitBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SplitBy = unmarshaller.Unmarshall(context, ref reader);

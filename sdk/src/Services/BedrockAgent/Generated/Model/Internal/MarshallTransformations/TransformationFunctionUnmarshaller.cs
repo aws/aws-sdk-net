@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("transformationLambdaConfiguration", targetDepth))
+                if (context.TestExpression("transformationLambdaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformationLambdaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TransformationLambdaConfiguration = unmarshaller.Unmarshall(context, ref reader);

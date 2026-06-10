@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("participantToken", targetDepth))
+                if (context.TestExpression("participantToken", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantTokenUnmarshaller.Instance;
                     response.ParticipantToken = unmarshaller.Unmarshall(context, ref reader);

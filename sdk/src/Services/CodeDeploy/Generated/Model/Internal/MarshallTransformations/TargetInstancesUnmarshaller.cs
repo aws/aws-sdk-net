@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth))
+                if (context.TestExpression("autoScalingGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2TagSet", targetDepth))
+                if (context.TestExpression("ec2TagSet", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2TagSetUnmarshaller.Instance;
                     unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagFilters", targetDepth))
+                if (context.TestExpression("tagFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance);
                     unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context, ref reader);

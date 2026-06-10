@@ -56,19 +56,19 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containerLogs", targetDepth))
+                if (context.TestExpression("containerLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogsConfigurationPolicy, LogsConfigurationPolicyUnmarshaller>(LogsConfigurationPolicyUnmarshaller.Instance);
                     unmarshalledObject.ContainerLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerMetrics", targetDepth))
+                if (context.TestExpression("containerMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricsConfigurationPolicyUnmarshaller.Instance;
                     unmarshalledObject.ContainerMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxArtifactSize", targetDepth))
+                if (context.TestExpression("maxArtifactSize", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainedModelArtifactMaxSizeUnmarshaller.Instance;
                     unmarshalledObject.MaxArtifactSize = unmarshaller.Unmarshall(context, ref reader);

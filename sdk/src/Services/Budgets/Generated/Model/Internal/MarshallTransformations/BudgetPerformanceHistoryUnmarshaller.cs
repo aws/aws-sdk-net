@@ -56,55 +56,55 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BillingViewArn", targetDepth))
+                if (context.TestExpression("BillingViewArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BillingViewArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetedAndActualAmountsList", targetDepth))
+                if (context.TestExpression("BudgetedAndActualAmountsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetedAndActualAmounts, BudgetedAndActualAmountsUnmarshaller>(BudgetedAndActualAmountsUnmarshaller.Instance);
                     unmarshalledObject.BudgetedAndActualAmountsList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetName", targetDepth))
+                if (context.TestExpression("BudgetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BudgetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetType", targetDepth))
+                if (context.TestExpression("BudgetType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BudgetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CostFilters", targetDepth))
+                if (context.TestExpression("CostFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.CostFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CostTypes", targetDepth))
+                if (context.TestExpression("CostTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = CostTypesUnmarshaller.Instance;
                     unmarshalledObject.CostTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterExpression", targetDepth))
+                if (context.TestExpression("FilterExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
                     unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeUnit", targetDepth))
+                if (context.TestExpression("TimeUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeUnit = unmarshaller.Unmarshall(context, ref reader);

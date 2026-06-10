@@ -56,25 +56,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProcessedObject", targetDepth))
+                if (context.TestExpression("ProcessedObject", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessedObjectUnmarshaller.Instance;
                     unmarshalledObject.ProcessedObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgressPercent", targetDepth))
+                if (context.TestExpression("ProgressPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgressStep", targetDepth))
+                if (context.TestExpression("ProgressStep", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgressStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalObjects", targetDepth))
+                if (context.TestExpression("TotalObjects", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalObjects = unmarshaller.Unmarshall(context, ref reader);

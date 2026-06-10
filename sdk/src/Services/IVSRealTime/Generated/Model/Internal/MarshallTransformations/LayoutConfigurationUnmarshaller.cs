@@ -56,13 +56,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grid", targetDepth))
+                if (context.TestExpression("grid", targetDepth, ref reader))
                 {
                     var unmarshaller = GridConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Grid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pip", targetDepth))
+                if (context.TestExpression("pip", targetDepth, ref reader))
                 {
                     var unmarshaller = PipConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Pip = unmarshaller.Unmarshall(context, ref reader);

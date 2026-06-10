@@ -52,7 +52,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("permissionGroupId", targetDepth))
+                if (context.TestExpression("permissionGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PermissionGroupId = unmarshaller.Unmarshall(context, ref reader);

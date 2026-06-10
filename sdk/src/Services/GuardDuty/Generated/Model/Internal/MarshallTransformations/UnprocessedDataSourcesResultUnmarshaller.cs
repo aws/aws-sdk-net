@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("malwareProtection", targetDepth))
+                if (context.TestExpression("malwareProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = MalwareProtectionConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);

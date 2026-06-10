@@ -56,13 +56,13 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BusinessVerificationResponse", targetDepth))
+                if (context.TestExpression("BusinessVerificationResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = BusinessVerificationResponseUnmarshaller.Instance;
                     unmarshalledObject.BusinessVerificationResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrantVerificationResponse", targetDepth))
+                if (context.TestExpression("RegistrantVerificationResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrantVerificationResponseUnmarshaller.Instance;
                     unmarshalledObject.RegistrantVerificationResponse = unmarshaller.Unmarshall(context, ref reader);

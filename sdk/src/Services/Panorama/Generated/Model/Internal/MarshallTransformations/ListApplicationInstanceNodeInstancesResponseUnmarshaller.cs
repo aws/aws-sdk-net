@@ -52,13 +52,13 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NodeInstances", targetDepth))
+                if (context.TestExpression("NodeInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NodeInstance, NodeInstanceUnmarshaller>(NodeInstanceUnmarshaller.Instance);
                     response.NodeInstances = unmarshaller.Unmarshall(context, ref reader);

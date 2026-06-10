@@ -56,7 +56,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScheduledAutoTuneDetails", targetDepth))
+                if (context.TestExpression("ScheduledAutoTuneDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledAutoTuneDetailsUnmarshaller.Instance;
                     unmarshalledObject.ScheduledAutoTuneDetails = unmarshaller.Unmarshall(context, ref reader);

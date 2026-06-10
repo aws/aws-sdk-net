@@ -56,31 +56,31 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applyNormalization", targetDepth))
+                if (context.TestExpression("applyNormalization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ApplyNormalization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerProfilesIntegrationConfig", targetDepth))
+                if (context.TestExpression("customerProfilesIntegrationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerProfilesIntegrationConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfilesIntegrationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KMSArn", targetDepth))
+                if (context.TestExpression("KMSArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KMSArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
+                if (context.TestExpression("output", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputAttribute, OutputAttributeUnmarshaller>(OutputAttributeUnmarshaller.Instance);
                     unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputS3Path", targetDepth))
+                if (context.TestExpression("outputS3Path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputS3Path = unmarshaller.Unmarshall(context, ref reader);

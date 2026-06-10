@@ -56,25 +56,25 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("globalConfidenceLevel", targetDepth))
+                if (context.TestExpression("globalConfidenceLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GlobalConfidenceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("globalEnforcedUrls", targetDepth))
+                if (context.TestExpression("globalEnforcedUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.GlobalEnforcedUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("globalExemptUrls", targetDepth))
+                if (context.TestExpression("globalExemptUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.GlobalExemptUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inlineRedactionPatterns", targetDepth))
+                if (context.TestExpression("inlineRedactionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InlineRedactionPattern, InlineRedactionPatternUnmarshaller>(InlineRedactionPatternUnmarshaller.Instance);
                     unmarshalledObject.InlineRedactionPatterns = unmarshaller.Unmarshall(context, ref reader);

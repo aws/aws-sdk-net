@@ -56,7 +56,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deleteResources", targetDepth))
+                if (context.TestExpression("deleteResources", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeleteResources = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportLabelsTaskRunProperties", targetDepth))
+                if (context.TestExpression("ExportLabelsTaskRunProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportLabelsTaskRunPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ExportLabelsTaskRunProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FindMatchesTaskRunProperties", targetDepth))
+                if (context.TestExpression("FindMatchesTaskRunProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = FindMatchesTaskRunPropertiesUnmarshaller.Instance;
                     unmarshalledObject.FindMatchesTaskRunProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportLabelsTaskRunProperties", targetDepth))
+                if (context.TestExpression("ImportLabelsTaskRunProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportLabelsTaskRunPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ImportLabelsTaskRunProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingSetGenerationTaskRunProperties", targetDepth))
+                if (context.TestExpression("LabelingSetGenerationTaskRunProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelingSetGenerationTaskRunPropertiesUnmarshaller.Instance;
                     unmarshalledObject.LabelingSetGenerationTaskRunProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskType", targetDepth))
+                if (context.TestExpression("TaskType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskType = unmarshaller.Unmarshall(context, ref reader);

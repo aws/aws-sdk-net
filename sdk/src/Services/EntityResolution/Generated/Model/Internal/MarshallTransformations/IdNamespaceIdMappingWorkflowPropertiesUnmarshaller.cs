@@ -56,19 +56,19 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idMappingType", targetDepth))
+                if (context.TestExpression("idMappingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdMappingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerProperties", targetDepth))
+                if (context.TestExpression("providerProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = NamespaceProviderPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleBasedProperties", targetDepth))
+                if (context.TestExpression("ruleBasedProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = NamespaceRuleBasedPropertiesUnmarshaller.Instance;
                     unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context, ref reader);

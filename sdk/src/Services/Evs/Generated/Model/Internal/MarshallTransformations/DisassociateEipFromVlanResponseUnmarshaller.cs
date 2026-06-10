@@ -52,7 +52,7 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vlan", targetDepth))
+                if (context.TestExpression("vlan", targetDepth, ref reader))
                 {
                     var unmarshaller = VlanUnmarshaller.Instance;
                     response.Vlan = unmarshaller.Unmarshall(context, ref reader);

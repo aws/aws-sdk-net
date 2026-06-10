@@ -56,19 +56,19 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SuppressedReasons", targetDepth))
+                if (context.TestExpression("SuppressedReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SuppressedReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuppressionScope", targetDepth))
+                if (context.TestExpression("SuppressionScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SuppressionScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationOptions", targetDepth))
+                if (context.TestExpression("ValidationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionValidationOptionsUnmarshaller.Instance;
                     unmarshalledObject.ValidationOptions = unmarshaller.Unmarshall(context, ref reader);

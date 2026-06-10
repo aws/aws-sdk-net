@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HyperParameterTuningJobArn", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HyperParameterTuningJobArn = unmarshaller.Unmarshall(context, ref reader);

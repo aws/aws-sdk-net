@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourcePolicy", targetDepth))
+                if (context.TestExpression("ResourcePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourcePolicyUnmarshaller.Instance;
                     response.ResourcePolicy = unmarshaller.Unmarshall(context, ref reader);

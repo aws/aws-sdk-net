@@ -56,25 +56,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("daily", targetDepth))
+                if (context.TestExpression("daily", targetDepth, ref reader))
                 {
                     var unmarshaller = DailyScheduleUnmarshaller.Instance;
                     unmarshalledObject.Daily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthly", targetDepth))
+                if (context.TestExpression("monthly", targetDepth, ref reader))
                 {
                     var unmarshaller = MonthlyScheduleUnmarshaller.Instance;
                     unmarshalledObject.Monthly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oneTime", targetDepth))
+                if (context.TestExpression("oneTime", targetDepth, ref reader))
                 {
                     var unmarshaller = OneTimeScheduleUnmarshaller.Instance;
                     unmarshalledObject.OneTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weekly", targetDepth))
+                if (context.TestExpression("weekly", targetDepth, ref reader))
                 {
                     var unmarshaller = WeeklyScheduleUnmarshaller.Instance;
                     unmarshalledObject.Weekly = unmarshaller.Unmarshall(context, ref reader);

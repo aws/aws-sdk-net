@@ -56,31 +56,31 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cacheConfigurations", targetDepth))
+                if (context.TestExpression("cacheConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxDatabaseCacheConfiguration, KxDatabaseCacheConfigurationUnmarshaller>(KxDatabaseCacheConfigurationUnmarshaller.Instance);
                     unmarshalledObject.CacheConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("changesetId", targetDepth))
+                if (context.TestExpression("changesetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChangesetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databaseName", targetDepth))
+                if (context.TestExpression("databaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataviewConfiguration", targetDepth))
+                if (context.TestExpression("dataviewConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KxDataviewConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataviewConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataviewName", targetDepth))
+                if (context.TestExpression("dataviewName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context, ref reader);

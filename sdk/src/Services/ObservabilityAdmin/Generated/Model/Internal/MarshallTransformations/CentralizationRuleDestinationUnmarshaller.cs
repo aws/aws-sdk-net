@@ -56,25 +56,25 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Account", targetDepth))
+                if (context.TestExpression("Account", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Account = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationLogsConfiguration", targetDepth))
+                if (context.TestExpression("DestinationLogsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationLogsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DestinationLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationMetricsConfiguration", targetDepth))
+                if (context.TestExpression("DestinationMetricsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationMetricsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DestinationMetricsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Region", targetDepth))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);

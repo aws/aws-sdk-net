@@ -56,7 +56,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultStorageTier", targetDepth))
+                if (context.TestExpression("DefaultStorageTier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultStorageTier = unmarshaller.Unmarshall(context, ref reader);

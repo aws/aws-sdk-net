@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("listing", targetDepth))
+                if (context.TestExpression("listing", targetDepth, ref reader))
                 {
                     var unmarshaller = ListingRevisionUnmarshaller.Instance;
                     unmarshalledObject.Listing = unmarshaller.Unmarshall(context, ref reader);

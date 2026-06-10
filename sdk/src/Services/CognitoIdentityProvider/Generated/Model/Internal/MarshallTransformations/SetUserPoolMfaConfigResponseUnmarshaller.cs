@@ -52,31 +52,31 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmailMfaConfiguration", targetDepth))
+                if (context.TestExpression("EmailMfaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailMfaConfigTypeUnmarshaller.Instance;
                     response.EmailMfaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MfaConfiguration", targetDepth))
+                if (context.TestExpression("MfaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MfaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmsMfaConfiguration", targetDepth))
+                if (context.TestExpression("SmsMfaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SmsMfaConfigTypeUnmarshaller.Instance;
                     response.SmsMfaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SoftwareTokenMfaConfiguration", targetDepth))
+                if (context.TestExpression("SoftwareTokenMfaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SoftwareTokenMfaConfigTypeUnmarshaller.Instance;
                     response.SoftwareTokenMfaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebAuthnConfiguration", targetDepth))
+                if (context.TestExpression("WebAuthnConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WebAuthnConfigurationTypeUnmarshaller.Instance;
                     response.WebAuthnConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("spendingLimitArn", targetDepth))
+                if (context.TestExpression("spendingLimitArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpendingLimitArn = unmarshaller.Unmarshall(context, ref reader);

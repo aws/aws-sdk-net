@@ -52,7 +52,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DirectoryRegistration", targetDepth))
+                if (context.TestExpression("DirectoryRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = DirectoryRegistrationUnmarshaller.Instance;
                     response.DirectoryRegistration = unmarshaller.Unmarshall(context, ref reader);

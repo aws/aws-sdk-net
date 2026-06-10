@@ -56,13 +56,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeShareCount", targetDepth))
+                if (context.TestExpression("activeShareCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ActiveShareCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topCapacityUtilization", targetDepth))
+                if (context.TestExpression("topCapacityUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FairshareCapacityUtilization, FairshareCapacityUtilizationUnmarshaller>(FairshareCapacityUtilizationUnmarshaller.Instance);
                     unmarshalledObject.TopCapacityUtilization = unmarshaller.Unmarshall(context, ref reader);

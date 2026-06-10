@@ -56,55 +56,55 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("systemCreated", targetDepth))
+                if (context.TestExpression("systemCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemCreatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemDeleted", targetDepth))
+                if (context.TestExpression("systemDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemDeletedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemPolicyAssociated", targetDepth))
+                if (context.TestExpression("systemPolicyAssociated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemPolicyAssociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemPolicyAssociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemPolicyDisassociated", targetDepth))
+                if (context.TestExpression("systemPolicyDisassociated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemPolicyDisassociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemPolicyDisassociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemServiceAssociated", targetDepth))
+                if (context.TestExpression("systemServiceAssociated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemServiceAssociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemServiceAssociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemServiceDisassociated", targetDepth))
+                if (context.TestExpression("systemServiceDisassociated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemServiceDisassociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemServiceDisassociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemUserJourneyCreated", targetDepth))
+                if (context.TestExpression("systemUserJourneyCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemUserJourneyCreatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemUserJourneyCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemUserJourneyDeleted", targetDepth))
+                if (context.TestExpression("systemUserJourneyDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemUserJourneyDeletedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemUserJourneyDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemUserJourneyUpdated", targetDepth))
+                if (context.TestExpression("systemUserJourneyUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemUserJourneyUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.SystemUserJourneyUpdated = unmarshaller.Unmarshall(context, ref reader);

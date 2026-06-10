@@ -56,19 +56,19 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AndRuleStatement", targetDepth))
+                if (context.TestExpression("AndRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = AndRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.AndRuleStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchingRuleStatement", targetDepth))
+                if (context.TestExpression("MatchingRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = MatchingRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.MatchingRuleStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrRuleStatement", targetDepth))
+                if (context.TestExpression("OrRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = OrRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.OrRuleStatement = unmarshaller.Unmarshall(context, ref reader);

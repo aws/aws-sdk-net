@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioSpecification", targetDepth))
+                if (context.TestExpression("audioSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioSpecificationUnmarshaller.Instance;
                     unmarshalledObject.AudioSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dtmfSpecification", targetDepth))
+                if (context.TestExpression("dtmfSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = DTMFSpecificationUnmarshaller.Instance;
                     unmarshalledObject.DtmfSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimeoutMs", targetDepth))
+                if (context.TestExpression("startTimeoutMs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartTimeoutMs = unmarshaller.Unmarshall(context, ref reader);

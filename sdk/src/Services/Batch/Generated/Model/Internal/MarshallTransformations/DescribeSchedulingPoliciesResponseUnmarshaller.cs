@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("schedulingPolicies", targetDepth))
+                if (context.TestExpression("schedulingPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SchedulingPolicyDetail, SchedulingPolicyDetailUnmarshaller>(SchedulingPolicyDetailUnmarshaller.Instance);
                     response.SchedulingPolicies = unmarshaller.Unmarshall(context, ref reader);

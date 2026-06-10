@@ -56,13 +56,13 @@ namespace Amazon.SSMGuiConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KMSKeyArn", targetDepth))
+                if (context.TestExpression("KMSKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KMSKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordingDestinations", targetDepth))
+                if (context.TestExpression("RecordingDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordingDestinationsUnmarshaller.Instance;
                     unmarshalledObject.RecordingDestinations = unmarshaller.Unmarshall(context, ref reader);

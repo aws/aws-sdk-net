@@ -56,55 +56,55 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedServiceCount", targetDepth))
+                if (context.TestExpression("associatedServiceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AssociatedServiceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availabilitySlo", targetDepth))
+                if (context.TestExpression("availabilitySlo", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailabilitySloUnmarshaller.Instance;
                     unmarshalledObject.AvailabilitySlo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataRecovery", targetDepth))
+                if (context.TestExpression("dataRecovery", targetDepth, ref reader))
                 {
                     var unmarshaller = DataRecoveryTargetsUnmarshaller.Instance;
                     unmarshalledObject.DataRecovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiAz", targetDepth))
+                if (context.TestExpression("multiAz", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiAzTargetsUnmarshaller.Instance;
                     unmarshalledObject.MultiAz = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiRegion", targetDepth))
+                if (context.TestExpression("multiRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiRegionTargetsUnmarshaller.Instance;
                     unmarshalledObject.MultiRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyArn", targetDepth))
+                if (context.TestExpression("policyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

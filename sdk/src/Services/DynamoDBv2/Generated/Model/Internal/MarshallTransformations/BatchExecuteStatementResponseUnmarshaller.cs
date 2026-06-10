@@ -52,13 +52,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                if (context.TestExpression("ConsumedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConsumedCapacity, ConsumedCapacityUnmarshaller>(ConsumedCapacityUnmarshaller.Instance);
                     response.ConsumedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Responses", targetDepth))
+                if (context.TestExpression("Responses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchStatementResponse, BatchStatementResponseUnmarshaller>(BatchStatementResponseUnmarshaller.Instance);
                     response.Responses = unmarshaller.Unmarshall(context, ref reader);

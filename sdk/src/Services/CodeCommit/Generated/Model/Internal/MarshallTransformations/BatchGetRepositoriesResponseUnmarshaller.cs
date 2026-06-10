@@ -52,19 +52,19 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetRepositoriesError, BatchGetRepositoriesErrorUnmarshaller>(BatchGetRepositoriesErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositories", targetDepth))
+                if (context.TestExpression("repositories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RepositoryMetadata, RepositoryMetadataUnmarshaller>(RepositoryMetadataUnmarshaller.Instance);
                     response.Repositories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoriesNotFound", targetDepth))
+                if (context.TestExpression("repositoriesNotFound", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RepositoriesNotFound = unmarshaller.Unmarshall(context, ref reader);

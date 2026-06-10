@@ -52,13 +52,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProactiveAnomaly", targetDepth))
+                if (context.TestExpression("ProactiveAnomaly", targetDepth, ref reader))
                 {
                     var unmarshaller = ProactiveAnomalyUnmarshaller.Instance;
                     response.ProactiveAnomaly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReactiveAnomaly", targetDepth))
+                if (context.TestExpression("ReactiveAnomaly", targetDepth, ref reader))
                 {
                     var unmarshaller = ReactiveAnomalyUnmarshaller.Instance;
                     response.ReactiveAnomaly = unmarshaller.Unmarshall(context, ref reader);

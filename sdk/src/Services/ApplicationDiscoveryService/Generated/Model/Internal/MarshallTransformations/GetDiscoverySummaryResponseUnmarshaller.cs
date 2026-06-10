@@ -52,49 +52,49 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentlessCollectorSummary", targetDepth))
+                if (context.TestExpression("agentlessCollectorSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerAgentlessCollectorInfoUnmarshaller.Instance;
                     response.AgentlessCollectorSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentSummary", targetDepth))
+                if (context.TestExpression("agentSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerAgentInfoUnmarshaller.Instance;
                     response.AgentSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("applications", targetDepth))
+                if (context.TestExpression("applications", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Applications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorSummary", targetDepth))
+                if (context.TestExpression("connectorSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerConnectorInfoUnmarshaller.Instance;
                     response.ConnectorSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("meCollectorSummary", targetDepth))
+                if (context.TestExpression("meCollectorSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerMeCollectorInfoUnmarshaller.Instance;
                     response.MeCollectorSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servers", targetDepth))
+                if (context.TestExpression("servers", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Servers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serversMappedToApplications", targetDepth))
+                if (context.TestExpression("serversMappedToApplications", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ServersMappedToApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serversMappedtoTags", targetDepth))
+                if (context.TestExpression("serversMappedtoTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ServersMappedtoTags = unmarshaller.Unmarshall(context, ref reader);

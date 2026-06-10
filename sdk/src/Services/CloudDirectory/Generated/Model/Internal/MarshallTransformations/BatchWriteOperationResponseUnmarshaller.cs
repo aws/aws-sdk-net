@@ -56,91 +56,91 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AddFacetToObject", targetDepth))
+                if (context.TestExpression("AddFacetToObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchAddFacetToObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.AddFacetToObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttachObject", targetDepth))
+                if (context.TestExpression("AttachObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchAttachObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.AttachObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttachPolicy", targetDepth))
+                if (context.TestExpression("AttachPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchAttachPolicyResponseUnmarshaller.Instance;
                     unmarshalledObject.AttachPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttachToIndex", targetDepth))
+                if (context.TestExpression("AttachToIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchAttachToIndexResponseUnmarshaller.Instance;
                     unmarshalledObject.AttachToIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttachTypedLink", targetDepth))
+                if (context.TestExpression("AttachTypedLink", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchAttachTypedLinkResponseUnmarshaller.Instance;
                     unmarshalledObject.AttachTypedLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateIndex", targetDepth))
+                if (context.TestExpression("CreateIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchCreateIndexResponseUnmarshaller.Instance;
                     unmarshalledObject.CreateIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateObject", targetDepth))
+                if (context.TestExpression("CreateObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchCreateObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.CreateObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteObject", targetDepth))
+                if (context.TestExpression("DeleteObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDeleteObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.DeleteObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DetachFromIndex", targetDepth))
+                if (context.TestExpression("DetachFromIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDetachFromIndexResponseUnmarshaller.Instance;
                     unmarshalledObject.DetachFromIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DetachObject", targetDepth))
+                if (context.TestExpression("DetachObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDetachObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.DetachObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DetachPolicy", targetDepth))
+                if (context.TestExpression("DetachPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDetachPolicyResponseUnmarshaller.Instance;
                     unmarshalledObject.DetachPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DetachTypedLink", targetDepth))
+                if (context.TestExpression("DetachTypedLink", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDetachTypedLinkResponseUnmarshaller.Instance;
                     unmarshalledObject.DetachTypedLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoveFacetFromObject", targetDepth))
+                if (context.TestExpression("RemoveFacetFromObject", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchRemoveFacetFromObjectResponseUnmarshaller.Instance;
                     unmarshalledObject.RemoveFacetFromObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateLinkAttributes", targetDepth))
+                if (context.TestExpression("UpdateLinkAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchUpdateLinkAttributesResponseUnmarshaller.Instance;
                     unmarshalledObject.UpdateLinkAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateObjectAttributes", targetDepth))
+                if (context.TestExpression("UpdateObjectAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchUpdateObjectAttributesResponseUnmarshaller.Instance;
                     unmarshalledObject.UpdateObjectAttributes = unmarshaller.Unmarshall(context, ref reader);

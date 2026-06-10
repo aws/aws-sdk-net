@@ -52,7 +52,7 @@ namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfigurationCheckOperation", targetDepth))
+                if (context.TestExpression("ConfigurationCheckOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationCheckOperationUnmarshaller.Instance;
                     response.ConfigurationCheckOperation = unmarshaller.Unmarshall(context, ref reader);

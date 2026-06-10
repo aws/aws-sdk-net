@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UnprocessedAssociationUpdates", targetDepth))
+                if (context.TestExpression("UnprocessedAssociationUpdates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedStandardsControlAssociationUpdate, UnprocessedStandardsControlAssociationUpdateUnmarshaller>(UnprocessedStandardsControlAssociationUpdateUnmarshaller.Instance);
                     response.UnprocessedAssociationUpdates = unmarshaller.Unmarshall(context, ref reader);

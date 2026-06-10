@@ -56,25 +56,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountAggregation", targetDepth))
+                if (context.TestExpression("accountAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountAggregationUnmarshaller.Instance;
                     unmarshalledObject.AccountAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageAggregation", targetDepth))
+                if (context.TestExpression("imageAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageAggregationUnmarshaller.Instance;
                     unmarshalledObject.ImageAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imagePipelineAggregation", targetDepth))
+                if (context.TestExpression("imagePipelineAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = ImagePipelineAggregationUnmarshaller.Instance;
                     unmarshalledObject.ImagePipelineAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vulnerabilityIdAggregation", targetDepth))
+                if (context.TestExpression("vulnerabilityIdAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = VulnerabilityIdAggregationUnmarshaller.Instance;
                     unmarshalledObject.VulnerabilityIdAggregation = unmarshaller.Unmarshall(context, ref reader);

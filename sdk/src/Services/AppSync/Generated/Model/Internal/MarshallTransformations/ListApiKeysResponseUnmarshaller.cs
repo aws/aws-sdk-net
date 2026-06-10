@@ -52,13 +52,13 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiKeys", targetDepth))
+                if (context.TestExpression("apiKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApiKey, ApiKeyUnmarshaller>(ApiKeyUnmarshaller.Instance);
                     response.ApiKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

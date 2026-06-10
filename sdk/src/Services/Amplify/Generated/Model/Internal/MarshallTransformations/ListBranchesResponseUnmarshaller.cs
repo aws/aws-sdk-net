@@ -52,13 +52,13 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("branches", targetDepth))
+                if (context.TestExpression("branches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Branch, BranchUnmarshaller>(BranchUnmarshaller.Instance);
                     response.Branches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

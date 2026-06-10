@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sandbox", targetDepth))
+                if (context.TestExpression("sandbox", targetDepth, ref reader))
                 {
                     var unmarshaller = SandboxUnmarshaller.Instance;
                     response.Sandbox = unmarshaller.Unmarshall(context, ref reader);

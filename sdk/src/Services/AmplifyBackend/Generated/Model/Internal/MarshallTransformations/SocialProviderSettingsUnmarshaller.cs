@@ -56,25 +56,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Facebook", targetDepth))
+                if (context.TestExpression("Facebook", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.Facebook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Google", targetDepth))
+                if (context.TestExpression("Google", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.Google = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoginWithAmazon", targetDepth))
+                if (context.TestExpression("LoginWithAmazon", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAuthSocialProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.LoginWithAmazon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SignInWithApple", targetDepth))
+                if (context.TestExpression("SignInWithApple", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAuthAppleProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.SignInWithApple = unmarshaller.Unmarshall(context, ref reader);

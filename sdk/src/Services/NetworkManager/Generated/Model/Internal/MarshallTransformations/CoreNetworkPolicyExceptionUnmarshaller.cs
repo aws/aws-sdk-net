@@ -72,7 +72,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Errors", targetDepth))
+                    if (context.TestExpression("Errors", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<CoreNetworkPolicyError, CoreNetworkPolicyErrorUnmarshaller>(CoreNetworkPolicyErrorUnmarshaller.Instance);
                         unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);

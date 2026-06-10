@@ -56,13 +56,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DecommissionTimeout", targetDepth))
+                if (context.TestExpression("DecommissionTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DecommissionTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceResizePolicy", targetDepth))
+                if (context.TestExpression("InstanceResizePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceResizePolicyUnmarshaller.Instance;
                     unmarshalledObject.InstanceResizePolicy = unmarshaller.Unmarshall(context, ref reader);

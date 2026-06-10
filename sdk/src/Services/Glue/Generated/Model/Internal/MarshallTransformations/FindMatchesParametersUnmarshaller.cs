@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccuracyCostTradeoff", targetDepth))
+                if (context.TestExpression("AccuracyCostTradeoff", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AccuracyCostTradeoff = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnforceProvidedLabels", targetDepth))
+                if (context.TestExpression("EnforceProvidedLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnforceProvidedLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrecisionRecallTradeoff", targetDepth))
+                if (context.TestExpression("PrecisionRecallTradeoff", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PrecisionRecallTradeoff = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryKeyColumnName", targetDepth))
+                if (context.TestExpression("PrimaryKeyColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryKeyColumnName = unmarshaller.Unmarshall(context, ref reader);

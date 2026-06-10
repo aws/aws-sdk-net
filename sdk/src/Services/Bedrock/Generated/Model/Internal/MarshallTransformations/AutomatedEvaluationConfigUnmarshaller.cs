@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customMetricConfig", targetDepth))
+                if (context.TestExpression("customMetricConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedEvaluationCustomMetricConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomMetricConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetMetricConfigs", targetDepth))
+                if (context.TestExpression("datasetMetricConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationDatasetMetricConfig, EvaluationDatasetMetricConfigUnmarshaller>(EvaluationDatasetMetricConfigUnmarshaller.Instance);
                     unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluatorModelConfig", targetDepth))
+                if (context.TestExpression("evaluatorModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluatorModelConfigUnmarshaller.Instance;
                     unmarshalledObject.EvaluatorModelConfig = unmarshaller.Unmarshall(context, ref reader);

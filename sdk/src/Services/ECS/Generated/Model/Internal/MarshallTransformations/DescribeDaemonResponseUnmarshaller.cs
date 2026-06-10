@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("daemon", targetDepth))
+                if (context.TestExpression("daemon", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonDetailUnmarshaller.Instance;
                     response.Daemon = unmarshaller.Unmarshall(context, ref reader);

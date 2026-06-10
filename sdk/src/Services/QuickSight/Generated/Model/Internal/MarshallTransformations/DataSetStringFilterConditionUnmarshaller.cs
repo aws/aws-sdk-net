@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnName", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComparisonFilterCondition", targetDepth))
+                if (context.TestExpression("ComparisonFilterCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetStringComparisonFilterConditionUnmarshaller.Instance;
                     unmarshalledObject.ComparisonFilterCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListFilterCondition", targetDepth))
+                if (context.TestExpression("ListFilterCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetStringListFilterConditionUnmarshaller.Instance;
                     unmarshalledObject.ListFilterCondition = unmarshaller.Unmarshall(context, ref reader);

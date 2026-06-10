@@ -56,7 +56,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OSUpdateSettings", targetDepth))
+                if (context.TestExpression("OSUpdateSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = OSUpdateSettingsUnmarshaller.Instance;
                     unmarshalledObject.OSUpdateSettings = unmarshaller.Unmarshall(context, ref reader);

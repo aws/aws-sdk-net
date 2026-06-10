@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SymbolStyle", targetDepth))
+                if (context.TestExpression("SymbolStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialNullSymbolStyleUnmarshaller.Instance;
                     unmarshalledObject.SymbolStyle = unmarshaller.Unmarshall(context, ref reader);

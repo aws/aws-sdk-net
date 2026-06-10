@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Proxy", targetDepth))
+                if (context.TestExpression("Proxy", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyUnmarshaller.Instance;
                     response.Proxy = unmarshaller.Unmarshall(context, ref reader);

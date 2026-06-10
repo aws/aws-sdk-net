@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("incrementalScanDetails", targetDepth))
+                if (context.TestExpression("incrementalScanDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = IncrementalScanDetailsUnmarshaller.Instance;
                     unmarshalledObject.IncrementalScanDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recoveryPoint", targetDepth))
+                if (context.TestExpression("recoveryPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = ScanConfigurationRecoveryPointUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("role", targetDepth))
+                if (context.TestExpression("role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggerDetails", targetDepth))
+                if (context.TestExpression("triggerDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TriggerDetailsUnmarshaller.Instance;
                     unmarshalledObject.TriggerDetails = unmarshaller.Unmarshall(context, ref reader);

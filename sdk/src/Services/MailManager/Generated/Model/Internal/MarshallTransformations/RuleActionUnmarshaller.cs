@@ -56,73 +56,73 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AddHeader", targetDepth))
+                if (context.TestExpression("AddHeader", targetDepth, ref reader))
                 {
                     var unmarshaller = AddHeaderActionUnmarshaller.Instance;
                     unmarshalledObject.AddHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Archive", targetDepth))
+                if (context.TestExpression("Archive", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveActionUnmarshaller.Instance;
                     unmarshalledObject.Archive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Bounce", targetDepth))
+                if (context.TestExpression("Bounce", targetDepth, ref reader))
                 {
                     var unmarshaller = BounceActionUnmarshaller.Instance;
                     unmarshalledObject.Bounce = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliverToMailbox", targetDepth))
+                if (context.TestExpression("DeliverToMailbox", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliverToMailboxActionUnmarshaller.Instance;
                     unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliverToQBusiness", targetDepth))
+                if (context.TestExpression("DeliverToQBusiness", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliverToQBusinessActionUnmarshaller.Instance;
                     unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Drop", targetDepth))
+                if (context.TestExpression("Drop", targetDepth, ref reader))
                 {
                     var unmarshaller = DropActionUnmarshaller.Instance;
                     unmarshalledObject.Drop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvokeLambda", targetDepth))
+                if (context.TestExpression("InvokeLambda", targetDepth, ref reader))
                 {
                     var unmarshaller = InvokeLambdaActionUnmarshaller.Instance;
                     unmarshalledObject.InvokeLambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublishToSns", targetDepth))
+                if (context.TestExpression("PublishToSns", targetDepth, ref reader))
                 {
                     var unmarshaller = SnsActionUnmarshaller.Instance;
                     unmarshalledObject.PublishToSns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Relay", targetDepth))
+                if (context.TestExpression("Relay", targetDepth, ref reader))
                 {
                     var unmarshaller = RelayActionUnmarshaller.Instance;
                     unmarshalledObject.Relay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplaceRecipient", targetDepth))
+                if (context.TestExpression("ReplaceRecipient", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplaceRecipientActionUnmarshaller.Instance;
                     unmarshalledObject.ReplaceRecipient = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Send", targetDepth))
+                if (context.TestExpression("Send", targetDepth, ref reader))
                 {
                     var unmarshaller = SendActionUnmarshaller.Instance;
                     unmarshalledObject.Send = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WriteToS3", targetDepth))
+                if (context.TestExpression("WriteToS3", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ActionUnmarshaller.Instance;
                     unmarshalledObject.WriteToS3 = unmarshaller.Unmarshall(context, ref reader);

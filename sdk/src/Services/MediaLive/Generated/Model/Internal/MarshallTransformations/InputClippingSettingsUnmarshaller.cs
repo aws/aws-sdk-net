@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputTimecodeSource", targetDepth))
+                if (context.TestExpression("inputTimecodeSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputTimecodeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimecode", targetDepth))
+                if (context.TestExpression("startTimecode", targetDepth, ref reader))
                 {
                     var unmarshaller = StartTimecodeUnmarshaller.Instance;
                     unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stopTimecode", targetDepth))
+                if (context.TestExpression("stopTimecode", targetDepth, ref reader))
                 {
                     var unmarshaller = StopTimecodeUnmarshaller.Instance;
                     unmarshalledObject.StopTimecode = unmarshaller.Unmarshall(context, ref reader);

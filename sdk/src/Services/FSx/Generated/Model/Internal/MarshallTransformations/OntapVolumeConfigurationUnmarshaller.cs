@@ -56,97 +56,97 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregateConfiguration", targetDepth))
+                if (context.TestExpression("AggregateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AggregateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTagsToBackups", targetDepth))
+                if (context.TestExpression("CopyTagsToBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FlexCacheEndpointType", targetDepth))
+                if (context.TestExpression("FlexCacheEndpointType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlexCacheEndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JunctionPath", targetDepth))
+                if (context.TestExpression("JunctionPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JunctionPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OntapVolumeType", targetDepth))
+                if (context.TestExpression("OntapVolumeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OntapVolumeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityStyle", targetDepth))
+                if (context.TestExpression("SecurityStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeInBytes", targetDepth))
+                if (context.TestExpression("SizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeInMegabytes", targetDepth))
+                if (context.TestExpression("SizeInMegabytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeInMegabytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnaplockConfiguration", targetDepth))
+                if (context.TestExpression("SnaplockConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnaplockConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnaplockConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnapshotPolicy", targetDepth))
+                if (context.TestExpression("SnapshotPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageEfficiencyEnabled", targetDepth))
+                if (context.TestExpression("StorageEfficiencyEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StorageEfficiencyEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageVirtualMachineId", targetDepth))
+                if (context.TestExpression("StorageVirtualMachineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageVirtualMachineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageVirtualMachineRoot", targetDepth))
+                if (context.TestExpression("StorageVirtualMachineRoot", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.StorageVirtualMachineRoot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TieringPolicy", targetDepth))
+                if (context.TestExpression("TieringPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = TieringPolicyUnmarshaller.Instance;
                     unmarshalledObject.TieringPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UUID", targetDepth))
+                if (context.TestExpression("UUID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UUID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeStyle", targetDepth))
+                if (context.TestExpression("VolumeStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeStyle = unmarshaller.Unmarshall(context, ref reader);

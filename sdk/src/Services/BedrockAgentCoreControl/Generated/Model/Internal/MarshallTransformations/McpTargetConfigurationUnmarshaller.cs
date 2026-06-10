@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiGateway", targetDepth))
+                if (context.TestExpression("apiGateway", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiGatewayTargetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ApiGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambda", targetDepth))
+                if (context.TestExpression("lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = McpLambdaTargetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpServer", targetDepth))
+                if (context.TestExpression("mcpServer", targetDepth, ref reader))
                 {
                     var unmarshaller = McpServerTargetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.McpServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openApiSchema", targetDepth))
+                if (context.TestExpression("openApiSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiSchemaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpenApiSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smithyModel", targetDepth))
+                if (context.TestExpression("smithyModel", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiSchemaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SmithyModel = unmarshaller.Unmarshall(context, ref reader);

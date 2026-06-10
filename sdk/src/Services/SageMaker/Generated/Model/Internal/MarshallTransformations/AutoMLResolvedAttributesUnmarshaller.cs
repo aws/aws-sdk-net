@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoMLJobObjective", targetDepth))
+                if (context.TestExpression("AutoMLJobObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobObjectiveUnmarshaller.Instance;
                     unmarshalledObject.AutoMLJobObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLProblemTypeResolvedAttributes", targetDepth))
+                if (context.TestExpression("AutoMLProblemTypeResolvedAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLProblemTypeResolvedAttributesUnmarshaller.Instance;
                     unmarshalledObject.AutoMLProblemTypeResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);

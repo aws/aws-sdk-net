@@ -56,79 +56,79 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityReservationConfig", targetDepth))
+                if (context.TestExpression("CapacityReservationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantCapacityReservationSummaryUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentInstanceCount", targetDepth))
+                if (context.TestExpression("CurrentInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentServerlessConfig", targetDepth))
+                if (context.TestExpression("CurrentServerlessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
                     unmarshalledObject.CurrentServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentWeight", targetDepth))
+                if (context.TestExpression("CurrentWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.CurrentWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeployedImages", targetDepth))
+                if (context.TestExpression("DeployedImages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeployedImage, DeployedImageUnmarshaller>(DeployedImageUnmarshaller.Instance);
                     unmarshalledObject.DeployedImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredInstanceCount", targetDepth))
+                if (context.TestExpression("DesiredInstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredServerlessConfig", targetDepth))
+                if (context.TestExpression("DesiredServerlessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantServerlessConfigUnmarshaller.Instance;
                     unmarshalledObject.DesiredServerlessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredWeight", targetDepth))
+                if (context.TestExpression("DesiredWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.DesiredWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancePools", targetDepth))
+                if (context.TestExpression("InstancePools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstancePoolSummary, InstancePoolSummaryUnmarshaller>(InstancePoolSummaryUnmarshaller.Instance);
                     unmarshalledObject.InstancePools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedInstanceScaling", targetDepth))
+                if (context.TestExpression("ManagedInstanceScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantManagedInstanceScalingUnmarshaller.Instance;
                     unmarshalledObject.ManagedInstanceScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingConfig", targetDepth))
+                if (context.TestExpression("RoutingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductionVariantRoutingConfigUnmarshaller.Instance;
                     unmarshalledObject.RoutingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VariantName", targetDepth))
+                if (context.TestExpression("VariantName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VariantName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VariantStatus", targetDepth))
+                if (context.TestExpression("VariantStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductionVariantStatus, ProductionVariantStatusUnmarshaller>(ProductionVariantStatusUnmarshaller.Instance);
                     unmarshalledObject.VariantStatus = unmarshaller.Unmarshall(context, ref reader);

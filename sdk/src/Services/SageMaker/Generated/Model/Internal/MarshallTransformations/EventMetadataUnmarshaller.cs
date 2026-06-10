@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Cluster", targetDepth))
+                if (context.TestExpression("Cluster", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterMetadataUnmarshaller.Instance;
                     unmarshalledObject.Cluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Instance", targetDepth))
+                if (context.TestExpression("Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceMetadataUnmarshaller.Instance;
                     unmarshalledObject.Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroup", targetDepth))
+                if (context.TestExpression("InstanceGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceGroupMetadataUnmarshaller.Instance;
                     unmarshalledObject.InstanceGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroupScaling", targetDepth))
+                if (context.TestExpression("InstanceGroupScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceGroupScalingMetadataUnmarshaller.Instance;
                     unmarshalledObject.InstanceGroupScaling = unmarshaller.Unmarshall(context, ref reader);

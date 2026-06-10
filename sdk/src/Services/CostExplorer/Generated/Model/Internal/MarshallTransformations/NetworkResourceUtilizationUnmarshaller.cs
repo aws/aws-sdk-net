@@ -56,25 +56,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NetworkInBytesPerSecond", targetDepth))
+                if (context.TestExpression("NetworkInBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkOutBytesPerSecond", targetDepth))
+                if (context.TestExpression("NetworkOutBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkOutBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkPacketsInPerSecond", targetDepth))
+                if (context.TestExpression("NetworkPacketsInPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkPacketsInPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkPacketsOutPerSecond", targetDepth))
+                if (context.TestExpression("NetworkPacketsOutPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkPacketsOutPerSecond = unmarshaller.Unmarshall(context, ref reader);

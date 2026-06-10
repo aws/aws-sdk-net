@@ -56,37 +56,37 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("controlIdentifier", targetDepth))
+                if (context.TestExpression("controlIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ControlIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("driftStatusSummary", targetDepth))
+                if (context.TestExpression("driftStatusSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftStatusSummaryUnmarshaller.Instance;
                     unmarshalledObject.DriftStatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentIdentifier", targetDepth))
+                if (context.TestExpression("parentIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusSummary", targetDepth))
+                if (context.TestExpression("statusSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = EnablementStatusSummaryUnmarshaller.Instance;
                     unmarshalledObject.StatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetIdentifier", targetDepth))
+                if (context.TestExpression("targetIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetIdentifier = unmarshaller.Unmarshall(context, ref reader);

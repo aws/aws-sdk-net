@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectedRouterInputs", targetDepth))
+                if (context.TestExpression("connectedRouterInputs", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConnectRouterOutputConnectionMapUnmarshaller.Instance;
                     unmarshalledObject.ConnectedRouterInputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerSettings", targetDepth))
+                if (context.TestExpression("containerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConnectRouterContainerSettingsUnmarshaller.Instance;
                     unmarshalledObject.ContainerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);

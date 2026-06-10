@@ -52,13 +52,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WindowIdentities", targetDepth))
+                if (context.TestExpression("WindowIdentities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MaintenanceWindowIdentityForTarget, MaintenanceWindowIdentityForTargetUnmarshaller>(MaintenanceWindowIdentityForTargetUnmarshaller.Instance);
                     response.WindowIdentities = unmarshaller.Unmarshall(context, ref reader);

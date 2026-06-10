@@ -52,19 +52,19 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamARN", targetDepth))
+                if (context.TestExpression("StreamARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamName", targetDepth))
+                if (context.TestExpression("StreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamStorageConfiguration", targetDepth))
+                if (context.TestExpression("StreamStorageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamStorageConfigurationUnmarshaller.Instance;
                     response.StreamStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anomaly", targetDepth))
+                if (context.TestExpression("anomaly", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalyUnmarshaller.Instance;
                     unmarshalledObject.Anomaly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sequence", targetDepth))
+                if (context.TestExpression("sequence", targetDepth, ref reader))
                 {
                     var unmarshaller = SequenceUnmarshaller.Instance;
                     unmarshalledObject.Sequence = unmarshaller.Unmarshall(context, ref reader);

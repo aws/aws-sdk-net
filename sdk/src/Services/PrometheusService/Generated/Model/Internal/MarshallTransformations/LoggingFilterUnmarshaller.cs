@@ -56,7 +56,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("qspThreshold", targetDepth))
+                if (context.TestExpression("qspThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QspThreshold = unmarshaller.Unmarshall(context, ref reader);

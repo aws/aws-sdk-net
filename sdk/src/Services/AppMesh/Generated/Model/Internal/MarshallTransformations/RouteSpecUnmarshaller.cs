@@ -56,31 +56,31 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grpcRoute", targetDepth))
+                if (context.TestExpression("grpcRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = GrpcRouteUnmarshaller.Instance;
                     unmarshalledObject.GrpcRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("http2Route", targetDepth))
+                if (context.TestExpression("http2Route", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpRouteUnmarshaller.Instance;
                     unmarshalledObject.Http2Route = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpRoute", targetDepth))
+                if (context.TestExpression("httpRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpRouteUnmarshaller.Instance;
                     unmarshalledObject.HttpRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priority", targetDepth))
+                if (context.TestExpression("priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tcpRoute", targetDepth))
+                if (context.TestExpression("tcpRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = TcpRouteUnmarshaller.Instance;
                     unmarshalledObject.TcpRoute = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("underlyingErrorCode", targetDepth))
+                    if (context.TestExpression("underlyingErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UnderlyingErrorCode = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("algorithmHyperParameterRanges", targetDepth))
+                if (context.TestExpression("algorithmHyperParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterRangesUnmarshaller.Instance;
                     unmarshalledObject.AlgorithmHyperParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hpoObjective", targetDepth))
+                if (context.TestExpression("hpoObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = HPOObjectiveUnmarshaller.Instance;
                     unmarshalledObject.HpoObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hpoResourceConfig", targetDepth))
+                if (context.TestExpression("hpoResourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HPOResourceConfigUnmarshaller.Instance;
                     unmarshalledObject.HpoResourceConfig = unmarshaller.Unmarshall(context, ref reader);

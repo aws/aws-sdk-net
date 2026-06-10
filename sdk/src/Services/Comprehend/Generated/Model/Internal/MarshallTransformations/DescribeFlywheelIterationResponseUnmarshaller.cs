@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FlywheelIterationProperties", targetDepth))
+                if (context.TestExpression("FlywheelIterationProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = FlywheelIterationPropertiesUnmarshaller.Instance;
                     response.FlywheelIterationProperties = unmarshaller.Unmarshall(context, ref reader);

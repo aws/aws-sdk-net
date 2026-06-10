@@ -52,13 +52,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("graphs", targetDepth))
+                if (context.TestExpression("graphs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GraphSummary, GraphSummaryUnmarshaller>(GraphSummaryUnmarshaller.Instance);
                     response.Graphs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

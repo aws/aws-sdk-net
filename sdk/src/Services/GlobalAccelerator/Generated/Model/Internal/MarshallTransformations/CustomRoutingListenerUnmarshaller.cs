@@ -56,13 +56,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ListenerArn", targetDepth))
+                if (context.TestExpression("ListenerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ListenerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortRanges", targetDepth))
+                if (context.TestExpression("PortRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
                     unmarshalledObject.PortRanges = unmarshaller.Unmarshall(context, ref reader);

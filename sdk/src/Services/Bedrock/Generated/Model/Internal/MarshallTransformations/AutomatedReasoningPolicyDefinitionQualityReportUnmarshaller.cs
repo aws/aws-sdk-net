@@ -56,49 +56,49 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conflictingRules", targetDepth))
+                if (context.TestExpression("conflictingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ConflictingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disjointRuleSets", targetDepth))
+                if (context.TestExpression("disjointRuleSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyDisjointRuleSet, AutomatedReasoningPolicyDisjointRuleSetUnmarshaller>(AutomatedReasoningPolicyDisjointRuleSetUnmarshaller.Instance);
                     unmarshalledObject.DisjointRuleSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleCount", targetDepth))
+                if (context.TestExpression("ruleCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RuleCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeCount", targetDepth))
+                if (context.TestExpression("typeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TypeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedTypes", targetDepth))
+                if (context.TestExpression("unusedTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UnusedTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedTypeValues", targetDepth))
+                if (context.TestExpression("unusedTypeValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyDefinitionTypeValuePair, AutomatedReasoningPolicyDefinitionTypeValuePairUnmarshaller>(AutomatedReasoningPolicyDefinitionTypeValuePairUnmarshaller.Instance);
                     unmarshalledObject.UnusedTypeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedVariables", targetDepth))
+                if (context.TestExpression("unusedVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UnusedVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variableCount", targetDepth))
+                if (context.TestExpression("variableCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VariableCount = unmarshaller.Unmarshall(context, ref reader);

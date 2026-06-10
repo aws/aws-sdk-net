@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedScalingPolicy", targetDepth))
+                if (context.TestExpression("ManagedScalingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedScalingPolicyUnmarshaller.Instance;
                     response.ManagedScalingPolicy = unmarshaller.Unmarshall(context, ref reader);

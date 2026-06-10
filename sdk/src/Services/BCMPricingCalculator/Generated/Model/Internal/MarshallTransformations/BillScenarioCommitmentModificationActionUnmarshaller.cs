@@ -56,25 +56,25 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addReservedInstanceAction", targetDepth))
+                if (context.TestExpression("addReservedInstanceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AddReservedInstanceActionUnmarshaller.Instance;
                     unmarshalledObject.AddReservedInstanceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addSavingsPlanAction", targetDepth))
+                if (context.TestExpression("addSavingsPlanAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AddSavingsPlanActionUnmarshaller.Instance;
                     unmarshalledObject.AddSavingsPlanAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("negateReservedInstanceAction", targetDepth))
+                if (context.TestExpression("negateReservedInstanceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = NegateReservedInstanceActionUnmarshaller.Instance;
                     unmarshalledObject.NegateReservedInstanceAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("negateSavingsPlanAction", targetDepth))
+                if (context.TestExpression("negateSavingsPlanAction", targetDepth, ref reader))
                 {
                     var unmarshaller = NegateSavingsPlanActionUnmarshaller.Instance;
                     unmarshalledObject.NegateSavingsPlanAction = unmarshaller.Unmarshall(context, ref reader);

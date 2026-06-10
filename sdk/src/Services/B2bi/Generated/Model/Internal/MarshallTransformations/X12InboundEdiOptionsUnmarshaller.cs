@@ -56,7 +56,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acknowledgmentOptions", targetDepth))
+                if (context.TestExpression("acknowledgmentOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = X12AcknowledgmentOptionsUnmarshaller.Instance;
                     unmarshalledObject.AcknowledgmentOptions = unmarshaller.Unmarshall(context, ref reader);

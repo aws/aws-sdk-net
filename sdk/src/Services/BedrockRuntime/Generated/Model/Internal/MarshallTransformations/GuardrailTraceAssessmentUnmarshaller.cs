@@ -56,25 +56,25 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionReason", targetDepth))
+                if (context.TestExpression("actionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputAssessment", targetDepth))
+                if (context.TestExpression("inputAssessment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, GuardrailAssessment, StringUnmarshaller, GuardrailAssessmentUnmarshaller>(StringUnmarshaller.Instance, GuardrailAssessmentUnmarshaller.Instance);
                     unmarshalledObject.InputAssessment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelOutput", targetDepth))
+                if (context.TestExpression("modelOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ModelOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputAssessments", targetDepth))
+                if (context.TestExpression("outputAssessments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<GuardrailAssessment>, StringUnmarshaller, JsonListUnmarshaller<GuardrailAssessment,GuardrailAssessmentUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<GuardrailAssessment, GuardrailAssessmentUnmarshaller>(GuardrailAssessmentUnmarshaller.Instance));
                     unmarshalledObject.OutputAssessments = unmarshaller.Unmarshall(context, ref reader);

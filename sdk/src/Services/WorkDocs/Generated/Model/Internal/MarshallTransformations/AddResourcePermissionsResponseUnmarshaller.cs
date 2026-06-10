@@ -52,7 +52,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShareResults", targetDepth))
+                if (context.TestExpression("ShareResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ShareResult, ShareResultUnmarshaller>(ShareResultUnmarshaller.Instance);
                     response.ShareResults = unmarshaller.Unmarshall(context, ref reader);

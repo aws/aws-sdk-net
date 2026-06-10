@@ -72,7 +72,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Errors", targetDepth))
+                    if (context.TestExpression("Errors", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ValidationError, ValidationErrorUnmarshaller>(ValidationErrorUnmarshaller.Instance);
                         unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);

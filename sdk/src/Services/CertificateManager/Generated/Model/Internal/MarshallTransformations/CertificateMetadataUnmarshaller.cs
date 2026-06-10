@@ -56,7 +56,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcmCertificateMetadata", targetDepth))
+                if (context.TestExpression("AcmCertificateMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = AcmCertificateMetadataUnmarshaller.Instance;
                     unmarshalledObject.AcmCertificateMetadata = unmarshaller.Unmarshall(context, ref reader);

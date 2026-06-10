@@ -56,7 +56,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AffectedSensorCount", targetDepth))
+                if (context.TestExpression("AffectedSensorCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AffectedSensorCount = unmarshaller.Unmarshall(context, ref reader);

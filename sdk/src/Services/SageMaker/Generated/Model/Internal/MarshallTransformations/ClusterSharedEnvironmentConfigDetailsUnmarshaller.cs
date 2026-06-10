@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentFSxLustreConfig", targetDepth))
+                if (context.TestExpression("CurrentFSxLustreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxLustreConfigUnmarshaller.Instance;
                     unmarshalledObject.CurrentFSxLustreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentFSxLustreDeletionPolicy", targetDepth))
+                if (context.TestExpression("CurrentFSxLustreDeletionPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentFSxLustreDeletionPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredFSxLustreConfig", targetDepth))
+                if (context.TestExpression("DesiredFSxLustreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FSxLustreConfigUnmarshaller.Instance;
                     unmarshalledObject.DesiredFSxLustreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredFSxLustreDeletionPolicy", targetDepth))
+                if (context.TestExpression("DesiredFSxLustreDeletionPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DesiredFSxLustreDeletionPolicy = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("openSearchIntegrationDetails", targetDepth))
+                if (context.TestExpression("openSearchIntegrationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchIntegrationDetailsUnmarshaller.Instance;
                     unmarshalledObject.OpenSearchIntegrationDetails = unmarshaller.Unmarshall(context, ref reader);

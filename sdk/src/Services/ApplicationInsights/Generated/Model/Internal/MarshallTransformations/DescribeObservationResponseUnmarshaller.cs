@@ -52,7 +52,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Observation", targetDepth))
+                if (context.TestExpression("Observation", targetDepth, ref reader))
                 {
                     var unmarshaller = ObservationUnmarshaller.Instance;
                     response.Observation = unmarshaller.Unmarshall(context, ref reader);

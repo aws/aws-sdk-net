@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContextMenuOption", targetDepth))
+                if (context.TestExpression("ContextMenuOption", targetDepth, ref reader))
                 {
                     var unmarshaller = ContextMenuOptionUnmarshaller.Instance;
                     unmarshalledObject.ContextMenuOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualMenuOption", targetDepth))
+                if (context.TestExpression("VisualMenuOption", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualMenuOptionUnmarshaller.Instance;
                     unmarshalledObject.VisualMenuOption = unmarshaller.Unmarshall(context, ref reader);

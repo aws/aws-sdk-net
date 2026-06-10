@@ -52,7 +52,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CacheReportInfo", targetDepth))
+                if (context.TestExpression("CacheReportInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = CacheReportInfoUnmarshaller.Instance;
                     response.CacheReportInfo = unmarshaller.Unmarshall(context, ref reader);

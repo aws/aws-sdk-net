@@ -56,25 +56,25 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allocationStrategy", targetDepth))
+                if (context.TestExpression("allocationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instance", targetDepth))
+                if (context.TestExpression("instance", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mixedInstances", targetDepth))
+                if (context.TestExpression("mixedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MixedInstanceConfiguration, MixedInstanceConfigurationUnmarshaller>(MixedInstanceConfigurationUnmarshaller.Instance);
                     unmarshalledObject.MixedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

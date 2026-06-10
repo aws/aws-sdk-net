@@ -56,25 +56,25 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aspectRatio", targetDepth))
+                if (context.TestExpression("aspectRatio", targetDepth, ref reader))
                 {
                     var unmarshaller = AspectRatioUnmarshaller.Instance;
                     unmarshalledObject.AspectRatio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dictionary", targetDepth))
+                if (context.TestExpression("dictionary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Dictionary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("language", targetDepth))
+                if (context.TestExpression("language", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Language = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profanityFilter", targetDepth))
+                if (context.TestExpression("profanityFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfanityFilter = unmarshaller.Unmarshall(context, ref reader);

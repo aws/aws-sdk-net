@@ -52,13 +52,13 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestStatusUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggest", targetDepth))
+                if (context.TestExpression("suggest", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestModelUnmarshaller.Instance;
                     response.Suggest = unmarshaller.Unmarshall(context, ref reader);

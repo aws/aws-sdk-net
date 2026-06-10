@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StandardsArn", targetDepth))
+                if (context.TestExpression("StandardsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandardsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsControlsUpdatable", targetDepth))
+                if (context.TestExpression("StandardsControlsUpdatable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandardsControlsUpdatable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsInput", targetDepth))
+                if (context.TestExpression("StandardsInput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.StandardsInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsStatus", targetDepth))
+                if (context.TestExpression("StandardsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandardsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsStatusReason", targetDepth))
+                if (context.TestExpression("StandardsStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardsStatusReasonUnmarshaller.Instance;
                     unmarshalledObject.StandardsStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsSubscriptionArn", targetDepth))
+                if (context.TestExpression("StandardsSubscriptionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StandardsSubscriptionArn = unmarshaller.Unmarshall(context, ref reader);

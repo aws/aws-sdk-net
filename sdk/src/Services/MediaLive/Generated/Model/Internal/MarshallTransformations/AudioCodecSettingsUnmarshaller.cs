@@ -56,43 +56,43 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aacSettings", targetDepth))
+                if (context.TestExpression("aacSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AacSettingsUnmarshaller.Instance;
                     unmarshalledObject.AacSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ac3Settings", targetDepth))
+                if (context.TestExpression("ac3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Ac3SettingsUnmarshaller.Instance;
                     unmarshalledObject.Ac3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eac3AtmosSettings", targetDepth))
+                if (context.TestExpression("eac3AtmosSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Eac3AtmosSettingsUnmarshaller.Instance;
                     unmarshalledObject.Eac3AtmosSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eac3Settings", targetDepth))
+                if (context.TestExpression("eac3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Eac3SettingsUnmarshaller.Instance;
                     unmarshalledObject.Eac3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mp2Settings", targetDepth))
+                if (context.TestExpression("mp2Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Mp2SettingsUnmarshaller.Instance;
                     unmarshalledObject.Mp2Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("passThroughSettings", targetDepth))
+                if (context.TestExpression("passThroughSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = PassThroughSettingsUnmarshaller.Instance;
                     unmarshalledObject.PassThroughSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wavSettings", targetDepth))
+                if (context.TestExpression("wavSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = WavSettingsUnmarshaller.Instance;
                     unmarshalledObject.WavSettings = unmarshaller.Unmarshall(context, ref reader);

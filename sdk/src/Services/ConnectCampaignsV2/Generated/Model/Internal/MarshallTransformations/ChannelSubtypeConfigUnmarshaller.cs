@@ -56,25 +56,25 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("email", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailChannelSubtypeConfigUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("sms", targetDepth, ref reader))
                 {
                     var unmarshaller = SmsChannelSubtypeConfigUnmarshaller.Instance;
                     unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("telephony", targetDepth))
+                if (context.TestExpression("telephony", targetDepth, ref reader))
                 {
                     var unmarshaller = TelephonyChannelSubtypeConfigUnmarshaller.Instance;
                     unmarshalledObject.Telephony = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("whatsApp", targetDepth))
+                if (context.TestExpression("whatsApp", targetDepth, ref reader))
                 {
                     var unmarshaller = WhatsAppChannelSubtypeConfigUnmarshaller.Instance;
                     unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);

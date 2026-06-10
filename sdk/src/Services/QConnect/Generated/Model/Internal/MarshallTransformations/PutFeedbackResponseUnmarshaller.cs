@@ -52,31 +52,31 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assistantArn", targetDepth))
+                if (context.TestExpression("assistantArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssistantArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assistantId", targetDepth))
+                if (context.TestExpression("assistantId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssistantId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentFeedback", targetDepth))
+                if (context.TestExpression("contentFeedback", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentFeedbackDataUnmarshaller.Instance;
                     response.ContentFeedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetId", targetDepth))
+                if (context.TestExpression("targetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetType", targetDepth))
+                if (context.TestExpression("targetType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetType = unmarshaller.Unmarshall(context, ref reader);

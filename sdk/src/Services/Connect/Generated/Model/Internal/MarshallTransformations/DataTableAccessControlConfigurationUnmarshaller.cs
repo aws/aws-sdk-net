@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PrimaryAttributeAccessControlConfiguration", targetDepth))
+                if (context.TestExpression("PrimaryAttributeAccessControlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PrimaryAttributeAccessControlConfigurationItemUnmarshaller.Instance;
                     unmarshalledObject.PrimaryAttributeAccessControlConfiguration = unmarshaller.Unmarshall(context, ref reader);

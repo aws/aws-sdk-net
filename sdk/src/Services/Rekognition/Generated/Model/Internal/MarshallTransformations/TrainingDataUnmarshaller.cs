@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Assets", targetDepth))
+                if (context.TestExpression("Assets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Asset, AssetUnmarshaller>(AssetUnmarshaller.Instance);
                     unmarshalledObject.Assets = unmarshaller.Unmarshall(context, ref reader);

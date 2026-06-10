@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentFailureReasons", targetDepth))
+                if (context.TestExpression("environmentFailureReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<EnvironmentError>, StringUnmarshaller, JsonListUnmarshaller<EnvironmentError,EnvironmentErrorUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<EnvironmentError, EnvironmentErrorUnmarshaller>(EnvironmentErrorUnmarshaller.Instance));
                     unmarshalledObject.EnvironmentFailureReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overallDeploymentStatus", targetDepth))
+                if (context.TestExpression("overallDeploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverallDeploymentStatus = unmarshaller.Unmarshall(context, ref reader);

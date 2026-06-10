@@ -56,19 +56,19 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasourcePackageIngestHistory", targetDepth))
+                if (context.TestExpression("DatasourcePackageIngestHistory", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, TimestampForCollection>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, TimestampForCollection, StringUnmarshaller, TimestampForCollectionUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, TimestampForCollection, StringUnmarshaller, TimestampForCollectionUnmarshaller>(StringUnmarshaller.Instance, TimestampForCollectionUnmarshaller.Instance));
                     unmarshalledObject.DatasourcePackageIngestHistory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GraphArn", targetDepth))
+                if (context.TestExpression("GraphArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context, ref reader);

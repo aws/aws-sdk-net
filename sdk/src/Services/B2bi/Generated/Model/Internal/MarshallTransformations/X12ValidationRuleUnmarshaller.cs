@@ -56,19 +56,19 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeListValidationRule", targetDepth))
+                if (context.TestExpression("codeListValidationRule", targetDepth, ref reader))
                 {
                     var unmarshaller = X12CodeListValidationRuleUnmarshaller.Instance;
                     unmarshalledObject.CodeListValidationRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elementLengthValidationRule", targetDepth))
+                if (context.TestExpression("elementLengthValidationRule", targetDepth, ref reader))
                 {
                     var unmarshaller = X12ElementLengthValidationRuleUnmarshaller.Instance;
                     unmarshalledObject.ElementLengthValidationRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elementRequirementValidationRule", targetDepth))
+                if (context.TestExpression("elementRequirementValidationRule", targetDepth, ref reader))
                 {
                     var unmarshaller = X12ElementRequirementValidationRuleUnmarshaller.Instance;
                     unmarshalledObject.ElementRequirementValidationRule = unmarshaller.Unmarshall(context, ref reader);

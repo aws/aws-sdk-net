@@ -52,49 +52,49 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalModelResponseFields", targetDepth))
+                if (context.TestExpression("additionalModelResponseFields", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.AdditionalModelResponseFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metrics", targetDepth))
+                if (context.TestExpression("metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = ConverseMetricsUnmarshaller.Instance;
                     response.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
+                if (context.TestExpression("output", targetDepth, ref reader))
                 {
                     var unmarshaller = ConverseOutputUnmarshaller.Instance;
                     response.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performanceConfig", targetDepth))
+                if (context.TestExpression("performanceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
                     response.PerformanceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceTier", targetDepth))
+                if (context.TestExpression("serviceTier", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceTierUnmarshaller.Instance;
                     response.ServiceTier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stopReason", targetDepth))
+                if (context.TestExpression("stopReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StopReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trace", targetDepth))
+                if (context.TestExpression("trace", targetDepth, ref reader))
                 {
                     var unmarshaller = ConverseTraceUnmarshaller.Instance;
                     response.Trace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usage", targetDepth))
+                if (context.TestExpression("usage", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenUsageUnmarshaller.Instance;
                     response.Usage = unmarshaller.Unmarshall(context, ref reader);

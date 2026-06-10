@@ -52,7 +52,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Deployments", targetDepth))
+                if (context.TestExpression("Deployments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EdgeDeployment, EdgeDeploymentUnmarshaller>(EdgeDeploymentUnmarshaller.Instance);
                     response.Deployments = unmarshaller.Unmarshall(context, ref reader);

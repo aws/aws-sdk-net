@@ -56,19 +56,19 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("antennaDemodDecodeDetails", targetDepth))
+                if (context.TestExpression("antennaDemodDecodeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AntennaDemodDecodeDetailsUnmarshaller.Instance;
                     unmarshalledObject.AntennaDemodDecodeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpointDetails", targetDepth))
+                if (context.TestExpression("endpointDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointDetailsUnmarshaller.Instance;
                     unmarshalledObject.EndpointDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3RecordingDetails", targetDepth))
+                if (context.TestExpression("s3RecordingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = S3RecordingDetailsUnmarshaller.Instance;
                     unmarshalledObject.S3RecordingDetails = unmarshaller.Unmarshall(context, ref reader);

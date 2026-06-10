@@ -56,19 +56,19 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Entities", targetDepth))
+                if (context.TestExpression("Entities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MedicalEntity, MedicalEntityUnmarshaller>(MedicalEntityUnmarshaller.Instance);
                     unmarshalledObject.Entities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Items", targetDepth))
+                if (context.TestExpression("Items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MedicalItem, MedicalItemUnmarshaller>(MedicalItemUnmarshaller.Instance);
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth))
+                if (context.TestExpression("Transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);

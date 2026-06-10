@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviderOperatorRoleArn", targetDepth))
+                if (context.TestExpression("CapacityProviderOperatorRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityProviderOperatorRoleArn = unmarshaller.Unmarshall(context, ref reader);

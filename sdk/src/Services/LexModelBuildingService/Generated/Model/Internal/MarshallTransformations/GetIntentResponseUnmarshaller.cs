@@ -52,109 +52,109 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("checksum", targetDepth))
+                if (context.TestExpression("checksum", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Checksum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conclusionStatement", targetDepth))
+                if (context.TestExpression("conclusionStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StatementUnmarshaller.Instance;
                     response.ConclusionStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("confirmationPrompt", targetDepth))
+                if (context.TestExpression("confirmationPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptUnmarshaller.Instance;
                     response.ConfirmationPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
+                if (context.TestExpression("createdDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dialogCodeHook", targetDepth))
+                if (context.TestExpression("dialogCodeHook", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeHookUnmarshaller.Instance;
                     response.DialogCodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("followUpPrompt", targetDepth))
+                if (context.TestExpression("followUpPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = FollowUpPromptUnmarshaller.Instance;
                     response.FollowUpPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fulfillmentActivity", targetDepth))
+                if (context.TestExpression("fulfillmentActivity", targetDepth, ref reader))
                 {
                     var unmarshaller = FulfillmentActivityUnmarshaller.Instance;
                     response.FulfillmentActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputContexts", targetDepth))
+                if (context.TestExpression("inputContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputContext, InputContextUnmarshaller>(InputContextUnmarshaller.Instance);
                     response.InputContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kendraConfiguration", targetDepth))
+                if (context.TestExpression("kendraConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KendraConfigurationUnmarshaller.Instance;
                     response.KendraConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDate", targetDepth))
+                if (context.TestExpression("lastUpdatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputContexts", targetDepth))
+                if (context.TestExpression("outputContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputContext, OutputContextUnmarshaller>(OutputContextUnmarshaller.Instance);
                     response.OutputContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentIntentSignature", targetDepth))
+                if (context.TestExpression("parentIntentSignature", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParentIntentSignature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rejectionStatement", targetDepth))
+                if (context.TestExpression("rejectionStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StatementUnmarshaller.Instance;
                     response.RejectionStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleUtterances", targetDepth))
+                if (context.TestExpression("sampleUtterances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SampleUtterances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slots", targetDepth))
+                if (context.TestExpression("slots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Slot, SlotUnmarshaller>(SlotUnmarshaller.Instance);
                     response.Slots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Version = unmarshaller.Unmarshall(context, ref reader);

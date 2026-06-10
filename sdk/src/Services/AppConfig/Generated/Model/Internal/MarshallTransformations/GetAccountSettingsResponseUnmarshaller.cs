@@ -52,7 +52,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeletionProtection", targetDepth))
+                if (context.TestExpression("DeletionProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = DeletionProtectionSettingsUnmarshaller.Instance;
                     response.DeletionProtection = unmarshaller.Unmarshall(context, ref reader);

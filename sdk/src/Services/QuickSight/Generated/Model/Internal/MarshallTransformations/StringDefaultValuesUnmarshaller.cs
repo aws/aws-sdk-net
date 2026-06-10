@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamicValue", targetDepth))
+                if (context.TestExpression("DynamicValue", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamicDefaultValueUnmarshaller.Instance;
                     unmarshalledObject.DynamicValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticValues", targetDepth))
+                if (context.TestExpression("StaticValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StaticValues = unmarshaller.Unmarshall(context, ref reader);

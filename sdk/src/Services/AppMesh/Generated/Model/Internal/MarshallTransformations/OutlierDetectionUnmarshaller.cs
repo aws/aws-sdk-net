@@ -56,25 +56,25 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("baseEjectionDuration", targetDepth))
+                if (context.TestExpression("baseEjectionDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.BaseEjectionDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interval", targetDepth))
+                if (context.TestExpression("interval", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.Interval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxEjectionPercent", targetDepth))
+                if (context.TestExpression("maxEjectionPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxEjectionPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxServerErrors", targetDepth))
+                if (context.TestExpression("maxServerErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxServerErrors = unmarshaller.Unmarshall(context, ref reader);

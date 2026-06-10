@@ -56,25 +56,25 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorType", targetDepth))
+                if (context.TestExpression("ErrorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastCheckedTimestamp", targetDepth))
+                if (context.TestExpression("LastCheckedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastCheckedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSuccessTimestamp", targetDepth))
+                if (context.TestExpression("LastSuccessTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SOARecord", targetDepth))
+                if (context.TestExpression("SOARecord", targetDepth, ref reader))
                 {
                     var unmarshaller = SOARecordUnmarshaller.Instance;
                     unmarshalledObject.SOARecord = unmarshaller.Unmarshall(context, ref reader);

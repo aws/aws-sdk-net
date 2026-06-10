@@ -56,25 +56,25 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Regions", targetDepth))
+                if (context.TestExpression("Regions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepPreviews", targetDepth))
+                if (context.TestExpression("StepPreviews", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.StepPreviews = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetPreviews", targetDepth))
+                if (context.TestExpression("TargetPreviews", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetPreview, TargetPreviewUnmarshaller>(TargetPreviewUnmarshaller.Instance);
                     unmarshalledObject.TargetPreviews = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAccounts", targetDepth))
+                if (context.TestExpression("TotalAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAccounts = unmarshaller.Unmarshall(context, ref reader);

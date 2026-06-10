@@ -72,7 +72,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("errorAttribute", targetDepth))
+                    if (context.TestExpression("errorAttribute", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorAttribute = unmarshaller.Unmarshall(context, ref reader);

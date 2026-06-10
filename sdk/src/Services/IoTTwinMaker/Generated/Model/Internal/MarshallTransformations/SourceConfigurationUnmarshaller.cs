@@ -56,25 +56,25 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iotSiteWiseConfiguration", targetDepth))
+                if (context.TestExpression("iotSiteWiseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IotSiteWiseSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IotSiteWiseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotTwinMakerConfiguration", targetDepth))
+                if (context.TestExpression("iotTwinMakerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IotTwinMakerSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IotTwinMakerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Configuration", targetDepth))
+                if (context.TestExpression("s3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3SourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("DuplicateOperationId", targetDepth))
+                    if (context.TestExpression("DuplicateOperationId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DuplicateOperationId = unmarshaller.Unmarshall(context, ref reader);

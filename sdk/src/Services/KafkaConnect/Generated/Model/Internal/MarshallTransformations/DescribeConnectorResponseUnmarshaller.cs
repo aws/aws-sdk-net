@@ -52,109 +52,109 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacity", targetDepth))
+                if (context.TestExpression("capacity", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityDescriptionUnmarshaller.Instance;
                     response.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorArn", targetDepth))
+                if (context.TestExpression("connectorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorConfiguration", targetDepth))
+                if (context.TestExpression("connectorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.ConnectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorDescription", targetDepth))
+                if (context.TestExpression("connectorDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorName", targetDepth))
+                if (context.TestExpression("connectorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorState", targetDepth))
+                if (context.TestExpression("connectorState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("currentVersion", targetDepth))
+                if (context.TestExpression("currentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaCluster", targetDepth))
+                if (context.TestExpression("kafkaCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaClusterDescriptionUnmarshaller.Instance;
                     response.KafkaCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaClusterClientAuthentication", targetDepth))
+                if (context.TestExpression("kafkaClusterClientAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaClusterClientAuthenticationDescriptionUnmarshaller.Instance;
                     response.KafkaClusterClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaClusterEncryptionInTransit", targetDepth))
+                if (context.TestExpression("kafkaClusterEncryptionInTransit", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaClusterEncryptionInTransitDescriptionUnmarshaller.Instance;
                     response.KafkaClusterEncryptionInTransit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaConnectVersion", targetDepth))
+                if (context.TestExpression("kafkaConnectVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KafkaConnectVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logDelivery", targetDepth))
+                if (context.TestExpression("logDelivery", targetDepth, ref reader))
                 {
                     var unmarshaller = LogDeliveryDescriptionUnmarshaller.Instance;
                     response.LogDelivery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkType", targetDepth))
+                if (context.TestExpression("networkType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("plugins", targetDepth))
+                if (context.TestExpression("plugins", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PluginDescription, PluginDescriptionUnmarshaller>(PluginDescriptionUnmarshaller.Instance);
                     response.Plugins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceExecutionRoleArn", targetDepth))
+                if (context.TestExpression("serviceExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateDescription", targetDepth))
+                if (context.TestExpression("stateDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StateDescriptionUnmarshaller.Instance;
                     response.StateDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerConfiguration", targetDepth))
+                if (context.TestExpression("workerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkerConfigurationDescriptionUnmarshaller.Instance;
                     response.WorkerConfiguration = unmarshaller.Unmarshall(context, ref reader);

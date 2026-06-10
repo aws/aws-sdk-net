@@ -52,19 +52,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BrandDefinition", targetDepth))
+                if (context.TestExpression("BrandDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = BrandDefinitionUnmarshaller.Instance;
                     response.BrandDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BrandDetail", targetDepth))
+                if (context.TestExpression("BrandDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = BrandDetailUnmarshaller.Instance;
                     response.BrandDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);

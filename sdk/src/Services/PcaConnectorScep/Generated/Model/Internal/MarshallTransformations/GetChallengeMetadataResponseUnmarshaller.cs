@@ -52,7 +52,7 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChallengeMetadata", targetDepth))
+                if (context.TestExpression("ChallengeMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ChallengeMetadataUnmarshaller.Instance;
                     response.ChallengeMetadata = unmarshaller.Unmarshall(context, ref reader);

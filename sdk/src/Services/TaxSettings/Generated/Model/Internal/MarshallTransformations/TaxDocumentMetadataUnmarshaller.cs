@@ -56,13 +56,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taxDocumentAccessToken", targetDepth))
+                if (context.TestExpression("taxDocumentAccessToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaxDocumentAccessToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxDocumentName", targetDepth))
+                if (context.TestExpression("taxDocumentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaxDocumentName = unmarshaller.Unmarshall(context, ref reader);

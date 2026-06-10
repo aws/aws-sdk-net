@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateTransparencyLoggingPreference", targetDepth))
+                if (context.TestExpression("CertificateTransparencyLoggingPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateTransparencyLoggingPreference = unmarshaller.Unmarshall(context, ref reader);

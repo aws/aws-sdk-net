@@ -56,49 +56,49 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationConfiguration", targetDepth))
+                if (context.TestExpression("destinationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DestinationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
+                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("renditionConfiguration", targetDepth))
+                if (context.TestExpression("renditionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RenditionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RenditionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                if (context.TestExpression("thumbnailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ThumbnailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context, ref reader);

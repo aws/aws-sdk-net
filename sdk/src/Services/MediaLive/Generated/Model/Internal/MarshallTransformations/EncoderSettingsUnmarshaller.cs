@@ -56,85 +56,85 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioDescriptions", targetDepth))
+                if (context.TestExpression("audioDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioDescription, AudioDescriptionUnmarshaller>(AudioDescriptionUnmarshaller.Instance);
                     unmarshalledObject.AudioDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availBlanking", targetDepth))
+                if (context.TestExpression("availBlanking", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailBlankingUnmarshaller.Instance;
                     unmarshalledObject.AvailBlanking = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availConfiguration", targetDepth))
+                if (context.TestExpression("availConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AvailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blackoutSlate", targetDepth))
+                if (context.TestExpression("blackoutSlate", targetDepth, ref reader))
                 {
                     var unmarshaller = BlackoutSlateUnmarshaller.Instance;
                     unmarshalledObject.BlackoutSlate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionDescriptions", targetDepth))
+                if (context.TestExpression("captionDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CaptionDescription, CaptionDescriptionUnmarshaller>(CaptionDescriptionUnmarshaller.Instance);
                     unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorCorrectionSettings", targetDepth))
+                if (context.TestExpression("colorCorrectionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ColorCorrectionSettingsUnmarshaller.Instance;
                     unmarshalledObject.ColorCorrectionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("featureActivations", targetDepth))
+                if (context.TestExpression("featureActivations", targetDepth, ref reader))
                 {
                     var unmarshaller = FeatureActivationsUnmarshaller.Instance;
                     unmarshalledObject.FeatureActivations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("globalConfiguration", targetDepth))
+                if (context.TestExpression("globalConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GlobalConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("motionGraphicsConfiguration", targetDepth))
+                if (context.TestExpression("motionGraphicsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MotionGraphicsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MotionGraphicsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenConfiguration", targetDepth))
+                if (context.TestExpression("nielsenConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputGroups", targetDepth))
+                if (context.TestExpression("outputGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);
                     unmarshalledObject.OutputGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                if (context.TestExpression("thumbnailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ThumbnailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeConfig", targetDepth))
+                if (context.TestExpression("timecodeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TimecodeConfigUnmarshaller.Instance;
                     unmarshalledObject.TimecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoDescriptions", targetDepth))
+                if (context.TestExpression("videoDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VideoDescription, VideoDescriptionUnmarshaller>(VideoDescriptionUnmarshaller.Instance);
                     unmarshalledObject.VideoDescriptions = unmarshaller.Unmarshall(context, ref reader);

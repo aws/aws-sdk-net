@@ -56,55 +56,55 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreateS3DataAccessFromS3Bucket", targetDepth))
+                if (context.TestExpression("CreateS3DataAccessFromS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateS3DataAccessFromS3BucketResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.CreateS3DataAccessFromS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportAssetsToS3", targetDepth))
+                if (context.TestExpression("ExportAssetsToS3", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportAssetsToS3ResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExportAssetsToS3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportAssetToSignedUrl", targetDepth))
+                if (context.TestExpression("ExportAssetToSignedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportAssetToSignedUrlResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExportAssetToSignedUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportRevisionsToS3", targetDepth))
+                if (context.TestExpression("ExportRevisionsToS3", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportRevisionsToS3ResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExportRevisionsToS3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetFromApiGatewayApi", targetDepth))
+                if (context.TestExpression("ImportAssetFromApiGatewayApi", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetFromApiGatewayApiResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetFromApiGatewayApi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetFromSignedUrl", targetDepth))
+                if (context.TestExpression("ImportAssetFromSignedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetFromSignedUrlResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetFromSignedUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetsFromLakeFormationTagPolicy", targetDepth))
+                if (context.TestExpression("ImportAssetsFromLakeFormationTagPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetsFromLakeFormationTagPolicyResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetsFromLakeFormationTagPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetsFromRedshiftDataShares", targetDepth))
+                if (context.TestExpression("ImportAssetsFromRedshiftDataShares", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetsFromRedshiftDataSharesResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetsFromRedshiftDataShares = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportAssetsFromS3", targetDepth))
+                if (context.TestExpression("ImportAssetsFromS3", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportAssetsFromS3ResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImportAssetsFromS3 = unmarshaller.Unmarshall(context, ref reader);

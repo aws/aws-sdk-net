@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lexTranscriptFilter", targetDepth))
+                if (context.TestExpression("lexTranscriptFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = LexTranscriptFilterUnmarshaller.Instance;
                     unmarshalledObject.LexTranscriptFilter = unmarshaller.Unmarshall(context, ref reader);

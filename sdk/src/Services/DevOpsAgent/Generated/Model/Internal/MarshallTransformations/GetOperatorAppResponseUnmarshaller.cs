@@ -52,25 +52,25 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iam", targetDepth))
+                if (context.TestExpression("iam", targetDepth, ref reader))
                 {
                     var unmarshaller = IamAuthConfigurationUnmarshaller.Instance;
                     response.Iam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idc", targetDepth))
+                if (context.TestExpression("idc", targetDepth, ref reader))
                 {
                     var unmarshaller = IdcAuthConfigurationUnmarshaller.Instance;
                     response.Idc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idp", targetDepth))
+                if (context.TestExpression("idp", targetDepth, ref reader))
                 {
                     var unmarshaller = IdpAuthConfigurationUnmarshaller.Instance;
                     response.Idp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operatorAppUrl", targetDepth))
+                if (context.TestExpression("operatorAppUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OperatorAppUrl = unmarshaller.Unmarshall(context, ref reader);

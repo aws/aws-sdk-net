@@ -56,13 +56,13 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("breakdown", targetDepth))
+                if (context.TestExpression("breakdown", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaxBreakdownItem, TaxBreakdownItemUnmarshaller>(TaxBreakdownItemUnmarshaller.Instance);
                     unmarshalledObject.Breakdown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalAmount", targetDepth))
+                if (context.TestExpression("totalAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalAmount = unmarshaller.Unmarshall(context, ref reader);

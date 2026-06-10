@@ -56,7 +56,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encounterReason", targetDepth))
+                if (context.TestExpression("encounterReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncounterReason = unmarshaller.Unmarshall(context, ref reader);

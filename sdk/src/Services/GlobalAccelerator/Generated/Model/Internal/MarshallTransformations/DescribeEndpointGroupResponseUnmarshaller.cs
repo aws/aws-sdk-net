@@ -52,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointGroup", targetDepth))
+                if (context.TestExpression("EndpointGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointGroupUnmarshaller.Instance;
                     response.EndpointGroup = unmarshaller.Unmarshall(context, ref reader);

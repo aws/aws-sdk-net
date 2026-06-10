@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MatchPattern", targetDepth))
+                if (context.TestExpression("MatchPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = HeaderMatchPatternUnmarshaller.Instance;
                     unmarshalledObject.MatchPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchScope", targetDepth))
+                if (context.TestExpression("MatchScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MatchScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OversizeHandling", targetDepth))
+                if (context.TestExpression("OversizeHandling", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OversizeHandling = unmarshaller.Unmarshall(context, ref reader);

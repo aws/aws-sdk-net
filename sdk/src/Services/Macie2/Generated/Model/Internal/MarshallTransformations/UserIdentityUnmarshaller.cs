@@ -56,43 +56,43 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assumedRole", targetDepth))
+                if (context.TestExpression("assumedRole", targetDepth, ref reader))
                 {
                     var unmarshaller = AssumedRoleUnmarshaller.Instance;
                     unmarshalledObject.AssumedRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsAccount", targetDepth))
+                if (context.TestExpression("awsAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAccountUnmarshaller.Instance;
                     unmarshalledObject.AwsAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsService", targetDepth))
+                if (context.TestExpression("awsService", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsServiceUnmarshaller.Instance;
                     unmarshalledObject.AwsService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("federatedUser", targetDepth))
+                if (context.TestExpression("federatedUser", targetDepth, ref reader))
                 {
                     var unmarshaller = FederatedUserUnmarshaller.Instance;
                     unmarshalledObject.FederatedUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamUser", targetDepth))
+                if (context.TestExpression("iamUser", targetDepth, ref reader))
                 {
                     var unmarshaller = IamUserUnmarshaller.Instance;
                     unmarshalledObject.IamUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("root", targetDepth))
+                if (context.TestExpression("root", targetDepth, ref reader))
                 {
                     var unmarshaller = UserIdentityRootUnmarshaller.Instance;
                     unmarshalledObject.Root = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

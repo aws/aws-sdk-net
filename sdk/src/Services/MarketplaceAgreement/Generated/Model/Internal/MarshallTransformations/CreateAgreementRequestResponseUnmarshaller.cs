@@ -52,13 +52,13 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agreementRequestId", targetDepth))
+                if (context.TestExpression("agreementRequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgreementRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("chargeSummary", targetDepth))
+                if (context.TestExpression("chargeSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ChargeSummaryUnmarshaller.Instance;
                     response.ChargeSummary = unmarshaller.Unmarshall(context, ref reader);

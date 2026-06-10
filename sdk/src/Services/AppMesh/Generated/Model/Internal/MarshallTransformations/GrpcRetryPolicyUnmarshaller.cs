@@ -56,31 +56,31 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grpcRetryEvents", targetDepth))
+                if (context.TestExpression("grpcRetryEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.GrpcRetryEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpRetryEvents", targetDepth))
+                if (context.TestExpression("httpRetryEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HttpRetryEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxRetries", targetDepth))
+                if (context.TestExpression("maxRetries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRetries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("perRetryTimeout", targetDepth))
+                if (context.TestExpression("perRetryTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.PerRetryTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tcpRetryEvents", targetDepth))
+                if (context.TestExpression("tcpRetryEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TcpRetryEvents = unmarshaller.Unmarshall(context, ref reader);

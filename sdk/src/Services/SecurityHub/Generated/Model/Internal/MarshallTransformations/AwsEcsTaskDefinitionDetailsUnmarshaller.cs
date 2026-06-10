@@ -56,91 +56,91 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerDefinitions", targetDepth))
+                if (context.TestExpression("ContainerDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsDetails, AwsEcsTaskDefinitionContainerDefinitionsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.ContainerDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cpu", targetDepth))
+                if (context.TestExpression("Cpu", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
+                if (context.TestExpression("ExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Family", targetDepth))
+                if (context.TestExpression("Family", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Family = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceAccelerators", targetDepth))
+                if (context.TestExpression("InferenceAccelerators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionInferenceAcceleratorsDetails, AwsEcsTaskDefinitionInferenceAcceleratorsDetailsUnmarshaller>(AwsEcsTaskDefinitionInferenceAcceleratorsDetailsUnmarshaller.Instance);
                     unmarshalledObject.InferenceAccelerators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpcMode", targetDepth))
+                if (context.TestExpression("IpcMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpcMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Memory", targetDepth))
+                if (context.TestExpression("Memory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkMode", targetDepth))
+                if (context.TestExpression("NetworkMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PidMode", targetDepth))
+                if (context.TestExpression("PidMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PidMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementConstraints", targetDepth))
+                if (context.TestExpression("PlacementConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionPlacementConstraintsDetails, AwsEcsTaskDefinitionPlacementConstraintsDetailsUnmarshaller>(AwsEcsTaskDefinitionPlacementConstraintsDetailsUnmarshaller.Instance);
                     unmarshalledObject.PlacementConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyConfiguration", targetDepth))
+                if (context.TestExpression("ProxyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionProxyConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequiresCompatibilities", targetDepth))
+                if (context.TestExpression("RequiresCompatibilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RequiresCompatibilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskRoleArn", targetDepth))
+                if (context.TestExpression("TaskRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Volumes", targetDepth))
+                if (context.TestExpression("Volumes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionVolumesDetails, AwsEcsTaskDefinitionVolumesDetailsUnmarshaller>(AwsEcsTaskDefinitionVolumesDetailsUnmarshaller.Instance);
                     unmarshalledObject.Volumes = unmarshaller.Unmarshall(context, ref reader);

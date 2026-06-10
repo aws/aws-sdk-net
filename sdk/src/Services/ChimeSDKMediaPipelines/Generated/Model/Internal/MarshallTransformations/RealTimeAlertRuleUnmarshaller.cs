@@ -56,25 +56,25 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IssueDetectionConfiguration", targetDepth))
+                if (context.TestExpression("IssueDetectionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IssueDetectionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IssueDetectionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeywordMatchConfiguration", targetDepth))
+                if (context.TestExpression("KeywordMatchConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KeywordMatchConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KeywordMatchConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SentimentConfiguration", targetDepth))
+                if (context.TestExpression("SentimentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SentimentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

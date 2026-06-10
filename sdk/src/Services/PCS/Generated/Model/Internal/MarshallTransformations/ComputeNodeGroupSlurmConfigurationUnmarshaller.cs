@@ -56,13 +56,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
+                if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slurmCustomSettings", targetDepth))
+                if (context.TestExpression("slurmCustomSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
                     unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context, ref reader);

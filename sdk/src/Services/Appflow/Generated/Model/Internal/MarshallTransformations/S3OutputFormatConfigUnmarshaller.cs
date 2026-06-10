@@ -56,25 +56,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregationConfig", targetDepth))
+                if (context.TestExpression("aggregationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregationConfigUnmarshaller.Instance;
                     unmarshalledObject.AggregationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileType", targetDepth))
+                if (context.TestExpression("fileType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("prefixConfig", targetDepth))
+                if (context.TestExpression("prefixConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PrefixConfigUnmarshaller.Instance;
                     unmarshalledObject.PrefixConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preserveSourceDataTyping", targetDepth))
+                if (context.TestExpression("preserveSourceDataTyping", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PreserveSourceDataTyping = unmarshaller.Unmarshall(context, ref reader);

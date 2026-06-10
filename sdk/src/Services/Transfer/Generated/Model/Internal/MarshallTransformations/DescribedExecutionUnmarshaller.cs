@@ -56,49 +56,49 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionId", targetDepth))
+                if (context.TestExpression("ExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialFileLocation", targetDepth))
+                if (context.TestExpression("InitialFileLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = FileLocationUnmarshaller.Instance;
                     unmarshalledObject.InitialFileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoggingConfiguration", targetDepth))
+                if (context.TestExpression("LoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PosixProfile", targetDepth))
+                if (context.TestExpression("PosixProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = PosixProfileUnmarshaller.Instance;
                     unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionResultsUnmarshaller.Instance;
                     unmarshalledObject.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceMetadata", targetDepth))
+                if (context.TestExpression("ServiceMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

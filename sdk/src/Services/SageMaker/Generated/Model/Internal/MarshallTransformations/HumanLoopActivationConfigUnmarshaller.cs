@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HumanLoopActivationConditionsConfig", targetDepth))
+                if (context.TestExpression("HumanLoopActivationConditionsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HumanLoopActivationConditionsConfigUnmarshaller.Instance;
                     unmarshalledObject.HumanLoopActivationConditionsConfig = unmarshaller.Unmarshall(context, ref reader);

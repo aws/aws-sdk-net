@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationTableMap", targetDepth))
+                if (context.TestExpression("DestinationTableMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, DestinationTable, StringUnmarshaller, DestinationTableUnmarshaller>(StringUnmarshaller.Instance, DestinationTableUnmarshaller.Instance);
                     unmarshalledObject.DestinationTableMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceTableMap", targetDepth))
+                if (context.TestExpression("SourceTableMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SourceTable, StringUnmarshaller, SourceTableUnmarshaller>(StringUnmarshaller.Instance, SourceTableUnmarshaller.Instance);
                     unmarshalledObject.SourceTableMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformStepMap", targetDepth))
+                if (context.TestExpression("TransformStepMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, TransformStep, StringUnmarshaller, TransformStepUnmarshaller>(StringUnmarshaller.Instance, TransformStepUnmarshaller.Instance);
                     unmarshalledObject.TransformStepMap = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("minScaleDownDelayMinutes", targetDepth))
+                if (context.TestExpression("minScaleDownDelayMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinScaleDownDelayMinutes = unmarshaller.Unmarshall(context, ref reader);

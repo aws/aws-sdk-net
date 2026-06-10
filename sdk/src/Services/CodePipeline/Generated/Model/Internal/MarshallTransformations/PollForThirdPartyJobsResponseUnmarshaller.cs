@@ -52,7 +52,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobs", targetDepth))
+                if (context.TestExpression("jobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ThirdPartyJob, ThirdPartyJobUnmarshaller>(ThirdPartyJobUnmarshaller.Instance);
                     response.Jobs = unmarshaller.Unmarshall(context, ref reader);

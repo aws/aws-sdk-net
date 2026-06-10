@@ -56,13 +56,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("oAuth2Properties", targetDepth))
+                if (context.TestExpression("oAuth2Properties", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2PropertiesUnmarshaller.Instance;
                     unmarshalledObject.OAuth2Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profileProperties", targetDepth))
+                if (context.TestExpression("profileProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ProfileProperties = unmarshaller.Unmarshall(context, ref reader);

@@ -56,79 +56,79 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BatchJobParameters", targetDepth))
+                if (context.TestExpression("BatchJobParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetBatchJobParametersUnmarshaller.Instance;
                     unmarshalledObject.BatchJobParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLogsParameters", targetDepth))
+                if (context.TestExpression("CloudWatchLogsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetCloudWatchLogsParametersUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EcsTaskParameters", targetDepth))
+                if (context.TestExpression("EcsTaskParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetEcsTaskParametersUnmarshaller.Instance;
                     unmarshalledObject.EcsTaskParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventBridgeEventBusParameters", targetDepth))
+                if (context.TestExpression("EventBridgeEventBusParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetEventBridgeEventBusParametersUnmarshaller.Instance;
                     unmarshalledObject.EventBridgeEventBusParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpParameters", targetDepth))
+                if (context.TestExpression("HttpParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetHttpParametersUnmarshaller.Instance;
                     unmarshalledObject.HttpParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputTemplate", targetDepth))
+                if (context.TestExpression("InputTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisStreamParameters", targetDepth))
+                if (context.TestExpression("KinesisStreamParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetKinesisStreamParametersUnmarshaller.Instance;
                     unmarshalledObject.KinesisStreamParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LambdaFunctionParameters", targetDepth))
+                if (context.TestExpression("LambdaFunctionParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetLambdaFunctionParametersUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDataParameters", targetDepth))
+                if (context.TestExpression("RedshiftDataParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetRedshiftDataParametersUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerPipelineParameters", targetDepth))
+                if (context.TestExpression("SageMakerPipelineParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetSageMakerPipelineParametersUnmarshaller.Instance;
                     unmarshalledObject.SageMakerPipelineParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsQueueParameters", targetDepth))
+                if (context.TestExpression("SqsQueueParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetSqsQueueParametersUnmarshaller.Instance;
                     unmarshalledObject.SqsQueueParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepFunctionStateMachineParameters", targetDepth))
+                if (context.TestExpression("StepFunctionStateMachineParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetStateMachineParametersUnmarshaller.Instance;
                     unmarshalledObject.StepFunctionStateMachineParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimestreamParameters", targetDepth))
+                if (context.TestExpression("TimestreamParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeTargetTimestreamParametersUnmarshaller.Instance;
                     unmarshalledObject.TimestreamParameters = unmarshaller.Unmarshall(context, ref reader);

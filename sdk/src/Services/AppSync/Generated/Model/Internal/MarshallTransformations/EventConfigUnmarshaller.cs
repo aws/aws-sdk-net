@@ -56,31 +56,31 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authProviders", targetDepth))
+                if (context.TestExpression("authProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthProvider, AuthProviderUnmarshaller>(AuthProviderUnmarshaller.Instance);
                     unmarshalledObject.AuthProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectionAuthModes", targetDepth))
+                if (context.TestExpression("connectionAuthModes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
                     unmarshalledObject.ConnectionAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultPublishAuthModes", targetDepth))
+                if (context.TestExpression("defaultPublishAuthModes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
                     unmarshalledObject.DefaultPublishAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultSubscribeAuthModes", targetDepth))
+                if (context.TestExpression("defaultSubscribeAuthModes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthMode, AuthModeUnmarshaller>(AuthModeUnmarshaller.Instance);
                     unmarshalledObject.DefaultSubscribeAuthModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logConfig", targetDepth))
+                if (context.TestExpression("logConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventLogConfigUnmarshaller.Instance;
                     unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PaperCanvasSizeOptions", targetDepth))
+                if (context.TestExpression("PaperCanvasSizeOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SectionBasedLayoutPaperCanvasSizeOptionsUnmarshaller.Instance;
                     unmarshalledObject.PaperCanvasSizeOptions = unmarshaller.Unmarshall(context, ref reader);

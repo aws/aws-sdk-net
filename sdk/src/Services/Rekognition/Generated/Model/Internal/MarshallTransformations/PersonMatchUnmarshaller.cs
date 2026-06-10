@@ -56,19 +56,19 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceMatches", targetDepth))
+                if (context.TestExpression("FaceMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FaceMatch, FaceMatchUnmarshaller>(FaceMatchUnmarshaller.Instance);
                     unmarshalledObject.FaceMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Person", targetDepth))
+                if (context.TestExpression("Person", targetDepth, ref reader))
                 {
                     var unmarshaller = PersonDetailUnmarshaller.Instance;
                     unmarshalledObject.Person = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

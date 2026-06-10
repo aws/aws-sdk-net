@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MapMatchingConfig", targetDepth))
+                if (context.TestExpression("MapMatchingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MapMatchingConfigUnmarshaller.Instance;
                     unmarshalledObject.MapMatchingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReverseGeocodingConfig", targetDepth))
+                if (context.TestExpression("ReverseGeocodingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ReverseGeocodingConfigUnmarshaller.Instance;
                     unmarshalledObject.ReverseGeocodingConfig = unmarshaller.Unmarshall(context, ref reader);

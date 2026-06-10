@@ -56,13 +56,13 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedServices", targetDepth))
+                if (context.TestExpression("associatedServices", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceReferenceChangesUnmarshaller.Instance;
                     unmarshalledObject.AssociatedServices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("journeyDescription", targetDepth))
+                if (context.TestExpression("journeyDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringChangeUnmarshaller.Instance;
                     unmarshalledObject.JourneyDescription = unmarshaller.Unmarshall(context, ref reader);

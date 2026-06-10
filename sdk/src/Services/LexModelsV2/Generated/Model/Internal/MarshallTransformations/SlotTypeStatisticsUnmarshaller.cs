@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("discoveredSlotTypeCount", targetDepth))
+                if (context.TestExpression("discoveredSlotTypeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DiscoveredSlotTypeCount = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProductViewSummary", targetDepth))
+                if (context.TestExpression("ProductViewSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductViewSummaryUnmarshaller.Instance;
                     unmarshalledObject.ProductViewSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifact", targetDepth))
+                if (context.TestExpression("ProvisioningArtifact", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisioningArtifactUnmarshaller.Instance;
                     unmarshalledObject.ProvisioningArtifact = unmarshaller.Unmarshall(context, ref reader);

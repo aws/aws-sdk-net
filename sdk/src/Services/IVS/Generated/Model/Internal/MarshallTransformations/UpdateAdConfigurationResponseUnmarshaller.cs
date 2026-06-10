@@ -52,7 +52,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adConfiguration", targetDepth))
+                if (context.TestExpression("adConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AdConfigurationUnmarshaller.Instance;
                     response.AdConfiguration = unmarshaller.Unmarshall(context, ref reader);

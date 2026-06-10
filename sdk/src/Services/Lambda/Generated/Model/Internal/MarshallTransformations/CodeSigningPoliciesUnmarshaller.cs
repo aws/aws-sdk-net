@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UntrustedArtifactOnDeployment", targetDepth))
+                if (context.TestExpression("UntrustedArtifactOnDeployment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UntrustedArtifactOnDeployment = unmarshaller.Unmarshall(context, ref reader);

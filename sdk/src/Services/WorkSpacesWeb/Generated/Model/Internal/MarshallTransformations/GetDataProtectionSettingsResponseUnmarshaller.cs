@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataProtectionSettings", targetDepth))
+                if (context.TestExpression("dataProtectionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProtectionSettingsUnmarshaller.Instance;
                     response.DataProtectionSettings = unmarshaller.Unmarshall(context, ref reader);

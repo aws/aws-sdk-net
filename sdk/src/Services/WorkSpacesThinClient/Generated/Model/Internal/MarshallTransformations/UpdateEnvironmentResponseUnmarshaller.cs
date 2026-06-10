@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environment", targetDepth))
+                if (context.TestExpression("environment", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentSummaryUnmarshaller.Instance;
                     response.Environment = unmarshaller.Unmarshall(context, ref reader);

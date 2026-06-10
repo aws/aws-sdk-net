@@ -56,19 +56,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomProperties", targetDepth))
+                if (context.TestExpression("CustomProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.CustomProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLakeAccessProperties", targetDepth))
+                if (context.TestExpression("DataLakeAccessProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DataLakeAccessPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.DataLakeAccessProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IcebergOptimizationProperties", targetDepth))
+                if (context.TestExpression("IcebergOptimizationProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergOptimizationPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.IcebergOptimizationProperties = unmarshaller.Unmarshall(context, ref reader);

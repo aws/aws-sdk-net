@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregations", targetDepth))
+                if (context.TestExpression("aggregations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DifferentialPrivacyPrivacyBudgetAggregation, DifferentialPrivacyPrivacyBudgetAggregationUnmarshaller>(DifferentialPrivacyPrivacyBudgetAggregationUnmarshaller.Instance);
                     unmarshalledObject.Aggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epsilon", targetDepth))
+                if (context.TestExpression("epsilon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Epsilon = unmarshaller.Unmarshall(context, ref reader);

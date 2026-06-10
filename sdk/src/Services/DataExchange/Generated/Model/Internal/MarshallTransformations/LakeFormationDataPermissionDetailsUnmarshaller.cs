@@ -56,7 +56,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LFTagPolicy", targetDepth))
+                if (context.TestExpression("LFTagPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = LFTagPolicyDetailsUnmarshaller.Instance;
                     unmarshalledObject.LFTagPolicy = unmarshaller.Unmarshall(context, ref reader);

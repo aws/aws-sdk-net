@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLCandidateGenerationConfigUnmarshaller.Instance;
                     unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSplitConfig", targetDepth))
+                if (context.TestExpression("DataSplitConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLDataSplitConfigUnmarshaller.Instance;
                     unmarshalledObject.DataSplitConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfig", targetDepth))
+                if (context.TestExpression("SecurityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLSecurityConfigUnmarshaller.Instance;
                     unmarshalledObject.SecurityConfig = unmarshaller.Unmarshall(context, ref reader);

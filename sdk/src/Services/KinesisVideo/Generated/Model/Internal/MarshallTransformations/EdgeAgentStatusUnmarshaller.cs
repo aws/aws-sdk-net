@@ -56,13 +56,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastRecorderStatus", targetDepth))
+                if (context.TestExpression("LastRecorderStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = LastRecorderStatusUnmarshaller.Instance;
                     unmarshalledObject.LastRecorderStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUploaderStatus", targetDepth))
+                if (context.TestExpression("LastUploaderStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = LastUploaderStatusUnmarshaller.Instance;
                     unmarshalledObject.LastUploaderStatus = unmarshaller.Unmarshall(context, ref reader);

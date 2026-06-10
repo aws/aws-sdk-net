@@ -56,49 +56,49 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeDefinitions", targetDepth))
+                if (context.TestExpression("AttributeDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeDefinition, AttributeDefinitionUnmarshaller>(AttributeDefinitionUnmarshaller.Instance);
                     unmarshalledObject.AttributeDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BillingMode", targetDepth))
+                if (context.TestExpression("BillingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GlobalSecondaryIndex, GlobalSecondaryIndexUnmarshaller>(GlobalSecondaryIndexUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeySchema", targetDepth))
+                if (context.TestExpression("KeySchema", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughput", targetDepth))
+                if (context.TestExpression("OnDemandThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandThroughputUnmarshaller.Instance;
                     unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughput", targetDepth))
+                if (context.TestExpression("ProvisionedThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedThroughputUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SSESpecification", targetDepth))
+                if (context.TestExpression("SSESpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = SSESpecificationUnmarshaller.Instance;
                     unmarshalledObject.SSESpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);

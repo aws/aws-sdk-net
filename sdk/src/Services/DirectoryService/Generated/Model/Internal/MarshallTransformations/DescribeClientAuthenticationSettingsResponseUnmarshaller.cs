@@ -52,13 +52,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientAuthenticationSettingsInfo", targetDepth))
+                if (context.TestExpression("ClientAuthenticationSettingsInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClientAuthenticationSettingInfo, ClientAuthenticationSettingInfoUnmarshaller>(ClientAuthenticationSettingInfoUnmarshaller.Instance);
                     response.ClientAuthenticationSettingsInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

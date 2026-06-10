@@ -56,13 +56,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Market", targetDepth))
+                if (context.TestExpression("Market", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Market = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SimpleScalingPolicyConfiguration", targetDepth))
+                if (context.TestExpression("SimpleScalingPolicyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SimpleScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SimpleScalingPolicyConfiguration = unmarshaller.Unmarshall(context, ref reader);

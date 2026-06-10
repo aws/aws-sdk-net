@@ -52,19 +52,19 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReplicaKeyMetadata", targetDepth))
+                if (context.TestExpression("ReplicaKeyMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyMetadataUnmarshaller.Instance;
                     response.ReplicaKeyMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaPolicy", targetDepth))
+                if (context.TestExpression("ReplicaPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicaPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaTags", targetDepth))
+                if (context.TestExpression("ReplicaTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.ReplicaTags = unmarshaller.Unmarshall(context, ref reader);

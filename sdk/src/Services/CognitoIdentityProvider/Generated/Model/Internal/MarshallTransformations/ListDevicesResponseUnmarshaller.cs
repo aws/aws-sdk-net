@@ -52,13 +52,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Devices", targetDepth))
+                if (context.TestExpression("Devices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeviceType, DeviceTypeUnmarshaller>(DeviceTypeUnmarshaller.Instance);
                     response.Devices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaginationToken", targetDepth))
+                if (context.TestExpression("PaginationToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PaginationToken = unmarshaller.Unmarshall(context, ref reader);

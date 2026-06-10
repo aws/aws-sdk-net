@@ -52,19 +52,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityForecast", targetDepth))
+                if (context.TestExpression("CapacityForecast", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityForecastUnmarshaller.Instance;
                     response.CapacityForecast = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadForecast", targetDepth))
+                if (context.TestExpression("LoadForecast", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LoadForecast, LoadForecastUnmarshaller>(LoadForecastUnmarshaller.Instance);
                     response.LoadForecast = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateTime", targetDepth))
+                if (context.TestExpression("UpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context, ref reader);

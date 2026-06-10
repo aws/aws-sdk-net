@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentCoreMemoryConfiguration", targetDepth))
+                if (context.TestExpression("agentCoreMemoryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessAgentCoreMemoryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AgentCoreMemoryConfiguration = unmarshaller.Unmarshall(context, ref reader);

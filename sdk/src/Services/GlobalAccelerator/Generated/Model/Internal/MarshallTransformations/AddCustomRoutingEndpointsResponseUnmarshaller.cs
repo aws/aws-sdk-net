@@ -52,13 +52,13 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointDescriptions", targetDepth))
+                if (context.TestExpression("EndpointDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomRoutingEndpointDescription, CustomRoutingEndpointDescriptionUnmarshaller>(CustomRoutingEndpointDescriptionUnmarshaller.Instance);
                     response.EndpointDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupArn", targetDepth))
+                if (context.TestExpression("EndpointGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointGroupArn = unmarshaller.Unmarshall(context, ref reader);

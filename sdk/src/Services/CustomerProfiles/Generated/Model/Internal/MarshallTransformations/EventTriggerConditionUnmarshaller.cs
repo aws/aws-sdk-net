@@ -56,13 +56,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventTriggerDimensions", targetDepth))
+                if (context.TestExpression("EventTriggerDimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventTriggerDimension, EventTriggerDimensionUnmarshaller>(EventTriggerDimensionUnmarshaller.Instance);
                     unmarshalledObject.EventTriggerDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogicalOperator", targetDepth))
+                if (context.TestExpression("LogicalOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogicalOperator = unmarshaller.Unmarshall(context, ref reader);

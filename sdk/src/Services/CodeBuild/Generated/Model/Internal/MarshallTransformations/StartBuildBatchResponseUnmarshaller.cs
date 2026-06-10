@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildBatch", targetDepth))
+                if (context.TestExpression("buildBatch", targetDepth, ref reader))
                 {
                     var unmarshaller = BuildBatchUnmarshaller.Instance;
                     response.BuildBatch = unmarshaller.Unmarshall(context, ref reader);

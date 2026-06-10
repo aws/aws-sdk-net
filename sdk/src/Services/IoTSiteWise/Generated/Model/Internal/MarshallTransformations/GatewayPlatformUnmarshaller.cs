@@ -56,19 +56,19 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("greengrass", targetDepth))
+                if (context.TestExpression("greengrass", targetDepth, ref reader))
                 {
                     var unmarshaller = GreengrassUnmarshaller.Instance;
                     unmarshalledObject.Greengrass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greengrassV2", targetDepth))
+                if (context.TestExpression("greengrassV2", targetDepth, ref reader))
                 {
                     var unmarshaller = GreengrassV2Unmarshaller.Instance;
                     unmarshalledObject.GreengrassV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("siemensIE", targetDepth))
+                if (context.TestExpression("siemensIE", targetDepth, ref reader))
                 {
                     var unmarshaller = SiemensIEUnmarshaller.Instance;
                     unmarshalledObject.SiemensIE = unmarshaller.Unmarshall(context, ref reader);

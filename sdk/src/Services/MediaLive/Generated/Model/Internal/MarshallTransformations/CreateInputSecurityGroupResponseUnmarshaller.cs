@@ -52,7 +52,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("securityGroup", targetDepth))
+                if (context.TestExpression("securityGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSecurityGroupUnmarshaller.Instance;
                     response.SecurityGroup = unmarshaller.Unmarshall(context, ref reader);

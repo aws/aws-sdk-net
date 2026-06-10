@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("harness", targetDepth))
+                if (context.TestExpression("harness", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessUnmarshaller.Instance;
                     response.Harness = unmarshaller.Unmarshall(context, ref reader);

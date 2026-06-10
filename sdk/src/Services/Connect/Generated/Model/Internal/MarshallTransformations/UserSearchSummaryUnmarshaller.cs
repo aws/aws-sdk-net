@@ -56,91 +56,91 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AfterContactWorkConfigs", targetDepth))
+                if (context.TestExpression("AfterContactWorkConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AfterContactWorkConfigPerChannel, AfterContactWorkConfigPerChannelUnmarshaller>(AfterContactWorkConfigPerChannelUnmarshaller.Instance);
                     unmarshalledObject.AfterContactWorkConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoAcceptConfigs", targetDepth))
+                if (context.TestExpression("AutoAcceptConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoAcceptConfig, AutoAcceptConfigUnmarshaller>(AutoAcceptConfigUnmarshaller.Instance);
                     unmarshalledObject.AutoAcceptConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryUserId", targetDepth))
+                if (context.TestExpression("DirectoryUserId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryUserId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HierarchyGroupId", targetDepth))
+                if (context.TestExpression("HierarchyGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HierarchyGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityInfo", targetDepth))
+                if (context.TestExpression("IdentityInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = UserIdentityInfoLiteUnmarshaller.Instance;
                     unmarshalledObject.IdentityInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PersistentConnectionConfigs", targetDepth))
+                if (context.TestExpression("PersistentConnectionConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PersistentConnectionConfig, PersistentConnectionConfigUnmarshaller>(PersistentConnectionConfigUnmarshaller.Instance);
                     unmarshalledObject.PersistentConnectionConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhoneConfig", targetDepth))
+                if (context.TestExpression("PhoneConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UserPhoneConfigUnmarshaller.Instance;
                     unmarshalledObject.PhoneConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhoneNumberConfigs", targetDepth))
+                if (context.TestExpression("PhoneNumberConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PhoneNumberConfig, PhoneNumberConfigUnmarshaller>(PhoneNumberConfigUnmarshaller.Instance);
                     unmarshalledObject.PhoneNumberConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingProfileId", targetDepth))
+                if (context.TestExpression("RoutingProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoutingProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityProfileIds", targetDepth))
+                if (context.TestExpression("SecurityProfileIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityProfileIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Username", targetDepth))
+                if (context.TestExpression("Username", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceEnhancementConfigs", targetDepth))
+                if (context.TestExpression("VoiceEnhancementConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VoiceEnhancementConfig, VoiceEnhancementConfigUnmarshaller>(VoiceEnhancementConfigUnmarshaller.Instance);
                     unmarshalledObject.VoiceEnhancementConfigs = unmarshaller.Unmarshall(context, ref reader);

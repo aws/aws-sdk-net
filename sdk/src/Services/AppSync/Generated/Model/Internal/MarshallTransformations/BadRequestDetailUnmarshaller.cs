@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeErrors", targetDepth))
+                if (context.TestExpression("codeErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeError, CodeErrorUnmarshaller>(CodeErrorUnmarshaller.Instance);
                     unmarshalledObject.CodeErrors = unmarshaller.Unmarshall(context, ref reader);

@@ -56,79 +56,79 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addRule", targetDepth))
+                if (context.TestExpression("addRule", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyAddRuleAnnotationUnmarshaller.Instance;
                     unmarshalledObject.AddRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addRuleFromNaturalLanguage", targetDepth))
+                if (context.TestExpression("addRuleFromNaturalLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyAddRuleFromNaturalLanguageAnnotationUnmarshaller.Instance;
                     unmarshalledObject.AddRuleFromNaturalLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addType", targetDepth))
+                if (context.TestExpression("addType", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyAddTypeAnnotationUnmarshaller.Instance;
                     unmarshalledObject.AddType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addVariable", targetDepth))
+                if (context.TestExpression("addVariable", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyAddVariableAnnotationUnmarshaller.Instance;
                     unmarshalledObject.AddVariable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteRule", targetDepth))
+                if (context.TestExpression("deleteRule", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDeleteRuleAnnotationUnmarshaller.Instance;
                     unmarshalledObject.DeleteRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteType", targetDepth))
+                if (context.TestExpression("deleteType", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDeleteTypeAnnotationUnmarshaller.Instance;
                     unmarshalledObject.DeleteType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteVariable", targetDepth))
+                if (context.TestExpression("deleteVariable", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDeleteVariableAnnotationUnmarshaller.Instance;
                     unmarshalledObject.DeleteVariable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingestContent", targetDepth))
+                if (context.TestExpression("ingestContent", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyIngestContentAnnotationUnmarshaller.Instance;
                     unmarshalledObject.IngestContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateFromRulesFeedback", targetDepth))
+                if (context.TestExpression("updateFromRulesFeedback", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateFromRuleFeedbackAnnotationUnmarshaller.Instance;
                     unmarshalledObject.UpdateFromRulesFeedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateFromScenarioFeedback", targetDepth))
+                if (context.TestExpression("updateFromScenarioFeedback", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateFromScenarioFeedbackAnnotationUnmarshaller.Instance;
                     unmarshalledObject.UpdateFromScenarioFeedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateRule", targetDepth))
+                if (context.TestExpression("updateRule", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateRuleAnnotationUnmarshaller.Instance;
                     unmarshalledObject.UpdateRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateType", targetDepth))
+                if (context.TestExpression("updateType", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateTypeAnnotationUnmarshaller.Instance;
                     unmarshalledObject.UpdateType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateVariable", targetDepth))
+                if (context.TestExpression("updateVariable", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateVariableAnnotationUnmarshaller.Instance;
                     unmarshalledObject.UpdateVariable = unmarshaller.Unmarshall(context, ref reader);

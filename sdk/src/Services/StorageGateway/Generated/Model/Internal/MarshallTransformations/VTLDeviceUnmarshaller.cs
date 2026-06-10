@@ -56,31 +56,31 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeviceiSCSIAttributes", targetDepth))
+                if (context.TestExpression("DeviceiSCSIAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceiSCSIAttributesUnmarshaller.Instance;
                     unmarshalledObject.DeviceiSCSIAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VTLDeviceARN", targetDepth))
+                if (context.TestExpression("VTLDeviceARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VTLDeviceARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VTLDeviceProductIdentifier", targetDepth))
+                if (context.TestExpression("VTLDeviceProductIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VTLDeviceProductIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VTLDeviceType", targetDepth))
+                if (context.TestExpression("VTLDeviceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VTLDeviceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VTLDeviceVendor", targetDepth))
+                if (context.TestExpression("VTLDeviceVendor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VTLDeviceVendor = unmarshaller.Unmarshall(context, ref reader);

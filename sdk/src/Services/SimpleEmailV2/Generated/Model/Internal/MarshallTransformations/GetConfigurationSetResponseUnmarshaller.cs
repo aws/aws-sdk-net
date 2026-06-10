@@ -52,55 +52,55 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArchivingOptions", targetDepth))
+                if (context.TestExpression("ArchivingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchivingOptionsUnmarshaller.Instance;
                     response.ArchivingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
+                if (context.TestExpression("ConfigurationSetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConfigurationSetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeliveryOptions", targetDepth))
+                if (context.TestExpression("DeliveryOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliveryOptionsUnmarshaller.Instance;
                     response.DeliveryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReputationOptions", targetDepth))
+                if (context.TestExpression("ReputationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ReputationOptionsUnmarshaller.Instance;
                     response.ReputationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SendingOptions", targetDepth))
+                if (context.TestExpression("SendingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SendingOptionsUnmarshaller.Instance;
                     response.SendingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuppressionOptions", targetDepth))
+                if (context.TestExpression("SuppressionOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionOptionsUnmarshaller.Instance;
                     response.SuppressionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrackingOptions", targetDepth))
+                if (context.TestExpression("TrackingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TrackingOptionsUnmarshaller.Instance;
                     response.TrackingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VdmOptions", targetDepth))
+                if (context.TestExpression("VdmOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = VdmOptionsUnmarshaller.Instance;
                     response.VdmOptions = unmarshaller.Unmarshall(context, ref reader);

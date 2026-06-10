@@ -56,13 +56,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Priority", targetDepth))
+                if (context.TestExpression("Priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleDefinition", targetDepth))
+                if (context.TestExpression("RuleDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleDefinitionUnmarshaller.Instance;
                     unmarshalledObject.RuleDefinition = unmarshaller.Unmarshall(context, ref reader);

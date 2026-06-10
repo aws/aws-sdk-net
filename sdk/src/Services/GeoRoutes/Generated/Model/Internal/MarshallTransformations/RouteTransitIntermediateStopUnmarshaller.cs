@@ -56,31 +56,31 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Departure", targetDepth))
+                if (context.TestExpression("Departure", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTransitDepartureUnmarshaller.Instance;
                     unmarshalledObject.Departure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("Duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeometryOffset", targetDepth))
+                if (context.TestExpression("GeometryOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transport", targetDepth))
+                if (context.TestExpression("Transport", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTransitTransportModeDetailsUnmarshaller.Instance;
                     unmarshalledObject.Transport = unmarshaller.Unmarshall(context, ref reader);

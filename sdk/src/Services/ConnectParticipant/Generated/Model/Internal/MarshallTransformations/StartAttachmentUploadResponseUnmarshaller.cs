@@ -52,13 +52,13 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentId", targetDepth))
+                if (context.TestExpression("AttachmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AttachmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadMetadata", targetDepth))
+                if (context.TestExpression("UploadMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = UploadMetadataUnmarshaller.Instance;
                     response.UploadMetadata = unmarshaller.Unmarshall(context, ref reader);

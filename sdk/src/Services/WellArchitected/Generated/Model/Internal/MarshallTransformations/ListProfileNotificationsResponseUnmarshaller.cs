@@ -52,13 +52,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationSummaries", targetDepth))
+                if (context.TestExpression("NotificationSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileNotificationSummary, ProfileNotificationSummaryUnmarshaller>(ProfileNotificationSummaryUnmarshaller.Instance);
                     response.NotificationSummaries = unmarshaller.Unmarshall(context, ref reader);

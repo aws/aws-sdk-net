@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaGrader", targetDepth))
+                if (context.TestExpression("lambdaGrader", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaGraderConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaGrader = unmarshaller.Unmarshall(context, ref reader);

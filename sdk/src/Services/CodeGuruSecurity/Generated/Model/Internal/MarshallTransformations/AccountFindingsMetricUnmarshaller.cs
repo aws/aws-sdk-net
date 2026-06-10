@@ -56,31 +56,31 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("closedFindings", targetDepth))
+                if (context.TestExpression("closedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
                     unmarshalledObject.ClosedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("date", targetDepth))
+                if (context.TestExpression("date", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("meanTimeToClose", targetDepth))
+                if (context.TestExpression("meanTimeToClose", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
                     unmarshalledObject.MeanTimeToClose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newFindings", targetDepth))
+                if (context.TestExpression("newFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
                     unmarshalledObject.NewFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openFindings", targetDepth))
+                if (context.TestExpression("openFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
                     unmarshalledObject.OpenFindings = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("successful", targetDepth))
+                if (context.TestExpression("successful", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleUpdateSuccess, RuleUpdateSuccessUnmarshaller>(RuleUpdateSuccessUnmarshaller.Instance);
                     response.Successful = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unsuccessful", targetDepth))
+                if (context.TestExpression("unsuccessful", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleUpdateFailure, RuleUpdateFailureUnmarshaller>(RuleUpdateFailureUnmarshaller.Instance);
                     response.Unsuccessful = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationName", targetDepth))
+                if (context.TestExpression("applicationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revision", targetDepth))
+                if (context.TestExpression("revision", targetDepth, ref reader))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;
                     response.Revision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revisionInfo", targetDepth))
+                if (context.TestExpression("revisionInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = GenericRevisionInfoUnmarshaller.Instance;
                     response.RevisionInfo = unmarshaller.Unmarshall(context, ref reader);

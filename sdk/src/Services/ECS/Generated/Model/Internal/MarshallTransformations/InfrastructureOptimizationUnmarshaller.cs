@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scaleInAfter", targetDepth))
+                if (context.TestExpression("scaleInAfter", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleInAfter = unmarshaller.Unmarshall(context, ref reader);

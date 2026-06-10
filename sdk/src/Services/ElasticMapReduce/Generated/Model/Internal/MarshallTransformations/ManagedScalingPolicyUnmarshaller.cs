@@ -56,19 +56,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputeLimits", targetDepth))
+                if (context.TestExpression("ComputeLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeLimitsUnmarshaller.Instance;
                     unmarshalledObject.ComputeLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingStrategy", targetDepth))
+                if (context.TestExpression("ScalingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalingStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UtilizationPerformanceIndex", targetDepth))
+                if (context.TestExpression("UtilizationPerformanceIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UtilizationPerformanceIndex = unmarshaller.Unmarshall(context, ref reader);

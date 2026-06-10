@@ -56,19 +56,19 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComparisonOperator", targetDepth))
+                if (context.TestExpression("ComparisonOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricThreshold", targetDepth))
+                if (context.TestExpression("MetricThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SliMetric", targetDepth))
+                if (context.TestExpression("SliMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceLevelIndicatorMetricUnmarshaller.Instance;
                     unmarshalledObject.SliMetric = unmarshaller.Unmarshall(context, ref reader);

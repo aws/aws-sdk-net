@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("oauth2", targetDepth))
+                if (context.TestExpression("oauth2", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2AuthorizationDataUnmarshaller.Instance;
                     unmarshalledObject.Oauth2 = unmarshaller.Unmarshall(context, ref reader);

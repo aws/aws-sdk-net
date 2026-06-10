@@ -52,19 +52,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessions", targetDepth))
+                if (context.TestExpression("sessions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SessionSpecification, SessionSpecificationUnmarshaller>(SessionSpecificationUnmarshaller.Instance);
                     response.Sessions = unmarshaller.Unmarshall(context, ref reader);

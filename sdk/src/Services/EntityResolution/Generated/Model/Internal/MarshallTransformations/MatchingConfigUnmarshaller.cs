@@ -56,7 +56,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enableTransitiveMatching", targetDepth))
+                if (context.TestExpression("enableTransitiveMatching", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableTransitiveMatching = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityUsageSummary", targetDepth))
+                if (context.TestExpression("CapacityUsageSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityUsageSummaryUnmarshaller.Instance;
                     unmarshalledObject.CapacityUsageSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth))
+                if (context.TestExpression("ConfigurationSyncStateSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationSyncStateSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SyncStates", targetDepth))
+                if (context.TestExpression("SyncStates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SyncState, StringUnmarshaller, SyncStateUnmarshaller>(StringUnmarshaller.Instance, SyncStateUnmarshaller.Instance);
                     unmarshalledObject.SyncStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth))
+                if (context.TestExpression("TransitGatewayAttachmentSyncState", targetDepth, ref reader))
                 {
                     var unmarshaller = TransitGatewayAttachmentSyncStateUnmarshaller.Instance;
                     unmarshalledObject.TransitGatewayAttachmentSyncState = unmarshaller.Unmarshall(context, ref reader);

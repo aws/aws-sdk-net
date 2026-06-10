@@ -56,43 +56,43 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addedToServiceDateTime", targetDepth))
+                if (context.TestExpression("addedToServiceDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddedToServiceDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elapsedReplicationDuration", targetDepth))
+                if (context.TestExpression("elapsedReplicationDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElapsedReplicationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstByteDateTime", targetDepth))
+                if (context.TestExpression("firstByteDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirstByteDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastCutover", targetDepth))
+                if (context.TestExpression("lastCutover", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastCutoverUnmarshaller.Instance;
                     unmarshalledObject.LastCutover = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastSeenByServiceDateTime", targetDepth))
+                if (context.TestExpression("lastSeenByServiceDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastSeenByServiceDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastTest", targetDepth))
+                if (context.TestExpression("lastTest", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastTestUnmarshaller.Instance;
                     unmarshalledObject.LastTest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Height", targetDepth))
+                if (context.TestExpression("Height", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Padding", targetDepth))
+                if (context.TestExpression("Padding", targetDepth, ref reader))
                 {
                     var unmarshaller = SpacingUnmarshaller.Instance;
                     unmarshalledObject.Padding = unmarshaller.Unmarshall(context, ref reader);

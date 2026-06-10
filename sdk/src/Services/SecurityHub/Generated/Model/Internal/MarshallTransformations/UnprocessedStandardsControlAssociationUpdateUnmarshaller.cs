@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorReason", targetDepth))
+                if (context.TestExpression("ErrorReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardsControlAssociationUpdate", targetDepth))
+                if (context.TestExpression("StandardsControlAssociationUpdate", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardsControlAssociationUpdateUnmarshaller.Instance;
                     unmarshalledObject.StandardsControlAssociationUpdate = unmarshaller.Unmarshall(context, ref reader);

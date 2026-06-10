@@ -52,7 +52,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("statuses", targetDepth))
+                if (context.TestExpression("statuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrustedAdvisorCheckRefreshStatus, TrustedAdvisorCheckRefreshStatusUnmarshaller>(TrustedAdvisorCheckRefreshStatusUnmarshaller.Instance);
                     response.Statuses = unmarshaller.Unmarshall(context, ref reader);

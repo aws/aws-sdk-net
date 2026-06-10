@@ -56,25 +56,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InterruptionFilter", targetDepth))
+                if (context.TestExpression("InterruptionFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = InterruptionFilterUnmarshaller.Instance;
                     unmarshalledObject.InterruptionFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonTalkTimeFilter", targetDepth))
+                if (context.TestExpression("NonTalkTimeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NonTalkTimeFilterUnmarshaller.Instance;
                     unmarshalledObject.NonTalkTimeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SentimentFilter", targetDepth))
+                if (context.TestExpression("SentimentFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentFilterUnmarshaller.Instance;
                     unmarshalledObject.SentimentFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranscriptFilter", targetDepth))
+                if (context.TestExpression("TranscriptFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TranscriptFilterUnmarshaller.Instance;
                     unmarshalledObject.TranscriptFilter = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Intune", targetDepth))
+                if (context.TestExpression("Intune", targetDepth, ref reader))
                 {
                     var unmarshaller = IntuneConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Intune = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomaticUpdatePolicy", targetDepth))
+                if (context.TestExpression("AutomaticUpdatePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutomaticUpdatePolicy = unmarshaller.Unmarshall(context, ref reader);

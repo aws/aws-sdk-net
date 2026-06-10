@@ -56,19 +56,19 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clipping", targetDepth))
+                if (context.TestExpression("clipping", targetDepth, ref reader))
                 {
                     var unmarshaller = ClippingConfigUnmarshaller.Instance;
                     unmarshalledObject.Clipping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cropping", targetDepth))
+                if (context.TestExpression("cropping", targetDepth, ref reader))
                 {
                     var unmarshaller = CroppingConfigUnmarshaller.Instance;
                     unmarshalledObject.Cropping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subtitling", targetDepth))
+                if (context.TestExpression("subtitling", targetDepth, ref reader))
                 {
                     var unmarshaller = SubtitlingConfigUnmarshaller.Instance;
                     unmarshalledObject.Subtitling = unmarshaller.Unmarshall(context, ref reader);

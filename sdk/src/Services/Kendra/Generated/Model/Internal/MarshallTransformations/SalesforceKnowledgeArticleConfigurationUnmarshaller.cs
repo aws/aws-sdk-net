@@ -56,19 +56,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomKnowledgeArticleTypeConfigurations", targetDepth))
+                if (context.TestExpression("CustomKnowledgeArticleTypeConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SalesforceCustomKnowledgeArticleTypeConfiguration, SalesforceCustomKnowledgeArticleTypeConfigurationUnmarshaller>(SalesforceCustomKnowledgeArticleTypeConfigurationUnmarshaller.Instance);
                     unmarshalledObject.CustomKnowledgeArticleTypeConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludedStates", targetDepth))
+                if (context.TestExpression("IncludedStates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludedStates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardKnowledgeArticleTypeConfiguration", targetDepth))
+                if (context.TestExpression("StandardKnowledgeArticleTypeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceStandardKnowledgeArticleTypeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StandardKnowledgeArticleTypeConfiguration = unmarshaller.Unmarshall(context, ref reader);

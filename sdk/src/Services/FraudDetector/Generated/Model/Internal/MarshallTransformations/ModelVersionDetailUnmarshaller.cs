@@ -56,79 +56,79 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdTime", targetDepth))
+                if (context.TestExpression("createdTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalEventsDetail", targetDepth))
+                if (context.TestExpression("externalEventsDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalEventsDetailUnmarshaller.Instance;
                     unmarshalledObject.ExternalEventsDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingestedEventsDetail", targetDepth))
+                if (context.TestExpression("ingestedEventsDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestedEventsDetailUnmarshaller.Instance;
                     unmarshalledObject.IngestedEventsDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedTime", targetDepth))
+                if (context.TestExpression("lastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelType", targetDepth))
+                if (context.TestExpression("modelType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelVersionNumber", targetDepth))
+                if (context.TestExpression("modelVersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelVersionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDataSchema", targetDepth))
+                if (context.TestExpression("trainingDataSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingDataSchemaUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDataSource", targetDepth))
+                if (context.TestExpression("trainingDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingResult", targetDepth))
+                if (context.TestExpression("trainingResult", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingResultUnmarshaller.Instance;
                     unmarshalledObject.TrainingResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingResultV2", targetDepth))
+                if (context.TestExpression("trainingResultV2", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingResultV2Unmarshaller.Instance;
                     unmarshalledObject.TrainingResultV2 = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Iscsi", targetDepth))
+                if (context.TestExpression("Iscsi", targetDepth, ref reader))
                 {
                     var unmarshaller = SvmEndpointUnmarshaller.Instance;
                     unmarshalledObject.Iscsi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Management", targetDepth))
+                if (context.TestExpression("Management", targetDepth, ref reader))
                 {
                     var unmarshaller = SvmEndpointUnmarshaller.Instance;
                     unmarshalledObject.Management = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Nfs", targetDepth))
+                if (context.TestExpression("Nfs", targetDepth, ref reader))
                 {
                     var unmarshaller = SvmEndpointUnmarshaller.Instance;
                     unmarshalledObject.Nfs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Smb", targetDepth))
+                if (context.TestExpression("Smb", targetDepth, ref reader))
                 {
                     var unmarshaller = SvmEndpointUnmarshaller.Instance;
                     unmarshalledObject.Smb = unmarshaller.Unmarshall(context, ref reader);

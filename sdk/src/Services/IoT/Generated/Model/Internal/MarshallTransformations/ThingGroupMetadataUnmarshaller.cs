@@ -56,19 +56,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationDate", targetDepth))
+                if (context.TestExpression("creationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentGroupName", targetDepth))
+                if (context.TestExpression("parentGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootToParentThingGroups", targetDepth))
+                if (context.TestExpression("rootToParentThingGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupNameAndArn, GroupNameAndArnUnmarshaller>(GroupNameAndArnUnmarshaller.Instance);
                     unmarshalledObject.RootToParentThingGroups = unmarshaller.Unmarshall(context, ref reader);

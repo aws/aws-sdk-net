@@ -56,25 +56,25 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourceTypeStatistics", targetDepth))
+                if (context.TestExpression("resourceTypeStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ResourceTypeDetails, StringUnmarshaller, ResourceTypeDetailsUnmarshaller>(StringUnmarshaller.Instance, ResourceTypeDetailsUnmarshaller.Instance);
                     unmarshalledObject.ResourceTypeStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalActiveFindings", targetDepth))
+                if (context.TestExpression("totalActiveFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalActiveFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalArchivedFindings", targetDepth))
+                if (context.TestExpression("totalArchivedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalArchivedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalResolvedFindings", targetDepth))
+                if (context.TestExpression("totalResolvedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalResolvedFindings = unmarshaller.Unmarshall(context, ref reader);

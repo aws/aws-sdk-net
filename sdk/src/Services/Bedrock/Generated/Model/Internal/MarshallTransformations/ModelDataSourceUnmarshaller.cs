@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3DataSource", targetDepth))
+                if (context.TestExpression("s3DataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataSourceUnmarshaller.Instance;
                     unmarshalledObject.S3DataSource = unmarshaller.Unmarshall(context, ref reader);

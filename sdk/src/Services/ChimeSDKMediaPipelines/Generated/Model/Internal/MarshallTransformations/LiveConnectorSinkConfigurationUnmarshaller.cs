@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RTMPConfiguration", targetDepth))
+                if (context.TestExpression("RTMPConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LiveConnectorRTMPConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RTMPConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SinkType", targetDepth))
+                if (context.TestExpression("SinkType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SinkType = unmarshaller.Unmarshall(context, ref reader);

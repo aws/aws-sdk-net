@@ -52,19 +52,19 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failed", targetDepth))
+                if (context.TestExpression("failed", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchUserErrorResponseItem, BatchUserErrorResponseItemUnmarshaller>(BatchUserErrorResponseItemUnmarshaller.Instance);
                     response.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successful", targetDepth))
+                if (context.TestExpression("successful", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<User, UserUnmarshaller>(UserUnmarshaller.Instance);
                     response.Successful = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CostDrivers", targetDepth))
+                if (context.TestExpression("CostDrivers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CostDriver, CostDriverUnmarshaller>(CostDriverUnmarshaller.Instance);
                     unmarshalledObject.CostDrivers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CostSelector", targetDepth))
+                if (context.TestExpression("CostSelector", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
                     unmarshalledObject.CostSelector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComparisonMetricValue, StringUnmarshaller, ComparisonMetricValueUnmarshaller>(StringUnmarshaller.Instance, ComparisonMetricValueUnmarshaller.Instance);
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);

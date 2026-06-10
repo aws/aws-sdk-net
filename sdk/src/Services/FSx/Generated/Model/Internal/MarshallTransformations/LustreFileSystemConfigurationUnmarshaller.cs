@@ -56,97 +56,97 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
+                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTagsToBackups", targetDepth))
+                if (context.TestExpression("CopyTagsToBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
+                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCompressionType", targetDepth))
+                if (context.TestExpression("DataCompressionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataReadCacheConfiguration", targetDepth))
+                if (context.TestExpression("DataReadCacheConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LustreReadCacheConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataReadCacheConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataRepositoryConfiguration", targetDepth))
+                if (context.TestExpression("DataRepositoryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataRepositoryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataRepositoryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentType", targetDepth))
+                if (context.TestExpression("DeploymentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DriveCacheType", targetDepth))
+                if (context.TestExpression("DriveCacheType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DriveCacheType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EfaEnabled", targetDepth))
+                if (context.TestExpression("EfaEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EfaEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogConfiguration", targetDepth))
+                if (context.TestExpression("LogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LustreLogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataConfiguration", targetDepth))
+                if (context.TestExpression("MetadataConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSystemLustreMetadataConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MountName", targetDepth))
+                if (context.TestExpression("MountName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerUnitStorageThroughput", targetDepth))
+                if (context.TestExpression("PerUnitStorageThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PerUnitStorageThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootSquashConfiguration", targetDepth))
+                if (context.TestExpression("RootSquashConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LustreRootSquashConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RootSquashConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThroughputCapacity", targetDepth))
+                if (context.TestExpression("ThroughputCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
+                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resources", targetDepth))
+                    if (context.TestExpression("resources", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ResourceConflict, ResourceConflictUnmarshaller>(ResourceConflictUnmarshaller.Instance);
                         unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resourceArn", targetDepth))
+                    if (context.TestExpression("resourceArn", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

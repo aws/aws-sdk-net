@@ -56,13 +56,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResultSetMetadata", targetDepth))
+                if (context.TestExpression("ResultSetMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultSetMetadataUnmarshaller.Instance;
                     unmarshalledObject.ResultSetMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rows", targetDepth))
+                if (context.TestExpression("Rows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);
                     unmarshalledObject.Rows = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Iam", targetDepth))
+                if (context.TestExpression("Iam", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationSaslIamDetailsUnmarshaller.Instance;
                     unmarshalledObject.Iam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scram", targetDepth))
+                if (context.TestExpression("Scram", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationSaslScramDetailsUnmarshaller.Instance;
                     unmarshalledObject.Scram = unmarshaller.Unmarshall(context, ref reader);

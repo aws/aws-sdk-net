@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Workflow", targetDepth))
+                if (context.TestExpression("Workflow", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribedWorkflowUnmarshaller.Instance;
                     response.Workflow = unmarshaller.Unmarshall(context, ref reader);

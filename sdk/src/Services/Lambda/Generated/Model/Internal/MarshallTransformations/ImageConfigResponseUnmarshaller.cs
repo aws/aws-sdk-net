@@ -56,13 +56,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Error", targetDepth))
+                if (context.TestExpression("Error", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageConfigErrorUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageConfig", targetDepth))
+                if (context.TestExpression("ImageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageConfigUnmarshaller.Instance;
                     unmarshalledObject.ImageConfig = unmarshaller.Unmarshall(context, ref reader);

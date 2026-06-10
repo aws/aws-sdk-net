@@ -56,55 +56,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Comparison", targetDepth))
+                if (context.TestExpression("Comparison", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparisonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Comparison = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValueDisplayType", targetDepth))
+                if (context.TestExpression("PrimaryValueDisplayType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryValueDisplayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValueFontConfiguration", targetDepth))
+                if (context.TestExpression("PrimaryValueFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PrimaryValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgressBar", targetDepth))
+                if (context.TestExpression("ProgressBar", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgressBarOptionsUnmarshaller.Instance;
                     unmarshalledObject.ProgressBar = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryValue", targetDepth))
+                if (context.TestExpression("SecondaryValue", targetDepth, ref reader))
                 {
                     var unmarshaller = SecondaryValueOptionsUnmarshaller.Instance;
                     unmarshalledObject.SecondaryValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryValueFontConfiguration", targetDepth))
+                if (context.TestExpression("SecondaryValueFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecondaryValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sparkline", targetDepth))
+                if (context.TestExpression("Sparkline", targetDepth, ref reader))
                 {
                     var unmarshaller = KPISparklineOptionsUnmarshaller.Instance;
                     unmarshalledObject.Sparkline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrendArrows", targetDepth))
+                if (context.TestExpression("TrendArrows", targetDepth, ref reader))
                 {
                     var unmarshaller = TrendArrowOptionsUnmarshaller.Instance;
                     unmarshalledObject.TrendArrows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualLayoutOptions", targetDepth))
+                if (context.TestExpression("VisualLayoutOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = KPIVisualLayoutOptionsUnmarshaller.Instance;
                     unmarshalledObject.VisualLayoutOptions = unmarshaller.Unmarshall(context, ref reader);

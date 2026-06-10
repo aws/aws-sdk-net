@@ -56,97 +56,97 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DICOMAccessionNumber", targetDepth))
+                if (context.TestExpression("DICOMAccessionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMAccessionNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMNumberOfStudyRelatedInstances", targetDepth))
+                if (context.TestExpression("DICOMNumberOfStudyRelatedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMNumberOfStudyRelatedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMNumberOfStudyRelatedSeries", targetDepth))
+                if (context.TestExpression("DICOMNumberOfStudyRelatedSeries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMNumberOfStudyRelatedSeries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMPatientBirthDate", targetDepth))
+                if (context.TestExpression("DICOMPatientBirthDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMPatientBirthDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMPatientId", targetDepth))
+                if (context.TestExpression("DICOMPatientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMPatientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMPatientName", targetDepth))
+                if (context.TestExpression("DICOMPatientName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMPatientName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMPatientSex", targetDepth))
+                if (context.TestExpression("DICOMPatientSex", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMPatientSex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMSeriesBodyPart", targetDepth))
+                if (context.TestExpression("DICOMSeriesBodyPart", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMSeriesBodyPart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMSeriesInstanceUID", targetDepth))
+                if (context.TestExpression("DICOMSeriesInstanceUID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMSeriesInstanceUID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMSeriesModality", targetDepth))
+                if (context.TestExpression("DICOMSeriesModality", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMSeriesModality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMSeriesNumber", targetDepth))
+                if (context.TestExpression("DICOMSeriesNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DICOMSeriesNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMStudyDate", targetDepth))
+                if (context.TestExpression("DICOMStudyDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMStudyDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMStudyDescription", targetDepth))
+                if (context.TestExpression("DICOMStudyDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMStudyDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMStudyId", targetDepth))
+                if (context.TestExpression("DICOMStudyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMStudyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMStudyInstanceUID", targetDepth))
+                if (context.TestExpression("DICOMStudyInstanceUID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMStudyInstanceUID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DICOMStudyTime", targetDepth))
+                if (context.TestExpression("DICOMStudyTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DICOMStudyTime = unmarshaller.Unmarshall(context, ref reader);

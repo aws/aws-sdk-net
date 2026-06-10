@@ -56,19 +56,19 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsSso", targetDepth))
+                if (context.TestExpression("awsSso", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsSsoAuthenticationUnmarshaller.Instance;
                     unmarshalledObject.AwsSso = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providers", targetDepth))
+                if (context.TestExpression("providers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Providers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("saml", targetDepth))
+                if (context.TestExpression("saml", targetDepth, ref reader))
                 {
                     var unmarshaller = SamlAuthenticationUnmarshaller.Instance;
                     unmarshalledObject.Saml = unmarshaller.Unmarshall(context, ref reader);

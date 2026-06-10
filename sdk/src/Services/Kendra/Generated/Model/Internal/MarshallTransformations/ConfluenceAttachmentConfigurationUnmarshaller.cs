@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentFieldMappings", targetDepth))
+                if (context.TestExpression("AttachmentFieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfluenceAttachmentToIndexFieldMapping, ConfluenceAttachmentToIndexFieldMappingUnmarshaller>(ConfluenceAttachmentToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.AttachmentFieldMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlAttachments", targetDepth))
+                if (context.TestExpression("CrawlAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context, ref reader);

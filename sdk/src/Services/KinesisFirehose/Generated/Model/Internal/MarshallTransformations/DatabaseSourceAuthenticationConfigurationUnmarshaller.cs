@@ -56,7 +56,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SecretsManagerConfiguration", targetDepth))
+                if (context.TestExpression("SecretsManagerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerConfiguration = unmarshaller.Unmarshall(context, ref reader);

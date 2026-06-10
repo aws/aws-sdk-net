@@ -52,13 +52,13 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelAssociations", targetDepth))
+                if (context.TestExpression("channelAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedNotificationChannelAssociationSummary, ManagedNotificationChannelAssociationSummaryUnmarshaller>(ManagedNotificationChannelAssociationSummaryUnmarshaller.Instance);
                     response.ChannelAssociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobRunAttempts", targetDepth))
+                if (context.TestExpression("jobRunAttempts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobRunAttemptSummary, JobRunAttemptSummaryUnmarshaller>(JobRunAttemptSummaryUnmarshaller.Instance);
                     response.JobRunAttempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

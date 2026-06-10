@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TranscriptItems", targetDepth))
+                if (context.TestExpression("TranscriptItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RealTimeContactAnalysisTranscriptItemWithContent, RealTimeContactAnalysisTranscriptItemWithContentUnmarshaller>(RealTimeContactAnalysisTranscriptItemWithContentUnmarshaller.Instance);
                     unmarshalledObject.TranscriptItems = unmarshaller.Unmarshall(context, ref reader);

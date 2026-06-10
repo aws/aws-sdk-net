@@ -52,7 +52,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RegexPatternSet", targetDepth))
+                if (context.TestExpression("RegexPatternSet", targetDepth, ref reader))
                 {
                     var unmarshaller = RegexPatternSetUnmarshaller.Instance;
                     response.RegexPatternSet = unmarshaller.Unmarshall(context, ref reader);

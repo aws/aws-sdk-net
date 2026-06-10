@@ -56,7 +56,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inheritance", targetDepth))
+                if (context.TestExpression("inheritance", targetDepth, ref reader))
                 {
                     var unmarshaller = EnabledBaselineInheritanceDriftUnmarshaller.Instance;
                     unmarshalledObject.Inheritance = unmarshaller.Unmarshall(context, ref reader);

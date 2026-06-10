@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WhatIfPointScenario", targetDepth))
+                if (context.TestExpression("WhatIfPointScenario", targetDepth, ref reader))
                 {
                     var unmarshaller = WhatIfPointScenarioUnmarshaller.Instance;
                     unmarshalledObject.WhatIfPointScenario = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WhatIfRangeScenario", targetDepth))
+                if (context.TestExpression("WhatIfRangeScenario", targetDepth, ref reader))
                 {
                     var unmarshaller = WhatIfRangeScenarioUnmarshaller.Instance;
                     unmarshalledObject.WhatIfRangeScenario = unmarshaller.Unmarshall(context, ref reader);

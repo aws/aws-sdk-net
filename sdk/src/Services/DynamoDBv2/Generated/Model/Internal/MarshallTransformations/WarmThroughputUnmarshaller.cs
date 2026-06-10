@@ -56,13 +56,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReadUnitsPerSecond", targetDepth))
+                if (context.TestExpression("ReadUnitsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadUnitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WriteUnitsPerSecond", targetDepth))
+                if (context.TestExpression("WriteUnitsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WriteUnitsPerSecond = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedRuleGroupStatement", targetDepth))
+                if (context.TestExpression("ManagedRuleGroupStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedRuleGroupStatementUnmarshaller.Instance;
                     unmarshalledObject.ManagedRuleGroupStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleGroupReferenceStatement", targetDepth))
+                if (context.TestExpression("RuleGroupReferenceStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupReferenceStatementUnmarshaller.Instance;
                     unmarshalledObject.RuleGroupReferenceStatement = unmarshaller.Unmarshall(context, ref reader);

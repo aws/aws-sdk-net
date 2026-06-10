@@ -52,7 +52,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReportJob", targetDepth))
+                if (context.TestExpression("ReportJob", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportJobUnmarshaller.Instance;
                     response.ReportJob = unmarshaller.Unmarshall(context, ref reader);

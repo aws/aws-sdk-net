@@ -56,43 +56,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointConfiguration", targetDepth))
+                if (context.TestExpression("EndpointConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EndpointOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointMetrics", targetDepth))
+                if (context.TestExpression("EndpointMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceMetricsUnmarshaller.Instance;
                     unmarshalledObject.EndpointMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvocationEndTime", targetDepth))
+                if (context.TestExpression("InvocationEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvocationEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvocationStartTime", targetDepth))
+                if (context.TestExpression("InvocationStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvocationStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationMetricsUnmarshaller.Instance;
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelConfiguration", targetDepth))
+                if (context.TestExpression("ModelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ModelConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("elasticLoadBalancing", targetDepth))
+                if (context.TestExpression("elasticLoadBalancing", targetDepth, ref reader))
                 {
                     var unmarshaller = ElasticLoadBalancingUnmarshaller.Instance;
                     unmarshalledObject.ElasticLoadBalancing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipFamily", targetDepth))
+                if (context.TestExpression("ipFamily", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceIpv4Cidr", targetDepth))
+                if (context.TestExpression("serviceIpv4Cidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceIpv6Cidr", targetDepth))
+                if (context.TestExpression("serviceIpv6Cidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context, ref reader);

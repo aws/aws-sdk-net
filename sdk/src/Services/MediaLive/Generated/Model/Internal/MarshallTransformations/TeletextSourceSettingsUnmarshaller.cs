@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("outputRectangle", targetDepth))
+                if (context.TestExpression("outputRectangle", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptionRectangleUnmarshaller.Instance;
                     unmarshalledObject.OutputRectangle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pageNumber", targetDepth))
+                if (context.TestExpression("pageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);

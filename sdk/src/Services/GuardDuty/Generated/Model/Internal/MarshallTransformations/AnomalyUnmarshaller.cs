@@ -56,13 +56,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("profiles", targetDepth))
+                if (context.TestExpression("profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, List<AnomalyObject>>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, List<AnomalyObject>, StringUnmarshaller, JsonListUnmarshaller<AnomalyObject,AnomalyObjectUnmarshaller>>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, List<AnomalyObject>, StringUnmarshaller, JsonListUnmarshaller<AnomalyObject,AnomalyObjectUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<AnomalyObject, AnomalyObjectUnmarshaller>(AnomalyObjectUnmarshaller.Instance)));
                     unmarshalledObject.Profiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusual", targetDepth))
+                if (context.TestExpression("unusual", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalyUnusualUnmarshaller.Instance;
                     unmarshalledObject.Unusual = unmarshaller.Unmarshall(context, ref reader);

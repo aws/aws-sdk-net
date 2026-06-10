@@ -52,19 +52,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedKeyRegistration", targetDepth))
+                if (context.TestExpression("FailedKeyRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedKeyRegistrationEntry, FailedKeyRegistrationEntryUnmarshaller>(FailedKeyRegistrationEntryUnmarshaller.Instance);
                     response.FailedKeyRegistration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessfulKeyRegistration", targetDepth))
+                if (context.TestExpression("SuccessfulKeyRegistration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuccessfulKeyRegistrationEntry, SuccessfulKeyRegistrationEntryUnmarshaller>(SuccessfulKeyRegistrationEntryUnmarshaller.Instance);
                     response.SuccessfulKeyRegistration = unmarshaller.Unmarshall(context, ref reader);

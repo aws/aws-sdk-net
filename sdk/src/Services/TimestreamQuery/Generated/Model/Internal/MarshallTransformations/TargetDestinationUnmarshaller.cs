@@ -56,7 +56,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TimestreamDestination", targetDepth))
+                if (context.TestExpression("TimestreamDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestreamDestinationUnmarshaller.Instance;
                     unmarshalledObject.TimestreamDestination = unmarshaller.Unmarshall(context, ref reader);

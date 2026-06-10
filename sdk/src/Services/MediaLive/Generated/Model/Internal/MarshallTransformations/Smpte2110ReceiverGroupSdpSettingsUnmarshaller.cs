@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ancillarySdps", targetDepth))
+                if (context.TestExpression("ancillarySdps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
                     unmarshalledObject.AncillarySdps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioSdps", targetDepth))
+                if (context.TestExpression("audioSdps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputSdpLocation, InputSdpLocationUnmarshaller>(InputSdpLocationUnmarshaller.Instance);
                     unmarshalledObject.AudioSdps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoSdp", targetDepth))
+                if (context.TestExpression("videoSdp", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSdpLocationUnmarshaller.Instance;
                     unmarshalledObject.VideoSdp = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdvancedEventSelectors", targetDepth))
+                if (context.TestExpression("AdvancedEventSelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdvancedEventSelector, AdvancedEventSelectorUnmarshaller>(AdvancedEventSelectorUnmarshaller.Instance);
                     unmarshalledObject.AdvancedEventSelectors = unmarshaller.Unmarshall(context, ref reader);

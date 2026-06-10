@@ -56,19 +56,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkType", targetDepth))
+                if (context.TestExpression("networkType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicAccess", targetDepth))
+                if (context.TestExpression("publicAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicAccessUnmarshaller.Instance;
                     unmarshalledObject.PublicAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConnectivity", targetDepth))
+                if (context.TestExpression("vpcConnectivity", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectivityUnmarshaller.Instance;
                     unmarshalledObject.VpcConnectivity = unmarshaller.Unmarshall(context, ref reader);

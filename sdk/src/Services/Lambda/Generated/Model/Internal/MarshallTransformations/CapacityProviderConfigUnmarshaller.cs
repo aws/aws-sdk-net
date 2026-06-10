@@ -56,7 +56,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LambdaManagedInstancesCapacityProviderConfig", targetDepth))
+                if (context.TestExpression("LambdaManagedInstancesCapacityProviderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaManagedInstancesCapacityProviderConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaManagedInstancesCapacityProviderConfig = unmarshaller.Unmarshall(context, ref reader);

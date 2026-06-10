@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioDescriptionNames", targetDepth))
+                if (context.TestExpression("audioDescriptionNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AudioDescriptionNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionDescriptionNames", targetDepth))
+                if (context.TestExpression("captionDescriptionNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CaptionDescriptionNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputName", targetDepth))
+                if (context.TestExpression("outputName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSettings", targetDepth))
+                if (context.TestExpression("outputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.OutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoDescriptionName", targetDepth))
+                if (context.TestExpression("videoDescriptionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VideoDescriptionName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceleratorArn", targetDepth))
+                if (context.TestExpression("AcceleratorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AcceleratorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AcceleratorSocketAddresses", targetDepth))
+                if (context.TestExpression("AcceleratorSocketAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SocketAddress, SocketAddressUnmarshaller>(SocketAddressUnmarshaller.Instance);
                     unmarshalledObject.AcceleratorSocketAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationSocketAddress", targetDepth))
+                if (context.TestExpression("DestinationSocketAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = SocketAddressUnmarshaller.Instance;
                     unmarshalledObject.DestinationSocketAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationTrafficState", targetDepth))
+                if (context.TestExpression("DestinationTrafficState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTrafficState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupArn", targetDepth))
+                if (context.TestExpression("EndpointGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupRegion", targetDepth))
+                if (context.TestExpression("EndpointGroupRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointId", targetDepth))
+                if (context.TestExpression("EndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddressType", targetDepth))
+                if (context.TestExpression("IpAddressType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);

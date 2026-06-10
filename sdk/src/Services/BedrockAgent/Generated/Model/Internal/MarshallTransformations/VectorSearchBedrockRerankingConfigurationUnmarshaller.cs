@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metadataConfiguration", targetDepth))
+                if (context.TestExpression("metadataConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataConfigurationForRerankingUnmarshaller.Instance;
                     unmarshalledObject.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelConfiguration", targetDepth))
+                if (context.TestExpression("modelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorSearchBedrockRerankingModelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfRerankedResults", targetDepth))
+                if (context.TestExpression("numberOfRerankedResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRerankedResults = unmarshaller.Unmarshall(context, ref reader);

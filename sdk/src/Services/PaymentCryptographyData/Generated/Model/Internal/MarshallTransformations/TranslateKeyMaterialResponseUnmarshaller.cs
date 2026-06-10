@@ -52,7 +52,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WrappedKey", targetDepth))
+                if (context.TestExpression("WrappedKey", targetDepth, ref reader))
                 {
                     var unmarshaller = WrappedWorkingKeyUnmarshaller.Instance;
                     response.WrappedKey = unmarshaller.Unmarshall(context, ref reader);

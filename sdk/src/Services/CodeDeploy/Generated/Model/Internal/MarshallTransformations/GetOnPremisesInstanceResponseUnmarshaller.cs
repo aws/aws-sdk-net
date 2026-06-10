@@ -52,7 +52,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceInfo", targetDepth))
+                if (context.TestExpression("instanceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceInfoUnmarshaller.Instance;
                     response.InstanceInfo = unmarshaller.Unmarshall(context, ref reader);

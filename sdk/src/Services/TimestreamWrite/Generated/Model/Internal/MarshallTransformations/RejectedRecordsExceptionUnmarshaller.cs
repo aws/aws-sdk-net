@@ -72,7 +72,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("RejectedRecords", targetDepth))
+                    if (context.TestExpression("RejectedRecords", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<RejectedRecord, RejectedRecordUnmarshaller>(RejectedRecordUnmarshaller.Instance);
                         unmarshalledObject.RejectedRecords = unmarshaller.Unmarshall(context, ref reader);

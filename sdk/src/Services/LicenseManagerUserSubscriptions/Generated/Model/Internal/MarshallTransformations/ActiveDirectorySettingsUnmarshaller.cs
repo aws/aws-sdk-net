@@ -56,31 +56,31 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainCredentialsProvider", targetDepth))
+                if (context.TestExpression("DomainCredentialsProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = CredentialsProviderUnmarshaller.Instance;
                     unmarshalledObject.DomainCredentialsProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainIpv4List", targetDepth))
+                if (context.TestExpression("DomainIpv4List", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DomainIpv4List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainIpv6List", targetDepth))
+                if (context.TestExpression("DomainIpv6List", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DomainIpv6List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainNetworkSettings", targetDepth))
+                if (context.TestExpression("DomainNetworkSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainNetworkSettingsUnmarshaller.Instance;
                     unmarshalledObject.DomainNetworkSettings = unmarshaller.Unmarshall(context, ref reader);

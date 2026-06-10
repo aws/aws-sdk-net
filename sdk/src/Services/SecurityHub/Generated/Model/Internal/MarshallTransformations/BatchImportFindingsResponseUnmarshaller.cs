@@ -52,19 +52,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedCount", targetDepth))
+                if (context.TestExpression("FailedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.FailedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedFindings", targetDepth))
+                if (context.TestExpression("FailedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImportFindingsError, ImportFindingsErrorUnmarshaller>(ImportFindingsErrorUnmarshaller.Instance);
                     response.FailedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessCount", targetDepth))
+                if (context.TestExpression("SuccessCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.SuccessCount = unmarshaller.Unmarshall(context, ref reader);

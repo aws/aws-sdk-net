@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudTrail", targetDepth))
+                if (context.TestExpression("CloudTrail", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesCloudTrailDetailsUnmarshaller.Instance;
                     unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsLogs", targetDepth))
+                if (context.TestExpression("DnsLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesDnsLogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FlowLogs", targetDepth))
+                if (context.TestExpression("FlowLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesFlowLogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Kubernetes", targetDepth))
+                if (context.TestExpression("Kubernetes", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesKubernetesDetailsUnmarshaller.Instance;
                     unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MalwareProtection", targetDepth))
+                if (context.TestExpression("MalwareProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesMalwareProtectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Logs", targetDepth))
+                if (context.TestExpression("S3Logs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesS3LogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);

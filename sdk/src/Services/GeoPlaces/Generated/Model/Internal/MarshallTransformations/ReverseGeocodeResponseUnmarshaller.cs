@@ -52,7 +52,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResultItems", targetDepth))
+                if (context.TestExpression("ResultItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReverseGeocodeResultItem, ReverseGeocodeResultItemUnmarshaller>(ReverseGeocodeResultItemUnmarshaller.Instance);
                     response.ResultItems = unmarshaller.Unmarshall(context, ref reader);

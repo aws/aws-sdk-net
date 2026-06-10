@@ -56,31 +56,31 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth))
+                if (context.TestExpression("CertificateBasedAuthProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateBasedAuthPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CertificateBasedAuthProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryName", targetDepth))
+                if (context.TestExpression("DirectoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationalUnitDistinguishedNames", targetDepth))
+                if (context.TestExpression("OrganizationalUnitDistinguishedNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OrganizationalUnitDistinguishedNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceAccountCredentials", targetDepth))
+                if (context.TestExpression("ServiceAccountCredentials", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceAccountCredentialsUnmarshaller.Instance;
                     unmarshalledObject.ServiceAccountCredentials = unmarshaller.Unmarshall(context, ref reader);

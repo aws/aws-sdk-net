@@ -52,49 +52,49 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configurationStatus", targetDepth))
+                if (context.TestExpression("configurationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationStatusUnmarshaller.Instance;
                     response.ConfigurationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disallowIngestNullNaN", targetDepth))
+                if (context.TestExpression("disallowIngestNullNaN", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DisallowIngestNullNaN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disassociatedDataStorage", targetDepth))
+                if (context.TestExpression("disassociatedDataStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DisassociatedDataStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiLayerStorage", targetDepth))
+                if (context.TestExpression("multiLayerStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiLayerStorageUnmarshaller.Instance;
                     response.MultiLayerStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retentionPeriod", targetDepth))
+                if (context.TestExpression("retentionPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionPeriodUnmarshaller.Instance;
                     response.RetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageType", targetDepth))
+                if (context.TestExpression("storageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StorageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("warmTier", targetDepth))
+                if (context.TestExpression("warmTier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WarmTier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("warmTierRetentionPeriod", targetDepth))
+                if (context.TestExpression("warmTierRetentionPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = WarmTierRetentionPeriodUnmarshaller.Instance;
                     response.WarmTierRetentionPeriod = unmarshaller.Unmarshall(context, ref reader);

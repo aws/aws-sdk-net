@@ -72,7 +72,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("validationErrors", targetDepth))
+                    if (context.TestExpression("validationErrors", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ValidationError, ValidationErrorUnmarshaller>(ValidationErrorUnmarshaller.Instance);
                         unmarshalledObject.ValidationErrors = unmarshaller.Unmarshall(context, ref reader);

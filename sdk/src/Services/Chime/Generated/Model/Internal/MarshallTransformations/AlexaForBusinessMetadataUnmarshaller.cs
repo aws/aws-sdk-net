@@ -56,13 +56,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlexaForBusinessRoomArn", targetDepth))
+                if (context.TestExpression("AlexaForBusinessRoomArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AlexaForBusinessRoomArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsAlexaForBusinessEnabled", targetDepth))
+                if (context.TestExpression("IsAlexaForBusinessEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAlexaForBusinessEnabled = unmarshaller.Unmarshall(context, ref reader);

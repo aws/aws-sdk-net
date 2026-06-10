@@ -56,31 +56,31 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enhancedFindings", targetDepth))
+                if (context.TestExpression("enhancedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnhancedImageScanFinding, EnhancedImageScanFindingUnmarshaller>(EnhancedImageScanFindingUnmarshaller.Instance);
                     unmarshalledObject.EnhancedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findings", targetDepth))
+                if (context.TestExpression("findings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageScanFinding, ImageScanFindingUnmarshaller>(ImageScanFindingUnmarshaller.Instance);
                     unmarshalledObject.Findings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingSeverityCounts", targetDepth))
+                if (context.TestExpression("findingSeverityCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.FindingSeverityCounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageScanCompletedAt", targetDepth))
+                if (context.TestExpression("imageScanCompletedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImageScanCompletedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vulnerabilitySourceUpdatedAt", targetDepth))
+                if (context.TestExpression("vulnerabilitySourceUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.VulnerabilitySourceUpdatedAt = unmarshaller.Unmarshall(context, ref reader);

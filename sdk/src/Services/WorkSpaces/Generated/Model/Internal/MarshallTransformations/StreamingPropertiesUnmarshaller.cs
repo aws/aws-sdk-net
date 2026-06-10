@@ -56,25 +56,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalAccelerator", targetDepth))
+                if (context.TestExpression("GlobalAccelerator", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalAcceleratorForDirectoryUnmarshaller.Instance;
                     unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageConnectors", targetDepth))
+                if (context.TestExpression("StorageConnectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
                     unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamingExperiencePreferredProtocol", targetDepth))
+                if (context.TestExpression("StreamingExperiencePreferredProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamingExperiencePreferredProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserSettings", targetDepth))
+                if (context.TestExpression("UserSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
                     unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context, ref reader);

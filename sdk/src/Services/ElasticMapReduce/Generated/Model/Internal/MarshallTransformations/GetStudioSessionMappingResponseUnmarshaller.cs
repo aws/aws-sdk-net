@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SessionMapping", targetDepth))
+                if (context.TestExpression("SessionMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionMappingDetailUnmarshaller.Instance;
                     response.SessionMapping = unmarshaller.Unmarshall(context, ref reader);

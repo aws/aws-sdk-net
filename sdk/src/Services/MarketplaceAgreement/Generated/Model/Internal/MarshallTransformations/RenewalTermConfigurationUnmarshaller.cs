@@ -56,7 +56,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enableAutoRenew", targetDepth))
+                if (context.TestExpression("enableAutoRenew", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAutoRenew = unmarshaller.Unmarshall(context, ref reader);

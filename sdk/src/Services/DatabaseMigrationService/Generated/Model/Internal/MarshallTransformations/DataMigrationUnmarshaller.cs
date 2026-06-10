@@ -56,103 +56,103 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataMigrationArn", targetDepth))
+                if (context.TestExpression("DataMigrationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationCidrBlocks", targetDepth))
+                if (context.TestExpression("DataMigrationCidrBlocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DataMigrationCidrBlocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationCreateTime", targetDepth))
+                if (context.TestExpression("DataMigrationCreateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationEndTime", targetDepth))
+                if (context.TestExpression("DataMigrationEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationName", targetDepth))
+                if (context.TestExpression("DataMigrationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationSettings", targetDepth))
+                if (context.TestExpression("DataMigrationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DataMigrationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationStartTime", targetDepth))
+                if (context.TestExpression("DataMigrationStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationStatistics", targetDepth))
+                if (context.TestExpression("DataMigrationStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = DataMigrationStatisticsUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationStatus", targetDepth))
+                if (context.TestExpression("DataMigrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataMigrationType", targetDepth))
+                if (context.TestExpression("DataMigrationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastFailureMessage", targetDepth))
+                if (context.TestExpression("LastFailureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastFailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MigrationProjectArn", targetDepth))
+                if (context.TestExpression("MigrationProjectArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicIpAddresses", targetDepth))
+                if (context.TestExpression("PublicIpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PublicIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceAccessRoleArn", targetDepth))
+                if (context.TestExpression("ServiceAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDataSettings", targetDepth))
+                if (context.TestExpression("SourceDataSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceDataSetting, SourceDataSettingUnmarshaller>(SourceDataSettingUnmarshaller.Instance);
                     unmarshalledObject.SourceDataSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StopReason", targetDepth))
+                if (context.TestExpression("StopReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StopReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetDataSettings", targetDepth))
+                if (context.TestExpression("TargetDataSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetDataSetting, TargetDataSettingUnmarshaller>(TargetDataSettingUnmarshaller.Instance);
                     unmarshalledObject.TargetDataSettings = unmarshaller.Unmarshall(context, ref reader);

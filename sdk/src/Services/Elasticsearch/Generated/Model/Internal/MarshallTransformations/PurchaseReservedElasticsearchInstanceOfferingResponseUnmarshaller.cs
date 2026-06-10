@@ -52,13 +52,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReservationName", targetDepth))
+                if (context.TestExpression("ReservationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReservationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservedElasticsearchInstanceId", targetDepth))
+                if (context.TestExpression("ReservedElasticsearchInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReservedElasticsearchInstanceId = unmarshaller.Unmarshall(context, ref reader);

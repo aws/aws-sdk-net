@@ -56,19 +56,19 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdapterVersion", targetDepth))
+                if (context.TestExpression("AdapterVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationMetricUnmarshaller.Instance;
                     unmarshalledObject.AdapterVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Baseline", targetDepth))
+                if (context.TestExpression("Baseline", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationMetricUnmarshaller.Instance;
                     unmarshalledObject.Baseline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureType", targetDepth))
+                if (context.TestExpression("FeatureType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeatureType = unmarshaller.Unmarshall(context, ref reader);

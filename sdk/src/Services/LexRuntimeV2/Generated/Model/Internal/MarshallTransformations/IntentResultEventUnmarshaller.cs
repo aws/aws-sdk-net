@@ -56,43 +56,43 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventId", targetDepth))
+                if (context.TestExpression("eventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputMode", targetDepth))
+                if (context.TestExpression("inputMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interpretations", targetDepth))
+                if (context.TestExpression("interpretations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Interpretation, InterpretationUnmarshaller>(InterpretationUnmarshaller.Instance);
                     unmarshalledObject.Interpretations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recognizedBotMember", targetDepth))
+                if (context.TestExpression("recognizedBotMember", targetDepth, ref reader))
                 {
                     var unmarshaller = RecognizedBotMemberUnmarshaller.Instance;
                     unmarshalledObject.RecognizedBotMember = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestAttributes", targetDepth))
+                if (context.TestExpression("requestAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.RequestAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionState", targetDepth))
+                if (context.TestExpression("sessionState", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionStateUnmarshaller.Instance;
                     unmarshalledObject.SessionStateValue = unmarshaller.Unmarshall(context, ref reader);

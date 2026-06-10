@@ -52,25 +52,25 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalyzeDocumentModelVersion", targetDepth))
+                if (context.TestExpression("AnalyzeDocumentModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalyzeDocumentModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Blocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
                     response.Blocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopActivationOutput", targetDepth))
+                if (context.TestExpression("HumanLoopActivationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = HumanLoopActivationOutputUnmarshaller.Instance;
                     response.HumanLoopActivationOutput = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kinesisDataStreamData", targetDepth))
+                if (context.TestExpression("kinesisDataStreamData", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisDataStreamDataUnmarshaller.Instance;
                     unmarshalledObject.KinesisDataStreamData = unmarshaller.Unmarshall(context, ref reader);

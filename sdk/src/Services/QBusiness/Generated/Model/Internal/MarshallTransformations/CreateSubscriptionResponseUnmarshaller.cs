@@ -52,25 +52,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentSubscription", targetDepth))
+                if (context.TestExpression("currentSubscription", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionDetailsUnmarshaller.Instance;
                     response.CurrentSubscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextSubscription", targetDepth))
+                if (context.TestExpression("nextSubscription", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionDetailsUnmarshaller.Instance;
                     response.NextSubscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subscriptionArn", targetDepth))
+                if (context.TestExpression("subscriptionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subscriptionId", targetDepth))
+                if (context.TestExpression("subscriptionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SubscriptionId = unmarshaller.Unmarshall(context, ref reader);

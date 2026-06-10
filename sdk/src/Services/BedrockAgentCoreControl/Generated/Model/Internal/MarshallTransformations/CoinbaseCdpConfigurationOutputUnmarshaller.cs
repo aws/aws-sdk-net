@@ -56,43 +56,43 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiKeyId", targetDepth))
+                if (context.TestExpression("apiKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiKeySecretArn", targetDepth))
+                if (context.TestExpression("apiKeySecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;
                     unmarshalledObject.ApiKeySecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiKeySecretJsonKey", targetDepth))
+                if (context.TestExpression("apiKeySecretJsonKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiKeySecretJsonKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiKeySecretSource", targetDepth))
+                if (context.TestExpression("apiKeySecretSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiKeySecretSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("walletSecretArn", targetDepth))
+                if (context.TestExpression("walletSecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;
                     unmarshalledObject.WalletSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("walletSecretJsonKey", targetDepth))
+                if (context.TestExpression("walletSecretJsonKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WalletSecretJsonKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("walletSecretSource", targetDepth))
+                if (context.TestExpression("walletSecretSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WalletSecretSource = unmarshaller.Unmarshall(context, ref reader);

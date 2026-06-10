@@ -56,43 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alias", targetDepth))
+                if (context.TestExpression("Alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnsToUnpivot", targetDepth))
+                if (context.TestExpression("ColumnsToUnpivot", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnToUnpivot, ColumnToUnpivotUnmarshaller>(ColumnToUnpivotUnmarshaller.Instance);
                     unmarshalledObject.ColumnsToUnpivot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Source", targetDepth))
+                if (context.TestExpression("Source", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformOperationSourceUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnpivotedLabelColumnId", targetDepth))
+                if (context.TestExpression("UnpivotedLabelColumnId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnpivotedLabelColumnId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnpivotedLabelColumnName", targetDepth))
+                if (context.TestExpression("UnpivotedLabelColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnpivotedLabelColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnpivotedValueColumnId", targetDepth))
+                if (context.TestExpression("UnpivotedValueColumnId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnpivotedValueColumnId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnpivotedValueColumnName", targetDepth))
+                if (context.TestExpression("UnpivotedValueColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnpivotedValueColumnName = unmarshaller.Unmarshall(context, ref reader);

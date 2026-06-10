@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MarketType", targetDepth))
+                if (context.TestExpression("MarketType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MarketType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpotOptions", targetDepth))
+                if (context.TestExpression("SpotOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2LaunchTemplateDataInstanceMarketOptionsSpotOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.SpotOptions = unmarshaller.Unmarshall(context, ref reader);

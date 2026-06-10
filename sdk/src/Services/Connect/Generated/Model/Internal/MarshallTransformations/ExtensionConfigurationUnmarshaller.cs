@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowedExtensions", targetDepth))
+                if (context.TestExpression("AllowedExtensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AllowedExtension, AllowedExtensionUnmarshaller>(AllowedExtensionUnmarshaller.Instance);
                     unmarshalledObject.AllowedExtensions = unmarshaller.Unmarshall(context, ref reader);

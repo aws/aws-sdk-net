@@ -56,25 +56,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusterMetadata", targetDepth))
+                if (context.TestExpression("clusterMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterMetadataUnmarshaller.Instance;
                     unmarshalledObject.ClusterMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastInUse", targetDepth))
+                if (context.TestExpression("lastInUse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastInUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runningUnitCount", targetDepth))
+                if (context.TestExpression("runningUnitCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RunningUnitCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppedUnitCount", targetDepth))
+                if (context.TestExpression("stoppedUnitCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoppedUnitCount = unmarshaller.Unmarshall(context, ref reader);

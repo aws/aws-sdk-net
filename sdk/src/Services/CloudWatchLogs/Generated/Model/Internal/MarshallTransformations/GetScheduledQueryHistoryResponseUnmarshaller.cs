@@ -52,25 +52,25 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scheduledQueryArn", targetDepth))
+                if (context.TestExpression("scheduledQueryArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ScheduledQueryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggerHistory", targetDepth))
+                if (context.TestExpression("triggerHistory", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TriggerHistoryRecord, TriggerHistoryRecordUnmarshaller>(TriggerHistoryRecordUnmarshaller.Instance);
                     response.TriggerHistory = unmarshaller.Unmarshall(context, ref reader);

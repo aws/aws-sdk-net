@@ -56,31 +56,31 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GlobalSecondaryIndexInfo, GlobalSecondaryIndexInfoUnmarshaller>(GlobalSecondaryIndexInfoUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("LocalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LocalSecondaryIndexInfo, LocalSecondaryIndexInfoUnmarshaller>(LocalSecondaryIndexInfoUnmarshaller.Instance);
                     unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SSEDescription", targetDepth))
+                if (context.TestExpression("SSEDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = SSEDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SSEDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamDescription", targetDepth))
+                if (context.TestExpression("StreamDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamSpecificationUnmarshaller.Instance;
                     unmarshalledObject.StreamDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeToLiveDescription", targetDepth))
+                if (context.TestExpression("TimeToLiveDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeToLiveDescriptionUnmarshaller.Instance;
                     unmarshalledObject.TimeToLiveDescription = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MailboxValidation", targetDepth))
+                if (context.TestExpression("MailboxValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = MailboxValidationUnmarshaller.Instance;
                     response.MailboxValidation = unmarshaller.Unmarshall(context, ref reader);

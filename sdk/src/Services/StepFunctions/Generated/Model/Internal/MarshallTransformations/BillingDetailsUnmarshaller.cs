@@ -56,13 +56,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("billedDurationInMilliseconds", targetDepth))
+                if (context.TestExpression("billedDurationInMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BilledDurationInMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("billedMemoryUsedInMB", targetDepth))
+                if (context.TestExpression("billedMemoryUsedInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BilledMemoryUsedInMB = unmarshaller.Unmarshall(context, ref reader);

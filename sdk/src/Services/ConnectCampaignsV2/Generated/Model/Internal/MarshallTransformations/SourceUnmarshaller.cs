@@ -56,13 +56,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerProfilesSegmentArn", targetDepth))
+                if (context.TestExpression("customerProfilesSegmentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfilesSegmentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventTrigger", targetDepth))
+                if (context.TestExpression("eventTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = EventTriggerUnmarshaller.Instance;
                     unmarshalledObject.EventTrigger = unmarshaller.Unmarshall(context, ref reader);

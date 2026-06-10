@@ -56,13 +56,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("canSendMessage", targetDepth))
+                if (context.TestExpression("canSendMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanSendMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entities", targetDepth))
+                if (context.TestExpression("entities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetaFlowHealthEntity, MetaFlowHealthEntityUnmarshaller>(MetaFlowHealthEntityUnmarshaller.Instance);
                     unmarshalledObject.Entities = unmarshaller.Unmarshall(context, ref reader);

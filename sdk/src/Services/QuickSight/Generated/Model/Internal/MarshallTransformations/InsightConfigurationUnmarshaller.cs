@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Computations", targetDepth))
+                if (context.TestExpression("Computations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Computation, ComputationUnmarshaller>(ComputationUnmarshaller.Instance);
                     unmarshalledObject.Computations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomNarrative", targetDepth))
+                if (context.TestExpression("CustomNarrative", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomNarrativeOptionsUnmarshaller.Instance;
                     unmarshalledObject.CustomNarrative = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);

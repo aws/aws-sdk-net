@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisibleRange", targetDepth))
+                if (context.TestExpression("VisibleRange", targetDepth, ref reader))
                 {
                     var unmarshaller = VisibleRangeOptionsUnmarshaller.Instance;
                     unmarshalledObject.VisibleRange = unmarshaller.Unmarshall(context, ref reader);

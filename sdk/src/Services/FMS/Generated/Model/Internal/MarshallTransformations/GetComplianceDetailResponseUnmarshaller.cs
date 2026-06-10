@@ -52,7 +52,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyComplianceDetail", targetDepth))
+                if (context.TestExpression("PolicyComplianceDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyComplianceDetailUnmarshaller.Instance;
                     response.PolicyComplianceDetail = unmarshaller.Unmarshall(context, ref reader);

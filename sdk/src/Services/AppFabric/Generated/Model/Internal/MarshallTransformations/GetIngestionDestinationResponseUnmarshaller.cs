@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ingestionDestination", targetDepth))
+                if (context.TestExpression("ingestionDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestionDestinationUnmarshaller.Instance;
                     response.IngestionDestination = unmarshaller.Unmarshall(context, ref reader);

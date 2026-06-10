@@ -52,13 +52,13 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartnerEventSourceAccounts", targetDepth))
+                if (context.TestExpression("PartnerEventSourceAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartnerEventSourceAccount, PartnerEventSourceAccountUnmarshaller>(PartnerEventSourceAccountUnmarshaller.Instance);
                     response.PartnerEventSourceAccounts = unmarshaller.Unmarshall(context, ref reader);

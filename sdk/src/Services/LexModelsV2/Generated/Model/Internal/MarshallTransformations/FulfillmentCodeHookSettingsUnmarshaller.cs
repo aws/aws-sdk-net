@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth))
+                if (context.TestExpression("active", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fulfillmentUpdatesSpecification", targetDepth))
+                if (context.TestExpression("fulfillmentUpdatesSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = FulfillmentUpdatesSpecificationUnmarshaller.Instance;
                     unmarshalledObject.FulfillmentUpdatesSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postFulfillmentStatusSpecification", targetDepth))
+                if (context.TestExpression("postFulfillmentStatusSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PostFulfillmentStatusSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PostFulfillmentStatusSpecification = unmarshaller.Unmarshall(context, ref reader);

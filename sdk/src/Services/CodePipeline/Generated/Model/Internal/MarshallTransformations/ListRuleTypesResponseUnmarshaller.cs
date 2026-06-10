@@ -52,7 +52,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ruleTypes", targetDepth))
+                if (context.TestExpression("ruleTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleType, RuleTypeUnmarshaller>(RuleTypeUnmarshaller.Instance);
                     response.RuleTypes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apacheKafkaCluster", targetDepth))
+                if (context.TestExpression("apacheKafkaCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = ApacheKafkaClusterDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApacheKafkaCluster = unmarshaller.Unmarshall(context, ref reader);

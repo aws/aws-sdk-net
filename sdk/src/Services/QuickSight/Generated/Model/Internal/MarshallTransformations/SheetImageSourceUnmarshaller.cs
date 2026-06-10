@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SheetImageStaticFileSource", targetDepth))
+                if (context.TestExpression("SheetImageStaticFileSource", targetDepth, ref reader))
                 {
                     var unmarshaller = SheetImageStaticFileSourceUnmarshaller.Instance;
                     unmarshalledObject.SheetImageStaticFileSource = unmarshaller.Unmarshall(context, ref reader);

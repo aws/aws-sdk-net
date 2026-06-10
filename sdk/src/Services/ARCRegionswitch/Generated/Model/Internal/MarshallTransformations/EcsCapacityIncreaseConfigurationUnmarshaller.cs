@@ -56,31 +56,31 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityMonitoringApproach", targetDepth))
+                if (context.TestExpression("capacityMonitoringApproach", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityMonitoringApproach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("services", targetDepth))
+                if (context.TestExpression("services", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Service, ServiceUnmarshaller>(ServiceUnmarshaller.Instance);
                     unmarshalledObject.Services = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetPercent", targetDepth))
+                if (context.TestExpression("targetPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutMinutes", targetDepth))
+                if (context.TestExpression("timeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ungraceful", targetDepth))
+                if (context.TestExpression("ungraceful", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsUngracefulUnmarshaller.Instance;
                     unmarshalledObject.Ungraceful = unmarshaller.Unmarshall(context, ref reader);

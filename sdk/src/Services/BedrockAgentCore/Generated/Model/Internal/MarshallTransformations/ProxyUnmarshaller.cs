@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalProxy", targetDepth))
+                if (context.TestExpression("externalProxy", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalProxyUnmarshaller.Instance;
                     unmarshalledObject.ExternalProxy = unmarshaller.Unmarshall(context, ref reader);

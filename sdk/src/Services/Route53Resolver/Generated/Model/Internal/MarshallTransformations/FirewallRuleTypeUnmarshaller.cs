@@ -56,19 +56,19 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DnsThreatProtection", targetDepth))
+                if (context.TestExpression("DnsThreatProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsThreatProtectionRuleTypeConfigUnmarshaller.Instance;
                     unmarshalledObject.DnsThreatProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallAdvancedContentCategory", targetDepth))
+                if (context.TestExpression("FirewallAdvancedContentCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallAdvancedContentCategoryConfigUnmarshaller.Instance;
                     unmarshalledObject.FirewallAdvancedContentCategory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallAdvancedThreatCategory", targetDepth))
+                if (context.TestExpression("FirewallAdvancedThreatCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallAdvancedThreatCategoryConfigUnmarshaller.Instance;
                     unmarshalledObject.FirewallAdvancedThreatCategory = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldDelimiter", targetDepth))
+                if (context.TestExpression("fieldDelimiter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordFields", targetDepth))
+                if (context.TestExpression("recordFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RecordFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3DeliveryConfiguration", targetDepth))
+                if (context.TestExpression("s3DeliveryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DeliveryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3DeliveryConfiguration = unmarshaller.Unmarshall(context, ref reader);

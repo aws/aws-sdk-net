@@ -56,25 +56,25 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessPoints", targetDepth))
+                if (context.TestExpression("accessPoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, S3AccessPointConfiguration, StringUnmarshaller, S3AccessPointConfigurationUnmarshaller>(StringUnmarshaller.Instance, S3AccessPointConfigurationUnmarshaller.Instance);
                     unmarshalledObject.AccessPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketAclGrants", targetDepth))
+                if (context.TestExpression("bucketAclGrants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3BucketAclGrantConfiguration, S3BucketAclGrantConfigurationUnmarshaller>(S3BucketAclGrantConfigurationUnmarshaller.Instance);
                     unmarshalledObject.BucketAclGrants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketPolicy", targetDepth))
+                if (context.TestExpression("bucketPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketPublicAccessBlock", targetDepth))
+                if (context.TestExpression("bucketPublicAccessBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = S3PublicAccessBlockConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketPublicAccessBlock = unmarshaller.Unmarshall(context, ref reader);

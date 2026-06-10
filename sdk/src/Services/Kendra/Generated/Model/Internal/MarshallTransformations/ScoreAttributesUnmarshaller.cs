@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScoreConfidence", targetDepth))
+                if (context.TestExpression("ScoreConfidence", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScoreConfidence = unmarshaller.Unmarshall(context, ref reader);

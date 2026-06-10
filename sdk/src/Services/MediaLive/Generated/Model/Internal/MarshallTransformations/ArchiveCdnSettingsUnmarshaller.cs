@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("archiveS3Settings", targetDepth))
+                if (context.TestExpression("archiveS3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveS3SettingsUnmarshaller.Instance;
                     unmarshalledObject.ArchiveS3Settings = unmarshaller.Unmarshall(context, ref reader);

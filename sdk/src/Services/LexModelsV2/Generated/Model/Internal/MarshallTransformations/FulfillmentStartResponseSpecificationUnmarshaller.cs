@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowInterrupt", targetDepth))
+                if (context.TestExpression("allowInterrupt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("delayInSeconds", targetDepth))
+                if (context.TestExpression("delayInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DelayInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageGroups", targetDepth))
+                if (context.TestExpression("messageGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageGroup, MessageGroupUnmarshaller>(MessageGroupUnmarshaller.Instance);
                     unmarshalledObject.MessageGroups = unmarshaller.Unmarshall(context, ref reader);

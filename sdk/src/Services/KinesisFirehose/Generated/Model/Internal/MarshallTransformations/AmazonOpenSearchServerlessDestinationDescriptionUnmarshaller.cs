@@ -56,61 +56,61 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BufferingHints", targetDepth))
+                if (context.TestExpression("BufferingHints", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonOpenSearchServerlessBufferingHintsUnmarshaller.Instance;
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CollectionEndpoint", targetDepth))
+                if (context.TestExpression("CollectionEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CollectionEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessingConfiguration", targetDepth))
+                if (context.TestExpression("ProcessingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryOptions", targetDepth))
+                if (context.TestExpression("RetryOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonOpenSearchServerlessRetryOptionsUnmarshaller.Instance;
                     unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleARN", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BackupMode", targetDepth))
+                if (context.TestExpression("S3BackupMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
+                if (context.TestExpression("S3DestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfigurationDescription", targetDepth))
+                if (context.TestExpression("VpcConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.VpcConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

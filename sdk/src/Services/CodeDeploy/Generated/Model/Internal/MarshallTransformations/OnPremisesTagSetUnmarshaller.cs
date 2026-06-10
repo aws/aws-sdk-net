@@ -56,7 +56,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("onPremisesTagSetList", targetDepth))
+                if (context.TestExpression("onPremisesTagSetList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<TagFilter>, JsonListUnmarshaller<TagFilter,TagFilterUnmarshaller>>(new JsonListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance));
                     unmarshalledObject.OnPremisesTagSetList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentLightLevel", targetDepth))
+                if (context.TestExpression("contentLightLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentLightLevelUnmarshaller.Instance;
                     unmarshalledObject.ContentLightLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("masteringDisplayColorVolume", targetDepth))
+                if (context.TestExpression("masteringDisplayColorVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = MasteringDisplayColorVolumeUnmarshaller.Instance;
                     unmarshalledObject.MasteringDisplayColorVolume = unmarshaller.Unmarshall(context, ref reader);

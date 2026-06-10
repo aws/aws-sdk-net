@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("propertyValue", targetDepth))
+                if (context.TestExpression("propertyValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetPropertyValueUnmarshaller.Instance;
                     response.PropertyValue = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idleResourceAssignmentStrategy", targetDepth))
+                if (context.TestExpression("idleResourceAssignmentStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdleResourceAssignmentStrategy = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("minimumSuccessPercentage", targetDepth))
+                if (context.TestExpression("minimumSuccessPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumSuccessPercentage = unmarshaller.Unmarshall(context, ref reader);

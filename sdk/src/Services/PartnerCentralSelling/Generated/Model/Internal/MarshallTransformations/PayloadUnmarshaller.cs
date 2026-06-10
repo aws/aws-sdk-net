@@ -56,13 +56,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LeadInvitation", targetDepth))
+                if (context.TestExpression("LeadInvitation", targetDepth, ref reader))
                 {
                     var unmarshaller = LeadInvitationPayloadUnmarshaller.Instance;
                     unmarshalledObject.LeadInvitation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpportunityInvitation", targetDepth))
+                if (context.TestExpression("OpportunityInvitation", targetDepth, ref reader))
                 {
                     var unmarshaller = OpportunityInvitationPayloadUnmarshaller.Instance;
                     unmarshalledObject.OpportunityInvitation = unmarshaller.Unmarshall(context, ref reader);

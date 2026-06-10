@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Cells", targetDepth))
+                if (context.TestExpression("Cells", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TableCell, TableCellUnmarshaller>(TableCellUnmarshaller.Instance);
                     unmarshalledObject.Cells = unmarshaller.Unmarshall(context, ref reader);

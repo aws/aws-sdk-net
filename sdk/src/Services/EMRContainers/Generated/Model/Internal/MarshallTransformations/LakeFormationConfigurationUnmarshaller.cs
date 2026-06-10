@@ -56,19 +56,19 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizedSessionTagValue", targetDepth))
+                if (context.TestExpression("authorizedSessionTagValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizedSessionTagValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryEngineRoleArn", targetDepth))
+                if (context.TestExpression("queryEngineRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryEngineRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secureNamespaceInfo", targetDepth))
+                if (context.TestExpression("secureNamespaceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = SecureNamespaceInfoUnmarshaller.Instance;
                     unmarshalledObject.SecureNamespaceInfo = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentAttributeKey", targetDepth))
+                if (context.TestExpression("DocumentAttributeKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentAttributeKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentAttributeValueCountPairs", targetDepth))
+                if (context.TestExpression("DocumentAttributeValueCountPairs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentAttributeValueCountPair, DocumentAttributeValueCountPairUnmarshaller>(DocumentAttributeValueCountPairUnmarshaller.Instance);
                     unmarshalledObject.DocumentAttributeValueCountPairs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentAttributeValueType", targetDepth))
+                if (context.TestExpression("DocumentAttributeValueType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentAttributeValueType = unmarshaller.Unmarshall(context, ref reader);

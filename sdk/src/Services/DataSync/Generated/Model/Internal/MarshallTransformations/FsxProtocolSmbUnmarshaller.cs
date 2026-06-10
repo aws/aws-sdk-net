@@ -56,43 +56,43 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CmkSecretConfig", targetDepth))
+                if (context.TestExpression("CmkSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CmkSecretConfigUnmarshaller.Instance;
                     unmarshalledObject.CmkSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomSecretConfig", targetDepth))
+                if (context.TestExpression("CustomSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomSecretConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedSecretConfig", targetDepth))
+                if (context.TestExpression("ManagedSecretConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedSecretConfigUnmarshaller.Instance;
                     unmarshalledObject.ManagedSecretConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MountOptions", targetDepth))
+                if (context.TestExpression("MountOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SmbMountOptionsUnmarshaller.Instance;
                     unmarshalledObject.MountOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Password", targetDepth))
+                if (context.TestExpression("Password", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Password = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("User", targetDepth))
+                if (context.TestExpression("User", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

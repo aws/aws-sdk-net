@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientPolicy", targetDepth))
+                if (context.TestExpression("clientPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayClientPolicyUnmarshaller.Instance;
                     unmarshalledObject.ClientPolicy = unmarshaller.Unmarshall(context, ref reader);

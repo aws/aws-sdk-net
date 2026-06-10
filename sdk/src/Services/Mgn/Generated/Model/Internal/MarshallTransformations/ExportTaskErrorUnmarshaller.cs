@@ -56,13 +56,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorData", targetDepth))
+                if (context.TestExpression("errorData", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportErrorDataUnmarshaller.Instance;
                     unmarshalledObject.ErrorData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorDateTime", targetDepth))
+                if (context.TestExpression("errorDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorDateTime = unmarshaller.Unmarshall(context, ref reader);

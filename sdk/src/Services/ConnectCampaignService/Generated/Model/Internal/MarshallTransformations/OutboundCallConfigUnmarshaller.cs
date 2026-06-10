@@ -56,25 +56,25 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("answerMachineDetectionConfig", targetDepth))
+                if (context.TestExpression("answerMachineDetectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AnswerMachineDetectionConfigUnmarshaller.Instance;
                     unmarshalledObject.AnswerMachineDetectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectContactFlowId", targetDepth))
+                if (context.TestExpression("connectContactFlowId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectContactFlowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectQueueId", targetDepth))
+                if (context.TestExpression("connectQueueId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectQueueId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectSourcePhoneNumber", targetDepth))
+                if (context.TestExpression("connectSourcePhoneNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectSourcePhoneNumber = unmarshaller.Unmarshall(context, ref reader);

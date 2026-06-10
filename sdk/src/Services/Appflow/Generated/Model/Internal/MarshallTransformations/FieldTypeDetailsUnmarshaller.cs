@@ -56,43 +56,43 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldLengthRange", targetDepth))
+                if (context.TestExpression("fieldLengthRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.FieldLengthRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldType", targetDepth))
+                if (context.TestExpression("fieldType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fieldValueRange", targetDepth))
+                if (context.TestExpression("fieldValueRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.FieldValueRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterOperators", targetDepth))
+                if (context.TestExpression("filterOperators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.FilterOperators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedDateFormat", targetDepth))
+                if (context.TestExpression("supportedDateFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupportedDateFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedValues", targetDepth))
+                if (context.TestExpression("supportedValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("valueRegexPattern", targetDepth))
+                if (context.TestExpression("valueRegexPattern", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValueRegexPattern = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("previewToken", targetDepth))
+                if (context.TestExpression("previewToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PreviewToken = unmarshaller.Unmarshall(context, ref reader);

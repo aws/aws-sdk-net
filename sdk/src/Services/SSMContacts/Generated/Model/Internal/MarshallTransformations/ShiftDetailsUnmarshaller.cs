@@ -56,7 +56,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OverriddenContactIds", targetDepth))
+                if (context.TestExpression("OverriddenContactIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OverriddenContactIds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowedUserActions", targetDepth))
+                if (context.TestExpression("AllowedUserActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedUserActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostAcceptTimeoutConfig", targetDepth))
+                if (context.TestExpression("PostAcceptTimeoutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PostAcceptTimeoutConfigUnmarshaller.Instance;
                     unmarshalledObject.PostAcceptTimeoutConfig = unmarshaller.Unmarshall(context, ref reader);

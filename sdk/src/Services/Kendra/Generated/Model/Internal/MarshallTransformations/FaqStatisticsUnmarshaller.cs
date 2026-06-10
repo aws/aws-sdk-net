@@ -56,7 +56,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexedQuestionAnswersCount", targetDepth))
+                if (context.TestExpression("IndexedQuestionAnswersCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndexedQuestionAnswersCount = unmarshaller.Unmarshall(context, ref reader);

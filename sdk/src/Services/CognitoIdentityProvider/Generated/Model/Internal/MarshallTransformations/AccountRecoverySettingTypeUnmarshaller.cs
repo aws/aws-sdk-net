@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecoveryMechanisms", targetDepth))
+                if (context.TestExpression("RecoveryMechanisms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecoveryOptionType, RecoveryOptionTypeUnmarshaller>(RecoveryOptionTypeUnmarshaller.Instance);
                     unmarshalledObject.RecoveryMechanisms = unmarshaller.Unmarshall(context, ref reader);

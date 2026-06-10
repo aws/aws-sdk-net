@@ -52,43 +52,43 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Compliance", targetDepth))
+                if (context.TestExpression("Compliance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Compliance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationContext", targetDepth))
+                if (context.TestExpression("EvaluationContext", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationContextUnmarshaller.Instance;
                     response.EvaluationContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationMode", targetDepth))
+                if (context.TestExpression("EvaluationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationStartTimestamp", targetDepth))
+                if (context.TestExpression("EvaluationStartTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EvaluationStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationStatus", targetDepth))
+                if (context.TestExpression("EvaluationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationStatusUnmarshaller.Instance;
                     response.EvaluationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceDetails", targetDepth))
+                if (context.TestExpression("ResourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;
                     response.ResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceEvaluationId", targetDepth))
+                if (context.TestExpression("ResourceEvaluationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceEvaluationId = unmarshaller.Unmarshall(context, ref reader);

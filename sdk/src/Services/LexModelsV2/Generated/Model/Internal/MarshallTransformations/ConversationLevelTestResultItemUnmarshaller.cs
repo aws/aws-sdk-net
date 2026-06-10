@@ -56,31 +56,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversationId", targetDepth))
+                if (context.TestExpression("conversationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endToEndResult", targetDepth))
+                if (context.TestExpression("endToEndResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndToEndResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentClassificationResults", targetDepth))
+                if (context.TestExpression("intentClassificationResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConversationLevelIntentClassificationResultItem, ConversationLevelIntentClassificationResultItemUnmarshaller>(ConversationLevelIntentClassificationResultItemUnmarshaller.Instance);
                     unmarshalledObject.IntentClassificationResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotResolutionResults", targetDepth))
+                if (context.TestExpression("slotResolutionResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConversationLevelSlotResolutionResultItem, ConversationLevelSlotResolutionResultItemUnmarshaller>(ConversationLevelSlotResolutionResultItemUnmarshaller.Instance);
                     unmarshalledObject.SlotResolutionResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechTranscriptionResult", targetDepth))
+                if (context.TestExpression("speechTranscriptionResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpeechTranscriptionResult = unmarshaller.Unmarshall(context, ref reader);

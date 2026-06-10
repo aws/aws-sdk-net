@@ -56,19 +56,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricIntervalLowerBound", targetDepth))
+                if (context.TestExpression("MetricIntervalLowerBound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricIntervalLowerBound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricIntervalUpperBound", targetDepth))
+                if (context.TestExpression("MetricIntervalUpperBound", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MetricIntervalUpperBound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingAdjustment", targetDepth))
+                if (context.TestExpression("ScalingAdjustment", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FormFactorConfigs", targetDepth))
+                if (context.TestExpression("FormFactorConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FormFactorConfig, FormFactorConfigUnmarshaller>(FormFactorConfigUnmarshaller.Instance);
                     unmarshalledObject.FormFactorConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemoryInMib", targetDepth))
+                if (context.TestExpression("MemoryInMib", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryInMib = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkPerformance", targetDepth))
+                if (context.TestExpression("NetworkPerformance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkPerformance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VCPUs", targetDepth))
+                if (context.TestExpression("VCPUs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VCPUs = unmarshaller.Unmarshall(context, ref reader);

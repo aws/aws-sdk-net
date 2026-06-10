@@ -52,25 +52,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectConfigurationArn", targetDepth))
+                if (context.TestExpression("ProtectConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtectConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                if (context.TestExpression("ProtectConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtectConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleSetNumberOverrides", targetDepth))
+                if (context.TestExpression("RuleSetNumberOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProtectConfigurationRuleSetNumberOverride, ProtectConfigurationRuleSetNumberOverrideUnmarshaller>(ProtectConfigurationRuleSetNumberOverrideUnmarshaller.Instance);
                     response.RuleSetNumberOverrides = unmarshaller.Unmarshall(context, ref reader);

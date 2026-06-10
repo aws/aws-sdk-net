@@ -56,19 +56,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CoverageCost", targetDepth))
+                if (context.TestExpression("CoverageCost", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageCostUnmarshaller.Instance;
                     unmarshalledObject.CoverageCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CoverageHours", targetDepth))
+                if (context.TestExpression("CoverageHours", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageHoursUnmarshaller.Instance;
                     unmarshalledObject.CoverageHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CoverageNormalizedUnits", targetDepth))
+                if (context.TestExpression("CoverageNormalizedUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageNormalizedUnitsUnmarshaller.Instance;
                     unmarshalledObject.CoverageNormalizedUnits = unmarshaller.Unmarshall(context, ref reader);

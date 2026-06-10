@@ -56,7 +56,7 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resolutionStrategy", targetDepth))
+                if (context.TestExpression("resolutionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResolutionStrategy = unmarshaller.Unmarshall(context, ref reader);

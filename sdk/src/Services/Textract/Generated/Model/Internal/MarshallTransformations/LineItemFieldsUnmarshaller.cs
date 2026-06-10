@@ -56,7 +56,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LineItemExpenseFields", targetDepth))
+                if (context.TestExpression("LineItemExpenseFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance);
                     unmarshalledObject.LineItemExpenseFields = unmarshaller.Unmarshall(context, ref reader);

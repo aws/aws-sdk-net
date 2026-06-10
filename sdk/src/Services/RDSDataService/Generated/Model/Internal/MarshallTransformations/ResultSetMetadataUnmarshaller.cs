@@ -56,13 +56,13 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnCount", targetDepth))
+                if (context.TestExpression("columnCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ColumnCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("columnMetadata", targetDepth))
+                if (context.TestExpression("columnMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnMetadata, ColumnMetadataUnmarshaller>(ColumnMetadataUnmarshaller.Instance);
                     unmarshalledObject.ColumnMetadata = unmarshaller.Unmarshall(context, ref reader);

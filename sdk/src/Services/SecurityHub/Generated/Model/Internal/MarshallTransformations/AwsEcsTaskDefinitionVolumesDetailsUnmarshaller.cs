@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DockerVolumeConfiguration", targetDepth))
+                if (context.TestExpression("DockerVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EfsVolumeConfiguration", targetDepth))
+                if (context.TestExpression("EfsVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Host", targetDepth))
+                if (context.TestExpression("Host", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesHostDetailsUnmarshaller.Instance;
                     unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

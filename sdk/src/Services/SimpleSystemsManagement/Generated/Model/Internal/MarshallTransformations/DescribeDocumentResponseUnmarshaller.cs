@@ -52,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Document", targetDepth))
+                if (context.TestExpression("Document", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentDescriptionUnmarshaller.Instance;
                     response.Document = unmarshaller.Unmarshall(context, ref reader);

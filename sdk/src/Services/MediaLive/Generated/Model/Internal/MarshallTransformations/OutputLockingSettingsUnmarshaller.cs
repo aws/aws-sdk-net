@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("disabledLockingSettings", targetDepth))
+                if (context.TestExpression("disabledLockingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DisabledLockingSettingsUnmarshaller.Instance;
                     unmarshalledObject.DisabledLockingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epochLockingSettings", targetDepth))
+                if (context.TestExpression("epochLockingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EpochLockingSettingsUnmarshaller.Instance;
                     unmarshalledObject.EpochLockingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineLockingSettings", targetDepth))
+                if (context.TestExpression("pipelineLockingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineLockingSettingsUnmarshaller.Instance;
                     unmarshalledObject.PipelineLockingSettings = unmarshaller.Unmarshall(context, ref reader);

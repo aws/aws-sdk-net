@@ -52,13 +52,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Disks", targetDepth))
+                if (context.TestExpression("Disks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
                     response.Disks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("GatewayARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RollbackServiceSoftwareOptions", targetDepth))
+                if (context.TestExpression("RollbackServiceSoftwareOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = RollbackServiceSoftwareOptionsUnmarshaller.Instance;
                     response.RollbackServiceSoftwareOptions = unmarshaller.Unmarshall(context, ref reader);

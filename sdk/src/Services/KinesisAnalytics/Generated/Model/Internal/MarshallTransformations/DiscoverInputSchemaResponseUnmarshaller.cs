@@ -52,25 +52,25 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InputSchema", targetDepth))
+                if (context.TestExpression("InputSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceSchemaUnmarshaller.Instance;
                     response.InputSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParsedInputRecords", targetDepth))
+                if (context.TestExpression("ParsedInputRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.ParsedInputRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessedInputRecords", targetDepth))
+                if (context.TestExpression("ProcessedInputRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ProcessedInputRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RawInputRecords", targetDepth))
+                if (context.TestExpression("RawInputRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RawInputRecords = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hostHeader", targetDepth))
+                if (context.TestExpression("hostHeader", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hostHeaderWildcard", targetDepth))
+                if (context.TestExpression("hostHeaderWildcard", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostHeaderWildcard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pathExact", targetDepth))
+                if (context.TestExpression("pathExact", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PathExact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pathPrefix", targetDepth))
+                if (context.TestExpression("pathPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PathPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryStringEquals", targetDepth))
+                if (context.TestExpression("queryStringEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryStringKeyValuePairUnmarshaller.Instance;
                     unmarshalledObject.QueryStringEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryStringExists", targetDepth))
+                if (context.TestExpression("queryStringExists", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryStringExists = unmarshaller.Unmarshall(context, ref reader);

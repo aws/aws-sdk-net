@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UICustomization", targetDepth))
+                if (context.TestExpression("UICustomization", targetDepth, ref reader))
                 {
                     var unmarshaller = UICustomizationTypeUnmarshaller.Instance;
                     response.UICustomization = unmarshaller.Unmarshall(context, ref reader);

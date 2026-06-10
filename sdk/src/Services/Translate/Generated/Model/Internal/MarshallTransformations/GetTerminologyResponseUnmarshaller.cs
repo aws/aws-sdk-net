@@ -52,19 +52,19 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuxiliaryDataLocation", targetDepth))
+                if (context.TestExpression("AuxiliaryDataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = TerminologyDataLocationUnmarshaller.Instance;
                     response.AuxiliaryDataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminologyDataLocation", targetDepth))
+                if (context.TestExpression("TerminologyDataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = TerminologyDataLocationUnmarshaller.Instance;
                     response.TerminologyDataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminologyProperties", targetDepth))
+                if (context.TestExpression("TerminologyProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = TerminologyPropertiesUnmarshaller.Instance;
                     response.TerminologyProperties = unmarshaller.Unmarshall(context, ref reader);

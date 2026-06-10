@@ -56,25 +56,25 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Circle", targetDepth))
+                if (context.TestExpression("Circle", targetDepth, ref reader))
                 {
                     var unmarshaller = CircleUnmarshaller.Instance;
                     unmarshalledObject.Circle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geobuf", targetDepth))
+                if (context.TestExpression("Geobuf", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.Geobuf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiPolygon", targetDepth))
+                if (context.TestExpression("MultiPolygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<List<List<double>>>, JsonListUnmarshaller<List<List<double>>,JsonListUnmarshaller<List<double>,JsonListUnmarshaller<double,DoubleUnmarshaller>>>>(new JsonListUnmarshaller<List<List<double>>, JsonListUnmarshaller<List<double>,JsonListUnmarshaller<double,DoubleUnmarshaller>>>(new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance))));
                     unmarshalledObject.MultiPolygon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Polygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<List<double>>, JsonListUnmarshaller<List<double>,JsonListUnmarshaller<double,DoubleUnmarshaller>>>(new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));
                     unmarshalledObject.Polygon = unmarshaller.Unmarshall(context, ref reader);

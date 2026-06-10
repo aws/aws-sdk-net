@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rist", targetDepth))
+                if (context.TestExpression("rist", targetDepth, ref reader))
                 {
                     var unmarshaller = RistRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Rist = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rtp", targetDepth))
+                if (context.TestExpression("rtp", targetDepth, ref reader))
                 {
                     var unmarshaller = RtpRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Rtp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtCaller", targetDepth))
+                if (context.TestExpression("srtCaller", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtCallerRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SrtCaller = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtListener", targetDepth))
+                if (context.TestExpression("srtListener", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtListenerRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SrtListener = unmarshaller.Unmarshall(context, ref reader);

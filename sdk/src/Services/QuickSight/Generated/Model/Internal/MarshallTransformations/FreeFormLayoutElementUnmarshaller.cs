@@ -56,85 +56,85 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackgroundStyle", targetDepth))
+                if (context.TestExpression("BackgroundStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeFormLayoutElementBackgroundStyleUnmarshaller.Instance;
                     unmarshalledObject.BackgroundStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BorderRadius", targetDepth))
+                if (context.TestExpression("BorderRadius", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BorderRadius = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BorderStyle", targetDepth))
+                if (context.TestExpression("BorderStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeFormLayoutElementBorderStyleUnmarshaller.Instance;
                     unmarshalledObject.BorderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElementId", targetDepth))
+                if (context.TestExpression("ElementId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElementType", targetDepth))
+                if (context.TestExpression("ElementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Height", targetDepth))
+                if (context.TestExpression("Height", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadingAnimation", targetDepth))
+                if (context.TestExpression("LoadingAnimation", targetDepth, ref reader))
                 {
                     var unmarshaller = LoadingAnimationUnmarshaller.Instance;
                     unmarshalledObject.LoadingAnimation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Padding", targetDepth))
+                if (context.TestExpression("Padding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Padding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenderingRules", targetDepth))
+                if (context.TestExpression("RenderingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetElementRenderingRule, SheetElementRenderingRuleUnmarshaller>(SheetElementRenderingRuleUnmarshaller.Instance);
                     unmarshalledObject.RenderingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedBorderStyle", targetDepth))
+                if (context.TestExpression("SelectedBorderStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeFormLayoutElementBorderStyleUnmarshaller.Instance;
                     unmarshalledObject.SelectedBorderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Width", targetDepth))
+                if (context.TestExpression("Width", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxisLocation", targetDepth))
+                if (context.TestExpression("XAxisLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.XAxisLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("YAxisLocation", targetDepth))
+                if (context.TestExpression("YAxisLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.YAxisLocation = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("timeBetweenBackupsInMinutes", targetDepth))
+                if (context.TestExpression("timeBetweenBackupsInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeBetweenBackupsInMinutes = unmarshaller.Unmarshall(context, ref reader);

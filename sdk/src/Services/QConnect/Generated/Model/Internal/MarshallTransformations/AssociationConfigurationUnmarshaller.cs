@@ -56,19 +56,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associationConfigurationData", targetDepth))
+                if (context.TestExpression("associationConfigurationData", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociationConfigurationDataUnmarshaller.Instance;
                     unmarshalledObject.AssociationConfigurationData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associationId", targetDepth))
+                if (context.TestExpression("associationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associationType", targetDepth))
+                if (context.TestExpression("associationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationType = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextPageToken", targetDepth))
+                if (context.TestExpression("nextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationalDatabases", targetDepth))
+                if (context.TestExpression("relationalDatabases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RelationalDatabase, RelationalDatabaseUnmarshaller>(RelationalDatabaseUnmarshaller.Instance);
                     response.RelationalDatabases = unmarshaller.Unmarshall(context, ref reader);

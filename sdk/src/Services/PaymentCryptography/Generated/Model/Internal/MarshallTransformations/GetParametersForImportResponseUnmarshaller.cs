@@ -52,31 +52,31 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImportToken", targetDepth))
+                if (context.TestExpression("ImportToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ImportToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParametersValidUntilTimestamp", targetDepth))
+                if (context.TestExpression("ParametersValidUntilTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ParametersValidUntilTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WrappingKeyAlgorithm", targetDepth))
+                if (context.TestExpression("WrappingKeyAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WrappingKeyAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WrappingKeyCertificate", targetDepth))
+                if (context.TestExpression("WrappingKeyCertificate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WrappingKeyCertificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WrappingKeyCertificateChain", targetDepth))
+                if (context.TestExpression("WrappingKeyCertificateChain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WrappingKeyCertificateChain = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.QueryCompatible.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("QueueUrl", targetDepth))
+                if (context.TestExpression("QueueUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueueUrl = unmarshaller.Unmarshall(context, ref reader);

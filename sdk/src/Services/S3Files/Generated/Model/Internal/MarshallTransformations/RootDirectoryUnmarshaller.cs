@@ -56,13 +56,13 @@ namespace Amazon.S3Files.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationPermissions", targetDepth))
+                if (context.TestExpression("creationPermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = CreationPermissionsUnmarshaller.Instance;
                     unmarshalledObject.CreationPermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("path", targetDepth))
+                if (context.TestExpression("path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);

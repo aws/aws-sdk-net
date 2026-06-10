@@ -56,43 +56,43 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("canSignal", targetDepth))
+                if (context.TestExpression("canSignal", targetDepth, ref reader))
                 {
                     var unmarshaller = CanSignalUnmarshaller.Instance;
                     unmarshalledObject.CanSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customDecodingSignal", targetDepth))
+                if (context.TestExpression("customDecodingSignal", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomDecodingSignalUnmarshaller.Instance;
                     unmarshalledObject.CustomDecodingSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fullyQualifiedName", targetDepth))
+                if (context.TestExpression("fullyQualifiedName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interfaceId", targetDepth))
+                if (context.TestExpression("interfaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageSignal", targetDepth))
+                if (context.TestExpression("messageSignal", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageSignalUnmarshaller.Instance;
                     unmarshalledObject.MessageSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("obdSignal", targetDepth))
+                if (context.TestExpression("obdSignal", targetDepth, ref reader))
                 {
                     var unmarshaller = ObdSignalUnmarshaller.Instance;
                     unmarshalledObject.ObdSignal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

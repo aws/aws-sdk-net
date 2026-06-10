@@ -56,31 +56,31 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DagProcessingLogs", targetDepth))
+                if (context.TestExpression("DagProcessingLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ModuleLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DagProcessingLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchedulerLogs", targetDepth))
+                if (context.TestExpression("SchedulerLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ModuleLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SchedulerLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskLogs", targetDepth))
+                if (context.TestExpression("TaskLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ModuleLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TaskLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebserverLogs", targetDepth))
+                if (context.TestExpression("WebserverLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ModuleLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WebserverLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkerLogs", targetDepth))
+                if (context.TestExpression("WorkerLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ModuleLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WorkerLogs = unmarshaller.Unmarshall(context, ref reader);

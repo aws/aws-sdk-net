@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SparkConnect", targetDepth))
+                if (context.TestExpression("SparkConnect", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionEndpointUnmarshaller.Instance;
                     response.SparkConnect = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AthenaDatasetDefinition", targetDepth))
+                if (context.TestExpression("AthenaDatasetDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = AthenaDatasetDefinitionUnmarshaller.Instance;
                     unmarshalledObject.AthenaDatasetDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataDistributionType", targetDepth))
+                if (context.TestExpression("DataDistributionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataDistributionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputMode", targetDepth))
+                if (context.TestExpression("InputMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalPath", targetDepth))
+                if (context.TestExpression("LocalPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDatasetDefinition", targetDepth))
+                if (context.TestExpression("RedshiftDatasetDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDatasetDefinitionUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDatasetDefinition = unmarshaller.Unmarshall(context, ref reader);

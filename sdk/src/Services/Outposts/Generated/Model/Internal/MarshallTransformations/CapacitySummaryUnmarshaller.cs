@@ -56,19 +56,19 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityChange", targetDepth))
+                if (context.TestExpression("CapacityChange", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuoteCapacity, QuoteCapacityUnmarshaller>(QuoteCapacityUnmarshaller.Instance);
                     unmarshalledObject.CapacityChange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExistingCapacities", targetDepth))
+                if (context.TestExpression("ExistingCapacities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuoteCapacity, QuoteCapacityUnmarshaller>(QuoteCapacityUnmarshaller.Instance);
                     unmarshalledObject.ExistingCapacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FinalCapacities", targetDepth))
+                if (context.TestExpression("FinalCapacities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuoteCapacity, QuoteCapacityUnmarshaller>(QuoteCapacityUnmarshaller.Instance);
                     unmarshalledObject.FinalCapacities = unmarshaller.Unmarshall(context, ref reader);

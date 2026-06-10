@@ -56,19 +56,19 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogDestinationConfigs", targetDepth))
+                if (context.TestExpression("LogDestinationConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LogDestinationConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedactedFields", targetDepth))
+                if (context.TestExpression("RedactedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldToMatch, FieldToMatchUnmarshaller>(FieldToMatchUnmarshaller.Instance);
                     unmarshalledObject.RedactedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

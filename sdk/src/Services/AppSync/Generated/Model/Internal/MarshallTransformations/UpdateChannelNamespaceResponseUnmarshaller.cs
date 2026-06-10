@@ -52,7 +52,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelNamespace", targetDepth))
+                if (context.TestExpression("channelNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelNamespaceUnmarshaller.Instance;
                     response.ChannelNamespace = unmarshaller.Unmarshall(context, ref reader);

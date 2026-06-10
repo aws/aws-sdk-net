@@ -56,31 +56,31 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("initiatedEventId", targetDepth))
+                if (context.TestExpression("initiatedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InitiatedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedEventId", targetDepth))
+                if (context.TestExpression("startedEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutType", targetDepth))
+                if (context.TestExpression("timeoutType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeoutType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowExecution", targetDepth))
+                if (context.TestExpression("workflowExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
                     unmarshalledObject.WorkflowExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowType", targetDepth))
+                if (context.TestExpression("workflowType", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowTypeUnmarshaller.Instance;
                     unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context, ref reader);

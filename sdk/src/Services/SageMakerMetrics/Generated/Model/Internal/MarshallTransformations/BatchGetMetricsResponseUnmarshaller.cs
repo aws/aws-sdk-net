@@ -52,7 +52,7 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricQueryResults", targetDepth))
+                if (context.TestExpression("MetricQueryResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricQueryResult, MetricQueryResultUnmarshaller>(MetricQueryResultUnmarshaller.Instance);
                     response.MetricQueryResults = unmarshaller.Unmarshall(context, ref reader);

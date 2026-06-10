@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Dark", targetDepth))
+                if (context.TestExpression("Dark", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceThemeConfigUnmarshaller.Instance;
                     unmarshalledObject.Dark = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Light", targetDepth))
+                if (context.TestExpression("Light", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceThemeConfigUnmarshaller.Instance;
                     unmarshalledObject.Light = unmarshaller.Unmarshall(context, ref reader);

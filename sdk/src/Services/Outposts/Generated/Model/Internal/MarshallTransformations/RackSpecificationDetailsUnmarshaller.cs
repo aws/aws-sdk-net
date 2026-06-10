@@ -56,55 +56,55 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EC2Capacities", targetDepth))
+                if (context.TestExpression("EC2Capacities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EC2Capacity, EC2CapacityUnmarshaller>(EC2CapacityUnmarshaller.Instance);
                     unmarshalledObject.EC2Capacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackDepthInches", targetDepth))
+                if (context.TestExpression("RackDepthInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackDepthInches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackHeightInches", targetDepth))
+                if (context.TestExpression("RackHeightInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackHeightInches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackId", targetDepth))
+                if (context.TestExpression("RackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RackId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackPowerDrawKva", targetDepth))
+                if (context.TestExpression("RackPowerDrawKva", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackPowerDrawKva = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackUnitHeight", targetDepth))
+                if (context.TestExpression("RackUnitHeight", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RackUnitHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackUse", targetDepth))
+                if (context.TestExpression("RackUse", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RackUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackWeightLbs", targetDepth))
+                if (context.TestExpression("RackWeightLbs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackWeightLbs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackWidthInches", targetDepth))
+                if (context.TestExpression("RackWidthInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackWidthInches = unmarshaller.Unmarshall(context, ref reader);

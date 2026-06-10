@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AltText", targetDepth))
+                if (context.TestExpression("AltText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AltText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogoSet", targetDepth))
+                if (context.TestExpression("LogoSet", targetDepth, ref reader))
                 {
                     var unmarshaller = LogoSetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogoSet = unmarshaller.Unmarshall(context, ref reader);

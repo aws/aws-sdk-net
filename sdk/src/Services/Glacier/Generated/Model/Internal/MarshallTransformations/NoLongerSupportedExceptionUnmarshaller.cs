@@ -72,13 +72,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("code", targetDepth))
+                    if (context.TestExpression("code", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("type", targetDepth))
+                    if (context.TestExpression("type", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

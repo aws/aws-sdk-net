@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultNewSheetConfiguration", targetDepth))
+                if (context.TestExpression("DefaultNewSheetConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultNewSheetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DefaultNewSheetConfiguration = unmarshaller.Unmarshall(context, ref reader);

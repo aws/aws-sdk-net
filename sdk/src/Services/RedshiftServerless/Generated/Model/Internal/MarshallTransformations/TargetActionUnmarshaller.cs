@@ -56,7 +56,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createSnapshot", targetDepth))
+                if (context.TestExpression("createSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateSnapshotScheduleActionParametersUnmarshaller.Instance;
                     unmarshalledObject.CreateSnapshot = unmarshaller.Unmarshall(context, ref reader);

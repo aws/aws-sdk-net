@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appId", targetDepth))
+                if (context.TestExpression("appId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("appSecretArn", targetDepth))
+                if (context.TestExpression("appSecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;
                     unmarshalledObject.AppSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("appSecretJsonKey", targetDepth))
+                if (context.TestExpression("appSecretJsonKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppSecretJsonKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("appSecretSource", targetDepth))
+                if (context.TestExpression("appSecretSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppSecretSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationId", targetDepth))
+                if (context.TestExpression("authorizationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationPrivateKeyArn", targetDepth))
+                if (context.TestExpression("authorizationPrivateKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationPrivateKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationPrivateKeyJsonKey", targetDepth))
+                if (context.TestExpression("authorizationPrivateKeyJsonKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationPrivateKeyJsonKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationPrivateKeySource", targetDepth))
+                if (context.TestExpression("authorizationPrivateKeySource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationPrivateKeySource = unmarshaller.Unmarshall(context, ref reader);

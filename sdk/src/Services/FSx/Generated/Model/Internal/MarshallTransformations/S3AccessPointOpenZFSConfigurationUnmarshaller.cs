@@ -56,13 +56,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileSystemIdentity", targetDepth))
+                if (context.TestExpression("FileSystemIdentity", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenZFSFileSystemIdentityUnmarshaller.Instance;
                     unmarshalledObject.FileSystemIdentity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeId", targetDepth))
+                if (context.TestExpression("VolumeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context, ref reader);

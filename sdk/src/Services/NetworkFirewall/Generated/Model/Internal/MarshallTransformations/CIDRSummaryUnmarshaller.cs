@@ -56,19 +56,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailableCIDRCount", targetDepth))
+                if (context.TestExpression("AvailableCIDRCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AvailableCIDRCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IPSetReferences", targetDepth))
+                if (context.TestExpression("IPSetReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, IPSetMetadata, StringUnmarshaller, IPSetMetadataUnmarshaller>(StringUnmarshaller.Instance, IPSetMetadataUnmarshaller.Instance);
                     unmarshalledObject.IPSetReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UtilizedCIDRCount", targetDepth))
+                if (context.TestExpression("UtilizedCIDRCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UtilizedCIDRCount = unmarshaller.Unmarshall(context, ref reader);

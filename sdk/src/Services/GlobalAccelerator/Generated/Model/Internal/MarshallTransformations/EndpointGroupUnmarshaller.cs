@@ -56,61 +56,61 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointDescriptions", targetDepth))
+                if (context.TestExpression("EndpointDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointDescription, EndpointDescriptionUnmarshaller>(EndpointDescriptionUnmarshaller.Instance);
                     unmarshalledObject.EndpointDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupArn", targetDepth))
+                if (context.TestExpression("EndpointGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupRegion", targetDepth))
+                if (context.TestExpression("EndpointGroupRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckIntervalSeconds", targetDepth))
+                if (context.TestExpression("HealthCheckIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckPath", targetDepth))
+                if (context.TestExpression("HealthCheckPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckPort", targetDepth))
+                if (context.TestExpression("HealthCheckPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckProtocol", targetDepth))
+                if (context.TestExpression("HealthCheckProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortOverrides", targetDepth))
+                if (context.TestExpression("PortOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortOverride, PortOverrideUnmarshaller>(PortOverrideUnmarshaller.Instance);
                     unmarshalledObject.PortOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThresholdCount", targetDepth))
+                if (context.TestExpression("ThresholdCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThresholdCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficDialPercentage", targetDepth))
+                if (context.TestExpression("TrafficDialPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TrafficDialPercentage = unmarshaller.Unmarshall(context, ref reader);

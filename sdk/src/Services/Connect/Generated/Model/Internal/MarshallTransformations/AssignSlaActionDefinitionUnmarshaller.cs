@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaseSlaConfiguration", targetDepth))
+                if (context.TestExpression("CaseSlaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CaseSlaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CaseSlaConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SlaAssignmentType", targetDepth))
+                if (context.TestExpression("SlaAssignmentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlaAssignmentType = unmarshaller.Unmarshall(context, ref reader);

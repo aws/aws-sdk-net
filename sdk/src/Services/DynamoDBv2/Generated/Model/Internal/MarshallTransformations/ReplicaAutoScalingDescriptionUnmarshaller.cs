@@ -56,31 +56,31 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth))
+                if (context.TestExpression("GlobalSecondaryIndexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicaGlobalSecondaryIndexAutoScalingDescription, ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexAutoScalingDescriptionUnmarshaller.Instance);
                     unmarshalledObject.GlobalSecondaryIndexes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionName", targetDepth))
+                if (context.TestExpression("RegionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedReadCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedReadCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth))
+                if (context.TestExpression("ReplicaProvisionedWriteCapacityAutoScalingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingSettingsDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ReplicaProvisionedWriteCapacityAutoScalingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaStatus", targetDepth))
+                if (context.TestExpression("ReplicaStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicaStatus = unmarshaller.Unmarshall(context, ref reader);

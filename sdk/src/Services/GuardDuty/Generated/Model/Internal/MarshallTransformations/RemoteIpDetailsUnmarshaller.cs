@@ -56,37 +56,37 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("city", targetDepth))
+                if (context.TestExpression("city", targetDepth, ref reader))
                 {
                     var unmarshaller = CityUnmarshaller.Instance;
                     unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("country", targetDepth))
+                if (context.TestExpression("country", targetDepth, ref reader))
                 {
                     var unmarshaller = CountryUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("geoLocation", targetDepth))
+                if (context.TestExpression("geoLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = GeoLocationUnmarshaller.Instance;
                     unmarshalledObject.GeoLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipAddressV4", targetDepth))
+                if (context.TestExpression("ipAddressV4", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipAddressV6", targetDepth))
+                if (context.TestExpression("ipAddressV6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressV6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("organization", targetDepth))
+                if (context.TestExpression("organization", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationUnmarshaller.Instance;
                     unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);

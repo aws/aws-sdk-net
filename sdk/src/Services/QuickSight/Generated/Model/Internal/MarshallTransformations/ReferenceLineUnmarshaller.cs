@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataConfiguration", targetDepth))
+                if (context.TestExpression("DataConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineDataConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelConfiguration", targetDepth))
+                if (context.TestExpression("LabelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineLabelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LabelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StyleConfiguration", targetDepth))
+                if (context.TestExpression("StyleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineStyleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StyleConfiguration = unmarshaller.Unmarshall(context, ref reader);

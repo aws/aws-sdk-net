@@ -56,7 +56,7 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("privateRouteServerPeerings", targetDepth))
+                if (context.TestExpression("privateRouteServerPeerings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PrivateRouteServerPeerings = unmarshaller.Unmarshall(context, ref reader);

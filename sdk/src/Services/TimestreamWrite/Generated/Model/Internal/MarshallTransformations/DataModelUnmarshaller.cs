@@ -56,37 +56,37 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionMappings", targetDepth))
+                if (context.TestExpression("DimensionMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionMapping, DimensionMappingUnmarshaller>(DimensionMappingUnmarshaller.Instance);
                     unmarshalledObject.DimensionMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeasureNameColumn", targetDepth))
+                if (context.TestExpression("MeasureNameColumn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeasureNameColumn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MixedMeasureMappings", targetDepth))
+                if (context.TestExpression("MixedMeasureMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MixedMeasureMapping, MixedMeasureMappingUnmarshaller>(MixedMeasureMappingUnmarshaller.Instance);
                     unmarshalledObject.MixedMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiMeasureMappings", targetDepth))
+                if (context.TestExpression("MultiMeasureMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiMeasureMappingsUnmarshaller.Instance;
                     unmarshalledObject.MultiMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeColumn", targetDepth))
+                if (context.TestExpression("TimeColumn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeColumn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeUnit", targetDepth))
+                if (context.TestExpression("TimeUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeUnit = unmarshaller.Unmarshall(context, ref reader);

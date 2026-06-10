@@ -52,7 +52,7 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamDescription", targetDepth))
+                if (context.TestExpression("StreamDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamDescriptionUnmarshaller.Instance;
                     response.StreamDescription = unmarshaller.Unmarshall(context, ref reader);

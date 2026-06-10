@@ -52,7 +52,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Workload", targetDepth))
+                if (context.TestExpression("Workload", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadUnmarshaller.Instance;
                     response.Workload = unmarshaller.Unmarshall(context, ref reader);

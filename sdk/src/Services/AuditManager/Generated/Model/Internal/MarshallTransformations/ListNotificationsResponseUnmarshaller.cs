@@ -52,13 +52,13 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notifications", targetDepth))
+                if (context.TestExpression("notifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Notification, NotificationUnmarshaller>(NotificationUnmarshaller.Instance);
                     response.Notifications = unmarshaller.Unmarshall(context, ref reader);

@@ -52,25 +52,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CountryLaunchStatus", targetDepth))
+                if (context.TestExpression("CountryLaunchStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CountryLaunchStatusInformation, CountryLaunchStatusInformationUnmarshaller>(CountryLaunchStatusInformationUnmarshaller.Instance);
                     response.CountryLaunchStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RcsAgentArn", targetDepth))
+                if (context.TestExpression("RcsAgentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RcsAgentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RcsAgentId", targetDepth))
+                if (context.TestExpression("RcsAgentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RcsAgentId = unmarshaller.Unmarshall(context, ref reader);

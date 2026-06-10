@@ -56,37 +56,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DailyCap", targetDepth))
+                if (context.TestExpression("DailyCap", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DailyCap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointReentryCap", targetDepth))
+                if (context.TestExpression("EndpointReentryCap", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndpointReentryCap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointReentryInterval", targetDepth))
+                if (context.TestExpression("EndpointReentryInterval", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointReentryInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessagesPerSecond", targetDepth))
+                if (context.TestExpression("MessagesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeframeCap", targetDepth))
+                if (context.TestExpression("TimeframeCap", targetDepth, ref reader))
                 {
                     var unmarshaller = JourneyTimeframeCapUnmarshaller.Instance;
                     unmarshalledObject.TimeframeCap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCap", targetDepth))
+                if (context.TestExpression("TotalCap", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalCap = unmarshaller.Unmarshall(context, ref reader);

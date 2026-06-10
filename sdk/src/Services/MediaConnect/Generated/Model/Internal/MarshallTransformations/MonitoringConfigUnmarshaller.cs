@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioMonitoringSettings", targetDepth))
+                if (context.TestExpression("audioMonitoringSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioMonitoringSetting, AudioMonitoringSettingUnmarshaller>(AudioMonitoringSettingUnmarshaller.Instance);
                     unmarshalledObject.AudioMonitoringSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentQualityAnalysisState", targetDepth))
+                if (context.TestExpression("contentQualityAnalysisState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentQualityAnalysisState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailState", targetDepth))
+                if (context.TestExpression("thumbnailState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoMonitoringSettings", targetDepth))
+                if (context.TestExpression("videoMonitoringSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VideoMonitoringSetting, VideoMonitoringSettingUnmarshaller>(VideoMonitoringSettingUnmarshaller.Instance);
                     unmarshalledObject.VideoMonitoringSettings = unmarshaller.Unmarshall(context, ref reader);

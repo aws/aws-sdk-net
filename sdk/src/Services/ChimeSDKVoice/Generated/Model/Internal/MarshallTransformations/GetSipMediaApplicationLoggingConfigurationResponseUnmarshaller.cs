@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SipMediaApplicationLoggingConfiguration", targetDepth))
+                if (context.TestExpression("SipMediaApplicationLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SipMediaApplicationLoggingConfigurationUnmarshaller.Instance;
                     response.SipMediaApplicationLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);

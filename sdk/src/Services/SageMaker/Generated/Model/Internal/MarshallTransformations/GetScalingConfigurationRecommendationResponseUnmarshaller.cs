@@ -52,43 +52,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamicScalingConfiguration", targetDepth))
+                if (context.TestExpression("DynamicScalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamicScalingConfigurationUnmarshaller.Instance;
                     response.DynamicScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointName", targetDepth))
+                if (context.TestExpression("EndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceRecommendationsJobName", targetDepth))
+                if (context.TestExpression("InferenceRecommendationsJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InferenceRecommendationsJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metric", targetDepth))
+                if (context.TestExpression("Metric", targetDepth, ref reader))
                 {
                     var unmarshaller = ScalingPolicyMetricUnmarshaller.Instance;
                     response.Metric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationId", targetDepth))
+                if (context.TestExpression("RecommendationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecommendationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingPolicyObjective", targetDepth))
+                if (context.TestExpression("ScalingPolicyObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = ScalingPolicyObjectiveUnmarshaller.Instance;
                     response.ScalingPolicyObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetCpuUtilizationPerCore", targetDepth))
+                if (context.TestExpression("TargetCpuUtilizationPerCore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TargetCpuUtilizationPerCore = unmarshaller.Unmarshall(context, ref reader);

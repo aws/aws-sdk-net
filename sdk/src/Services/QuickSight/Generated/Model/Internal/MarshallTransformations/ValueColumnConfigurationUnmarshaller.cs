@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregationFunction", targetDepth))
+                if (context.TestExpression("AggregationFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPrepAggregationFunctionUnmarshaller.Instance;
                     unmarshalledObject.AggregationFunction = unmarshaller.Unmarshall(context, ref reader);

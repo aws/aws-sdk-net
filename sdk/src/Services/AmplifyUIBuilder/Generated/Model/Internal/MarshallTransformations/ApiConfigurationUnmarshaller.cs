@@ -56,19 +56,19 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataStoreConfig", targetDepth))
+                if (context.TestExpression("dataStoreConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataStoreRenderConfigUnmarshaller.Instance;
                     unmarshalledObject.DataStoreConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("graphQLConfig", targetDepth))
+                if (context.TestExpression("graphQLConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GraphQLRenderConfigUnmarshaller.Instance;
                     unmarshalledObject.GraphQLConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noApiConfig", targetDepth))
+                if (context.TestExpression("noApiConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = NoApiRenderConfigUnmarshaller.Instance;
                     unmarshalledObject.NoApiConfig = unmarshaller.Unmarshall(context, ref reader);

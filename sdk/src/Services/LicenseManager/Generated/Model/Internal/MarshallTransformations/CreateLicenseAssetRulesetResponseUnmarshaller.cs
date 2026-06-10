@@ -52,7 +52,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LicenseAssetRulesetArn", targetDepth))
+                if (context.TestExpression("LicenseAssetRulesetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LicenseAssetRulesetArn = unmarshaller.Unmarshall(context, ref reader);

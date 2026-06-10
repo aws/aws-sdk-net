@@ -56,85 +56,85 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amazonQProperties", targetDepth))
+                if (context.TestExpression("amazonQProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonQPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.AmazonQProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("athenaProperties", targetDepth))
+                if (context.TestExpression("athenaProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = AthenaPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.AthenaProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glueProperties", targetDepth))
+                if (context.TestExpression("glueProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = GluePropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.GlueProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hyperPodProperties", targetDepth))
+                if (context.TestExpression("hyperPodProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperPodPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.HyperPodProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamProperties", targetDepth))
+                if (context.TestExpression("iamProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = IamPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.IamProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lakehouseProperties", targetDepth))
+                if (context.TestExpression("lakehouseProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = LakehousePropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.LakehouseProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mlflowProperties", targetDepth))
+                if (context.TestExpression("mlflowProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = MlflowPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.MlflowProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftProperties", targetDepth))
+                if (context.TestExpression("redshiftProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.RedshiftProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Properties", targetDepth))
+                if (context.TestExpression("s3Properties", targetDepth, ref reader))
                 {
                     var unmarshaller = S3PropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.S3Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparkEmrProperties", targetDepth))
+                if (context.TestExpression("sparkEmrProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SparkEmrPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.SparkEmrProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparkGlueProperties", targetDepth))
+                if (context.TestExpression("sparkGlueProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SparkGluePropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.SparkGlueProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcProperties", targetDepth))
+                if (context.TestExpression("vpcProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.VpcProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowsMwaaProperties", targetDepth))
+                if (context.TestExpression("workflowsMwaaProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowsMwaaPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.WorkflowsMwaaProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowsServerlessProperties", targetDepth))
+                if (context.TestExpression("workflowsServerlessProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowsServerlessPropertiesOutputUnmarshaller.Instance;
                     unmarshalledObject.WorkflowsServerlessProperties = unmarshaller.Unmarshall(context, ref reader);

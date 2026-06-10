@@ -52,7 +52,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityReservation", targetDepth))
+                if (context.TestExpression("CapacityReservation", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityReservationUnmarshaller.Instance;
                     response.CapacityReservation = unmarshaller.Unmarshall(context, ref reader);

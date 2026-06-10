@@ -72,7 +72,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("queryCompileError", targetDepth))
+                    if (context.TestExpression("queryCompileError", targetDepth, ref reader))
                     {
                         var unmarshaller = QueryCompileErrorUnmarshaller.Instance;
                         unmarshalledObject.QueryCompileError = unmarshaller.Unmarshall(context, ref reader);

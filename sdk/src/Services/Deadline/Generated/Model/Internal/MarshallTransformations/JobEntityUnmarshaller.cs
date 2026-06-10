@@ -56,25 +56,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentDetails", targetDepth))
+                if (context.TestExpression("environmentDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentDetailsEntityUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobAttachmentDetails", targetDepth))
+                if (context.TestExpression("jobAttachmentDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = JobAttachmentDetailsEntityUnmarshaller.Instance;
                     unmarshalledObject.JobAttachmentDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDetails", targetDepth))
+                if (context.TestExpression("jobDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = JobDetailsEntityUnmarshaller.Instance;
                     unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stepDetails", targetDepth))
+                if (context.TestExpression("stepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StepDetailsEntityUnmarshaller.Instance;
                     unmarshalledObject.StepDetails = unmarshaller.Unmarshall(context, ref reader);

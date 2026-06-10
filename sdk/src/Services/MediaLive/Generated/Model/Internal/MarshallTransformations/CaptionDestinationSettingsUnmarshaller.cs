@@ -56,79 +56,79 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aribDestinationSettings", targetDepth))
+                if (context.TestExpression("aribDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AribDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.AribDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("burnInDestinationSettings", targetDepth))
+                if (context.TestExpression("burnInDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = BurnInDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.BurnInDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dvbSubDestinationSettings", targetDepth))
+                if (context.TestExpression("dvbSubDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DvbSubDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DvbSubDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebuTtDDestinationSettings", targetDepth))
+                if (context.TestExpression("ebuTtDDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EbuTtDDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.EbuTtDDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedDestinationSettings", targetDepth))
+                if (context.TestExpression("embeddedDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmbeddedDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedPlusScte20DestinationSettings", targetDepth))
+                if (context.TestExpression("embeddedPlusScte20DestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmbeddedPlusScte20DestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedPlusScte20DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rtmpCaptionInfoDestinationSettings", targetDepth))
+                if (context.TestExpression("rtmpCaptionInfoDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RtmpCaptionInfoDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.RtmpCaptionInfoDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte20PlusEmbeddedDestinationSettings", targetDepth))
+                if (context.TestExpression("scte20PlusEmbeddedDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte20PlusEmbeddedDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.Scte20PlusEmbeddedDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte27DestinationSettings", targetDepth))
+                if (context.TestExpression("scte27DestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte27DestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.Scte27DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smpteTtDestinationSettings", targetDepth))
+                if (context.TestExpression("smpteTtDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SmpteTtDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.SmpteTtDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("teletextDestinationSettings", targetDepth))
+                if (context.TestExpression("teletextDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TeletextDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.TeletextDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ttmlDestinationSettings", targetDepth))
+                if (context.TestExpression("ttmlDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TtmlDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.TtmlDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webvttDestinationSettings", targetDepth))
+                if (context.TestExpression("webvttDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = WebvttDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.WebvttDestinationSettings = unmarshaller.Unmarshall(context, ref reader);

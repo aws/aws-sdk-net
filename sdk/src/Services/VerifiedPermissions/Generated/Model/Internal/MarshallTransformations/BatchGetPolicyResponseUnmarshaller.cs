@@ -52,13 +52,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetPolicyErrorItem, BatchGetPolicyErrorItemUnmarshaller>(BatchGetPolicyErrorItemUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("results", targetDepth))
+                if (context.TestExpression("results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetPolicyOutputItem, BatchGetPolicyOutputItemUnmarshaller>(BatchGetPolicyOutputItemUnmarshaller.Instance);
                     response.Results = unmarshaller.Unmarshall(context, ref reader);

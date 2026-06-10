@@ -52,25 +52,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansUtilizationDetails", targetDepth))
+                if (context.TestExpression("SavingsPlansUtilizationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavingsPlansUtilizationDetail, SavingsPlansUtilizationDetailUnmarshaller>(SavingsPlansUtilizationDetailUnmarshaller.Instance);
                     response.SavingsPlansUtilizationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimePeriod", targetDepth))
+                if (context.TestExpression("TimePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = DateIntervalUnmarshaller.Instance;
                     response.TimePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Total", targetDepth))
+                if (context.TestExpression("Total", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansUtilizationAggregatesUnmarshaller.Instance;
                     response.Total = unmarshaller.Unmarshall(context, ref reader);

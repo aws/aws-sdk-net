@@ -56,61 +56,61 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("burninDestinationSettings", targetDepth))
+                if (context.TestExpression("burninDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = BurninDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.BurninDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationType", targetDepth))
+                if (context.TestExpression("destinationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dvbSubDestinationSettings", targetDepth))
+                if (context.TestExpression("dvbSubDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DvbSubDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DvbSubDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedDestinationSettings", targetDepth))
+                if (context.TestExpression("embeddedDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmbeddedDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imscDestinationSettings", targetDepth))
+                if (context.TestExpression("imscDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ImscDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.ImscDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sccDestinationSettings", targetDepth))
+                if (context.TestExpression("sccDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SccDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.SccDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtDestinationSettings", targetDepth))
+                if (context.TestExpression("srtDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.SrtDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("teletextDestinationSettings", targetDepth))
+                if (context.TestExpression("teletextDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TeletextDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.TeletextDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ttmlDestinationSettings", targetDepth))
+                if (context.TestExpression("ttmlDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TtmlDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.TtmlDestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webvttDestinationSettings", targetDepth))
+                if (context.TestExpression("webvttDestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = WebvttDestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.WebvttDestinationSettings = unmarshaller.Unmarshall(context, ref reader);

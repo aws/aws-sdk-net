@@ -56,49 +56,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioDescriptions", targetDepth))
+                if (context.TestExpression("audioDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioDescription, AudioDescriptionUnmarshaller>(AudioDescriptionUnmarshaller.Instance);
                     unmarshalledObject.AudioDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionDescriptions", targetDepth))
+                if (context.TestExpression("captionDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CaptionDescription, CaptionDescriptionUnmarshaller>(CaptionDescriptionUnmarshaller.Instance);
                     unmarshalledObject.CaptionDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerSettings", targetDepth))
+                if (context.TestExpression("containerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerSettingsUnmarshaller.Instance;
                     unmarshalledObject.ContainerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("extension", targetDepth))
+                if (context.TestExpression("extension", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Extension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nameModifier", targetDepth))
+                if (context.TestExpression("nameModifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSettings", targetDepth))
+                if (context.TestExpression("outputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.OutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preset", targetDepth))
+                if (context.TestExpression("preset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Preset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoDescription", targetDepth))
+                if (context.TestExpression("videoDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoDescriptionUnmarshaller.Instance;
                     unmarshalledObject.VideoDescription = unmarshaller.Unmarshall(context, ref reader);

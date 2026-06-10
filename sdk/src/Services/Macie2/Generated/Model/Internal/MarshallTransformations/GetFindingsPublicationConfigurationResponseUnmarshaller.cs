@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("securityHubConfiguration", targetDepth))
+                if (context.TestExpression("securityHubConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityHubConfigurationUnmarshaller.Instance;
                     response.SecurityHubConfiguration = unmarshaller.Unmarshall(context, ref reader);

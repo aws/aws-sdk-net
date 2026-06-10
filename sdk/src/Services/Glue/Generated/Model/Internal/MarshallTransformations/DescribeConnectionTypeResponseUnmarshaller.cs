@@ -52,73 +52,73 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AthenaConnectionProperties", targetDepth))
+                if (context.TestExpression("AthenaConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.AthenaConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthConfigurationUnmarshaller.Instance;
                     response.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Capabilities", targetDepth))
+                if (context.TestExpression("Capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = CapabilitiesUnmarshaller.Instance;
                     response.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeEnvironmentConfigurations", targetDepth))
+                if (context.TestExpression("ComputeEnvironmentConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComputeEnvironmentConfiguration, StringUnmarshaller, ComputeEnvironmentConfigurationUnmarshaller>(StringUnmarshaller.Instance, ComputeEnvironmentConfigurationUnmarshaller.Instance);
                     response.ComputeEnvironmentConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionOptions", targetDepth))
+                if (context.TestExpression("ConnectionOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.ConnectionOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionProperties", targetDepth))
+                if (context.TestExpression("ConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.ConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionType", targetDepth))
+                if (context.TestExpression("ConnectionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhysicalConnectionRequirements", targetDepth))
+                if (context.TestExpression("PhysicalConnectionRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.PhysicalConnectionRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PythonConnectionProperties", targetDepth))
+                if (context.TestExpression("PythonConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.PythonConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestConfiguration", targetDepth))
+                if (context.TestExpression("RestConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RestConfigurationUnmarshaller.Instance;
                     response.RestConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SparkConnectionProperties", targetDepth))
+                if (context.TestExpression("SparkConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Property, StringUnmarshaller, PropertyUnmarshaller>(StringUnmarshaller.Instance, PropertyUnmarshaller.Instance);
                     response.SparkConnectionProperties = unmarshaller.Unmarshall(context, ref reader);

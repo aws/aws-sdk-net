@@ -56,7 +56,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3ReportLocation", targetDepth))
+                if (context.TestExpression("S3ReportLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ReportLocationUnmarshaller.Instance;
                     unmarshalledObject.S3ReportLocation = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RecursiveLoop", targetDepth))
+                if (context.TestExpression("RecursiveLoop", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecursiveLoop = unmarshaller.Unmarshall(context, ref reader);

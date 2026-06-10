@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PluginVisualTableQuerySort", targetDepth))
+                if (context.TestExpression("PluginVisualTableQuerySort", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginVisualTableQuerySortUnmarshaller.Instance;
                     unmarshalledObject.PluginVisualTableQuerySort = unmarshaller.Unmarshall(context, ref reader);

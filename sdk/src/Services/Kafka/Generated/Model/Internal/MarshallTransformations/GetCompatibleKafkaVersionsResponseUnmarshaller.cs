@@ -52,7 +52,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compatibleKafkaVersions", targetDepth))
+                if (context.TestExpression("compatibleKafkaVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompatibleKafkaVersion, CompatibleKafkaVersionUnmarshaller>(CompatibleKafkaVersionUnmarshaller.Instance);
                     response.CompatibleKafkaVersions = unmarshaller.Unmarshall(context, ref reader);

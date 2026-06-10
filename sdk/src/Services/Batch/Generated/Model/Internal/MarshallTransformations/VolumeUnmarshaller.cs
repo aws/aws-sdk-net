@@ -56,25 +56,25 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("efsVolumeConfiguration", targetDepth))
+                if (context.TestExpression("efsVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EFSVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("host", targetDepth))
+                if (context.TestExpression("host", targetDepth, ref reader))
                 {
                     var unmarshaller = HostUnmarshaller.Instance;
                     unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3filesVolumeConfiguration", targetDepth))
+                if (context.TestExpression("s3filesVolumeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3FilesVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3filesVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);

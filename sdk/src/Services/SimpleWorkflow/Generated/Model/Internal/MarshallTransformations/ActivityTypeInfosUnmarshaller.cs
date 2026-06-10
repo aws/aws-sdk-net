@@ -56,13 +56,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextPageToken", targetDepth))
+                if (context.TestExpression("nextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeInfos", targetDepth))
+                if (context.TestExpression("typeInfos", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActivityTypeInfo, ActivityTypeInfoUnmarshaller>(ActivityTypeInfoUnmarshaller.Instance);
                     unmarshalledObject.TypeInfos = unmarshaller.Unmarshall(context, ref reader);

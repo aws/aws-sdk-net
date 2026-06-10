@@ -56,37 +56,37 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CopyStepDetails", targetDepth))
+                if (context.TestExpression("CopyStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CopyStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.CopyStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomStepDetails", targetDepth))
+                if (context.TestExpression("CustomStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.CustomStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecryptStepDetails", targetDepth))
+                if (context.TestExpression("DecryptStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DecryptStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.DecryptStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteStepDetails", targetDepth))
+                if (context.TestExpression("DeleteStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.DeleteStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagStepDetails", targetDepth))
+                if (context.TestExpression("TagStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TagStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.TagStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

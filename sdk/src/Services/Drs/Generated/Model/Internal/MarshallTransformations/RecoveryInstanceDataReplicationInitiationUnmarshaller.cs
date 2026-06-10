@@ -56,13 +56,13 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("startDateTime", targetDepth))
+                if (context.TestExpression("startDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("steps", targetDepth))
+                if (context.TestExpression("steps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecoveryInstanceDataReplicationInitiationStep, RecoveryInstanceDataReplicationInitiationStepUnmarshaller>(RecoveryInstanceDataReplicationInitiationStepUnmarshaller.Instance);
                     unmarshalledObject.Steps = unmarshaller.Unmarshall(context, ref reader);

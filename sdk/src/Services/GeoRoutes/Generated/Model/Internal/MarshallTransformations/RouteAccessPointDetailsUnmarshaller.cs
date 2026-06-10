@@ -56,7 +56,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Accessibility", targetDepth))
+                if (context.TestExpression("Accessibility", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteAccessibilityAvailabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.Accessibility = unmarshaller.Unmarshall(context, ref reader);

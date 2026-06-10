@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("requestAttributes", targetDepth))
+                if (context.TestExpression("requestAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.RequestAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionState", targetDepth))
+                if (context.TestExpression("sessionState", targetDepth, ref reader))
                 {
                     var unmarshaller = InputSessionStateSpecificationUnmarshaller.Instance;
                     unmarshalledObject.SessionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utteranceInput", targetDepth))
+                if (context.TestExpression("utteranceInput", targetDepth, ref reader))
                 {
                     var unmarshaller = UtteranceInputSpecificationUnmarshaller.Instance;
                     unmarshalledObject.UtteranceInput = unmarshaller.Unmarshall(context, ref reader);

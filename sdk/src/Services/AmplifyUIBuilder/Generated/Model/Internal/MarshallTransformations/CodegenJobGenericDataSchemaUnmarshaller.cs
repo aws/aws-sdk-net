@@ -56,25 +56,25 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSourceType", targetDepth))
+                if (context.TestExpression("dataSourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enums", targetDepth))
+                if (context.TestExpression("enums", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CodegenGenericDataEnum, StringUnmarshaller, CodegenGenericDataEnumUnmarshaller>(StringUnmarshaller.Instance, CodegenGenericDataEnumUnmarshaller.Instance);
                     unmarshalledObject.Enums = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("models", targetDepth))
+                if (context.TestExpression("models", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CodegenGenericDataModel, StringUnmarshaller, CodegenGenericDataModelUnmarshaller>(StringUnmarshaller.Instance, CodegenGenericDataModelUnmarshaller.Instance);
                     unmarshalledObject.Models = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nonModels", targetDepth))
+                if (context.TestExpression("nonModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CodegenGenericDataNonModel, StringUnmarshaller, CodegenGenericDataNonModelUnmarshaller>(StringUnmarshaller.Instance, CodegenGenericDataNonModelUnmarshaller.Instance);
                     unmarshalledObject.NonModels = unmarshaller.Unmarshall(context, ref reader);

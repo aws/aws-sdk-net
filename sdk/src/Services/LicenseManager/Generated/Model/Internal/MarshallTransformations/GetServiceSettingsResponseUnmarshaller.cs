@@ -52,49 +52,49 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossRegionDiscoveryHomeRegion", targetDepth))
+                if (context.TestExpression("CrossRegionDiscoveryHomeRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CrossRegionDiscoveryHomeRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossRegionDiscoverySourceRegions", targetDepth))
+                if (context.TestExpression("CrossRegionDiscoverySourceRegions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.CrossRegionDiscoverySourceRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableCrossAccountsDiscovery", targetDepth))
+                if (context.TestExpression("EnableCrossAccountsDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.EnableCrossAccountsDiscovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseManagerResourceShareArn", targetDepth))
+                if (context.TestExpression("LicenseManagerResourceShareArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LicenseManagerResourceShareArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConfiguration", targetDepth))
+                if (context.TestExpression("OrganizationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationConfigurationUnmarshaller.Instance;
                     response.OrganizationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BucketArn", targetDepth))
+                if (context.TestExpression("S3BucketArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceStatus", targetDepth))
+                if (context.TestExpression("ServiceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceStatusUnmarshaller.Instance;
                     response.ServiceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsTopicArn", targetDepth))
+                if (context.TestExpression("SnsTopicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SnsTopicArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetItem", targetDepth))
+                if (context.TestExpression("assetItem", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetItemUnmarshaller.Instance;
                     unmarshalledObject.AssetItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataProductItem", targetDepth))
+                if (context.TestExpression("dataProductItem", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProductResultItemUnmarshaller.Instance;
                     unmarshalledObject.DataProductItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glossaryItem", targetDepth))
+                if (context.TestExpression("glossaryItem", targetDepth, ref reader))
                 {
                     var unmarshaller = GlossaryItemUnmarshaller.Instance;
                     unmarshalledObject.GlossaryItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glossaryTermItem", targetDepth))
+                if (context.TestExpression("glossaryTermItem", targetDepth, ref reader))
                 {
                     var unmarshaller = GlossaryTermItemUnmarshaller.Instance;
                     unmarshalledObject.GlossaryTermItem = unmarshaller.Unmarshall(context, ref reader);

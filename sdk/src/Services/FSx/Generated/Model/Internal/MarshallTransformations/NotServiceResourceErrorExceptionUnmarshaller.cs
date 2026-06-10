@@ -72,7 +72,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ResourceARN", targetDepth))
+                    if (context.TestExpression("ResourceARN", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context, ref reader);

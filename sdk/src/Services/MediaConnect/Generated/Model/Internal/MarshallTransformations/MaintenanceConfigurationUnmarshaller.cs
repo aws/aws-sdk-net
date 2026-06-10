@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("default", targetDepth))
+                if (context.TestExpression("default", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultMaintenanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Default = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preferredDayTime", targetDepth))
+                if (context.TestExpression("preferredDayTime", targetDepth, ref reader))
                 {
                     var unmarshaller = PreferredDayTimeMaintenanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PreferredDayTime = unmarshaller.Unmarshall(context, ref reader);

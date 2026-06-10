@@ -56,151 +56,151 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auroraDbClusterStorage", targetDepth))
+                if (context.TestExpression("auroraDbClusterStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = AuroraDbClusterStorageUnmarshaller.Instance;
                     unmarshalledObject.AuroraDbClusterStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeSavingsPlans", targetDepth))
+                if (context.TestExpression("computeSavingsPlans", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeSavingsPlansUnmarshaller.Instance;
                     unmarshalledObject.ComputeSavingsPlans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentDbCluster", targetDepth))
+                if (context.TestExpression("documentDbCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentDbClusterUnmarshaller.Instance;
                     unmarshalledObject.DocumentDbCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynamoDbReservedCapacity", targetDepth))
+                if (context.TestExpression("dynamoDbReservedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamoDbReservedCapacityUnmarshaller.Instance;
                     unmarshalledObject.DynamoDbReservedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynamoDbTable", targetDepth))
+                if (context.TestExpression("dynamoDbTable", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamoDbTableUnmarshaller.Instance;
                     unmarshalledObject.DynamoDbTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsVolume", targetDepth))
+                if (context.TestExpression("ebsVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsVolumeUnmarshaller.Instance;
                     unmarshalledObject.EbsVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2AutoScalingGroup", targetDepth))
+                if (context.TestExpression("ec2AutoScalingGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2AutoScalingGroupUnmarshaller.Instance;
                     unmarshalledObject.Ec2AutoScalingGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2Instance", targetDepth))
+                if (context.TestExpression("ec2Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2InstanceUnmarshaller.Instance;
                     unmarshalledObject.Ec2Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2InstanceSavingsPlans", targetDepth))
+                if (context.TestExpression("ec2InstanceSavingsPlans", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2InstanceSavingsPlansUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceSavingsPlans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2ReservedInstances", targetDepth))
+                if (context.TestExpression("ec2ReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.Ec2ReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsService", targetDepth))
+                if (context.TestExpression("ecsService", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsServiceUnmarshaller.Instance;
                     unmarshalledObject.EcsService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elastiCacheCluster", targetDepth))
+                if (context.TestExpression("elastiCacheCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = ElastiCacheClusterUnmarshaller.Instance;
                     unmarshalledObject.ElastiCacheCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elastiCacheReservedInstances", targetDepth))
+                if (context.TestExpression("elastiCacheReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = ElastiCacheReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.ElastiCacheReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunction", targetDepth))
+                if (context.TestExpression("lambdaFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryDbCluster", targetDepth))
+                if (context.TestExpression("memoryDbCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryDbClusterUnmarshaller.Instance;
                     unmarshalledObject.MemoryDbCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryDbReservedInstances", targetDepth))
+                if (context.TestExpression("memoryDbReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryDbReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.MemoryDbReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("natGateway", targetDepth))
+                if (context.TestExpression("natGateway", targetDepth, ref reader))
                 {
                     var unmarshaller = NatGatewayUnmarshaller.Instance;
                     unmarshalledObject.NatGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openSearchReservedInstances", targetDepth))
+                if (context.TestExpression("openSearchReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.OpenSearchReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbInstance", targetDepth))
+                if (context.TestExpression("rdsDbInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbInstanceUnmarshaller.Instance;
                     unmarshalledObject.RdsDbInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbInstanceStorage", targetDepth))
+                if (context.TestExpression("rdsDbInstanceStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbInstanceStorageUnmarshaller.Instance;
                     unmarshalledObject.RdsDbInstanceStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsReservedInstances", targetDepth))
+                if (context.TestExpression("rdsReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.RdsReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftReservedInstances", targetDepth))
+                if (context.TestExpression("redshiftReservedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftReservedInstancesUnmarshaller.Instance;
                     unmarshalledObject.RedshiftReservedInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sageMakerEndpoint", targetDepth))
+                if (context.TestExpression("sageMakerEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerEndpointUnmarshaller.Instance;
                     unmarshalledObject.SageMakerEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sageMakerSavingsPlans", targetDepth))
+                if (context.TestExpression("sageMakerSavingsPlans", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerSavingsPlansUnmarshaller.Instance;
                     unmarshalledObject.SageMakerSavingsPlans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workSpaces", targetDepth))
+                if (context.TestExpression("workSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkSpacesUnmarshaller.Instance;
                     unmarshalledObject.WorkSpaces = unmarshaller.Unmarshall(context, ref reader);

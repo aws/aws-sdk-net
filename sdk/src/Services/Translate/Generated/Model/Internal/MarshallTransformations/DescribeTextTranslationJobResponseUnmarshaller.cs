@@ -52,7 +52,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TextTranslationJobProperties", targetDepth))
+                if (context.TestExpression("TextTranslationJobProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = TextTranslationJobPropertiesUnmarshaller.Instance;
                     response.TextTranslationJobProperties = unmarshaller.Unmarshall(context, ref reader);

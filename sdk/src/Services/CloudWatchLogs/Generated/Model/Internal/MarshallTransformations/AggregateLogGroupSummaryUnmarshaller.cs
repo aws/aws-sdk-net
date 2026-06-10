@@ -56,13 +56,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("groupingIdentifiers", targetDepth))
+                if (context.TestExpression("groupingIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupingIdentifier, GroupingIdentifierUnmarshaller>(GroupingIdentifierUnmarshaller.Instance);
                     unmarshalledObject.GroupingIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupCount", targetDepth))
+                if (context.TestExpression("logGroupCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LogGroupCount = unmarshaller.Unmarshall(context, ref reader);

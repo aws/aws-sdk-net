@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionGroupInvocationOutput", targetDepth))
+                if (context.TestExpression("actionGroupInvocationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionGroupInvocationOutputUnmarshaller.Instance;
                     unmarshalledObject.ActionGroupInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentCollaboratorInvocationOutput", targetDepth))
+                if (context.TestExpression("agentCollaboratorInvocationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentCollaboratorInvocationOutputUnmarshaller.Instance;
                     unmarshalledObject.AgentCollaboratorInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeInterpreterInvocationOutput", targetDepth))
+                if (context.TestExpression("codeInterpreterInvocationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeInterpreterInvocationOutputUnmarshaller.Instance;
                     unmarshalledObject.CodeInterpreterInvocationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("finalResponse", targetDepth))
+                if (context.TestExpression("finalResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = FinalResponseUnmarshaller.Instance;
                     unmarshalledObject.FinalResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseLookupOutput", targetDepth))
+                if (context.TestExpression("knowledgeBaseLookupOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseLookupOutputUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseLookupOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repromptResponse", targetDepth))
+                if (context.TestExpression("repromptResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = RepromptResponseUnmarshaller.Instance;
                     unmarshalledObject.RepromptResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("traceId", targetDepth))
+                if (context.TestExpression("traceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TraceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

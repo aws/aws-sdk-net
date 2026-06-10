@@ -56,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationDataSharingType", targetDepth))
+                if (context.TestExpression("DestinationDataSharingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationDataSharingType = unmarshaller.Unmarshall(context, ref reader);

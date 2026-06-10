@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("FederationSourceErrorCode", targetDepth))
+                    if (context.TestExpression("FederationSourceErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.FederationSourceErrorCode = unmarshaller.Unmarshall(context, ref reader);

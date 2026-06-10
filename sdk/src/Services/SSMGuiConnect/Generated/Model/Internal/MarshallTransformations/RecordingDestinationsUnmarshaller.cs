@@ -56,7 +56,7 @@ namespace Amazon.SSMGuiConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Buckets", targetDepth))
+                if (context.TestExpression("S3Buckets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3Bucket, S3BucketUnmarshaller>(S3BucketUnmarshaller.Instance);
                     unmarshalledObject.S3Buckets = unmarshaller.Unmarshall(context, ref reader);

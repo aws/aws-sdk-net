@@ -52,7 +52,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("test", targetDepth))
+                if (context.TestExpression("test", targetDepth, ref reader))
                 {
                     var unmarshaller = TestUnmarshaller.Instance;
                     response.Test = unmarshaller.Unmarshall(context, ref reader);

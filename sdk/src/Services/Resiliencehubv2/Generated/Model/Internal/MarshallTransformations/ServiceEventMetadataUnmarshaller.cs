@@ -56,115 +56,115 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assertionCreated", targetDepth))
+                if (context.TestExpression("assertionCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = AssertionCreatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.AssertionCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assertionDeleted", targetDepth))
+                if (context.TestExpression("assertionDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = AssertionDeletedMetadataUnmarshaller.Instance;
                     unmarshalledObject.AssertionDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assertionUpdated", targetDepth))
+                if (context.TestExpression("assertionUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = AssertionUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.AssertionUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceAchievabilityUpdated", targetDepth))
+                if (context.TestExpression("serviceAchievabilityUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceAchievabilityUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceAchievabilityUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceCreated", targetDepth))
+                if (context.TestExpression("serviceCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceCreatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceDeleted", targetDepth))
+                if (context.TestExpression("serviceDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceDeletedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceFunctionCreated", targetDepth))
+                if (context.TestExpression("serviceFunctionCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceFunctionCreatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceFunctionCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceFunctionDeleted", targetDepth))
+                if (context.TestExpression("serviceFunctionDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceFunctionDeletedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceFunctionDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceFunctionResourcesAdded", targetDepth))
+                if (context.TestExpression("serviceFunctionResourcesAdded", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceFunctionResourcesAddedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceFunctionResourcesAdded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceFunctionResourcesRemoved", targetDepth))
+                if (context.TestExpression("serviceFunctionResourcesRemoved", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceFunctionResourcesRemovedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceFunctionResourcesRemoved = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceFunctionUpdated", targetDepth))
+                if (context.TestExpression("serviceFunctionUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceFunctionUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceFunctionUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceInputSourcesUpdated", targetDepth))
+                if (context.TestExpression("serviceInputSourcesUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceInputSourcesUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceInputSourcesUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servicePolicyAssociated", targetDepth))
+                if (context.TestExpression("servicePolicyAssociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServicePolicyAssociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServicePolicyAssociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servicePolicyDisassociated", targetDepth))
+                if (context.TestExpression("servicePolicyDisassociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServicePolicyDisassociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServicePolicyDisassociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceResourcesAssociated", targetDepth))
+                if (context.TestExpression("serviceResourcesAssociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceResourcesAssociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceResourcesAssociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceResourcesDisassociated", targetDepth))
+                if (context.TestExpression("serviceResourcesDisassociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceResourcesDisassociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceResourcesDisassociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceSystemAssociated", targetDepth))
+                if (context.TestExpression("serviceSystemAssociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceSystemAssociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceSystemAssociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceSystemDisassociated", targetDepth))
+                if (context.TestExpression("serviceSystemDisassociated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceSystemDisassociatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceSystemDisassociated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceWorkflowUpdated", targetDepth))
+                if (context.TestExpression("serviceWorkflowUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceWorkflowUpdatedMetadataUnmarshaller.Instance;
                     unmarshalledObject.ServiceWorkflowUpdated = unmarshaller.Unmarshall(context, ref reader);

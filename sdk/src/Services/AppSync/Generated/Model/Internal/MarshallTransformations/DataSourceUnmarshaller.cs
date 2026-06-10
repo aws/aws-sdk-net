@@ -56,79 +56,79 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSourceArn", targetDepth))
+                if (context.TestExpression("dataSourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynamodbConfig", targetDepth))
+                if (context.TestExpression("dynamodbConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamodbDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.DynamodbConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elasticsearchConfig", targetDepth))
+                if (context.TestExpression("elasticsearchConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ElasticsearchDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.ElasticsearchConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventBridgeConfig", targetDepth))
+                if (context.TestExpression("eventBridgeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventBridgeDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.EventBridgeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpConfig", targetDepth))
+                if (context.TestExpression("httpConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.HttpConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaConfig", targetDepth))
+                if (context.TestExpression("lambdaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsConfig", targetDepth))
+                if (context.TestExpression("metricsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openSearchServiceConfig", targetDepth))
+                if (context.TestExpression("openSearchServiceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchServiceDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.OpenSearchServiceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationalDatabaseConfig", targetDepth))
+                if (context.TestExpression("relationalDatabaseConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationalDatabaseDataSourceConfigUnmarshaller.Instance;
                     unmarshalledObject.RelationalDatabaseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceRoleArn", targetDepth))
+                if (context.TestExpression("serviceRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

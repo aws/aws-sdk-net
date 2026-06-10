@@ -52,13 +52,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountDetails", targetDepth))
+                if (context.TestExpression("accountDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountDetails, AccountDetailsUnmarshaller>(AccountDetailsUnmarshaller.Instance);
                     response.AccountDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainIspPlacements", targetDepth))
+                if (context.TestExpression("DomainIspPlacements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainIspPlacement, DomainIspPlacementUnmarshaller>(DomainIspPlacementUnmarshaller.Instance);
                     unmarshalledObject.DomainIspPlacements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartDate", targetDepth))
+                if (context.TestExpression("StartDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeStatistics", targetDepth))
+                if (context.TestExpression("VolumeStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = VolumeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.VolumeStatistics = unmarshaller.Unmarshall(context, ref reader);

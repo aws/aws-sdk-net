@@ -52,211 +52,211 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BytesCompressed", targetDepth))
+                if (context.TestExpression("BytesCompressed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesCompressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BytesTransferred", targetDepth))
+                if (context.TestExpression("BytesTransferred", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesTransferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BytesWritten", targetDepth))
+                if (context.TestExpression("BytesWritten", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.BytesWritten = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedBytesToTransfer", targetDepth))
+                if (context.TestExpression("EstimatedBytesToTransfer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedBytesToTransfer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedFilesToDelete", targetDepth))
+                if (context.TestExpression("EstimatedFilesToDelete", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFilesToDelete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedFilesToTransfer", targetDepth))
+                if (context.TestExpression("EstimatedFilesToTransfer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFilesToTransfer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedFoldersToDelete", targetDepth))
+                if (context.TestExpression("EstimatedFoldersToDelete", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFoldersToDelete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedFoldersToTransfer", targetDepth))
+                if (context.TestExpression("EstimatedFoldersToTransfer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.EstimatedFoldersToTransfer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Excludes", targetDepth))
+                if (context.TestExpression("Excludes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
                     response.Excludes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesDeleted", targetDepth))
+                if (context.TestExpression("FilesDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesFailed", targetDepth))
+                if (context.TestExpression("FilesFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskExecutionFilesFailedDetailUnmarshaller.Instance;
                     response.FilesFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesListed", targetDepth))
+                if (context.TestExpression("FilesListed", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskExecutionFilesListedDetailUnmarshaller.Instance;
                     response.FilesListed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesPrepared", targetDepth))
+                if (context.TestExpression("FilesPrepared", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesPrepared = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesSkipped", targetDepth))
+                if (context.TestExpression("FilesSkipped", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesSkipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesTransferred", targetDepth))
+                if (context.TestExpression("FilesTransferred", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesTransferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilesVerified", targetDepth))
+                if (context.TestExpression("FilesVerified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesVerified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersDeleted", targetDepth))
+                if (context.TestExpression("FoldersDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FoldersDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersFailed", targetDepth))
+                if (context.TestExpression("FoldersFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskExecutionFoldersFailedDetailUnmarshaller.Instance;
                     response.FoldersFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersListed", targetDepth))
+                if (context.TestExpression("FoldersListed", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskExecutionFoldersListedDetailUnmarshaller.Instance;
                     response.FoldersListed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersPrepared", targetDepth))
+                if (context.TestExpression("FoldersPrepared", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FoldersPrepared = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersSkipped", targetDepth))
+                if (context.TestExpression("FoldersSkipped", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FoldersSkipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersTransferred", targetDepth))
+                if (context.TestExpression("FoldersTransferred", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FoldersTransferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FoldersVerified", targetDepth))
+                if (context.TestExpression("FoldersVerified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FoldersVerified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Includes", targetDepth))
+                if (context.TestExpression("Includes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterRule, FilterRuleUnmarshaller>(FilterRuleUnmarshaller.Instance);
                     response.Includes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchTime", targetDepth))
+                if (context.TestExpression("LaunchTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LaunchTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManifestConfig", targetDepth))
+                if (context.TestExpression("ManifestConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ManifestConfigUnmarshaller.Instance;
                     response.ManifestConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = OptionsUnmarshaller.Instance;
                     response.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportResult", targetDepth))
+                if (context.TestExpression("ReportResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportResultUnmarshaller.Instance;
                     response.ReportResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Result", targetDepth))
+                if (context.TestExpression("Result", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskExecutionResultDetailUnmarshaller.Instance;
                     response.Result = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskExecutionArn", targetDepth))
+                if (context.TestExpression("TaskExecutionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskExecutionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskMode", targetDepth))
+                if (context.TestExpression("TaskMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskReportConfig", targetDepth))
+                if (context.TestExpression("TaskReportConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskReportConfigUnmarshaller.Instance;
                     response.TaskReportConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BeginOffset", targetDepth))
+                if (context.TestExpression("BeginOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BlockId", targetDepth))
+                if (context.TestExpression("BlockId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BlockId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChildBlocks", targetDepth))
+                if (context.TestExpression("ChildBlocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChildBlock, ChildBlockUnmarshaller>(ChildBlockUnmarshaller.Instance);
                     unmarshalledObject.ChildBlocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndOffset", targetDepth))
+                if (context.TestExpression("EndOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context, ref reader);

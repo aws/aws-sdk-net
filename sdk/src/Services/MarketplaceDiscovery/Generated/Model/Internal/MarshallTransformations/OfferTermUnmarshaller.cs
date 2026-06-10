@@ -56,73 +56,73 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("byolPricingTerm", targetDepth))
+                if (context.TestExpression("byolPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = ByolPricingTermUnmarshaller.Instance;
                     unmarshalledObject.ByolPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configurableUpfrontPricingTerm", targetDepth))
+                if (context.TestExpression("configurableUpfrontPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurableUpfrontPricingTermUnmarshaller.Instance;
                     unmarshalledObject.ConfigurableUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixedUpfrontPricingTerm", targetDepth))
+                if (context.TestExpression("fixedUpfrontPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = FixedUpfrontPricingTermUnmarshaller.Instance;
                     unmarshalledObject.FixedUpfrontPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("freeTrialPricingTerm", targetDepth))
+                if (context.TestExpression("freeTrialPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeTrialPricingTermUnmarshaller.Instance;
                     unmarshalledObject.FreeTrialPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("legalTerm", targetDepth))
+                if (context.TestExpression("legalTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = LegalTermUnmarshaller.Instance;
                     unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("paymentScheduleTerm", targetDepth))
+                if (context.TestExpression("paymentScheduleTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = PaymentScheduleTermUnmarshaller.Instance;
                     unmarshalledObject.PaymentScheduleTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recurringPaymentTerm", targetDepth))
+                if (context.TestExpression("recurringPaymentTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurringPaymentTermUnmarshaller.Instance;
                     unmarshalledObject.RecurringPaymentTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("renewalTerm", targetDepth))
+                if (context.TestExpression("renewalTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = RenewalTermUnmarshaller.Instance;
                     unmarshalledObject.RenewalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportTerm", targetDepth))
+                if (context.TestExpression("supportTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = SupportTermUnmarshaller.Instance;
                     unmarshalledObject.SupportTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageBasedPricingTerm", targetDepth))
+                if (context.TestExpression("usageBasedPricingTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageBasedPricingTermUnmarshaller.Instance;
                     unmarshalledObject.UsageBasedPricingTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validityTerm", targetDepth))
+                if (context.TestExpression("validityTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidityTermUnmarshaller.Instance;
                     unmarshalledObject.ValidityTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variablePaymentTerm", targetDepth))
+                if (context.TestExpression("variablePaymentTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = VariablePaymentTermUnmarshaller.Instance;
                     unmarshalledObject.VariablePaymentTerm = unmarshaller.Unmarshall(context, ref reader);

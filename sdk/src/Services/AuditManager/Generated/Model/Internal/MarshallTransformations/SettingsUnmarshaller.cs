@@ -56,49 +56,49 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultAssessmentReportsDestination", targetDepth))
+                if (context.TestExpression("defaultAssessmentReportsDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = AssessmentReportsDestinationUnmarshaller.Instance;
                     unmarshalledObject.DefaultAssessmentReportsDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultExportDestination", targetDepth))
+                if (context.TestExpression("defaultExportDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultExportDestinationUnmarshaller.Instance;
                     unmarshalledObject.DefaultExportDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultProcessOwners", targetDepth))
+                if (context.TestExpression("defaultProcessOwners", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Role, RoleUnmarshaller>(RoleUnmarshaller.Instance);
                     unmarshalledObject.DefaultProcessOwners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deregistrationPolicy", targetDepth))
+                if (context.TestExpression("deregistrationPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = DeregistrationPolicyUnmarshaller.Instance;
                     unmarshalledObject.DeregistrationPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evidenceFinderEnablement", targetDepth))
+                if (context.TestExpression("evidenceFinderEnablement", targetDepth, ref reader))
                 {
                     var unmarshaller = EvidenceFinderEnablementUnmarshaller.Instance;
                     unmarshalledObject.EvidenceFinderEnablement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isAwsOrgEnabled", targetDepth))
+                if (context.TestExpression("isAwsOrgEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsAwsOrgEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKey", targetDepth))
+                if (context.TestExpression("kmsKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snsTopic", targetDepth))
+                if (context.TestExpression("snsTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnsTopic = unmarshaller.Unmarshall(context, ref reader);

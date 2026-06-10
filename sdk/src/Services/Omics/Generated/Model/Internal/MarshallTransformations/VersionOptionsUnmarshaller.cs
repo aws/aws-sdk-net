@@ -56,7 +56,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tsvVersionOptions", targetDepth))
+                if (context.TestExpression("tsvVersionOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TsvVersionOptionsUnmarshaller.Instance;
                     unmarshalledObject.TsvVersionOptions = unmarshaller.Unmarshall(context, ref reader);

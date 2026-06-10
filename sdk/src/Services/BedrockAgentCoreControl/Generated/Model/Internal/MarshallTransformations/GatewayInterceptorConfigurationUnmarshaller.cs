@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputConfiguration", targetDepth))
+                if (context.TestExpression("inputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InterceptorInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interceptionPoints", targetDepth))
+                if (context.TestExpression("interceptionPoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InterceptionPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interceptor", targetDepth))
+                if (context.TestExpression("interceptor", targetDepth, ref reader))
                 {
                     var unmarshaller = InterceptorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Interceptor = unmarshaller.Unmarshall(context, ref reader);

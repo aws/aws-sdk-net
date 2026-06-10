@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RealTimeInferenceRecommendations", targetDepth))
+                if (context.TestExpression("RealTimeInferenceRecommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RealTimeInferenceRecommendation, RealTimeInferenceRecommendationUnmarshaller>(RealTimeInferenceRecommendationUnmarshaller.Instance);
                     unmarshalledObject.RealTimeInferenceRecommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationStatus", targetDepth))
+                if (context.TestExpression("RecommendationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendationStatus = unmarshaller.Unmarshall(context, ref reader);

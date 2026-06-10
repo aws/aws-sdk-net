@@ -56,19 +56,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditLogDestination", targetDepth))
+                if (context.TestExpression("AuditLogDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuditLogDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileAccessAuditLogLevel", targetDepth))
+                if (context.TestExpression("FileAccessAuditLogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileAccessAuditLogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileShareAccessAuditLogLevel", targetDepth))
+                if (context.TestExpression("FileShareAccessAuditLogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileShareAccessAuditLogLevel = unmarshaller.Unmarshall(context, ref reader);

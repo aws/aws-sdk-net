@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inferenceParams", targetDepth))
+                if (context.TestExpression("inferenceParams", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InferenceParams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelIdentifier", targetDepth))
+                if (context.TestExpression("modelIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performanceConfig", targetDepth))
+                if (context.TestExpression("performanceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context, ref reader);

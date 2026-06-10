@@ -56,13 +56,13 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BusinessValidationError", targetDepth))
+                if (context.TestExpression("BusinessValidationError", targetDepth, ref reader))
                 {
                     var unmarshaller = BusinessValidationErrorUnmarshaller.Instance;
                     unmarshalledObject.BusinessValidationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldValidationError", targetDepth))
+                if (context.TestExpression("FieldValidationError", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldValidationErrorUnmarshaller.Instance;
                     unmarshalledObject.FieldValidationError = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addedToServiceDateTime", targetDepth))
+                if (context.TestExpression("addedToServiceDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddedToServiceDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("elapsedReplicationDuration", targetDepth))
+                if (context.TestExpression("elapsedReplicationDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElapsedReplicationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstByteDateTime", targetDepth))
+                if (context.TestExpression("firstByteDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirstByteDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastLaunch", targetDepth))
+                if (context.TestExpression("lastLaunch", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastLaunchUnmarshaller.Instance;
                     unmarshalledObject.LastLaunch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastSeenByServiceDateTime", targetDepth))
+                if (context.TestExpression("lastSeenByServiceDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastSeenByServiceDateTime = unmarshaller.Unmarshall(context, ref reader);

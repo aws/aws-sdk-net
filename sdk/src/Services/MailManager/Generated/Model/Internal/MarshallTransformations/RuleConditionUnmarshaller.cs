@@ -56,37 +56,37 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BooleanExpression", targetDepth))
+                if (context.TestExpression("BooleanExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleBooleanExpressionUnmarshaller.Instance;
                     unmarshalledObject.BooleanExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DmarcExpression", targetDepth))
+                if (context.TestExpression("DmarcExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleDmarcExpressionUnmarshaller.Instance;
                     unmarshalledObject.DmarcExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpExpression", targetDepth))
+                if (context.TestExpression("IpExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleIpExpressionUnmarshaller.Instance;
                     unmarshalledObject.IpExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberExpression", targetDepth))
+                if (context.TestExpression("NumberExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleNumberExpressionUnmarshaller.Instance;
                     unmarshalledObject.NumberExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringExpression", targetDepth))
+                if (context.TestExpression("StringExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleStringExpressionUnmarshaller.Instance;
                     unmarshalledObject.StringExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerdictExpression", targetDepth))
+                if (context.TestExpression("VerdictExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleVerdictExpressionUnmarshaller.Instance;
                     unmarshalledObject.VerdictExpression = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactsConfiguration", targetDepth))
+                if (context.TestExpression("ArtifactsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ArtifactsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceConfiguration", targetDepth))
+                if (context.TestExpression("SourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.SSMGuiConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientToken", targetDepth))
+                if (context.TestExpression("ClientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionRecordingPreferences", targetDepth))
+                if (context.TestExpression("ConnectionRecordingPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionRecordingPreferencesUnmarshaller.Instance;
                     response.ConnectionRecordingPreferences = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("antennaDownlinkConfig", targetDepth))
+                if (context.TestExpression("antennaDownlinkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AntennaDownlinkConfigUnmarshaller.Instance;
                     unmarshalledObject.AntennaDownlinkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antennaDownlinkDemodDecodeConfig", targetDepth))
+                if (context.TestExpression("antennaDownlinkDemodDecodeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AntennaDownlinkDemodDecodeConfigUnmarshaller.Instance;
                     unmarshalledObject.AntennaDownlinkDemodDecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antennaUplinkConfig", targetDepth))
+                if (context.TestExpression("antennaUplinkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AntennaUplinkConfigUnmarshaller.Instance;
                     unmarshalledObject.AntennaUplinkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataflowEndpointConfig", targetDepth))
+                if (context.TestExpression("dataflowEndpointConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataflowEndpointConfigUnmarshaller.Instance;
                     unmarshalledObject.DataflowEndpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3RecordingConfig", targetDepth))
+                if (context.TestExpression("s3RecordingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = S3RecordingConfigUnmarshaller.Instance;
                     unmarshalledObject.S3RecordingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("telemetrySinkConfig", targetDepth))
+                if (context.TestExpression("telemetrySinkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TelemetrySinkConfigUnmarshaller.Instance;
                     unmarshalledObject.TelemetrySinkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trackingConfig", targetDepth))
+                if (context.TestExpression("trackingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrackingConfigUnmarshaller.Instance;
                     unmarshalledObject.TrackingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uplinkEchoConfig", targetDepth))
+                if (context.TestExpression("uplinkEchoConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UplinkEchoConfigUnmarshaller.Instance;
                     unmarshalledObject.UplinkEchoConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blob", targetDepth))
+                if (context.TestExpression("blob", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.Blob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversational", targetDepth))
+                if (context.TestExpression("conversational", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationalUnmarshaller.Instance;
                     unmarshalledObject.Conversational = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VarCharValue", targetDepth))
+                if (context.TestExpression("VarCharValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VarCharValue = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dashManifests", targetDepth))
+                if (context.TestExpression("dashManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DashManifest, DashManifestUnmarshaller>(DashManifestUnmarshaller.Instance);
                     unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = DashEncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeEncoderConfigurationInSegments", targetDepth))
+                if (context.TestExpression("includeEncoderConfigurationInSegments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeEncoderConfigurationInSegments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeIframeOnlyStream", targetDepth))
+                if (context.TestExpression("includeIframeOnlyStream", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("periodTriggers", targetDepth))
+                if (context.TestExpression("periodTriggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PeriodTriggers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentDurationSeconds", targetDepth))
+                if (context.TestExpression("segmentDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentTemplateFormat", targetDepth))
+                if (context.TestExpression("segmentTemplateFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentTemplateFormat = unmarshaller.Unmarshall(context, ref reader);

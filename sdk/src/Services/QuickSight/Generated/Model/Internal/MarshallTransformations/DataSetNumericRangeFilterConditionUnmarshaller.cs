@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IncludeMaximum", targetDepth))
+                if (context.TestExpression("IncludeMaximum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMaximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeMinimum", targetDepth))
+                if (context.TestExpression("IncludeMinimum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeMinimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeMaximum", targetDepth))
+                if (context.TestExpression("RangeMaximum", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetNumericFilterValueUnmarshaller.Instance;
                     unmarshalledObject.RangeMaximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeMinimum", targetDepth))
+                if (context.TestExpression("RangeMinimum", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetNumericFilterValueUnmarshaller.Instance;
                     unmarshalledObject.RangeMinimum = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ParametricCloudWatchMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("persistentAppUI", targetDepth))
+                if (context.TestExpression("persistentAppUI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PersistentAppUI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("s3MonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ParametricS3MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

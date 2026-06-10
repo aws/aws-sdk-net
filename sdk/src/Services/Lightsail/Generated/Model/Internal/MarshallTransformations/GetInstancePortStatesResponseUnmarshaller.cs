@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("portStates", targetDepth))
+                if (context.TestExpression("portStates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstancePortState, InstancePortStateUnmarshaller>(InstancePortStateUnmarshaller.Instance);
                     response.PortStates = unmarshaller.Unmarshall(context, ref reader);

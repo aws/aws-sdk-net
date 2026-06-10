@@ -56,31 +56,31 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CmafExcludeSegmentDrmMetadata", targetDepth))
+                if (context.TestExpression("CmafExcludeSegmentDrmMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CmafExcludeSegmentDrmMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConstantInitializationVector", targetDepth))
+                if (context.TestExpression("ConstantInitializationVector", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionMethod", targetDepth))
+                if (context.TestExpression("EncryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionMethodUnmarshaller.Instance;
                     unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyRotationIntervalSeconds", targetDepth))
+                if (context.TestExpression("KeyRotationIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KeyRotationIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpekeKeyProvider", targetDepth))
+                if (context.TestExpression("SpekeKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SpekeKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);

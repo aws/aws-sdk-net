@@ -52,7 +52,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventIntegrationArn", targetDepth))
+                if (context.TestExpression("EventIntegrationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventIntegrationArn = unmarshaller.Unmarshall(context, ref reader);

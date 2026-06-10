@@ -52,7 +52,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("construct", targetDepth))
+                if (context.TestExpression("construct", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkMigrationMapperSegmentConstructUnmarshaller.Instance;
                     response.Construct = unmarshaller.Unmarshall(context, ref reader);

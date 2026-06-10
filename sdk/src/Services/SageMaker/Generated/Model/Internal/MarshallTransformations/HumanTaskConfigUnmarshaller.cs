@@ -56,73 +56,73 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnnotationConsolidationConfig", targetDepth))
+                if (context.TestExpression("AnnotationConsolidationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AnnotationConsolidationConfigUnmarshaller.Instance;
                     unmarshalledObject.AnnotationConsolidationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxConcurrentTaskCount", targetDepth))
+                if (context.TestExpression("MaxConcurrentTaskCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentTaskCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfHumanWorkersPerDataObject", targetDepth))
+                if (context.TestExpression("NumberOfHumanWorkersPerDataObject", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfHumanWorkersPerDataObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreHumanTaskLambdaArn", targetDepth))
+                if (context.TestExpression("PreHumanTaskLambdaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreHumanTaskLambdaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicWorkforceTaskPrice", targetDepth))
+                if (context.TestExpression("PublicWorkforceTaskPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicWorkforceTaskPriceUnmarshaller.Instance;
                     unmarshalledObject.PublicWorkforceTaskPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskAvailabilityLifetimeInSeconds", targetDepth))
+                if (context.TestExpression("TaskAvailabilityLifetimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TaskAvailabilityLifetimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskDescription", targetDepth))
+                if (context.TestExpression("TaskDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskKeywords", targetDepth))
+                if (context.TestExpression("TaskKeywords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TaskKeywords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskTimeLimitInSeconds", targetDepth))
+                if (context.TestExpression("TaskTimeLimitInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TaskTimeLimitInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskTitle", targetDepth))
+                if (context.TestExpression("TaskTitle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UiConfig", targetDepth))
+                if (context.TestExpression("UiConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UiConfigUnmarshaller.Instance;
                     unmarshalledObject.UiConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkteamArn", targetDepth))
+                if (context.TestExpression("WorkteamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkteamArn = unmarshaller.Unmarshall(context, ref reader);

@@ -52,25 +52,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceModelVersion", targetDepth))
+                if (context.TestExpression("FaceModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FaceModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaceRecords", targetDepth))
+                if (context.TestExpression("FaceRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FaceRecord, FaceRecordUnmarshaller>(FaceRecordUnmarshaller.Instance);
                     response.FaceRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrientationCorrection", targetDepth))
+                if (context.TestExpression("OrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrientationCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnindexedFaces", targetDepth))
+                if (context.TestExpression("UnindexedFaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnindexedFace, UnindexedFaceUnmarshaller>(UnindexedFaceUnmarshaller.Instance);
                     response.UnindexedFaces = unmarshaller.Unmarshall(context, ref reader);

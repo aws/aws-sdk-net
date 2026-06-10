@@ -56,25 +56,25 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("fileBatchJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = FileBatchJobIdentifierUnmarshaller.Instance;
                     unmarshalledObject.FileBatchJobIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("restartBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("restartBatchJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = RestartBatchJobIdentifierUnmarshaller.Instance;
                     unmarshalledObject.RestartBatchJobIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BatchJobIdentifier", targetDepth))
+                if (context.TestExpression("s3BatchJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BatchJobIdentifierUnmarshaller.Instance;
                     unmarshalledObject.S3BatchJobIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptBatchJobIdentifier", targetDepth))
+                if (context.TestExpression("scriptBatchJobIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = ScriptBatchJobIdentifierUnmarshaller.Instance;
                     unmarshalledObject.ScriptBatchJobIdentifier = unmarshaller.Unmarshall(context, ref reader);

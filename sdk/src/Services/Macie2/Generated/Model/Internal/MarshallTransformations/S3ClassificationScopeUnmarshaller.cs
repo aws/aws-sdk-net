@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("excludes", targetDepth))
+                if (context.TestExpression("excludes", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ClassificationScopeExclusionUnmarshaller.Instance;
                     unmarshalledObject.Excludes = unmarshaller.Unmarshall(context, ref reader);

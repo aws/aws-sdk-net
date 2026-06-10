@@ -56,73 +56,73 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppendOnly", targetDepth))
+                if (context.TestExpression("AppendOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AppendOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BufferingHints", targetDepth))
+                if (context.TestExpression("BufferingHints", targetDepth, ref reader))
                 {
                     var unmarshaller = BufferingHintsUnmarshaller.Instance;
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CatalogConfiguration", targetDepth))
+                if (context.TestExpression("CatalogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CatalogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CatalogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationTableConfigurationList", targetDepth))
+                if (context.TestExpression("DestinationTableConfigurationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DestinationTableConfiguration, DestinationTableConfigurationUnmarshaller>(DestinationTableConfigurationUnmarshaller.Instance);
                     unmarshalledObject.DestinationTableConfigurationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessingConfiguration", targetDepth))
+                if (context.TestExpression("ProcessingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryOptions", targetDepth))
+                if (context.TestExpression("RetryOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryOptionsUnmarshaller.Instance;
                     unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleARN", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BackupMode", targetDepth))
+                if (context.TestExpression("S3BackupMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
+                if (context.TestExpression("S3DestinationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaEvolutionConfiguration", targetDepth))
+                if (context.TestExpression("SchemaEvolutionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaEvolutionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SchemaEvolutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableCreationConfiguration", targetDepth))
+                if (context.TestExpression("TableCreationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCreationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TableCreationConfiguration = unmarshaller.Unmarshall(context, ref reader);

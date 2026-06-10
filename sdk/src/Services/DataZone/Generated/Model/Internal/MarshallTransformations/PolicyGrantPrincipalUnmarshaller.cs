@@ -56,25 +56,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainUnit", targetDepth))
+                if (context.TestExpression("domainUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainUnitPolicyGrantPrincipalUnmarshaller.Instance;
                     unmarshalledObject.DomainUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("group", targetDepth))
+                if (context.TestExpression("group", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupPolicyGrantPrincipalUnmarshaller.Instance;
                     unmarshalledObject.Group = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("project", targetDepth))
+                if (context.TestExpression("project", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectPolicyGrantPrincipalUnmarshaller.Instance;
                     unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("user", targetDepth))
+                if (context.TestExpression("user", targetDepth, ref reader))
                 {
                     var unmarshaller = UserPolicyGrantPrincipalUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnPartialUpload", targetDepth))
+                if (context.TestExpression("OnPartialUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkflowDetail, WorkflowDetailUnmarshaller>(WorkflowDetailUnmarshaller.Instance);
                     unmarshalledObject.OnPartialUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnUpload", targetDepth))
+                if (context.TestExpression("OnUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkflowDetail, WorkflowDetailUnmarshaller>(WorkflowDetailUnmarshaller.Instance);
                     unmarshalledObject.OnUpload = unmarshaller.Unmarshall(context, ref reader);

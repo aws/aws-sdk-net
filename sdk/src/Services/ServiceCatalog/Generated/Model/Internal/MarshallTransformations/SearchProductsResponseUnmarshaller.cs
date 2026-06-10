@@ -52,19 +52,19 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductViewAggregations", targetDepth))
+                if (context.TestExpression("ProductViewAggregations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<ProductViewAggregationValue>, StringUnmarshaller, JsonListUnmarshaller<ProductViewAggregationValue,ProductViewAggregationValueUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<ProductViewAggregationValue, ProductViewAggregationValueUnmarshaller>(ProductViewAggregationValueUnmarshaller.Instance));
                     response.ProductViewAggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductViewSummaries", targetDepth))
+                if (context.TestExpression("ProductViewSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductViewSummary, ProductViewSummaryUnmarshaller>(ProductViewSummaryUnmarshaller.Instance);
                     response.ProductViewSummaries = unmarshaller.Unmarshall(context, ref reader);

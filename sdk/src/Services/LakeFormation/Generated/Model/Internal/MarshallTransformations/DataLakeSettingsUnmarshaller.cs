@@ -56,61 +56,61 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowExternalDataFiltering", targetDepth))
+                if (context.TestExpression("AllowExternalDataFiltering", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowExternalDataFiltering = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth))
+                if (context.TestExpression("AllowFullTableExternalDataAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowFullTableExternalDataAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthorizedSessionTagValueList", targetDepth))
+                if (context.TestExpression("AuthorizedSessionTagValueList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AuthorizedSessionTagValueList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateDatabaseDefaultPermissions", targetDepth))
+                if (context.TestExpression("CreateDatabaseDefaultPermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrincipalPermissions, PrincipalPermissionsUnmarshaller>(PrincipalPermissionsUnmarshaller.Instance);
                     unmarshalledObject.CreateDatabaseDefaultPermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateTableDefaultPermissions", targetDepth))
+                if (context.TestExpression("CreateTableDefaultPermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrincipalPermissions, PrincipalPermissionsUnmarshaller>(PrincipalPermissionsUnmarshaller.Instance);
                     unmarshalledObject.CreateTableDefaultPermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLakeAdmins", targetDepth))
+                if (context.TestExpression("DataLakeAdmins", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
                     unmarshalledObject.DataLakeAdmins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExternalDataFilteringAllowList", targetDepth))
+                if (context.TestExpression("ExternalDataFilteringAllowList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
                     unmarshalledObject.ExternalDataFilteringAllowList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadOnlyAdmins", targetDepth))
+                if (context.TestExpression("ReadOnlyAdmins", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
                     unmarshalledObject.ReadOnlyAdmins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrustedResourceOwners", targetDepth))
+                if (context.TestExpression("TrustedResourceOwners", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TrustedResourceOwners = unmarshaller.Unmarshall(context, ref reader);

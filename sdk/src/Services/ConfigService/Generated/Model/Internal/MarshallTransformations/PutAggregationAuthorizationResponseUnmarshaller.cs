@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregationAuthorization", targetDepth))
+                if (context.TestExpression("AggregationAuthorization", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregationAuthorizationUnmarshaller.Instance;
                     response.AggregationAuthorization = unmarshaller.Unmarshall(context, ref reader);

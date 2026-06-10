@@ -56,13 +56,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authenticationMode", targetDepth))
+                if (context.TestExpression("authenticationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapClusterCreatorAdminPermissions", targetDepth))
+                if (context.TestExpression("bootstrapClusterCreatorAdminPermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BootstrapClusterCreatorAdminPermissions = unmarshaller.Unmarshall(context, ref reader);

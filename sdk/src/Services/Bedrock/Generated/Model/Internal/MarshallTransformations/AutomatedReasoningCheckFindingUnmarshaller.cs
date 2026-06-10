@@ -56,43 +56,43 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("impossible", targetDepth))
+                if (context.TestExpression("impossible", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckImpossibleFindingUnmarshaller.Instance;
                     unmarshalledObject.Impossible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invalid", targetDepth))
+                if (context.TestExpression("invalid", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckInvalidFindingUnmarshaller.Instance;
                     unmarshalledObject.Invalid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noTranslations", targetDepth))
+                if (context.TestExpression("noTranslations", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckNoTranslationsFindingUnmarshaller.Instance;
                     unmarshalledObject.NoTranslations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("satisfiable", targetDepth))
+                if (context.TestExpression("satisfiable", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckSatisfiableFindingUnmarshaller.Instance;
                     unmarshalledObject.Satisfiable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tooComplex", targetDepth))
+                if (context.TestExpression("tooComplex", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckTooComplexFindingUnmarshaller.Instance;
                     unmarshalledObject.TooComplex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("translationAmbiguous", targetDepth))
+                if (context.TestExpression("translationAmbiguous", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckTranslationAmbiguousFindingUnmarshaller.Instance;
                     unmarshalledObject.TranslationAmbiguous = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("valid", targetDepth))
+                if (context.TestExpression("valid", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckValidFindingUnmarshaller.Instance;
                     unmarshalledObject.Valid = unmarshaller.Unmarshall(context, ref reader);

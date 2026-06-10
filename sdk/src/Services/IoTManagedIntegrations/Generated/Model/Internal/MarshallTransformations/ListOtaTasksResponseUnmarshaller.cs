@@ -52,13 +52,13 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tasks", targetDepth))
+                if (context.TestExpression("Tasks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OtaTaskSummary, OtaTaskSummaryUnmarshaller>(OtaTaskSummaryUnmarshaller.Instance);
                     response.Tasks = unmarshaller.Unmarshall(context, ref reader);

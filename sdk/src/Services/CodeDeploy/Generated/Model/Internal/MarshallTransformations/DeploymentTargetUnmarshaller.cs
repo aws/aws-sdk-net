@@ -56,31 +56,31 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudFormationTarget", targetDepth))
+                if (context.TestExpression("cloudFormationTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudFormationTargetUnmarshaller.Instance;
                     unmarshalledObject.CloudFormationTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentTargetType", targetDepth))
+                if (context.TestExpression("deploymentTargetType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentTargetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsTarget", targetDepth))
+                if (context.TestExpression("ecsTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = ECSTargetUnmarshaller.Instance;
                     unmarshalledObject.EcsTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceTarget", targetDepth))
+                if (context.TestExpression("instanceTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceTargetUnmarshaller.Instance;
                     unmarshalledObject.InstanceTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaTarget", targetDepth))
+                if (context.TestExpression("lambdaTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaTargetUnmarshaller.Instance;
                     unmarshalledObject.LambdaTarget = unmarshaller.Unmarshall(context, ref reader);

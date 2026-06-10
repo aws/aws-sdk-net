@@ -52,13 +52,13 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateMachineAliases", targetDepth))
+                if (context.TestExpression("stateMachineAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StateMachineAliasListItem, StateMachineAliasListItemUnmarshaller>(StateMachineAliasListItemUnmarshaller.Instance);
                     response.StateMachineAliases = unmarshaller.Unmarshall(context, ref reader);

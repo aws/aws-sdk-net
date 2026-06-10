@@ -52,73 +52,73 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("application", targetDepth))
+                if (context.TestExpression("application", targetDepth, ref reader))
                 {
                     var unmarshaller = MetaFlowApplicationInfoUnmarshaller.Instance;
                     response.Application = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("categories", targetDepth))
+                if (context.TestExpression("categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataApiVersion", targetDepth))
+                if (context.TestExpression("dataApiVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataApiVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpointUri", targetDepth))
+                if (context.TestExpression("endpointUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowId", targetDepth))
+                if (context.TestExpression("flowId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowName", targetDepth))
+                if (context.TestExpression("flowName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlowName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowStatus", targetDepth))
+                if (context.TestExpression("flowStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FlowStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthStatus", targetDepth))
+                if (context.TestExpression("healthStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = MetaFlowHealthStatusUnmarshaller.Instance;
                     response.HealthStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jsonVersion", targetDepth))
+                if (context.TestExpression("jsonVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JsonVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preview", targetDepth))
+                if (context.TestExpression("preview", targetDepth, ref reader))
                 {
                     var unmarshaller = MetaFlowPreviewInfoUnmarshaller.Instance;
                     response.Preview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationErrors", targetDepth))
+                if (context.TestExpression("validationErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ValidationErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("whatsAppBusinessAccount", targetDepth))
+                if (context.TestExpression("whatsAppBusinessAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = MetaFlowWhatsAppBusinessAccountInfoUnmarshaller.Instance;
                     response.WhatsAppBusinessAccount = unmarshaller.Unmarshall(context, ref reader);

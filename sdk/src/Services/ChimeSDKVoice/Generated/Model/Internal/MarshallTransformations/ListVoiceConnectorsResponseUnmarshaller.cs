@@ -52,13 +52,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceConnectors", targetDepth))
+                if (context.TestExpression("VoiceConnectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VoiceConnector, VoiceConnectorUnmarshaller>(VoiceConnectorUnmarshaller.Instance);
                     response.VoiceConnectors = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fixed", targetDepth))
+                if (context.TestExpression("fixed", targetDepth, ref reader))
                 {
                     var unmarshaller = FixedBudgetScheduleUnmarshaller.Instance;
                     unmarshalledObject.Fixed = unmarshaller.Unmarshall(context, ref reader);

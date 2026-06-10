@@ -52,7 +52,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autonomousDatabase", targetDepth))
+                if (context.TestExpression("autonomousDatabase", targetDepth, ref reader))
                 {
                     var unmarshaller = AutonomousDatabaseUnmarshaller.Instance;
                     response.AutonomousDatabase = unmarshaller.Unmarshall(context, ref reader);

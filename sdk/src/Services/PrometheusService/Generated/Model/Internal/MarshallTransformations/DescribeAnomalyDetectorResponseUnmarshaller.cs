@@ -52,7 +52,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anomalyDetector", targetDepth))
+                if (context.TestExpression("anomalyDetector", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalyDetectorDescriptionUnmarshaller.Instance;
                     response.AnomalyDetector = unmarshaller.Unmarshall(context, ref reader);

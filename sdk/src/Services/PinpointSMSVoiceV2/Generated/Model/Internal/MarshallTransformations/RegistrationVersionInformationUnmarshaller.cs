@@ -56,31 +56,31 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeniedReasons", targetDepth))
+                if (context.TestExpression("DeniedReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegistrationDeniedReasonInformation, RegistrationDeniedReasonInformationUnmarshaller>(RegistrationDeniedReasonInformationUnmarshaller.Instance);
                     unmarshalledObject.DeniedReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Feedback", targetDepth))
+                if (context.TestExpression("Feedback", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Feedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationVersionStatus", targetDepth))
+                if (context.TestExpression("RegistrationVersionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationVersionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationVersionStatusHistory", targetDepth))
+                if (context.TestExpression("RegistrationVersionStatusHistory", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrationVersionStatusHistoryUnmarshaller.Instance;
                     unmarshalledObject.RegistrationVersionStatusHistory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionNumber", targetDepth))
+                if (context.TestExpression("VersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context, ref reader);

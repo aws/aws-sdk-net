@@ -56,13 +56,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobExecutionSummary", targetDepth))
+                if (context.TestExpression("jobExecutionSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = JobExecutionSummaryUnmarshaller.Instance;
                     unmarshalledObject.JobExecutionSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingArn", targetDepth))
+                if (context.TestExpression("thingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThingArn = unmarshaller.Unmarshall(context, ref reader);

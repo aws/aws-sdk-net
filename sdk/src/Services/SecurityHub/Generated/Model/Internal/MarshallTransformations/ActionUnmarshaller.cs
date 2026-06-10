@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionType", targetDepth))
+                if (context.TestExpression("ActionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsApiCallAction", targetDepth))
+                if (context.TestExpression("AwsApiCallAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsApiCallActionUnmarshaller.Instance;
                     unmarshalledObject.AwsApiCallAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsRequestAction", targetDepth))
+                if (context.TestExpression("DnsRequestAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsRequestActionUnmarshaller.Instance;
                     unmarshalledObject.DnsRequestAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkConnectionAction", targetDepth))
+                if (context.TestExpression("NetworkConnectionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConnectionActionUnmarshaller.Instance;
                     unmarshalledObject.NetworkConnectionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortProbeAction", targetDepth))
+                if (context.TestExpression("PortProbeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = PortProbeActionUnmarshaller.Instance;
                     unmarshalledObject.PortProbeAction = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamingConfigurations", targetDepth))
+                if (context.TestExpression("StreamingConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreamingConfiguration, StreamingConfigurationUnmarshaller>(StreamingConfigurationUnmarshaller.Instance);
                     response.StreamingConfigurations = unmarshaller.Unmarshall(context, ref reader);

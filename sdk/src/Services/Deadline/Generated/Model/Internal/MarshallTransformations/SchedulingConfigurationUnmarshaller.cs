@@ -56,19 +56,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("priorityBalanced", targetDepth))
+                if (context.TestExpression("priorityBalanced", targetDepth, ref reader))
                 {
                     var unmarshaller = PriorityBalancedSchedulingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PriorityBalanced = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priorityFifo", targetDepth))
+                if (context.TestExpression("priorityFifo", targetDepth, ref reader))
                 {
                     var unmarshaller = PriorityFifoSchedulingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PriorityFifo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weightedBalanced", targetDepth))
+                if (context.TestExpression("weightedBalanced", targetDepth, ref reader))
                 {
                     var unmarshaller = WeightedBalancedSchedulingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WeightedBalanced = unmarshaller.Unmarshall(context, ref reader);

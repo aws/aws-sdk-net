@@ -52,7 +52,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProfileTemplate", targetDepth))
+                if (context.TestExpression("ProfileTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = ProfileTemplateUnmarshaller.Instance;
                     response.ProfileTemplate = unmarshaller.Unmarshall(context, ref reader);

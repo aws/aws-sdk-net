@@ -56,13 +56,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RangeInBytes", targetDepth))
+                if (context.TestExpression("RangeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RangeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SHA256TreeHash", targetDepth))
+                if (context.TestExpression("SHA256TreeHash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SHA256TreeHash = unmarshaller.Unmarshall(context, ref reader);

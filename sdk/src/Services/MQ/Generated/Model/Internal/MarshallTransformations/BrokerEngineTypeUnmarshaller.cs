@@ -56,13 +56,13 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("engineType", targetDepth))
+                if (context.TestExpression("engineType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("engineVersions", targetDepth))
+                if (context.TestExpression("engineVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EngineVersion, EngineVersionUnmarshaller>(EngineVersionUnmarshaller.Instance);
                     unmarshalledObject.EngineVersions = unmarshaller.Unmarshall(context, ref reader);

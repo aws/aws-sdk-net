@@ -52,13 +52,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KinesisDataStreamDestinations", targetDepth))
+                if (context.TestExpression("KinesisDataStreamDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KinesisDataStreamDestination, KinesisDataStreamDestinationUnmarshaller>(KinesisDataStreamDestinationUnmarshaller.Instance);
                     response.KinesisDataStreamDestinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableName = unmarshaller.Unmarshall(context, ref reader);

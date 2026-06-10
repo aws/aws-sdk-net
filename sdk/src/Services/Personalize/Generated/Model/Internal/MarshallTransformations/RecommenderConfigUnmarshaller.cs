@@ -56,25 +56,25 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enableMetadataWithRecommendations", targetDepth))
+                if (context.TestExpression("enableMetadataWithRecommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMetadataWithRecommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("itemExplorationConfig", targetDepth))
+                if (context.TestExpression("itemExplorationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minRecommendationRequestsPerSecond", targetDepth))
+                if (context.TestExpression("minRecommendationRequestsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinRecommendationRequestsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDataConfig", targetDepth))
+                if (context.TestExpression("trainingDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
                     unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context, ref reader);

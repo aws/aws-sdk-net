@@ -56,19 +56,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LensArn", targetDepth))
+                if (context.TestExpression("LensArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LensArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pillars", targetDepth))
+                if (context.TestExpression("Pillars", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PillarMetric, PillarMetricUnmarshaller>(PillarMetricUnmarshaller.Instance);
                     unmarshalledObject.Pillars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RiskCounts", targetDepth))
+                if (context.TestExpression("RiskCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.RiskCounts = unmarshaller.Unmarshall(context, ref reader);

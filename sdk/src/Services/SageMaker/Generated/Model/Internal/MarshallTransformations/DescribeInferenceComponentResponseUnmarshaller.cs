@@ -52,79 +52,79 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointArn", targetDepth))
+                if (context.TestExpression("EndpointArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointName", targetDepth))
+                if (context.TestExpression("EndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceComponentArn", targetDepth))
+                if (context.TestExpression("InferenceComponentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InferenceComponentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceComponentName", targetDepth))
+                if (context.TestExpression("InferenceComponentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InferenceComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceComponentStatus", targetDepth))
+                if (context.TestExpression("InferenceComponentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InferenceComponentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastDeploymentConfig", targetDepth))
+                if (context.TestExpression("LastDeploymentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentDeploymentConfigUnmarshaller.Instance;
                     response.LastDeploymentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuntimeConfig", targetDepth))
+                if (context.TestExpression("RuntimeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentRuntimeConfigSummaryUnmarshaller.Instance;
                     response.RuntimeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Specification", targetDepth))
+                if (context.TestExpression("Specification", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentSpecificationSummaryUnmarshaller.Instance;
                     response.Specification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Specifications", targetDepth))
+                if (context.TestExpression("Specifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InferenceComponentSpecificationSummary, InferenceComponentSpecificationSummaryUnmarshaller>(InferenceComponentSpecificationSummaryUnmarshaller.Instance);
                     response.Specifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VariantName", targetDepth))
+                if (context.TestExpression("VariantName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VariantName = unmarshaller.Unmarshall(context, ref reader);

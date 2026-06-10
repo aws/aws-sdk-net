@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("userAliases", targetDepth))
+                if (context.TestExpression("userAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserAlias, UserAliasUnmarshaller>(UserAliasUnmarshaller.Instance);
                     response.UserAliases = unmarshaller.Unmarshall(context, ref reader);

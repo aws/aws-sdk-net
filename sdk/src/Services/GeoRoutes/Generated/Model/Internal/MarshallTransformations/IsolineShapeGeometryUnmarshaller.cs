@@ -56,13 +56,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Polygon", targetDepth))
+                if (context.TestExpression("Polygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<List<double>>, JsonListUnmarshaller<List<double>,JsonListUnmarshaller<double,DoubleUnmarshaller>>>(new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance)));
                     unmarshalledObject.Polygon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolylinePolygon", targetDepth))
+                if (context.TestExpression("PolylinePolygon", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PolylinePolygon = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attempts", targetDepth))
+                if (context.TestExpression("attempts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Attempts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluateOnExit", targetDepth))
+                if (context.TestExpression("evaluateOnExit", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluateOnExit, EvaluateOnExitUnmarshaller>(EvaluateOnExitUnmarshaller.Instance);
                     unmarshalledObject.EvaluateOnExit = unmarshaller.Unmarshall(context, ref reader);

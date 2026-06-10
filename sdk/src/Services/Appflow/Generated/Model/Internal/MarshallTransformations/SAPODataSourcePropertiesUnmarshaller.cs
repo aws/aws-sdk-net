@@ -56,19 +56,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("objectPath", targetDepth))
+                if (context.TestExpression("objectPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObjectPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("paginationConfig", targetDepth))
+                if (context.TestExpression("paginationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SAPODataPaginationConfigUnmarshaller.Instance;
                     unmarshalledObject.PaginationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parallelismConfig", targetDepth))
+                if (context.TestExpression("parallelismConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SAPODataParallelismConfigUnmarshaller.Instance;
                     unmarshalledObject.ParallelismConfig = unmarshaller.Unmarshall(context, ref reader);

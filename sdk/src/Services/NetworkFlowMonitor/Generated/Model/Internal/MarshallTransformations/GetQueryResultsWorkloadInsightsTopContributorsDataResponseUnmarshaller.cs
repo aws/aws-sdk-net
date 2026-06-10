@@ -52,19 +52,19 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datapoints", targetDepth))
+                if (context.TestExpression("datapoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkloadInsightsTopContributorsDataPoint, WorkloadInsightsTopContributorsDataPointUnmarshaller>(WorkloadInsightsTopContributorsDataPointUnmarshaller.Instance);
                     response.Datapoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unit", targetDepth))
+                if (context.TestExpression("unit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Unit = unmarshaller.Unmarshall(context, ref reader);

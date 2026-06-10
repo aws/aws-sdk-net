@@ -52,7 +52,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorEntries", targetDepth))
+                if (context.TestExpression("errorEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchAlarmActionErrorEntry, BatchAlarmActionErrorEntryUnmarshaller>(BatchAlarmActionErrorEntryUnmarshaller.Instance);
                     response.ErrorEntries = unmarshaller.Unmarshall(context, ref reader);

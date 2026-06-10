@@ -52,7 +52,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analyzer", targetDepth))
+                if (context.TestExpression("analyzer", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalyzerSummaryUnmarshaller.Instance;
                     response.Analyzer = unmarshaller.Unmarshall(context, ref reader);

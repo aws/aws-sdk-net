@@ -56,13 +56,13 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("estimatedMonthlySavings", targetDepth))
+                if (context.TestExpression("estimatedMonthlySavings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedPercentMonthlySavings", targetDepth))
+                if (context.TestExpression("estimatedPercentMonthlySavings", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedPercentMonthlySavings = unmarshaller.Unmarshall(context, ref reader);

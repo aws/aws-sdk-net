@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TabularResolvedAttributes", targetDepth))
+                if (context.TestExpression("TabularResolvedAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = TabularResolvedAttributesUnmarshaller.Instance;
                     unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextGenerationResolvedAttributes", targetDepth))
+                if (context.TestExpression("TextGenerationResolvedAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = TextGenerationResolvedAttributesUnmarshaller.Instance;
                     unmarshalledObject.TextGenerationResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);

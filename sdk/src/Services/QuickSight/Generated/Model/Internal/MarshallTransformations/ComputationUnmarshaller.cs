@@ -56,61 +56,61 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Forecast", targetDepth))
+                if (context.TestExpression("Forecast", targetDepth, ref reader))
                 {
                     var unmarshaller = ForecastComputationUnmarshaller.Instance;
                     unmarshalledObject.Forecast = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GrowthRate", targetDepth))
+                if (context.TestExpression("GrowthRate", targetDepth, ref reader))
                 {
                     var unmarshaller = GrowthRateComputationUnmarshaller.Instance;
                     unmarshalledObject.GrowthRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumMinimum", targetDepth))
+                if (context.TestExpression("MaximumMinimum", targetDepth, ref reader))
                 {
                     var unmarshaller = MaximumMinimumComputationUnmarshaller.Instance;
                     unmarshalledObject.MaximumMinimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricComparison", targetDepth))
+                if (context.TestExpression("MetricComparison", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricComparisonComputationUnmarshaller.Instance;
                     unmarshalledObject.MetricComparison = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeriodOverPeriod", targetDepth))
+                if (context.TestExpression("PeriodOverPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = PeriodOverPeriodComputationUnmarshaller.Instance;
                     unmarshalledObject.PeriodOverPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeriodToDate", targetDepth))
+                if (context.TestExpression("PeriodToDate", targetDepth, ref reader))
                 {
                     var unmarshaller = PeriodToDateComputationUnmarshaller.Instance;
                     unmarshalledObject.PeriodToDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopBottomMovers", targetDepth))
+                if (context.TestExpression("TopBottomMovers", targetDepth, ref reader))
                 {
                     var unmarshaller = TopBottomMoversComputationUnmarshaller.Instance;
                     unmarshalledObject.TopBottomMovers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopBottomRanked", targetDepth))
+                if (context.TestExpression("TopBottomRanked", targetDepth, ref reader))
                 {
                     var unmarshaller = TopBottomRankedComputationUnmarshaller.Instance;
                     unmarshalledObject.TopBottomRanked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAggregation", targetDepth))
+                if (context.TestExpression("TotalAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = TotalAggregationComputationUnmarshaller.Instance;
                     unmarshalledObject.TotalAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniqueValues", targetDepth))
+                if (context.TestExpression("UniqueValues", targetDepth, ref reader))
                 {
                     var unmarshaller = UniqueValuesComputationUnmarshaller.Instance;
                     unmarshalledObject.UniqueValues = unmarshaller.Unmarshall(context, ref reader);

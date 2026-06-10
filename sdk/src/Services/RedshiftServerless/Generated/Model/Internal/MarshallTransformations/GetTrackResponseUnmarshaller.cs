@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("track", targetDepth))
+                if (context.TestExpression("track", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerlessTrackUnmarshaller.Instance;
                     response.Track = unmarshaller.Unmarshall(context, ref reader);

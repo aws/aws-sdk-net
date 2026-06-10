@@ -52,7 +52,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mappingTemplate", targetDepth))
+                if (context.TestExpression("mappingTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MappingTemplate = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("DisallowedFeatures", targetDepth))
+                    if (context.TestExpression("DisallowedFeatures", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<DisallowedFeature, DisallowedFeatureUnmarshaller>(DisallowedFeatureUnmarshaller.Instance);
                         unmarshalledObject.DisallowedFeatures = unmarshaller.Unmarshall(context, ref reader);

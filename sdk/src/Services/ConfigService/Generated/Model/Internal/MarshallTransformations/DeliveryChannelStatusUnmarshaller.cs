@@ -56,25 +56,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configHistoryDeliveryInfo", targetDepth))
+                if (context.TestExpression("configHistoryDeliveryInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigExportDeliveryInfoUnmarshaller.Instance;
                     unmarshalledObject.ConfigHistoryDeliveryInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configSnapshotDeliveryInfo", targetDepth))
+                if (context.TestExpression("configSnapshotDeliveryInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigExportDeliveryInfoUnmarshaller.Instance;
                     unmarshalledObject.ConfigSnapshotDeliveryInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configStreamDeliveryInfo", targetDepth))
+                if (context.TestExpression("configStreamDeliveryInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigStreamDeliveryInfoUnmarshaller.Instance;
                     unmarshalledObject.ConfigStreamDeliveryInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

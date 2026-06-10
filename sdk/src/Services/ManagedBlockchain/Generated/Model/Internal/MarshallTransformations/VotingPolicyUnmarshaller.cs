@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApprovalThresholdPolicy", targetDepth))
+                if (context.TestExpression("ApprovalThresholdPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ApprovalThresholdPolicyUnmarshaller.Instance;
                     unmarshalledObject.ApprovalThresholdPolicy = unmarshaller.Unmarshall(context, ref reader);

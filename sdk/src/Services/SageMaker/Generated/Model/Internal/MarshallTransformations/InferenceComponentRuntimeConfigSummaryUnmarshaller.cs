@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentCopyCount", targetDepth))
+                if (context.TestExpression("CurrentCopyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CurrentCopyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredCopyCount", targetDepth))
+                if (context.TestExpression("DesiredCopyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredCopyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementStatus", targetDepth))
+                if (context.TestExpression("PlacementStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InferenceComponentPlacementStatus, InferenceComponentPlacementStatusUnmarshaller>(InferenceComponentPlacementStatusUnmarshaller.Instance);
                     unmarshalledObject.PlacementStatus = unmarshaller.Unmarshall(context, ref reader);

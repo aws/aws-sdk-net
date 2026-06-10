@@ -52,13 +52,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NamedQueries", targetDepth))
+                if (context.TestExpression("NamedQueries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NamedQuery, NamedQueryUnmarshaller>(NamedQueryUnmarshaller.Instance);
                     response.NamedQueries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedNamedQueryIds", targetDepth))
+                if (context.TestExpression("UnprocessedNamedQueryIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedNamedQueryId, UnprocessedNamedQueryIdUnmarshaller>(UnprocessedNamedQueryIdUnmarshaller.Instance);
                     response.UnprocessedNamedQueryIds = unmarshaller.Unmarshall(context, ref reader);

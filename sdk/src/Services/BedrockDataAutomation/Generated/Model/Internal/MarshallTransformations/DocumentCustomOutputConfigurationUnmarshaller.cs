@@ -56,7 +56,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fallbackBlueprints", targetDepth))
+                if (context.TestExpression("fallbackBlueprints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BlueprintItem, BlueprintItemUnmarshaller>(BlueprintItemUnmarshaller.Instance);
                     unmarshalledObject.FallbackBlueprints = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FindingIdentifier", targetDepth))
+                if (context.TestExpression("FindingIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = OcsfFindingIdentifierUnmarshaller.Instance;
                     unmarshalledObject.FindingIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataUid", targetDepth))
+                if (context.TestExpression("MetadataUid", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetadataUid = unmarshaller.Unmarshall(context, ref reader);

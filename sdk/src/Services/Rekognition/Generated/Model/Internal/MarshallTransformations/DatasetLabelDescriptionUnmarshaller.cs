@@ -56,13 +56,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LabelName", targetDepth))
+                if (context.TestExpression("LabelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelStats", targetDepth))
+                if (context.TestExpression("LabelStats", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetLabelStatsUnmarshaller.Instance;
                     unmarshalledObject.LabelStats = unmarshaller.Unmarshall(context, ref reader);

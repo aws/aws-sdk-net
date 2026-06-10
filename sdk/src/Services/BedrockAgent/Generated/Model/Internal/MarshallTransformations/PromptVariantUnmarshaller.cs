@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalModelRequestFields", targetDepth))
+                if (context.TestExpression("additionalModelRequestFields", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("genAiResource", targetDepth))
+                if (context.TestExpression("genAiResource", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptGenAiResourceUnmarshaller.Instance;
                     unmarshalledObject.GenAiResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inferenceConfiguration", targetDepth))
+                if (context.TestExpression("inferenceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PromptMetadataEntry, PromptMetadataEntryUnmarshaller>(PromptMetadataEntryUnmarshaller.Instance);
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("templateConfiguration", targetDepth))
+                if (context.TestExpression("templateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptTemplateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("templateType", targetDepth))
+                if (context.TestExpression("templateType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TemplateType = unmarshaller.Unmarshall(context, ref reader);

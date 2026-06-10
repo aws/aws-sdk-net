@@ -56,31 +56,31 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationPath", targetDepth))
+                if (context.TestExpression("CreationPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreationPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableRegexInPath", targetDepth))
+                if (context.TestExpression("EnableRegexInPath", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrationPagePath", targetDepth))
+                if (context.TestExpression("RegistrationPagePath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationPagePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestInspection", targetDepth))
+                if (context.TestExpression("RequestInspection", targetDepth, ref reader))
                 {
                     var unmarshaller = RequestInspectionACFPUnmarshaller.Instance;
                     unmarshalledObject.RequestInspection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseInspection", targetDepth))
+                if (context.TestExpression("ResponseInspection", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseInspectionUnmarshaller.Instance;
                     unmarshalledObject.ResponseInspection = unmarshaller.Unmarshall(context, ref reader);

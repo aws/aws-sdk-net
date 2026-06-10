@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("workgroup", targetDepth))
+                if (context.TestExpression("workgroup", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkgroupUnmarshaller.Instance;
                     response.Workgroup = unmarshaller.Unmarshall(context, ref reader);

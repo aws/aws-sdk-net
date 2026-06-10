@@ -56,43 +56,43 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("numberOfDocumentsDeleted", targetDepth))
+                if (context.TestExpression("numberOfDocumentsDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfDocumentsFailed", targetDepth))
+                if (context.TestExpression("numberOfDocumentsFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfDocumentsScanned", targetDepth))
+                if (context.TestExpression("numberOfDocumentsScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDocumentsScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfMetadataDocumentsModified", targetDepth))
+                if (context.TestExpression("numberOfMetadataDocumentsModified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMetadataDocumentsModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfMetadataDocumentsScanned", targetDepth))
+                if (context.TestExpression("numberOfMetadataDocumentsScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfMetadataDocumentsScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfModifiedDocumentsIndexed", targetDepth))
+                if (context.TestExpression("numberOfModifiedDocumentsIndexed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfModifiedDocumentsIndexed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfNewDocumentsIndexed", targetDepth))
+                if (context.TestExpression("numberOfNewDocumentsIndexed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfNewDocumentsIndexed = unmarshaller.Unmarshall(context, ref reader);

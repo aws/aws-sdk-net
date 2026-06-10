@@ -56,31 +56,31 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FragmentLengthInMilliseconds", targetDepth))
+                if (context.TestExpression("FragmentLengthInMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FragmentLengthInMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FragmentNumber", targetDepth))
+                if (context.TestExpression("FragmentNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FragmentNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FragmentSizeInBytes", targetDepth))
+                if (context.TestExpression("FragmentSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FragmentSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProducerTimestamp", targetDepth))
+                if (context.TestExpression("ProducerTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ProducerTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerTimestamp", targetDepth))
+                if (context.TestExpression("ServerTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ServerTimestamp = unmarshaller.Unmarshall(context, ref reader);

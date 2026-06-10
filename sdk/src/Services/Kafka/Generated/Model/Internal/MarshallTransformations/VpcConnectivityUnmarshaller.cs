@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientAuthentication", targetDepth))
+                if (context.TestExpression("clientAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectivityClientAuthenticationUnmarshaller.Instance;
                     unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);

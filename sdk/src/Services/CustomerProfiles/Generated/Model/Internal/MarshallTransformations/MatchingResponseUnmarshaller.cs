@@ -56,25 +56,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoMerging", targetDepth))
+                if (context.TestExpression("AutoMerging", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMergingUnmarshaller.Instance;
                     unmarshalledObject.AutoMerging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportingConfig", targetDepth))
+                if (context.TestExpression("ExportingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportingConfigUnmarshaller.Instance;
                     unmarshalledObject.ExportingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobSchedule", targetDepth))
+                if (context.TestExpression("JobSchedule", targetDepth, ref reader))
                 {
                     var unmarshaller = JobScheduleUnmarshaller.Instance;
                     unmarshalledObject.JobSchedule = unmarshaller.Unmarshall(context, ref reader);

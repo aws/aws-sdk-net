@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("entries", targetDepth))
+                if (context.TestExpression("entries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubstituteStringEntry, SubstituteStringEntryUnmarshaller>(SubstituteStringEntryUnmarshaller.Instance);
                     unmarshalledObject.Entries = unmarshaller.Unmarshall(context, ref reader);

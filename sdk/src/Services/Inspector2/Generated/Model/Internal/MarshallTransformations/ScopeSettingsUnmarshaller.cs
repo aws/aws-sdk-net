@@ -56,7 +56,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("projectSelectionScope", targetDepth))
+                if (context.TestExpression("projectSelectionScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProjectSelectionScope = unmarshaller.Unmarshall(context, ref reader);

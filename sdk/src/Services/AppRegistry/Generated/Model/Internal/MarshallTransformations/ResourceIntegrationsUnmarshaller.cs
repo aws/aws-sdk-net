@@ -56,7 +56,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourceGroup", targetDepth))
+                if (context.TestExpression("resourceGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceGroupUnmarshaller.Instance;
                     unmarshalledObject.ResourceGroup = unmarshaller.Unmarshall(context, ref reader);

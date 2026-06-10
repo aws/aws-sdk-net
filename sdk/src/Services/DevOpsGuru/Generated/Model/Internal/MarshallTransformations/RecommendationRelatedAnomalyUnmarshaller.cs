@@ -56,19 +56,19 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnomalyId", targetDepth))
+                if (context.TestExpression("AnomalyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnomalyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resources", targetDepth))
+                if (context.TestExpression("Resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedAnomalyResource, RecommendationRelatedAnomalyResourceUnmarshaller>(RecommendationRelatedAnomalyResourceUnmarshaller.Instance);
                     unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDetails", targetDepth))
+                if (context.TestExpression("SourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationRelatedAnomalySourceDetail, RecommendationRelatedAnomalySourceDetailUnmarshaller>(RecommendationRelatedAnomalySourceDetailUnmarshaller.Instance);
                     unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);

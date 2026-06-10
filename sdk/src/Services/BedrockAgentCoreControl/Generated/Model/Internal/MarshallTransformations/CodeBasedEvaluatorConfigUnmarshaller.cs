@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaConfig", targetDepth))
+                if (context.TestExpression("lambdaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaEvaluatorConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaConfig = unmarshaller.Unmarshall(context, ref reader);

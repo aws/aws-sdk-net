@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CollectiveConstant", targetDepth))
+                if (context.TestExpression("CollectiveConstant", targetDepth, ref reader))
                 {
                     var unmarshaller = CollectiveConstantUnmarshaller.Instance;
                     unmarshalledObject.CollectiveConstant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConstantType", targetDepth))
+                if (context.TestExpression("ConstantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConstantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingularConstant", targetDepth))
+                if (context.TestExpression("SingularConstant", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SingularConstant = unmarshaller.Unmarshall(context, ref reader);

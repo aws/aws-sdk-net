@@ -52,25 +52,25 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Definition", targetDepth))
+                if (context.TestExpression("Definition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataModelName", targetDepth))
+                if (context.TestExpression("MetadataModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MetadataModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataModelType", targetDepth))
+                if (context.TestExpression("MetadataModelType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MetadataModelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetMetadataModels", targetDepth))
+                if (context.TestExpression("TargetMetadataModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetadataModelReference, MetadataModelReferenceUnmarshaller>(MetadataModelReferenceUnmarshaller.Instance);
                     response.TargetMetadataModels = unmarshaller.Unmarshall(context, ref reader);

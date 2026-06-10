@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeContexts", targetDepth))
+                if (context.TestExpression("activeContexts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActiveContext, ActiveContextUnmarshaller>(ActiveContextUnmarshaller.Instance);
                     unmarshalledObject.ActiveContexts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intent", targetDepth))
+                if (context.TestExpression("intent", targetDepth, ref reader))
                 {
                     var unmarshaller = UserTurnIntentOutputUnmarshaller.Instance;
                     unmarshalledObject.Intent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transcript", targetDepth))
+                if (context.TestExpression("transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);

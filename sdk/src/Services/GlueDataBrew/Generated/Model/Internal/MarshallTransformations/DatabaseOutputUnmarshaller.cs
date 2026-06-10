@@ -56,19 +56,19 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatabaseOptions", targetDepth))
+                if (context.TestExpression("DatabaseOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseTableOutputOptionsUnmarshaller.Instance;
                     unmarshalledObject.DatabaseOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseOutputMode", targetDepth))
+                if (context.TestExpression("DatabaseOutputMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseOutputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlueConnectionName", targetDepth))
+                if (context.TestExpression("GlueConnectionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context, ref reader);

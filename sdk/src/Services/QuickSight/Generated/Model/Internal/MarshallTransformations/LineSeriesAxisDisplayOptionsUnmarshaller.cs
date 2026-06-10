@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AxisOptions", targetDepth))
+                if (context.TestExpression("AxisOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.AxisOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MissingDataConfigurations", targetDepth))
+                if (context.TestExpression("MissingDataConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MissingDataConfiguration, MissingDataConfigurationUnmarshaller>(MissingDataConfigurationUnmarshaller.Instance);
                     unmarshalledObject.MissingDataConfigurations = unmarshaller.Unmarshall(context, ref reader);

@@ -56,109 +56,109 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CopyStrategy", targetDepth))
+                if (context.TestExpression("CopyStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CopyStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTagsToSnapshots", targetDepth))
+                if (context.TestExpression("CopyTagsToSnapshots", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToSnapshots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCompressionType", targetDepth))
+                if (context.TestExpression("DataCompressionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteClonedVolumes", targetDepth))
+                if (context.TestExpression("DeleteClonedVolumes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteIntermediateData", targetDepth))
+                if (context.TestExpression("DeleteIntermediateData", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteIntermediateData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth))
+                if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationSnapshot", targetDepth))
+                if (context.TestExpression("DestinationSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NfsExports", targetDepth))
+                if (context.TestExpression("NfsExports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OpenZFSNfsExport, OpenZFSNfsExportUnmarshaller>(OpenZFSNfsExportUnmarshaller.Instance);
                     unmarshalledObject.NfsExports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginSnapshot", targetDepth))
+                if (context.TestExpression("OriginSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenZFSOriginSnapshotConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OriginSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParentVolumeId", targetDepth))
+                if (context.TestExpression("ParentVolumeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentVolumeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadOnly", targetDepth))
+                if (context.TestExpression("ReadOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordSizeKiB", targetDepth))
+                if (context.TestExpression("RecordSizeKiB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestoreToSnapshot", targetDepth))
+                if (context.TestExpression("RestoreToSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RestoreToSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceSnapshotARN", targetDepth))
+                if (context.TestExpression("SourceSnapshotARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceSnapshotARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))
+                if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacityQuotaGiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageCapacityReservationGiB", targetDepth))
+                if (context.TestExpression("StorageCapacityReservationGiB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageCapacityReservationGiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserAndGroupQuotas", targetDepth))
+                if (context.TestExpression("UserAndGroupQuotas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OpenZFSUserOrGroupQuota, OpenZFSUserOrGroupQuotaUnmarshaller>(OpenZFSUserOrGroupQuotaUnmarshaller.Instance);
                     unmarshalledObject.UserAndGroupQuotas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumePath", targetDepth))
+                if (context.TestExpression("VolumePath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumePath = unmarshaller.Unmarshall(context, ref reader);

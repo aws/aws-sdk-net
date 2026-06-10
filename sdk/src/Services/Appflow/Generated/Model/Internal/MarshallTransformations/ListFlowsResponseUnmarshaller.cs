@@ -52,13 +52,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("flows", targetDepth))
+                if (context.TestExpression("flows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FlowDefinition, FlowDefinitionUnmarshaller>(FlowDefinitionUnmarshaller.Instance);
                     response.Flows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeFormatConfiguration", targetDepth))
+                if (context.TestExpression("DateTimeFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DateTimeFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberFormatConfiguration", targetDepth))
+                if (context.TestExpression("NumberFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NumberFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringFormatConfiguration", targetDepth))
+                if (context.TestExpression("StringFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StringFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);

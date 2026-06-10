@@ -52,13 +52,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedRecords", targetDepth))
+                if (context.TestExpression("failedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MemoryRecordOutput, MemoryRecordOutputUnmarshaller>(MemoryRecordOutputUnmarshaller.Instance);
                     response.FailedRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulRecords", targetDepth))
+                if (context.TestExpression("successfulRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MemoryRecordOutput, MemoryRecordOutputUnmarshaller>(MemoryRecordOutputUnmarshaller.Instance);
                     response.SuccessfulRecords = unmarshaller.Unmarshall(context, ref reader);

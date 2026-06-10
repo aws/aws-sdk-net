@@ -52,13 +52,13 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Backups", targetDepth))
+                if (context.TestExpression("Backups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Backup, BackupUnmarshaller>(BackupUnmarshaller.Instance);
                     response.Backups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

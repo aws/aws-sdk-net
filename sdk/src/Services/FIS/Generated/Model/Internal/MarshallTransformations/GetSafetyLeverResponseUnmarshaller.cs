@@ -52,7 +52,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("safetyLever", targetDepth))
+                if (context.TestExpression("safetyLever", targetDepth, ref reader))
                 {
                     var unmarshaller = SafetyLeverUnmarshaller.Instance;
                     response.SafetyLever = unmarshaller.Unmarshall(context, ref reader);

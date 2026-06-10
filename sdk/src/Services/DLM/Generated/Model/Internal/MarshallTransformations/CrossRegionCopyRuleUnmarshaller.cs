@@ -56,43 +56,43 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CmkArn", targetDepth))
+                if (context.TestExpression("CmkArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CmkArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTags", targetDepth))
+                if (context.TestExpression("CopyTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeprecateRule", targetDepth))
+                if (context.TestExpression("DeprecateRule", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossRegionCopyDeprecateRuleUnmarshaller.Instance;
                     unmarshalledObject.DeprecateRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Encrypted", targetDepth))
+                if (context.TestExpression("Encrypted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetainRule", targetDepth))
+                if (context.TestExpression("RetainRule", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossRegionCopyRetainRuleUnmarshaller.Instance;
                     unmarshalledObject.RetainRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Target", targetDepth))
+                if (context.TestExpression("Target", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetRegion", targetDepth))
+                if (context.TestExpression("TargetRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetRegion = unmarshaller.Unmarshall(context, ref reader);

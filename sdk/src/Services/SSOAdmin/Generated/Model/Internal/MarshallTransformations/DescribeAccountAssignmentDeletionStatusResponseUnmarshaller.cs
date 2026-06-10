@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountAssignmentDeletionStatus", targetDepth))
+                if (context.TestExpression("AccountAssignmentDeletionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountAssignmentOperationStatusUnmarshaller.Instance;
                     response.AccountAssignmentDeletionStatus = unmarshaller.Unmarshall(context, ref reader);

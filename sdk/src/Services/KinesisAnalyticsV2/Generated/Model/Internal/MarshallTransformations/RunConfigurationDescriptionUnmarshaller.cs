@@ -56,13 +56,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationRestoreConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationRestoreConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationRestoreConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ApplicationRestoreConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FlinkRunConfigurationDescription", targetDepth))
+                if (context.TestExpression("FlinkRunConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = FlinkRunConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FlinkRunConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

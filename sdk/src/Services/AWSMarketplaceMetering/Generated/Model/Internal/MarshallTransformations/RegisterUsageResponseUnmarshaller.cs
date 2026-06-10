@@ -52,13 +52,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PublicKeyRotationTimestamp", targetDepth))
+                if (context.TestExpression("PublicKeyRotationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.PublicKeyRotationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Signature", targetDepth))
+                if (context.TestExpression("Signature", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Signature = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Handshake", targetDepth))
+                if (context.TestExpression("Handshake", targetDepth, ref reader))
                 {
                     var unmarshaller = HandshakeUnmarshaller.Instance;
                     response.Handshake = unmarshaller.Unmarshall(context, ref reader);

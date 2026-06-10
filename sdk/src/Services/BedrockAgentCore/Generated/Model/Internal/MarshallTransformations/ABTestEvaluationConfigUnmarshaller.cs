@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("onlineEvaluationConfigArn", targetDepth))
+                if (context.TestExpression("onlineEvaluationConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnlineEvaluationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("perVariantOnlineEvaluationConfig", targetDepth))
+                if (context.TestExpression("perVariantOnlineEvaluationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PerVariantOnlineEvaluationConfig, PerVariantOnlineEvaluationConfigUnmarshaller>(PerVariantOnlineEvaluationConfigUnmarshaller.Instance);
                     unmarshalledObject.PerVariantOnlineEvaluationConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WebAppCustomization", targetDepth))
+                if (context.TestExpression("WebAppCustomization", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribedWebAppCustomizationUnmarshaller.Instance;
                     response.WebAppCustomization = unmarshaller.Unmarshall(context, ref reader);

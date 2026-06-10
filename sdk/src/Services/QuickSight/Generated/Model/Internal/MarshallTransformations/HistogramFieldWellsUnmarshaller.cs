@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HistogramAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("HistogramAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = HistogramAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.HistogramAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

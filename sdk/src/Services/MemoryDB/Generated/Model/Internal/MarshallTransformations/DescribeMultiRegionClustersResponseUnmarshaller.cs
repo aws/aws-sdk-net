@@ -52,13 +52,13 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiRegionClusters", targetDepth))
+                if (context.TestExpression("MultiRegionClusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiRegionCluster, MultiRegionClusterUnmarshaller>(MultiRegionClusterUnmarshaller.Instance);
                     response.MultiRegionClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

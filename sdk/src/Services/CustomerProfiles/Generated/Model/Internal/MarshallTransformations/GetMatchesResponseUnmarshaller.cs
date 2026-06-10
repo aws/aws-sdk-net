@@ -52,25 +52,25 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Matches", targetDepth))
+                if (context.TestExpression("Matches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MatchItem, MatchItemUnmarshaller>(MatchItemUnmarshaller.Instance);
                     response.Matches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchGenerationDate", targetDepth))
+                if (context.TestExpression("MatchGenerationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.MatchGenerationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PotentialMatches", targetDepth))
+                if (context.TestExpression("PotentialMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.PotentialMatches = unmarshaller.Unmarshall(context, ref reader);

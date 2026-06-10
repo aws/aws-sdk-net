@@ -52,7 +52,7 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("batchUpdateRecommendationResourceExclusionErrors", targetDepth))
+                if (context.TestExpression("batchUpdateRecommendationResourceExclusionErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UpdateRecommendationResourceExclusionError, UpdateRecommendationResourceExclusionErrorUnmarshaller>(UpdateRecommendationResourceExclusionErrorUnmarshaller.Instance);
                     response.BatchUpdateRecommendationResourceExclusionErrors = unmarshaller.Unmarshall(context, ref reader);

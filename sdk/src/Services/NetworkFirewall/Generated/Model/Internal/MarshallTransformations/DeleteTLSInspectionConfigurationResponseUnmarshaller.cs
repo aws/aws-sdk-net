@@ -52,7 +52,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TLSInspectionConfigurationResponse", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = TLSInspectionConfigurationResponseUnmarshaller.Instance;
                     response.TLSInspectionConfigurationResponse = unmarshaller.Unmarshall(context, ref reader);

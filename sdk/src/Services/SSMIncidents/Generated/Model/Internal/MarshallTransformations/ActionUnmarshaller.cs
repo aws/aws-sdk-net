@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ssmAutomation", targetDepth))
+                if (context.TestExpression("ssmAutomation", targetDepth, ref reader))
                 {
                     var unmarshaller = SsmAutomationUnmarshaller.Instance;
                     unmarshalledObject.SsmAutomation = unmarshaller.Unmarshall(context, ref reader);

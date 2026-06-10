@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dimensionColumns", targetDepth))
+                if (context.TestExpression("dimensionColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DimensionColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("joinColumns", targetDepth))
+                if (context.TestExpression("joinColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.JoinColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryConstraints", targetDepth))
+                if (context.TestExpression("queryConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryConstraint, QueryConstraintUnmarshaller>(QueryConstraintUnmarshaller.Instance);
                     unmarshalledObject.QueryConstraints = unmarshaller.Unmarshall(context, ref reader);

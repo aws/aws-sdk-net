@@ -52,13 +52,13 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExpiresAt", targetDepth))
+                if (context.TestExpression("ExpiresAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ExpiresAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Record", targetDepth))
+                if (context.TestExpression("Record", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FeatureValue, FeatureValueUnmarshaller>(FeatureValueUnmarshaller.Instance);
                     response.Record = unmarshaller.Unmarshall(context, ref reader);

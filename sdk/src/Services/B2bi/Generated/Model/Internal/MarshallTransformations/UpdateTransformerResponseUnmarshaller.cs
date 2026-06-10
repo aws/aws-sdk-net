@@ -52,85 +52,85 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ediType", targetDepth))
+                if (context.TestExpression("ediType", targetDepth, ref reader))
                 {
                     var unmarshaller = EdiTypeUnmarshaller.Instance;
                     response.EdiType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileFormat", targetDepth))
+                if (context.TestExpression("fileFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputConversion", targetDepth))
+                if (context.TestExpression("inputConversion", targetDepth, ref reader))
                 {
                     var unmarshaller = InputConversionUnmarshaller.Instance;
                     response.InputConversion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapping", targetDepth))
+                if (context.TestExpression("mapping", targetDepth, ref reader))
                 {
                     var unmarshaller = MappingUnmarshaller.Instance;
                     response.Mapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappingTemplate", targetDepth))
+                if (context.TestExpression("mappingTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MappingTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modifiedAt", targetDepth))
+                if (context.TestExpression("modifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputConversion", targetDepth))
+                if (context.TestExpression("outputConversion", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputConversionUnmarshaller.Instance;
                     response.OutputConversion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleDocument", targetDepth))
+                if (context.TestExpression("sampleDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SampleDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleDocuments", targetDepth))
+                if (context.TestExpression("sampleDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = SampleDocumentsUnmarshaller.Instance;
                     response.SampleDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transformerArn", targetDepth))
+                if (context.TestExpression("transformerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TransformerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transformerId", targetDepth))
+                if (context.TestExpression("transformerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TransformerId = unmarshaller.Unmarshall(context, ref reader);

@@ -52,79 +52,79 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botAliasHistoryEvents", targetDepth))
+                if (context.TestExpression("botAliasHistoryEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BotAliasHistoryEvent, BotAliasHistoryEventUnmarshaller>(BotAliasHistoryEventUnmarshaller.Instance);
                     response.BotAliasHistoryEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botAliasId", targetDepth))
+                if (context.TestExpression("botAliasId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotAliasId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botAliasLocaleSettings", targetDepth))
+                if (context.TestExpression("botAliasLocaleSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, BotAliasLocaleSettings, StringUnmarshaller, BotAliasLocaleSettingsUnmarshaller>(StringUnmarshaller.Instance, BotAliasLocaleSettingsUnmarshaller.Instance);
                     response.BotAliasLocaleSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botAliasName", targetDepth))
+                if (context.TestExpression("botAliasName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotAliasName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botAliasStatus", targetDepth))
+                if (context.TestExpression("botAliasStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotAliasStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conversationLogSettings", targetDepth))
+                if (context.TestExpression("conversationLogSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationLogSettingsUnmarshaller.Instance;
                     response.ConversationLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationDateTime", targetDepth))
+                if (context.TestExpression("creationDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
+                if (context.TestExpression("lastUpdatedDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentBotNetworks", targetDepth))
+                if (context.TestExpression("parentBotNetworks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParentBotNetwork, ParentBotNetworkUnmarshaller>(ParentBotNetworkUnmarshaller.Instance);
                     response.ParentBotNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sentimentAnalysisSettings", targetDepth))
+                if (context.TestExpression("sentimentAnalysisSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentAnalysisSettingsUnmarshaller.Instance;
                     response.SentimentAnalysisSettings = unmarshaller.Unmarshall(context, ref reader);

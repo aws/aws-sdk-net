@@ -52,7 +52,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3DestinationUrl", targetDepth))
+                if (context.TestExpression("s3DestinationUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.S3DestinationUrl = unmarshaller.Unmarshall(context, ref reader);

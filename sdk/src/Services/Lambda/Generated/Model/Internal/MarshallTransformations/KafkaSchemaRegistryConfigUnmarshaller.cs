@@ -56,25 +56,25 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessConfigs", targetDepth))
+                if (context.TestExpression("AccessConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KafkaSchemaRegistryAccessConfig, KafkaSchemaRegistryAccessConfigUnmarshaller>(KafkaSchemaRegistryAccessConfigUnmarshaller.Instance);
                     unmarshalledObject.AccessConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventRecordFormat", targetDepth))
+                if (context.TestExpression("EventRecordFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventRecordFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaRegistryURI", targetDepth))
+                if (context.TestExpression("SchemaRegistryURI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaRegistryURI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaValidationConfigs", targetDepth))
+                if (context.TestExpression("SchemaValidationConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KafkaSchemaValidationConfig, KafkaSchemaValidationConfigUnmarshaller>(KafkaSchemaValidationConfigUnmarshaller.Instance);
                     unmarshalledObject.SchemaValidationConfigs = unmarshaller.Unmarshall(context, ref reader);

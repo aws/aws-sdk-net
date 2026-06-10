@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RoomMembership", targetDepth))
+                if (context.TestExpression("RoomMembership", targetDepth, ref reader))
                 {
                     var unmarshaller = RoomMembershipUnmarshaller.Instance;
                     response.RoomMembership = unmarshaller.Unmarshall(context, ref reader);

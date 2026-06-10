@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiPolygonGeometry", targetDepth))
+                if (context.TestExpression("MultiPolygonGeometry", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiPolygonGeometryInputUnmarshaller.Instance;
                     unmarshalledObject.MultiPolygonGeometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolygonGeometry", targetDepth))
+                if (context.TestExpression("PolygonGeometry", targetDepth, ref reader))
                 {
                     var unmarshaller = PolygonGeometryInputUnmarshaller.Instance;
                     unmarshalledObject.PolygonGeometry = unmarshaller.Unmarshall(context, ref reader);

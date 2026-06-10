@@ -56,7 +56,7 @@ namespace Amazon.DSQL.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kinesis", targetDepth))
+                if (context.TestExpression("kinesis", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisTargetDefinitionUnmarshaller.Instance;
                     unmarshalledObject.Kinesis = unmarshaller.Unmarshall(context, ref reader);

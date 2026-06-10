@@ -56,67 +56,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbortIncompleteMultipartUpload", targetDepth))
+                if (context.TestExpression("AbortIncompleteMultipartUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationRulesAbortIncompleteMultipartUploadDetailsUnmarshaller.Instance;
                     unmarshalledObject.AbortIncompleteMultipartUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationDate", targetDepth))
+                if (context.TestExpression("ExpirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationInDays", targetDepth))
+                if (context.TestExpression("ExpirationInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpirationInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpiredObjectDeleteMarker", targetDepth))
+                if (context.TestExpression("ExpiredObjectDeleteMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExpiredObjectDeleteMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Filter", targetDepth))
+                if (context.TestExpression("Filter", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationRulesFilterDetailsUnmarshaller.Instance;
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ID", targetDepth))
+                if (context.TestExpression("ID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoncurrentVersionExpirationInDays", targetDepth))
+                if (context.TestExpression("NoncurrentVersionExpirationInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoncurrentVersionExpirationInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoncurrentVersionTransitions", targetDepth))
+                if (context.TestExpression("NoncurrentVersionTransitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetails, AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsUnmarshaller>(AwsS3BucketBucketLifecycleConfigurationRulesNoncurrentVersionTransitionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.NoncurrentVersionTransitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transitions", targetDepth))
+                if (context.TestExpression("Transitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails, AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsUnmarshaller>(AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.Transitions = unmarshaller.Unmarshall(context, ref reader);

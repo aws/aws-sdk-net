@@ -52,7 +52,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ephemerisId", targetDepth))
+                if (context.TestExpression("ephemerisId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EphemerisId = unmarshaller.Unmarshall(context, ref reader);

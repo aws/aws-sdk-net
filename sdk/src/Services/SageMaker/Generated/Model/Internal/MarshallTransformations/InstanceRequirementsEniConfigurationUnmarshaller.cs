@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalEnis", targetDepth))
+                if (context.TestExpression("AdditionalEnis", targetDepth, ref reader))
                 {
                     var unmarshaller = AdditionalEnisUnmarshaller.Instance;
                     unmarshalledObject.AdditionalEnis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerEni", targetDepth))
+                if (context.TestExpression("CustomerEni", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerEni = unmarshaller.Unmarshall(context, ref reader);

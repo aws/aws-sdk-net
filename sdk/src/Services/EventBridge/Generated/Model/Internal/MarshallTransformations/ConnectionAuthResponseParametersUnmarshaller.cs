@@ -56,31 +56,31 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApiKeyAuthParameters", targetDepth))
+                if (context.TestExpression("ApiKeyAuthParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionApiKeyAuthResponseParametersUnmarshaller.Instance;
                     unmarshalledObject.ApiKeyAuthParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BasicAuthParameters", targetDepth))
+                if (context.TestExpression("BasicAuthParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionBasicAuthResponseParametersUnmarshaller.Instance;
                     unmarshalledObject.BasicAuthParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectivityParameters", targetDepth))
+                if (context.TestExpression("ConnectivityParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribeConnectionConnectivityParametersUnmarshaller.Instance;
                     unmarshalledObject.ConnectivityParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvocationHttpParameters", targetDepth))
+                if (context.TestExpression("InvocationHttpParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionHttpParametersUnmarshaller.Instance;
                     unmarshalledObject.InvocationHttpParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuthParameters", targetDepth))
+                if (context.TestExpression("OAuthParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionOAuthResponseParametersUnmarshaller.Instance;
                     unmarshalledObject.OAuthParameters = unmarshaller.Unmarshall(context, ref reader);

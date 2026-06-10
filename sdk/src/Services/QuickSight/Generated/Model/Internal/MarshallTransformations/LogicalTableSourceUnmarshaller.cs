@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSetArn", targetDepth))
+                if (context.TestExpression("DataSetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JoinInstruction", targetDepth))
+                if (context.TestExpression("JoinInstruction", targetDepth, ref reader))
                 {
                     var unmarshaller = JoinInstructionUnmarshaller.Instance;
                     unmarshalledObject.JoinInstruction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhysicalTableId", targetDepth))
+                if (context.TestExpression("PhysicalTableId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PhysicalTableId = unmarshaller.Unmarshall(context, ref reader);

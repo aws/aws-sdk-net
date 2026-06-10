@@ -52,31 +52,31 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExclusionList", targetDepth))
+                if (context.TestExpression("ExclusionList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<QuotaInfo>, StringUnmarshaller, JsonListUnmarshaller<QuotaInfo,QuotaInfoUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<QuotaInfo, QuotaInfoUnmarshaller>(QuotaInfoUnmarshaller.Instance));
                     response.ExclusionList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationArn", targetDepth))
+                if (context.TestExpression("NotificationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NotificationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptInLevel", targetDepth))
+                if (context.TestExpression("OptInLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptInLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptInStatus", targetDepth))
+                if (context.TestExpression("OptInStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptInStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptInType", targetDepth))
+                if (context.TestExpression("OptInType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OptInType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("podProperties", targetDepth))
+                if (context.TestExpression("podProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EksPodPropertiesDetailUnmarshaller.Instance;
                     unmarshalledObject.PodProperties = unmarshaller.Unmarshall(context, ref reader);

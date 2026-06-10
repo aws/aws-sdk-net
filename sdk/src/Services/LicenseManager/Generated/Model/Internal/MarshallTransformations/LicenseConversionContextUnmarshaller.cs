@@ -56,13 +56,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProductCodes", targetDepth))
+                if (context.TestExpression("ProductCodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductCodeListItem, ProductCodeListItemUnmarshaller>(ProductCodeListItemUnmarshaller.Instance);
                     unmarshalledObject.ProductCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsageOperation", targetDepth))
+                if (context.TestExpression("UsageOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageOperation = unmarshaller.Unmarshall(context, ref reader);

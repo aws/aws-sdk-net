@@ -56,19 +56,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contradictingRules", targetDepth))
+                if (context.TestExpression("contradictingRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailAutomatedReasoningRule, GuardrailAutomatedReasoningRuleUnmarshaller>(GuardrailAutomatedReasoningRuleUnmarshaller.Instance);
                     unmarshalledObject.ContradictingRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicWarning", targetDepth))
+                if (context.TestExpression("logicWarning", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailAutomatedReasoningLogicWarningUnmarshaller.Instance;
                     unmarshalledObject.LogicWarning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("translation", targetDepth))
+                if (context.TestExpression("translation", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailAutomatedReasoningTranslationUnmarshaller.Instance;
                     unmarshalledObject.Translation = unmarshaller.Unmarshall(context, ref reader);

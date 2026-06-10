@@ -52,13 +52,13 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UpdatedFirewallRules", targetDepth))
+                if (context.TestExpression("UpdatedFirewallRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FirewallRule, FirewallRuleUnmarshaller>(FirewallRuleUnmarshaller.Instance);
                     response.UpdatedFirewallRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateErrors", targetDepth))
+                if (context.TestExpression("UpdateErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchUpdateFirewallRuleError, BatchUpdateFirewallRuleErrorUnmarshaller>(BatchUpdateFirewallRuleErrorUnmarshaller.Instance);
                     response.UpdateErrors = unmarshaller.Unmarshall(context, ref reader);

@@ -56,61 +56,61 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Config", targetDepth))
+                if (context.TestExpression("Config", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HoursOfOperationOverrideConfig, HoursOfOperationOverrideConfigUnmarshaller>(HoursOfOperationOverrideConfigUnmarshaller.Instance);
                     unmarshalledObject.Config = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EffectiveFrom", targetDepth))
+                if (context.TestExpression("EffectiveFrom", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectiveFrom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EffectiveTill", targetDepth))
+                if (context.TestExpression("EffectiveTill", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectiveTill = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HoursOfOperationArn", targetDepth))
+                if (context.TestExpression("HoursOfOperationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HoursOfOperationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HoursOfOperationId", targetDepth))
+                if (context.TestExpression("HoursOfOperationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HoursOfOperationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HoursOfOperationOverrideId", targetDepth))
+                if (context.TestExpression("HoursOfOperationOverrideId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HoursOfOperationOverrideId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideType", targetDepth))
+                if (context.TestExpression("OverrideType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverrideType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurrenceConfig", targetDepth))
+                if (context.TestExpression("RecurrenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurrenceConfigUnmarshaller.Instance;
                     unmarshalledObject.RecurrenceConfig = unmarshaller.Unmarshall(context, ref reader);

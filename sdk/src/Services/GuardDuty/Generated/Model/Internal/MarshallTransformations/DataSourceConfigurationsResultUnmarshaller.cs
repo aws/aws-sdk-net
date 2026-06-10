@@ -56,37 +56,37 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudTrail", targetDepth))
+                if (context.TestExpression("cloudTrail", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudTrailConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dnsLogs", targetDepth))
+                if (context.TestExpression("dnsLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = DNSLogsConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.DNSLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowLogs", targetDepth))
+                if (context.TestExpression("flowLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowLogsConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetes", targetDepth))
+                if (context.TestExpression("kubernetes", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("malwareProtection", targetDepth))
+                if (context.TestExpression("malwareProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = MalwareProtectionConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Logs", targetDepth))
+                if (context.TestExpression("s3Logs", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LogsConfigurationResultUnmarshaller.Instance;
                     unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);

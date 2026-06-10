@@ -52,7 +52,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VirtualMachine", targetDepth))
+                if (context.TestExpression("VirtualMachine", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualMachineDetailsUnmarshaller.Instance;
                     response.VirtualMachine = unmarshaller.Unmarshall(context, ref reader);

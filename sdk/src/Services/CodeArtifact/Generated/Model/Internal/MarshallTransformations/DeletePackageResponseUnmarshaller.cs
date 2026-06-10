@@ -52,7 +52,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deletedPackage", targetDepth))
+                if (context.TestExpression("deletedPackage", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageSummaryUnmarshaller.Instance;
                     response.DeletedPackage = unmarshaller.Unmarshall(context, ref reader);

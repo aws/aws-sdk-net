@@ -52,13 +52,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("referenceStores", targetDepth))
+                if (context.TestExpression("referenceStores", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReferenceStoreDetail, ReferenceStoreDetailUnmarshaller>(ReferenceStoreDetailUnmarshaller.Instance);
                     response.ReferenceStores = unmarshaller.Unmarshall(context, ref reader);

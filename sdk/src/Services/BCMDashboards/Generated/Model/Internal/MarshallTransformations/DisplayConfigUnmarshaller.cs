@@ -56,13 +56,13 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("graph", targetDepth))
+                if (context.TestExpression("graph", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, GraphDisplayConfig, StringUnmarshaller, GraphDisplayConfigUnmarshaller>(StringUnmarshaller.Instance, GraphDisplayConfigUnmarshaller.Instance);
                     unmarshalledObject.Graph = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("table", targetDepth))
+                if (context.TestExpression("table", targetDepth, ref reader))
                 {
                     var unmarshaller = TableDisplayConfigStructUnmarshaller.Instance;
                     unmarshalledObject.Table = unmarshaller.Unmarshall(context, ref reader);

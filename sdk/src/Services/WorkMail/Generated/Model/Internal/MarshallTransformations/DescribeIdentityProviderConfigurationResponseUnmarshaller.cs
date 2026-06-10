@@ -52,19 +52,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationMode", targetDepth))
+                if (context.TestExpression("AuthenticationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthenticationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
                     response.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PersonalAccessTokenConfiguration", targetDepth))
+                if (context.TestExpression("PersonalAccessTokenConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PersonalAccessTokenConfigurationUnmarshaller.Instance;
                     response.PersonalAccessTokenConfiguration = unmarshaller.Unmarshall(context, ref reader);

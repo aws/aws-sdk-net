@@ -52,13 +52,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileCaches", targetDepth))
+                if (context.TestExpression("FileCaches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FileCache, FileCacheUnmarshaller>(FileCacheUnmarshaller.Instance);
                     response.FileCaches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

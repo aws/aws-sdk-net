@@ -52,7 +52,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taxExemptionTypes", targetDepth))
+                if (context.TestExpression("taxExemptionTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaxExemptionType, TaxExemptionTypeUnmarshaller>(TaxExemptionTypeUnmarshaller.Instance);
                     response.TaxExemptionTypes = unmarshaller.Unmarshall(context, ref reader);

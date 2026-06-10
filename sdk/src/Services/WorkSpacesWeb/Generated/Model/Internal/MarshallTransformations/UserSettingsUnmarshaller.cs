@@ -56,97 +56,97 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalEncryptionContext", targetDepth))
+                if (context.TestExpression("additionalEncryptionContext", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalEncryptionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedPortalArns", targetDepth))
+                if (context.TestExpression("associatedPortalArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AssociatedPortalArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("brandingConfiguration", targetDepth))
+                if (context.TestExpression("brandingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BrandingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BrandingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cookieSynchronizationConfiguration", targetDepth))
+                if (context.TestExpression("cookieSynchronizationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CookieSynchronizationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CookieSynchronizationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyAllowed", targetDepth))
+                if (context.TestExpression("copyAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CopyAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerManagedKey", targetDepth))
+                if (context.TestExpression("customerManagedKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deepLinkAllowed", targetDepth))
+                if (context.TestExpression("deepLinkAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeepLinkAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth))
+                if (context.TestExpression("disconnectTimeoutInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("downloadAllowed", targetDepth))
+                if (context.TestExpression("downloadAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DownloadAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idleDisconnectTimeoutInMinutes", targetDepth))
+                if (context.TestExpression("idleDisconnectTimeoutInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleDisconnectTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pasteAllowed", targetDepth))
+                if (context.TestExpression("pasteAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PasteAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("printAllowed", targetDepth))
+                if (context.TestExpression("printAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrintAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolbarConfiguration", targetDepth))
+                if (context.TestExpression("toolbarConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ToolbarConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ToolbarConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uploadAllowed", targetDepth))
+                if (context.TestExpression("uploadAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UploadAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userSettingsArn", targetDepth))
+                if (context.TestExpression("userSettingsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserSettingsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webAuthnAllowed", targetDepth))
+                if (context.TestExpression("webAuthnAllowed", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebAuthnAllowed = unmarshaller.Unmarshall(context, ref reader);

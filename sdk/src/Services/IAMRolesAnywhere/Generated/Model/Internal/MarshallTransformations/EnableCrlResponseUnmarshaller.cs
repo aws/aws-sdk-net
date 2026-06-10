@@ -52,7 +52,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crl", targetDepth))
+                if (context.TestExpression("crl", targetDepth, ref reader))
                 {
                     var unmarshaller = CrlDetailUnmarshaller.Instance;
                     response.Crl = unmarshaller.Unmarshall(context, ref reader);

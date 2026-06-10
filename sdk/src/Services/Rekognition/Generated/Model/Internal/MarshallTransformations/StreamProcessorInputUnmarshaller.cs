@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KinesisVideoStream", targetDepth))
+                if (context.TestExpression("KinesisVideoStream", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisVideoStreamUnmarshaller.Instance;
                     unmarshalledObject.KinesisVideoStream = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyMetadata", targetDepth))
+                if (context.TestExpression("KeyMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyMetadataUnmarshaller.Instance;
                     response.KeyMetadata = unmarshaller.Unmarshall(context, ref reader);

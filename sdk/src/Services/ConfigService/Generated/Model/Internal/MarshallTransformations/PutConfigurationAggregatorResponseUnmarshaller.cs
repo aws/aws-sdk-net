@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConfigurationAggregator", targetDepth))
+                if (context.TestExpression("ConfigurationAggregator", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfigurationAggregatorUnmarshaller.Instance;
                     response.ConfigurationAggregator = unmarshaller.Unmarshall(context, ref reader);

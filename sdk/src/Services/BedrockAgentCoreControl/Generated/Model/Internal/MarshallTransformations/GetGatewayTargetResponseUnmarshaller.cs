@@ -52,97 +52,97 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationData", targetDepth))
+                if (context.TestExpression("authorizationData", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationDataUnmarshaller.Instance;
                     response.AuthorizationData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("credentialProviderConfigurations", targetDepth))
+                if (context.TestExpression("credentialProviderConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CredentialProviderConfiguration, CredentialProviderConfigurationUnmarshaller>(CredentialProviderConfigurationUnmarshaller.Instance);
                     response.CredentialProviderConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayArn", targetDepth))
+                if (context.TestExpression("gatewayArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastSynchronizedAt", targetDepth))
+                if (context.TestExpression("lastSynchronizedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastSynchronizedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metadataConfiguration", targetDepth))
+                if (context.TestExpression("metadataConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataConfigurationUnmarshaller.Instance;
                     response.MetadataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateEndpoint", targetDepth))
+                if (context.TestExpression("privateEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = PrivateEndpointUnmarshaller.Instance;
                     response.PrivateEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateEndpointManagedResources", targetDepth))
+                if (context.TestExpression("privateEndpointManagedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedResourceDetails, ManagedResourceDetailsUnmarshaller>(ManagedResourceDetailsUnmarshaller.Instance);
                     response.PrivateEndpointManagedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocolType", targetDepth))
+                if (context.TestExpression("protocolType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtocolType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReasons", targetDepth))
+                if (context.TestExpression("statusReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StatusReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetConfiguration", targetDepth))
+                if (context.TestExpression("targetConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetConfigurationUnmarshaller.Instance;
                     response.TargetConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetId", targetDepth))
+                if (context.TestExpression("targetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

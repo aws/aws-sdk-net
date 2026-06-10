@@ -56,31 +56,31 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeSnippet", targetDepth))
+                if (context.TestExpression("codeSnippet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CodeLine, CodeLineUnmarshaller>(CodeLineUnmarshaller.Instance);
                     unmarshalledObject.CodeSnippet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endLine", targetDepth))
+                if (context.TestExpression("endLine", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndLine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingArn", targetDepth))
+                if (context.TestExpression("findingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startLine", targetDepth))
+                if (context.TestExpression("startLine", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartLine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggestedFixes", targetDepth))
+                if (context.TestExpression("suggestedFixes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuggestedFix, SuggestedFixUnmarshaller>(SuggestedFixUnmarshaller.Instance);
                     unmarshalledObject.SuggestedFixes = unmarshaller.Unmarshall(context, ref reader);

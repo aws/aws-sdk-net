@@ -52,7 +52,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlacklistReport", targetDepth))
+                if (context.TestExpression("BlacklistReport", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<BlacklistEntry>, StringUnmarshaller, JsonListUnmarshaller<BlacklistEntry,BlacklistEntryUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<BlacklistEntry, BlacklistEntryUnmarshaller>(BlacklistEntryUnmarshaller.Instance));
                     response.BlacklistReport = unmarshaller.Unmarshall(context, ref reader);

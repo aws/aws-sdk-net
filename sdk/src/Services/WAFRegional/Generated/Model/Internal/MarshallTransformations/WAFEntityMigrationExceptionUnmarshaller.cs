@@ -72,13 +72,13 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("MigrationErrorReason", targetDepth))
+                    if (context.TestExpression("MigrationErrorReason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MigrationErrorReason = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("MigrationErrorType", targetDepth))
+                    if (context.TestExpression("MigrationErrorType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MigrationErrorType = unmarshaller.Unmarshall(context, ref reader);

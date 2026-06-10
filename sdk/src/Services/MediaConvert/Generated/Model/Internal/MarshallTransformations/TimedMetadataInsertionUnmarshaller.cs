@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id3Insertions", targetDepth))
+                if (context.TestExpression("id3Insertions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Id3Insertion, Id3InsertionUnmarshaller>(Id3InsertionUnmarshaller.Instance);
                     unmarshalledObject.Id3Insertions = unmarshaller.Unmarshall(context, ref reader);

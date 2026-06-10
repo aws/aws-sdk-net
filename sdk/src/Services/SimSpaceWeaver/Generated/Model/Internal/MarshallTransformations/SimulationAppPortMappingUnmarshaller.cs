@@ -56,13 +56,13 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Actual", targetDepth))
+                if (context.TestExpression("Actual", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Actual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Declared", targetDepth))
+                if (context.TestExpression("Declared", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Declared = unmarshaller.Unmarshall(context, ref reader);

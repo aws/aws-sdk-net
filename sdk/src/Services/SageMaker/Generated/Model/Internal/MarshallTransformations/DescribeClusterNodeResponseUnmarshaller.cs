@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NodeDetails", targetDepth))
+                if (context.TestExpression("NodeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterNodeDetailsUnmarshaller.Instance;
                     response.NodeDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CancelledChangeIds", targetDepth))
+                if (context.TestExpression("CancelledChangeIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.CancelledChangeIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CancelledChangeProperties", targetDepth))
+                if (context.TestExpression("CancelledChangeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CancelledChangeProperty, CancelledChangePropertyUnmarshaller>(CancelledChangePropertyUnmarshaller.Instance);
                     response.CancelledChangeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRun", targetDepth))
+                if (context.TestExpression("DryRun", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DryRun = unmarshaller.Unmarshall(context, ref reader);

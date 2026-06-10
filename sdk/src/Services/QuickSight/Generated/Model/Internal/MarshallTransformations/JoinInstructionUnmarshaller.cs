@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LeftJoinKeyProperties", targetDepth))
+                if (context.TestExpression("LeftJoinKeyProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = JoinKeyPropertiesUnmarshaller.Instance;
                     unmarshalledObject.LeftJoinKeyProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LeftOperand", targetDepth))
+                if (context.TestExpression("LeftOperand", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LeftOperand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnClause", targetDepth))
+                if (context.TestExpression("OnClause", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnClause = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RightJoinKeyProperties", targetDepth))
+                if (context.TestExpression("RightJoinKeyProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = JoinKeyPropertiesUnmarshaller.Instance;
                     unmarshalledObject.RightJoinKeyProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RightOperand", targetDepth))
+                if (context.TestExpression("RightOperand", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RightOperand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Workspace", targetDepth))
+                if (context.TestExpression("Workspace", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceUnmarshaller.Instance;
                     response.Workspace = unmarshaller.Unmarshall(context, ref reader);

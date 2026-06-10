@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PipelineParameterList", targetDepth))
+                if (context.TestExpression("PipelineParameterList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SageMakerPipelineParameter, SageMakerPipelineParameterUnmarshaller>(SageMakerPipelineParameterUnmarshaller.Instance);
                     unmarshalledObject.PipelineParameterList = unmarshaller.Unmarshall(context, ref reader);

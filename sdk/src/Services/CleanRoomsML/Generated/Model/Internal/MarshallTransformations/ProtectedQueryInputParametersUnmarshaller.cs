@@ -56,19 +56,19 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeConfiguration", targetDepth))
+                if (context.TestExpression("computeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resultFormat", targetDepth))
+                if (context.TestExpression("resultFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResultFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqlParameters", targetDepth))
+                if (context.TestExpression("sqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedQuerySQLParametersUnmarshaller.Instance;
                     unmarshalledObject.SqlParameters = unmarshaller.Unmarshall(context, ref reader);

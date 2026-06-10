@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupByResults", targetDepth))
+                if (context.TestExpression("GroupByResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupByResult, GroupByResultUnmarshaller>(GroupByResultUnmarshaller.Instance);
                     response.GroupByResults = unmarshaller.Unmarshall(context, ref reader);

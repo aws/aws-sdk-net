@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentCoreBrowser", targetDepth))
+                if (context.TestExpression("agentCoreBrowser", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessAgentCoreBrowserConfigUnmarshaller.Instance;
                     unmarshalledObject.AgentCoreBrowser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentCoreCodeInterpreter", targetDepth))
+                if (context.TestExpression("agentCoreCodeInterpreter", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessAgentCoreCodeInterpreterConfigUnmarshaller.Instance;
                     unmarshalledObject.AgentCoreCodeInterpreter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentCoreGateway", targetDepth))
+                if (context.TestExpression("agentCoreGateway", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessAgentCoreGatewayConfigUnmarshaller.Instance;
                     unmarshalledObject.AgentCoreGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inlineFunction", targetDepth))
+                if (context.TestExpression("inlineFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessInlineFunctionConfigUnmarshaller.Instance;
                     unmarshalledObject.InlineFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteMcp", targetDepth))
+                if (context.TestExpression("remoteMcp", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessRemoteMcpConfigUnmarshaller.Instance;
                     unmarshalledObject.RemoteMcp = unmarshaller.Unmarshall(context, ref reader);

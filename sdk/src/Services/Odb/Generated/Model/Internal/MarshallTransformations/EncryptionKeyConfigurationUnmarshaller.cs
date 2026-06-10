@@ -56,19 +56,19 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsEncryptionKey", targetDepth))
+                if (context.TestExpression("awsEncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AwsEncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ociEncryptionKey", targetDepth))
+                if (context.TestExpression("ociEncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = OciEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OciEncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("okvEncryptionKey", targetDepth))
+                if (context.TestExpression("okvEncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = OkvEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OkvEncryptionKey = unmarshaller.Unmarshall(context, ref reader);

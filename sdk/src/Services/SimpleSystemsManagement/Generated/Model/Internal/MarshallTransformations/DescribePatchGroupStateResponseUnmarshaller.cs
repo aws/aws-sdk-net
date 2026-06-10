@@ -52,79 +52,79 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Instances", targetDepth))
+                if (context.TestExpression("Instances", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Instances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithAvailableSecurityUpdates", targetDepth))
+                if (context.TestExpression("InstancesWithAvailableSecurityUpdates", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithAvailableSecurityUpdates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithCriticalNonCompliantPatches", targetDepth))
+                if (context.TestExpression("InstancesWithCriticalNonCompliantPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithCriticalNonCompliantPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithFailedPatches", targetDepth))
+                if (context.TestExpression("InstancesWithFailedPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithFailedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithInstalledOtherPatches", targetDepth))
+                if (context.TestExpression("InstancesWithInstalledOtherPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledOtherPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithInstalledPatches", targetDepth))
+                if (context.TestExpression("InstancesWithInstalledPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithInstalledPendingRebootPatches", targetDepth))
+                if (context.TestExpression("InstancesWithInstalledPendingRebootPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledPendingRebootPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithInstalledRejectedPatches", targetDepth))
+                if (context.TestExpression("InstancesWithInstalledRejectedPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithInstalledRejectedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithMissingPatches", targetDepth))
+                if (context.TestExpression("InstancesWithMissingPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithMissingPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithNotApplicablePatches", targetDepth))
+                if (context.TestExpression("InstancesWithNotApplicablePatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithNotApplicablePatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithOtherNonCompliantPatches", targetDepth))
+                if (context.TestExpression("InstancesWithOtherNonCompliantPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithOtherNonCompliantPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithSecurityNonCompliantPatches", targetDepth))
+                if (context.TestExpression("InstancesWithSecurityNonCompliantPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithSecurityNonCompliantPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth))
+                if (context.TestExpression("InstancesWithUnreportedNotApplicablePatches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.InstancesWithUnreportedNotApplicablePatches = unmarshaller.Unmarshall(context, ref reader);

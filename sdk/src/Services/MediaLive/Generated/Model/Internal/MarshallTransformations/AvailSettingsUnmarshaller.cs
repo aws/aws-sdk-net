@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("esam", targetDepth))
+                if (context.TestExpression("esam", targetDepth, ref reader))
                 {
                     var unmarshaller = EsamUnmarshaller.Instance;
                     unmarshalledObject.Esam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte35SpliceInsert", targetDepth))
+                if (context.TestExpression("scte35SpliceInsert", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte35SpliceInsertUnmarshaller.Instance;
                     unmarshalledObject.Scte35SpliceInsert = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte35TimeSignalApos", targetDepth))
+                if (context.TestExpression("scte35TimeSignalApos", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte35TimeSignalAposUnmarshaller.Instance;
                     unmarshalledObject.Scte35TimeSignalApos = unmarshaller.Unmarshall(context, ref reader);

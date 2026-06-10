@@ -56,7 +56,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultErrorDetails", targetDepth))
+                if (context.TestExpression("defaultErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultErrorDetailsUnmarshaller.Instance;
                     unmarshalledObject.DefaultErrorDetails = unmarshaller.Unmarshall(context, ref reader);

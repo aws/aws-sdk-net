@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2InstanceDetails", targetDepth))
+                if (context.TestExpression("ec2InstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageEc2InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.Ec2InstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsClusterDetails", targetDepth))
+                if (context.TestExpression("ecsClusterDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageEcsClusterDetailsUnmarshaller.Instance;
                     unmarshalledObject.EcsClusterDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksClusterDetails", targetDepth))
+                if (context.TestExpression("eksClusterDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CoverageEksClusterDetailsUnmarshaller.Instance;
                     unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);

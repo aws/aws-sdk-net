@@ -56,25 +56,25 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Automation", targetDepth))
+                if (context.TestExpression("Automation", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceWindowAutomationParametersUnmarshaller.Instance;
                     unmarshalledObject.Automation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Lambda", targetDepth))
+                if (context.TestExpression("Lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceWindowLambdaParametersUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunCommand", targetDepth))
+                if (context.TestExpression("RunCommand", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceWindowRunCommandParametersUnmarshaller.Instance;
                     unmarshalledObject.RunCommand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepFunctions", targetDepth))
+                if (context.TestExpression("StepFunctions", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceWindowStepFunctionsParametersUnmarshaller.Instance;
                     unmarshalledObject.StepFunctions = unmarshaller.Unmarshall(context, ref reader);

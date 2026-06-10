@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allDomainUnitsGrantFilter", targetDepth))
+                if (context.TestExpression("allDomainUnitsGrantFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = AllDomainUnitsGrantFilterUnmarshaller.Instance;
                     unmarshalledObject.AllDomainUnitsGrantFilter = unmarshaller.Unmarshall(context, ref reader);

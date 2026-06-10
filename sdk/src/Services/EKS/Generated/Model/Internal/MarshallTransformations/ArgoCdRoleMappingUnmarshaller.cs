@@ -56,13 +56,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identities", targetDepth))
+                if (context.TestExpression("identities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SsoIdentity, SsoIdentityUnmarshaller>(SsoIdentityUnmarshaller.Instance);
                     unmarshalledObject.Identities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("role", targetDepth))
+                if (context.TestExpression("role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);

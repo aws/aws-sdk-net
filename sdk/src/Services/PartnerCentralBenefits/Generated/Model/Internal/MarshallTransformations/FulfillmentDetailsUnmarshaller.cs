@@ -56,25 +56,25 @@ namespace Amazon.PartnerCentralBenefits.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessDetails", targetDepth))
+                if (context.TestExpression("AccessDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessDetailsUnmarshaller.Instance;
                     unmarshalledObject.AccessDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumableDetails", targetDepth))
+                if (context.TestExpression("ConsumableDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsumableDetailsUnmarshaller.Instance;
                     unmarshalledObject.ConsumableDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreditDetails", targetDepth))
+                if (context.TestExpression("CreditDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CreditDetailsUnmarshaller.Instance;
                     unmarshalledObject.CreditDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisbursementDetails", targetDepth))
+                if (context.TestExpression("DisbursementDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DisbursementDetailsUnmarshaller.Instance;
                     unmarshalledObject.DisbursementDetails = unmarshaller.Unmarshall(context, ref reader);

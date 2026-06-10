@@ -56,13 +56,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("presetSpeke20Audio", targetDepth))
+                if (context.TestExpression("presetSpeke20Audio", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PresetSpeke20Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("presetSpeke20Video", targetDepth))
+                if (context.TestExpression("presetSpeke20Video", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PresetSpeke20Video = unmarshaller.Unmarshall(context, ref reader);

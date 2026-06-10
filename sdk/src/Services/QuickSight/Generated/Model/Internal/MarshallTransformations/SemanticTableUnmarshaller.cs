@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alias", targetDepth))
+                if (context.TestExpression("Alias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationTableId", targetDepth))
+                if (context.TestExpression("DestinationTableId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowLevelPermissionConfiguration", targetDepth))
+                if (context.TestExpression("RowLevelPermissionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RowLevelPermissionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RowLevelPermissionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SemanticMetadata", targetDepth))
+                if (context.TestExpression("SemanticMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = TableSemanticMetadataUnmarshaller.Instance;
                     unmarshalledObject.SemanticMetadata = unmarshaller.Unmarshall(context, ref reader);

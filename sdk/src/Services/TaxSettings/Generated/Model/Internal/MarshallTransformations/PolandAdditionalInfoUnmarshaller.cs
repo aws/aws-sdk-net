@@ -56,19 +56,19 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("individualRegistrationNumber", targetDepth))
+                if (context.TestExpression("individualRegistrationNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndividualRegistrationNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isGroupVatEnabled", targetDepth))
+                if (context.TestExpression("isGroupVatEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsGroupVatEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxRegistrationNumberType", targetDepth))
+                if (context.TestExpression("taxRegistrationNumberType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaxRegistrationNumberType = unmarshaller.Unmarshall(context, ref reader);

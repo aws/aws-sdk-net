@@ -56,7 +56,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("stateTemplateUpdateRate", targetDepth))
+                if (context.TestExpression("stateTemplateUpdateRate", targetDepth, ref reader))
                 {
                     var unmarshaller = TimePeriodUnmarshaller.Instance;
                     unmarshalledObject.StateTemplateUpdateRate = unmarshaller.Unmarshall(context, ref reader);

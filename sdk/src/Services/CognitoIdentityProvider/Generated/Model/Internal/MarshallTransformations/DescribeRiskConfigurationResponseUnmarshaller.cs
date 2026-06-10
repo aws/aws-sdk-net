@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RiskConfiguration", targetDepth))
+                if (context.TestExpression("RiskConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RiskConfigurationTypeUnmarshaller.Instance;
                     response.RiskConfiguration = unmarshaller.Unmarshall(context, ref reader);

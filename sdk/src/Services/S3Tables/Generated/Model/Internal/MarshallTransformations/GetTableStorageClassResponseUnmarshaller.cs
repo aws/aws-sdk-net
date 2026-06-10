@@ -52,7 +52,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("storageClassConfiguration", targetDepth))
+                if (context.TestExpression("storageClassConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageClassConfigurationUnmarshaller.Instance;
                     response.StorageClassConfiguration = unmarshaller.Unmarshall(context, ref reader);

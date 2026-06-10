@@ -52,25 +52,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceTableConfig", targetDepth))
+                if (context.TestExpression("SourceTableConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceTableConfigUnmarshaller.Instance;
                     response.SourceTableConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TableName", targetDepth))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetTableConfig", targetDepth))
+                if (context.TestExpression("TargetTableConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetTableConfigUnmarshaller.Instance;
                     response.TargetTableConfig = unmarshaller.Unmarshall(context, ref reader);

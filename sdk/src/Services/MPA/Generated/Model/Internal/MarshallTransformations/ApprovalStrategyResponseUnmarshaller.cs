@@ -56,7 +56,7 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MofN", targetDepth))
+                if (context.TestExpression("MofN", targetDepth, ref reader))
                 {
                     var unmarshaller = MofNApprovalStrategyUnmarshaller.Instance;
                     unmarshalledObject.MofN = unmarshaller.Unmarshall(context, ref reader);

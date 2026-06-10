@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsConsoleLink", targetDepth))
+                if (context.TestExpression("awsConsoleLink", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsConsoleLinkParametersUnmarshaller.Instance;
                     unmarshalledObject.AwsConsoleLink = unmarshaller.Unmarshall(context, ref reader);

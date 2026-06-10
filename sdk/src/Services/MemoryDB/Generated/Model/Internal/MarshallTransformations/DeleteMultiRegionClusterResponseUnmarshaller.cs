@@ -52,7 +52,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiRegionCluster", targetDepth))
+                if (context.TestExpression("MultiRegionCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiRegionClusterUnmarshaller.Instance;
                     response.MultiRegionCluster = unmarshaller.Unmarshall(context, ref reader);

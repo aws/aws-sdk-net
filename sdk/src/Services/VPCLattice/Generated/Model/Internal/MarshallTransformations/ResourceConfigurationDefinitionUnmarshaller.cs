@@ -56,19 +56,19 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arnResource", targetDepth))
+                if (context.TestExpression("arnResource", targetDepth, ref reader))
                 {
                     var unmarshaller = ArnResourceUnmarshaller.Instance;
                     unmarshalledObject.ArnResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dnsResource", targetDepth))
+                if (context.TestExpression("dnsResource", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsResourceUnmarshaller.Instance;
                     unmarshalledObject.DnsResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipResource", targetDepth))
+                if (context.TestExpression("ipResource", targetDepth, ref reader))
                 {
                     var unmarshaller = IpResourceUnmarshaller.Instance;
                     unmarshalledObject.IpResource = unmarshaller.Unmarshall(context, ref reader);

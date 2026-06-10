@@ -52,37 +52,37 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contactPostPassDurationSeconds", targetDepth))
+                if (context.TestExpression("contactPostPassDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ContactPostPassDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contactPrePassDurationSeconds", targetDepth))
+                if (context.TestExpression("contactPrePassDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ContactPrePassDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataflowEndpointGroupArn", targetDepth))
+                if (context.TestExpression("dataflowEndpointGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataflowEndpointGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataflowEndpointGroupId", targetDepth))
+                if (context.TestExpression("dataflowEndpointGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataflowEndpointGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpointsDetails", targetDepth))
+                if (context.TestExpression("endpointsDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointDetails, EndpointDetailsUnmarshaller>(EndpointDetailsUnmarshaller.Instance);
                     response.EndpointsDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

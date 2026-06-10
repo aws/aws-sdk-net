@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FontColor", targetDepth))
+                if (context.TestExpression("FontColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontDecoration", targetDepth))
+                if (context.TestExpression("FontDecoration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FontDecoration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontFamily", targetDepth))
+                if (context.TestExpression("FontFamily", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FontFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontSize", targetDepth))
+                if (context.TestExpression("FontSize", targetDepth, ref reader))
                 {
                     var unmarshaller = FontSizeUnmarshaller.Instance;
                     unmarshalledObject.FontSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontStyle", targetDepth))
+                if (context.TestExpression("FontStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FontStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontWeight", targetDepth))
+                if (context.TestExpression("FontWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = FontWeightUnmarshaller.Instance;
                     unmarshalledObject.FontWeight = unmarshaller.Unmarshall(context, ref reader);

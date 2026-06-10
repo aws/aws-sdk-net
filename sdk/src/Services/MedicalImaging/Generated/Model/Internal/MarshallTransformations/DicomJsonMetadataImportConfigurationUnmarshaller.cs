@@ -56,7 +56,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dicomMetadataMappings", targetDepth))
+                if (context.TestExpression("dicomMetadataMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DicomMetadataMapping, DicomMetadataMappingUnmarshaller>(DicomMetadataMappingUnmarshaller.Instance);
                     unmarshalledObject.DicomMetadataMappings = unmarshaller.Unmarshall(context, ref reader);

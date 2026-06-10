@@ -56,25 +56,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cpuArchitecture", targetDepth))
+                if (context.TestExpression("cpuArchitecture", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CpuArchitecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileSystemType", targetDepth))
+                if (context.TestExpression("fileSystemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkInfoList", targetDepth))
+                if (context.TestExpression("networkInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkInfo, NetworkInfoUnmarshaller>(NetworkInfoUnmarshaller.Instance);
                     unmarshalledObject.NetworkInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("osInfo", targetDepth))
+                if (context.TestExpression("osInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = OSInfoUnmarshaller.Instance;
                     unmarshalledObject.OsInfo = unmarshaller.Unmarshall(context, ref reader);

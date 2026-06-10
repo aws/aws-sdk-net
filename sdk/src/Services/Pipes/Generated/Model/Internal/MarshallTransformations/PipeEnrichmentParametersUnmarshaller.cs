@@ -56,13 +56,13 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HttpParameters", targetDepth))
+                if (context.TestExpression("HttpParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeEnrichmentHttpParametersUnmarshaller.Instance;
                     unmarshalledObject.HttpParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputTemplate", targetDepth))
+                if (context.TestExpression("InputTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputTemplate = unmarshaller.Unmarshall(context, ref reader);

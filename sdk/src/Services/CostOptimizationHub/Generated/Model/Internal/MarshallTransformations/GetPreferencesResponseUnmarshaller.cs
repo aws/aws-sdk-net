@@ -52,19 +52,19 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("memberAccountDiscountVisibility", targetDepth))
+                if (context.TestExpression("memberAccountDiscountVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MemberAccountDiscountVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preferredCommitment", targetDepth))
+                if (context.TestExpression("preferredCommitment", targetDepth, ref reader))
                 {
                     var unmarshaller = PreferredCommitmentUnmarshaller.Instance;
                     response.PreferredCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("savingsEstimationMode", targetDepth))
+                if (context.TestExpression("savingsEstimationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SavingsEstimationMode = unmarshaller.Unmarshall(context, ref reader);

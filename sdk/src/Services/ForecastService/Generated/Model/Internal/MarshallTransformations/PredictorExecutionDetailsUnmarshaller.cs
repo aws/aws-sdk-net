@@ -56,7 +56,7 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PredictorExecutions", targetDepth))
+                if (context.TestExpression("PredictorExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PredictorExecution, PredictorExecutionUnmarshaller>(PredictorExecutionUnmarshaller.Instance);
                     unmarshalledObject.PredictorExecutions = unmarshaller.Unmarshall(context, ref reader);

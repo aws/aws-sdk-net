@@ -52,19 +52,19 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("managementAccountRateTypeSelections", targetDepth))
+                if (context.TestExpression("managementAccountRateTypeSelections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ManagementAccountRateTypeSelections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memberAccountRateTypeSelections", targetDepth))
+                if (context.TestExpression("memberAccountRateTypeSelections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.MemberAccountRateTypeSelections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("standaloneAccountRateTypeSelections", targetDepth))
+                if (context.TestExpression("standaloneAccountRateTypeSelections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StandaloneAccountRateTypeSelections = unmarshaller.Unmarshall(context, ref reader);

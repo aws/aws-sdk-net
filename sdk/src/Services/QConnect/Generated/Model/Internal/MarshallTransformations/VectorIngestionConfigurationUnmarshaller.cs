@@ -56,13 +56,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chunkingConfiguration", targetDepth))
+                if (context.TestExpression("chunkingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChunkingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parsingConfiguration", targetDepth))
+                if (context.TestExpression("parsingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ParsingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ParsingConfiguration = unmarshaller.Unmarshall(context, ref reader);

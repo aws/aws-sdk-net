@@ -56,31 +56,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kmsKeyArn", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pathFormat", targetDepth))
+                if (context.TestExpression("pathFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = PathFormatUnmarshaller.Instance;
                     unmarshalledObject.PathFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BucketName", targetDepth))
+                if (context.TestExpression("s3BucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transcriptFilter", targetDepth))
+                if (context.TestExpression("transcriptFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TranscriptFilterUnmarshaller.Instance;
                     unmarshalledObject.TranscriptFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transcriptFormat", targetDepth))
+                if (context.TestExpression("transcriptFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TranscriptFormat = unmarshaller.Unmarshall(context, ref reader);

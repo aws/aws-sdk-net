@@ -56,19 +56,19 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dnsTxt", targetDepth))
+                if (context.TestExpression("dnsTxt", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsVerificationUnmarshaller.Instance;
                     unmarshalledObject.DnsTxt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("httpRoute", targetDepth))
+                if (context.TestExpression("httpRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpVerificationUnmarshaller.Instance;
                     unmarshalledObject.HttpRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("method", targetDepth))
+                if (context.TestExpression("method", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);

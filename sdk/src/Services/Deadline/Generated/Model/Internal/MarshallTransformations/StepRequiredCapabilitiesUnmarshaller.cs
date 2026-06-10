@@ -56,13 +56,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amounts", targetDepth))
+                if (context.TestExpression("amounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StepAmountCapability, StepAmountCapabilityUnmarshaller>(StepAmountCapabilityUnmarshaller.Instance);
                     unmarshalledObject.Amounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attributes", targetDepth))
+                if (context.TestExpression("attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StepAttributeCapability, StepAttributeCapabilityUnmarshaller>(StepAttributeCapabilityUnmarshaller.Instance);
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);

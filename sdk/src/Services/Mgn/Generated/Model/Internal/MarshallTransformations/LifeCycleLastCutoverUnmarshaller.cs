@@ -56,19 +56,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("finalized", targetDepth))
+                if (context.TestExpression("finalized", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastCutoverFinalizedUnmarshaller.Instance;
                     unmarshalledObject.Finalized = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initiated", targetDepth))
+                if (context.TestExpression("initiated", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastCutoverInitiatedUnmarshaller.Instance;
                     unmarshalledObject.Initiated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reverted", targetDepth))
+                if (context.TestExpression("reverted", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleLastCutoverRevertedUnmarshaller.Instance;
                     unmarshalledObject.Reverted = unmarshaller.Unmarshall(context, ref reader);

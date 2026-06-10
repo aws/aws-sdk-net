@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sessionIds", targetDepth))
+                if (context.TestExpression("sessionIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SessionIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeRange", targetDepth))
+                if (context.TestExpression("timeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionFilterConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);

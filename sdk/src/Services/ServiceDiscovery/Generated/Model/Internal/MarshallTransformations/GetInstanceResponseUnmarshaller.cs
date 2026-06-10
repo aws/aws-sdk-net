@@ -52,13 +52,13 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Instance", targetDepth))
+                if (context.TestExpression("Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceUnmarshaller.Instance;
                     response.Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceOwner", targetDepth))
+                if (context.TestExpression("ResourceOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceOwner = unmarshaller.Unmarshall(context, ref reader);

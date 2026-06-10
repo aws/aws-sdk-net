@@ -72,7 +72,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("expectedSequenceToken", targetDepth))
+                    if (context.TestExpression("expectedSequenceToken", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ExpectedSequenceToken = unmarshaller.Unmarshall(context, ref reader);

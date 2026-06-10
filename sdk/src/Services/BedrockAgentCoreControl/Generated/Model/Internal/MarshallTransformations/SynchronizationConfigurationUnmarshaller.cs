@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fromUrl", targetDepth))
+                if (context.TestExpression("fromUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = FromUrlSynchronizationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FromUrl = unmarshaller.Unmarshall(context, ref reader);

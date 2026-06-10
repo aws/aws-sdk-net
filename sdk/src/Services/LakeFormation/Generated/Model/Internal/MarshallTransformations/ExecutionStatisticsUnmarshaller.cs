@@ -56,19 +56,19 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AverageExecutionTimeMillis", targetDepth))
+                if (context.TestExpression("AverageExecutionTimeMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AverageExecutionTimeMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataScannedBytes", targetDepth))
+                if (context.TestExpression("DataScannedBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DataScannedBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkUnitsExecutedCount", targetDepth))
+                if (context.TestExpression("WorkUnitsExecutedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitsExecutedCount = unmarshaller.Unmarshall(context, ref reader);

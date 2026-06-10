@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InsertHeaders", targetDepth))
+                if (context.TestExpression("InsertHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsWafv2CustomHttpHeader, AwsWafv2CustomHttpHeaderUnmarshaller>(AwsWafv2CustomHttpHeaderUnmarshaller.Instance);
                     unmarshalledObject.InsertHeaders = unmarshaller.Unmarshall(context, ref reader);

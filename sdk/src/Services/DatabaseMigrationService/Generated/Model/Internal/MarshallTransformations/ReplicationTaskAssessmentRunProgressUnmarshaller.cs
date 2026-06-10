@@ -56,13 +56,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndividualAssessmentCompletedCount", targetDepth))
+                if (context.TestExpression("IndividualAssessmentCompletedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndividualAssessmentCompletedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndividualAssessmentCount", targetDepth))
+                if (context.TestExpression("IndividualAssessmentCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IndividualAssessmentCount = unmarshaller.Unmarshall(context, ref reader);

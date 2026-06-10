@@ -52,13 +52,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProcessedFindings", targetDepth))
+                if (context.TestExpression("ProcessedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchUpdateFindingsV2ProcessedFinding, BatchUpdateFindingsV2ProcessedFindingUnmarshaller>(BatchUpdateFindingsV2ProcessedFindingUnmarshaller.Instance);
                     response.ProcessedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedFindings", targetDepth))
+                if (context.TestExpression("UnprocessedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchUpdateFindingsV2UnprocessedFinding, BatchUpdateFindingsV2UnprocessedFindingUnmarshaller>(BatchUpdateFindingsV2UnprocessedFindingUnmarshaller.Instance);
                     response.UnprocessedFindings = unmarshaller.Unmarshall(context, ref reader);

@@ -52,31 +52,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agreementAvailability", targetDepth))
+                if (context.TestExpression("agreementAvailability", targetDepth, ref reader))
                 {
                     var unmarshaller = AgreementAvailabilityUnmarshaller.Instance;
                     response.AgreementAvailability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationStatus", targetDepth))
+                if (context.TestExpression("authorizationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AuthorizationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entitlementAvailability", targetDepth))
+                if (context.TestExpression("entitlementAvailability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EntitlementAvailability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regionAvailability", targetDepth))
+                if (context.TestExpression("regionAvailability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegionAvailability = unmarshaller.Unmarshall(context, ref reader);

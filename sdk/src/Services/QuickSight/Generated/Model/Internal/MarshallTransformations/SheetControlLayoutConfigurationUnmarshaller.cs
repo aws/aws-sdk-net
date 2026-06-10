@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GridLayout", targetDepth))
+                if (context.TestExpression("GridLayout", targetDepth, ref reader))
                 {
                     var unmarshaller = GridLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GridLayout = unmarshaller.Unmarshall(context, ref reader);

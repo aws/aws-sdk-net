@@ -52,7 +52,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("View", targetDepth))
+                if (context.TestExpression("View", targetDepth, ref reader))
                 {
                     var unmarshaller = ViewUnmarshaller.Instance;
                     response.View = unmarshaller.Unmarshall(context, ref reader);

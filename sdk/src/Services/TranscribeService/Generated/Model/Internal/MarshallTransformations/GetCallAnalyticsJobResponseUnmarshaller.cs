@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CallAnalyticsJob", targetDepth))
+                if (context.TestExpression("CallAnalyticsJob", targetDepth, ref reader))
                 {
                     var unmarshaller = CallAnalyticsJobUnmarshaller.Instance;
                     response.CallAnalyticsJob = unmarshaller.Unmarshall(context, ref reader);

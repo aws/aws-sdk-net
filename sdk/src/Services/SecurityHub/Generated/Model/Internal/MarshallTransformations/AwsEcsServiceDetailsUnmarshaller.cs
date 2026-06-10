@@ -56,133 +56,133 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviderStrategy", targetDepth))
+                if (context.TestExpression("CapacityProviderStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsServiceCapacityProviderStrategyDetails, AwsEcsServiceCapacityProviderStrategyDetailsUnmarshaller>(AwsEcsServiceCapacityProviderStrategyDetailsUnmarshaller.Instance);
                     unmarshalledObject.CapacityProviderStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cluster", targetDepth))
+                if (context.TestExpression("Cluster", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Cluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentConfiguration", targetDepth))
+                if (context.TestExpression("DeploymentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsServiceDeploymentConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentController", targetDepth))
+                if (context.TestExpression("DeploymentController", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsServiceDeploymentControllerDetailsUnmarshaller.Instance;
                     unmarshalledObject.DeploymentController = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DesiredCount", targetDepth))
+                if (context.TestExpression("DesiredCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableEcsManagedTags", targetDepth))
+                if (context.TestExpression("EnableEcsManagedTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableEcsManagedTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableExecuteCommand", targetDepth))
+                if (context.TestExpression("EnableExecuteCommand", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableExecuteCommand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckGracePeriodSeconds", targetDepth))
+                if (context.TestExpression("HealthCheckGracePeriodSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckGracePeriodSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchType", targetDepth))
+                if (context.TestExpression("LaunchType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadBalancers", targetDepth))
+                if (context.TestExpression("LoadBalancers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsServiceLoadBalancersDetails, AwsEcsServiceLoadBalancersDetailsUnmarshaller>(AwsEcsServiceLoadBalancersDetailsUnmarshaller.Instance);
                     unmarshalledObject.LoadBalancers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkConfiguration", targetDepth))
+                if (context.TestExpression("NetworkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsServiceNetworkConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementConstraints", targetDepth))
+                if (context.TestExpression("PlacementConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsServicePlacementConstraintsDetails, AwsEcsServicePlacementConstraintsDetailsUnmarshaller>(AwsEcsServicePlacementConstraintsDetailsUnmarshaller.Instance);
                     unmarshalledObject.PlacementConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlacementStrategies", targetDepth))
+                if (context.TestExpression("PlacementStrategies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsServicePlacementStrategiesDetails, AwsEcsServicePlacementStrategiesDetailsUnmarshaller>(AwsEcsServicePlacementStrategiesDetailsUnmarshaller.Instance);
                     unmarshalledObject.PlacementStrategies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlatformVersion", targetDepth))
+                if (context.TestExpression("PlatformVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PropagateTags", targetDepth))
+                if (context.TestExpression("PropagateTags", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchedulingStrategy", targetDepth))
+                if (context.TestExpression("SchedulingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchedulingStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceArn", targetDepth))
+                if (context.TestExpression("ServiceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceName", targetDepth))
+                if (context.TestExpression("ServiceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceRegistries", targetDepth))
+                if (context.TestExpression("ServiceRegistries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsServiceServiceRegistriesDetails, AwsEcsServiceServiceRegistriesDetailsUnmarshaller>(AwsEcsServiceServiceRegistriesDetailsUnmarshaller.Instance);
                     unmarshalledObject.ServiceRegistries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskDefinition", targetDepth))
+                if (context.TestExpression("TaskDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskDefinition = unmarshaller.Unmarshall(context, ref reader);

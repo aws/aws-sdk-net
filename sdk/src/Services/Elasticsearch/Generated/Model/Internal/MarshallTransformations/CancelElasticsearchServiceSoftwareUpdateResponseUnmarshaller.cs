@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServiceSoftwareOptions", targetDepth))
+                if (context.TestExpression("ServiceSoftwareOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceSoftwareOptionsUnmarshaller.Instance;
                     response.ServiceSoftwareOptions = unmarshaller.Unmarshall(context, ref reader);

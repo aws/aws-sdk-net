@@ -56,19 +56,19 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("horizontalGap", targetDepth))
+                if (context.TestExpression("horizontalGap", targetDepth, ref reader))
                 {
                     var unmarshaller = FormStyleConfigUnmarshaller.Instance;
                     unmarshalledObject.HorizontalGap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outerPadding", targetDepth))
+                if (context.TestExpression("outerPadding", targetDepth, ref reader))
                 {
                     var unmarshaller = FormStyleConfigUnmarshaller.Instance;
                     unmarshalledObject.OuterPadding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verticalGap", targetDepth))
+                if (context.TestExpression("verticalGap", targetDepth, ref reader))
                 {
                     var unmarshaller = FormStyleConfigUnmarshaller.Instance;
                     unmarshalledObject.VerticalGap = unmarshaller.Unmarshall(context, ref reader);

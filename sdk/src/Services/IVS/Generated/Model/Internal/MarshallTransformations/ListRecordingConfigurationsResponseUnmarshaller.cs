@@ -52,13 +52,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingConfigurations", targetDepth))
+                if (context.TestExpression("recordingConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecordingConfigurationSummary, RecordingConfigurationSummaryUnmarshaller>(RecordingConfigurationSummaryUnmarshaller.Instance);
                     response.RecordingConfigurations = unmarshaller.Unmarshall(context, ref reader);

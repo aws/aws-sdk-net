@@ -56,37 +56,37 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attachments", targetDepth))
+                if (context.TestExpression("Attachments", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentAttachmentsUnmarshaller.Instance;
                     unmarshalledObject.Attachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Categories", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentCategoriesUnmarshaller.Instance;
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Event", targetDepth))
+                if (context.TestExpression("Event", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentEventUnmarshaller.Instance;
                     unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Issues", targetDepth))
+                if (context.TestExpression("Issues", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentIssuesUnmarshaller.Instance;
                     unmarshalledObject.Issues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostContactSummary", targetDepth))
+                if (context.TestExpression("PostContactSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentPostContactSummaryUnmarshaller.Instance;
                     unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth))
+                if (context.TestExpression("Transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentTranscriptUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);

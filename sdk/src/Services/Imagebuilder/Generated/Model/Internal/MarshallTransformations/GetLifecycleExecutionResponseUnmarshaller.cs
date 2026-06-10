@@ -52,7 +52,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lifecycleExecution", targetDepth))
+                if (context.TestExpression("lifecycleExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleExecutionUnmarshaller.Instance;
                     response.LifecycleExecution = unmarshaller.Unmarshall(context, ref reader);

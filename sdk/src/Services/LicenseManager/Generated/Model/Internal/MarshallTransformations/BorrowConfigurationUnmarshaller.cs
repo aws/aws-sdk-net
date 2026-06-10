@@ -56,13 +56,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowEarlyCheckIn", targetDepth))
+                if (context.TestExpression("AllowEarlyCheckIn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowEarlyCheckIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth))
+                if (context.TestExpression("MaxTimeToLiveInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeToLiveInMinutes = unmarshaller.Unmarshall(context, ref reader);

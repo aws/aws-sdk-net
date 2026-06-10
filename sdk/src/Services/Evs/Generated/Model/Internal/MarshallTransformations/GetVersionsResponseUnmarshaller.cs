@@ -52,13 +52,13 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceTypeEsxVersions", targetDepth))
+                if (context.TestExpression("instanceTypeEsxVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceTypeEsxVersionsInfo, InstanceTypeEsxVersionsInfoUnmarshaller>(InstanceTypeEsxVersionsInfoUnmarshaller.Instance);
                     response.InstanceTypeEsxVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vcfVersions", targetDepth))
+                if (context.TestExpression("vcfVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VcfVersionInfo, VcfVersionInfoUnmarshaller>(VcfVersionInfoUnmarshaller.Instance);
                     response.VcfVersions = unmarshaller.Unmarshall(context, ref reader);

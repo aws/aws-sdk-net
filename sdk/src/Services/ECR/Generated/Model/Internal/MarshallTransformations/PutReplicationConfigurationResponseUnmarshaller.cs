@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("replicationConfiguration", targetDepth))
+                if (context.TestExpression("replicationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationConfigurationUnmarshaller.Instance;
                     response.ReplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);

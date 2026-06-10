@@ -52,19 +52,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextSequenceToken", targetDepth))
+                if (context.TestExpression("nextSequenceToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextSequenceToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rejectedEntityInfo", targetDepth))
+                if (context.TestExpression("rejectedEntityInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RejectedEntityInfoUnmarshaller.Instance;
                     response.RejectedEntityInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rejectedLogEventsInfo", targetDepth))
+                if (context.TestExpression("rejectedLogEventsInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RejectedLogEventsInfoUnmarshaller.Instance;
                     response.RejectedLogEventsInfo = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Failover", targetDepth))
+                if (context.TestExpression("Failover", targetDepth, ref reader))
                 {
                     var unmarshaller = FailoverTypeUnmarshaller.Instance;
                     unmarshalledObject.Failover = unmarshaller.Unmarshall(context, ref reader);

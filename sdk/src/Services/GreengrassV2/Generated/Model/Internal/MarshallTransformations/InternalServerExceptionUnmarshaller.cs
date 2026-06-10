@@ -72,7 +72,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Retry-After", targetDepth))
+                    if (context.TestExpression("Retry-After", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);

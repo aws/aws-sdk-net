@@ -56,13 +56,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recommendedBatchTransformInstanceType", targetDepth))
+                if (context.TestExpression("recommendedBatchTransformInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendedBatchTransformInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendedRealtimeInferenceInstanceType", targetDepth))
+                if (context.TestExpression("recommendedRealtimeInferenceInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendedRealtimeInferenceInstanceType = unmarshaller.Unmarshall(context, ref reader);

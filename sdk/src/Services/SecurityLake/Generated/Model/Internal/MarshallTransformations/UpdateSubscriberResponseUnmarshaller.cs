@@ -52,7 +52,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("subscriber", targetDepth))
+                if (context.TestExpression("subscriber", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriberResourceUnmarshaller.Instance;
                     response.Subscriber = unmarshaller.Unmarshall(context, ref reader);

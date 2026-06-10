@@ -52,25 +52,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceMatches", targetDepth))
+                if (context.TestExpression("FaceMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FaceMatch, FaceMatchUnmarshaller>(FaceMatchUnmarshaller.Instance);
                     response.FaceMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaceModelVersion", targetDepth))
+                if (context.TestExpression("FaceModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FaceModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchedFaceBoundingBox", targetDepth))
+                if (context.TestExpression("SearchedFaceBoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
                     response.SearchedFaceBoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchedFaceConfidence", targetDepth))
+                if (context.TestExpression("SearchedFaceConfidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.SearchedFaceConfidence = unmarshaller.Unmarshall(context, ref reader);

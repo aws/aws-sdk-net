@@ -56,13 +56,13 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutomaticTapeCreationRules", targetDepth))
+                if (context.TestExpression("AutomaticTapeCreationRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomaticTapeCreationRule, AutomaticTapeCreationRuleUnmarshaller>(AutomaticTapeCreationRuleUnmarshaller.Instance);
                     unmarshalledObject.AutomaticTapeCreationRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("GatewayARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GatewayARN = unmarshaller.Unmarshall(context, ref reader);

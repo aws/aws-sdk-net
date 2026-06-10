@@ -56,37 +56,37 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("controlNumbers", targetDepth))
+                if (context.TestExpression("controlNumbers", targetDepth, ref reader))
                 {
                     var unmarshaller = X12ControlNumbersUnmarshaller.Instance;
                     unmarshalledObject.ControlNumbers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("delimiters", targetDepth))
+                if (context.TestExpression("delimiters", targetDepth, ref reader))
                 {
                     var unmarshaller = X12DelimitersUnmarshaller.Instance;
                     unmarshalledObject.Delimiters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("functionalGroupHeaders", targetDepth))
+                if (context.TestExpression("functionalGroupHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = X12FunctionalGroupHeadersUnmarshaller.Instance;
                     unmarshalledObject.FunctionalGroupHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gs05TimeFormat", targetDepth))
+                if (context.TestExpression("gs05TimeFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Gs05TimeFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interchangeControlHeaders", targetDepth))
+                if (context.TestExpression("interchangeControlHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = X12InterchangeControlHeadersUnmarshaller.Instance;
                     unmarshalledObject.InterchangeControlHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validateEdi", targetDepth))
+                if (context.TestExpression("validateEdi", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ValidateEdi = unmarshaller.Unmarshall(context, ref reader);

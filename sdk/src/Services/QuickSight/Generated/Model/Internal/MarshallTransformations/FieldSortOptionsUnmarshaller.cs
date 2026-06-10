@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnSort", targetDepth))
+                if (context.TestExpression("ColumnSort", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnSortUnmarshaller.Instance;
                     unmarshalledObject.ColumnSort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldSort", targetDepth))
+                if (context.TestExpression("FieldSort", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldSortUnmarshaller.Instance;
                     unmarshalledObject.FieldSort = unmarshaller.Unmarshall(context, ref reader);

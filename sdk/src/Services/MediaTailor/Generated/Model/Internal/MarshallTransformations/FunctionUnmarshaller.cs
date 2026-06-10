@@ -56,49 +56,49 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomOutputConfiguration", targetDepth))
+                if (context.TestExpression("CustomOutputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomOutputConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionId", targetDepth))
+                if (context.TestExpression("FunctionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FunctionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionType", targetDepth))
+                if (context.TestExpression("FunctionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FunctionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpRequestConfiguration", targetDepth))
+                if (context.TestExpression("HttpRequestConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpRequestConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HttpRequestConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SequentialExecutorConfiguration", targetDepth))
+                if (context.TestExpression("SequentialExecutorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SequentialExecutorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SequentialExecutorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

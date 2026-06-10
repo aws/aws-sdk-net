@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("transportStreamMediaInfo", targetDepth))
+                if (context.TestExpression("transportStreamMediaInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = TransportMediaInfoUnmarshaller.Instance;
                     unmarshalledObject.TransportStreamMediaInfo = unmarshaller.Unmarshall(context, ref reader);

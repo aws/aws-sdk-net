@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HttpPort", targetDepth))
+                if (context.TestExpression("HttpPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HttpPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpsPort", targetDepth))
+                if (context.TestExpression("HttpsPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HttpsPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
+                if (context.TestExpression("OriginKeepaliveTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OriginKeepaliveTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginProtocolPolicy", targetDepth))
+                if (context.TestExpression("OriginProtocolPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OriginProtocolPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginReadTimeout", targetDepth))
+                if (context.TestExpression("OriginReadTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginSslProtocols", targetDepth))
+                if (context.TestExpression("OriginSslProtocols", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginSslProtocolsUnmarshaller.Instance;
                     unmarshalledObject.OriginSslProtocols = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nexguardFileMarkerSettings", targetDepth))
+                if (context.TestExpression("nexguardFileMarkerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NexGuardFileMarkerSettingsUnmarshaller.Instance;
                     unmarshalledObject.NexguardFileMarkerSettings = unmarshaller.Unmarshall(context, ref reader);

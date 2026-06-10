@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("videoSelectorPid", targetDepth))
+                if (context.TestExpression("videoSelectorPid", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoSelectorPidUnmarshaller.Instance;
                     unmarshalledObject.VideoSelectorPid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoSelectorProgramId", targetDepth))
+                if (context.TestExpression("videoSelectorProgramId", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoSelectorProgramIdUnmarshaller.Instance;
                     unmarshalledObject.VideoSelectorProgramId = unmarshaller.Unmarshall(context, ref reader);

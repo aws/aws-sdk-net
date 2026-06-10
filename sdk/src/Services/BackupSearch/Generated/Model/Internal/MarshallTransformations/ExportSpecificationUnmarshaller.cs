@@ -56,7 +56,7 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3ExportSpecification", targetDepth))
+                if (context.TestExpression("s3ExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ExportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.S3ExportSpecification = unmarshaller.Unmarshall(context, ref reader);

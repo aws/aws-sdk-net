@@ -56,7 +56,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idcTrustedTokenIssuerArn", targetDepth))
+                if (context.TestExpression("idcTrustedTokenIssuerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdcTrustedTokenIssuerArn = unmarshaller.Unmarshall(context, ref reader);

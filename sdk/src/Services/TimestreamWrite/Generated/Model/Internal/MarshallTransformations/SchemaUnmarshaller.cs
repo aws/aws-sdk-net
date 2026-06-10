@@ -56,7 +56,7 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompositePartitionKey", targetDepth))
+                if (context.TestExpression("CompositePartitionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartitionKey, PartitionKeyUnmarshaller>(PartitionKeyUnmarshaller.Instance);
                     unmarshalledObject.CompositePartitionKey = unmarshaller.Unmarshall(context, ref reader);

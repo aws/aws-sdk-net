@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actorId", targetDepth))
+                if (context.TestExpression("actorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messagesCount", targetDepth))
+                if (context.TestExpression("messagesCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessagesCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrievalConfig", targetDepth))
+                if (context.TestExpression("retrievalConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, HarnessAgentCoreMemoryRetrievalConfig, StringUnmarshaller, HarnessAgentCoreMemoryRetrievalConfigUnmarshaller>(StringUnmarshaller.Instance, HarnessAgentCoreMemoryRetrievalConfigUnmarshaller.Instance);
                     unmarshalledObject.RetrievalConfig = unmarshaller.Unmarshall(context, ref reader);

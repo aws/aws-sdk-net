@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Audio", targetDepth))
+                if (context.TestExpression("Audio", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioQualityMetricsInfoUnmarshaller.Instance;
                     unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);

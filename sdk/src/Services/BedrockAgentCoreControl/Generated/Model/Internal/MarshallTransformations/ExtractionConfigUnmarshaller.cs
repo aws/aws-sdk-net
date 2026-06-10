@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("llmExtractionConfig", targetDepth))
+                if (context.TestExpression("llmExtractionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LlmExtractionConfigUnmarshaller.Instance;
                     unmarshalledObject.LlmExtractionConfig = unmarshaller.Unmarshall(context, ref reader);

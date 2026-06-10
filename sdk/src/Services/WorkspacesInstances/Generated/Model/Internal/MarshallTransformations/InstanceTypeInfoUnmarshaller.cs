@@ -56,13 +56,13 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedInstanceConfigurations", targetDepth))
+                if (context.TestExpression("SupportedInstanceConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SupportedInstanceConfiguration, SupportedInstanceConfigurationUnmarshaller>(SupportedInstanceConfigurationUnmarshaller.Instance);
                     unmarshalledObject.SupportedInstanceConfigurations = unmarshaller.Unmarshall(context, ref reader);

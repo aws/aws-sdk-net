@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grantType", targetDepth))
+                if (context.TestExpression("grantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GrantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenExchangeGrantTypeConfig", targetDepth))
+                if (context.TestExpression("tokenExchangeGrantTypeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenExchangeGrantTypeConfigTypeUnmarshaller.Instance;
                     unmarshalledObject.TokenExchangeGrantTypeConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommentMetadata", targetDepth))
+                if (context.TestExpression("CommentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = CommentMetadataUnmarshaller.Instance;
                     unmarshalledObject.CommentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     unmarshalledObject.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentVersionMetadata", targetDepth))
+                if (context.TestExpression("DocumentVersionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentVersionMetadataUnmarshaller.Instance;
                     unmarshalledObject.DocumentVersionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FolderMetadata", targetDepth))
+                if (context.TestExpression("FolderMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = FolderMetadataUnmarshaller.Instance;
                     unmarshalledObject.FolderMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceType", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebUrl", targetDepth))
+                if (context.TestExpression("WebUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebUrl = unmarshaller.Unmarshall(context, ref reader);

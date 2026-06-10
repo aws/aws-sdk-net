@@ -56,19 +56,19 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatabaseUserName", targetDepth))
+                if (context.TestExpression("DatabaseUserName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseUserName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDatabase", targetDepth))
+                if (context.TestExpression("RedshiftDatabase", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDatabaseUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDatabase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectSqlQuery", targetDepth))
+                if (context.TestExpression("SelectSqlQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectSqlQuery = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogDelivery", targetDepth))
+                if (context.TestExpression("cloudWatchLogDelivery", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogDeliveryOptionsUnmarshaller.Instance;
                     response.CloudWatchLogDelivery = unmarshaller.Unmarshall(context, ref reader);

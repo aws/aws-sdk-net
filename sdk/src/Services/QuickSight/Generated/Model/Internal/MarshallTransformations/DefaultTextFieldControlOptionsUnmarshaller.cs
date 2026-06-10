@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisplayOptions", targetDepth))
+                if (context.TestExpression("DisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TextFieldControlDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);

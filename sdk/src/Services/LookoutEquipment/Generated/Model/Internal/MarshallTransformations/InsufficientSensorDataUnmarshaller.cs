@@ -56,13 +56,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MissingCompleteSensorData", targetDepth))
+                if (context.TestExpression("MissingCompleteSensorData", targetDepth, ref reader))
                 {
                     var unmarshaller = MissingCompleteSensorDataUnmarshaller.Instance;
                     unmarshalledObject.MissingCompleteSensorData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SensorsWithShortDateRange", targetDepth))
+                if (context.TestExpression("SensorsWithShortDateRange", targetDepth, ref reader))
                 {
                     var unmarshaller = SensorsWithShortDateRangeUnmarshaller.Instance;
                     unmarshalledObject.SensorsWithShortDateRange = unmarshaller.Unmarshall(context, ref reader);

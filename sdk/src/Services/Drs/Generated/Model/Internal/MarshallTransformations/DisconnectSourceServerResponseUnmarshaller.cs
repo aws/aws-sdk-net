@@ -52,85 +52,85 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentVersion", targetDepth))
+                if (context.TestExpression("agentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationInfo", targetDepth))
+                if (context.TestExpression("dataReplicationInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
                     response.DataReplicationInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastLaunchResult", targetDepth))
+                if (context.TestExpression("lastLaunchResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastLaunchResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifeCycle", targetDepth))
+                if (context.TestExpression("lifeCycle", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleUnmarshaller.Instance;
                     response.LifeCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recoveryInstanceId", targetDepth))
+                if (context.TestExpression("recoveryInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RecoveryInstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationDirection", targetDepth))
+                if (context.TestExpression("replicationDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicationDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth))
+                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReversedDirectionSourceServerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceCloudProperties", targetDepth))
+                if (context.TestExpression("sourceCloudProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceCloudPropertiesUnmarshaller.Instance;
                     response.SourceCloudProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceNetworkID", targetDepth))
+                if (context.TestExpression("sourceNetworkID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceNetworkID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceProperties", targetDepth))
+                if (context.TestExpression("sourceProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;
                     response.SourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("sourceServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stagingArea", targetDepth))
+                if (context.TestExpression("stagingArea", targetDepth, ref reader))
                 {
                     var unmarshaller = StagingAreaUnmarshaller.Instance;
                     response.StagingArea = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

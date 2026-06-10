@@ -52,37 +52,37 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("monthlyAccountEvaluationHours", targetDepth))
+                if (context.TestExpression("monthlyAccountEvaluationHours", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageMetricUnmarshaller.Instance;
                     response.MonthlyAccountEvaluationHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyAccountInvestigationHours", targetDepth))
+                if (context.TestExpression("monthlyAccountInvestigationHours", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageMetricUnmarshaller.Instance;
                     response.MonthlyAccountInvestigationHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyAccountOnDemandHours", targetDepth))
+                if (context.TestExpression("monthlyAccountOnDemandHours", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageMetricUnmarshaller.Instance;
                     response.MonthlyAccountOnDemandHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyAccountSystemLearningHours", targetDepth))
+                if (context.TestExpression("monthlyAccountSystemLearningHours", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageMetricUnmarshaller.Instance;
                     response.MonthlyAccountSystemLearningHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usagePeriodEndTime", targetDepth))
+                if (context.TestExpression("usagePeriodEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UsagePeriodEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usagePeriodStartTime", targetDepth))
+                if (context.TestExpression("usagePeriodStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UsagePeriodStartTime = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("oauth", targetDepth))
+                if (context.TestExpression("oauth", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuthAdditionalStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.Oauth = unmarshaller.Unmarshall(context, ref reader);

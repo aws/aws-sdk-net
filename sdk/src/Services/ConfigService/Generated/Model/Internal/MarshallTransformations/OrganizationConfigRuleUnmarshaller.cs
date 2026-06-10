@@ -56,43 +56,43 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExcludedAccounts", targetDepth))
+                if (context.TestExpression("ExcludedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTime", targetDepth))
+                if (context.TestExpression("LastUpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConfigRuleArn", targetDepth))
+                if (context.TestExpression("OrganizationConfigRuleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationConfigRuleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConfigRuleName", targetDepth))
+                if (context.TestExpression("OrganizationConfigRuleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationConfigRuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationCustomPolicyRuleMetadata", targetDepth))
+                if (context.TestExpression("OrganizationCustomPolicyRuleMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationCustomPolicyRuleMetadataNoPolicyUnmarshaller.Instance;
                     unmarshalledObject.OrganizationCustomPolicyRuleMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationCustomRuleMetadata", targetDepth))
+                if (context.TestExpression("OrganizationCustomRuleMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationCustomRuleMetadataUnmarshaller.Instance;
                     unmarshalledObject.OrganizationCustomRuleMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationManagedRuleMetadata", targetDepth))
+                if (context.TestExpression("OrganizationManagedRuleMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationManagedRuleMetadataUnmarshaller.Instance;
                     unmarshalledObject.OrganizationManagedRuleMetadata = unmarshaller.Unmarshall(context, ref reader);

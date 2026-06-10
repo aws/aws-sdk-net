@@ -52,13 +52,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Effect", targetDepth))
+                if (context.TestExpression("Effect", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Effect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchedRules", targetDepth))
+                if (context.TestExpression("MatchedRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MobileDeviceAccessMatchedRule, MobileDeviceAccessMatchedRuleUnmarshaller>(MobileDeviceAccessMatchedRuleUnmarshaller.Instance);
                     response.MatchedRules = unmarshaller.Unmarshall(context, ref reader);

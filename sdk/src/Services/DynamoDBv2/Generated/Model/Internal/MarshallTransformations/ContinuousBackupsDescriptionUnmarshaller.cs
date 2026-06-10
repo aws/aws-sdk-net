@@ -56,13 +56,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContinuousBackupsStatus", targetDepth))
+                if (context.TestExpression("ContinuousBackupsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContinuousBackupsStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PointInTimeRecoveryDescription", targetDepth))
+                if (context.TestExpression("PointInTimeRecoveryDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = PointInTimeRecoveryDescriptionUnmarshaller.Instance;
                     unmarshalledObject.PointInTimeRecoveryDescription = unmarshaller.Unmarshall(context, ref reader);

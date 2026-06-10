@@ -72,7 +72,7 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Resources", targetDepth))
+                    if (context.TestExpression("Resources", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);

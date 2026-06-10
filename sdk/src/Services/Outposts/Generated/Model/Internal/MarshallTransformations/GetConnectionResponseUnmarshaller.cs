@@ -52,13 +52,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionDetails", targetDepth))
+                if (context.TestExpression("ConnectionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionDetailsUnmarshaller.Instance;
                     response.ConnectionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionId", targetDepth))
+                if (context.TestExpression("ConnectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionId = unmarshaller.Unmarshall(context, ref reader);

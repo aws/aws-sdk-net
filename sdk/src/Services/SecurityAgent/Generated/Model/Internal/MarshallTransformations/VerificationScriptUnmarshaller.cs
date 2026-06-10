@@ -56,25 +56,25 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("envVars", targetDepth))
+                if (context.TestExpression("envVars", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VerificationScriptEnvVar, VerificationScriptEnvVarUnmarshaller>(VerificationScriptEnvVarUnmarshaller.Instance);
                     unmarshalledObject.EnvVars = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instructions", targetDepth))
+                if (context.TestExpression("instructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptType", targetDepth))
+                if (context.TestExpression("scriptType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScriptType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptUrl", targetDepth))
+                if (context.TestExpression("scriptUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScriptUrl = unmarshaller.Unmarshall(context, ref reader);

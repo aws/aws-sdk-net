@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LaunchTemplateSpecification", targetDepth))
+                if (context.TestExpression("LaunchTemplateSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplateSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Overrides", targetDepth))
+                if (context.TestExpression("Overrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetails, AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetailsUnmarshaller>(AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateOverridesListDetailsUnmarshaller.Instance);
                     unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);

@@ -72,7 +72,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("tld", targetDepth))
+                    if (context.TestExpression("tld", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Tld = unmarshaller.Unmarshall(context, ref reader);

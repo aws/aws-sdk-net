@@ -56,13 +56,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CSVMappingParameters", targetDepth))
+                if (context.TestExpression("CSVMappingParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = CSVMappingParametersUnmarshaller.Instance;
                     unmarshalledObject.CSVMappingParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JSONMappingParameters", targetDepth))
+                if (context.TestExpression("JSONMappingParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = JSONMappingParametersUnmarshaller.Instance;
                     unmarshalledObject.JSONMappingParameters = unmarshaller.Unmarshall(context, ref reader);

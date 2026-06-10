@@ -56,37 +56,37 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hlsConfiguration", targetDepth))
+                if (context.TestExpression("hlsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantRecordingHlsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HlsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaTypes", targetDepth))
+                if (context.TestExpression("mediaTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MediaTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth))
+                if (context.TestExpression("recordingReconnectWindowSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecordingReconnectWindowSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordParticipantReplicas", targetDepth))
+                if (context.TestExpression("recordParticipantReplicas", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RecordParticipantReplicas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageConfigurationArn", targetDepth))
+                if (context.TestExpression("storageConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfiguration", targetDepth))
+                if (context.TestExpression("thumbnailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantThumbnailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ThumbnailConfiguration = unmarshaller.Unmarshall(context, ref reader);

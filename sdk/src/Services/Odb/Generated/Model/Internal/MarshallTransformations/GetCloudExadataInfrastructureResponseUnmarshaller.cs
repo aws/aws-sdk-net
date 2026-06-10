@@ -52,7 +52,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudExadataInfrastructure", targetDepth))
+                if (context.TestExpression("cloudExadataInfrastructure", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudExadataInfrastructureUnmarshaller.Instance;
                     response.CloudExadataInfrastructure = unmarshaller.Unmarshall(context, ref reader);

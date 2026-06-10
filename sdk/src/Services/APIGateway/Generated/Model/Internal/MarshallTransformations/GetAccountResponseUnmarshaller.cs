@@ -52,25 +52,25 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiKeyVersion", targetDepth))
+                if (context.TestExpression("apiKeyVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApiKeyVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudwatchRoleArn", targetDepth))
+                if (context.TestExpression("cloudwatchRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CloudwatchRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("features", targetDepth))
+                if (context.TestExpression("features", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Features = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("throttleSettings", targetDepth))
+                if (context.TestExpression("throttleSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ThrottleSettingsUnmarshaller.Instance;
                     response.ThrottleSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bucketCriteria", targetDepth))
+                if (context.TestExpression("bucketCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketCriteriaForJobUnmarshaller.Instance;
                     unmarshalledObject.BucketCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketDefinitions", targetDepth))
+                if (context.TestExpression("bucketDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3BucketDefinitionForJob, S3BucketDefinitionForJobUnmarshaller>(S3BucketDefinitionForJobUnmarshaller.Instance);
                     unmarshalledObject.BucketDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scoping", targetDepth))
+                if (context.TestExpression("scoping", targetDepth, ref reader))
                 {
                     var unmarshaller = ScopingUnmarshaller.Instance;
                     unmarshalledObject.Scoping = unmarshaller.Unmarshall(context, ref reader);

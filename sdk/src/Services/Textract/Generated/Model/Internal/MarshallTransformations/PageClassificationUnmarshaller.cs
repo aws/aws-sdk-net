@@ -56,13 +56,13 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PageNumber", targetDepth))
+                if (context.TestExpression("PageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Prediction, PredictionUnmarshaller>(PredictionUnmarshaller.Instance);
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageType", targetDepth))
+                if (context.TestExpression("PageType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Prediction, PredictionUnmarshaller>(PredictionUnmarshaller.Instance);
                     unmarshalledObject.PageType = unmarshaller.Unmarshall(context, ref reader);

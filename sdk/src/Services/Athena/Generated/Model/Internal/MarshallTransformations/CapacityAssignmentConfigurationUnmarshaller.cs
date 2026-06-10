@@ -56,13 +56,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityAssignments", targetDepth))
+                if (context.TestExpression("CapacityAssignments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CapacityAssignment, CapacityAssignmentUnmarshaller>(CapacityAssignmentUnmarshaller.Instance);
                     unmarshalledObject.CapacityAssignments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityReservationName", targetDepth))
+                if (context.TestExpression("CapacityReservationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityReservationName = unmarshaller.Unmarshall(context, ref reader);

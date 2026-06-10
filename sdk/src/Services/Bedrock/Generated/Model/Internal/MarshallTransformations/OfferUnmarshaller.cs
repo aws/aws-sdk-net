@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("offerId", targetDepth))
+                if (context.TestExpression("offerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfferId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offerToken", targetDepth))
+                if (context.TestExpression("offerToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfferToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("termDetails", targetDepth))
+                if (context.TestExpression("termDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TermDetailsUnmarshaller.Instance;
                     unmarshalledObject.TermDetails = unmarshaller.Unmarshall(context, ref reader);

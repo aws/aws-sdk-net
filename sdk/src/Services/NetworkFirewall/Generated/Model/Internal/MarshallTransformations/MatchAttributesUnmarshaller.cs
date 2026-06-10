@@ -56,37 +56,37 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationPorts", targetDepth))
+                if (context.TestExpression("DestinationPorts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
                     unmarshalledObject.DestinationPorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Destinations", targetDepth))
+                if (context.TestExpression("Destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
                     unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocols", targetDepth))
+                if (context.TestExpression("Protocols", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourcePorts", targetDepth))
+                if (context.TestExpression("SourcePorts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
                     unmarshalledObject.SourcePorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sources", targetDepth))
+                if (context.TestExpression("Sources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Address, AddressUnmarshaller>(AddressUnmarshaller.Instance);
                     unmarshalledObject.Sources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TCPFlags", targetDepth))
+                if (context.TestExpression("TCPFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TCPFlagField, TCPFlagFieldUnmarshaller>(TCPFlagFieldUnmarshaller.Instance);
                     unmarshalledObject.TCPFlags = unmarshaller.Unmarshall(context, ref reader);

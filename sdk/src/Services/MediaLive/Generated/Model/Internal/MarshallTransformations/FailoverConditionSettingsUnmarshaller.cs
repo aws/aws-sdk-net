@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioSilenceSettings", targetDepth))
+                if (context.TestExpression("audioSilenceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioSilenceFailoverSettingsUnmarshaller.Instance;
                     unmarshalledObject.AudioSilenceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLossSettings", targetDepth))
+                if (context.TestExpression("inputLossSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLossFailoverSettingsUnmarshaller.Instance;
                     unmarshalledObject.InputLossSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoBlackSettings", targetDepth))
+                if (context.TestExpression("videoBlackSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoBlackFailoverSettingsUnmarshaller.Instance;
                     unmarshalledObject.VideoBlackSettings = unmarshaller.Unmarshall(context, ref reader);

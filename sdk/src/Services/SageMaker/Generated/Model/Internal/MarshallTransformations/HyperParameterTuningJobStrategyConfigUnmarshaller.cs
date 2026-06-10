@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HyperbandStrategyConfig", targetDepth))
+                if (context.TestExpression("HyperbandStrategyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperbandStrategyConfigUnmarshaller.Instance;
                     unmarshalledObject.HyperbandStrategyConfig = unmarshaller.Unmarshall(context, ref reader);

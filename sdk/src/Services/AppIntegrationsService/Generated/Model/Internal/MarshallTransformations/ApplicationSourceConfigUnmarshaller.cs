@@ -56,7 +56,7 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExternalUrlConfig", targetDepth))
+                if (context.TestExpression("ExternalUrlConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalUrlConfigUnmarshaller.Instance;
                     unmarshalledObject.ExternalUrlConfig = unmarshaller.Unmarshall(context, ref reader);

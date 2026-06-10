@@ -56,19 +56,19 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeReservation", targetDepth))
+                if (context.TestExpression("computeReservation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ComputeReservation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shareDecaySeconds", targetDepth))
+                if (context.TestExpression("shareDecaySeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShareDecaySeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shareDistribution", targetDepth))
+                if (context.TestExpression("shareDistribution", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ShareAttributes, ShareAttributesUnmarshaller>(ShareAttributesUnmarshaller.Instance);
                     unmarshalledObject.ShareDistribution = unmarshaller.Unmarshall(context, ref reader);

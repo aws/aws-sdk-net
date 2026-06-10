@@ -52,49 +52,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentId", targetDepth))
+                if (context.TestExpression("AgentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AgentStatus", targetDepth))
+                if (context.TestExpression("AgentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedToAddActionConnectors", targetDepth))
+                if (context.TestExpression("FailedToAddActionConnectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedToUpdateAssociation, FailedToUpdateAssociationUnmarshaller>(FailedToUpdateAssociationUnmarshaller.Instance);
                     response.FailedToAddActionConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedToAddSpaces", targetDepth))
+                if (context.TestExpression("FailedToAddSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedToUpdateAssociation, FailedToUpdateAssociationUnmarshaller>(FailedToUpdateAssociationUnmarshaller.Instance);
                     response.FailedToAddSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedToRemoveActionConnectors", targetDepth))
+                if (context.TestExpression("FailedToRemoveActionConnectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedToUpdateAssociation, FailedToUpdateAssociationUnmarshaller>(FailedToUpdateAssociationUnmarshaller.Instance);
                     response.FailedToRemoveActionConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailedToRemoveSpaces", targetDepth))
+                if (context.TestExpression("FailedToRemoveSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedToUpdateAssociation, FailedToUpdateAssociationUnmarshaller>(FailedToUpdateAssociationUnmarshaller.Instance);
                     response.FailedToRemoveSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);

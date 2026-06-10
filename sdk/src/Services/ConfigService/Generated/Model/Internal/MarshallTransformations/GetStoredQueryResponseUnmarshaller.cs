@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StoredQuery", targetDepth))
+                if (context.TestExpression("StoredQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = StoredQueryUnmarshaller.Instance;
                     response.StoredQuery = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationFleetAssociation", targetDepth))
+                if (context.TestExpression("ApplicationFleetAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationFleetAssociationUnmarshaller.Instance;
                     response.ApplicationFleetAssociation = unmarshaller.Unmarshall(context, ref reader);

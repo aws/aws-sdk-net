@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("features", targetDepth))
+                if (context.TestExpression("features", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Features = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("feeds", targetDepth))
+                if (context.TestExpression("feeds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ElementalInferenceFeed, ElementalInferenceFeedUnmarshaller>(ElementalInferenceFeedUnmarshaller.Instance);
                     unmarshalledObject.Feeds = unmarshaller.Unmarshall(context, ref reader);

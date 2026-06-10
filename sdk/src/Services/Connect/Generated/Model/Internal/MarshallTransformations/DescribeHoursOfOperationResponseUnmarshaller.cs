@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HoursOfOperation", targetDepth))
+                if (context.TestExpression("HoursOfOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = HoursOfOperationUnmarshaller.Instance;
                     response.HoursOfOperation = unmarshaller.Unmarshall(context, ref reader);

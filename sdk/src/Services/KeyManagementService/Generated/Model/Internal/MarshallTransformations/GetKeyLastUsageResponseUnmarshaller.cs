@@ -52,25 +52,25 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyCreationDate", targetDepth))
+                if (context.TestExpression("KeyCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.KeyCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyId", targetDepth))
+                if (context.TestExpression("KeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyLastUsage", targetDepth))
+                if (context.TestExpression("KeyLastUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyLastUsageDataUnmarshaller.Instance;
                     response.KeyLastUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrackingStartDate", targetDepth))
+                if (context.TestExpression("TrackingStartDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.TrackingStartDate = unmarshaller.Unmarshall(context, ref reader);

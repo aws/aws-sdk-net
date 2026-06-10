@@ -56,31 +56,31 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileUpload", targetDepth))
+                if (context.TestExpression("fileUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = FileUploadCardInputUnmarshaller.Instance;
                     unmarshalledObject.FileUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("formInput", targetDepth))
+                if (context.TestExpression("formInput", targetDepth, ref reader))
                 {
                     var unmarshaller = FormInputCardInputUnmarshaller.Instance;
                     unmarshalledObject.FormInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qPlugin", targetDepth))
+                if (context.TestExpression("qPlugin", targetDepth, ref reader))
                 {
                     var unmarshaller = QPluginCardInputUnmarshaller.Instance;
                     unmarshalledObject.QPlugin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qQuery", targetDepth))
+                if (context.TestExpression("qQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = QQueryCardInputUnmarshaller.Instance;
                     unmarshalledObject.QQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textInput", targetDepth))
+                if (context.TestExpression("textInput", targetDepth, ref reader))
                 {
                     var unmarshaller = TextInputCardInputUnmarshaller.Instance;
                     unmarshalledObject.TextInput = unmarshaller.Unmarshall(context, ref reader);

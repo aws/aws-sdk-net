@@ -56,13 +56,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kendraIndexConfiguration", targetDepth))
+                if (context.TestExpression("kendraIndexConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KendraIndexConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KendraIndexConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nativeIndexConfiguration", targetDepth))
+                if (context.TestExpression("nativeIndexConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NativeIndexConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NativeIndexConfiguration = unmarshaller.Unmarshall(context, ref reader);

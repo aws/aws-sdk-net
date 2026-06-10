@@ -56,7 +56,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShardLevelMetrics", targetDepth))
+                if (context.TestExpression("ShardLevelMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ShardLevelMetrics = unmarshaller.Unmarshall(context, ref reader);

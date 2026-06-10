@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupPolicy", targetDepth))
+                if (context.TestExpression("BackupPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = BackupPolicyUnmarshaller.Instance;
                     response.BackupPolicy = unmarshaller.Unmarshall(context, ref reader);

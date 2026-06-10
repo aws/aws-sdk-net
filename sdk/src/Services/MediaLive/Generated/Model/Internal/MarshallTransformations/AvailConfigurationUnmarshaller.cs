@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("availSettings", targetDepth))
+                if (context.TestExpression("availSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailSettingsUnmarshaller.Instance;
                     unmarshalledObject.AvailSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte35SegmentationScope", targetDepth))
+                if (context.TestExpression("scte35SegmentationScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Scte35SegmentationScope = unmarshaller.Unmarshall(context, ref reader);

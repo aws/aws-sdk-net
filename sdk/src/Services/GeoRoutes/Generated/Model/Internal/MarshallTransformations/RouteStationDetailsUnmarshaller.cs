@@ -56,19 +56,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Accessibility", targetDepth))
+                if (context.TestExpression("Accessibility", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteAccessibilityAvailabilityDetailsUnmarshaller.Instance;
                     unmarshalledObject.Accessibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlatformName", targetDepth))
+                if (context.TestExpression("PlatformName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlatformName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShortName", targetDepth))
+                if (context.TestExpression("ShortName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShortName = unmarshaller.Unmarshall(context, ref reader);

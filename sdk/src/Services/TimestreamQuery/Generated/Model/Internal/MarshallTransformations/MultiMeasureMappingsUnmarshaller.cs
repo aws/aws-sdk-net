@@ -56,13 +56,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth))
+                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiMeasureAttributeMapping, MultiMeasureAttributeMappingUnmarshaller>(MultiMeasureAttributeMappingUnmarshaller.Instance);
                     unmarshalledObject.MultiMeasureAttributeMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetMultiMeasureName", targetDepth))
+                if (context.TestExpression("TargetMultiMeasureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetMultiMeasureName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomValues", targetDepth))
+                if (context.TestExpression("CustomValues", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomParameterValuesUnmarshaller.Instance;
                     unmarshalledObject.CustomValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeNullValue", targetDepth))
+                if (context.TestExpression("IncludeNullValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeNullValue = unmarshaller.Unmarshall(context, ref reader);

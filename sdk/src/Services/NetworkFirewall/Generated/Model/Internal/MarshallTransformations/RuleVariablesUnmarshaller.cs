@@ -56,13 +56,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IPSets", targetDepth))
+                if (context.TestExpression("IPSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, IPSet, StringUnmarshaller, IPSetUnmarshaller>(StringUnmarshaller.Instance, IPSetUnmarshaller.Instance);
                     unmarshalledObject.IPSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PortSets", targetDepth))
+                if (context.TestExpression("PortSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, PortSet, StringUnmarshaller, PortSetUnmarshaller>(StringUnmarshaller.Instance, PortSetUnmarshaller.Instance);
                     unmarshalledObject.PortSets = unmarshaller.Unmarshall(context, ref reader);

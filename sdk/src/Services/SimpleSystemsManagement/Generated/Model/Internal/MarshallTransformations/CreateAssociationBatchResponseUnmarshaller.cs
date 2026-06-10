@@ -52,13 +52,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Failed", targetDepth))
+                if (context.TestExpression("Failed", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedCreateAssociation, FailedCreateAssociationUnmarshaller>(FailedCreateAssociationUnmarshaller.Instance);
                     response.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Successful", targetDepth))
+                if (context.TestExpression("Successful", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociationDescription, AssociationDescriptionUnmarshaller>(AssociationDescriptionUnmarshaller.Instance);
                     response.Successful = unmarshaller.Unmarshall(context, ref reader);

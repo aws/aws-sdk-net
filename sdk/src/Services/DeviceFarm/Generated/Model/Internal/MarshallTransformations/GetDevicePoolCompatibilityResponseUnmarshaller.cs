@@ -52,13 +52,13 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compatibleDevices", targetDepth))
+                if (context.TestExpression("compatibleDevices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DevicePoolCompatibilityResult, DevicePoolCompatibilityResultUnmarshaller>(DevicePoolCompatibilityResultUnmarshaller.Instance);
                     response.CompatibleDevices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incompatibleDevices", targetDepth))
+                if (context.TestExpression("incompatibleDevices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DevicePoolCompatibilityResult, DevicePoolCompatibilityResultUnmarshaller>(DevicePoolCompatibilityResultUnmarshaller.Instance);
                     response.IncompatibleDevices = unmarshaller.Unmarshall(context, ref reader);

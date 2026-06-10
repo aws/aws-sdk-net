@@ -72,19 +72,19 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("QuotaCode", targetDepth))
+                    if (context.TestExpression("QuotaCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("RetryAfterSeconds", targetDepth))
+                    if (context.TestExpression("RetryAfterSeconds", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ServiceCode", targetDepth))
+                    if (context.TestExpression("ServiceCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Concurrency", targetDepth))
+                if (context.TestExpression("Concurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Concurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossChannelBehavior", targetDepth))
+                if (context.TestExpression("CrossChannelBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossChannelBehaviorUnmarshaller.Instance;
                     unmarshalledObject.CrossChannelBehavior = unmarshaller.Unmarshall(context, ref reader);

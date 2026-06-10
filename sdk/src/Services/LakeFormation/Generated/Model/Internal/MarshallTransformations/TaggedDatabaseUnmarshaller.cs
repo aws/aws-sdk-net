@@ -56,13 +56,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Database", targetDepth))
+                if (context.TestExpression("Database", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseResourceUnmarshaller.Instance;
                     unmarshalledObject.Database = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTags", targetDepth))
+                if (context.TestExpression("LFTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
                     unmarshalledObject.LFTags = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InclusionAnnotation", targetDepth))
+                if (context.TestExpression("InclusionAnnotation", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestampedInclusionAnnotationUnmarshaller.Instance;
                     unmarshalledObject.InclusionAnnotation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProfileId", targetDepth))
+                if (context.TestExpression("ProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticId", targetDepth))
+                if (context.TestExpression("StatisticId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatisticId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatisticRecordedOn", targetDepth))
+                if (context.TestExpression("StatisticRecordedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StatisticRecordedOn = unmarshaller.Unmarshall(context, ref reader);

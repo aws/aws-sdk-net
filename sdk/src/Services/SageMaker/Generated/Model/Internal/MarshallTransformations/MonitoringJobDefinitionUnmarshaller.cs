@@ -56,55 +56,55 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaselineConfig", targetDepth))
+                if (context.TestExpression("BaselineConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringBaselineConfigUnmarshaller.Instance;
                     unmarshalledObject.BaselineConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringAppSpecification", targetDepth))
+                if (context.TestExpression("MonitoringAppSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringAppSpecificationUnmarshaller.Instance;
                     unmarshalledObject.MonitoringAppSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringInputs", targetDepth))
+                if (context.TestExpression("MonitoringInputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MonitoringInput, MonitoringInputUnmarshaller>(MonitoringInputUnmarshaller.Instance);
                     unmarshalledObject.MonitoringInputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringOutputConfig", targetDepth))
+                if (context.TestExpression("MonitoringOutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringOutputConfigUnmarshaller.Instance;
                     unmarshalledObject.MonitoringOutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringResources", targetDepth))
+                if (context.TestExpression("MonitoringResources", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringResourcesUnmarshaller.Instance;
                     unmarshalledObject.MonitoringResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkConfig", targetDepth))
+                if (context.TestExpression("NetworkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConfigUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StoppingCondition", targetDepth))
+                if (context.TestExpression("StoppingCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringStoppingConditionUnmarshaller.Instance;
                     unmarshalledObject.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);

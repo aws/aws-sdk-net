@@ -56,43 +56,43 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogDestinationConfigs", targetDepth))
+                if (context.TestExpression("LogDestinationConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LogDestinationConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoggingFilter", targetDepth))
+                if (context.TestExpression("LoggingFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingFilterUnmarshaller.Instance;
                     unmarshalledObject.LoggingFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogScope", targetDepth))
+                if (context.TestExpression("LogScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogType", targetDepth))
+                if (context.TestExpression("LogType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedByFirewallManager", targetDepth))
+                if (context.TestExpression("ManagedByFirewallManager", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManagedByFirewallManager = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedactedFields", targetDepth))
+                if (context.TestExpression("RedactedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldToMatch, FieldToMatchUnmarshaller>(FieldToMatchUnmarshaller.Instance);
                     unmarshalledObject.RedactedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);

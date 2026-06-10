@@ -72,19 +72,19 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("agents", targetDepth))
+                    if (context.TestExpression("agents", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<AgentAlreadyRunningAssessment, AgentAlreadyRunningAssessmentUnmarshaller>(AgentAlreadyRunningAssessmentUnmarshaller.Instance);
                         unmarshalledObject.Agents = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("agentsTruncated", targetDepth))
+                    if (context.TestExpression("agentsTruncated", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.AgentsTruncated = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("canRetry", targetDepth))
+                    if (context.TestExpression("canRetry", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.CanRetry = unmarshaller.Unmarshall(context, ref reader);

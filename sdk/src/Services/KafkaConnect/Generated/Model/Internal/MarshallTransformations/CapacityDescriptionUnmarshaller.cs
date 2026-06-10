@@ -56,13 +56,13 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScaling", targetDepth))
+                if (context.TestExpression("autoScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingDescriptionUnmarshaller.Instance;
                     unmarshalledObject.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisionedCapacity", targetDepth))
+                if (context.TestExpression("provisionedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedCapacityDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context, ref reader);

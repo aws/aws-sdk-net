@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hlsInputSettings", targetDepth))
+                if (context.TestExpression("hlsInputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsInputSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsInputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multicastInputSettings", targetDepth))
+                if (context.TestExpression("multicastInputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MulticastInputSettingsUnmarshaller.Instance;
                     unmarshalledObject.MulticastInputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverValidation", targetDepth))
+                if (context.TestExpression("serverValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerValidation = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventBridgeEnabled", targetDepth))
+                if (context.TestExpression("eventBridgeEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EventBridgeEnabled = unmarshaller.Unmarshall(context, ref reader);

@@ -52,37 +52,37 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Connections", targetDepth))
+                if (context.TestExpression("Connections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WaypointOptimizationConnection, WaypointOptimizationConnectionUnmarshaller>(WaypointOptimizationConnectionUnmarshaller.Instance);
                     response.Connections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Distance", targetDepth))
+                if (context.TestExpression("Distance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("Duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImpedingWaypoints", targetDepth))
+                if (context.TestExpression("ImpedingWaypoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WaypointOptimizationImpedingWaypoint, WaypointOptimizationImpedingWaypointUnmarshaller>(WaypointOptimizationImpedingWaypointUnmarshaller.Instance);
                     response.ImpedingWaypoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizedWaypoints", targetDepth))
+                if (context.TestExpression("OptimizedWaypoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WaypointOptimizationOptimizedWaypoint, WaypointOptimizationOptimizedWaypointUnmarshaller>(WaypointOptimizationOptimizedWaypointUnmarshaller.Instance);
                     response.OptimizedWaypoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeBreakdown", targetDepth))
+                if (context.TestExpression("TimeBreakdown", targetDepth, ref reader))
                 {
                     var unmarshaller = WaypointOptimizationTimeBreakdownUnmarshaller.Instance;
                     response.TimeBreakdown = unmarshaller.Unmarshall(context, ref reader);

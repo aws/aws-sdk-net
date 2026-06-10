@@ -52,13 +52,13 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedFindings", targetDepth))
+                if (context.TestExpression("failedFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetFindingsError, BatchGetFindingsErrorUnmarshaller>(BatchGetFindingsErrorUnmarshaller.Instance);
                     response.FailedFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findings", targetDepth))
+                if (context.TestExpression("findings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Finding, FindingUnmarshaller>(FindingUnmarshaller.Instance);
                     response.Findings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Customer", targetDepth))
+                if (context.TestExpression("Customer", targetDepth, ref reader))
                 {
                     var unmarshaller = EngagementCustomerUnmarshaller.Instance;
                     unmarshalledObject.Customer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Project", targetDepth))
+                if (context.TestExpression("Project", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectDetailsUnmarshaller.Instance;
                     unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReceiverResponsibilities", targetDepth))
+                if (context.TestExpression("ReceiverResponsibilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ReceiverResponsibilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SenderContacts", targetDepth))
+                if (context.TestExpression("SenderContacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SenderContact, SenderContactUnmarshaller>(SenderContactUnmarshaller.Instance);
                     unmarshalledObject.SenderContacts = unmarshaller.Unmarshall(context, ref reader);

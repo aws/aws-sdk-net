@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth))
+                if (context.TestExpression("ApplyServerSideEncryptionByDefault", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketServerSideEncryptionByDefaultUnmarshaller.Instance;
                     unmarshalledObject.ApplyServerSideEncryptionByDefault = unmarshaller.Unmarshall(context, ref reader);

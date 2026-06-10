@@ -56,13 +56,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumerGroupId", targetDepth))
+                if (context.TestExpression("ConsumerGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConsumerGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaRegistryConfig", targetDepth))
+                if (context.TestExpression("SchemaRegistryConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaSchemaRegistryConfigUnmarshaller.Instance;
                     unmarshalledObject.SchemaRegistryConfig = unmarshaller.Unmarshall(context, ref reader);

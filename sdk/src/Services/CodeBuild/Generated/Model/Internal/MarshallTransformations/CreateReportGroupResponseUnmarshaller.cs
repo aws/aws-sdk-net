@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reportGroup", targetDepth))
+                if (context.TestExpression("reportGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportGroupUnmarshaller.Instance;
                     response.ReportGroup = unmarshaller.Unmarshall(context, ref reader);

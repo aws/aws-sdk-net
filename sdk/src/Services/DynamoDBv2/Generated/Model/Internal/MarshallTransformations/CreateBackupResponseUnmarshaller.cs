@@ -52,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupDetails", targetDepth))
+                if (context.TestExpression("BackupDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = BackupDetailsUnmarshaller.Instance;
                     response.BackupDetails = unmarshaller.Unmarshall(context, ref reader);

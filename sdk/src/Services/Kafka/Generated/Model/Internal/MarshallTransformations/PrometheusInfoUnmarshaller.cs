@@ -56,13 +56,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jmxExporter", targetDepth))
+                if (context.TestExpression("jmxExporter", targetDepth, ref reader))
                 {
                     var unmarshaller = JmxExporterInfoUnmarshaller.Instance;
                     unmarshalledObject.JmxExporter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeExporter", targetDepth))
+                if (context.TestExpression("nodeExporter", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeExporterInfoUnmarshaller.Instance;
                     unmarshalledObject.NodeExporter = unmarshaller.Unmarshall(context, ref reader);

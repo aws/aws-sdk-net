@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SeverityTrends", targetDepth))
+                if (context.TestExpression("SeverityTrends", targetDepth, ref reader))
                 {
                     var unmarshaller = SeverityTrendsCountUnmarshaller.Instance;
                     unmarshalledObject.SeverityTrends = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxIndexingCapacityInOCU", targetDepth))
+                if (context.TestExpression("maxIndexingCapacityInOCU", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxIndexingCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxSearchCapacityInOCU", targetDepth))
+                if (context.TestExpression("maxSearchCapacityInOCU", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSearchCapacityInOCU = unmarshaller.Unmarshall(context, ref reader);

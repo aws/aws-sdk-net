@@ -56,13 +56,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filterByAsset", targetDepth))
+                if (context.TestExpression("filterByAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterByAssetUnmarshaller.Instance;
                     unmarshalledObject.FilterByAsset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterByAssetModel", targetDepth))
+                if (context.TestExpression("filterByAssetModel", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterByAssetModelUnmarshaller.Instance;
                     unmarshalledObject.FilterByAssetModel = unmarshaller.Unmarshall(context, ref reader);

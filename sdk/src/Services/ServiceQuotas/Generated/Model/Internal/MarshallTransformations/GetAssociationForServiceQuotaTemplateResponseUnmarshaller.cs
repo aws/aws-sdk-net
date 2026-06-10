@@ -52,7 +52,7 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServiceQuotaTemplateAssociationStatus", targetDepth))
+                if (context.TestExpression("ServiceQuotaTemplateAssociationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ServiceQuotaTemplateAssociationStatus = unmarshaller.Unmarshall(context, ref reader);

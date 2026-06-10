@@ -56,19 +56,19 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deliveryMethod", targetDepth))
+                if (context.TestExpression("deliveryMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailSettings", targetDepth))
+                if (context.TestExpression("emailSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmailSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smsSettings", targetDepth))
+                if (context.TestExpression("smsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SmsSettingsUnmarshaller.Instance;
                     unmarshalledObject.SmsSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceTagKey", targetDepth))
+                if (context.TestExpression("ResourceTagKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceTagKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceTagValue", targetDepth))
+                if (context.TestExpression("ResourceTagValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceTagValue = unmarshaller.Unmarshall(context, ref reader);

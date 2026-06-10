@@ -56,7 +56,7 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UnlockDelay", targetDepth))
+                if (context.TestExpression("UnlockDelay", targetDepth, ref reader))
                 {
                     var unmarshaller = UnlockDelayUnmarshaller.Instance;
                     unmarshalledObject.UnlockDelay = unmarshaller.Unmarshall(context, ref reader);

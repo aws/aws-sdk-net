@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizedPrincipal", targetDepth))
+                if (context.TestExpression("AuthorizedPrincipal", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizedPrincipalUnmarshaller.Instance;
                     response.AuthorizedPrincipal = unmarshaller.Unmarshall(context, ref reader);

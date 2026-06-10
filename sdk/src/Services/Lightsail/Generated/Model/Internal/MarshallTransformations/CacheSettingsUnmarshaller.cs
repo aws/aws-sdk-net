@@ -56,49 +56,49 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedHTTPMethods", targetDepth))
+                if (context.TestExpression("allowedHTTPMethods", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllowedHTTPMethods = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cachedHTTPMethods", targetDepth))
+                if (context.TestExpression("cachedHTTPMethods", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CachedHTTPMethods = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTTL", targetDepth))
+                if (context.TestExpression("defaultTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DefaultTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forwardedCookies", targetDepth))
+                if (context.TestExpression("forwardedCookies", targetDepth, ref reader))
                 {
                     var unmarshaller = CookieObjectUnmarshaller.Instance;
                     unmarshalledObject.ForwardedCookies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forwardedHeaders", targetDepth))
+                if (context.TestExpression("forwardedHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = HeaderObjectUnmarshaller.Instance;
                     unmarshalledObject.ForwardedHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forwardedQueryStrings", targetDepth))
+                if (context.TestExpression("forwardedQueryStrings", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryStringObjectUnmarshaller.Instance;
                     unmarshalledObject.ForwardedQueryStrings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maximumTTL", targetDepth))
+                if (context.TestExpression("maximumTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaximumTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumTTL", targetDepth))
+                if (context.TestExpression("minimumTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumTTL = unmarshaller.Unmarshall(context, ref reader);

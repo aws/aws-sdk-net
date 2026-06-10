@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("staticRoute", targetDepth))
+                if (context.TestExpression("staticRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticRouteUnmarshaller.Instance;
                     unmarshalledObject.StaticRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weightedRoute", targetDepth))
+                if (context.TestExpression("weightedRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = WeightedRouteUnmarshaller.Instance;
                     unmarshalledObject.WeightedRoute = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SyncBlockerSummary", targetDepth))
+                if (context.TestExpression("SyncBlockerSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = SyncBlockerSummaryUnmarshaller.Instance;
                     response.SyncBlockerSummary = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hive", targetDepth))
+                if (context.TestExpression("hive", targetDepth, ref reader))
                 {
                     var unmarshaller = HiveUnmarshaller.Instance;
                     unmarshalledObject.Hive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparkSubmit", targetDepth))
+                if (context.TestExpression("sparkSubmit", targetDepth, ref reader))
                 {
                     var unmarshaller = SparkSubmitUnmarshaller.Instance;
                     unmarshalledObject.SparkSubmit = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultValues", targetDepth))
+                if (context.TestExpression("DefaultValues", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeDefaultValuesUnmarshaller.Instance;
                     unmarshalledObject.DefaultValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MappedDataSetParameters", targetDepth))
+                if (context.TestExpression("MappedDataSetParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MappedDataSetParameter, MappedDataSetParameterUnmarshaller>(MappedDataSetParameterUnmarshaller.Instance);
                     unmarshalledObject.MappedDataSetParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueWhenUnset", targetDepth))
+                if (context.TestExpression("ValueWhenUnset", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeValueWhenUnsetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ValueWhenUnset = unmarshaller.Unmarshall(context, ref reader);

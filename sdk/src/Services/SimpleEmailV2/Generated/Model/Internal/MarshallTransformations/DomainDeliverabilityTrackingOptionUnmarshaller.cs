@@ -56,19 +56,19 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InboxPlacementTrackingOption", targetDepth))
+                if (context.TestExpression("InboxPlacementTrackingOption", targetDepth, ref reader))
                 {
                     var unmarshaller = InboxPlacementTrackingOptionUnmarshaller.Instance;
                     unmarshalledObject.InboxPlacementTrackingOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionStartDate", targetDepth))
+                if (context.TestExpression("SubscriptionStartDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionStartDate = unmarshaller.Unmarshall(context, ref reader);

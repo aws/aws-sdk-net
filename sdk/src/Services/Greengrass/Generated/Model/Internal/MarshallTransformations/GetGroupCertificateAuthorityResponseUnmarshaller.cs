@@ -52,19 +52,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupCertificateAuthorityArn", targetDepth))
+                if (context.TestExpression("GroupCertificateAuthorityArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GroupCertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupCertificateAuthorityId", targetDepth))
+                if (context.TestExpression("GroupCertificateAuthorityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GroupCertificateAuthorityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PemEncodedCertificate", targetDepth))
+                if (context.TestExpression("PemEncodedCertificate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PemEncodedCertificate = unmarshaller.Unmarshall(context, ref reader);

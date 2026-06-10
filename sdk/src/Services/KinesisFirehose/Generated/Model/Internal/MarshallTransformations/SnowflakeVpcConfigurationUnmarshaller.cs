@@ -56,7 +56,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PrivateLinkVpceId", targetDepth))
+                if (context.TestExpression("PrivateLinkVpceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrivateLinkVpceId = unmarshaller.Unmarshall(context, ref reader);

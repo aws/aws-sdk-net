@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RequestedChange", targetDepth))
+                if (context.TestExpression("RequestedChange", targetDepth, ref reader))
                 {
                     var unmarshaller = TableUnmarshaller.Instance;
                     unmarshalledObject.RequestedChange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViewValidations", targetDepth))
+                if (context.TestExpression("ViewValidations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ViewValidation, ViewValidationUnmarshaller>(ViewValidationUnmarshaller.Instance);
                     unmarshalledObject.ViewValidations = unmarshaller.Unmarshall(context, ref reader);

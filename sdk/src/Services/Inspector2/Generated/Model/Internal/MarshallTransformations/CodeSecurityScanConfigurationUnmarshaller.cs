@@ -56,19 +56,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("continuousIntegrationScanConfiguration", targetDepth))
+                if (context.TestExpression("continuousIntegrationScanConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ContinuousIntegrationScanConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ContinuousIntegrationScanConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("periodicScanConfiguration", targetDepth))
+                if (context.TestExpression("periodicScanConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PeriodicScanConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PeriodicScanConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleSetCategories", targetDepth))
+                if (context.TestExpression("ruleSetCategories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RuleSetCategories = unmarshaller.Unmarshall(context, ref reader);

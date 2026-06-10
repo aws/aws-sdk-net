@@ -56,19 +56,19 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customProperties", targetDepth))
+                if (context.TestExpression("customProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.CustomProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataTransferApi", targetDepth))
+                if (context.TestExpression("dataTransferApi", targetDepth, ref reader))
                 {
                     var unmarshaller = DataTransferApiUnmarshaller.Instance;
                     unmarshalledObject.DataTransferApi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityName", targetDepth))
+                if (context.TestExpression("entityName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityName = unmarshaller.Unmarshall(context, ref reader);

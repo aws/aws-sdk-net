@@ -52,31 +52,31 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppliedSettings", targetDepth))
+                if (context.TestExpression("AppliedSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TranslationSettingsUnmarshaller.Instance;
                     response.AppliedSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppliedTerminologies", targetDepth))
+                if (context.TestExpression("AppliedTerminologies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AppliedTerminology, AppliedTerminologyUnmarshaller>(AppliedTerminologyUnmarshaller.Instance);
                     response.AppliedTerminologies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLanguageCode", targetDepth))
+                if (context.TestExpression("SourceLanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceLanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetLanguageCode", targetDepth))
+                if (context.TestExpression("TargetLanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetLanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranslatedText", targetDepth))
+                if (context.TestExpression("TranslatedText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TranslatedText = unmarshaller.Unmarshall(context, ref reader);

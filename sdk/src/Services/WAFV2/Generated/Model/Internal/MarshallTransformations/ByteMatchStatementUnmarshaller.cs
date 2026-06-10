@@ -56,25 +56,25 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldToMatch", targetDepth))
+                if (context.TestExpression("FieldToMatch", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldToMatchUnmarshaller.Instance;
                     unmarshalledObject.FieldToMatch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PositionalConstraint", targetDepth))
+                if (context.TestExpression("PositionalConstraint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PositionalConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SearchString", targetDepth))
+                if (context.TestExpression("SearchString", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.SearchString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextTransformations", targetDepth))
+                if (context.TestExpression("TextTransformations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TextTransformation, TextTransformationUnmarshaller>(TextTransformationUnmarshaller.Instance);
                     unmarshalledObject.TextTransformations = unmarshaller.Unmarshall(context, ref reader);

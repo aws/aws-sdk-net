@@ -52,7 +52,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachmentPresignedUrl", targetDepth))
+                if (context.TestExpression("attachmentPresignedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AttachmentPresignedUrl = unmarshaller.Unmarshall(context, ref reader);

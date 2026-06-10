@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventEnabled", targetDepth))
+                if (context.TestExpression("eventEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EventEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("templateConfiguration", targetDepth))
+                if (context.TestExpression("templateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KbTemplateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);

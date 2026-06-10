@@ -52,13 +52,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customDataIdentifiers", targetDepth))
+                if (context.TestExpression("customDataIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetCustomDataIdentifierSummary, BatchGetCustomDataIdentifierSummaryUnmarshaller>(BatchGetCustomDataIdentifierSummaryUnmarshaller.Instance);
                     response.CustomDataIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notFoundIdentifierIds", targetDepth))
+                if (context.TestExpression("notFoundIdentifierIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.NotFoundIdentifierIds = unmarshaller.Unmarshall(context, ref reader);

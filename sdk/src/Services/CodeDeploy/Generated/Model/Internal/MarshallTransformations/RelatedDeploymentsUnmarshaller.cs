@@ -56,13 +56,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoUpdateOutdatedInstancesDeploymentIds", targetDepth))
+                if (context.TestExpression("autoUpdateOutdatedInstancesDeploymentIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AutoUpdateOutdatedInstancesDeploymentIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoUpdateOutdatedInstancesRootDeploymentId", targetDepth))
+                if (context.TestExpression("autoUpdateOutdatedInstancesRootDeploymentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoUpdateOutdatedInstancesRootDeploymentId = unmarshaller.Unmarshall(context, ref reader);

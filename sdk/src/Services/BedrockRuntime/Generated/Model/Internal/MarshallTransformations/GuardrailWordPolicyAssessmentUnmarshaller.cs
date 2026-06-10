@@ -56,13 +56,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customWords", targetDepth))
+                if (context.TestExpression("customWords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailCustomWord, GuardrailCustomWordUnmarshaller>(GuardrailCustomWordUnmarshaller.Instance);
                     unmarshalledObject.CustomWords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedWordLists", targetDepth))
+                if (context.TestExpression("managedWordLists", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailManagedWord, GuardrailManagedWordUnmarshaller>(GuardrailManagedWordUnmarshaller.Instance);
                     unmarshalledObject.ManagedWordLists = unmarshaller.Unmarshall(context, ref reader);

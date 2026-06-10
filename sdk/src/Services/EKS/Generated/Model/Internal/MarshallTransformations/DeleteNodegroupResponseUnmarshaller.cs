@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nodegroup", targetDepth))
+                if (context.TestExpression("nodegroup", targetDepth, ref reader))
                 {
                     var unmarshaller = NodegroupUnmarshaller.Instance;
                     response.Nodegroup = unmarshaller.Unmarshall(context, ref reader);

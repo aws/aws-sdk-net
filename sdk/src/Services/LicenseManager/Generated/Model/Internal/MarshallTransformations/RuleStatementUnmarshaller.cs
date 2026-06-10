@@ -56,19 +56,19 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceRuleStatement", targetDepth))
+                if (context.TestExpression("InstanceRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.InstanceRuleStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseConfigurationRuleStatement", targetDepth))
+                if (context.TestExpression("LicenseConfigurationRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = LicenseConfigurationRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.LicenseConfigurationRuleStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LicenseRuleStatement", targetDepth))
+                if (context.TestExpression("LicenseRuleStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = LicenseRuleStatementUnmarshaller.Instance;
                     unmarshalledObject.LicenseRuleStatement = unmarshaller.Unmarshall(context, ref reader);

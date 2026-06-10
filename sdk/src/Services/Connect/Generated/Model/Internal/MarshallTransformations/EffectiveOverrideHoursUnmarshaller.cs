@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Date", targetDepth))
+                if (context.TestExpression("Date", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideHours", targetDepth))
+                if (context.TestExpression("OverrideHours", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OverrideHour, OverrideHourUnmarshaller>(OverrideHourUnmarshaller.Instance);
                     unmarshalledObject.OverrideHours = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationConfiguration", targetDepth))
+                if (context.TestExpression("authorizationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationConfiguration = unmarshaller.Unmarshall(context, ref reader);

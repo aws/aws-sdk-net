@@ -56,55 +56,55 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChatterFeedConfiguration", targetDepth))
+                if (context.TestExpression("ChatterFeedConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceChatterFeedConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChatterFeedConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlAttachments", targetDepth))
+                if (context.TestExpression("CrawlAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeAttachmentFilePatterns", targetDepth))
+                if (context.TestExpression("ExcludeAttachmentFilePatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludeAttachmentFilePatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeAttachmentFilePatterns", targetDepth))
+                if (context.TestExpression("IncludeAttachmentFilePatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludeAttachmentFilePatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KnowledgeArticleConfiguration", targetDepth))
+                if (context.TestExpression("KnowledgeArticleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceKnowledgeArticleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeArticleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerUrl", targetDepth))
+                if (context.TestExpression("ServerUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardObjectAttachmentConfiguration", targetDepth))
+                if (context.TestExpression("StandardObjectAttachmentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceStandardObjectAttachmentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StandardObjectAttachmentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardObjectConfigurations", targetDepth))
+                if (context.TestExpression("StandardObjectConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SalesforceStandardObjectConfiguration, SalesforceStandardObjectConfigurationUnmarshaller>(SalesforceStandardObjectConfigurationUnmarshaller.Instance);
                     unmarshalledObject.StandardObjectConfigurations = unmarshaller.Unmarshall(context, ref reader);

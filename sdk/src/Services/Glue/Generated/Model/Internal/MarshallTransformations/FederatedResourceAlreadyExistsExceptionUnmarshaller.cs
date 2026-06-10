@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("AssociatedGlueResource", targetDepth))
+                    if (context.TestExpression("AssociatedGlueResource", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AssociatedGlueResource = unmarshaller.Unmarshall(context, ref reader);

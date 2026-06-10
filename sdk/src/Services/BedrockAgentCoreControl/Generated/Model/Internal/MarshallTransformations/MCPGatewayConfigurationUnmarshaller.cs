@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instructions", targetDepth))
+                if (context.TestExpression("instructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("searchType", targetDepth))
+                if (context.TestExpression("searchType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SearchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionConfiguration", targetDepth))
+                if (context.TestExpression("sessionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SessionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamingConfiguration", targetDepth))
+                if (context.TestExpression("streamingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StreamingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedVersions", targetDepth))
+                if (context.TestExpression("supportedVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedVersions = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("exportTask", targetDepth))
+                if (context.TestExpression("exportTask", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportTaskUnmarshaller.Instance;
                     response.ExportTask = unmarshaller.Unmarshall(context, ref reader);

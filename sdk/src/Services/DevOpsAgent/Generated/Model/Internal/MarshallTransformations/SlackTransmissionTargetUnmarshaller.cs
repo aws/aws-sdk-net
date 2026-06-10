@@ -56,13 +56,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("opsOncallTarget", targetDepth))
+                if (context.TestExpression("opsOncallTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackChannelUnmarshaller.Instance;
                     unmarshalledObject.OpsOncallTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("opsSRETarget", targetDepth))
+                if (context.TestExpression("opsSRETarget", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackChannelUnmarshaller.Instance;
                     unmarshalledObject.OpsSRETarget = unmarshaller.Unmarshall(context, ref reader);

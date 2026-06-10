@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CcList", targetDepth))
+                if (context.TestExpression("CcList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
                     unmarshalledObject.CcList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ToList", targetDepth))
+                if (context.TestExpression("ToList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EmailRecipient, EmailRecipientUnmarshaller>(EmailRecipientUnmarshaller.Instance);
                     unmarshalledObject.ToList = unmarshaller.Unmarshall(context, ref reader);

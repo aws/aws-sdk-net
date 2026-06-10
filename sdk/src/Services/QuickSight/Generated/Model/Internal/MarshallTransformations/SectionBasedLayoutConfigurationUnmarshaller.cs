@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BodySections", targetDepth))
+                if (context.TestExpression("BodySections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BodySectionConfiguration, BodySectionConfigurationUnmarshaller>(BodySectionConfigurationUnmarshaller.Instance);
                     unmarshalledObject.BodySections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanvasSizeOptions", targetDepth))
+                if (context.TestExpression("CanvasSizeOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SectionBasedLayoutCanvasSizeOptionsUnmarshaller.Instance;
                     unmarshalledObject.CanvasSizeOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FooterSections", targetDepth))
+                if (context.TestExpression("FooterSections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HeaderFooterSectionConfiguration, HeaderFooterSectionConfigurationUnmarshaller>(HeaderFooterSectionConfigurationUnmarshaller.Instance);
                     unmarshalledObject.FooterSections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeaderSections", targetDepth))
+                if (context.TestExpression("HeaderSections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HeaderFooterSectionConfiguration, HeaderFooterSectionConfigurationUnmarshaller>(HeaderFooterSectionConfigurationUnmarshaller.Instance);
                     unmarshalledObject.HeaderSections = unmarshaller.Unmarshall(context, ref reader);

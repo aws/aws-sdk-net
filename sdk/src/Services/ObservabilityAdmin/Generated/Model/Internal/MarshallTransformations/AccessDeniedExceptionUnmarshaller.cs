@@ -72,7 +72,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AmznErrorType = unmarshaller.Unmarshall(context, ref reader);

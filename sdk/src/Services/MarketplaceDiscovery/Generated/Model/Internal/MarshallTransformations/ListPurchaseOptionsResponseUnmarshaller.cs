@@ -52,13 +52,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("purchaseOptions", targetDepth))
+                if (context.TestExpression("purchaseOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PurchaseOptionSummary, PurchaseOptionSummaryUnmarshaller>(PurchaseOptionSummaryUnmarshaller.Instance);
                     response.PurchaseOptions = unmarshaller.Unmarshall(context, ref reader);

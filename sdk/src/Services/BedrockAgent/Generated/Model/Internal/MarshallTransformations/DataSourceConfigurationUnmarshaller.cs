@@ -56,37 +56,37 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("confluenceConfiguration", targetDepth))
+                if (context.TestExpression("confluenceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceDataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ConfluenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Configuration", targetDepth))
+                if (context.TestExpression("s3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("salesforceConfiguration", targetDepth))
+                if (context.TestExpression("salesforceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SalesforceDataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SalesforceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sharePointConfiguration", targetDepth))
+                if (context.TestExpression("sharePointConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SharePointDataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SharePointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webConfiguration", targetDepth))
+                if (context.TestExpression("webConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WebDataSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.WebConfiguration = unmarshaller.Unmarshall(context, ref reader);

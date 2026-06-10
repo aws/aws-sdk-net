@@ -52,7 +52,7 @@ namespace Amazon.SignerData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("revokedEntities", targetDepth))
+                if (context.TestExpression("revokedEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RevokedEntities = unmarshaller.Unmarshall(context, ref reader);

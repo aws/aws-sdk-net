@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomDecalSettings", targetDepth))
+                if (context.TestExpression("CustomDecalSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DecalSettings, DecalSettingsUnmarshaller>(DecalSettingsUnmarshaller.Instance);
                     unmarshalledObject.CustomDecalSettings = unmarshaller.Unmarshall(context, ref reader);

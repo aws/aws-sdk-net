@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nielsenCbetSettings", targetDepth))
+                if (context.TestExpression("nielsenCbetSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenCBETUnmarshaller.Instance;
                     unmarshalledObject.NielsenCbetSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenDistributionType", targetDepth))
+                if (context.TestExpression("nielsenDistributionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NielsenDistributionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenNaesIiNwSettings", targetDepth))
+                if (context.TestExpression("nielsenNaesIiNwSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenNaesIiNwUnmarshaller.Instance;
                     unmarshalledObject.NielsenNaesIiNwSettings = unmarshaller.Unmarshall(context, ref reader);

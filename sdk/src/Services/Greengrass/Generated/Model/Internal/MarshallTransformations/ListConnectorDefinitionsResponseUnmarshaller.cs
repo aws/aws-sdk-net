@@ -52,13 +52,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Definitions", targetDepth))
+                if (context.TestExpression("Definitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DefinitionInformation, DefinitionInformationUnmarshaller>(DefinitionInformationUnmarshaller.Instance);
                     response.Definitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

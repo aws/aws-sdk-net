@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultEbsVolumeSizeInGb", targetDepth))
+                if (context.TestExpression("DefaultEbsVolumeSizeInGb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DefaultEbsVolumeSizeInGb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumEbsVolumeSizeInGb", targetDepth))
+                if (context.TestExpression("MaximumEbsVolumeSizeInGb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumEbsVolumeSizeInGb = unmarshaller.Unmarshall(context, ref reader);

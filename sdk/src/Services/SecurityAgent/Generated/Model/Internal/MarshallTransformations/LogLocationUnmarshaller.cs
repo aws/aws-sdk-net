@@ -56,13 +56,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLog", targetDepth))
+                if (context.TestExpression("cloudWatchLog", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logType", targetDepth))
+                if (context.TestExpression("logType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);

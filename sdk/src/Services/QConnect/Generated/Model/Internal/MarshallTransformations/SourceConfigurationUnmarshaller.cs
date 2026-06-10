@@ -56,13 +56,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appIntegrations", targetDepth))
+                if (context.TestExpression("appIntegrations", targetDepth, ref reader))
                 {
                     var unmarshaller = AppIntegrationsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AppIntegrations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedSourceConfiguration", targetDepth))
+                if (context.TestExpression("managedSourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);

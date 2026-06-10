@@ -72,7 +72,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("retryAfterSeconds", targetDepth))
+                    if (context.TestExpression("retryAfterSeconds", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);

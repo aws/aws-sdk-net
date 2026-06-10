@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizerDescription", targetDepth))
+                if (context.TestExpression("authorizerDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizerDescriptionUnmarshaller.Instance;
                     response.AuthorizerDescription = unmarshaller.Unmarshall(context, ref reader);

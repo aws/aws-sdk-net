@@ -52,31 +52,31 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Budgets", targetDepth))
+                if (context.TestExpression("Budgets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetDetail, BudgetDetailUnmarshaller>(BudgetDetailUnmarshaller.Instance);
                     response.Budgets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductViewDetail", targetDepth))
+                if (context.TestExpression("ProductViewDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductViewDetailUnmarshaller.Instance;
                     response.ProductViewDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactSummaries", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningArtifactSummary, ProvisioningArtifactSummaryUnmarshaller>(ProvisioningArtifactSummaryUnmarshaller.Instance);
                     response.ProvisioningArtifactSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagOptions", targetDepth))
+                if (context.TestExpression("TagOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagOptionDetail, TagOptionDetailUnmarshaller>(TagOptionDetailUnmarshaller.Instance);
                     response.TagOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

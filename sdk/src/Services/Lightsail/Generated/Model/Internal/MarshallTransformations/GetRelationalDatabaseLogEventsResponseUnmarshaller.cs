@@ -52,19 +52,19 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextBackwardToken", targetDepth))
+                if (context.TestExpression("nextBackwardToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextBackwardToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextForwardToken", targetDepth))
+                if (context.TestExpression("nextForwardToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextForwardToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceLogEvents", targetDepth))
+                if (context.TestExpression("resourceLogEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogEvent, LogEventUnmarshaller>(LogEventUnmarshaller.Instance);
                     response.ResourceLogEvents = unmarshaller.Unmarshall(context, ref reader);

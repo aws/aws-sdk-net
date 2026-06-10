@@ -52,67 +52,67 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agreementProposalId", targetDepth))
+                if (context.TestExpression("agreementProposalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgreementProposalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedEntities", targetDepth))
+                if (context.TestExpression("associatedEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OfferAssociatedEntity, OfferAssociatedEntityUnmarshaller>(OfferAssociatedEntityUnmarshaller.Instance);
                     response.AssociatedEntities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availableFromTime", targetDepth))
+                if (context.TestExpression("availableFromTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.AvailableFromTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("badges", targetDepth))
+                if (context.TestExpression("badges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PurchaseOptionBadge, PurchaseOptionBadgeUnmarshaller>(PurchaseOptionBadgeUnmarshaller.Instance);
                     response.Badges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("catalog", targetDepth))
+                if (context.TestExpression("catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expirationTime", targetDepth))
+                if (context.TestExpression("expirationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpirationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offerId", targetDepth))
+                if (context.TestExpression("offerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OfferId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offerName", targetDepth))
+                if (context.TestExpression("offerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OfferName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pricingModel", targetDepth))
+                if (context.TestExpression("pricingModel", targetDepth, ref reader))
                 {
                     var unmarshaller = PricingModelUnmarshaller.Instance;
                     response.PricingModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replacementAgreementId", targetDepth))
+                if (context.TestExpression("replacementAgreementId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplacementAgreementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sellerOfRecord", targetDepth))
+                if (context.TestExpression("sellerOfRecord", targetDepth, ref reader))
                 {
                     var unmarshaller = SellerInformationUnmarshaller.Instance;
                     response.SellerOfRecord = unmarshaller.Unmarshall(context, ref reader);

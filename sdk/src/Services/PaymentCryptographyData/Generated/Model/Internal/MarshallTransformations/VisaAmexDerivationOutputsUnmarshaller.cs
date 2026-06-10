@@ -56,25 +56,25 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationRequestKeyArn", targetDepth))
+                if (context.TestExpression("AuthorizationRequestKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationRequestKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthorizationRequestKeyCheckValue", targetDepth))
+                if (context.TestExpression("AuthorizationRequestKeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationRequestKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentPinPekArn", targetDepth))
+                if (context.TestExpression("CurrentPinPekArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentPinPekArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentPinPekKeyCheckValue", targetDepth))
+                if (context.TestExpression("CurrentPinPekKeyCheckValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentPinPekKeyCheckValue = unmarshaller.Unmarshall(context, ref reader);

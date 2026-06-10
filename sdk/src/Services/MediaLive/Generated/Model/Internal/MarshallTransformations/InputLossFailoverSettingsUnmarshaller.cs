@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputLossThresholdMsec", targetDepth))
+                if (context.TestExpression("inputLossThresholdMsec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InputLossThresholdMsec = unmarshaller.Unmarshall(context, ref reader);

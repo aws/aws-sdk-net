@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TargetTracking", targetDepth))
+                if (context.TestExpression("TargetTracking", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetTrackingScalingPolicyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetTracking = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("numberValidation", targetDepth))
+                if (context.TestExpression("numberValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberValidationUnmarshaller.Instance;
                     unmarshalledObject.NumberValidation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringListValidation", targetDepth))
+                if (context.TestExpression("stringListValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringListValidationUnmarshaller.Instance;
                     unmarshalledObject.StringListValidation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringValidation", targetDepth))
+                if (context.TestExpression("stringValidation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringValidationUnmarshaller.Instance;
                     unmarshalledObject.StringValidation = unmarshaller.Unmarshall(context, ref reader);

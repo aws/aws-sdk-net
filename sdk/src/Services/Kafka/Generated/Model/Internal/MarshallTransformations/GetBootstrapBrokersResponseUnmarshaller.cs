@@ -52,85 +52,85 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bootstrapBrokerString", targetDepth))
+                if (context.TestExpression("bootstrapBrokerString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringIpv6", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringIpv6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringPublicSaslIam", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringPublicSaslIam", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringPublicSaslIam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringPublicSaslScram", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringPublicSaslScram", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringPublicSaslScram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringPublicTls", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringPublicTls", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringPublicTls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringSaslIam", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringSaslIam", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringSaslIam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringSaslIamIpv6", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringSaslIamIpv6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringSaslIamIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringSaslScram", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringSaslScram", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringSaslScram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringSaslScramIpv6", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringSaslScramIpv6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringSaslScramIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringTls", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringTls", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringTls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringTlsIpv6", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringTlsIpv6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringTlsIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringVpcConnectivitySaslIam", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringVpcConnectivitySaslIam", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringVpcConnectivitySaslIam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringVpcConnectivitySaslScram", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringVpcConnectivitySaslScram", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringVpcConnectivitySaslScram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bootstrapBrokerStringVpcConnectivityTls", targetDepth))
+                if (context.TestExpression("bootstrapBrokerStringVpcConnectivityTls", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BootstrapBrokerStringVpcConnectivityTls = unmarshaller.Unmarshall(context, ref reader);

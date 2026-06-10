@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalSourcesConfiguration", targetDepth))
+                if (context.TestExpression("externalSourcesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalSourcesRetrieveAndGenerateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExternalSourcesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseConfiguration", targetDepth))
+                if (context.TestExpression("knowledgeBaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseRetrieveAndGenerateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

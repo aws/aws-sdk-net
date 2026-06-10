@@ -56,7 +56,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EC2ResourceDetails", targetDepth))
+                if (context.TestExpression("EC2ResourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2ResourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.EC2ResourceDetails = unmarshaller.Unmarshall(context, ref reader);

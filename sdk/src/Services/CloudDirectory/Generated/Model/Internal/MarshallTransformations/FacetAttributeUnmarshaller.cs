@@ -56,25 +56,25 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeDefinition", targetDepth))
+                if (context.TestExpression("AttributeDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = FacetAttributeDefinitionUnmarshaller.Instance;
                     unmarshalledObject.AttributeDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttributeReference", targetDepth))
+                if (context.TestExpression("AttributeReference", targetDepth, ref reader))
                 {
                     var unmarshaller = FacetAttributeReferenceUnmarshaller.Instance;
                     unmarshalledObject.AttributeReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequiredBehavior", targetDepth))
+                if (context.TestExpression("RequiredBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequiredBehavior = unmarshaller.Unmarshall(context, ref reader);

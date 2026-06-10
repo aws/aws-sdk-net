@@ -56,7 +56,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allocationStrategy", targetDepth))
+                if (context.TestExpression("allocationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context, ref reader);

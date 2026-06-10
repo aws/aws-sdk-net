@@ -56,49 +56,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("colorCorrector", targetDepth))
+                if (context.TestExpression("colorCorrector", targetDepth, ref reader))
                 {
                     var unmarshaller = ColorCorrectorUnmarshaller.Instance;
                     unmarshalledObject.ColorCorrector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deinterlacer", targetDepth))
+                if (context.TestExpression("deinterlacer", targetDepth, ref reader))
                 {
                     var unmarshaller = DeinterlacerUnmarshaller.Instance;
                     unmarshalledObject.Deinterlacer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dolbyVision", targetDepth))
+                if (context.TestExpression("dolbyVision", targetDepth, ref reader))
                 {
                     var unmarshaller = DolbyVisionUnmarshaller.Instance;
                     unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hdr10Plus", targetDepth))
+                if (context.TestExpression("hdr10Plus", targetDepth, ref reader))
                 {
                     var unmarshaller = Hdr10PlusUnmarshaller.Instance;
                     unmarshalledObject.Hdr10Plus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageInserter", targetDepth))
+                if (context.TestExpression("imageInserter", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageInserterUnmarshaller.Instance;
                     unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noiseReducer", targetDepth))
+                if (context.TestExpression("noiseReducer", targetDepth, ref reader))
                 {
                     var unmarshaller = NoiseReducerUnmarshaller.Instance;
                     unmarshalledObject.NoiseReducer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("partnerWatermarking", targetDepth))
+                if (context.TestExpression("partnerWatermarking", targetDepth, ref reader))
                 {
                     var unmarshaller = PartnerWatermarkingUnmarshaller.Instance;
                     unmarshalledObject.PartnerWatermarking = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeBurnin", targetDepth))
+                if (context.TestExpression("timecodeBurnin", targetDepth, ref reader))
                 {
                     var unmarshaller = TimecodeBurninUnmarshaller.Instance;
                     unmarshalledObject.TimecodeBurnin = unmarshaller.Unmarshall(context, ref reader);

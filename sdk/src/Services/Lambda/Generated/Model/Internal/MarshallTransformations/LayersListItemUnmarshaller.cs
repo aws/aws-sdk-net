@@ -56,19 +56,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LatestMatchingVersion", targetDepth))
+                if (context.TestExpression("LatestMatchingVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = LayerVersionsListItemUnmarshaller.Instance;
                     unmarshalledObject.LatestMatchingVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LayerArn", targetDepth))
+                if (context.TestExpression("LayerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LayerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LayerName", targetDepth))
+                if (context.TestExpression("LayerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LayerName = unmarshaller.Unmarshall(context, ref reader);

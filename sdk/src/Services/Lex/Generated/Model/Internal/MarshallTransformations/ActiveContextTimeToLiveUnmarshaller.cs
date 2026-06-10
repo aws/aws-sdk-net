@@ -56,13 +56,13 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("timeToLiveInSeconds", targetDepth))
+                if (context.TestExpression("timeToLiveInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeToLiveInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("turnsToLive", targetDepth))
+                if (context.TestExpression("turnsToLive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TurnsToLive = unmarshaller.Unmarshall(context, ref reader);

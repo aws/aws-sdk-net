@@ -52,19 +52,19 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LFTagOnDatabase", targetDepth))
+                if (context.TestExpression("LFTagOnDatabase", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
                     response.LFTagOnDatabase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTagsOnColumns", targetDepth))
+                if (context.TestExpression("LFTagsOnColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnLFTag, ColumnLFTagUnmarshaller>(ColumnLFTagUnmarshaller.Instance);
                     response.LFTagsOnColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LFTagsOnTable", targetDepth))
+                if (context.TestExpression("LFTagsOnTable", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LFTagPair, LFTagPairUnmarshaller>(LFTagPairUnmarshaller.Instance);
                     response.LFTagsOnTable = unmarshaller.Unmarshall(context, ref reader);

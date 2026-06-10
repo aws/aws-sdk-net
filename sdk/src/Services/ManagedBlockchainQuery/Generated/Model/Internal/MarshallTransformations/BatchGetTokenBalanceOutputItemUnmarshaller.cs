@@ -56,31 +56,31 @@ namespace Amazon.ManagedBlockchainQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("atBlockchainInstant", targetDepth))
+                if (context.TestExpression("atBlockchainInstant", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockchainInstantUnmarshaller.Instance;
                     unmarshalledObject.AtBlockchainInstant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("balance", targetDepth))
+                if (context.TestExpression("balance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Balance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedTime", targetDepth))
+                if (context.TestExpression("lastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockchainInstantUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ownerIdentifier", targetDepth))
+                if (context.TestExpression("ownerIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = OwnerIdentifierUnmarshaller.Instance;
                     unmarshalledObject.OwnerIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenIdentifier", targetDepth))
+                if (context.TestExpression("tokenIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenIdentifierUnmarshaller.Instance;
                     unmarshalledObject.TokenIdentifier = unmarshaller.Unmarshall(context, ref reader);

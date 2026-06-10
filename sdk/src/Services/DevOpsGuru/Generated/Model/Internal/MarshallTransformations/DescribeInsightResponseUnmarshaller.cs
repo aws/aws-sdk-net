@@ -52,13 +52,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProactiveInsight", targetDepth))
+                if (context.TestExpression("ProactiveInsight", targetDepth, ref reader))
                 {
                     var unmarshaller = ProactiveInsightUnmarshaller.Instance;
                     response.ProactiveInsight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReactiveInsight", targetDepth))
+                if (context.TestExpression("ReactiveInsight", targetDepth, ref reader))
                 {
                     var unmarshaller = ReactiveInsightUnmarshaller.Instance;
                     response.ReactiveInsight = unmarshaller.Unmarshall(context, ref reader);

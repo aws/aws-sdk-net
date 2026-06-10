@@ -56,25 +56,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("excludedUsersAndGroups", targetDepth))
+                if (context.TestExpression("excludedUsersAndGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = UsersAndGroupsUnmarshaller.Instance;
                     unmarshalledObject.ExcludedUsersAndGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includedUsersAndGroups", targetDepth))
+                if (context.TestExpression("includedUsersAndGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = UsersAndGroupsUnmarshaller.Instance;
                     unmarshalledObject.IncludedUsersAndGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleConfiguration", targetDepth))
+                if (context.TestExpression("ruleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RuleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleType", targetDepth))
+                if (context.TestExpression("ruleType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleType = unmarshaller.Unmarshall(context, ref reader);

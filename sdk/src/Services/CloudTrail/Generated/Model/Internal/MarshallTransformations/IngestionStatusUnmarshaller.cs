@@ -56,31 +56,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LatestIngestionAttemptEventID", targetDepth))
+                if (context.TestExpression("LatestIngestionAttemptEventID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionAttemptEventID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestIngestionAttemptTime", targetDepth))
+                if (context.TestExpression("LatestIngestionAttemptTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionAttemptTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestIngestionErrorCode", targetDepth))
+                if (context.TestExpression("LatestIngestionErrorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestIngestionSuccessEventID", targetDepth))
+                if (context.TestExpression("LatestIngestionSuccessEventID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionSuccessEventID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestIngestionSuccessTime", targetDepth))
+                if (context.TestExpression("LatestIngestionSuccessTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestIngestionSuccessTime = unmarshaller.Unmarshall(context, ref reader);

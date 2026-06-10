@@ -52,37 +52,37 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DkimAttributes", targetDepth))
+                if (context.TestExpression("DkimAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = DkimAttributesUnmarshaller.Instance;
                     response.DkimAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeedbackForwardingStatus", targetDepth))
+                if (context.TestExpression("FeedbackForwardingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.FeedbackForwardingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityType", targetDepth))
+                if (context.TestExpression("IdentityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailFromAttributes", targetDepth))
+                if (context.TestExpression("MailFromAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = MailFromAttributesUnmarshaller.Instance;
                     response.MailFromAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
+                if (context.TestExpression("VerifiedForSendingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context, ref reader);

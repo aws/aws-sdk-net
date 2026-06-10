@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arc", targetDepth))
+                if (context.TestExpression("Arc", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartArcConditionalFormattingUnmarshaller.Instance;
                     unmarshalledObject.Arc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValue", targetDepth))
+                if (context.TestExpression("PrimaryValue", targetDepth, ref reader))
                 {
                     var unmarshaller = GaugeChartPrimaryValueConditionalFormattingUnmarshaller.Instance;
                     unmarshalledObject.PrimaryValue = unmarshaller.Unmarshall(context, ref reader);

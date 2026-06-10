@@ -52,7 +52,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pipelineExecution", targetDepth))
+                if (context.TestExpression("pipelineExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = PipelineExecutionUnmarshaller.Instance;
                     response.PipelineExecution = unmarshaller.Unmarshall(context, ref reader);

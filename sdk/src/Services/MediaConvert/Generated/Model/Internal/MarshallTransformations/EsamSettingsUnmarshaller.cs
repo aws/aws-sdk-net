@@ -56,19 +56,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("manifestConfirmConditionNotification", targetDepth))
+                if (context.TestExpression("manifestConfirmConditionNotification", targetDepth, ref reader))
                 {
                     var unmarshaller = EsamManifestConfirmConditionNotificationUnmarshaller.Instance;
                     unmarshalledObject.ManifestConfirmConditionNotification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responseSignalPreroll", targetDepth))
+                if (context.TestExpression("responseSignalPreroll", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ResponseSignalPreroll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signalProcessingNotification", targetDepth))
+                if (context.TestExpression("signalProcessingNotification", targetDepth, ref reader))
                 {
                     var unmarshaller = EsamSignalProcessingNotificationUnmarshaller.Instance;
                     unmarshalledObject.SignalProcessingNotification = unmarshaller.Unmarshall(context, ref reader);

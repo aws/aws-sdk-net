@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PathId", targetDepth))
+                if (context.TestExpression("PathId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PathId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductId", targetDepth))
+                if (context.TestExpression("ProductId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProductId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningArtifactId", targetDepth))
+                if (context.TestExpression("ProvisioningArtifactId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisioningArtifactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisioningParameters", targetDepth))
+                if (context.TestExpression("ProvisioningParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisioningParameter, ProvisioningParameterUnmarshaller>(ProvisioningParameterUnmarshaller.Instance);
                     unmarshalledObject.ProvisioningParameters = unmarshaller.Unmarshall(context, ref reader);

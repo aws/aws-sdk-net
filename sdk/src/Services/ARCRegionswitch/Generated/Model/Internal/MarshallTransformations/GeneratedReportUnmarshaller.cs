@@ -56,13 +56,13 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reportGenerationTime", targetDepth))
+                if (context.TestExpression("reportGenerationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ReportGenerationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reportOutput", targetDepth))
+                if (context.TestExpression("reportOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportOutputUnmarshaller.Instance;
                     unmarshalledObject.ReportOutput = unmarshaller.Unmarshall(context, ref reader);

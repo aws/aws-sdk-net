@@ -52,13 +52,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentSpaceId", targetDepth))
+                if (context.TestExpression("agentSpaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AgentSpaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idp", targetDepth))
+                if (context.TestExpression("idp", targetDepth, ref reader))
                 {
                     var unmarshaller = IdpAuthConfigurationUnmarshaller.Instance;
                     response.Idp = unmarshaller.Unmarshall(context, ref reader);

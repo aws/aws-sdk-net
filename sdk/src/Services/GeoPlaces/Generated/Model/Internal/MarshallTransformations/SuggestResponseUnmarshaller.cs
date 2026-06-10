@@ -52,13 +52,13 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("QueryRefinements", targetDepth))
+                if (context.TestExpression("QueryRefinements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryRefinement, QueryRefinementUnmarshaller>(QueryRefinementUnmarshaller.Instance);
                     response.QueryRefinements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultItems", targetDepth))
+                if (context.TestExpression("ResultItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuggestResultItem, SuggestResultItemUnmarshaller>(SuggestResultItemUnmarshaller.Instance);
                     response.ResultItems = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeSuggestionsMode", targetDepth))
+                if (context.TestExpression("AttributeSuggestionsMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributeSuggestionsMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuggestableConfigList", targetDepth))
+                if (context.TestExpression("SuggestableConfigList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuggestableConfig, SuggestableConfigUnmarshaller>(SuggestableConfigUnmarshaller.Instance);
                     unmarshalledObject.SuggestableConfigList = unmarshaller.Unmarshall(context, ref reader);

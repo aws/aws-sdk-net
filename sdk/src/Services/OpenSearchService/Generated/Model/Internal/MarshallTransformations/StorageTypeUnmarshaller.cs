@@ -56,19 +56,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StorageSubTypeName", targetDepth))
+                if (context.TestExpression("StorageSubTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageSubTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageTypeLimits", targetDepth))
+                if (context.TestExpression("StorageTypeLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StorageTypeLimit, StorageTypeLimitUnmarshaller>(StorageTypeLimitUnmarshaller.Instance);
                     unmarshalledObject.StorageTypeLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageTypeName", targetDepth))
+                if (context.TestExpression("StorageTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageTypeName = unmarshaller.Unmarshall(context, ref reader);

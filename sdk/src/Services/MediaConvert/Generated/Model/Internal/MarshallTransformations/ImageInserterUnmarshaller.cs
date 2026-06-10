@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("insertableImages", targetDepth))
+                if (context.TestExpression("insertableImages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InsertableImage, InsertableImageUnmarshaller>(InsertableImageUnmarshaller.Instance);
                     unmarshalledObject.InsertableImages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth))
+                if (context.TestExpression("sdrReferenceWhiteLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SdrReferenceWhiteLevel = unmarshaller.Unmarshall(context, ref reader);

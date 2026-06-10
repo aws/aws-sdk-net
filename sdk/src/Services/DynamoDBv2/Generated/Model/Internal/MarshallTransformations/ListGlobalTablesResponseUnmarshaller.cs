@@ -52,13 +52,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalTables", targetDepth))
+                if (context.TestExpression("GlobalTables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GlobalTable, GlobalTableUnmarshaller>(GlobalTableUnmarshaller.Instance);
                     response.GlobalTables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastEvaluatedGlobalTableName", targetDepth))
+                if (context.TestExpression("LastEvaluatedGlobalTableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastEvaluatedGlobalTableName = unmarshaller.Unmarshall(context, ref reader);

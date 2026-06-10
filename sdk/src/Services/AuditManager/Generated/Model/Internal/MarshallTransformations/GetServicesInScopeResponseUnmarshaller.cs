@@ -52,7 +52,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serviceMetadata", targetDepth))
+                if (context.TestExpression("serviceMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceMetadata, ServiceMetadataUnmarshaller>(ServiceMetadataUnmarshaller.Instance);
                     response.ServiceMetadata = unmarshaller.Unmarshall(context, ref reader);

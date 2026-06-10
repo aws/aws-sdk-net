@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SeedUrlConfiguration", targetDepth))
+                if (context.TestExpression("SeedUrlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SeedUrlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SeedUrlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SiteMapsConfiguration", targetDepth))
+                if (context.TestExpression("SiteMapsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SiteMapsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SiteMapsConfiguration = unmarshaller.Unmarshall(context, ref reader);

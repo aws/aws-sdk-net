@@ -56,25 +56,25 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Definitions", targetDepth))
+                if (context.TestExpression("Definitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Definition, DefinitionUnmarshaller>(DefinitionUnmarshaller.Instance);
                     unmarshalledObject.Definitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentName", targetDepth))
+                if (context.TestExpression("DeploymentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureHandlingPolicy", targetDepth))
+                if (context.TestExpression("FailureHandlingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureHandlingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

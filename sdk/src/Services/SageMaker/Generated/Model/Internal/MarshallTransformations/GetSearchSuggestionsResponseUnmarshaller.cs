@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PropertyNameSuggestions", targetDepth))
+                if (context.TestExpression("PropertyNameSuggestions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropertyNameSuggestion, PropertyNameSuggestionUnmarshaller>(PropertyNameSuggestionUnmarshaller.Instance);
                     response.PropertyNameSuggestions = unmarshaller.Unmarshall(context, ref reader);

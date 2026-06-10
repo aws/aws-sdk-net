@@ -56,13 +56,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainEntryPoint", targetDepth))
+                if (context.TestExpression("domainEntryPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainEntryPointUnmarshaller.Instance;
                     unmarshalledObject.DomainEntryPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("originType", targetDepth))
+                if (context.TestExpression("originType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OriginType = unmarshaller.Unmarshall(context, ref reader);

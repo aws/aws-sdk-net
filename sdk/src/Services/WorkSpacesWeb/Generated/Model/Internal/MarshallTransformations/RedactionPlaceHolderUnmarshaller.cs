@@ -56,13 +56,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("redactionPlaceHolderText", targetDepth))
+                if (context.TestExpression("redactionPlaceHolderText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedactionPlaceHolderText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redactionPlaceHolderType", targetDepth))
+                if (context.TestExpression("redactionPlaceHolderType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedactionPlaceHolderType = unmarshaller.Unmarshall(context, ref reader);

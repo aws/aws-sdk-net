@@ -56,115 +56,115 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectedRouterOutputArn", targetDepth))
+                if (context.TestExpression("connectedRouterOutputArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectedRouterOutputArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
+                if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataTransferSubscriberFeePercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("decryption", targetDepth))
+                if (context.TestExpression("decryption", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionUnmarshaller.Instance;
                     unmarshalledObject.Decryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entitlementArn", targetDepth))
+                if (context.TestExpression("entitlementArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gatewayBridgeSource", targetDepth))
+                if (context.TestExpression("gatewayBridgeSource", targetDepth, ref reader))
                 {
                     var unmarshaller = GatewayBridgeSourceUnmarshaller.Instance;
                     unmarshalledObject.GatewayBridgeSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingestIp", targetDepth))
+                if (context.TestExpression("ingestIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IngestIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingestPort", targetDepth))
+                if (context.TestExpression("ingestPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IngestPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaStreamSourceConfigurations", targetDepth))
+                if (context.TestExpression("mediaStreamSourceConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MediaStreamSourceConfiguration, MediaStreamSourceConfigurationUnmarshaller>(MediaStreamSourceConfigurationUnmarshaller.Instance);
                     unmarshalledObject.MediaStreamSourceConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("peerIpAddress", targetDepth))
+                if (context.TestExpression("peerIpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PeerIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routerIntegrationState", targetDepth))
+                if (context.TestExpression("routerIntegrationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RouterIntegrationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routerIntegrationTransitDecryption", targetDepth))
+                if (context.TestExpression("routerIntegrationTransitDecryption", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTransitEncryptionUnmarshaller.Instance;
                     unmarshalledObject.RouterIntegrationTransitDecryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("senderControlPort", targetDepth))
+                if (context.TestExpression("senderControlPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SenderControlPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("senderIpAddress", targetDepth))
+                if (context.TestExpression("senderIpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceArn", targetDepth))
+                if (context.TestExpression("sourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transport", targetDepth))
+                if (context.TestExpression("transport", targetDepth, ref reader))
                 {
                     var unmarshaller = TransportUnmarshaller.Instance;
                     unmarshalledObject.Transport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcInterfaceName", targetDepth))
+                if (context.TestExpression("vpcInterfaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcInterfaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("whitelistCidr", targetDepth))
+                if (context.TestExpression("whitelistCidr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WhitelistCidr = unmarshaller.Unmarshall(context, ref reader);

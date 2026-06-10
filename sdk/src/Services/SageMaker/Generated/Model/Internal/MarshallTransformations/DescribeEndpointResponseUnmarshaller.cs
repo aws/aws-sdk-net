@@ -52,91 +52,91 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AsyncInferenceConfig", targetDepth))
+                if (context.TestExpression("AsyncInferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AsyncInferenceConfigUnmarshaller.Instance;
                     response.AsyncInferenceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCaptureConfig", targetDepth))
+                if (context.TestExpression("DataCaptureConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCaptureConfigSummaryUnmarshaller.Instance;
                     response.DataCaptureConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointArn", targetDepth))
+                if (context.TestExpression("EndpointArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointConfigName", targetDepth))
+                if (context.TestExpression("EndpointConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointName", targetDepth))
+                if (context.TestExpression("EndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointStatus", targetDepth))
+                if (context.TestExpression("EndpointStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EndpointStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExplainerConfig", targetDepth))
+                if (context.TestExpression("ExplainerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExplainerConfigUnmarshaller.Instance;
                     response.ExplainerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastDeploymentConfig", targetDepth))
+                if (context.TestExpression("LastDeploymentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentConfigUnmarshaller.Instance;
                     response.LastDeploymentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricsConfig", targetDepth))
+                if (context.TestExpression("MetricsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricsConfigUnmarshaller.Instance;
                     response.MetricsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PendingDeploymentSummary", targetDepth))
+                if (context.TestExpression("PendingDeploymentSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = PendingDeploymentSummaryUnmarshaller.Instance;
                     response.PendingDeploymentSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductionVariants", targetDepth))
+                if (context.TestExpression("ProductionVariants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);
                     response.ProductionVariants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                if (context.TestExpression("ShadowProductionVariants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProductionVariantSummary, ProductionVariantSummaryUnmarshaller>(ProductionVariantSummaryUnmarshaller.Instance);
                     response.ShadowProductionVariants = unmarshaller.Unmarshall(context, ref reader);

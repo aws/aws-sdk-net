@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capability", targetDepth))
+                if (context.TestExpression("capability", targetDepth, ref reader))
                 {
                     var unmarshaller = CapabilityUnmarshaller.Instance;
                     response.Capability = unmarshaller.Unmarshall(context, ref reader);

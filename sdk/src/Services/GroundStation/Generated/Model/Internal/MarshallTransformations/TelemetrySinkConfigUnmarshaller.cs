@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("telemetrySinkData", targetDepth))
+                if (context.TestExpression("telemetrySinkData", targetDepth, ref reader))
                 {
                     var unmarshaller = TelemetrySinkDataUnmarshaller.Instance;
                     unmarshalledObject.TelemetrySinkData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("telemetrySinkType", targetDepth))
+                if (context.TestExpression("telemetrySinkType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TelemetrySinkType = unmarshaller.Unmarshall(context, ref reader);

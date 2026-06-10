@@ -56,19 +56,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetTypeItem", targetDepth))
+                if (context.TestExpression("assetTypeItem", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetTypeItemUnmarshaller.Instance;
                     unmarshalledObject.AssetTypeItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("formTypeItem", targetDepth))
+                if (context.TestExpression("formTypeItem", targetDepth, ref reader))
                 {
                     var unmarshaller = FormTypeDataUnmarshaller.Instance;
                     unmarshalledObject.FormTypeItem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lineageNodeTypeItem", targetDepth))
+                if (context.TestExpression("lineageNodeTypeItem", targetDepth, ref reader))
                 {
                     var unmarshaller = LineageNodeTypeItemUnmarshaller.Instance;
                     unmarshalledObject.LineageNodeTypeItem = unmarshaller.Unmarshall(context, ref reader);

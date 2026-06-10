@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Sasl", targetDepth))
+                if (context.TestExpression("Sasl", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationSaslDetailsUnmarshaller.Instance;
                     unmarshalledObject.Sasl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tls", targetDepth))
+                if (context.TestExpression("Tls", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationTlsDetailsUnmarshaller.Instance;
                     unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Unauthenticated", targetDepth))
+                if (context.TestExpression("Unauthenticated", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetailsUnmarshaller.Instance;
                     unmarshalledObject.Unauthenticated = unmarshaller.Unmarshall(context, ref reader);

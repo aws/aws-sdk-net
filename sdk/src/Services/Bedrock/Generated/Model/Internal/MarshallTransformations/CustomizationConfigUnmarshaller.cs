@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("distillationConfig", targetDepth))
+                if (context.TestExpression("distillationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DistillationConfigUnmarshaller.Instance;
                     unmarshalledObject.DistillationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rftConfig", targetDepth))
+                if (context.TestExpression("rftConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RFTConfigUnmarshaller.Instance;
                     unmarshalledObject.RftConfig = unmarshaller.Unmarshall(context, ref reader);

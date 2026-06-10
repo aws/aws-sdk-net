@@ -52,7 +52,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Subscription", targetDepth))
+                if (context.TestExpression("Subscription", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionUnmarshaller.Instance;
                     response.Subscription = unmarshaller.Unmarshall(context, ref reader);

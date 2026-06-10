@@ -56,13 +56,13 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("firehoseStream", targetDepth))
+                if (context.TestExpression("firehoseStream", targetDepth, ref reader))
                 {
                     var unmarshaller = FirehoseStreamUnmarshaller.Instance;
                     unmarshalledObject.FirehoseStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Bucket", targetDepth))
+                if (context.TestExpression("s3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketUnmarshaller.Instance;
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("columnClassification", targetDepth))
+                if (context.TestExpression("columnClassification", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnClassificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ColumnClassification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epsilon", targetDepth))
+                if (context.TestExpression("epsilon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Epsilon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxMembershipInferenceAttackScore", targetDepth))
+                if (context.TestExpression("maxMembershipInferenceAttackScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxMembershipInferenceAttackScore = unmarshaller.Unmarshall(context, ref reader);

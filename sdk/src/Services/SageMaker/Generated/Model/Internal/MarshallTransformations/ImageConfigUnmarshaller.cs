@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RepositoryAccessMode", targetDepth))
+                if (context.TestExpression("RepositoryAccessMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryAccessMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepositoryAuthConfig", targetDepth))
+                if (context.TestExpression("RepositoryAuthConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryAuthConfigUnmarshaller.Instance;
                     unmarshalledObject.RepositoryAuthConfig = unmarshaller.Unmarshall(context, ref reader);

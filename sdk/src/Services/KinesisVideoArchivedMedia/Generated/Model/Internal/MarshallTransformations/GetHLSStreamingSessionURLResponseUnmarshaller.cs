@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HLSStreamingSessionURL", targetDepth))
+                if (context.TestExpression("HLSStreamingSessionURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HLSStreamingSessionURL = unmarshaller.Unmarshall(context, ref reader);

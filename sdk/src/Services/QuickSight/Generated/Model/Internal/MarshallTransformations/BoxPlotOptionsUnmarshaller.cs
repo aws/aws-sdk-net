@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllDataPointsVisibility", targetDepth))
+                if (context.TestExpression("AllDataPointsVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AllDataPointsVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutlierVisibility", targetDepth))
+                if (context.TestExpression("OutlierVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutlierVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StyleOptions", targetDepth))
+                if (context.TestExpression("StyleOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = BoxPlotStyleOptionsUnmarshaller.Instance;
                     unmarshalledObject.StyleOptions = unmarshaller.Unmarshall(context, ref reader);

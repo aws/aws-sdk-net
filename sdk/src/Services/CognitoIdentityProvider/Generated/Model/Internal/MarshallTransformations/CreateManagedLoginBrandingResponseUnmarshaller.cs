@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedLoginBranding", targetDepth))
+                if (context.TestExpression("ManagedLoginBranding", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedLoginBrandingTypeUnmarshaller.Instance;
                     response.ManagedLoginBranding = unmarshaller.Unmarshall(context, ref reader);

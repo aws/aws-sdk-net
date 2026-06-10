@@ -56,13 +56,13 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EinvoiceDeliveryDocumentType", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryDocumentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryDocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderDataSourceType", targetDepth))
+                if (context.TestExpression("PurchaseOrderDataSourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOrderDataSourceType = unmarshaller.Unmarshall(context, ref reader);

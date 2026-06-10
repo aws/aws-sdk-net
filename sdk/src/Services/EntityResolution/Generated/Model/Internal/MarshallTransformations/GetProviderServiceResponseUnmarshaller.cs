@@ -52,79 +52,79 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("anonymizedOutput", targetDepth))
+                if (context.TestExpression("anonymizedOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AnonymizedOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerComponentSchema", targetDepth))
+                if (context.TestExpression("providerComponentSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderComponentSchemaUnmarshaller.Instance;
                     response.ProviderComponentSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerConfigurationDefinition", targetDepth))
+                if (context.TestExpression("providerConfigurationDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.ProviderConfigurationDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerEndpointConfiguration", targetDepth))
+                if (context.TestExpression("providerEndpointConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderEndpointConfigurationUnmarshaller.Instance;
                     response.ProviderEndpointConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerEntityOutputDefinition", targetDepth))
+                if (context.TestExpression("providerEntityOutputDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.ProviderEntityOutputDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerIdNameSpaceConfiguration", targetDepth))
+                if (context.TestExpression("providerIdNameSpaceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderIdNameSpaceConfigurationUnmarshaller.Instance;
                     response.ProviderIdNameSpaceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerIntermediateDataAccessConfiguration", targetDepth))
+                if (context.TestExpression("providerIntermediateDataAccessConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderIntermediateDataAccessConfigurationUnmarshaller.Instance;
                     response.ProviderIntermediateDataAccessConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerJobConfiguration", targetDepth))
+                if (context.TestExpression("providerJobConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.ProviderJobConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerName", targetDepth))
+                if (context.TestExpression("providerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerServiceArn", targetDepth))
+                if (context.TestExpression("providerServiceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderServiceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerServiceDisplayName", targetDepth))
+                if (context.TestExpression("providerServiceDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderServiceDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerServiceName", targetDepth))
+                if (context.TestExpression("providerServiceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerServiceType", targetDepth))
+                if (context.TestExpression("providerServiceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderServiceType = unmarshaller.Unmarshall(context, ref reader);

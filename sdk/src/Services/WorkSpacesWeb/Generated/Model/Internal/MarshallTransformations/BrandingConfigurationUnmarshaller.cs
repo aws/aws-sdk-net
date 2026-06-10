@@ -56,37 +56,37 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("colorTheme", targetDepth))
+                if (context.TestExpression("colorTheme", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColorTheme = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("favicon", targetDepth))
+                if (context.TestExpression("favicon", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageMetadataUnmarshaller.Instance;
                     unmarshalledObject.Favicon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localizedStrings", targetDepth))
+                if (context.TestExpression("localizedStrings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, LocalizedBrandingStrings, StringUnmarshaller, LocalizedBrandingStringsUnmarshaller>(StringUnmarshaller.Instance, LocalizedBrandingStringsUnmarshaller.Instance);
                     unmarshalledObject.LocalizedStrings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logo", targetDepth))
+                if (context.TestExpression("logo", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageMetadataUnmarshaller.Instance;
                     unmarshalledObject.Logo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("termsOfService", targetDepth))
+                if (context.TestExpression("termsOfService", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TermsOfService = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wallpaper", targetDepth))
+                if (context.TestExpression("wallpaper", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageMetadataUnmarshaller.Instance;
                     unmarshalledObject.Wallpaper = unmarshaller.Unmarshall(context, ref reader);

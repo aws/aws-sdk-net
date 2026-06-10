@@ -52,7 +52,7 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SignalResponse", targetDepth))
+                if (context.TestExpression("SignalResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SignalResponse = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TypedLinkSpecifier", targetDepth))
+                if (context.TestExpression("TypedLinkSpecifier", targetDepth, ref reader))
                 {
                     var unmarshaller = TypedLinkSpecifierUnmarshaller.Instance;
                     response.TypedLinkSpecifier = unmarshaller.Unmarshall(context, ref reader);

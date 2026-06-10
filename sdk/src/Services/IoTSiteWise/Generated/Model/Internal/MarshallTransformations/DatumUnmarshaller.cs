@@ -56,25 +56,25 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arrayValue", targetDepth))
+                if (context.TestExpression("arrayValue", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Datum, DatumUnmarshaller>(DatumUnmarshaller.Instance);
                     unmarshalledObject.ArrayValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nullValue", targetDepth))
+                if (context.TestExpression("nullValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NullValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rowValue", targetDepth))
+                if (context.TestExpression("rowValue", targetDepth, ref reader))
                 {
                     var unmarshaller = RowUnmarshaller.Instance;
                     unmarshalledObject.RowValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalarValue", targetDepth))
+                if (context.TestExpression("scalarValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalarValue = unmarshaller.Unmarshall(context, ref reader);

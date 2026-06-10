@@ -56,13 +56,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awaitAnswerMachinePrompt", targetDepth))
+                if (context.TestExpression("awaitAnswerMachinePrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AwaitAnswerMachinePrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enableAnswerMachineDetection", targetDepth))
+                if (context.TestExpression("enableAnswerMachineDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableAnswerMachineDetection = unmarshaller.Unmarshall(context, ref reader);

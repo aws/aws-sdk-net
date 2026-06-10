@@ -56,13 +56,13 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ASSERTION", targetDepth))
+                if (context.TestExpression("ASSERTION", targetDepth, ref reader))
                 {
                     var unmarshaller = AssertionRuleUnmarshaller.Instance;
                     unmarshalledObject.ASSERTION = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GATING", targetDepth))
+                if (context.TestExpression("GATING", targetDepth, ref reader))
                 {
                     var unmarshaller = GatingRuleUnmarshaller.Instance;
                     unmarshalledObject.GATING = unmarshaller.Unmarshall(context, ref reader);

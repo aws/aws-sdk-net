@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Elements", targetDepth))
+                if (context.TestExpression("Elements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FreeFormLayoutElement, FreeFormLayoutElementUnmarshaller>(FreeFormLayoutElementUnmarshaller.Instance);
                     unmarshalledObject.Elements = unmarshaller.Unmarshall(context, ref reader);

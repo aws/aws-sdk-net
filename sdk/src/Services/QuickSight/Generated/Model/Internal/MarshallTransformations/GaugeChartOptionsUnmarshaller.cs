@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arc", targetDepth))
+                if (context.TestExpression("Arc", targetDepth, ref reader))
                 {
                     var unmarshaller = ArcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Arc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ArcAxis", targetDepth))
+                if (context.TestExpression("ArcAxis", targetDepth, ref reader))
                 {
                     var unmarshaller = ArcAxisConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ArcAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Comparison", targetDepth))
+                if (context.TestExpression("Comparison", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparisonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Comparison = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValueDisplayType", targetDepth))
+                if (context.TestExpression("PrimaryValueDisplayType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryValueDisplayType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryValueFontConfiguration", targetDepth))
+                if (context.TestExpression("PrimaryValueFontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PrimaryValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);

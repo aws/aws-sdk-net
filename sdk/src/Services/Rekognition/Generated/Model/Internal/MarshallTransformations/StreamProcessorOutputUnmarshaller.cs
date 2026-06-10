@@ -56,13 +56,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KinesisDataStream", targetDepth))
+                if (context.TestExpression("KinesisDataStream", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisDataStreamUnmarshaller.Instance;
                     unmarshalledObject.KinesisDataStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Destination", targetDepth))
+                if (context.TestExpression("S3Destination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationUnmarshaller.Instance;
                     unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);

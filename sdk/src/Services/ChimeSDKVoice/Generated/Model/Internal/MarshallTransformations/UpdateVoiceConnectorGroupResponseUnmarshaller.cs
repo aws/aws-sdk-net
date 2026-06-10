@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VoiceConnectorGroup", targetDepth))
+                if (context.TestExpression("VoiceConnectorGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = VoiceConnectorGroupUnmarshaller.Instance;
                     response.VoiceConnectorGroup = unmarshaller.Unmarshall(context, ref reader);

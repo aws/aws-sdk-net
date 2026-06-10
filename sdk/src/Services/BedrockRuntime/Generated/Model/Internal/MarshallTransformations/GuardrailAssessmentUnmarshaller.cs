@@ -56,49 +56,49 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appliedGuardrailDetails", targetDepth))
+                if (context.TestExpression("appliedGuardrailDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AppliedGuardrailDetailsUnmarshaller.Instance;
                     unmarshalledObject.AppliedGuardrailDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("automatedReasoningPolicy", targetDepth))
+                if (context.TestExpression("automatedReasoningPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailAutomatedReasoningPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.AutomatedReasoningPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentPolicy", targetDepth))
+                if (context.TestExpression("contentPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailContentPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.ContentPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contextualGroundingPolicy", targetDepth))
+                if (context.TestExpression("contextualGroundingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailContextualGroundingPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.ContextualGroundingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invocationMetrics", targetDepth))
+                if (context.TestExpression("invocationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailInvocationMetricsUnmarshaller.Instance;
                     unmarshalledObject.InvocationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveInformationPolicy", targetDepth))
+                if (context.TestExpression("sensitiveInformationPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailSensitiveInformationPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.SensitiveInformationPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicPolicy", targetDepth))
+                if (context.TestExpression("topicPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailTopicPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.TopicPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wordPolicy", targetDepth))
+                if (context.TestExpression("wordPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailWordPolicyAssessmentUnmarshaller.Instance;
                     unmarshalledObject.WordPolicy = unmarshaller.Unmarshall(context, ref reader);

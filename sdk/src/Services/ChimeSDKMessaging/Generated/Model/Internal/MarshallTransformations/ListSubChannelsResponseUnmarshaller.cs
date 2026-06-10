@@ -52,19 +52,19 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelArn", targetDepth))
+                if (context.TestExpression("ChannelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChannelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubChannels", targetDepth))
+                if (context.TestExpression("SubChannels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubChannelSummary, SubChannelSummaryUnmarshaller>(SubChannelSummaryUnmarshaller.Instance);
                     response.SubChannels = unmarshaller.Unmarshall(context, ref reader);

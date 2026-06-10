@@ -56,31 +56,31 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdas", targetDepth))
+                if (context.TestExpression("lambdas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Lambdas, LambdasUnmarshaller>(LambdasUnmarshaller.Instance);
                     unmarshalledObject.Lambdas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regionToRun", targetDepth))
+                if (context.TestExpression("regionToRun", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegionToRun = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retryIntervalMinutes", targetDepth))
+                if (context.TestExpression("retryIntervalMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RetryIntervalMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutMinutes", targetDepth))
+                if (context.TestExpression("timeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ungraceful", targetDepth))
+                if (context.TestExpression("ungraceful", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaUngracefulUnmarshaller.Instance;
                     unmarshalledObject.Ungraceful = unmarshaller.Unmarshall(context, ref reader);

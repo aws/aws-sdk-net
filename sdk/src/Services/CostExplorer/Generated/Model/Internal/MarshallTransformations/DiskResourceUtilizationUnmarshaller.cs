@@ -56,25 +56,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DiskReadBytesPerSecond", targetDepth))
+                if (context.TestExpression("DiskReadBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiskReadBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DiskReadOpsPerSecond", targetDepth))
+                if (context.TestExpression("DiskReadOpsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiskReadOpsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DiskWriteBytesPerSecond", targetDepth))
+                if (context.TestExpression("DiskWriteBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiskWriteBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DiskWriteOpsPerSecond", targetDepth))
+                if (context.TestExpression("DiskWriteOpsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiskWriteOpsPerSecond = unmarshaller.Unmarshall(context, ref reader);

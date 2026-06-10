@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("topCapacityUtilization", targetDepth))
+                if (context.TestExpression("topCapacityUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuotaShareCapacityUtilization, QuotaShareCapacityUtilizationUnmarshaller>(QuotaShareCapacityUtilizationUnmarshaller.Instance);
                     unmarshalledObject.TopCapacityUtilization = unmarshaller.Unmarshall(context, ref reader);

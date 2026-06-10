@@ -56,13 +56,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessTokenOnly", targetDepth))
+                if (context.TestExpression("accessTokenOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIdConnectAccessTokenConfigurationItemUnmarshaller.Instance;
                     unmarshalledObject.AccessTokenOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identityTokenOnly", targetDepth))
+                if (context.TestExpression("identityTokenOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIdConnectIdentityTokenConfigurationItemUnmarshaller.Instance;
                     unmarshalledObject.IdentityTokenOnly = unmarshaller.Unmarshall(context, ref reader);

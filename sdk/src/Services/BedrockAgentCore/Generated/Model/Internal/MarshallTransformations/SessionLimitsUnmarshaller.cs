@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxSpendAmount", targetDepth))
+                if (context.TestExpression("maxSpendAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = AmountUnmarshaller.Instance;
                     unmarshalledObject.MaxSpendAmount = unmarshaller.Unmarshall(context, ref reader);

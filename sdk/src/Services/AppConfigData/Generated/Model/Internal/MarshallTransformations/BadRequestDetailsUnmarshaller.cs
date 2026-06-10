@@ -56,7 +56,7 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvalidParameters", targetDepth))
+                if (context.TestExpression("InvalidParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, InvalidParameterDetail, StringUnmarshaller, InvalidParameterDetailUnmarshaller>(StringUnmarshaller.Instance, InvalidParameterDetailUnmarshaller.Instance);
                     unmarshalledObject.InvalidParameters = unmarshaller.Unmarshall(context, ref reader);

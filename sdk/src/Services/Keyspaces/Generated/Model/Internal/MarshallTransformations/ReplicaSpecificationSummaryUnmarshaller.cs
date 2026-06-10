@@ -56,25 +56,25 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacitySpecification", targetDepth))
+                if (context.TestExpression("capacitySpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
                     unmarshalledObject.CapacitySpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("warmThroughputSpecification", targetDepth))
+                if (context.TestExpression("warmThroughputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
                     unmarshalledObject.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);

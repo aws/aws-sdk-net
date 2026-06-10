@@ -52,13 +52,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchCreateBillScenarioCommitmentModificationError, BatchCreateBillScenarioCommitmentModificationErrorUnmarshaller>(BatchCreateBillScenarioCommitmentModificationErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("items", targetDepth))
+                if (context.TestExpression("items", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchCreateBillScenarioCommitmentModificationItem, BatchCreateBillScenarioCommitmentModificationItemUnmarshaller>(BatchCreateBillScenarioCommitmentModificationItemUnmarshaller.Instance);
                     response.Items = unmarshaller.Unmarshall(context, ref reader);

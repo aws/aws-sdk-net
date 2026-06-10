@@ -56,19 +56,19 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilesLimit", targetDepth))
+                if (context.TestExpression("FilesLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = FilesLimitUnmarshaller.Instance;
                     unmarshalledObject.FilesLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedDateCondition", targetDepth))
+                if (context.TestExpression("LastModifiedDateCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterExpressionUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDateCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parameters", targetDepth))
+                if (context.TestExpression("Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, DatasetParameter, StringUnmarshaller, DatasetParameterUnmarshaller>(StringUnmarshaller.Instance, DatasetParameterUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);

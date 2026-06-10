@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogDriver", targetDepth))
+                if (context.TestExpression("LogDriver", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogDriver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Options", targetDepth))
+                if (context.TestExpression("Options", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Options = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretOptions", targetDepth))
+                if (context.TestExpression("SecretOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetails, AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationSecretOptionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.SecretOptions = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudFrontDomain", targetDepth))
+                if (context.TestExpression("CloudFrontDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CloudFrontDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedLoginVersion", targetDepth))
+                if (context.TestExpression("ManagedLoginVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ManagedLoginVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Routing", targetDepth))
+                if (context.TestExpression("Routing", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingTypeUnmarshaller.Instance;
                     response.Routing = unmarshaller.Unmarshall(context, ref reader);

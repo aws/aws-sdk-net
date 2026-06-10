@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColorField", targetDepth))
+                if (context.TestExpression("ColorField", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialLayerColorFieldUnmarshaller.Instance;
                     unmarshalledObject.ColorField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetKeyField", targetDepth))
+                if (context.TestExpression("DatasetKeyField", targetDepth, ref reader))
                 {
                     var unmarshaller = UnaggregatedFieldUnmarshaller.Instance;
                     unmarshalledObject.DatasetKeyField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShapeKeyField", targetDepth))
+                if (context.TestExpression("ShapeKeyField", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShapeKeyField = unmarshaller.Unmarshall(context, ref reader);

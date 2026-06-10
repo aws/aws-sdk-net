@@ -56,37 +56,37 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataAccessRole", targetDepth))
+                if (context.TestExpression("dataAccessRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataAccessRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftCredentialConfiguration", targetDepth))
+                if (context.TestExpression("redshiftCredentialConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftCredentialConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RedshiftCredentialConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftStorage", targetDepth))
+                if (context.TestExpression("redshiftStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftStorageUnmarshaller.Instance;
                     unmarshalledObject.RedshiftStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationalFilterConfigurations", targetDepth))
+                if (context.TestExpression("relationalFilterConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RelationalFilterConfiguration, RelationalFilterConfigurationUnmarshaller>(RelationalFilterConfigurationUnmarshaller.Instance);
                     unmarshalledObject.RelationalFilterConfigurations = unmarshaller.Unmarshall(context, ref reader);

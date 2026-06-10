@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PotentialDisconnectIssue", targetDepth))
+                if (context.TestExpression("PotentialDisconnectIssue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PotentialDisconnectIssue = unmarshaller.Unmarshall(context, ref reader);

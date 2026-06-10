@@ -56,19 +56,19 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dedupeRecords", targetDepth))
+                if (context.TestExpression("dedupeRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DedupeRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dedupeStrategy", targetDepth))
+                if (context.TestExpression("dedupeStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = DataIntegrationFlowDedupeStrategyUnmarshaller.Instance;
                     unmarshalledObject.DedupeStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loadType", targetDepth))
+                if (context.TestExpression("loadType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LoadType = unmarshaller.Unmarshall(context, ref reader);

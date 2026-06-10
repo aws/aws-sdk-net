@@ -56,55 +56,55 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mongoDbAtlasConfiguration", targetDepth))
+                if (context.TestExpression("mongoDbAtlasConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MongoDbAtlasConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MongoDbAtlasConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("neptuneAnalyticsConfiguration", targetDepth))
+                if (context.TestExpression("neptuneAnalyticsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NeptuneAnalyticsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NeptuneAnalyticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("opensearchManagedClusterConfiguration", targetDepth))
+                if (context.TestExpression("opensearchManagedClusterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchManagedClusterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpensearchManagedClusterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("opensearchServerlessConfiguration", targetDepth))
+                if (context.TestExpression("opensearchServerlessConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenSearchServerlessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpensearchServerlessConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pineconeConfiguration", targetDepth))
+                if (context.TestExpression("pineconeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PineconeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PineconeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsConfiguration", targetDepth))
+                if (context.TestExpression("rdsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RdsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redisEnterpriseCloudConfiguration", targetDepth))
+                if (context.TestExpression("redisEnterpriseCloudConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedisEnterpriseCloudConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RedisEnterpriseCloudConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3VectorsConfiguration", targetDepth))
+                if (context.TestExpression("s3VectorsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3VectorsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3VectorsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("disasterRecoveryType", targetDepth))
+                if (context.TestExpression("disasterRecoveryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DisasterRecoveryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isReplicateAutomaticBackups", targetDepth))
+                if (context.TestExpression("isReplicateAutomaticBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsReplicateAutomaticBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isSnapshotStandby", targetDepth))
+                if (context.TestExpression("isSnapshotStandby", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSnapshotStandby = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeSnapshotStandbyEnabledTill", targetDepth))
+                if (context.TestExpression("timeSnapshotStandbyEnabledTill", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimeSnapshotStandbyEnabledTill = unmarshaller.Unmarshall(context, ref reader);

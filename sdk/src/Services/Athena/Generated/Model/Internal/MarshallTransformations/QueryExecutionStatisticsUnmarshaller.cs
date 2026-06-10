@@ -56,61 +56,61 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataManifestLocation", targetDepth))
+                if (context.TestExpression("DataManifestLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataManifestLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataScannedInBytes", targetDepth))
+                if (context.TestExpression("DataScannedInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DataScannedInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DpuCount", targetDepth))
+                if (context.TestExpression("DpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth))
+                if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth))
+                if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryQueueTimeInMillis", targetDepth))
+                if (context.TestExpression("QueryQueueTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultReuseInformation", targetDepth))
+                if (context.TestExpression("ResultReuseInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultReuseInformationUnmarshaller.Instance;
                     unmarshalledObject.ResultReuseInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth))
+                if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
+                if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth))
+                if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);

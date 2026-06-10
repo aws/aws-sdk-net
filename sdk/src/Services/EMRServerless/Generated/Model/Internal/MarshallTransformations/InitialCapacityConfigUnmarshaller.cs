@@ -56,13 +56,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("workerConfiguration", targetDepth))
+                if (context.TestExpression("workerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkerResourceConfigUnmarshaller.Instance;
                     unmarshalledObject.WorkerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerCount", targetDepth))
+                if (context.TestExpression("workerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkerCount = unmarshaller.Unmarshall(context, ref reader);

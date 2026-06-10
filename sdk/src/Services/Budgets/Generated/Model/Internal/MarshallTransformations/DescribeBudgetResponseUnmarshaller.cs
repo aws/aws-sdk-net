@@ -52,7 +52,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Budget", targetDepth))
+                if (context.TestExpression("Budget", targetDepth, ref reader))
                 {
                     var unmarshaller = BudgetUnmarshaller.Instance;
                     response.Budget = unmarshaller.Unmarshall(context, ref reader);

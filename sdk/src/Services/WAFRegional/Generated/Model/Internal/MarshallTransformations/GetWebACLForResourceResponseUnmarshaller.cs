@@ -52,7 +52,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WebACLSummary", targetDepth))
+                if (context.TestExpression("WebACLSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = WebACLSummaryUnmarshaller.Instance;
                     response.WebACLSummary = unmarshaller.Unmarshall(context, ref reader);

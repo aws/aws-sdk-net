@@ -56,97 +56,97 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth))
+                if (context.TestExpression("automatedDiscoveryMonitoringStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutomatedDiscoveryMonitoringStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bucketName", targetDepth))
+                if (context.TestExpression("bucketName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("classifiableObjectCount", targetDepth))
+                if (context.TestExpression("classifiableObjectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ClassifiableObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("classifiableSizeInBytes", targetDepth))
+                if (context.TestExpression("classifiableSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ClassifiableSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorCode", targetDepth))
+                if (context.TestExpression("errorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorMessage", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDetails", targetDepth))
+                if (context.TestExpression("jobDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = JobDetailsUnmarshaller.Instance;
                     unmarshalledObject.JobDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastAutomatedDiscoveryTime", targetDepth))
+                if (context.TestExpression("lastAutomatedDiscoveryTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAutomatedDiscoveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objectCount", targetDepth))
+                if (context.TestExpression("objectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objectCountByEncryptionType", targetDepth))
+                if (context.TestExpression("objectCountByEncryptionType", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectCountByEncryptionTypeUnmarshaller.Instance;
                     unmarshalledObject.ObjectCountByEncryptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitivityScore", targetDepth))
+                if (context.TestExpression("sensitivityScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SensitivityScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sizeInBytes", targetDepth))
+                if (context.TestExpression("sizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sizeInBytesCompressed", targetDepth))
+                if (context.TestExpression("sizeInBytesCompressed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SizeInBytesCompressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unclassifiableObjectCount", targetDepth))
+                if (context.TestExpression("unclassifiableObjectCount", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
                     unmarshalledObject.UnclassifiableObjectCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unclassifiableObjectSizeInBytes", targetDepth))
+                if (context.TestExpression("unclassifiableObjectSizeInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectLevelStatisticsUnmarshaller.Instance;
                     unmarshalledObject.UnclassifiableObjectSizeInBytes = unmarshaller.Unmarshall(context, ref reader);

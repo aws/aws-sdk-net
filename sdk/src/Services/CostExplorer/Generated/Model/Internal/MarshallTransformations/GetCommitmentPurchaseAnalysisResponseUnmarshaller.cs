@@ -52,49 +52,49 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalysisCompletionTime", targetDepth))
+                if (context.TestExpression("AnalysisCompletionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisCompletionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisDetails", targetDepth))
+                if (context.TestExpression("AnalysisDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisDetailsUnmarshaller.Instance;
                     response.AnalysisDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisId", targetDepth))
+                if (context.TestExpression("AnalysisId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisStartedTime", targetDepth))
+                if (context.TestExpression("AnalysisStartedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisStartedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnalysisStatus", targetDepth))
+                if (context.TestExpression("AnalysisStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalysisStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CommitmentPurchaseAnalysisConfiguration", targetDepth))
+                if (context.TestExpression("CommitmentPurchaseAnalysisConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CommitmentPurchaseAnalysisConfigurationUnmarshaller.Instance;
                     response.CommitmentPurchaseAnalysisConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedCompletionTime", targetDepth))
+                if (context.TestExpression("EstimatedCompletionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EstimatedCompletionTime = unmarshaller.Unmarshall(context, ref reader);

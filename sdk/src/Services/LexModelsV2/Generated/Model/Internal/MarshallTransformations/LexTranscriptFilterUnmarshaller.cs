@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dateRangeFilter", targetDepth))
+                if (context.TestExpression("dateRangeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = DateRangeFilterUnmarshaller.Instance;
                     unmarshalledObject.DateRangeFilter = unmarshaller.Unmarshall(context, ref reader);

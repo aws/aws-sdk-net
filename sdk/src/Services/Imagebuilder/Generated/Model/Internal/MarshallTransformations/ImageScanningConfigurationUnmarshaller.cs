@@ -56,13 +56,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ecrConfiguration", targetDepth))
+                if (context.TestExpression("ecrConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EcrConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageScanningEnabled", targetDepth))
+                if (context.TestExpression("imageScanningEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ImageScanningEnabled = unmarshaller.Unmarshall(context, ref reader);

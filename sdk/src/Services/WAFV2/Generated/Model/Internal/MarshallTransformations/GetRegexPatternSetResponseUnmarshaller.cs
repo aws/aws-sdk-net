@@ -52,13 +52,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LockToken", targetDepth))
+                if (context.TestExpression("LockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegexPatternSet", targetDepth))
+                if (context.TestExpression("RegexPatternSet", targetDepth, ref reader))
                 {
                     var unmarshaller = RegexPatternSetUnmarshaller.Instance;
                     response.RegexPatternSet = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Cluster", targetDepth))
+                if (context.TestExpression("Cluster", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterUnmarshaller.Instance;
                     response.Cluster = unmarshaller.Unmarshall(context, ref reader);

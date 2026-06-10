@@ -52,7 +52,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("incidentRecordArn", targetDepth))
+                if (context.TestExpression("incidentRecordArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IncidentRecordArn = unmarshaller.Unmarshall(context, ref reader);

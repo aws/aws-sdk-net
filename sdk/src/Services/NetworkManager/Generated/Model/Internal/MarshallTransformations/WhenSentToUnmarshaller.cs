@@ -56,7 +56,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WhenSentToSegmentsList", targetDepth))
+                if (context.TestExpression("WhenSentToSegmentsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.WhenSentToSegmentsList = unmarshaller.Unmarshall(context, ref reader);

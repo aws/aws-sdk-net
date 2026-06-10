@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FindMatchesParameters", targetDepth))
+                if (context.TestExpression("FindMatchesParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = FindMatchesParametersUnmarshaller.Instance;
                     unmarshalledObject.FindMatchesParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformType", targetDepth))
+                if (context.TestExpression("TransformType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformType = unmarshaller.Unmarshall(context, ref reader);

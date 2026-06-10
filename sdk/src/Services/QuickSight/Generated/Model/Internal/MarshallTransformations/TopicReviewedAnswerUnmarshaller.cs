@@ -56,43 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnswerId", targetDepth))
+                if (context.TestExpression("AnswerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnswerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetArn", targetDepth))
+                if (context.TestExpression("DatasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mir", targetDepth))
+                if (context.TestExpression("Mir", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicIRUnmarshaller.Instance;
                     unmarshalledObject.Mir = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryVisual", targetDepth))
+                if (context.TestExpression("PrimaryVisual", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicVisualUnmarshaller.Instance;
                     unmarshalledObject.PrimaryVisual = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Question", targetDepth))
+                if (context.TestExpression("Question", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Question = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Template", targetDepth))
+                if (context.TestExpression("Template", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicTemplateUnmarshaller.Instance;
                     unmarshalledObject.Template = unmarshaller.Unmarshall(context, ref reader);

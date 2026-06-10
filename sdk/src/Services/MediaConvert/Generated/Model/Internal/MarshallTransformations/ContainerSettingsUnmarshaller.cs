@@ -56,55 +56,55 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cmfcSettings", targetDepth))
+                if (context.TestExpression("cmfcSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CmfcSettingsUnmarshaller.Instance;
                     unmarshalledObject.CmfcSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("container", targetDepth))
+                if (context.TestExpression("container", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("f4vSettings", targetDepth))
+                if (context.TestExpression("f4vSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = F4vSettingsUnmarshaller.Instance;
                     unmarshalledObject.F4vSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("m2tsSettings", targetDepth))
+                if (context.TestExpression("m2tsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = M2tsSettingsUnmarshaller.Instance;
                     unmarshalledObject.M2tsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("m3u8Settings", targetDepth))
+                if (context.TestExpression("m3u8Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = M3u8SettingsUnmarshaller.Instance;
                     unmarshalledObject.M3u8Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("movSettings", targetDepth))
+                if (context.TestExpression("movSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MovSettingsUnmarshaller.Instance;
                     unmarshalledObject.MovSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mp4Settings", targetDepth))
+                if (context.TestExpression("mp4Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Mp4SettingsUnmarshaller.Instance;
                     unmarshalledObject.Mp4Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mpdSettings", targetDepth))
+                if (context.TestExpression("mpdSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MpdSettingsUnmarshaller.Instance;
                     unmarshalledObject.MpdSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mxfSettings", targetDepth))
+                if (context.TestExpression("mxfSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MxfSettingsUnmarshaller.Instance;
                     unmarshalledObject.MxfSettings = unmarshaller.Unmarshall(context, ref reader);

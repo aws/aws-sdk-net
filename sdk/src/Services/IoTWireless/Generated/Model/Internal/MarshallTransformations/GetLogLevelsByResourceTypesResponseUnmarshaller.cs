@@ -52,25 +52,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultLogLevel", targetDepth))
+                if (context.TestExpression("DefaultLogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DefaultLogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FuotaTaskLogOptions", targetDepth))
+                if (context.TestExpression("FuotaTaskLogOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FuotaTaskLogOption, FuotaTaskLogOptionUnmarshaller>(FuotaTaskLogOptionUnmarshaller.Instance);
                     response.FuotaTaskLogOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WirelessDeviceLogOptions", targetDepth))
+                if (context.TestExpression("WirelessDeviceLogOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WirelessDeviceLogOption, WirelessDeviceLogOptionUnmarshaller>(WirelessDeviceLogOptionUnmarshaller.Instance);
                     response.WirelessDeviceLogOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WirelessGatewayLogOptions", targetDepth))
+                if (context.TestExpression("WirelessGatewayLogOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WirelessGatewayLogOption, WirelessGatewayLogOptionUnmarshaller>(WirelessGatewayLogOptionUnmarshaller.Instance);
                     response.WirelessGatewayLogOptions = unmarshaller.Unmarshall(context, ref reader);

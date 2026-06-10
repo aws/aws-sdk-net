@@ -52,25 +52,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationMode", targetDepth))
+                if (context.TestExpression("applicationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("applicationPreferences", targetDepth))
+                if (context.TestExpression("applicationPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationPreferencesUnmarshaller.Instance;
                     response.ApplicationPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("databasePreferences", targetDepth))
+                if (context.TestExpression("databasePreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabasePreferencesUnmarshaller.Instance;
                     response.DatabasePreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("prioritizeBusinessGoals", targetDepth))
+                if (context.TestExpression("prioritizeBusinessGoals", targetDepth, ref reader))
                 {
                     var unmarshaller = PrioritizeBusinessGoalsUnmarshaller.Instance;
                     response.PrioritizeBusinessGoals = unmarshaller.Unmarshall(context, ref reader);

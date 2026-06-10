@@ -56,19 +56,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alarms", targetDepth))
+                if (context.TestExpression("alarms", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonAlarmConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bakeTimeInMinutes", targetDepth))
+                if (context.TestExpression("bakeTimeInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BakeTimeInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("drainPercent", targetDepth))
+                if (context.TestExpression("drainPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DrainPercent = unmarshaller.Unmarshall(context, ref reader);

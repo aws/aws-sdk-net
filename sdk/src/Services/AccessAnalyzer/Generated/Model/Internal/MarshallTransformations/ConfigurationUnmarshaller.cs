@@ -56,85 +56,85 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dynamodbStream", targetDepth))
+                if (context.TestExpression("dynamodbStream", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamodbStreamConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamodbStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynamodbTable", targetDepth))
+                if (context.TestExpression("dynamodbTable", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamodbTableConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamodbTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsSnapshot", targetDepth))
+                if (context.TestExpression("ebsSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsSnapshotConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EbsSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrRepository", targetDepth))
+                if (context.TestExpression("ecrRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrRepositoryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EcrRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("efsFileSystem", targetDepth))
+                if (context.TestExpression("efsFileSystem", targetDepth, ref reader))
                 {
                     var unmarshaller = EfsFileSystemConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EfsFileSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamRole", targetDepth))
+                if (context.TestExpression("iamRole", targetDepth, ref reader))
                 {
                     var unmarshaller = IamRoleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IamRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKey", targetDepth))
+                if (context.TestExpression("kmsKey", targetDepth, ref reader))
                 {
                     var unmarshaller = KmsKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KmsKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbClusterSnapshot", targetDepth))
+                if (context.TestExpression("rdsDbClusterSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbClusterSnapshotConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RdsDbClusterSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbSnapshot", targetDepth))
+                if (context.TestExpression("rdsDbSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbSnapshotConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RdsDbSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Bucket", targetDepth))
+                if (context.TestExpression("s3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3ExpressDirectoryBucket", targetDepth))
+                if (context.TestExpression("s3ExpressDirectoryBucket", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ExpressDirectoryBucketConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3ExpressDirectoryBucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secretsManagerSecret", targetDepth))
+                if (context.TestExpression("secretsManagerSecret", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerSecretConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerSecret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snsTopic", targetDepth))
+                if (context.TestExpression("snsTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = SnsTopicConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnsTopic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqsQueue", targetDepth))
+                if (context.TestExpression("sqsQueue", targetDepth, ref reader))
                 {
                     var unmarshaller = SqsQueueConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqsQueue = unmarshaller.Unmarshall(context, ref reader);

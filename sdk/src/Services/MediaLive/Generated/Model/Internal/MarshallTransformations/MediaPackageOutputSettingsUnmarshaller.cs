@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mediaPackageV2DestinationSettings", targetDepth))
+                if (context.TestExpression("mediaPackageV2DestinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPackageV2DestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.MediaPackageV2DestinationSettings = unmarshaller.Unmarshall(context, ref reader);

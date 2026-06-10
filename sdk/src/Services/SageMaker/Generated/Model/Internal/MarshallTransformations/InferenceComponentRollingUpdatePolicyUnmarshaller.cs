@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaximumBatchSize", targetDepth))
+                if (context.TestExpression("MaximumBatchSize", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentCapacitySizeUnmarshaller.Instance;
                     unmarshalledObject.MaximumBatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumExecutionTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("MaximumExecutionTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumExecutionTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollbackMaximumBatchSize", targetDepth))
+                if (context.TestExpression("RollbackMaximumBatchSize", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentCapacitySizeUnmarshaller.Instance;
                     unmarshalledObject.RollbackMaximumBatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WaitIntervalInSeconds", targetDepth))
+                if (context.TestExpression("WaitIntervalInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WaitIntervalInSeconds = unmarshaller.Unmarshall(context, ref reader);

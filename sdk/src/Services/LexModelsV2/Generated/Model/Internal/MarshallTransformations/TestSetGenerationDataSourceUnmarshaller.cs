@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversationLogsDataSource", targetDepth))
+                if (context.TestExpression("conversationLogsDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationLogsDataSourceUnmarshaller.Instance;
                     unmarshalledObject.ConversationLogsDataSource = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("component", targetDepth))
+                if (context.TestExpression("component", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentStateUnmarshaller.Instance;
                     unmarshalledObject.Component = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environment", targetDepth))
+                if (context.TestExpression("environment", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentStateUnmarshaller.Instance;
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceInstance", targetDepth))
+                if (context.TestExpression("serviceInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceInstanceStateUnmarshaller.Instance;
                     unmarshalledObject.ServiceInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servicePipeline", targetDepth))
+                if (context.TestExpression("servicePipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = ServicePipelineStateUnmarshaller.Instance;
                     unmarshalledObject.ServicePipeline = unmarshaller.Unmarshall(context, ref reader);

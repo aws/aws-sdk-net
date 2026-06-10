@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adAvailOffset", targetDepth))
+                if (context.TestExpression("adAvailOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AdAvailOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noRegionalBlackoutFlag", targetDepth))
+                if (context.TestExpression("noRegionalBlackoutFlag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NoRegionalBlackoutFlag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webDeliveryAllowedFlag", targetDepth))
+                if (context.TestExpression("webDeliveryAllowedFlag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WebDeliveryAllowedFlag = unmarshaller.Unmarshall(context, ref reader);

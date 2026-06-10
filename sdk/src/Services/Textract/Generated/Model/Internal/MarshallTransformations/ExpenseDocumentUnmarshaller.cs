@@ -56,25 +56,25 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Blocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
                     unmarshalledObject.Blocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpenseIndex", targetDepth))
+                if (context.TestExpression("ExpenseIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ExpenseIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineItemGroups", targetDepth))
+                if (context.TestExpression("LineItemGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LineItemGroup, LineItemGroupUnmarshaller>(LineItemGroupUnmarshaller.Instance);
                     unmarshalledObject.LineItemGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SummaryFields", targetDepth))
+                if (context.TestExpression("SummaryFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpenseField, ExpenseFieldUnmarshaller>(ExpenseFieldUnmarshaller.Instance);
                     unmarshalledObject.SummaryFields = unmarshaller.Unmarshall(context, ref reader);

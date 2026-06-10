@@ -56,19 +56,19 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainDetails", targetDepth))
+                if (context.TestExpression("domainDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainDetailsUnmarshaller.Instance;
                     unmarshalledObject.DomainDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipAddressDetails", targetDepth))
+                if (context.TestExpression("ipAddressDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = IpAddressDetailsUnmarshaller.Instance;
                     unmarshalledObject.IpAddressDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userIdentity", targetDepth))
+                if (context.TestExpression("userIdentity", targetDepth, ref reader))
                 {
                     var unmarshaller = UserIdentityUnmarshaller.Instance;
                     unmarshalledObject.UserIdentity = unmarshaller.Unmarshall(context, ref reader);

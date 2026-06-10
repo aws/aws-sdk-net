@@ -56,7 +56,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogGroupNamePattern", targetDepth))
+                if (context.TestExpression("LogGroupNamePattern", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupNamePattern = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("prompt", targetDepth))
+                if (context.TestExpression("prompt", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptUnmarshaller.Instance;
                     unmarshalledObject.Prompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rejectionStatement", targetDepth))
+                if (context.TestExpression("rejectionStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StatementUnmarshaller.Instance;
                     unmarshalledObject.RejectionStatement = unmarshaller.Unmarshall(context, ref reader);

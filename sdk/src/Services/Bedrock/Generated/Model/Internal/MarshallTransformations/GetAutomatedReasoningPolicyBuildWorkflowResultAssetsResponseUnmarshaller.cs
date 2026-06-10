@@ -52,19 +52,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildWorkflowAssets", targetDepth))
+                if (context.TestExpression("buildWorkflowAssets", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyBuildResultAssetsUnmarshaller.Instance;
                     response.BuildWorkflowAssets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildWorkflowId", targetDepth))
+                if (context.TestExpression("buildWorkflowId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BuildWorkflowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyArn", targetDepth))
+                if (context.TestExpression("policyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PolicyArn = unmarshaller.Unmarshall(context, ref reader);

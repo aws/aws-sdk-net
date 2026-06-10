@@ -56,19 +56,19 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MeteringRecordId", targetDepth))
+                if (context.TestExpression("MeteringRecordId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeteringRecordId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsageRecord", targetDepth))
+                if (context.TestExpression("UsageRecord", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageRecordUnmarshaller.Instance;
                     unmarshalledObject.UsageRecord = unmarshaller.Unmarshall(context, ref reader);

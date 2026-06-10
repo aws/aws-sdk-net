@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveDirectory", targetDepth))
+                if (context.TestExpression("ActiveDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsActiveDirectoryDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FederatedAuthentication", targetDepth))
+                if (context.TestExpression("FederatedAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetailsUnmarshaller.Instance;
                     unmarshalledObject.FederatedAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MutualAuthentication", targetDepth))
+                if (context.TestExpression("MutualAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetailsUnmarshaller.Instance;
                     unmarshalledObject.MutualAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

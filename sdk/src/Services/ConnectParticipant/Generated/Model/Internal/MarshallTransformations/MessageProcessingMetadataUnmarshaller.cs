@@ -56,7 +56,7 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MessageProcessingStatus", targetDepth))
+                if (context.TestExpression("MessageProcessingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageProcessingStatus = unmarshaller.Unmarshall(context, ref reader);

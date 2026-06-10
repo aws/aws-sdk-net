@@ -56,7 +56,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Destination", targetDepth))
+                if (context.TestExpression("S3Destination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);

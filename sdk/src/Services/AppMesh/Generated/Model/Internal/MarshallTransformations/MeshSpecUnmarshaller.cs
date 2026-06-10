@@ -56,13 +56,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("egressFilter", targetDepth))
+                if (context.TestExpression("egressFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = EgressFilterUnmarshaller.Instance;
                     unmarshalledObject.EgressFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceDiscovery", targetDepth))
+                if (context.TestExpression("serviceDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = MeshServiceDiscoveryUnmarshaller.Instance;
                     unmarshalledObject.ServiceDiscovery = unmarshaller.Unmarshall(context, ref reader);

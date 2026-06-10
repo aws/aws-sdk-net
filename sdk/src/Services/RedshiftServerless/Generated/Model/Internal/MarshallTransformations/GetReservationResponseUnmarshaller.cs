@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reservation", targetDepth))
+                if (context.TestExpression("reservation", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservationUnmarshaller.Instance;
                     response.Reservation = unmarshaller.Unmarshall(context, ref reader);

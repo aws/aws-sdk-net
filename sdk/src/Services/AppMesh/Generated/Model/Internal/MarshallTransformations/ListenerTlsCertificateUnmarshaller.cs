@@ -56,19 +56,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acm", targetDepth))
+                if (context.TestExpression("acm", targetDepth, ref reader))
                 {
                     var unmarshaller = ListenerTlsAcmCertificateUnmarshaller.Instance;
                     unmarshalledObject.Acm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("file", targetDepth))
+                if (context.TestExpression("file", targetDepth, ref reader))
                 {
                     var unmarshaller = ListenerTlsFileCertificateUnmarshaller.Instance;
                     unmarshalledObject.File = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sds", targetDepth))
+                if (context.TestExpression("sds", targetDepth, ref reader))
                 {
                     var unmarshaller = ListenerTlsSdsCertificateUnmarshaller.Instance;
                     unmarshalledObject.Sds = unmarshaller.Unmarshall(context, ref reader);

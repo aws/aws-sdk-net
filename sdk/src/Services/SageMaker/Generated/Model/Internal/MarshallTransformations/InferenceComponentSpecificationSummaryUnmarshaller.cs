@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseInferenceComponentName", targetDepth))
+                if (context.TestExpression("BaseInferenceComponentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseInferenceComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeResourceRequirements", targetDepth))
+                if (context.TestExpression("ComputeResourceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentComputeResourceRequirementsUnmarshaller.Instance;
                     unmarshalledObject.ComputeResourceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Container", targetDepth))
+                if (context.TestExpression("Container", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentContainerSpecificationSummaryUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCacheConfig", targetDepth))
+                if (context.TestExpression("DataCacheConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentDataCacheConfigSummaryUnmarshaller.Instance;
                     unmarshalledObject.DataCacheConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchedulingConfig", targetDepth))
+                if (context.TestExpression("SchedulingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentSchedulingConfigUnmarshaller.Instance;
                     unmarshalledObject.SchedulingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartupParameters", targetDepth))
+                if (context.TestExpression("StartupParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentStartupParametersUnmarshaller.Instance;
                     unmarshalledObject.StartupParameters = unmarshaller.Unmarshall(context, ref reader);

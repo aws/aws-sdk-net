@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("binKeys", targetDepth))
+                if (context.TestExpression("binKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsBinKey, AnalyticsBinKeyUnmarshaller>(AnalyticsBinKeyUnmarshaller.Instance);
                     unmarshalledObject.BinKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupByKeys", targetDepth))
+                if (context.TestExpression("groupByKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsIntentGroupByKey, AnalyticsIntentGroupByKeyUnmarshaller>(AnalyticsIntentGroupByKeyUnmarshaller.Instance);
                     unmarshalledObject.GroupByKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsResults", targetDepth))
+                if (context.TestExpression("metricsResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsIntentMetricResult, AnalyticsIntentMetricResultUnmarshaller>(AnalyticsIntentMetricResultUnmarshaller.Instance);
                     unmarshalledObject.MetricsResults = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentPricingPlan", targetDepth))
+                if (context.TestExpression("currentPricingPlan", targetDepth, ref reader))
                 {
                     var unmarshaller = PricingPlanUnmarshaller.Instance;
                     response.CurrentPricingPlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pendingPricingPlan", targetDepth))
+                if (context.TestExpression("pendingPricingPlan", targetDepth, ref reader))
                 {
                     var unmarshaller = PricingPlanUnmarshaller.Instance;
                     response.PendingPricingPlan = unmarshaller.Unmarshall(context, ref reader);

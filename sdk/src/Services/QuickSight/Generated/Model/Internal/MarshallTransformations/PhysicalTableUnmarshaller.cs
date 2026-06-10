@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomSql", targetDepth))
+                if (context.TestExpression("CustomSql", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomSqlUnmarshaller.Instance;
                     unmarshalledObject.CustomSql = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelationalTable", targetDepth))
+                if (context.TestExpression("RelationalTable", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationalTableUnmarshaller.Instance;
                     unmarshalledObject.RelationalTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Source", targetDepth))
+                if (context.TestExpression("S3Source", targetDepth, ref reader))
                 {
                     var unmarshaller = S3SourceUnmarshaller.Instance;
                     unmarshalledObject.S3Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SaaSTable", targetDepth))
+                if (context.TestExpression("SaaSTable", targetDepth, ref reader))
                 {
                     var unmarshaller = SaaSTableUnmarshaller.Instance;
                     unmarshalledObject.SaaSTable = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queryEngineConfiguration", targetDepth))
+                if (context.TestExpression("queryEngineConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftQueryEngineConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QueryEngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryGenerationConfiguration", targetDepth))
+                if (context.TestExpression("queryGenerationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryGenerationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QueryGenerationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageConfigurations", targetDepth))
+                if (context.TestExpression("storageConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RedshiftQueryEngineStorageConfiguration, RedshiftQueryEngineStorageConfigurationUnmarshaller>(RedshiftQueryEngineStorageConfigurationUnmarshaller.Instance);
                     unmarshalledObject.StorageConfigurations = unmarshaller.Unmarshall(context, ref reader);

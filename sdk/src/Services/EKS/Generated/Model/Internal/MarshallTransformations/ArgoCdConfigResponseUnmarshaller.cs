@@ -56,31 +56,31 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsIdc", targetDepth))
+                if (context.TestExpression("awsIdc", targetDepth, ref reader))
                 {
                     var unmarshaller = ArgoCdAwsIdcConfigResponseUnmarshaller.Instance;
                     unmarshalledObject.AwsIdc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkAccess", targetDepth))
+                if (context.TestExpression("networkAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = ArgoCdNetworkAccessConfigResponseUnmarshaller.Instance;
                     unmarshalledObject.NetworkAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rbacRoleMappings", targetDepth))
+                if (context.TestExpression("rbacRoleMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ArgoCdRoleMapping, ArgoCdRoleMappingUnmarshaller>(ArgoCdRoleMappingUnmarshaller.Instance);
                     unmarshalledObject.RbacRoleMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverUrl", targetDepth))
+                if (context.TestExpression("serverUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerUrl = unmarshaller.Unmarshall(context, ref reader);

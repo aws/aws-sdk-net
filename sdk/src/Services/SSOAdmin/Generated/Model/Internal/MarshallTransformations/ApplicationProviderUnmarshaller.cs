@@ -56,25 +56,25 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationProviderArn", targetDepth))
+                if (context.TestExpression("ApplicationProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayData", targetDepth))
+                if (context.TestExpression("DisplayData", targetDepth, ref reader))
                 {
                     var unmarshaller = DisplayDataUnmarshaller.Instance;
                     unmarshalledObject.DisplayData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FederationProtocol", targetDepth))
+                if (context.TestExpression("FederationProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FederationProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceServerConfig", targetDepth))
+                if (context.TestExpression("ResourceServerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceServerConfigUnmarshaller.Instance;
                     unmarshalledObject.ResourceServerConfig = unmarshaller.Unmarshall(context, ref reader);

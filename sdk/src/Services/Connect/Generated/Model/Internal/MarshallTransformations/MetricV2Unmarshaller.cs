@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricFilters", targetDepth))
+                if (context.TestExpression("MetricFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricFilterV2, MetricFilterV2Unmarshaller>(MetricFilterV2Unmarshaller.Instance);
                     unmarshalledObject.MetricFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricId", targetDepth))
+                if (context.TestExpression("MetricId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Threshold", targetDepth))
+                if (context.TestExpression("Threshold", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ThresholdV2, ThresholdV2Unmarshaller>(ThresholdV2Unmarshaller.Instance);
                     unmarshalledObject.Threshold = unmarshaller.Unmarshall(context, ref reader);

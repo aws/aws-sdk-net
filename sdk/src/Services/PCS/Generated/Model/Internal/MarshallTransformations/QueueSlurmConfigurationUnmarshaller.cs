@@ -56,7 +56,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("slurmCustomSettings", targetDepth))
+                if (context.TestExpression("slurmCustomSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
                     unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context, ref reader);

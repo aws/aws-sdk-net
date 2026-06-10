@@ -56,43 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultDateTimePickerOptions", targetDepth))
+                if (context.TestExpression("DefaultDateTimePickerOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultDateTimePickerControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultDateTimePickerOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultDropdownOptions", targetDepth))
+                if (context.TestExpression("DefaultDropdownOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFilterDropDownControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultDropdownOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultListOptions", targetDepth))
+                if (context.TestExpression("DefaultListOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFilterListControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultListOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultRelativeDateTimeOptions", targetDepth))
+                if (context.TestExpression("DefaultRelativeDateTimeOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultRelativeDateTimeControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultRelativeDateTimeOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultSliderOptions", targetDepth))
+                if (context.TestExpression("DefaultSliderOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultSliderControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultSliderOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultTextAreaOptions", targetDepth))
+                if (context.TestExpression("DefaultTextAreaOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultTextAreaControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultTextAreaOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultTextFieldOptions", targetDepth))
+                if (context.TestExpression("DefaultTextFieldOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultTextFieldControlOptionsUnmarshaller.Instance;
                     unmarshalledObject.DefaultTextFieldOptions = unmarshaller.Unmarshall(context, ref reader);

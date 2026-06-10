@@ -56,13 +56,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("all", targetDepth))
+                if (context.TestExpression("all", targetDepth, ref reader))
                 {
                     var unmarshaller = UnitUnmarshaller.Instance;
                     unmarshalledObject.All = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("include", targetDepth))
+                if (context.TestExpression("include", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Include = unmarshaller.Unmarshall(context, ref reader);

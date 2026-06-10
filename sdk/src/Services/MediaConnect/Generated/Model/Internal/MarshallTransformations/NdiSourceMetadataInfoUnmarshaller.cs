@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeSource", targetDepth))
+                if (context.TestExpression("activeSource", targetDepth, ref reader))
                 {
                     var unmarshaller = NdiSourceInfoUnmarshaller.Instance;
                     unmarshalledObject.ActiveSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("discoveredSources", targetDepth))
+                if (context.TestExpression("discoveredSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NdiSourceInfo, NdiSourceInfoUnmarshaller>(NdiSourceInfoUnmarshaller.Instance);
                     unmarshalledObject.DiscoveredSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaInfo", targetDepth))
+                if (context.TestExpression("mediaInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = NdiMediaInfoUnmarshaller.Instance;
                     unmarshalledObject.MediaInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messages", targetDepth))
+                if (context.TestExpression("messages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageDetail, MessageDetailUnmarshaller>(MessageDetailUnmarshaller.Instance);
                     unmarshalledObject.Messages = unmarshaller.Unmarshall(context, ref reader);

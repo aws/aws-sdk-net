@@ -56,13 +56,13 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DnsProperties", targetDepth))
+                if (context.TestExpression("DnsProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsPropertiesUnmarshaller.Instance;
                     unmarshalledObject.DnsProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpProperties", targetDepth))
+                if (context.TestExpression("HttpProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpPropertiesUnmarshaller.Instance;
                     unmarshalledObject.HttpProperties = unmarshaller.Unmarshall(context, ref reader);

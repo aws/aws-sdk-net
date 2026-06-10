@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChimeSdkMeetingLiveConnectorConfiguration", targetDepth))
+                if (context.TestExpression("ChimeSdkMeetingLiveConnectorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ChimeSdkMeetingLiveConnectorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChimeSdkMeetingLiveConnectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceType", targetDepth))
+                if (context.TestExpression("SourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);

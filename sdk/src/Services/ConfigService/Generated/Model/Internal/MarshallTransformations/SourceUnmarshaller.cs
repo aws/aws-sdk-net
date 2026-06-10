@@ -56,25 +56,25 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomPolicyDetails", targetDepth))
+                if (context.TestExpression("CustomPolicyDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPolicyDetailsUnmarshaller.Instance;
                     unmarshalledObject.CustomPolicyDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Owner", targetDepth))
+                if (context.TestExpression("Owner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDetails", targetDepth))
+                if (context.TestExpression("SourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceDetail, SourceDetailUnmarshaller>(SourceDetailUnmarshaller.Instance);
                     unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceIdentifier", targetDepth))
+                if (context.TestExpression("SourceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context, ref reader);

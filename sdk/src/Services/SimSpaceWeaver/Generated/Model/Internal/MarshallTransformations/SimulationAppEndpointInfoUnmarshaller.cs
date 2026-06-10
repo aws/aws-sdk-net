@@ -56,13 +56,13 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Address", targetDepth))
+                if (context.TestExpression("Address", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngressPortMappings", targetDepth))
+                if (context.TestExpression("IngressPortMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SimulationAppPortMapping, SimulationAppPortMappingUnmarshaller>(SimulationAppPortMappingUnmarshaller.Instance);
                     unmarshalledObject.IngressPortMappings = unmarshaller.Unmarshall(context, ref reader);

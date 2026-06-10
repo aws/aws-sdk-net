@@ -56,19 +56,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PreviousSmtpPasswordExpiryTimestamp", targetDepth))
+                if (context.TestExpression("PreviousSmtpPasswordExpiryTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PreviousSmtpPasswordExpiryTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousSmtpPasswordVersion", targetDepth))
+                if (context.TestExpression("PreviousSmtpPasswordVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousSmtpPasswordVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SmtpPasswordVersion", targetDepth))
+                if (context.TestExpression("SmtpPasswordVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SmtpPasswordVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -56,109 +56,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BestTrainingJob", targetDepth))
+                if (context.TestExpression("BestTrainingJob", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;
                     unmarshalledObject.BestTrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedResources", targetDepth))
+                if (context.TestExpression("ConsumedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobConsumedResourcesUnmarshaller.Instance;
                     unmarshalledObject.ConsumedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningEndTime", targetDepth))
+                if (context.TestExpression("HyperParameterTuningEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningJobArn", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningJobConfig", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobConfigUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningJobName", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HyperParameterTuningJobStatus", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObjectiveStatusCounters", targetDepth))
+                if (context.TestExpression("ObjectiveStatusCounters", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectiveStatusCountersUnmarshaller.Instance;
                     unmarshalledObject.ObjectiveStatusCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverallBestTrainingJob", targetDepth))
+                if (context.TestExpression("OverallBestTrainingJob", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;
                     unmarshalledObject.OverallBestTrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingJobDefinition", targetDepth))
+                if (context.TestExpression("TrainingJobDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTrainingJobDefinitionUnmarshaller.Instance;
                     unmarshalledObject.TrainingJobDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingJobDefinitions", targetDepth))
+                if (context.TestExpression("TrainingJobDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HyperParameterTrainingJobDefinition, HyperParameterTrainingJobDefinitionUnmarshaller>(HyperParameterTrainingJobDefinitionUnmarshaller.Instance);
                     unmarshalledObject.TrainingJobDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingJobStatusCounters", targetDepth))
+                if (context.TestExpression("TrainingJobStatusCounters", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingJobStatusCountersUnmarshaller.Instance;
                     unmarshalledObject.TrainingJobStatusCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TuningJobCompletionDetails", targetDepth))
+                if (context.TestExpression("TuningJobCompletionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobCompletionDetailsUnmarshaller.Instance;
                     unmarshalledObject.TuningJobCompletionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmStartConfig", targetDepth))
+                if (context.TestExpression("WarmStartConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobWarmStartConfigUnmarshaller.Instance;
                     unmarshalledObject.WarmStartConfig = unmarshaller.Unmarshall(context, ref reader);

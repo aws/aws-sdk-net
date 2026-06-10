@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioRenditionSets", targetDepth))
+                if (context.TestExpression("audioRenditionSets", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AudioRenditionSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("m3u8Settings", targetDepth))
+                if (context.TestExpression("m3u8Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = M3u8SettingsUnmarshaller.Instance;
                     unmarshalledObject.M3u8Settings = unmarshaller.Unmarshall(context, ref reader);

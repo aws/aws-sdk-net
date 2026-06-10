@@ -52,7 +52,7 @@ namespace Amazon.IoTEventsData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("detector", targetDepth))
+                if (context.TestExpression("detector", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectorUnmarshaller.Instance;
                     response.Detector = unmarshaller.Unmarshall(context, ref reader);

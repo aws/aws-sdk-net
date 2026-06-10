@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metadataAttributes", targetDepth))
+                if (context.TestExpression("metadataAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetadataAttributeSchema, MetadataAttributeSchemaUnmarshaller>(MetadataAttributeSchemaUnmarshaller.Instance);
                     unmarshalledObject.MetadataAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelArn", targetDepth))
+                if (context.TestExpression("modelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);

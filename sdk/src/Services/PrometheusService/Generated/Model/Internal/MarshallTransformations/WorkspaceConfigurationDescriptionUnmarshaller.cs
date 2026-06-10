@@ -56,19 +56,19 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("limitsPerLabelSet", targetDepth))
+                if (context.TestExpression("limitsPerLabelSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LimitsPerLabelSet, LimitsPerLabelSetUnmarshaller>(LimitsPerLabelSetUnmarshaller.Instance);
                     unmarshalledObject.LimitsPerLabelSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retentionPeriodInDays", targetDepth))
+                if (context.TestExpression("retentionPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceConfigurationStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scanModeState", targetDepth))
+                if (context.TestExpression("scanModeState", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ScanModeStateUnmarshaller.Instance;
                     unmarshalledObject.ScanModeState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vmScannerState", targetDepth))
+                if (context.TestExpression("vmScannerState", targetDepth, ref reader))
                 {
                     var unmarshaller = VMScannerStateUnmarshaller.Instance;
                     unmarshalledObject.VmScannerState = unmarshaller.Unmarshall(context, ref reader);

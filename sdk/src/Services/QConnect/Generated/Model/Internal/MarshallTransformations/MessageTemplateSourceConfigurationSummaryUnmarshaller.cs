@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("whatsApp", targetDepth))
+                if (context.TestExpression("whatsApp", targetDepth, ref reader))
                 {
                     var unmarshaller = WhatsAppMessageTemplateSourceConfigurationSummaryUnmarshaller.Instance;
                     unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);

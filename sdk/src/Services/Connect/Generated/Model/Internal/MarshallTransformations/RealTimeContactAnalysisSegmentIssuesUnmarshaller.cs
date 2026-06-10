@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IssuesDetected", targetDepth))
+                if (context.TestExpression("IssuesDetected", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RealTimeContactAnalysisIssueDetected, RealTimeContactAnalysisIssueDetectedUnmarshaller>(RealTimeContactAnalysisIssueDetectedUnmarshaller.Instance);
                     unmarshalledObject.IssuesDetected = unmarshaller.Unmarshall(context, ref reader);

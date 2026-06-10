@@ -52,13 +52,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LockToken", targetDepth))
+                if (context.TestExpression("LockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LockToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleGroup", targetDepth))
+                if (context.TestExpression("RuleGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupUnmarshaller.Instance;
                     response.RuleGroup = unmarshaller.Unmarshall(context, ref reader);

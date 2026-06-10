@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SelectedFieldsConfiguration", targetDepth))
+                if (context.TestExpression("SelectedFieldsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterOperationSelectedFieldsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SelectedFieldsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetVisualsConfiguration", targetDepth))
+                if (context.TestExpression("TargetVisualsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterOperationTargetVisualsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetVisualsConfiguration = unmarshaller.Unmarshall(context, ref reader);

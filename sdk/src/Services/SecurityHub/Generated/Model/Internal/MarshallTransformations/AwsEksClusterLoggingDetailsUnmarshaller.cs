@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterLogging", targetDepth))
+                if (context.TestExpression("ClusterLogging", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEksClusterLoggingClusterLoggingDetails, AwsEksClusterLoggingClusterLoggingDetailsUnmarshaller>(AwsEksClusterLoggingClusterLoggingDetailsUnmarshaller.Instance);
                     unmarshalledObject.ClusterLogging = unmarshaller.Unmarshall(context, ref reader);

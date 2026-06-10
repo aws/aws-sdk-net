@@ -56,13 +56,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossAccountDiscovery", targetDepth))
+                if (context.TestExpression("CrossAccountDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossAccountDiscoveryServiceStatusUnmarshaller.Instance;
                     unmarshalledObject.CrossAccountDiscovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossRegionDiscovery", targetDepth))
+                if (context.TestExpression("CrossRegionDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = CrossRegionDiscoveryStatusUnmarshaller.Instance;
                     unmarshalledObject.CrossRegionDiscovery = unmarshaller.Unmarshall(context, ref reader);

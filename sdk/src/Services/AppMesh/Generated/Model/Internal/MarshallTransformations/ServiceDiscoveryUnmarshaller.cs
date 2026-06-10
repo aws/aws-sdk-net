@@ -56,13 +56,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsCloudMap", targetDepth))
+                if (context.TestExpression("awsCloudMap", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudMapServiceDiscoveryUnmarshaller.Instance;
                     unmarshalledObject.AwsCloudMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dns", targetDepth))
+                if (context.TestExpression("dns", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsServiceDiscoveryUnmarshaller.Instance;
                     unmarshalledObject.Dns = unmarshaller.Unmarshall(context, ref reader);

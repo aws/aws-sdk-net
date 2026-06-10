@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("requireOverlap", targetDepth))
+                if (context.TestExpression("requireOverlap", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryConstraintRequireOverlapUnmarshaller.Instance;
                     unmarshalledObject.RequireOverlap = unmarshaller.Unmarshall(context, ref reader);

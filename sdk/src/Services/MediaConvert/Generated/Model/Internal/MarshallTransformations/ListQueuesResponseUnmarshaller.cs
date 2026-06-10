@@ -52,25 +52,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queues", targetDepth))
+                if (context.TestExpression("queues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Queue, QueueUnmarshaller>(QueueUnmarshaller.Instance);
                     response.Queues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalConcurrentJobs", targetDepth))
+                if (context.TestExpression("totalConcurrentJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalConcurrentJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unallocatedConcurrentJobs", targetDepth))
+                if (context.TestExpression("unallocatedConcurrentJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.UnallocatedConcurrentJobs = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CIDRs", targetDepth))
+                if (context.TestExpression("CIDRs", targetDepth, ref reader))
                 {
                     var unmarshaller = CIDRSummaryUnmarshaller.Instance;
                     unmarshalledObject.CIDRs = unmarshaller.Unmarshall(context, ref reader);

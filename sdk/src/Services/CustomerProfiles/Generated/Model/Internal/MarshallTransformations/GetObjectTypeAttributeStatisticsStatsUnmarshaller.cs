@@ -56,31 +56,31 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Average", targetDepth))
+                if (context.TestExpression("Average", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Average = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Maximum", targetDepth))
+                if (context.TestExpression("Maximum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Maximum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Minimum", targetDepth))
+                if (context.TestExpression("Minimum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Minimum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Percentiles", targetDepth))
+                if (context.TestExpression("Percentiles", targetDepth, ref reader))
                 {
                     var unmarshaller = GetObjectTypeAttributeStatisticsPercentilesUnmarshaller.Instance;
                     unmarshalledObject.Percentiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StandardDeviation", targetDepth))
+                if (context.TestExpression("StandardDeviation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.StandardDeviation = unmarshaller.Unmarshall(context, ref reader);

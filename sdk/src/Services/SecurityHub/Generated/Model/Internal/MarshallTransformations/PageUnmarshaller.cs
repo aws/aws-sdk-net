@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LineRange", targetDepth))
+                if (context.TestExpression("LineRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.LineRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffsetRange", targetDepth))
+                if (context.TestExpression("OffsetRange", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeUnmarshaller.Instance;
                     unmarshalledObject.OffsetRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageNumber", targetDepth))
+                if (context.TestExpression("PageNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PageNumber = unmarshaller.Unmarshall(context, ref reader);

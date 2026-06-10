@@ -56,103 +56,103 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveDirectoryId", targetDepth))
+                if (context.TestExpression("ActiveDirectoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("Aliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
                     unmarshalledObject.Aliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuditLogConfiguration", targetDepth))
+                if (context.TestExpression("AuditLogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowsAuditLogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuditLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth))
+                if (context.TestExpression("AutomaticBackupRetentionDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutomaticBackupRetentionDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CopyTagsToBackups", targetDepth))
+                if (context.TestExpression("CopyTagsToBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CopyTagsToBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth))
+                if (context.TestExpression("DailyAutomaticBackupStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DailyAutomaticBackupStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentType", targetDepth))
+                if (context.TestExpression("DeploymentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DiskIopsConfiguration", targetDepth))
+                if (context.TestExpression("DiskIopsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DiskIopsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DiskIopsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FsrmConfiguration", targetDepth))
+                if (context.TestExpression("FsrmConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowsFsrmConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FsrmConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaintenanceOperationsInProgress", targetDepth))
+                if (context.TestExpression("MaintenanceOperationsInProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MaintenanceOperationsInProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredFileServerIp", targetDepth))
+                if (context.TestExpression("PreferredFileServerIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredFileServerIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredFileServerIpv6", targetDepth))
+                if (context.TestExpression("PreferredFileServerIpv6", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredFileServerIpv6 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreferredSubnetId", targetDepth))
+                if (context.TestExpression("PreferredSubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteAdministrationEndpoint", targetDepth))
+                if (context.TestExpression("RemoteAdministrationEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteAdministrationEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth))
+                if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManagedActiveDirectoryAttributesUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedActiveDirectoryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThroughputCapacity", targetDepth))
+                if (context.TestExpression("ThroughputCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ThroughputCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth))
+                if (context.TestExpression("WeeklyMaintenanceStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WeeklyMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);

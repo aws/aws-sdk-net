@@ -56,13 +56,13 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionId", targetDepth))
+                if (context.TestExpression("executionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobStepRestartMarker", targetDepth))
+                if (context.TestExpression("jobStepRestartMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = JobStepRestartMarkerUnmarshaller.Instance;
                     unmarshalledObject.JobStepRestartMarker = unmarshaller.Unmarshall(context, ref reader);

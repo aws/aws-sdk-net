@@ -52,19 +52,19 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DkimAttributes", targetDepth))
+                if (context.TestExpression("DkimAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = DkimAttributesUnmarshaller.Instance;
                     response.DkimAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityType", targetDepth))
+                if (context.TestExpression("IdentityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerifiedForSendingStatus", targetDepth))
+                if (context.TestExpression("VerifiedForSendingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.VerifiedForSendingStatus = unmarshaller.Unmarshall(context, ref reader);

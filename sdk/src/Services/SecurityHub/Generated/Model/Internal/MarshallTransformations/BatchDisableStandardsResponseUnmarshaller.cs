@@ -52,7 +52,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StandardsSubscriptions", targetDepth))
+                if (context.TestExpression("StandardsSubscriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StandardsSubscription, StandardsSubscriptionUnmarshaller>(StandardsSubscriptionUnmarshaller.Instance);
                     response.StandardsSubscriptions = unmarshaller.Unmarshall(context, ref reader);

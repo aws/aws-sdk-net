@@ -56,7 +56,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("profilingEnabled", targetDepth))
+                if (context.TestExpression("profilingEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ProfilingEnabled = unmarshaller.Unmarshall(context, ref reader);

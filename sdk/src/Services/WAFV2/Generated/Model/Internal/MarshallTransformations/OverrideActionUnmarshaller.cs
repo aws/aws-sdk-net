@@ -56,13 +56,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Count", targetDepth))
+                if (context.TestExpression("Count", targetDepth, ref reader))
                 {
                     var unmarshaller = CountActionUnmarshaller.Instance;
                     unmarshalledObject.Count = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("None", targetDepth))
+                if (context.TestExpression("None", targetDepth, ref reader))
                 {
                     var unmarshaller = NoneActionUnmarshaller.Instance;
                     unmarshalledObject.None = unmarshaller.Unmarshall(context, ref reader);

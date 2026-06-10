@@ -56,25 +56,25 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("entityIdPrefix", targetDepth))
+                if (context.TestExpression("entityIdPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityIdPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupConfiguration", targetDepth))
+                if (context.TestExpression("groupConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIdConnectGroupConfigurationItemUnmarshaller.Instance;
                     unmarshalledObject.GroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issuer", targetDepth))
+                if (context.TestExpression("issuer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Issuer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenSelection", targetDepth))
+                if (context.TestExpression("tokenSelection", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIdConnectTokenSelectionItemUnmarshaller.Instance;
                     unmarshalledObject.TokenSelection = unmarshaller.Unmarshall(context, ref reader);

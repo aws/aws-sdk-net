@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PreviousEarthObservationJobArn", targetDepth))
+                if (context.TestExpression("PreviousEarthObservationJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousEarthObservationJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RasterDataCollectionQuery", targetDepth))
+                if (context.TestExpression("RasterDataCollectionQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = RasterDataCollectionQueryOutputUnmarshaller.Instance;
                     unmarshalledObject.RasterDataCollectionQuery = unmarshaller.Unmarshall(context, ref reader);

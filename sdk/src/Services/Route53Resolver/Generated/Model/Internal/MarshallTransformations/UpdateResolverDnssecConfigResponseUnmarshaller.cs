@@ -52,7 +52,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResolverDNSSECConfig", targetDepth))
+                if (context.TestExpression("ResolverDNSSECConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolverDnssecConfigUnmarshaller.Instance;
                     response.ResolverDNSSECConfig = unmarshaller.Unmarshall(context, ref reader);

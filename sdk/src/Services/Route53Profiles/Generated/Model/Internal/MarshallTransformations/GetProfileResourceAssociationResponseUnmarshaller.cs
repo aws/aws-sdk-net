@@ -52,7 +52,7 @@ namespace Amazon.Route53Profiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProfileResourceAssociation", targetDepth))
+                if (context.TestExpression("ProfileResourceAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = ProfileResourceAssociationUnmarshaller.Instance;
                     response.ProfileResourceAssociation = unmarshaller.Unmarshall(context, ref reader);

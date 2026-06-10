@@ -52,19 +52,19 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetRecordError, BatchGetRecordErrorUnmarshaller>(BatchGetRecordErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetRecordResultDetail, BatchGetRecordResultDetailUnmarshaller>(BatchGetRecordResultDetailUnmarshaller.Instance);
                     response.Records = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedIdentifiers", targetDepth))
+                if (context.TestExpression("UnprocessedIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetRecordIdentifier, BatchGetRecordIdentifierUnmarshaller>(BatchGetRecordIdentifierUnmarshaller.Instance);
                     response.UnprocessedIdentifiers = unmarshaller.Unmarshall(context, ref reader);

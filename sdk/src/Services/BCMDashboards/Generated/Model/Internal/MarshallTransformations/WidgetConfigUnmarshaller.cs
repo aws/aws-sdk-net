@@ -56,13 +56,13 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("displayConfig", targetDepth))
+                if (context.TestExpression("displayConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DisplayConfigUnmarshaller.Instance;
                     unmarshalledObject.DisplayConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryParameters", targetDepth))
+                if (context.TestExpression("queryParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryParametersUnmarshaller.Instance;
                     unmarshalledObject.QueryParameters = unmarshaller.Unmarshall(context, ref reader);

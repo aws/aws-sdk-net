@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("av1Settings", targetDepth))
+                if (context.TestExpression("av1Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Av1SettingsUnmarshaller.Instance;
                     unmarshalledObject.Av1Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameCaptureSettings", targetDepth))
+                if (context.TestExpression("frameCaptureSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureSettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("h264Settings", targetDepth))
+                if (context.TestExpression("h264Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = H264SettingsUnmarshaller.Instance;
                     unmarshalledObject.H264Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("h265Settings", targetDepth))
+                if (context.TestExpression("h265Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = H265SettingsUnmarshaller.Instance;
                     unmarshalledObject.H265Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mpeg2Settings", targetDepth))
+                if (context.TestExpression("mpeg2Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Mpeg2SettingsUnmarshaller.Instance;
                     unmarshalledObject.Mpeg2Settings = unmarshaller.Unmarshall(context, ref reader);

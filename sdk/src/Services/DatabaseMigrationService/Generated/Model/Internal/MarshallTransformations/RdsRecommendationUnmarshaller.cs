@@ -56,13 +56,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RequirementsToTarget", targetDepth))
+                if (context.TestExpression("RequirementsToTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsRequirementsUnmarshaller.Instance;
                     unmarshalledObject.RequirementsToTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetConfiguration", targetDepth))
+                if (context.TestExpression("TargetConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context, ref reader);

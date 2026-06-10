@@ -56,31 +56,31 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MigrationTaskName", targetDepth))
+                if (context.TestExpression("MigrationTaskName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MigrationTaskName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgressUpdateStream", targetDepth))
+                if (context.TestExpression("ProgressUpdateStream", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgressUpdateStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceAttributeList", targetDepth))
+                if (context.TestExpression("ResourceAttributeList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceAttribute, ResourceAttributeUnmarshaller>(ResourceAttributeUnmarshaller.Instance);
                     unmarshalledObject.ResourceAttributeList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Task", targetDepth))
+                if (context.TestExpression("Task", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskUnmarshaller.Instance;
                     unmarshalledObject.Task = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateDateTime", targetDepth))
+                if (context.TestExpression("UpdateDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateDateTime = unmarshaller.Unmarshall(context, ref reader);

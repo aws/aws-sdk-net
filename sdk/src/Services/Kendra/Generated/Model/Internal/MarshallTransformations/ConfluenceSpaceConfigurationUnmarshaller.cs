@@ -56,31 +56,31 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrawlArchivedSpaces", targetDepth))
+                if (context.TestExpression("CrawlArchivedSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlArchivedSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlPersonalSpaces", targetDepth))
+                if (context.TestExpression("CrawlPersonalSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CrawlPersonalSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludeSpaces", targetDepth))
+                if (context.TestExpression("ExcludeSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludeSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeSpaces", targetDepth))
+                if (context.TestExpression("IncludeSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludeSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceFieldMappings", targetDepth))
+                if (context.TestExpression("SpaceFieldMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfluenceSpaceToIndexFieldMapping, ConfluenceSpaceToIndexFieldMappingUnmarshaller>(ConfluenceSpaceToIndexFieldMappingUnmarshaller.Instance);
                     unmarshalledObject.SpaceFieldMappings = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationData", targetDepth))
+                if (context.TestExpression("authorizationData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuthorizationData, AuthorizationDataUnmarshaller>(AuthorizationDataUnmarshaller.Instance);
                     response.AuthorizationData = unmarshaller.Unmarshall(context, ref reader);

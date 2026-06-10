@@ -52,7 +52,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientPropertiesList", targetDepth))
+                if (context.TestExpression("ClientPropertiesList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClientPropertiesResult, ClientPropertiesResultUnmarshaller>(ClientPropertiesResultUnmarshaller.Instance);
                     response.ClientPropertiesList = unmarshaller.Unmarshall(context, ref reader);

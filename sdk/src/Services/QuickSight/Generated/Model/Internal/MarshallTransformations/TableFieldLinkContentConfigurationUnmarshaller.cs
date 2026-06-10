@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomIconContent", targetDepth))
+                if (context.TestExpression("CustomIconContent", targetDepth, ref reader))
                 {
                     var unmarshaller = TableFieldCustomIconContentUnmarshaller.Instance;
                     unmarshalledObject.CustomIconContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomTextContent", targetDepth))
+                if (context.TestExpression("CustomTextContent", targetDepth, ref reader))
                 {
                     var unmarshaller = TableFieldCustomTextContentUnmarshaller.Instance;
                     unmarshalledObject.CustomTextContent = unmarshaller.Unmarshall(context, ref reader);

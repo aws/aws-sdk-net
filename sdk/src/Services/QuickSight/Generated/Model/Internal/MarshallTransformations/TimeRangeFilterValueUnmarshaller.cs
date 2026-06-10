@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Parameter", targetDepth))
+                if (context.TestExpression("Parameter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Parameter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollingDate", targetDepth))
+                if (context.TestExpression("RollingDate", targetDepth, ref reader))
                 {
                     var unmarshaller = RollingDateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RollingDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticValue", targetDepth))
+                if (context.TestExpression("StaticValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StaticValue = unmarshaller.Unmarshall(context, ref reader);

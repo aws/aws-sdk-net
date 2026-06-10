@@ -52,7 +52,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResolverQueryLogConfig", targetDepth))
+                if (context.TestExpression("ResolverQueryLogConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolverQueryLogConfigUnmarshaller.Instance;
                     response.ResolverQueryLogConfig = unmarshaller.Unmarshall(context, ref reader);

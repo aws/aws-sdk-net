@@ -56,25 +56,25 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectionPool", targetDepth))
+                if (context.TestExpression("connectionPool", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayConnectionPoolUnmarshaller.Instance;
                     unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthCheck", targetDepth))
+                if (context.TestExpression("healthCheck", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayHealthCheckPolicyUnmarshaller.Instance;
                     unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portMapping", targetDepth))
+                if (context.TestExpression("portMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayPortMappingUnmarshaller.Instance;
                     unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tls", targetDepth))
+                if (context.TestExpression("tls", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayListenerTlsUnmarshaller.Instance;
                     unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);

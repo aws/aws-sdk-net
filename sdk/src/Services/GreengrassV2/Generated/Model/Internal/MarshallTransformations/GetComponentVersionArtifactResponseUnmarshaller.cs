@@ -52,7 +52,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("preSignedUrl", targetDepth))
+                if (context.TestExpression("preSignedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PreSignedUrl = unmarshaller.Unmarshall(context, ref reader);

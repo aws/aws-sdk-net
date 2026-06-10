@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceEndpointList", targetDepth))
+                if (context.TestExpression("ResourceEndpointList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceEndpointListItem, ResourceEndpointListItemUnmarshaller>(ResourceEndpointListItemUnmarshaller.Instance);
                     response.ResourceEndpointList = unmarshaller.Unmarshall(context, ref reader);

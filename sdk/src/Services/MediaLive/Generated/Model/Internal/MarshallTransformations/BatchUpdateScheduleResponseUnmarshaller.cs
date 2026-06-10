@@ -52,13 +52,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creates", targetDepth))
+                if (context.TestExpression("creates", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchScheduleActionCreateResultUnmarshaller.Instance;
                     response.Creates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deletes", targetDepth))
+                if (context.TestExpression("deletes", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchScheduleActionDeleteResultUnmarshaller.Instance;
                     response.Deletes = unmarshaller.Unmarshall(context, ref reader);

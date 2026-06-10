@@ -56,13 +56,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerProvidedId", targetDepth))
+                if (context.TestExpression("customerProvidedId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerProvidedId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responderErrorMasking", targetDepth))
+                if (context.TestExpression("responderErrorMasking", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResponderErrorMaskingForHttpCode, ResponderErrorMaskingForHttpCodeUnmarshaller>(ResponderErrorMaskingForHttpCodeUnmarshaller.Instance);
                     unmarshalledObject.ResponderErrorMasking = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jsonDelta", targetDepth))
+                if (context.TestExpression("jsonDelta", targetDepth, ref reader))
                 {
                     var unmarshaller = SendMessageJsonDeltaUnmarshaller.Instance;
                     unmarshalledObject.JsonDelta = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textDelta", targetDepth))
+                if (context.TestExpression("textDelta", targetDepth, ref reader))
                 {
                     var unmarshaller = SendMessageTextDeltaUnmarshaller.Instance;
                     unmarshalledObject.TextDelta = unmarshaller.Unmarshall(context, ref reader);

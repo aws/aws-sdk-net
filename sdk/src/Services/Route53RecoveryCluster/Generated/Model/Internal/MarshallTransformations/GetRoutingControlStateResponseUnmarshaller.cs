@@ -52,19 +52,19 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RoutingControlArn", targetDepth))
+                if (context.TestExpression("RoutingControlArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoutingControlArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingControlName", targetDepth))
+                if (context.TestExpression("RoutingControlName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoutingControlName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingControlState", targetDepth))
+                if (context.TestExpression("RoutingControlState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoutingControlState = unmarshaller.Unmarshall(context, ref reader);

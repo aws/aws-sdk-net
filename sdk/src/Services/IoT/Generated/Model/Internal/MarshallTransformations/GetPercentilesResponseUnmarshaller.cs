@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("percentiles", targetDepth))
+                if (context.TestExpression("percentiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PercentPair, PercentPairUnmarshaller>(PercentPairUnmarshaller.Instance);
                     response.Percentiles = unmarshaller.Unmarshall(context, ref reader);

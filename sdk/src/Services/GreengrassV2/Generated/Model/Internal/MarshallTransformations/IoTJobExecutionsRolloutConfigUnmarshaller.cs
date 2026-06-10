@@ -56,13 +56,13 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("exponentialRate", targetDepth))
+                if (context.TestExpression("exponentialRate", targetDepth, ref reader))
                 {
                     var unmarshaller = IoTJobExponentialRolloutRateUnmarshaller.Instance;
                     unmarshalledObject.ExponentialRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maximumPerMinute", targetDepth))
+                if (context.TestExpression("maximumPerMinute", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPerMinute = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryFilterFunction", targetDepth))
+                if (context.TestExpression("CategoryFilterFunction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilterFunction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CategoryFilterType", targetDepth))
+                if (context.TestExpression("CategoryFilterType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CategoryFilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Constant", targetDepth))
+                if (context.TestExpression("Constant", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicCategoryFilterConstantUnmarshaller.Instance;
                     unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inverse", targetDepth))
+                if (context.TestExpression("Inverse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inverse = unmarshaller.Unmarshall(context, ref reader);

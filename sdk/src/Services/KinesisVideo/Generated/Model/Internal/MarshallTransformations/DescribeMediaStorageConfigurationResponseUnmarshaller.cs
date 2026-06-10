@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MediaStorageConfiguration", targetDepth))
+                if (context.TestExpression("MediaStorageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaStorageConfigurationUnmarshaller.Instance;
                     response.MediaStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);

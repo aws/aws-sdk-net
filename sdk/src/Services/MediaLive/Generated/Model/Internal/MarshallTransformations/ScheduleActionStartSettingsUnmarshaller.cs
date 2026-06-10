@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fixedModeScheduleActionStartSettings", targetDepth))
+                if (context.TestExpression("fixedModeScheduleActionStartSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FixedModeScheduleActionStartSettingsUnmarshaller.Instance;
                     unmarshalledObject.FixedModeScheduleActionStartSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("followModeScheduleActionStartSettings", targetDepth))
+                if (context.TestExpression("followModeScheduleActionStartSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FollowModeScheduleActionStartSettingsUnmarshaller.Instance;
                     unmarshalledObject.FollowModeScheduleActionStartSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("immediateModeScheduleActionStartSettings", targetDepth))
+                if (context.TestExpression("immediateModeScheduleActionStartSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ImmediateModeScheduleActionStartSettingsUnmarshaller.Instance;
                     unmarshalledObject.ImmediateModeScheduleActionStartSettings = unmarshaller.Unmarshall(context, ref reader);

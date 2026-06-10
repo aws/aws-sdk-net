@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Level1", targetDepth))
+                if (context.TestExpression("Level1", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentHierarchyGroupUnmarshaller.Instance;
                     unmarshalledObject.Level1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Level2", targetDepth))
+                if (context.TestExpression("Level2", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentHierarchyGroupUnmarshaller.Instance;
                     unmarshalledObject.Level2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Level3", targetDepth))
+                if (context.TestExpression("Level3", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentHierarchyGroupUnmarshaller.Instance;
                     unmarshalledObject.Level3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Level4", targetDepth))
+                if (context.TestExpression("Level4", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentHierarchyGroupUnmarshaller.Instance;
                     unmarshalledObject.Level4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Level5", targetDepth))
+                if (context.TestExpression("Level5", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentHierarchyGroupUnmarshaller.Instance;
                     unmarshalledObject.Level5 = unmarshaller.Unmarshall(context, ref reader);

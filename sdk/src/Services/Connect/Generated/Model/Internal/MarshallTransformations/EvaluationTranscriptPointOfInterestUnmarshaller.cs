@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MillisecondOffsets", targetDepth))
+                if (context.TestExpression("MillisecondOffsets", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationSuggestedAnswerTranscriptMillisecondOffsetsUnmarshaller.Instance;
                     unmarshalledObject.MillisecondOffsets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranscriptSegment", targetDepth))
+                if (context.TestExpression("TranscriptSegment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TranscriptSegment = unmarshaller.Unmarshall(context, ref reader);

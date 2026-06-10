@@ -52,19 +52,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CostAndUsageComparisons", targetDepth))
+                if (context.TestExpression("CostAndUsageComparisons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CostAndUsageComparison, CostAndUsageComparisonUnmarshaller>(CostAndUsageComparisonUnmarshaller.Instance);
                     response.CostAndUsageComparisons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCostAndUsage", targetDepth))
+                if (context.TestExpression("TotalCostAndUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ComparisonMetricValue, StringUnmarshaller, ComparisonMetricValueUnmarshaller>(StringUnmarshaller.Instance, ComparisonMetricValueUnmarshaller.Instance);
                     response.TotalCostAndUsage = unmarshaller.Unmarshall(context, ref reader);

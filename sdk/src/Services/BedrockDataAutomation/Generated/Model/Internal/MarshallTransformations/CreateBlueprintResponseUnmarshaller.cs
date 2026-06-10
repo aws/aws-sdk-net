@@ -52,7 +52,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blueprint", targetDepth))
+                if (context.TestExpression("blueprint", targetDepth, ref reader))
                 {
                     var unmarshaller = BlueprintUnmarshaller.Instance;
                     response.Blueprint = unmarshaller.Unmarshall(context, ref reader);

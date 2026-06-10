@@ -52,13 +52,13 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profiles", targetDepth))
+                if (context.TestExpression("profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileDetail, ProfileDetailUnmarshaller>(ProfileDetailUnmarshaller.Instance);
                     response.Profiles = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configurationBlob", targetDepth))
+                if (context.TestExpression("configurationBlob", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationBlob = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompositeSliConfig", targetDepth))
+                if (context.TestExpression("CompositeSliConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositeSliConfigUnmarshaller.Instance;
                     unmarshalledObject.CompositeSliConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DependencyConfig", targetDepth))
+                if (context.TestExpression("DependencyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DependencyConfigUnmarshaller.Instance;
                     unmarshalledObject.DependencyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("KeyAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricDataQueries", targetDepth))
+                if (context.TestExpression("MetricDataQueries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataQuery, MetricDataQueryUnmarshaller>(MetricDataQueryUnmarshaller.Instance);
                     unmarshalledObject.MetricDataQueries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricSource", targetDepth))
+                if (context.TestExpression("MetricSource", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricSourceUnmarshaller.Instance;
                     unmarshalledObject.MetricSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricType", targetDepth))
+                if (context.TestExpression("MetricType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetricType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperationName", targetDepth))
+                if (context.TestExpression("OperationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationName = unmarshaller.Unmarshall(context, ref reader);

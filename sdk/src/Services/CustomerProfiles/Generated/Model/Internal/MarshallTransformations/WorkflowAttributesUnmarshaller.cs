@@ -56,7 +56,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppflowIntegration", targetDepth))
+                if (context.TestExpression("AppflowIntegration", targetDepth, ref reader))
                 {
                     var unmarshaller = AppflowIntegrationWorkflowAttributesUnmarshaller.Instance;
                     unmarshalledObject.AppflowIntegration = unmarshaller.Unmarshall(context, ref reader);

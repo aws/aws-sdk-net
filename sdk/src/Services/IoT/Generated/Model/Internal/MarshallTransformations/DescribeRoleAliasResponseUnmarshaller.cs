@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("roleAliasDescription", targetDepth))
+                if (context.TestExpression("roleAliasDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = RoleAliasDescriptionUnmarshaller.Instance;
                     response.RoleAliasDescription = unmarshaller.Unmarshall(context, ref reader);

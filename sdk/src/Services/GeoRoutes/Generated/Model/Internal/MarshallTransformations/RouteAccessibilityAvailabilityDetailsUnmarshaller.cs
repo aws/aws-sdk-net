@@ -56,7 +56,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Wheelchair", targetDepth))
+                if (context.TestExpression("Wheelchair", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Wheelchair = unmarshaller.Unmarshall(context, ref reader);

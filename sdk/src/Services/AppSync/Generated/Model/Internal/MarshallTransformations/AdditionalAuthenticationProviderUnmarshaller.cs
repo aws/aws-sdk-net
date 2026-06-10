@@ -56,25 +56,25 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authenticationType", targetDepth))
+                if (context.TestExpression("authenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
+                if (context.TestExpression("lambdaAuthorizerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openIDConnectConfig", targetDepth))
+                if (context.TestExpression("openIDConnectConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIDConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPoolConfig", targetDepth))
+                if (context.TestExpression("userPoolConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CognitoUserPoolConfigUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context, ref reader);

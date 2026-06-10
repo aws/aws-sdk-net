@@ -52,19 +52,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextItemOffset", targetDepth))
+                if (context.TestExpression("nextItemOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.NextItemOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalResults", targetDepth))
+                if (context.TestExpression("totalResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workers", targetDepth))
+                if (context.TestExpression("workers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkerSearchSummary, WorkerSearchSummaryUnmarshaller>(WorkerSearchSummaryUnmarshaller.Instance);
                     response.Workers = unmarshaller.Unmarshall(context, ref reader);

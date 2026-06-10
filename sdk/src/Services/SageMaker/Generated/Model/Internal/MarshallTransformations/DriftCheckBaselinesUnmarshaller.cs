@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Bias", targetDepth))
+                if (context.TestExpression("Bias", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftCheckBiasUnmarshaller.Instance;
                     unmarshalledObject.Bias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Explainability", targetDepth))
+                if (context.TestExpression("Explainability", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftCheckExplainabilityUnmarshaller.Instance;
                     unmarshalledObject.Explainability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDataQuality", targetDepth))
+                if (context.TestExpression("ModelDataQuality", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftCheckModelDataQualityUnmarshaller.Instance;
                     unmarshalledObject.ModelDataQuality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQuality", targetDepth))
+                if (context.TestExpression("ModelQuality", targetDepth, ref reader))
                 {
                     var unmarshaller = DriftCheckModelQualityUnmarshaller.Instance;
                     unmarshalledObject.ModelQuality = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth))
+                if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomizedScalingMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableScaleIn", targetDepth))
+                if (context.TestExpression("DisableScaleIn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedInstanceWarmup", targetDepth))
+                if (context.TestExpression("EstimatedInstanceWarmup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EstimatedInstanceWarmup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth))
+                if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredefinedScalingMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScaleInCooldown", targetDepth))
+                if (context.TestExpression("ScaleInCooldown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScaleOutCooldown", targetDepth))
+                if (context.TestExpression("ScaleOutCooldown", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetValue", targetDepth))
+                if (context.TestExpression("TargetValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);

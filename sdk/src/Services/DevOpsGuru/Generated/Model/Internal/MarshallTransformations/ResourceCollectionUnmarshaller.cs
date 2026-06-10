@@ -56,13 +56,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudFormation", targetDepth))
+                if (context.TestExpression("CloudFormation", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudFormationCollectionUnmarshaller.Instance;
                     unmarshalledObject.CloudFormation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagCollection, TagCollectionUnmarshaller>(TagCollectionUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

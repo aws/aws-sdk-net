@@ -52,13 +52,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Milestone", targetDepth))
+                if (context.TestExpression("Milestone", targetDepth, ref reader))
                 {
                     var unmarshaller = MilestoneUnmarshaller.Instance;
                     response.Milestone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadId", targetDepth))
+                if (context.TestExpression("WorkloadId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkloadId = unmarshaller.Unmarshall(context, ref reader);

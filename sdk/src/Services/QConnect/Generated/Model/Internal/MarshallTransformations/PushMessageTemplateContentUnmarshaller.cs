@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adm", targetDepth))
+                if (context.TestExpression("adm", targetDepth, ref reader))
                 {
                     var unmarshaller = PushADMMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Adm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apns", targetDepth))
+                if (context.TestExpression("apns", targetDepth, ref reader))
                 {
                     var unmarshaller = PushAPNSMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Apns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("baidu", targetDepth))
+                if (context.TestExpression("baidu", targetDepth, ref reader))
                 {
                     var unmarshaller = PushBaiduMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Baidu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fcm", targetDepth))
+                if (context.TestExpression("fcm", targetDepth, ref reader))
                 {
                     var unmarshaller = PushFCMMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Fcm = unmarshaller.Unmarshall(context, ref reader);

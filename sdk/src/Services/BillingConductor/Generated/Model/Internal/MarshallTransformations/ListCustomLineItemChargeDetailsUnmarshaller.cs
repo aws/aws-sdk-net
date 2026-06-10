@@ -56,25 +56,25 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Flat", targetDepth))
+                if (context.TestExpression("Flat", targetDepth, ref reader))
                 {
                     var unmarshaller = ListCustomLineItemFlatChargeDetailsUnmarshaller.Instance;
                     unmarshalledObject.Flat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineItemFilters", targetDepth))
+                if (context.TestExpression("LineItemFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LineItemFilter, LineItemFilterUnmarshaller>(LineItemFilterUnmarshaller.Instance);
                     unmarshalledObject.LineItemFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Percentage", targetDepth))
+                if (context.TestExpression("Percentage", targetDepth, ref reader))
                 {
                     var unmarshaller = ListCustomLineItemPercentageChargeDetailsUnmarshaller.Instance;
                     unmarshalledObject.Percentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

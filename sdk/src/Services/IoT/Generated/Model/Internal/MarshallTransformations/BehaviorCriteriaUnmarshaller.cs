@@ -56,43 +56,43 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("comparisonOperator", targetDepth))
+                if (context.TestExpression("comparisonOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComparisonOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("consecutiveDatapointsToAlarm", targetDepth))
+                if (context.TestExpression("consecutiveDatapointsToAlarm", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConsecutiveDatapointsToAlarm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("consecutiveDatapointsToClear", targetDepth))
+                if (context.TestExpression("consecutiveDatapointsToClear", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConsecutiveDatapointsToClear = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("durationSeconds", targetDepth))
+                if (context.TestExpression("durationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mlDetectionConfig", targetDepth))
+                if (context.TestExpression("mlDetectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MachineLearningDetectionConfigUnmarshaller.Instance;
                     unmarshalledObject.MlDetectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statisticalThreshold", targetDepth))
+                if (context.TestExpression("statisticalThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = StatisticalThresholdUnmarshaller.Instance;
                     unmarshalledObject.StatisticalThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("value", targetDepth))
+                if (context.TestExpression("value", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricValueUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);

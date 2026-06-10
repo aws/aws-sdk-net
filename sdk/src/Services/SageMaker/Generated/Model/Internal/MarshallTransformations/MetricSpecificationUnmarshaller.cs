@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Customized", targetDepth))
+                if (context.TestExpression("Customized", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomizedMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.Customized = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Predefined", targetDepth))
+                if (context.TestExpression("Predefined", targetDepth, ref reader))
                 {
                     var unmarshaller = PredefinedMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.Predefined = unmarshaller.Unmarshall(context, ref reader);

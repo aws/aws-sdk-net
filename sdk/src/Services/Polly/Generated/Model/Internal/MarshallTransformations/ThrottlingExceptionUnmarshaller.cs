@@ -72,7 +72,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("throttlingReasons", targetDepth))
+                    if (context.TestExpression("throttlingReasons", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ThrottlingReason, ThrottlingReasonUnmarshaller>(ThrottlingReasonUnmarshaller.Instance);
                         unmarshalledObject.ThrottlingReasons = unmarshaller.Unmarshall(context, ref reader);

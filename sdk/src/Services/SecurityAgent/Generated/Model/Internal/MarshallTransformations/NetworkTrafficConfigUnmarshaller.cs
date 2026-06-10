@@ -56,13 +56,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customHeaders", targetDepth))
+                if (context.TestExpression("customHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomHeader, CustomHeaderUnmarshaller>(CustomHeaderUnmarshaller.Instance);
                     unmarshalledObject.CustomHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkTrafficRule, NetworkTrafficRuleUnmarshaller>(NetworkTrafficRuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);

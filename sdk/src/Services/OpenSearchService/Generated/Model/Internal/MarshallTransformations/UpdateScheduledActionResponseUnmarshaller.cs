@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScheduledAction", targetDepth))
+                if (context.TestExpression("ScheduledAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledActionUnmarshaller.Instance;
                     response.ScheduledAction = unmarshaller.Unmarshall(context, ref reader);

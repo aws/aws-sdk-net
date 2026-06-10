@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HostToClient", targetDepth))
+                if (context.TestExpression("HostToClient", targetDepth, ref reader))
                 {
                     var unmarshaller = UrlRedirectionConfigUnmarshaller.Instance;
                     unmarshalledObject.HostToClient = unmarshaller.Unmarshall(context, ref reader);

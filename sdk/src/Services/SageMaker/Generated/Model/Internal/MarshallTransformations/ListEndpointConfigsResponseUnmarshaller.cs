@@ -52,13 +52,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointConfigs", targetDepth))
+                if (context.TestExpression("EndpointConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EndpointConfigSummary, EndpointConfigSummaryUnmarshaller>(EndpointConfigSummaryUnmarshaller.Instance);
                     response.EndpointConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataPathLabelType", targetDepth))
+                if (context.TestExpression("DataPathLabelType", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPathLabelTypeUnmarshaller.Instance;
                     unmarshalledObject.DataPathLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldLabelType", targetDepth))
+                if (context.TestExpression("FieldLabelType", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldLabelTypeUnmarshaller.Instance;
                     unmarshalledObject.FieldLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumLabelType", targetDepth))
+                if (context.TestExpression("MaximumLabelType", targetDepth, ref reader))
                 {
                     var unmarshaller = MaximumLabelTypeUnmarshaller.Instance;
                     unmarshalledObject.MaximumLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumLabelType", targetDepth))
+                if (context.TestExpression("MinimumLabelType", targetDepth, ref reader))
                 {
                     var unmarshaller = MinimumLabelTypeUnmarshaller.Instance;
                     unmarshalledObject.MinimumLabelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RangeEndsLabelType", targetDepth))
+                if (context.TestExpression("RangeEndsLabelType", targetDepth, ref reader))
                 {
                     var unmarshaller = RangeEndsLabelTypeUnmarshaller.Instance;
                     unmarshalledObject.RangeEndsLabelType = unmarshaller.Unmarshall(context, ref reader);

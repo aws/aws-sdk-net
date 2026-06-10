@@ -56,25 +56,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdvancedBackupSettings", targetDepth))
+                if (context.TestExpression("AdvancedBackupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
                     unmarshalledObject.AdvancedBackupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupPlanName", targetDepth))
+                if (context.TestExpression("BackupPlanName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BackupRule, BackupRuleUnmarshaller>(BackupRuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScanSettings", targetDepth))
+                if (context.TestExpression("ScanSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScanSetting, ScanSettingUnmarshaller>(ScanSettingUnmarshaller.Instance);
                     unmarshalledObject.ScanSettings = unmarshaller.Unmarshall(context, ref reader);

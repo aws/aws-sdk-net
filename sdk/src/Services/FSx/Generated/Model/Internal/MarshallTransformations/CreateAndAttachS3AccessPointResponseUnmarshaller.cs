@@ -52,7 +52,7 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3AccessPointAttachment", targetDepth))
+                if (context.TestExpression("S3AccessPointAttachment", targetDepth, ref reader))
                 {
                     var unmarshaller = S3AccessPointAttachmentUnmarshaller.Instance;
                     response.S3AccessPointAttachment = unmarshaller.Unmarshall(context, ref reader);

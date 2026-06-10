@@ -56,7 +56,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FixedAvailabilityStartTime", targetDepth))
+                if (context.TestExpression("FixedAvailabilityStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FixedAvailabilityStartTime = unmarshaller.Unmarshall(context, ref reader);

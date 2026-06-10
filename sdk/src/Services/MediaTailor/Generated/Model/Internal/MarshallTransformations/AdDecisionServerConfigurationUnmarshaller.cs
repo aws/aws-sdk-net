@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HttpRequest", targetDepth))
+                if (context.TestExpression("HttpRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpRequestUnmarshaller.Instance;
                     unmarshalledObject.HttpRequest = unmarshaller.Unmarshall(context, ref reader);

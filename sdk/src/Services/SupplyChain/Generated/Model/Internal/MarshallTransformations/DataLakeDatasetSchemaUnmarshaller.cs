@@ -56,19 +56,19 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fields", targetDepth))
+                if (context.TestExpression("fields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeDatasetSchemaField, DataLakeDatasetSchemaFieldUnmarshaller>(DataLakeDatasetSchemaFieldUnmarshaller.Instance);
                     unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryKeys", targetDepth))
+                if (context.TestExpression("primaryKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakeDatasetPrimaryKeyField, DataLakeDatasetPrimaryKeyFieldUnmarshaller>(DataLakeDatasetPrimaryKeyFieldUnmarshaller.Instance);
                     unmarshalledObject.PrimaryKeys = unmarshaller.Unmarshall(context, ref reader);

@@ -72,13 +72,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Nested", targetDepth))
+                    if (context.TestExpression("Nested", targetDepth, ref reader))
                     {
                         var unmarshaller = ComplexNestedErrorDataUnmarshaller.Instance;
                         unmarshalledObject.Nested = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("TopLevel", targetDepth))
+                    if (context.TestExpression("TopLevel", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TopLevel = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("iteratorPosition", targetDepth))
+                if (context.TestExpression("iteratorPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IteratorPosition = unmarshaller.Unmarshall(context, ref reader);

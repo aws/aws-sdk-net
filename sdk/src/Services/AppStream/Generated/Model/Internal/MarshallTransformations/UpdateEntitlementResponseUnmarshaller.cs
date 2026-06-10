@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Entitlement", targetDepth))
+                if (context.TestExpression("Entitlement", targetDepth, ref reader))
                 {
                     var unmarshaller = EntitlementUnmarshaller.Instance;
                     response.Entitlement = unmarshaller.Unmarshall(context, ref reader);

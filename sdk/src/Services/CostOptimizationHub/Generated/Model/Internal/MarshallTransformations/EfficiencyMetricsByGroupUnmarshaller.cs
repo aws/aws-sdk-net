@@ -56,19 +56,19 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("group", targetDepth))
+                if (context.TestExpression("group", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Group = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsByTime", targetDepth))
+                if (context.TestExpression("metricsByTime", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricsByTime, MetricsByTimeUnmarshaller>(MetricsByTimeUnmarshaller.Instance);
                     unmarshalledObject.MetricsByTime = unmarshaller.Unmarshall(context, ref reader);

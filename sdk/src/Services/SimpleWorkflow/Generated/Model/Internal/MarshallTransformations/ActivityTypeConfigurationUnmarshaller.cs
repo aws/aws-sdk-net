@@ -56,37 +56,37 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("defaultTaskHeartbeatTimeout", targetDepth))
+                if (context.TestExpression("defaultTaskHeartbeatTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskHeartbeatTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTaskList", targetDepth))
+                if (context.TestExpression("defaultTaskList", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskListUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTaskPriority", targetDepth))
+                if (context.TestExpression("defaultTaskPriority", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth))
+                if (context.TestExpression("defaultTaskScheduleToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskScheduleToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTaskScheduleToStartTimeout", targetDepth))
+                if (context.TestExpression("defaultTaskScheduleToStartTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskScheduleToStartTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth))
+                if (context.TestExpression("defaultTaskStartToCloseTimeout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultTaskStartToCloseTimeout = unmarshaller.Unmarshall(context, ref reader);

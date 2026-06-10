@@ -56,13 +56,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reasoningText", targetDepth))
+                if (context.TestExpression("reasoningText", targetDepth, ref reader))
                 {
                     var unmarshaller = ReasoningTextBlockUnmarshaller.Instance;
                     unmarshalledObject.ReasoningText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redactedContent", targetDepth))
+                if (context.TestExpression("redactedContent", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     unmarshalledObject.RedactedContent = unmarshaller.Unmarshall(context, ref reader);

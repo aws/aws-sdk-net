@@ -56,103 +56,103 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZones", targetDepth))
+                if (context.TestExpression("AvailabilityZones", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackendServerDescriptions", targetDepth))
+                if (context.TestExpression("BackendServerDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbLoadBalancerBackendServerDescription, AwsElbLoadBalancerBackendServerDescriptionUnmarshaller>(AwsElbLoadBalancerBackendServerDescriptionUnmarshaller.Instance);
                     unmarshalledObject.BackendServerDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanonicalHostedZoneName", targetDepth))
+                if (context.TestExpression("CanonicalHostedZoneName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanonicalHostedZoneName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth))
+                if (context.TestExpression("CanonicalHostedZoneNameID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanonicalHostedZoneNameID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsName", targetDepth))
+                if (context.TestExpression("DnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheck", targetDepth))
+                if (context.TestExpression("HealthCheck", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerHealthCheckUnmarshaller.Instance;
                     unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Instances", targetDepth))
+                if (context.TestExpression("Instances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbLoadBalancerInstance, AwsElbLoadBalancerInstanceUnmarshaller>(AwsElbLoadBalancerInstanceUnmarshaller.Instance);
                     unmarshalledObject.Instances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ListenerDescriptions", targetDepth))
+                if (context.TestExpression("ListenerDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbLoadBalancerListenerDescription, AwsElbLoadBalancerListenerDescriptionUnmarshaller>(AwsElbLoadBalancerListenerDescriptionUnmarshaller.Instance);
                     unmarshalledObject.ListenerDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadBalancerAttributes", targetDepth))
+                if (context.TestExpression("LoadBalancerAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerAttributesUnmarshaller.Instance;
                     unmarshalledObject.LoadBalancerAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadBalancerName", targetDepth))
+                if (context.TestExpression("LoadBalancerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Policies", targetDepth))
+                if (context.TestExpression("Policies", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerPoliciesUnmarshaller.Instance;
                     unmarshalledObject.Policies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scheme", targetDepth))
+                if (context.TestExpression("Scheme", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Scheme = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroups", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceSecurityGroup", targetDepth))
+                if (context.TestExpression("SourceSecurityGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerSourceSecurityGroupUnmarshaller.Instance;
                     unmarshalledObject.SourceSecurityGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subnets", targetDepth))
+                if (context.TestExpression("Subnets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Subnets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

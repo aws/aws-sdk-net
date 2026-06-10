@@ -56,7 +56,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PartitionKey", targetDepth))
+                if (context.TestExpression("PartitionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PartitionKey = unmarshaller.Unmarshall(context, ref reader);

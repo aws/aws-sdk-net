@@ -52,19 +52,19 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolutionId", targetDepth))
+                if (context.TestExpression("resolutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResolutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unsupportedResources", targetDepth))
+                if (context.TestExpression("unsupportedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnsupportedResource, UnsupportedResourceUnmarshaller>(UnsupportedResourceUnmarshaller.Instance);
                     response.UnsupportedResources = unmarshaller.Unmarshall(context, ref reader);

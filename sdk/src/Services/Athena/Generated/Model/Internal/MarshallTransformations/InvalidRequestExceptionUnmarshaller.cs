@@ -72,7 +72,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("AthenaErrorCode", targetDepth))
+                    if (context.TestExpression("AthenaErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AthenaErrorCode = unmarshaller.Unmarshall(context, ref reader);

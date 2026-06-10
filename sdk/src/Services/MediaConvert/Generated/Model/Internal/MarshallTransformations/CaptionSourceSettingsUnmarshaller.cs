@@ -56,49 +56,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ancillarySourceSettings", targetDepth))
+                if (context.TestExpression("ancillarySourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AncillarySourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.AncillarySourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dvbSubSourceSettings", targetDepth))
+                if (context.TestExpression("dvbSubSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DvbSubSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.DvbSubSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedSourceSettings", targetDepth))
+                if (context.TestExpression("embeddedSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmbeddedSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileSourceSettings", targetDepth))
+                if (context.TestExpression("fileSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.FileSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceType", targetDepth))
+                if (context.TestExpression("sourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("teletextSourceSettings", targetDepth))
+                if (context.TestExpression("teletextSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TeletextSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trackSourceSettings", targetDepth))
+                if (context.TestExpression("trackSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TrackSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.TrackSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webvttHlsSourceSettings", targetDepth))
+                if (context.TestExpression("webvttHlsSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = WebvttHlsSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.WebvttHlsSourceSettings = unmarshaller.Unmarshall(context, ref reader);

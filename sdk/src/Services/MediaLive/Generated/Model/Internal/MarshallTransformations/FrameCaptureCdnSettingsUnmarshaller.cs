@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("frameCaptureS3Settings", targetDepth))
+                if (context.TestExpression("frameCaptureS3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureS3SettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureS3Settings = unmarshaller.Unmarshall(context, ref reader);

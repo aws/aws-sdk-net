@@ -52,19 +52,19 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceLevelObjectiveBudgetReportError, ServiceLevelObjectiveBudgetReportErrorUnmarshaller>(ServiceLevelObjectiveBudgetReportErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Reports", targetDepth))
+                if (context.TestExpression("Reports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceLevelObjectiveBudgetReport, ServiceLevelObjectiveBudgetReportUnmarshaller>(ServiceLevelObjectiveBudgetReportUnmarshaller.Instance);
                     response.Reports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.Timestamp = unmarshaller.Unmarshall(context, ref reader);

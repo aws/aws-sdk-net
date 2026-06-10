@@ -56,85 +56,85 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContinueStepDetails", targetDepth))
+                if (context.TestExpression("ContinueStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteContinueStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.ContinueStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Distance", targetDepth))
+                if (context.TestExpression("Distance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Duration", targetDepth))
+                if (context.TestExpression("Duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExitStepDetails", targetDepth))
+                if (context.TestExpression("ExitStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteExitStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExitStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeometryOffset", targetDepth))
+                if (context.TestExpression("GeometryOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Instruction", targetDepth))
+                if (context.TestExpression("Instruction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Instruction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeepStepDetails", targetDepth))
+                if (context.TestExpression("KeepStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteKeepStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.KeepStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RampStepDetails", targetDepth))
+                if (context.TestExpression("RampStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteRampStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.RampStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoundaboutEnterStepDetails", targetDepth))
+                if (context.TestExpression("RoundaboutEnterStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteRoundaboutEnterStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.RoundaboutEnterStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoundaboutExitStepDetails", targetDepth))
+                if (context.TestExpression("RoundaboutExitStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteRoundaboutExitStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.RoundaboutExitStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoundaboutPassStepDetails", targetDepth))
+                if (context.TestExpression("RoundaboutPassStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteRoundaboutPassStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.RoundaboutPassStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TurnStepDetails", targetDepth))
+                if (context.TestExpression("TurnStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTurnStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.TurnStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UTurnStepDetails", targetDepth))
+                if (context.TestExpression("UTurnStepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteUTurnStepDetailsUnmarshaller.Instance;
                     unmarshalledObject.UTurnStepDetails = unmarshaller.Unmarshall(context, ref reader);

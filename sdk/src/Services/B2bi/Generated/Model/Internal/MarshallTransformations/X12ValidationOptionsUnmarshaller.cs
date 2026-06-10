@@ -56,7 +56,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("validationRules", targetDepth))
+                if (context.TestExpression("validationRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<X12ValidationRule, X12ValidationRuleUnmarshaller>(X12ValidationRuleUnmarshaller.Instance);
                     unmarshalledObject.ValidationRules = unmarshaller.Unmarshall(context, ref reader);

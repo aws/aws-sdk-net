@@ -52,13 +52,13 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchError, BatchErrorUnmarshaller>(BatchErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamKeys", targetDepth))
+                if (context.TestExpression("streamKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreamKey, StreamKeyUnmarshaller>(StreamKeyUnmarshaller.Instance);
                     response.StreamKeys = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deletedBranch", targetDepth))
+                if (context.TestExpression("deletedBranch", targetDepth, ref reader))
                 {
                     var unmarshaller = BranchInfoUnmarshaller.Instance;
                     response.DeletedBranch = unmarshaller.Unmarshall(context, ref reader);

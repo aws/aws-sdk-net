@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("unusedPermissionsRecommendedStep", targetDepth))
+                if (context.TestExpression("unusedPermissionsRecommendedStep", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedPermissionsRecommendedStepUnmarshaller.Instance;
                     unmarshalledObject.UnusedPermissionsRecommendedStep = unmarshaller.Unmarshall(context, ref reader);

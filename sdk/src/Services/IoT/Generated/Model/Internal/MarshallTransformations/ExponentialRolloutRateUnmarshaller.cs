@@ -56,19 +56,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("baseRatePerMinute", targetDepth))
+                if (context.TestExpression("baseRatePerMinute", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BaseRatePerMinute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incrementFactor", targetDepth))
+                if (context.TestExpression("incrementFactor", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.IncrementFactor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rateIncreaseCriteria", targetDepth))
+                if (context.TestExpression("rateIncreaseCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = RateIncreaseCriteriaUnmarshaller.Instance;
                     unmarshalledObject.RateIncreaseCriteria = unmarshaller.Unmarshall(context, ref reader);

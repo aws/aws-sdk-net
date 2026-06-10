@@ -52,7 +52,7 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Pipeline", targetDepth))
+                if (context.TestExpression("Pipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = TelemetryPipelineUnmarshaller.Instance;
                     response.Pipeline = unmarshaller.Unmarshall(context, ref reader);

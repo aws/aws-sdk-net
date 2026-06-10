@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeDatasetParameter", targetDepth))
+                if (context.TestExpression("DateTimeDatasetParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeDatasetParameterUnmarshaller.Instance;
                     unmarshalledObject.DateTimeDatasetParameter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecimalDatasetParameter", targetDepth))
+                if (context.TestExpression("DecimalDatasetParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = DecimalDatasetParameterUnmarshaller.Instance;
                     unmarshalledObject.DecimalDatasetParameter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IntegerDatasetParameter", targetDepth))
+                if (context.TestExpression("IntegerDatasetParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = IntegerDatasetParameterUnmarshaller.Instance;
                     unmarshalledObject.IntegerDatasetParameter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringDatasetParameter", targetDepth))
+                if (context.TestExpression("StringDatasetParameter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringDatasetParameterUnmarshaller.Instance;
                     unmarshalledObject.StringDatasetParameter = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProvider", targetDepth))
+                if (context.TestExpression("CapacityProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityProviderUnmarshaller.Instance;
                     response.CapacityProvider = unmarshaller.Unmarshall(context, ref reader);

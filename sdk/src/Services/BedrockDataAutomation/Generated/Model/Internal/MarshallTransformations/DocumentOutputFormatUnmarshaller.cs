@@ -56,13 +56,13 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalFileFormat", targetDepth))
+                if (context.TestExpression("additionalFileFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentOutputAdditionalFileFormatUnmarshaller.Instance;
                     unmarshalledObject.AdditionalFileFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textFormat", targetDepth))
+                if (context.TestExpression("textFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentOutputTextFormatUnmarshaller.Instance;
                     unmarshalledObject.TextFormat = unmarshaller.Unmarshall(context, ref reader);

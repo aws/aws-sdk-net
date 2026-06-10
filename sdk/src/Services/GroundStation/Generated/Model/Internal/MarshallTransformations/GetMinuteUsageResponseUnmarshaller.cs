@@ -52,31 +52,31 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("estimatedMinutesRemaining", targetDepth))
+                if (context.TestExpression("estimatedMinutesRemaining", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.EstimatedMinutesRemaining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isReservedMinutesCustomer", targetDepth))
+                if (context.TestExpression("isReservedMinutesCustomer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsReservedMinutesCustomer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalReservedMinuteAllocation", targetDepth))
+                if (context.TestExpression("totalReservedMinuteAllocation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalReservedMinuteAllocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalScheduledMinutes", targetDepth))
+                if (context.TestExpression("totalScheduledMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalScheduledMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upcomingMinutesScheduled", targetDepth))
+                if (context.TestExpression("upcomingMinutesScheduled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.UpcomingMinutesScheduled = unmarshaller.Unmarshall(context, ref reader);

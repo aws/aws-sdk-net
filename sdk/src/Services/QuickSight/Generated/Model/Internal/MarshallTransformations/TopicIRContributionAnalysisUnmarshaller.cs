@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Direction", targetDepth))
+                if (context.TestExpression("Direction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Direction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Factors", targetDepth))
+                if (context.TestExpression("Factors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContributionAnalysisFactor, ContributionAnalysisFactorUnmarshaller>(ContributionAnalysisFactorUnmarshaller.Instance);
                     unmarshalledObject.Factors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortType", targetDepth))
+                if (context.TestExpression("SortType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SortType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRanges", targetDepth))
+                if (context.TestExpression("TimeRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = ContributionAnalysisTimeRangesUnmarshaller.Instance;
                     unmarshalledObject.TimeRanges = unmarshaller.Unmarshall(context, ref reader);

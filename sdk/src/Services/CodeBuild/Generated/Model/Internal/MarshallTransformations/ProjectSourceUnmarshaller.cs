@@ -56,61 +56,61 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("auth", targetDepth))
+                if (context.TestExpression("auth", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceAuthUnmarshaller.Instance;
                     unmarshalledObject.Auth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildspec", targetDepth))
+                if (context.TestExpression("buildspec", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Buildspec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buildStatusConfig", targetDepth))
+                if (context.TestExpression("buildStatusConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = BuildStatusConfigUnmarshaller.Instance;
                     unmarshalledObject.BuildStatusConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gitCloneDepth", targetDepth))
+                if (context.TestExpression("gitCloneDepth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GitCloneDepth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gitSubmodulesConfig", targetDepth))
+                if (context.TestExpression("gitSubmodulesConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GitSubmodulesConfigUnmarshaller.Instance;
                     unmarshalledObject.GitSubmodulesConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("insecureSsl", targetDepth))
+                if (context.TestExpression("insecureSsl", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InsecureSsl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("location", targetDepth))
+                if (context.TestExpression("location", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reportBuildStatus", targetDepth))
+                if (context.TestExpression("reportBuildStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ReportBuildStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceIdentifier", targetDepth))
+                if (context.TestExpression("sourceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

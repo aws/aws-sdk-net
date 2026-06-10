@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Destinations", targetDepth))
+                if (context.TestExpression("S3Destinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SnapshotS3DestinationConfiguration, SnapshotS3DestinationConfigurationUnmarshaller>(SnapshotS3DestinationConfigurationUnmarshaller.Instance);
                     unmarshalledObject.S3Destinations = unmarshaller.Unmarshall(context, ref reader);

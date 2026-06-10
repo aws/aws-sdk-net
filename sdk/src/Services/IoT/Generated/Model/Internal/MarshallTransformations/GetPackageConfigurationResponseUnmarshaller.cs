@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("versionUpdateByJobsConfig", targetDepth))
+                if (context.TestExpression("versionUpdateByJobsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VersionUpdateByJobsConfigUnmarshaller.Instance;
                     response.VersionUpdateByJobsConfig = unmarshaller.Unmarshall(context, ref reader);

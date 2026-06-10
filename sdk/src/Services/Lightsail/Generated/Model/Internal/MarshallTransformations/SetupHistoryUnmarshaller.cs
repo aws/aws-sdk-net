@@ -56,31 +56,31 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionDetails", targetDepth))
+                if (context.TestExpression("executionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SetupExecutionDetails, SetupExecutionDetailsUnmarshaller>(SetupExecutionDetailsUnmarshaller.Instance);
                     unmarshalledObject.ExecutionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationId", targetDepth))
+                if (context.TestExpression("operationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("request", targetDepth))
+                if (context.TestExpression("request", targetDepth, ref reader))
                 {
                     var unmarshaller = SetupRequestUnmarshaller.Instance;
                     unmarshalledObject.Request = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resource", targetDepth))
+                if (context.TestExpression("resource", targetDepth, ref reader))
                 {
                     var unmarshaller = SetupHistoryResourceUnmarshaller.Instance;
                     unmarshalledObject.Resource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

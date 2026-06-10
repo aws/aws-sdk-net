@@ -56,7 +56,7 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RunCommandTargets", targetDepth))
+                if (context.TestExpression("RunCommandTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RunCommandTarget, RunCommandTargetUnmarshaller>(RunCommandTargetUnmarshaller.Instance);
                     unmarshalledObject.RunCommandTargets = unmarshaller.Unmarshall(context, ref reader);

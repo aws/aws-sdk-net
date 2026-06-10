@@ -56,103 +56,103 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aws", targetDepth))
+                if (context.TestExpression("aws", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Aws = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("azure", targetDepth))
+                if (context.TestExpression("azure", targetDepth, ref reader))
                 {
                     var unmarshaller = AzureConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Azure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("azuredevops", targetDepth))
+                if (context.TestExpression("azuredevops", targetDepth, ref reader))
                 {
                     var unmarshaller = AzureDevOpsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Azuredevops = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynatrace", targetDepth))
+                if (context.TestExpression("dynatrace", targetDepth, ref reader))
                 {
                     var unmarshaller = DynatraceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Dynatrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventChannel", targetDepth))
+                if (context.TestExpression("eventChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = EventChannelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EventChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("github", targetDepth))
+                if (context.TestExpression("github", targetDepth, ref reader))
                 {
                     var unmarshaller = GitHubConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Github = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gitlab", targetDepth))
+                if (context.TestExpression("gitlab", targetDepth, ref reader))
                 {
                     var unmarshaller = GitLabConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Gitlab = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpserver", targetDepth))
+                if (context.TestExpression("mcpserver", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpserver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpserverdatadog", targetDepth))
+                if (context.TestExpression("mcpserverdatadog", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerDatadogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpserverdatadog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpservergrafana", targetDepth))
+                if (context.TestExpression("mcpservergrafana", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerGrafanaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpservergrafana = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpservernewrelic", targetDepth))
+                if (context.TestExpression("mcpservernewrelic", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerNewRelicConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpservernewrelic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpserversigv4", targetDepth))
+                if (context.TestExpression("mcpserversigv4", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerSigV4ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpserversigv4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcpserversplunk", targetDepth))
+                if (context.TestExpression("mcpserversplunk", targetDepth, ref reader))
                 {
                     var unmarshaller = MCPServerSplunkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mcpserversplunk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pagerduty", targetDepth))
+                if (context.TestExpression("pagerduty", targetDepth, ref reader))
                 {
                     var unmarshaller = PagerDutyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Pagerduty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servicenow", targetDepth))
+                if (context.TestExpression("servicenow", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Servicenow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slack", targetDepth))
+                if (context.TestExpression("slack", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Slack = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceAws", targetDepth))
+                if (context.TestExpression("sourceAws", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceAwsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceAws = unmarshaller.Unmarshall(context, ref reader);

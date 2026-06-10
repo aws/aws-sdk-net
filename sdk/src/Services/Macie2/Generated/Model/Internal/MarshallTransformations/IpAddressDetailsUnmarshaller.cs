@@ -56,31 +56,31 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipAddressV4", targetDepth))
+                if (context.TestExpression("ipAddressV4", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressV4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipCity", targetDepth))
+                if (context.TestExpression("ipCity", targetDepth, ref reader))
                 {
                     var unmarshaller = IpCityUnmarshaller.Instance;
                     unmarshalledObject.IpCity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipCountry", targetDepth))
+                if (context.TestExpression("ipCountry", targetDepth, ref reader))
                 {
                     var unmarshaller = IpCountryUnmarshaller.Instance;
                     unmarshalledObject.IpCountry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipGeoLocation", targetDepth))
+                if (context.TestExpression("ipGeoLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = IpGeoLocationUnmarshaller.Instance;
                     unmarshalledObject.IpGeoLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ipOwner", targetDepth))
+                if (context.TestExpression("ipOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = IpOwnerUnmarshaller.Instance;
                     unmarshalledObject.IpOwner = unmarshaller.Unmarshall(context, ref reader);

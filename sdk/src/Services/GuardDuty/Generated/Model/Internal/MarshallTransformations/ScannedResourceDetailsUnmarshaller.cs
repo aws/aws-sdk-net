@@ -56,13 +56,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ebsSnapshot", targetDepth))
+                if (context.TestExpression("ebsSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsSnapshotUnmarshaller.Instance;
                     unmarshalledObject.EbsSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsVolume", targetDepth))
+                if (context.TestExpression("ebsVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = VolumeDetailUnmarshaller.Instance;
                     unmarshalledObject.EbsVolume = unmarshaller.Unmarshall(context, ref reader);

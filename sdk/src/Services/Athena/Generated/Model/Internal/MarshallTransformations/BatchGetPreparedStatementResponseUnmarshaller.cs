@@ -52,13 +52,13 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PreparedStatements", targetDepth))
+                if (context.TestExpression("PreparedStatements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PreparedStatement, PreparedStatementUnmarshaller>(PreparedStatementUnmarshaller.Instance);
                     response.PreparedStatements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedPreparedStatementNames", targetDepth))
+                if (context.TestExpression("UnprocessedPreparedStatementNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedPreparedStatementName, UnprocessedPreparedStatementNameUnmarshaller>(UnprocessedPreparedStatementNameUnmarshaller.Instance);
                     response.UnprocessedPreparedStatementNames = unmarshaller.Unmarshall(context, ref reader);

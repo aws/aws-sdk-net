@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("protectedQueryInputParameters", targetDepth))
+                if (context.TestExpression("protectedQueryInputParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedQueryInputParametersUnmarshaller.Instance;
                     unmarshalledObject.ProtectedQueryInputParameters = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EvaluationResultQualifier", targetDepth))
+                if (context.TestExpression("EvaluationResultQualifier", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationResultQualifierUnmarshaller.Instance;
                     unmarshalledObject.EvaluationResultQualifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrderingTimestamp", targetDepth))
+                if (context.TestExpression("OrderingTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.OrderingTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceEvaluationId", targetDepth))
+                if (context.TestExpression("ResourceEvaluationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceEvaluationId = unmarshaller.Unmarshall(context, ref reader);

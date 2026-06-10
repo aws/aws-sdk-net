@@ -56,31 +56,31 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommitMessage", targetDepth))
+                if (context.TestExpression("CommitMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CommitMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageConfiguration", targetDepth))
+                if (context.TestExpression("PackageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PackageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PackageVersion", targetDepth))
+                if (context.TestExpression("PackageVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PluginProperties", targetDepth))
+                if (context.TestExpression("PluginProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = PluginPropertiesUnmarshaller.Instance;
                     unmarshalledObject.PluginProperties = unmarshaller.Unmarshall(context, ref reader);

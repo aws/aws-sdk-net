@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PermissionSetProvisioningStatus", targetDepth))
+                if (context.TestExpression("PermissionSetProvisioningStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = PermissionSetProvisioningStatusUnmarshaller.Instance;
                     response.PermissionSetProvisioningStatus = unmarshaller.Unmarshall(context, ref reader);

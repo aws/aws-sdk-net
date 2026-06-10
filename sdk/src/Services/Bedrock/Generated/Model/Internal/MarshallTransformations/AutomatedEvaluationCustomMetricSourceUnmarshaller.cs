@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customMetricDefinition", targetDepth))
+                if (context.TestExpression("customMetricDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomMetricDefinitionUnmarshaller.Instance;
                     unmarshalledObject.CustomMetricDefinition = unmarshaller.Unmarshall(context, ref reader);

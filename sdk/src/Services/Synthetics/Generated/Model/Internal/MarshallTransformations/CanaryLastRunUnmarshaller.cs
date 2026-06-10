@@ -56,13 +56,13 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CanaryName", targetDepth))
+                if (context.TestExpression("CanaryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanaryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastRun", targetDepth))
+                if (context.TestExpression("LastRun", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryRunUnmarshaller.Instance;
                     unmarshalledObject.LastRun = unmarshaller.Unmarshall(context, ref reader);

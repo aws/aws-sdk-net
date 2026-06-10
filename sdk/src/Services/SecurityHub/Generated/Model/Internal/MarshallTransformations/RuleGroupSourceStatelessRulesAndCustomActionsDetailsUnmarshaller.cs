@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomActions", targetDepth))
+                if (context.TestExpression("CustomActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceCustomActionsDetails, RuleGroupSourceCustomActionsDetailsUnmarshaller>(RuleGroupSourceCustomActionsDetailsUnmarshaller.Instance);
                     unmarshalledObject.CustomActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatelessRules", targetDepth))
+                if (context.TestExpression("StatelessRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleGroupSourceStatelessRulesDetails, RuleGroupSourceStatelessRulesDetailsUnmarshaller>(RuleGroupSourceStatelessRulesDetailsUnmarshaller.Instance);
                     unmarshalledObject.StatelessRules = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("grants", targetDepth))
+                if (context.TestExpression("grants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KmsGrantConfiguration, KmsGrantConfigurationUnmarshaller>(KmsGrantConfigurationUnmarshaller.Instance);
                     unmarshalledObject.Grants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyPolicies", targetDepth))
+                if (context.TestExpression("keyPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.KeyPolicies = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analyzableServers", targetDepth))
+                if (context.TestExpression("analyzableServers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyzableServerSummary, AnalyzableServerSummaryUnmarshaller>(AnalyzableServerSummaryUnmarshaller.Instance);
                     response.AnalyzableServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

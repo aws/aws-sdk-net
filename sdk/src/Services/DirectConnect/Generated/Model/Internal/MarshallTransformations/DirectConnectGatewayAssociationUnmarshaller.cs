@@ -56,67 +56,67 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedPrefixesToDirectConnectGateway", targetDepth))
+                if (context.TestExpression("allowedPrefixesToDirectConnectGateway", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteFilterPrefix, RouteFilterPrefixUnmarshaller>(RouteFilterPrefixUnmarshaller.Instance);
                     unmarshalledObject.AllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedCoreNetwork", targetDepth))
+                if (context.TestExpression("associatedCoreNetwork", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociatedCoreNetworkUnmarshaller.Instance;
                     unmarshalledObject.AssociatedCoreNetwork = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedGateway", targetDepth))
+                if (context.TestExpression("associatedGateway", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociatedGatewayUnmarshaller.Instance;
                     unmarshalledObject.AssociatedGateway = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associationId", targetDepth))
+                if (context.TestExpression("associationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associationState", targetDepth))
+                if (context.TestExpression("associationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("directConnectGatewayId", targetDepth))
+                if (context.TestExpression("directConnectGatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("directConnectGatewayOwnerAccount", targetDepth))
+                if (context.TestExpression("directConnectGatewayOwnerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectConnectGatewayOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateChangeError", targetDepth))
+                if (context.TestExpression("stateChangeError", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayId", targetDepth))
+                if (context.TestExpression("virtualGatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayOwnerAccount", targetDepth))
+                if (context.TestExpression("virtualGatewayOwnerAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualGatewayOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualGatewayRegion", targetDepth))
+                if (context.TestExpression("virtualGatewayRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VirtualGatewayRegion = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("gdg", targetDepth))
+                if (context.TestExpression("gdg", targetDepth, ref reader))
                 {
                     var unmarshaller = GdgDetailAttributesUnmarshaller.Instance;
                     unmarshalledObject.Gdg = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("po", targetDepth))
+                if (context.TestExpression("po", targetDepth, ref reader))
                 {
                     var unmarshaller = PoDetailAttributesUnmarshaller.Instance;
                     unmarshalledObject.Po = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ps", targetDepth))
+                if (context.TestExpression("ps", targetDepth, ref reader))
                 {
                     var unmarshaller = PsDetailAttributesUnmarshaller.Instance;
                     unmarshalledObject.Ps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vsam", targetDepth))
+                if (context.TestExpression("vsam", targetDepth, ref reader))
                 {
                     var unmarshaller = VsamDetailAttributesUnmarshaller.Instance;
                     unmarshalledObject.Vsam = unmarshaller.Unmarshall(context, ref reader);

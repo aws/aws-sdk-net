@@ -52,19 +52,19 @@ namespace Amazon.RestJsonDataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Messages", targetDepth))
+                if (context.TestExpression("Messages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageData, MessageDataUnmarshaller>(MessageDataUnmarshaller.Instance);
                     response.Messages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricDataResults", targetDepth))
+                if (context.TestExpression("MetricDataResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricDataResult, MetricDataResultUnmarshaller>(MetricDataResultUnmarshaller.Instance);
                     response.MetricDataResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

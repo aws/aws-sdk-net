@@ -52,7 +52,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("asset", targetDepth))
+                if (context.TestExpression("asset", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetUnmarshaller.Instance;
                     response.Asset = unmarshaller.Unmarshall(context, ref reader);

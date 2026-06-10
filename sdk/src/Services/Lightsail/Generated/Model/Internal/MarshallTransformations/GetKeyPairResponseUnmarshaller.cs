@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyPair", targetDepth))
+                if (context.TestExpression("keyPair", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyPairUnmarshaller.Instance;
                     response.KeyPair = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedStandbyRequests", targetDepth))
+                if (context.TestExpression("FailedStandbyRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedCreateStandbyWorkspacesRequest, FailedCreateStandbyWorkspacesRequestUnmarshaller>(FailedCreateStandbyWorkspacesRequestUnmarshaller.Instance);
                     response.FailedStandbyRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PendingStandbyRequests", targetDepth))
+                if (context.TestExpression("PendingStandbyRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingCreateStandbyWorkspacesRequest, PendingCreateStandbyWorkspacesRequestUnmarshaller>(PendingCreateStandbyWorkspacesRequestUnmarshaller.Instance);
                     response.PendingStandbyRequests = unmarshaller.Unmarshall(context, ref reader);

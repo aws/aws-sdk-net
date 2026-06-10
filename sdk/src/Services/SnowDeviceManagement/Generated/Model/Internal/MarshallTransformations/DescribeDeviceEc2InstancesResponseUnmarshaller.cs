@@ -52,7 +52,7 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instances", targetDepth))
+                if (context.TestExpression("instances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceSummary, InstanceSummaryUnmarshaller>(InstanceSummaryUnmarshaller.Instance);
                     response.Instances = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeConstraints", targetDepth))
+                if (context.TestExpression("SizeConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SizeConstraint, SizeConstraintUnmarshaller>(SizeConstraintUnmarshaller.Instance);
                     unmarshalledObject.SizeConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeConstraintSetId", targetDepth))
+                if (context.TestExpression("SizeConstraintSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SizeConstraintSetId = unmarshaller.Unmarshall(context, ref reader);

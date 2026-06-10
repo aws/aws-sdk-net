@@ -56,199 +56,199 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonElasticsearchParameters", targetDepth))
+                if (context.TestExpression("AmazonElasticsearchParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonElasticsearchParametersUnmarshaller.Instance;
                     unmarshalledObject.AmazonElasticsearchParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmazonOpenSearchParameters", targetDepth))
+                if (context.TestExpression("AmazonOpenSearchParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonOpenSearchParametersUnmarshaller.Instance;
                     unmarshalledObject.AmazonOpenSearchParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AthenaParameters", targetDepth))
+                if (context.TestExpression("AthenaParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AthenaParametersUnmarshaller.Instance;
                     unmarshalledObject.AthenaParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuroraParameters", targetDepth))
+                if (context.TestExpression("AuroraParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AuroraParametersUnmarshaller.Instance;
                     unmarshalledObject.AuroraParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuroraPostgreSqlParameters", targetDepth))
+                if (context.TestExpression("AuroraPostgreSqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AuroraPostgreSqlParametersUnmarshaller.Instance;
                     unmarshalledObject.AuroraPostgreSqlParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsIotAnalyticsParameters", targetDepth))
+                if (context.TestExpression("AwsIotAnalyticsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsIotAnalyticsParametersUnmarshaller.Instance;
                     unmarshalledObject.AwsIotAnalyticsParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BigQueryParameters", targetDepth))
+                if (context.TestExpression("BigQueryParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = BigQueryParametersUnmarshaller.Instance;
                     unmarshalledObject.BigQueryParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfluenceParameters", targetDepth))
+                if (context.TestExpression("ConfluenceParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfluenceParametersUnmarshaller.Instance;
                     unmarshalledObject.ConfluenceParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomConnectionParameters", targetDepth))
+                if (context.TestExpression("CustomConnectionParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomConnectionParametersUnmarshaller.Instance;
                     unmarshalledObject.CustomConnectionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabricksParameters", targetDepth))
+                if (context.TestExpression("DatabricksParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabricksParametersUnmarshaller.Instance;
                     unmarshalledObject.DatabricksParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExasolParameters", targetDepth))
+                if (context.TestExpression("ExasolParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ExasolParametersUnmarshaller.Instance;
                     unmarshalledObject.ExasolParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImpalaParameters", targetDepth))
+                if (context.TestExpression("ImpalaParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ImpalaParametersUnmarshaller.Instance;
                     unmarshalledObject.ImpalaParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JiraParameters", targetDepth))
+                if (context.TestExpression("JiraParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = JiraParametersUnmarshaller.Instance;
                     unmarshalledObject.JiraParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MariaDbParameters", targetDepth))
+                if (context.TestExpression("MariaDbParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = MariaDbParametersUnmarshaller.Instance;
                     unmarshalledObject.MariaDbParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MySqlParameters", targetDepth))
+                if (context.TestExpression("MySqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = MySqlParametersUnmarshaller.Instance;
                     unmarshalledObject.MySqlParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OracleParameters", targetDepth))
+                if (context.TestExpression("OracleParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = OracleParametersUnmarshaller.Instance;
                     unmarshalledObject.OracleParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostgreSqlParameters", targetDepth))
+                if (context.TestExpression("PostgreSqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PostgreSqlParametersUnmarshaller.Instance;
                     unmarshalledObject.PostgreSqlParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrestoParameters", targetDepth))
+                if (context.TestExpression("PrestoParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PrestoParametersUnmarshaller.Instance;
                     unmarshalledObject.PrestoParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QBusinessParameters", targetDepth))
+                if (context.TestExpression("QBusinessParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = QBusinessParametersUnmarshaller.Instance;
                     unmarshalledObject.QBusinessParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RdsParameters", targetDepth))
+                if (context.TestExpression("RdsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsParametersUnmarshaller.Instance;
                     unmarshalledObject.RdsParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftParameters", targetDepth))
+                if (context.TestExpression("RedshiftParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftParametersUnmarshaller.Instance;
                     unmarshalledObject.RedshiftParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3KnowledgeBaseParameters", targetDepth))
+                if (context.TestExpression("S3KnowledgeBaseParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = S3KnowledgeBaseParametersUnmarshaller.Instance;
                     unmarshalledObject.S3KnowledgeBaseParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Parameters", targetDepth))
+                if (context.TestExpression("S3Parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ParametersUnmarshaller.Instance;
                     unmarshalledObject.S3Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3TablesParameters", targetDepth))
+                if (context.TestExpression("S3TablesParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = S3TablesParametersUnmarshaller.Instance;
                     unmarshalledObject.S3TablesParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNowParameters", targetDepth))
+                if (context.TestExpression("ServiceNowParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowParametersUnmarshaller.Instance;
                     unmarshalledObject.ServiceNowParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnowflakeParameters", targetDepth))
+                if (context.TestExpression("SnowflakeParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SnowflakeParametersUnmarshaller.Instance;
                     unmarshalledObject.SnowflakeParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SparkParameters", targetDepth))
+                if (context.TestExpression("SparkParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SparkParametersUnmarshaller.Instance;
                     unmarshalledObject.SparkParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqlServerParameters", targetDepth))
+                if (context.TestExpression("SqlServerParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SqlServerParametersUnmarshaller.Instance;
                     unmarshalledObject.SqlServerParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StarburstParameters", targetDepth))
+                if (context.TestExpression("StarburstParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = StarburstParametersUnmarshaller.Instance;
                     unmarshalledObject.StarburstParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TeradataParameters", targetDepth))
+                if (context.TestExpression("TeradataParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = TeradataParametersUnmarshaller.Instance;
                     unmarshalledObject.TeradataParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrinoParameters", targetDepth))
+                if (context.TestExpression("TrinoParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = TrinoParametersUnmarshaller.Instance;
                     unmarshalledObject.TrinoParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TwitterParameters", targetDepth))
+                if (context.TestExpression("TwitterParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = TwitterParametersUnmarshaller.Instance;
                     unmarshalledObject.TwitterParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebCrawlerParameters", targetDepth))
+                if (context.TestExpression("WebCrawlerParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = WebCrawlerParametersUnmarshaller.Instance;
                     unmarshalledObject.WebCrawlerParameters = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dnsName", targetDepth))
+                if (context.TestExpression("dnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("port", targetDepth))
+                if (context.TestExpression("port", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testTrafficRules", targetDepth))
+                if (context.TestExpression("testTrafficRules", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceConnectTestTrafficRulesUnmarshaller.Instance;
                     unmarshalledObject.TestTrafficRules = unmarshaller.Unmarshall(context, ref reader);

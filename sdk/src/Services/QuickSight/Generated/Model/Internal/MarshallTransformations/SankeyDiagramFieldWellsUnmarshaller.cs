@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SankeyDiagramAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("SankeyDiagramAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = SankeyDiagramAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.SankeyDiagramAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("segmentationConfiguration", targetDepth))
+                if (context.TestExpression("segmentationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioSegmentationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SegmentationConfiguration = unmarshaller.Unmarshall(context, ref reader);

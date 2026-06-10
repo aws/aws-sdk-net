@@ -72,7 +72,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("dbConnectionId", targetDepth))
+                    if (context.TestExpression("dbConnectionId", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.DbConnectionId = unmarshaller.Unmarshall(context, ref reader);

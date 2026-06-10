@@ -52,25 +52,25 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addonName", targetDepth))
+                if (context.TestExpression("addonName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AddonName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addonVersion", targetDepth))
+                if (context.TestExpression("addonVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AddonVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configurationSchema", targetDepth))
+                if (context.TestExpression("configurationSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConfigurationSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("podIdentityConfiguration", targetDepth))
+                if (context.TestExpression("podIdentityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AddonPodIdentityConfiguration, AddonPodIdentityConfigurationUnmarshaller>(AddonPodIdentityConfigurationUnmarshaller.Instance);
                     response.PodIdentityConfiguration = unmarshaller.Unmarshall(context, ref reader);

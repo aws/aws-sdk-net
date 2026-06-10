@@ -52,13 +52,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Destination", targetDepth))
+                if (context.TestExpression("Destination", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Solvers", targetDepth))
+                if (context.TestExpression("Solvers", targetDepth, ref reader))
                 {
                     var unmarshaller = PositionSolverDetailsUnmarshaller.Instance;
                     response.Solvers = unmarshaller.Unmarshall(context, ref reader);

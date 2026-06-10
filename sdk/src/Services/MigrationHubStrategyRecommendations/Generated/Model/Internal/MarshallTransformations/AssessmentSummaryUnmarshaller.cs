@@ -56,67 +56,67 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("antipatternReportS3Object", targetDepth))
+                if (context.TestExpression("antipatternReportS3Object", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
                     unmarshalledObject.AntipatternReportS3Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antipatternReportStatus", targetDepth))
+                if (context.TestExpression("antipatternReportStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AntipatternReportStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antipatternReportStatusMessage", targetDepth))
+                if (context.TestExpression("antipatternReportStatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AntipatternReportStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastAnalyzedTimestamp", targetDepth))
+                if (context.TestExpression("lastAnalyzedTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAnalyzedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listAntipatternSeveritySummary", targetDepth))
+                if (context.TestExpression("listAntipatternSeveritySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AntipatternSeveritySummary, AntipatternSeveritySummaryUnmarshaller>(AntipatternSeveritySummaryUnmarshaller.Instance);
                     unmarshalledObject.ListAntipatternSeveritySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listApplicationComponentStatusSummary", targetDepth))
+                if (context.TestExpression("listApplicationComponentStatusSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApplicationComponentStatusSummary, ApplicationComponentStatusSummaryUnmarshaller>(ApplicationComponentStatusSummaryUnmarshaller.Instance);
                     unmarshalledObject.ListApplicationComponentStatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listApplicationComponentStrategySummary", targetDepth))
+                if (context.TestExpression("listApplicationComponentStrategySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StrategySummary, StrategySummaryUnmarshaller>(StrategySummaryUnmarshaller.Instance);
                     unmarshalledObject.ListApplicationComponentStrategySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listApplicationComponentSummary", targetDepth))
+                if (context.TestExpression("listApplicationComponentSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApplicationComponentSummary, ApplicationComponentSummaryUnmarshaller>(ApplicationComponentSummaryUnmarshaller.Instance);
                     unmarshalledObject.ListApplicationComponentSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listServerStatusSummary", targetDepth))
+                if (context.TestExpression("listServerStatusSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerStatusSummary, ServerStatusSummaryUnmarshaller>(ServerStatusSummaryUnmarshaller.Instance);
                     unmarshalledObject.ListServerStatusSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listServerStrategySummary", targetDepth))
+                if (context.TestExpression("listServerStrategySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StrategySummary, StrategySummaryUnmarshaller>(StrategySummaryUnmarshaller.Instance);
                     unmarshalledObject.ListServerStrategySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listServerSummary", targetDepth))
+                if (context.TestExpression("listServerSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerSummary, ServerSummaryUnmarshaller>(ServerSummaryUnmarshaller.Instance);
                     unmarshalledObject.ListServerSummary = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("availabilitySlo", targetDepth))
+                if (context.TestExpression("availabilitySlo", targetDepth, ref reader))
                 {
                     var unmarshaller = SloSourceUnmarshaller.Instance;
                     unmarshalledObject.AvailabilitySlo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataRecoveryTimeBetweenBackups", targetDepth))
+                if (context.TestExpression("dataRecoveryTimeBetweenBackups", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetSourceUnmarshaller.Instance;
                     unmarshalledObject.DataRecoveryTimeBetweenBackups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiAzDrApproach", targetDepth))
+                if (context.TestExpression("multiAzDrApproach", targetDepth, ref reader))
                 {
                     var unmarshaller = DisasterRecoverySourceUnmarshaller.Instance;
                     unmarshalledObject.MultiAzDrApproach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiAzRpo", targetDepth))
+                if (context.TestExpression("multiAzRpo", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetSourceUnmarshaller.Instance;
                     unmarshalledObject.MultiAzRpo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiAzRto", targetDepth))
+                if (context.TestExpression("multiAzRto", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetSourceUnmarshaller.Instance;
                     unmarshalledObject.MultiAzRto = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiRegionDrApproach", targetDepth))
+                if (context.TestExpression("multiRegionDrApproach", targetDepth, ref reader))
                 {
                     var unmarshaller = DisasterRecoverySourceUnmarshaller.Instance;
                     unmarshalledObject.MultiRegionDrApproach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiRegionRpo", targetDepth))
+                if (context.TestExpression("multiRegionRpo", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetSourceUnmarshaller.Instance;
                     unmarshalledObject.MultiRegionRpo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiRegionRto", targetDepth))
+                if (context.TestExpression("multiRegionRto", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetSourceUnmarshaller.Instance;
                     unmarshalledObject.MultiRegionRto = unmarshaller.Unmarshall(context, ref reader);

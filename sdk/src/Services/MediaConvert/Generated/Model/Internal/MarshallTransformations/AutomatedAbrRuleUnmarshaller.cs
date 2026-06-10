@@ -56,31 +56,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedRenditions", targetDepth))
+                if (context.TestExpression("allowedRenditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AllowedRenditionSize, AllowedRenditionSizeUnmarshaller>(AllowedRenditionSizeUnmarshaller.Instance);
                     unmarshalledObject.AllowedRenditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forceIncludeRenditions", targetDepth))
+                if (context.TestExpression("forceIncludeRenditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ForceIncludeRenditionSize, ForceIncludeRenditionSizeUnmarshaller>(ForceIncludeRenditionSizeUnmarshaller.Instance);
                     unmarshalledObject.ForceIncludeRenditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minBottomRenditionSize", targetDepth))
+                if (context.TestExpression("minBottomRenditionSize", targetDepth, ref reader))
                 {
                     var unmarshaller = MinBottomRenditionSizeUnmarshaller.Instance;
                     unmarshalledObject.MinBottomRenditionSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minTopRenditionSize", targetDepth))
+                if (context.TestExpression("minTopRenditionSize", targetDepth, ref reader))
                 {
                     var unmarshaller = MinTopRenditionSizeUnmarshaller.Instance;
                     unmarshalledObject.MinTopRenditionSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

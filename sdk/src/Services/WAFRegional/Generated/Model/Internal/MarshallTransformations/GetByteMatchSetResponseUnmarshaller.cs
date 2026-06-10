@@ -52,7 +52,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ByteMatchSet", targetDepth))
+                if (context.TestExpression("ByteMatchSet", targetDepth, ref reader))
                 {
                     var unmarshaller = ByteMatchSetUnmarshaller.Instance;
                     response.ByteMatchSet = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageSetsMetadataSummaries", targetDepth))
+                if (context.TestExpression("imageSetsMetadataSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageSetsMetadataSummary, ImageSetsMetadataSummaryUnmarshaller>(ImageSetsMetadataSummaryUnmarshaller.Instance);
                     response.ImageSetsMetadataSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sort", targetDepth))
+                if (context.TestExpression("sort", targetDepth, ref reader))
                 {
                     var unmarshaller = SortUnmarshaller.Instance;
                     response.Sort = unmarshaller.Unmarshall(context, ref reader);

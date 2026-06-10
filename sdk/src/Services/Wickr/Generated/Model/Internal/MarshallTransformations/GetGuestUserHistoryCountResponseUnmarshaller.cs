@@ -52,7 +52,7 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("history", targetDepth))
+                if (context.TestExpression("history", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuestUserHistoryCount, GuestUserHistoryCountUnmarshaller>(GuestUserHistoryCountUnmarshaller.Instance);
                     response.History = unmarshaller.Unmarshall(context, ref reader);

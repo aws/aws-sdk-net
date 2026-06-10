@@ -72,19 +72,19 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Limit", targetDepth))
+                    if (context.TestExpression("Limit", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.Limit = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Measure", targetDepth))
+                    if (context.TestExpression("Measure", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Measure = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Size", targetDepth))
+                    if (context.TestExpression("Size", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableFloatUnmarshaller.Instance;
                         unmarshalledObject.Size = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PercentComplete", targetDepth))
+                if (context.TestExpression("PercentComplete", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PercentComplete = unmarshaller.Unmarshall(context, ref reader);

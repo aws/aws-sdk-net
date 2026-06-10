@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AreaStyleSettings", targetDepth))
+                if (context.TestExpression("AreaStyleSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RadarChartAreaStyleSettingsUnmarshaller.Instance;
                     unmarshalledObject.AreaStyleSettings = unmarshaller.Unmarshall(context, ref reader);

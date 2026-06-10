@@ -56,7 +56,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("randomCutForest", targetDepth))
+                if (context.TestExpression("randomCutForest", targetDepth, ref reader))
                 {
                     var unmarshaller = RandomCutForestConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RandomCutForest = unmarshaller.Unmarshall(context, ref reader);

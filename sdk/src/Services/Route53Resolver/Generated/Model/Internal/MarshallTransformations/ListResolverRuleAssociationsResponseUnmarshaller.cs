@@ -52,19 +52,19 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxResults", targetDepth))
+                if (context.TestExpression("MaxResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResolverRuleAssociations", targetDepth))
+                if (context.TestExpression("ResolverRuleAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResolverRuleAssociation, ResolverRuleAssociationUnmarshaller>(ResolverRuleAssociationUnmarshaller.Instance);
                     response.ResolverRuleAssociations = unmarshaller.Unmarshall(context, ref reader);

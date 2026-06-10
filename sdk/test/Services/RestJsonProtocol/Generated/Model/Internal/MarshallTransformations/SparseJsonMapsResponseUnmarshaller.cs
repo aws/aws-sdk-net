@@ -52,31 +52,31 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sparseBooleanMap", targetDepth))
+                if (context.TestExpression("sparseBooleanMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, bool?, StringUnmarshaller, NullableBoolUnmarshaller>(StringUnmarshaller.Instance, NullableBoolUnmarshaller.Instance);
                     response.SparseBooleanMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparseNumberMap", targetDepth))
+                if (context.TestExpression("sparseNumberMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int?, StringUnmarshaller, NullableIntUnmarshaller>(StringUnmarshaller.Instance, NullableIntUnmarshaller.Instance);
                     response.SparseNumberMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparseSetMap", targetDepth))
+                if (context.TestExpression("sparseSetMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     response.SparseSetMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparseStringMap", targetDepth))
+                if (context.TestExpression("sparseStringMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.SparseStringMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparseStructMap", targetDepth))
+                if (context.TestExpression("sparseStructMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, GreetingStruct, StringUnmarshaller, GreetingStructUnmarshaller>(StringUnmarshaller.Instance, GreetingStructUnmarshaller.Instance);
                     response.SparseStructMap = unmarshaller.Unmarshall(context, ref reader);

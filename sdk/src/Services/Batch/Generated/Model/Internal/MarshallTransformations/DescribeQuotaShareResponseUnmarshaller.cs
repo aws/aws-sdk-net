@@ -52,55 +52,55 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityLimits", targetDepth))
+                if (context.TestExpression("capacityLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuotaShareCapacityLimit, QuotaShareCapacityLimitUnmarshaller>(QuotaShareCapacityLimitUnmarshaller.Instance);
                     response.CapacityLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobQueueArn", targetDepth))
+                if (context.TestExpression("jobQueueArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobQueueArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preemptionConfiguration", targetDepth))
+                if (context.TestExpression("preemptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QuotaSharePreemptionConfigurationUnmarshaller.Instance;
                     response.PreemptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quotaShareArn", targetDepth))
+                if (context.TestExpression("quotaShareArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QuotaShareArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quotaShareName", targetDepth))
+                if (context.TestExpression("quotaShareName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QuotaShareName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceSharingConfiguration", targetDepth))
+                if (context.TestExpression("resourceSharingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QuotaShareResourceSharingConfigurationUnmarshaller.Instance;
                     response.ResourceSharingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

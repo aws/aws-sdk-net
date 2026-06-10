@@ -52,13 +52,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregateComplianceByConfigRules", targetDepth))
+                if (context.TestExpression("AggregateComplianceByConfigRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregateComplianceByConfigRule, AggregateComplianceByConfigRuleUnmarshaller>(AggregateComplianceByConfigRuleUnmarshaller.Instance);
                     response.AggregateComplianceByConfigRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

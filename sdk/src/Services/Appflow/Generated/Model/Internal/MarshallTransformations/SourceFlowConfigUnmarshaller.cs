@@ -56,31 +56,31 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiVersion", targetDepth))
+                if (context.TestExpression("apiVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorProfileName", targetDepth))
+                if (context.TestExpression("connectorProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectorProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorType", targetDepth))
+                if (context.TestExpression("connectorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incrementalPullConfig", targetDepth))
+                if (context.TestExpression("incrementalPullConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IncrementalPullConfigUnmarshaller.Instance;
                     unmarshalledObject.IncrementalPullConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceConnectorProperties", targetDepth))
+                if (context.TestExpression("sourceConnectorProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceConnectorPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SourceConnectorProperties = unmarshaller.Unmarshall(context, ref reader);

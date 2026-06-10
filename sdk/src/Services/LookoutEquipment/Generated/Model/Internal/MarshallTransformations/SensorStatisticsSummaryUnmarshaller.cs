@@ -56,79 +56,79 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoricalValues", targetDepth))
+                if (context.TestExpression("CategoricalValues", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoricalValuesUnmarshaller.Instance;
                     unmarshalledObject.CategoricalValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComponentName", targetDepth))
+                if (context.TestExpression("ComponentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataEndTime", targetDepth))
+                if (context.TestExpression("DataEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataExists", targetDepth))
+                if (context.TestExpression("DataExists", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataExists = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataStartTime", targetDepth))
+                if (context.TestExpression("DataStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DuplicateTimestamps", targetDepth))
+                if (context.TestExpression("DuplicateTimestamps", targetDepth, ref reader))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
                     unmarshalledObject.DuplicateTimestamps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvalidDateEntries", targetDepth))
+                if (context.TestExpression("InvalidDateEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
                     unmarshalledObject.InvalidDateEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvalidValues", targetDepth))
+                if (context.TestExpression("InvalidValues", targetDepth, ref reader))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
                     unmarshalledObject.InvalidValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LargeTimestampGaps", targetDepth))
+                if (context.TestExpression("LargeTimestampGaps", targetDepth, ref reader))
                 {
                     var unmarshaller = LargeTimestampGapsUnmarshaller.Instance;
                     unmarshalledObject.LargeTimestampGaps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MissingValues", targetDepth))
+                if (context.TestExpression("MissingValues", targetDepth, ref reader))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
                     unmarshalledObject.MissingValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonotonicValues", targetDepth))
+                if (context.TestExpression("MonotonicValues", targetDepth, ref reader))
                 {
                     var unmarshaller = MonotonicValuesUnmarshaller.Instance;
                     unmarshalledObject.MonotonicValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultipleOperatingModes", targetDepth))
+                if (context.TestExpression("MultipleOperatingModes", targetDepth, ref reader))
                 {
                     var unmarshaller = MultipleOperatingModesUnmarshaller.Instance;
                     unmarshalledObject.MultipleOperatingModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SensorName", targetDepth))
+                if (context.TestExpression("SensorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SensorName = unmarshaller.Unmarshall(context, ref reader);

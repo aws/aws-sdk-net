@@ -56,43 +56,43 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EC2Capacities", targetDepth))
+                if (context.TestExpression("EC2Capacities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EC2Capacity, EC2CapacityUnmarshaller>(EC2CapacityUnmarshaller.Instance);
                     unmarshalledObject.EC2Capacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackUnitHeight", targetDepth))
+                if (context.TestExpression("RackUnitHeight", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RackUnitHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerDepthInches", targetDepth))
+                if (context.TestExpression("ServerDepthInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ServerDepthInches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerHeightInches", targetDepth))
+                if (context.TestExpression("ServerHeightInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ServerHeightInches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerPowerDrawKva", targetDepth))
+                if (context.TestExpression("ServerPowerDrawKva", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ServerPowerDrawKva = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerWeightLbs", targetDepth))
+                if (context.TestExpression("ServerWeightLbs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ServerWeightLbs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerWidthInches", targetDepth))
+                if (context.TestExpression("ServerWidthInches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.ServerWidthInches = unmarshaller.Unmarshall(context, ref reader);

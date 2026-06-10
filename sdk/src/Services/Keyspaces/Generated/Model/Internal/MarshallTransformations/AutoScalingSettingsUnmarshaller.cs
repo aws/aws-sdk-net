@@ -56,25 +56,25 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingDisabled", targetDepth))
+                if (context.TestExpression("autoScalingDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maximumUnits", targetDepth))
+                if (context.TestExpression("maximumUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumUnits", targetDepth))
+                if (context.TestExpression("minimumUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingPolicy", targetDepth))
+                if (context.TestExpression("scalingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingPolicyUnmarshaller.Instance;
                     unmarshalledObject.ScalingPolicy = unmarshaller.Unmarshall(context, ref reader);

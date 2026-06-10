@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LambdaAuthorizerConfig", targetDepth))
+                if (context.TestExpression("LambdaAuthorizerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenIdConnectConfig", targetDepth))
+                if (context.TestExpression("OpenIdConnectConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.OpenIdConnectConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserPoolConfig", targetDepth))
+                if (context.TestExpression("UserPoolConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiUserPoolConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context, ref reader);

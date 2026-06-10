@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PropertyGroupDescriptions", targetDepth))
+                if (context.TestExpression("PropertyGroupDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropertyGroup, PropertyGroupUnmarshaller>(PropertyGroupUnmarshaller.Instance);
                     unmarshalledObject.PropertyGroupDescriptions = unmarshaller.Unmarshall(context, ref reader);

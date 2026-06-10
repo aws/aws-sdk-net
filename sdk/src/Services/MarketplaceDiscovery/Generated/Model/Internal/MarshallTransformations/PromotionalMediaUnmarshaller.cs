@@ -56,13 +56,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("embeddedImage", targetDepth))
+                if (context.TestExpression("embeddedImage", targetDepth, ref reader))
                 {
                     var unmarshaller = PromotionalEmbeddedImageUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedVideo", targetDepth))
+                if (context.TestExpression("embeddedVideo", targetDepth, ref reader))
                 {
                     var unmarshaller = PromotionalEmbeddedVideoUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedVideo = unmarshaller.Unmarshall(context, ref reader);

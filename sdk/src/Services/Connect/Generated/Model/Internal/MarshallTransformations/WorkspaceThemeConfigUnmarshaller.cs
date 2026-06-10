@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Images", targetDepth))
+                if (context.TestExpression("Images", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceThemeImagesUnmarshaller.Instance;
                     unmarshalledObject.Images = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Palette", targetDepth))
+                if (context.TestExpression("Palette", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceThemePaletteUnmarshaller.Instance;
                     unmarshalledObject.Palette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Typography", targetDepth))
+                if (context.TestExpression("Typography", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceThemeTypographyUnmarshaller.Instance;
                     unmarshalledObject.Typography = unmarshaller.Unmarshall(context, ref reader);

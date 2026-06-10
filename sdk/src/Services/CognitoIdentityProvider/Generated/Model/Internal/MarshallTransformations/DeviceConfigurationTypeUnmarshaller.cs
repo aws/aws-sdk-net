@@ -56,13 +56,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChallengeRequiredOnNewDevice", targetDepth))
+                if (context.TestExpression("ChallengeRequiredOnNewDevice", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ChallengeRequiredOnNewDevice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceOnlyRememberedOnUserPrompt", targetDepth))
+                if (context.TestExpression("DeviceOnlyRememberedOnUserPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeviceOnlyRememberedOnUserPrompt = unmarshaller.Unmarshall(context, ref reader);

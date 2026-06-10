@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DecimalSeparator", targetDepth))
+                if (context.TestExpression("DecimalSeparator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DecimalSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThousandsSeparator", targetDepth))
+                if (context.TestExpression("ThousandsSeparator", targetDepth, ref reader))
                 {
                     var unmarshaller = ThousandSeparatorOptionsUnmarshaller.Instance;
                     unmarshalledObject.ThousandsSeparator = unmarshaller.Unmarshall(context, ref reader);

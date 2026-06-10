@@ -52,13 +52,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodes", targetDepth))
+                if (context.TestExpression("nodes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DescribeNodeSummary, DescribeNodeSummaryUnmarshaller>(DescribeNodeSummaryUnmarshaller.Instance);
                     response.Nodes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColorsConfiguration", targetDepth))
+                if (context.TestExpression("ColorsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ColorsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ColorsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Column", targetDepth))
+                if (context.TestExpression("Column", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DecalSettingsConfiguration", targetDepth))
+                if (context.TestExpression("DecalSettingsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DecalSettingsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DecalSettingsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FormatConfiguration", targetDepth))
+                if (context.TestExpression("FormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppInstanceAdmin", targetDepth))
+                if (context.TestExpression("AppInstanceAdmin", targetDepth, ref reader))
                 {
                     var unmarshaller = AppInstanceAdminUnmarshaller.Instance;
                     response.AppInstanceAdmin = unmarshaller.Unmarshall(context, ref reader);

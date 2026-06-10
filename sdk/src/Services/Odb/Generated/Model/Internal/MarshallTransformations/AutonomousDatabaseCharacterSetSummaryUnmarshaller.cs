@@ -56,7 +56,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("characterSet", targetDepth))
+                if (context.TestExpression("characterSet", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CharacterSet = unmarshaller.Unmarshall(context, ref reader);

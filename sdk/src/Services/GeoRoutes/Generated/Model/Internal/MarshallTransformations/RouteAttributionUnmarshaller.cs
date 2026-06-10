@@ -56,13 +56,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributionType", targetDepth))
+                if (context.TestExpression("AttributionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WebLink", targetDepth))
+                if (context.TestExpression("WebLink", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteWebLinkUnmarshaller.Instance;
                     unmarshalledObject.WebLink = unmarshaller.Unmarshall(context, ref reader);

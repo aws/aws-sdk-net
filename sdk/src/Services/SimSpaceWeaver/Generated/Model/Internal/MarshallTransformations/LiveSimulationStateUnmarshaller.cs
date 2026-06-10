@@ -56,13 +56,13 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Clocks", targetDepth))
+                if (context.TestExpression("Clocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SimulationClock, SimulationClockUnmarshaller>(SimulationClockUnmarshaller.Instance);
                     unmarshalledObject.Clocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Domains", targetDepth))
+                if (context.TestExpression("Domains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Domain, DomainUnmarshaller>(DomainUnmarshaller.Instance);
                     unmarshalledObject.Domains = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EdgeSummaryStatistics", targetDepth))
+                if (context.TestExpression("EdgeSummaryStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.EdgeSummaryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseTimeHistogram", targetDepth))
+                if (context.TestExpression("ResponseTimeHistogram", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
                     unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceForecastStatistics", targetDepth))
+                if (context.TestExpression("ServiceForecastStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = ForecastStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ServiceForecastStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceSummaryStatistics", targetDepth))
+                if (context.TestExpression("ServiceSummaryStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ServiceSummaryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

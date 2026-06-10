@@ -56,7 +56,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reportOutputs", targetDepth))
+                if (context.TestExpression("reportOutputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReportOutputConfiguration, ReportOutputConfigurationUnmarshaller>(ReportOutputConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ReportOutputs = unmarshaller.Unmarshall(context, ref reader);

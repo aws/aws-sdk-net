@@ -52,13 +52,13 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Lexicon", targetDepth))
+                if (context.TestExpression("Lexicon", targetDepth, ref reader))
                 {
                     var unmarshaller = LexiconUnmarshaller.Instance;
                     response.Lexicon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LexiconAttributes", targetDepth))
+                if (context.TestExpression("LexiconAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = LexiconAttributesUnmarshaller.Instance;
                     response.LexiconAttributes = unmarshaller.Unmarshall(context, ref reader);

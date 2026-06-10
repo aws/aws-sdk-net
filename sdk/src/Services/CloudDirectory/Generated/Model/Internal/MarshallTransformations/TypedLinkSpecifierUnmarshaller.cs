@@ -56,25 +56,25 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityAttributeValues", targetDepth))
+                if (context.TestExpression("IdentityAttributeValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttributeNameAndValue, AttributeNameAndValueUnmarshaller>(AttributeNameAndValueUnmarshaller.Instance);
                     unmarshalledObject.IdentityAttributeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceObjectReference", targetDepth))
+                if (context.TestExpression("SourceObjectReference", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectReferenceUnmarshaller.Instance;
                     unmarshalledObject.SourceObjectReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetObjectReference", targetDepth))
+                if (context.TestExpression("TargetObjectReference", targetDepth, ref reader))
                 {
                     var unmarshaller = ObjectReferenceUnmarshaller.Instance;
                     unmarshalledObject.TargetObjectReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TypedLinkFacet", targetDepth))
+                if (context.TestExpression("TypedLinkFacet", targetDepth, ref reader))
                 {
                     var unmarshaller = TypedLinkSchemaAndFacetNameUnmarshaller.Instance;
                     unmarshalledObject.TypedLinkFacet = unmarshaller.Unmarshall(context, ref reader);

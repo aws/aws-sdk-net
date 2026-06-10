@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("centerFrequency", targetDepth))
+                if (context.TestExpression("centerFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = FrequencyUnmarshaller.Instance;
                     unmarshalledObject.CenterFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("polarization", targetDepth))
+                if (context.TestExpression("polarization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Polarization = unmarshaller.Unmarshall(context, ref reader);

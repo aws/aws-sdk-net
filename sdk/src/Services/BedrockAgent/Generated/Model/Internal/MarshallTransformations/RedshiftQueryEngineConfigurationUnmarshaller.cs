@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("provisionedConfiguration", targetDepth))
+                if (context.TestExpression("provisionedConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftProvisionedConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverlessConfiguration", targetDepth))
+                if (context.TestExpression("serverlessConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftServerlessConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServerlessConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

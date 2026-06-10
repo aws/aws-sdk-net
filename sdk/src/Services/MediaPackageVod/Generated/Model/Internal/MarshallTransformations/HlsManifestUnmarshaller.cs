@@ -56,37 +56,37 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adMarkers", targetDepth))
+                if (context.TestExpression("adMarkers", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeIframeOnlyStream", targetDepth))
+                if (context.TestExpression("includeIframeOnlyStream", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeIframeOnlyStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifestName", targetDepth))
+                if (context.TestExpression("manifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programDateTimeIntervalSeconds", targetDepth))
+                if (context.TestExpression("programDateTimeIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramDateTimeIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repeatExtXKey", targetDepth))
+                if (context.TestExpression("repeatExtXKey", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RepeatExtXKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamSelection", targetDepth))
+                if (context.TestExpression("streamSelection", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;
                     unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context, ref reader);

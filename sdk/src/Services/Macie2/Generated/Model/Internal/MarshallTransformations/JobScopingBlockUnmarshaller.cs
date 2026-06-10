@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("and", targetDepth))
+                if (context.TestExpression("and", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobScopeTerm, JobScopeTermUnmarshaller>(JobScopeTermUnmarshaller.Instance);
                     unmarshalledObject.And = unmarshaller.Unmarshall(context, ref reader);

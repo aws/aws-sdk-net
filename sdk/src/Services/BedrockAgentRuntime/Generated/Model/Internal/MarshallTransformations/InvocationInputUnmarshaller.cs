@@ -56,37 +56,37 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionGroupInvocationInput", targetDepth))
+                if (context.TestExpression("actionGroupInvocationInput", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionGroupInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.ActionGroupInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentCollaboratorInvocationInput", targetDepth))
+                if (context.TestExpression("agentCollaboratorInvocationInput", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentCollaboratorInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.AgentCollaboratorInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codeInterpreterInvocationInput", targetDepth))
+                if (context.TestExpression("codeInterpreterInvocationInput", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeInterpreterInvocationInputUnmarshaller.Instance;
                     unmarshalledObject.CodeInterpreterInvocationInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invocationType", targetDepth))
+                if (context.TestExpression("invocationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvocationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseLookupInput", targetDepth))
+                if (context.TestExpression("knowledgeBaseLookupInput", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseLookupInputUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseLookupInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("traceId", targetDepth))
+                if (context.TestExpression("traceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TraceId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionConfigurations", targetDepth))
+                if (context.TestExpression("DimensionConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudWatchDimensionConfiguration, CloudWatchDimensionConfigurationUnmarshaller>(CloudWatchDimensionConfigurationUnmarshaller.Instance);
                     unmarshalledObject.DimensionConfigurations = unmarshaller.Unmarshall(context, ref reader);

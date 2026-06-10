@@ -56,127 +56,127 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnGroups", targetDepth))
+                if (context.TestExpression("ColumnGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnGroup, ColumnGroupUnmarshaller>(ColumnGroupUnmarshaller.Instance);
                     unmarshalledObject.ColumnGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnLevelPermissionRules", targetDepth))
+                if (context.TestExpression("ColumnLevelPermissionRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnLevelPermissionRule, ColumnLevelPermissionRuleUnmarshaller>(ColumnLevelPermissionRuleUnmarshaller.Instance);
                     unmarshalledObject.ColumnLevelPermissionRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedSpiceCapacityInBytes", targetDepth))
+                if (context.TestExpression("ConsumedSpiceCapacityInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ConsumedSpiceCapacityInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataPrepConfiguration", targetDepth))
+                if (context.TestExpression("DataPrepConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPrepConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataPrepConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSetId", targetDepth))
+                if (context.TestExpression("DataSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetParameters", targetDepth))
+                if (context.TestExpression("DatasetParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DatasetParameter, DatasetParameterUnmarshaller>(DatasetParameterUnmarshaller.Instance);
                     unmarshalledObject.DatasetParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSetUsageConfiguration", targetDepth))
+                if (context.TestExpression("DataSetUsageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetUsageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataSetUsageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldFolders", targetDepth))
+                if (context.TestExpression("FieldFolders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, FieldFolder, StringUnmarshaller, FieldFolderUnmarshaller>(StringUnmarshaller.Instance, FieldFolderUnmarshaller.Instance);
                     unmarshalledObject.FieldFolders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportMode", targetDepth))
+                if (context.TestExpression("ImportMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImportMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogicalTableMap", targetDepth))
+                if (context.TestExpression("LogicalTableMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, LogicalTable, StringUnmarshaller, LogicalTableUnmarshaller>(StringUnmarshaller.Instance, LogicalTableUnmarshaller.Instance);
                     unmarshalledObject.LogicalTableMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputColumns", targetDepth))
+                if (context.TestExpression("OutputColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputColumn, OutputColumnUnmarshaller>(OutputColumnUnmarshaller.Instance);
                     unmarshalledObject.OutputColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerformanceConfiguration", targetDepth))
+                if (context.TestExpression("PerformanceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PerformanceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhysicalTableMap", targetDepth))
+                if (context.TestExpression("PhysicalTableMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, PhysicalTable, StringUnmarshaller, PhysicalTableUnmarshaller>(StringUnmarshaller.Instance, PhysicalTableUnmarshaller.Instance);
                     unmarshalledObject.PhysicalTableMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowLevelPermissionDataSet", targetDepth))
+                if (context.TestExpression("RowLevelPermissionDataSet", targetDepth, ref reader))
                 {
                     var unmarshaller = RowLevelPermissionDataSetUnmarshaller.Instance;
                     unmarshalledObject.RowLevelPermissionDataSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowLevelPermissionTagConfiguration", targetDepth))
+                if (context.TestExpression("RowLevelPermissionTagConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RowLevelPermissionTagConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RowLevelPermissionTagConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SemanticModelConfiguration", targetDepth))
+                if (context.TestExpression("SemanticModelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticModelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SemanticModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseAs", targetDepth))
+                if (context.TestExpression("UseAs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UseAs = unmarshaller.Unmarshall(context, ref reader);

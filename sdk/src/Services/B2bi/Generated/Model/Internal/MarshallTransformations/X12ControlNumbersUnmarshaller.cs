@@ -56,19 +56,19 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("startingFunctionalGroupControlNumber", targetDepth))
+                if (context.TestExpression("startingFunctionalGroupControlNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartingFunctionalGroupControlNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startingInterchangeControlNumber", targetDepth))
+                if (context.TestExpression("startingInterchangeControlNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartingInterchangeControlNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startingTransactionSetControlNumber", targetDepth))
+                if (context.TestExpression("startingTransactionSetControlNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartingTransactionSetControlNumber = unmarshaller.Unmarshall(context, ref reader);

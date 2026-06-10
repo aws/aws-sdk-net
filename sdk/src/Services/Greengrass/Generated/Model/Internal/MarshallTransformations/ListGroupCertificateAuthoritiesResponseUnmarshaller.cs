@@ -52,7 +52,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroupCertificateAuthorities", targetDepth))
+                if (context.TestExpression("GroupCertificateAuthorities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupCertificateAuthorityProperties, GroupCertificateAuthorityPropertiesUnmarshaller>(GroupCertificateAuthorityPropertiesUnmarshaller.Instance);
                     response.GroupCertificateAuthorities = unmarshaller.Unmarshall(context, ref reader);

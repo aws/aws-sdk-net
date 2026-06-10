@@ -52,7 +52,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DryRunConfig", targetDepth))
+                if (context.TestExpression("DryRunConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DryRunConfigOutputUnmarshaller.Instance;
                     response.DryRunConfig = unmarshaller.Unmarshall(context, ref reader);

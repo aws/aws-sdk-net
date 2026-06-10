@@ -56,25 +56,25 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleTypeIdUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputArtifactDetails", targetDepth))
+                if (context.TestExpression("inputArtifactDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.InputArtifactDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleConfigurationProperties", targetDepth))
+                if (context.TestExpression("ruleConfigurationProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleConfigurationProperty, RuleConfigurationPropertyUnmarshaller>(RuleConfigurationPropertyUnmarshaller.Instance);
                     unmarshalledObject.RuleConfigurationProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("settings", targetDepth))
+                if (context.TestExpression("settings", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleTypeSettingsUnmarshaller.Instance;
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);

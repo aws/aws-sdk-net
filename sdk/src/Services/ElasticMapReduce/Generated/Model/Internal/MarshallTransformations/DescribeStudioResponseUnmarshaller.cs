@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Studio", targetDepth))
+                if (context.TestExpression("Studio", targetDepth, ref reader))
                 {
                     var unmarshaller = StudioUnmarshaller.Instance;
                     response.Studio = unmarshaller.Unmarshall(context, ref reader);

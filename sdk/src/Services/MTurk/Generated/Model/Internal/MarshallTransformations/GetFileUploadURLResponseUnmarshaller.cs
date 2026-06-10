@@ -52,7 +52,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileUploadURL", targetDepth))
+                if (context.TestExpression("FileUploadURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FileUploadURL = unmarshaller.Unmarshall(context, ref reader);

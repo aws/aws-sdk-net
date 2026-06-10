@@ -52,13 +52,13 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetSessionActionError, BatchGetSessionActionErrorUnmarshaller>(BatchGetSessionActionErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionActions", targetDepth))
+                if (context.TestExpression("sessionActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetSessionActionItem, BatchGetSessionActionItemUnmarshaller>(BatchGetSessionActionItemUnmarshaller.Instance);
                     response.SessionActions = unmarshaller.Unmarshall(context, ref reader);

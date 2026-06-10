@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
+                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsDynamoDbTableProvisionedThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context, ref reader);

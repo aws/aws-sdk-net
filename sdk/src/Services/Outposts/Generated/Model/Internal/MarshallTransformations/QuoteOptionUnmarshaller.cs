@@ -56,31 +56,31 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Capacities", targetDepth))
+                if (context.TestExpression("Capacities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuoteCapacity, QuoteCapacityUnmarshaller>(QuoteCapacityUnmarshaller.Instance);
                     unmarshalledObject.Capacities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacitySummary", targetDepth))
+                if (context.TestExpression("CapacitySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacitySummaryUnmarshaller.Instance;
                     unmarshalledObject.CapacitySummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PricingOptions", targetDepth))
+                if (context.TestExpression("PricingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PricingOption, PricingOptionUnmarshaller>(PricingOptionUnmarshaller.Instance);
                     unmarshalledObject.PricingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuoteOptionIdentifier", targetDepth))
+                if (context.TestExpression("QuoteOptionIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuoteOptionIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Specifications", targetDepth))
+                if (context.TestExpression("Specifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuoteSpecification, QuoteSpecificationUnmarshaller>(QuoteSpecificationUnmarshaller.Instance);
                     unmarshalledObject.Specifications = unmarshaller.Unmarshall(context, ref reader);

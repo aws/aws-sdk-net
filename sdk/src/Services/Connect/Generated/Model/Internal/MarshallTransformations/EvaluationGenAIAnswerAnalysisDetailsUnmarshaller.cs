@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Justification", targetDepth))
+                if (context.TestExpression("Justification", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Justification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PointsOfInterest", targetDepth))
+                if (context.TestExpression("PointsOfInterest", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationTranscriptPointOfInterest, EvaluationTranscriptPointOfInterestUnmarshaller>(EvaluationTranscriptPointOfInterestUnmarshaller.Instance);
                     unmarshalledObject.PointsOfInterest = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionKeyConfiguration", targetDepth))
+                if (context.TestExpression("encryptionKeyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionKeyProvider", targetDepth))
+                if (context.TestExpression("encryptionKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyProvider = unmarshaller.Unmarshall(context, ref reader);

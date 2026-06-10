@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExemptUriRegularExpressions", targetDepth))
+                if (context.TestExpression("ExemptUriRegularExpressions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Regex, RegexUnmarshaller>(RegexUnmarshaller.Instance);
                     unmarshalledObject.ExemptUriRegularExpressions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sensitivity", targetDepth))
+                if (context.TestExpression("Sensitivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Sensitivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsageOfAction", targetDepth))
+                if (context.TestExpression("UsageOfAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageOfAction = unmarshaller.Unmarshall(context, ref reader);

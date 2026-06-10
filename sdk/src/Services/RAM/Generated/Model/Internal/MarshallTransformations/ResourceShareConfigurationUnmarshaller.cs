@@ -56,7 +56,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("retainSharingOnAccountLeaveOrganization", targetDepth))
+                if (context.TestExpression("retainSharingOnAccountLeaveOrganization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RetainSharingOnAccountLeaveOrganization = unmarshaller.Unmarshall(context, ref reader);

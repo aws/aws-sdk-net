@@ -56,7 +56,7 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExplorerEnablingRoleArn", targetDepth))
+                if (context.TestExpression("ExplorerEnablingRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExplorerEnablingRoleArn = unmarshaller.Unmarshall(context, ref reader);

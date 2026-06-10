@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ValueArn", targetDepth))
+                if (context.TestExpression("ValueArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValueArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueInteger", targetDepth))
+                if (context.TestExpression("ValueInteger", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ValueInteger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueList", targetDepth))
+                if (context.TestExpression("ValueList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SegmentAttributeValue, SegmentAttributeValueUnmarshaller>(SegmentAttributeValueUnmarshaller.Instance);
                     unmarshalledObject.ValueList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueMap", targetDepth))
+                if (context.TestExpression("ValueMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, SegmentAttributeValue, StringUnmarshaller, SegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, SegmentAttributeValueUnmarshaller.Instance);
                     unmarshalledObject.ValueMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueString", targetDepth))
+                if (context.TestExpression("ValueString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValueString = unmarshaller.Unmarshall(context, ref reader);

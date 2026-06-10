@@ -56,79 +56,79 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("andAll", targetDepth))
+                if (context.TestExpression("andAll", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RetrievalFilter, RetrievalFilterUnmarshaller>(RetrievalFilterUnmarshaller.Instance);
                     unmarshalledObject.AndAll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("equals", targetDepth))
+                if (context.TestExpression("equals", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.Equals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greaterThan", targetDepth))
+                if (context.TestExpression("greaterThan", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.GreaterThan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greaterThanOrEquals", targetDepth))
+                if (context.TestExpression("greaterThanOrEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.GreaterThanOrEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("in", targetDepth))
+                if (context.TestExpression("in", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.In = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lessThan", targetDepth))
+                if (context.TestExpression("lessThan", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.LessThan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lessThanOrEquals", targetDepth))
+                if (context.TestExpression("lessThanOrEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.LessThanOrEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listContains", targetDepth))
+                if (context.TestExpression("listContains", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.ListContains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notEquals", targetDepth))
+                if (context.TestExpression("notEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.NotEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notIn", targetDepth))
+                if (context.TestExpression("notIn", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.NotIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orAll", targetDepth))
+                if (context.TestExpression("orAll", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RetrievalFilter, RetrievalFilterUnmarshaller>(RetrievalFilterUnmarshaller.Instance);
                     unmarshalledObject.OrAll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startsWith", targetDepth))
+                if (context.TestExpression("startsWith", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.StartsWith = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stringContains", targetDepth))
+                if (context.TestExpression("stringContains", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterAttributeUnmarshaller.Instance;
                     unmarshalledObject.StringContains = unmarshaller.Unmarshall(context, ref reader);

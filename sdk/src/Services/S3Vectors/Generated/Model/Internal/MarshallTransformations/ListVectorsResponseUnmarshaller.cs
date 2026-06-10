@@ -52,13 +52,13 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vectors", targetDepth))
+                if (context.TestExpression("vectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListOutputVector, ListOutputVectorUnmarshaller>(ListOutputVectorUnmarshaller.Instance);
                     response.Vectors = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("levelConfigurations", targetDepth))
+                if (context.TestExpression("levelConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HierarchicalChunkingLevelConfiguration, HierarchicalChunkingLevelConfigurationUnmarshaller>(HierarchicalChunkingLevelConfigurationUnmarshaller.Instance);
                     unmarshalledObject.LevelConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overlapTokens", targetDepth))
+                if (context.TestExpression("overlapTokens", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.OverlapTokens = unmarshaller.Unmarshall(context, ref reader);

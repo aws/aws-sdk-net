@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("publicKey", targetDepth))
+                if (context.TestExpression("publicKey", targetDepth, ref reader))
                 {
                     var unmarshaller = PublicKeyUnmarshaller.Instance;
                     response.PublicKey = unmarshaller.Unmarshall(context, ref reader);

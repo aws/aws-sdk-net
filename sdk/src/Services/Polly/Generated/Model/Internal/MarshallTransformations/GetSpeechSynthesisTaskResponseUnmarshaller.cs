@@ -52,7 +52,7 @@ namespace Amazon.Polly.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SynthesisTask", targetDepth))
+                if (context.TestExpression("SynthesisTask", targetDepth, ref reader))
                 {
                     var unmarshaller = SynthesisTaskUnmarshaller.Instance;
                     response.SynthesisTask = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JiraCloud", targetDepth))
+                if (context.TestExpression("JiraCloud", targetDepth, ref reader))
                 {
                     var unmarshaller = JiraCloudDetailUnmarshaller.Instance;
                     unmarshalledObject.JiraCloud = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNow", targetDepth))
+                if (context.TestExpression("ServiceNow", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowDetailUnmarshaller.Instance;
                     unmarshalledObject.ServiceNow = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DASHStreamingSessionURL", targetDepth))
+                if (context.TestExpression("DASHStreamingSessionURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DASHStreamingSessionURL = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviderArn", targetDepth))
+                if (context.TestExpression("CapacityProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionEnvironmentMemoryGiBPerVCpu", targetDepth))
+                if (context.TestExpression("ExecutionEnvironmentMemoryGiBPerVCpu", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExecutionEnvironmentMemoryGiBPerVCpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PerExecutionEnvironmentMaxConcurrency", targetDepth))
+                if (context.TestExpression("PerExecutionEnvironmentMaxConcurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PerExecutionEnvironmentMaxConcurrency = unmarshaller.Unmarshall(context, ref reader);

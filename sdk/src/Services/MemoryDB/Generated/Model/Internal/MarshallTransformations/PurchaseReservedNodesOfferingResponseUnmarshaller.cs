@@ -52,7 +52,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReservedNode", targetDepth))
+                if (context.TestExpression("ReservedNode", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservedNodeUnmarshaller.Instance;
                     response.ReservedNode = unmarshaller.Unmarshall(context, ref reader);

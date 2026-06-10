@@ -56,13 +56,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputeMode", targetDepth))
+                if (context.TestExpression("ComputeMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedCapacity", targetDepth))
+                if (context.TestExpression("ProvisionedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedCapacityResponseUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context, ref reader);

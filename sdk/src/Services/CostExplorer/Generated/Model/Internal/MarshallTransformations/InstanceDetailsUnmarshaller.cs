@@ -56,37 +56,37 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EC2InstanceDetails", targetDepth))
+                if (context.TestExpression("EC2InstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.EC2InstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ElastiCacheInstanceDetails", targetDepth))
+                if (context.TestExpression("ElastiCacheInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ElastiCacheInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ElastiCacheInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ESInstanceDetails", targetDepth))
+                if (context.TestExpression("ESInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ESInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ESInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemoryDBInstanceDetails", targetDepth))
+                if (context.TestExpression("MemoryDBInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryDBInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.MemoryDBInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RDSInstanceDetails", targetDepth))
+                if (context.TestExpression("RDSInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RDSInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.RDSInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftInstanceDetails", targetDepth))
+                if (context.TestExpression("RedshiftInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.RedshiftInstanceDetails = unmarshaller.Unmarshall(context, ref reader);

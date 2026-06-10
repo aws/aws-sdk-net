@@ -52,13 +52,13 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageRecordResult, UsageRecordResultUnmarshaller>(UsageRecordResultUnmarshaller.Instance);
                     response.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedRecords", targetDepth))
+                if (context.TestExpression("UnprocessedRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageRecord, UsageRecordUnmarshaller>(UsageRecordUnmarshaller.Instance);
                     response.UnprocessedRecords = unmarshaller.Unmarshall(context, ref reader);

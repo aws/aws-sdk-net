@@ -52,13 +52,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("linkedAccounts", targetDepth))
+                if (context.TestExpression("linkedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LinkedWhatsAppBusinessAccountSummary, LinkedWhatsAppBusinessAccountSummaryUnmarshaller>(LinkedWhatsAppBusinessAccountSummaryUnmarshaller.Instance);
                     response.LinkedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

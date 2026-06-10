@@ -56,49 +56,49 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveMQBrokerParameters", targetDepth))
+                if (context.TestExpression("ActiveMQBrokerParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceActiveMQBrokerParametersUnmarshaller.Instance;
                     unmarshalledObject.ActiveMQBrokerParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamoDBStreamParameters", targetDepth))
+                if (context.TestExpression("DynamoDBStreamParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceDynamoDBStreamParametersUnmarshaller.Instance;
                     unmarshalledObject.DynamoDBStreamParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterCriteria", targetDepth))
+                if (context.TestExpression("FilterCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterCriteriaUnmarshaller.Instance;
                     unmarshalledObject.FilterCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisStreamParameters", targetDepth))
+                if (context.TestExpression("KinesisStreamParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceKinesisStreamParametersUnmarshaller.Instance;
                     unmarshalledObject.KinesisStreamParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedStreamingKafkaParameters", targetDepth))
+                if (context.TestExpression("ManagedStreamingKafkaParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceManagedStreamingKafkaParametersUnmarshaller.Instance;
                     unmarshalledObject.ManagedStreamingKafkaParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RabbitMQBrokerParameters", targetDepth))
+                if (context.TestExpression("RabbitMQBrokerParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceRabbitMQBrokerParametersUnmarshaller.Instance;
                     unmarshalledObject.RabbitMQBrokerParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedKafkaParameters", targetDepth))
+                if (context.TestExpression("SelfManagedKafkaParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceSelfManagedKafkaParametersUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedKafkaParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsQueueParameters", targetDepth))
+                if (context.TestExpression("SqsQueueParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = PipeSourceSqsQueueParametersUnmarshaller.Instance;
                     unmarshalledObject.SqsQueueParameters = unmarshaller.Unmarshall(context, ref reader);

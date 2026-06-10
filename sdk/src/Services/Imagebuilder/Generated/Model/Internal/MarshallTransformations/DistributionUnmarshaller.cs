@@ -56,49 +56,49 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("amiDistributionConfiguration", targetDepth))
+                if (context.TestExpression("amiDistributionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AmiDistributionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AmiDistributionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerDistributionConfiguration", targetDepth))
+                if (context.TestExpression("containerDistributionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerDistributionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ContainerDistributionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fastLaunchConfigurations", targetDepth))
+                if (context.TestExpression("fastLaunchConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FastLaunchConfiguration, FastLaunchConfigurationUnmarshaller>(FastLaunchConfigurationUnmarshaller.Instance);
                     unmarshalledObject.FastLaunchConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchTemplateConfigurations", targetDepth))
+                if (context.TestExpression("launchTemplateConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LaunchTemplateConfiguration, LaunchTemplateConfigurationUnmarshaller>(LaunchTemplateConfigurationUnmarshaller.Instance);
                     unmarshalledObject.LaunchTemplateConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("licenseConfigurationArns", targetDepth))
+                if (context.TestExpression("licenseConfigurationArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LicenseConfigurationArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3ExportConfiguration", targetDepth))
+                if (context.TestExpression("s3ExportConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ExportConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3ExportConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmParameterConfigurations", targetDepth))
+                if (context.TestExpression("ssmParameterConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SsmParameterConfiguration, SsmParameterConfigurationUnmarshaller>(SsmParameterConfigurationUnmarshaller.Instance);
                     unmarshalledObject.SsmParameterConfigurations = unmarshaller.Unmarshall(context, ref reader);

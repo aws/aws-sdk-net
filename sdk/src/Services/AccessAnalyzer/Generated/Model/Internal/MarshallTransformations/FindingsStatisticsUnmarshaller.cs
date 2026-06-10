@@ -56,19 +56,19 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("externalAccessFindingsStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalAccessFindingsStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ExternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("internalAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("internalAccessFindingsStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = InternalAccessFindingsStatisticsUnmarshaller.Instance;
                     unmarshalledObject.InternalAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedAccessFindingsStatistics", targetDepth))
+                if (context.TestExpression("unusedAccessFindingsStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedAccessFindingsStatisticsUnmarshaller.Instance;
                     unmarshalledObject.UnusedAccessFindingsStatistics = unmarshaller.Unmarshall(context, ref reader);

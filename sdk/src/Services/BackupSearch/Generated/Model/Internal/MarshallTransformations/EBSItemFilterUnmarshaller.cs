@@ -56,25 +56,25 @@ namespace Amazon.BackupSearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTimes", targetDepth))
+                if (context.TestExpression("CreationTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
                     unmarshalledObject.CreationTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilePaths", targetDepth))
+                if (context.TestExpression("FilePaths", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StringCondition, StringConditionUnmarshaller>(StringConditionUnmarshaller.Instance);
                     unmarshalledObject.FilePaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModificationTimes", targetDepth))
+                if (context.TestExpression("LastModificationTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeCondition, TimeConditionUnmarshaller>(TimeConditionUnmarshaller.Instance);
                     unmarshalledObject.LastModificationTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sizes", targetDepth))
+                if (context.TestExpression("Sizes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LongCondition, LongConditionUnmarshaller>(LongConditionUnmarshaller.Instance);
                     unmarshalledObject.Sizes = unmarshaller.Unmarshall(context, ref reader);

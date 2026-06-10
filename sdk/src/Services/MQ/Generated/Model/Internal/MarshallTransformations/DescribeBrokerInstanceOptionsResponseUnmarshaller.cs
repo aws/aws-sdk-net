@@ -52,19 +52,19 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("brokerInstanceOptions", targetDepth))
+                if (context.TestExpression("brokerInstanceOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BrokerInstanceOption, BrokerInstanceOptionUnmarshaller>(BrokerInstanceOptionUnmarshaller.Instance);
                     response.BrokerInstanceOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxResults", targetDepth))
+                if (context.TestExpression("maxResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

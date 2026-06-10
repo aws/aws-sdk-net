@@ -56,31 +56,31 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApiGatewayApiAsset", targetDepth))
+                if (context.TestExpression("ApiGatewayApiAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = ApiGatewayApiAssetUnmarshaller.Instance;
                     unmarshalledObject.ApiGatewayApiAsset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LakeFormationDataPermissionAsset", targetDepth))
+                if (context.TestExpression("LakeFormationDataPermissionAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = LakeFormationDataPermissionAssetUnmarshaller.Instance;
                     unmarshalledObject.LakeFormationDataPermissionAsset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDataShareAsset", targetDepth))
+                if (context.TestExpression("RedshiftDataShareAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDataShareAssetUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataShareAsset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3DataAccessAsset", targetDepth))
+                if (context.TestExpression("S3DataAccessAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DataAccessAssetUnmarshaller.Instance;
                     unmarshalledObject.S3DataAccessAsset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3SnapshotAsset", targetDepth))
+                if (context.TestExpression("S3SnapshotAsset", targetDepth, ref reader))
                 {
                     var unmarshaller = S3SnapshotAssetUnmarshaller.Instance;
                     unmarshalledObject.S3SnapshotAsset = unmarshaller.Unmarshall(context, ref reader);

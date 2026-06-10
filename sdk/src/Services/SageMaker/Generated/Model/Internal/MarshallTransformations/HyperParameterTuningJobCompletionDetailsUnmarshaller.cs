@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConvergenceDetectedTime", targetDepth))
+                if (context.TestExpression("ConvergenceDetectedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConvergenceDetectedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfTrainingJobsObjectiveNotImproving", targetDepth))
+                if (context.TestExpression("NumberOfTrainingJobsObjectiveNotImproving", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTrainingJobsObjectiveNotImproving = unmarshaller.Unmarshall(context, ref reader);

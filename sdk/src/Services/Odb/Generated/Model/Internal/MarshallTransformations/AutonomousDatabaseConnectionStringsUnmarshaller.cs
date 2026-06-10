@@ -56,37 +56,37 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allConnectionStrings", targetDepth))
+                if (context.TestExpression("allConnectionStrings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AllConnectionStrings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dedicated", targetDepth))
+                if (context.TestExpression("dedicated", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Dedicated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("high", targetDepth))
+                if (context.TestExpression("high", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.High = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("low", targetDepth))
+                if (context.TestExpression("low", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Low = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("medium", targetDepth))
+                if (context.TestExpression("medium", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Medium = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profiles", targetDepth))
+                if (context.TestExpression("profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DatabaseConnectionStringProfile, DatabaseConnectionStringProfileUnmarshaller>(DatabaseConnectionStringProfileUnmarshaller.Instance);
                     unmarshalledObject.Profiles = unmarshaller.Unmarshall(context, ref reader);

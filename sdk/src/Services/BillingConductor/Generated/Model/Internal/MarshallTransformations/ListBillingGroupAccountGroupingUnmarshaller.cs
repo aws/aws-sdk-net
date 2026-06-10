@@ -56,13 +56,13 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoAssociate", targetDepth))
+                if (context.TestExpression("AutoAssociate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAssociate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponsibilityTransferArn", targetDepth))
+                if (context.TestExpression("ResponsibilityTransferArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResponsibilityTransferArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dnsRecord", targetDepth))
+                if (context.TestExpression("dnsRecord", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DnsRecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subDomainSetting", targetDepth))
+                if (context.TestExpression("subDomainSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = SubDomainSettingUnmarshaller.Instance;
                     unmarshalledObject.SubDomainSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verified", targetDepth))
+                if (context.TestExpression("verified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Verified = unmarshaller.Unmarshall(context, ref reader);

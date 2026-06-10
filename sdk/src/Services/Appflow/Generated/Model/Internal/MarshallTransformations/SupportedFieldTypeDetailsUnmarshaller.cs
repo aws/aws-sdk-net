@@ -56,7 +56,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("v1", targetDepth))
+                if (context.TestExpression("v1", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldTypeDetailsUnmarshaller.Instance;
                     unmarshalledObject.V1 = unmarshaller.Unmarshall(context, ref reader);

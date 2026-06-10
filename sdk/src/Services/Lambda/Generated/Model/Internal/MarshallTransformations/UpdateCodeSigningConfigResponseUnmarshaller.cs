@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeSigningConfig", targetDepth))
+                if (context.TestExpression("CodeSigningConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeSigningConfigUnmarshaller.Instance;
                     response.CodeSigningConfig = unmarshaller.Unmarshall(context, ref reader);

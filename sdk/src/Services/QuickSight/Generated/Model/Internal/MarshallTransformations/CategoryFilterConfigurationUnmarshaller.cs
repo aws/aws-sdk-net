@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomFilterConfiguration", targetDepth))
+                if (context.TestExpression("CustomFilterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomFilterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomFilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomFilterListConfiguration", targetDepth))
+                if (context.TestExpression("CustomFilterListConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomFilterListConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomFilterListConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterListConfiguration", targetDepth))
+                if (context.TestExpression("FilterListConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterListConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FilterListConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,55 +56,55 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ADMMessage", targetDepth))
+                if (context.TestExpression("ADMMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.ADMMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("APNSMessage", targetDepth))
+                if (context.TestExpression("APNSMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.APNSMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BaiduMessage", targetDepth))
+                if (context.TestExpression("BaiduMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.BaiduMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomMessage", targetDepth))
+                if (context.TestExpression("CustomMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignCustomMessageUnmarshaller.Instance;
                     unmarshalledObject.CustomMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultMessage", targetDepth))
+                if (context.TestExpression("DefaultMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.DefaultMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmailMessage", targetDepth))
+                if (context.TestExpression("EmailMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignEmailMessageUnmarshaller.Instance;
                     unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GCMMessage", targetDepth))
+                if (context.TestExpression("GCMMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageUnmarshaller.Instance;
                     unmarshalledObject.GCMMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InAppMessage", targetDepth))
+                if (context.TestExpression("InAppMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignInAppMessageUnmarshaller.Instance;
                     unmarshalledObject.InAppMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SMSMessage", targetDepth))
+                if (context.TestExpression("SMSMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignSmsMessageUnmarshaller.Instance;
                     unmarshalledObject.SMSMessage = unmarshaller.Unmarshall(context, ref reader);

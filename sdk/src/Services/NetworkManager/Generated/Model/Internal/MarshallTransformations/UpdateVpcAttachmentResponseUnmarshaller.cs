@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VpcAttachment", targetDepth))
+                if (context.TestExpression("VpcAttachment", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcAttachmentUnmarshaller.Instance;
                     response.VpcAttachment = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServerCertificateConfigurations", targetDepth))
+                if (context.TestExpression("ServerCertificateConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServerCertificateConfiguration, ServerCertificateConfigurationUnmarshaller>(ServerCertificateConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ServerCertificateConfigurations = unmarshaller.Unmarshall(context, ref reader);

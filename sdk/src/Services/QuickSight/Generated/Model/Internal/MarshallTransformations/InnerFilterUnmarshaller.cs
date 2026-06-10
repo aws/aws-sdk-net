@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoryInnerFilter", targetDepth))
+                if (context.TestExpression("CategoryInnerFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoryInnerFilterUnmarshaller.Instance;
                     unmarshalledObject.CategoryInnerFilter = unmarshaller.Unmarshall(context, ref reader);

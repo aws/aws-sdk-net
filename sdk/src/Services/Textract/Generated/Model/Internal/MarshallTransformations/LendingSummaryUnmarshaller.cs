@@ -56,13 +56,13 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentGroups", targetDepth))
+                if (context.TestExpression("DocumentGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentGroup, DocumentGroupUnmarshaller>(DocumentGroupUnmarshaller.Instance);
                     unmarshalledObject.DocumentGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UndetectedDocumentTypes", targetDepth))
+                if (context.TestExpression("UndetectedDocumentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UndetectedDocumentTypes = unmarshaller.Unmarshall(context, ref reader);

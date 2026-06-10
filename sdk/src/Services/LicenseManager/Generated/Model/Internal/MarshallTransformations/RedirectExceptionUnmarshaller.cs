@@ -72,7 +72,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Location", targetDepth))
+                    if (context.TestExpression("Location", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);

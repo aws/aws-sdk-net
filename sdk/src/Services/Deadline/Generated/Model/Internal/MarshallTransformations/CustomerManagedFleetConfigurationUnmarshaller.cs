@@ -56,31 +56,31 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                if (context.TestExpression("autoScalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerManagedAutoScalingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mode", targetDepth))
+                if (context.TestExpression("mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageProfileId", targetDepth))
+                if (context.TestExpression("storageProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagPropagationMode", targetDepth))
+                if (context.TestExpression("tagPropagationMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TagPropagationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerCapabilities", targetDepth))
+                if (context.TestExpression("workerCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerManagedWorkerCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.WorkerCapabilities = unmarshaller.Unmarshall(context, ref reader);

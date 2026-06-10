@@ -52,13 +52,13 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedRequests", targetDepth))
+                if (context.TestExpression("failedRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedCampaignStateResponse, FailedCampaignStateResponseUnmarshaller>(FailedCampaignStateResponseUnmarshaller.Instance);
                     response.FailedRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulRequests", targetDepth))
+                if (context.TestExpression("successfulRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuccessfulCampaignStateResponse, SuccessfulCampaignStateResponseUnmarshaller>(SuccessfulCampaignStateResponseUnmarshaller.Instance);
                     response.SuccessfulRequests = unmarshaller.Unmarshall(context, ref reader);

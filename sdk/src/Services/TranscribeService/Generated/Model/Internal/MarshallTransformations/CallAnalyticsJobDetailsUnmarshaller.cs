@@ -56,7 +56,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Skipped", targetDepth))
+                if (context.TestExpression("Skipped", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CallAnalyticsSkippedFeature, CallAnalyticsSkippedFeatureUnmarshaller>(CallAnalyticsSkippedFeatureUnmarshaller.Instance);
                     unmarshalledObject.Skipped = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SpeakerSearchResult, SpeakerSearchResultUnmarshaller>(SpeakerSearchResultUnmarshaller.Instance);
                     unmarshalledObject.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceprintGenerationStatus", targetDepth))
+                if (context.TestExpression("VoiceprintGenerationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VoiceprintGenerationStatus = unmarshaller.Unmarshall(context, ref reader);

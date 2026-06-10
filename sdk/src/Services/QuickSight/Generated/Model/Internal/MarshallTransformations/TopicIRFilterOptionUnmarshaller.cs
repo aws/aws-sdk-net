@@ -56,109 +56,109 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggMetrics", targetDepth))
+                if (context.TestExpression("AggMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterAggMetrics, FilterAggMetricsUnmarshaller>(FilterAggMetricsUnmarshaller.Instance);
                     unmarshalledObject.AggMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Aggregation", targetDepth))
+                if (context.TestExpression("Aggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AggregationFunctionParameters", targetDepth))
+                if (context.TestExpression("AggregationFunctionParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AggregationFunctionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AggregationPartitionBy", targetDepth))
+                if (context.TestExpression("AggregationPartitionBy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregationPartitionBy, AggregationPartitionByUnmarshaller>(AggregationPartitionByUnmarshaller.Instance);
                     unmarshalledObject.AggregationPartitionBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Anchor", targetDepth))
+                if (context.TestExpression("Anchor", targetDepth, ref reader))
                 {
                     var unmarshaller = AnchorUnmarshaller.Instance;
                     unmarshalledObject.Anchor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Constant", targetDepth))
+                if (context.TestExpression("Constant", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
                     unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterClass", targetDepth))
+                if (context.TestExpression("FilterClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterType", targetDepth))
+                if (context.TestExpression("FilterType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Function", targetDepth))
+                if (context.TestExpression("Function", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Function = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inclusive", targetDepth))
+                if (context.TestExpression("Inclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inverse", targetDepth))
+                if (context.TestExpression("Inverse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inverse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastNextOffset", targetDepth))
+                if (context.TestExpression("LastNextOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
                     unmarshalledObject.LastNextOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullFilter", targetDepth))
+                if (context.TestExpression("NullFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NullFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperandField", targetDepth))
+                if (context.TestExpression("OperandField", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
                     unmarshalledObject.OperandField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Range", targetDepth))
+                if (context.TestExpression("Range", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
                     unmarshalledObject.Range = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SortDirection", targetDepth))
+                if (context.TestExpression("SortDirection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopBottomLimit", targetDepth))
+                if (context.TestExpression("TopBottomLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
                     unmarshalledObject.TopBottomLimit = unmarshaller.Unmarshall(context, ref reader);

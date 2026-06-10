@@ -56,19 +56,19 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fromBlueprintId", targetDepth))
+                if (context.TestExpression("fromBlueprintId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FromBlueprintId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fromBundleId", targetDepth))
+                if (context.TestExpression("fromBundleId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FromBundleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fromDiskInfo", targetDepth))
+                if (context.TestExpression("fromDiskInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DiskInfo, DiskInfoUnmarshaller>(DiskInfoUnmarshaller.Instance);
                     unmarshalledObject.FromDiskInfo = unmarshaller.Unmarshall(context, ref reader);

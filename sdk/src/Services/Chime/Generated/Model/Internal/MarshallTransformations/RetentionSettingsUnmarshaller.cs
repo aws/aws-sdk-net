@@ -56,13 +56,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConversationRetentionSettings", targetDepth))
+                if (context.TestExpression("ConversationRetentionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationRetentionSettingsUnmarshaller.Instance;
                     unmarshalledObject.ConversationRetentionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoomRetentionSettings", targetDepth))
+                if (context.TestExpression("RoomRetentionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RoomRetentionSettingsUnmarshaller.Instance;
                     unmarshalledObject.RoomRetentionSettings = unmarshaller.Unmarshall(context, ref reader);

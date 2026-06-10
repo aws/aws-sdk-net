@@ -56,13 +56,13 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountTargeting", targetDepth))
+                if (context.TestExpression("accountTargeting", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountTargeting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emptyTargetResolutionMode", targetDepth))
+                if (context.TestExpression("emptyTargetResolutionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmptyTargetResolutionMode = unmarshaller.Unmarshall(context, ref reader);

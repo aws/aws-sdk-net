@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BrandColorPalette", targetDepth))
+                if (context.TestExpression("BrandColorPalette", targetDepth, ref reader))
                 {
                     var unmarshaller = BrandColorPaletteUnmarshaller.Instance;
                     unmarshalledObject.BrandColorPalette = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BrandElementStyle", targetDepth))
+                if (context.TestExpression("BrandElementStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = BrandElementStyleUnmarshaller.Instance;
                     unmarshalledObject.BrandElementStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContextualAccentPalette", targetDepth))
+                if (context.TestExpression("ContextualAccentPalette", targetDepth, ref reader))
                 {
                     var unmarshaller = ContextualAccentPaletteUnmarshaller.Instance;
                     unmarshalledObject.ContextualAccentPalette = unmarshaller.Unmarshall(context, ref reader);

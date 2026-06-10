@@ -52,13 +52,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedItems", targetDepth))
+                if (context.TestExpression("FailedItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceKey, ResourceKeyUnmarshaller>(ResourceKeyUnmarshaller.Instance);
                     response.FailedItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureMessage", targetDepth))
+                if (context.TestExpression("FailureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);

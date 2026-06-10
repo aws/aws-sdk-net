@@ -56,25 +56,25 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExistingRackSpecificationDetails", targetDepth))
+                if (context.TestExpression("ExistingRackSpecificationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RackSpecificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExistingRackSpecificationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FinalRackSpecificationDetails", targetDepth))
+                if (context.TestExpression("FinalRackSpecificationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RackSpecificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.FinalRackSpecificationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuoteSpecificationType", targetDepth))
+                if (context.TestExpression("QuoteSpecificationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuoteSpecificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerSpecificationDetails", targetDepth))
+                if (context.TestExpression("ServerSpecificationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerSpecificationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ServerSpecificationDetails = unmarshaller.Unmarshall(context, ref reader);

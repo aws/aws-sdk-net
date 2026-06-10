@@ -56,19 +56,19 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataValidationMetrics", targetDepth))
+                if (context.TestExpression("dataValidationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = DataValidationMetricsUnmarshaller.Instance;
                     unmarshalledObject.DataValidationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingMetrics", targetDepth))
+                if (context.TestExpression("trainingMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingMetricsUnmarshaller.Instance;
                     unmarshalledObject.TrainingMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variableImportanceMetrics", targetDepth))
+                if (context.TestExpression("variableImportanceMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = VariableImportanceMetricsUnmarshaller.Instance;
                     unmarshalledObject.VariableImportanceMetrics = unmarshaller.Unmarshall(context, ref reader);

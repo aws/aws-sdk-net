@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("uninstallAfterBuild", targetDepth))
+                if (context.TestExpression("uninstallAfterBuild", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UninstallAfterBuild = unmarshaller.Unmarshall(context, ref reader);

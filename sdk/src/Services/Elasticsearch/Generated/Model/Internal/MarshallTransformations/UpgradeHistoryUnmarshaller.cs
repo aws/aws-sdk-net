@@ -56,25 +56,25 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StartTimestamp", targetDepth))
+                if (context.TestExpression("StartTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepsList", targetDepth))
+                if (context.TestExpression("StepsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UpgradeStepItem, UpgradeStepItemUnmarshaller>(UpgradeStepItemUnmarshaller.Instance);
                     unmarshalledObject.StepsList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpgradeName", targetDepth))
+                if (context.TestExpression("UpgradeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpgradeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpgradeStatus", targetDepth))
+                if (context.TestExpression("UpgradeStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpgradeStatus = unmarshaller.Unmarshall(context, ref reader);

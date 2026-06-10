@@ -52,7 +52,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("transactionStatus", targetDepth))
+                if (context.TestExpression("transactionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TransactionStatus = unmarshaller.Unmarshall(context, ref reader);

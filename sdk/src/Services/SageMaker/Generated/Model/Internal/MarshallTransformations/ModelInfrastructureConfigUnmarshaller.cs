@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InfrastructureType", targetDepth))
+                if (context.TestExpression("InfrastructureType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InfrastructureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RealTimeInferenceConfig", targetDepth))
+                if (context.TestExpression("RealTimeInferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeInferenceConfigUnmarshaller.Instance;
                     unmarshalledObject.RealTimeInferenceConfig = unmarshaller.Unmarshall(context, ref reader);

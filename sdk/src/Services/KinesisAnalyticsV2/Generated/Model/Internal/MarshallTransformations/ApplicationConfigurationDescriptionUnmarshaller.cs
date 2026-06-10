@@ -56,61 +56,61 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationCodeConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationCodeConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationCodeConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationCodeConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationEncryptionConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationEncryptionConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationEncryptionConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationSnapshotConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationSnapshotConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationSnapshotConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSnapshotConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationSystemRollbackConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationSystemRollbackConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationSystemRollbackConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSystemRollbackConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnvironmentPropertyDescriptions", targetDepth))
+                if (context.TestExpression("EnvironmentPropertyDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentPropertyDescriptionsUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentPropertyDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FlinkApplicationConfigurationDescription", targetDepth))
+                if (context.TestExpression("FlinkApplicationConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = FlinkApplicationConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.FlinkApplicationConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunConfigurationDescription", targetDepth))
+                if (context.TestExpression("RunConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = RunConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.RunConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqlApplicationConfigurationDescription", targetDepth))
+                if (context.TestExpression("SqlApplicationConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = SqlApplicationConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.SqlApplicationConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfigurationDescriptions", targetDepth))
+                if (context.TestExpression("VpcConfigurationDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcConfigurationDescription, VpcConfigurationDescriptionUnmarshaller>(VpcConfigurationDescriptionUnmarshaller.Instance);
                     unmarshalledObject.VpcConfigurationDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZeppelinApplicationConfigurationDescription", targetDepth))
+                if (context.TestExpression("ZeppelinApplicationConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ZeppelinApplicationConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ZeppelinApplicationConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cvss", targetDepth))
+                if (context.TestExpression("cvss", targetDepth, ref reader))
                 {
                     var unmarshaller = CvssScoreDetailsUnmarshaller.Instance;
                     unmarshalledObject.Cvss = unmarshaller.Unmarshall(context, ref reader);

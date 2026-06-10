@@ -56,25 +56,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("electronicTransactionCodeNumber", targetDepth))
+                if (context.TestExpression("electronicTransactionCodeNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ElectronicTransactionCodeNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enterpriseIdentificationNumber", targetDepth))
+                if (context.TestExpression("enterpriseIdentificationNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnterpriseIdentificationNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("paymentVoucherNumber", targetDepth))
+                if (context.TestExpression("paymentVoucherNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaymentVoucherNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("paymentVoucherNumberDate", targetDepth))
+                if (context.TestExpression("paymentVoucherNumberDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaymentVoucherNumberDate = unmarshaller.Unmarshall(context, ref reader);

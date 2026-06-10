@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationServerMetadata", targetDepth))
+                if (context.TestExpression("authorizationServerMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = Oauth2AuthorizationServerMetadataUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationServerMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("discoveryUrl", targetDepth))
+                if (context.TestExpression("discoveryUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiscoveryUrl = unmarshaller.Unmarshall(context, ref reader);

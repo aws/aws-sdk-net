@@ -52,13 +52,13 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MLModelId", targetDepth))
+                if (context.TestExpression("MLModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MLModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RealtimeEndpointInfo", targetDepth))
+                if (context.TestExpression("RealtimeEndpointInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RealtimeEndpointInfoUnmarshaller.Instance;
                     response.RealtimeEndpointInfo = unmarshaller.Unmarshall(context, ref reader);

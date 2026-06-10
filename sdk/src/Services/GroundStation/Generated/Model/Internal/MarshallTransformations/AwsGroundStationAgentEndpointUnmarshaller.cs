@@ -56,31 +56,31 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentStatus", targetDepth))
+                if (context.TestExpression("agentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("auditResults", targetDepth))
+                if (context.TestExpression("auditResults", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuditResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("egressAddress", targetDepth))
+                if (context.TestExpression("egressAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.EgressAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ingressAddress", targetDepth))
+                if (context.TestExpression("ingressAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = RangedConnectionDetailsUnmarshaller.Instance;
                     unmarshalledObject.IngressAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

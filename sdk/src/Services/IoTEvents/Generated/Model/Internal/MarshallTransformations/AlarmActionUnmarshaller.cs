@@ -56,55 +56,55 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dynamoDB", targetDepth))
+                if (context.TestExpression("dynamoDB", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamoDBActionUnmarshaller.Instance;
                     unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dynamoDBv2", targetDepth))
+                if (context.TestExpression("dynamoDBv2", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamoDBv2ActionUnmarshaller.Instance;
                     unmarshalledObject.DynamoDBv2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firehose", targetDepth))
+                if (context.TestExpression("firehose", targetDepth, ref reader))
                 {
                     var unmarshaller = FirehoseActionUnmarshaller.Instance;
                     unmarshalledObject.Firehose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotEvents", targetDepth))
+                if (context.TestExpression("iotEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = IotEventsActionUnmarshaller.Instance;
                     unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotSiteWise", targetDepth))
+                if (context.TestExpression("iotSiteWise", targetDepth, ref reader))
                 {
                     var unmarshaller = IotSiteWiseActionUnmarshaller.Instance;
                     unmarshalledObject.IotSiteWise = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iotTopicPublish", targetDepth))
+                if (context.TestExpression("iotTopicPublish", targetDepth, ref reader))
                 {
                     var unmarshaller = IotTopicPublishActionUnmarshaller.Instance;
                     unmarshalledObject.IotTopicPublish = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambda", targetDepth))
+                if (context.TestExpression("lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaActionUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sns", targetDepth))
+                if (context.TestExpression("sns", targetDepth, ref reader))
                 {
                     var unmarshaller = SNSTopicPublishActionUnmarshaller.Instance;
                     unmarshalledObject.Sns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqs", targetDepth))
+                if (context.TestExpression("sqs", targetDepth, ref reader))
                 {
                     var unmarshaller = SqsActionUnmarshaller.Instance;
                     unmarshalledObject.Sqs = unmarshaller.Unmarshall(context, ref reader);

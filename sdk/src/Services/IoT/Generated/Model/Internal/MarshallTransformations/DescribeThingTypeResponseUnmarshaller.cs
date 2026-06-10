@@ -52,31 +52,31 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("thingTypeArn", targetDepth))
+                if (context.TestExpression("thingTypeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThingTypeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingTypeId", targetDepth))
+                if (context.TestExpression("thingTypeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThingTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingTypeMetadata", targetDepth))
+                if (context.TestExpression("thingTypeMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ThingTypeMetadataUnmarshaller.Instance;
                     response.ThingTypeMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingTypeName", targetDepth))
+                if (context.TestExpression("thingTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThingTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingTypeProperties", targetDepth))
+                if (context.TestExpression("thingTypeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ThingTypePropertiesUnmarshaller.Instance;
                     response.ThingTypeProperties = unmarshaller.Unmarshall(context, ref reader);

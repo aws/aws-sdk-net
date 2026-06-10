@@ -56,19 +56,19 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EgressConfiguration", targetDepth))
+                if (context.TestExpression("EgressConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EgressConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EgressConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IngressConfiguration", targetDepth))
+                if (context.TestExpression("IngressConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IngressConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddressType", targetDepth))
+                if (context.TestExpression("IpAddressType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);

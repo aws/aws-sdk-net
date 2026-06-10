@@ -52,13 +52,13 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("plugins", targetDepth))
+                if (context.TestExpression("plugins", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PluginSummary, PluginSummaryUnmarshaller>(PluginSummaryUnmarshaller.Instance);
                     response.Plugins = unmarshaller.Unmarshall(context, ref reader);

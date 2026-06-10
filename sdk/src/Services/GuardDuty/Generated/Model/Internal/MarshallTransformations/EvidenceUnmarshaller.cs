@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("threatIntelligenceDetails", targetDepth))
+                if (context.TestExpression("threatIntelligenceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ThreatIntelligenceDetail, ThreatIntelligenceDetailUnmarshaller>(ThreatIntelligenceDetailUnmarshaller.Instance);
                     unmarshalledObject.ThreatIntelligenceDetails = unmarshaller.Unmarshall(context, ref reader);

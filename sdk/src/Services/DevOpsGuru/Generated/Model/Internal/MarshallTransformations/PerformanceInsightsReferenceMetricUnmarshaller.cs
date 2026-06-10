@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetricQuery", targetDepth))
+                if (context.TestExpression("MetricQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceInsightsMetricQueryUnmarshaller.Instance;
                     unmarshalledObject.MetricQuery = unmarshaller.Unmarshall(context, ref reader);

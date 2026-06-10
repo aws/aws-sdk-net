@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationCodeGrantCredentialsSource", targetDepth))
+                if (context.TestExpression("AuthorizationCodeGrantCredentialsSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationCodeGrantCredentialsSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BaseEndpoint", targetDepth))
+                if (context.TestExpression("BaseEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadAuthorizationCodeGrantCredentialsDetails", targetDepth))
+                if (context.TestExpression("ReadAuthorizationCodeGrantCredentialsDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadAuthorizationCodeGrantCredentialsDetailsUnmarshaller.Instance;
                     unmarshalledObject.ReadAuthorizationCodeGrantCredentialsDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedirectUrl", targetDepth))
+                if (context.TestExpression("RedirectUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RedirectUrl = unmarshaller.Unmarshall(context, ref reader);

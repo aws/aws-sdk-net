@@ -56,13 +56,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowlist", targetDepth))
+                if (context.TestExpression("allowlist", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CookieSpecification, CookieSpecificationUnmarshaller>(CookieSpecificationUnmarshaller.Instance);
                     unmarshalledObject.Allowlist = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blocklist", targetDepth))
+                if (context.TestExpression("blocklist", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CookieSpecification, CookieSpecificationUnmarshaller>(CookieSpecificationUnmarshaller.Instance);
                     unmarshalledObject.Blocklist = unmarshaller.Unmarshall(context, ref reader);

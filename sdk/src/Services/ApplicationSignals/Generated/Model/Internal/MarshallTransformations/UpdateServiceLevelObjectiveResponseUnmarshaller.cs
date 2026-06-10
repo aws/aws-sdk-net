@@ -52,7 +52,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Slo", targetDepth))
+                if (context.TestExpression("Slo", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceLevelObjectiveUnmarshaller.Instance;
                     response.Slo = unmarshaller.Unmarshall(context, ref reader);

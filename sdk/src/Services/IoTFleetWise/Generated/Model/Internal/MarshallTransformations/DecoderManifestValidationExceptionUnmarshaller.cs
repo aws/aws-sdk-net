@@ -72,13 +72,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("invalidNetworkInterfaces", targetDepth))
+                    if (context.TestExpression("invalidNetworkInterfaces", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<InvalidNetworkInterface, InvalidNetworkInterfaceUnmarshaller>(InvalidNetworkInterfaceUnmarshaller.Instance);
                         unmarshalledObject.InvalidNetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("invalidSignals", targetDepth))
+                    if (context.TestExpression("invalidSignals", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<InvalidSignalDecoder, InvalidSignalDecoderUnmarshaller>(InvalidSignalDecoderUnmarshaller.Instance);
                         unmarshalledObject.InvalidSignals = unmarshaller.Unmarshall(context, ref reader);

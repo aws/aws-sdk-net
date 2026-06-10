@@ -56,25 +56,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComponentId", targetDepth))
+                if (context.TestExpression("ComponentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComponentType", targetDepth))
+                if (context.TestExpression("ComponentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Egress", targetDepth))
+                if (context.TestExpression("Egress", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkHeaderUnmarshaller.Instance;
                     unmarshalledObject.Egress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ingress", targetDepth))
+                if (context.TestExpression("Ingress", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkHeaderUnmarshaller.Instance;
                     unmarshalledObject.Ingress = unmarshaller.Unmarshall(context, ref reader);

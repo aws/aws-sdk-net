@@ -56,31 +56,31 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudwatchLogsLogDestination", targetDepth))
+                if (context.TestExpression("CloudwatchLogsLogDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudwatchLogsLogDestinationUnmarshaller.Instance;
                     unmarshalledObject.CloudwatchLogsLogDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirehoseLogDestination", targetDepth))
+                if (context.TestExpression("FirehoseLogDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = FirehoseLogDestinationUnmarshaller.Instance;
                     unmarshalledObject.FirehoseLogDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludeExecutionData", targetDepth))
+                if (context.TestExpression("IncludeExecutionData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludeExecutionData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Level", targetDepth))
+                if (context.TestExpression("Level", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Level = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3LogDestination", targetDepth))
+                if (context.TestExpression("S3LogDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3LogDestinationUnmarshaller.Instance;
                     unmarshalledObject.S3LogDestination = unmarshaller.Unmarshall(context, ref reader);

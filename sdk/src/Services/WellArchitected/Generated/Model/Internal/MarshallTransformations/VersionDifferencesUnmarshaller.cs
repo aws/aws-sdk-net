@@ -56,7 +56,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PillarDifferences", targetDepth))
+                if (context.TestExpression("PillarDifferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PillarDifference, PillarDifferenceUnmarshaller>(PillarDifferenceUnmarshaller.Instance);
                     unmarshalledObject.PillarDifferences = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("association", targetDepth))
+                if (context.TestExpression("association", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociationUnmarshaller.Instance;
                     response.Association = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webhook", targetDepth))
+                if (context.TestExpression("webhook", targetDepth, ref reader))
                 {
                     var unmarshaller = GenericWebhookUnmarshaller.Instance;
                     response.Webhook = unmarshaller.Unmarshall(context, ref reader);

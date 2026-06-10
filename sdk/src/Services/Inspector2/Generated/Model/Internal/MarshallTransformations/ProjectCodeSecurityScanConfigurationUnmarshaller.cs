@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("continuousIntegrationScanConfigurations", targetDepth))
+                if (context.TestExpression("continuousIntegrationScanConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProjectContinuousIntegrationScanConfiguration, ProjectContinuousIntegrationScanConfigurationUnmarshaller>(ProjectContinuousIntegrationScanConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ContinuousIntegrationScanConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("periodicScanConfigurations", targetDepth))
+                if (context.TestExpression("periodicScanConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProjectPeriodicScanConfiguration, ProjectPeriodicScanConfigurationUnmarshaller>(ProjectPeriodicScanConfigurationUnmarshaller.Instance);
                     unmarshalledObject.PeriodicScanConfigurations = unmarshaller.Unmarshall(context, ref reader);

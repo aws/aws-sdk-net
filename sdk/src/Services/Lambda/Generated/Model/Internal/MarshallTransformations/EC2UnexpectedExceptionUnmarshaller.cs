@@ -72,13 +72,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("EC2ErrorCode", targetDepth))
+                    if (context.TestExpression("EC2ErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.EC2ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Type", targetDepth))
+                    if (context.TestExpression("Type", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

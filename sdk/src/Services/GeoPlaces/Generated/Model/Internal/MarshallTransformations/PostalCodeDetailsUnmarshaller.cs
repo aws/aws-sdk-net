@@ -56,31 +56,31 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PostalAuthority", targetDepth))
+                if (context.TestExpression("PostalAuthority", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostalAuthority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostalCode", targetDepth))
+                if (context.TestExpression("PostalCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostalCodeType", targetDepth))
+                if (context.TestExpression("PostalCodeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostalCodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UspsZip", targetDepth))
+                if (context.TestExpression("UspsZip", targetDepth, ref reader))
                 {
                     var unmarshaller = UspsZipUnmarshaller.Instance;
                     unmarshalledObject.UspsZip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UspsZipPlus4", targetDepth))
+                if (context.TestExpression("UspsZipPlus4", targetDepth, ref reader))
                 {
                     var unmarshaller = UspsZipPlus4Unmarshaller.Instance;
                     unmarshalledObject.UspsZipPlus4 = unmarshaller.Unmarshall(context, ref reader);

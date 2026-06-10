@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecuteCommandConfiguration", targetDepth))
+                if (context.TestExpression("ExecuteCommandConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecuteCommandConfiguration = unmarshaller.Unmarshall(context, ref reader);

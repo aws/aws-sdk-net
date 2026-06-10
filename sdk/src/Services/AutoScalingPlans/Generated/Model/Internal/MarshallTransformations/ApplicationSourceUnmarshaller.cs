@@ -56,13 +56,13 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudFormationStackARN", targetDepth))
+                if (context.TestExpression("CloudFormationStackARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudFormationStackARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagFilters", targetDepth))
+                if (context.TestExpression("TagFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagFilter, TagFilterUnmarshaller>(TagFilterUnmarshaller.Instance);
                     unmarshalledObject.TagFilters = unmarshaller.Unmarshall(context, ref reader);

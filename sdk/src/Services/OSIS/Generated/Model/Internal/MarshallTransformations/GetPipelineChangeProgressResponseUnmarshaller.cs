@@ -52,7 +52,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeProgressStatuses", targetDepth))
+                if (context.TestExpression("ChangeProgressStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChangeProgressStatus, ChangeProgressStatusUnmarshaller>(ChangeProgressStatusUnmarshaller.Instance);
                     response.ChangeProgressStatuses = unmarshaller.Unmarshall(context, ref reader);

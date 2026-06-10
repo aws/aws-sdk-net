@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CursorConfiguration", targetDepth))
+                if (context.TestExpression("CursorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CursorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CursorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffsetConfiguration", targetDepth))
+                if (context.TestExpression("OffsetConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OffsetConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OffsetConfiguration = unmarshaller.Unmarshall(context, ref reader);

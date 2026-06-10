@@ -56,13 +56,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Face", targetDepth))
+                if (context.TestExpression("Face", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparedFaceUnmarshaller.Instance;
                     unmarshalledObject.Face = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Similarity", targetDepth))
+                if (context.TestExpression("Similarity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Similarity = unmarshaller.Unmarshall(context, ref reader);

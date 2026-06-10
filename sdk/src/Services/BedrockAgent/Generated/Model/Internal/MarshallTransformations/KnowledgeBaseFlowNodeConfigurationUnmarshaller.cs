@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("guardrailConfiguration", targetDepth))
+                if (context.TestExpression("guardrailConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inferenceConfiguration", targetDepth))
+                if (context.TestExpression("inferenceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseId", targetDepth))
+                if (context.TestExpression("knowledgeBaseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelId", targetDepth))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfResults", targetDepth))
+                if (context.TestExpression("numberOfResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestrationConfiguration", targetDepth))
+                if (context.TestExpression("orchestrationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseOrchestrationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OrchestrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promptTemplate", targetDepth))
+                if (context.TestExpression("promptTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBasePromptTemplateUnmarshaller.Instance;
                     unmarshalledObject.PromptTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rerankingConfiguration", targetDepth))
+                if (context.TestExpression("rerankingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedResourcesMap", targetDepth))
+                if (context.TestExpression("FailedResourcesMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, FailureInfo, StringUnmarshaller, FailureInfoUnmarshaller>(StringUnmarshaller.Instance, FailureInfoUnmarshaller.Instance);
                     response.FailedResourcesMap = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentEphemeris", targetDepth))
+                if (context.TestExpression("currentEphemeris", targetDepth, ref reader))
                 {
                     var unmarshaller = EphemerisMetaDataUnmarshaller.Instance;
                     unmarshalledObject.CurrentEphemeris = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groundStations", targetDepth))
+                if (context.TestExpression("groundStations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.GroundStations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noradSatelliteID", targetDepth))
+                if (context.TestExpression("noradSatelliteID", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoradSatelliteID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("satelliteArn", targetDepth))
+                if (context.TestExpression("satelliteArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SatelliteArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("satelliteId", targetDepth))
+                if (context.TestExpression("satelliteId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SatelliteId = unmarshaller.Unmarshall(context, ref reader);

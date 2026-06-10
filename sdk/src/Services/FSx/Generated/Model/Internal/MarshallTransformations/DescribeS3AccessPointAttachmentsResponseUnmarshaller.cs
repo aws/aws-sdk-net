@@ -52,13 +52,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3AccessPointAttachments", targetDepth))
+                if (context.TestExpression("S3AccessPointAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3AccessPointAttachment, S3AccessPointAttachmentUnmarshaller>(S3AccessPointAttachmentUnmarshaller.Instance);
                     response.S3AccessPointAttachments = unmarshaller.Unmarshall(context, ref reader);

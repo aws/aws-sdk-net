@@ -56,37 +56,37 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregateKeyType", targetDepth))
+                if (context.TestExpression("AggregateKeyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AggregateKeyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomKeys", targetDepth))
+                if (context.TestExpression("CustomKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RateBasedStatementCustomKey, RateBasedStatementCustomKeyUnmarshaller>(RateBasedStatementCustomKeyUnmarshaller.Instance);
                     unmarshalledObject.CustomKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationWindowSec", targetDepth))
+                if (context.TestExpression("EvaluationWindowSec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EvaluationWindowSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForwardedIPConfig", targetDepth))
+                if (context.TestExpression("ForwardedIPConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;
                     unmarshalledObject.ForwardedIPConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Limit", targetDepth))
+                if (context.TestExpression("Limit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Limit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
+                if (context.TestExpression("ScopeDownStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StatementUnmarshaller.Instance;
                     unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context, ref reader);

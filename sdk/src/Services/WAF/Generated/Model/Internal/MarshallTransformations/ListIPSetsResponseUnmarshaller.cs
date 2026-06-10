@@ -52,13 +52,13 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IPSets", targetDepth))
+                if (context.TestExpression("IPSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IPSetSummary, IPSetSummaryUnmarshaller>(IPSetSummaryUnmarshaller.Instance);
                     response.IPSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

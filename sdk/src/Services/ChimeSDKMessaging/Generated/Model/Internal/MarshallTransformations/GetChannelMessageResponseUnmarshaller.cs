@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelMessage", targetDepth))
+                if (context.TestExpression("ChannelMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelMessageUnmarshaller.Instance;
                     response.ChannelMessage = unmarshaller.Unmarshall(context, ref reader);

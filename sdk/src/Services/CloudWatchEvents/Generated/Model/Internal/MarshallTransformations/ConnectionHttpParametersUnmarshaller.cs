@@ -56,19 +56,19 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BodyParameters", targetDepth))
+                if (context.TestExpression("BodyParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectionBodyParameter, ConnectionBodyParameterUnmarshaller>(ConnectionBodyParameterUnmarshaller.Instance);
                     unmarshalledObject.BodyParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeaderParameters", targetDepth))
+                if (context.TestExpression("HeaderParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectionHeaderParameter, ConnectionHeaderParameterUnmarshaller>(ConnectionHeaderParameterUnmarshaller.Instance);
                     unmarshalledObject.HeaderParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryStringParameters", targetDepth))
+                if (context.TestExpression("QueryStringParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectionQueryStringParameter, ConnectionQueryStringParameterUnmarshaller>(ConnectionQueryStringParameterUnmarshaller.Instance);
                     unmarshalledObject.QueryStringParameters = unmarshaller.Unmarshall(context, ref reader);

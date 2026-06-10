@@ -56,19 +56,19 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLoggingConfiguration", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionCloudWatchLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedLoggingConfiguration", targetDepth))
+                if (context.TestExpression("ManagedLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionManagedLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3LoggingConfiguration", targetDepth))
+                if (context.TestExpression("S3LoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionS3LoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);

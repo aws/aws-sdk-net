@@ -52,25 +52,25 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResolverQueryLogConfigs", targetDepth))
+                if (context.TestExpression("ResolverQueryLogConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResolverQueryLogConfig, ResolverQueryLogConfigUnmarshaller>(ResolverQueryLogConfigUnmarshaller.Instance);
                     response.ResolverQueryLogConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCount", targetDepth))
+                if (context.TestExpression("TotalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalFilteredCount", targetDepth))
+                if (context.TestExpression("TotalFilteredCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalFilteredCount = unmarshaller.Unmarshall(context, ref reader);

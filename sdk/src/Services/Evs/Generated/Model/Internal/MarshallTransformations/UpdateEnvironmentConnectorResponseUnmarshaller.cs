@@ -52,7 +52,7 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connector", targetDepth))
+                if (context.TestExpression("connector", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectorUnmarshaller.Instance;
                     response.Connector = unmarshaller.Unmarshall(context, ref reader);

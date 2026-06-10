@@ -52,7 +52,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SyncConfiguration", targetDepth))
+                if (context.TestExpression("SyncConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SyncConfigurationUnmarshaller.Instance;
                     response.SyncConfiguration = unmarshaller.Unmarshall(context, ref reader);

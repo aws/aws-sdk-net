@@ -56,13 +56,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioLogSettings", targetDepth))
+                if (context.TestExpression("audioLogSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioLogSetting, AudioLogSettingUnmarshaller>(AudioLogSettingUnmarshaller.Instance);
                     unmarshalledObject.AudioLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textLogSettings", targetDepth))
+                if (context.TestExpression("textLogSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TextLogSetting, TextLogSettingUnmarshaller>(TextLogSettingUnmarshaller.Instance);
                     unmarshalledObject.TextLogSettings = unmarshaller.Unmarshall(context, ref reader);

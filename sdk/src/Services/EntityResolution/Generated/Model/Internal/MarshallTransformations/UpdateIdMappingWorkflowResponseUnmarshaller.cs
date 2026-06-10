@@ -52,49 +52,49 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idMappingTechniques", targetDepth))
+                if (context.TestExpression("idMappingTechniques", targetDepth, ref reader))
                 {
                     var unmarshaller = IdMappingTechniquesUnmarshaller.Instance;
                     response.IdMappingTechniques = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("incrementalRunConfig", targetDepth))
+                if (context.TestExpression("incrementalRunConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IdMappingIncrementalRunConfigUnmarshaller.Instance;
                     response.IncrementalRunConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputSourceConfig", targetDepth))
+                if (context.TestExpression("inputSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdMappingWorkflowInputSource, IdMappingWorkflowInputSourceUnmarshaller>(IdMappingWorkflowInputSourceUnmarshaller.Instance);
                     response.InputSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSourceConfig", targetDepth))
+                if (context.TestExpression("outputSourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdMappingWorkflowOutputSource, IdMappingWorkflowOutputSourceUnmarshaller>(IdMappingWorkflowOutputSourceUnmarshaller.Instance);
                     response.OutputSourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowArn", targetDepth))
+                if (context.TestExpression("workflowArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkflowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowName", targetDepth))
+                if (context.TestExpression("workflowName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkflowName = unmarshaller.Unmarshall(context, ref reader);

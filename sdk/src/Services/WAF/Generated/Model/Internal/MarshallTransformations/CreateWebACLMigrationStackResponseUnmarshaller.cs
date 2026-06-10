@@ -52,7 +52,7 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3ObjectUrl", targetDepth))
+                if (context.TestExpression("S3ObjectUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.S3ObjectUrl = unmarshaller.Unmarshall(context, ref reader);

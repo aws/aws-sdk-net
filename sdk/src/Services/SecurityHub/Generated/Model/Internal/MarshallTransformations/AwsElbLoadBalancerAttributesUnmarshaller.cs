@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessLog", targetDepth))
+                if (context.TestExpression("AccessLog", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerAccessLogUnmarshaller.Instance;
                     unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdditionalAttributes", targetDepth))
+                if (context.TestExpression("AdditionalAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbLoadBalancerAdditionalAttribute, AwsElbLoadBalancerAdditionalAttributeUnmarshaller>(AwsElbLoadBalancerAdditionalAttributeUnmarshaller.Instance);
                     unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionDraining", targetDepth))
+                if (context.TestExpression("ConnectionDraining", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerConnectionDrainingUnmarshaller.Instance;
                     unmarshalledObject.ConnectionDraining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionSettings", targetDepth))
+                if (context.TestExpression("ConnectionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerConnectionSettingsUnmarshaller.Instance;
                     unmarshalledObject.ConnectionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossZoneLoadBalancing", targetDepth))
+                if (context.TestExpression("CrossZoneLoadBalancing", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerCrossZoneLoadBalancingUnmarshaller.Instance;
                     unmarshalledObject.CrossZoneLoadBalancing = unmarshaller.Unmarshall(context, ref reader);

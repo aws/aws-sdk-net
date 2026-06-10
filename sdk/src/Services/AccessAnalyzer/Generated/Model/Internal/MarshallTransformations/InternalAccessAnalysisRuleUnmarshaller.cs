@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inclusions", targetDepth))
+                if (context.TestExpression("inclusions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InternalAccessAnalysisRuleCriteria, InternalAccessAnalysisRuleCriteriaUnmarshaller>(InternalAccessAnalysisRuleCriteriaUnmarshaller.Instance);
                     unmarshalledObject.Inclusions = unmarshaller.Unmarshall(context, ref reader);

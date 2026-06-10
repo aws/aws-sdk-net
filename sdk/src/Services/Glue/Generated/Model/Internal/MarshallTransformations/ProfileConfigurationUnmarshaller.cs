@@ -56,13 +56,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JobConfiguration", targetDepth))
+                if (context.TestExpression("JobConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ConfigurationObject, StringUnmarshaller, ConfigurationObjectUnmarshaller>(StringUnmarshaller.Instance, ConfigurationObjectUnmarshaller.Instance);
                     unmarshalledObject.JobConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionConfiguration", targetDepth))
+                if (context.TestExpression("SessionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ConfigurationObject, StringUnmarshaller, ConfigurationObjectUnmarshaller>(StringUnmarshaller.Instance, ConfigurationObjectUnmarshaller.Instance);
                     unmarshalledObject.SessionConfiguration = unmarshaller.Unmarshall(context, ref reader);

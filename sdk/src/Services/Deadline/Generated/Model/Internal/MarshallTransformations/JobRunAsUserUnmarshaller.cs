@@ -56,19 +56,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("posix", targetDepth))
+                if (context.TestExpression("posix", targetDepth, ref reader))
                 {
                     var unmarshaller = PosixUserUnmarshaller.Instance;
                     unmarshalledObject.Posix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runAs", targetDepth))
+                if (context.TestExpression("runAs", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RunAs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("windows", targetDepth))
+                if (context.TestExpression("windows", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowsUserUnmarshaller.Instance;
                     unmarshalledObject.Windows = unmarshaller.Unmarshall(context, ref reader);

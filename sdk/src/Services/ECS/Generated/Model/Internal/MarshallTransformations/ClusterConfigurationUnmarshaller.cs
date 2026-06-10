@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executeCommandConfiguration", targetDepth))
+                if (context.TestExpression("executeCommandConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecuteCommandConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExecuteCommandConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedStorageConfiguration", targetDepth))
+                if (context.TestExpression("managedStorageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedStorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TableAutoScalingDescription", targetDepth))
+                if (context.TestExpression("TableAutoScalingDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = TableAutoScalingDescriptionUnmarshaller.Instance;
                     response.TableAutoScalingDescription = unmarshaller.Unmarshall(context, ref reader);

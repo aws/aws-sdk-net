@@ -56,19 +56,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("backendDefaults", targetDepth))
+                if (context.TestExpression("backendDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayBackendDefaultsUnmarshaller.Instance;
                     unmarshalledObject.BackendDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listeners", targetDepth))
+                if (context.TestExpression("listeners", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualGatewayListener, VirtualGatewayListenerUnmarshaller>(VirtualGatewayListenerUnmarshaller.Instance);
                     unmarshalledObject.Listeners = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logging", targetDepth))
+                if (context.TestExpression("logging", targetDepth, ref reader))
                 {
                     var unmarshaller = VirtualGatewayLoggingUnmarshaller.Instance;
                     unmarshalledObject.Logging = unmarshaller.Unmarshall(context, ref reader);

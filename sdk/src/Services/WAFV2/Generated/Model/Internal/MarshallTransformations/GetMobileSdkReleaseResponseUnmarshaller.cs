@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MobileSdkRelease", targetDepth))
+                if (context.TestExpression("MobileSdkRelease", targetDepth, ref reader))
                 {
                     var unmarshaller = MobileSdkReleaseUnmarshaller.Instance;
                     response.MobileSdkRelease = unmarshaller.Unmarshall(context, ref reader);

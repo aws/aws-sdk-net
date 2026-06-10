@@ -72,13 +72,13 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("RestApiResponse", targetDepth))
+                    if (context.TestExpression("RestApiResponse", targetDepth, ref reader))
                     {
                         var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                         unmarshalledObject.RestApiResponse = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("RestApiStatusCode", targetDepth))
+                    if (context.TestExpression("RestApiStatusCode", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RestApiStatusCode = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("storageConfiguration", targetDepth))
+                if (context.TestExpression("storageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageConfigurationUnmarshaller.Instance;
                     response.StorageConfiguration = unmarshaller.Unmarshall(context, ref reader);

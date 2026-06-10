@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RowLevelPermissionDataSet", targetDepth))
+                if (context.TestExpression("RowLevelPermissionDataSet", targetDepth, ref reader))
                 {
                     var unmarshaller = RowLevelPermissionDataSetUnmarshaller.Instance;
                     unmarshalledObject.RowLevelPermissionDataSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagConfiguration", targetDepth))
+                if (context.TestExpression("TagConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RowLevelPermissionTagConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TagConfiguration = unmarshaller.Unmarshall(context, ref reader);

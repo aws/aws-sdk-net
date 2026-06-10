@@ -56,13 +56,13 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("numberOfRecordsUpdated", targetDepth))
+                if (context.TestExpression("numberOfRecordsUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRecordsUpdated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resultFrame", targetDepth))
+                if (context.TestExpression("resultFrame", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultFrameUnmarshaller.Instance;
                     unmarshalledObject.ResultFrame = unmarshaller.Unmarshall(context, ref reader);

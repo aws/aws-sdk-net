@@ -56,19 +56,19 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("parallelRun", targetDepth))
+                if (context.TestExpression("parallelRun", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ParallelRun = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primaryDevice", targetDepth))
+                if (context.TestExpression("primaryDevice", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceUnderTestUnmarshaller.Instance;
                     unmarshalledObject.PrimaryDevice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selectedTestList", targetDepth))
+                if (context.TestExpression("selectedTestList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SelectedTestList = unmarshaller.Unmarshall(context, ref reader);

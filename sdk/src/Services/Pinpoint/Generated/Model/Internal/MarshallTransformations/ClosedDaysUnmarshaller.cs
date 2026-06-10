@@ -56,31 +56,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CUSTOM", targetDepth))
+                if (context.TestExpression("CUSTOM", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClosedDaysRule, ClosedDaysRuleUnmarshaller>(ClosedDaysRuleUnmarshaller.Instance);
                     unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EMAIL", targetDepth))
+                if (context.TestExpression("EMAIL", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClosedDaysRule, ClosedDaysRuleUnmarshaller>(ClosedDaysRuleUnmarshaller.Instance);
                     unmarshalledObject.EMAIL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PUSH", targetDepth))
+                if (context.TestExpression("PUSH", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClosedDaysRule, ClosedDaysRuleUnmarshaller>(ClosedDaysRuleUnmarshaller.Instance);
                     unmarshalledObject.PUSH = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SMS", targetDepth))
+                if (context.TestExpression("SMS", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClosedDaysRule, ClosedDaysRuleUnmarshaller>(ClosedDaysRuleUnmarshaller.Instance);
                     unmarshalledObject.SMS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VOICE", targetDepth))
+                if (context.TestExpression("VOICE", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClosedDaysRule, ClosedDaysRuleUnmarshaller>(ClosedDaysRuleUnmarshaller.Instance);
                     unmarshalledObject.VOICE = unmarshaller.Unmarshall(context, ref reader);

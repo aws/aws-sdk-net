@@ -56,25 +56,25 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationDescriptions", targetDepth))
+                if (context.TestExpression("DestinationDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomRoutingDestinationDescription, CustomRoutingDestinationDescriptionUnmarshaller>(CustomRoutingDestinationDescriptionUnmarshaller.Instance);
                     unmarshalledObject.DestinationDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointDescriptions", targetDepth))
+                if (context.TestExpression("EndpointDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomRoutingEndpointDescription, CustomRoutingEndpointDescriptionUnmarshaller>(CustomRoutingEndpointDescriptionUnmarshaller.Instance);
                     unmarshalledObject.EndpointDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupArn", targetDepth))
+                if (context.TestExpression("EndpointGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndpointGroupRegion", targetDepth))
+                if (context.TestExpression("EndpointGroupRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointGroupRegion = unmarshaller.Unmarshall(context, ref reader);

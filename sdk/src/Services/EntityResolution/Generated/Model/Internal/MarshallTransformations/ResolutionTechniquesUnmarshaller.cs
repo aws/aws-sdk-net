@@ -56,25 +56,25 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("providerProperties", targetDepth))
+                if (context.TestExpression("providerProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ProviderProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolutionType", targetDepth))
+                if (context.TestExpression("resolutionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResolutionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleBasedProperties", targetDepth))
+                if (context.TestExpression("ruleBasedProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleBasedPropertiesUnmarshaller.Instance;
                     unmarshalledObject.RuleBasedProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleConditionProperties", targetDepth))
+                if (context.TestExpression("ruleConditionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleConditionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.RuleConditionProperties = unmarshaller.Unmarshall(context, ref reader);

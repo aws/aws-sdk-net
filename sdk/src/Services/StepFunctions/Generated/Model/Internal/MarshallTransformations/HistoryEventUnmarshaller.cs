@@ -56,247 +56,247 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activityFailedEventDetails", targetDepth))
+                if (context.TestExpression("activityFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivityFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activityScheduledEventDetails", targetDepth))
+                if (context.TestExpression("activityScheduledEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityScheduledEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivityScheduledEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activityScheduleFailedEventDetails", targetDepth))
+                if (context.TestExpression("activityScheduleFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityScheduleFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivityScheduleFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activityStartedEventDetails", targetDepth))
+                if (context.TestExpression("activityStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityStartedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivityStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activitySucceededEventDetails", targetDepth))
+                if (context.TestExpression("activitySucceededEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivitySucceededEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivitySucceededEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("activityTimedOutEventDetails", targetDepth))
+                if (context.TestExpression("activityTimedOutEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityTimedOutEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ActivityTimedOutEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluationFailedEventDetails", targetDepth))
+                if (context.TestExpression("evaluationFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.EvaluationFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionAbortedEventDetails", targetDepth))
+                if (context.TestExpression("executionAbortedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionAbortedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionAbortedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionFailedEventDetails", targetDepth))
+                if (context.TestExpression("executionFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRedrivenEventDetails", targetDepth))
+                if (context.TestExpression("executionRedrivenEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionRedrivenEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRedrivenEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStartedEventDetails", targetDepth))
+                if (context.TestExpression("executionStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStartedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionSucceededEventDetails", targetDepth))
+                if (context.TestExpression("executionSucceededEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionSucceededEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionSucceededEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionTimedOutEventDetails", targetDepth))
+                if (context.TestExpression("executionTimedOutEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionTimedOutEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionTimedOutEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionFailedEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionScheduledEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionScheduledEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionScheduledEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionScheduledEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionScheduleFailedEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionScheduleFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionScheduleFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionScheduleFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionStartFailedEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionStartFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionStartFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionStartFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionSucceededEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionSucceededEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionSucceededEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionSucceededEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaFunctionTimedOutEventDetails", targetDepth))
+                if (context.TestExpression("lambdaFunctionTimedOutEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaFunctionTimedOutEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionTimedOutEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapIterationAbortedEventDetails", targetDepth))
+                if (context.TestExpression("mapIterationAbortedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapIterationAbortedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapIterationFailedEventDetails", targetDepth))
+                if (context.TestExpression("mapIterationFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapIterationFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapIterationStartedEventDetails", targetDepth))
+                if (context.TestExpression("mapIterationStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapIterationStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapIterationSucceededEventDetails", targetDepth))
+                if (context.TestExpression("mapIterationSucceededEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapIterationEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapIterationSucceededEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapRunFailedEventDetails", targetDepth))
+                if (context.TestExpression("mapRunFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapRunFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapRunFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapRunRedrivenEventDetails", targetDepth))
+                if (context.TestExpression("mapRunRedrivenEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapRunRedrivenEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapRunRedrivenEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapRunStartedEventDetails", targetDepth))
+                if (context.TestExpression("mapRunStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapRunStartedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapRunStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mapStateStartedEventDetails", targetDepth))
+                if (context.TestExpression("mapStateStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MapStateStartedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.MapStateStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previousEventId", targetDepth))
+                if (context.TestExpression("previousEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.PreviousEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateEnteredEventDetails", targetDepth))
+                if (context.TestExpression("stateEnteredEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StateEnteredEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.StateEnteredEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stateExitedEventDetails", targetDepth))
+                if (context.TestExpression("stateExitedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StateExitedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.StateExitedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskFailedEventDetails", targetDepth))
+                if (context.TestExpression("taskFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskScheduledEventDetails", targetDepth))
+                if (context.TestExpression("taskScheduledEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskScheduledEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskScheduledEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStartedEventDetails", targetDepth))
+                if (context.TestExpression("taskStartedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskStartedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskStartedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskStartFailedEventDetails", targetDepth))
+                if (context.TestExpression("taskStartFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskStartFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskStartFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskSubmitFailedEventDetails", targetDepth))
+                if (context.TestExpression("taskSubmitFailedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskSubmitFailedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskSubmitFailedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskSubmittedEventDetails", targetDepth))
+                if (context.TestExpression("taskSubmittedEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskSubmittedEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskSubmittedEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskSucceededEventDetails", targetDepth))
+                if (context.TestExpression("taskSucceededEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskSucceededEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskSucceededEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskTimedOutEventDetails", targetDepth))
+                if (context.TestExpression("taskTimedOutEventDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskTimedOutEventDetailsUnmarshaller.Instance;
                     unmarshalledObject.TaskTimedOutEventDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestamp", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

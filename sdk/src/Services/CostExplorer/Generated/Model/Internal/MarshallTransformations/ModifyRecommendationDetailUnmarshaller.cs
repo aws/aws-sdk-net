@@ -56,7 +56,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TargetInstances", targetDepth))
+                if (context.TestExpression("TargetInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetInstance, TargetInstanceUnmarshaller>(TargetInstanceUnmarshaller.Instance);
                     unmarshalledObject.TargetInstances = unmarshaller.Unmarshall(context, ref reader);

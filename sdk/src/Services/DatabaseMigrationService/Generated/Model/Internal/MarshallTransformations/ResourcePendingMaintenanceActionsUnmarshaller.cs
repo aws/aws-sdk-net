@@ -56,13 +56,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PendingMaintenanceActionDetails", targetDepth))
+                if (context.TestExpression("PendingMaintenanceActionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingMaintenanceAction, PendingMaintenanceActionUnmarshaller>(PendingMaintenanceActionUnmarshaller.Instance);
                     unmarshalledObject.PendingMaintenanceActionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceIdentifier", targetDepth))
+                if (context.TestExpression("ResourceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceIdentifier = unmarshaller.Unmarshall(context, ref reader);

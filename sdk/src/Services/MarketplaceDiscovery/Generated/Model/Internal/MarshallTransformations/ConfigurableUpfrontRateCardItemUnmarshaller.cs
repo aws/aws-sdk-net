@@ -56,19 +56,19 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("constraints", targetDepth))
+                if (context.TestExpression("constraints", targetDepth, ref reader))
                 {
                     var unmarshaller = ConstraintsUnmarshaller.Instance;
                     unmarshalledObject.Constraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rateCard", targetDepth))
+                if (context.TestExpression("rateCard", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RateCardItem, RateCardItemUnmarshaller>(RateCardItemUnmarshaller.Instance);
                     unmarshalledObject.RateCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selector", targetDepth))
+                if (context.TestExpression("selector", targetDepth, ref reader))
                 {
                     var unmarshaller = SelectorUnmarshaller.Instance;
                     unmarshalledObject.Selector = unmarshaller.Unmarshall(context, ref reader);
