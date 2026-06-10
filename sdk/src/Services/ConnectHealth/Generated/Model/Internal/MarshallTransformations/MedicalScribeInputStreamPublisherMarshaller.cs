@@ -69,6 +69,20 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
                 contentType = "application/json";
                 eventPayload = memoryStream.ToArray();
             }
+            else if (evnt is MedicalScribeBinaryAudioEvent)
+            {
+                var memoryStream = new MemoryStream();
+                var context = CreateJsonMarshallerContext(memoryStream);
+                context.Writer.WriteStartObject();
+                MedicalScribeBinaryAudioEventMarshaller.Instance.Marshall((MedicalScribeBinaryAudioEvent)evnt, context);
+                eventHeaders = context.Request.EventHeaders;
+                context.Writer.WriteEndObject();
+                context.Writer.Flush();
+
+                eventType = "binaryAudioEvent";
+                contentType = "application/octet-stream";
+                eventPayload = context.Request.Content;
+            }
             else if (evnt is MedicalScribeConfigurationEvent)
             {
                 var memoryStream = new MemoryStream();

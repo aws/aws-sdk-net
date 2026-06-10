@@ -19,19 +19,7 @@
 
 namespace Amazon.ConnectHealth.Model
 {
-#pragma warning disable CA1040
-    /// <summary>
-    /// Interface used to distinguish the events that can be sent to the service using the StartMedicalScribeListeningSession service operation.
-    /// The types that implement this interface are:
-    /// <list type="bullet">
-    ///   <item><term><see cref="MedicalScribeAudioEvent"/></term></item>
-    ///   <item><term><see cref="MedicalScribeBinaryAudioEvent"/></term></item>
-    ///   <item><term><see cref="MedicalScribeConfigurationEvent"/></term></item>
-    ///   <item><term><see cref="MedicalScribeSessionControlEvent"/></term></item>
-    /// </list>
-    /// </summary>
-    public interface IMedicalScribeInputStreamEvent
+    public partial class MedicalScribeBinaryAudioEvent : IMedicalScribeInputStreamEvent
     {
     }
-#pragma warning restore CA1040
 }
