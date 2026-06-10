@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -55,6 +56,21 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonTokenType? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
+
+        // Property names are no longer pushed onto the path stack (that was the per-property string
+        // allocation we removed). But AWSSDK.Core must stay compatible with service packages that were
+        // generated before reader-based matching existed: those still call the legacy path-based
+        // TestExpression(string, int) overload, which matches against CurrentPath. To keep that working
+        // without re-introducing an allocation on the hot path, we capture the current property name as
+        // raw UTF-8 bytes into a reused, pooled buffer on each Read, and only materialize a string lazily
+        // when CurrentPath is actually read (i.e. by old packages or by exception diagnostics).
+        private byte[] currentPropertyNameBuffer = null;
+        private int currentPropertyNameLength = 0;
+        // Set only when a property name contains JSON escapes, where a raw-byte copy can't be compared
+        // against the unescaped expression the legacy overload expects.
+        private string currentPropertyNameEscaped = null;
+        private bool onPropertyName = false;
+        private string cachedCurrentPath = null;
         #endregion
 
         #region Constructors
@@ -152,6 +168,21 @@ namespace Amazon.Runtime.Internal.Transform
         {
             return Read(ref reader) && this.CurrentDepth >= targetDepth;
         }
+
+        /// <summary>
+        ///     Tests whether the current token is a property name matching <paramref name="expression"/>
+        ///     at the given depth, comparing directly against the reader without allocating a path string.
+        ///     The match is restricted to property-name tokens so a scalar value at the same depth is never
+        ///     mistaken for a key. The comparison is ordinal (case-sensitive).
+        /// </summary>
+        /// <param name="expression">The property name to match.</param>
+        /// <param name="targetDepth">The depth at which the property must appear.</param>
+        /// <param name="reader">The reader positioned on the current token.</param>
+        /// <returns>True if the current property name matches at the target depth.</returns>
+        public bool TestExpression(string expression, int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return CurrentTokenType == JsonTokenType.PropertyName && CurrentDepth == targetDepth && reader.ValueTextEquals(expression);
+        }
         #endregion
 
         #region Overrides
@@ -199,11 +230,28 @@ namespace Amazon.Runtime.Internal.Transform
         /// <summary>
         /// The current Json path that is being unmarshalled.
         /// </summary>
+        /// <remarks>
+        /// Property names are not tracked on the path stack, so the stack only contributes the depth
+        /// delimiters. When positioned on a property name we append the captured name lazily so the
+        /// legacy path-based <c>TestExpression(string, int)</c> overload (used by service packages
+        /// generated before reader-based matching) and exception diagnostics still see the field name.
+        /// The built string is cached until the next token is read.
+        /// </remarks>
         public override string CurrentPath
         {
-            get 
+            get
             {
-                return this.stack.CurrentPath; 
+                if (!onPropertyName)
+                    return this.stack.CurrentPath;
+
+                if (cachedCurrentPath == null)
+                {
+                    string name = currentPropertyNameEscaped
+                        ?? Encoding.UTF8.GetString(currentPropertyNameBuffer, 0, currentPropertyNameLength);
+                    cachedCurrentPath = this.stack.CurrentPath + name;
+                }
+
+                return cachedCurrentPath;
             }
         }
 
@@ -361,9 +409,54 @@ namespace Amazon.Runtime.Internal.Transform
             return peek;
         }
 
+        /// <summary>
+        /// Captures the current property name so the legacy path-based <c>TestExpression(string, int)</c>
+        /// overload can match against <see cref="CurrentPath"/> without us pushing names onto the stack.
+        /// The common (unescaped) case only copies bytes into a reused pooled buffer; no string is
+        /// allocated until <see cref="CurrentPath"/> is read.
+        /// </summary>
+        private void CaptureCurrentPropertyName(ref StreamingUtf8JsonReader reader)
+        {
+            // The position is changing, so any previously built path string is now stale.
+            cachedCurrentPath = null;
+
+            if (currentToken != JsonTokenType.PropertyName)
+            {
+                onPropertyName = false;
+                return;
+            }
+
+            onPropertyName = true;
+            currentPropertyNameEscaped = null;
+
+            ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
+
+            // Property names containing JSON escape sequences are vanishingly rare for AWS shapes. In that
+            // case decode to a string so the legacy comparison sees the unescaped name; the hot path for
+            // ordinary identifiers only copies the raw bytes.
+            if (name.IndexOf((byte)'\\') >= 0)
+            {
+                currentPropertyNameEscaped = reader.Reader.GetString();
+                currentPropertyNameLength = 0;
+                return;
+            }
+
+            if (currentPropertyNameBuffer == null || currentPropertyNameBuffer.Length < name.Length)
+            {
+                if (currentPropertyNameBuffer != null)
+                    ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
+                currentPropertyNameBuffer = ArrayPool<byte>.Shared.Rent(name.Length);
+            }
+
+            name.CopyTo(currentPropertyNameBuffer);
+            currentPropertyNameLength = name.Length;
+        }
+
         private void UpdateContext(ref StreamingUtf8JsonReader reader)
         {
             if (!currentToken.HasValue) return;
+
+            CaptureCurrentPropertyName(ref reader);
 
             if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
@@ -382,22 +475,21 @@ namespace Amazon.Runtime.Internal.Transform
                     stack.Pop();
                     if (stack.Count > 0 && stack.Peek().SegmentType != PathSegmentType.Delimiter)
                     {
-                        // Pop the property name associated with the
-                        // object or array if present.
-                        // e.g. {"a":["1","2","3"]}
+                        // Pop a non-delimiter Value segment sitting beneath the closed scope. Property
+                        // names are no longer pushed, so in normal documents nothing is popped here.
                         stack.Pop();
                     }
                 }
             }
-            // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
-            // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
-            // so we should just push the value so that it can be retrieved later.
-            else if (currentToken.Value == JsonTokenType.PropertyName || (stack.Count == 0 && currentToken == JsonTokenType.String))
+            // Property names are intentionally not pushed onto the stack; they only ever served to
+            // build CurrentPath for path-based matching, which JSON unmarshalling no longer uses.
+            // Depth is unaffected, as property names never carried a delimiter.
+            else if (stack.Count == 0 && currentToken == JsonTokenType.String)
             {
+                // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
+                // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
+                // so we should just push the value so that it can be retrieved later.
                 string t = ReadText(ref reader);
-
-                // Push property name, it's appended to the stack's CurrentPath,
-                // it this does not affect the depth.
                 stack.Push(new PathSegment
                 {
                     SegmentType = PathSegmentType.Value,
@@ -406,10 +498,9 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
-                // Pop if you encounter a simple data type or null
-                // This will pop the property name associated with it in cases like  {"a":"b"}.
-                // Exclude the case where it's a value in an array so we dont end poping the start of array and
-                // property name e.g. {"a":["1","2","3"]}
+                // Pop a previously pushed Value segment when a scalar or null follows it. Since property
+                // names are no longer pushed, the only such segment is a raw top-level string; the
+                // Delimiter guard leaves scalars nested inside an object or array untouched.
                 stack.Pop();
             }
 
@@ -432,6 +523,12 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         baseStream.Dispose();
                         baseStream = null;
+                    }
+
+                    if (currentPropertyNameBuffer != null)
+                    {
+                        ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
+                        currentPropertyNameBuffer = null;
                     }
                 }
                 disposed = true;

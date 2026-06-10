@@ -194,7 +194,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\", targetDepth))\r\n                {\r\n                    var unmarshaller = ");
+            this.Write("\", targetDepth, ref reader))\r\n                {\r\n                    var unmarshaller = ");
             
             #line 89 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCStructureUnmarshaller.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineTypeUnmarshallerInstantiate()));

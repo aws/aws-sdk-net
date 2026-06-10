@@ -60,6 +60,89 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(DateTimeKind.Utc, nullModel.StartTimeRFC822.Kind);
         }
 
+        /// <summary>
+        /// Service packages generated before reader-based matching call the legacy path-based
+        /// <c>TestExpression(string, int)</c> overload, which matches against <see cref="JsonUnmarshallerContext.CurrentPath"/>.
+        /// AWSSDK.Core no longer pushes property names onto the path stack, so this verifies that those
+        /// older packages still unmarshall correctly against the current Core (CurrentPath must still end
+        /// with the current property name while positioned on it).
+        /// </summary>
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestJsonUnmarshalling_LegacyPathBasedTestExpression()
+        {
+            var model = UnmarshallModelLegacy(JsonWithValues);
+
+            Assert.AreEqual(1, model.Priority);
+            var expected = new DateTime(2018, 8, 1, 0, 0, 0, DateTimeKind.Utc);
+            Assert.AreEqual(expected, model.ReservoirQuotaTTL.Value);
+            Assert.AreEqual(expected, model.StartTimeISO8601);
+            Assert.AreEqual(expected, model.StartTimeEpoch);
+            Assert.AreEqual(expected, model.StartTimeRFC822);
+            Assert.IsNotNull(model.Stream);
+        }
+
+        // Mirrors UnmarshallModel but uses the legacy two-argument TestExpression(name, depth) overload
+        // (no reader), exactly as pre-existing generated service packages call it.
+        private Model UnmarshallModelLegacy(string json)
+        {
+            var stream = Utils.CreateStreamFromString(json);
+            JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
+            var reader = new StreamingUtf8JsonReader(stream);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            var model = new Model();
+            bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false,
+                isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("Priority", targetDepth))
+                {
+                    // CurrentPath must expose the current property name for the legacy overload to match.
+                    Assert.IsTrue(context.CurrentPath.EndsWith("/Priority"));
+                    model.Priority = NullableIntUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetPriority = true;
+                    continue;
+                }
+                if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
+                {
+                    model.ReservoirQuotaTTL = NullableDateTimeUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetReservoirQuotaTTL = true;
+                    continue;
+                }
+                if (context.TestExpression("StartTimeISO8601", targetDepth))
+                {
+                    model.StartTimeISO8601 = DateTimeUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetStartTimeISO8601 = true;
+                    continue;
+                }
+                if (context.TestExpression("StartTimeEpoch", targetDepth))
+                {
+                    model.StartTimeEpoch = DateTimeUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetStartTimeEpoch = true;
+                    continue;
+                }
+                if (context.TestExpression("StartTimeRFC822", targetDepth))
+                {
+                    model.StartTimeRFC822 = DateTimeUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetStartTimeRFC822 = true;
+                    continue;
+                }
+                if (context.TestExpression("Stream", targetDepth))
+                {
+                    model.Stream = MemoryStreamUnmarshaller.Instance.Unmarshall(context, ref reader);
+                    isSetStream = true;
+                    continue;
+                }
+            }
+            if (!(isSetPriority && isSetReservoirQuotaTTL && isSetStartTimeISO8601 && isSetStartTimeEpoch && isSetStartTimeRFC822 && isSetStream))
+            {
+                throw new Exception($"Could not parse all properties in JSON '{json}'");
+            }
+            return model;
+        }
+
         private Model UnmarshallModel(string json)
         {
             var stream = Utils.CreateStreamFromString(json);
@@ -68,41 +151,48 @@ namespace AWSSDK.UnitTests
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             var model = new Model();
-            bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false, 
+            bool isSetPriority = false, isSetReservoirQuotaTTL = false, isSetStartTimeISO8601 = false,
                 isSetStartTimeEpoch = false, isSetStartTimeRFC822 = false, isSetStream = false;
+            // Mirror the generated unmarshaller loop, where each match continues so the reader-based
+            // TestExpression is only evaluated while positioned on a property name.
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Priority", targetDepth))
+                if (context.TestExpression("Priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     model.Priority = unmarshaller.Unmarshall(context, ref reader);
                     isSetPriority = true;
+                    continue;
                 }
-                if (context.TestExpression("ReservoirQuotaTTL", targetDepth))
+                if (context.TestExpression("ReservoirQuotaTTL", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     model.ReservoirQuotaTTL = unmarshaller.Unmarshall(context, ref reader);
                     isSetReservoirQuotaTTL = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeISO8601", targetDepth))
+                if (context.TestExpression("StartTimeISO8601", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeISO8601 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeISO8601 = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeEpoch", targetDepth))
+                if (context.TestExpression("StartTimeEpoch", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeEpoch = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeEpoch = true;
+                    continue;
                 }
-                if (context.TestExpression("StartTimeRFC822", targetDepth))
+                if (context.TestExpression("StartTimeRFC822", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     model.StartTimeRFC822 = unmarshaller.Unmarshall(context, ref reader);
                     isSetStartTimeRFC822 = true;
+                    continue;
                 }
-                if (context.TestExpression("Stream", targetDepth))
+                if (context.TestExpression("Stream", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;
                     model.Stream = unmarshaller.Unmarshall(context, ref reader);
@@ -114,6 +204,7 @@ namespace AWSSDK.UnitTests
                     }
 
                     isSetStream = true;
+                    continue;
                 }
             }
             if (!(isSetPriority && isSetReservoirQuotaTTL && isSetStartTimeISO8601 && isSetStartTimeEpoch && isSetStartTimeRFC822 && isSetStream))

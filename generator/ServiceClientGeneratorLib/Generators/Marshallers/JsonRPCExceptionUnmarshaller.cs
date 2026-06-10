@@ -150,7 +150,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             
             #line default
             #line hidden
-            this.Write("\", targetDepth))\r\n                    {\r\n                        var unmarshaller" +
+            this.Write("\", targetDepth, ref reader))\r\n                    {\r\n                        var unmarshaller" +
                     " = ");
             
             #line 62 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCExceptionUnmarshaller.tt"
