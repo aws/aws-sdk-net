@@ -244,12 +244,10 @@ namespace Amazon.SageMaker.Model
         ///  <note> 
         /// <para>
         /// Certain Nitro-based instances include local storage, dependent on the instance type.
-        /// Local storage volumes are encrypted using a hardware module on the instance. You can't
-        /// request a <c>KmsKeyId</c> when using an instance type with local storage. If any of
-        /// the models that you specify in the <c>ProductionVariants</c> parameter use nitro-based
-        /// instances with local storage, do not specify a value for the <c>KmsKeyId</c> parameter.
-        /// If you specify a value for <c>KmsKeyId</c> when using any nitro-based instances with
-        /// local storage, the call to <c>CreateEndpointConfig</c> fails.
+        /// Local storage volumes are encrypted using a hardware module on the instance. If any
+        /// of the models that you specify in the <c>ProductionVariants</c> parameter use nitro-based
+        /// instances with local storage, the <c>KmsKeyId</c> parameter does not encrypt instance
+        /// local storage.
         /// </para>
         ///  
         /// <para>
