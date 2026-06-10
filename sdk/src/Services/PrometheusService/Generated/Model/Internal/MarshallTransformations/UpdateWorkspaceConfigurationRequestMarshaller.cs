@@ -103,10 +103,22 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetOutOfOrderTimeWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("outOfOrderTimeWindowInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.OutOfOrderTimeWindowInSeconds.Value);
+            }
+
             if(publicRequest.IsSetRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("retentionPeriodInDays");
                 context.Writer.WriteNumberValue(publicRequest.RetentionPeriodInDays.Value);
+            }
+
+            if(publicRequest.IsSetRuleQueryOffsetInSeconds())
+            {
+                context.Writer.WritePropertyName("ruleQueryOffsetInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.RuleQueryOffsetInSeconds.Value);
             }
 
             writer.WriteEndObject();
