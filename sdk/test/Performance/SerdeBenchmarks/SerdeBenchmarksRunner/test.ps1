@@ -21,9 +21,15 @@ for ($i = 0; $i -lt $args.Count; $i++) {
 
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# Get git commit ID
-$CommitId = if ($env:CODEBUILD_RESOLVED_SOURCE_VERSION) { $env:CODEBUILD_RESOLVED_SOURCE_VERSION } else {
-    try { git rev-parse HEAD 2>$null } catch { "unknown" }
+# Get build metadata (from build-metadata.json written by artifact step, or fallback)
+$metadataPath = Join-Path $ScriptDir "build-metadata.json"
+if (Test-Path $metadataPath) {
+    $metadata = Get-Content $metadataPath | ConvertFrom-Json
+    $CommitId = $metadata.commitId
+    $SdkVersion = $metadata.productVersion
+} else {
+    $CommitId = "unknown"
+    $SdkVersion = "unknown"
 }
 
 # Clean previous artifacts
@@ -103,9 +109,10 @@ foreach ($file in $JsonFiles) {
 
 # Build output
 $output = @{
-    productId = $productId
-    commitId  = $CommitId
-    results   = $AllResults
+    productId  = $productId
+    commitId   = $CommitId
+    sdkVersion = $SdkVersion
+    results    = $AllResults
 }
 
 # Output JSON to stdout (CI captures via pipe to output.json)
