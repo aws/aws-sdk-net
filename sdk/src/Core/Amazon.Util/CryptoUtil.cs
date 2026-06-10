@@ -327,6 +327,19 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
+#if NET8_0_OR_GREATER
+                switch (algorithmName)
+                {
+                    case SigningAlgorithm.HmacSHA256:
+                        return HMACSHA256.HashData(key, data);
+                    case SigningAlgorithm.HmacSHA1:
+                        return HMACSHA1.HashData(key, data);
+                    case SigningAlgorithm.HmacSHA512:
+                        return HMACSHA512.HashData(key, data);
+                    default:
+                        throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
+                }
+#else
                 KeyedHashAlgorithm algorithm = CreateKeyedHashAlgorithm(algorithmName);
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
@@ -341,6 +354,7 @@ namespace Amazon.Util
                 {
                     algorithm.Dispose();
                 }
+#endif
             }
 
             static KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)
