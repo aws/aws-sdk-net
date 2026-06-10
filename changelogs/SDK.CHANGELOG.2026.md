@@ -1,3 +1,24 @@
+### 4.0.267.0 (2026-06-10 18:18 UTC)
+* ConnectHealth (4.0.3.0)
+	* Add support for MedicalScribeBinaryAudioEvent in the Medical Scribe streaming input. This new event type lets you send audio as a raw binary payload instead of a base64-encoded value
+* EC2 (4.0.93.0)
+	* This release adds support for AMI Watermark which a structured identifier that helps in tracking AMI provenance
+* ECS (4.0.24.0)
+	* Amazon ECS Managed Daemon task definitions now support pidMode and ipcMode parameters. Set shared to allow daemons to share PID or IPC namespaces with co-located tasks on Managed Instances, enabling process tracing and shared memory communication.
+* Lightsail (4.0.10.0)
+	* This release adds support for Asia Pacific (Hong Kong) (ap-east-1), Europe (Spain) (eu-south-2) and South America (Sao Paulo) (sa-east-1) Regions.
+* MediaLive (4.0.23.0)
+	* Adding premixer settings to pid and track audio inputs in MediaLIve to allow greater control over mixing audio from multiple source streams including support for AudioPidSelectors made up of multiple audio PIDs.
+* PrometheusService (4.0.9.0)
+	* Adds supports for out-of-order sample ingestion (default 1-minute window) and a configurable rule query offset to reduce data loss and improve alerting accuracy.
+* SageMaker (4.0.64.0)
+	* Add support for G6e instances (ml.g6e.xlarge through ml.g6e.48xlarge) on Amazon SageMaker Notebook Instances.
+* Signin (4.0.2.0)
+	* AWS Sign-In now allows customers to control access to the AWS Management Console using resource-based policies. With this release customers can restrict console access based on network perimeters such as VPC IDs, VPC endpoints, and IP addresses.
+* Core 4.0.9.0
+	* Reduced allocations when unmarshalling JSON responses by matching property names directly against the Utf8JsonReader instead of building a path string per property.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.266.0 (2026-06-09 18:18 UTC)
 * AWSMarketplaceCommerceAnalytics (4.0.3.0)
 	* Adding new BDD representation of endpoint ruleset
