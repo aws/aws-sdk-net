@@ -109,10 +109,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Family);
             }
 
+            if(publicRequest.IsSetIpcMode())
+            {
+                context.Writer.WritePropertyName("ipcMode");
+                context.Writer.WriteStringValue(publicRequest.IpcMode);
+            }
+
             if(publicRequest.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
                 context.Writer.WriteStringValue(publicRequest.Memory);
+            }
+
+            if(publicRequest.IsSetPidMode())
+            {
+                context.Writer.WritePropertyName("pidMode");
+                context.Writer.WriteStringValue(publicRequest.PidMode);
             }
 
             if(publicRequest.IsSetTags())

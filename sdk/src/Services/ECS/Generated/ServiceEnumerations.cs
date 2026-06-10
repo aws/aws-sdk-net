@@ -1629,6 +1629,106 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DaemonIpcMode.
+    /// </summary>
+    public class DaemonIpcMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for DaemonIpcMode
+        /// </summary>
+        public static readonly DaemonIpcMode None = new DaemonIpcMode("none");
+        /// <summary>
+        /// Constant Shared for DaemonIpcMode
+        /// </summary>
+        public static readonly DaemonIpcMode Shared = new DaemonIpcMode("shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonIpcMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonIpcMode FindValue(string value)
+        {
+            return FindValue<DaemonIpcMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonIpcMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DaemonPidMode.
+    /// </summary>
+    public class DaemonPidMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for DaemonPidMode
+        /// </summary>
+        public static readonly DaemonPidMode None = new DaemonPidMode("none");
+        /// <summary>
+        /// Constant Shared for DaemonPidMode
+        /// </summary>
+        public static readonly DaemonPidMode Shared = new DaemonPidMode("shared");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DaemonPidMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DaemonPidMode FindValue(string value)
+        {
+            return FindValue<DaemonPidMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DaemonPidMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DaemonPropagateTags.
     /// </summary>
     public class DaemonPropagateTags : ConstantClass
