@@ -46,6 +46,7 @@ namespace Amazon.Omics.Model
         private int? _storageCapacity;
         private StorageType _storageType;
         private string _workflowId;
+        private string _workflowName;
         private string _workflowVersionName;
 
         /// <summary>
@@ -272,6 +273,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetWorkflowId()
         {
             return this._workflowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowName. 
+        /// <para>
+        /// The name of the workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string WorkflowName
+        {
+            get { return this._workflowName; }
+            set { this._workflowName = value; }
+        }
+
+        // Check to see if WorkflowName property is set
+        internal bool IsSetWorkflowName()
+        {
+            return this._workflowName != null;
         }
 
         /// <summary>
