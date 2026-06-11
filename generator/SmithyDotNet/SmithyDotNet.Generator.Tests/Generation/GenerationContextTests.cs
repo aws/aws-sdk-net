@@ -34,6 +34,25 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void ApiVersion_DerivedFromServiceShape()
+    {
+        Assert.Equal("2021-08-11", _context.ApiVersion);
+    }
+
+    [Fact]
+    public void EndpointPrefix_DerivedFromAwsServiceTrait()
+    {
+        Assert.Equal("cloudtrail-data", _context.EndpointPrefix);
+    }
+
+    [Fact]
+    public void ServiceDocumentation_IsPopulatedFromServiceShape()
+    {
+        Assert.NotNull(_context.ServiceDocumentation);
+        Assert.Contains("CloudTrail Data Service", _context.ServiceDocumentation);
+    }
+
+    [Fact]
     public void Operations_ContainsPutAuditEvents()
     {
         var op = Assert.Single(_context.Operations);

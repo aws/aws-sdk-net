@@ -10,10 +10,18 @@ namespace SmithyDotNet.Generator.Generation;
 public enum AWSProtocol { RestJson1 }
 
 /// <summary>
+/// An error shape paired with its <see cref="ShapeId"/>. A <see cref="StructureShape"/> does
+/// not carry its own ID, but writers need the error's name (e.g. to derive the
+/// <c>{Name}Exception</c> class referenced in an operation's <c>&lt;exception&gt;</c> doc tags),
+/// so the ID is resolved up front alongside the shape.
+/// </summary>
+public record OperationError(StructureShape Shape, ShapeId Id);
+
+/// <summary>
 /// An operation with its input, output, and error shapes pre-resolved so writers
 /// don't need to perform lookups themselves.
 /// </summary>
-public record Operation(string Name, OperationShape Shape, StructureShape Input, StructureShape Output, IReadOnlyList<StructureShape> Errors);
+public record Operation(string Name, OperationShape Shape, StructureShape Input, StructureShape Output, IReadOnlyList<OperationError> Errors);
 
 /// <summary>
 /// Aggregates everything code writers need about a single service: derived names,
@@ -30,6 +38,15 @@ public class GenerationContext
 
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
+
+    /// <summary>The service's API version from the service shape (e.g. "2021-08-11"). Used in generated doc links.</summary>
+    public string ApiVersion { get; }
+
+    /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
+    public string EndpointPrefix { get; }
+
+    /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
+    public string? ServiceDocumentation { get; }
 
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
@@ -56,6 +73,13 @@ public class GenerationContext
         ServiceName = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
+        ApiVersion = index.Service.ApiVersion;
+        // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
+        // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
+        // whitespace value in either would silently produce a malformed URL. Validate both once more
+        // services are onboarded.
+        EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
+        ServiceDocumentation = index.Service.GetDocumentation();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
 
@@ -137,10 +161,10 @@ public class GenerationContext
             var input = ResolveStructure(index, operation.Input, "input", operationId);
             var output = ResolveStructure(index, operation.Output, "output", operationId);
 
-            var errors = new List<StructureShape>(operation.Errors.Count);
+            var errors = new List<OperationError>(operation.Errors.Count);
             foreach (var errorId in operation.Errors)
             {
-                errors.Add(ResolveStructure(index, errorId, "error", operationId));
+                errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
             }
 
             resolved.Add(new Operation(operationId.Name, operation, input, output, errors));
