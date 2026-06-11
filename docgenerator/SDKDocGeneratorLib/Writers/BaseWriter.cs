@@ -122,8 +122,7 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("<meta name=\"service-name\" content=\"AWS SDK for .NET Version 4\"/>");
 
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/style.css\"/>", RootRelativePath);
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shCore.css\">", RootRelativePath);
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shThemeDefault.css\">", RootRelativePath);
+                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/highlightjs/github.min.css\">", RootRelativePath);
                 writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/sdkstyle.css\"/>", RootRelativePath);
 
                 // every page needs a title, meta description and canonical url to satisfy indexing. The summary/synopsis
@@ -322,11 +321,9 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("});");            
             writer.WriteLine("</script>");
             writer.WriteLine("<!-- END-SECTION -->");
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shCore.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushCSharp.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushXml.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\">SyntaxHighlighter.all()</script>");
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/highlightjs/highlight.min.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/highlightjs/csharp.min.js\"></script>", RootRelativePath);
+            writer.WriteLine("<script type=\"text/javascript\">hljs.highlightAll();</script>");
         }
 
         protected string FormatParameters(IList<ParameterInfoWrapper> infos)
@@ -580,8 +577,8 @@ namespace SDKDocGenerator.Writers
                 writer.WriteLine("</div>");
 
                 writer.WriteLine("<div class=\"codeSnippetContainerCodeContainer\">");
-                    writer.WriteLine("<div style=\"color:Black;\">");
-                        writer.WriteLine("<pre class=\"syntax\">{0}</pre>", csharpSyntax);
+                    writer.WriteLine("<div>");
+                        writer.WriteLine("<pre class=\"syntax\"><code class=\"language-csharp\">{0}</code></pre>", csharpSyntax);
                     writer.WriteLine("</div>");
                 writer.WriteLine("</div>");
 

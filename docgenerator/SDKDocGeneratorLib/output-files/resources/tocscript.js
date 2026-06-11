@@ -37,7 +37,15 @@
     },
 
     setContentPane: function (t) {
-        jQuery(window.parent.frames["contentpane"].document.location).attr("href", t);
+        // Resolve the target relative to the shell (parent) document, then load it into
+        // the named content iframe. Using the iframe element's src is more robust across
+        // browsers than poking document.location through a cross-frame reference.
+        var frame = window.parent.document.getElementById("contentpane");
+        if (frame) {
+            frame.setAttribute("src", t);
+        } else if (window.parent.frames["contentpane"]) {
+            window.parent.frames["contentpane"].location.href = t;
+        }
     },
 
     toggleTOCGroup: function (tocGroup) {
@@ -63,7 +71,10 @@
         g.addClass("expanded");
     },
     setFrameFocus: function (name) {
-        window.top.frames[name].focus();
+        try {
+            var f = window.top.frames[name];
+            if (f && f.focus) f.focus();
+        } catch (e) { /* focusing across frames can throw; non-critical */ }
     },
     dummy: null
 };

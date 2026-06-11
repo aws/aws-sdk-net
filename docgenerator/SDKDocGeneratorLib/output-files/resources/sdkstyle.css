@@ -1,61 +1,114 @@
 .languageTabLabel {
-    color: #5d5d5d;
-    font-weight:bold;
+    color: var(--docfx-muted, #6c757d);
+    font-weight: 600;
+}
+
+/*
+ * Code Snippets - styled to resemble DocFX code blocks (highlight.js GitHub theme)
+ */
+.codeSnippetContainer {
+    min-width: 260px;
+    clear: both;
+    margin: 12px 0 20px;
+}
+
+.codeSnippetContainerTabs {
+    vertical-align: middle;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.codeSnippetContainerTabActive {
+    font-family: inherit !important;
+    font-size: 0.8em;
+    font-style: normal !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    float: left;
+    width: auto;
+    padding: 4px 12px;
+    color: var(--docfx-muted, #6c757d);
+    background: var(--docfx-bg-subtle, #f6f8fa);
+    border: 1px solid var(--docfx-border, #e3e5e8);
+    border-bottom: none;
+    border-top-left-radius: var(--docfx-radius, 6px);
+    border-top-right-radius: var(--docfx-radius, 6px);
+}
+
+.codeSnippetContainerCodeContainer {
+    border: 1px solid var(--docfx-border, #e3e5e8);
+    border-radius: var(--docfx-radius, 6px);
+    border-top-left-radius: 0;
+    padding: 0;
+    clear: both;
+    margin-bottom: 12px;
+    position: relative;
+    top: -1px;
+    overflow: hidden;
+    background: var(--docfx-bg-subtle, #f6f8fa);
 }
 
 pre.syntax {
-    font-family: Consolas,"Lucida Console",Courier,monospace;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.875em;
+    line-height: 1.5;
     overflow-x: auto;
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
+    white-space: pre;
+    word-wrap: normal;
+    margin: 0;
+    padding: 14px 16px;
+    background: transparent;
+}
+
+pre.syntax code.hljs {
+    padding: 0;
+    background: transparent;
 }
 
 .frameworkVersions div {
     float: left;
 }
 
-/* 
+/*
  *  'Other Versions' popup panel
-*/
+ */
 #vsLink {
     margin-left: 4px;
     margin-right: 4px;
-    cursor:pointer;
-    position:relative;
-    color:#1364c4;
+    cursor: pointer;
+    position: relative;
+    color: var(--docfx-link, #0969da);
 }
 
 .vsLinkArrowContainer {
-    width:auto;
-    height:auto;
-    margin:0;
-    padding:0;
-    position:relative;
-    cursor:pointer;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
 }
 
 #vsPanel {
     position: absolute;
     top: 20px;
     left: 0px;
-    border: #bdbdbd 1px solid;
-    padding-bottom: 10px;
+    border: 1px solid var(--docfx-border-strong, #d0d7de);
+    border-radius: var(--docfx-radius, 6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 10px;
     background-color: #fff;
     margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
     display: none;
-    padding-top: 10px;
     list-style-type: none;
     z-index: 2;
-    width:160px;
+    width: 160px;
 }
 
 #vsPanel a:visited {
-    color: #960bb4;
+    color: #8250df;
 }
 
 #vsPanel li {
@@ -64,62 +117,7 @@ pre.syntax {
 }
 
 /*
- * Code Snippets
- */
-.codeSnippetContainer {
-    min-width: 260px;
-    clear:both;
-}
-
-.codeSnippetContainerTabs {
-    vertical-align: middle;
-    height: 23px;
-    position: relative;
-    z-index: 1;
-}
-
-.codeSnippetContainerTabs > div:first-child {
-    border-top-left-radius:4px;    
-}
-
-.codeSnippetContainerTabs > div:last-child {
-    border-top-right-radius:4px;    
-}
-
-.codeSnippetContainerTabActive {
-    font-family: 'Segoe UI','Lucida Grande',Verdana,Arial,Helvetica,sans-serif!important;
-    font-size: 1em;
-    font-style: normal!important;
-    font-weight: bold;
-    height: 22px;
-    float: left;
-    width: auto;
-    padding: 0 15px;
-    vertical-align: baseline;
-    color: #000000;	
-    background: #ffffff;
-    border-top: solid 1px #939393;
-    border-left: solid 1px #939393;
-    border-right: solid 1px #939393;
-}
-
-.codeSnippetContainerCodeContainer {
-    border-left: solid 1px #939393;
-    border-bottom: solid 1px #939393;
-    border-right: solid 1px #939393;
-    border-top: solid 1px #939393;
-    padding-right: 21px;
-    padding-left: 21px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    clear: both;
-    margin-bottom: 12px;
-    position: relative;
-    top: -1px;
-}
-
-/* 
- * Misc stuff
+ * Misc blocks
  */
 #inheritanceblock {
     padding-left: 15px;
@@ -133,29 +131,8 @@ pre.syntax {
     padding-top: 10px;
 }
 
-/*
- * Member type sprites
- */
-.static {
-    background: transparent url(imagesprite.png) -160px 0 no-repeat;
-    width:16px;
-    height:16px;
-}
-
-.publicMethod {
-    background: transparent url(imagesprite.png) -160px -16px no-repeat;
-    width:16px;
-    height:16px;
-}
-
-.publicProperty {
-    background: transparent url(imagesprite.png) -160px -32px no-repeat;
-    width:16px;
-    height:16px;
-}
-
 span.parameter {
-    margin-left: 16px;    
+    margin-left: 16px;
 }
 
 .returnType {
@@ -163,115 +140,67 @@ span.parameter {
 }
 
 .returnTypeName {
-    margin-left: 16px;    
+    margin-left: 16px;
 }
 
 .returnTypeDoc {
-    margin-left: 16px;    
+    margin-left: 16px;
+}
+
+/*
+ * Member type sprites (retained from original icon sprite sheet)
+ */
+.static {
+    background: transparent url(imagesprite.png) -160px 0 no-repeat;
+    width: 16px; height: 16px;
+}
+
+.publicMethod {
+    background: transparent url(imagesprite.png) -160px -16px no-repeat;
+    width: 16px; height: 16px;
+}
+
+.publicProperty {
+    background: transparent url(imagesprite.png) -160px -32px no-repeat;
+    width: 16px; height: 16px;
 }
 
 .vsLinkArrow {
     background: transparent url(imagesprite.png) -160px -48px no-repeat;
-    width:10px;
+    width: 10px;
 }
 
 .enum {
     background: transparent url(imagesprite.png) -176px 0 no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
 
 .struct {
     background: transparent url(imagesprite.png) -176px -16px no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
 
 .event {
     background: transparent url(imagesprite.png) -176px -32px no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
 
 .collapsed {
     background: transparent url(imagesprite.png) -176px -32px no-repeat;
-    width:16px;
+    width: 16px;
 }
 
 .field {
     background: transparent url(imagesprite.png) -192px 0 no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
 
 .class {
     background: transparent url(imagesprite.png) -192px -16px no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
 
 .interface {
     background: transparent url(imagesprite.png) -192px -32px no-repeat;
-    width:16px;
-    height:16px;
+    width: 16px; height: 16px;
 }
-
-/* 
- * Collapsible TOC
- */
-#pageTOC {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    padding: 5px;
-    margin: 15px 0;
-    transition: all 0.3s ease;
-}
-
-    #pageTOC h2 {
-        margin: 5px 0 5px 0;
-        font-size: 1.1em;
-        cursor: pointer;
-        user-select: none;
-        color: #495057;
-    }
-
-        #pageTOC h2:hover {
-            color: #007bff;
-        }
-
-    #pageTOC ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    #pageTOC li {
-        margin: 5px 0;
-    }
-
-    #pageTOC a {
-        color: #007bff;
-        text-decoration: none;
-        font-size: 0.9em;
-    }
-
-        #pageTOC a:hover {
-            text-decoration: underline;
-        }
-
-    #pageTOC.collapsed {
-        position: fixed;
-        top: 0px;
-        right: 6px;
-        width: 150px;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-#tocToggle {
-    float: right;
-    font-size: 0.8em;
-    padding-top: 2px;
-}
-
