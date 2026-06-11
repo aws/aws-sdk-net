@@ -1972,7 +1972,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public IDocumentTransactGet CreateTransactGet(ReturnConsumedCapacity returnConsumedCapacity = null)
         {
-            return new DocumentTransactGet(this);
+            return new DocumentTransactGet(this, returnConsumedCapacity);
         }
 
         #endregion

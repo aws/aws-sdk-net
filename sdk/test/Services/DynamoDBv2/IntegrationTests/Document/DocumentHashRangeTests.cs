@@ -2,7 +2,10 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -82,6 +85,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public async Task TestHashRangeTableViaBuilder_ExpressionsOnQuery(DynamoDBEntryConversion conversion)
         {
             await TestExpressionsOnQueryHelper(BuildHashRangeTable(conversion));
+        }
+
+        [Theory]
+        [MemberData(nameof(DynamoDBFixture.Conversions), MemberType = typeof(DynamoDBFixture))]
+        public async Task TestHashRangeTableTransactOperations_ReturnConsumedCapacity(DynamoDBEntryConversion conversion)
+        {
+            await TestReturnConsumedCapacity(LoadHashRangeTable(conversion));
+        }
+
+        [Theory]
+        [MemberData(nameof(DynamoDBFixture.Conversions), MemberType = typeof(DynamoDBFixture))]
+        public async Task TestHashRangeTableTransactOperationsViaBuilder_ReturnConsumedCapacity(DynamoDBEntryConversion conversion)
+        {
+            await TestReturnConsumedCapacity(BuildHashRangeTable(conversion));
         }
 
         [Theory]
@@ -622,6 +639,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             await hashRangeTable.DeleteItemAsync(doc1);
             await hashRangeTable.DeleteItemAsync(doc2);
+        }
+
+        private async Task TestReturnConsumedCapacity(ITable hashRangeTable)
+        {
+            var hDoc1 = new Document
+            {
+                ["Id"] = 6041,
+                ["Name"] = "Lewis",
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 1000,
+                ["Garbage"] = "asdf",
+                ["Age"] = 6,
+                ["School"] = "Elementary"
+            };
+
+            var hDoc2 = new Document
+            {
+                ["Id"] = 6042,
+                ["Name"] = "Frida",
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 500,
+                ["Garbage"] = "hjkl",
+                ["Age"] = 3,
+                ["School"] = "Preschool"
+            };
+
+            {
+                var transactWrite = hashRangeTable.CreateTransactWrite(ReturnConsumedCapacity.INDEXES);
+                transactWrite.AddDocumentToPut(hDoc1);
+                transactWrite.AddDocumentToPut(hDoc2);
+                await transactWrite.ExecuteAsync();
+
+                Assert.Equal(1, transactWrite.ConsumedCapacity.Count);
+
+                var consumedCapacity = transactWrite.ConsumedCapacity.SingleOrDefault();
+                Assert.Equal(4, consumedCapacity.WriteCapacityUnits);
+                Assert.Null(consumedCapacity.ReadCapacityUnits);
+                Assert.Null(consumedCapacity.GlobalSecondaryIndexes);
+                Assert.Null(consumedCapacity.LocalSecondaryIndexes);
+            }
+
+            {
+                var transactGet = hashRangeTable.CreateTransactGet(ReturnConsumedCapacity.TOTAL);
+                transactGet.AddKey(hashKey: "Lewis", rangeKey: 6);
+                transactGet.AddKey(hashKey: "Frida", rangeKey: 3);
+                await transactGet.ExecuteAsync();
+
+                Assert.Equal(1, transactGet.ConsumedCapacity.Count);
+
+                var consumedCapacity = transactGet.ConsumedCapacity.SingleOrDefault();
+                Assert.Equal(4, consumedCapacity.ReadCapacityUnits);
+                Assert.Null(consumedCapacity.WriteCapacityUnits);
+                Assert.Null(consumedCapacity.GlobalSecondaryIndexes);
+                Assert.Null(consumedCapacity.LocalSecondaryIndexes);
+            }
         }
 
         private async Task TestScanDocumentOperationRequestReturnConsumedCapacityHelper(ITable hashRangeTable)
