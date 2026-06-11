@@ -77,8 +77,8 @@ namespace Amazon.AWSSupport
     ///  </li> <li> 
     /// <para>
     /// The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a> operations return Amazon
-    /// Web Service names, service codes, service categories, and problem severity levels.
-    /// You use these values when you call the <a>CreateCase</a> operation.
+    /// Web Services service names, service codes, service categories, and problem severity
+    /// levels. You use these values when you call the <a>CreateCase</a> operation.
     /// </para>
     ///  </li> </ul> 
     /// <para>
