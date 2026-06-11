@@ -175,7 +175,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // Table.CreateTransactGet() returns the IDocumentTransactGet interface.
             // But since we rely on the internal behavior of DocumentTransactGet, we instantiate it via the constructor.
-            DocumentTransaction = new DocumentTransactGet(table);
+            DocumentTransaction = new DocumentTransactGet(table, _config.ReturnConsumedCapacity);
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
@@ -276,6 +276,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             ReturnConsumedCapacity = returnConsumedCapacity;
         }
+
         private void ExecuteHelper()
         {
             MultiTableDocumentTransactGet transaction = new MultiTableDocumentTransactGet();

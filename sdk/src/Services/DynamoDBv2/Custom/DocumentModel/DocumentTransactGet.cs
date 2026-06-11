@@ -399,12 +399,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Public methods
 
-        public (Dictionary<DocumentTransactGet, List<Document>>, List<ConsumedCapacity>) GetItems()
+        public (Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities) GetItems()
         {
             return GetItemsHelper();
         }
 
-        public Task<(Dictionary<DocumentTransactGet, List<Document>>, List<ConsumedCapacity>)> GetItemsAsync(CancellationToken cancellationToken)
+        public Task<(Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities)> GetItemsAsync(CancellationToken cancellationToken)
         {
             return GetItemsHelperAsync(cancellationToken);
         }
@@ -414,7 +414,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private helper methods
 
-        private (Dictionary<DocumentTransactGet, List<Document>>, List<ConsumedCapacity>) GetItemsHelper()
+        private (Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities) GetItemsHelper()
         {
             if (Items == null || !Items.Any()) return (new Dictionary<DocumentTransactGet, List<Document>>(), new List<ConsumedCapacity>());
 
@@ -434,7 +434,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return (GetDocuments(response.Responses), response.ConsumedCapacity);
         }
 
-        private async Task<(Dictionary<DocumentTransactGet, List<Document>>, List<ConsumedCapacity>)> GetItemsHelperAsync(CancellationToken cancellationToken)
+        private async Task<(Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities)> GetItemsHelperAsync(CancellationToken cancellationToken)
         {
             if (Items == null || !Items.Any()) return (new Dictionary<DocumentTransactGet, List<Document>>(), new List<ConsumedCapacity>());
 

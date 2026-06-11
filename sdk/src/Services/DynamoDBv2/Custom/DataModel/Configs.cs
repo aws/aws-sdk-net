@@ -230,7 +230,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? RetrieveDateTimeInUtc { get; set; }
 
         /// <summary>
-        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Controls whether DynamoDB returns capacity consumption details for each request.
         /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
         /// </summary>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
