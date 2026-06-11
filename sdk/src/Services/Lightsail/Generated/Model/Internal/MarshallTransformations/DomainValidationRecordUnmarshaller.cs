@@ -56,25 +56,25 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dnsRecordCreationState", targetDepth))
+                if (context.TestExpression("dnsRecordCreationState", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsRecordCreationStateUnmarshaller.Instance;
                     unmarshalledObject.DnsRecordCreationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("domainName", targetDepth))
+                if (context.TestExpression("domainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceRecord", targetDepth))
+                if (context.TestExpression("resourceRecord", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceRecordUnmarshaller.Instance;
                     unmarshalledObject.ResourceRecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationStatus", targetDepth))
+                if (context.TestExpression("validationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context, ref reader);

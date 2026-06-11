@@ -56,73 +56,73 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdministrativeActions", targetDepth))
+                if (context.TestExpression("AdministrativeActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdministrativeAction, AdministrativeActionUnmarshaller>(AdministrativeActionUnmarshaller.Instance);
                     unmarshalledObject.AdministrativeActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("FileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Lifecycle", targetDepth))
+                if (context.TestExpression("Lifecycle", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Lifecycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifecycleTransitionReason", targetDepth))
+                if (context.TestExpression("LifecycleTransitionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleTransitionReasonUnmarshaller.Instance;
                     unmarshalledObject.LifecycleTransitionReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OntapConfiguration", targetDepth))
+                if (context.TestExpression("OntapConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OntapVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OntapConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenZFSConfiguration", targetDepth))
+                if (context.TestExpression("OpenZFSConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenZFSVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OpenZFSConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceARN", targetDepth))
+                if (context.TestExpression("ResourceARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeId", targetDepth))
+                if (context.TestExpression("VolumeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VolumeType", targetDepth))
+                if (context.TestExpression("VolumeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context, ref reader);

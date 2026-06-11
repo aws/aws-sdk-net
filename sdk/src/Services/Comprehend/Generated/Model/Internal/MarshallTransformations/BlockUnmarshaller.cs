@@ -56,37 +56,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockType", targetDepth))
+                if (context.TestExpression("BlockType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BlockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geometry", targetDepth))
+                if (context.TestExpression("Geometry", targetDepth, ref reader))
                 {
                     var unmarshaller = GeometryUnmarshaller.Instance;
                     unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Page", targetDepth))
+                if (context.TestExpression("Page", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Relationships", targetDepth))
+                if (context.TestExpression("Relationships", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RelationshipsListItem, RelationshipsListItemUnmarshaller>(RelationshipsListItemUnmarshaller.Instance);
                     unmarshalledObject.Relationships = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Text", targetDepth))
+                if (context.TestExpression("Text", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);

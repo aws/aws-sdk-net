@@ -63,11 +63,15 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property FromAssociation. 
         /// <para>
-        /// This property is set by the service when you add the output to the feed, and indicates
-        /// how you added the output. True means that you used the AssociateFeed operation. False
-        /// means that you used the CreateFeed or UpdateFeed operation. Use GetFeed to obtain
-        /// the value. If the value is True, include this field here with a value of True. If
-        /// the value is False, omit the field here.
+        /// Elemental Inference originally sets this parameter to True if this output was created
+        /// by AssociateFeed or to False if this output was created by CreateFeed or UpdateFeed.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You must not change this value. Therefore, use GetFeed to determine the current value.
+        /// Then in the UpdateFeed request, if the current value is True, include this parameter
+        /// with a value of True. If it's False, omit the parameter. 
         /// </para>
         /// </summary>
         public bool? FromAssociation
@@ -85,7 +89,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name start here
+        /// The name of the output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,10 +108,9 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// A typed property for an output in a feed. It is used in the UpdateFeed action. It
-        /// identifies the action for Elemental Inference to perform. It also provides a repository
-        /// for the results of that action. For example, CroppingConfig output will contain the
-        /// metadata for the crop feature. 
+        /// A typed property for an output in a feed. It identifies the action for Elemental Inference
+        /// to perform. It also provides a repository for the results of that action. For example,
+        /// CroppingConfig output will contain the metadata for the crop feature. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

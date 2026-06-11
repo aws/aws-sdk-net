@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoRollbackConfiguration", targetDepth))
+                if (context.TestExpression("AutoRollbackConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoRollbackConfigUnmarshaller.Instance;
                     unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollingUpdatePolicy", targetDepth))
+                if (context.TestExpression("RollingUpdatePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceComponentRollingUpdatePolicyUnmarshaller.Instance;
                     unmarshalledObject.RollingUpdatePolicy = unmarshaller.Unmarshall(context, ref reader);

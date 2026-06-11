@@ -87,7 +87,13 @@ namespace Amazon.Organizations.Model
     /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
     /// GovCloud User Guide</i>.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> 
+    /// <para>
+    /// After the permanent termination of the account after the 90-day waiting period, Organizations
+    /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
+    /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
+    /// only in the management account's event history.
+    /// </para>
     /// </summary>
     public partial class CloseAccountRequest : AmazonOrganizationsRequest
     {

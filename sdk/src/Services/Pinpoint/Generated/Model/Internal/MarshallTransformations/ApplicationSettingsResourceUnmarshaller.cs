@@ -56,37 +56,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationId", targetDepth))
+                if (context.TestExpression("ApplicationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CampaignHook", targetDepth))
+                if (context.TestExpression("CampaignHook", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignHookUnmarshaller.Instance;
                     unmarshalledObject.CampaignHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JourneyLimits", targetDepth))
+                if (context.TestExpression("JourneyLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationSettingsJourneyLimitsUnmarshaller.Instance;
                     unmarshalledObject.JourneyLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
+                if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Limits", targetDepth))
+                if (context.TestExpression("Limits", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignLimitsUnmarshaller.Instance;
                     unmarshalledObject.Limits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuietTime", targetDepth))
+                if (context.TestExpression("QuietTime", targetDepth, ref reader))
                 {
                     var unmarshaller = QuietTimeUnmarshaller.Instance;
                     unmarshalledObject.QuietTime = unmarshaller.Unmarshall(context, ref reader);

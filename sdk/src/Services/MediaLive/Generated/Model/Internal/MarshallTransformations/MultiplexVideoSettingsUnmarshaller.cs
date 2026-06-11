@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("constantBitrate", targetDepth))
+                if (context.TestExpression("constantBitrate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConstantBitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statmuxSettings", targetDepth))
+                if (context.TestExpression("statmuxSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexStatmuxVideoSettingsUnmarshaller.Instance;
                     unmarshalledObject.StatmuxSettings = unmarshaller.Unmarshall(context, ref reader);

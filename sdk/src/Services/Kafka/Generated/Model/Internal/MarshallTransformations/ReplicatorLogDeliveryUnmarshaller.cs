@@ -56,19 +56,19 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogs", targetDepth))
+                if (context.TestExpression("cloudWatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicatorCloudWatchLogsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firehose", targetDepth))
+                if (context.TestExpression("firehose", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicatorFirehoseUnmarshaller.Instance;
                     unmarshalledObject.Firehose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3", targetDepth))
+                if (context.TestExpression("s3", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicatorS3Unmarshaller.Instance;
                     unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);

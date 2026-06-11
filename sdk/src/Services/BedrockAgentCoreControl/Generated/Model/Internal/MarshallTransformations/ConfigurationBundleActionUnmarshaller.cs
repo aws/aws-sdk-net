@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("staticOverride", targetDepth))
+                if (context.TestExpression("staticOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticOverrideUnmarshaller.Instance;
                     unmarshalledObject.StaticOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("weightedOverride", targetDepth))
+                if (context.TestExpression("weightedOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = WeightedOverrideUnmarshaller.Instance;
                     unmarshalledObject.WeightedOverride = unmarshaller.Unmarshall(context, ref reader);

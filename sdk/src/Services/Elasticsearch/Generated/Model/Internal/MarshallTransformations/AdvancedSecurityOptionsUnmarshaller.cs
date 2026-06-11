@@ -56,31 +56,31 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnonymousAuthDisableDate", targetDepth))
+                if (context.TestExpression("AnonymousAuthDisableDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AnonymousAuthDisableDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnonymousAuthEnabled", targetDepth))
+                if (context.TestExpression("AnonymousAuthEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AnonymousAuthEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth))
+                if (context.TestExpression("InternalUserDatabaseEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InternalUserDatabaseEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SAMLOptions", targetDepth))
+                if (context.TestExpression("SAMLOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SAMLOptionsOutputUnmarshaller.Instance;
                     unmarshalledObject.SAMLOptions = unmarshaller.Unmarshall(context, ref reader);

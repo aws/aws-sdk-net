@@ -56,43 +56,43 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomizedCapacityMetricSpecification", targetDepth))
+                if (context.TestExpression("CustomizedCapacityMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomizedCapacityMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth))
+                if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth))
+                if (context.TestExpression("CustomizedScalingMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingCustomizedMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomizedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth))
+                if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingPredefinedLoadMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedMetricPairSpecification", targetDepth))
+                if (context.TestExpression("PredefinedMetricPairSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingPredefinedMetricPairSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PredefinedMetricPairSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth))
+                if (context.TestExpression("PredefinedScalingMetricSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictiveScalingPredefinedScalingMetricSpecificationUnmarshaller.Instance;
                     unmarshalledObject.PredefinedScalingMetricSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetValue", targetDepth))
+                if (context.TestExpression("TargetValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);

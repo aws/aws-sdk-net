@@ -56,7 +56,7 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("generatedFields", targetDepth))
+                if (context.TestExpression("generatedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance);
                     unmarshalledObject.GeneratedFields = unmarshaller.Unmarshall(context, ref reader);

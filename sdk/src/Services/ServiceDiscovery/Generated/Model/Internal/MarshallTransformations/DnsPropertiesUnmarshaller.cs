@@ -56,13 +56,13 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HostedZoneId", targetDepth))
+                if (context.TestExpression("HostedZoneId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SOA", targetDepth))
+                if (context.TestExpression("SOA", targetDepth, ref reader))
                 {
                     var unmarshaller = SOAUnmarshaller.Instance;
                     unmarshalledObject.SOA = unmarshaller.Unmarshall(context, ref reader);

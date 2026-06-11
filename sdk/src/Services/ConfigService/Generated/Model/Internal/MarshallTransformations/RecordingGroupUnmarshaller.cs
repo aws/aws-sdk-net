@@ -56,31 +56,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allSupported", targetDepth))
+                if (context.TestExpression("allSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exclusionByResourceTypes", targetDepth))
+                if (context.TestExpression("exclusionByResourceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = ExclusionByResourceTypesUnmarshaller.Instance;
                     unmarshalledObject.ExclusionByResourceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeGlobalResourceTypes", targetDepth))
+                if (context.TestExpression("includeGlobalResourceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeGlobalResourceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingStrategy", targetDepth))
+                if (context.TestExpression("recordingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordingStrategyUnmarshaller.Instance;
                     unmarshalledObject.RecordingStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceTypes", targetDepth))
+                if (context.TestExpression("resourceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ResourceTypes = unmarshaller.Unmarshall(context, ref reader);

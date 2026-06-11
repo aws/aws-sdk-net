@@ -56,13 +56,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChannelTargetInfo", targetDepth))
+                if (context.TestExpression("ChannelTargetInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelTargetInfoUnmarshaller.Instance;
                     unmarshalledObject.ChannelTargetInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContactTargetInfo", targetDepth))
+                if (context.TestExpression("ContactTargetInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactTargetInfoUnmarshaller.Instance;
                     unmarshalledObject.ContactTargetInfo = unmarshaller.Unmarshall(context, ref reader);

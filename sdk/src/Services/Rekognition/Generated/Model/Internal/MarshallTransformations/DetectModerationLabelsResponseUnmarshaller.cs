@@ -52,31 +52,31 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContentTypes", targetDepth))
+                if (context.TestExpression("ContentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContentType, ContentTypeUnmarshaller>(ContentTypeUnmarshaller.Instance);
                     response.ContentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HumanLoopActivationOutput", targetDepth))
+                if (context.TestExpression("HumanLoopActivationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = HumanLoopActivationOutputUnmarshaller.Instance;
                     response.HumanLoopActivationOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModerationLabels", targetDepth))
+                if (context.TestExpression("ModerationLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModerationLabel, ModerationLabelUnmarshaller>(ModerationLabelUnmarshaller.Instance);
                     response.ModerationLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModerationModelVersion", targetDepth))
+                if (context.TestExpression("ModerationModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModerationModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProjectVersion", targetDepth))
+                if (context.TestExpression("ProjectVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProjectVersion = unmarshaller.Unmarshall(context, ref reader);

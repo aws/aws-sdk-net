@@ -56,19 +56,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maximumSize", targetDepth))
+                if (context.TestExpression("maximumSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageMaximumSizeUnmarshaller.Instance;
                     unmarshalledObject.MaximumSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumTimeToLive", targetDepth))
+                if (context.TestExpression("minimumTimeToLive", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageMinimumTimeToLiveUnmarshaller.Instance;
                     unmarshalledObject.MinimumTimeToLive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageLocation", targetDepth))
+                if (context.TestExpression("storageLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageLocation = unmarshaller.Unmarshall(context, ref reader);

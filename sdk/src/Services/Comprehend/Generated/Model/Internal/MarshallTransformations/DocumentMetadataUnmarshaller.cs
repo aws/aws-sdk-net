@@ -56,13 +56,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExtractedCharacters", targetDepth))
+                if (context.TestExpression("ExtractedCharacters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExtractedCharactersListItem, ExtractedCharactersListItemUnmarshaller>(ExtractedCharactersListItemUnmarshaller.Instance);
                     unmarshalledObject.ExtractedCharacters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pages", targetDepth))
+                if (context.TestExpression("Pages", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Pages = unmarshaller.Unmarshall(context, ref reader);

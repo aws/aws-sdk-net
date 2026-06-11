@@ -72,7 +72,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Reason", targetDepth))
+                    if (context.TestExpression("Reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

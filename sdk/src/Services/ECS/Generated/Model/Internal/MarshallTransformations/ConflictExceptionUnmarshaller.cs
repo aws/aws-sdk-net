@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("resourceIds", targetDepth))
+                    if (context.TestExpression("resourceIds", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ResourceIds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceType", targetDepth))
+                if (context.TestExpression("ResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregatorFilterResourceTypeUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServicePrincipal", targetDepth))
+                if (context.TestExpression("ServicePrincipal", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregatorFilterServicePrincipalUnmarshaller.Instance;
                     unmarshalledObject.ServicePrincipal = unmarshaller.Unmarshall(context, ref reader);

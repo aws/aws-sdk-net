@@ -56,19 +56,19 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Branches", targetDepth))
+                if (context.TestExpression("Branches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiConditionalBranch, MultiConditionalBranchUnmarshaller>(MultiConditionalBranchUnmarshaller.Instance);
                     unmarshalledObject.Branches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultActivity", targetDepth))
+                if (context.TestExpression("DefaultActivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationWaitTime", targetDepth))
+                if (context.TestExpression("EvaluationWaitTime", targetDepth, ref reader))
                 {
                     var unmarshaller = WaitTimeUnmarshaller.Instance;
                     unmarshalledObject.EvaluationWaitTime = unmarshaller.Unmarshall(context, ref reader);

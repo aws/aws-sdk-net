@@ -56,25 +56,25 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeProgressStages", targetDepth))
+                if (context.TestExpression("ChangeProgressStages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChangeProgressStage, ChangeProgressStageUnmarshaller>(ChangeProgressStageUnmarshaller.Instance);
                     unmarshalledObject.ChangeProgressStages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalNumberOfStages", targetDepth))
+                if (context.TestExpression("TotalNumberOfStages", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfStages = unmarshaller.Unmarshall(context, ref reader);

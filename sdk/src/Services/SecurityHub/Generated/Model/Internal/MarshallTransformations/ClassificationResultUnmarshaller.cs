@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalOccurrences", targetDepth))
+                if (context.TestExpression("AdditionalOccurrences", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AdditionalOccurrences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomDataIdentifiers", targetDepth))
+                if (context.TestExpression("CustomDataIdentifiers", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomDataIdentifiersResultUnmarshaller.Instance;
                     unmarshalledObject.CustomDataIdentifiers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MimeType", targetDepth))
+                if (context.TestExpression("MimeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MimeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SensitiveData", targetDepth))
+                if (context.TestExpression("SensitiveData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SensitiveDataResult, SensitiveDataResultUnmarshaller>(SensitiveDataResultUnmarshaller.Instance);
                     unmarshalledObject.SensitiveData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizeClassified", targetDepth))
+                if (context.TestExpression("SizeClassified", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SizeClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = ClassificationStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fixedResponse", targetDepth))
+                if (context.TestExpression("fixedResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = FixedResponseActionUnmarshaller.Instance;
                     unmarshalledObject.FixedResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forward", targetDepth))
+                if (context.TestExpression("forward", targetDepth, ref reader))
                 {
                     var unmarshaller = ForwardActionUnmarshaller.Instance;
                     unmarshalledObject.Forward = unmarshaller.Unmarshall(context, ref reader);

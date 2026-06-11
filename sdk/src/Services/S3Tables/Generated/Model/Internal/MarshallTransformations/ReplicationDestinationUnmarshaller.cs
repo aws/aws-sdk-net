@@ -56,7 +56,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destinationTableBucketARN", targetDepth))
+                if (context.TestExpression("destinationTableBucketARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTableBucketARN = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ACL", targetDepth))
+                if (context.TestExpression("ACL", targetDepth, ref reader))
                 {
                     var unmarshaller = ACLUnmarshaller.Instance;
                     response.ACL = unmarshaller.Unmarshall(context, ref reader);

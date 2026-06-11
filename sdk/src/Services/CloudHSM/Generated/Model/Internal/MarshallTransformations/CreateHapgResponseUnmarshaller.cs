@@ -52,7 +52,7 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HapgArn", targetDepth))
+                if (context.TestExpression("HapgArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HapgArn = unmarshaller.Unmarshall(context, ref reader);

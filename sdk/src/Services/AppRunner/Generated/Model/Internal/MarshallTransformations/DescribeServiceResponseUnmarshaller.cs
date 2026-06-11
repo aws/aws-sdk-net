@@ -52,7 +52,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Service", targetDepth))
+                if (context.TestExpression("Service", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceUnmarshaller.Instance;
                     response.Service = unmarshaller.Unmarshall(context, ref reader);

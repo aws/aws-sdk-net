@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxNumberOfTrainingJobs", targetDepth))
+                if (context.TestExpression("MaxNumberOfTrainingJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxNumberOfTrainingJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxParallelTrainingJobs", targetDepth))
+                if (context.TestExpression("MaxParallelTrainingJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelTrainingJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxRuntimeInSeconds", targetDepth))
+                if (context.TestExpression("MaxRuntimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context, ref reader);

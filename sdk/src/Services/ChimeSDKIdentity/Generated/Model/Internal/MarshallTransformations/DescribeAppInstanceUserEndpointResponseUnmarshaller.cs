@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppInstanceUserEndpoint", targetDepth))
+                if (context.TestExpression("AppInstanceUserEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = AppInstanceUserEndpointUnmarshaller.Instance;
                     response.AppInstanceUserEndpoint = unmarshaller.Unmarshall(context, ref reader);

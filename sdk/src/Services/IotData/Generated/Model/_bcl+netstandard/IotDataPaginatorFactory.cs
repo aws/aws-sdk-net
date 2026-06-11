@@ -43,5 +43,13 @@ namespace Amazon.IotData.Model
         {
             return new ListRetainedMessagesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSubscriptions operation
+        ///</summary>
+        public IListSubscriptionsPaginator ListSubscriptions(ListSubscriptionsRequest request) 
+        {
+            return new ListSubscriptionsPaginator(this.client, request);
+        }
     }
 }

@@ -56,31 +56,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Algorithm", targetDepth))
+                if (context.TestExpression("Algorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Algorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CryptoProviders", targetDepth))
+                if (context.TestExpression("CryptoProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CryptoProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeySpec", targetDepth))
+                if (context.TestExpression("KeySpec", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeySpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyUsageProperty", targetDepth))
+                if (context.TestExpression("KeyUsageProperty", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyUsagePropertyUnmarshaller.Instance;
                     unmarshalledObject.KeyUsageProperty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimalKeyLength", targetDepth))
+                if (context.TestExpression("MinimalKeyLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimalKeyLength = unmarshaller.Unmarshall(context, ref reader);

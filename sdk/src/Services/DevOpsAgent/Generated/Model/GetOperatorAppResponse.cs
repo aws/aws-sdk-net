@@ -37,6 +37,7 @@ namespace Amazon.DevOpsAgent.Model
         private IamAuthConfiguration _iam;
         private IdcAuthConfiguration _idc;
         private IdpAuthConfiguration _idp;
+        private string _operatorAppUrl;
 
         /// <summary>
         /// Gets and sets the property Iam.
@@ -81,6 +82,25 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetIdp()
         {
             return this._idp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatorAppUrl. 
+        /// <para>
+        /// The URL for operators to access the Operator App
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OperatorAppUrl
+        {
+            get { return this._operatorAppUrl; }
+            set { this._operatorAppUrl = value; }
+        }
+
+        // Check to see if OperatorAppUrl property is set
+        internal bool IsSetOperatorAppUrl()
+        {
+            return this._operatorAppUrl != null;
         }
 
     }

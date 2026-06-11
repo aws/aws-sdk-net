@@ -56,13 +56,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attachment", targetDepth))
+                if (context.TestExpression("Attachment", targetDepth, ref reader))
                 {
                     var unmarshaller = AttachmentUnmarshaller.Instance;
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpnConnectionArn", targetDepth))
+                if (context.TestExpression("VpnConnectionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpnConnectionArn = unmarshaller.Unmarshall(context, ref reader);

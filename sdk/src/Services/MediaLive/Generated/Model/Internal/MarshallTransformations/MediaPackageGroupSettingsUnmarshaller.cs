@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediapackageV2GroupSettings", targetDepth))
+                if (context.TestExpression("mediapackageV2GroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPackageV2GroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.MediapackageV2GroupSettings = unmarshaller.Unmarshall(context, ref reader);

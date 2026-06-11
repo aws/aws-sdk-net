@@ -52,13 +52,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationARN", targetDepth))
+                if (context.TestExpression("ApplicationARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationMaintenanceConfigurationDescription", targetDepth))
+                if (context.TestExpression("ApplicationMaintenanceConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationMaintenanceConfigurationDescriptionUnmarshaller.Instance;
                     response.ApplicationMaintenanceConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);

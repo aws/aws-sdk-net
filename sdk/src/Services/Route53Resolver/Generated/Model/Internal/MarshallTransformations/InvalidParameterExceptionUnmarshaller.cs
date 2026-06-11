@@ -72,7 +72,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("FieldName", targetDepth))
+                    if (context.TestExpression("FieldName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.FieldName = unmarshaller.Unmarshall(context, ref reader);

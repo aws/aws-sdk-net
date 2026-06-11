@@ -52,13 +52,13 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executionTriggered", targetDepth))
+                if (context.TestExpression("executionTriggered", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ExecutionTriggered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthStatus", targetDepth))
+                if (context.TestExpression("healthStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = HealthStatusUnmarshaller.Instance;
                     response.HealthStatus = unmarshaller.Unmarshall(context, ref reader);

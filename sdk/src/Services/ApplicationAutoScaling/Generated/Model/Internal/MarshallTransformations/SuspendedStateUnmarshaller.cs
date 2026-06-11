@@ -56,19 +56,19 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamicScalingInSuspended", targetDepth))
+                if (context.TestExpression("DynamicScalingInSuspended", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DynamicScalingInSuspended = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicScalingOutSuspended", targetDepth))
+                if (context.TestExpression("DynamicScalingOutSuspended", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DynamicScalingOutSuspended = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduledScalingSuspended", targetDepth))
+                if (context.TestExpression("ScheduledScalingSuspended", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScheduledScalingSuspended = unmarshaller.Unmarshall(context, ref reader);

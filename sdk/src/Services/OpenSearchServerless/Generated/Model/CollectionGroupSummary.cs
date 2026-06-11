@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _arn;
         private CollectionGroupCapacityLimits _capacityLimits;
         private long? _createdDate;
+        private ServerlessGeneration _generation;
         private string _id;
         private string _name;
         private int? _numberOfCollections;
@@ -90,6 +91,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Generation. 
+        /// <para>
+        /// The generation of Amazon OpenSearch Serverless for the collection group.
+        /// </para>
+        /// </summary>
+        public ServerlessGeneration Generation
+        {
+            get { return this._generation; }
+            set { this._generation = value; }
+        }
+
+        // Check to see if Generation property is set
+        internal bool IsSetGeneration()
+        {
+            return this._generation != null;
         }
 
         /// <summary>

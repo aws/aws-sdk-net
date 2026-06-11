@@ -56,13 +56,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("languages", targetDepth))
+                if (context.TestExpression("languages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentLanguage, EnvironmentLanguageUnmarshaller>(EnvironmentLanguageUnmarshaller.Instance);
                     unmarshalledObject.Languages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("platform", targetDepth))
+                if (context.TestExpression("platform", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);

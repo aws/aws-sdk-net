@@ -56,49 +56,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BooleanFilters", targetDepth))
+                if (context.TestExpression("BooleanFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfBooleanFilter, OcsfBooleanFilterUnmarshaller>(OcsfBooleanFilterUnmarshaller.Instance);
                     unmarshalledObject.BooleanFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateFilters", targetDepth))
+                if (context.TestExpression("DateFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfDateFilter, OcsfDateFilterUnmarshaller>(OcsfDateFilterUnmarshaller.Instance);
                     unmarshalledObject.DateFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpFilters", targetDepth))
+                if (context.TestExpression("IpFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfIpFilter, OcsfIpFilterUnmarshaller>(OcsfIpFilterUnmarshaller.Instance);
                     unmarshalledObject.IpFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapFilters", targetDepth))
+                if (context.TestExpression("MapFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfMapFilter, OcsfMapFilterUnmarshaller>(OcsfMapFilterUnmarshaller.Instance);
                     unmarshalledObject.MapFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NestedCompositeFilters", targetDepth))
+                if (context.TestExpression("NestedCompositeFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompositeFilter, CompositeFilterUnmarshaller>(CompositeFilterUnmarshaller.Instance);
                     unmarshalledObject.NestedCompositeFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberFilters", targetDepth))
+                if (context.TestExpression("NumberFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfNumberFilter, OcsfNumberFilterUnmarshaller>(OcsfNumberFilterUnmarshaller.Instance);
                     unmarshalledObject.NumberFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Operator", targetDepth))
+                if (context.TestExpression("Operator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringFilters", targetDepth))
+                if (context.TestExpression("StringFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OcsfStringFilter, OcsfStringFilterUnmarshaller>(OcsfStringFilterUnmarshaller.Instance);
                     unmarshalledObject.StringFilters = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("templateSyncConfig", targetDepth))
+                if (context.TestExpression("templateSyncConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateSyncConfigUnmarshaller.Instance;
                     response.TemplateSyncConfig = unmarshaller.Unmarshall(context, ref reader);

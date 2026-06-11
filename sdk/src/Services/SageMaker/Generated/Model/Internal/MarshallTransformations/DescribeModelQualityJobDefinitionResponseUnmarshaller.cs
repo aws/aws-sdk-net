@@ -52,67 +52,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobDefinitionArn", targetDepth))
+                if (context.TestExpression("JobDefinitionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobDefinitionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobDefinitionName", targetDepth))
+                if (context.TestExpression("JobDefinitionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobDefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobResources", targetDepth))
+                if (context.TestExpression("JobResources", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringResourcesUnmarshaller.Instance;
                     response.JobResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQualityAppSpecification", targetDepth))
+                if (context.TestExpression("ModelQualityAppSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelQualityAppSpecificationUnmarshaller.Instance;
                     response.ModelQualityAppSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQualityBaselineConfig", targetDepth))
+                if (context.TestExpression("ModelQualityBaselineConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelQualityBaselineConfigUnmarshaller.Instance;
                     response.ModelQualityBaselineConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQualityJobInput", targetDepth))
+                if (context.TestExpression("ModelQualityJobInput", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelQualityJobInputUnmarshaller.Instance;
                     response.ModelQualityJobInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelQualityJobOutputConfig", targetDepth))
+                if (context.TestExpression("ModelQualityJobOutputConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringOutputConfigUnmarshaller.Instance;
                     response.ModelQualityJobOutputConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkConfig", targetDepth))
+                if (context.TestExpression("NetworkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringNetworkConfigUnmarshaller.Instance;
                     response.NetworkConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StoppingCondition", targetDepth))
+                if (context.TestExpression("StoppingCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringStoppingConditionUnmarshaller.Instance;
                     response.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);

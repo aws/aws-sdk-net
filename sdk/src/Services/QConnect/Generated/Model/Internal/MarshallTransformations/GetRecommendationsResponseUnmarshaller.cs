@@ -52,13 +52,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recommendations", targetDepth))
+                if (context.TestExpression("recommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationData, RecommendationDataUnmarshaller>(RecommendationDataUnmarshaller.Instance);
                     response.Recommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggers", targetDepth))
+                if (context.TestExpression("triggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationTrigger, RecommendationTriggerUnmarshaller>(RecommendationTriggerUnmarshaller.Instance);
                     response.Triggers = unmarshaller.Unmarshall(context, ref reader);

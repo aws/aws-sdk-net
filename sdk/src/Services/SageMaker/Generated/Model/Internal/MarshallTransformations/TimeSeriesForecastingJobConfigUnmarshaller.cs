@@ -56,55 +56,55 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CandidateGenerationConfig", targetDepth))
+                if (context.TestExpression("CandidateGenerationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CandidateGenerationConfigUnmarshaller.Instance;
                     unmarshalledObject.CandidateGenerationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompletionCriteria", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
+                if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FeatureSpecificationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastFrequency", targetDepth))
+                if (context.TestExpression("ForecastFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastHorizon", targetDepth))
+                if (context.TestExpression("ForecastHorizon", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ForecastHorizon = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastQuantiles", targetDepth))
+                if (context.TestExpression("ForecastQuantiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ForecastQuantiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HolidayConfig", targetDepth))
+                if (context.TestExpression("HolidayConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HolidayConfigAttributes, HolidayConfigAttributesUnmarshaller>(HolidayConfigAttributesUnmarshaller.Instance);
                     unmarshalledObject.HolidayConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesConfig", targetDepth))
+                if (context.TestExpression("TimeSeriesConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeSeriesConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeSeriesConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transformations", targetDepth))
+                if (context.TestExpression("Transformations", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeSeriesTransformationsUnmarshaller.Instance;
                     unmarshalledObject.Transformations = unmarshaller.Unmarshall(context, ref reader);

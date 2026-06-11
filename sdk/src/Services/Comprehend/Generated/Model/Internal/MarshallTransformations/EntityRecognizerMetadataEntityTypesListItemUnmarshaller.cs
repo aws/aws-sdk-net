@@ -56,19 +56,19 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EvaluationMetrics", targetDepth))
+                if (context.TestExpression("EvaluationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityTypesEvaluationMetricsUnmarshaller.Instance;
                     unmarshalledObject.EvaluationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfTrainMentions", targetDepth))
+                if (context.TestExpression("NumberOfTrainMentions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfTrainMentions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

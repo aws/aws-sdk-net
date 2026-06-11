@@ -52,13 +52,13 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("descriptions", targetDepth))
+                if (context.TestExpression("descriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ContinuousExportDescription, ContinuousExportDescriptionUnmarshaller>(ContinuousExportDescriptionUnmarshaller.Instance);
                     response.Descriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

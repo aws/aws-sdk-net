@@ -56,13 +56,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExceptionResponse", targetDepth))
+                if (context.TestExpression("ExceptionResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchReadExceptionUnmarshaller.Instance;
                     unmarshalledObject.ExceptionResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessfulResponse", targetDepth))
+                if (context.TestExpression("SuccessfulResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchReadSuccessfulResponseUnmarshaller.Instance;
                     unmarshalledObject.SuccessfulResponse = unmarshaller.Unmarshall(context, ref reader);

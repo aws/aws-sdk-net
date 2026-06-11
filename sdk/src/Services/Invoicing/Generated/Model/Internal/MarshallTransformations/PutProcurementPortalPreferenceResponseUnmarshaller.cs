@@ -52,7 +52,7 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProcurementPortalPreferenceArn", targetDepth))
+                if (context.TestExpression("ProcurementPortalPreferenceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProcurementPortalPreferenceArn = unmarshaller.Unmarshall(context, ref reader);

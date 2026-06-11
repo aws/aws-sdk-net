@@ -56,19 +56,19 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("childFieldId", targetDepth))
+                if (context.TestExpression("childFieldId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChildFieldId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentChildFieldOptionsMappings", targetDepth))
+                if (context.TestExpression("parentChildFieldOptionsMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParentChildFieldOptionsMapping, ParentChildFieldOptionsMappingUnmarshaller>(ParentChildFieldOptionsMappingUnmarshaller.Instance);
                     unmarshalledObject.ParentChildFieldOptionsMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentFieldId", targetDepth))
+                if (context.TestExpression("parentFieldId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentFieldId = unmarshaller.Unmarshall(context, ref reader);

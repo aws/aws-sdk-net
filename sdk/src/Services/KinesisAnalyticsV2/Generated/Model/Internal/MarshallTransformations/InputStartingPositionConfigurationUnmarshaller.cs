@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InputStartingPosition", targetDepth))
+                if (context.TestExpression("InputStartingPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputStartingPosition = unmarshaller.Unmarshall(context, ref reader);

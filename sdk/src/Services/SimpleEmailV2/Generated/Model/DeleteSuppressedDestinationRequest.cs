@@ -31,16 +31,21 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSuppressedDestination operation.
-    /// Removes an email address from the suppression list for your account.
+    /// Removes an email address from the suppression list for your account or for a specific
+    /// tenant. To target a tenant's suppression list, specify the <c>TenantName</c> parameter.
+    /// If you omit <c>TenantName</c>, the address is removed from the account-level suppression
+    /// list.
     /// </summary>
     public partial class DeleteSuppressedDestinationRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _emailAddress;
+        private string _tenantName;
 
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The suppressed email destination to remove from the account suppression list.
+        /// The suppressed email destination to remove from the suppression list for your account
+        /// or for the specified tenant.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,6 +59,27 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetEmailAddress()
         {
             return this._emailAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant whose suppression list you want to remove the address from.
+        /// If you omit this parameter, the address is removed from the account-level suppression
+        /// list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null;
         }
 
     }

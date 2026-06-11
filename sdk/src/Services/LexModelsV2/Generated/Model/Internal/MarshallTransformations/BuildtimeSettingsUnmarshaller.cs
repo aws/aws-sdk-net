@@ -56,13 +56,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("descriptiveBotBuilder", targetDepth))
+                if (context.TestExpression("descriptiveBotBuilder", targetDepth, ref reader))
                 {
                     var unmarshaller = DescriptiveBotBuilderSpecificationUnmarshaller.Instance;
                     unmarshalledObject.DescriptiveBotBuilder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleUtteranceGeneration", targetDepth))
+                if (context.TestExpression("sampleUtteranceGeneration", targetDepth, ref reader))
                 {
                     var unmarshaller = SampleUtteranceGenerationSpecificationUnmarshaller.Instance;
                     unmarshalledObject.SampleUtteranceGeneration = unmarshaller.Unmarshall(context, ref reader);

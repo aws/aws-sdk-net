@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => builder.Build());
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => builder.Build());
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddHashKey("", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddHashKey("", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
             builder.AddHashKey("Id", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => builder.AddHashKey("Id2", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => builder.AddHashKey("Id2", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddRangeKey("", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddRangeKey("", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
             builder.AddRangeKey("Date", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => builder.AddRangeKey("Date2", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => builder.AddRangeKey("Date2", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddLocalSecondaryIndex("LSI", "Date", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddLocalSecondaryIndex("LSI", "Date", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
             builder.AddHashKey("Id", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddLocalSecondaryIndex("", "Date", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddLocalSecondaryIndex("", "Date", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
             builder.AddHashKey("Id", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddLocalSecondaryIndex("LSI", "", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddLocalSecondaryIndex("LSI", "", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace AWSSDK_DotNet.UnitTests
             builder.AddHashKey("Id", DynamoDBEntryType.String);
             builder.AddLocalSecondaryIndex("LSI", "Date", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddLocalSecondaryIndex("LSI", "Date2", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddLocalSecondaryIndex("LSI", "Date2", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -148,15 +148,15 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
             // Null GSI index name
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", "Id", DynamoDBEntryType.String));
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", "Id", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", "Id", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", "Id", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
 
             // Null hash key
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "", DynamoDBEntryType.String));
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
 
             // Null range key
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String, "", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String, "", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -168,8 +168,8 @@ namespace AWSSDK_DotNet.UnitTests
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
             builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String);
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String));
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", "Id", DynamoDBEntryType.String, "Date", DynamoDBEntryType.String));
         }
 
         /// <summary>
@@ -198,7 +198,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", hash, null));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", hash, null));
         }
 
         [TestMethod]
@@ -206,7 +206,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", null, null));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", null, null));
         }
 
         [TestMethod]
@@ -216,7 +216,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("", DynamoDBEntryType.String) };
 
-            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+            Assert.ThrowsExactly<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
         }
 
         [TestMethod]
@@ -233,7 +233,7 @@ namespace AWSSDK_DotNet.UnitTests
                 new KeyValuePair < string, DynamoDBEntryType >("H5", DynamoDBEntryType.String)
             };
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
         }
 
         [TestMethod]
@@ -251,7 +251,7 @@ namespace AWSSDK_DotNet.UnitTests
                 new KeyValuePair < string, DynamoDBEntryType >("R5", DynamoDBEntryType.String)
             };
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
         }
 
         [TestMethod]
@@ -266,7 +266,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var hashB = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hashB, null));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hashB, null));
         }
 
         [TestMethod]
@@ -319,7 +319,7 @@ namespace AWSSDK_DotNet.UnitTests
                 new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String)
             };
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
         }
 
         [TestMethod]
@@ -334,7 +334,7 @@ namespace AWSSDK_DotNet.UnitTests
                 new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String)
             };
 
-            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
+            Assert.ThrowsExactly<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
         }
 
 

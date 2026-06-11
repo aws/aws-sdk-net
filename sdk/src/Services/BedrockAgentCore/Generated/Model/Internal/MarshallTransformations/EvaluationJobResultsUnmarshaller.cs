@@ -56,37 +56,37 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("evaluatorSummaries", targetDepth))
+                if (context.TestExpression("evaluatorSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatorSummary, EvaluatorSummaryUnmarshaller>(EvaluatorSummaryUnmarshaller.Instance);
                     unmarshalledObject.EvaluatorSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfSessionsCompleted", targetDepth))
+                if (context.TestExpression("numberOfSessionsCompleted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSessionsCompleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfSessionsFailed", targetDepth))
+                if (context.TestExpression("numberOfSessionsFailed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSessionsFailed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfSessionsIgnored", targetDepth))
+                if (context.TestExpression("numberOfSessionsIgnored", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSessionsIgnored = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfSessionsInProgress", targetDepth))
+                if (context.TestExpression("numberOfSessionsInProgress", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSessionsInProgress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalNumberOfSessions", targetDepth))
+                if (context.TestExpression("totalNumberOfSessions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfSessions = unmarshaller.Unmarshall(context, ref reader);

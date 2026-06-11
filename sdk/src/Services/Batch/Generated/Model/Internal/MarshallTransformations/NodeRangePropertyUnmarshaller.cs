@@ -56,37 +56,37 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consumableResourceProperties", targetDepth))
+                if (context.TestExpression("consumableResourceProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsumableResourcePropertiesUnmarshaller.Instance;
                     unmarshalledObject.ConsumableResourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("container", targetDepth))
+                if (context.TestExpression("container", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerPropertiesUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsProperties", targetDepth))
+                if (context.TestExpression("ecsProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EcsProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksProperties", targetDepth))
+                if (context.TestExpression("eksProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EksPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceTypes", targetDepth))
+                if (context.TestExpression("instanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetNodes", targetDepth))
+                if (context.TestExpression("targetNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetNodes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionsStatus", targetDepth))
+                if (context.TestExpression("actionsStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionsStatus = unmarshaller.Unmarshall(context, ref reader);

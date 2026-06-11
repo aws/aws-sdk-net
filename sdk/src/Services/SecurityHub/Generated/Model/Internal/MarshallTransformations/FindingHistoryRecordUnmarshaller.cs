@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FindingCreated", targetDepth))
+                if (context.TestExpression("FindingCreated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FindingCreated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FindingIdentifier", targetDepth))
+                if (context.TestExpression("FindingIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsSecurityFindingIdentifierUnmarshaller.Instance;
                     unmarshalledObject.FindingIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Updates", targetDepth))
+                if (context.TestExpression("Updates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FindingHistoryUpdate, FindingHistoryUpdateUnmarshaller>(FindingHistoryUpdateUnmarshaller.Instance);
                     unmarshalledObject.Updates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateSource", targetDepth))
+                if (context.TestExpression("UpdateSource", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingHistoryUpdateSourceUnmarshaller.Instance;
                     unmarshalledObject.UpdateSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateTime", targetDepth))
+                if (context.TestExpression("UpdateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdateTime = unmarshaller.Unmarshall(context, ref reader);

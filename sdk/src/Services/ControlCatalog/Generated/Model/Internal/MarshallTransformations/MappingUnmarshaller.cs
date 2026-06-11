@@ -56,19 +56,19 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonControl", targetDepth))
+                if (context.TestExpression("CommonControl", targetDepth, ref reader))
                 {
                     var unmarshaller = CommonControlMappingDetailsUnmarshaller.Instance;
                     unmarshalledObject.CommonControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Framework", targetDepth))
+                if (context.TestExpression("Framework", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameworkMappingDetailsUnmarshaller.Instance;
                     unmarshalledObject.Framework = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedControl", targetDepth))
+                if (context.TestExpression("RelatedControl", targetDepth, ref reader))
                 {
                     var unmarshaller = RelatedControlMappingDetailsUnmarshaller.Instance;
                     unmarshalledObject.RelatedControl = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mode", targetDepth))
+                if (context.TestExpression("Mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Via", targetDepth))
+                if (context.TestExpression("Via", targetDepth, ref reader))
                 {
                     var unmarshaller = ViaUnmarshaller.Instance;
                     unmarshalledObject.Via = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WhenSentTo", targetDepth))
+                if (context.TestExpression("WhenSentTo", targetDepth, ref reader))
                 {
                     var unmarshaller = WhenSentToUnmarshaller.Instance;
                     unmarshalledObject.WhenSentTo = unmarshaller.Unmarshall(context, ref reader);

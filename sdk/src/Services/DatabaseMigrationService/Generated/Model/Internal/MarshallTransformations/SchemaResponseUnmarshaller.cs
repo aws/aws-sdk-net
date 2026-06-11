@@ -56,55 +56,55 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeLineCount", targetDepth))
+                if (context.TestExpression("CodeLineCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeLineCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSize", targetDepth))
+                if (context.TestExpression("CodeSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CodeSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Complexity", targetDepth))
+                if (context.TestExpression("Complexity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Complexity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseInstance", targetDepth))
+                if (context.TestExpression("DatabaseInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseShortInfoResponseUnmarshaller.Instance;
                     unmarshalledObject.DatabaseInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginalSchema", targetDepth))
+                if (context.TestExpression("OriginalSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaShortInfoResponseUnmarshaller.Instance;
                     unmarshalledObject.OriginalSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaId", targetDepth))
+                if (context.TestExpression("SchemaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaName", targetDepth))
+                if (context.TestExpression("SchemaName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchemaName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Server", targetDepth))
+                if (context.TestExpression("Server", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerShortInfoResponseUnmarshaller.Instance;
                     unmarshalledObject.Server = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Similarity", targetDepth))
+                if (context.TestExpression("Similarity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Similarity = unmarshaller.Unmarshall(context, ref reader);

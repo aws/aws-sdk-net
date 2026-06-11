@@ -90,7 +90,7 @@ namespace AWSSDK.UnitTests
             Assert.IsNull(bucketName);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "op-01234567890123456", "myaccesspoint")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint", "", "op-01234567890123456", "myaccesspoint")]
@@ -116,19 +116,18 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(outpostsArn, outpost.FullAccessPointName);            
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accespoint:myaccesspoint")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-012345678.90123456:accespoint:myaccesspoint")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456/accespoindt/myaccesspoint")]
         [DataRow("arn:aws:s3-outposts:us-west-2:123456789012:outpost::accespoint:myaccesspoint")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ParseOutpostBadInput(string input)
         {
-            Arn.Parse(input).ParseOutpost();
+            Assert.ThrowsExactly<AmazonClientException>(() => Arn.Parse(input).ParseOutpost());
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [TestCategory("S3")]
         [DataRow("arn:aws:s3::123456789012:accesspoint:myendpoint", true)]
         [DataRow("arn:aws:s3::123456789012:accesspoint/myendpoint", true)]

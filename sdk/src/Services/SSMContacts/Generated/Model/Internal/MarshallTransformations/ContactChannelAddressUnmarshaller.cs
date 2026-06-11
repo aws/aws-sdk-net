@@ -56,7 +56,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SimpleAddress", targetDepth))
+                if (context.TestExpression("SimpleAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SimpleAddress = unmarshaller.Unmarshall(context, ref reader);

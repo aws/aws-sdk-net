@@ -56,19 +56,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mqtt5Configuration", targetDepth))
+                if (context.TestExpression("mqtt5Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = Mqtt5ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Mqtt5Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("searchableAttributes", targetDepth))
+                if (context.TestExpression("searchableAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SearchableAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingTypeDescription", targetDepth))
+                if (context.TestExpression("thingTypeDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThingTypeDescription = unmarshaller.Unmarshall(context, ref reader);

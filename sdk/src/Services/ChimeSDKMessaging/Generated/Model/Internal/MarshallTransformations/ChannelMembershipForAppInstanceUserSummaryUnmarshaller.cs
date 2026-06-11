@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppInstanceUserMembershipSummary", targetDepth))
+                if (context.TestExpression("AppInstanceUserMembershipSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AppInstanceUserMembershipSummaryUnmarshaller.Instance;
                     unmarshalledObject.AppInstanceUserMembershipSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelSummary", targetDepth))
+                if (context.TestExpression("ChannelSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelSummaryUnmarshaller.Instance;
                     unmarshalledObject.ChannelSummary = unmarshaller.Unmarshall(context, ref reader);

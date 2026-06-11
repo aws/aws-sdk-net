@@ -56,7 +56,7 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PercentageValue", targetDepth))
+                if (context.TestExpression("PercentageValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PercentageValue = unmarshaller.Unmarshall(context, ref reader);

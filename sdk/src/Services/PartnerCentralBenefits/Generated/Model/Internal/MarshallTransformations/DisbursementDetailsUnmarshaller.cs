@@ -56,13 +56,13 @@ namespace Amazon.PartnerCentralBenefits.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisbursedAmount", targetDepth))
+                if (context.TestExpression("DisbursedAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = MonetaryValueUnmarshaller.Instance;
                     unmarshalledObject.DisbursedAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IssuanceDetails", targetDepth))
+                if (context.TestExpression("IssuanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = IssuanceDetailUnmarshaller.Instance;
                     unmarshalledObject.IssuanceDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -602,8 +602,16 @@
     <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.OutOfOrderTimeWindowInSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.RetentionPeriodInDays</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.RuleQueryOffsetInSeconds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateWorkspaceConfigurationRequest.WorkspaceId</property>
@@ -768,8 +776,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceConfigurationDescription.OutOfOrderTimeWindowInSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceConfigurationDescription.RetentionPeriodInDays</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.WorkspaceConfigurationDescription.RuleQueryOffsetInSeconds</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PrometheusService.Model.WorkspaceDescription.Alias</property>

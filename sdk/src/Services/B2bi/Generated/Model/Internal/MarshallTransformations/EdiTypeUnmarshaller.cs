@@ -56,7 +56,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("x12Details", targetDepth))
+                if (context.TestExpression("x12Details", targetDepth, ref reader))
                 {
                     var unmarshaller = X12DetailsUnmarshaller.Instance;
                     unmarshalledObject.X12Details = unmarshaller.Unmarshall(context, ref reader);

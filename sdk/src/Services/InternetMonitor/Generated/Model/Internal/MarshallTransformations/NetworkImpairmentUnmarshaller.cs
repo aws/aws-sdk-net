@@ -56,19 +56,19 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AsPath", targetDepth))
+                if (context.TestExpression("AsPath", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Network, NetworkUnmarshaller>(NetworkUnmarshaller.Instance);
                     unmarshalledObject.AsPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkEventType", targetDepth))
+                if (context.TestExpression("NetworkEventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkEventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Networks", targetDepth))
+                if (context.TestExpression("Networks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Network, NetworkUnmarshaller>(NetworkUnmarshaller.Instance);
                     unmarshalledObject.Networks = unmarshaller.Unmarshall(context, ref reader);

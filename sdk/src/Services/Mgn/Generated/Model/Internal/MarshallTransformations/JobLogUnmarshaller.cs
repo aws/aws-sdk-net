@@ -56,19 +56,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("event", targetDepth))
+                if (context.TestExpression("event", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventData", targetDepth))
+                if (context.TestExpression("eventData", targetDepth, ref reader))
                 {
                     var unmarshaller = JobLogEventDataUnmarshaller.Instance;
                     unmarshalledObject.EventData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logDateTime", targetDepth))
+                if (context.TestExpression("logDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogDateTime = unmarshaller.Unmarshall(context, ref reader);

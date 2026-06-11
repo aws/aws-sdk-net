@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addTypeValue", targetDepth))
+                if (context.TestExpression("addTypeValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyAddTypeValueUnmarshaller.Instance;
                     unmarshalledObject.AddTypeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteTypeValue", targetDepth))
+                if (context.TestExpression("deleteTypeValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDeleteTypeValueUnmarshaller.Instance;
                     unmarshalledObject.DeleteTypeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateTypeValue", targetDepth))
+                if (context.TestExpression("updateTypeValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningPolicyUpdateTypeValueUnmarshaller.Instance;
                     unmarshalledObject.UpdateTypeValue = unmarshaller.Unmarshall(context, ref reader);

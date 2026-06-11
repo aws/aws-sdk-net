@@ -52,7 +52,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountLink", targetDepth))
+                if (context.TestExpression("AccountLink", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountLinkUnmarshaller.Instance;
                     response.AccountLink = unmarshaller.Unmarshall(context, ref reader);

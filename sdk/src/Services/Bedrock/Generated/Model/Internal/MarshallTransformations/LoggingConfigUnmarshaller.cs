@@ -56,43 +56,43 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioDataDeliveryEnabled", targetDepth))
+                if (context.TestExpression("audioDataDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AudioDataDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudWatchConfig", targetDepth))
+                if (context.TestExpression("cloudWatchConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchConfigUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddingDataDeliveryEnabled", targetDepth))
+                if (context.TestExpression("embeddingDataDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EmbeddingDataDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageDataDeliveryEnabled", targetDepth))
+                if (context.TestExpression("imageDataDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ImageDataDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Config", targetDepth))
+                if (context.TestExpression("s3Config", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Config = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textDataDeliveryEnabled", targetDepth))
+                if (context.TestExpression("textDataDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TextDataDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoDataDeliveryEnabled", targetDepth))
+                if (context.TestExpression("videoDataDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.VideoDataDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);

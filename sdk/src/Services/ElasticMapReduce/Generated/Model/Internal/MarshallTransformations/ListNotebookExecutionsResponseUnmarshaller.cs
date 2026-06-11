@@ -52,13 +52,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotebookExecutions", targetDepth))
+                if (context.TestExpression("NotebookExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NotebookExecutionSummary, NotebookExecutionSummaryUnmarshaller>(NotebookExecutionSummaryUnmarshaller.Instance);
                     response.NotebookExecutions = unmarshaller.Unmarshall(context, ref reader);

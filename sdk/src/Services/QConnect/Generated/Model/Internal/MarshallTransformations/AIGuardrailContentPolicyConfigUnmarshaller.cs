@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filtersConfig", targetDepth))
+                if (context.TestExpression("filtersConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailContentFilterConfig, GuardrailContentFilterConfigUnmarshaller>(GuardrailContentFilterConfigUnmarshaller.Instance);
                     unmarshalledObject.FiltersConfig = unmarshaller.Unmarshall(context, ref reader);

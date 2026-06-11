@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("commit", targetDepth))
+                if (context.TestExpression("commit", targetDepth, ref reader))
                 {
                     var unmarshaller = CommitUnmarshaller.Instance;
                     response.Commit = unmarshaller.Unmarshall(context, ref reader);

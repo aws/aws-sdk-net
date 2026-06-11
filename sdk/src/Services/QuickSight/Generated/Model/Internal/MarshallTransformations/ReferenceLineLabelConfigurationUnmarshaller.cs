@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomLabelConfiguration", targetDepth))
+                if (context.TestExpression("CustomLabelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineCustomLabelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomLabelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontColor", targetDepth))
+                if (context.TestExpression("FontColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FontConfiguration", targetDepth))
+                if (context.TestExpression("FontConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FontConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FontConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HorizontalPosition", targetDepth))
+                if (context.TestExpression("HorizontalPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HorizontalPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValueLabelConfiguration", targetDepth))
+                if (context.TestExpression("ValueLabelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineValueLabelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ValueLabelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerticalPosition", targetDepth))
+                if (context.TestExpression("VerticalPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerticalPosition = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appDefinitionVersion", targetDepth))
+                if (context.TestExpression("appDefinitionVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppDefinitionVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("canEdit", targetDepth))
+                if (context.TestExpression("canEdit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CanEdit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cards", targetDepth))
+                if (context.TestExpression("cards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Card, CardUnmarshaller>(CardUnmarshaller.Instance);
                     unmarshalledObject.Cards = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProvisionedCapacityList", targetDepth))
+                if (context.TestExpression("ProvisionedCapacityList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProvisionedCapacityDescription, ProvisionedCapacityDescriptionUnmarshaller>(ProvisionedCapacityDescriptionUnmarshaller.Instance);
                     response.ProvisionedCapacityList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RetentionPeriod", targetDepth))
+                if (context.TestExpression("RetentionPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context, ref reader);

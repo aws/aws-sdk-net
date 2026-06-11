@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queries", targetDepth))
+                if (context.TestExpression("queries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeneratedQuery, GeneratedQueryUnmarshaller>(GeneratedQueryUnmarshaller.Instance);
                     response.Queries = unmarshaller.Unmarshall(context, ref reader);

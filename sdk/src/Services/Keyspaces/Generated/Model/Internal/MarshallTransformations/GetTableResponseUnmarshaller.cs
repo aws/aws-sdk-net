@@ -52,103 +52,103 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacitySpecification", targetDepth))
+                if (context.TestExpression("capacitySpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
                     response.CapacitySpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cdcSpecification", targetDepth))
+                if (context.TestExpression("cdcSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CdcSpecificationSummaryUnmarshaller.Instance;
                     response.CdcSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientSideTimestamps", targetDepth))
+                if (context.TestExpression("clientSideTimestamps", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientSideTimestampsUnmarshaller.Instance;
                     response.ClientSideTimestamps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("comment", targetDepth, ref reader))
                 {
                     var unmarshaller = CommentUnmarshaller.Instance;
                     response.Comment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTimestamp", targetDepth))
+                if (context.TestExpression("creationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultTimeToLive", targetDepth))
+                if (context.TestExpression("defaultTimeToLive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DefaultTimeToLive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionSpecification", targetDepth))
+                if (context.TestExpression("encryptionSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionSpecificationUnmarshaller.Instance;
                     response.EncryptionSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyspaceName", targetDepth))
+                if (context.TestExpression("keyspaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KeyspaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestStreamArn", targetDepth))
+                if (context.TestExpression("latestStreamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestStreamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pointInTimeRecovery", targetDepth))
+                if (context.TestExpression("pointInTimeRecovery", targetDepth, ref reader))
                 {
                     var unmarshaller = PointInTimeRecoverySummaryUnmarshaller.Instance;
                     response.PointInTimeRecovery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicaSpecifications", targetDepth))
+                if (context.TestExpression("replicaSpecifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicaSpecificationSummary, ReplicaSpecificationSummaryUnmarshaller>(ReplicaSpecificationSummaryUnmarshaller.Instance);
                     response.ReplicaSpecifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaDefinition", targetDepth))
+                if (context.TestExpression("schemaDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaDefinitionUnmarshaller.Instance;
                     response.SchemaDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tableName", targetDepth))
+                if (context.TestExpression("tableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ttl", targetDepth))
+                if (context.TestExpression("ttl", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeToLiveUnmarshaller.Instance;
                     response.Ttl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("warmThroughputSpecification", targetDepth))
+                if (context.TestExpression("warmThroughputSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
                     response.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);

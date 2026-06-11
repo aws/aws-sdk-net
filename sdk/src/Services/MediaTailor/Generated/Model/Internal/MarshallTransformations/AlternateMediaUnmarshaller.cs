@@ -56,43 +56,43 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdBreaks", targetDepth))
+                if (context.TestExpression("AdBreaks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdBreak, AdBreakUnmarshaller>(AdBreakUnmarshaller.Instance);
                     unmarshalledObject.AdBreaks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClipRange", targetDepth))
+                if (context.TestExpression("ClipRange", targetDepth, ref reader))
                 {
                     var unmarshaller = ClipRangeUnmarshaller.Instance;
                     unmarshalledObject.ClipRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DurationMillis", targetDepth))
+                if (context.TestExpression("DurationMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LiveSourceName", targetDepth))
+                if (context.TestExpression("LiveSourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LiveSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduledStartTimeMillis", targetDepth))
+                if (context.TestExpression("ScheduledStartTimeMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStartTimeMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationName", targetDepth))
+                if (context.TestExpression("SourceLocationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceLocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VodSourceName", targetDepth))
+                if (context.TestExpression("VodSourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VodSourceName = unmarshaller.Unmarshall(context, ref reader);

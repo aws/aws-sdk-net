@@ -56,73 +56,73 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalAuthenticationProviders", targetDepth))
+                if (context.TestExpression("AdditionalAuthenticationProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails, AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsUnmarshaller>(AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsUnmarshaller.Instance);
                     unmarshalledObject.AdditionalAuthenticationProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApiId", targetDepth))
+                if (context.TestExpression("ApiId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LambdaAuthorizerConfig", targetDepth))
+                if (context.TestExpression("LambdaAuthorizerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogConfig", targetDepth))
+                if (context.TestExpression("LogConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiLogConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.LogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenIdConnectConfig", targetDepth))
+                if (context.TestExpression("OpenIdConnectConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.OpenIdConnectConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserPoolConfig", targetDepth))
+                if (context.TestExpression("UserPoolConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAppSyncGraphQlApiUserPoolConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WafWebAclArn", targetDepth))
+                if (context.TestExpression("WafWebAclArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WafWebAclArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XrayEnabled", targetDepth))
+                if (context.TestExpression("XrayEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.XrayEnabled = unmarshaller.Unmarshall(context, ref reader);

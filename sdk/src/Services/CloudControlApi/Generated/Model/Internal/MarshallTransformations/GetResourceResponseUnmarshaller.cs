@@ -52,13 +52,13 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceDescription", targetDepth))
+                if (context.TestExpression("ResourceDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceDescriptionUnmarshaller.Instance;
                     response.ResourceDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TypeName", targetDepth))
+                if (context.TestExpression("TypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TypeName = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationVersionDetail", targetDepth))
+                if (context.TestExpression("ApplicationVersionDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationDetailUnmarshaller.Instance;
                     response.ApplicationVersionDetail = unmarshaller.Unmarshall(context, ref reader);

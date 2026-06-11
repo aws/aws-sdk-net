@@ -56,43 +56,43 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudAutonomousVmClusters", targetDepth))
+                if (context.TestExpression("cloudAutonomousVmClusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudAutonomousVmClusterResourceDetails, CloudAutonomousVmClusterResourceDetailsUnmarshaller>(CloudAutonomousVmClusterResourceDetailsUnmarshaller.Instance);
                     unmarshalledObject.CloudAutonomousVmClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudExadataInfrastructureDisplayName", targetDepth))
+                if (context.TestExpression("cloudExadataInfrastructureDisplayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudExadataInfrastructureDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudExadataInfrastructureId", targetDepth))
+                if (context.TestExpression("cloudExadataInfrastructureId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloudExadataInfrastructureId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exadataStorageInTBs", targetDepth))
+                if (context.TestExpression("exadataStorageInTBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ExadataStorageInTBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localStorageInGBs", targetDepth))
+                if (context.TestExpression("localStorageInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LocalStorageInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryInGBs", targetDepth))
+                if (context.TestExpression("memoryInGBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryInGBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ocpus", targetDepth))
+                if (context.TestExpression("ocpus", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Ocpus = unmarshaller.Unmarshall(context, ref reader);

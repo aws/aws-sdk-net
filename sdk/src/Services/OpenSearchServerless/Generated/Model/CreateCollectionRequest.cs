@@ -38,6 +38,7 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private string _clientToken;
         private string _collectionGroupName;
+        private DeletionProtection _deletionProtection;
         private string _description;
         private EncryptionConfig _encryptionConfig;
         private string _name;
@@ -85,6 +86,25 @@ namespace Amazon.OpenSearchServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Indicates whether to enable deletion protection for the collection. When set to <c>ENABLED</c>,
+        /// the collection cannot be deleted.
+        /// </para>
+        /// </summary>
+        public DeletionProtection DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// Description of the collection.
@@ -127,7 +147,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Name of the collection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=32)]
+        [AWSProperty(Required=true, Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }

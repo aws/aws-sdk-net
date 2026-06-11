@@ -52,13 +52,13 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dashboards", targetDepth))
+                if (context.TestExpression("dashboards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DashboardReference, DashboardReferenceUnmarshaller>(DashboardReferenceUnmarshaller.Instance);
                     response.Dashboards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

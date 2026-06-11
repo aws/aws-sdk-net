@@ -56,13 +56,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProtectionGroupLimits", targetDepth))
+                if (context.TestExpression("ProtectionGroupLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectionGroupLimitsUnmarshaller.Instance;
                     unmarshalledObject.ProtectionGroupLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectionLimits", targetDepth))
+                if (context.TestExpression("ProtectionLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectionLimitsUnmarshaller.Instance;
                     unmarshalledObject.ProtectionLimits = unmarshaller.Unmarshall(context, ref reader);

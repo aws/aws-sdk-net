@@ -56,25 +56,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BodyParts", targetDepth))
+                if (context.TestExpression("BodyParts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProtectiveEquipmentBodyPart, ProtectiveEquipmentBodyPartUnmarshaller>(ProtectiveEquipmentBodyPartUnmarshaller.Instance);
                     unmarshalledObject.BodyParts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("BoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);

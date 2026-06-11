@@ -56,25 +56,25 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AclConfiguration", targetDepth))
+                if (context.TestExpression("AclConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AclConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AclConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedBucketOwner", targetDepth))
+                if (context.TestExpression("ExpectedBucketOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpectedBucketOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputLocation", targetDepth))
+                if (context.TestExpression("OutputLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context, ref reader);

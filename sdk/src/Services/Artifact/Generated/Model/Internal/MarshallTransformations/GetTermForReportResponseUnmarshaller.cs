@@ -52,13 +52,13 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("documentPresignedUrl", targetDepth))
+                if (context.TestExpression("documentPresignedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DocumentPresignedUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("termToken", targetDepth))
+                if (context.TestExpression("termToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TermToken = unmarshaller.Unmarshall(context, ref reader);

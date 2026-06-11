@@ -52,13 +52,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PricingOptions", targetDepth))
+                if (context.TestExpression("PricingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PricingOption, PricingOptionUnmarshaller>(PricingOptionUnmarshaller.Instance);
                     response.PricingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PricingResult", targetDepth))
+                if (context.TestExpression("PricingResult", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PricingResult = unmarshaller.Unmarshall(context, ref reader);

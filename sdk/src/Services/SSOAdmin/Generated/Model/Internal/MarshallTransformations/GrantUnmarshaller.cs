@@ -56,25 +56,25 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthorizationCode", targetDepth))
+                if (context.TestExpression("AuthorizationCode", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizationCodeGrantUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JwtBearer", targetDepth))
+                if (context.TestExpression("JwtBearer", targetDepth, ref reader))
                 {
                     var unmarshaller = JwtBearerGrantUnmarshaller.Instance;
                     unmarshalledObject.JwtBearer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefreshToken", targetDepth))
+                if (context.TestExpression("RefreshToken", targetDepth, ref reader))
                 {
                     var unmarshaller = RefreshTokenGrantUnmarshaller.Instance;
                     unmarshalledObject.RefreshToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TokenExchange", targetDepth))
+                if (context.TestExpression("TokenExchange", targetDepth, ref reader))
                 {
                     var unmarshaller = TokenExchangeGrantUnmarshaller.Instance;
                     unmarshalledObject.TokenExchange = unmarshaller.Unmarshall(context, ref reader);

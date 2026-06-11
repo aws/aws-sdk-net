@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileFormat", targetDepth))
+                if (context.TestExpression("fileFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = FileFormatUnmarshaller.Instance;
                     unmarshalledObject.FileFormat = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipAddressBasedRemoteInfoList", targetDepth))
+                if (context.TestExpression("ipAddressBasedRemoteInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IPAddressBasedRemoteInfo, IPAddressBasedRemoteInfoUnmarshaller>(IPAddressBasedRemoteInfoUnmarshaller.Instance);
                     unmarshalledObject.IpAddressBasedRemoteInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineInfoList", targetDepth))
+                if (context.TestExpression("pipelineInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineInfo, PipelineInfoUnmarshaller>(PipelineInfoUnmarshaller.Instance);
                     unmarshalledObject.PipelineInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteSourceCodeAnalysisServerInfo", targetDepth))
+                if (context.TestExpression("remoteSourceCodeAnalysisServerInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RemoteSourceCodeAnalysisServerInfoUnmarshaller.Instance;
                     unmarshalledObject.RemoteSourceCodeAnalysisServerInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vcenterBasedRemoteInfoList", targetDepth))
+                if (context.TestExpression("vcenterBasedRemoteInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VcenterBasedRemoteInfo, VcenterBasedRemoteInfoUnmarshaller>(VcenterBasedRemoteInfoUnmarshaller.Instance);
                     unmarshalledObject.VcenterBasedRemoteInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("versionControlInfoList", targetDepth))
+                if (context.TestExpression("versionControlInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VersionControlInfo, VersionControlInfoUnmarshaller>(VersionControlInfoUnmarshaller.Instance);
                     unmarshalledObject.VersionControlInfoList = unmarshaller.Unmarshall(context, ref reader);

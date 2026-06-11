@@ -740,7 +740,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.RuntimeSessionId</property>
-    <min>1</min>
+    <min>33</min>
     <max>100</max>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
@@ -1628,6 +1628,29 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.ApiBase</property>
+    <min>1</min>
+    <max>16383</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.ApiKeyArn</property>
+    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.MaxTokens</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.Temperature</property>
+    <min>0</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.TopP</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessOpenAiModelConfig.ApiKeyArn</property>
     <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
   </property-value-rule>
@@ -1658,6 +1681,20 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkill.Path</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitAuth.CredentialArn</property>
+    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitSource.Url</property>
+    <min>8</min>
+    <pattern>https://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessSkillS3Source.Uri</property>
+    <min>5</min>
+    <pattern>s3://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSystemContentBlock.Text</property>

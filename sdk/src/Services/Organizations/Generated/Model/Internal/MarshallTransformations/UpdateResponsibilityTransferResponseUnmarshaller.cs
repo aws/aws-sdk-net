@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResponsibilityTransfer", targetDepth))
+                if (context.TestExpression("ResponsibilityTransfer", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponsibilityTransferUnmarshaller.Instance;
                     response.ResponsibilityTransfer = unmarshaller.Unmarshall(context, ref reader);

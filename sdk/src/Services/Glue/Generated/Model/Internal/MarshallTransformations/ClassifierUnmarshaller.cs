@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CsvClassifier", targetDepth))
+                if (context.TestExpression("CsvClassifier", targetDepth, ref reader))
                 {
                     var unmarshaller = CsvClassifierUnmarshaller.Instance;
                     unmarshalledObject.CsvClassifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GrokClassifier", targetDepth))
+                if (context.TestExpression("GrokClassifier", targetDepth, ref reader))
                 {
                     var unmarshaller = GrokClassifierUnmarshaller.Instance;
                     unmarshalledObject.GrokClassifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JsonClassifier", targetDepth))
+                if (context.TestExpression("JsonClassifier", targetDepth, ref reader))
                 {
                     var unmarshaller = JsonClassifierUnmarshaller.Instance;
                     unmarshalledObject.JsonClassifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XMLClassifier", targetDepth))
+                if (context.TestExpression("XMLClassifier", targetDepth, ref reader))
                 {
                     var unmarshaller = XMLClassifierUnmarshaller.Instance;
                     unmarshalledObject.XMLClassifier = unmarshaller.Unmarshall(context, ref reader);

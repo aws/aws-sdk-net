@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UserBackgroundSessionApplicationStatus", targetDepth))
+                if (context.TestExpression("UserBackgroundSessionApplicationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserBackgroundSessionApplicationStatus = unmarshaller.Unmarshall(context, ref reader);

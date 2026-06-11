@@ -56,25 +56,25 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataRetentionInHours", targetDepth))
+                if (context.TestExpression("DataRetentionInHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataRetentionInHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Disabled", targetDepth))
+                if (context.TestExpression("Disabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsConfiguration", targetDepth))
+                if (context.TestExpression("MediaInsightsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaInsightsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamingNotificationTargets", targetDepth))
+                if (context.TestExpression("StreamingNotificationTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreamingNotificationTarget, StreamingNotificationTargetUnmarshaller>(StreamingNotificationTargetUnmarshaller.Instance);
                     unmarshalledObject.StreamingNotificationTargets = unmarshaller.Unmarshall(context, ref reader);

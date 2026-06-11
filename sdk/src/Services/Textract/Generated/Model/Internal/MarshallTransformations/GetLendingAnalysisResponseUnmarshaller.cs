@@ -52,43 +52,43 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnalyzeLendingModelVersion", targetDepth))
+                if (context.TestExpression("AnalyzeLendingModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AnalyzeLendingModelVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("Results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LendingResult, LendingResultUnmarshaller>(LendingResultUnmarshaller.Instance);
                     response.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("Warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Warning, WarningUnmarshaller>(WarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("playbackDeviceCompatibility", targetDepth))
+                if (context.TestExpression("playbackDeviceCompatibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlaybackDeviceCompatibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                if (context.TestExpression("spekeKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SpekeKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);

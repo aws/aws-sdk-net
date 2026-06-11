@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Listener", targetDepth))
+                if (context.TestExpression("Listener", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElbLoadBalancerListenerUnmarshaller.Instance;
                     unmarshalledObject.Listener = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyNames", targetDepth))
+                if (context.TestExpression("PolicyNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PolicyNames = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteId", targetDepth))
+                if (context.TestExpression("DeleteId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeleteId = unmarshaller.Unmarshall(context, ref reader);

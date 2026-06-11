@@ -56,13 +56,13 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelLabeling", targetDepth))
+                if (context.TestExpression("channelLabeling", targetDepth, ref reader))
                 {
                     var unmarshaller = ChannelLabelingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChannelLabeling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speakerLabeling", targetDepth))
+                if (context.TestExpression("speakerLabeling", targetDepth, ref reader))
                 {
                     var unmarshaller = SpeakerLabelingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SpeakerLabeling = unmarshaller.Unmarshall(context, ref reader);

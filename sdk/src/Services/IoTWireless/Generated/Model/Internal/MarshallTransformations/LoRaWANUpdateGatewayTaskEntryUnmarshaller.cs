@@ -56,13 +56,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentVersion", targetDepth))
+                if (context.TestExpression("CurrentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = LoRaWANGatewayVersionUnmarshaller.Instance;
                     unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateVersion", targetDepth))
+                if (context.TestExpression("UpdateVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = LoRaWANGatewayVersionUnmarshaller.Instance;
                     unmarshalledObject.UpdateVersion = unmarshaller.Unmarshall(context, ref reader);

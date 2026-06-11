@@ -56,7 +56,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recommendationText", targetDepth))
+                if (context.TestExpression("recommendationText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendationText = unmarshaller.Unmarshall(context, ref reader);

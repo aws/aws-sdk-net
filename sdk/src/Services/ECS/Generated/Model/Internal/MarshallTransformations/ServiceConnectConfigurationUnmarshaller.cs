@@ -56,31 +56,31 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessLogConfiguration", targetDepth))
+                if (context.TestExpression("accessLogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceConnectAccessLogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AccessLogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logConfiguration", targetDepth))
+                if (context.TestExpression("logConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("services", targetDepth))
+                if (context.TestExpression("services", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceConnectService, ServiceConnectServiceUnmarshaller>(ServiceConnectServiceUnmarshaller.Instance);
                     unmarshalledObject.Services = unmarshaller.Unmarshall(context, ref reader);

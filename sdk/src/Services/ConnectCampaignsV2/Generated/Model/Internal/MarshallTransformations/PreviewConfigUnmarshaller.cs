@@ -56,19 +56,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentActions", targetDepth))
+                if (context.TestExpression("agentActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AgentActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bandwidthAllocation", targetDepth))
+                if (context.TestExpression("bandwidthAllocation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutConfig", targetDepth))
+                if (context.TestExpression("timeoutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeoutConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);

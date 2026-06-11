@@ -56,7 +56,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("readOptions", targetDepth))
+                if (context.TestExpression("readOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadOptionsUnmarshaller.Instance;
                     unmarshalledObject.ReadOptions = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("propertyValues", targetDepth))
+                if (context.TestExpression("propertyValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, PropertyLatestValue, StringUnmarshaller, PropertyLatestValueUnmarshaller>(StringUnmarshaller.Instance, PropertyLatestValueUnmarshaller.Instance);
                     response.PropertyValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tabularPropertyValues", targetDepth))
+                if (context.TestExpression("tabularPropertyValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<Dictionary<string, DataValue>>, JsonListUnmarshaller<Dictionary<string, DataValue>,JsonDictionaryUnmarshaller<string, DataValue, StringUnmarshaller, DataValueUnmarshaller>>>(new JsonListUnmarshaller<Dictionary<string, DataValue>, JsonDictionaryUnmarshaller<string, DataValue, StringUnmarshaller, DataValueUnmarshaller>>(new JsonDictionaryUnmarshaller<string, DataValue, StringUnmarshaller, DataValueUnmarshaller>(StringUnmarshaller.Instance, DataValueUnmarshaller.Instance)));
                     response.TabularPropertyValues = unmarshaller.Unmarshall(context, ref reader);

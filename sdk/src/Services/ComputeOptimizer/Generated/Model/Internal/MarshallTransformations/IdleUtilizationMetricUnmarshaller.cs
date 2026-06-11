@@ -62,6 +62,14 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "dimensions":
+                        {
+                            context.AddPathSegment("Dimensions");
+                            var unmarshaller = new CborListUnmarshaller<IdleDimension, IdleDimensionUnmarshaller>(IdleDimensionUnmarshaller.Instance);
+                            unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "name":
                         {
                             context.AddPathSegment("Name");

@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
     {
         private ComputeConfiguration _computeConfiguration;
         private string _membershipIdentifier;
+        private string _queryComputePayerAccountId;
         private ProtectedQueryResultConfiguration _resultConfiguration;
         private ProtectedQuerySQLParameters _sqlParameters;
         private ProtectedQueryType _type;
@@ -77,6 +78,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMembershipIdentifier()
         {
             return this._membershipIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryComputePayerAccountId. 
+        /// <para>
+        /// The account ID of the member that pays for the query compute costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string QueryComputePayerAccountId
+        {
+            get { return this._queryComputePayerAccountId; }
+            set { this._queryComputePayerAccountId = value; }
+        }
+
+        // Check to see if QueryComputePayerAccountId property is set
+        internal bool IsSetQueryComputePayerAccountId()
+        {
+            return this._queryComputePayerAccountId != null;
         }
 
         /// <summary>

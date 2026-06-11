@@ -52,25 +52,25 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyPair", targetDepth))
+                if (context.TestExpression("keyPair", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyPairUnmarshaller.Instance;
                     response.KeyPair = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operation", targetDepth))
+                if (context.TestExpression("operation", targetDepth, ref reader))
                 {
                     var unmarshaller = OperationUnmarshaller.Instance;
                     response.Operation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privateKeyBase64", targetDepth))
+                if (context.TestExpression("privateKeyBase64", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PrivateKeyBase64 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publicKeyBase64", targetDepth))
+                if (context.TestExpression("publicKeyBase64", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PublicKeyBase64 = unmarshaller.Unmarshall(context, ref reader);

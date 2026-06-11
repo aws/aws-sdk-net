@@ -56,37 +56,37 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentRuntimeArn", targetDepth))
+                if (context.TestExpression("agentRuntimeArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentRuntimeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeId", targetDepth))
+                if (context.TestExpression("agentRuntimeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentRuntimeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("agentRuntimeName", targetDepth))
+                if (context.TestExpression("agentRuntimeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgentRuntimeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filesystemConfigurations", targetDepth))
+                if (context.TestExpression("filesystemConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilesystemConfiguration, FilesystemConfigurationUnmarshaller>(FilesystemConfigurationUnmarshaller.Instance);
                     unmarshalledObject.FilesystemConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleConfiguration", targetDepth))
+                if (context.TestExpression("lifecycleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LifecycleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkConfiguration", targetDepth))
+                if (context.TestExpression("networkConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);

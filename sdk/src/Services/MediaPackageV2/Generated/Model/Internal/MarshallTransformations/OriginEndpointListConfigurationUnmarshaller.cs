@@ -56,85 +56,85 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelGroupName", targetDepth))
+                if (context.TestExpression("ChannelGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChannelName", targetDepth))
+                if (context.TestExpression("ChannelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerType", targetDepth))
+                if (context.TestExpression("ContainerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DashManifests", targetDepth))
+                if (context.TestExpression("DashManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListDashManifestConfiguration, ListDashManifestConfigurationUnmarshaller>(ListDashManifestConfigurationUnmarshaller.Instance);
                     unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth))
+                if (context.TestExpression("ForceEndpointErrorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ForceEndpointErrorConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ForceEndpointErrorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HlsManifests", targetDepth))
+                if (context.TestExpression("HlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListHlsManifestConfiguration, ListHlsManifestConfigurationUnmarshaller>(ListHlsManifestConfigurationUnmarshaller.Instance);
                     unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LowLatencyHlsManifests", targetDepth))
+                if (context.TestExpression("LowLatencyHlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListLowLatencyHlsManifestConfiguration, ListLowLatencyHlsManifestConfigurationUnmarshaller>(ListLowLatencyHlsManifestConfigurationUnmarshaller.Instance);
                     unmarshalledObject.LowLatencyHlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModifiedAt", targetDepth))
+                if (context.TestExpression("ModifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MssManifests", targetDepth))
+                if (context.TestExpression("MssManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListMssManifestConfiguration, ListMssManifestConfigurationUnmarshaller>(ListMssManifestConfigurationUnmarshaller.Instance);
                     unmarshalledObject.MssManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginEndpointName", targetDepth))
+                if (context.TestExpression("OriginEndpointName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OriginEndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UriSeparator", targetDepth))
+                if (context.TestExpression("UriSeparator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UriSeparator = unmarshaller.Unmarshall(context, ref reader);

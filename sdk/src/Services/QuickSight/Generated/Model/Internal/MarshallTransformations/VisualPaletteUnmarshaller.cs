@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChartColor", targetDepth))
+                if (context.TestExpression("ChartColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChartColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColorMap", targetDepth))
+                if (context.TestExpression("ColorMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataPathColor, DataPathColorUnmarshaller>(DataPathColorUnmarshaller.Instance);
                     unmarshalledObject.ColorMap = unmarshaller.Unmarshall(context, ref reader);

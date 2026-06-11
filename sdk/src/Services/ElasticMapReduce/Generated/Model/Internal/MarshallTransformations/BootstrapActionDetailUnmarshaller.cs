@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BootstrapActionConfig", targetDepth))
+                if (context.TestExpression("BootstrapActionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = BootstrapActionConfigUnmarshaller.Instance;
                     unmarshalledObject.BootstrapActionConfig = unmarshaller.Unmarshall(context, ref reader);

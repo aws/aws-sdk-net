@@ -72,7 +72,7 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("reasons", targetDepth))
+                    if (context.TestExpression("reasons", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
                         unmarshalledObject.Reasons = unmarshaller.Unmarshall(context, ref reader);

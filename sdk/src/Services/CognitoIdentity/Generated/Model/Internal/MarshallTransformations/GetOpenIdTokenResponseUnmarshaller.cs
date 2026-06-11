@@ -52,13 +52,13 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityId", targetDepth))
+                if (context.TestExpression("IdentityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IdentityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Token", targetDepth))
+                if (context.TestExpression("Token", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Token = unmarshaller.Unmarshall(context, ref reader);

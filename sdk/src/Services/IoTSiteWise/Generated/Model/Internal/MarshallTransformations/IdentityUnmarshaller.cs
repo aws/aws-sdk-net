@@ -56,25 +56,25 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("group", targetDepth))
+                if (context.TestExpression("group", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupIdentityUnmarshaller.Instance;
                     unmarshalledObject.Group = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamRole", targetDepth))
+                if (context.TestExpression("iamRole", targetDepth, ref reader))
                 {
                     var unmarshaller = IAMRoleIdentityUnmarshaller.Instance;
                     unmarshalledObject.IamRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamUser", targetDepth))
+                if (context.TestExpression("iamUser", targetDepth, ref reader))
                 {
                     var unmarshaller = IAMUserIdentityUnmarshaller.Instance;
                     unmarshalledObject.IamUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("user", targetDepth))
+                if (context.TestExpression("user", targetDepth, ref reader))
                 {
                     var unmarshaller = UserIdentityUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

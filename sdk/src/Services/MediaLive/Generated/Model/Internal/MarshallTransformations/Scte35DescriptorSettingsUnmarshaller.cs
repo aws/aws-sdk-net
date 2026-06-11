@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("segmentationDescriptorScte35DescriptorSettings", targetDepth))
+                if (context.TestExpression("segmentationDescriptorScte35DescriptorSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte35SegmentationDescriptorUnmarshaller.Instance;
                     unmarshalledObject.SegmentationDescriptorScte35DescriptorSettings = unmarshaller.Unmarshall(context, ref reader);

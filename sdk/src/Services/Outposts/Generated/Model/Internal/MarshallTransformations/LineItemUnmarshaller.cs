@@ -56,49 +56,49 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssetInformationList", targetDepth))
+                if (context.TestExpression("AssetInformationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LineItemAssetInformation, LineItemAssetInformationUnmarshaller>(LineItemAssetInformationUnmarshaller.Instance);
                     unmarshalledObject.AssetInformationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CatalogItemId", targetDepth))
+                if (context.TestExpression("CatalogItemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CatalogItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineItemId", targetDepth))
+                if (context.TestExpression("LineItemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousLineItemId", targetDepth))
+                if (context.TestExpression("PreviousLineItemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousLineItemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousOrderId", targetDepth))
+                if (context.TestExpression("PreviousOrderId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousOrderId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Quantity", targetDepth))
+                if (context.TestExpression("Quantity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Quantity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShipmentInformation", targetDepth))
+                if (context.TestExpression("ShipmentInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = ShipmentInformationUnmarshaller.Instance;
                     unmarshalledObject.ShipmentInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

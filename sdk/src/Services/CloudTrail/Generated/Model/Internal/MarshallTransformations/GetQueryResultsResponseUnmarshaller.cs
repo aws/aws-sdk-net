@@ -52,31 +52,31 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorMessage", targetDepth))
+                if (context.TestExpression("ErrorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryResultRows", targetDepth))
+                if (context.TestExpression("QueryResultRows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<Dictionary<string, string>>, JsonListUnmarshaller<Dictionary<string, string>,JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>>(new JsonListUnmarshaller<Dictionary<string, string>, JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance)));
                     response.QueryResultRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryStatistics", targetDepth))
+                if (context.TestExpression("QueryStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryStatisticsUnmarshaller.Instance;
                     response.QueryStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryStatus", targetDepth))
+                if (context.TestExpression("QueryStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryStatus = unmarshaller.Unmarshall(context, ref reader);

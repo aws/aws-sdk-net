@@ -56,7 +56,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataShareArn", targetDepth))
+                if (context.TestExpression("DataShareArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataShareArn = unmarshaller.Unmarshall(context, ref reader);

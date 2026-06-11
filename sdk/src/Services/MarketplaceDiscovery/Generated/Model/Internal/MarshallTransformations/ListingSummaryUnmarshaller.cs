@@ -56,79 +56,79 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedEntities", targetDepth))
+                if (context.TestExpression("associatedEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListingSummaryAssociatedEntity, ListingSummaryAssociatedEntityUnmarshaller>(ListingSummaryAssociatedEntityUnmarshaller.Instance);
                     unmarshalledObject.AssociatedEntities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("badges", targetDepth))
+                if (context.TestExpression("badges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListingBadge, ListingBadgeUnmarshaller>(ListingBadgeUnmarshaller.Instance);
                     unmarshalledObject.Badges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("catalog", targetDepth))
+                if (context.TestExpression("catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("categories", targetDepth))
+                if (context.TestExpression("categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Category, CategoryUnmarshaller>(CategoryUnmarshaller.Instance);
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fulfillmentOptionSummaries", targetDepth))
+                if (context.TestExpression("fulfillmentOptionSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FulfillmentOptionSummary, FulfillmentOptionSummaryUnmarshaller>(FulfillmentOptionSummaryUnmarshaller.Instance);
                     unmarshalledObject.FulfillmentOptionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listingId", targetDepth))
+                if (context.TestExpression("listingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ListingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listingName", targetDepth))
+                if (context.TestExpression("listingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ListingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logoThumbnailUrl", targetDepth))
+                if (context.TestExpression("logoThumbnailUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogoThumbnailUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pricingModels", targetDepth))
+                if (context.TestExpression("pricingModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PricingModel, PricingModelUnmarshaller>(PricingModelUnmarshaller.Instance);
                     unmarshalledObject.PricingModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pricingUnits", targetDepth))
+                if (context.TestExpression("pricingUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PricingUnit, PricingUnitUnmarshaller>(PricingUnitUnmarshaller.Instance);
                     unmarshalledObject.PricingUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("publisher", targetDepth))
+                if (context.TestExpression("publisher", targetDepth, ref reader))
                 {
                     var unmarshaller = SellerInformationUnmarshaller.Instance;
                     unmarshalledObject.Publisher = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reviewSummary", targetDepth))
+                if (context.TestExpression("reviewSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewSummaryUnmarshaller.Instance;
                     unmarshalledObject.ReviewSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shortDescription", targetDepth))
+                if (context.TestExpression("shortDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShortDescription = unmarshaller.Unmarshall(context, ref reader);

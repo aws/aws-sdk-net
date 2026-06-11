@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("propagatingAttributes", targetDepth))
+                if (context.TestExpression("propagatingAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropagatingAttribute, PropagatingAttributeUnmarshaller>(PropagatingAttributeUnmarshaller.Instance);
                     unmarshalledObject.PropagatingAttributes = unmarshaller.Unmarshall(context, ref reader);

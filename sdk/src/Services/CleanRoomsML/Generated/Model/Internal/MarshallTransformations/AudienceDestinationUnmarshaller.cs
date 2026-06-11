@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3Destination", targetDepth))
+                if (context.TestExpression("s3Destination", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigMapUnmarshaller.Instance;
                     unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);

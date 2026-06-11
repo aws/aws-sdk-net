@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ForecastProperties", targetDepth))
+                if (context.TestExpression("ForecastProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedForecastPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ForecastProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Scenario", targetDepth))
+                if (context.TestExpression("Scenario", targetDepth, ref reader))
                 {
                     var unmarshaller = ForecastScenarioUnmarshaller.Instance;
                     unmarshalledObject.Scenario = unmarshaller.Unmarshall(context, ref reader);

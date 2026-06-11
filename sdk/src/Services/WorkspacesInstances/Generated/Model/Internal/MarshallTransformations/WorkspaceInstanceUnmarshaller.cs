@@ -56,19 +56,19 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EC2ManagedInstance", targetDepth))
+                if (context.TestExpression("EC2ManagedInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = EC2ManagedInstanceUnmarshaller.Instance;
                     unmarshalledObject.EC2ManagedInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionState", targetDepth))
+                if (context.TestExpression("ProvisionState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceInstanceId", targetDepth))
+                if (context.TestExpression("WorkspaceInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceInstanceId = unmarshaller.Unmarshall(context, ref reader);

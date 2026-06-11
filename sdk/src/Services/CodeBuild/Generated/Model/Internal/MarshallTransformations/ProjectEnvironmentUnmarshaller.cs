@@ -56,67 +56,67 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificate", targetDepth))
+                if (context.TestExpression("certificate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Certificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeConfiguration", targetDepth))
+                if (context.TestExpression("computeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeType", targetDepth))
+                if (context.TestExpression("computeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dockerServer", targetDepth))
+                if (context.TestExpression("dockerServer", targetDepth, ref reader))
                 {
                     var unmarshaller = DockerServerUnmarshaller.Instance;
                     unmarshalledObject.DockerServer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentVariables", targetDepth))
+                if (context.TestExpression("environmentVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentVariable, EnvironmentVariableUnmarshaller>(EnvironmentVariableUnmarshaller.Instance);
                     unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fleet", targetDepth))
+                if (context.TestExpression("fleet", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectFleetUnmarshaller.Instance;
                     unmarshalledObject.Fleet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imagePullCredentialsType", targetDepth))
+                if (context.TestExpression("imagePullCredentialsType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImagePullCredentialsType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("privilegedMode", targetDepth))
+                if (context.TestExpression("privilegedMode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PrivilegedMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryCredential", targetDepth))
+                if (context.TestExpression("registryCredential", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistryCredentialUnmarshaller.Instance;
                     unmarshalledObject.RegistryCredential = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

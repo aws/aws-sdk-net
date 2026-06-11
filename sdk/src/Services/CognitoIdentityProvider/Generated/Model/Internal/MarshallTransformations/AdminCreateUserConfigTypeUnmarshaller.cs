@@ -56,19 +56,19 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowAdminCreateUserOnly", targetDepth))
+                if (context.TestExpression("AllowAdminCreateUserOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowAdminCreateUserOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InviteMessageTemplate", targetDepth))
+                if (context.TestExpression("InviteMessageTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageTemplateTypeUnmarshaller.Instance;
                     unmarshalledObject.InviteMessageTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnusedAccountValidityDays", targetDepth))
+                if (context.TestExpression("UnusedAccountValidityDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnusedAccountValidityDays = unmarshaller.Unmarshall(context, ref reader);

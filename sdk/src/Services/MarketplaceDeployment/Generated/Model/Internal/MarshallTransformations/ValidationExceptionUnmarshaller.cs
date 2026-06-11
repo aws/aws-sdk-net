@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceDeployment.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("fieldName", targetDepth))
+                    if (context.TestExpression("fieldName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.FieldName = unmarshaller.Unmarshall(context, ref reader);

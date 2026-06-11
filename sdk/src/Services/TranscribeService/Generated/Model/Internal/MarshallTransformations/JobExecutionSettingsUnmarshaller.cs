@@ -56,13 +56,13 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowDeferredExecution", targetDepth))
+                if (context.TestExpression("AllowDeferredExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllowDeferredExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataAccessRoleArn", targetDepth))
+                if (context.TestExpression("DataAccessRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);

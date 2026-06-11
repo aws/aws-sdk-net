@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureConfiguration", targetDepth))
+                if (context.TestExpression("FailureConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RefreshFailureConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FailureConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefreshConfiguration", targetDepth))
+                if (context.TestExpression("RefreshConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RefreshConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RefreshConfiguration = unmarshaller.Unmarshall(context, ref reader);

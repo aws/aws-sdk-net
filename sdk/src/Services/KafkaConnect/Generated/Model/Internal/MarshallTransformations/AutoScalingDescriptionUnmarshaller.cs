@@ -56,37 +56,37 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxAutoscalingTaskCount", targetDepth))
+                if (context.TestExpression("maxAutoscalingTaskCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAutoscalingTaskCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxWorkerCount", targetDepth))
+                if (context.TestExpression("maxWorkerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxWorkerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mcuCount", targetDepth))
+                if (context.TestExpression("mcuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.McuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minWorkerCount", targetDepth))
+                if (context.TestExpression("minWorkerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinWorkerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scaleInPolicy", targetDepth))
+                if (context.TestExpression("scaleInPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ScaleInPolicyDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ScaleInPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scaleOutPolicy", targetDepth))
+                if (context.TestExpression("scaleOutPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = ScaleOutPolicyDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutPolicy = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IotCertificateId", targetDepth))
+                if (context.TestExpression("IotCertificateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IotCertificateId = unmarshaller.Unmarshall(context, ref reader);

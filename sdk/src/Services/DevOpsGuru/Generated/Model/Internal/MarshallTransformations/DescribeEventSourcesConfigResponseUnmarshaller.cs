@@ -52,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventSources", targetDepth))
+                if (context.TestExpression("EventSources", targetDepth, ref reader))
                 {
                     var unmarshaller = EventSourcesConfigUnmarshaller.Instance;
                     response.EventSources = unmarshaller.Unmarshall(context, ref reader);

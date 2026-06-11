@@ -56,31 +56,31 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failover", targetDepth))
+                if (context.TestExpression("failover", targetDepth, ref reader))
                 {
                     var unmarshaller = FailoverRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Failover = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaConnectFlow", targetDepth))
+                if (context.TestExpression("mediaConnectFlow", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConnectFlowRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MediaConnectFlow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaLiveChannel", targetDepth))
+                if (context.TestExpression("mediaLiveChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaLiveChannelRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MediaLiveChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("merge", targetDepth))
+                if (context.TestExpression("merge", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Merge = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("standard", targetDepth))
+                if (context.TestExpression("standard", targetDepth, ref reader))
                 {
                     var unmarshaller = StandardRouterInputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Standard = unmarshaller.Unmarshall(context, ref reader);

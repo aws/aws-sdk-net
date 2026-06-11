@@ -68,6 +68,17 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSubtitling())
+            {
+                context.Writer.WritePropertyName("subtitling");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubtitlingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Subtitling, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

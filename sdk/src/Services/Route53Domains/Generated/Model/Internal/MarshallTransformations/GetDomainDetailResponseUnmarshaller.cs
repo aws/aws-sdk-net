@@ -52,145 +52,145 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AbuseContactEmail", targetDepth))
+                if (context.TestExpression("AbuseContactEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AbuseContactEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AbuseContactPhone", targetDepth))
+                if (context.TestExpression("AbuseContactPhone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AbuseContactPhone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdminContact", targetDepth))
+                if (context.TestExpression("AdminContact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
                     response.AdminContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdminPrivacy", targetDepth))
+                if (context.TestExpression("AdminPrivacy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AdminPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoRenew", targetDepth))
+                if (context.TestExpression("AutoRenew", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BillingContact", targetDepth))
+                if (context.TestExpression("BillingContact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
                     response.BillingContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BillingPrivacy", targetDepth))
+                if (context.TestExpression("BillingPrivacy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.BillingPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnsSec", targetDepth))
+                if (context.TestExpression("DnsSec", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DnsSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DnssecKeys", targetDepth))
+                if (context.TestExpression("DnssecKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DnssecKey, DnssecKeyUnmarshaller>(DnssecKeyUnmarshaller.Instance);
                     response.DnssecKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationDate", targetDepth))
+                if (context.TestExpression("ExpirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpirationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Nameservers", targetDepth))
+                if (context.TestExpression("Nameservers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Nameserver, NameserverUnmarshaller>(NameserverUnmarshaller.Instance);
                     response.Nameservers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrantContact", targetDepth))
+                if (context.TestExpression("RegistrantContact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
                     response.RegistrantContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrantPrivacy", targetDepth))
+                if (context.TestExpression("RegistrantPrivacy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.RegistrantPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrarName", targetDepth))
+                if (context.TestExpression("RegistrarName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistrarName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistrarUrl", targetDepth))
+                if (context.TestExpression("RegistrarUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistrarUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegistryDomainId", targetDepth))
+                if (context.TestExpression("RegistryDomainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistryDomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Reseller", targetDepth))
+                if (context.TestExpression("Reseller", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Reseller = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusList", targetDepth))
+                if (context.TestExpression("StatusList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StatusList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TechContact", targetDepth))
+                if (context.TestExpression("TechContact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactDetailUnmarshaller.Instance;
                     response.TechContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TechPrivacy", targetDepth))
+                if (context.TestExpression("TechPrivacy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.TechPrivacy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdatedDate", targetDepth))
+                if (context.TestExpression("UpdatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WhoIsServer", targetDepth))
+                if (context.TestExpression("WhoIsServer", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WhoIsServer = unmarshaller.Unmarshall(context, ref reader);

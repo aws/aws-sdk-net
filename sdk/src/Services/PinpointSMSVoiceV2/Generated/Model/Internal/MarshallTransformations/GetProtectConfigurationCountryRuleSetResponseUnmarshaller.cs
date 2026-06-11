@@ -52,25 +52,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CountryRuleSet", targetDepth))
+                if (context.TestExpression("CountryRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ProtectConfigurationCountryRuleSetInformation, StringUnmarshaller, ProtectConfigurationCountryRuleSetInformationUnmarshaller>(StringUnmarshaller.Instance, ProtectConfigurationCountryRuleSetInformationUnmarshaller.Instance);
                     response.CountryRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberCapability", targetDepth))
+                if (context.TestExpression("NumberCapability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NumberCapability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectConfigurationArn", targetDepth))
+                if (context.TestExpression("ProtectConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtectConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                if (context.TestExpression("ProtectConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProtectConfigurationId = unmarshaller.Unmarshall(context, ref reader);

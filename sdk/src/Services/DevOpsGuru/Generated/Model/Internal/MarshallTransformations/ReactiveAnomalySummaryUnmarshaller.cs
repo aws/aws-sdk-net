@@ -56,79 +56,79 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnomalyReportedTimeRange", targetDepth))
+                if (context.TestExpression("AnomalyReportedTimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalyReportedTimeRangeUnmarshaller.Instance;
                     unmarshalledObject.AnomalyReportedTimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnomalyResources", targetDepth))
+                if (context.TestExpression("AnomalyResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnomalyResource, AnomalyResourceUnmarshaller>(AnomalyResourceUnmarshaller.Instance);
                     unmarshalledObject.AnomalyResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AnomalyTimeRange", targetDepth))
+                if (context.TestExpression("AnomalyTimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalyTimeRangeUnmarshaller.Instance;
                     unmarshalledObject.AnomalyTimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssociatedInsightId", targetDepth))
+                if (context.TestExpression("AssociatedInsightId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociatedInsightId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CausalAnomalyId", targetDepth))
+                if (context.TestExpression("CausalAnomalyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CausalAnomalyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceCollection", targetDepth))
+                if (context.TestExpression("ResourceCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceCollectionUnmarshaller.Instance;
                     unmarshalledObject.ResourceCollection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Severity", targetDepth))
+                if (context.TestExpression("Severity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDetails", targetDepth))
+                if (context.TestExpression("SourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AnomalySourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

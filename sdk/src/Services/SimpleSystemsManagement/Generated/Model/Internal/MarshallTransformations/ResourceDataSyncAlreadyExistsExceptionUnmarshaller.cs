@@ -72,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("SyncName", targetDepth))
+                    if (context.TestExpression("SyncName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.SyncName = unmarshaller.Unmarshall(context, ref reader);

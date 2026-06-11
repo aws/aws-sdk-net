@@ -56,67 +56,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationSuccessFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("ApplicationSuccessFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationSuccessFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirehoseFailureFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("FirehoseFailureFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirehoseFailureFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirehoseSuccessFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("FirehoseSuccessFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirehoseSuccessFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpFailureFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("HttpFailureFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HttpFailureFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpSuccessFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("HttpSuccessFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HttpSuccessFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsMasterKeyId", targetDepth))
+                if (context.TestExpression("KmsMasterKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsMasterKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Owner", targetDepth))
+                if (context.TestExpression("Owner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Owner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsFailureFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("SqsFailureFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SqsFailureFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsSuccessFeedbackRoleArn", targetDepth))
+                if (context.TestExpression("SqsSuccessFeedbackRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SqsSuccessFeedbackRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subscription", targetDepth))
+                if (context.TestExpression("Subscription", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsSnsTopicSubscription, AwsSnsTopicSubscriptionUnmarshaller>(AwsSnsTopicSubscriptionUnmarshaller.Instance);
                     unmarshalledObject.Subscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicName", targetDepth))
+                if (context.TestExpression("TopicName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);

@@ -56,67 +56,67 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnchorDateConfiguration", targetDepth))
+                if (context.TestExpression("AnchorDateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AnchorDateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AnchorDateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Column", targetDepth))
+                if (context.TestExpression("Column", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth))
+                if (context.TestExpression("DefaultFilterControlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFilterControlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DefaultFilterControlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludePeriodConfiguration", targetDepth))
+                if (context.TestExpression("ExcludePeriodConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExcludePeriodConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExcludePeriodConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterId", targetDepth))
+                if (context.TestExpression("FilterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumGranularity", targetDepth))
+                if (context.TestExpression("MinimumGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MinimumGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NullOption", targetDepth))
+                if (context.TestExpression("NullOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NullOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterName", targetDepth))
+                if (context.TestExpression("ParameterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeDateType", targetDepth))
+                if (context.TestExpression("RelativeDateType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RelativeDateType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelativeDateValue", targetDepth))
+                if (context.TestExpression("RelativeDateValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RelativeDateValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);

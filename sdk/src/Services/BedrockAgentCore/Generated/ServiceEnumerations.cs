@@ -971,6 +971,60 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessBedrockApiFormat.
+    /// </summary>
+    public class HarnessBedrockApiFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat_completions for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Chat_completions = new HarnessBedrockApiFormat("chat_completions");
+        /// <summary>
+        /// Constant Converse_stream for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Converse_stream = new HarnessBedrockApiFormat("converse_stream");
+        /// <summary>
+        /// Constant Responses for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Responses = new HarnessBedrockApiFormat("responses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessBedrockApiFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessBedrockApiFormat FindValue(string value)
+        {
+            return FindValue<HarnessBedrockApiFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessBedrockApiFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HarnessConversationRole.
     /// </summary>
     public class HarnessConversationRole : ConstantClass
@@ -1014,6 +1068,56 @@ namespace Amazon.BedrockAgentCore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HarnessConversationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessOpenAiApiFormat.
+    /// </summary>
+    public class HarnessOpenAiApiFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat_completions for HarnessOpenAiApiFormat
+        /// </summary>
+        public static readonly HarnessOpenAiApiFormat Chat_completions = new HarnessOpenAiApiFormat("chat_completions");
+        /// <summary>
+        /// Constant Responses for HarnessOpenAiApiFormat
+        /// </summary>
+        public static readonly HarnessOpenAiApiFormat Responses = new HarnessOpenAiApiFormat("responses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessOpenAiApiFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessOpenAiApiFormat FindValue(string value)
+        {
+            return FindValue<HarnessOpenAiApiFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessOpenAiApiFormat(string value)
         {
             return FindValue(value);
         }

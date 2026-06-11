@@ -52,43 +52,43 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lifecyclePolicyText", targetDepth))
+                if (context.TestExpression("lifecyclePolicyText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LifecyclePolicyText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previewResults", targetDepth))
+                if (context.TestExpression("previewResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicyPreviewResult, LifecyclePolicyPreviewResultUnmarshaller>(LifecyclePolicyPreviewResultUnmarshaller.Instance);
                     response.PreviewResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("registryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("summary", targetDepth))
+                if (context.TestExpression("summary", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyPreviewSummaryUnmarshaller.Instance;
                     response.Summary = unmarshaller.Unmarshall(context, ref reader);

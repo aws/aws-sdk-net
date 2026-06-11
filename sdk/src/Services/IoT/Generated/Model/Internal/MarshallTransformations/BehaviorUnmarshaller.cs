@@ -56,37 +56,37 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("criteria", targetDepth))
+                if (context.TestExpression("criteria", targetDepth, ref reader))
                 {
                     var unmarshaller = BehaviorCriteriaUnmarshaller.Instance;
                     unmarshalledObject.Criteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exportMetric", targetDepth))
+                if (context.TestExpression("exportMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExportMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metric", targetDepth))
+                if (context.TestExpression("metric", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Metric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricDimension", targetDepth))
+                if (context.TestExpression("metricDimension", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricDimensionUnmarshaller.Instance;
                     unmarshalledObject.MetricDimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suppressAlerts", targetDepth))
+                if (context.TestExpression("suppressAlerts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SuppressAlerts = unmarshaller.Unmarshall(context, ref reader);

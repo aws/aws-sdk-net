@@ -56,43 +56,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clearLead", targetDepth))
+                if (context.TestExpression("clearLeadSegments", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClearLead = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ClearLeadSegments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("constantInitializationVector", targetDepth))
+                if (context.TestExpression("constantInitializationVector", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConstantInitializationVector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionMethod", targetDepth))
+                if (context.TestExpression("encryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initializationVectorInManifest", targetDepth))
+                if (context.TestExpression("initializationVectorInManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InitializationVectorInManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                if (context.TestExpression("spekeKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SpekeKeyProviderCmafUnmarshaller.Instance;
                     unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("staticKeyProvider", targetDepth))
+                if (context.TestExpression("staticKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.StaticKeyProvider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BoxPlotAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("BoxPlotAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = BoxPlotAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.BoxPlotAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Preview", targetDepth))
+                if (context.TestExpression("Preview", targetDepth, ref reader))
                 {
                     var unmarshaller = PreviewUnmarshaller.Instance;
                     unmarshalledObject.Preview = unmarshaller.Unmarshall(context, ref reader);

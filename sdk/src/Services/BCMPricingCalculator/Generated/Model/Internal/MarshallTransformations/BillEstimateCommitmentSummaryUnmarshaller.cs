@@ -56,55 +56,55 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monthlyPayment", targetDepth))
+                if (context.TestExpression("monthlyPayment", targetDepth, ref reader))
                 {
                     var unmarshaller = CostAmountUnmarshaller.Instance;
                     unmarshalledObject.MonthlyPayment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offeringId", targetDepth))
+                if (context.TestExpression("offeringId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OfferingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("paymentOption", targetDepth))
+                if (context.TestExpression("paymentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("purchaseAgreementType", targetDepth))
+                if (context.TestExpression("purchaseAgreementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseAgreementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("region", targetDepth))
+                if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("termLength", targetDepth))
+                if (context.TestExpression("termLength", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TermLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upfrontPayment", targetDepth))
+                if (context.TestExpression("upfrontPayment", targetDepth, ref reader))
                 {
                     var unmarshaller = CostAmountUnmarshaller.Instance;
                     unmarshalledObject.UpfrontPayment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageAccountId", targetDepth))
+                if (context.TestExpression("usageAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context, ref reader);

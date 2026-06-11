@@ -52,13 +52,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rotations", targetDepth))
+                if (context.TestExpression("Rotations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Rotation, RotationUnmarshaller>(RotationUnmarshaller.Instance);
                     response.Rotations = unmarshaller.Unmarshall(context, ref reader);

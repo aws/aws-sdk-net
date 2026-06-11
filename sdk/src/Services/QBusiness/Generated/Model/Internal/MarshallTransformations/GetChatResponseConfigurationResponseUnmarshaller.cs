@@ -52,37 +52,37 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chatResponseConfigurationArn", targetDepth))
+                if (context.TestExpression("chatResponseConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChatResponseConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("chatResponseConfigurationId", targetDepth))
+                if (context.TestExpression("chatResponseConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChatResponseConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("displayName", targetDepth))
+                if (context.TestExpression("displayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inUseConfiguration", targetDepth))
+                if (context.TestExpression("inUseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ChatResponseConfigurationDetailUnmarshaller.Instance;
                     response.InUseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdateConfiguration", targetDepth))
+                if (context.TestExpression("lastUpdateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ChatResponseConfigurationDetailUnmarshaller.Instance;
                     response.LastUpdateConfiguration = unmarshaller.Unmarshall(context, ref reader);

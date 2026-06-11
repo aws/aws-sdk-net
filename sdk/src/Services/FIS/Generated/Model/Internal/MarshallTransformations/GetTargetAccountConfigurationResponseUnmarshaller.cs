@@ -52,7 +52,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("targetAccountConfiguration", targetDepth))
+                if (context.TestExpression("targetAccountConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetAccountConfigurationUnmarshaller.Instance;
                     response.TargetAccountConfiguration = unmarshaller.Unmarshall(context, ref reader);

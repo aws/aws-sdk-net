@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexSchema", targetDepth))
+                if (context.TestExpression("IndexSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.IndexSchema = unmarshaller.Unmarshall(context, ref reader);

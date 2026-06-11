@@ -52,13 +52,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("thingGroupIndexingConfiguration", targetDepth))
+                if (context.TestExpression("thingGroupIndexingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ThingGroupIndexingConfigurationUnmarshaller.Instance;
                     response.ThingGroupIndexingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingIndexingConfiguration", targetDepth))
+                if (context.TestExpression("thingIndexingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ThingIndexingConfigurationUnmarshaller.Instance;
                     response.ThingIndexingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("issues", targetDepth))
+                if (context.TestExpression("issues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FargateProfileIssue, FargateProfileIssueUnmarshaller>(FargateProfileIssueUnmarshaller.Instance);
                     unmarshalledObject.Issues = unmarshaller.Unmarshall(context, ref reader);

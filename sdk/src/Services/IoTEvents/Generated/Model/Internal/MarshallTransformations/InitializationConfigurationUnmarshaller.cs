@@ -56,7 +56,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("disabledOnInitialization", targetDepth))
+                if (context.TestExpression("disabledOnInitialization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisabledOnInitialization = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analysisStatus", targetDepth))
+                if (context.TestExpression("analysisStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisStatusUnionUnmarshaller.Instance;
                     unmarshalledObject.AnalysisStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("analysisType", targetDepth))
+                if (context.TestExpression("analysisType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AnalysisType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("antipatternReportResultList", targetDepth))
+                if (context.TestExpression("antipatternReportResultList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AntipatternReportResult, AntipatternReportResultUnmarshaller>(AntipatternReportResultUnmarshaller.Instance);
                     unmarshalledObject.AntipatternReportResultList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusMessage", targetDepth))
+                if (context.TestExpression("statusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);

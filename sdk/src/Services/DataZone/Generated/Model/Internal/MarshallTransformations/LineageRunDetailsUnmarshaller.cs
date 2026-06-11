@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sqlQueryRunDetails", targetDepth))
+                if (context.TestExpression("sqlQueryRunDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LineageSqlQueryRunDetailsUnmarshaller.Instance;
                     unmarshalledObject.SqlQueryRunDetails = unmarshaller.Unmarshall(context, ref reader);

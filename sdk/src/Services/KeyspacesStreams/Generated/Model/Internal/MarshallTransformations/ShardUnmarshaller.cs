@@ -56,19 +56,19 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("parentShardIds", targetDepth))
+                if (context.TestExpression("parentShardIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ParentShardIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sequenceNumberRange", targetDepth))
+                if (context.TestExpression("sequenceNumberRange", targetDepth, ref reader))
                 {
                     var unmarshaller = SequenceNumberRangeUnmarshaller.Instance;
                     unmarshalledObject.SequenceNumberRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shardId", targetDepth))
+                if (context.TestExpression("shardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShardId = unmarshaller.Unmarshall(context, ref reader);

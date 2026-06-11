@@ -52,7 +52,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProtectionGroup", targetDepth))
+                if (context.TestExpression("ProtectionGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectionGroupUnmarshaller.Instance;
                     response.ProtectionGroup = unmarshaller.Unmarshall(context, ref reader);

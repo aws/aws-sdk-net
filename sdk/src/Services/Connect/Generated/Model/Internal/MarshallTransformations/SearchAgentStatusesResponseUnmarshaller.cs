@@ -52,19 +52,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentStatuses", targetDepth))
+                if (context.TestExpression("AgentStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgentStatus, AgentStatusUnmarshaller>(AgentStatusUnmarshaller.Instance);
                     response.AgentStatuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApproximateTotalCount", targetDepth))
+                if (context.TestExpression("ApproximateTotalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApproximateTotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

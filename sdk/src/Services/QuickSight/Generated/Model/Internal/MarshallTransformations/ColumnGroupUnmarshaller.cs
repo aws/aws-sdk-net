@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GeoSpatialColumnGroup", targetDepth))
+                if (context.TestExpression("GeoSpatialColumnGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = GeoSpatialColumnGroupUnmarshaller.Instance;
                     unmarshalledObject.GeoSpatialColumnGroup = unmarshaller.Unmarshall(context, ref reader);

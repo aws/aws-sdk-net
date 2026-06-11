@@ -52,13 +52,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appArn", targetDepth))
+                if (context.TestExpression("appArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AppArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failedEntries", targetDepth))
+                if (context.TestExpression("failedEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedGroupingRecommendationEntry, FailedGroupingRecommendationEntryUnmarshaller>(FailedGroupingRecommendationEntryUnmarshaller.Instance);
                     response.FailedEntries = unmarshaller.Unmarshall(context, ref reader);

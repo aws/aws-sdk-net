@@ -56,25 +56,25 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttackVectors", targetDepth))
+                if (context.TestExpression("AttackVectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SummarizedAttackVector, SummarizedAttackVectorUnmarshaller>(SummarizedAttackVectorUnmarshaller.Instance);
                     unmarshalledObject.AttackVectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Counters", targetDepth))
+                if (context.TestExpression("Counters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
                     unmarshalledObject.Counters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

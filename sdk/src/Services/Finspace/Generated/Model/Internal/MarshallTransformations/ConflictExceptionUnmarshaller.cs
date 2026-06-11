@@ -72,7 +72,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("reason", targetDepth))
+                    if (context.TestExpression("reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UsernamePassword", targetDepth))
+                if (context.TestExpression("UsernamePassword", targetDepth, ref reader))
                 {
                     var unmarshaller = UsernamePasswordUnmarshaller.Instance;
                     unmarshalledObject.UsernamePassword = unmarshaller.Unmarshall(context, ref reader);

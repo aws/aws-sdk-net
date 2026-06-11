@@ -56,13 +56,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("stepInfo", targetDepth))
+                if (context.TestExpression("stepInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterOperationStepInfoUnmarshaller.Instance;
                     unmarshalledObject.StepInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stepName", targetDepth))
+                if (context.TestExpression("stepName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StepName = unmarshaller.Unmarshall(context, ref reader);

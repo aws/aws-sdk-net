@@ -56,25 +56,25 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MilestoneName", targetDepth))
+                if (context.TestExpression("MilestoneName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MilestoneName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MilestoneNumber", targetDepth))
+                if (context.TestExpression("MilestoneNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MilestoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecordedAt", targetDepth))
+                if (context.TestExpression("RecordedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.RecordedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadSummary", targetDepth))
+                if (context.TestExpression("WorkloadSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadSummaryUnmarshaller.Instance;
                     unmarshalledObject.WorkloadSummary = unmarshaller.Unmarshall(context, ref reader);

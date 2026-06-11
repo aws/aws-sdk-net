@@ -52,7 +52,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Container", targetDepth))
+                if (context.TestExpression("Container", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerUnmarshaller.Instance;
                     response.Container = unmarshaller.Unmarshall(context, ref reader);

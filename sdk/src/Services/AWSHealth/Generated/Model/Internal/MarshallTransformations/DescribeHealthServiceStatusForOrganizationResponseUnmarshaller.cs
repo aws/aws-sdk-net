@@ -52,7 +52,7 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("healthServiceAccessStatusForOrganization", targetDepth))
+                if (context.TestExpression("healthServiceAccessStatusForOrganization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HealthServiceAccessStatusForOrganization = unmarshaller.Unmarshall(context, ref reader);

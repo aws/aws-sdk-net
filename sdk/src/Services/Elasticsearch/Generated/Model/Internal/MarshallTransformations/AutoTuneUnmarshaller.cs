@@ -56,13 +56,13 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoTuneDetails", targetDepth))
+                if (context.TestExpression("AutoTuneDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoTuneDetailsUnmarshaller.Instance;
                     unmarshalledObject.AutoTuneDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoTuneType", targetDepth))
+                if (context.TestExpression("AutoTuneType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoTuneType = unmarshaller.Unmarshall(context, ref reader);

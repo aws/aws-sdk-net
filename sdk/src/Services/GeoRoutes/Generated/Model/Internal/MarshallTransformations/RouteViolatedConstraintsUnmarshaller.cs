@@ -56,115 +56,115 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllHazardsRestricted", targetDepth))
+                if (context.TestExpression("AllHazardsRestricted", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AllHazardsRestricted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AxleCount", targetDepth))
+                if (context.TestExpression("AxleCount", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteNoticeDetailRangeUnmarshaller.Instance;
                     unmarshalledObject.AxleCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HazardousCargos", targetDepth))
+                if (context.TestExpression("HazardousCargos", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HazardousCargos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxHeight", targetDepth))
+                if (context.TestExpression("MaxHeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxHeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxKpraLength", targetDepth))
+                if (context.TestExpression("MaxKpraLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxKpraLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxLength", targetDepth))
+                if (context.TestExpression("MaxLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxPayloadCapacity", targetDepth))
+                if (context.TestExpression("MaxPayloadCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxPayloadCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxWeight", targetDepth))
+                if (context.TestExpression("MaxWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteWeightConstraintUnmarshaller.Instance;
                     unmarshalledObject.MaxWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxWeightPerAxle", targetDepth))
+                if (context.TestExpression("MaxWeightPerAxle", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxWeightPerAxle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxWeightPerAxleGroup", targetDepth))
+                if (context.TestExpression("MaxWeightPerAxleGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = WeightPerAxleGroupUnmarshaller.Instance;
                     unmarshalledObject.MaxWeightPerAxleGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxWidth", targetDepth))
+                if (context.TestExpression("MaxWidth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxWidth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Occupancy", targetDepth))
+                if (context.TestExpression("Occupancy", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteNoticeDetailRangeUnmarshaller.Instance;
                     unmarshalledObject.Occupancy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestrictedTimes", targetDepth))
+                if (context.TestExpression("RestrictedTimes", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RestrictedTimes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeDependent", targetDepth))
+                if (context.TestExpression("TimeDependent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TimeDependent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrailerCount", targetDepth))
+                if (context.TestExpression("TrailerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteNoticeDetailRangeUnmarshaller.Instance;
                     unmarshalledObject.TrailerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TravelMode", targetDepth))
+                if (context.TestExpression("TravelMode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TravelMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TruckRoadType", targetDepth))
+                if (context.TestExpression("TruckRoadType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TruckRoadType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TruckType", targetDepth))
+                if (context.TestExpression("TruckType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TruckType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TunnelRestrictionCode", targetDepth))
+                if (context.TestExpression("TunnelRestrictionCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TunnelRestrictionCode = unmarshaller.Unmarshall(context, ref reader);

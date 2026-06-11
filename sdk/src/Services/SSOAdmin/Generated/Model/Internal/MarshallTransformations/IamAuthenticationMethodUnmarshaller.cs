@@ -56,7 +56,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActorPolicy", targetDepth))
+                if (context.TestExpression("ActorPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.ActorPolicy = unmarshaller.Unmarshall(context, ref reader);

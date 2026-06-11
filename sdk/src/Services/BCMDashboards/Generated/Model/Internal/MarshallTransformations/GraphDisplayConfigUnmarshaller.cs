@@ -56,7 +56,7 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("visualType", targetDepth))
+                if (context.TestExpression("visualType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VisualType = unmarshaller.Unmarshall(context, ref reader);

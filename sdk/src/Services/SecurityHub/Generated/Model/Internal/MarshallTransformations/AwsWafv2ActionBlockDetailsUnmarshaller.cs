@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomResponse", targetDepth))
+                if (context.TestExpression("CustomResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsWafv2CustomResponseDetailsUnmarshaller.Instance;
                     unmarshalledObject.CustomResponse = unmarshaller.Unmarshall(context, ref reader);

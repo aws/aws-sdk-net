@@ -56,49 +56,49 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Command", targetDepth))
+                if (context.TestExpression("Command", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cpu", targetDepth))
+                if (context.TestExpression("Cpu", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsEnvironmentVariable, EcsEnvironmentVariableUnmarshaller>(EcsEnvironmentVariableUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnvironmentFiles", targetDepth))
+                if (context.TestExpression("EnvironmentFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsEnvironmentFile, EcsEnvironmentFileUnmarshaller>(EcsEnvironmentFileUnmarshaller.Instance);
                     unmarshalledObject.EnvironmentFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Memory", targetDepth))
+                if (context.TestExpression("Memory", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemoryReservation", targetDepth))
+                if (context.TestExpression("MemoryReservation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MemoryReservation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceRequirements", targetDepth))
+                if (context.TestExpression("ResourceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsResourceRequirement, EcsResourceRequirementUnmarshaller>(EcsResourceRequirementUnmarshaller.Instance);
                     unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context, ref reader);

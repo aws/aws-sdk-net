@@ -56,49 +56,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("byteRateLimit", targetDepth))
+                if (context.TestExpression("byteRateLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ByteRateLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("convert608To708", targetDepth))
+                if (context.TestExpression("convert608To708", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Convert608To708 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("convertPaintToPop", targetDepth))
+                if (context.TestExpression("convertPaintToPop", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConvertPaintToPop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("framerate", targetDepth))
+                if (context.TestExpression("framerate", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptionSourceFramerateUnmarshaller.Instance;
                     unmarshalledObject.Framerate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceFile", targetDepth))
+                if (context.TestExpression("sourceFile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeDelta", targetDepth))
+                if (context.TestExpression("timeDelta", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeDelta = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeDeltaUnits", targetDepth))
+                if (context.TestExpression("timeDeltaUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeDeltaUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upconvertSTLToTeletext", targetDepth))
+                if (context.TestExpression("upconvertSTLToTeletext", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpconvertSTLToTeletext = unmarshaller.Unmarshall(context, ref reader);

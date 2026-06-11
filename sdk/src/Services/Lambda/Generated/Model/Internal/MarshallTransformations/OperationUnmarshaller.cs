@@ -56,85 +56,85 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CallbackDetails", targetDepth))
+                if (context.TestExpression("CallbackDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CallbackDetailsUnmarshaller.Instance;
                     unmarshalledObject.CallbackDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChainedInvokeDetails", targetDepth))
+                if (context.TestExpression("ChainedInvokeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ChainedInvokeDetailsUnmarshaller.Instance;
                     unmarshalledObject.ChainedInvokeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContextDetails", targetDepth))
+                if (context.TestExpression("ContextDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ContextDetailsUnmarshaller.Instance;
                     unmarshalledObject.ContextDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTimestamp", targetDepth))
+                if (context.TestExpression("EndTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionDetails", targetDepth))
+                if (context.TestExpression("ExecutionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParentId", targetDepth))
+                if (context.TestExpression("ParentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTimestamp", targetDepth))
+                if (context.TestExpression("StartTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepDetails", targetDepth))
+                if (context.TestExpression("StepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StepDetailsUnmarshaller.Instance;
                     unmarshalledObject.StepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubType", targetDepth))
+                if (context.TestExpression("SubType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WaitDetails", targetDepth))
+                if (context.TestExpression("WaitDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = WaitDetailsUnmarshaller.Instance;
                     unmarshalledObject.WaitDetails = unmarshaller.Unmarshall(context, ref reader);

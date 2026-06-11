@@ -52,7 +52,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusterOperationInfo", targetDepth))
+                if (context.TestExpression("clusterOperationInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ClusterOperationInfoUnmarshaller.Instance;
                     response.ClusterOperationInfo = unmarshaller.Unmarshall(context, ref reader);

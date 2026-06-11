@@ -56,31 +56,31 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSources", targetDepth))
+                if (context.TestExpression("DataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataSource, DataSourceUnmarshaller>(DataSourceUnmarshaller.Instance);
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessorCount", targetDepth))
+                if (context.TestExpression("ProcessorCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProcessorCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Processors", targetDepth))
+                if (context.TestExpression("Processors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Processors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sinks", targetDepth))
+                if (context.TestExpression("Sinks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Sinks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sources", targetDepth))
+                if (context.TestExpression("Sources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Source, SourceUnmarshaller>(SourceUnmarshaller.Instance);
                     unmarshalledObject.Sources = unmarshaller.Unmarshall(context, ref reader);

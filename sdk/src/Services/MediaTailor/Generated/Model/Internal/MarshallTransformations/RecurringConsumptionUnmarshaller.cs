@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailMatchingCriteria", targetDepth))
+                if (context.TestExpression("AvailMatchingCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AvailMatchingCriteria, AvailMatchingCriteriaUnmarshaller>(AvailMatchingCriteriaUnmarshaller.Instance);
                     unmarshalledObject.AvailMatchingCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetrievedAdExpirationSeconds", targetDepth))
+                if (context.TestExpression("RetrievedAdExpirationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetrievedAdExpirationSeconds = unmarshaller.Unmarshall(context, ref reader);

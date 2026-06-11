@@ -52,7 +52,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountPreferences", targetDepth))
+                if (context.TestExpression("AccountPreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountPreferencesUnmarshaller.Instance;
                     response.AccountPreferences = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("itemCount", targetDepth))
+                if (context.TestExpression("itemCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shortened", targetDepth))
+                if (context.TestExpression("shortened", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Shortened = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("threatNames", targetDepth))
+                if (context.TestExpression("threatNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScanThreatName, ScanThreatNameUnmarshaller>(ScanThreatNameUnmarshaller.Instance);
                     unmarshalledObject.ThreatNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uniqueThreatNameCount", targetDepth))
+                if (context.TestExpression("uniqueThreatNameCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UniqueThreatNameCount = unmarshaller.Unmarshall(context, ref reader);

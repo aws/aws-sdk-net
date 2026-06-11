@@ -56,13 +56,13 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Primary", targetDepth))
+                if (context.TestExpression("Primary", targetDepth, ref reader))
                 {
                     var unmarshaller = PrimaryUnmarshaller.Instance;
                     unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Secondary", targetDepth))
+                if (context.TestExpression("Secondary", targetDepth, ref reader))
                 {
                     var unmarshaller = SecondaryUnmarshaller.Instance;
                     unmarshalledObject.Secondary = unmarshaller.Unmarshall(context, ref reader);

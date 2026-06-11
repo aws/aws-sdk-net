@@ -67,8 +67,8 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -146,6 +146,28 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EmailVerificationSubject");
                 context.Writer.WriteStringValue(publicRequest.EmailVerificationSubject);
+            }
+
+            if(publicRequest.IsSetIssuerConfiguration())
+            {
+                context.Writer.WritePropertyName("IssuerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IssuerConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IssuerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKeyConfiguration())
+            {
+                context.Writer.WritePropertyName("KeyConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KeyConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KeyConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetLambdaConfig())
@@ -266,10 +288,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -56,19 +56,19 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("intentName", targetDepth))
+                if (context.TestExpression("intentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nluIntentConfidence", targetDepth))
+                if (context.TestExpression("nluIntentConfidence", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentConfidenceUnmarshaller.Instance;
                     unmarshalledObject.NluIntentConfidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slots", targetDepth))
+                if (context.TestExpression("slots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Slots = unmarshaller.Unmarshall(context, ref reader);

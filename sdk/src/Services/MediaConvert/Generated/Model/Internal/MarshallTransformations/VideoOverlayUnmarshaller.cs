@@ -56,43 +56,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crop", targetDepth))
+                if (context.TestExpression("crop", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoOverlayCropUnmarshaller.Instance;
                     unmarshalledObject.Crop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTimecode", targetDepth))
+                if (context.TestExpression("endTimecode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndTimecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initialPosition", targetDepth))
+                if (context.TestExpression("initialPosition", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoOverlayPositionUnmarshaller.Instance;
                     unmarshalledObject.InitialPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("input", targetDepth))
+                if (context.TestExpression("input", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoOverlayInputUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("playback", targetDepth))
+                if (context.TestExpression("playback", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Playback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimecode", targetDepth))
+                if (context.TestExpression("startTimecode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StartTimecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transitions", targetDepth))
+                if (context.TestExpression("transitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VideoOverlayTransition, VideoOverlayTransitionUnmarshaller>(VideoOverlayTransitionUnmarshaller.Instance);
                     unmarshalledObject.Transitions = unmarshaller.Unmarshall(context, ref reader);

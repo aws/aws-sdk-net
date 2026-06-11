@@ -52,31 +52,31 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Account", targetDepth))
+                if (context.TestExpression("Account", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountHealth, AccountHealthUnmarshaller>(AccountHealthUnmarshaller.Instance);
                     response.Account = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudFormation", targetDepth))
+                if (context.TestExpression("CloudFormation", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudFormationHealth, CloudFormationHealthUnmarshaller>(CloudFormationHealthUnmarshaller.Instance);
                     response.CloudFormation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Service", targetDepth))
+                if (context.TestExpression("Service", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceHealth, ServiceHealthUnmarshaller>(ServiceHealthUnmarshaller.Instance);
                     response.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagHealth, TagHealthUnmarshaller>(TagHealthUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainAssociation", targetDepth))
+                if (context.TestExpression("domainAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainAssociationUnmarshaller.Instance;
                     response.DomainAssociation = unmarshaller.Unmarshall(context, ref reader);

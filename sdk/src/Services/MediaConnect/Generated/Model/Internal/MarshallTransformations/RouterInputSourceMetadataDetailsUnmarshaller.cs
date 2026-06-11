@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("routerInputMetadata", targetDepth))
+                if (context.TestExpression("routerInputMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = RouterInputMetadataUnmarshaller.Instance;
                     unmarshalledObject.RouterInputMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceMetadataMessages", targetDepth))
+                if (context.TestExpression("sourceMetadataMessages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouterInputMessage, RouterInputMessageUnmarshaller>(RouterInputMessageUnmarshaller.Instance);
                     unmarshalledObject.SourceMetadataMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestamp", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

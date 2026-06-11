@@ -56,25 +56,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("preferredChannelPipeline", targetDepth))
+                if (context.TestExpression("preferredChannelPipeline", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreferredChannelPipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programNumber", targetDepth))
+                if (context.TestExpression("programNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceDescriptor", targetDepth))
+                if (context.TestExpression("serviceDescriptor", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexProgramServiceDescriptorUnmarshaller.Instance;
                     unmarshalledObject.ServiceDescriptor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoSettings", targetDepth))
+                if (context.TestExpression("videoSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexVideoSettingsUnmarshaller.Instance;
                     unmarshalledObject.VideoSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("services", targetDepth))
+                if (context.TestExpression("services", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Service, ServiceUnmarshaller>(ServiceUnmarshaller.Instance);
                     response.Services = unmarshaller.Unmarshall(context, ref reader);

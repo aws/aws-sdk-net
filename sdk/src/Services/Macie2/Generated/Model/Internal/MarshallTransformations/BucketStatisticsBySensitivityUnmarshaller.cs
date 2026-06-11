@@ -56,25 +56,25 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("classificationError", targetDepth))
+                if (context.TestExpression("classificationError", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
                     unmarshalledObject.ClassificationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notClassified", targetDepth))
+                if (context.TestExpression("notClassified", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
                     unmarshalledObject.NotClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notSensitive", targetDepth))
+                if (context.TestExpression("notSensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
                     unmarshalledObject.NotSensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitive", targetDepth))
+                if (context.TestExpression("sensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
                     unmarshalledObject.Sensitive = unmarshaller.Unmarshall(context, ref reader);

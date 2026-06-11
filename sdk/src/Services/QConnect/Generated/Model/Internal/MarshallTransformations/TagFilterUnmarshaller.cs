@@ -56,19 +56,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("andConditions", targetDepth))
+                if (context.TestExpression("andConditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagCondition, TagConditionUnmarshaller>(TagConditionUnmarshaller.Instance);
                     unmarshalledObject.AndConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orConditions", targetDepth))
+                if (context.TestExpression("orConditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrCondition, OrConditionUnmarshaller>(OrConditionUnmarshaller.Instance);
                     unmarshalledObject.OrConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagCondition", targetDepth))
+                if (context.TestExpression("tagCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = TagConditionUnmarshaller.Instance;
                     unmarshalledObject.TagCondition = unmarshaller.Unmarshall(context, ref reader);

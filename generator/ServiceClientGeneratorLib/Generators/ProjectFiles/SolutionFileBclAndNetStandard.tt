@@ -61,7 +61,7 @@ EndProject
 if(this.Session.ContainsKey("IntegrationTestDependencies"))
 {
 #>
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTestDependencies", "IntegrationTestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestDependencies", "TestDependencies", "{939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}"
 EndProject
 <#
     foreach(var project in (List<SolutionFileCreator.Project>)this.Session["IntegrationTestDependencies"])

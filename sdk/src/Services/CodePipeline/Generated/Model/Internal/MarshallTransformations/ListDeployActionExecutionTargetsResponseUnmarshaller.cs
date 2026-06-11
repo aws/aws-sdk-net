@@ -52,13 +52,13 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targets", targetDepth))
+                if (context.TestExpression("targets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeployActionExecutionTarget, DeployActionExecutionTargetUnmarshaller>(DeployActionExecutionTargetUnmarshaller.Instance);
                     response.Targets = unmarshaller.Unmarshall(context, ref reader);

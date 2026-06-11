@@ -52,7 +52,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("functionConfiguration", targetDepth))
+                if (context.TestExpression("functionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionConfigurationUnmarshaller.Instance;
                     response.FunctionConfiguration = unmarshaller.Unmarshall(context, ref reader);

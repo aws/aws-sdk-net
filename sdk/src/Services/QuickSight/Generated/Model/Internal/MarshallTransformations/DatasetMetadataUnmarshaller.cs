@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CalculatedFields", targetDepth))
+                if (context.TestExpression("CalculatedFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicCalculatedField, TopicCalculatedFieldUnmarshaller>(TopicCalculatedFieldUnmarshaller.Instance);
                     unmarshalledObject.CalculatedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Columns", targetDepth))
+                if (context.TestExpression("Columns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicColumn, TopicColumnUnmarshaller>(TopicColumnUnmarshaller.Instance);
                     unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataAggregation", targetDepth))
+                if (context.TestExpression("DataAggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = DataAggregationUnmarshaller.Instance;
                     unmarshalledObject.DataAggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetArn", targetDepth))
+                if (context.TestExpression("DatasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetDescription", targetDepth))
+                if (context.TestExpression("DatasetDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetName", targetDepth))
+                if (context.TestExpression("DatasetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Filters", targetDepth))
+                if (context.TestExpression("Filters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicFilter, TopicFilterUnmarshaller>(TopicFilterUnmarshaller.Instance);
                     unmarshalledObject.Filters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NamedEntities", targetDepth))
+                if (context.TestExpression("NamedEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TopicNamedEntity, TopicNamedEntityUnmarshaller>(TopicNamedEntityUnmarshaller.Instance);
                     unmarshalledObject.NamedEntities = unmarshaller.Unmarshall(context, ref reader);

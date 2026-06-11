@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blackFrameMsec", targetDepth))
+                if (context.TestExpression("blackFrameMsec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BlackFrameMsec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLossImageColor", targetDepth))
+                if (context.TestExpression("inputLossImageColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputLossImageColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLossImageSlate", targetDepth))
+                if (context.TestExpression("inputLossImageSlate", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLocationUnmarshaller.Instance;
                     unmarshalledObject.InputLossImageSlate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputLossImageType", targetDepth))
+                if (context.TestExpression("inputLossImageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputLossImageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repeatFrameMsec", targetDepth))
+                if (context.TestExpression("repeatFrameMsec", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RepeatFrameMsec = unmarshaller.Unmarshall(context, ref reader);

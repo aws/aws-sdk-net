@@ -56,13 +56,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityUsage", targetDepth))
+                if (context.TestExpression("capacityUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuotaShareCapacityUsage, QuotaShareCapacityUsageUnmarshaller>(QuotaShareCapacityUsageUnmarshaller.Instance);
                     unmarshalledObject.CapacityUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quotaShareName", targetDepth))
+                if (context.TestExpression("quotaShareName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuotaShareName = unmarshaller.Unmarshall(context, ref reader);

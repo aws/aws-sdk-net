@@ -56,7 +56,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("slotHints", targetDepth))
+                if (context.TestExpression("slotHints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Dictionary<string, RuntimeHintDetails>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, RuntimeHintDetails, StringUnmarshaller, RuntimeHintDetailsUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, RuntimeHintDetails, StringUnmarshaller, RuntimeHintDetailsUnmarshaller>(StringUnmarshaller.Instance, RuntimeHintDetailsUnmarshaller.Instance));
                     unmarshalledObject.SlotHints = unmarshaller.Unmarshall(context, ref reader);

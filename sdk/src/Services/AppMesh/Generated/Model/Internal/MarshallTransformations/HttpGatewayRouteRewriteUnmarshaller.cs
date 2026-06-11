@@ -56,19 +56,19 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hostname", targetDepth))
+                if (context.TestExpression("hostname", targetDepth, ref reader))
                 {
                     var unmarshaller = GatewayRouteHostnameRewriteUnmarshaller.Instance;
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("path", targetDepth))
+                if (context.TestExpression("path", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpGatewayRoutePathRewriteUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("prefix", targetDepth))
+                if (context.TestExpression("prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpGatewayRoutePrefixRewriteUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);

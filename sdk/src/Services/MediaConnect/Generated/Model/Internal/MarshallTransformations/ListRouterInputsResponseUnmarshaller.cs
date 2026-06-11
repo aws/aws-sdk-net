@@ -52,13 +52,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routerInputs", targetDepth))
+                if (context.TestExpression("routerInputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListedRouterInput, ListedRouterInputUnmarshaller>(ListedRouterInputUnmarshaller.Instance);
                     response.RouterInputs = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorInfo", targetDepth))
+                if (context.TestExpression("ErrorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorInfoUnmarshaller.Instance;
                     unmarshalledObject.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollbackOperationId", targetDepth))
+                if (context.TestExpression("RollbackOperationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RollbackOperationId = unmarshaller.Unmarshall(context, ref reader);

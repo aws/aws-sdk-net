@@ -52,7 +52,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EvaluationId", targetDepth))
+                if (context.TestExpression("EvaluationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EvaluationId = unmarshaller.Unmarshall(context, ref reader);

@@ -52,31 +52,31 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationArn", targetDepth))
+                if (context.TestExpression("LocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocationUri", targetDepth))
+                if (context.TestExpression("LocationUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocationUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MountOptions", targetDepth))
+                if (context.TestExpression("MountOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = NfsMountOptionsUnmarshaller.Instance;
                     response.MountOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnPremConfig", targetDepth))
+                if (context.TestExpression("OnPremConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OnPremConfigUnmarshaller.Instance;
                     response.OnPremConfig = unmarshaller.Unmarshall(context, ref reader);

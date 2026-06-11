@@ -52,13 +52,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Evaluation", targetDepth))
+                if (context.TestExpression("Evaluation", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationUnmarshaller.Instance;
                     response.Evaluation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EvaluationForm", targetDepth))
+                if (context.TestExpression("EvaluationForm", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormContentUnmarshaller.Instance;
                     response.EvaluationForm = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ParentHyperParameterTuningJobs", targetDepth))
+                if (context.TestExpression("ParentHyperParameterTuningJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParentHyperParameterTuningJob, ParentHyperParameterTuningJobUnmarshaller>(ParentHyperParameterTuningJobUnmarshaller.Instance);
                     unmarshalledObject.ParentHyperParameterTuningJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmStartType", targetDepth))
+                if (context.TestExpression("WarmStartType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WarmStartType = unmarshaller.Unmarshall(context, ref reader);

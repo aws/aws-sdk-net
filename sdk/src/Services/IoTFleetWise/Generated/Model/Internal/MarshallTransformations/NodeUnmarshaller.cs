@@ -56,37 +56,37 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actuator", targetDepth))
+                if (context.TestExpression("actuator", targetDepth, ref reader))
                 {
                     var unmarshaller = ActuatorUnmarshaller.Instance;
                     unmarshalledObject.Actuator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("attribute", targetDepth))
+                if (context.TestExpression("attribute", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeUnmarshaller.Instance;
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("branch", targetDepth))
+                if (context.TestExpression("branch", targetDepth, ref reader))
                 {
                     var unmarshaller = BranchUnmarshaller.Instance;
                     unmarshalledObject.Branch = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("property", targetDepth))
+                if (context.TestExpression("property", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPropertyUnmarshaller.Instance;
                     unmarshalledObject.Property = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensor", targetDepth))
+                if (context.TestExpression("sensor", targetDepth, ref reader))
                 {
                     var unmarshaller = SensorUnmarshaller.Instance;
                     unmarshalledObject.Sensor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("struct", targetDepth))
+                if (context.TestExpression("struct", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomStructUnmarshaller.Instance;
                     unmarshalledObject.Struct = unmarshaller.Unmarshall(context, ref reader);

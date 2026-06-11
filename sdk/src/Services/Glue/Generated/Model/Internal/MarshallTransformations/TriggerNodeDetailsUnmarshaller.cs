@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Trigger", targetDepth))
+                if (context.TestExpression("Trigger", targetDepth, ref reader))
                 {
                     var unmarshaller = TriggerUnmarshaller.Instance;
                     unmarshalledObject.Trigger = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Encryption", targetDepth))
+                if (context.TestExpression("S3Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = S3EncryptionConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Encryption = unmarshaller.Unmarshall(context, ref reader);

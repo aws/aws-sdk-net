@@ -56,37 +56,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AreaUnderPRCurve", targetDepth))
+                if (context.TestExpression("AreaUnderPRCurve", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AreaUnderPRCurve = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnImportances", targetDepth))
+                if (context.TestExpression("ColumnImportances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnImportance, ColumnImportanceUnmarshaller>(ColumnImportanceUnmarshaller.Instance);
                     unmarshalledObject.ColumnImportances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfusionMatrix", targetDepth))
+                if (context.TestExpression("ConfusionMatrix", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfusionMatrixUnmarshaller.Instance;
                     unmarshalledObject.ConfusionMatrix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("F1", targetDepth))
+                if (context.TestExpression("F1", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.F1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Precision", targetDepth))
+                if (context.TestExpression("Precision", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Precision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Recall", targetDepth))
+                if (context.TestExpression("Recall", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Recall = unmarshaller.Unmarshall(context, ref reader);

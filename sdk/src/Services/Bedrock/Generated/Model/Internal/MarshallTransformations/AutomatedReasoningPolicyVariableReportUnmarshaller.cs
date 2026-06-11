@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accuracyJustification", targetDepth))
+                if (context.TestExpression("accuracyJustification", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccuracyJustification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("accuracyScore", targetDepth))
+                if (context.TestExpression("accuracyScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AccuracyScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groundingJustifications", targetDepth))
+                if (context.TestExpression("groundingJustifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.GroundingJustifications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groundingStatements", targetDepth))
+                if (context.TestExpression("groundingStatements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyStatementReference, AutomatedReasoningPolicyStatementReferenceUnmarshaller>(AutomatedReasoningPolicyStatementReferenceUnmarshaller.Instance);
                     unmarshalledObject.GroundingStatements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyVariable", targetDepth))
+                if (context.TestExpression("policyVariable", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyVariable = unmarshaller.Unmarshall(context, ref reader);

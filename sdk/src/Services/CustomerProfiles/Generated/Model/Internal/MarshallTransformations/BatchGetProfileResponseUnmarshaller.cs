@@ -52,13 +52,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchGetProfileError, BatchGetProfileErrorUnmarshaller>(BatchGetProfileErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Profiles", targetDepth))
+                if (context.TestExpression("Profiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Profile, ProfileUnmarshaller>(ProfileUnmarshaller.Instance);
                     response.Profiles = unmarshaller.Unmarshall(context, ref reader);

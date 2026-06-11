@@ -72,13 +72,13 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("FieldList", targetDepth))
+                    if (context.TestExpression("FieldList", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ValidationExceptionField, ValidationExceptionFieldUnmarshaller>(ValidationExceptionFieldUnmarshaller.Instance);
                         unmarshalledObject.FieldList = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Reason", targetDepth))
+                    if (context.TestExpression("Reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

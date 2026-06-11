@@ -52,19 +52,19 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedApplications", targetDepth))
+                if (context.TestExpression("associatedApplications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociatedApplication, AssociatedApplicationUnmarshaller>(AssociatedApplicationUnmarshaller.Instance);
                     response.AssociatedApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serverDetail", targetDepth))
+                if (context.TestExpression("serverDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerDetailUnmarshaller.Instance;
                     response.ServerDetail = unmarshaller.Unmarshall(context, ref reader);

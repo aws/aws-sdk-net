@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EligibilityDays", targetDepth))
+                if (context.TestExpression("EligibilityDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EligibilityDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReviewNotificationRecipients", targetDepth))
+                if (context.TestExpression("ReviewNotificationRecipients", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationReviewNotificationRecipient, EvaluationReviewNotificationRecipientUnmarshaller>(EvaluationReviewNotificationRecipientUnmarshaller.Instance);
                     unmarshalledObject.ReviewNotificationRecipients = unmarshaller.Unmarshall(context, ref reader);

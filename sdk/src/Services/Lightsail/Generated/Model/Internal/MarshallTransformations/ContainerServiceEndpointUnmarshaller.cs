@@ -56,19 +56,19 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containerName", targetDepth))
+                if (context.TestExpression("containerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerPort", targetDepth))
+                if (context.TestExpression("containerPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthCheck", targetDepth))
+                if (context.TestExpression("healthCheck", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerServiceHealthCheckConfigUnmarshaller.Instance;
                     unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);

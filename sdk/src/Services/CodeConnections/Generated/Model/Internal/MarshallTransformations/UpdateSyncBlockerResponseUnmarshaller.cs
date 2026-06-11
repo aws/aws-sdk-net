@@ -52,19 +52,19 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ParentResourceName", targetDepth))
+                if (context.TestExpression("ParentResourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParentResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceName", targetDepth))
+                if (context.TestExpression("ResourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SyncBlocker", targetDepth))
+                if (context.TestExpression("SyncBlocker", targetDepth, ref reader))
                 {
                     var unmarshaller = SyncBlockerUnmarshaller.Instance;
                     response.SyncBlocker = unmarshaller.Unmarshall(context, ref reader);

@@ -31,7 +31,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConnectClientAddIns operation.
-    /// Retrieves a list of Amazon Connect client add-ins that have been created.
+    /// Retrieves a list of Connect Customer client add-ins that have been created.
     /// </summary>
     public partial class DescribeConnectClientAddInsRequest : AmazonWorkSpacesRequest
     {

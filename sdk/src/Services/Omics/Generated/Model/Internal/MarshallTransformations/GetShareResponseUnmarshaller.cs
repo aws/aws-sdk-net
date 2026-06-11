@@ -52,7 +52,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("share", targetDepth))
+                if (context.TestExpression("share", targetDepth, ref reader))
                 {
                     var unmarshaller = ShareDetailsUnmarshaller.Instance;
                     response.Share = unmarshaller.Unmarshall(context, ref reader);

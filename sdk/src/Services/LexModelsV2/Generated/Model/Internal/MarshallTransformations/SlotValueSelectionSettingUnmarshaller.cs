@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedRecognitionSetting", targetDepth))
+                if (context.TestExpression("advancedRecognitionSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = AdvancedRecognitionSettingUnmarshaller.Instance;
                     unmarshalledObject.AdvancedRecognitionSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regexFilter", targetDepth))
+                if (context.TestExpression("regexFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotValueRegexFilterUnmarshaller.Instance;
                     unmarshalledObject.RegexFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolutionStrategy", targetDepth))
+                if (context.TestExpression("resolutionStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResolutionStrategy = unmarshaller.Unmarshall(context, ref reader);

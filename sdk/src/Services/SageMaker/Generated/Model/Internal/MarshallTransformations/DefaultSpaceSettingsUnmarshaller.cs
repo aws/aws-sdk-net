@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomFileSystemConfigs", targetDepth))
+                if (context.TestExpression("CustomFileSystemConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomFileSystemConfig, CustomFileSystemConfigUnmarshaller>(CustomFileSystemConfigUnmarshaller.Instance);
                     unmarshalledObject.CustomFileSystemConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomPosixUserConfig", targetDepth))
+                if (context.TestExpression("CustomPosixUserConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPosixUserConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomPosixUserConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterLabAppSettings", targetDepth))
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterLabAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterServerAppSettings", targetDepth))
+                if (context.TestExpression("JupyterServerAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelGatewayAppSettings", targetDepth))
+                if (context.TestExpression("KernelGatewayAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroups", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                if (context.TestExpression("SpaceStorageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultSpaceStorageSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);

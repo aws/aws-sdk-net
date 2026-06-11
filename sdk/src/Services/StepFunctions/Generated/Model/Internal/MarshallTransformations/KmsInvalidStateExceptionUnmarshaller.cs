@@ -72,7 +72,7 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("kmsKeyState", targetDepth))
+                    if (context.TestExpression("kmsKeyState", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.KmsKeyState = unmarshaller.Unmarshall(context, ref reader);

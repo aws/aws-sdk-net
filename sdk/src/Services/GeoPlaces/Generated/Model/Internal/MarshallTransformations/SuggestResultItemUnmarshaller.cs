@@ -56,31 +56,31 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Highlights", targetDepth))
+                if (context.TestExpression("Highlights", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestHighlightsUnmarshaller.Instance;
                     unmarshalledObject.Highlights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Place", targetDepth))
+                if (context.TestExpression("Place", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestPlaceResultUnmarshaller.Instance;
                     unmarshalledObject.Place = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Query", targetDepth))
+                if (context.TestExpression("Query", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestQueryResultUnmarshaller.Instance;
                     unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuggestResultItemType", targetDepth))
+                if (context.TestExpression("SuggestResultItemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SuggestResultItemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

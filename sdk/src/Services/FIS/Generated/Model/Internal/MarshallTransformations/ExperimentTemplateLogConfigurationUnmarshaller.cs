@@ -56,19 +56,19 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchLogsConfiguration", targetDepth))
+                if (context.TestExpression("cloudWatchLogsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentTemplateCloudWatchLogsLogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logSchemaVersion", targetDepth))
+                if (context.TestExpression("logSchemaVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LogSchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Configuration", targetDepth))
+                if (context.TestExpression("s3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentTemplateS3LogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);

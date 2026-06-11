@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomAuthMode", targetDepth))
+                if (context.TestExpression("CustomAuthMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomAuthMode = unmarshaller.Unmarshall(context, ref reader);

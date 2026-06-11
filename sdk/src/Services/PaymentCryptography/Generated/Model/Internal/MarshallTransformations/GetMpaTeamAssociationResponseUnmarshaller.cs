@@ -52,7 +52,7 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MpaTeamAssociation", targetDepth))
+                if (context.TestExpression("MpaTeamAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = MpaTeamAssociationUnmarshaller.Instance;
                     response.MpaTeamAssociation = unmarshaller.Unmarshall(context, ref reader);

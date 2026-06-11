@@ -37,6 +37,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     {
         private bool? _complianceStatus;
         private List<string> _keysWithNoncompliantValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _missingTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _noncompliantKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -79,6 +80,30 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         internal bool IsSetKeysWithNoncompliantValues()
         {
             return this._keysWithNoncompliantValues != null && (this._keysWithNoncompliantValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MissingTagKeys. 
+        /// <para>
+        /// These tag keys are defined as required in the <c>report_required_tag_for</c> block
+        /// of the effective tag policy, but are missing from the resource.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> MissingTagKeys
+        {
+            get { return this._missingTagKeys; }
+            set { this._missingTagKeys = value; }
+        }
+
+        // Check to see if MissingTagKeys property is set
+        internal bool IsSetMissingTagKeys()
+        {
+            return this._missingTagKeys != null && (this._missingTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

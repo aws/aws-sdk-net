@@ -52,13 +52,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MarketplaceOnboardingStatus", targetDepth))
+                if (context.TestExpression("MarketplaceOnboardingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MarketplaceOnboardingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ThirdPartyFirewallStatus", targetDepth))
+                if (context.TestExpression("ThirdPartyFirewallStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ThirdPartyFirewallStatus = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("firstZoneMonitorDurationInSeconds", targetDepth))
+                if (context.TestExpression("firstZoneMonitorDurationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FirstZoneMonitorDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumHealthyHostsPerZone", targetDepth))
+                if (context.TestExpression("minimumHealthyHostsPerZone", targetDepth, ref reader))
                 {
                     var unmarshaller = MinimumHealthyHostsPerZoneUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyHostsPerZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monitorDurationInSeconds", targetDepth))
+                if (context.TestExpression("monitorDurationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MonitorDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);

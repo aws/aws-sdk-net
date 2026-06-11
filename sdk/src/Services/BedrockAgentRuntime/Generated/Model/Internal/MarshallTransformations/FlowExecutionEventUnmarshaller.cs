@@ -56,55 +56,55 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conditionResultEvent", targetDepth))
+                if (context.TestExpression("conditionResultEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionResultEventUnmarshaller.Instance;
                     unmarshalledObject.ConditionResultEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowFailureEvent", targetDepth))
+                if (context.TestExpression("flowFailureEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowFailureEventUnmarshaller.Instance;
                     unmarshalledObject.FlowFailureEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowInputEvent", targetDepth))
+                if (context.TestExpression("flowInputEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowExecutionInputEventUnmarshaller.Instance;
                     unmarshalledObject.FlowInputEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowOutputEvent", targetDepth))
+                if (context.TestExpression("flowOutputEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowExecutionOutputEventUnmarshaller.Instance;
                     unmarshalledObject.FlowOutputEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeActionEvent", targetDepth))
+                if (context.TestExpression("nodeActionEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeActionEventUnmarshaller.Instance;
                     unmarshalledObject.NodeActionEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeDependencyEvent", targetDepth))
+                if (context.TestExpression("nodeDependencyEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeDependencyEventUnmarshaller.Instance;
                     unmarshalledObject.NodeDependencyEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeFailureEvent", targetDepth))
+                if (context.TestExpression("nodeFailureEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeFailureEventUnmarshaller.Instance;
                     unmarshalledObject.NodeFailureEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeInputEvent", targetDepth))
+                if (context.TestExpression("nodeInputEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeInputEventUnmarshaller.Instance;
                     unmarshalledObject.NodeInputEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeOutputEvent", targetDepth))
+                if (context.TestExpression("nodeOutputEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeOutputEventUnmarshaller.Instance;
                     unmarshalledObject.NodeOutputEvent = unmarshaller.Unmarshall(context, ref reader);

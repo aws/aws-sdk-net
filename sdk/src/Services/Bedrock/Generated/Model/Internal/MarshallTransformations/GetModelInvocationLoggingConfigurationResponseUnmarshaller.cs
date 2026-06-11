@@ -52,7 +52,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("loggingConfig", targetDepth))
+                if (context.TestExpression("loggingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingConfigUnmarshaller.Instance;
                     response.LoggingConfig = unmarshaller.Unmarshall(context, ref reader);

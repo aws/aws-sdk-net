@@ -64,14 +64,14 @@ namespace AWSSDK_DotNet.UnitTests
 
         private async Task AssertThrowsAsync<T>(Func<Task> act, string expectedMessage = null) where T : Exception
         {
-            var ex = await Assert.ThrowsExceptionAsync<T>(act);
+            var ex = await Assert.ThrowsExactlyAsync<T>(act);
             if (expectedMessage != null)
                 Assert.AreEqual(expectedMessage, ex.Message);
         }
 
         private void AssertThrowsSync<T>(Action act, string expectedMessage = null) where T : Exception
         {
-            var ex = Assert.ThrowsException<T>(act);
+            var ex = Assert.ThrowsExactly<T>(act);
             if (expectedMessage != null)
                 Assert.AreEqual(expectedMessage, ex.Message);
         }
@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region UpdateHelper Tests 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -91,10 +91,10 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokeUpdateSync(null));
         }
 
-        [DataTestMethod]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", true)]
+        [TestMethod]
+        [DataRow(null, null, "A key must be provided when Document is not set.", true)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", true)]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", false)]
+        [DataRow(null, null, "A key must be provided when Document is not set.", false)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", false)]
         public async Task UpdateHelper_RequestInvalidDocExprCombination_ThrowsInvalidOperationException(object docObj, object exprObj, string expectedMessage, bool isAsync)
         {
@@ -118,7 +118,26 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request), expectedMessage);
         }
 
-        [DataTestMethod]
+
+        [TestMethod]
+        [DataRow("Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow("Either Document or UpdateExpression must be set (exclusively).", false)]
+        public async Task UpdateHelper_RequestInvalidDocExprCombinationWithKey_ThrowsInvalidOperationException(string expectedMessage, bool isAsync)
+        {
+            var request = new UpdateItemDocumentOperationRequest
+            {
+                Key = new Document { ["Id"] = "1", ["Count"] = 5 },
+                Document = null,
+                UpdateExpression = null
+            };
+
+            if (isAsync)
+                await AssertThrowsAsync<InvalidOperationException>(() => InvokeUpdateAsync(request), expectedMessage);
+            else
+                AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request), expectedMessage);
+        }
+
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_KeyMissing_ThrowsInvalidOperationException(bool isAsync)
@@ -137,7 +156,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<InvalidOperationException>(() => InvokeUpdateSync(request));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_ReturnsDocument_WhenReturnValuesNotNone(bool isAsync)
@@ -171,7 +190,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_SetsUpdateExpression_WhenDocumentProvided(bool isAsync)
@@ -229,7 +248,7 @@ namespace AWSSDK_DotNet.UnitTests
                         && r.ExpressionAttributeNames != null)), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_UsesOnlyChangedAttributes_WhenKeysUnchanged(bool isAsync)
@@ -280,7 +299,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesUpdateExpression(bool isAsync)
@@ -305,24 +324,29 @@ namespace AWSSDK_DotNet.UnitTests
                 && r.ExpressionAttributeValues.Count == 1;
 
             if (isAsync)
-                _ddbClientMock.Setup(c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()))
+            {
+                _ddbClientMock.Setup(c =>
+                        c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()))
                     .ReturnsAsync(new UpdateItemResponse());
+                await InvokeUpdateAsync(request);
+
+                _ddbClientMock.Verify(
+                    c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()),
+                    Times.Once);
+
+            }
             else
+            {
                 _ddbClientMock.Setup(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))))
                     .Returns(new UpdateItemResponse());
 
-            if (isAsync)
-                await InvokeUpdateAsync(request);
-            else
                 InvokeUpdateSync(request);
 
-            if (isAsync)
-                _ddbClientMock.Verify(c => c.UpdateItemAsync(It.Is<UpdateItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()), Times.Once);
-            else
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
+            }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesConditionalExpression(bool isAsync)
@@ -345,6 +369,7 @@ namespace AWSSDK_DotNet.UnitTests
             Predicate<UpdateItemRequest> predicate = r =>
                 r.Key.ContainsKey("Id")
                 && r.ConditionExpression == "#N = :v"
+                && r.UpdateExpression== "SET #awsavar1 = :awsavar1, #awsavar2 = :awsavar2 "
                 && r.ExpressionAttributeValues.Count == 3; // :v + converted Count + Prop
 
             if (isAsync)
@@ -365,7 +390,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.UpdateItem(It.Is<UpdateItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task UpdateHelper_AppliesBothExpressions(bool isAsync)
@@ -418,7 +443,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region DeleteHelper Tests 
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -429,7 +454,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokeDeleteSync(null));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_ReturnsDocument_WhenReturnValuesAllOldAttributes(bool isAsync)
@@ -457,7 +482,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_ReturnsNull_WhenReturnValuesNone(bool isAsync)
@@ -486,7 +511,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_AppliesConditionalExpression(bool isAsync)
@@ -531,7 +556,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.DeleteItem(It.Is<DeleteItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task DeleteHelper_AppliesConditionalExpression_WithAllOldAttributes(bool isAsync)
@@ -584,7 +609,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.DeleteItem(It.Is<DeleteItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, true)]  
         [DataRow(true, false)]  
         [DataRow(false, true)]  
@@ -601,12 +626,12 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => InvokeDeleteAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<InvalidOperationException>(() => InvokeDeleteAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<InvalidOperationException>(() => InvokeDeleteSync(request));
+                var ex = Assert.ThrowsExactly<InvalidOperationException>(() => InvokeDeleteSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
@@ -615,7 +640,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region PutItemHelper Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -626,7 +651,7 @@ namespace AWSSDK_DotNet.UnitTests
                 AssertThrowsSync<ArgumentNullException>(() => InvokePutSync(null));
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_ReturnsNull_WhenReturnValuesNone(bool isAsync)
@@ -656,7 +681,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(result);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_ReturnsOldAttributes_WhenReturnValuesAllOld(bool isAsync)
@@ -689,7 +714,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("OLD", result["Value"].AsPrimitive().Value);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_CommitsDocumentChanges(bool isAsync)
@@ -721,7 +746,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(doc.IsDirty(), "Document should have committed changes after PutItem.");
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_PassesConditionalExpression(bool isAsync)
@@ -765,7 +790,7 @@ namespace AWSSDK_DotNet.UnitTests
                 _ddbClientMock.Verify(c => c.PutItem(It.Is<PutItemRequest>(r => predicate(r))), Times.Once);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task PutItemHelper_DocumentNull_ThrowsInvalidOperationException(bool isAsync)
@@ -780,12 +805,12 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<InvalidOperationException>(() => InvokePutAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<InvalidOperationException>(() => InvokePutAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<InvalidOperationException>(() => InvokePutSync(request));
+                var ex = Assert.ThrowsExactly<InvalidOperationException>(() => InvokePutSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
@@ -793,7 +818,7 @@ namespace AWSSDK_DotNet.UnitTests
 
         #region GetItemHelper Tests
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
@@ -808,7 +833,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, true)]
         [DataRow(true, false)]
         [DataRow(false, true)]
@@ -825,17 +850,17 @@ namespace AWSSDK_DotNet.UnitTests
 
             if (isAsync)
             {
-                var ex = await Assert.ThrowsExceptionAsync<System.InvalidOperationException>(() => InvokeGetAsync(request));
+                var ex = await Assert.ThrowsExactlyAsync<System.InvalidOperationException>(() => InvokeGetAsync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
             else
             {
-                var ex = Assert.ThrowsException<System.InvalidOperationException>(() => InvokeGetSync(request));
+                var ex = Assert.ThrowsExactly<System.InvalidOperationException>(() => InvokeGetSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_AppliesProjectionExpression(bool isAsync)
@@ -888,7 +913,7 @@ namespace AWSSDK_DotNet.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true)]
         [DataRow(false)]
         public async Task GetItemHelper_ReturnsDocument(bool isAsync)
@@ -1055,6 +1080,57 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public void GivenDeletedCreateOnlyAttribute_WhenUpdateHelperCalled_ThenRemoveIsSkipped()
+        {
+            var doc = new Document { ["Id"] = "1", ["Keep"] = 10, ["DeleteMe"] = "x" };
+            doc.CommitChanges();
+            doc["Keep"] = 11;
+            doc.Remove("DeleteMe");
+
+            var ifNotExistAttrs = new HashSet<string> { "DeleteMe" };
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, null, ifNotExistAttrs);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression != null && capturedRequest.UpdateExpression.Contains("SET"));
+            Assert.IsFalse(capturedRequest.UpdateExpression.Contains("REMOVE"));
+            Assert.IsFalse(capturedRequest.ExpressionAttributeNames?.ContainsValue("DeleteMe") ?? false);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenDeletedNonCreateOnlyAttribute_WhenUpdateHelperCalled_ThenRemoveIsAdded()
+        {
+            var doc = new Document { ["Id"] = "1", ["Keep"] = 10, ["DeleteMe"] = "x" };
+            doc.CommitChanges();
+            doc["Keep"] = 11;
+            doc["DeleteMe"] = null;
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse { Attributes = new Dictionary<string, AttributeValue>() });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression != null && capturedRequest.UpdateExpression.Contains("REMOVE"));
+            Assert.IsTrue(
+                (capturedRequest.ExpressionAttributeNames?.ContainsValue("DeleteMe") ?? false) ||
+                capturedRequest.UpdateExpression.Contains("DeleteMe"));
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
         public void GivenChangedKeys_WhenUpdateHelperCalled_ThenAllAttributesUpdated()
         {
             // Arrange
@@ -1151,6 +1227,76 @@ namespace AWSSDK_DotNet.UnitTests
 
             // Assert
             Assert.IsNull(result);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenUpdateExpression_WhenUpdateHelperWithReturnValuesOverloadCalled_ThenUpdateExpressionIsApplied()
+        {
+            var doc = new Document { ["Id"] = "1" };
+            var updateExpression = new UpdateExpression
+            {
+                ExpressionAttributeNames = new Dictionary<string, string> { { "#Count", "Count" } },
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":inc", 1 } }
+            };
+            updateExpression.AddStatement(UpdateExpression.OperationSet, "#Count = #Count + :inc");
+
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse
+                {
+                    Attributes = new Dictionary<string, AttributeValue>
+                    {
+                        { "Id", new AttributeValue { S = "1" } },
+                        { "Count", new AttributeValue { N = "5" } }
+                    }
+                });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, updateExpression);
+
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression.Contains("SET #Count = #Count + :inc"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeNames.ContainsKey("#Count"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeValues.ContainsKey(":inc"));
+            Assert.IsNotNull(result);
+            _ddbClientMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void GivenDocumentChangesAndUpdateExpression_WhenUpdateHelperWithReturnValuesOverloadCalled_ThenBothAreIncludedInRequest()
+        {
+            var doc = new Document { ["Id"] = "1", ["Score"] = 10 };
+            var updateExpression = new UpdateExpression
+            {
+                ExpressionAttributeNames = new Dictionary<string, string> { { "#Count", "Count" } },
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":inc", 1 } }
+            };
+            updateExpression.AddStatement(UpdateExpression.OperationSet, "#Count = #Count + :inc");
+
+            UpdateItemRequest capturedRequest = null;
+
+            _ddbClientMock
+                .Setup(c => c.UpdateItem(It.IsAny<UpdateItemRequest>()))
+                .Callback<UpdateItemRequest>(r => capturedRequest = r)
+                .Returns(new UpdateItemResponse
+                {
+                    Attributes = new Dictionary<string, AttributeValue>
+                    {
+                        { "Id", new AttributeValue { S = "1" } },
+                        { "Score", new AttributeValue { N = "10" } },
+                        { "Count", new AttributeValue { N = "2" } }
+                    }
+                });
+
+            var result = _table.UpdateHelper(doc, ReturnValues.AllNewAttributes, null, updateExpression);
+
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(capturedRequest.UpdateExpression.Contains("#Count = #Count + :inc"));
+            Assert.IsTrue(capturedRequest.ExpressionAttributeNames.ContainsValue("Score"));
+            Assert.IsNotNull(result);
             _ddbClientMock.VerifyAll();
         }
     }

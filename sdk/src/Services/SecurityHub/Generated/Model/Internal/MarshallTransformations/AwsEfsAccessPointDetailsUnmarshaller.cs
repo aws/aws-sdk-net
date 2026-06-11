@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessPointId", targetDepth))
+                if (context.TestExpression("AccessPointId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessPointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientToken", targetDepth))
+                if (context.TestExpression("ClientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileSystemId", targetDepth))
+                if (context.TestExpression("FileSystemId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileSystemId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PosixUser", targetDepth))
+                if (context.TestExpression("PosixUser", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEfsAccessPointPosixUserDetailsUnmarshaller.Instance;
                     unmarshalledObject.PosixUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootDirectory", targetDepth))
+                if (context.TestExpression("RootDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEfsAccessPointRootDirectoryDetailsUnmarshaller.Instance;
                     unmarshalledObject.RootDirectory = unmarshaller.Unmarshall(context, ref reader);

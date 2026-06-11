@@ -56,43 +56,43 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errorWeight", targetDepth))
+                if (context.TestExpression("errorWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ErrorWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxPriorityOverride", targetDepth))
+                if (context.TestExpression("maxPriorityOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = SchedulingMaxPriorityOverrideUnmarshaller.Instance;
                     unmarshalledObject.MaxPriorityOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minPriorityOverride", targetDepth))
+                if (context.TestExpression("minPriorityOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = SchedulingMinPriorityOverrideUnmarshaller.Instance;
                     unmarshalledObject.MinPriorityOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priorityWeight", targetDepth))
+                if (context.TestExpression("priorityWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PriorityWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("renderingTaskBuffer", targetDepth))
+                if (context.TestExpression("renderingTaskBuffer", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RenderingTaskBuffer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("renderingTaskWeight", targetDepth))
+                if (context.TestExpression("renderingTaskWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RenderingTaskWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("submissionTimeWeight", targetDepth))
+                if (context.TestExpression("submissionTimeWeight", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SubmissionTimeWeight = unmarshaller.Unmarshall(context, ref reader);

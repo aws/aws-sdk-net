@@ -52,7 +52,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourcePendingMaintenanceAction", targetDepth))
+                if (context.TestExpression("resourcePendingMaintenanceAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourcePendingMaintenanceActionUnmarshaller.Instance;
                     response.ResourcePendingMaintenanceAction = unmarshaller.Unmarshall(context, ref reader);

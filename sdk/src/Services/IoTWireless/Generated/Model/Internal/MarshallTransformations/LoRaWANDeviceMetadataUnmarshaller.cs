@@ -56,43 +56,43 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataRate", targetDepth))
+                if (context.TestExpression("DataRate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DataRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DevEui", targetDepth))
+                if (context.TestExpression("DevEui", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DevEui = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FPort", targetDepth))
+                if (context.TestExpression("FPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Frequency", targetDepth))
+                if (context.TestExpression("Frequency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Gateways", targetDepth))
+                if (context.TestExpression("Gateways", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LoRaWANGatewayMetadata, LoRaWANGatewayMetadataUnmarshaller>(LoRaWANGatewayMetadataUnmarshaller.Instance);
                     unmarshalledObject.Gateways = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicGateways", targetDepth))
+                if (context.TestExpression("PublicGateways", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LoRaWANPublicGatewayMetadata, LoRaWANPublicGatewayMetadataUnmarshaller>(LoRaWANPublicGatewayMetadataUnmarshaller.Instance);
                     unmarshalledObject.PublicGateways = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timestamp", targetDepth))
+                if (context.TestExpression("Timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

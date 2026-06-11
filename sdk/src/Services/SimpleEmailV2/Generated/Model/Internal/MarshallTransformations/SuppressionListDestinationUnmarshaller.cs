@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SuppressionListImportAction", targetDepth))
+                if (context.TestExpression("SuppressionListImportAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SuppressionListImportAction = unmarshaller.Unmarshall(context, ref reader);

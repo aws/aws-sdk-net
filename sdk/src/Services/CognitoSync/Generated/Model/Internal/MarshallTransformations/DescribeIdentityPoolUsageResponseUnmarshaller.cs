@@ -52,7 +52,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityPoolUsage", targetDepth))
+                if (context.TestExpression("IdentityPoolUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityPoolUsageUnmarshaller.Instance;
                     response.IdentityPoolUsage = unmarshaller.Unmarshall(context, ref reader);

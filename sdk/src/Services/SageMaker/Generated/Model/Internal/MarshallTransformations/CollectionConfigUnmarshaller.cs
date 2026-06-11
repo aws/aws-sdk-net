@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("VectorConfig", targetDepth))
+                if (context.TestExpression("VectorConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorConfigUnmarshaller.Instance;
                     unmarshalledObject.VectorConfig = unmarshaller.Unmarshall(context, ref reader);

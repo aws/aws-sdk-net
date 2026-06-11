@@ -56,25 +56,25 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Configuration", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupConfigurationItem, GroupConfigurationItemUnmarshaller>(GroupConfigurationItemUnmarshaller.Instance);
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProposedConfiguration", targetDepth))
+                if (context.TestExpression("ProposedConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupConfigurationItem, GroupConfigurationItemUnmarshaller>(GroupConfigurationItemUnmarshaller.Instance);
                     unmarshalledObject.ProposedConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);

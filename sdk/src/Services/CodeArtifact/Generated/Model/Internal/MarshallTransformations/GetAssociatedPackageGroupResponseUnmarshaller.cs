@@ -52,13 +52,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associationType", targetDepth))
+                if (context.TestExpression("associationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssociationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packageGroup", targetDepth))
+                if (context.TestExpression("packageGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageGroupDescriptionUnmarshaller.Instance;
                     response.PackageGroup = unmarshaller.Unmarshall(context, ref reader);

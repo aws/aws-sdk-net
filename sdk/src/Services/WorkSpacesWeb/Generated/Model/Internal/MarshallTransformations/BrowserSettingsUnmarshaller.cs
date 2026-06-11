@@ -56,37 +56,37 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalEncryptionContext", targetDepth))
+                if (context.TestExpression("additionalEncryptionContext", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalEncryptionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("associatedPortalArns", targetDepth))
+                if (context.TestExpression("associatedPortalArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AssociatedPortalArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("browserPolicy", targetDepth))
+                if (context.TestExpression("browserPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BrowserPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("browserSettingsArn", targetDepth))
+                if (context.TestExpression("browserSettingsArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BrowserSettingsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerManagedKey", targetDepth))
+                if (context.TestExpression("customerManagedKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomerManagedKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("webContentFilteringPolicy", targetDepth))
+                if (context.TestExpression("webContentFilteringPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = WebContentFilteringPolicyUnmarshaller.Instance;
                     unmarshalledObject.WebContentFilteringPolicy = unmarshaller.Unmarshall(context, ref reader);

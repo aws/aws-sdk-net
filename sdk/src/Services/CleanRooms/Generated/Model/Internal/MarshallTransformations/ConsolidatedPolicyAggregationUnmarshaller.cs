@@ -56,61 +56,61 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalAnalyses", targetDepth))
+                if (context.TestExpression("additionalAnalyses", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdditionalAnalyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregateColumns", targetDepth))
+                if (context.TestExpression("aggregateColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregateColumn, AggregateColumnUnmarshaller>(AggregateColumnUnmarshaller.Instance);
                     unmarshalledObject.AggregateColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedAdditionalAnalyses", targetDepth))
+                if (context.TestExpression("allowedAdditionalAnalyses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedAdditionalAnalyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedJoinOperators", targetDepth))
+                if (context.TestExpression("allowedJoinOperators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedJoinOperators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedResultReceivers", targetDepth))
+                if (context.TestExpression("allowedResultReceivers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedResultReceivers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dimensionColumns", targetDepth))
+                if (context.TestExpression("dimensionColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DimensionColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("joinColumns", targetDepth))
+                if (context.TestExpression("joinColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.JoinColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("joinRequired", targetDepth))
+                if (context.TestExpression("joinRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JoinRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputConstraints", targetDepth))
+                if (context.TestExpression("outputConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregationConstraint, AggregationConstraintUnmarshaller>(AggregationConstraintUnmarshaller.Instance);
                     unmarshalledObject.OutputConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalarFunctions", targetDepth))
+                if (context.TestExpression("scalarFunctions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ScalarFunctions = unmarshaller.Unmarshall(context, ref reader);

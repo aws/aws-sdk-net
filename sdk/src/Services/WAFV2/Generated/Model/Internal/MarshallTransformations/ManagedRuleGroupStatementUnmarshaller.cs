@@ -56,43 +56,43 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExcludedRules", targetDepth))
+                if (context.TestExpression("ExcludedRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
                     unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedRuleGroupConfigs", targetDepth))
+                if (context.TestExpression("ManagedRuleGroupConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedRuleGroupConfig, ManagedRuleGroupConfigUnmarshaller>(ManagedRuleGroupConfigUnmarshaller.Instance);
                     unmarshalledObject.ManagedRuleGroupConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleActionOverrides", targetDepth))
+                if (context.TestExpression("RuleActionOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleActionOverride, RuleActionOverrideUnmarshaller>(RuleActionOverrideUnmarshaller.Instance);
                     unmarshalledObject.RuleActionOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
+                if (context.TestExpression("ScopeDownStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StatementUnmarshaller.Instance;
                     unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VendorName", targetDepth))
+                if (context.TestExpression("VendorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VendorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("Version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

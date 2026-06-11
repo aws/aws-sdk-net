@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("episodicReflectionOverride", targetDepth))
+                if (context.TestExpression("episodicReflectionOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = EpisodicReflectionOverrideUnmarshaller.Instance;
                     unmarshalledObject.EpisodicReflectionOverride = unmarshaller.Unmarshall(context, ref reader);

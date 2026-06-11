@@ -56,19 +56,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationId", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaInsightsPipelineConfigurationName", targetDepth))
+                if (context.TestExpression("MediaInsightsPipelineConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaInsightsPipelineConfigurationName = unmarshaller.Unmarshall(context, ref reader);

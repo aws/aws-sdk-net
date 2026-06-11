@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxAutoMLJobRuntimeInSeconds", targetDepth))
+                if (context.TestExpression("MaxAutoMLJobRuntimeInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxAutoMLJobRuntimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxCandidates", targetDepth))
+                if (context.TestExpression("MaxCandidates", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCandidates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxRuntimePerTrainingJobInSeconds", targetDepth))
+                if (context.TestExpression("MaxRuntimePerTrainingJobInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRuntimePerTrainingJobInSeconds = unmarshaller.Unmarshall(context, ref reader);

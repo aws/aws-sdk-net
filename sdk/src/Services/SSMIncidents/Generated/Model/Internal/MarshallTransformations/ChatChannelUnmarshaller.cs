@@ -56,13 +56,13 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chatbotSns", targetDepth))
+                if (context.TestExpression("chatbotSns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ChatbotSns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("empty", targetDepth))
+                if (context.TestExpression("empty", targetDepth, ref reader))
                 {
                     var unmarshaller = EmptyChatChannelUnmarshaller.Instance;
                     unmarshalledObject.Empty = unmarshaller.Unmarshall(context, ref reader);

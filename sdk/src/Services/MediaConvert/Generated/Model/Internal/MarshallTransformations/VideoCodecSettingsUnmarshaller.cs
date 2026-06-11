@@ -56,91 +56,91 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("av1Settings", targetDepth))
+                if (context.TestExpression("av1Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Av1SettingsUnmarshaller.Instance;
                     unmarshalledObject.Av1Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("avcIntraSettings", targetDepth))
+                if (context.TestExpression("avcIntraSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AvcIntraSettingsUnmarshaller.Instance;
                     unmarshalledObject.AvcIntraSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codec", targetDepth))
+                if (context.TestExpression("codec", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Codec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameCaptureSettings", targetDepth))
+                if (context.TestExpression("frameCaptureSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureSettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("gifSettings", targetDepth))
+                if (context.TestExpression("gifSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = GifSettingsUnmarshaller.Instance;
                     unmarshalledObject.GifSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("h264Settings", targetDepth))
+                if (context.TestExpression("h264Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = H264SettingsUnmarshaller.Instance;
                     unmarshalledObject.H264Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("h265Settings", targetDepth))
+                if (context.TestExpression("h265Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = H265SettingsUnmarshaller.Instance;
                     unmarshalledObject.H265Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mpeg2Settings", targetDepth))
+                if (context.TestExpression("mpeg2Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Mpeg2SettingsUnmarshaller.Instance;
                     unmarshalledObject.Mpeg2Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("passthroughSettings", targetDepth))
+                if (context.TestExpression("passthroughSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = PassthroughSettingsUnmarshaller.Instance;
                     unmarshalledObject.PassthroughSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("proresSettings", targetDepth))
+                if (context.TestExpression("proresSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ProresSettingsUnmarshaller.Instance;
                     unmarshalledObject.ProresSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uncompressedSettings", targetDepth))
+                if (context.TestExpression("uncompressedSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UncompressedSettingsUnmarshaller.Instance;
                     unmarshalledObject.UncompressedSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vc3Settings", targetDepth))
+                if (context.TestExpression("vc3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Vc3SettingsUnmarshaller.Instance;
                     unmarshalledObject.Vc3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vp8Settings", targetDepth))
+                if (context.TestExpression("vp8Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Vp8SettingsUnmarshaller.Instance;
                     unmarshalledObject.Vp8Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vp9Settings", targetDepth))
+                if (context.TestExpression("vp9Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = Vp9SettingsUnmarshaller.Instance;
                     unmarshalledObject.Vp9Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("xavcSettings", targetDepth))
+                if (context.TestExpression("xavcSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = XavcSettingsUnmarshaller.Instance;
                     unmarshalledObject.XavcSettings = unmarshaller.Unmarshall(context, ref reader);

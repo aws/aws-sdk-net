@@ -33,7 +33,7 @@ namespace Amazon.BedrockDataAutomation
     public partial class AmazonBedrockDataAutomationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Bedrock Data Automation", "4.0.8.9");
+            InternalSDKUtils.BuildUserAgentString("Bedrock Data Automation", "4.0.10.5");
 
         private static readonly AmazonBedrockDataAutomationEndpointResolver EndpointResolver =
             new AmazonBedrockDataAutomationEndpointResolver();

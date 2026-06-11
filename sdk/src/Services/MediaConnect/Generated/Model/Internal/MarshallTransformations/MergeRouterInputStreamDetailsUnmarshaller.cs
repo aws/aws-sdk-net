@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceIndexOneStreamDetails", targetDepth))
+                if (context.TestExpression("sourceIndexOneStreamDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeRouterInputIndexedStreamDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceIndexOneStreamDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceIndexZeroStreamDetails", targetDepth))
+                if (context.TestExpression("sourceIndexZeroStreamDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = MergeRouterInputIndexedStreamDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceIndexZeroStreamDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("ImageClassificationJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
                     unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
+                if (context.TestExpression("TabularJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TabularJobConfigUnmarshaller.Instance;
                     unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
+                if (context.TestExpression("TextClassificationJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
                     unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextGenerationJobConfig", targetDepth))
+                if (context.TestExpression("TextGenerationJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TextGenerationJobConfigUnmarshaller.Instance;
                     unmarshalledObject.TextGenerationJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth))
+                if (context.TestExpression("TimeSeriesForecastingJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeSeriesForecastingJobConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeSeriesForecastingJobConfig = unmarshaller.Unmarshall(context, ref reader);

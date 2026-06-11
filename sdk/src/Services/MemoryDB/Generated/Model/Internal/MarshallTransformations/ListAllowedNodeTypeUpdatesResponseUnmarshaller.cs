@@ -52,13 +52,13 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScaleDownNodeTypes", targetDepth))
+                if (context.TestExpression("ScaleDownNodeTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ScaleDownNodeTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScaleUpNodeTypes", targetDepth))
+                if (context.TestExpression("ScaleUpNodeTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ScaleUpNodeTypes = unmarshaller.Unmarshall(context, ref reader);

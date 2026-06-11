@@ -529,9 +529,17 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType ComputeSavingsPlans = new ResourceType("ComputeSavingsPlans");
         /// <summary>
+        /// Constant DocumentDBCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType DocumentDBCluster = new ResourceType("DocumentDBCluster");
+        /// <summary>
         /// Constant DynamoDbReservedCapacity for ResourceType
         /// </summary>
         public static readonly ResourceType DynamoDbReservedCapacity = new ResourceType("DynamoDbReservedCapacity");
+        /// <summary>
+        /// Constant DynamoDBTable for ResourceType
+        /// </summary>
+        public static readonly ResourceType DynamoDBTable = new ResourceType("DynamoDBTable");
         /// <summary>
         /// Constant EbsVolume for ResourceType
         /// </summary>
@@ -557,6 +565,10 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType EcsService = new ResourceType("EcsService");
         /// <summary>
+        /// Constant ElastiCacheCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType ElastiCacheCluster = new ResourceType("ElastiCacheCluster");
+        /// <summary>
         /// Constant ElastiCacheReservedInstances for ResourceType
         /// </summary>
         public static readonly ResourceType ElastiCacheReservedInstances = new ResourceType("ElastiCacheReservedInstances");
@@ -564,6 +576,10 @@ namespace Amazon.CostOptimizationHub
         /// Constant LambdaFunction for ResourceType
         /// </summary>
         public static readonly ResourceType LambdaFunction = new ResourceType("LambdaFunction");
+        /// <summary>
+        /// Constant MemoryDBCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType MemoryDBCluster = new ResourceType("MemoryDBCluster");
         /// <summary>
         /// Constant MemoryDbReservedInstances for ResourceType
         /// </summary>
@@ -593,9 +609,17 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType RedshiftReservedInstances = new ResourceType("RedshiftReservedInstances");
         /// <summary>
+        /// Constant SageMakerEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType SageMakerEndpoint = new ResourceType("SageMakerEndpoint");
+        /// <summary>
         /// Constant SageMakerSavingsPlans for ResourceType
         /// </summary>
         public static readonly ResourceType SageMakerSavingsPlans = new ResourceType("SageMakerSavingsPlans");
+        /// <summary>
+        /// Constant WorkSpaces for ResourceType
+        /// </summary>
+        public static readonly ResourceType WorkSpaces = new ResourceType("WorkSpaces");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

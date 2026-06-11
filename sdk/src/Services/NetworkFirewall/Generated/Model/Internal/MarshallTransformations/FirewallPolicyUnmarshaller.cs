@@ -56,61 +56,61 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableTLSSessionHolding", targetDepth))
+                if (context.TestExpression("EnableTLSSessionHolding", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableTLSSessionHolding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyVariables", targetDepth))
+                if (context.TestExpression("PolicyVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyVariablesUnmarshaller.Instance;
                     unmarshalledObject.PolicyVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatefulDefaultActions", targetDepth))
+                if (context.TestExpression("StatefulDefaultActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StatefulDefaultActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatefulEngineOptions", targetDepth))
+                if (context.TestExpression("StatefulEngineOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = StatefulEngineOptionsUnmarshaller.Instance;
                     unmarshalledObject.StatefulEngineOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatefulRuleGroupReferences", targetDepth))
+                if (context.TestExpression("StatefulRuleGroupReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StatefulRuleGroupReference, StatefulRuleGroupReferenceUnmarshaller>(StatefulRuleGroupReferenceUnmarshaller.Instance);
                     unmarshalledObject.StatefulRuleGroupReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatelessCustomActions", targetDepth))
+                if (context.TestExpression("StatelessCustomActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomAction, CustomActionUnmarshaller>(CustomActionUnmarshaller.Instance);
                     unmarshalledObject.StatelessCustomActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatelessDefaultActions", targetDepth))
+                if (context.TestExpression("StatelessDefaultActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StatelessDefaultActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatelessFragmentDefaultActions", targetDepth))
+                if (context.TestExpression("StatelessFragmentDefaultActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.StatelessFragmentDefaultActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatelessRuleGroupReferences", targetDepth))
+                if (context.TestExpression("StatelessRuleGroupReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StatelessRuleGroupReference, StatelessRuleGroupReferenceUnmarshaller>(StatelessRuleGroupReferenceUnmarshaller.Instance);
                     unmarshalledObject.StatelessRuleGroupReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth))
+                if (context.TestExpression("TLSInspectionConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TLSInspectionConfigurationArn = unmarshaller.Unmarshall(context, ref reader);

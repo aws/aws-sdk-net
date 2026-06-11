@@ -56,37 +56,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountTakeoverRiskConfiguration", targetDepth))
+                if (context.TestExpression("AccountTakeoverRiskConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountTakeoverRiskConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.AccountTakeoverRiskConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientId", targetDepth))
+                if (context.TestExpression("ClientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompromisedCredentialsRiskConfiguration", targetDepth))
+                if (context.TestExpression("CompromisedCredentialsRiskConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CompromisedCredentialsRiskConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.CompromisedCredentialsRiskConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
+                if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RiskExceptionConfiguration", targetDepth))
+                if (context.TestExpression("RiskExceptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RiskExceptionConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.RiskExceptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserPoolId", targetDepth))
+                if (context.TestExpression("UserPoolId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context, ref reader);

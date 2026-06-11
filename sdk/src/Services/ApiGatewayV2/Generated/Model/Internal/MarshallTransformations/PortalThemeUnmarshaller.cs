@@ -56,13 +56,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customColors", targetDepth))
+                if (context.TestExpression("customColors", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomColorsUnmarshaller.Instance;
                     unmarshalledObject.CustomColors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logoLastUploaded", targetDepth))
+                if (context.TestExpression("logoLastUploaded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LogoLastUploaded = unmarshaller.Unmarshall(context, ref reader);

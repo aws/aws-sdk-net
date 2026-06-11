@@ -56,7 +56,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AreaOfInterestGeometry", targetDepth))
+                if (context.TestExpression("AreaOfInterestGeometry", targetDepth, ref reader))
                 {
                     var unmarshaller = AreaOfInterestGeometryUnmarshaller.Instance;
                     unmarshalledObject.AreaOfInterestGeometry = unmarshaller.Unmarshall(context, ref reader);

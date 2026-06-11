@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndpointConfigName", targetDepth))
+                if (context.TestExpression("EndpointConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndpointConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductionVariants", targetDepth))
+                if (context.TestExpression("ProductionVariants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingProductionVariantSummary, PendingProductionVariantSummaryUnmarshaller>(PendingProductionVariantSummaryUnmarshaller.Instance);
                     unmarshalledObject.ProductionVariants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShadowProductionVariants", targetDepth))
+                if (context.TestExpression("ShadowProductionVariants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingProductionVariantSummary, PendingProductionVariantSummaryUnmarshaller>(PendingProductionVariantSummaryUnmarshaller.Instance);
                     unmarshalledObject.ShadowProductionVariants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);

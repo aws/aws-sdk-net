@@ -74,6 +74,7 @@ namespace Amazon.ConfigService.Model
         private List<EvaluationModeConfiguration> _evaluationModes = AWSConfigs.InitializeCollections ? new List<EvaluationModeConfiguration>() : null;
         private string _inputParameters;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
+        private RuleEvaluationVisibility _ruleEvaluationVisibility;
         private Scope _scope;
         private Source _source;
 
@@ -291,6 +292,27 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetMaximumExecutionFrequency()
         {
             return this._maximumExecutionFrequency != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleEvaluationVisibility. 
+        /// <para>
+        /// Indicates whether you can get <a>Evaluation</a>s for the Config rule. You can get
+        /// <a>Evaluation</a>s for the Amazon Web Services Config rule if this value is <c>EXTERNAL</c>.
+        /// You cannot get <a>Evaluation</a>s for the Amazon Web Services Config rule if this
+        /// value is <c>INTERNAL</c>.
+        /// </para>
+        /// </summary>
+        public RuleEvaluationVisibility RuleEvaluationVisibility
+        {
+            get { return this._ruleEvaluationVisibility; }
+            set { this._ruleEvaluationVisibility = value; }
+        }
+
+        // Check to see if RuleEvaluationVisibility property is set
+        internal bool IsSetRuleEvaluationVisibility()
+        {
+            return this._ruleEvaluationVisibility != null;
         }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace Amazon.RestJsonDataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ok", targetDepth))
+                if (context.TestExpression("ok", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Ok = unmarshaller.Unmarshall(context, ref reader);

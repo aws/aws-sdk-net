@@ -3956,6 +3956,159 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateJob
+
+
+        /// <summary>
+        /// Creates a model customization job in Amazon SageMaker. A job runs a workload based
+        /// on the job category and configuration you provide. You specify the job category, a
+        /// schema-versioned configuration document, and an IAM role that grants Amazon SageMaker
+        /// permission to access resources on your behalf.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>AgentRFT</c> category to fine-tune a model using multi-turn reinforcement
+        /// learning with reward signals. Use the <c>AgentRFTEvaluation</c> category to evaluate
+        /// a fine-tuned or base model by running multi-turn rollouts against a held-out prompt
+        /// dataset and computing metrics such as pass@k and mean reward.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before creating a job, call <c>ListJobSchemaVersions</c> and <c>DescribeJobSchemaVersion</c>
+        /// to retrieve the configuration schema for your job category. The <c>JobConfigDocument</c>
+        /// must conform to the schema specified by <c>JobConfigSchemaVersion</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>CreateJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobSchemaVersions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJobSchemaVersion</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateJob">REST API Reference for CreateJob Operation</seealso>
+        public virtual CreateJobResponse CreateJob(CreateJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a model customization job in Amazon SageMaker. A job runs a workload based
+        /// on the job category and configuration you provide. You specify the job category, a
+        /// schema-versioned configuration document, and an IAM role that grants Amazon SageMaker
+        /// permission to access resources on your behalf.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>AgentRFT</c> category to fine-tune a model using multi-turn reinforcement
+        /// learning with reward signals. Use the <c>AgentRFTEvaluation</c> category to evaluate
+        /// a fine-tuned or base model by running multi-turn rollouts against a held-out prompt
+        /// dataset and computing metrics such as pass@k and mean reward.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before creating a job, call <c>ListJobSchemaVersions</c> and <c>DescribeJobSchemaVersion</c>
+        /// to retrieve the configuration schema for your job category. The <c>JobConfigDocument</c>
+        /// must conform to the schema specified by <c>JobConfigSchemaVersion</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following operations are related to <c>CreateJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobSchemaVersions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJobSchemaVersion</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateJob">REST API Reference for CreateJob Operation</seealso>
+        public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLabelingJob
 
 
@@ -8680,6 +8833,97 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteJob
+
+
+        /// <summary>
+        /// Deletes a job. This operation is idempotent. If the job is currently running, you
+        /// must stop it before deleting it by calling <c>StopJob</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DeleteJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        public virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a job. This operation is idempotent. If the job is currently running, you
+        /// must stop it before deleting it by calling <c>StopJob</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DeleteJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
+        public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteMlflowApp
 
 
@@ -12027,6 +12271,184 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeJob
+
+
+        /// <summary>
+        /// Returns detailed information about a job, including its current status, secondary
+        /// status, configuration, and timestamps. Use <c>SecondaryStatus</c> for granular progress
+        /// tracking and <c>SecondaryStatusTransitions</c> to see the full history of status changes
+        /// with timestamps.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
+        public virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns detailed information about a job, including its current status, secondary
+        /// status, configuration, and timestamps. Use <c>SecondaryStatus</c> for granular progress
+        /// tracking and <c>SecondaryStatusTransitions</c> to see the full history of status changes
+        /// with timestamps.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ListJobs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StopJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
+        public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeJobSchemaVersion
+
+
+        /// <summary>
+        /// Returns the JSON schema for a specified job category and schema version. Use this
+        /// schema to validate your <c>JobConfigDocument</c> before calling <c>CreateJob</c>.
+        /// If you don't specify a schema version, the latest version is returned. The schema
+        /// defines required fields, allowed values, and constraints for the job configuration.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeJobSchemaVersion</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListJobSchemaVersions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobSchemaVersion service method.</param>
+        /// 
+        /// <returns>The response from the DescribeJobSchemaVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJobSchemaVersion">REST API Reference for DescribeJobSchemaVersion Operation</seealso>
+        public virtual DescribeJobSchemaVersionResponse DescribeJobSchemaVersion(DescribeJobSchemaVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeJobSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobSchemaVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeJobSchemaVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the JSON schema for a specified job category and schema version. Use this
+        /// schema to validate your <c>JobConfigDocument</c> before calling <c>CreateJob</c>.
+        /// If you don't specify a schema version, the latest version is returned. The schema
+        /// defines required fields, allowed values, and constraints for the job configuration.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>DescribeJobSchemaVersion</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListJobSchemaVersions</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeJobSchemaVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeJobSchemaVersion service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeJobSchemaVersion">REST API Reference for DescribeJobSchemaVersion Operation</seealso>
+        public virtual Task<DescribeJobSchemaVersionResponse> DescribeJobSchemaVersionAsync(DescribeJobSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeJobSchemaVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeJobSchemaVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeJobSchemaVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeLabelingJob
 
 
@@ -12313,6 +12735,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Describes the content, creation time, and security configuration of an Amazon SageMaker
         /// Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To retrieve only metadata about a model card without requiring <c>kms:Decrypt</c>
+        /// permission on the associated customer-managed Amazon Web Services KMS key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>. The default is <c>AllData</c>, which returns the full model
+        /// card <c>Content</c> and requires <c>kms:Decrypt</c> permission when a customer-managed
+        /// key is configured.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
         /// 
@@ -12334,6 +12766,16 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Describes the content, creation time, and security configuration of an Amazon SageMaker
         /// Model Card.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// To retrieve only metadata about a model card without requiring <c>kms:Decrypt</c>
+        /// permission on the associated customer-managed Amazon Web Services KMS key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>. The default is <c>AllData</c>, which returns the full model
+        /// card <c>Content</c> and requires <c>kms:Decrypt</c> permission when a customer-managed
+        /// key is configured.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeModelCard service method.</param>
         /// <param name="cancellationToken">
@@ -12461,7 +12903,10 @@ namespace Amazon.SageMaker
         /// <para>
         /// If you provided a KMS Key ID when you created your model package, you will see the
         /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
-        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API. To call this operation
+        /// without requiring <c>kms:Decrypt</c> permission on the customer-managed key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>; the response is returned with the embedded <c>ModelCard.ModelCardContent</c>
+        /// field sanitized.
         /// </para>
         ///  </important> 
         /// <para>
@@ -12491,7 +12936,10 @@ namespace Amazon.SageMaker
         /// <para>
         /// If you provided a KMS Key ID when you created your model package, you will see the
         /// <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html">KMS
-        /// Decrypt</a> API call in your CloudTrail logs when you use this API.
+        /// Decrypt</a> API call in your CloudTrail logs when you use this API. To call this operation
+        /// without requiring <c>kms:Decrypt</c> permission on the customer-managed key, set <c>IncludedData</c>
+        /// to <c>MetadataOnly</c>; the response is returned with the embedded <c>ModelCard.ModelCardContent</c>
+        /// field sanitized.
         /// </para>
         ///  </important> 
         /// <para>
@@ -16186,6 +16634,156 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListJobs
+
+
+        /// <summary>
+        /// Lists jobs in a specified category. You can filter results by creation time, last
+        /// modified time, name, and status. Results are sorted by the field you specify in <c>SortBy</c>.
+        /// Use pagination to retrieve large result sets efficiently.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListJobs</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual ListJobsResponse ListJobs(ListJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists jobs in a specified category. You can filter results by creation time, last
+        /// modified time, name, and status. Results are sorted by the field you specify in <c>SortBy</c>.
+        /// Use pagination to retrieve large result sets efficiently.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListJobs</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobs">REST API Reference for ListJobs Operation</seealso>
+        public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListJobSchemaVersions
+
+
+        /// <summary>
+        /// Lists available configuration schema versions for a specified job category. Use the
+        /// schema versions with <c>DescribeJobSchemaVersion</c> to retrieve the full schema document.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListJobSchemaVersions</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeJobSchemaVersion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobSchemaVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListJobSchemaVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobSchemaVersions">REST API Reference for ListJobSchemaVersions Operation</seealso>
+        public virtual ListJobSchemaVersionsResponse ListJobSchemaVersions(ListJobSchemaVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListJobSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobSchemaVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobSchemaVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists available configuration schema versions for a specified job category. Use the
+        /// schema versions with <c>DescribeJobSchemaVersion</c> to retrieve the full schema document.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>ListJobSchemaVersions</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeJobSchemaVersion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobSchemaVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobSchemaVersions service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListJobSchemaVersions">REST API Reference for ListJobSchemaVersions Operation</seealso>
+        public virtual Task<ListJobSchemaVersionsResponse> ListJobSchemaVersionsAsync(ListJobSchemaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListJobSchemaVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobSchemaVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListJobSchemaVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLabelingJobs
 
 
@@ -19736,6 +20334,95 @@ namespace Amazon.SageMaker
             options.ResponseUnmarshaller = StopInferenceRecommendationsJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopInferenceRecommendationsJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopJob
+
+
+        /// <summary>
+        /// Stops a running job. When you call <c>StopJob</c>, Amazon SageMaker sets the job status
+        /// to <c>Stopping</c>. After the job stops, the status changes to <c>Stopped</c>. Partial
+        /// results may be available in the output location if the job was in progress. To delete
+        /// a stopped job, call <c>DeleteJob</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>StopJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
+        /// 
+        /// <returns>The response from the StopJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual StopJobResponse StopJob(StopJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running job. When you call <c>StopJob</c>, Amazon SageMaker sets the job status
+        /// to <c>Stopping</c>. After the job stops, the status changes to <c>Stopped</c>. Partial
+        /// results may be available in the output location if the job was in progress. To delete
+        /// a stopped job, call <c>DeleteJob</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The following operations are related to <c>StopJob</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DescribeJob</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DeleteJob</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopJob service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopJob">REST API Reference for StopJob Operation</seealso>
+        public virtual Task<StopJobResponse> StopJobAsync(StopJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

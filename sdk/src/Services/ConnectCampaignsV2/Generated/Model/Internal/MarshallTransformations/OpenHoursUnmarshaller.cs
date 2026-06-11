@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dailyHours", targetDepth))
+                if (context.TestExpression("dailyHours", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<TimeRange>, StringUnmarshaller, JsonListUnmarshaller<TimeRange,TimeRangeUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<TimeRange, TimeRangeUnmarshaller>(TimeRangeUnmarshaller.Instance));
                     unmarshalledObject.DailyHours = unmarshaller.Unmarshall(context, ref reader);

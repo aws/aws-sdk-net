@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ForegroundColor", targetDepth))
+                if (context.TestExpression("ForegroundColor", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalFormattingColorUnmarshaller.Instance;
                     unmarshalledObject.ForegroundColor = unmarshaller.Unmarshall(context, ref reader);

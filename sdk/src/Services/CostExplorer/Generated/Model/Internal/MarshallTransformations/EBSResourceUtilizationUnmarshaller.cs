@@ -56,25 +56,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EbsReadBytesPerSecond", targetDepth))
+                if (context.TestExpression("EbsReadBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EbsReadBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsReadOpsPerSecond", targetDepth))
+                if (context.TestExpression("EbsReadOpsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EbsReadOpsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsWriteBytesPerSecond", targetDepth))
+                if (context.TestExpression("EbsWriteBytesPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EbsWriteBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EbsWriteOpsPerSecond", targetDepth))
+                if (context.TestExpression("EbsWriteOpsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EbsWriteOpsPerSecond = unmarshaller.Unmarshall(context, ref reader);

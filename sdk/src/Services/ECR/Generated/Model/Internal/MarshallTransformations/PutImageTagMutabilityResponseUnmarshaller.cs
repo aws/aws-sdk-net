@@ -52,25 +52,25 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageTagMutability", targetDepth))
+                if (context.TestExpression("imageTagMutability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ImageTagMutability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageTagMutabilityExclusionFilters", targetDepth))
+                if (context.TestExpression("imageTagMutabilityExclusionFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImageTagMutabilityExclusionFilter, ImageTagMutabilityExclusionFilterUnmarshaller>(ImageTagMutabilityExclusionFilterUnmarshaller.Instance);
                     response.ImageTagMutabilityExclusionFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("registryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryName", targetDepth))
+                if (context.TestExpression("repositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RepositoryName = unmarshaller.Unmarshall(context, ref reader);

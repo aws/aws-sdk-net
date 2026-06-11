@@ -52,7 +52,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("controlOperation", targetDepth))
+                if (context.TestExpression("controlOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = ControlOperationUnmarshaller.Instance;
                     response.ControlOperation = unmarshaller.Unmarshall(context, ref reader);

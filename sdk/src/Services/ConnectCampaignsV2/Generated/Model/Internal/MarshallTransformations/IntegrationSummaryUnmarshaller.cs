@@ -56,19 +56,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerProfiles", targetDepth))
+                if (context.TestExpression("customerProfiles", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerProfilesIntegrationSummaryUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambda", targetDepth))
+                if (context.TestExpression("lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaIntegrationSummaryUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qConnect", targetDepth))
+                if (context.TestExpression("qConnect", targetDepth, ref reader))
                 {
                     var unmarshaller = QConnectIntegrationSummaryUnmarshaller.Instance;
                     unmarshalledObject.QConnect = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionOnFailure", targetDepth))
+                if (context.TestExpression("ActionOnFailure", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionOnFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HadoopJarStep", targetDepth))
+                if (context.TestExpression("HadoopJarStep", targetDepth, ref reader))
                 {
                     var unmarshaller = HadoopJarStepConfigUnmarshaller.Instance;
                     unmarshalledObject.HadoopJarStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("StepMonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StepMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StepMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

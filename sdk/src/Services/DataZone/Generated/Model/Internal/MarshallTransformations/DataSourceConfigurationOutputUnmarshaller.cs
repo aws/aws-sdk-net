@@ -56,19 +56,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("glueRunConfiguration", targetDepth))
+                if (context.TestExpression("glueRunConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueRunConfigurationOutputUnmarshaller.Instance;
                     unmarshalledObject.GlueRunConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redshiftRunConfiguration", targetDepth))
+                if (context.TestExpression("redshiftRunConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftRunConfigurationOutputUnmarshaller.Instance;
                     unmarshalledObject.RedshiftRunConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sageMakerRunConfiguration", targetDepth))
+                if (context.TestExpression("sageMakerRunConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerRunConfigurationOutputUnmarshaller.Instance;
                     unmarshalledObject.SageMakerRunConfiguration = unmarshaller.Unmarshall(context, ref reader);

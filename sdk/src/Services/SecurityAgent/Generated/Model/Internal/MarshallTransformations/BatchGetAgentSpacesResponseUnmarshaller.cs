@@ -52,13 +52,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentSpaces", targetDepth))
+                if (context.TestExpression("agentSpaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgentSpace, AgentSpaceUnmarshaller>(AgentSpaceUnmarshaller.Instance);
                     response.AgentSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("notFound", targetDepth))
+                if (context.TestExpression("notFound", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.NotFound = unmarshaller.Unmarshall(context, ref reader);

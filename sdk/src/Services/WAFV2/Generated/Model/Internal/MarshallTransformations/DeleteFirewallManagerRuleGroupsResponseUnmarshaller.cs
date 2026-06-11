@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextWebACLLockToken", targetDepth))
+                if (context.TestExpression("NextWebACLLockToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextWebACLLockToken = unmarshaller.Unmarshall(context, ref reader);

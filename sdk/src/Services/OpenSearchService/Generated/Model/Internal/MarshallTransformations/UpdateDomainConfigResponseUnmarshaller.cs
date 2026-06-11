@@ -52,19 +52,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainConfig", targetDepth))
+                if (context.TestExpression("DomainConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainConfigUnmarshaller.Instance;
                     response.DomainConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRunProgressStatus", targetDepth))
+                if (context.TestExpression("DryRunProgressStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = DryRunProgressStatusUnmarshaller.Instance;
                     response.DryRunProgressStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRunResults", targetDepth))
+                if (context.TestExpression("DryRunResults", targetDepth, ref reader))
                 {
                     var unmarshaller = DryRunResultsUnmarshaller.Instance;
                     response.DryRunResults = unmarshaller.Unmarshall(context, ref reader);

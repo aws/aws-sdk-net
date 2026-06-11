@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace AWSSDK.UnitTests
 {
@@ -38,9 +39,19 @@ namespace AWSSDK.UnitTests
 
         public SharedCredentialsFile CredentialsFile { get; private set; }
 
+        private readonly string _originalCredentialsFileVar;
+        private readonly string _originalConfigFileVar;
+        private readonly string _originalDefaultFilePath;
+        private readonly string _originalDefaultConfigFilePath;
+
         public SharedCredentialsFileTestFixture(string credentialsFileContents, string configFileContents = null,
             bool createEmptyFile = false, bool isSharedCredentialsVarProvided = false, bool isSharedConfigVarProvided = false)
         {
+            _originalCredentialsFileVar = Environment.GetEnvironmentVariable(SharedCredentialsFile.SharedCredentialsFileEnvVar);
+            _originalConfigFileVar = Environment.GetEnvironmentVariable(SharedCredentialsFile.SharedConfigFileEnvVar);
+            _originalDefaultFilePath = SharedCredentialsFile.DefaultFilePath;
+            _originalDefaultConfigFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+
             PrepareTempFilePaths();
 
             if (credentialsFileContents == null)
@@ -65,11 +76,11 @@ namespace AWSSDK.UnitTests
             {
                 if (isSharedCredentialsVarProvided)
                 {
-                    Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                    Environment.SetEnvironmentVariable(SharedCredentialsFile.SharedCredentialsFileEnvVar, CredentialsFilePath);
                 }
                 if (isSharedConfigVarProvided)
                 {
-                    Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", ConfigFilePath);
+                    Environment.SetEnvironmentVariable(SharedCredentialsFile.SharedConfigFileEnvVar, ConfigFilePath);
                 }
                 Type sharedCredentialsFile = typeof(SharedCredentialsFile);
                 sharedCredentialsFile.TypeInitializer.Invoke(null,null);
@@ -332,6 +343,20 @@ namespace AWSSDK.UnitTests
             AssertConfigsFileContents(expectedConfigContents);
         }
 
+        private const int FileWatcherDelayMs = 500;
+
+        public void UpdateCredentialsFile(string contents)
+        {
+            File.WriteAllText(CredentialsFilePath, contents);
+            Thread.Sleep(FileWatcherDelayMs);
+        }
+
+        public void UpdateConfigFile(string contents)
+        {
+            File.WriteAllText(ConfigFilePath, contents);
+            Thread.Sleep(FileWatcherDelayMs);
+        }
+
         public void AssertCredentialsFileContents(string expectedContents)
         {
             Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(CredentialsFilePath).Trim());
@@ -344,6 +369,12 @@ namespace AWSSDK.UnitTests
 
         public void Dispose()
         {
+            Environment.SetEnvironmentVariable(SharedCredentialsFile.SharedCredentialsFileEnvVar, _originalCredentialsFileVar);
+            Environment.SetEnvironmentVariable(SharedCredentialsFile.SharedConfigFileEnvVar, _originalConfigFileVar);
+            ReflectionHelpers.Invoke(typeof(SharedCredentialsFile), nameof(SharedCredentialsFile.DefaultFilePath), _originalDefaultFilePath);
+            ReflectionHelpers.Invoke(typeof(SharedCredentialsFile), nameof(SharedCredentialsFile.DefaultConfigFilePath), _originalDefaultConfigFilePath);
+            FallbackRegionFactory.Reset();
+
             // Don't clean up files if the test is being debugged.
             if (!Debugger.IsAttached)
             {

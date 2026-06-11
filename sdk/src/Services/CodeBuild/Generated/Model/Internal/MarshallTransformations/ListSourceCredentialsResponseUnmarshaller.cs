@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceCredentialsInfos", targetDepth))
+                if (context.TestExpression("sourceCredentialsInfos", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceCredentialsInfo, SourceCredentialsInfoUnmarshaller>(SourceCredentialsInfoUnmarshaller.Instance);
                     response.SourceCredentialsInfos = unmarshaller.Unmarshall(context, ref reader);

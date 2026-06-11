@@ -56,7 +56,7 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildComputeType", targetDepth))
+                if (context.TestExpression("buildComputeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuildComputeType = unmarshaller.Unmarshall(context, ref reader);

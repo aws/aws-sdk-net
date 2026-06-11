@@ -56,19 +56,19 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationTargetActionsUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailConfigurations", targetDepth))
+                if (context.TestExpression("emailConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EmailConfiguration, EmailConfigurationUnmarshaller>(EmailConfigurationUnmarshaller.Instance);
                     unmarshalledObject.EmailConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("smsConfigurations", targetDepth))
+                if (context.TestExpression("smsConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SMSConfiguration, SMSConfigurationUnmarshaller>(SMSConfigurationUnmarshaller.Instance);
                     unmarshalledObject.SmsConfigurations = unmarshaller.Unmarshall(context, ref reader);

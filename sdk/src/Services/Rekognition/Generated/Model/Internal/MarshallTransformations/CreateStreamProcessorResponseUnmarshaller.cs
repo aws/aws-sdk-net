@@ -52,7 +52,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamProcessorArn", targetDepth))
+                if (context.TestExpression("StreamProcessorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamProcessorArn = unmarshaller.Unmarshall(context, ref reader);

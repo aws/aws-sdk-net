@@ -56,61 +56,61 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActionType", targetDepth))
+                if (context.TestExpression("ActionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssignContactCategoryAction", targetDepth))
+                if (context.TestExpression("AssignContactCategoryAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignContactCategoryActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.AssignContactCategoryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssignSlaAction", targetDepth))
+                if (context.TestExpression("AssignSlaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignSlaActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.AssignSlaAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateCaseAction", targetDepth))
+                if (context.TestExpression("CreateCaseAction", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateCaseActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.CreateCaseAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndAssociatedTasksAction", targetDepth))
+                if (context.TestExpression("EndAssociatedTasksAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EndAssociatedTasksActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.EndAssociatedTasksAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventBridgeAction", targetDepth))
+                if (context.TestExpression("EventBridgeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = EventBridgeActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.EventBridgeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SendNotificationAction", targetDepth))
+                if (context.TestExpression("SendNotificationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = SendNotificationActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.SendNotificationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubmitAutoEvaluationAction", targetDepth))
+                if (context.TestExpression("SubmitAutoEvaluationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = SubmitAutoEvaluationActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.SubmitAutoEvaluationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskAction", targetDepth))
+                if (context.TestExpression("TaskAction", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.TaskAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateCaseAction", targetDepth))
+                if (context.TestExpression("UpdateCaseAction", targetDepth, ref reader))
                 {
                     var unmarshaller = UpdateCaseActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.UpdateCaseAction = unmarshaller.Unmarshall(context, ref reader);

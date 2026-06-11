@@ -52,19 +52,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Metadata", targetDepth))
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansPurchaseRecommendationMetadataUnmarshaller.Instance;
                     response.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansPurchaseRecommendation", targetDepth))
+                if (context.TestExpression("SavingsPlansPurchaseRecommendation", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansPurchaseRecommendationUnmarshaller.Instance;
                     response.SavingsPlansPurchaseRecommendation = unmarshaller.Unmarshall(context, ref reader);

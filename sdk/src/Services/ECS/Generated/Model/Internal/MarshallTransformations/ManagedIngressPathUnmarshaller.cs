@@ -56,49 +56,49 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessType", targetDepth))
+                if (context.TestExpression("accessType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("certificate", targetDepth))
+                if (context.TestExpression("certificate", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedCertificateUnmarshaller.Instance;
                     unmarshalledObject.Certificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listener", targetDepth))
+                if (context.TestExpression("listener", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedListenerUnmarshaller.Instance;
                     unmarshalledObject.Listener = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loadBalancer", targetDepth))
+                if (context.TestExpression("loadBalancer", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedLoadBalancerUnmarshaller.Instance;
                     unmarshalledObject.LoadBalancer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loadBalancerSecurityGroups", targetDepth))
+                if (context.TestExpression("loadBalancerSecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedSecurityGroup, ManagedSecurityGroupUnmarshaller>(ManagedSecurityGroupUnmarshaller.Instance);
                     unmarshalledObject.LoadBalancerSecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rule", targetDepth))
+                if (context.TestExpression("rule", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedListenerRuleUnmarshaller.Instance;
                     unmarshalledObject.Rule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetGroups", targetDepth))
+                if (context.TestExpression("targetGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedTargetGroup, ManagedTargetGroupUnmarshaller>(ManagedTargetGroupUnmarshaller.Instance);
                     unmarshalledObject.TargetGroups = unmarshaller.Unmarshall(context, ref reader);

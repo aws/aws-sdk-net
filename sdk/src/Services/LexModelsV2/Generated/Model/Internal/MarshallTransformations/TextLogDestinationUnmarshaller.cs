@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatch", targetDepth))
+                if (context.TestExpression("cloudWatch", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogGroupLogDestinationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatch = unmarshaller.Unmarshall(context, ref reader);

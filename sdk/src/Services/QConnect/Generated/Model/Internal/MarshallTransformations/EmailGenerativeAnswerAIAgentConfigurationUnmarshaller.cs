@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associationConfigurations", targetDepth))
+                if (context.TestExpression("associationConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociationConfiguration, AssociationConfigurationUnmarshaller>(AssociationConfigurationUnmarshaller.Instance);
                     unmarshalledObject.AssociationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailGenerativeAnswerAIPromptId", targetDepth))
+                if (context.TestExpression("emailGenerativeAnswerAIPromptId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmailGenerativeAnswerAIPromptId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("emailQueryReformulationAIPromptId", targetDepth))
+                if (context.TestExpression("emailQueryReformulationAIPromptId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EmailQueryReformulationAIPromptId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("locale", targetDepth))
+                if (context.TestExpression("locale", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Locale = unmarshaller.Unmarshall(context, ref reader);

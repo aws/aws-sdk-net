@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("storageSizeGiB", targetDepth))
+                if (context.TestExpression("storageSizeGiB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StorageSizeGiB = unmarshaller.Unmarshall(context, ref reader);

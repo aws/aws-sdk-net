@@ -30,9 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Geometry defined as a circle. When request routing boundary was set as <c>AutoCircle</c>,
-    /// the response routing boundary will return <c>Circle</c> derived from the <c>AutoCircle</c>
+    /// Geometry defined as a circle. The circle defines the routing boundary area. Any waypoints
+    /// outside the circle will result in a route matrix entry error.
+    /// 
+    ///  
+    /// <para>
+    /// You can specify a <c>Circle</c> directly in the request, or it will be auto-derived
+    /// when <c>AutoCircle</c> is used. When <c>AutoCircle</c> is set in the request, the
+    /// response routing boundary will return <c>Circle</c> derived from the <c>AutoCircle</c>
     /// settings.
+    /// </para>
     /// </summary>
     public partial class Circle
     {
@@ -76,6 +83,10 @@ namespace Amazon.GeoRoutes.Model
         ///  
         /// <para>
         ///  <b>Unit</b>: <c>meters</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 0. Maximum value of 200000.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

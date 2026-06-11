@@ -56,7 +56,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationIdentifier", targetDepth))
+                if (context.TestExpression("ApplicationIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationIdentifier = unmarshaller.Unmarshall(context, ref reader);

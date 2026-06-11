@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serviceTemplateVersion", targetDepth))
+                if (context.TestExpression("serviceTemplateVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceTemplateVersionUnmarshaller.Instance;
                     response.ServiceTemplateVersion = unmarshaller.Unmarshall(context, ref reader);

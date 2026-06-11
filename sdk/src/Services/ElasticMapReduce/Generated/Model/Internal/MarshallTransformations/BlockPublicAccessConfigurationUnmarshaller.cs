@@ -56,13 +56,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockPublicSecurityGroupRules", targetDepth))
+                if (context.TestExpression("BlockPublicSecurityGroupRules", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.BlockPublicSecurityGroupRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PermittedPublicSecurityGroupRuleRanges", targetDepth))
+                if (context.TestExpression("PermittedPublicSecurityGroupRuleRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortRange, PortRangeUnmarshaller>(PortRangeUnmarshaller.Instance);
                     unmarshalledObject.PermittedPublicSecurityGroupRuleRanges = unmarshaller.Unmarshall(context, ref reader);

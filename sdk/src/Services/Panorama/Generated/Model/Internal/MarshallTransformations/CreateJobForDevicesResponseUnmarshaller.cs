@@ -52,7 +52,7 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Jobs", targetDepth))
+                if (context.TestExpression("Jobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Job, JobUnmarshaller>(JobUnmarshaller.Instance);
                     response.Jobs = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstancesDistribution", targetDepth))
+                if (context.TestExpression("InstancesDistribution", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyInstancesDistributionDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstancesDistribution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchTemplate", targetDepth))
+                if (context.TestExpression("LaunchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateDetailsUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context, ref reader);

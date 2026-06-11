@@ -56,85 +56,85 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adAvailOffset", targetDepth))
+                if (context.TestExpression("adAvailOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AdAvailOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("availBlanking", targetDepth))
+                if (context.TestExpression("availBlanking", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailBlankingUnmarshaller.Instance;
                     unmarshalledObject.AvailBlanking = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorConversion3DLUTSettings", targetDepth))
+                if (context.TestExpression("colorConversion3DLUTSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColorConversion3DLUTSetting, ColorConversion3DLUTSettingUnmarshaller>(ColorConversion3DLUTSettingUnmarshaller.Instance);
                     unmarshalledObject.ColorConversion3DLUTSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("esam", targetDepth))
+                if (context.TestExpression("esam", targetDepth, ref reader))
                 {
                     var unmarshaller = EsamSettingsUnmarshaller.Instance;
                     unmarshalledObject.Esam = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("extendedDataServices", targetDepth))
+                if (context.TestExpression("extendedDataServices", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtendedDataServicesUnmarshaller.Instance;
                     unmarshalledObject.ExtendedDataServices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("followSource", targetDepth))
+                if (context.TestExpression("followSource", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FollowSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputs", targetDepth))
+                if (context.TestExpression("inputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputTemplate, InputTemplateUnmarshaller>(InputTemplateUnmarshaller.Instance);
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kantarWatermark", targetDepth))
+                if (context.TestExpression("kantarWatermark", targetDepth, ref reader))
                 {
                     var unmarshaller = KantarWatermarkSettingsUnmarshaller.Instance;
                     unmarshalledObject.KantarWatermark = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("motionImageInserter", targetDepth))
+                if (context.TestExpression("motionImageInserter", targetDepth, ref reader))
                 {
                     var unmarshaller = MotionImageInserterUnmarshaller.Instance;
                     unmarshalledObject.MotionImageInserter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenConfiguration", targetDepth))
+                if (context.TestExpression("nielsenConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NielsenConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenNonLinearWatermark", targetDepth))
+                if (context.TestExpression("nielsenNonLinearWatermark", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenNonLinearWatermarkSettingsUnmarshaller.Instance;
                     unmarshalledObject.NielsenNonLinearWatermark = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputGroups", targetDepth))
+                if (context.TestExpression("outputGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputGroup, OutputGroupUnmarshaller>(OutputGroupUnmarshaller.Instance);
                     unmarshalledObject.OutputGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timecodeConfig", targetDepth))
+                if (context.TestExpression("timecodeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TimecodeConfigUnmarshaller.Instance;
                     unmarshalledObject.TimecodeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataInsertion", targetDepth))
+                if (context.TestExpression("timedMetadataInsertion", targetDepth, ref reader))
                 {
                     var unmarshaller = TimedMetadataInsertionUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataInsertion = unmarshaller.Unmarshall(context, ref reader);

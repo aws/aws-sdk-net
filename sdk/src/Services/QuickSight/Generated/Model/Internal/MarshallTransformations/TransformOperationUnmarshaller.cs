@@ -56,49 +56,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CastColumnTypeOperation", targetDepth))
+                if (context.TestExpression("CastColumnTypeOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CastColumnTypeOperationUnmarshaller.Instance;
                     unmarshalledObject.CastColumnTypeOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateColumnsOperation", targetDepth))
+                if (context.TestExpression("CreateColumnsOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateColumnsOperationUnmarshaller.Instance;
                     unmarshalledObject.CreateColumnsOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterOperation", targetDepth))
+                if (context.TestExpression("FilterOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = FilterOperationUnmarshaller.Instance;
                     unmarshalledObject.FilterOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideDatasetParameterOperation", targetDepth))
+                if (context.TestExpression("OverrideDatasetParameterOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideDatasetParameterOperationUnmarshaller.Instance;
                     unmarshalledObject.OverrideDatasetParameterOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProjectOperation", targetDepth))
+                if (context.TestExpression("ProjectOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectOperationUnmarshaller.Instance;
                     unmarshalledObject.ProjectOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RenameColumnOperation", targetDepth))
+                if (context.TestExpression("RenameColumnOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = RenameColumnOperationUnmarshaller.Instance;
                     unmarshalledObject.RenameColumnOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagColumnOperation", targetDepth))
+                if (context.TestExpression("TagColumnOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = TagColumnOperationUnmarshaller.Instance;
                     unmarshalledObject.TagColumnOperation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UntagColumnOperation", targetDepth))
+                if (context.TestExpression("UntagColumnOperation", targetDepth, ref reader))
                 {
                     var unmarshaller = UntagColumnOperationUnmarshaller.Instance;
                     unmarshalledObject.UntagColumnOperation = unmarshaller.Unmarshall(context, ref reader);

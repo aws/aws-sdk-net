@@ -56,55 +56,55 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InAppStreamNames", targetDepth))
+                if (context.TestExpression("InAppStreamNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InAppStreamNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputId", targetDepth))
+                if (context.TestExpression("InputId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputParallelism", targetDepth))
+                if (context.TestExpression("InputParallelism", targetDepth, ref reader))
                 {
                     var unmarshaller = InputParallelismUnmarshaller.Instance;
                     unmarshalledObject.InputParallelism = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputProcessingConfigurationDescription", targetDepth))
+                if (context.TestExpression("InputProcessingConfigurationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = InputProcessingConfigurationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.InputProcessingConfigurationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputSchema", targetDepth))
+                if (context.TestExpression("InputSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceSchemaUnmarshaller.Instance;
                     unmarshalledObject.InputSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputStartingPositionConfiguration", targetDepth))
+                if (context.TestExpression("InputStartingPositionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InputStartingPositionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InputStartingPositionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisFirehoseInputDescription", targetDepth))
+                if (context.TestExpression("KinesisFirehoseInputDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisFirehoseInputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.KinesisFirehoseInputDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisStreamsInputDescription", targetDepth))
+                if (context.TestExpression("KinesisStreamsInputDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisStreamsInputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.KinesisStreamsInputDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NamePrefix", targetDepth))
+                if (context.TestExpression("NamePrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NamePrefix = unmarshaller.Unmarshall(context, ref reader);

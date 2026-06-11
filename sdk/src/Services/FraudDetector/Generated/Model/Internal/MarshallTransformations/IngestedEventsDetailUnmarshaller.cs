@@ -56,7 +56,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ingestedEventsTimeWindow", targetDepth))
+                if (context.TestExpression("ingestedEventsTimeWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = IngestedEventsTimeWindowUnmarshaller.Instance;
                     unmarshalledObject.IngestedEventsTimeWindow = unmarshaller.Unmarshall(context, ref reader);

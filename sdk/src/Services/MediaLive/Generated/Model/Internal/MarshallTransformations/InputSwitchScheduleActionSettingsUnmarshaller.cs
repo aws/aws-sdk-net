@@ -56,19 +56,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inputAttachmentNameReference", targetDepth))
+                if (context.TestExpression("inputAttachmentNameReference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputAttachmentNameReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputClippingSettings", targetDepth))
+                if (context.TestExpression("inputClippingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = InputClippingSettingsUnmarshaller.Instance;
                     unmarshalledObject.InputClippingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("urlPath", targetDepth))
+                if (context.TestExpression("urlPath", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UrlPath = unmarshaller.Unmarshall(context, ref reader);

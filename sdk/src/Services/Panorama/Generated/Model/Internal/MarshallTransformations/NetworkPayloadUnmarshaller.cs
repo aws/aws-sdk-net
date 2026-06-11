@@ -56,19 +56,19 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Ethernet0", targetDepth))
+                if (context.TestExpression("Ethernet0", targetDepth, ref reader))
                 {
                     var unmarshaller = EthernetPayloadUnmarshaller.Instance;
                     unmarshalledObject.Ethernet0 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ethernet1", targetDepth))
+                if (context.TestExpression("Ethernet1", targetDepth, ref reader))
                 {
                     var unmarshaller = EthernetPayloadUnmarshaller.Instance;
                     unmarshalledObject.Ethernet1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ntp", targetDepth))
+                if (context.TestExpression("Ntp", targetDepth, ref reader))
                 {
                     var unmarshaller = NtpPayloadUnmarshaller.Instance;
                     unmarshalledObject.Ntp = unmarshaller.Unmarshall(context, ref reader);

@@ -52,37 +52,37 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionDefinitionId", targetDepth))
+                if (context.TestExpression("actionDefinitionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActionDefinitionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionId", targetDepth))
+                if (context.TestExpression("actionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ActionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionPayload", targetDepth))
+                if (context.TestExpression("actionPayload", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionPayloadUnmarshaller.Instance;
                     response.ActionPayload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionTime", targetDepth))
+                if (context.TestExpression("executionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExecutionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolveTo", targetDepth))
+                if (context.TestExpression("resolveTo", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolveToUnmarshaller.Instance;
                     response.ResolveTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetResource", targetDepth))
+                if (context.TestExpression("targetResource", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetResourceUnmarshaller.Instance;
                     response.TargetResource = unmarshaller.Unmarshall(context, ref reader);

@@ -2643,6 +2643,11 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyIterativeRefinementContent.Feedback</property>
+    <min>0</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyReportSourceDocument.DocumentHash</property>
     <min>64</min>
     <max>64</max>
@@ -3612,6 +3617,10 @@
   <property-value-rule>
     <property>Amazon.Bedrock.Model.ModelInvocationJobSummary.TotalRecordCount</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.ModelPackageArnDataSource.ModelPackageArn</property>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.OutputDataConfig.S3Uri</property>

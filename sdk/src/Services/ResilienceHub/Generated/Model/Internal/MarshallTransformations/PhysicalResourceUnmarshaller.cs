@@ -56,55 +56,55 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalInfo", targetDepth))
+                if (context.TestExpression("additionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("appComponents", targetDepth))
+                if (context.TestExpression("appComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AppComponent, AppComponentUnmarshaller>(AppComponentUnmarshaller.Instance);
                     unmarshalledObject.AppComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excluded", targetDepth))
+                if (context.TestExpression("excluded", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Excluded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicalResourceId", targetDepth))
+                if (context.TestExpression("logicalResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = LogicalResourceIdUnmarshaller.Instance;
                     unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentResourceName", targetDepth))
+                if (context.TestExpression("parentResourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("physicalResourceId", targetDepth))
+                if (context.TestExpression("physicalResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = PhysicalResourceIdUnmarshaller.Instance;
                     unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceName", targetDepth))
+                if (context.TestExpression("resourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceType", targetDepth))
+                if (context.TestExpression("sourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FlowConfig", targetDepth))
+                if (context.TestExpression("FlowConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowQuickConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.FlowConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PhoneConfig", targetDepth))
+                if (context.TestExpression("PhoneConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PhoneNumberQuickConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.PhoneConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueueConfig", targetDepth))
+                if (context.TestExpression("QueueConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = QueueQuickConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.QueueConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuickConnectType", targetDepth))
+                if (context.TestExpression("QuickConnectType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QuickConnectType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserConfig", targetDepth))
+                if (context.TestExpression("UserConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UserQuickConnectConfigUnmarshaller.Instance;
                     unmarshalledObject.UserConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OutputBytes", targetDepth))
+                if (context.TestExpression("OutputBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputRows", targetDepth))
+                if (context.TestExpression("OutputRows", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuerySpatialCoverage", targetDepth))
+                if (context.TestExpression("QuerySpatialCoverage", targetDepth, ref reader))
                 {
                     var unmarshaller = QuerySpatialCoverageUnmarshaller.Instance;
                     unmarshalledObject.QuerySpatialCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryTableCount", targetDepth))
+                if (context.TestExpression("QueryTableCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryTableCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryTemporalRange", targetDepth))
+                if (context.TestExpression("QueryTemporalRange", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryTemporalRangeUnmarshaller.Instance;
                     unmarshalledObject.QueryTemporalRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnloadPartitionCount", targetDepth))
+                if (context.TestExpression("UnloadPartitionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UnloadPartitionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnloadWrittenBytes", targetDepth))
+                if (context.TestExpression("UnloadWrittenBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UnloadWrittenBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnloadWrittenRows", targetDepth))
+                if (context.TestExpression("UnloadWrittenRows", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.UnloadWrittenRows = unmarshaller.Unmarshall(context, ref reader);

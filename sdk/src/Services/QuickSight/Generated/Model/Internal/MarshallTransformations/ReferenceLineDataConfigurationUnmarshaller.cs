@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AxisBinding", targetDepth))
+                if (context.TestExpression("AxisBinding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AxisBinding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicConfiguration", targetDepth))
+                if (context.TestExpression("DynamicConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineDynamicDataConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamicConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SeriesType", targetDepth))
+                if (context.TestExpression("SeriesType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SeriesType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StaticConfiguration", targetDepth))
+                if (context.TestExpression("StaticConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceLineStaticDataConfigurationUnmarshaller.Instance;
                     unmarshalledObject.StaticConfiguration = unmarshaller.Unmarshall(context, ref reader);

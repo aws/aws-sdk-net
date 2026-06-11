@@ -56,31 +56,31 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth))
+                if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventSource", targetDepth))
+                if (context.TestExpression("EventSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirehoseConfiguration", targetDepth))
+                if (context.TestExpression("FirehoseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FirehoseConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogLevel", targetDepth))
+                if (context.TestExpression("LogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Configuration", targetDepth))
+                if (context.TestExpression("S3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigurationTypeUnmarshaller.Instance;
                     unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);

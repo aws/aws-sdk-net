@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReplicationOverwriteProtection", targetDepth))
+                if (context.TestExpression("ReplicationOverwriteProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicationOverwriteProtection = unmarshaller.Unmarshall(context, ref reader);

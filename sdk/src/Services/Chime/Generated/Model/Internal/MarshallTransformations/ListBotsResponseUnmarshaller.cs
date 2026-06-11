@@ -52,13 +52,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Bots", targetDepth))
+                if (context.TestExpression("Bots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Bot, BotUnmarshaller>(BotUnmarshaller.Instance);
                     response.Bots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

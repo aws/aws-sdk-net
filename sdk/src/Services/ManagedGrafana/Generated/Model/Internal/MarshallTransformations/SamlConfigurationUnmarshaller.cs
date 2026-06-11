@@ -56,31 +56,31 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedOrganizations", targetDepth))
+                if (context.TestExpression("allowedOrganizations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedOrganizations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assertionAttributes", targetDepth))
+                if (context.TestExpression("assertionAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AssertionAttributesUnmarshaller.Instance;
                     unmarshalledObject.AssertionAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idpMetadata", targetDepth))
+                if (context.TestExpression("idpMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = IdpMetadataUnmarshaller.Instance;
                     unmarshalledObject.IdpMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("loginValidityDuration", targetDepth))
+                if (context.TestExpression("loginValidityDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LoginValidityDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleValues", targetDepth))
+                if (context.TestExpression("roleValues", targetDepth, ref reader))
                 {
                     var unmarshaller = RoleValuesUnmarshaller.Instance;
                     unmarshalledObject.RoleValues = unmarshaller.Unmarshall(context, ref reader);

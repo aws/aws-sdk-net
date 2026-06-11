@@ -56,13 +56,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HiveJsonSerDe", targetDepth))
+                if (context.TestExpression("HiveJsonSerDe", targetDepth, ref reader))
                 {
                     var unmarshaller = HiveJsonSerDeUnmarshaller.Instance;
                     unmarshalledObject.HiveJsonSerDe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpenXJsonSerDe", targetDepth))
+                if (context.TestExpression("OpenXJsonSerDe", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenXJsonSerDeUnmarshaller.Instance;
                     unmarshalledObject.OpenXJsonSerDe = unmarshaller.Unmarshall(context, ref reader);

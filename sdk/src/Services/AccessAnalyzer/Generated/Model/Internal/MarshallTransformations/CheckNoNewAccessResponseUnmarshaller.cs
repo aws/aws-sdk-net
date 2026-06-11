@@ -52,19 +52,19 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("message", targetDepth))
+                if (context.TestExpression("message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reasons", targetDepth))
+                if (context.TestExpression("reasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReasonSummary, ReasonSummaryUnmarshaller>(ReasonSummaryUnmarshaller.Instance);
                     response.Reasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("result", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Result = unmarshaller.Unmarshall(context, ref reader);

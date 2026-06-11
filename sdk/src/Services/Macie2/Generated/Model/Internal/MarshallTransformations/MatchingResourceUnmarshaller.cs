@@ -56,7 +56,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("matchingBucket", targetDepth))
+                if (context.TestExpression("matchingBucket", targetDepth, ref reader))
                 {
                     var unmarshaller = MatchingBucketUnmarshaller.Instance;
                     unmarshalledObject.MatchingBucket = unmarshaller.Unmarshall(context, ref reader);

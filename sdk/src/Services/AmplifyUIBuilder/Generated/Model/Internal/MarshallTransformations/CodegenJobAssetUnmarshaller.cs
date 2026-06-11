@@ -56,7 +56,7 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("downloadUrl", targetDepth))
+                if (context.TestExpression("downloadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DownloadUrl = unmarshaller.Unmarshall(context, ref reader);

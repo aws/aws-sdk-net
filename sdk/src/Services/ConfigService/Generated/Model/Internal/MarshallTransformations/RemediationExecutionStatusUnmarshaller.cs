@@ -56,31 +56,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvocationTime", targetDepth))
+                if (context.TestExpression("InvocationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceKey", targetDepth))
+                if (context.TestExpression("ResourceKey", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceKeyUnmarshaller.Instance;
                     unmarshalledObject.ResourceKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StepDetails", targetDepth))
+                if (context.TestExpression("StepDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RemediationExecutionStep, RemediationExecutionStepUnmarshaller>(RemediationExecutionStepUnmarshaller.Instance);
                     unmarshalledObject.StepDetails = unmarshaller.Unmarshall(context, ref reader);

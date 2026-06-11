@@ -52,7 +52,7 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("event", targetDepth))
+                if (context.TestExpression("event", targetDepth, ref reader))
                 {
                     var unmarshaller = EventUnmarshaller.Instance;
                     response.Event = unmarshaller.Unmarshall(context, ref reader);

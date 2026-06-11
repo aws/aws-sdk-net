@@ -52,19 +52,19 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acceptedQueryCount", targetDepth))
+                if (context.TestExpression("acceptedQueryCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.AcceptedQueryCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queries", targetDepth))
+                if (context.TestExpression("queries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GremlinQueryStatus, GremlinQueryStatusUnmarshaller>(GremlinQueryStatusUnmarshaller.Instance);
                     response.Queries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runningQueryCount", targetDepth))
+                if (context.TestExpression("runningQueryCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RunningQueryCount = unmarshaller.Unmarshall(context, ref reader);

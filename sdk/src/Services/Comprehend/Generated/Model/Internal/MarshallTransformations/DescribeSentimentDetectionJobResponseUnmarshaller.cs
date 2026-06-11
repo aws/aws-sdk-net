@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SentimentDetectionJobProperties", targetDepth))
+                if (context.TestExpression("SentimentDetectionJobProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SentimentDetectionJobPropertiesUnmarshaller.Instance;
                     response.SentimentDetectionJobProperties = unmarshaller.Unmarshall(context, ref reader);

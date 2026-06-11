@@ -56,43 +56,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CidrBlock", targetDepth))
+                if (context.TestExpression("CidrBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CidrBlockSet", targetDepth))
+                if (context.TestExpression("CidrBlockSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcInfoCidrBlockSetDetails, VpcInfoCidrBlockSetDetailsUnmarshaller>(VpcInfoCidrBlockSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.CidrBlockSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ipv6CidrBlockSet", targetDepth))
+                if (context.TestExpression("Ipv6CidrBlockSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcInfoIpv6CidrBlockSetDetails, VpcInfoIpv6CidrBlockSetDetailsUnmarshaller>(VpcInfoIpv6CidrBlockSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.Ipv6CidrBlockSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerId", targetDepth))
+                if (context.TestExpression("OwnerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeeringOptions", targetDepth))
+                if (context.TestExpression("PeeringOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcInfoPeeringOptionsDetailsUnmarshaller.Instance;
                     unmarshalledObject.PeeringOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Region", targetDepth))
+                if (context.TestExpression("Region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

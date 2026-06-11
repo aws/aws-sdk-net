@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("elbInfoList", targetDepth))
+                if (context.TestExpression("elbInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ELBInfo, ELBInfoUnmarshaller>(ELBInfoUnmarshaller.Instance);
                     unmarshalledObject.ElbInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetGroupInfoList", targetDepth))
+                if (context.TestExpression("targetGroupInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetGroupInfo, TargetGroupInfoUnmarshaller>(TargetGroupInfoUnmarshaller.Instance);
                     unmarshalledObject.TargetGroupInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetGroupPairInfoList", targetDepth))
+                if (context.TestExpression("targetGroupPairInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetGroupPairInfo, TargetGroupPairInfoUnmarshaller>(TargetGroupPairInfoUnmarshaller.Instance);
                     unmarshalledObject.TargetGroupPairInfoList = unmarshaller.Unmarshall(context, ref reader);

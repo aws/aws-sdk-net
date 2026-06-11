@@ -52,31 +52,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvalidAnswers", targetDepth))
+                if (context.TestExpression("InvalidAnswers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InvalidTopicReviewedAnswer, InvalidTopicReviewedAnswerUnmarshaller>(InvalidTopicReviewedAnswerUnmarshaller.Instance);
                     response.InvalidAnswers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SucceededAnswers", targetDepth))
+                if (context.TestExpression("SucceededAnswers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SucceededTopicReviewedAnswer, SucceededTopicReviewedAnswerUnmarshaller>(SucceededTopicReviewedAnswerUnmarshaller.Instance);
                     response.SucceededAnswers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicArn", targetDepth))
+                if (context.TestExpression("TopicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TopicArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicId", targetDepth))
+                if (context.TestExpression("TopicId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TopicId = unmarshaller.Unmarshall(context, ref reader);

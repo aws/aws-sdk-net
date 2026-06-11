@@ -68,8 +68,8 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             request.AddPathResource("{workspaceId}", StringUtils.FromString(publicRequest.WorkspaceId));
             request.ResourcePath = "/workspaces/{workspaceId}/configuration";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -103,18 +103,27 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetOutOfOrderTimeWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("outOfOrderTimeWindowInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.OutOfOrderTimeWindowInSeconds.Value);
+            }
+
             if(publicRequest.IsSetRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("retentionPeriodInDays");
                 context.Writer.WriteNumberValue(publicRequest.RetentionPeriodInDays.Value);
             }
 
+            if(publicRequest.IsSetRuleQueryOffsetInSeconds())
+            {
+                context.Writer.WritePropertyName("ruleQueryOffsetInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.RuleQueryOffsetInSeconds.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

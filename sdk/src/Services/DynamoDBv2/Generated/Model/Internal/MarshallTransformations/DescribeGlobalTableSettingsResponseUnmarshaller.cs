@@ -52,13 +52,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalTableName", targetDepth))
+                if (context.TestExpression("GlobalTableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GlobalTableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicaSettings", targetDepth))
+                if (context.TestExpression("ReplicaSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicaSettingsDescription, ReplicaSettingsDescriptionUnmarshaller>(ReplicaSettingsDescriptionUnmarshaller.Instance);
                     response.ReplicaSettings = unmarshaller.Unmarshall(context, ref reader);

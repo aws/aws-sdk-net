@@ -56,19 +56,19 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("endpoints", targetDepth))
+                if (context.TestExpression("endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CapabilityReportEndpoint, CapabilityReportEndpointUnmarshaller>(CapabilityReportEndpointUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeId", targetDepth))
+                if (context.TestExpression("nodeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

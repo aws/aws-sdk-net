@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataVolumeKMSKeyId", targetDepth))
+                if (context.TestExpression("DataVolumeKMSKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataVolumeKMSKeyId = unmarshaller.Unmarshall(context, ref reader);

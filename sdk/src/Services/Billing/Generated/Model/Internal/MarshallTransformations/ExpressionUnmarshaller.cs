@@ -56,25 +56,25 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("costCategories", targetDepth))
+                if (context.TestExpression("costCategories", targetDepth, ref reader))
                 {
                     var unmarshaller = CostCategoryValuesUnmarshaller.Instance;
                     unmarshalledObject.CostCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dimensions", targetDepth))
+                if (context.TestExpression("dimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = DimensionValuesUnmarshaller.Instance;
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = TagValuesUnmarshaller.Instance;
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeRange", targetDepth))
+                if (context.TestExpression("timeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeUnmarshaller.Instance;
                     unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);

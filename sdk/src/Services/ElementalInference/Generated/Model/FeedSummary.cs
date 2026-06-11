@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElementalInference.Model
 {
     /// <summary>
-    /// Contains configuration information about a feed. It is used in the ListFeeds action.
+    /// Contains configuration information about a feed. It is used in the ListFeeds response.
     /// </summary>
     public partial class FeedSummary
     {

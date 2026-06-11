@@ -52,31 +52,31 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessPolicyStats", targetDepth))
+                if (context.TestExpression("AccessPolicyStats", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessPolicyStatsUnmarshaller.Instance;
                     response.AccessPolicyStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifecyclePolicyStats", targetDepth))
+                if (context.TestExpression("LifecyclePolicyStats", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyStatsUnmarshaller.Instance;
                     response.LifecyclePolicyStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityConfigStats", targetDepth))
+                if (context.TestExpression("SecurityConfigStats", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityConfigStatsUnmarshaller.Instance;
                     response.SecurityConfigStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityPolicyStats", targetDepth))
+                if (context.TestExpression("SecurityPolicyStats", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityPolicyStatsUnmarshaller.Instance;
                     response.SecurityPolicyStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalPolicyCount", targetDepth))
+                if (context.TestExpression("TotalPolicyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.TotalPolicyCount = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessPointPolicy", targetDepth))
+                if (context.TestExpression("accessPointPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessPointPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkOrigin", targetDepth))
+                if (context.TestExpression("networkOrigin", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkOriginConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NetworkOrigin = unmarshaller.Unmarshall(context, ref reader);

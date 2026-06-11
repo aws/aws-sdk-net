@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NotebookExecutionId", targetDepth))
+                if (context.TestExpression("NotebookExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NotebookExecutionId = unmarshaller.Unmarshall(context, ref reader);

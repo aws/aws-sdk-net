@@ -56,13 +56,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("edgeFilter", targetDepth))
+                if (context.TestExpression("edgeFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ExportFilterElement, StringUnmarshaller, ExportFilterElementUnmarshaller>(StringUnmarshaller.Instance, ExportFilterElementUnmarshaller.Instance);
                     unmarshalledObject.EdgeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vertexFilter", targetDepth))
+                if (context.TestExpression("vertexFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ExportFilterElement, StringUnmarshaller, ExportFilterElementUnmarshaller>(StringUnmarshaller.Instance, ExportFilterElementUnmarshaller.Instance);
                     unmarshalledObject.VertexFilter = unmarshaller.Unmarshall(context, ref reader);

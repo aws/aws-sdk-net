@@ -38,6 +38,7 @@ namespace Amazon.CleanRooms.Model
         private string _id;
         private string _membershipArn;
         private string _membershipId;
+        private string _queryComputePayerAccountId;
         private List<ReceiverConfiguration> _receiverConfigurations = AWSConfigs.InitializeCollections ? new List<ReceiverConfiguration>() : null;
         private ProtectedQueryStatus _status;
 
@@ -115,6 +116,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMembershipId()
         {
             return this._membershipId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryComputePayerAccountId. 
+        /// <para>
+        /// The account ID of the member that pays for the query compute costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string QueryComputePayerAccountId
+        {
+            get { return this._queryComputePayerAccountId; }
+            set { this._queryComputePayerAccountId = value; }
+        }
+
+        // Check to see if QueryComputePayerAccountId property is set
+        internal bool IsSetQueryComputePayerAccountId()
+        {
+            return this._queryComputePayerAccountId != null;
         }
 
         /// <summary>

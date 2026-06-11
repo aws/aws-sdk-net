@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeLocation", targetDepth))
+                if (context.TestExpression("computeLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("forwardingConfig", targetDepth))
+                if (context.TestExpression("forwardingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ForwardingConfigUnmarshaller.Instance;
                     unmarshalledObject.ForwardingConfig = unmarshaller.Unmarshall(context, ref reader);

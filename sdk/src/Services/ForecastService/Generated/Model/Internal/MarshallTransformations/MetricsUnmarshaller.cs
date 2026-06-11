@@ -56,25 +56,25 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AverageWeightedQuantileLoss", targetDepth))
+                if (context.TestExpression("AverageWeightedQuantileLoss", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AverageWeightedQuantileLoss = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorMetrics", targetDepth))
+                if (context.TestExpression("ErrorMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ErrorMetric, ErrorMetricUnmarshaller>(ErrorMetricUnmarshaller.Instance);
                     unmarshalledObject.ErrorMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RMSE", targetDepth))
+                if (context.TestExpression("RMSE", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RMSE = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeightedQuantileLosses", targetDepth))
+                if (context.TestExpression("WeightedQuantileLosses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WeightedQuantileLoss, WeightedQuantileLossUnmarshaller>(WeightedQuantileLossUnmarshaller.Instance);
                     unmarshalledObject.WeightedQuantileLosses = unmarshaller.Unmarshall(context, ref reader);

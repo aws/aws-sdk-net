@@ -52,7 +52,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Records", targetDepth))
+                if (context.TestExpression("Records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Record, RecordUnmarshaller>(RecordUnmarshaller.Instance);
                     response.Records = unmarshaller.Unmarshall(context, ref reader);

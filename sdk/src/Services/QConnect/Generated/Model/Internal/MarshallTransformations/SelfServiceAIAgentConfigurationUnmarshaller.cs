@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associationConfigurations", targetDepth))
+                if (context.TestExpression("associationConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociationConfiguration, AssociationConfigurationUnmarshaller>(AssociationConfigurationUnmarshaller.Instance);
                     unmarshalledObject.AssociationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfServiceAIGuardrailId", targetDepth))
+                if (context.TestExpression("selfServiceAIGuardrailId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelfServiceAIGuardrailId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfServiceAnswerGenerationAIPromptId", targetDepth))
+                if (context.TestExpression("selfServiceAnswerGenerationAIPromptId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelfServiceAnswerGenerationAIPromptId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selfServicePreProcessingAIPromptId", targetDepth))
+                if (context.TestExpression("selfServicePreProcessingAIPromptId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelfServicePreProcessingAIPromptId = unmarshaller.Unmarshall(context, ref reader);

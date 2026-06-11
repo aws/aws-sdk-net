@@ -56,55 +56,55 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioFillerSettings", targetDepth))
+                if (context.TestExpression("audioFillerSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioFillerSettingsUnmarshaller.Instance;
                     unmarshalledObject.AudioFillerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localeId", targetDepth))
+                if (context.TestExpression("localeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth))
+                if (context.TestExpression("nluIntentConfidenceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechDetectionSensitivity", targetDepth))
+                if (context.TestExpression("speechDetectionSensitivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SpeechDetectionSensitivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("speechRecognitionSettings", targetDepth))
+                if (context.TestExpression("speechRecognitionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpeechRecognitionSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpeechRecognitionSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unifiedSpeechSettings", targetDepth))
+                if (context.TestExpression("unifiedSpeechSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UnifiedSpeechSettingsUnmarshaller.Instance;
                     unmarshalledObject.UnifiedSpeechSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("voiceSettings", targetDepth))
+                if (context.TestExpression("voiceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VoiceSettingsUnmarshaller.Instance;
                     unmarshalledObject.VoiceSettings = unmarshaller.Unmarshall(context, ref reader);

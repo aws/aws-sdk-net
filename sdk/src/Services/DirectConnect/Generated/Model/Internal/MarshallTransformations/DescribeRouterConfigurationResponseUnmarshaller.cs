@@ -52,25 +52,25 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customerRouterConfig", targetDepth))
+                if (context.TestExpression("customerRouterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomerRouterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("router", targetDepth))
+                if (context.TestExpression("router", targetDepth, ref reader))
                 {
                     var unmarshaller = RouterTypeUnmarshaller.Instance;
                     response.Router = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualInterfaceId", targetDepth))
+                if (context.TestExpression("virtualInterfaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VirtualInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualInterfaceName", targetDepth))
+                if (context.TestExpression("virtualInterfaceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VirtualInterfaceName = unmarshaller.Unmarshall(context, ref reader);

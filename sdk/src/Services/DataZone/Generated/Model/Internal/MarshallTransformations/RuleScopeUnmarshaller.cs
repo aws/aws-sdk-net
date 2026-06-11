@@ -56,19 +56,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetType", targetDepth))
+                if (context.TestExpression("assetType", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetTypesForRuleUnmarshaller.Instance;
                     unmarshalledObject.AssetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataProduct", targetDepth))
+                if (context.TestExpression("dataProduct", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DataProduct = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("project", targetDepth))
+                if (context.TestExpression("project", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectsForRuleUnmarshaller.Instance;
                     unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NotificationConfiguration", targetDepth))
+                if (context.TestExpression("NotificationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NotificationConfigurationUnmarshaller.Instance;
                     response.NotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);

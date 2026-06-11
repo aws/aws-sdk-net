@@ -56,25 +56,25 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("groupDesc", targetDepth))
+                if (context.TestExpression("groupDesc", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupDesc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupId", targetDepth))
+                if (context.TestExpression("groupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupName", targetDepth))
+                if (context.TestExpression("groupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userRules", targetDepth))
+                if (context.TestExpression("userRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IpRuleItem, IpRuleItemUnmarshaller>(IpRuleItemUnmarshaller.Instance);
                     unmarshalledObject.UserRules = unmarshaller.Unmarshall(context, ref reader);

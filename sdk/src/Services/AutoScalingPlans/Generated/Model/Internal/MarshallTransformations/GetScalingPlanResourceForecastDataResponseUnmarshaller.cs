@@ -52,7 +52,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Datapoints", targetDepth))
+                if (context.TestExpression("Datapoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Datapoint, DatapointUnmarshaller>(DatapointUnmarshaller.Instance);
                     response.Datapoints = unmarshaller.Unmarshall(context, ref reader);

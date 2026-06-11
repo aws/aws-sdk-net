@@ -56,31 +56,31 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3BucketArn", targetDepth))
+                if (context.TestExpression("S3BucketArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScreenImageFormat", targetDepth))
+                if (context.TestExpression("ScreenImageFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScreenImageFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScreenResolution", targetDepth))
+                if (context.TestExpression("ScreenResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScreenResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScreenshotsUploadEnabled", targetDepth))
+                if (context.TestExpression("ScreenshotsUploadEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ScreenshotsUploadEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Settings", targetDepth))
+                if (context.TestExpression("Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AgentAccessSetting, AgentAccessSettingUnmarshaller>(AgentAccessSettingUnmarshaller.Instance);
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);

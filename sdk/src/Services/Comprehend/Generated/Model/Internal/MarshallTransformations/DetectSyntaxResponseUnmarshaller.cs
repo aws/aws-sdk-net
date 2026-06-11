@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SyntaxTokens", targetDepth))
+                if (context.TestExpression("SyntaxTokens", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SyntaxToken, SyntaxTokenUnmarshaller>(SyntaxTokenUnmarshaller.Instance);
                     response.SyntaxTokens = unmarshaller.Unmarshall(context, ref reader);

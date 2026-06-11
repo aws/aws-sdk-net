@@ -52,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Request", targetDepth))
+                if (context.TestExpression("Request", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaConversionRequestUnmarshaller.Instance;
                     response.Request = unmarshaller.Unmarshall(context, ref reader);

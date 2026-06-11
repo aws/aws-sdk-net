@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("categorical", targetDepth))
+                if (context.TestExpression("categorical", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CategoricalScaleDefinition, CategoricalScaleDefinitionUnmarshaller>(CategoricalScaleDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Categorical = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numerical", targetDepth))
+                if (context.TestExpression("numerical", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NumericalScaleDefinition, NumericalScaleDefinitionUnmarshaller>(NumericalScaleDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Numerical = unmarshaller.Unmarshall(context, ref reader);

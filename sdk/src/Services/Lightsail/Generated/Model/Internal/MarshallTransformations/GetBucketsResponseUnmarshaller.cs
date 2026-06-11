@@ -52,19 +52,19 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountLevelBpaSync", targetDepth))
+                if (context.TestExpression("accountLevelBpaSync", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountLevelBpaSyncUnmarshaller.Instance;
                     response.AccountLevelBpaSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("buckets", targetDepth))
+                if (context.TestExpression("buckets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Bucket, BucketUnmarshaller>(BucketUnmarshaller.Instance);
                     response.Buckets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextPageToken", targetDepth))
+                if (context.TestExpression("nextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);

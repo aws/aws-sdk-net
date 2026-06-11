@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("locationRegistrationExcludeS3Locations", targetDepth))
+                if (context.TestExpression("locationRegistrationExcludeS3Locations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LocationRegistrationExcludeS3Locations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("locationRegistrationRole", targetDepth))
+                if (context.TestExpression("locationRegistrationRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocationRegistrationRole = unmarshaller.Unmarshall(context, ref reader);

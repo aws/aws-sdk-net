@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OptimizedSharedDelivery", targetDepth))
+                if (context.TestExpression("OptimizedSharedDelivery", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OptimizedSharedDelivery = unmarshaller.Unmarshall(context, ref reader);

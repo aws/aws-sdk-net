@@ -56,49 +56,49 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executor", targetDepth))
+                if (context.TestExpression("executor", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeExecutorUnmarshaller.Instance;
                     unmarshalledObject.Executor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeIdentifierUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputArtifactDetails", targetDepth))
+                if (context.TestExpression("inputArtifactDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.InputArtifactDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputArtifactDetails", targetDepth))
+                if (context.TestExpression("outputArtifactDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeArtifactDetailsUnmarshaller.Instance;
                     unmarshalledObject.OutputArtifactDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("permissions", targetDepth))
+                if (context.TestExpression("permissions", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypePermissionsUnmarshaller.Instance;
                     unmarshalledObject.Permissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("properties", targetDepth))
+                if (context.TestExpression("properties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionTypeProperty, ActionTypePropertyUnmarshaller>(ActionTypePropertyUnmarshaller.Instance);
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("urls", targetDepth))
+                if (context.TestExpression("urls", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTypeUrlsUnmarshaller.Instance;
                     unmarshalledObject.Urls = unmarshaller.Unmarshall(context, ref reader);

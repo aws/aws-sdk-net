@@ -70,7 +70,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// Maximum duration of the ad break, in seconds.
+        /// Duration of the ad break, in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

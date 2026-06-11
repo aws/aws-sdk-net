@@ -52,49 +52,49 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("JobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobTag", targetDepth))
+                if (context.TestExpression("JobTag", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobTag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Persons", targetDepth))
+                if (context.TestExpression("Persons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PersonDetection, PersonDetectionUnmarshaller>(PersonDetectionUnmarshaller.Instance);
                     response.Persons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatusMessage", targetDepth))
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Video", targetDepth))
+                if (context.TestExpression("Video", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoUnmarshaller.Instance;
                     response.Video = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VideoMetadata", targetDepth))
+                if (context.TestExpression("VideoMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoMetadataUnmarshaller.Instance;
                     response.VideoMetadata = unmarshaller.Unmarshall(context, ref reader);

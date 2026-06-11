@@ -56,13 +56,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyRotationIntervalSeconds", targetDepth))
+                if (context.TestExpression("keyRotationIntervalSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.KeyRotationIntervalSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spekeKeyProvider", targetDepth))
+                if (context.TestExpression("spekeKeyProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = SpekeKeyProviderUnmarshaller.Instance;
                     unmarshalledObject.SpekeKeyProvider = unmarshaller.Unmarshall(context, ref reader);

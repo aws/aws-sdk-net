@@ -52,85 +52,85 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("catalog", targetDepth))
+                if (context.TestExpression("catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("categories", targetDepth))
+                if (context.TestExpression("categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Category, CategoryUnmarshaller>(CategoryUnmarshaller.Instance);
                     response.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deployedOnAws", targetDepth))
+                if (context.TestExpression("deployedOnAws", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeployedOnAws = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fulfillmentOptionSummaries", targetDepth))
+                if (context.TestExpression("fulfillmentOptionSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FulfillmentOptionSummary, FulfillmentOptionSummaryUnmarshaller>(FulfillmentOptionSummaryUnmarshaller.Instance);
                     response.FulfillmentOptionSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("highlights", targetDepth))
+                if (context.TestExpression("highlights", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Highlights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logoThumbnailUrl", targetDepth))
+                if (context.TestExpression("logoThumbnailUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LogoThumbnailUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("longDescription", targetDepth))
+                if (context.TestExpression("longDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LongDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manufacturer", targetDepth))
+                if (context.TestExpression("manufacturer", targetDepth, ref reader))
                 {
                     var unmarshaller = SellerInformationUnmarshaller.Instance;
                     response.Manufacturer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("productId", targetDepth))
+                if (context.TestExpression("productId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProductId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("productName", targetDepth))
+                if (context.TestExpression("productName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProductName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("promotionalMedia", targetDepth))
+                if (context.TestExpression("promotionalMedia", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PromotionalMedia, PromotionalMediaUnmarshaller>(PromotionalMediaUnmarshaller.Instance);
                     response.PromotionalMedia = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resources", targetDepth))
+                if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
                     response.Resources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sellerEngagements", targetDepth))
+                if (context.TestExpression("sellerEngagements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SellerEngagement, SellerEngagementUnmarshaller>(SellerEngagementUnmarshaller.Instance);
                     response.SellerEngagements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shortDescription", targetDepth))
+                if (context.TestExpression("shortDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ShortDescription = unmarshaller.Unmarshall(context, ref reader);

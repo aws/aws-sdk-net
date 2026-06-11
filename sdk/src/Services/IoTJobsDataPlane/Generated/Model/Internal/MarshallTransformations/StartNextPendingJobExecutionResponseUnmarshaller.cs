@@ -52,7 +52,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("execution", targetDepth))
+                if (context.TestExpression("execution", targetDepth, ref reader))
                 {
                     var unmarshaller = JobExecutionUnmarshaller.Instance;
                     response.Execution = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("parameterOverrides", targetDepth))
+                if (context.TestExpression("parameterOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentConfigurationParameter, EnvironmentConfigurationParameterUnmarshaller>(EnvironmentConfigurationParameterUnmarshaller.Instance);
                     unmarshalledObject.ParameterOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resolvedParameters", targetDepth))
+                if (context.TestExpression("resolvedParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentConfigurationParameter, EnvironmentConfigurationParameterUnmarshaller>(EnvironmentConfigurationParameterUnmarshaller.Instance);
                     unmarshalledObject.ResolvedParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmPath", targetDepth))
+                if (context.TestExpression("ssmPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SsmPath = unmarshaller.Unmarshall(context, ref reader);

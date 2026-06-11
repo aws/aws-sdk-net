@@ -56,43 +56,43 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customOrchestrationTrace", targetDepth))
+                if (context.TestExpression("customOrchestrationTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomOrchestrationTraceUnmarshaller.Instance;
                     unmarshalledObject.CustomOrchestrationTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureTrace", targetDepth))
+                if (context.TestExpression("failureTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureTraceUnmarshaller.Instance;
                     unmarshalledObject.FailureTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailTrace", targetDepth))
+                if (context.TestExpression("guardrailTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailTraceUnmarshaller.Instance;
                     unmarshalledObject.GuardrailTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestrationTrace", targetDepth))
+                if (context.TestExpression("orchestrationTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = OrchestrationTraceUnmarshaller.Instance;
                     unmarshalledObject.OrchestrationTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postProcessingTrace", targetDepth))
+                if (context.TestExpression("postProcessingTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = PostProcessingTraceUnmarshaller.Instance;
                     unmarshalledObject.PostProcessingTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preProcessingTrace", targetDepth))
+                if (context.TestExpression("preProcessingTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = PreProcessingTraceUnmarshaller.Instance;
                     unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routingClassifierTrace", targetDepth))
+                if (context.TestExpression("routingClassifierTrace", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingClassifierTraceUnmarshaller.Instance;
                     unmarshalledObject.RoutingClassifierTrace = unmarshaller.Unmarshall(context, ref reader);

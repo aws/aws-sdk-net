@@ -56,31 +56,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainEndpoint", targetDepth))
+                if (context.TestExpression("domainEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exactResponse", targetDepth))
+                if (context.TestExpression("exactResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExactResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exactResponseFields", targetDepth))
+                if (context.TestExpression("exactResponseFields", targetDepth, ref reader))
                 {
                     var unmarshaller = ExactResponseFieldsUnmarshaller.Instance;
                     unmarshalledObject.ExactResponseFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeFields", targetDepth))
+                if (context.TestExpression("includeFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludeFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("indexName", targetDepth))
+                if (context.TestExpression("indexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);

@@ -72,13 +72,13 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Details", targetDepth))
+                    if (context.TestExpression("Details", targetDepth, ref reader))
                     {
                         var unmarshaller = BadRequestDetailsUnmarshaller.Instance;
                         unmarshalledObject.Details = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Reason", targetDepth))
+                    if (context.TestExpression("Reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

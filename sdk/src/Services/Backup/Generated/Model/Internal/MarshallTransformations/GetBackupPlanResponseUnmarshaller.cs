@@ -52,61 +52,61 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdvancedBackupSettings", targetDepth))
+                if (context.TestExpression("AdvancedBackupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
                     response.AdvancedBackupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupPlan", targetDepth))
+                if (context.TestExpression("BackupPlan", targetDepth, ref reader))
                 {
                     var unmarshaller = BackupPlanUnmarshaller.Instance;
                     response.BackupPlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupPlanArn", targetDepth))
+                if (context.TestExpression("BackupPlanArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackupPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BackupPlanId", targetDepth))
+                if (context.TestExpression("BackupPlanId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackupPlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatorRequestId", targetDepth))
+                if (context.TestExpression("CreatorRequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeletionDate", targetDepth))
+                if (context.TestExpression("DeletionDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DeletionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastExecutionDate", targetDepth))
+                if (context.TestExpression("LastExecutionDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastExecutionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduledRunsPreview", targetDepth))
+                if (context.TestExpression("ScheduledRunsPreview", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScheduledPlanExecutionMember, ScheduledPlanExecutionMemberUnmarshaller>(ScheduledPlanExecutionMemberUnmarshaller.Instance);
                     response.ScheduledRunsPreview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionId", targetDepth))
+                if (context.TestExpression("VersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VersionId = unmarshaller.Unmarshall(context, ref reader);

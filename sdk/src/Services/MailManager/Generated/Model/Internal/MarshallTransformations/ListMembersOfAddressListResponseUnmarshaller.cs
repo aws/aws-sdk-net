@@ -52,13 +52,13 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Addresses", targetDepth))
+                if (context.TestExpression("Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavedAddress, SavedAddressUnmarshaller>(SavedAddressUnmarshaller.Instance);
                     response.Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChallengeResponses", targetDepth))
+                if (context.TestExpression("ChallengeResponses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ChallengeResponseType, ChallengeResponseTypeUnmarshaller>(ChallengeResponseTypeUnmarshaller.Instance);
                     unmarshalledObject.ChallengeResponses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationDate", targetDepth))
+                if (context.TestExpression("CreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventContextData", targetDepth))
+                if (context.TestExpression("EventContextData", targetDepth, ref reader))
                 {
                     var unmarshaller = EventContextDataTypeUnmarshaller.Instance;
                     unmarshalledObject.EventContextData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventFeedback", targetDepth))
+                if (context.TestExpression("EventFeedback", targetDepth, ref reader))
                 {
                     var unmarshaller = EventFeedbackTypeUnmarshaller.Instance;
                     unmarshalledObject.EventFeedback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventId", targetDepth))
+                if (context.TestExpression("EventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventResponse", targetDepth))
+                if (context.TestExpression("EventResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventRisk", targetDepth))
+                if (context.TestExpression("EventRisk", targetDepth, ref reader))
                 {
                     var unmarshaller = EventRiskTypeUnmarshaller.Instance;
                     unmarshalledObject.EventRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventType", targetDepth))
+                if (context.TestExpression("EventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Partitions", targetDepth))
+                if (context.TestExpression("Partitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Partition, PartitionUnmarshaller>(PartitionUnmarshaller.Instance);
                     response.Partitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedKeys", targetDepth))
+                if (context.TestExpression("UnprocessedKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartitionValueList, PartitionValueListUnmarshaller>(PartitionValueListUnmarshaller.Instance);
                     response.UnprocessedKeys = unmarshaller.Unmarshall(context, ref reader);

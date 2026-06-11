@@ -56,37 +56,37 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("manifestLayout", targetDepth))
+                if (context.TestExpression("manifestLayout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifestName", targetDepth))
+                if (context.TestExpression("manifestName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minBufferTimeSeconds", targetDepth))
+                if (context.TestExpression("minBufferTimeSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinBufferTimeSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("profile", targetDepth))
+                if (context.TestExpression("profile", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scteMarkersSource", targetDepth))
+                if (context.TestExpression("scteMarkersSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScteMarkersSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamSelection", targetDepth))
+                if (context.TestExpression("streamSelection", targetDepth, ref reader))
                 {
                     var unmarshaller = StreamSelectionUnmarshaller.Instance;
                     unmarshalledObject.StreamSelection = unmarshaller.Unmarshall(context, ref reader);

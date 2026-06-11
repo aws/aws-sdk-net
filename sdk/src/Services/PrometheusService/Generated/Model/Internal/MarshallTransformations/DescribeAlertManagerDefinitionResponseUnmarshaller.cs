@@ -52,7 +52,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alertManagerDefinition", targetDepth))
+                if (context.TestExpression("alertManagerDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = AlertManagerDefinitionDescriptionUnmarshaller.Instance;
                     response.AlertManagerDefinition = unmarshaller.Unmarshall(context, ref reader);

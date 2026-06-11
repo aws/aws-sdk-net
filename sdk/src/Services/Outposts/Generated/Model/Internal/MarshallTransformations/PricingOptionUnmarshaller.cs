@@ -56,13 +56,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PricingType", targetDepth))
+                if (context.TestExpression("PricingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PricingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionPricingDetails", targetDepth))
+                if (context.TestExpression("SubscriptionPricingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionPricingDetailsUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionPricingDetails = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("device", targetDepth))
+                if (context.TestExpression("device", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceSummaryUnmarshaller.Instance;
                     response.Device = unmarshaller.Unmarshall(context, ref reader);

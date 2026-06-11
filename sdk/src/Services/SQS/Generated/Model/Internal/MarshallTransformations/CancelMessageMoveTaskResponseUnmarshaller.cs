@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth))
+                if (context.TestExpression("ApproximateNumberOfMessagesMoved", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ApproximateNumberOfMessagesMoved = unmarshaller.Unmarshall(context, ref reader);

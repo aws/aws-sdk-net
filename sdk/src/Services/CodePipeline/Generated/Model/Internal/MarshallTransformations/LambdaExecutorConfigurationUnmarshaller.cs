@@ -56,7 +56,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaFunctionArn", targetDepth))
+                if (context.TestExpression("lambdaFunctionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LambdaFunctionArn = unmarshaller.Unmarshall(context, ref reader);

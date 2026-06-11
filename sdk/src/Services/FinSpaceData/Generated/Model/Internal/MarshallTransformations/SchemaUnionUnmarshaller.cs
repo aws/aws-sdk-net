@@ -56,7 +56,7 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tabularSchemaConfig", targetDepth))
+                if (context.TestExpression("tabularSchemaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SchemaDefinitionUnmarshaller.Instance;
                     unmarshalledObject.TabularSchemaConfig = unmarshaller.Unmarshall(context, ref reader);

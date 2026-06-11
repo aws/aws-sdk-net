@@ -56,31 +56,31 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdjacentParentShardId", targetDepth))
+                if (context.TestExpression("AdjacentParentShardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdjacentParentShardId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HashKeyRange", targetDepth))
+                if (context.TestExpression("HashKeyRange", targetDepth, ref reader))
                 {
                     var unmarshaller = HashKeyRangeUnmarshaller.Instance;
                     unmarshalledObject.HashKeyRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParentShardId", targetDepth))
+                if (context.TestExpression("ParentShardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentShardId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SequenceNumberRange", targetDepth))
+                if (context.TestExpression("SequenceNumberRange", targetDepth, ref reader))
                 {
                     var unmarshaller = SequenceNumberRangeUnmarshaller.Instance;
                     unmarshalledObject.SequenceNumberRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShardId", targetDepth))
+                if (context.TestExpression("ShardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShardId = unmarshaller.Unmarshall(context, ref reader);

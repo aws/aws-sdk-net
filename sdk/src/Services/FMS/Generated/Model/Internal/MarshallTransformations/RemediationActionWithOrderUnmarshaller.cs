@@ -56,13 +56,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Order", targetDepth))
+                if (context.TestExpression("Order", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Order = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemediationAction", targetDepth))
+                if (context.TestExpression("RemediationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = RemediationActionUnmarshaller.Instance;
                     unmarshalledObject.RemediationAction = unmarshaller.Unmarshall(context, ref reader);

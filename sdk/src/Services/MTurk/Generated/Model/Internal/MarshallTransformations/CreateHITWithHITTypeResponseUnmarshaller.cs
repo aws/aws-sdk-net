@@ -52,7 +52,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HIT", targetDepth))
+                if (context.TestExpression("HIT", targetDepth, ref reader))
                 {
                     var unmarshaller = HITUnmarshaller.Instance;
                     response.HIT = unmarshaller.Unmarshall(context, ref reader);

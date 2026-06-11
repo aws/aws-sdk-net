@@ -56,37 +56,37 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockEmail", targetDepth))
+                if (context.TestExpression("BlockEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
                     unmarshalledObject.BlockEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("From", targetDepth))
+                if (context.TestExpression("From", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.From = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MfaEmail", targetDepth))
+                if (context.TestExpression("MfaEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
                     unmarshalledObject.MfaEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoActionEmail", targetDepth))
+                if (context.TestExpression("NoActionEmail", targetDepth, ref reader))
                 {
                     var unmarshaller = NotifyEmailTypeUnmarshaller.Instance;
                     unmarshalledObject.NoActionEmail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplyTo", targetDepth))
+                if (context.TestExpression("ReplyTo", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplyTo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceArn", targetDepth))
+                if (context.TestExpression("SourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);

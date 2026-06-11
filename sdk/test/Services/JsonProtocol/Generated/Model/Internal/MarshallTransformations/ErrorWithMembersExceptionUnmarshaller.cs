@@ -72,37 +72,37 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Code", targetDepth))
+                    if (context.TestExpression("Code", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ComplexData", targetDepth))
+                    if (context.TestExpression("ComplexData", targetDepth, ref reader))
                     {
                         var unmarshaller = KitchenSinkUnmarshaller.Instance;
                         unmarshalledObject.ComplexData = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("IntegerField", targetDepth))
+                    if (context.TestExpression("IntegerField", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.IntegerField = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ListField", targetDepth))
+                    if (context.TestExpression("ListField", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ListField = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("MapField", targetDepth))
+                    if (context.TestExpression("MapField", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         unmarshalledObject.MapField = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("StringField", targetDepth))
+                    if (context.TestExpression("StringField", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StringField = unmarshaller.Unmarshall(context, ref reader);

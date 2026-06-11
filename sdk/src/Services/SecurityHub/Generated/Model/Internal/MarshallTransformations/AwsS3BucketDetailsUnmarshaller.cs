@@ -56,85 +56,85 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessControlList", targetDepth))
+                if (context.TestExpression("AccessControlList", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessControlList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketLifecycleConfiguration", targetDepth))
+                if (context.TestExpression("BucketLifecycleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.BucketLifecycleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketLoggingConfiguration", targetDepth))
+                if (context.TestExpression("BucketLoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketLoggingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketLoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketNotificationConfiguration", targetDepth))
+                if (context.TestExpression("BucketNotificationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketNotificationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketNotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketVersioningConfiguration", targetDepth))
+                if (context.TestExpression("BucketVersioningConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketBucketVersioningConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketVersioningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BucketWebsiteConfiguration", targetDepth))
+                if (context.TestExpression("BucketWebsiteConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketWebsiteConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BucketWebsiteConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ObjectLockConfiguration", targetDepth))
+                if (context.TestExpression("ObjectLockConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketObjectLockConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ObjectLockConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerAccountId", targetDepth))
+                if (context.TestExpression("OwnerAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerId", targetDepth))
+                if (context.TestExpression("OwnerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerName", targetDepth))
+                if (context.TestExpression("OwnerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicAccessBlockConfiguration", targetDepth))
+                if (context.TestExpression("PublicAccessBlockConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3AccountPublicAccessBlockDetailsUnmarshaller.Instance;
                     unmarshalledObject.PublicAccessBlockConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("ServerSideEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketServerSideEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);

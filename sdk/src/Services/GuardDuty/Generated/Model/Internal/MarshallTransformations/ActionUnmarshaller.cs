@@ -56,61 +56,61 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionType", targetDepth))
+                if (context.TestExpression("actionType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsApiCallAction", targetDepth))
+                if (context.TestExpression("awsApiCallAction", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsApiCallActionUnmarshaller.Instance;
                     unmarshalledObject.AwsApiCallAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dnsRequestAction", targetDepth))
+                if (context.TestExpression("dnsRequestAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DnsRequestActionUnmarshaller.Instance;
                     unmarshalledObject.DnsRequestAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesApiCallAction", targetDepth))
+                if (context.TestExpression("kubernetesApiCallAction", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesApiCallActionUnmarshaller.Instance;
                     unmarshalledObject.KubernetesApiCallAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesPermissionCheckedDetails", targetDepth))
+                if (context.TestExpression("kubernetesPermissionCheckedDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesPermissionCheckedDetailsUnmarshaller.Instance;
                     unmarshalledObject.KubernetesPermissionCheckedDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesRoleBindingDetails", targetDepth))
+                if (context.TestExpression("kubernetesRoleBindingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesRoleBindingDetailsUnmarshaller.Instance;
                     unmarshalledObject.KubernetesRoleBindingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesRoleDetails", targetDepth))
+                if (context.TestExpression("kubernetesRoleDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesRoleDetailsUnmarshaller.Instance;
                     unmarshalledObject.KubernetesRoleDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkConnectionAction", targetDepth))
+                if (context.TestExpression("networkConnectionAction", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkConnectionActionUnmarshaller.Instance;
                     unmarshalledObject.NetworkConnectionAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portProbeAction", targetDepth))
+                if (context.TestExpression("portProbeAction", targetDepth, ref reader))
                 {
                     var unmarshaller = PortProbeActionUnmarshaller.Instance;
                     unmarshalledObject.PortProbeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsLoginAttemptAction", targetDepth))
+                if (context.TestExpression("rdsLoginAttemptAction", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsLoginAttemptActionUnmarshaller.Instance;
                     unmarshalledObject.RdsLoginAttemptAction = unmarshaller.Unmarshall(context, ref reader);

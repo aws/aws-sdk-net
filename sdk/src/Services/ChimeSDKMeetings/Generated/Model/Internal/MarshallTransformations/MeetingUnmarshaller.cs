@@ -56,55 +56,55 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExternalMeetingId", targetDepth))
+                if (context.TestExpression("ExternalMeetingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExternalMeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaPlacement", targetDepth))
+                if (context.TestExpression("MediaPlacement", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPlacementUnmarshaller.Instance;
                     unmarshalledObject.MediaPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MediaRegion", targetDepth))
+                if (context.TestExpression("MediaRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingArn", targetDepth))
+                if (context.TestExpression("MeetingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeetingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingFeatures", targetDepth))
+                if (context.TestExpression("MeetingFeatures", targetDepth, ref reader))
                 {
                     var unmarshaller = MeetingFeaturesConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MeetingFeatures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingHostId", targetDepth))
+                if (context.TestExpression("MeetingHostId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeetingHostId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeetingId", targetDepth))
+                if (context.TestExpression("MeetingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryMeetingId", targetDepth))
+                if (context.TestExpression("PrimaryMeetingId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryMeetingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TenantIds", targetDepth))
+                if (context.TestExpression("TenantIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TenantIds = unmarshaller.Unmarshall(context, ref reader);

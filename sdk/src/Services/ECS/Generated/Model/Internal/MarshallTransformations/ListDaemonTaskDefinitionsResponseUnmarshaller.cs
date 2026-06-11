@@ -52,13 +52,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("daemonTaskDefinitions", targetDepth))
+                if (context.TestExpression("daemonTaskDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DaemonTaskDefinitionSummary, DaemonTaskDefinitionSummaryUnmarshaller>(DaemonTaskDefinitionSummaryUnmarshaller.Instance);
                     response.DaemonTaskDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

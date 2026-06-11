@@ -56,19 +56,19 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ControlArn", targetDepth))
+                if (context.TestExpression("ControlArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ControlArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mapping", targetDepth))
+                if (context.TestExpression("Mapping", targetDepth, ref reader))
                 {
                     var unmarshaller = MappingUnmarshaller.Instance;
                     unmarshalledObject.Mapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MappingType", targetDepth))
+                if (context.TestExpression("MappingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MappingType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OutboundEmailAddressId", targetDepth))
+                if (context.TestExpression("OutboundEmailAddressId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutboundEmailAddressId = unmarshaller.Unmarshall(context, ref reader);

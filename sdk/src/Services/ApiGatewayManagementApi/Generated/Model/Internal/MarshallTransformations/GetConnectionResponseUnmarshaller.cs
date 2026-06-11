@@ -52,19 +52,19 @@ namespace Amazon.ApiGatewayManagementApi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectedAt", targetDepth))
+                if (context.TestExpression("connectedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ConnectedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identity", targetDepth))
+                if (context.TestExpression("identity", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityUnmarshaller.Instance;
                     response.Identity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastActiveAt", targetDepth))
+                if (context.TestExpression("lastActiveAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastActiveAt = unmarshaller.Unmarshall(context, ref reader);

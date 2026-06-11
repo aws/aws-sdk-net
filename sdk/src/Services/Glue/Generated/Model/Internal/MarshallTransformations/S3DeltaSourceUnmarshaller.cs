@@ -56,31 +56,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalDeltaOptions", targetDepth))
+                if (context.TestExpression("AdditionalDeltaOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.AdditionalDeltaOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AdditionalOptions", targetDepth))
+                if (context.TestExpression("AdditionalOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DirectSourceAdditionalOptionsUnmarshaller.Instance;
                     unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputSchemas", targetDepth))
+                if (context.TestExpression("OutputSchemas", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GlueSchema, GlueSchemaUnmarshaller>(GlueSchemaUnmarshaller.Instance);
                     unmarshalledObject.OutputSchemas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Paths", targetDepth))
+                if (context.TestExpression("Paths", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Paths = unmarshaller.Unmarshall(context, ref reader);

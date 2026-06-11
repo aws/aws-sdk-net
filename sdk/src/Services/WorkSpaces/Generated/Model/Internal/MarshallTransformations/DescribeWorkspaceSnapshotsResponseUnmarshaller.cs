@@ -52,13 +52,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RebuildSnapshots", targetDepth))
+                if (context.TestExpression("RebuildSnapshots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Snapshot, SnapshotUnmarshaller>(SnapshotUnmarshaller.Instance);
                     response.RebuildSnapshots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RestoreSnapshots", targetDepth))
+                if (context.TestExpression("RestoreSnapshots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Snapshot, SnapshotUnmarshaller>(SnapshotUnmarshaller.Instance);
                     response.RestoreSnapshots = unmarshaller.Unmarshall(context, ref reader);

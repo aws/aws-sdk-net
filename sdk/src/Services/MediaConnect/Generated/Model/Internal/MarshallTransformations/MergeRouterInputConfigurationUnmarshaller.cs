@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mergeRecoveryWindowMilliseconds", targetDepth))
+                if (context.TestExpression("mergeRecoveryWindowMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MergeRecoveryWindowMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaceArn", targetDepth))
+                if (context.TestExpression("networkInterfaceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocolConfigurations", targetDepth))
+                if (context.TestExpression("protocolConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MergeRouterInputProtocolConfiguration, MergeRouterInputProtocolConfigurationUnmarshaller>(MergeRouterInputProtocolConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ProtocolConfigurations = unmarshaller.Unmarshall(context, ref reader);

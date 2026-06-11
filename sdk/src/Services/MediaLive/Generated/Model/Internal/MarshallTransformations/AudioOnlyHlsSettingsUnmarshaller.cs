@@ -56,25 +56,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioGroupId", targetDepth))
+                if (context.TestExpression("audioGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioOnlyImage", targetDepth))
+                if (context.TestExpression("audioOnlyImage", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLocationUnmarshaller.Instance;
                     unmarshalledObject.AudioOnlyImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioTrackType", targetDepth))
+                if (context.TestExpression("audioTrackType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentType", targetDepth))
+                if (context.TestExpression("segmentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentType = unmarshaller.Unmarshall(context, ref reader);

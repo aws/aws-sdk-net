@@ -56,25 +56,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Deleted", targetDepth))
+                if (context.TestExpression("Deleted", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
                     unmarshalledObject.Deleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Skipped", targetDepth))
+                if (context.TestExpression("Skipped", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
                     unmarshalledObject.Skipped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transferred", targetDepth))
+                if (context.TestExpression("Transferred", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
                     unmarshalledObject.Transferred = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Verified", targetDepth))
+                if (context.TestExpression("Verified", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportOverrideUnmarshaller.Instance;
                     unmarshalledObject.Verified = unmarshaller.Unmarshall(context, ref reader);

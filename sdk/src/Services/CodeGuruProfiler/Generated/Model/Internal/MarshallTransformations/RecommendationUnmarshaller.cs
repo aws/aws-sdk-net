@@ -56,37 +56,37 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allMatchesCount", targetDepth))
+                if (context.TestExpression("allMatchesCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AllMatchesCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allMatchesSum", targetDepth))
+                if (context.TestExpression("allMatchesSum", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AllMatchesSum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTime", targetDepth))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pattern", targetDepth))
+                if (context.TestExpression("pattern", targetDepth, ref reader))
                 {
                     var unmarshaller = PatternUnmarshaller.Instance;
                     unmarshalledObject.Pattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topMatches", targetDepth))
+                if (context.TestExpression("topMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Match, MatchUnmarshaller>(MatchUnmarshaller.Instance);
                     unmarshalledObject.TopMatches = unmarshaller.Unmarshall(context, ref reader);

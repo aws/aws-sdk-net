@@ -56,31 +56,31 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssetId", targetDepth))
+                if (context.TestExpression("AssetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssetLocation", targetDepth))
+                if (context.TestExpression("AssetLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetLocationUnmarshaller.Instance;
                     unmarshalledObject.AssetLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssetType", targetDepth))
+                if (context.TestExpression("AssetType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssetType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComputeAttributes", targetDepth))
+                if (context.TestExpression("ComputeAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeAttributesUnmarshaller.Instance;
                     unmarshalledObject.ComputeAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RackId", targetDepth))
+                if (context.TestExpression("RackId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RackId = unmarshaller.Unmarshall(context, ref reader);

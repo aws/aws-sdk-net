@@ -52,13 +52,13 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountState", targetDepth))
+                if (context.TestExpression("AccountState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GovCloudAccountId", targetDepth))
+                if (context.TestExpression("GovCloudAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GovCloudAccountId = unmarshaller.Unmarshall(context, ref reader);

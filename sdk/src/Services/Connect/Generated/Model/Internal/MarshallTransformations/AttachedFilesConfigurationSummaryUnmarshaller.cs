@@ -56,25 +56,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachmentScope", targetDepth))
+                if (context.TestExpression("AttachmentScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachmentScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExtensionConfiguration", targetDepth))
+                if (context.TestExpression("ExtensionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtensionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExtensionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceId", targetDepth))
+                if (context.TestExpression("InstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumSizeLimitInBytes", targetDepth))
+                if (context.TestExpression("MaximumSizeLimitInBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaximumSizeLimitInBytes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,67 +56,67 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("archiveOutputSettings", targetDepth))
+                if (context.TestExpression("archiveOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.ArchiveOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cmafIngestOutputSettings", targetDepth))
+                if (context.TestExpression("cmafIngestOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CmafIngestOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.CmafIngestOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frameCaptureOutputSettings", targetDepth))
+                if (context.TestExpression("frameCaptureOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FrameCaptureOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.FrameCaptureOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsOutputSettings", targetDepth))
+                if (context.TestExpression("hlsOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaConnectRouterOutputSettings", targetDepth))
+                if (context.TestExpression("mediaConnectRouterOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaConnectRouterOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.MediaConnectRouterOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaPackageOutputSettings", targetDepth))
+                if (context.TestExpression("mediaPackageOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaPackageOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.MediaPackageOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("msSmoothOutputSettings", targetDepth))
+                if (context.TestExpression("msSmoothOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MsSmoothOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.MsSmoothOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("multiplexOutputSettings", targetDepth))
+                if (context.TestExpression("multiplexOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiplexOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.MultiplexOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rtmpOutputSettings", targetDepth))
+                if (context.TestExpression("rtmpOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RtmpOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.RtmpOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("srtOutputSettings", targetDepth))
+                if (context.TestExpression("srtOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SrtOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.SrtOutputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("udpOutputSettings", targetDepth))
+                if (context.TestExpression("udpOutputSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = UdpOutputSettingsUnmarshaller.Instance;
                     unmarshalledObject.UdpOutputSettings = unmarshaller.Unmarshall(context, ref reader);

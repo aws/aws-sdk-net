@@ -56,13 +56,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associateInProgressToken", targetDepth))
+                if (context.TestExpression("associateInProgressToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociateInProgressToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linkedAccountsWithIncompleteSetup", targetDepth))
+                if (context.TestExpression("linkedAccountsWithIncompleteSetup", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, LinkedWhatsAppBusinessAccountIdMetaData, StringUnmarshaller, LinkedWhatsAppBusinessAccountIdMetaDataUnmarshaller>(StringUnmarshaller.Instance, LinkedWhatsAppBusinessAccountIdMetaDataUnmarshaller.Instance);
                     unmarshalledObject.LinkedAccountsWithIncompleteSetup = unmarshaller.Unmarshall(context, ref reader);

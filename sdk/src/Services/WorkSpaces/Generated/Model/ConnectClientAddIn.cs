@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes an Amazon Connect client add-in.
+    /// Describes an Connect Customer client add-in.
     /// </summary>
     public partial class ConnectClientAddIn
     {

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityProviderCACertificatesBundleS3Uri", targetDepth))
+                if (context.TestExpression("IdentityProviderCACertificatesBundleS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityProviderCACertificatesBundleS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderResourceUri", targetDepth))
+                if (context.TestExpression("IdentityProviderResourceUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityProviderResourceUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderVpcConnectionProperties", targetDepth))
+                if (context.TestExpression("IdentityProviderVpcConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConnectionPropertiesUnmarshaller.Instance;
                     unmarshalledObject.IdentityProviderVpcConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OAuthScope", targetDepth))
+                if (context.TestExpression("OAuthScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OAuthScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TokenProviderUrl", targetDepth))
+                if (context.TestExpression("TokenProviderUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TokenProviderUrl = unmarshaller.Unmarshall(context, ref reader);

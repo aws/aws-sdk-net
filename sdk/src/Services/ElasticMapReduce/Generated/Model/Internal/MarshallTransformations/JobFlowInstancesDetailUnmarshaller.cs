@@ -56,85 +56,85 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Ec2KeyName", targetDepth))
+                if (context.TestExpression("Ec2KeyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2KeyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ec2SubnetId", targetDepth))
+                if (context.TestExpression("Ec2SubnetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Ec2SubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HadoopVersion", targetDepth))
+                if (context.TestExpression("HadoopVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HadoopVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceCount", targetDepth))
+                if (context.TestExpression("InstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceGroups", targetDepth))
+                if (context.TestExpression("InstanceGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceGroupDetail, InstanceGroupDetailUnmarshaller>(InstanceGroupDetailUnmarshaller.Instance);
                     unmarshalledObject.InstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeepJobFlowAliveWhenNoSteps", targetDepth))
+                if (context.TestExpression("KeepJobFlowAliveWhenNoSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KeepJobFlowAliveWhenNoSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MasterInstanceId", targetDepth))
+                if (context.TestExpression("MasterInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MasterInstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MasterInstanceType", targetDepth))
+                if (context.TestExpression("MasterInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MasterInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MasterPublicDnsName", targetDepth))
+                if (context.TestExpression("MasterPublicDnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MasterPublicDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NormalizedInstanceHours", targetDepth))
+                if (context.TestExpression("NormalizedInstanceHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NormalizedInstanceHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Placement", targetDepth))
+                if (context.TestExpression("Placement", targetDepth, ref reader))
                 {
                     var unmarshaller = PlacementTypeUnmarshaller.Instance;
                     unmarshalledObject.Placement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SlaveInstanceType", targetDepth))
+                if (context.TestExpression("SlaveInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SlaveInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminationProtected", targetDepth))
+                if (context.TestExpression("TerminationProtected", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TerminationProtected = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnhealthyNodeReplacement", targetDepth))
+                if (context.TestExpression("UnhealthyNodeReplacement", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UnhealthyNodeReplacement = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LifecyclePolicies", targetDepth))
+                if (context.TestExpression("LifecyclePolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecyclePolicy, LifecyclePolicyUnmarshaller>(LifecyclePolicyUnmarshaller.Instance);
                     response.LifecyclePolicies = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServiceId", targetDepth))
+                if (context.TestExpression("ServiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceIdUnmarshaller.Instance;
                     unmarshalledObject.ServiceId = unmarshaller.Unmarshall(context, ref reader);

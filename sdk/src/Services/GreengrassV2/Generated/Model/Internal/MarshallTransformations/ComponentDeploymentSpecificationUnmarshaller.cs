@@ -56,19 +56,19 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("componentVersion", targetDepth))
+                if (context.TestExpression("componentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComponentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configurationUpdate", targetDepth))
+                if (context.TestExpression("configurationUpdate", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentConfigurationUpdateUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runWith", targetDepth))
+                if (context.TestExpression("runWith", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentRunWithUnmarshaller.Instance;
                     unmarshalledObject.RunWith = unmarshaller.Unmarshall(context, ref reader);

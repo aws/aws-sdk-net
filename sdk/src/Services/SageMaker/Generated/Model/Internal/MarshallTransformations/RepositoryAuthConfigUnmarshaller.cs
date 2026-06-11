@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RepositoryCredentialsProviderArn", targetDepth))
+                if (context.TestExpression("RepositoryCredentialsProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryCredentialsProviderArn = unmarshaller.Unmarshall(context, ref reader);

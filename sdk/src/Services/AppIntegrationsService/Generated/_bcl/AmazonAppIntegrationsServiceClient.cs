@@ -62,8 +62,8 @@ namespace Amazon.AppIntegrationsService
     /// </para>
     ///  
     /// <para>
-    /// For information about how you can use external applications with Amazon Connect, see
-    /// the following topics in the <i>Amazon Connect Administrator Guide</i>:
+    /// For information about how you can use external applications with Connect Customer,
+    /// see the following topics in the <i>Connect Customer Administrator Guide</i>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -56,7 +56,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxSeries", targetDepth))
+                if (context.TestExpression("maxSeries", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxSeries = unmarshaller.Unmarshall(context, ref reader);

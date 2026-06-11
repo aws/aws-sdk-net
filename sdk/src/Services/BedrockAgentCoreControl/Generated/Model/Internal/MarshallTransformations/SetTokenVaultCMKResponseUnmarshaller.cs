@@ -52,19 +52,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kmsConfiguration", targetDepth))
+                if (context.TestExpression("kmsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KmsConfigurationUnmarshaller.Instance;
                     response.KmsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
+                if (context.TestExpression("lastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenVaultId", targetDepth))
+                if (context.TestExpression("tokenVaultId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TokenVaultId = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServiceIntegration", targetDepth))
+                if (context.TestExpression("ServiceIntegration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceIntegrationConfigUnmarshaller.Instance;
                     response.ServiceIntegration = unmarshaller.Unmarshall(context, ref reader);

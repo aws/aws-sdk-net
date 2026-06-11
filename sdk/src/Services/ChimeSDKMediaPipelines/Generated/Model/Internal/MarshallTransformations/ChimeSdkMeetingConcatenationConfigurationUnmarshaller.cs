@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactsConfiguration", targetDepth))
+                if (context.TestExpression("ArtifactsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactsConcatenationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ArtifactsConfiguration = unmarshaller.Unmarshall(context, ref reader);

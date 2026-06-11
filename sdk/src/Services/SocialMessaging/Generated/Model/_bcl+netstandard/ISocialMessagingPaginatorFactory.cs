@@ -38,6 +38,26 @@ namespace Amazon.SocialMessaging.Model
         IListLinkedWhatsAppBusinessAccountsPaginator ListLinkedWhatsAppBusinessAccounts(ListLinkedWhatsAppBusinessAccountsRequest request);
 
         /// <summary>
+        /// Paginator for ListWhatsAppFlowAssets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWhatsAppFlowAssetsPaginator ListWhatsAppFlowAssets(ListWhatsAppFlowAssetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWhatsAppFlows operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWhatsAppFlowsPaginator ListWhatsAppFlows(ListWhatsAppFlowsRequest request);
+
+        /// <summary>
         /// Paginator for ListWhatsAppMessageTemplates operation
         ///</summary>
         [AWSPaginator(

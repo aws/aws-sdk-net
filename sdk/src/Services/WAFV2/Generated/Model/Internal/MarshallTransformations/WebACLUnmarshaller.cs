@@ -56,127 +56,127 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationConfig", targetDepth))
+                if (context.TestExpression("ApplicationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ApplicationConfigUnmarshaller.Instance;
                     unmarshalledObject.ApplicationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("ARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssociationConfig", targetDepth))
+                if (context.TestExpression("AssociationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AssociationConfigUnmarshaller.Instance;
                     unmarshalledObject.AssociationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Capacity", targetDepth))
+                if (context.TestExpression("Capacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CaptchaConfig", targetDepth))
+                if (context.TestExpression("CaptchaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptchaConfigUnmarshaller.Instance;
                     unmarshalledObject.CaptchaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChallengeConfig", targetDepth))
+                if (context.TestExpression("ChallengeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ChallengeConfigUnmarshaller.Instance;
                     unmarshalledObject.ChallengeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomResponseBodies", targetDepth))
+                if (context.TestExpression("CustomResponseBodies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CustomResponseBody, StringUnmarshaller, CustomResponseBodyUnmarshaller>(StringUnmarshaller.Instance, CustomResponseBodyUnmarshaller.Instance);
                     unmarshalledObject.CustomResponseBodies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataProtectionConfig", targetDepth))
+                if (context.TestExpression("DataProtectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProtectionConfigUnmarshaller.Instance;
                     unmarshalledObject.DataProtectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultAction", targetDepth))
+                if (context.TestExpression("DefaultAction", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultActionUnmarshaller.Instance;
                     unmarshalledObject.DefaultAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelNamespace", targetDepth))
+                if (context.TestExpression("LabelNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedByFirewallManager", targetDepth))
+                if (context.TestExpression("ManagedByFirewallManager", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManagedByFirewallManager = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnSourceDDoSProtectionConfig", targetDepth))
+                if (context.TestExpression("OnSourceDDoSProtectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OnSourceDDoSProtectionConfigUnmarshaller.Instance;
                     unmarshalledObject.OnSourceDDoSProtectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostProcessFirewallManagerRuleGroups", targetDepth))
+                if (context.TestExpression("PostProcessFirewallManagerRuleGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
                     unmarshalledObject.PostProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreProcessFirewallManagerRuleGroups", targetDepth))
+                if (context.TestExpression("PreProcessFirewallManagerRuleGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FirewallManagerRuleGroup, FirewallManagerRuleGroupUnmarshaller>(FirewallManagerRuleGroupUnmarshaller.Instance);
                     unmarshalledObject.PreProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetrofittedByFirewallManager", targetDepth))
+                if (context.TestExpression("RetrofittedByFirewallManager", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RetrofittedByFirewallManager = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rules", targetDepth))
+                if (context.TestExpression("Rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);
                     unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TokenDomains", targetDepth))
+                if (context.TestExpression("TokenDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TokenDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisibilityConfig", targetDepth))
+                if (context.TestExpression("VisibilityConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VisibilityConfigUnmarshaller.Instance;
                     unmarshalledObject.VisibilityConfig = unmarshaller.Unmarshall(context, ref reader);

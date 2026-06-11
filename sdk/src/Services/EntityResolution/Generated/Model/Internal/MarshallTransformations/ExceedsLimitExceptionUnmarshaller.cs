@@ -72,13 +72,13 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("quotaName", targetDepth))
+                    if (context.TestExpression("quotaName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.QuotaName = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("quotaValue", targetDepth))
+                    if (context.TestExpression("quotaValue", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.QuotaValue = unmarshaller.Unmarshall(context, ref reader);

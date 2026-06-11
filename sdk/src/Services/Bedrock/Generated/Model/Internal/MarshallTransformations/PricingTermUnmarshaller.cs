@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rateCard", targetDepth))
+                if (context.TestExpression("rateCard", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionalPriceRate, DimensionalPriceRateUnmarshaller>(DimensionalPriceRateUnmarshaller.Instance);
                     unmarshalledObject.RateCard = unmarshaller.Unmarshall(context, ref reader);

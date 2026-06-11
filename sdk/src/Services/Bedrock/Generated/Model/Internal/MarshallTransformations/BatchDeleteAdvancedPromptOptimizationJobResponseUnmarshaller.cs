@@ -52,13 +52,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedPromptOptimizationJobs", targetDepth))
+                if (context.TestExpression("advancedPromptOptimizationJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDeleteAdvancedPromptOptimizationJobItem, BatchDeleteAdvancedPromptOptimizationJobItemUnmarshaller>(BatchDeleteAdvancedPromptOptimizationJobItemUnmarshaller.Instance);
                     response.AdvancedPromptOptimizationJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDeleteAdvancedPromptOptimizationJobError, BatchDeleteAdvancedPromptOptimizationJobErrorUnmarshaller>(BatchDeleteAdvancedPromptOptimizationJobErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

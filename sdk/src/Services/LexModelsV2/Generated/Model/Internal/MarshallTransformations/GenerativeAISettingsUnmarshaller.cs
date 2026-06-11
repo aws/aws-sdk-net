@@ -56,13 +56,13 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("buildtimeSettings", targetDepth))
+                if (context.TestExpression("buildtimeSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = BuildtimeSettingsUnmarshaller.Instance;
                     unmarshalledObject.BuildtimeSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runtimeSettings", targetDepth))
+                if (context.TestExpression("runtimeSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RuntimeSettingsUnmarshaller.Instance;
                     unmarshalledObject.RuntimeSettings = unmarshaller.Unmarshall(context, ref reader);

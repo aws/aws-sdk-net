@@ -72,7 +72,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("EntityIds", targetDepth))
+                    if (context.TestExpression("EntityIds", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.EntityIds = unmarshaller.Unmarshall(context, ref reader);

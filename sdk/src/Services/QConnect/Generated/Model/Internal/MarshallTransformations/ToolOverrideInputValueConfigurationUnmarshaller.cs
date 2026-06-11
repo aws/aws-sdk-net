@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("constant", targetDepth))
+                if (context.TestExpression("constant", targetDepth, ref reader))
                 {
                     var unmarshaller = ToolOverrideConstantInputValueUnmarshaller.Instance;
                     unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);

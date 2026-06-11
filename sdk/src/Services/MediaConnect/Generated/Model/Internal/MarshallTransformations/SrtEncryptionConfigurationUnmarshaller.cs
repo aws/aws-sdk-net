@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionKey", targetDepth))
+                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);

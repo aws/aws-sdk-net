@@ -52,13 +52,13 @@ namespace Amazon.ARCZonalShift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resourceIdentifier", targetDepth))
+                if (context.TestExpression("resourceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("zonalAutoshiftStatus", targetDepth))
+                if (context.TestExpression("zonalAutoshiftStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ZonalAutoshiftStatus = unmarshaller.Unmarshall(context, ref reader);

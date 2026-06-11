@@ -269,6 +269,82 @@ namespace Amazon.BedrockAgentCoreControl
         #endregion
 
 
+        #region  AddDatasetExamples
+
+        internal virtual AddDatasetExamplesResponse AddDatasetExamples(AddDatasetExamplesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddDatasetExamplesResponseUnmarshaller.Instance;
+
+            return Invoke<AddDatasetExamplesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds examples to the dataset's DRAFT.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
+        /// before any writes occur. If any example fails validation, the entire batch is rejected
+        /// with ValidationException — no examples are written (all-or-nothing semantics).
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
+        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
+        /// dataset status is not in {DRAFT, ACTIVE}.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
+        /// per call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddDatasetExamples service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AddDatasetExamples service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/AddDatasetExamples">REST API Reference for AddDatasetExamples Operation</seealso>
+        public virtual Task<AddDatasetExamplesResponse> AddDatasetExamplesAsync(AddDatasetExamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AddDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AddDatasetExamplesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddDatasetExamplesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateAgentRuntime
 
         internal virtual CreateAgentRuntimeResponse CreateAgentRuntime(CreateAgentRuntimeRequest request)
@@ -645,6 +721,135 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = CreateConfigurationBundleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateDataset
+
+        internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Dataset resource asynchronously.
+        /// 
+        ///  
+        /// <para>
+        /// Returns immediately with status CREATING. Poll GetDataset until status transitions
+        /// to ACTIVE or CREATE_FAILED (with failureReason).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataset service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
+        public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateDatasetVersion
+
+        internal virtual CreateDatasetVersionResponse CreateDatasetVersion(CreateDatasetVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Publishes the current DRAFT as a new numbered version.
+        /// 
+        ///  
+        /// <para>
+        /// Snapshots the DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved
+        /// and remains editable after publishing. Returns immediately with status UPDATING. Poll
+        /// GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or UPDATE_FAILED.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if status
+        /// is in {CREATING, UPDATING, DELETING}, or DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED,
+        /// DELETE_FAILED}.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published versions only
+        /// (not DRAFT).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDatasetVersion service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateDatasetVersion">REST API Reference for CreateDatasetVersion Operation</seealso>
+        public virtual Task<CreateDatasetVersionResponse> CreateDatasetVersionAsync(CreateDatasetVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetVersionResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1928,6 +2133,163 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  DeleteDataset
+
+        internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a dataset version or an entire dataset (all versions + name claim). Asynchronous
+        /// 202.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>State transitions:</strong>
+        /// </para>
+        ///  <ul> <li>If <c>datasetVersion</c> is absent (full delete): status transitions to
+        /// DELETING immediately.</li> <li>If <c>datasetVersion</c> is provided (version-specific
+        /// delete): status transitions to UPDATING.</li> </ul> 
+        /// <para>
+        /// <strong>State guard (full delete):</strong> Returns ConflictException (DATASET_NOT_READY)
+        /// if the dataset status is in {CREATING, UPDATING}. Deletion is allowed from ACTIVE,
+        /// CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED states.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard (version-specific delete):</strong> Returns ConflictException
+        /// (DATASET_NOT_READY) if the dataset status is not in {ACTIVE, CREATE_FAILED, UPDATE_FAILED}.
+        /// </para>
+        ///  
+        /// <para>
+        /// Fails with ConflictException (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation
+        /// job (full delete only).
+        /// </para>
+        ///  
+        /// <para>
+        /// If the delete workflow fails after retries, status is set to DELETE_FAILED (full delete)
+        /// or UPDATE_FAILED (version-specific delete). Calling DeleteDataset on a DELETE_FAILED
+        /// dataset re-triggers the delete workflow (idempotent retry path).
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Version parameter:</strong>
+        /// </para>
+        ///  <ul> <li>If <c>datasetVersion</c> is absent: deletes ALL versions and the Dataset
+        /// record itself.</li> <li>If <c>datasetVersion</c> is provided: deletes only that specific
+        /// DatasetVersion. Returns ResourceNotFoundException if the specified version does not
+        /// exist.</li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataset service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
+        public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteDatasetExamples
+
+        internal virtual DeleteDatasetExamplesResponse DeleteDatasetExamples(DeleteDatasetExamplesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetExamplesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetExamplesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes specific examples by ID from DRAFT.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>Validation:</strong> All example IDs are validated before any deletes occur.
+        /// If any ID does not exist in DRAFT, the entire batch is rejected with ResourceNotFoundException
+        /// — no examples are deleted (all-or-nothing semantics).
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
+        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
+        /// dataset status is not in {DRAFT, ACTIVE}.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetExamples service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDatasetExamples service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteDatasetExamples">REST API Reference for DeleteDatasetExamples Operation</seealso>
+        public virtual Task<DeleteDatasetExamplesResponse> DeleteDatasetExamplesAsync(DeleteDatasetExamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetExamplesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetExamplesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteEvaluator
 
         internal virtual DeleteEvaluatorResponse DeleteEvaluator(DeleteEvaluatorRequest request)
@@ -3208,6 +3570,87 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = GetConfigurationBundleVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConfigurationBundleVersionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetDataset
+
+        internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves dataset metadata only.
+        /// 
+        ///  
+        /// <para>
+        /// Use <c>?datasetVersion=DRAFT</c> or <c>?datasetVersion=N</c> to retrieve a specific
+        /// version's metadata. If absent, defaults to DRAFT (the mutable working copy). Returns
+        /// ResourceNotFoundException if the specified version is not found.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Initial state after CreateDataset:</strong> When CreateDataset completes successfully
+        /// (status transitions to ACTIVE), only a DRAFT working copy exists. No published versions
+        /// exist until CreateDatasetVersion is called. At this point draftStatus is MODIFIED
+        /// because the DRAFT has content that has never been published.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Default version behavior:</strong> When <c>datasetVersion</c> is omitted,
+        /// the operation returns the DRAFT working copy. To retrieve a specific published version,
+        /// pass the version number as a string (e.g. <c>?datasetVersion=1</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Allowed for all statuses including DELETING. Returns
+        /// the dataset record with its current status so callers can observe the deletion in
+        /// progress.
+        /// </para>
+        ///  
+        /// <para>
+        /// For paginated example IDs use ListDatasetExamples.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataset service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetDataset">REST API Reference for GetDataset Operation</seealso>
+        public virtual Task<GetDatasetResponse> GetDatasetAsync(GetDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatasetResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4736,6 +5179,169 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListConfigurationBundleVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationBundleVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDatasetExamples
+
+        internal virtual ListDatasetExamplesResponse ListDatasetExamples(ListDatasetExamplesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetExamplesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetExamplesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns paginated examples from the dataset.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>Version-pinned pagination:</strong> The server embeds the resolved version
+        /// in the <c>nextToken</c>. Once pagination begins, all subsequent pages are pinned to
+        /// that version regardless of concurrent mutations or whether <c>datasetVersion</c> is
+        /// passed on subsequent requests. The <c>datasetVersion</c> query parameter is only used
+        /// for the first request (when <c>nextToken</c> is absent); if omitted, defaults to DRAFT.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetExamples service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasetExamples service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetExamples">REST API Reference for ListDatasetExamples Operation</seealso>
+        public virtual Task<ListDatasetExamplesResponse> ListDatasetExamplesAsync(ListDatasetExamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetExamplesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetExamplesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDatasets
+
+        internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all datasets in the caller's account, paginated. No presigned URLs in list results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasets service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
+        public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDatasetVersions
+
+        internal virtual ListDatasetVersionsResponse ListDatasetVersions(ListDatasetVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all published versions of a dataset, sorted by version number descending (newest
+        /// first). Does not include the DRAFT working copy.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Allowed for all statuses including DELETING.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDatasetVersions service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListDatasetVersions">REST API Reference for ListDatasetVersions Operation</seealso>
+        public virtual Task<ListDatasetVersionsResponse> ListDatasetVersionsAsync(ListDatasetVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetVersionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -6449,6 +7055,148 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateConfigurationBundleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateDataset
+
+        internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a dataset's metadata. Synchronous operation. Only provided fields are updated;
+        /// omitted fields remain unchanged.
+        /// 
+        ///  
+        /// <para>
+        /// To modify dataset content, use AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.
+        /// </para>
+        ///  
+        /// <para>
+        /// Cannot update: name, schemaType, kmsKeyArn (immutable after creation).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataset service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
+        public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateDatasetExamples
+
+        internal virtual UpdateDatasetExamplesResponse UpdateDatasetExamples(UpdateDatasetExamplesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetExamplesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetExamplesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates multiple existing examples in-place on DRAFT.
+        /// 
+        ///  
+        /// <para>
+        /// <strong>Validation:</strong> All examples are validated against the dataset's schemaType
+        /// before any writes occur. If any example fails validation, the entire batch is rejected
+        /// with ValidationException — no examples are updated (all-or-nothing semantics).
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Asynchronous:</strong> Operates in-place on DRAFT. No version bump occurs.
+        /// Use CreateDatasetVersion to publish DRAFT as a new numbered version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Fails with ResourceNotFoundException if any exampleId does not exist in DRAFT. To
+        /// add new examples, use AddDatasetExamples instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if the
+        /// dataset status is not in {DRAFT, ACTIVE}.
+        /// </para>
+        ///  
+        /// <para>
+        /// <strong>Request size limit:</strong> Max 5 MB total request body. Max 1000 examples
+        /// per call.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetExamples service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDatasetExamples service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateDatasetExamples">REST API Reference for UpdateDatasetExamples Operation</seealso>
+        public virtual Task<UpdateDatasetExamplesResponse> UpdateDatasetExamplesAsync(UpdateDatasetExamplesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetExamplesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetExamplesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetExamplesResponse>(request, options, cancellationToken);
         }
         #endregion
         

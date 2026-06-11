@@ -56,19 +56,19 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pagerDutyIncidentConfiguration", targetDepth))
+                if (context.TestExpression("pagerDutyIncidentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PagerDutyIncidentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PagerDutyIncidentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("secretId", targetDepth))
+                if (context.TestExpression("secretId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretId = unmarshaller.Unmarshall(context, ref reader);

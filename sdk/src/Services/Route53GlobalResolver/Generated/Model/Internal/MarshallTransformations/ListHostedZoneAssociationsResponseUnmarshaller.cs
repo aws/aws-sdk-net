@@ -52,13 +52,13 @@ namespace Amazon.Route53GlobalResolver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hostedZoneAssociations", targetDepth))
+                if (context.TestExpression("hostedZoneAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HostedZoneAssociationSummary, HostedZoneAssociationSummaryUnmarshaller>(HostedZoneAssociationSummaryUnmarshaller.Instance);
                     response.HostedZoneAssociations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

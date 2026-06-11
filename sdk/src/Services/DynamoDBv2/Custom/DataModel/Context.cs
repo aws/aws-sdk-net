@@ -375,9 +375,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = table.UpdateHelper(
                 storage.Document,
-                table.MakeKey(storage.Document),
-                updateConfig.opConfig,
-                updateConfig.counterConditionExpression,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
+                updateConfig.counterUpdateExpression,
                 updateConfig.updateIfNotExistsAttributeNames
             );
 
@@ -402,9 +402,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateDocument = await table.UpdateHelperAsync(
                 storage.Document,
-                table.MakeKey(storage.Document),
-                updateConfig.opConfig,
-                updateConfig.counterConditionExpression,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
+                updateConfig.counterUpdateExpression,
                 cancellationToken,
                 updateConfig.updateIfNotExistsAttributeNames
             ).ConfigureAwait(false);
@@ -412,10 +412,10 @@ namespace Amazon.DynamoDBv2.DataModel
             ApplyPostUpdate(storage, value, flatConfig, updateDocument, updateConfig);
         }
 
-        private (UpdateItemOperationConfig opConfig, Expression versionExpression, Expression counterConditionExpression, 
+        private (UpdateItemOperationConfig opConfig, Expression versionExpression, UpdateExpression counterUpdateExpression, 
             HashSet<string> updateIfNotExistsAttributeNames, bool updateIfNotExists) PrepareUpdateOperation(ItemStorage storage, DynamoDBFlatConfig flatConfig, Table table)
         {
-            var counterConditionExpression = BuildCounterConditionExpression(storage);
+            var counterUpdateExpression = BuildCounterUpdateExpression(storage);
 
             Expression versionExpression = null;
 
@@ -426,7 +426,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // set return values to AllNewAttributes if there is a condition expression or updateIfNotExists is true
             // to get the updated document back and reflect changes to the object
-            var returnValues = counterConditionExpression == null && !updateIfNotExists
+            var returnValues = counterUpdateExpression == null && !updateIfNotExists
                 ? ReturnValues.None
                 : ReturnValues.AllNewAttributes;
 
@@ -445,7 +445,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return (updateItemOperationConfig,
                 versionExpression,
-                counterConditionExpression,
+                counterUpdateExpression,
                 updateIfNotExistsAttributeNames,
                 updateIfNotExists);
         }
@@ -530,15 +530,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private T LoadHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
         {
-            GetItemOperationConfig getConfig = new GetItemOperationConfig
-            {
-                ConsistentRead = flatConfig.ConsistentRead.Value,
-                AttributesToGet = storageConfig.AttributesToGet
-            };
+            var operationRequest = CreateInternalGetItemDocumentOperationRequest(key, flatConfig, storageConfig);
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = table.GetItemHelper(key, getConfig);
+            storage.Document = table.GetItemHelper(operationRequest);
 
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
@@ -546,18 +542,31 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private async Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
-            GetItemOperationConfig getConfig = new GetItemOperationConfig
-            {
-                ConsistentRead = flatConfig.ConsistentRead.Value,
-                AttributesToGet = storageConfig.AttributesToGet
-            };
+            var operationRequest = CreateInternalGetItemDocumentOperationRequest(key, flatConfig, storageConfig);
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = await table.GetItemHelperAsync(key, getConfig, cancellationToken).ConfigureAwait(false);
+            storage.Document = await table.GetItemHelperAsync(operationRequest, cancellationToken).ConfigureAwait(false);
 
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;
+        }
+
+        private InternalGetItemDocumentOperationRequest CreateInternalGetItemDocumentOperationRequest(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
+        {
+            var operationRequest = new InternalGetItemDocumentOperationRequest()
+            {
+                ConsistentRead = flatConfig.ConsistentRead.Value,
+                Key = key
+            };
+
+            // check for projection expression
+            if (storageConfig.ProjectionExpression.IsSet)
+            {
+                operationRequest.ProjectionExpression = storageConfig.ProjectionExpression;
+            }
+
+            return operationRequest;
         }
 
         /// <inheritdoc/>
@@ -650,49 +659,51 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private void DeleteHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
         {
-            if (value == null) throw new ArgumentNullException("value");
-
-            flatConfig.IgnoreNullValues = true;
-            ItemStorage storage = ObjectToItemStorage<T>(value, true, flatConfig);
+            ItemStorage storage = GetItemStorage(value, flatConfig);
             if (storage == null) return;
 
             Table table = GetTargetTable(storage.Config, flatConfig);
-            if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
-            {
-                table.DeleteHelper(table.MakeKey(storage.Document), null);
-            }
-            else
-            {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                table.DeleteHelper(
-                    table.MakeKey(storage.Document),
-                    new DeleteItemOperationConfig { Expected = expectedDocument });
-            }
+            var operationRequest = CreateInternalDeleteItemOperationRequest(flatConfig, storage, table);
+            table.DeleteHelper(operationRequest);
         }
 
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
 
         private Task DeleteHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig, CancellationToken cancellationToken)
         {
+            ItemStorage storage = GetItemStorage(value, flatConfig);
+            if (storage == null) return CompletedTask;
+
+            Table table = GetTargetTable(storage.Config, flatConfig);
+            var operationRequest = CreateInternalDeleteItemOperationRequest(flatConfig, storage, table);
+            return table.DeleteHelperAsync(operationRequest, cancellationToken);
+        }
+
+        private ItemStorage GetItemStorage<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(T value, DynamoDBFlatConfig flatConfig)
+        {
             if (value == null) throw new ArgumentNullException("value");
 
             flatConfig.IgnoreNullValues = true;
             ItemStorage storage = ObjectToItemStorage(value, true, flatConfig);
-            if (storage == null) return CompletedTask;
+            return storage;
+        }
 
-            Table table = GetTargetTable(storage.Config, flatConfig);
-            if (flatConfig.SkipVersionCheck.Value || !storage.Config.HasVersion)
+        private static InternalDeleteItemDocumentOperationRequest CreateInternalDeleteItemOperationRequest(DynamoDBFlatConfig flatConfig, ItemStorage storage, Table table)
+        {
+            var operationRequest = new InternalDeleteItemDocumentOperationRequest()
             {
-                return table.DeleteHelperAsync(table.MakeKey(storage.Document), null, cancellationToken);
-            }
-            else
+                Key = table.MakeKey(storage.Document)
+            };
+
+            if (!flatConfig.SkipVersionCheck.Value && storage.Config.HasVersion)
             {
-                Document expectedDocument = CreateExpectedDocumentForVersion(storage);
-                return table.DeleteHelperAsync(
-                    table.MakeKey(storage.Document),
-                    new DeleteItemOperationConfig { Expected = expectedDocument },
-                    cancellationToken);
+                var conversionConfig = new DynamoDBEntry.AttributeConversionConfig(table.Conversion, table.IsEmptyStringValueEnabled);
+                var versionExpression = CreateConditionExpressionForVersion(storage, conversionConfig);
+
+                operationRequest.ConditionalExpression = versionExpression;
             }
+
+            return operationRequest;
         }
 
         #endregion

@@ -56,7 +56,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("icebergUnreferencedFileRemoval", targetDepth))
+                if (context.TestExpression("icebergUnreferencedFileRemoval", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergUnreferencedFileRemovalSettingsUnmarshaller.Instance;
                     unmarshalledObject.IcebergUnreferencedFileRemoval = unmarshaller.Unmarshall(context, ref reader);

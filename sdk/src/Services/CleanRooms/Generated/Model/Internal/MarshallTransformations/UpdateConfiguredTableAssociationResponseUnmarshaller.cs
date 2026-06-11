@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuredTableAssociation", targetDepth))
+                if (context.TestExpression("configuredTableAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfiguredTableAssociationUnmarshaller.Instance;
                     response.ConfiguredTableAssociation = unmarshaller.Unmarshall(context, ref reader);

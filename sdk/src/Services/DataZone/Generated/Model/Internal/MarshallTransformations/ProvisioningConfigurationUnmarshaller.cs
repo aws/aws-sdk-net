@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lakeFormationConfiguration", targetDepth))
+                if (context.TestExpression("lakeFormationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LakeFormationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LakeFormationConfiguration = unmarshaller.Unmarshall(context, ref reader);

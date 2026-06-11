@@ -56,13 +56,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsEc2NetworkInterfaceViolations", targetDepth))
+                if (context.TestExpression("AwsEc2NetworkInterfaceViolations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfaceViolation, AwsEc2NetworkInterfaceViolationUnmarshaller>(AwsEc2NetworkInterfaceViolationUnmarshaller.Instance);
                     unmarshalledObject.AwsEc2NetworkInterfaceViolations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ViolationTarget", targetDepth))
+                if (context.TestExpression("ViolationTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context, ref reader);

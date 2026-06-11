@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("counts", targetDepth))
+                if (context.TestExpression("counts", targetDepth, ref reader))
                 {
                     var unmarshaller = CountsSummaryUnmarshaller.Instance;
                     response.Counts = unmarshaller.Unmarshall(context, ref reader);

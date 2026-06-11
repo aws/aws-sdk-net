@@ -56,7 +56,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vnfd", targetDepth))
+                if (context.TestExpression("vnfd", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionArtifactMetaUnmarshaller.Instance;
                     unmarshalledObject.Vnfd = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BuildArtifactsObjectKey", targetDepth))
+                if (context.TestExpression("BuildArtifactsObjectKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuildArtifactsObjectKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceCodeArtifactsObjectKey", targetDepth))
+                if (context.TestExpression("SourceCodeArtifactsObjectKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceCodeArtifactsObjectKey = unmarshaller.Unmarshall(context, ref reader);

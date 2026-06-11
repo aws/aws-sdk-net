@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssignmentRequired", targetDepth))
+                if (context.TestExpression("AssignmentRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AssignmentRequired = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryStreamArn", targetDepth))
+                if (context.TestExpression("DeliveryStreamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeliveryStreamArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Content", targetDepth, ref reader))
                 {
                     var unmarshaller = BodySectionContentUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageBreakConfiguration", targetDepth))
+                if (context.TestExpression("PageBreakConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SectionPageBreakConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PageBreakConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepeatConfiguration", targetDepth))
+                if (context.TestExpression("RepeatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BodySectionRepeatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RepeatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SectionId", targetDepth))
+                if (context.TestExpression("SectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Style", targetDepth))
+                if (context.TestExpression("Style", targetDepth, ref reader))
                 {
                     var unmarshaller = SectionStyleUnmarshaller.Instance;
                     unmarshalledObject.Style = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsJsonSubstitution", targetDepth))
+                if (context.TestExpression("awsJsonSubstitution", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsJsonSubstitutionCommandPreprocessorConfigUnmarshaller.Instance;
                     unmarshalledObject.AwsJsonSubstitution = unmarshaller.Unmarshall(context, ref reader);

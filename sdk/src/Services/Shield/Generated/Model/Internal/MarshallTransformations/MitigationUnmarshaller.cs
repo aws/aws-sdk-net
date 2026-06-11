@@ -56,7 +56,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MitigationName", targetDepth))
+                if (context.TestExpression("MitigationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MitigationName = unmarshaller.Unmarshall(context, ref reader);

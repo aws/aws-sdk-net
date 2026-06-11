@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateIconVisibility", targetDepth))
+                if (context.TestExpression("DateIconVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DateIconVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateTimeFormat", targetDepth))
+                if (context.TestExpression("DateTimeFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DateTimeFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HelperTextVisibility", targetDepth))
+                if (context.TestExpression("HelperTextVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HelperTextVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InfoIconLabelOptions", targetDepth))
+                if (context.TestExpression("InfoIconLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = SheetControlInfoIconLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.InfoIconLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TitleOptions", targetDepth))
+                if (context.TestExpression("TitleOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.TitleOptions = unmarshaller.Unmarshall(context, ref reader);

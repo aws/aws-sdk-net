@@ -56,13 +56,13 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attendee", targetDepth))
+                if (context.TestExpression("Attendee", targetDepth, ref reader))
                 {
                     var unmarshaller = AttendeeUnmarshaller.Instance;
                     unmarshalledObject.Attendee = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Meeting", targetDepth))
+                if (context.TestExpression("Meeting", targetDepth, ref reader))
                 {
                     var unmarshaller = WebRTCMeetingUnmarshaller.Instance;
                     unmarshalledObject.Meeting = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("textResponsePart", targetDepth))
+                if (context.TestExpression("textResponsePart", targetDepth, ref reader))
                 {
                     var unmarshaller = TextResponsePartUnmarshaller.Instance;
                     unmarshalledObject.TextResponsePart = unmarshaller.Unmarshall(context, ref reader);

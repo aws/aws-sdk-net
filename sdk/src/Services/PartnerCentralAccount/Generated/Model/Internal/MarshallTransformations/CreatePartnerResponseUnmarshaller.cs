@@ -52,49 +52,49 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllianceLeadContact", targetDepth))
+                if (context.TestExpression("AllianceLeadContact", targetDepth, ref reader))
                 {
                     var unmarshaller = AllianceLeadContactUnmarshaller.Instance;
                     response.AllianceLeadContact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsTrainingCertificationEmailDomains", targetDepth))
+                if (context.TestExpression("AwsTrainingCertificationEmailDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PartnerDomain, PartnerDomainUnmarshaller>(PartnerDomainUnmarshaller.Instance);
                     response.AwsTrainingCertificationEmailDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Catalog", targetDepth))
+                if (context.TestExpression("Catalog", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Catalog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedAt", targetDepth))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LegalName", targetDepth))
+                if (context.TestExpression("LegalName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LegalName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Profile", targetDepth))
+                if (context.TestExpression("Profile", targetDepth, ref reader))
                 {
                     var unmarshaller = PartnerProfileUnmarshaller.Instance;
                     response.Profile = unmarshaller.Unmarshall(context, ref reader);

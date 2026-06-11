@@ -56,61 +56,61 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aiAgentConfiguration", targetDepth))
+                if (context.TestExpression("aiAgentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AIAgentConfigurationData, StringUnmarshaller, AIAgentConfigurationDataUnmarshaller>(StringUnmarshaller.Instance, AIAgentConfigurationDataUnmarshaller.Instance);
                     unmarshalledObject.AiAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integrationConfiguration", targetDepth))
+                if (context.TestExpression("integrationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionIntegrationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IntegrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestratorConfigurationList", targetDepth))
+                if (context.TestExpression("orchestratorConfigurationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OrchestratorConfigurationEntry, OrchestratorConfigurationEntryUnmarshaller>(OrchestratorConfigurationEntryUnmarshaller.Instance);
                     unmarshalledObject.OrchestratorConfigurationList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("origin", targetDepth))
+                if (context.TestExpression("origin", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Origin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionArn", targetDepth))
+                if (context.TestExpression("sessionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagFilter", targetDepth))
+                if (context.TestExpression("tagFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = TagFilterUnmarshaller.Instance;
                     unmarshalledObject.TagFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

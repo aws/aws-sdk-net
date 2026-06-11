@@ -56,7 +56,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fleetArn", targetDepth))
+                if (context.TestExpression("fleetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FleetArn = unmarshaller.Unmarshall(context, ref reader);

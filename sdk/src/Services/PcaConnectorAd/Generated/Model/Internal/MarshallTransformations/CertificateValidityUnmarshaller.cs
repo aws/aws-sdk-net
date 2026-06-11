@@ -56,13 +56,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RenewalPeriod", targetDepth))
+                if (context.TestExpression("RenewalPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidityPeriodUnmarshaller.Instance;
                     unmarshalledObject.RenewalPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidityPeriod", targetDepth))
+                if (context.TestExpression("ValidityPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidityPeriodUnmarshaller.Instance;
                     unmarshalledObject.ValidityPeriod = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteLocalStoreAfterUpload", targetDepth))
+                if (context.TestExpression("DeleteLocalStoreAfterUpload", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeleteLocalStoreAfterUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalStoreFileRotationMaxBytes", targetDepth))
+                if (context.TestExpression("LocalStoreFileRotationMaxBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LocalStoreFileRotationMaxBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalStoreFileRotationMaxFiles", targetDepth))
+                if (context.TestExpression("LocalStoreFileRotationMaxFiles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LocalStoreFileRotationMaxFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalStoreLocation", targetDepth))
+                if (context.TestExpression("LocalStoreLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LocalStoreLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogFlushLevel", targetDepth))
+                if (context.TestExpression("LogFlushLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogFlushLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogLevel", targetDepth))
+                if (context.TestExpression("LogLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadLog", targetDepth))
+                if (context.TestExpression("UploadLog", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UploadLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadPeriodMinutes", targetDepth))
+                if (context.TestExpression("UploadPeriodMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UploadPeriodMinutes = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WorkloadConfiguration", targetDepth))
+                if (context.TestExpression("WorkloadConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadConfigurationUnmarshaller.Instance;
                     response.WorkloadConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadId", targetDepth))
+                if (context.TestExpression("WorkloadId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkloadId = unmarshaller.Unmarshall(context, ref reader);

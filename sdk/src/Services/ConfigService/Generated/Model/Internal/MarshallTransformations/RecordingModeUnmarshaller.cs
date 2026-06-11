@@ -56,13 +56,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recordingFrequency", targetDepth))
+                if (context.TestExpression("recordingFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecordingFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recordingModeOverrides", targetDepth))
+                if (context.TestExpression("recordingModeOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecordingModeOverride, RecordingModeOverrideUnmarshaller>(RecordingModeOverrideUnmarshaller.Instance);
                     unmarshalledObject.RecordingModeOverrides = unmarshaller.Unmarshall(context, ref reader);

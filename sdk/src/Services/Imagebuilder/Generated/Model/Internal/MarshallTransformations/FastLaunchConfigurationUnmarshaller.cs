@@ -56,31 +56,31 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchTemplate", targetDepth))
+                if (context.TestExpression("launchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = FastLaunchLaunchTemplateSpecificationUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxParallelLaunches", targetDepth))
+                if (context.TestExpression("maxParallelLaunches", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelLaunches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snapshotConfiguration", targetDepth))
+                if (context.TestExpression("snapshotConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FastLaunchSnapshotConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SnapshotConfiguration = unmarshaller.Unmarshall(context, ref reader);

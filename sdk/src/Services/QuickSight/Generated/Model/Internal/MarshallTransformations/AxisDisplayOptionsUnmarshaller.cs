@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AxisLineVisibility", targetDepth))
+                if (context.TestExpression("AxisLineVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AxisLineVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AxisOffset", targetDepth))
+                if (context.TestExpression("AxisOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AxisOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataOptions", targetDepth))
+                if (context.TestExpression("DataOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisDataOptionsUnmarshaller.Instance;
                     unmarshalledObject.DataOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GridLineVisibility", targetDepth))
+                if (context.TestExpression("GridLineVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GridLineVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScrollbarOptions", targetDepth))
+                if (context.TestExpression("ScrollbarOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ScrollBarOptionsUnmarshaller.Instance;
                     unmarshalledObject.ScrollbarOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TickLabelOptions", targetDepth))
+                if (context.TestExpression("TickLabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisTickLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.TickLabelOptions = unmarshaller.Unmarshall(context, ref reader);

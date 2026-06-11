@@ -56,13 +56,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NFS", targetDepth))
+                if (context.TestExpression("NFS", targetDepth, ref reader))
                 {
                     var unmarshaller = FsxProtocolNfsUnmarshaller.Instance;
                     unmarshalledObject.NFS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SMB", targetDepth))
+                if (context.TestExpression("SMB", targetDepth, ref reader))
                 {
                     var unmarshaller = FsxProtocolSmbUnmarshaller.Instance;
                     unmarshalledObject.SMB = unmarshaller.Unmarshall(context, ref reader);

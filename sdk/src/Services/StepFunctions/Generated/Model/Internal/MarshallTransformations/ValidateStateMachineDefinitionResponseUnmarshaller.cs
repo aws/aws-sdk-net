@@ -52,19 +52,19 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("diagnostics", targetDepth))
+                if (context.TestExpression("diagnostics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidateStateMachineDefinitionDiagnostic, ValidateStateMachineDefinitionDiagnosticUnmarshaller>(ValidateStateMachineDefinitionDiagnosticUnmarshaller.Instance);
                     response.Diagnostics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("result", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Result = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("truncated", targetDepth))
+                if (context.TestExpression("truncated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Truncated = unmarshaller.Unmarshall(context, ref reader);

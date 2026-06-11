@@ -56,43 +56,43 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BoundingBox", targetDepth))
+                if (context.TestExpression("BoundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = BoundingBoxUnmarshaller.Instance;
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Emotions", targetDepth))
+                if (context.TestExpression("Emotions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Emotion, EmotionUnmarshaller>(EmotionUnmarshaller.Instance);
                     unmarshalledObject.Emotions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Landmarks", targetDepth))
+                if (context.TestExpression("Landmarks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Landmark, LandmarkUnmarshaller>(LandmarkUnmarshaller.Instance);
                     unmarshalledObject.Landmarks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Pose", targetDepth))
+                if (context.TestExpression("Pose", targetDepth, ref reader))
                 {
                     var unmarshaller = PoseUnmarshaller.Instance;
                     unmarshalledObject.Pose = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Quality", targetDepth))
+                if (context.TestExpression("Quality", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageQualityUnmarshaller.Instance;
                     unmarshalledObject.Quality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Smile", targetDepth))
+                if (context.TestExpression("Smile", targetDepth, ref reader))
                 {
                     var unmarshaller = SmileUnmarshaller.Instance;
                     unmarshalledObject.Smile = unmarshaller.Unmarshall(context, ref reader);

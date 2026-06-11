@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeploymentConfig", targetDepth))
+                if (context.TestExpression("DeploymentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EdgeDeploymentConfigUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentStatus", targetDepth))
+                if (context.TestExpression("DeploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = EdgeDeploymentStatusUnmarshaller.Instance;
                     unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceSelectionConfig", targetDepth))
+                if (context.TestExpression("DeviceSelectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceSelectionConfigUnmarshaller.Instance;
                     unmarshalledObject.DeviceSelectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StageName", targetDepth))
+                if (context.TestExpression("StageName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);

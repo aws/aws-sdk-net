@@ -56,31 +56,31 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedValues", targetDepth))
+                if (context.TestExpression("allowedValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataValue, DataValueUnmarshaller>(DataValueUnmarshaller.Instance);
                     unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nestedType", targetDepth))
+                if (context.TestExpression("nestedType", targetDepth, ref reader))
                 {
                     var unmarshaller = DataTypeUnmarshaller.Instance;
                     unmarshalledObject.NestedType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("relationship", targetDepth))
+                if (context.TestExpression("relationship", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationshipUnmarshaller.Instance;
                     unmarshalledObject.Relationship = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unitOfMeasure", targetDepth))
+                if (context.TestExpression("unitOfMeasure", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UnitOfMeasure = unmarshaller.Unmarshall(context, ref reader);

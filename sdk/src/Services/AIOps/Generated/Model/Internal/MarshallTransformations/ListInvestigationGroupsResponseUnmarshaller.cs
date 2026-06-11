@@ -52,13 +52,13 @@ namespace Amazon.AIOps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("investigationGroups", targetDepth))
+                if (context.TestExpression("investigationGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListInvestigationGroupsModel, ListInvestigationGroupsModelUnmarshaller>(ListInvestigationGroupsModelUnmarshaller.Instance);
                     response.InvestigationGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

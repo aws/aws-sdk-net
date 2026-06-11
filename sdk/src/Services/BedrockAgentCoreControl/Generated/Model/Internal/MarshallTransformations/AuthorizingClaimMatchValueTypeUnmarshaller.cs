@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("claimMatchOperator", targetDepth))
+                if (context.TestExpression("claimMatchOperator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClaimMatchOperator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("claimMatchValue", targetDepth))
+                if (context.TestExpression("claimMatchValue", targetDepth, ref reader))
                 {
                     var unmarshaller = ClaimMatchValueTypeUnmarshaller.Instance;
                     unmarshalledObject.ClaimMatchValue = unmarshaller.Unmarshall(context, ref reader);

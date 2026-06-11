@@ -56,19 +56,19 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("trainedModelExports", targetDepth))
+                if (context.TestExpression("trainedModelExports", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainedModelExportsConfigurationPolicyUnmarshaller.Instance;
                     unmarshalledObject.TrainedModelExports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainedModelInferenceJobs", targetDepth))
+                if (context.TestExpression("trainedModelInferenceJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainedModelInferenceJobsConfigurationPolicyUnmarshaller.Instance;
                     unmarshalledObject.TrainedModelInferenceJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainedModels", targetDepth))
+                if (context.TestExpression("trainedModels", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainedModelsConfigurationPolicyUnmarshaller.Instance;
                     unmarshalledObject.TrainedModels = unmarshaller.Unmarshall(context, ref reader);

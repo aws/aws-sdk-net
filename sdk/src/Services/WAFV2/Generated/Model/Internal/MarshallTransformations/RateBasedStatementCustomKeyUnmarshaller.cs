@@ -56,73 +56,73 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ASN", targetDepth))
+                if (context.TestExpression("ASN", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitAsnUnmarshaller.Instance;
                     unmarshalledObject.ASN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cookie", targetDepth))
+                if (context.TestExpression("Cookie", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitCookieUnmarshaller.Instance;
                     unmarshalledObject.Cookie = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForwardedIP", targetDepth))
+                if (context.TestExpression("ForwardedIP", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitForwardedIPUnmarshaller.Instance;
                     unmarshalledObject.ForwardedIP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Header", targetDepth))
+                if (context.TestExpression("Header", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitHeaderUnmarshaller.Instance;
                     unmarshalledObject.Header = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HTTPMethod", targetDepth))
+                if (context.TestExpression("HTTPMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitHTTPMethodUnmarshaller.Instance;
                     unmarshalledObject.HTTPMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IP", targetDepth))
+                if (context.TestExpression("IP", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitIPUnmarshaller.Instance;
                     unmarshalledObject.IP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JA3Fingerprint", targetDepth))
+                if (context.TestExpression("JA3Fingerprint", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitJA3FingerprintUnmarshaller.Instance;
                     unmarshalledObject.JA3Fingerprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JA4Fingerprint", targetDepth))
+                if (context.TestExpression("JA4Fingerprint", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitJA4FingerprintUnmarshaller.Instance;
                     unmarshalledObject.JA4Fingerprint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelNamespace", targetDepth))
+                if (context.TestExpression("LabelNamespace", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitLabelNamespaceUnmarshaller.Instance;
                     unmarshalledObject.LabelNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryArgument", targetDepth))
+                if (context.TestExpression("QueryArgument", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitQueryArgumentUnmarshaller.Instance;
                     unmarshalledObject.QueryArgument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryString", targetDepth))
+                if (context.TestExpression("QueryString", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitQueryStringUnmarshaller.Instance;
                     unmarshalledObject.QueryString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UriPath", targetDepth))
+                if (context.TestExpression("UriPath", targetDepth, ref reader))
                 {
                     var unmarshaller = RateLimitUriPathUnmarshaller.Instance;
                     unmarshalledObject.UriPath = unmarshaller.Unmarshall(context, ref reader);

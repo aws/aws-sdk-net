@@ -1,0 +1,487 @@
+{
+    "version": "1.1",
+    "parameters": {
+        "UseDualStack": {
+            "builtIn": "AWS::UseDualStack",
+            "required": true,
+            "default": false,
+            "documentation": "When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.",
+            "type": "boolean"
+        },
+        "UseFIPS": {
+            "builtIn": "AWS::UseFIPS",
+            "required": true,
+            "default": false,
+            "documentation": "When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.",
+            "type": "boolean"
+        },
+        "Endpoint": {
+            "builtIn": "SDK::Endpoint",
+            "required": false,
+            "documentation": "Override the endpoint used to send this request",
+            "type": "string"
+        },
+        "Region": {
+            "builtIn": "AWS::Region",
+            "required": false,
+            "documentation": "The AWS region used to dispatch the request.",
+            "type": "string"
+        },
+        "IsControlPlane": {
+            "required": false,
+            "documentation": "Indicates if the operation targets the control plane endpoint",
+            "type": "boolean"
+        }
+    },
+    "conditions": [
+        {
+            "fn": "isSet",
+            "argv": [
+                {
+                    "ref": "Region"
+                }
+            ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "fn": "coalesce",
+                    "argv": [
+                        {
+                            "ref": "IsControlPlane"
+                        },
+                        false
+                    ]
+                },
+                true
+            ]
+        },
+        {
+            "fn": "isSet",
+            "argv": [
+                {
+                    "ref": "Endpoint"
+                }
+            ]
+        },
+        {
+            "fn": "aws.partition",
+            "argv": [
+                {
+                    "ref": "Region"
+                }
+            ],
+            "assign": "PartitionResult"
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "ref": "UseFIPS"
+                },
+                true
+            ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "ref": "UseDualStack"
+                },
+                true
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-cn"
+            ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "supportsDualStack"
+                    ]
+                },
+                true
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "ref": "Region"
+                },
+                "us-gov-west-1"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-us-gov"
+            ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "supportsFIPS"
+                    ]
+                },
+                true
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-iso"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-iso-b"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-iso-f"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-iso-e"
+            ]
+        },
+        {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws-eusc"
+            ]
+        }
+    ],
+    "results": [
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin.{Region}.api.aws",
+                "properties": {
+                    "authSchemes": [
+                        {
+                            "name": "sigv4",
+                            "signingName": "signin",
+                            "signingRegion": "{Region}"
+                        }
+                    ]
+                },
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin.{Region}.api.amazonwebservices.com.cn",
+                "properties": {
+                    "authSchemes": [
+                        {
+                            "name": "sigv4",
+                            "signingName": "signin",
+                            "signingRegion": "{Region}"
+                        }
+                    ]
+                },
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                "properties": {
+                    "authSchemes": [
+                        {
+                            "name": "sigv4",
+                            "signingName": "signin",
+                            "signingRegion": "{Region}"
+                        }
+                    ]
+                },
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.aws.amazon.com",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.amazonaws.cn",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.amazonaws-us-gov.com",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.c2shome.ic.gov",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.sc2shome.sgov.gov",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.csphome.hci.ic.gov",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.csphome.adc-e.uk",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.amazonaws-eusc.eu",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin-fips.amazonaws-us-gov.com",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin-fips.amazonaws-us-gov.com",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.signin.{PartitionResult#dnsSuffix}",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "Invalid Configuration: FIPS and custom endpoint are not supported",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": {
+                    "ref": "Endpoint"
+                },
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin-fips.{Region}.{PartitionResult#dnsSuffix}",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "FIPS is enabled but this partition does not support FIPS",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "DualStack is enabled but this partition does not support DualStack",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://signin.{Region}.{PartitionResult#dnsSuffix}",
+                "properties": {},
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "Invalid Configuration: Missing Region",
+            "type": "error"
+        }
+    ],
+    "root": 2,
+    "nodeCount": 33,
+    "nodes": "/////wAAAAH/////AAAAAAAAAAQAAAADAAAAAgAAAB4F9eEZAAAAAQAAABgAAAAFAAAAAgAAAB4AAAAGAAAAAwAAAAcAAAAaAAAABAAAABIAAAAIAAAABQAAABEAAAAJAAAABgX14QQAAAAKAAAABwX14QUAAAALAAAACgX14QYAAAAMAAAADAX14QcAAAANAAAADQX14QgAAAAOAAAADgX14QkAAAAPAAAADwX14QoAAAAQAAAAEAX14QsF9eEOAAAACAX14RYF9eEXAAAABQAAABYAAAATAAAACQX14QwAAAAUAAAACgX14Q0AAAAVAAAACwX14RQF9eEVAAAACAAAABcF9eETAAAACwX14RIF9eETAAAAAgAAAB0AAAAZAAAAAwAAACAAAAAaAAAABAAAABsF9eEZAAAABQX14RkAAAAcAAAACQX14QwF9eEZAAAAAwAAACAAAAAeAAAABAX14Q8AAAAfAAAABQX14RAF9eERAAAABgX14QEAAAAhAAAABwX14QIF9eED"
+}

@@ -52,7 +52,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TaskConfigurationId", targetDepth))
+                if (context.TestExpression("TaskConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TaskConfigurationId = unmarshaller.Unmarshall(context, ref reader);

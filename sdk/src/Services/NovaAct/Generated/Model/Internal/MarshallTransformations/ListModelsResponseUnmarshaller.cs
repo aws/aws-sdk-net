@@ -52,19 +52,19 @@ namespace Amazon.NovaAct.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compatibilityInformation", targetDepth))
+                if (context.TestExpression("compatibilityInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = CompatibilityInformationUnmarshaller.Instance;
                     response.CompatibilityInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelAliases", targetDepth))
+                if (context.TestExpression("modelAliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelAlias, ModelAliasUnmarshaller>(ModelAliasUnmarshaller.Instance);
                     response.ModelAliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelSummaries", targetDepth))
+                if (context.TestExpression("modelSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelSummary, ModelSummaryUnmarshaller>(ModelSummaryUnmarshaller.Instance);
                     response.ModelSummaries = unmarshaller.Unmarshall(context, ref reader);

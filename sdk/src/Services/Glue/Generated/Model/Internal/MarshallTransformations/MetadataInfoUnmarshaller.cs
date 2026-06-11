@@ -56,19 +56,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetadataValue", targetDepth))
+                if (context.TestExpression("MetadataValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MetadataValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtherMetadataValueList", targetDepth))
+                if (context.TestExpression("OtherMetadataValueList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OtherMetadataValueListItem, OtherMetadataValueListItemUnmarshaller>(OtherMetadataValueListItemUnmarshaller.Instance);
                     unmarshalledObject.OtherMetadataValueList = unmarshaller.Unmarshall(context, ref reader);

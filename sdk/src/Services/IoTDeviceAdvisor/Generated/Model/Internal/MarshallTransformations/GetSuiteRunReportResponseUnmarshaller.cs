@@ -52,7 +52,7 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("qualificationReportDownloadUrl", targetDepth))
+                if (context.TestExpression("qualificationReportDownloadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QualificationReportDownloadUrl = unmarshaller.Unmarshall(context, ref reader);

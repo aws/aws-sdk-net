@@ -647,6 +647,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType VERTICA = new ConnectionType("VERTICA");
         /// <summary>
+        /// Constant VPC for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType VPC = new ConnectionType("VPC");
+        /// <summary>
         /// Constant WORKFLOWS_MWAA for ConnectionType
         /// </summary>
         public static readonly ConnectionType WORKFLOWS_MWAA = new ConnectionType("WORKFLOWS_MWAA");

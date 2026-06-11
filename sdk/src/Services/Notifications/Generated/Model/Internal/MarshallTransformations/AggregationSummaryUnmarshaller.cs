@@ -56,37 +56,37 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalSummarizationDimensions", targetDepth))
+                if (context.TestExpression("additionalSummarizationDimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SummarizationDimensionOverview, SummarizationDimensionOverviewUnmarshaller>(SummarizationDimensionOverviewUnmarshaller.Instance);
                     unmarshalledObject.AdditionalSummarizationDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregatedAccounts", targetDepth))
+                if (context.TestExpression("aggregatedAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
                     unmarshalledObject.AggregatedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregatedBy", targetDepth))
+                if (context.TestExpression("aggregatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AggregationKey, AggregationKeyUnmarshaller>(AggregationKeyUnmarshaller.Instance);
                     unmarshalledObject.AggregatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregatedOrganizationalUnits", targetDepth))
+                if (context.TestExpression("aggregatedOrganizationalUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
                     unmarshalledObject.AggregatedOrganizationalUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aggregatedRegions", targetDepth))
+                if (context.TestExpression("aggregatedRegions", targetDepth, ref reader))
                 {
                     var unmarshaller = SummarizationDimensionOverviewUnmarshaller.Instance;
                     unmarshalledObject.AggregatedRegions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventCount", targetDepth))
+                if (context.TestExpression("eventCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EventCount = unmarshaller.Unmarshall(context, ref reader);

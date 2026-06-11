@@ -52,7 +52,7 @@ namespace Amazon.ECRPublic.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("catalogData", targetDepth))
+                if (context.TestExpression("catalogData", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryCatalogDataUnmarshaller.Instance;
                     response.CatalogData = unmarshaller.Unmarshall(context, ref reader);

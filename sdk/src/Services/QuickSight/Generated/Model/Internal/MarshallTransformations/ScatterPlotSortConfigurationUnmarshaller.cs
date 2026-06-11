@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScatterPlotLimitConfiguration", targetDepth))
+                if (context.TestExpression("ScatterPlotLimitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ScatterPlotLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("timeRange", targetDepth))
+                if (context.TestExpression("timeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageTotals", targetDepth))
+                if (context.TestExpression("usageTotals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UsageTotal, UsageTotalUnmarshaller>(UsageTotalUnmarshaller.Instance);
                     response.UsageTotals = unmarshaller.Unmarshall(context, ref reader);

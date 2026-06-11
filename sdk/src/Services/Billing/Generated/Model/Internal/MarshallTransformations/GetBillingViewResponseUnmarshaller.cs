@@ -52,7 +52,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("billingView", targetDepth))
+                if (context.TestExpression("billingView", targetDepth, ref reader))
                 {
                     var unmarshaller = BillingViewElementUnmarshaller.Instance;
                     response.BillingView = unmarshaller.Unmarshall(context, ref reader);

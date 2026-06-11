@@ -56,13 +56,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computationModelIds", targetDepth))
+                if (context.TestExpression("computationModelIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ComputationModelIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchedDataBinding", targetDepth))
+                if (context.TestExpression("matchedDataBinding", targetDepth, ref reader))
                 {
                     var unmarshaller = MatchedDataBindingUnmarshaller.Instance;
                     unmarshalledObject.MatchedDataBinding = unmarshaller.Unmarshall(context, ref reader);

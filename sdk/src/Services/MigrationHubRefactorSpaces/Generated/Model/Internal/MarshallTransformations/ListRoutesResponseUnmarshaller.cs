@@ -52,13 +52,13 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteSummaryList", targetDepth))
+                if (context.TestExpression("RouteSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteSummary, RouteSummaryUnmarshaller>(RouteSummaryUnmarshaller.Instance);
                     response.RouteSummaryList = unmarshaller.Unmarshall(context, ref reader);

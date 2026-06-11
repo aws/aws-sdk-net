@@ -72,25 +72,25 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("lastValidByteReceived", targetDepth))
+                    if (context.TestExpression("lastValidByteReceived", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableLongUnmarshaller.Instance;
                         unmarshalledObject.LastValidByteReceived = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("registryId", targetDepth))
+                    if (context.TestExpression("registryId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("repositoryName", targetDepth))
+                    if (context.TestExpression("repositoryName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("uploadId", targetDepth))
+                    if (context.TestExpression("uploadId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.UploadId = unmarshaller.Unmarshall(context, ref reader);

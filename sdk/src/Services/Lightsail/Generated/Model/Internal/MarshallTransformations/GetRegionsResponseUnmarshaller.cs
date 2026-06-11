@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("regions", targetDepth))
+                if (context.TestExpression("regions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Region, RegionUnmarshaller>(RegionUnmarshaller.Instance);
                     response.Regions = unmarshaller.Unmarshall(context, ref reader);

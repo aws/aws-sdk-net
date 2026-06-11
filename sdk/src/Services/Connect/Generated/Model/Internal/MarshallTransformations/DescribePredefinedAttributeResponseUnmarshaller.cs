@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PredefinedAttribute", targetDepth))
+                if (context.TestExpression("PredefinedAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = PredefinedAttributeUnmarshaller.Instance;
                     response.PredefinedAttribute = unmarshaller.Unmarshall(context, ref reader);

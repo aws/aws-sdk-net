@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmazonCodeGuruProfiler", targetDepth))
+                if (context.TestExpression("AmazonCodeGuruProfiler", targetDepth, ref reader))
                 {
                     var unmarshaller = AmazonCodeGuruProfilerIntegrationUnmarshaller.Instance;
                     unmarshalledObject.AmazonCodeGuruProfiler = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorReportLocation", targetDepth))
+                if (context.TestExpression("ErrorReportLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorReportLocationUnmarshaller.Instance;
                     unmarshalledObject.ErrorReportLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionStats", targetDepth))
+                if (context.TestExpression("ExecutionStats", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStatsUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InvocationTime", targetDepth))
+                if (context.TestExpression("InvocationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryInsightsResponse", targetDepth))
+                if (context.TestExpression("QueryInsightsResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledQueryInsightsResponseUnmarshaller.Instance;
                     unmarshalledObject.QueryInsightsResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunStatus", targetDepth))
+                if (context.TestExpression("RunStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RunStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TriggerTime", targetDepth))
+                if (context.TestExpression("TriggerTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TriggerTime = unmarshaller.Unmarshall(context, ref reader);

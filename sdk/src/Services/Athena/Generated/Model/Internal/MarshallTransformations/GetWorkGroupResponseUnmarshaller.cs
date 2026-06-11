@@ -52,7 +52,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WorkGroup", targetDepth))
+                if (context.TestExpression("WorkGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkGroupUnmarshaller.Instance;
                     response.WorkGroup = unmarshaller.Unmarshall(context, ref reader);

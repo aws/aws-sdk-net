@@ -56,13 +56,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Objects", targetDepth))
+                if (context.TestExpression("Objects", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TableObject, TableObjectUnmarshaller>(TableObjectUnmarshaller.Instance);
                     unmarshalledObject.Objects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartitionValues", targetDepth))
+                if (context.TestExpression("PartitionValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PartitionValues = unmarshaller.Unmarshall(context, ref reader);

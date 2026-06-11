@@ -2035,6 +2035,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Control.Model.SelectionCriteria.MinStorageBytesPercentage</property>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>

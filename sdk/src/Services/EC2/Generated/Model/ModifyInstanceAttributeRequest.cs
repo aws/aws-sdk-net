@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private bool? _dryRun;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
+        private EnclaveOptionsRequest _enclaveOptions;
         private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         private string _ramdisk;
         private bool? _sourceDestCheck;
         private string _sriovNetSupport;
-        private string _userData;
+        private SecureBlobAttributeValue _userData;
         private string _value;
 
         /// <summary>
@@ -258,6 +259,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnclaveOptions. 
+        /// <para>
+        /// Enables or disables the instance for Amazon Web Services Nitro Enclaves. For more
+        /// information, see the <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves User Guide</a>.
+        /// </para>
+        /// </summary>
+        public EnclaveOptionsRequest EnclaveOptions
+        {
+            get { return this._enclaveOptions; }
+            set { this._enclaveOptions = value; }
+        }
+
+        // Check to see if EnclaveOptions property is set
+        internal bool IsSetEnclaveOptions()
+        {
+            return this._enclaveOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
         /// Replaces the security groups of the instance with the specified security groups. You
@@ -438,7 +459,7 @@ namespace Amazon.EC2.Model
         /// with instance user data</a>.
         /// </para>
         /// </summary>
-        public string UserData
+        public SecureBlobAttributeValue UserData
         {
             get { return this._userData; }
             set { this._userData = value; }

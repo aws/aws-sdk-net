@@ -52,7 +52,7 @@ namespace Amazon.DAX.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ParameterGroup", targetDepth))
+                if (context.TestExpression("ParameterGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterGroupUnmarshaller.Instance;
                     response.ParameterGroup = unmarshaller.Unmarshall(context, ref reader);

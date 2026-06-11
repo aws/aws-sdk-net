@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchEncryption", targetDepth))
+                if (context.TestExpression("CloudWatchEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchEncryptionUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataQualityEncryption", targetDepth))
+                if (context.TestExpression("DataQualityEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = DataQualityEncryptionUnmarshaller.Instance;
                     unmarshalledObject.DataQualityEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobBookmarksEncryption", targetDepth))
+                if (context.TestExpression("JobBookmarksEncryption", targetDepth, ref reader))
                 {
                     var unmarshaller = JobBookmarksEncryptionUnmarshaller.Instance;
                     unmarshalledObject.JobBookmarksEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Encryption", targetDepth))
+                if (context.TestExpression("S3Encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3Encryption, S3EncryptionUnmarshaller>(S3EncryptionUnmarshaller.Instance);
                     unmarshalledObject.S3Encryption = unmarshaller.Unmarshall(context, ref reader);

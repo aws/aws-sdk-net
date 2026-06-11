@@ -52,13 +52,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstanceTypeDetails", targetDepth))
+                if (context.TestExpression("InstanceTypeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InstanceTypeDetails, InstanceTypeDetailsUnmarshaller>(InstanceTypeDetailsUnmarshaller.Instance);
                     response.InstanceTypeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

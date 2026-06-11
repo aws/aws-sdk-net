@@ -56,25 +56,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("formsOutput", targetDepth))
+                if (context.TestExpression("formsOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
                     unmarshalledObject.FormsOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth))
+                if (context.TestExpression("latestTimeSeriesDataPointFormsOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimeSeriesDataPointSummaryFormOutput, TimeSeriesDataPointSummaryFormOutputUnmarshaller>(TimeSeriesDataPointSummaryFormOutputUnmarshaller.Instance);
                     unmarshalledObject.LatestTimeSeriesDataPointFormsOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchRationale", targetDepth))
+                if (context.TestExpression("matchRationale", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MatchRationaleItem, MatchRationaleItemUnmarshaller>(MatchRationaleItemUnmarshaller.Instance);
                     unmarshalledObject.MatchRationale = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("readOnlyFormsOutput", targetDepth))
+                if (context.TestExpression("readOnlyFormsOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FormOutput, FormOutputUnmarshaller>(FormOutputUnmarshaller.Instance);
                     unmarshalledObject.ReadOnlyFormsOutput = unmarshaller.Unmarshall(context, ref reader);

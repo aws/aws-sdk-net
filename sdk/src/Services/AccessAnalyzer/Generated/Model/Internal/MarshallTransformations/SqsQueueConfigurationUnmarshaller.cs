@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("queuePolicy", targetDepth))
+                if (context.TestExpression("queuePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueuePolicy = unmarshaller.Unmarshall(context, ref reader);

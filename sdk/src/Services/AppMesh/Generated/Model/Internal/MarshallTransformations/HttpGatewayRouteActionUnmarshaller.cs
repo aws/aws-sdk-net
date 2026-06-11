@@ -56,13 +56,13 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rewrite", targetDepth))
+                if (context.TestExpression("rewrite", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpGatewayRouteRewriteUnmarshaller.Instance;
                     unmarshalledObject.Rewrite = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("target", targetDepth))
+                if (context.TestExpression("target", targetDepth, ref reader))
                 {
                     var unmarshaller = GatewayRouteTargetUnmarshaller.Instance;
                     unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sigv4", targetDepth))
+                if (context.TestExpression("sigv4", targetDepth, ref reader))
                 {
                     var unmarshaller = SigV4AuthorizationUnmarshaller.Instance;
                     unmarshalledObject.Sigv4 = unmarshaller.Unmarshall(context, ref reader);

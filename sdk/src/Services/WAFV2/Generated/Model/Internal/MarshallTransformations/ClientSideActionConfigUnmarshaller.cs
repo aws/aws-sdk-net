@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Challenge", targetDepth))
+                if (context.TestExpression("Challenge", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientSideActionUnmarshaller.Instance;
                     unmarshalledObject.Challenge = unmarshaller.Unmarshall(context, ref reader);

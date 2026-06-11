@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventTopics", targetDepth))
+                if (context.TestExpression("EventTopics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventTopic, EventTopicUnmarshaller>(EventTopicUnmarshaller.Instance);
                     response.EventTopics = unmarshaller.Unmarshall(context, ref reader);

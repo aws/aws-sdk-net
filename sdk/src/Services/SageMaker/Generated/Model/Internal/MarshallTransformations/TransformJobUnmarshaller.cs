@@ -56,133 +56,133 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoMLJobArn", targetDepth))
+                if (context.TestExpression("AutoMLJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoMLJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BatchStrategy", targetDepth))
+                if (context.TestExpression("BatchStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BatchStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataCaptureConfig", targetDepth))
+                if (context.TestExpression("DataCaptureConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchDataCaptureConfigUnmarshaller.Instance;
                     unmarshalledObject.DataCaptureConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataProcessing", targetDepth))
+                if (context.TestExpression("DataProcessing", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProcessingUnmarshaller.Instance;
                     unmarshalledObject.DataProcessing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExperimentConfig", targetDepth))
+                if (context.TestExpression("ExperimentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentConfigUnmarshaller.Instance;
                     unmarshalledObject.ExperimentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelingJobArn", targetDepth))
+                if (context.TestExpression("LabelingJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelingJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxConcurrentTransforms", targetDepth))
+                if (context.TestExpression("MaxConcurrentTransforms", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentTransforms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxPayloadInMB", targetDepth))
+                if (context.TestExpression("MaxPayloadInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPayloadInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelClientConfig", targetDepth))
+                if (context.TestExpression("ModelClientConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelClientConfigUnmarshaller.Instance;
                     unmarshalledObject.ModelClientConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelName", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformEndTime", targetDepth))
+                if (context.TestExpression("TransformEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TransformEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformInput", targetDepth))
+                if (context.TestExpression("TransformInput", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformInputUnmarshaller.Instance;
                     unmarshalledObject.TransformInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformJobArn", targetDepth))
+                if (context.TestExpression("TransformJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformJobName", targetDepth))
+                if (context.TestExpression("TransformJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformJobStatus", targetDepth))
+                if (context.TestExpression("TransformJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformOutput", targetDepth))
+                if (context.TestExpression("TransformOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformOutputUnmarshaller.Instance;
                     unmarshalledObject.TransformOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformResources", targetDepth))
+                if (context.TestExpression("TransformResources", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformResourcesUnmarshaller.Instance;
                     unmarshalledObject.TransformResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransformStartTime", targetDepth))
+                if (context.TestExpression("TransformStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TransformStartTime = unmarshaller.Unmarshall(context, ref reader);

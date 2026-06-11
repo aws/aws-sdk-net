@@ -52,7 +52,7 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountAlias", targetDepth))
+                if (context.TestExpression("accountAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountAlias = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChaincodeLogs", targetDepth))
+                if (context.TestExpression("ChaincodeLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.ChaincodeLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PeerLogs", targetDepth))
+                if (context.TestExpression("PeerLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.PeerLogs = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cmafGroupSettings", targetDepth))
+                if (context.TestExpression("cmafGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CmafGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.CmafGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dashIsoGroupSettings", targetDepth))
+                if (context.TestExpression("dashIsoGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DashIsoGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.DashIsoGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fileGroupSettings", targetDepth))
+                if (context.TestExpression("fileGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FileGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.FileGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsGroupSettings", targetDepth))
+                if (context.TestExpression("hlsGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("msSmoothGroupSettings", targetDepth))
+                if (context.TestExpression("msSmoothGroupSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MsSmoothGroupSettingsUnmarshaller.Instance;
                     unmarshalledObject.MsSmoothGroupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("perFrameMetrics", targetDepth))
+                if (context.TestExpression("perFrameMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PerFrameMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

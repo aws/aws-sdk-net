@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchConfig", targetDepth))
+                if (context.TestExpression("cloudWatchConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchOutputConfigUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchConfig = unmarshaller.Unmarshall(context, ref reader);

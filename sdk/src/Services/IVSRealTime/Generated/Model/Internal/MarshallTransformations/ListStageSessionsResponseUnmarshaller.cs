@@ -52,13 +52,13 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stageSessions", targetDepth))
+                if (context.TestExpression("stageSessions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StageSessionSummary, StageSessionSummaryUnmarshaller>(StageSessionSummaryUnmarshaller.Instance);
                     response.StageSessions = unmarshaller.Unmarshall(context, ref reader);

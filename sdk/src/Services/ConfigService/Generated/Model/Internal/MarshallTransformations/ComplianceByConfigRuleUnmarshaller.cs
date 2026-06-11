@@ -56,13 +56,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Compliance", targetDepth))
+                if (context.TestExpression("Compliance", targetDepth, ref reader))
                 {
                     var unmarshaller = ComplianceUnmarshaller.Instance;
                     unmarshalledObject.Compliance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigRuleName", targetDepth))
+                if (context.TestExpression("ConfigRuleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context, ref reader);

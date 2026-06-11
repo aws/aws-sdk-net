@@ -52,7 +52,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OrganizationConfigRuleArn", targetDepth))
+                if (context.TestExpression("OrganizationConfigRuleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrganizationConfigRuleArn = unmarshaller.Unmarshall(context, ref reader);

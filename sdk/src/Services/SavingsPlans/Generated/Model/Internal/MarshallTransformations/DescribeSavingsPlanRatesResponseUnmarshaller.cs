@@ -52,19 +52,19 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("savingsPlanId", targetDepth))
+                if (context.TestExpression("savingsPlanId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SavingsPlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("searchResults", targetDepth))
+                if (context.TestExpression("searchResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavingsPlanRate, SavingsPlanRateUnmarshaller>(SavingsPlanRateUnmarshaller.Instance);
                     response.SearchResults = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("textMatches", targetDepth))
+                if (context.TestExpression("textMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TextMatchItem, TextMatchItemUnmarshaller>(TextMatchItemUnmarshaller.Instance);
                     unmarshalledObject.TextMatches = unmarshaller.Unmarshall(context, ref reader);

@@ -56,49 +56,49 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("keyPress", targetDepth))
+                if (context.TestExpression("keyPress", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyPressResultUnmarshaller.Instance;
                     unmarshalledObject.KeyPress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyShortcut", targetDepth))
+                if (context.TestExpression("keyShortcut", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyShortcutResultUnmarshaller.Instance;
                     unmarshalledObject.KeyShortcut = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("keyType", targetDepth))
+                if (context.TestExpression("keyType", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyTypeResultUnmarshaller.Instance;
                     unmarshalledObject.KeyType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mouseClick", targetDepth))
+                if (context.TestExpression("mouseClick", targetDepth, ref reader))
                 {
                     var unmarshaller = MouseClickResultUnmarshaller.Instance;
                     unmarshalledObject.MouseClick = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mouseDrag", targetDepth))
+                if (context.TestExpression("mouseDrag", targetDepth, ref reader))
                 {
                     var unmarshaller = MouseDragResultUnmarshaller.Instance;
                     unmarshalledObject.MouseDrag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mouseMove", targetDepth))
+                if (context.TestExpression("mouseMove", targetDepth, ref reader))
                 {
                     var unmarshaller = MouseMoveResultUnmarshaller.Instance;
                     unmarshalledObject.MouseMove = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mouseScroll", targetDepth))
+                if (context.TestExpression("mouseScroll", targetDepth, ref reader))
                 {
                     var unmarshaller = MouseScrollResultUnmarshaller.Instance;
                     unmarshalledObject.MouseScroll = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("screenshot", targetDepth))
+                if (context.TestExpression("screenshot", targetDepth, ref reader))
                 {
                     var unmarshaller = ScreenshotResultUnmarshaller.Instance;
                     unmarshalledObject.Screenshot = unmarshaller.Unmarshall(context, ref reader);

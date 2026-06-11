@@ -52,13 +52,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RuleGroupResponse", targetDepth))
+                if (context.TestExpression("RuleGroupResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleGroupResponseUnmarshaller.Instance;
                     response.RuleGroupResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateToken", targetDepth))
+                if (context.TestExpression("UpdateToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UpdateToken = unmarshaller.Unmarshall(context, ref reader);

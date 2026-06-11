@@ -21,7 +21,7 @@ namespace AWSSDK.UnitTests
     public class RegionEndpointProviderTest
     {
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("us-east-1", "US East (Virginia)")]
         [DataRow("us-east-1-regional", "US East (Virginia) regional")]
         [DataRow("us-east-2", "US East (Ohio)")]

@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Identifier", targetDepth))
+                if (context.TestExpression("Identifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceComponents", targetDepth))
+                if (context.TestExpression("InferenceComponents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AIBenchmarkInferenceComponent, AIBenchmarkInferenceComponentUnmarshaller>(AIBenchmarkInferenceComponentUnmarshaller.Instance);
                     unmarshalledObject.InferenceComponents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetContainerHostname", targetDepth))
+                if (context.TestExpression("TargetContainerHostname", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetContainerHostname = unmarshaller.Unmarshall(context, ref reader);

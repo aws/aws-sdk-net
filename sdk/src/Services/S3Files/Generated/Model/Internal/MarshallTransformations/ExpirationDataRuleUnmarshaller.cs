@@ -56,7 +56,7 @@ namespace Amazon.S3Files.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("daysAfterLastAccess", targetDepth))
+                if (context.TestExpression("daysAfterLastAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DaysAfterLastAccess = unmarshaller.Unmarshall(context, ref reader);

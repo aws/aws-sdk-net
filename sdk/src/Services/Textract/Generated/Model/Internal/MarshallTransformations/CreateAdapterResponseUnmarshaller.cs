@@ -52,7 +52,7 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdapterId", targetDepth))
+                if (context.TestExpression("AdapterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AdapterId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdMarkerDash", targetDepth))
+                if (context.TestExpression("AdMarkerDash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdMarkerDash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScteInManifests", targetDepth))
+                if (context.TestExpression("ScteInManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScteInManifests = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProgressEvent", targetDepth))
+                if (context.TestExpression("ProgressEvent", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgressEventUnmarshaller.Instance;
                     response.ProgressEvent = unmarshaller.Unmarshall(context, ref reader);

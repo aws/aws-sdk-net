@@ -56,43 +56,43 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveSpeakerOnlyConfiguration", targetDepth))
+                if (context.TestExpression("ActiveSpeakerOnlyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ActiveSpeakerOnlyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ActiveSpeakerOnlyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanvasOrientation", targetDepth))
+                if (context.TestExpression("CanvasOrientation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CanvasOrientation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentShareLayout", targetDepth))
+                if (context.TestExpression("ContentShareLayout", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentShareLayout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HorizontalLayoutConfiguration", targetDepth))
+                if (context.TestExpression("HorizontalLayoutConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HorizontalLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HorizontalLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PresenterOnlyConfiguration", targetDepth))
+                if (context.TestExpression("PresenterOnlyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PresenterOnlyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PresenterOnlyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerticalLayoutConfiguration", targetDepth))
+                if (context.TestExpression("VerticalLayoutConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VerticalLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VerticalLayoutConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VideoAttribute", targetDepth))
+                if (context.TestExpression("VideoAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoAttributeUnmarshaller.Instance;
                     unmarshalledObject.VideoAttribute = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GroundTruthManifest", targetDepth))
+                if (context.TestExpression("GroundTruthManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = GroundTruthManifestUnmarshaller.Instance;
                     unmarshalledObject.GroundTruthManifest = unmarshaller.Unmarshall(context, ref reader);

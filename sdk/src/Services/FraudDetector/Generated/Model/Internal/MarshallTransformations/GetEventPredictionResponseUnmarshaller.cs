@@ -52,19 +52,19 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalModelOutputs", targetDepth))
+                if (context.TestExpression("externalModelOutputs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExternalModelOutputs, ExternalModelOutputsUnmarshaller>(ExternalModelOutputsUnmarshaller.Instance);
                     response.ExternalModelOutputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelScores", targetDepth))
+                if (context.TestExpression("modelScores", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelScores, ModelScoresUnmarshaller>(ModelScoresUnmarshaller.Instance);
                     response.ModelScores = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleResults", targetDepth))
+                if (context.TestExpression("ruleResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RuleResult, RuleResultUnmarshaller>(RuleResultUnmarshaller.Instance);
                     response.RuleResults = unmarshaller.Unmarshall(context, ref reader);

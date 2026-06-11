@@ -52,43 +52,43 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deviceArn", targetDepth))
+                if (context.TestExpression("deviceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceCapabilities", targetDepth))
+                if (context.TestExpression("deviceCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceCapabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceName", targetDepth))
+                if (context.TestExpression("deviceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceQueueInfo", targetDepth))
+                if (context.TestExpression("deviceQueueInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeviceQueueInfo, DeviceQueueInfoUnmarshaller>(DeviceQueueInfoUnmarshaller.Instance);
                     response.DeviceQueueInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceStatus", targetDepth))
+                if (context.TestExpression("deviceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceType", targetDepth))
+                if (context.TestExpression("deviceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DeviceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerName", targetDepth))
+                if (context.TestExpression("providerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProviderName = unmarshaller.Unmarshall(context, ref reader);

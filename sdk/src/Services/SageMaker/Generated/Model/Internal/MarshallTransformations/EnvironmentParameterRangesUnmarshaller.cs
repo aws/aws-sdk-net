@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoricalParameterRanges", targetDepth))
+                if (context.TestExpression("CategoricalParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CategoricalParameter, CategoricalParameterUnmarshaller>(CategoricalParameterUnmarshaller.Instance);
                     unmarshalledObject.CategoricalParameterRanges = unmarshaller.Unmarshall(context, ref reader);

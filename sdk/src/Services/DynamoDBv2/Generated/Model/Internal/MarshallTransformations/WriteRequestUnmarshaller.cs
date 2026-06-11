@@ -56,13 +56,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeleteRequest", targetDepth))
+                if (context.TestExpression("DeleteRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteRequestUnmarshaller.Instance;
                     unmarshalledObject.DeleteRequest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PutRequest", targetDepth))
+                if (context.TestExpression("PutRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = PutRequestUnmarshaller.Instance;
                     unmarshalledObject.PutRequest = unmarshaller.Unmarshall(context, ref reader);

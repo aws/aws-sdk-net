@@ -3096,6 +3096,95 @@ namespace Amazon.IVS
 
         #endregion
         
+        #region  UpdateAdConfiguration
+
+
+        /// <summary>
+        /// Updates a specified ad configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateAdConfiguration">REST API Reference for UpdateAdConfiguration Operation</seealso>
+        public virtual UpdateAdConfigurationResponse UpdateAdConfiguration(UpdateAdConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAdConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAdConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a specified ad configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAdConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAdConfiguration service method, as returned by IVS.</returns>
+        /// <exception cref="Amazon.IVS.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVS.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateAdConfiguration">REST API Reference for UpdateAdConfiguration Operation</seealso>
+        public virtual Task<UpdateAdConfigurationResponse> UpdateAdConfigurationAsync(UpdateAdConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAdConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAdConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAdConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateChannel
 
 

@@ -56,7 +56,7 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RevisionPublished", targetDepth))
+                if (context.TestExpression("RevisionPublished", targetDepth, ref reader))
                 {
                     var unmarshaller = RevisionPublishedUnmarshaller.Instance;
                     unmarshalledObject.RevisionPublished = unmarshaller.Unmarshall(context, ref reader);

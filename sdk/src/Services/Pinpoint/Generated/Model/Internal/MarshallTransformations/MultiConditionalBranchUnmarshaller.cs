@@ -56,13 +56,13 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Condition", targetDepth))
+                if (context.TestExpression("Condition", targetDepth, ref reader))
                 {
                     var unmarshaller = SimpleConditionUnmarshaller.Instance;
                     unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextActivity", targetDepth))
+                if (context.TestExpression("NextActivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextActivity = unmarshaller.Unmarshall(context, ref reader);

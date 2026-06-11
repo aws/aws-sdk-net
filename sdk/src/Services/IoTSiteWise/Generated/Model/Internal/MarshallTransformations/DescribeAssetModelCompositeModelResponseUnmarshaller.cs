@@ -52,67 +52,67 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionDefinitions", targetDepth))
+                if (context.TestExpression("actionDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ActionDefinition, ActionDefinitionUnmarshaller>(ActionDefinitionUnmarshaller.Instance);
                     response.ActionDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelDescription", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelCompositeModelDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelExternalId", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelCompositeModelExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelId", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelCompositeModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelName", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelCompositeModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelPath", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelPath", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModelPathSegment, AssetModelCompositeModelPathSegmentUnmarshaller>(AssetModelCompositeModelPathSegmentUnmarshaller.Instance);
                     response.AssetModelCompositeModelPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelProperties", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelProperty, AssetModelPropertyUnmarshaller>(AssetModelPropertyUnmarshaller.Instance);
                     response.AssetModelCompositeModelProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetModelCompositeModelSummary, AssetModelCompositeModelSummaryUnmarshaller>(AssetModelCompositeModelSummaryUnmarshaller.Instance);
                     response.AssetModelCompositeModelSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelCompositeModelType", targetDepth))
+                if (context.TestExpression("assetModelCompositeModelType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelCompositeModelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("assetModelId", targetDepth))
+                if (context.TestExpression("assetModelId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compositionDetails", targetDepth))
+                if (context.TestExpression("compositionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositionDetailsUnmarshaller.Instance;
                     response.CompositionDetails = unmarshaller.Unmarshall(context, ref reader);

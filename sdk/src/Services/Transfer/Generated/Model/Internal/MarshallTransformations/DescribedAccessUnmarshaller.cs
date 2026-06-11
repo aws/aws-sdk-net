@@ -56,43 +56,43 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExternalId", targetDepth))
+                if (context.TestExpression("ExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HomeDirectory", targetDepth))
+                if (context.TestExpression("HomeDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HomeDirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HomeDirectoryMappings", targetDepth))
+                if (context.TestExpression("HomeDirectoryMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HomeDirectoryMapEntry, HomeDirectoryMapEntryUnmarshaller>(HomeDirectoryMapEntryUnmarshaller.Instance);
                     unmarshalledObject.HomeDirectoryMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HomeDirectoryType", targetDepth))
+                if (context.TestExpression("HomeDirectoryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HomeDirectoryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Policy", targetDepth))
+                if (context.TestExpression("Policy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Policy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PosixProfile", targetDepth))
+                if (context.TestExpression("PosixProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = PosixProfileUnmarshaller.Instance;
                     unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Role", targetDepth))
+                if (context.TestExpression("Role", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Role = unmarshaller.Unmarshall(context, ref reader);

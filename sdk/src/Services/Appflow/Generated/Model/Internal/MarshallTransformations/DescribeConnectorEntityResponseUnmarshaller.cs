@@ -52,7 +52,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectorEntityFields", targetDepth))
+                if (context.TestExpression("connectorEntityFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectorEntityField, ConnectorEntityFieldUnmarshaller>(ConnectorEntityFieldUnmarshaller.Instance);
                     response.ConnectorEntityFields = unmarshaller.Unmarshall(context, ref reader);

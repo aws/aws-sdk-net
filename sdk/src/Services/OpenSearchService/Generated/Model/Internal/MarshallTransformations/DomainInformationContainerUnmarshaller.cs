@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AWSDomainInformation", targetDepth))
+                if (context.TestExpression("AWSDomainInformation", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSDomainInformationUnmarshaller.Instance;
                     unmarshalledObject.AWSDomainInformation = unmarshaller.Unmarshall(context, ref reader);

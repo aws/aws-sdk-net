@@ -72,7 +72,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("serviceCode", targetDepth))
+                    if (context.TestExpression("serviceCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);

@@ -52,31 +52,31 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamResources", targetDepth))
+                if (context.TestExpression("iamResources", targetDepth, ref reader))
                 {
                     var unmarshaller = IamResourcesUnmarshaller.Instance;
                     response.IamResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModificationTime", targetDepth))
+                if (context.TestExpression("lastModificationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registerAccountStatus", targetDepth))
+                if (context.TestExpression("registerAccountStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegisterAccountStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestreamResources", targetDepth))
+                if (context.TestExpression("timestreamResources", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestreamResourcesUnmarshaller.Instance;
                     response.TimestreamResources = unmarshaller.Unmarshall(context, ref reader);

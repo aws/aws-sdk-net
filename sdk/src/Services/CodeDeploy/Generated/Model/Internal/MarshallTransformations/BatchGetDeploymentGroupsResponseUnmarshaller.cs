@@ -52,13 +52,13 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deploymentGroupsInfo", targetDepth))
+                if (context.TestExpression("deploymentGroupsInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentGroupInfo, DeploymentGroupInfoUnmarshaller>(DeploymentGroupInfoUnmarshaller.Instance);
                     response.DeploymentGroupsInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorMessage", targetDepth))
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);

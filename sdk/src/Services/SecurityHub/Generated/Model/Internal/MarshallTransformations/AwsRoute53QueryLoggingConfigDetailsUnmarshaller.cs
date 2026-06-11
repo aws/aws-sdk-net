@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogsLogGroupArn", targetDepth))
+                if (context.TestExpression("CloudWatchLogsLogGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsLogGroupArnConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsLogGroupArn = unmarshaller.Unmarshall(context, ref reader);

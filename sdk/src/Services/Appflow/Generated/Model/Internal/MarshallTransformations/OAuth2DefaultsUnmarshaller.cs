@@ -56,31 +56,31 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authCodeUrls", targetDepth))
+                if (context.TestExpression("authCodeUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AuthCodeUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oauth2CustomProperties", targetDepth))
+                if (context.TestExpression("oauth2CustomProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OAuth2CustomParameter, OAuth2CustomParameterUnmarshaller>(OAuth2CustomParameterUnmarshaller.Instance);
                     unmarshalledObject.Oauth2CustomProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oauth2GrantTypesSupported", targetDepth))
+                if (context.TestExpression("oauth2GrantTypesSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Oauth2GrantTypesSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oauthScopes", targetDepth))
+                if (context.TestExpression("oauthScopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OauthScopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tokenUrls", targetDepth))
+                if (context.TestExpression("tokenUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TokenUrls = unmarshaller.Unmarshall(context, ref reader);

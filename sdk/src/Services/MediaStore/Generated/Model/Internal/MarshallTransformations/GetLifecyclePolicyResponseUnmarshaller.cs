@@ -52,7 +52,7 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LifecyclePolicy", targetDepth))
+                if (context.TestExpression("LifecyclePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LifecyclePolicy = unmarshaller.Unmarshall(context, ref reader);

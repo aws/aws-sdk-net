@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountSettingsDetail", targetDepth))
+                if (context.TestExpression("accountSettingsDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountSettingsDetailUnmarshaller.Instance;
                     response.AccountSettingsDetail = unmarshaller.Unmarshall(context, ref reader);

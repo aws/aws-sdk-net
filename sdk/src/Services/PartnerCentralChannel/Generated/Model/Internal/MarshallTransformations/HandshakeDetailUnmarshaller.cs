@@ -56,19 +56,19 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("programManagementAccountHandshakeDetail", targetDepth))
+                if (context.TestExpression("programManagementAccountHandshakeDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ProgramManagementAccountHandshakeDetailUnmarshaller.Instance;
                     unmarshalledObject.ProgramManagementAccountHandshakeDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revokeServicePeriodHandshakeDetail", targetDepth))
+                if (context.TestExpression("revokeServicePeriodHandshakeDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = RevokeServicePeriodHandshakeDetailUnmarshaller.Instance;
                     unmarshalledObject.RevokeServicePeriodHandshakeDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startServicePeriodHandshakeDetail", targetDepth))
+                if (context.TestExpression("startServicePeriodHandshakeDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = StartServicePeriodHandshakeDetailUnmarshaller.Instance;
                     unmarshalledObject.StartServicePeriodHandshakeDetail = unmarshaller.Unmarshall(context, ref reader);

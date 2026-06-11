@@ -56,37 +56,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Behavior", targetDepth))
+                if (context.TestExpression("Behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = SegmentBehaviorsUnmarshaller.Instance;
                     unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Demographic", targetDepth))
+                if (context.TestExpression("Demographic", targetDepth, ref reader))
                 {
                     var unmarshaller = SegmentDemographicsUnmarshaller.Instance;
                     unmarshalledObject.Demographic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("Location", targetDepth, ref reader))
                 {
                     var unmarshaller = SegmentLocationUnmarshaller.Instance;
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, MetricDimension, StringUnmarshaller, MetricDimensionUnmarshaller>(StringUnmarshaller.Instance, MetricDimensionUnmarshaller.Instance);
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserAttributes", targetDepth))
+                if (context.TestExpression("UserAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeDimension, StringUnmarshaller, AttributeDimensionUnmarshaller>(StringUnmarshaller.Instance, AttributeDimensionUnmarshaller.Instance);
                     unmarshalledObject.UserAttributes = unmarshaller.Unmarshall(context, ref reader);

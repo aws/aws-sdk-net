@@ -52,73 +52,73 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectorArn", targetDepth))
+                if (context.TestExpression("connectorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorOperationArn", targetDepth))
+                if (context.TestExpression("connectorOperationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorOperationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorOperationState", targetDepth))
+                if (context.TestExpression("connectorOperationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorOperationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorOperationType", targetDepth))
+                if (context.TestExpression("connectorOperationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectorOperationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endTime", targetDepth))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("errorInfo", targetDepth))
+                if (context.TestExpression("errorInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = StateDescriptionUnmarshaller.Instance;
                     response.ErrorInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationSteps", targetDepth))
+                if (context.TestExpression("operationSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectorOperationStep, ConnectorOperationStepUnmarshaller>(ConnectorOperationStepUnmarshaller.Instance);
                     response.OperationSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("originConnectorConfiguration", targetDepth))
+                if (context.TestExpression("originConnectorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.OriginConnectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("originWorkerSetting", targetDepth))
+                if (context.TestExpression("originWorkerSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkerSettingUnmarshaller.Instance;
                     response.OriginWorkerSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetConnectorConfiguration", targetDepth))
+                if (context.TestExpression("targetConnectorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.TargetConnectorConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetWorkerSetting", targetDepth))
+                if (context.TestExpression("targetWorkerSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkerSettingUnmarshaller.Instance;
                     response.TargetWorkerSetting = unmarshaller.Unmarshall(context, ref reader);

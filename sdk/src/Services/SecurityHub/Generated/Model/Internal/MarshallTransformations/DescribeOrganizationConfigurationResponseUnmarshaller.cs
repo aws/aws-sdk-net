@@ -52,25 +52,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoEnable", targetDepth))
+                if (context.TestExpression("AutoEnable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AutoEnable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoEnableStandards", targetDepth))
+                if (context.TestExpression("AutoEnableStandards", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoEnableStandards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MemberAccountLimitReached", targetDepth))
+                if (context.TestExpression("MemberAccountLimitReached", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MemberAccountLimitReached = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationConfiguration", targetDepth))
+                if (context.TestExpression("OrganizationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationConfigurationUnmarshaller.Instance;
                     response.OrganizationConfiguration = unmarshaller.Unmarshall(context, ref reader);

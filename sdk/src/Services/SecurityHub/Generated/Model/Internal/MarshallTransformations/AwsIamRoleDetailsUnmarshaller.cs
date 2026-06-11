@@ -56,61 +56,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssumeRolePolicyDocument", targetDepth))
+                if (context.TestExpression("AssumeRolePolicyDocument", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssumeRolePolicyDocument = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AttachedManagedPolicies", targetDepth))
+                if (context.TestExpression("AttachedManagedPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsIamAttachedManagedPolicy, AwsIamAttachedManagedPolicyUnmarshaller>(AwsIamAttachedManagedPolicyUnmarshaller.Instance);
                     unmarshalledObject.AttachedManagedPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateDate", targetDepth))
+                if (context.TestExpression("CreateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceProfileList", targetDepth))
+                if (context.TestExpression("InstanceProfileList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsIamInstanceProfile, AwsIamInstanceProfileUnmarshaller>(AwsIamInstanceProfileUnmarshaller.Instance);
                     unmarshalledObject.InstanceProfileList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxSessionDuration", targetDepth))
+                if (context.TestExpression("MaxSessionDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxSessionDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Path", targetDepth))
+                if (context.TestExpression("Path", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PermissionsBoundary", targetDepth))
+                if (context.TestExpression("PermissionsBoundary", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsIamPermissionsBoundaryUnmarshaller.Instance;
                     unmarshalledObject.PermissionsBoundary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleId", targetDepth))
+                if (context.TestExpression("RoleId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleName", targetDepth))
+                if (context.TestExpression("RoleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RolePolicyList", targetDepth))
+                if (context.TestExpression("RolePolicyList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsIamRolePolicy, AwsIamRolePolicyUnmarshaller>(AwsIamRolePolicyUnmarshaller.Instance);
                     unmarshalledObject.RolePolicyList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GlobalSignInEndpoint", targetDepth))
+                if (context.TestExpression("GlobalSignInEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GlobalSignInEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationStatusSummaryList", targetDepth))
+                if (context.TestExpression("ReplicationStatusSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationStatusSummary, ReplicationStatusSummaryUnmarshaller>(ReplicationStatusSummaryUnmarshaller.Instance);
                     unmarshalledObject.ReplicationStatusSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceRegion", targetDepth))
+                if (context.TestExpression("SourceRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context, ref reader);

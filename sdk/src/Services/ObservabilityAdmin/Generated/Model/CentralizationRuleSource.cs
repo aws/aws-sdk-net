@@ -37,6 +37,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scope;
         private SourceLogsConfiguration _sourceLogsConfiguration;
+        private SourceMetricsConfiguration _sourceMetricsConfiguration;
 
         /// <summary>
         /// Gets and sets the property Regions. 
@@ -98,6 +99,24 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetSourceLogsConfiguration()
         {
             return this._sourceLogsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMetricsConfiguration. 
+        /// <para>
+        /// Metric specific configuration for centralization source metrics.
+        /// </para>
+        /// </summary>
+        public SourceMetricsConfiguration SourceMetricsConfiguration
+        {
+            get { return this._sourceMetricsConfiguration; }
+            set { this._sourceMetricsConfiguration = value; }
+        }
+
+        // Check to see if SourceMetricsConfiguration property is set
+        internal bool IsSetSourceMetricsConfiguration()
+        {
+            return this._sourceMetricsConfiguration != null;
         }
 
     }

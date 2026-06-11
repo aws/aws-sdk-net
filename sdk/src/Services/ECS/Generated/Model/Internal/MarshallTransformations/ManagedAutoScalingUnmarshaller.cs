@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationAutoScalingPolicies", targetDepth))
+                if (context.TestExpression("applicationAutoScalingPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedApplicationAutoScalingPolicy, ManagedApplicationAutoScalingPolicyUnmarshaller>(ManagedApplicationAutoScalingPolicyUnmarshaller.Instance);
                     unmarshalledObject.ApplicationAutoScalingPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalableTarget", targetDepth))
+                if (context.TestExpression("scalableTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedScalableTargetUnmarshaller.Instance;
                     unmarshalledObject.ScalableTarget = unmarshaller.Unmarshall(context, ref reader);

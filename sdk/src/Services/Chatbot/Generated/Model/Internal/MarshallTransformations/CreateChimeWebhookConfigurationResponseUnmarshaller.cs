@@ -52,7 +52,7 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WebhookConfiguration", targetDepth))
+                if (context.TestExpression("WebhookConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ChimeWebhookConfigurationUnmarshaller.Instance;
                     response.WebhookConfiguration = unmarshaller.Unmarshall(context, ref reader);

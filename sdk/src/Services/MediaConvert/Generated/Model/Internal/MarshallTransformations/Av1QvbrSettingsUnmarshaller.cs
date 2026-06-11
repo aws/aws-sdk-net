@@ -56,13 +56,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("qvbrQualityLevel", targetDepth))
+                if (context.TestExpression("qvbrQualityLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QvbrQualityLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("qvbrQualityLevelFineTune", targetDepth))
+                if (context.TestExpression("qvbrQualityLevelFineTune", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.QvbrQualityLevelFineTune = unmarshaller.Unmarshall(context, ref reader);

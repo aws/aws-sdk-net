@@ -56,13 +56,13 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExponentialRolloutRate", targetDepth))
+                if (context.TestExpression("ExponentialRolloutRate", targetDepth, ref reader))
                 {
                     var unmarshaller = ExponentialRolloutRateUnmarshaller.Instance;
                     unmarshalledObject.ExponentialRolloutRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumPerMinute", targetDepth))
+                if (context.TestExpression("MaximumPerMinute", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPerMinute = unmarshaller.Unmarshall(context, ref reader);

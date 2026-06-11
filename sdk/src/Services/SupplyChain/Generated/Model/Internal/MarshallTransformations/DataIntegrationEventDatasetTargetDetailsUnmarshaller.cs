@@ -56,19 +56,19 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datasetIdentifier", targetDepth))
+                if (context.TestExpression("datasetIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatasetIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetLoadExecution", targetDepth))
+                if (context.TestExpression("datasetLoadExecution", targetDepth, ref reader))
                 {
                     var unmarshaller = DataIntegrationEventDatasetLoadExecutionDetailsUnmarshaller.Instance;
                     unmarshalledObject.DatasetLoadExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operationType", targetDepth))
+                if (context.TestExpression("operationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperationType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxMemoryRequiredInMb", targetDepth))
+                if (context.TestExpression("MaxMemoryRequiredInMb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxMemoryRequiredInMb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinMemoryRequiredInMb", targetDepth))
+                if (context.TestExpression("MinMemoryRequiredInMb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinMemoryRequiredInMb = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfAcceleratorDevicesRequired", targetDepth))
+                if (context.TestExpression("NumberOfAcceleratorDevicesRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAcceleratorDevicesRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfCpuCoresRequired", targetDepth))
+                if (context.TestExpression("NumberOfCpuCoresRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.NumberOfCpuCoresRequired = unmarshaller.Unmarshall(context, ref reader);

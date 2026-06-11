@@ -56,19 +56,19 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachmentState", targetDepth))
+                if (context.TestExpression("attachmentState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("performance", targetDepth))
+                if (context.TestExpression("performance", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockStoragePerformanceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Performance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storage", targetDepth))
+                if (context.TestExpression("storage", targetDepth, ref reader))
                 {
                     var unmarshaller = StorageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Storage = unmarshaller.Unmarshall(context, ref reader);

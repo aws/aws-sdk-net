@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientAuthentication", targetDepth))
+                if (context.TestExpression("ClientAuthentication", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoClientAuthenticationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClusterName", targetDepth))
+                if (context.TestExpression("ClusterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrentVersion", targetDepth))
+                if (context.TestExpression("CurrentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionInfo", targetDepth))
+                if (context.TestExpression("EncryptionInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsMskClusterClusterInfoEncryptionInfoDetailsUnmarshaller.Instance;
                     unmarshalledObject.EncryptionInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnhancedMonitoring", targetDepth))
+                if (context.TestExpression("EnhancedMonitoring", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnhancedMonitoring = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfBrokerNodes", targetDepth))
+                if (context.TestExpression("NumberOfBrokerNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfBrokerNodes = unmarshaller.Unmarshall(context, ref reader);

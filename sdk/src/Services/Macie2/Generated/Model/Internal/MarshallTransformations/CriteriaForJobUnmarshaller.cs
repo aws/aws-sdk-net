@@ -56,13 +56,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("simpleCriterion", targetDepth))
+                if (context.TestExpression("simpleCriterion", targetDepth, ref reader))
                 {
                     var unmarshaller = SimpleCriterionForJobUnmarshaller.Instance;
                     unmarshalledObject.SimpleCriterion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagCriterion", targetDepth))
+                if (context.TestExpression("tagCriterion", targetDepth, ref reader))
                 {
                     var unmarshaller = TagCriterionForJobUnmarshaller.Instance;
                     unmarshalledObject.TagCriterion = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SummaryMetric", targetDepth))
+                if (context.TestExpression("SummaryMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = SummaryMetricConfigurationUnmarshaller.Instance;
                     response.SummaryMetric = unmarshaller.Unmarshall(context, ref reader);

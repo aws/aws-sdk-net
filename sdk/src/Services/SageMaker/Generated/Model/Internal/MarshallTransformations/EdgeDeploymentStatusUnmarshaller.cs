@@ -56,37 +56,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EdgeDeploymentFailedInStage", targetDepth))
+                if (context.TestExpression("EdgeDeploymentFailedInStage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentFailedInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentPendingInStage", targetDepth))
+                if (context.TestExpression("EdgeDeploymentPendingInStage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentPendingInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentStageStartTime", targetDepth))
+                if (context.TestExpression("EdgeDeploymentStageStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentStageStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentStatusMessage", targetDepth))
+                if (context.TestExpression("EdgeDeploymentStatusMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeDeploymentSuccessInStage", targetDepth))
+                if (context.TestExpression("EdgeDeploymentSuccessInStage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EdgeDeploymentSuccessInStage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StageStatus", targetDepth))
+                if (context.TestExpression("StageStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StageStatus = unmarshaller.Unmarshall(context, ref reader);

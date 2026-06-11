@@ -56,13 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogs", targetDepth))
+                if (context.TestExpression("CloudWatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AICloudWatchLogs, AICloudWatchLogsUnmarshaller>(AICloudWatchLogsUnmarshaller.Instance);
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OutputLocation", targetDepth))
+                if (context.TestExpression("MlflowConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AIMlflowConfigUnmarshaller.Instance;
+                    unmarshalledObject.MlflowConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("S3OutputLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3OutputLocation = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NullValueFormatConfiguration", targetDepth))
+                if (context.TestExpression("NullValueFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullValueFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NullValueFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericFormatConfiguration", targetDepth))
+                if (context.TestExpression("NumericFormatConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NumericFormatConfiguration = unmarshaller.Unmarshall(context, ref reader);

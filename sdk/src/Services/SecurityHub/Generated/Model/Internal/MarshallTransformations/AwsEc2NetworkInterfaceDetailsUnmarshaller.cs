@@ -56,49 +56,49 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attachment", targetDepth))
+                if (context.TestExpression("Attachment", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2NetworkInterfaceAttachmentUnmarshaller.Instance;
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpV6Addresses", targetDepth))
+                if (context.TestExpression("IpV6Addresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail, AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller>(AwsEc2NetworkInterfaceIpV6AddressDetailUnmarshaller.Instance);
                     unmarshalledObject.IpV6Addresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkInterfaceId", targetDepth))
+                if (context.TestExpression("NetworkInterfaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrivateIpAddresses", targetDepth))
+                if (context.TestExpression("PrivateIpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail, AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller>(AwsEc2NetworkInterfacePrivateIpAddressDetailUnmarshaller.Instance);
                     unmarshalledObject.PrivateIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicDnsName", targetDepth))
+                if (context.TestExpression("PublicDnsName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublicIp", targetDepth))
+                if (context.TestExpression("PublicIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroups", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2NetworkInterfaceSecurityGroup, AwsEc2NetworkInterfaceSecurityGroupUnmarshaller>(AwsEc2NetworkInterfaceSecurityGroupUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDestCheck", targetDepth))
+                if (context.TestExpression("SourceDestCheck", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SourceDestCheck = unmarshaller.Unmarshall(context, ref reader);

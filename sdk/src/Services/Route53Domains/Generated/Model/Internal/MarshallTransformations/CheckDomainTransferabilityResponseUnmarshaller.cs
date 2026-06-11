@@ -52,13 +52,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Message", targetDepth))
+                if (context.TestExpression("Message", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transferability", targetDepth))
+                if (context.TestExpression("Transferability", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainTransferabilityUnmarshaller.Instance;
                     response.Transferability = unmarshaller.Unmarshall(context, ref reader);

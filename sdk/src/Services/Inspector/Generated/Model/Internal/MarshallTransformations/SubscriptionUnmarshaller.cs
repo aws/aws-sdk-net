@@ -56,19 +56,19 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventSubscriptions", targetDepth))
+                if (context.TestExpression("eventSubscriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventSubscription, EventSubscriptionUnmarshaller>(EventSubscriptionUnmarshaller.Instance);
                     unmarshalledObject.EventSubscriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceArn", targetDepth))
+                if (context.TestExpression("resourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicArn", targetDepth))
+                if (context.TestExpression("topicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TopicArn = unmarshaller.Unmarshall(context, ref reader);

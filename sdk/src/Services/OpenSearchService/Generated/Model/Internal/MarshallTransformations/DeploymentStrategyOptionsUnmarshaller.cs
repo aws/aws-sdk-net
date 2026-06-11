@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeploymentStrategy", targetDepth))
+                if (context.TestExpression("DeploymentStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentStrategy = unmarshaller.Unmarshall(context, ref reader);

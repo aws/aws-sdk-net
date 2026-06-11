@@ -56,109 +56,109 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consumableResourceProperties", targetDepth))
+                if (context.TestExpression("consumableResourceProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsumableResourcePropertiesUnmarshaller.Instance;
                     unmarshalledObject.ConsumableResourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerOrchestrationType", targetDepth))
+                if (context.TestExpression("containerOrchestrationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerOrchestrationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerProperties", targetDepth))
+                if (context.TestExpression("containerProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerPropertiesUnmarshaller.Instance;
                     unmarshalledObject.ContainerProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsProperties", targetDepth))
+                if (context.TestExpression("ecsProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EcsProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksProperties", targetDepth))
+                if (context.TestExpression("eksProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = EksPropertiesUnmarshaller.Instance;
                     unmarshalledObject.EksProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDefinitionArn", targetDepth))
+                if (context.TestExpression("jobDefinitionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobDefinitionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDefinitionName", targetDepth))
+                if (context.TestExpression("jobDefinitionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobDefinitionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeProperties", targetDepth))
+                if (context.TestExpression("nodeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = NodePropertiesUnmarshaller.Instance;
                     unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameters", targetDepth))
+                if (context.TestExpression("parameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Parameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("platformCapabilities", targetDepth))
+                if (context.TestExpression("platformCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PlatformCapabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("propagateTags", targetDepth))
+                if (context.TestExpression("propagateTags", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retryStrategy", targetDepth))
+                if (context.TestExpression("retryStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryStrategyUnmarshaller.Instance;
                     unmarshalledObject.RetryStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("revision", targetDepth))
+                if (context.TestExpression("revision", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schedulingPriority", targetDepth))
+                if (context.TestExpression("schedulingPriority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SchedulingPriority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeout", targetDepth))
+                if (context.TestExpression("timeout", targetDepth, ref reader))
                 {
                     var unmarshaller = JobTimeoutUnmarshaller.Instance;
                     unmarshalledObject.Timeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

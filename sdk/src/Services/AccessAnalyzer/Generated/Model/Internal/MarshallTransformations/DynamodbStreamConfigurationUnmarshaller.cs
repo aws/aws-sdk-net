@@ -56,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("streamPolicy", targetDepth))
+                if (context.TestExpression("streamPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamPolicy = unmarshaller.Unmarshall(context, ref reader);

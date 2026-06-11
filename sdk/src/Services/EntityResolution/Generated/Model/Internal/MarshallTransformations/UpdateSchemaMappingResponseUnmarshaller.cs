@@ -52,25 +52,25 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mappedInputFields", targetDepth))
+                if (context.TestExpression("mappedInputFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SchemaInputAttribute, SchemaInputAttributeUnmarshaller>(SchemaInputAttributeUnmarshaller.Instance);
                     response.MappedInputFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaArn", targetDepth))
+                if (context.TestExpression("schemaArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SchemaArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schemaName", targetDepth))
+                if (context.TestExpression("schemaName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SchemaName = unmarshaller.Unmarshall(context, ref reader);

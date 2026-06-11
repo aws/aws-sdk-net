@@ -56,19 +56,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NaturalLanguageQueryGenerationOptions", targetDepth))
+                if (context.TestExpression("NaturalLanguageQueryGenerationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = NaturalLanguageQueryGenerationOptionsOutputUnmarshaller.Instance;
                     unmarshalledObject.NaturalLanguageQueryGenerationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3VectorsEngine", targetDepth))
+                if (context.TestExpression("S3VectorsEngine", targetDepth, ref reader))
                 {
                     var unmarshaller = S3VectorsEngineUnmarshaller.Instance;
                     unmarshalledObject.S3VectorsEngine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth))
+                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerlessVectorAccelerationUnmarshaller.Instance;
                     unmarshalledObject.ServerlessVectorAcceleration = unmarshaller.Unmarshall(context, ref reader);

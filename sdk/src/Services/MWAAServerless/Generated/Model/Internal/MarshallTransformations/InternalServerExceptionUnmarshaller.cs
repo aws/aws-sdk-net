@@ -72,7 +72,7 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("RetryAfterSeconds", targetDepth))
+                    if (context.TestExpression("RetryAfterSeconds", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);

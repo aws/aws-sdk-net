@@ -52,13 +52,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommenderFilters", targetDepth))
+                if (context.TestExpression("RecommenderFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommenderFilterSummary, RecommenderFilterSummaryUnmarshaller>(RecommenderFilterSummaryUnmarshaller.Instance);
                     response.RecommenderFilters = unmarshaller.Unmarshall(context, ref reader);

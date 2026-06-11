@@ -2112,6 +2112,20 @@
       "type":"list",
       "member":{"shape":"Container"}
     },
+    "ContinuousScanDetails":{
+      "type":"structure",
+      "required":["EndTime"],
+      "members":{
+        "StartTime":{
+          "shape":"Timestamp",
+          "locationName":"startTime"
+        },
+        "EndTime":{
+          "shape":"Timestamp",
+          "locationName":"endTime"
+        }
+      }
+    },
     "CountByCoverageStatus":{
       "type":"map",
       "key":{"shape":"CoverageStatus"},
@@ -6917,7 +6931,8 @@
         "EC2_INSTANCE",
         "EC2_RECOVERY_POINT",
         "S3_RECOVERY_POINT",
-        "S3_BUCKET"
+        "S3_BUCKET",
+        "S3_POINT_IN_TIME_RECOVERY"
       ]
     },
     "MalwareProtectionScanStatus":{
@@ -8166,6 +8181,10 @@
         "BackupVaultName":{
           "shape":"String",
           "locationName":"backupVaultName"
+        },
+        "ContinuousScanDetails":{
+          "shape":"ContinuousScanDetails",
+          "locationName":"continuousScanDetails"
         }
       }
     },
@@ -8181,6 +8200,12 @@
           "locationName":"backupVaultName"
         }
       }
+    },
+    "RelatedFilePathsList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":25,
+      "min":1
     },
     "RemoteAccountDetails":{
       "type":"structure",
@@ -8602,6 +8627,18 @@
         "ThreatFilePath":{
           "shape":"String",
           "locationName":"threatFilePath"
+        },
+        "FileOperation":{
+          "shape":"String",
+          "locationName":"fileOperation"
+        },
+        "FilePath":{
+          "shape":"String",
+          "locationName":"filePath"
+        },
+        "RelatedFilePaths":{
+          "shape":"RelatedFilePathsList",
+          "locationName":"relatedFilePaths"
         }
       }
     },
@@ -8912,12 +8949,30 @@
         }
       }
     },
+    "ScanConfigurationContinuousScanDetails":{
+      "type":"structure",
+      "required":["EndTime"],
+      "members":{
+        "StartTime":{
+          "shape":"Timestamp",
+          "locationName":"startTime"
+        },
+        "EndTime":{
+          "shape":"Timestamp",
+          "locationName":"endTime"
+        }
+      }
+    },
     "ScanConfigurationRecoveryPoint":{
       "type":"structure",
       "members":{
         "BackupVaultName":{
           "shape":"NonEmptyString",
           "locationName":"backupVaultName"
+        },
+        "ContinuousScanDetails":{
+          "shape":"ScanConfigurationContinuousScanDetails",
+          "locationName":"continuousScanDetails"
         }
       }
     },

@@ -52,31 +52,31 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountStatus", targetDepth))
+                if (context.TestExpression("AccountStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ActiveSubscribedDomains", targetDepth))
+                if (context.TestExpression("ActiveSubscribedDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainDeliverabilityTrackingOption, DomainDeliverabilityTrackingOptionUnmarshaller>(DomainDeliverabilityTrackingOptionUnmarshaller.Instance);
                     response.ActiveSubscribedDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DashboardEnabled", targetDepth))
+                if (context.TestExpression("DashboardEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.DashboardEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PendingExpirationSubscribedDomains", targetDepth))
+                if (context.TestExpression("PendingExpirationSubscribedDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainDeliverabilityTrackingOption, DomainDeliverabilityTrackingOptionUnmarshaller>(DomainDeliverabilityTrackingOptionUnmarshaller.Instance);
                     response.PendingExpirationSubscribedDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionExpiryDate", targetDepth))
+                if (context.TestExpression("SubscriptionExpiryDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.SubscriptionExpiryDate = unmarshaller.Unmarshall(context, ref reader);

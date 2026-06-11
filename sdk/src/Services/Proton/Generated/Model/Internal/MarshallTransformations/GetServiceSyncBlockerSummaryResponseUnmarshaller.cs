@@ -52,7 +52,7 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serviceSyncBlockerSummary", targetDepth))
+                if (context.TestExpression("serviceSyncBlockerSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceSyncBlockerSummaryUnmarshaller.Instance;
                     response.ServiceSyncBlockerSummary = unmarshaller.Unmarshall(context, ref reader);

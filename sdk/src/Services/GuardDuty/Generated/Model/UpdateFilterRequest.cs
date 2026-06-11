@@ -164,10 +164,6 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// description
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// id
         /// </para>
         ///  </li> <li> 
@@ -836,14 +832,6 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// resource.rdsDbInstanceDetails.tags.key
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// resource.rdsDbInstanceDetails.tags.value
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// resource.rdsDbInstanceDetails.vpcId
         /// </para>
         ///  </li> <li> 
@@ -1037,10 +1025,6 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// service.action.actionType
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// service.action.awsApiCallAction.affectedResources
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1617,14 +1601,6 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// service.count
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// service.detection.anomaly.profiles
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// service.detection.anomaly.unusual.behavior
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2771,10 +2747,6 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html">Findings
         /// severity levels</a> in the <i>Amazon GuardDuty User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// title
         /// </para>
         ///  </li> <li> 
         /// <para>

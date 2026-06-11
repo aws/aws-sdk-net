@@ -56,13 +56,13 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Components", targetDepth))
+                if (context.TestExpression("Components", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompositeSliComponent, CompositeSliComponentUnmarshaller>(CompositeSliComponentUnmarshaller.Instance);
                     unmarshalledObject.Components = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectionConfig", targetDepth))
+                if (context.TestExpression("SelectionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SelectionConfigUnmarshaller.Instance;
                     unmarshalledObject.SelectionConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sageMaker", targetDepth))
+                if (context.TestExpression("sageMaker", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerEndpointUnmarshaller.Instance;
                     unmarshalledObject.SageMaker = unmarshaller.Unmarshall(context, ref reader);

@@ -56,55 +56,55 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrawlDepth", targetDepth))
+                if (context.TestExpression("CrawlDepth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CrawlDepth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxContentSizePerPageInMegaBytes", targetDepth))
+                if (context.TestExpression("MaxContentSizePerPageInMegaBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.MaxContentSizePerPageInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxLinksPerPage", targetDepth))
+                if (context.TestExpression("MaxLinksPerPage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxLinksPerPage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxUrlsPerMinuteCrawlRate", targetDepth))
+                if (context.TestExpression("MaxUrlsPerMinuteCrawlRate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxUrlsPerMinuteCrawlRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyConfiguration", targetDepth))
+                if (context.TestExpression("ProxyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UrlExclusionPatterns", targetDepth))
+                if (context.TestExpression("UrlExclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UrlExclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UrlInclusionPatterns", targetDepth))
+                if (context.TestExpression("UrlInclusionPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.UrlInclusionPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Urls", targetDepth))
+                if (context.TestExpression("Urls", targetDepth, ref reader))
                 {
                     var unmarshaller = UrlsUnmarshaller.Instance;
                     unmarshalledObject.Urls = unmarshaller.Unmarshall(context, ref reader);

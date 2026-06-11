@@ -56,7 +56,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsEcrContainerImage", targetDepth))
+                if (context.TestExpression("awsEcrContainerImage", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcrContainerImageDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsEcrContainerImage = unmarshaller.Unmarshall(context, ref reader);

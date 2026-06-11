@@ -52,67 +52,67 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AlgorithmArn", targetDepth))
+                if (context.TestExpression("AlgorithmArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AlgorithmArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlgorithmDescription", targetDepth))
+                if (context.TestExpression("AlgorithmDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AlgorithmDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlgorithmName", targetDepth))
+                if (context.TestExpression("AlgorithmName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AlgorithmName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlgorithmStatus", targetDepth))
+                if (context.TestExpression("AlgorithmStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AlgorithmStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AlgorithmStatusDetails", targetDepth))
+                if (context.TestExpression("AlgorithmStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AlgorithmStatusDetailsUnmarshaller.Instance;
                     response.AlgorithmStatusDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertifyForMarketplace", targetDepth))
+                if (context.TestExpression("CertifyForMarketplace", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.CertifyForMarketplace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceSpecification", targetDepth))
+                if (context.TestExpression("InferenceSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceSpecificationUnmarshaller.Instance;
                     response.InferenceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProductId", targetDepth))
+                if (context.TestExpression("ProductId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProductId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingSpecification", targetDepth))
+                if (context.TestExpression("TrainingSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingSpecificationUnmarshaller.Instance;
                     response.TrainingSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationSpecification", targetDepth))
+                if (context.TestExpression("ValidationSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = AlgorithmValidationSpecificationUnmarshaller.Instance;
                     response.ValidationSpecification = unmarshaller.Unmarshall(context, ref reader);

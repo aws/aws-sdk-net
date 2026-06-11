@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Preference", targetDepth))
+                if (context.TestExpression("Preference", targetDepth, ref reader))
                 {
                     var unmarshaller = GeocodePreferenceValueUnmarshaller.Instance;
                     unmarshalledObject.Preference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestKey", targetDepth))
+                if (context.TestExpression("RequestKey", targetDepth, ref reader))
                 {
                     var unmarshaller = GeocoderHierarchyUnmarshaller.Instance;
                     unmarshalledObject.RequestKey = unmarshaller.Unmarshall(context, ref reader);

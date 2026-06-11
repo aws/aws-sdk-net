@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Input data configuration for the advanced prompt optimization job.
+    /// Contains the input data configuration for an advanced prompt optimization job.
     /// </summary>
     public partial class AdvancedPromptOptimizationInputConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// S3 URI of the input JSONL file.
+        /// The S3 URI of the JSONL input file containing prompt templates and evaluation samples.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

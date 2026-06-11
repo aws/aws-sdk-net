@@ -56,43 +56,43 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Collectors", targetDepth))
+                if (context.TestExpression("Collectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CollectorShortInfoResponse, CollectorShortInfoResponseUnmarshaller>(CollectorShortInfoResponseUnmarshaller.Instance);
                     unmarshalledObject.Collectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseId", targetDepth))
+                if (context.TestExpression("DatabaseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseName", targetDepth))
+                if (context.TestExpression("DatabaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpAddress", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfSchemas", targetDepth))
+                if (context.TestExpression("NumberOfSchemas", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSchemas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Server", targetDepth))
+                if (context.TestExpression("Server", targetDepth, ref reader))
                 {
                     var unmarshaller = ServerShortInfoResponseUnmarshaller.Instance;
                     unmarshalledObject.Server = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SoftwareDetails", targetDepth))
+                if (context.TestExpression("SoftwareDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DatabaseInstanceSoftwareDetailsResponseUnmarshaller.Instance;
                     unmarshalledObject.SoftwareDetails = unmarshaller.Unmarshall(context, ref reader);

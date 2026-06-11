@@ -52,7 +52,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("index", targetDepth))
+                if (context.TestExpression("index", targetDepth, ref reader))
                 {
                     var unmarshaller = IndexUnmarshaller.Instance;
                     response.Index = unmarshaller.Unmarshall(context, ref reader);

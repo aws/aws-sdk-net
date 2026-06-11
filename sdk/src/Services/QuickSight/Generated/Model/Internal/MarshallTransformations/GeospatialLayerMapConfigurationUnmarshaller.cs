@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Interactions", targetDepth))
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
                     unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Legend", targetDepth))
+                if (context.TestExpression("Legend", targetDepth, ref reader))
                 {
                     var unmarshaller = LegendOptionsUnmarshaller.Instance;
                     unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapLayers", targetDepth))
+                if (context.TestExpression("MapLayers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GeospatialLayerItem, GeospatialLayerItemUnmarshaller>(GeospatialLayerItemUnmarshaller.Instance);
                     unmarshalledObject.MapLayers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapState", targetDepth))
+                if (context.TestExpression("MapState", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialMapStateUnmarshaller.Instance;
                     unmarshalledObject.MapState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MapStyle", targetDepth))
+                if (context.TestExpression("MapStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialMapStyleUnmarshaller.Instance;
                     unmarshalledObject.MapStyle = unmarshaller.Unmarshall(context, ref reader);

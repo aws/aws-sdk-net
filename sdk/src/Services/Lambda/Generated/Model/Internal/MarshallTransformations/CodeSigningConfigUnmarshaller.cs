@@ -56,37 +56,37 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllowedPublishers", targetDepth))
+                if (context.TestExpression("AllowedPublishers", targetDepth, ref reader))
                 {
                     var unmarshaller = AllowedPublishersUnmarshaller.Instance;
                     unmarshalledObject.AllowedPublishers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSigningConfigArn", targetDepth))
+                if (context.TestExpression("CodeSigningConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CodeSigningConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSigningConfigId", targetDepth))
+                if (context.TestExpression("CodeSigningConfigId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CodeSigningConfigId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeSigningPolicies", targetDepth))
+                if (context.TestExpression("CodeSigningPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeSigningPoliciesUnmarshaller.Instance;
                     unmarshalledObject.CodeSigningPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModified", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);

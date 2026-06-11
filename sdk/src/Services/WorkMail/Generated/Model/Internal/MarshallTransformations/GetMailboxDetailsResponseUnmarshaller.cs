@@ -52,13 +52,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MailboxQuota", targetDepth))
+                if (context.TestExpression("MailboxQuota", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MailboxQuota = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MailboxSize", targetDepth))
+                if (context.TestExpression("MailboxSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.MailboxSize = unmarshaller.Unmarshall(context, ref reader);

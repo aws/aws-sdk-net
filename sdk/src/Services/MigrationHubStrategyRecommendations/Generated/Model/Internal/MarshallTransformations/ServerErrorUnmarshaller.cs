@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serverErrorCategory", targetDepth))
+                if (context.TestExpression("serverErrorCategory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerErrorCategory = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Recency", targetDepth))
+                if (context.TestExpression("Recency", targetDepth, ref reader))
                 {
                     var unmarshaller = RecencyDimensionUnmarshaller.Instance;
                     unmarshalledObject.Recency = unmarshaller.Unmarshall(context, ref reader);

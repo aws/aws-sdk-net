@@ -8,8 +8,7 @@ namespace SmithyDotNet.Generator.Model;
 /// Combines operation discovery (similar to Java smithy-model's <c>TopDownIndex</c>) with
 /// recursive shape reachability (similar to the C2J generator's shape traversal).
 /// <para />
-/// Does not yet traverse resources or service-level errors and also assumes the model has been 
-/// validated by <see cref="ModelValidator"/>.
+/// Does not yet traverse resources. Assumes the model has been validated by <see cref="ModelValidator"/>.
 /// </summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/service-types.html" /></remarks>
 public class ServiceIndex
@@ -31,29 +30,35 @@ public class ServiceIndex
     {
         Service = model.Shapes.Values.OfType<ServiceShape>().Single();
         Operations = CollectOperations(model, Service);
-        Shapes = CollectReachableShapes(model, Operations);
+        Shapes = CollectReachableShapes(model, Service, Operations);
     }
 
     private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
     {
         // TODO: walk service.Resources recursively to collect lifecycle operations
-        var operations = new List<OperationShape>();
+        var operations = new List<OperationShape>(service.Operations.Count);
         foreach (var operationId in service.Operations)
         {
-            if (model.Shapes.TryGetValue(operationId.AbsoluteName, out var shape) && shape is OperationShape operation)
+            if (!model.Shapes.TryGetValue(operationId.AbsoluteName, out var shape) || shape is not OperationShape operation)
             {
-                operations.Add(operation);
+                throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
+
+            operations.Add(operation);
         }
 
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, IReadOnlyList<OperationShape> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
     {
-        // TODO: walk service.Errors for service-level error shapes
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();
+
+        foreach (var errorId in service.Errors)
+        {
+            WalkShapeId(model, errorId, reachable, visited);
+        }
 
         foreach (var operation in operations)
         {

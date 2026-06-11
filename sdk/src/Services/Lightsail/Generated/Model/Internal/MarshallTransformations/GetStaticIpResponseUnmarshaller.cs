@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("staticIp", targetDepth))
+                if (context.TestExpression("staticIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StaticIpUnmarshaller.Instance;
                     response.StaticIp = unmarshaller.Unmarshall(context, ref reader);

@@ -52,37 +52,37 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnInfo", targetDepth))
+                if (context.TestExpression("ColumnInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnInfo, ColumnInfoUnmarshaller>(ColumnInfoUnmarshaller.Instance);
                     response.ColumnInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryId", targetDepth))
+                if (context.TestExpression("QueryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryInsightsResponse", targetDepth))
+                if (context.TestExpression("QueryInsightsResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryInsightsResponseUnmarshaller.Instance;
                     response.QueryInsightsResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryStatus", targetDepth))
+                if (context.TestExpression("QueryStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryStatusUnmarshaller.Instance;
                     response.QueryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rows", targetDepth))
+                if (context.TestExpression("Rows", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);
                     response.Rows = unmarshaller.Unmarshall(context, ref reader);

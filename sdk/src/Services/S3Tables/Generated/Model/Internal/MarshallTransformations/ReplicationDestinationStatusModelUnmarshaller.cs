@@ -56,31 +56,31 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destinationTableArn", targetDepth))
+                if (context.TestExpression("destinationTableArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTableArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationTableBucketArn", targetDepth))
+                if (context.TestExpression("destinationTableBucketArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationTableBucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureMessage", targetDepth))
+                if (context.TestExpression("failureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastSuccessfulReplicatedUpdate", targetDepth))
+                if (context.TestExpression("lastSuccessfulReplicatedUpdate", targetDepth, ref reader))
                 {
                     var unmarshaller = LastSuccessfulReplicatedUpdateUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulReplicatedUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationStatus", targetDepth))
+                if (context.TestExpression("replicationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicationStatus = unmarshaller.Unmarshall(context, ref reader);

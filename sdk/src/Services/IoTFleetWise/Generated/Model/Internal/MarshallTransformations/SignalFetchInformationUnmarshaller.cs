@@ -56,25 +56,25 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actions", targetDepth))
+                if (context.TestExpression("actions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conditionLanguageVersion", targetDepth))
+                if (context.TestExpression("conditionLanguageVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ConditionLanguageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fullyQualifiedName", targetDepth))
+                if (context.TestExpression("fullyQualifiedName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signalFetchConfig", targetDepth))
+                if (context.TestExpression("signalFetchConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SignalFetchConfigUnmarshaller.Instance;
                     unmarshalledObject.SignalFetchConfig = unmarshaller.Unmarshall(context, ref reader);

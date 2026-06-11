@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationItemsLimit", targetDepth))
+                if (context.TestExpression("DestinationItemsLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DestinationItemsLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceItemsLimit", targetDepth))
+                if (context.TestExpression("SourceItemsLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceItemsLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeightSort", targetDepth))
+                if (context.TestExpression("WeightSort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.WeightSort = unmarshaller.Unmarshall(context, ref reader);

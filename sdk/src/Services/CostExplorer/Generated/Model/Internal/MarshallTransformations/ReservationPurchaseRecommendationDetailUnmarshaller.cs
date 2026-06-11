@@ -56,145 +56,145 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AverageNormalizedUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("AverageNormalizedUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AverageNormalizedUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AverageNumberOfCapacityUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("AverageNumberOfCapacityUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AverageNumberOfCapacityUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AverageNumberOfInstancesUsedPerHour", targetDepth))
+                if (context.TestExpression("AverageNumberOfInstancesUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AverageNumberOfInstancesUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AverageUtilization", targetDepth))
+                if (context.TestExpression("AverageUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AverageUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CurrencyCode", targetDepth))
+                if (context.TestExpression("CurrencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedBreakEvenInMonths", targetDepth))
+                if (context.TestExpression("EstimatedBreakEvenInMonths", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedBreakEvenInMonths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedMonthlyOnDemandCost", targetDepth))
+                if (context.TestExpression("EstimatedMonthlyOnDemandCost", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlyOnDemandCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedMonthlySavingsAmount", targetDepth))
+                if (context.TestExpression("EstimatedMonthlySavingsAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlySavingsAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedMonthlySavingsPercentage", targetDepth))
+                if (context.TestExpression("EstimatedMonthlySavingsPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedMonthlySavingsPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EstimatedReservationCostForLookbackPeriod", targetDepth))
+                if (context.TestExpression("EstimatedReservationCostForLookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EstimatedReservationCostForLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceDetails", targetDepth))
+                if (context.TestExpression("InstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumNormalizedUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("MaximumNormalizedUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaximumNormalizedUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumNumberOfCapacityUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("MaximumNumberOfCapacityUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaximumNumberOfCapacityUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumNumberOfInstancesUsedPerHour", targetDepth))
+                if (context.TestExpression("MaximumNumberOfInstancesUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MaximumNumberOfInstancesUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumNormalizedUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("MinimumNormalizedUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MinimumNormalizedUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumNumberOfCapacityUnitsUsedPerHour", targetDepth))
+                if (context.TestExpression("MinimumNumberOfCapacityUnitsUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MinimumNumberOfCapacityUnitsUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumNumberOfInstancesUsedPerHour", targetDepth))
+                if (context.TestExpression("MinimumNumberOfInstancesUsedPerHour", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MinimumNumberOfInstancesUsedPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendedNormalizedUnitsToPurchase", targetDepth))
+                if (context.TestExpression("RecommendedNormalizedUnitsToPurchase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendedNormalizedUnitsToPurchase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendedNumberOfCapacityUnitsToPurchase", targetDepth))
+                if (context.TestExpression("RecommendedNumberOfCapacityUnitsToPurchase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendedNumberOfCapacityUnitsToPurchase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendedNumberOfInstancesToPurchase", targetDepth))
+                if (context.TestExpression("RecommendedNumberOfInstancesToPurchase", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendedNumberOfInstancesToPurchase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringStandardMonthlyCost", targetDepth))
+                if (context.TestExpression("RecurringStandardMonthlyCost", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecurringStandardMonthlyCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservedCapacityDetails", targetDepth))
+                if (context.TestExpression("ReservedCapacityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservedCapacityDetailsUnmarshaller.Instance;
                     unmarshalledObject.ReservedCapacityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpfrontCost", targetDepth))
+                if (context.TestExpression("UpfrontCost", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UpfrontCost = unmarshaller.Unmarshall(context, ref reader);

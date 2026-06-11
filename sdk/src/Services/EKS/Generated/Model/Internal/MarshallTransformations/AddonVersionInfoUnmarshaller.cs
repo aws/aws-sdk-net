@@ -56,37 +56,37 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addonVersion", targetDepth))
+                if (context.TestExpression("addonVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddonVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("architecture", targetDepth))
+                if (context.TestExpression("architecture", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Architecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compatibilities", targetDepth))
+                if (context.TestExpression("compatibilities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Compatibility, CompatibilityUnmarshaller>(CompatibilityUnmarshaller.Instance);
                     unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("computeTypes", targetDepth))
+                if (context.TestExpression("computeTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ComputeTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requiresConfiguration", targetDepth))
+                if (context.TestExpression("requiresConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requiresIamPermissions", targetDepth))
+                if (context.TestExpression("requiresIamPermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiresIamPermissions = unmarshaller.Unmarshall(context, ref reader);

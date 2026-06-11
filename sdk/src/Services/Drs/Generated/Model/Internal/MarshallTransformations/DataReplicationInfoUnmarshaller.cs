@@ -56,49 +56,49 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataReplicationError", targetDepth))
+                if (context.TestExpression("dataReplicationError", targetDepth, ref reader))
                 {
                     var unmarshaller = DataReplicationErrorUnmarshaller.Instance;
                     unmarshalledObject.DataReplicationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationInitiation", targetDepth))
+                if (context.TestExpression("dataReplicationInitiation", targetDepth, ref reader))
                 {
                     var unmarshaller = DataReplicationInitiationUnmarshaller.Instance;
                     unmarshalledObject.DataReplicationInitiation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationState", targetDepth))
+                if (context.TestExpression("dataReplicationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataReplicationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("etaDateTime", targetDepth))
+                if (context.TestExpression("etaDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EtaDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lagDuration", targetDepth))
+                if (context.TestExpression("lagDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LagDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatedDisks", targetDepth))
+                if (context.TestExpression("replicatedDisks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataReplicationInfoReplicatedDisk, DataReplicationInfoReplicatedDiskUnmarshaller>(DataReplicationInfoReplicatedDiskUnmarshaller.Instance);
                     unmarshalledObject.ReplicatedDisks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stagingAvailabilityZone", targetDepth))
+                if (context.TestExpression("stagingAvailabilityZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StagingAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stagingOutpostArn", targetDepth))
+                if (context.TestExpression("stagingOutpostArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StagingOutpostArn = unmarshaller.Unmarshall(context, ref reader);

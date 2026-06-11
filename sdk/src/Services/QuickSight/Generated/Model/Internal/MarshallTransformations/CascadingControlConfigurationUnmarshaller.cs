@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SourceControls", targetDepth))
+                if (context.TestExpression("SourceControls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CascadingControlSource, CascadingControlSourceUnmarshaller>(CascadingControlSourceUnmarshaller.Instance);
                     unmarshalledObject.SourceControls = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lambdaAction", targetDepth))
+                if (context.TestExpression("lambdaAction", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaActionUnmarshaller.Instance;
                     unmarshalledObject.LambdaAction = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobRun", targetDepth))
+                if (context.TestExpression("jobRun", targetDepth, ref reader))
                 {
                     var unmarshaller = JobRunUnmarshaller.Instance;
                     response.JobRun = unmarshaller.Unmarshall(context, ref reader);

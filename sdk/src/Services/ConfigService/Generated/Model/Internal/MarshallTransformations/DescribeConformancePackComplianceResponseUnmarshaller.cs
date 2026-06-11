@@ -52,19 +52,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConformancePackName", targetDepth))
+                if (context.TestExpression("ConformancePackName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConformancePackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConformancePackRuleComplianceList", targetDepth))
+                if (context.TestExpression("ConformancePackRuleComplianceList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConformancePackRuleCompliance, ConformancePackRuleComplianceUnmarshaller>(ConformancePackRuleComplianceUnmarshaller.Instance);
                     response.ConformancePackRuleComplianceList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

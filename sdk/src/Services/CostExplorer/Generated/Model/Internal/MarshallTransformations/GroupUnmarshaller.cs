@@ -56,13 +56,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Keys", targetDepth))
+                if (context.TestExpression("Keys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Metrics", targetDepth))
+                if (context.TestExpression("Metrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, MetricValue, StringUnmarshaller, MetricValueUnmarshaller>(StringUnmarshaller.Instance, MetricValueUnmarshaller.Instance);
                     unmarshalledObject.Metrics = unmarshaller.Unmarshall(context, ref reader);

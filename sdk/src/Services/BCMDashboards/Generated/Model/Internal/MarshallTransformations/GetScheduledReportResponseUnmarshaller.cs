@@ -52,7 +52,7 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scheduledReport", targetDepth))
+                if (context.TestExpression("scheduledReport", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledReportUnmarshaller.Instance;
                     response.ScheduledReport = unmarshaller.Unmarshall(context, ref reader);

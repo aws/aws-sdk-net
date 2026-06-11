@@ -56,7 +56,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("abrSettings", targetDepth))
+                if (context.TestExpression("abrSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedAbrSettingsUnmarshaller.Instance;
                     unmarshalledObject.AbrSettings = unmarshaller.Unmarshall(context, ref reader);

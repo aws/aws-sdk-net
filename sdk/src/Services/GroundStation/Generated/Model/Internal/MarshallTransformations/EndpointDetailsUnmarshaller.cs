@@ -56,43 +56,43 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth))
+                if (context.TestExpression("awsGroundStationAgentEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGroundStationAgentEndpointUnmarshaller.Instance;
                     unmarshalledObject.AwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("downlinkAwsGroundStationAgentEndpoint", targetDepth))
+                if (context.TestExpression("downlinkAwsGroundStationAgentEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = DownlinkAwsGroundStationAgentEndpointDetailsUnmarshaller.Instance;
                     unmarshalledObject.DownlinkAwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpoint", targetDepth))
+                if (context.TestExpression("endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = DataflowEndpointUnmarshaller.Instance;
                     unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthReasons", targetDepth))
+                if (context.TestExpression("healthReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.HealthReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthStatus", targetDepth))
+                if (context.TestExpression("healthStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityDetails", targetDepth))
+                if (context.TestExpression("securityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = SecurityDetailsUnmarshaller.Instance;
                     unmarshalledObject.SecurityDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uplinkAwsGroundStationAgentEndpoint", targetDepth))
+                if (context.TestExpression("uplinkAwsGroundStationAgentEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = UplinkAwsGroundStationAgentEndpointDetailsUnmarshaller.Instance;
                     unmarshalledObject.UplinkAwsGroundStationAgentEndpoint = unmarshaller.Unmarshall(context, ref reader);

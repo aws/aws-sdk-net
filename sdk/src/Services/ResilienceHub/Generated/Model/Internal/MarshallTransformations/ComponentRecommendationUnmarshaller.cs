@@ -56,19 +56,19 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appComponentName", targetDepth))
+                if (context.TestExpression("appComponentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("configRecommendations", targetDepth))
+                if (context.TestExpression("configRecommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConfigRecommendation, ConfigRecommendationUnmarshaller>(ConfigRecommendationUnmarshaller.Instance);
                     unmarshalledObject.ConfigRecommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recommendationStatus", targetDepth))
+                if (context.TestExpression("recommendationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendationStatus = unmarshaller.Unmarshall(context, ref reader);

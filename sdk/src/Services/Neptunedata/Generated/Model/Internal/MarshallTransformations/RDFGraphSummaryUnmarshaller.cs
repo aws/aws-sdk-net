@@ -56,43 +56,43 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("classes", targetDepth))
+                if (context.TestExpression("classes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Classes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numClasses", targetDepth))
+                if (context.TestExpression("numClasses", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumClasses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numDistinctPredicates", targetDepth))
+                if (context.TestExpression("numDistinctPredicates", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumDistinctPredicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numDistinctSubjects", targetDepth))
+                if (context.TestExpression("numDistinctSubjects", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumDistinctSubjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numQuads", targetDepth))
+                if (context.TestExpression("numQuads", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumQuads = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predicates", targetDepth))
+                if (context.TestExpression("predicates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dictionary<string, long>, JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
                     unmarshalledObject.Predicates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subjectStructures", targetDepth))
+                if (context.TestExpression("subjectStructures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubjectStructure, SubjectStructureUnmarshaller>(SubjectStructureUnmarshaller.Instance);
                     unmarshalledObject.SubjectStructures = unmarshaller.Unmarshall(context, ref reader);

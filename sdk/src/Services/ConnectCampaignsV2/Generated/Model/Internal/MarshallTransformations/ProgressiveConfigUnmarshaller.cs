@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bandwidthAllocation", targetDepth))
+                if (context.TestExpression("bandwidthAllocation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context, ref reader);

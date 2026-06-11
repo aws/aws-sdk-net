@@ -52,13 +52,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProxyRuleGroupArn", targetDepth))
+                if (context.TestExpression("ProxyRuleGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProxyRuleGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyRuleGroupName", targetDepth))
+                if (context.TestExpression("ProxyRuleGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProxyRuleGroupName = unmarshaller.Unmarshall(context, ref reader);

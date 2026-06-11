@@ -56,19 +56,19 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mainNode", targetDepth))
+                if (context.TestExpression("mainNode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MainNode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeRangeProperties", targetDepth))
+                if (context.TestExpression("nodeRangeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NodeRangeProperty, NodeRangePropertyUnmarshaller>(NodeRangePropertyUnmarshaller.Instance);
                     unmarshalledObject.NodeRangeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numNodes", targetDepth))
+                if (context.TestExpression("numNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context, ref reader);

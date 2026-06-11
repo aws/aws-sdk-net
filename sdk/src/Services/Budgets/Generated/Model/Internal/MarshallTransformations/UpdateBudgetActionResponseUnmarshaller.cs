@@ -52,25 +52,25 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetName", targetDepth))
+                if (context.TestExpression("BudgetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BudgetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewAction", targetDepth))
+                if (context.TestExpression("NewAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionUnmarshaller.Instance;
                     response.NewAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OldAction", targetDepth))
+                if (context.TestExpression("OldAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionUnmarshaller.Instance;
                     response.OldAction = unmarshaller.Unmarshall(context, ref reader);

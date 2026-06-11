@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DirectDeploySettings", targetDepth))
+                if (context.TestExpression("DirectDeploySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DirectDeploySettingsUnmarshaller.Instance;
                     unmarshalledObject.DirectDeploySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EmrServerlessSettings", targetDepth))
+                if (context.TestExpression("EmrServerlessSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmrServerlessSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmrServerlessSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GenerativeAiSettings", targetDepth))
+                if (context.TestExpression("GenerativeAiSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeAiSettingsUnmarshaller.Instance;
                     unmarshalledObject.GenerativeAiSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth))
+                if (context.TestExpression("IdentityProviderOAuthSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IdentityProviderOAuthSetting, IdentityProviderOAuthSettingUnmarshaller>(IdentityProviderOAuthSettingUnmarshaller.Instance);
                     unmarshalledObject.IdentityProviderOAuthSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KendraSettings", targetDepth))
+                if (context.TestExpression("KendraSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = KendraSettingsUnmarshaller.Instance;
                     unmarshalledObject.KendraSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelRegisterSettings", targetDepth))
+                if (context.TestExpression("ModelRegisterSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelRegisterSettingsUnmarshaller.Instance;
                     unmarshalledObject.ModelRegisterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesForecastingSettings", targetDepth))
+                if (context.TestExpression("TimeSeriesForecastingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeSeriesForecastingSettingsUnmarshaller.Instance;
                     unmarshalledObject.TimeSeriesForecastingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkspaceSettings", targetDepth))
+                if (context.TestExpression("WorkspaceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceSettingsUnmarshaller.Instance;
                     unmarshalledObject.WorkspaceSettings = unmarshaller.Unmarshall(context, ref reader);

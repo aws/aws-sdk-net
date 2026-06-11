@@ -56,61 +56,61 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("account", targetDepth))
+                if (context.TestExpression("account", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Account = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("caCertificateId", targetDepth))
+                if (context.TestExpression("caCertificateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CaCertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientId", targetDepth))
+                if (context.TestExpression("clientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cognitoIdentityPoolId", targetDepth))
+                if (context.TestExpression("cognitoIdentityPoolId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CognitoIdentityPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceCertificateArn", targetDepth))
+                if (context.TestExpression("deviceCertificateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceCertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deviceCertificateId", targetDepth))
+                if (context.TestExpression("deviceCertificateId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeviceCertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamRoleArn", targetDepth))
+                if (context.TestExpression("iamRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issuerCertificateIdentifier", targetDepth))
+                if (context.TestExpression("issuerCertificateIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = IssuerCertificateIdentifierUnmarshaller.Instance;
                     unmarshalledObject.IssuerCertificateIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyVersionIdentifier", targetDepth))
+                if (context.TestExpression("policyVersionIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyVersionIdentifierUnmarshaller.Instance;
                     unmarshalledObject.PolicyVersionIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleAliasArn", targetDepth))
+                if (context.TestExpression("roleAliasArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleAliasArn = unmarshaller.Unmarshall(context, ref reader);

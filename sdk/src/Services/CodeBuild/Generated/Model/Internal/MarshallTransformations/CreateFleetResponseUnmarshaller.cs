@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fleet", targetDepth))
+                if (context.TestExpression("fleet", targetDepth, ref reader))
                 {
                     var unmarshaller = FleetUnmarshaller.Instance;
                     response.Fleet = unmarshaller.Unmarshall(context, ref reader);

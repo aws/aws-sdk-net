@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputationId", targetDepth))
+                if (context.TestExpression("ComputationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FromValue", targetDepth))
+                if (context.TestExpression("FromValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MeasureFieldUnmarshaller.Instance;
                     unmarshalledObject.FromValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetValue", targetDepth))
+                if (context.TestExpression("TargetValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MeasureFieldUnmarshaller.Instance;
                     unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Time", targetDepth))
+                if (context.TestExpression("Time", targetDepth, ref reader))
                 {
                     var unmarshaller = DimensionFieldUnmarshaller.Instance;
                     unmarshalledObject.Time = unmarshaller.Unmarshall(context, ref reader);

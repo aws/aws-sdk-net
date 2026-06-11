@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("piiEntities", targetDepth))
+                if (context.TestExpression("piiEntities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailPiiEntity, GuardrailPiiEntityUnmarshaller>(GuardrailPiiEntityUnmarshaller.Instance);
                     unmarshalledObject.PiiEntities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regexes", targetDepth))
+                if (context.TestExpression("regexes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailRegex, GuardrailRegexUnmarshaller>(GuardrailRegexUnmarshaller.Instance);
                     unmarshalledObject.Regexes = unmarshaller.Unmarshall(context, ref reader);

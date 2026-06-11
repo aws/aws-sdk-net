@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idle", targetDepth))
+                if (context.TestExpression("idle", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;
                     unmarshalledObject.Idle = unmarshaller.Unmarshall(context, ref reader);

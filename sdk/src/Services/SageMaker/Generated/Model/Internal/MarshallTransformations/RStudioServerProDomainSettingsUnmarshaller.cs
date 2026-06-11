@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultResourceSpec", targetDepth))
+                if (context.TestExpression("DefaultResourceSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSpecUnmarshaller.Instance;
                     unmarshalledObject.DefaultResourceSpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainExecutionRoleArn", targetDepth))
+                if (context.TestExpression("DomainExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RStudioConnectUrl", targetDepth))
+                if (context.TestExpression("RStudioConnectUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RStudioConnectUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RStudioPackageManagerUrl", targetDepth))
+                if (context.TestExpression("RStudioPackageManagerUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RStudioPackageManagerUrl = unmarshaller.Unmarshall(context, ref reader);

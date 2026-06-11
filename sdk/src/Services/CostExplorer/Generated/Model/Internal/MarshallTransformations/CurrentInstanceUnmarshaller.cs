@@ -56,67 +56,67 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrencyCode", targetDepth))
+                if (context.TestExpression("CurrencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceName", targetDepth))
+                if (context.TestExpression("InstanceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonthlyCost", targetDepth))
+                if (context.TestExpression("MonthlyCost", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MonthlyCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("OnDemandHoursInLookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OnDemandHoursInLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReservationCoveredHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("ReservationCoveredHoursInLookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReservationCoveredHoursInLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceDetails", targetDepth))
+                if (context.TestExpression("ResourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ResourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceId", targetDepth))
+                if (context.TestExpression("ResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceUtilization", targetDepth))
+                if (context.TestExpression("ResourceUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
                     unmarshalledObject.ResourceUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("SavingsPlansCoveredHoursInLookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansCoveredHoursInLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TagValues, TagValuesUnmarshaller>(TagValuesUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalRunningHoursInLookbackPeriod", targetDepth))
+                if (context.TestExpression("TotalRunningHoursInLookbackPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalRunningHoursInLookbackPeriod = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.DynamoDBStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LastEvaluatedStreamArn", targetDepth))
+                if (context.TestExpression("LastEvaluatedStreamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LastEvaluatedStreamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Streams", targetDepth))
+                if (context.TestExpression("Streams", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreamSummary, StreamSummaryUnmarshaller>(StreamSummaryUnmarshaller.Instance);
                     response.Streams = unmarshaller.Unmarshall(context, ref reader);

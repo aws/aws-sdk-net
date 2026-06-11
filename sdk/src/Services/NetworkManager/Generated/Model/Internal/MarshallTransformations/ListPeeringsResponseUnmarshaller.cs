@@ -52,13 +52,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Peerings", targetDepth))
+                if (context.TestExpression("Peerings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Peering, PeeringUnmarshaller>(PeeringUnmarshaller.Instance);
                     response.Peerings = unmarshaller.Unmarshall(context, ref reader);

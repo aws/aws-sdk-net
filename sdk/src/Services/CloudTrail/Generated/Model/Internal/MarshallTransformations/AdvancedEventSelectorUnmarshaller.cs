@@ -56,13 +56,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldSelectors", targetDepth))
+                if (context.TestExpression("FieldSelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdvancedFieldSelector, AdvancedFieldSelectorUnmarshaller>(AdvancedFieldSelectorUnmarshaller.Instance);
                     unmarshalledObject.FieldSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

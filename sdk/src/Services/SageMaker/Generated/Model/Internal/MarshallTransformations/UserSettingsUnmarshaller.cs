@@ -56,109 +56,109 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoMountHomeEFS", targetDepth))
+                if (context.TestExpression("AutoMountHomeEFS", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoMountHomeEFS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CanvasAppSettings", targetDepth))
+                if (context.TestExpression("CanvasAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CanvasAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.CanvasAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeEditorAppSettings", targetDepth))
+                if (context.TestExpression("CodeEditorAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeEditorAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.CodeEditorAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomFileSystemConfigs", targetDepth))
+                if (context.TestExpression("CustomFileSystemConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomFileSystemConfig, CustomFileSystemConfigUnmarshaller>(CustomFileSystemConfigUnmarshaller.Instance);
                     unmarshalledObject.CustomFileSystemConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomPosixUserConfig", targetDepth))
+                if (context.TestExpression("CustomPosixUserConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomPosixUserConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomPosixUserConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultLandingUri", targetDepth))
+                if (context.TestExpression("DefaultLandingUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultLandingUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterLabAppSettings", targetDepth))
+                if (context.TestExpression("JupyterLabAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterLabAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterLabAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JupyterServerAppSettings", targetDepth))
+                if (context.TestExpression("JupyterServerAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = JupyterServerAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.JupyterServerAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelGatewayAppSettings", targetDepth))
+                if (context.TestExpression("KernelGatewayAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = KernelGatewayAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.KernelGatewayAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RSessionAppSettings", targetDepth))
+                if (context.TestExpression("RSessionAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RSessionAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.RSessionAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RStudioServerProAppSettings", targetDepth))
+                if (context.TestExpression("RStudioServerProAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = RStudioServerProAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.RStudioServerProAppSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecurityGroups", targetDepth))
+                if (context.TestExpression("SecurityGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SharingSettings", targetDepth))
+                if (context.TestExpression("SharingSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SharingSettingsUnmarshaller.Instance;
                     unmarshalledObject.SharingSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                if (context.TestExpression("SpaceStorageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultSpaceStorageSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StudioWebPortal", targetDepth))
+                if (context.TestExpression("StudioWebPortal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StudioWebPortal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StudioWebPortalSettings", targetDepth))
+                if (context.TestExpression("StudioWebPortalSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = StudioWebPortalSettingsUnmarshaller.Instance;
                     unmarshalledObject.StudioWebPortalSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TensorBoardAppSettings", targetDepth))
+                if (context.TestExpression("TensorBoardAppSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TensorBoardAppSettingsUnmarshaller.Instance;
                     unmarshalledObject.TensorBoardAppSettings = unmarshaller.Unmarshall(context, ref reader);

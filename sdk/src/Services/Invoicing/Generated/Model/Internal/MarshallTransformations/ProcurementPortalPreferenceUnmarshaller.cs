@@ -56,139 +56,139 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsAccountId", targetDepth))
+                if (context.TestExpression("AwsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BuyerDomain", targetDepth))
+                if (context.TestExpression("BuyerDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuyerDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BuyerIdentifier", targetDepth))
+                if (context.TestExpression("BuyerIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BuyerIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Contacts", targetDepth))
+                if (context.TestExpression("Contacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Contact, ContactUnmarshaller>(ContactUnmarshaller.Instance);
                     unmarshalledObject.Contacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateDate", targetDepth))
+                if (context.TestExpression("CreateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryEnabled", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryPreference", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = EinvoiceDeliveryPreferenceUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryPreferenceStatus", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryPreferenceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryPreferenceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EinvoiceDeliveryPreferenceStatusReason", targetDepth))
+                if (context.TestExpression("EinvoiceDeliveryPreferenceStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EinvoiceDeliveryPreferenceStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateDate", targetDepth))
+                if (context.TestExpression("LastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcurementPortalInstanceEndpoint", targetDepth))
+                if (context.TestExpression("ProcurementPortalInstanceEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProcurementPortalInstanceEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcurementPortalName", targetDepth))
+                if (context.TestExpression("ProcurementPortalName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProcurementPortalName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcurementPortalPreferenceArn", targetDepth))
+                if (context.TestExpression("ProcurementPortalPreferenceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProcurementPortalPreferenceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcurementPortalSharedSecret", targetDepth))
+                if (context.TestExpression("ProcurementPortalSharedSecret", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProcurementPortalSharedSecret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderRetrievalEnabled", targetDepth))
+                if (context.TestExpression("PurchaseOrderRetrievalEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOrderRetrievalEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderRetrievalEndpoint", targetDepth))
+                if (context.TestExpression("PurchaseOrderRetrievalEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOrderRetrievalEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderRetrievalPreferenceStatus", targetDepth))
+                if (context.TestExpression("PurchaseOrderRetrievalPreferenceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOrderRetrievalPreferenceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PurchaseOrderRetrievalPreferenceStatusReason", targetDepth))
+                if (context.TestExpression("PurchaseOrderRetrievalPreferenceStatusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PurchaseOrderRetrievalPreferenceStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Selector", targetDepth))
+                if (context.TestExpression("Selector", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcurementPortalPreferenceSelectorUnmarshaller.Instance;
                     unmarshalledObject.Selector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupplierDomain", targetDepth))
+                if (context.TestExpression("SupplierDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupplierDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupplierIdentifier", targetDepth))
+                if (context.TestExpression("SupplierIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SupplierIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TestEnvPreference", targetDepth))
+                if (context.TestExpression("TestEnvPreference", targetDepth, ref reader))
                 {
                     var unmarshaller = TestEnvPreferenceUnmarshaller.Instance;
                     unmarshalledObject.TestEnvPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Version", targetDepth))
+                if (context.TestExpression("Version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

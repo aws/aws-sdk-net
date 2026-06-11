@@ -56,7 +56,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdentityCenterConfig", targetDepth))
+                if (context.TestExpression("IdentityCenterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribedIdentityCenterConfigUnmarshaller.Instance;
                     unmarshalledObject.IdentityCenterConfig = unmarshaller.Unmarshall(context, ref reader);

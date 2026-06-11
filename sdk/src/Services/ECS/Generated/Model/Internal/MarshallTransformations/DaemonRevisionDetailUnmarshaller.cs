@@ -56,19 +56,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("capacityProviders", targetDepth))
+                if (context.TestExpression("capacityProviders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DaemonCapacityProvider, DaemonCapacityProviderUnmarshaller>(DaemonCapacityProviderUnmarshaller.Instance);
                     unmarshalledObject.CapacityProviders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalRunningCount", targetDepth))
+                if (context.TestExpression("totalRunningCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalRunningCount = unmarshaller.Unmarshall(context, ref reader);

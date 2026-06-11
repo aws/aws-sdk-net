@@ -56,43 +56,43 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cpus", targetDepth))
+                if (context.TestExpression("cpus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CPU, CPUUnmarshaller>(CPUUnmarshaller.Instance);
                     unmarshalledObject.Cpus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("disks", targetDepth))
+                if (context.TestExpression("disks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecoveryInstanceDisk, RecoveryInstanceDiskUnmarshaller>(RecoveryInstanceDiskUnmarshaller.Instance);
                     unmarshalledObject.Disks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identificationHints", targetDepth))
+                if (context.TestExpression("identificationHints", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentificationHintsUnmarshaller.Instance;
                     unmarshalledObject.IdentificationHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedDateTime", targetDepth))
+                if (context.TestExpression("lastUpdatedDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaces", targetDepth))
+                if (context.TestExpression("networkInterfaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
                     unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("os", targetDepth))
+                if (context.TestExpression("os", targetDepth, ref reader))
                 {
                     var unmarshaller = OSUnmarshaller.Instance;
                     unmarshalledObject.Os = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ramBytes", targetDepth))
+                if (context.TestExpression("ramBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RamBytes = unmarshaller.Unmarshall(context, ref reader);

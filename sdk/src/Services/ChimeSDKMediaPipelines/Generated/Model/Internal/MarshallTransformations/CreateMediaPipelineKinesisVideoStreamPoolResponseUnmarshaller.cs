@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KinesisVideoStreamPoolConfiguration", targetDepth))
+                if (context.TestExpression("KinesisVideoStreamPoolConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisVideoStreamPoolConfigurationUnmarshaller.Instance;
                     response.KinesisVideoStreamPoolConfiguration = unmarshaller.Unmarshall(context, ref reader);

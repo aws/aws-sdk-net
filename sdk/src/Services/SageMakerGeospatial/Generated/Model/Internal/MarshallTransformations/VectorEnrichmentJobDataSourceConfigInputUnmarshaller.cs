@@ -56,7 +56,7 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Data", targetDepth))
+                if (context.TestExpression("S3Data", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorEnrichmentJobS3DataUnmarshaller.Instance;
                     unmarshalledObject.S3Data = unmarshaller.Unmarshall(context, ref reader);

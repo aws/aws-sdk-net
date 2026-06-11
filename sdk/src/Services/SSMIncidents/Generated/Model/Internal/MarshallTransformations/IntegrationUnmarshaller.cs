@@ -56,7 +56,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("pagerDutyConfiguration", targetDepth))
+                if (context.TestExpression("pagerDutyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PagerDutyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PagerDutyConfiguration = unmarshaller.Unmarshall(context, ref reader);

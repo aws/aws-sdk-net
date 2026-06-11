@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregations", targetDepth))
+                if (context.TestExpression("aggregations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DifferentialPrivacyPreviewAggregation, DifferentialPrivacyPreviewAggregationUnmarshaller>(DifferentialPrivacyPreviewAggregationUnmarshaller.Instance);
                     unmarshalledObject.Aggregations = unmarshaller.Unmarshall(context, ref reader);

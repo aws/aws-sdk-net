@@ -56,49 +56,49 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("Aliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Alias, AliasUnmarshaller>(AliasUnmarshaller.Instance);
                     unmarshalledObject.Aliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EdgeType", targetDepth))
+                if (context.TestExpression("EdgeType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EdgeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReceivedEventAgeHistogram", targetDepth))
+                if (context.TestExpression("ReceivedEventAgeHistogram", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
                     unmarshalledObject.ReceivedEventAgeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceId", targetDepth))
+                if (context.TestExpression("ReferenceId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ReferenceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseTimeHistogram", targetDepth))
+                if (context.TestExpression("ResponseTimeHistogram", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HistogramEntry, HistogramEntryUnmarshaller>(HistogramEntryUnmarshaller.Instance);
                     unmarshalledObject.ResponseTimeHistogram = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SummaryStatistics", targetDepth))
+                if (context.TestExpression("SummaryStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = EdgeStatisticsUnmarshaller.Instance;
                     unmarshalledObject.SummaryStatistics = unmarshaller.Unmarshall(context, ref reader);

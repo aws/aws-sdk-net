@@ -56,37 +56,37 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aliases", targetDepth))
+                if (context.TestExpression("Aliases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LabelAlias, LabelAliasUnmarshaller>(LabelAliasUnmarshaller.Instance);
                     unmarshalledObject.Aliases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Categories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LabelCategory, LabelCategoryUnmarshaller>(LabelCategoryUnmarshaller.Instance);
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Confidence", targetDepth))
+                if (context.TestExpression("Confidence", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Instances", targetDepth))
+                if (context.TestExpression("Instances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Instance, InstanceUnmarshaller>(InstanceUnmarshaller.Instance);
                     unmarshalledObject.Instances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parents", targetDepth))
+                if (context.TestExpression("Parents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Parent, ParentUnmarshaller>(ParentUnmarshaller.Instance);
                     unmarshalledObject.Parents = unmarshaller.Unmarshall(context, ref reader);

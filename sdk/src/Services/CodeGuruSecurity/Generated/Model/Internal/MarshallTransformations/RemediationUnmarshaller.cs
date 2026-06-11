@@ -56,13 +56,13 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recommendation", targetDepth))
+                if (context.TestExpression("recommendation", targetDepth, ref reader))
                 {
                     var unmarshaller = RecommendationUnmarshaller.Instance;
                     unmarshalledObject.Recommendation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggestedFixes", targetDepth))
+                if (context.TestExpression("suggestedFixes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SuggestedFix, SuggestedFixUnmarshaller>(SuggestedFixUnmarshaller.Instance);
                     unmarshalledObject.SuggestedFixes = unmarshaller.Unmarshall(context, ref reader);

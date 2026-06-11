@@ -56,97 +56,103 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentInfo", targetDepth))
+                if (context.TestExpression("AgentInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactSearchSummaryAgentInfoUnmarshaller.Instance;
                     unmarshalledObject.AgentInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("AiAgentInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ContactSearchSummaryAiAgentInfo, ContactSearchSummaryAiAgentInfoUnmarshaller>(ContactSearchSummaryAiAgentInfoUnmarshaller.Instance);
+                    unmarshalledObject.AiAgentInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisconnectTimestamp", targetDepth))
+                if (context.TestExpression("DisconnectTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DisconnectTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalResiliencyMetadata", targetDepth))
+                if (context.TestExpression("GlobalResiliencyMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalResiliencyMetadataUnmarshaller.Instance;
                     unmarshalledObject.GlobalResiliencyMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialContactId", targetDepth))
+                if (context.TestExpression("InitialContactId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InitialContactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitiationMethod", targetDepth))
+                if (context.TestExpression("InitiationMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InitiationMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitiationTimestamp", targetDepth))
+                if (context.TestExpression("InitiationTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.InitiationTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviousContactId", targetDepth))
+                if (context.TestExpression("PreviousContactId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviousContactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueueInfo", targetDepth))
+                if (context.TestExpression("QueueInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactSearchSummaryQueueInfoUnmarshaller.Instance;
                     unmarshalledObject.QueueInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingCriteria", targetDepth))
+                if (context.TestExpression("RoutingCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingCriteriaUnmarshaller.Instance;
                     unmarshalledObject.RoutingCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScheduledTimestamp", targetDepth))
+                if (context.TestExpression("ScheduledTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduledTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentAttributes", targetDepth))
+                if (context.TestExpression("SegmentAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ContactSearchSummarySegmentAttributeValue, StringUnmarshaller, ContactSearchSummarySegmentAttributeValueUnmarshaller>(StringUnmarshaller.Instance, ContactSearchSummarySegmentAttributeValueUnmarshaller.Instance);
                     unmarshalledObject.SegmentAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AudioAggregationEndedAt", targetDepth))
+                if (context.TestExpression("AudioAggregationEndedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AudioAggregationEndedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AudioAggregationStartedAt", targetDepth))
+                if (context.TestExpression("AudioAggregationStartedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AudioAggregationStartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Configuration", targetDepth))
+                if (context.TestExpression("Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = FraudDetectionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Decision", targetDepth))
+                if (context.TestExpression("Decision", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Decision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FraudDetectionResultId", targetDepth))
+                if (context.TestExpression("FraudDetectionResultId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FraudDetectionResultId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Reasons", targetDepth))
+                if (context.TestExpression("Reasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Reasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RiskDetails", targetDepth))
+                if (context.TestExpression("RiskDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = FraudRiskDetailsUnmarshaller.Instance;
                     unmarshalledObject.RiskDetails = unmarshaller.Unmarshall(context, ref reader);

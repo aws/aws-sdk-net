@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("chunkingStrategy", targetDepth))
+                if (context.TestExpression("chunkingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChunkingStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixedSizeChunkingConfiguration", targetDepth))
+                if (context.TestExpression("fixedSizeChunkingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = FixedSizeChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FixedSizeChunkingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hierarchicalChunkingConfiguration", targetDepth))
+                if (context.TestExpression("hierarchicalChunkingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchicalChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HierarchicalChunkingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("semanticChunkingConfiguration", targetDepth))
+                if (context.TestExpression("semanticChunkingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticChunkingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SemanticChunkingConfiguration = unmarshaller.Unmarshall(context, ref reader);

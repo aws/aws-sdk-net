@@ -56,25 +56,25 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("claimsFalseScenario", targetDepth))
+                if (context.TestExpression("claimsFalseScenario", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckScenarioUnmarshaller.Instance;
                     unmarshalledObject.ClaimsFalseScenario = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("claimsTrueScenario", targetDepth))
+                if (context.TestExpression("claimsTrueScenario", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckScenarioUnmarshaller.Instance;
                     unmarshalledObject.ClaimsTrueScenario = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicWarning", targetDepth))
+                if (context.TestExpression("logicWarning", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckLogicWarningUnmarshaller.Instance;
                     unmarshalledObject.LogicWarning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("translation", targetDepth))
+                if (context.TestExpression("translation", targetDepth, ref reader))
                 {
                     var unmarshaller = AutomatedReasoningCheckTranslationUnmarshaller.Instance;
                     unmarshalledObject.Translation = unmarshaller.Unmarshall(context, ref reader);

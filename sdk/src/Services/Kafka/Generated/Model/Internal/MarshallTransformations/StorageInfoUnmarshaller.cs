@@ -56,7 +56,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ebsStorageInfo", targetDepth))
+                if (context.TestExpression("ebsStorageInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = EBSStorageInfoUnmarshaller.Instance;
                     unmarshalledObject.EbsStorageInfo = unmarshaller.Unmarshall(context, ref reader);

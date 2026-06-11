@@ -52,19 +52,19 @@ namespace Amazon.MarketplaceReporting.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dashboardIdentifier", targetDepth))
+                if (context.TestExpression("dashboardIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DashboardIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddingDomains", targetDepth))
+                if (context.TestExpression("embeddingDomains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.EmbeddingDomains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embedUrl", targetDepth))
+                if (context.TestExpression("embedUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EmbedUrl = unmarshaller.Unmarshall(context, ref reader);

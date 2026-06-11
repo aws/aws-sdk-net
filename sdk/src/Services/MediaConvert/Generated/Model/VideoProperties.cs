@@ -39,8 +39,10 @@ namespace Amazon.MediaConvert.Model
         private CodecMetadata _codecMetadata;
         private ColorPrimaries _colorPrimaries;
         private FrameRate _frameRate;
+        private HdrMetadata _hdrMetadata;
         private int? _height;
         private MatrixCoefficients _matrixCoefficients;
+        private int? _rotation;
         private TransferCharacteristics _transferCharacteristics;
         private int? _width;
 
@@ -129,6 +131,23 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HdrMetadata. HDR (High Dynamic Range) metadata extracted
+        /// from the container, including mastering display color volume and content light level
+        /// information. This metadata is present in HDR10 and similar HDR content.
+        /// </summary>
+        public HdrMetadata HdrMetadata
+        {
+            get { return this._hdrMetadata; }
+            set { this._hdrMetadata = value; }
+        }
+
+        // Check to see if HdrMetadata property is set
+        internal bool IsSetHdrMetadata()
+        {
+            return this._hdrMetadata != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Height. The height of the video track, in pixels.
         /// </summary>
         public int? Height
@@ -158,6 +177,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMatrixCoefficients()
         {
             return this._matrixCoefficients != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rotation. The clockwise rotation angle of the video track,
+        /// in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation
+        /// matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and
+        /// 270. This field is null when no rotation metadata is present or when the rotation
+        /// is 0 degrees. For MP4, non-standard transformation matrices also yield null.
+        /// </summary>
+        public int? Rotation
+        {
+            get { return this._rotation; }
+            set { this._rotation = value; }
+        }
+
+        // Check to see if Rotation property is set
+        internal bool IsSetRotation()
+        {
+            return this._rotation.HasValue; 
         }
 
         /// <summary>

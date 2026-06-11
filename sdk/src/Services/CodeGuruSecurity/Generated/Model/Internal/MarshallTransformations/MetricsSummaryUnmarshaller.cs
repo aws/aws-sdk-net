@@ -56,31 +56,31 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("categoriesWithMostFindings", targetDepth))
+                if (context.TestExpression("categoriesWithMostFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CategoryWithFindingNum, CategoryWithFindingNumUnmarshaller>(CategoryWithFindingNumUnmarshaller.Instance);
                     unmarshalledObject.CategoriesWithMostFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("date", targetDepth))
+                if (context.TestExpression("date", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openFindings", targetDepth))
+                if (context.TestExpression("openFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = FindingMetricsValuePerSeverityUnmarshaller.Instance;
                     unmarshalledObject.OpenFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scansWithMostOpenCriticalFindings", targetDepth))
+                if (context.TestExpression("scansWithMostOpenCriticalFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScanNameWithFindingNum, ScanNameWithFindingNumUnmarshaller>(ScanNameWithFindingNumUnmarshaller.Instance);
                     unmarshalledObject.ScansWithMostOpenCriticalFindings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scansWithMostOpenFindings", targetDepth))
+                if (context.TestExpression("scansWithMostOpenFindings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ScanNameWithFindingNum, ScanNameWithFindingNumUnmarshaller>(ScanNameWithFindingNumUnmarshaller.Instance);
                     unmarshalledObject.ScansWithMostOpenFindings = unmarshaller.Unmarshall(context, ref reader);

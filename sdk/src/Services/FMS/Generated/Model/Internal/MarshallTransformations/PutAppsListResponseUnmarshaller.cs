@@ -52,13 +52,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppsList", targetDepth))
+                if (context.TestExpression("AppsList", targetDepth, ref reader))
                 {
                     var unmarshaller = AppsListDataUnmarshaller.Instance;
                     response.AppsList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AppsListArn", targetDepth))
+                if (context.TestExpression("AppsListArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AppsListArn = unmarshaller.Unmarshall(context, ref reader);

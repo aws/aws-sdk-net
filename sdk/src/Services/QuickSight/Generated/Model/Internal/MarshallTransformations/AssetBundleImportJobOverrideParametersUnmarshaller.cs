@@ -56,55 +56,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Analyses", targetDepth))
+                if (context.TestExpression("Analyses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobAnalysisOverrideParameters, AssetBundleImportJobAnalysisOverrideParametersUnmarshaller>(AssetBundleImportJobAnalysisOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.Analyses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dashboards", targetDepth))
+                if (context.TestExpression("Dashboards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDashboardOverrideParameters, AssetBundleImportJobDashboardOverrideParametersUnmarshaller>(AssetBundleImportJobDashboardOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.Dashboards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSets", targetDepth))
+                if (context.TestExpression("DataSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDataSetOverrideParameters, AssetBundleImportJobDataSetOverrideParametersUnmarshaller>(AssetBundleImportJobDataSetOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.DataSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSources", targetDepth))
+                if (context.TestExpression("DataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobDataSourceOverrideParameters, AssetBundleImportJobDataSourceOverrideParametersUnmarshaller>(AssetBundleImportJobDataSourceOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Folders", targetDepth))
+                if (context.TestExpression("Folders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobFolderOverrideParameters, AssetBundleImportJobFolderOverrideParametersUnmarshaller>(AssetBundleImportJobFolderOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.Folders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RefreshSchedules", targetDepth))
+                if (context.TestExpression("RefreshSchedules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobRefreshScheduleOverrideParameters, AssetBundleImportJobRefreshScheduleOverrideParametersUnmarshaller>(AssetBundleImportJobRefreshScheduleOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.RefreshSchedules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceIdOverrideConfiguration", targetDepth))
+                if (context.TestExpression("ResourceIdOverrideConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobResourceIdOverrideConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResourceIdOverrideConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Themes", targetDepth))
+                if (context.TestExpression("Themes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobThemeOverrideParameters, AssetBundleImportJobThemeOverrideParametersUnmarshaller>(AssetBundleImportJobThemeOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.Themes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VPCConnections", targetDepth))
+                if (context.TestExpression("VPCConnections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobVPCConnectionOverrideParameters, AssetBundleImportJobVPCConnectionOverrideParametersUnmarshaller>(AssetBundleImportJobVPCConnectionOverrideParametersUnmarshaller.Instance);
                     unmarshalledObject.VPCConnections = unmarshaller.Unmarshall(context, ref reader);

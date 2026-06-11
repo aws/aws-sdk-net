@@ -52,13 +52,13 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Connectors", targetDepth))
+                if (context.TestExpression("Connectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectorSummary, ConnectorSummaryUnmarshaller>(ConnectorSummaryUnmarshaller.Instance);
                     response.Connectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Signin.Model.DeleteConsoleAuthorizationConfigurationRequest.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.DeleteConsoleAuthorizationConfigurationResponse.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.DeleteResourcePermissionStatementRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.DeleteResourcePermissionStatementRequest.StatementId</property>
+    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetConsoleAuthorizationConfigurationRequest.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.GetConsoleAuthorizationConfigurationResponse.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListResourcePermissionStatementsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListResourcePermissionStatementsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[-a-zA-Z0-9+=/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.ListResourcePermissionStatementsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[-a-zA-Z0-9+=/_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutConsoleAuthorizationConfigurationRequest.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutConsoleAuthorizationConfigurationResponse.TargetId</property>
+    <min>12</min>
+    <max>32</max>
+    <pattern>(\d{12}|o-[a-z0-9]{10}|r-[0-9a-z]{4,32})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ConsoleSourceVpce</property>
+    <pattern>vpce-[a-z0-9]{8,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.ExcludedPrincipal</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws:((iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]{1,64})|(iam::[0-9]{12}:user/[a-zA-Z0-9_+=,.@-]{1,64})|(sts::[0-9]{12}:federated-user/[a-zA-Z0-9_+=,.@-]{2,193})|(iam::[0-9]{12}:root))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.RequestedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+)+-\d+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.SigninSourceVpce</property>
+    <pattern>vpce-[a-z0-9]{8,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementRequest.SourceVpc</property>
+    <pattern>vpc-([0-9a-f]{8}|[0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PutResourcePermissionStatementResponse.StatementId</property>
+    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenRequestBody.ClientId</property>
     <pattern>arn:aws:signin:::devtools/(cross-device|same-device)</pattern>
   </property-value-rule>
@@ -47,5 +142,9 @@
   <property-value-rule>
     <property>Amazon.Signin.Model.CreateOAuth2TokenResponseBody.TokenType</property>
     <pattern>aws_sigv4</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Signin.Model.PermissionStatementSummary.Sid</property>
+    <pattern>[A-Za-z0-9+/]{64}=?</pattern>
   </property-value-rule>
 </property-value-rules>

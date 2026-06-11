@@ -56,19 +56,19 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupDetails", targetDepth))
+                if (context.TestExpression("BackupDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = BackupDetailsUnmarshaller.Instance;
                     unmarshalledObject.BackupDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceTableDetails", targetDepth))
+                if (context.TestExpression("SourceTableDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceTableDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceTableDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceTableFeatureDetails", targetDepth))
+                if (context.TestExpression("SourceTableFeatureDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceTableFeatureDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceTableFeatureDetails = unmarshaller.Unmarshall(context, ref reader);

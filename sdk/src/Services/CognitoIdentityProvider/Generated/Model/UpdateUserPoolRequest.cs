@@ -37,10 +37,17 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  <important> 
     /// <para>
-    /// With the exception of <c>UserPoolTier</c>, if you don't provide a value for an attribute,
-    /// Amazon Cognito sets it to its default value.
+    /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
+    /// value.
     /// </para>
-    ///  </important> <note> 
+    ///  </important> 
+    /// <para>
+    /// In secondary regions for user pools with multi-region replication, regional configurations
+    /// for email, SMS, Lambda functions, and tags can be updated. Both global and regional
+    /// settings must be provided as inputs, with global settings required to match existing
+    /// values to maintain consistency across replicas.
+    /// </para>
+    ///  <note> 
     /// <para>
     /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
     /// carriers require you to register an origination phone number before you can send SMS
@@ -93,6 +100,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
+        private IssuerConfigurationType _issuerConfiguration;
+        private KeyConfigurationType _keyConfiguration;
         private LambdaConfigType _lambdaConfig;
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
@@ -288,6 +297,44 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetEmailVerificationSubject()
         {
             return this._emailVerificationSubject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerConfiguration. 
+        /// <para>
+        /// The issuer configuration for the user pool. In secondary regions, this parameter must
+        /// match the existing configuration and cannot be modified.
+        /// </para>
+        /// </summary>
+        public IssuerConfigurationType IssuerConfiguration
+        {
+            get { return this._issuerConfiguration; }
+            set { this._issuerConfiguration = value; }
+        }
+
+        // Check to see if IssuerConfiguration property is set
+        internal bool IsSetIssuerConfiguration()
+        {
+            return this._issuerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyConfiguration. 
+        /// <para>
+        /// The key configuration for the user pool. In secondary regions, this parameter must
+        /// match the existing configuration and cannot be modified.
+        /// </para>
+        /// </summary>
+        public KeyConfigurationType KeyConfiguration
+        {
+            get { return this._keyConfiguration; }
+            set { this._keyConfiguration = value; }
+        }
+
+        // Check to see if KeyConfiguration property is set
+        internal bool IsSetKeyConfiguration()
+        {
+            return this._keyConfiguration != null;
         }
 
         /// <summary>

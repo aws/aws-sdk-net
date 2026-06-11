@@ -32,86 +32,14 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For custom endpoint with region not set and fips disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
+        [Description("Control Plane operation in us-east-1 (aws partition)")]
+        public void Control_Plane_operation_in_useast1_aws_partition_Test()
         {
             var parameters = new SigninEndpointParameters();
-            parameters["Endpoint"] = "https://example.com";
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For custom endpoint with fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Endpoint"] = "https://example.com";
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Endpoint"] = "https://example.com";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
+            parameters["IsControlPlane"] = true;
             parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
+            parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://signin.us-east-1.api.aws", endpoint.URL);
         }
@@ -120,8 +48,40 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("Control Plane operation in cn-north-1 (aws-cn partition)")]
+        public void Control_Plane_operation_in_cnnorth1_awscn_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsControlPlane"] = true;
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://signin.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("Data Plane operation in us-east-1")]
+        public void Data_Plane_operation_in_useast1_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["IsControlPlane"] = false;
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-east-1.signin.aws.amazon.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("Data Plane operation in us-east-1 (IsControlPlane not set)")]
+        public void Data_Plane_operation_in_useast1_IsControlPlane_not_set_Test()
         {
             var parameters = new SigninEndpointParameters();
             parameters["Region"] = "us-east-1";
@@ -135,248 +95,115 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("Data Plane operation in cn-north-1")]
+        public void Data_Plane_operation_in_cnnorth1_Test()
         {
             var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "cn-northwest-1";
+            parameters["IsControlPlane"] = false;
+            parameters["Region"] = "cn-north-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://cn-northwest-1.signin.amazonaws.cn", endpoint.URL);
+            Assert.AreEqual("https://cn-north-1.signin.amazonaws.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("Data Plane operation in us-gov-west-1")]
+        public void Data_Plane_operation_in_usgovwest1_Test()
         {
             var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "eusc-de-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.eusc-de-east-1.amazonaws.eu", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "eu-isoe-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-isof-south-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Signin")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new SigninEndpointParameters();
+            parameters["IsControlPlane"] = false;
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-gov-west-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://us-gov-west-1.signin.amazonaws-us-gov.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("FIPS endpoint in us-gov-west-1 (global endpoint)")]
+        public void FIPS_endpoint_in_usgovwest1_global_endpoint_Test()
         {
             var parameters = new SigninEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://signin-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://signin-fips.amazonaws-us-gov.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("FIPS endpoint in us-gov-east-1 (regional endpoint)")]
+        public void FIPS_endpoint_in_usgoveast1_regional_endpoint_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-gov-east-1.signin-fips.amazonaws-us-gov.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("FIPS endpoint in us-east-1")]
+        public void FIPS_endpoint_in_useast1_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://signin-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("DualStack falls through to default SDK endpoint in us-east-1 (aws partition)")]
+        public void DualStack_falls_through_to_default_SDK_endpoint_in_useast1_aws_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://signin.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("DualStack falls through to default SDK endpoint in cn-north-1 (aws-cn partition)")]
+        public void DualStack_falls_through_to_default_SDK_endpoint_in_cnnorth1_awscn_partition_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://signin.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("DualStack falls through to default SDK endpoint in us-gov-west-1 (aws-us-gov partition)")]
+        public void DualStack_falls_through_to_default_SDK_endpoint_in_usgovwest1_awsusgov_partition_Test()
         {
             var parameters = new SigninEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
@@ -390,27 +217,46 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("Custom SDK endpoint override")]
+        public void Custom_SDK_endpoint_override_Test()
         {
             var parameters = new SigninEndpointParameters();
-            parameters["Region"] = "us-gov-west-1";
+            parameters["Region"] = "us-east-1";
+            parameters["Endpoint"] = "https://custom.signin.example.com";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://us-gov-west-1.signin.amazonaws-us-gov.com", endpoint.URL);
+            Assert.AreEqual("https://custom.signin.example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Signin")]
-        [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
-        public void Missing_region_Test()
+        [Description("ISO partition (us-iso-east-1)")]
+        public void ISO_partition_usisoeast1_Test()
         {
             var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-iso-east-1.signin.c2shome.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Signin")]
+        [Description("ISO-B partition (us-isob-east-1)")]
+        public void ISOB_partition_usisobeast1_Test()
+        {
+            var parameters = new SigninEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonSigninEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://us-isob-east-1.signin.sc2shome.sgov.gov", endpoint.URL);
         }
 
     }

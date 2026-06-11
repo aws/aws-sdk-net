@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FragmentSelectorType", targetDepth))
+                if (context.TestExpression("FragmentSelectorType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FragmentSelectorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimestampRange", targetDepth))
+                if (context.TestExpression("TimestampRange", targetDepth, ref reader))
                 {
                     var unmarshaller = TimestampRangeUnmarshaller.Instance;
                     unmarshalledObject.TimestampRange = unmarshaller.Unmarshall(context, ref reader);

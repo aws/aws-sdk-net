@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("definition", targetDepth))
+                if (context.TestExpression("definition", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyDefinitionUnmarshaller.Instance;
                     unmarshalledObject.Definition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findings", targetDepth))
+                if (context.TestExpression("findings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Finding, FindingUnmarshaller>(FindingUnmarshaller.Instance);
                     unmarshalledObject.Findings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyGenerationAssetId", targetDepth))
+                if (context.TestExpression("policyGenerationAssetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyGenerationAssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rawTextFragment", targetDepth))
+                if (context.TestExpression("rawTextFragment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RawTextFragment = unmarshaller.Unmarshall(context, ref reader);

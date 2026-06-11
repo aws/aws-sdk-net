@@ -56,31 +56,31 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("command", targetDepth))
+                if (context.TestExpression("command", targetDepth, ref reader))
                 {
                     var unmarshaller = PlatformCommandUnmarshaller.Instance;
                     unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("runEnvironment", targetDepth))
+                if (context.TestExpression("runEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RunEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptLocationS3Bucket", targetDepth))
+                if (context.TestExpression("scriptLocationS3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScriptLocationS3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptLocationS3Key", targetDepth))
+                if (context.TestExpression("scriptLocationS3Key", targetDepth, ref reader))
                 {
                     var unmarshaller = PlatformScriptKeyUnmarshaller.Instance;
                     unmarshalledObject.ScriptLocationS3Key = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetType", targetDepth))
+                if (context.TestExpression("targetType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetType = unmarshaller.Unmarshall(context, ref reader);

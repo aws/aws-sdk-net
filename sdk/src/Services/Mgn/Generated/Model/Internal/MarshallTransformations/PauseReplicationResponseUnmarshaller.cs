@@ -52,85 +52,85 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationID", targetDepth))
+                if (context.TestExpression("applicationID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("connectorAction", targetDepth))
+                if (context.TestExpression("connectorAction", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceServerConnectorActionUnmarshaller.Instance;
                     response.ConnectorAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataReplicationInfo", targetDepth))
+                if (context.TestExpression("dataReplicationInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DataReplicationInfoUnmarshaller.Instance;
                     response.DataReplicationInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fqdnForActionFramework", targetDepth))
+                if (context.TestExpression("fqdnForActionFramework", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FqdnForActionFramework = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isArchived", targetDepth))
+                if (context.TestExpression("isArchived", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsArchived = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("launchedInstance", targetDepth))
+                if (context.TestExpression("launchedInstance", targetDepth, ref reader))
                 {
                     var unmarshaller = LaunchedInstanceUnmarshaller.Instance;
                     response.LaunchedInstance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifeCycle", targetDepth))
+                if (context.TestExpression("lifeCycle", targetDepth, ref reader))
                 {
                     var unmarshaller = LifeCycleUnmarshaller.Instance;
                     response.LifeCycle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationType", targetDepth))
+                if (context.TestExpression("replicationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReplicationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceProperties", targetDepth))
+                if (context.TestExpression("sourceProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;
                     response.SourceProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceServerID", targetDepth))
+                if (context.TestExpression("sourceServerID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceServerID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userProvidedID", targetDepth))
+                if (context.TestExpression("userProvidedID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UserProvidedID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vcenterClientID", targetDepth))
+                if (context.TestExpression("vcenterClientID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.VcenterClientID = unmarshaller.Unmarshall(context, ref reader);

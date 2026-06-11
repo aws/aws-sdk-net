@@ -56,25 +56,25 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Background", targetDepth))
+                if (context.TestExpression("Background", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectLabelsImageBackgroundUnmarshaller.Instance;
                     unmarshalledObject.Background = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DominantColors", targetDepth))
+                if (context.TestExpression("DominantColors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DominantColor, DominantColorUnmarshaller>(DominantColorUnmarshaller.Instance);
                     unmarshalledObject.DominantColors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Foreground", targetDepth))
+                if (context.TestExpression("Foreground", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectLabelsImageForegroundUnmarshaller.Instance;
                     unmarshalledObject.Foreground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Quality", targetDepth))
+                if (context.TestExpression("Quality", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectLabelsImageQualityUnmarshaller.Instance;
                     unmarshalledObject.Quality = unmarshaller.Unmarshall(context, ref reader);

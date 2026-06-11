@@ -52,13 +52,13 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("registryId", targetDepth))
+                if (context.TestExpression("registryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RegistryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoryCreationTemplate", targetDepth))
+                if (context.TestExpression("repositoryCreationTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryCreationTemplateUnmarshaller.Instance;
                     response.RepositoryCreationTemplate = unmarshaller.Unmarshall(context, ref reader);

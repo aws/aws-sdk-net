@@ -56,31 +56,31 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("metadata", targetDepth, ref reader))
                 {
                     var unmarshaller = MetadataUnmarshaller.Instance;
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parsedResponse", targetDepth))
+                if (context.TestExpression("parsedResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = PostProcessingParsedResponseUnmarshaller.Instance;
                     unmarshalledObject.ParsedResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rawResponse", targetDepth))
+                if (context.TestExpression("rawResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = RawResponseUnmarshaller.Instance;
                     unmarshalledObject.RawResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("reasoningContent", targetDepth, ref reader))
                 {
                     var unmarshaller = ReasoningContentBlockUnmarshaller.Instance;
                     unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("traceId", targetDepth))
+                if (context.TestExpression("traceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TraceId = unmarshaller.Unmarshall(context, ref reader);

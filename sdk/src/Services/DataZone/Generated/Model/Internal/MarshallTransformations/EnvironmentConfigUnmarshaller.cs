@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("imageVersion", targetDepth))
+                if (context.TestExpression("imageVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packageConfig", targetDepth))
+                if (context.TestExpression("packageConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageConfigUnmarshaller.Instance;
                     unmarshalledObject.PackageConfig = unmarshaller.Unmarshall(context, ref reader);

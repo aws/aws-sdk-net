@@ -56,13 +56,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffPeakWindow", targetDepth))
+                if (context.TestExpression("OffPeakWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = OffPeakWindowUnmarshaller.Instance;
                     unmarshalledObject.OffPeakWindow = unmarshaller.Unmarshall(context, ref reader);

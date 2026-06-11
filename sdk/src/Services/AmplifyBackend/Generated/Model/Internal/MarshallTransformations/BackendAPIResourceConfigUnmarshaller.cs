@@ -56,37 +56,37 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalAuthTypes", targetDepth))
+                if (context.TestExpression("additionalAuthTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BackendAPIAuthType, BackendAPIAuthTypeUnmarshaller>(BackendAPIAuthTypeUnmarshaller.Instance);
                     unmarshalledObject.AdditionalAuthTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("apiName", targetDepth))
+                if (context.TestExpression("apiName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conflictResolution", targetDepth))
+                if (context.TestExpression("conflictResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAPIConflictResolutionUnmarshaller.Instance;
                     unmarshalledObject.ConflictResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultAuthType", targetDepth))
+                if (context.TestExpression("defaultAuthType", targetDepth, ref reader))
                 {
                     var unmarshaller = BackendAPIAuthTypeUnmarshaller.Instance;
                     unmarshalledObject.DefaultAuthType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("service", targetDepth))
+                if (context.TestExpression("service", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transformSchema", targetDepth))
+                if (context.TestExpression("transformSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformSchema = unmarshaller.Unmarshall(context, ref reader);

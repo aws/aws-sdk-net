@@ -52,7 +52,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShareInvitation", targetDepth))
+                if (context.TestExpression("ShareInvitation", targetDepth, ref reader))
                 {
                     var unmarshaller = ShareInvitationUnmarshaller.Instance;
                     response.ShareInvitation = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeProgressStatus", targetDepth))
+                if (context.TestExpression("ChangeProgressStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = ChangeProgressStatusDetailsUnmarshaller.Instance;
                     response.ChangeProgressStatus = unmarshaller.Unmarshall(context, ref reader);

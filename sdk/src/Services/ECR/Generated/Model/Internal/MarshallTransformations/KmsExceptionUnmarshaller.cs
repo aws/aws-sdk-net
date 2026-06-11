@@ -72,7 +72,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("kmsError", targetDepth))
+                    if (context.TestExpression("kmsError", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.KmsError = unmarshaller.Unmarshall(context, ref reader);

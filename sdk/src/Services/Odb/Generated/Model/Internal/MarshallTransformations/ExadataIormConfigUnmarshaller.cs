@@ -56,25 +56,25 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dbPlans", targetDepth))
+                if (context.TestExpression("dbPlans", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DbIormConfig, DbIormConfigUnmarshaller>(DbIormConfigUnmarshaller.Instance);
                     unmarshalledObject.DbPlans = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleDetails", targetDepth))
+                if (context.TestExpression("lifecycleDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LifecycleDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleState", targetDepth))
+                if (context.TestExpression("lifecycleState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LifecycleState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("objective", targetDepth))
+                if (context.TestExpression("objective", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Objective = unmarshaller.Unmarshall(context, ref reader);

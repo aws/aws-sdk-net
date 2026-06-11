@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Messages", targetDepth))
+                if (context.TestExpression("Messages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Message, MessageUnmarshaller>(MessageUnmarshaller.Instance);
                     response.Messages = unmarshaller.Unmarshall(context, ref reader);

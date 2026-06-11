@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalArtifacts", targetDepth))
+                if (context.TestExpression("additionalArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalysisTemplateArtifact, AnalysisTemplateArtifactUnmarshaller>(AnalysisTemplateArtifactUnmarshaller.Instance);
                     unmarshalledObject.AdditionalArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entryPoint", targetDepth))
+                if (context.TestExpression("entryPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisTemplateArtifactUnmarshaller.Instance;
                     unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);

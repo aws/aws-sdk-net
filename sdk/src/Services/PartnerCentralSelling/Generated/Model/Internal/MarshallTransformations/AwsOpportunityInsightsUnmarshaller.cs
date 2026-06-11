@@ -56,19 +56,19 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsProductsSpendInsightsBySource", targetDepth))
+                if (context.TestExpression("AwsProductsSpendInsightsBySource", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsProductsSpendInsightsBySourceUnmarshaller.Instance;
                     unmarshalledObject.AwsProductsSpendInsightsBySource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngagementScore", targetDepth))
+                if (context.TestExpression("EngagementScore", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngagementScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextBestActions", targetDepth))
+                if (context.TestExpression("NextBestActions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextBestActions = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DedicatedMasterCount", targetDepth))
+                if (context.TestExpression("DedicatedMasterCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DedicatedMasterCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DedicatedMasterEnabled", targetDepth))
+                if (context.TestExpression("DedicatedMasterEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DedicatedMasterEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DedicatedMasterType", targetDepth))
+                if (context.TestExpression("DedicatedMasterType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DedicatedMasterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceCount", targetDepth))
+                if (context.TestExpression("InstanceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZoneAwarenessConfig", targetDepth))
+                if (context.TestExpression("ZoneAwarenessConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.ZoneAwarenessConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ZoneAwarenessEnabled", targetDepth))
+                if (context.TestExpression("ZoneAwarenessEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ZoneAwarenessEnabled = unmarshaller.Unmarshall(context, ref reader);

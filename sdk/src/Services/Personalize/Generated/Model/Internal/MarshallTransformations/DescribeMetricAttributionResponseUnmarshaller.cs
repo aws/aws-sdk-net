@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metricAttribution", targetDepth))
+                if (context.TestExpression("metricAttribution", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricAttributionUnmarshaller.Instance;
                     response.MetricAttribution = unmarshaller.Unmarshall(context, ref reader);

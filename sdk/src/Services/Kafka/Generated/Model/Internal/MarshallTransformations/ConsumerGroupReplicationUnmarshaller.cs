@@ -56,31 +56,31 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("consumerGroupOffsetSyncMode", targetDepth))
+                if (context.TestExpression("consumerGroupOffsetSyncMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConsumerGroupOffsetSyncMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("consumerGroupsToExclude", targetDepth))
+                if (context.TestExpression("consumerGroupsToExclude", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ConsumerGroupsToExclude = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("consumerGroupsToReplicate", targetDepth))
+                if (context.TestExpression("consumerGroupsToReplicate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ConsumerGroupsToReplicate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectAndCopyNewConsumerGroups", targetDepth))
+                if (context.TestExpression("detectAndCopyNewConsumerGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DetectAndCopyNewConsumerGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("synchroniseConsumerGroupOffsets", targetDepth))
+                if (context.TestExpression("synchroniseConsumerGroupOffsets", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SynchroniseConsumerGroupOffsets = unmarshaller.Unmarshall(context, ref reader);

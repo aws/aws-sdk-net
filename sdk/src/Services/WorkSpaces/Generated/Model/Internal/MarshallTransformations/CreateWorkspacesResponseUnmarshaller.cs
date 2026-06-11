@@ -52,13 +52,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedRequests", targetDepth))
+                if (context.TestExpression("FailedRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedCreateWorkspaceRequest, FailedCreateWorkspaceRequestUnmarshaller>(FailedCreateWorkspaceRequestUnmarshaller.Instance);
                     response.FailedRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PendingRequests", targetDepth))
+                if (context.TestExpression("PendingRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Workspace, WorkspaceUnmarshaller>(WorkspaceUnmarshaller.Instance);
                     response.PendingRequests = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReferenceSets", targetDepth))
+                if (context.TestExpression("ReferenceSets", targetDepth, ref reader))
                 {
                     var unmarshaller = ReferenceSetsUnmarshaller.Instance;
                     unmarshalledObject.ReferenceSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RulesSource", targetDepth))
+                if (context.TestExpression("RulesSource", targetDepth, ref reader))
                 {
                     var unmarshaller = RulesSourceUnmarshaller.Instance;
                     unmarshalledObject.RulesSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleVariables", targetDepth))
+                if (context.TestExpression("RuleVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = RuleVariablesUnmarshaller.Instance;
                     unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatefulRuleOptions", targetDepth))
+                if (context.TestExpression("StatefulRuleOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = StatefulRuleOptionsUnmarshaller.Instance;
                     unmarshalledObject.StatefulRuleOptions = unmarshaller.Unmarshall(context, ref reader);

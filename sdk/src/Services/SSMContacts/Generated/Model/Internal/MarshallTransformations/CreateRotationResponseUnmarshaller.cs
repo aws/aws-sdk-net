@@ -52,7 +52,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RotationArn", targetDepth))
+                if (context.TestExpression("RotationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RotationArn = unmarshaller.Unmarshall(context, ref reader);

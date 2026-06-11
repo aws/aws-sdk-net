@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Endpoints", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelDashboardEndpoint, ModelDashboardEndpointUnmarshaller>(ModelDashboardEndpointUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastBatchTransformJob", targetDepth))
+                if (context.TestExpression("LastBatchTransformJob", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformJobUnmarshaller.Instance;
                     unmarshalledObject.LastBatchTransformJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Model", targetDepth))
+                if (context.TestExpression("Model", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelCard", targetDepth))
+                if (context.TestExpression("ModelCard", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDashboardModelCardUnmarshaller.Instance;
                     unmarshalledObject.ModelCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringSchedules", targetDepth))
+                if (context.TestExpression("MonitoringSchedules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelDashboardMonitoringSchedule, ModelDashboardMonitoringScheduleUnmarshaller>(ModelDashboardMonitoringScheduleUnmarshaller.Instance);
                     unmarshalledObject.MonitoringSchedules = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusterArn", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unprocessedScramSecrets", targetDepth))
+                if (context.TestExpression("unprocessedScramSecrets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedScramSecret, UnprocessedScramSecretUnmarshaller>(UnprocessedScramSecretUnmarshaller.Instance);
                     response.UnprocessedScramSecrets = unmarshaller.Unmarshall(context, ref reader);

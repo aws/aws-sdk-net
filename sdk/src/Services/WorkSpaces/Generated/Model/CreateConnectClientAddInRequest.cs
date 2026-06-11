@@ -31,12 +31,12 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConnectClientAddIn operation.
-    /// Creates a client-add-in for Amazon Connect within a directory. You can create only
-    /// one Amazon Connect client add-in within a directory.
+    /// Creates a client-add-in for Connect Customer within a directory. You can create only
+    /// one Connect Customer client add-in within a directory.
     /// 
     ///  
     /// <para>
-    /// This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
+    /// This client add-in allows WorkSpaces users to seamlessly connect to Connect Customer.
     /// </para>
     /// </summary>
     public partial class CreateConnectClientAddInRequest : AmazonWorkSpacesRequest
@@ -86,7 +86,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property URL. 
         /// <para>
-        /// The endpoint URL of the Amazon Connect client add-in.
+        /// The endpoint URL of the Connect Customer client add-in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

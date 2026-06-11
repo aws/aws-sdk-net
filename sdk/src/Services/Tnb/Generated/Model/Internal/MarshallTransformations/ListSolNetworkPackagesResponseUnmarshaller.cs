@@ -52,13 +52,13 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkPackages", targetDepth))
+                if (context.TestExpression("networkPackages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListSolNetworkPackageInfo, ListSolNetworkPackageInfoUnmarshaller>(ListSolNetworkPackageInfoUnmarshaller.Instance);
                     response.NetworkPackages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.PinpointSMSVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogsDestination", targetDepth))
+                if (context.TestExpression("CloudWatchLogsDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsDestinationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisFirehoseDestination", targetDepth))
+                if (context.TestExpression("KinesisFirehoseDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisFirehoseDestinationUnmarshaller.Instance;
                     unmarshalledObject.KinesisFirehoseDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MatchingEventTypes", targetDepth))
+                if (context.TestExpression("MatchingEventTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.MatchingEventTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnsDestination", targetDepth))
+                if (context.TestExpression("SnsDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = SnsDestinationUnmarshaller.Instance;
                     unmarshalledObject.SnsDestination = unmarshaller.Unmarshall(context, ref reader);

@@ -44,6 +44,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _membershipIdentifier;
         private MetricsStatus _metricsStatus;
         private string _metricsStatusDetails;
+        private string _mlModelInferencePayerAccountId;
         private string _name;
         private InferenceOutputConfiguration _outputConfiguration;
         private TrainedModelInferenceJobStatus _status;
@@ -238,6 +239,25 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetMetricsStatusDetails()
         {
             return this._metricsStatusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlModelInferencePayerAccountId. 
+        /// <para>
+        /// The account ID of the member that is responsible for paying for model inference costs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string MlModelInferencePayerAccountId
+        {
+            get { return this._mlModelInferencePayerAccountId; }
+            set { this._mlModelInferencePayerAccountId = value; }
+        }
+
+        // Check to see if MlModelInferencePayerAccountId property is set
+        internal bool IsSetMlModelInferencePayerAccountId()
+        {
+            return this._mlModelInferencePayerAccountId != null;
         }
 
         /// <summary>

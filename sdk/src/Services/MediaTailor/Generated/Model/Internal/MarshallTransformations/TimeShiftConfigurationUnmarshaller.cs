@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxTimeDelaySeconds", targetDepth))
+                if (context.TestExpression("MaxTimeDelaySeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTimeDelaySeconds = unmarshaller.Unmarshall(context, ref reader);

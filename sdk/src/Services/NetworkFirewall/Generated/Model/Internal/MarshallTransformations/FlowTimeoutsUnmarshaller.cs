@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TcpIdleTimeoutSeconds", targetDepth))
+                if (context.TestExpression("TcpIdleTimeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TcpIdleTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);

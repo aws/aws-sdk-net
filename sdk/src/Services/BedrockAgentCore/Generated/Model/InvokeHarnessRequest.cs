@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         private List<HarnessMessage> _messages = AWSConfigs.InitializeCollections ? new List<HarnessMessage>() : null;
         private HarnessModelConfiguration _model;
         private string _runtimeSessionId;
+        private string _runtimeUserId;
         private List<HarnessSkill> _skills = AWSConfigs.InitializeCollections ? new List<HarnessSkill>() : null;
         private List<HarnessSystemContentBlock> _systemPrompt = AWSConfigs.InitializeCollections ? new List<HarnessSystemContentBlock>() : null;
         private int? _timeoutSeconds;
@@ -197,7 +198,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// a conversation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=33, Max=100)]
         public string RuntimeSessionId
         {
             get { return this._runtimeSessionId; }
@@ -208,6 +209,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetRuntimeSessionId()
         {
             return this._runtimeSessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeUserId. 
+        /// <para>
+        /// An identifier for the end user making the request. This value is passed through to
+        /// the runtime container.
+        /// </para>
+        /// </summary>
+        public string RuntimeUserId
+        {
+            get { return this._runtimeUserId; }
+            set { this._runtimeUserId = value; }
+        }
+
+        // Check to see if RuntimeUserId property is set
+        internal bool IsSetRuntimeUserId()
+        {
+            return this._runtimeUserId != null;
         }
 
         /// <summary>

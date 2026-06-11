@@ -52,7 +52,7 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RepositoryLinkInfo", targetDepth))
+                if (context.TestExpression("RepositoryLinkInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = RepositoryLinkInfoUnmarshaller.Instance;
                     response.RepositoryLinkInfo = unmarshaller.Unmarshall(context, ref reader);

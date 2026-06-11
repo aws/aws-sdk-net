@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OneDriveUserList", targetDepth))
+                if (context.TestExpression("OneDriveUserList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OneDriveUserList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OneDriveUserS3Path", targetDepth))
+                if (context.TestExpression("OneDriveUserS3Path", targetDepth, ref reader))
                 {
                     var unmarshaller = S3PathUnmarshaller.Instance;
                     unmarshalledObject.OneDriveUserS3Path = unmarshaller.Unmarshall(context, ref reader);

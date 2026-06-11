@@ -56,37 +56,37 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("externalAccessDetails", targetDepth))
+                if (context.TestExpression("externalAccessDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalAccessDetailsUnmarshaller.Instance;
                     unmarshalledObject.ExternalAccessDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("internalAccessDetails", targetDepth))
+                if (context.TestExpression("internalAccessDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = InternalAccessDetailsUnmarshaller.Instance;
                     unmarshalledObject.InternalAccessDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedIamRoleDetails", targetDepth))
+                if (context.TestExpression("unusedIamRoleDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedIamRoleDetailsUnmarshaller.Instance;
                     unmarshalledObject.UnusedIamRoleDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedIamUserAccessKeyDetails", targetDepth))
+                if (context.TestExpression("unusedIamUserAccessKeyDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedIamUserAccessKeyDetailsUnmarshaller.Instance;
                     unmarshalledObject.UnusedIamUserAccessKeyDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedIamUserPasswordDetails", targetDepth))
+                if (context.TestExpression("unusedIamUserPasswordDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedIamUserPasswordDetailsUnmarshaller.Instance;
                     unmarshalledObject.UnusedIamUserPasswordDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unusedPermissionDetails", targetDepth))
+                if (context.TestExpression("unusedPermissionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = UnusedPermissionDetailsUnmarshaller.Instance;
                     unmarshalledObject.UnusedPermissionDetails = unmarshaller.Unmarshall(context, ref reader);

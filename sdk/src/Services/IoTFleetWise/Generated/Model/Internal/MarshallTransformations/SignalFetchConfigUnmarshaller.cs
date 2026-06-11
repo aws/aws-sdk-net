@@ -56,13 +56,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conditionBased", targetDepth))
+                if (context.TestExpression("conditionBased", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionBasedSignalFetchConfigUnmarshaller.Instance;
                     unmarshalledObject.ConditionBased = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeBased", targetDepth))
+                if (context.TestExpression("timeBased", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedSignalFetchConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeBased = unmarshaller.Unmarshall(context, ref reader);

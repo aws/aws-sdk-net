@@ -52,25 +52,25 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("credentialProviderArn", targetDepth))
+                if (context.TestExpression("credentialProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CredentialProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("credentialProviderVendor", targetDepth))
+                if (context.TestExpression("credentialProviderVendor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CredentialProviderVendor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("providerConfigurationOutput", targetDepth))
+                if (context.TestExpression("providerConfigurationOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = PaymentProviderConfigurationOutputUnmarshaller.Instance;
                     response.ProviderConfigurationOutput = unmarshaller.Unmarshall(context, ref reader);

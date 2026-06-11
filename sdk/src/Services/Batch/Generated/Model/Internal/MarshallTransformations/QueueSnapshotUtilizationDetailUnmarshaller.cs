@@ -56,25 +56,25 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fairshareUtilization", targetDepth))
+                if (context.TestExpression("fairshareUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = FairshareUtilizationDetailUnmarshaller.Instance;
                     unmarshalledObject.FairshareUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("quotaShareUtilization", targetDepth))
+                if (context.TestExpression("quotaShareUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = QuotaShareUtilizationDetailUnmarshaller.Instance;
                     unmarshalledObject.QuotaShareUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalCapacityUsage", targetDepth))
+                if (context.TestExpression("totalCapacityUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueueSnapshotCapacityUsage, QueueSnapshotCapacityUsageUnmarshaller>(QueueSnapshotCapacityUsageUnmarshaller.Instance);
                     unmarshalledObject.TotalCapacityUsage = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CancelStepsInfoList", targetDepth))
+                if (context.TestExpression("CancelStepsInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CancelStepsInfo, CancelStepsInfoUnmarshaller>(CancelStepsInfoUnmarshaller.Instance);
                     response.CancelStepsInfoList = unmarshaller.Unmarshall(context, ref reader);

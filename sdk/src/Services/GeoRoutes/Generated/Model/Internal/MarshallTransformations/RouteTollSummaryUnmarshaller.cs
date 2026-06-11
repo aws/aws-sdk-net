@@ -56,7 +56,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Total", targetDepth))
+                if (context.TestExpression("Total", targetDepth, ref reader))
                 {
                     var unmarshaller = RouteTollPriceSummaryUnmarshaller.Instance;
                     unmarshalledObject.Total = unmarshaller.Unmarshall(context, ref reader);

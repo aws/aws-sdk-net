@@ -52,25 +52,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appId", targetDepth))
+                if (context.TestExpression("appId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AppId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("backendEnvironmentName", targetDepth))
+                if (context.TestExpression("backendEnvironmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BackendEnvironmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceConfig", targetDepth))
+                if (context.TestExpression("resourceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GetBackendStorageResourceConfigUnmarshaller.Instance;
                     response.ResourceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceName", targetDepth))
+                if (context.TestExpression("resourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceName = unmarshaller.Unmarshall(context, ref reader);

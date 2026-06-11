@@ -52,13 +52,13 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Firewall", targetDepth))
+                if (context.TestExpression("Firewall", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallUnmarshaller.Instance;
                     response.Firewall = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirewallStatus", targetDepth))
+                if (context.TestExpression("FirewallStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = FirewallStatusUnmarshaller.Instance;
                     response.FirewallStatus = unmarshaller.Unmarshall(context, ref reader);

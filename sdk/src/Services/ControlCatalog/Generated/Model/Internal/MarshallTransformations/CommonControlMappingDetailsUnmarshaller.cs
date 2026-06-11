@@ -56,7 +56,7 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonControlArn", targetDepth))
+                if (context.TestExpression("CommonControlArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CommonControlArn = unmarshaller.Unmarshall(context, ref reader);

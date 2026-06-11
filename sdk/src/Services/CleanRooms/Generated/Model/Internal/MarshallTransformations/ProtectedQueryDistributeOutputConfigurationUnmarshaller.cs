@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("locations", targetDepth))
+                if (context.TestExpression("locations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProtectedQueryDistributeOutputConfigurationLocation, ProtectedQueryDistributeOutputConfigurationLocationUnmarshaller>(ProtectedQueryDistributeOutputConfigurationLocationUnmarshaller.Instance);
                     unmarshalledObject.Locations = unmarshaller.Unmarshall(context, ref reader);

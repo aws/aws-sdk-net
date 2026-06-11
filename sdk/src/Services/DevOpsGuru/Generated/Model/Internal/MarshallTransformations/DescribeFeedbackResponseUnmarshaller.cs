@@ -52,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InsightFeedback", targetDepth))
+                if (context.TestExpression("InsightFeedback", targetDepth, ref reader))
                 {
                     var unmarshaller = InsightFeedbackUnmarshaller.Instance;
                     response.InsightFeedback = unmarshaller.Unmarshall(context, ref reader);

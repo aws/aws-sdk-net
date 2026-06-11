@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("teacherModelConfig", targetDepth))
+                if (context.TestExpression("teacherModelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TeacherModelConfigUnmarshaller.Instance;
                     unmarshalledObject.TeacherModelConfig = unmarshaller.Unmarshall(context, ref reader);

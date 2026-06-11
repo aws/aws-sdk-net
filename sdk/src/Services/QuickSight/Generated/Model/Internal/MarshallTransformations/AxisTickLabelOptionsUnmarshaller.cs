@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LabelOptions", targetDepth))
+                if (context.TestExpression("LabelOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.LabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RotationAngle", targetDepth))
+                if (context.TestExpression("RotationAngle", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RotationAngle = unmarshaller.Unmarshall(context, ref reader);

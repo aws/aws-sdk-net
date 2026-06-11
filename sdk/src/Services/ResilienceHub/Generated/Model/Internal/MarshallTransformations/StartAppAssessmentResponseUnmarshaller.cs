@@ -52,7 +52,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assessment", targetDepth))
+                if (context.TestExpression("assessment", targetDepth, ref reader))
                 {
                     var unmarshaller = AppAssessmentUnmarshaller.Instance;
                     response.Assessment = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatasetPropertiesList", targetDepth))
+                if (context.TestExpression("DatasetPropertiesList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DatasetProperties, DatasetPropertiesUnmarshaller>(DatasetPropertiesUnmarshaller.Instance);
                     response.DatasetPropertiesList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

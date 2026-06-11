@@ -56,31 +56,31 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PaginationConfiguration", targetDepth))
+                if (context.TestExpression("PaginationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PaginationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PaginationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestMethod", targetDepth))
+                if (context.TestExpression("RequestMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequestMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestParameters", targetDepth))
+                if (context.TestExpression("RequestParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConnectorProperty, ConnectorPropertyUnmarshaller>(ConnectorPropertyUnmarshaller.Instance);
                     unmarshalledObject.RequestParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestPath", targetDepth))
+                if (context.TestExpression("RequestPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RequestPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseConfiguration", targetDepth))
+                if (context.TestExpression("ResponseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResponseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResponseConfiguration = unmarshaller.Unmarshall(context, ref reader);

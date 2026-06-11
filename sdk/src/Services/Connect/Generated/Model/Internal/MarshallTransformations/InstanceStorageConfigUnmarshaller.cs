@@ -56,37 +56,37 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssociationId", targetDepth))
+                if (context.TestExpression("AssociationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisFirehoseConfig", targetDepth))
+                if (context.TestExpression("KinesisFirehoseConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisFirehoseConfigUnmarshaller.Instance;
                     unmarshalledObject.KinesisFirehoseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisStreamConfig", targetDepth))
+                if (context.TestExpression("KinesisStreamConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisStreamConfigUnmarshaller.Instance;
                     unmarshalledObject.KinesisStreamConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisVideoStreamConfig", targetDepth))
+                if (context.TestExpression("KinesisVideoStreamConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisVideoStreamConfigUnmarshaller.Instance;
                     unmarshalledObject.KinesisVideoStreamConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Config", targetDepth))
+                if (context.TestExpression("S3Config", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigUnmarshaller.Instance;
                     unmarshalledObject.S3Config = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageType", targetDepth))
+                if (context.TestExpression("StorageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageType = unmarshaller.Unmarshall(context, ref reader);

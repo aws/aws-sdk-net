@@ -52,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossAccountAttachment", targetDepth))
+                if (context.TestExpression("CrossAccountAttachment", targetDepth, ref reader))
                 {
                     var unmarshaller = AttachmentUnmarshaller.Instance;
                     response.CrossAccountAttachment = unmarshaller.Unmarshall(context, ref reader);

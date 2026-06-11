@@ -56,49 +56,49 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComputeTypeName", targetDepth))
+                if (context.TestExpression("ComputeTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalAccelerator", targetDepth))
+                if (context.TestExpression("GlobalAccelerator", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalAcceleratorForWorkSpaceUnmarshaller.Instance;
                     unmarshalledObject.GlobalAccelerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperatingSystemName", targetDepth))
+                if (context.TestExpression("OperatingSystemName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperatingSystemName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocols", targetDepth))
+                if (context.TestExpression("Protocols", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Protocols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RootVolumeSizeGib", targetDepth))
+                if (context.TestExpression("RootVolumeSizeGib", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RootVolumeSizeGib = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunningMode", targetDepth))
+                if (context.TestExpression("RunningMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RunningMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth))
+                if (context.TestExpression("RunningModeAutoStopTimeoutInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RunningModeAutoStopTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserVolumeSizeGib", targetDepth))
+                if (context.TestExpression("UserVolumeSizeGib", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UserVolumeSizeGib = unmarshaller.Unmarshall(context, ref reader);

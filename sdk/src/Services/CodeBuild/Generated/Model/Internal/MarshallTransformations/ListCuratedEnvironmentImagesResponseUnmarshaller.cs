@@ -52,7 +52,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("platforms", targetDepth))
+                if (context.TestExpression("platforms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentPlatform, EnvironmentPlatformUnmarshaller>(EnvironmentPlatformUnmarshaller.Instance);
                     response.Platforms = unmarshaller.Unmarshall(context, ref reader);

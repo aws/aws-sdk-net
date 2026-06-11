@@ -56,13 +56,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NetBiosName", targetDepth))
+                if (context.TestExpression("NetBiosName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetBiosName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth))
+                if (context.TestExpression("SelfManagedActiveDirectoryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SelfManagedActiveDirectoryAttributesUnmarshaller.Instance;
                     unmarshalledObject.SelfManagedActiveDirectoryConfiguration = unmarshaller.Unmarshall(context, ref reader);

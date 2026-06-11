@@ -52,43 +52,43 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DayOfMonth", targetDepth))
+                if (context.TestExpression("DayOfMonth", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DayOfMonth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DayOfWeek", targetDepth))
+                if (context.TestExpression("DayOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.DayOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayARN", targetDepth))
+                if (context.TestExpression("GatewayARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GatewayARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HourOfDay", targetDepth))
+                if (context.TestExpression("HourOfDay", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.HourOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinuteOfHour", targetDepth))
+                if (context.TestExpression("MinuteOfHour", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SoftwareUpdatePreferences", targetDepth))
+                if (context.TestExpression("SoftwareUpdatePreferences", targetDepth, ref reader))
                 {
                     var unmarshaller = SoftwareUpdatePreferencesUnmarshaller.Instance;
                     response.SoftwareUpdatePreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timezone", targetDepth))
+                if (context.TestExpression("Timezone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Timezone = unmarshaller.Unmarshall(context, ref reader);

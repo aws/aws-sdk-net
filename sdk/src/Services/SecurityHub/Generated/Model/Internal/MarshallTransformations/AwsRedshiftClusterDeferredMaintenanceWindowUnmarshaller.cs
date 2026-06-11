@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeferMaintenanceEndTime", targetDepth))
+                if (context.TestExpression("DeferMaintenanceEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeferMaintenanceEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeferMaintenanceIdentifier", targetDepth))
+                if (context.TestExpression("DeferMaintenanceIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeferMaintenanceIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeferMaintenanceStartTime", targetDepth))
+                if (context.TestExpression("DeferMaintenanceStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeferMaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);

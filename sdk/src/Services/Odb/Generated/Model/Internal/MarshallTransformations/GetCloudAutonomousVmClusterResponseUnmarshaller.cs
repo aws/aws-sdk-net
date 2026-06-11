@@ -52,7 +52,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudAutonomousVmCluster", targetDepth))
+                if (context.TestExpression("cloudAutonomousVmCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudAutonomousVmClusterUnmarshaller.Instance;
                     response.CloudAutonomousVmCluster = unmarshaller.Unmarshall(context, ref reader);

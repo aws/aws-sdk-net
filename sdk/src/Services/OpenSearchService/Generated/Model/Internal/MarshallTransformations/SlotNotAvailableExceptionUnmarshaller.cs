@@ -72,7 +72,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("SlotSuggestions", targetDepth))
+                    if (context.TestExpression("SlotSuggestions", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
                         unmarshalledObject.SlotSuggestions = unmarshaller.Unmarshall(context, ref reader);

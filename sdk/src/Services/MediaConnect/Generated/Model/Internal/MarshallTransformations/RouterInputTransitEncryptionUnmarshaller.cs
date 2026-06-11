@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionKeyConfiguration", targetDepth))
+                if (context.TestExpression("encryptionKeyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RouterInputTransitEncryptionKeyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionKeyType", targetDepth))
+                if (context.TestExpression("encryptionKeyType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKeyType = unmarshaller.Unmarshall(context, ref reader);

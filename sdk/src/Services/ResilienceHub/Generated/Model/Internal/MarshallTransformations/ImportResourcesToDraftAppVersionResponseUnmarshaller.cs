@@ -52,37 +52,37 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appArn", targetDepth))
+                if (context.TestExpression("appArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AppArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("appVersion", targetDepth))
+                if (context.TestExpression("appVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AppVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksSources", targetDepth))
+                if (context.TestExpression("eksSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksSource, EksSourceUnmarshaller>(EksSourceUnmarshaller.Instance);
                     response.EksSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceArns", targetDepth))
+                if (context.TestExpression("sourceArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SourceArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("terraformSources", targetDepth))
+                if (context.TestExpression("terraformSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TerraformSource, TerraformSourceUnmarshaller>(TerraformSourceUnmarshaller.Instance);
                     response.TerraformSources = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Linear", targetDepth))
+                if (context.TestExpression("Linear", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisLinearScaleUnmarshaller.Instance;
                     unmarshalledObject.Linear = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Logarithmic", targetDepth))
+                if (context.TestExpression("Logarithmic", targetDepth, ref reader))
                 {
                     var unmarshaller = AxisLogarithmicScaleUnmarshaller.Instance;
                     unmarshalledObject.Logarithmic = unmarshaller.Unmarshall(context, ref reader);

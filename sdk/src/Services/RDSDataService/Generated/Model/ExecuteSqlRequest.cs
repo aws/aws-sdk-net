@@ -61,7 +61,7 @@ namespace Amazon.RDSDataService.Model
         /// a database secret</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string AwsSecretStoreArn
         {
             get { return this._awsSecretStoreArn; }
@@ -99,7 +99,7 @@ namespace Amazon.RDSDataService.Model
         /// The ARN of the Aurora Serverless DB cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=11, Max=100)]
+        [AWSProperty(Required=true, Min=11, Max=570)]
         public string DbClusterOrInstanceArn
         {
             get { return this._dbClusterOrInstanceArn; }

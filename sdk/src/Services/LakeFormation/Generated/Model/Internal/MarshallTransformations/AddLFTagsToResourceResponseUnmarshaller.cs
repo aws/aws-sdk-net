@@ -52,7 +52,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Failures", targetDepth))
+                if (context.TestExpression("Failures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LFTagError, LFTagErrorUnmarshaller>(LFTagErrorUnmarshaller.Instance);
                     response.Failures = unmarshaller.Unmarshall(context, ref reader);

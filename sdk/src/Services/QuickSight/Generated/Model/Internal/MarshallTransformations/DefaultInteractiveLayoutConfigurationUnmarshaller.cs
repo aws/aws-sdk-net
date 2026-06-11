@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FreeForm", targetDepth))
+                if (context.TestExpression("FreeForm", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFreeFormLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.FreeForm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Grid", targetDepth))
+                if (context.TestExpression("Grid", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultGridLayoutConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Grid = unmarshaller.Unmarshall(context, ref reader);

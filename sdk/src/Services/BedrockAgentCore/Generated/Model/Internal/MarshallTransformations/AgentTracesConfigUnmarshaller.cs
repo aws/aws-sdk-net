@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudwatchLogs", targetDepth))
+                if (context.TestExpression("cloudwatchLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsTraceConfigUnmarshaller.Instance;
                     unmarshalledObject.CloudwatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionSpans", targetDepth))
+                if (context.TestExpression("sessionSpans", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
                     unmarshalledObject.SessionSpans = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customAuthConfigs", targetDepth))
+                if (context.TestExpression("customAuthConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CustomAuthConfig, CustomAuthConfigUnmarshaller>(CustomAuthConfigUnmarshaller.Instance);
                     unmarshalledObject.CustomAuthConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isApiKeyAuthSupported", targetDepth))
+                if (context.TestExpression("isApiKeyAuthSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsApiKeyAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isBasicAuthSupported", targetDepth))
+                if (context.TestExpression("isBasicAuthSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsBasicAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isCustomAuthSupported", targetDepth))
+                if (context.TestExpression("isCustomAuthSupported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsCustomAuthSupported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isOAuth2Supported", targetDepth))
+                if (context.TestExpression("isOAuth2Supported", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsOAuth2Supported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2Defaults", targetDepth))
+                if (context.TestExpression("oAuth2Defaults", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2DefaultsUnmarshaller.Instance;
                     unmarshalledObject.OAuth2Defaults = unmarshaller.Unmarshall(context, ref reader);

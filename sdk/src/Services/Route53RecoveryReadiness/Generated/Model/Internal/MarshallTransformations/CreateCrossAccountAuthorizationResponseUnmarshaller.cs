@@ -52,7 +52,7 @@ namespace Amazon.Route53RecoveryReadiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("crossAccountAuthorization", targetDepth))
+                if (context.TestExpression("crossAccountAuthorization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CrossAccountAuthorization = unmarshaller.Unmarshall(context, ref reader);

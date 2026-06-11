@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// Container for the parameters to the GetTenant operation.
     /// Get information about a specific tenant, including the tenant's name, ID, ARN, creation
-    /// timestamp, tags, and sending status.
+    /// timestamp, tags, sending status, and suppression attributes.
     /// </summary>
     public partial class GetTenantRequest : AmazonSimpleEmailServiceV2Request
     {

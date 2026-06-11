@@ -52,25 +52,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Notices", targetDepth))
+                if (context.TestExpression("Notices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RoadSnapNotice, RoadSnapNoticeUnmarshaller>(RoadSnapNoticeUnmarshaller.Instance);
                     response.Notices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedGeometry", targetDepth))
+                if (context.TestExpression("SnappedGeometry", targetDepth, ref reader))
                 {
                     var unmarshaller = RoadSnapSnappedGeometryUnmarshaller.Instance;
                     response.SnappedGeometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedGeometryFormat", targetDepth))
+                if (context.TestExpression("SnappedGeometryFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SnappedGeometryFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SnappedTracePoints", targetDepth))
+                if (context.TestExpression("SnappedTracePoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RoadSnapSnappedTracePoint, RoadSnapSnappedTracePointUnmarshaller>(RoadSnapSnappedTracePointUnmarshaller.Instance);
                     response.SnappedTracePoints = unmarshaller.Unmarshall(context, ref reader);

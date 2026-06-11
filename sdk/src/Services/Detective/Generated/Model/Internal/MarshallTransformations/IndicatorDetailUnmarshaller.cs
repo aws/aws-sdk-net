@@ -56,49 +56,49 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FlaggedIpAddressDetail", targetDepth))
+                if (context.TestExpression("FlaggedIpAddressDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = FlaggedIpAddressDetailUnmarshaller.Instance;
                     unmarshalledObject.FlaggedIpAddressDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImpossibleTravelDetail", targetDepth))
+                if (context.TestExpression("ImpossibleTravelDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ImpossibleTravelDetailUnmarshaller.Instance;
                     unmarshalledObject.ImpossibleTravelDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewAsoDetail", targetDepth))
+                if (context.TestExpression("NewAsoDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = NewAsoDetailUnmarshaller.Instance;
                     unmarshalledObject.NewAsoDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewGeolocationDetail", targetDepth))
+                if (context.TestExpression("NewGeolocationDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = NewGeolocationDetailUnmarshaller.Instance;
                     unmarshalledObject.NewGeolocationDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NewUserAgentDetail", targetDepth))
+                if (context.TestExpression("NewUserAgentDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = NewUserAgentDetailUnmarshaller.Instance;
                     unmarshalledObject.NewUserAgentDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedFindingDetail", targetDepth))
+                if (context.TestExpression("RelatedFindingDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = RelatedFindingDetailUnmarshaller.Instance;
                     unmarshalledObject.RelatedFindingDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RelatedFindingGroupDetail", targetDepth))
+                if (context.TestExpression("RelatedFindingGroupDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = RelatedFindingGroupDetailUnmarshaller.Instance;
                     unmarshalledObject.RelatedFindingGroupDetail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TTPsObservedDetail", targetDepth))
+                if (context.TestExpression("TTPsObservedDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = TTPsObservedDetailUnmarshaller.Instance;
                     unmarshalledObject.TTPsObservedDetail = unmarshaller.Unmarshall(context, ref reader);

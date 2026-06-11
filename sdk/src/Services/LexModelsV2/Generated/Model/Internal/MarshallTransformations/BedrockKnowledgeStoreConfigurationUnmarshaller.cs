@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockKnowledgeBaseArn", targetDepth))
+                if (context.TestExpression("bedrockKnowledgeBaseArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BedrockKnowledgeBaseArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exactResponse", targetDepth))
+                if (context.TestExpression("exactResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ExactResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exactResponseFields", targetDepth))
+                if (context.TestExpression("exactResponseFields", targetDepth, ref reader))
                 {
                     var unmarshaller = BedrockKnowledgeStoreExactResponseFieldsUnmarshaller.Instance;
                     unmarshalledObject.ExactResponseFields = unmarshaller.Unmarshall(context, ref reader);

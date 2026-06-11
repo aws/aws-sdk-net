@@ -52,7 +52,7 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackfillRequest", targetDepth))
+                if (context.TestExpression("BackfillRequest", targetDepth, ref reader))
                 {
                     var unmarshaller = CostAllocationTagBackfillRequestUnmarshaller.Instance;
                     response.BackfillRequest = unmarshaller.Unmarshall(context, ref reader);

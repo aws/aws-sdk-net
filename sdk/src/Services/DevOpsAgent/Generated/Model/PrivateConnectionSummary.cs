@@ -35,6 +35,8 @@ namespace Amazon.DevOpsAgent.Model
     public partial class PrivateConnectionSummary
     {
         private DateTime? _certificateExpiryTime;
+        private ResourceConfigDnsResolution _dnsResolution;
+        private string _failureMessage;
         private string _hostAddress;
         private string _name;
         private string _resourceConfigurationId;
@@ -60,6 +62,43 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetCertificateExpiryTime()
         {
             return this._certificateExpiryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsResolution. 
+        /// <para>
+        /// DNS resolution mode for the Private Connection's resource gateway.
+        /// </para>
+        /// </summary>
+        public ResourceConfigDnsResolution DnsResolution
+        {
+            get { return this._dnsResolution; }
+            set { this._dnsResolution = value; }
+        }
+
+        // Check to see if DnsResolution property is set
+        internal bool IsSetDnsResolution()
+        {
+            return this._dnsResolution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureMessage. 
+        /// <para>
+        /// Message describing the reason for a failed Private Connection, if applicable.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string FailureMessage
+        {
+            get { return this._failureMessage; }
+            set { this._failureMessage = value; }
+        }
+
+        // Check to see if FailureMessage property is set
+        internal bool IsSetFailureMessage()
+        {
+            return this._failureMessage != null;
         }
 
         /// <summary>

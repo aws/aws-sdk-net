@@ -56,19 +56,19 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActualAmount", targetDepth))
+                if (context.TestExpression("ActualAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = SpendUnmarshaller.Instance;
                     unmarshalledObject.ActualAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BudgetedAmount", targetDepth))
+                if (context.TestExpression("BudgetedAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = SpendUnmarshaller.Instance;
                     unmarshalledObject.BudgetedAmount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimePeriod", targetDepth))
+                if (context.TestExpression("TimePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = TimePeriodUnmarshaller.Instance;
                     unmarshalledObject.TimePeriod = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OpportunitySummaries", targetDepth))
+                if (context.TestExpression("OpportunitySummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OpportunitySummary, OpportunitySummaryUnmarshaller>(OpportunitySummaryUnmarshaller.Instance);
                     response.OpportunitySummaries = unmarshaller.Unmarshall(context, ref reader);

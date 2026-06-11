@@ -52,13 +52,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("missionProfileList", targetDepth))
+                if (context.TestExpression("missionProfileList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MissionProfileListItem, MissionProfileListItemUnmarshaller>(MissionProfileListItemUnmarshaller.Instance);
                     response.MissionProfileList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

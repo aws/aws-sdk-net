@@ -37,6 +37,7 @@ namespace Amazon.Deadline.Model
         private ServiceManagedEc2AutoScalingConfiguration _autoScalingConfiguration;
         private ServiceManagedEc2InstanceCapabilities _instanceCapabilities;
         private ServiceManagedEc2InstanceMarketOptions _instanceMarketOptions;
+        private PersistentVolumeConfiguration _persistentVolumeConfiguration;
         private string _storageProfileId;
         private VpcConfiguration _vpcConfiguration;
 
@@ -94,6 +95,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetInstanceMarketOptions()
         {
             return this._instanceMarketOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PersistentVolumeConfiguration. 
+        /// <para>
+        /// The persistent volume configuration for the service managed EC2 fleet.
+        /// </para>
+        /// </summary>
+        public PersistentVolumeConfiguration PersistentVolumeConfiguration
+        {
+            get { return this._persistentVolumeConfiguration; }
+            set { this._persistentVolumeConfiguration = value; }
+        }
+
+        // Check to see if PersistentVolumeConfiguration property is set
+        internal bool IsSetPersistentVolumeConfiguration()
+        {
+            return this._persistentVolumeConfiguration != null;
         }
 
         /// <summary>

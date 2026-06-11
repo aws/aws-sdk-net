@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("translations", targetDepth))
+                if (context.TestExpression("translations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningCheckTranslation, AutomatedReasoningCheckTranslationUnmarshaller>(AutomatedReasoningCheckTranslationUnmarshaller.Instance);
                     unmarshalledObject.Translations = unmarshaller.Unmarshall(context, ref reader);

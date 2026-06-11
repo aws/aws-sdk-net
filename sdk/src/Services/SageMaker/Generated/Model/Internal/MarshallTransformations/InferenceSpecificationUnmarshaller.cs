@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Containers", targetDepth))
+                if (context.TestExpression("Containers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ModelPackageContainerDefinition, ModelPackageContainerDefinitionUnmarshaller>(ModelPackageContainerDefinitionUnmarshaller.Instance);
                     unmarshalledObject.Containers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedContentTypes", targetDepth))
+                if (context.TestExpression("SupportedContentTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedContentTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedRealtimeInferenceInstanceTypes", targetDepth))
+                if (context.TestExpression("SupportedRealtimeInferenceInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedRealtimeInferenceInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedResponseMIMETypes", targetDepth))
+                if (context.TestExpression("SupportedResponseMIMETypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedResponseMIMETypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedTransformInstanceTypes", targetDepth))
+                if (context.TestExpression("SupportedTransformInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupportedTransformInstanceTypes = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultSizeInspectionLimit", targetDepth))
+                if (context.TestExpression("DefaultSizeInspectionLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultSizeInspectionLimit = unmarshaller.Unmarshall(context, ref reader);

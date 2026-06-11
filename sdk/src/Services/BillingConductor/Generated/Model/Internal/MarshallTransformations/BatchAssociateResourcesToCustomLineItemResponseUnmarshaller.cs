@@ -52,13 +52,13 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedAssociatedResources", targetDepth))
+                if (context.TestExpression("FailedAssociatedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociateResourceResponseElement, AssociateResourceResponseElementUnmarshaller>(AssociateResourceResponseElementUnmarshaller.Instance);
                     response.FailedAssociatedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessfullyAssociatedResources", targetDepth))
+                if (context.TestExpression("SuccessfullyAssociatedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociateResourceResponseElement, AssociateResourceResponseElementUnmarshaller>(AssociateResourceResponseElementUnmarshaller.Instance);
                     response.SuccessfullyAssociatedResources = unmarshaller.Unmarshall(context, ref reader);

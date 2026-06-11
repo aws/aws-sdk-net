@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxParallelExecutionSteps", targetDepth))
+                if (context.TestExpression("MaxParallelExecutionSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxParallelExecutionSteps = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LogUploadEnabled", targetDepth))
+                if (context.TestExpression("LogUploadEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogUploadEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReconnectEnabled", targetDepth))
+                if (context.TestExpression("ReconnectEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReconnectEnabled = unmarshaller.Unmarshall(context, ref reader);

@@ -111,6 +111,10 @@ namespace Amazon.Util
 
         partial class CryptoUtil : ICryptoUtil
         {
+#if NET8_0_OR_GREATER
+            private static bool _md5HashDataAvailable = true;
+#endif
+
             internal CryptoUtil()
             {
             }
@@ -170,6 +174,18 @@ namespace Amazon.Util
             /// <summary>
             /// Computes a SHA256 hash
             /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <param name="offset">Offset into the byte array from which to begin using data</param>
+            /// <param name="count">Number of bytes in the array to use as data</param>
+            /// <returns>Computed hash code</returns>
+            public byte[] ComputeSHA256Hash(byte[] data, int offset, int count)
+            {
+                return SHA256HashAlgorithmInstance.ComputeHash(data, offset, count);
+            }
+
+            /// <summary>
+            /// Computes a SHA256 hash
+            /// </summary>
             /// <param name="steam">Input to compute the hash code for</param>
             /// <returns>Computed hash code</returns>
             public byte[] ComputeSHA256Hash(Stream steam)
@@ -205,11 +221,20 @@ namespace Amazon.Util
             public byte[] ComputeMD5Hash(byte[] data)
             {
 #if NET8_0_OR_GREATER
-                return MD5.HashData(data);
-#else
+                if (_md5HashDataAvailable)
+                {
+                    try
+                    {
+                        return MD5.HashData(data);
+                    }
+                    catch (CryptographicException)
+                    {
+                        _md5HashDataAvailable = false;
+                    }
+                }
+#endif
                 var hashed = new MD5Managed().ComputeHash(data);
                 return hashed;
-#endif
             }
 
             /// <summary>
@@ -220,11 +245,20 @@ namespace Amazon.Util
             public byte[] ComputeMD5Hash(Stream steam)
             {
 #if NET8_0_OR_GREATER
-                return MD5.HashData(steam);
-#else
+                if (_md5HashDataAvailable)
+                {
+                    try
+                    {
+                        return MD5.HashData(steam);
+                    }
+                    catch (CryptographicException)
+                    {
+                        _md5HashDataAvailable = false;
+                    }
+                }
+#endif
                 var hashed = new MD5Managed().ComputeHash(steam);
                 return hashed;
-#endif
             }
 
             /// <summary>
@@ -293,6 +327,19 @@ namespace Amazon.Util
                 if (data == null || data.Length == 0)
                     throw new ArgumentNullException("data", "Please specify data to sign.");
 
+#if NET8_0_OR_GREATER
+                switch (algorithmName)
+                {
+                    case SigningAlgorithm.HmacSHA256:
+                        return HMACSHA256.HashData(key, data);
+                    case SigningAlgorithm.HmacSHA1:
+                        return HMACSHA1.HashData(key, data);
+                    case SigningAlgorithm.HmacSHA512:
+                        return HMACSHA512.HashData(key, data);
+                    default:
+                        throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
+                }
+#else
                 KeyedHashAlgorithm algorithm = CreateKeyedHashAlgorithm(algorithmName);
                 if (null == algorithm)
                     throw new InvalidOperationException("Please specify a KeyedHashAlgorithm to use.");
@@ -307,6 +354,7 @@ namespace Amazon.Util
                 {
                     algorithm.Dispose();
                 }
+#endif
             }
 
             static KeyedHashAlgorithm CreateKeyedHashAlgorithm(SigningAlgorithm algorithmName)

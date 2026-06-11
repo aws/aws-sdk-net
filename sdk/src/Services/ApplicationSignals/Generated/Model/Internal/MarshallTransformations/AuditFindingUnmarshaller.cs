@@ -56,37 +56,37 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditorResults", targetDepth))
+                if (context.TestExpression("AuditorResults", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AuditorResult, AuditorResultUnmarshaller>(AuditorResultUnmarshaller.Instance);
                     unmarshalledObject.AuditorResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DependencyGraph", targetDepth))
+                if (context.TestExpression("DependencyGraph", targetDepth, ref reader))
                 {
                     var unmarshaller = DependencyGraphUnmarshaller.Instance;
                     unmarshalledObject.DependencyGraph = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyAttributes", targetDepth))
+                if (context.TestExpression("KeyAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.KeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricGraph", targetDepth))
+                if (context.TestExpression("MetricGraph", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricGraphUnmarshaller.Instance;
                     unmarshalledObject.MetricGraph = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Operation", targetDepth))
+                if (context.TestExpression("Operation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

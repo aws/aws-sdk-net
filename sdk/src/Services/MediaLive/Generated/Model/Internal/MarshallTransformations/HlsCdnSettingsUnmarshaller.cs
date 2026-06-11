@@ -56,31 +56,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hlsAkamaiSettings", targetDepth))
+                if (context.TestExpression("hlsAkamaiSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsAkamaiSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsAkamaiSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsBasicPutSettings", targetDepth))
+                if (context.TestExpression("hlsBasicPutSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsBasicPutSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsBasicPutSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsMediaStoreSettings", targetDepth))
+                if (context.TestExpression("hlsMediaStoreSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsMediaStoreSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsMediaStoreSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsS3Settings", targetDepth))
+                if (context.TestExpression("hlsS3Settings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsS3SettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsS3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsWebdavSettings", targetDepth))
+                if (context.TestExpression("hlsWebdavSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsWebdavSettingsUnmarshaller.Instance;
                     unmarshalledObject.HlsWebdavSettings = unmarshaller.Unmarshall(context, ref reader);

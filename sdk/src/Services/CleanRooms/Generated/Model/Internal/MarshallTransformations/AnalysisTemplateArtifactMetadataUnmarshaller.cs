@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalArtifactHashes", targetDepth))
+                if (context.TestExpression("additionalArtifactHashes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Hash, HashUnmarshaller>(HashUnmarshaller.Instance);
                     unmarshalledObject.AdditionalArtifactHashes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entryPointHash", targetDepth))
+                if (context.TestExpression("entryPointHash", targetDepth, ref reader))
                 {
                     var unmarshaller = HashUnmarshaller.Instance;
                     unmarshalledObject.EntryPointHash = unmarshaller.Unmarshall(context, ref reader);

@@ -43,6 +43,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class RemoveTagsRequest : AmazonElasticMapReduceRequest
     {
+        private string _clusterId;
         private string _resourceId;
         private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -69,6 +70,26 @@ namespace Amazon.ElasticMapReduce.Model
         {
             _resourceId = resourceId;
             _tagKeys = tagKeys;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
+        /// The ID of the cluster that scopes the tag operation. Required when the resource being
+        /// untagged is a session-scoped resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ClusterId
+        {
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
+        }
+
+        // Check to see if ClusterId property is set
+        internal bool IsSetClusterId()
+        {
+            return this._clusterId != null;
         }
 
         /// <summary>

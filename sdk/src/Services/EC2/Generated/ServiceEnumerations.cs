@@ -705,6 +705,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant Cancelling for AllocationType
+        /// </summary>
+        public static readonly AllocationType Cancelling = new AllocationType("cancelling");
+        /// <summary>
         /// Constant Future for AllocationType
         /// </summary>
         public static readonly AllocationType Future = new AllocationType("future");
@@ -1042,6 +1046,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplianceModeSupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplyCancellationCharges.
+    /// </summary>
+    public class ApplyCancellationCharges : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CommitmentWindDown for ApplyCancellationCharges
+        /// </summary>
+        public static readonly ApplyCancellationCharges CommitmentWindDown = new ApplyCancellationCharges("commitment-wind-down");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplyCancellationCharges(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplyCancellationCharges FindValue(string value)
+        {
+            return FindValue<ApplyCancellationCharges>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplyCancellationCharges(string value)
         {
             return FindValue(value);
         }
@@ -3113,6 +3163,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityReservationCancellationQuoteState.
+    /// </summary>
+    public class CapacityReservationCancellationQuoteState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for CapacityReservationCancellationQuoteState
+        /// </summary>
+        public static readonly CapacityReservationCancellationQuoteState Active = new CapacityReservationCancellationQuoteState("active");
+        /// <summary>
+        /// Constant Expired for CapacityReservationCancellationQuoteState
+        /// </summary>
+        public static readonly CapacityReservationCancellationQuoteState Expired = new CapacityReservationCancellationQuoteState("expired");
+        /// <summary>
+        /// Constant Pending for CapacityReservationCancellationQuoteState
+        /// </summary>
+        public static readonly CapacityReservationCancellationQuoteState Pending = new CapacityReservationCancellationQuoteState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationCancellationQuoteState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationCancellationQuoteState FindValue(string value)
+        {
+            return FindValue<CapacityReservationCancellationQuoteState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationCancellationQuoteState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationDeliveryPreference.
     /// </summary>
     public class CapacityReservationDeliveryPreference : ConstantClass
@@ -3426,6 +3530,10 @@ namespace Amazon.EC2
         /// Constant Cancelled for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Cancelled = new CapacityReservationState("cancelled");
+        /// <summary>
+        /// Constant Cancelling for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Cancelling = new CapacityReservationState("cancelling");
         /// <summary>
         /// Constant Delayed for CapacityReservationState
         /// </summary>
@@ -22617,6 +22725,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType CapacityReservation = new ResourceType("capacity-reservation");
         /// <summary>
+        /// Constant CapacityReservationCancellationQuote for ResourceType
+        /// </summary>
+        public static readonly ResourceType CapacityReservationCancellationQuote = new ResourceType("capacity-reservation-cancellation-quote");
+        /// <summary>
         /// Constant CapacityReservationFleet for ResourceType
         /// </summary>
         public static readonly ResourceType CapacityReservationFleet = new ResourceType("capacity-reservation-fleet");
@@ -26410,6 +26522,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SupportedAdditionalProcessorFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaggableResourceType.
+    /// </summary>
+    public class TaggableResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutoScalingGroup for TaggableResourceType
+        /// </summary>
+        public static readonly TaggableResourceType AutoScalingGroup = new TaggableResourceType("auto-scaling-group");
+        /// <summary>
+        /// Constant Instance for TaggableResourceType
+        /// </summary>
+        public static readonly TaggableResourceType Instance = new TaggableResourceType("instance");
+        /// <summary>
+        /// Constant NetworkInterface for TaggableResourceType
+        /// </summary>
+        public static readonly TaggableResourceType NetworkInterface = new TaggableResourceType("network-interface");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaggableResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaggableResourceType FindValue(string value)
+        {
+            return FindValue<TaggableResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaggableResourceType(string value)
         {
             return FindValue(value);
         }

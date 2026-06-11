@@ -52,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportDescription", targetDepth))
+                if (context.TestExpression("ExportDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportDescriptionUnmarshaller.Instance;
                     response.ExportDescription = unmarshaller.Unmarshall(context, ref reader);

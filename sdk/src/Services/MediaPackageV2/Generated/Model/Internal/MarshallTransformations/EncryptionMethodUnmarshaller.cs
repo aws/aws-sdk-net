@@ -56,19 +56,19 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CmafEncryptionMethod", targetDepth))
+                if (context.TestExpression("CmafEncryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CmafEncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsmEncryptionMethod", targetDepth))
+                if (context.TestExpression("IsmEncryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IsmEncryptionMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TsEncryptionMethod", targetDepth))
+                if (context.TestExpression("TsEncryptionMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TsEncryptionMethod = unmarshaller.Unmarshall(context, ref reader);

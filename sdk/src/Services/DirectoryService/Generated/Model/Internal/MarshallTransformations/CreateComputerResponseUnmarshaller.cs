@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Computer", targetDepth))
+                if (context.TestExpression("Computer", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputerUnmarshaller.Instance;
                     response.Computer = unmarshaller.Unmarshall(context, ref reader);

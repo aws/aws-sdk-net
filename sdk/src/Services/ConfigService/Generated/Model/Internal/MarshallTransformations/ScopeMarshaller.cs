@@ -63,6 +63,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetServicePrincipals())
+            {
+                context.Writer.WritePropertyName("ServicePrincipals");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectServicePrincipalsListValue in requestObject.ServicePrincipals)
+                {
+                        context.Writer.WriteStringValue(requestObjectServicePrincipalsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetTagKey())
             {
                 context.Writer.WritePropertyName("TagKey");

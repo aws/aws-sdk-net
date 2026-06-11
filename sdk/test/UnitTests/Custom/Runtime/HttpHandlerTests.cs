@@ -107,7 +107,7 @@ namespace AWSSDK.UnitTests
             _ = new RuntimePipeline(httpHandler);
             
             var executionContext = CreateExecutionContextForListBuckets();
-            await Assert.ThrowsExceptionAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
+            await Assert.ThrowsExactlyAsync<IOException>(() => httpHandler.InvokeAsync<AmazonWebServiceResponse>(executionContext));
             
             var httpRequest = factory.LastCreatedRequest;
             Assert.AreEqual("GET", httpRequest.Method);
@@ -300,6 +300,15 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(content);
                 Assert.IsNotNull(contentHeaders);
             }
+
+#if !NETFRAMEWORK
+            public void WriteToRequestBody(Stream requestContent, ReadOnlyMemory<byte> content, IDictionary<string, string> contentHeaders)
+            {
+                Assert.IsNotNull(requestContent);
+                Assert.IsFalse(content.IsEmpty);
+                Assert.IsNotNull(contentHeaders);
+            }
+#endif
 
             public void Abort()
             {

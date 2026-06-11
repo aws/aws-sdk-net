@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoTerminationPolicy", targetDepth))
+                if (context.TestExpression("AutoTerminationPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoTerminationPolicyUnmarshaller.Instance;
                     response.AutoTerminationPolicy = unmarshaller.Unmarshall(context, ref reader);

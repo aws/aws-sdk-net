@@ -56,79 +56,79 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContentType", targetDepth))
+                if (context.TestExpression("ContentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomActionDefaults", targetDepth))
+                if (context.TestExpression("CustomActionDefaults", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualCustomActionDefaultsUnmarshaller.Instance;
                     unmarshalledObject.CustomActionDefaults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FilterControls", targetDepth))
+                if (context.TestExpression("FilterControls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterControl, FilterControlUnmarshaller>(FilterControlUnmarshaller.Instance);
                     unmarshalledObject.FilterControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Images", targetDepth))
+                if (context.TestExpression("Images", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetImage, SheetImageUnmarshaller>(SheetImageUnmarshaller.Instance);
                     unmarshalledObject.Images = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Layouts", targetDepth))
+                if (context.TestExpression("Layouts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Layout, LayoutUnmarshaller>(LayoutUnmarshaller.Instance);
                     unmarshalledObject.Layouts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterControls", targetDepth))
+                if (context.TestExpression("ParameterControls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParameterControl, ParameterControlUnmarshaller>(ParameterControlUnmarshaller.Instance);
                     unmarshalledObject.ParameterControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SheetControlLayouts", targetDepth))
+                if (context.TestExpression("SheetControlLayouts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetControlLayout, SheetControlLayoutUnmarshaller>(SheetControlLayoutUnmarshaller.Instance);
                     unmarshalledObject.SheetControlLayouts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SheetId", targetDepth))
+                if (context.TestExpression("SheetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SheetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextBoxes", targetDepth))
+                if (context.TestExpression("TextBoxes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SheetTextBox, SheetTextBoxUnmarshaller>(SheetTextBoxUnmarshaller.Instance);
                     unmarshalledObject.TextBoxes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visuals", targetDepth))
+                if (context.TestExpression("Visuals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Visual, VisualUnmarshaller>(VisualUnmarshaller.Instance);
                     unmarshalledObject.Visuals = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("validators", targetDepth))
+                if (context.TestExpression("validators", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Validator, ValidatorUnmarshaller>(ValidatorUnmarshaller.Instance);
                     unmarshalledObject.Validators = unmarshaller.Unmarshall(context, ref reader);

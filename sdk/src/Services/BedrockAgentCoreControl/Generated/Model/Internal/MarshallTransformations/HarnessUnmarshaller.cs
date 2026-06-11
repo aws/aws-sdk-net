@@ -56,133 +56,133 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowedTools", targetDepth))
+                if (context.TestExpression("allowedTools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedTools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizerConfiguration", targetDepth))
+                if (context.TestExpression("authorizerConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizerConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthorizerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environment", targetDepth))
+                if (context.TestExpression("environment", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessEnvironmentProviderUnmarshaller.Instance;
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentArtifact", targetDepth))
+                if (context.TestExpression("environmentArtifact", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessEnvironmentArtifactUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentArtifact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentVariables", targetDepth))
+                if (context.TestExpression("environmentVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRoleArn", targetDepth))
+                if (context.TestExpression("executionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureReason", targetDepth))
+                if (context.TestExpression("failureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("harnessId", targetDepth))
+                if (context.TestExpression("harnessId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HarnessId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("harnessName", targetDepth))
+                if (context.TestExpression("harnessName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HarnessName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxIterations", targetDepth))
+                if (context.TestExpression("maxIterations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxIterations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxTokens", targetDepth))
+                if (context.TestExpression("maxTokens", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTokens = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memory", targetDepth))
+                if (context.TestExpression("memory", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessMemoryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("model", targetDepth))
+                if (context.TestExpression("model", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessModelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("skills", targetDepth))
+                if (context.TestExpression("skills", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarnessSkill, HarnessSkillUnmarshaller>(HarnessSkillUnmarshaller.Instance);
                     unmarshalledObject.Skills = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemPrompt", targetDepth))
+                if (context.TestExpression("systemPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarnessSystemContentBlock, HarnessSystemContentBlockUnmarshaller>(HarnessSystemContentBlockUnmarshaller.Instance);
                     unmarshalledObject.SystemPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutSeconds", targetDepth))
+                if (context.TestExpression("timeoutSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tools", targetDepth))
+                if (context.TestExpression("tools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarnessTool, HarnessToolUnmarshaller>(HarnessToolUnmarshaller.Instance);
                     unmarshalledObject.Tools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("truncation", targetDepth))
+                if (context.TestExpression("truncation", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessTruncationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Truncation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);

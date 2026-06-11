@@ -56,13 +56,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("systemsManagerAgent", targetDepth))
+                if (context.TestExpression("systemsManagerAgent", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemsManagerAgentUnmarshaller.Instance;
                     unmarshalledObject.SystemsManagerAgent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userDataOverride", targetDepth))
+                if (context.TestExpression("userDataOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserDataOverride = unmarshaller.Unmarshall(context, ref reader);

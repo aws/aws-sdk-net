@@ -56,37 +56,37 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("categorySpecificSummary", targetDepth))
+                if (context.TestExpression("categorySpecificSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustedAdvisorCategorySpecificSummaryUnmarshaller.Instance;
                     unmarshalledObject.CategorySpecificSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("checkId", targetDepth))
+                if (context.TestExpression("checkId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CheckId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flaggedResources", targetDepth))
+                if (context.TestExpression("flaggedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrustedAdvisorResourceDetail, TrustedAdvisorResourceDetailUnmarshaller>(TrustedAdvisorResourceDetailUnmarshaller.Instance);
                     unmarshalledObject.FlaggedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourcesSummary", targetDepth))
+                if (context.TestExpression("resourcesSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustedAdvisorResourcesSummaryUnmarshaller.Instance;
                     unmarshalledObject.ResourcesSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestamp", targetDepth))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);

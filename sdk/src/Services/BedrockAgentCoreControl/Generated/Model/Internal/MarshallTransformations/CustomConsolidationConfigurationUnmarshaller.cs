@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("episodicConsolidationOverride", targetDepth))
+                if (context.TestExpression("episodicConsolidationOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = EpisodicConsolidationOverrideUnmarshaller.Instance;
                     unmarshalledObject.EpisodicConsolidationOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("semanticConsolidationOverride", targetDepth))
+                if (context.TestExpression("semanticConsolidationOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticConsolidationOverrideUnmarshaller.Instance;
                     unmarshalledObject.SemanticConsolidationOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("summaryConsolidationOverride", targetDepth))
+                if (context.TestExpression("summaryConsolidationOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = SummaryConsolidationOverrideUnmarshaller.Instance;
                     unmarshalledObject.SummaryConsolidationOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userPreferenceConsolidationOverride", targetDepth))
+                if (context.TestExpression("userPreferenceConsolidationOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = UserPreferenceConsolidationOverrideUnmarshaller.Instance;
                     unmarshalledObject.UserPreferenceConsolidationOverride = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonAttributes", targetDepth))
+                if (context.TestExpression("CommonAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HttpEndpointCommonAttribute, HttpEndpointCommonAttributeUnmarshaller>(HttpEndpointCommonAttributeUnmarshaller.Instance);
                     unmarshalledObject.CommonAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentEncoding", targetDepth))
+                if (context.TestExpression("ContentEncoding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentEncoding = unmarshaller.Unmarshall(context, ref reader);

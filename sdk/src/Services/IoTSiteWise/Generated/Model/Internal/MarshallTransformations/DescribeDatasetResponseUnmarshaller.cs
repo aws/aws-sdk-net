@@ -52,55 +52,55 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datasetArn", targetDepth))
+                if (context.TestExpression("datasetArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetCreationDate", targetDepth))
+                if (context.TestExpression("datasetCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DatasetCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetDescription", targetDepth))
+                if (context.TestExpression("datasetDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetId", targetDepth))
+                if (context.TestExpression("datasetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetLastUpdateDate", targetDepth))
+                if (context.TestExpression("datasetLastUpdateDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DatasetLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetName", targetDepth))
+                if (context.TestExpression("datasetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetSource", targetDepth))
+                if (context.TestExpression("datasetSource", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetSourceUnmarshaller.Instance;
                     response.DatasetSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetStatus", targetDepth))
+                if (context.TestExpression("datasetStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetStatusUnmarshaller.Instance;
                     response.DatasetStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("datasetVersion", targetDepth))
+                if (context.TestExpression("datasetVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetVersion = unmarshaller.Unmarshall(context, ref reader);

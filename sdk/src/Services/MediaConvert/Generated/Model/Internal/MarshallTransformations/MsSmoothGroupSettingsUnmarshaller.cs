@@ -56,49 +56,49 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalManifests", targetDepth))
+                if (context.TestExpression("additionalManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MsSmoothAdditionalManifest, MsSmoothAdditionalManifestUnmarshaller>(MsSmoothAdditionalManifestUnmarshaller.Instance);
                     unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioDeduplication", targetDepth))
+                if (context.TestExpression("audioDeduplication", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AudioDeduplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationSettings", targetDepth))
+                if (context.TestExpression("destinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = MsSmoothEncryptionSettingsUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fragmentLength", targetDepth))
+                if (context.TestExpression("fragmentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fragmentLengthControl", targetDepth))
+                if (context.TestExpression("fragmentLengthControl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FragmentLengthControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifestEncoding", targetDepth))
+                if (context.TestExpression("manifestEncoding", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestEncoding = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.InspectorScan.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sbom", targetDepth))
+                if (context.TestExpression("sbom", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     response.Sbom = unmarshaller.Unmarshall(context, ref reader);

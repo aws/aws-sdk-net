@@ -52,13 +52,13 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("app", targetDepth))
+                if (context.TestExpression("app", targetDepth, ref reader))
                 {
                     var unmarshaller = PredictAppDefinitionUnmarshaller.Instance;
                     response.App = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("problemStatement", targetDepth))
+                if (context.TestExpression("problemStatement", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProblemStatement = unmarshaller.Unmarshall(context, ref reader);

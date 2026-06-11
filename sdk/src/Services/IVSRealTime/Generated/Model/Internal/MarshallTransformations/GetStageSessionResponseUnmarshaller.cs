@@ -52,7 +52,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("stageSession", targetDepth))
+                if (context.TestExpression("stageSession", targetDepth, ref reader))
                 {
                     var unmarshaller = StageSessionUnmarshaller.Instance;
                     response.StageSession = unmarshaller.Unmarshall(context, ref reader);

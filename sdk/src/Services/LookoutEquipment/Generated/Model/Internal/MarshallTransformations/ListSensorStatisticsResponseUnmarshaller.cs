@@ -52,13 +52,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SensorStatisticsSummaries", targetDepth))
+                if (context.TestExpression("SensorStatisticsSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SensorStatisticsSummary, SensorStatisticsSummaryUnmarshaller>(SensorStatisticsSummaryUnmarshaller.Instance);
                     response.SensorStatisticsSummaries = unmarshaller.Unmarshall(context, ref reader);

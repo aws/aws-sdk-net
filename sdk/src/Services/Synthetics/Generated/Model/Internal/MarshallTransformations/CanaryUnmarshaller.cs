@@ -56,133 +56,133 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArtifactConfig", targetDepth))
+                if (context.TestExpression("ArtifactConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.ArtifactConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ArtifactS3Location", targetDepth))
+                if (context.TestExpression("ArtifactS3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ArtifactS3Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BrowserConfigs", targetDepth))
+                if (context.TestExpression("BrowserConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BrowserConfig, BrowserConfigUnmarshaller>(BrowserConfigUnmarshaller.Instance);
                     unmarshalledObject.BrowserConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Code", targetDepth))
+                if (context.TestExpression("Code", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryCodeOutputUnmarshaller.Instance;
                     unmarshalledObject.Code = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DryRunConfig", targetDepth))
+                if (context.TestExpression("DryRunConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DryRunConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.DryRunConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineArn", targetDepth))
+                if (context.TestExpression("EngineArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EngineArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineConfigs", targetDepth))
+                if (context.TestExpression("EngineConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EngineConfig, EngineConfigUnmarshaller>(EngineConfigUnmarshaller.Instance);
                     unmarshalledObject.EngineConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
+                if (context.TestExpression("ExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureRetentionPeriodInDays", targetDepth))
+                if (context.TestExpression("FailureRetentionPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailureRetentionPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedResourceCleanup", targetDepth))
+                if (context.TestExpression("ProvisionedResourceCleanup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedResourceCleanup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunConfig", targetDepth))
+                if (context.TestExpression("RunConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryRunConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.RunConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuntimeVersion", targetDepth))
+                if (context.TestExpression("RuntimeVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuntimeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryScheduleOutputUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuccessRetentionPeriodInDays", targetDepth))
+                if (context.TestExpression("SuccessRetentionPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessRetentionPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timeline", targetDepth))
+                if (context.TestExpression("Timeline", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryTimelineUnmarshaller.Instance;
                     unmarshalledObject.Timeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualReference", targetDepth))
+                if (context.TestExpression("VisualReference", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualReferenceOutputUnmarshaller.Instance;
                     unmarshalledObject.VisualReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualReferences", targetDepth))
+                if (context.TestExpression("VisualReferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VisualReferenceOutput, VisualReferenceOutputUnmarshaller>(VisualReferenceOutputUnmarshaller.Instance);
                     unmarshalledObject.VisualReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigOutputUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

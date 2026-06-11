@@ -56,25 +56,25 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Android", targetDepth))
+                if (context.TestExpression("Android", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Android = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultConfig", targetDepth))
+                if (context.TestExpression("DefaultConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultButtonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DefaultConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IOS", targetDepth))
+                if (context.TestExpression("IOS", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IOS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Web", targetDepth))
+                if (context.TestExpression("Web", targetDepth, ref reader))
                 {
                     var unmarshaller = OverrideButtonConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Web = unmarshaller.Unmarshall(context, ref reader);

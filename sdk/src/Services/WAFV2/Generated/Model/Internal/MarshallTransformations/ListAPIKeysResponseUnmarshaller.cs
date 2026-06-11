@@ -52,19 +52,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("APIKeySummaries", targetDepth))
+                if (context.TestExpression("APIKeySummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<APIKeySummary, APIKeySummaryUnmarshaller>(APIKeySummaryUnmarshaller.Instance);
                     response.APIKeySummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationIntegrationURL", targetDepth))
+                if (context.TestExpression("ApplicationIntegrationURL", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationIntegrationURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrainingPlanExtensions", targetDepth))
+                if (context.TestExpression("TrainingPlanExtensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrainingPlanExtension, TrainingPlanExtensionUnmarshaller>(TrainingPlanExtensionUnmarshaller.Instance);
                     response.TrainingPlanExtensions = unmarshaller.Unmarshall(context, ref reader);

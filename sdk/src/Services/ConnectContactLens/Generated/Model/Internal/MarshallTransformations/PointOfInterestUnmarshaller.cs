@@ -56,13 +56,13 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BeginOffsetMillis", targetDepth))
+                if (context.TestExpression("BeginOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndOffsetMillis", targetDepth))
+                if (context.TestExpression("EndOffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context, ref reader);

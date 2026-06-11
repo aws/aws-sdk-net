@@ -56,7 +56,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("diagnosticReportsRootS3URI", targetDepth))
+                if (context.TestExpression("diagnosticReportsRootS3URI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DiagnosticReportsRootS3URI = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerOverrides", targetDepth))
+                if (context.TestExpression("ContainerOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsContainerOverride, EcsContainerOverrideUnmarshaller>(EcsContainerOverrideUnmarshaller.Instance);
                     unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Cpu", targetDepth))
+                if (context.TestExpression("Cpu", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EphemeralStorage", targetDepth))
+                if (context.TestExpression("EphemeralStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsEphemeralStorageUnmarshaller.Instance;
                     unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
+                if (context.TestExpression("ExecutionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceAcceleratorOverrides", targetDepth))
+                if (context.TestExpression("InferenceAcceleratorOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsInferenceAcceleratorOverride, EcsInferenceAcceleratorOverrideUnmarshaller>(EcsInferenceAcceleratorOverrideUnmarshaller.Instance);
                     unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Memory", targetDepth))
+                if (context.TestExpression("Memory", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskRoleArn", targetDepth))
+                if (context.TestExpression("TaskRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context, ref reader);

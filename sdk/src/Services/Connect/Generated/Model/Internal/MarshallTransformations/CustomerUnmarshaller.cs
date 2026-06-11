@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Capabilities", targetDepth))
+                if (context.TestExpression("Capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceInfo", targetDepth))
+                if (context.TestExpression("DeviceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceInfoUnmarshaller.Instance;
                     unmarshalledObject.DeviceInfo = unmarshaller.Unmarshall(context, ref reader);

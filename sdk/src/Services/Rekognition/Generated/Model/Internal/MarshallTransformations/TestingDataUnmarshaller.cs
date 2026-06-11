@@ -56,13 +56,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Assets", targetDepth))
+                if (context.TestExpression("Assets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Asset, AssetUnmarshaller>(AssetUnmarshaller.Instance);
                     unmarshalledObject.Assets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoCreate", targetDepth))
+                if (context.TestExpression("AutoCreate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoCreate = unmarshaller.Unmarshall(context, ref reader);

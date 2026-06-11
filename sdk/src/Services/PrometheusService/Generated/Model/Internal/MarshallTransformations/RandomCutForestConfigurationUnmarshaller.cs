@@ -56,31 +56,31 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ignoreNearExpectedFromAbove", targetDepth))
+                if (context.TestExpression("ignoreNearExpectedFromAbove", targetDepth, ref reader))
                 {
                     var unmarshaller = IgnoreNearExpectedUnmarshaller.Instance;
                     unmarshalledObject.IgnoreNearExpectedFromAbove = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ignoreNearExpectedFromBelow", targetDepth))
+                if (context.TestExpression("ignoreNearExpectedFromBelow", targetDepth, ref reader))
                 {
                     var unmarshaller = IgnoreNearExpectedUnmarshaller.Instance;
                     unmarshalledObject.IgnoreNearExpectedFromBelow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("query", targetDepth))
+                if (context.TestExpression("query", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sampleSize", targetDepth))
+                if (context.TestExpression("sampleSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SampleSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shingleSize", targetDepth))
+                if (context.TestExpression("shingleSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShingleSize = unmarshaller.Unmarshall(context, ref reader);

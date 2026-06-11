@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("JobRuns", targetDepth))
+                if (context.TestExpression("JobRuns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobRun, JobRunUnmarshaller>(JobRunUnmarshaller.Instance);
                     unmarshalledObject.JobRuns = unmarshaller.Unmarshall(context, ref reader);

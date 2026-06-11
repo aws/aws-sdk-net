@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkInterfaceArn", targetDepth))
+                if (context.TestExpression("networkInterfaceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkInterfaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("primarySourceIndex", targetDepth))
+                if (context.TestExpression("primarySourceIndex", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PrimarySourceIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocolConfigurations", targetDepth))
+                if (context.TestExpression("protocolConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailoverRouterInputProtocolConfiguration, FailoverRouterInputProtocolConfigurationUnmarshaller>(FailoverRouterInputProtocolConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ProtocolConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourcePriorityMode", targetDepth))
+                if (context.TestExpression("sourcePriorityMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourcePriorityMode = unmarshaller.Unmarshall(context, ref reader);

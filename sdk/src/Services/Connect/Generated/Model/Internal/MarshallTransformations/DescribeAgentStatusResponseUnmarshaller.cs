@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentStatus", targetDepth))
+                if (context.TestExpression("AgentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentStatusUnmarshaller.Instance;
                     response.AgentStatus = unmarshaller.Unmarshall(context, ref reader);

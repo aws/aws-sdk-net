@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("uploadPolicy", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
+                        var unmarshaller = MemoryStreamUnmarshaller.Instance;
                         unmarshalledObject.UploadPolicy = unmarshaller.Unmarshall(context);
                         continue;
                     }

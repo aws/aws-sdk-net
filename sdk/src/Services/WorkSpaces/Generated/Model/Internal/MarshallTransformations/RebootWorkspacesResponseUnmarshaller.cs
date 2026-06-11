@@ -52,7 +52,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedRequests", targetDepth))
+                if (context.TestExpression("FailedRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedWorkspaceChangeRequest, FailedWorkspaceChangeRequestUnmarshaller>(FailedWorkspaceChangeRequestUnmarshaller.Instance);
                     response.FailedRequests = unmarshaller.Unmarshall(context, ref reader);

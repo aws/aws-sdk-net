@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enrichmentStrategyConfiguration", targetDepth))
+                if (context.TestExpression("enrichmentStrategyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EnrichmentStrategyConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EnrichmentStrategyConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelArn", targetDepth))
+                if (context.TestExpression("modelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("efficiencyMetricsByGroup", targetDepth))
+                if (context.TestExpression("efficiencyMetricsByGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EfficiencyMetricsByGroup, EfficiencyMetricsByGroupUnmarshaller>(EfficiencyMetricsByGroupUnmarshaller.Instance);
                     response.EfficiencyMetricsByGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("doubleValue", targetDepth))
+                if (context.TestExpression("doubleValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.DoubleValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("floatValue", targetDepth))
+                if (context.TestExpression("floatValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.FloatValue = unmarshaller.Unmarshall(context, ref reader);

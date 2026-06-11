@@ -59,9 +59,39 @@ namespace Amazon.ElementalInference
 
         /// <summary>
         /// Associates a resource with the feed. The resource provides the input that Elemental
-        /// Inference needs needs in order to perform an Elemental Inference feature, such as
-        /// cropping video. You always provide the resource by associating it with a feed. You
-        /// can associate only one resource with each feed.
+        /// Inference needs in order to perform an Elemental Inference feature, such as cropping
+        /// video. You always provide the resource by associating it with a feed. You can associate
+        /// only one resource with each feed. With an association, a specific source media is
+        /// claiming ownership of the feed. 
+        /// 
+        ///  
+        /// <para>
+        /// AssociateFeed is a PATCH operation, which means that you can include only parameters
+        /// that you want to change. Parameters that you don't include will not be affected by
+        /// the operation. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can add more outputs to the existing outputs. New outputs will be appended.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't modify an existing output (for example to change its name). Instead, use
+        /// UpdateFeed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't delete an existing output. Instead, use UpdateFeed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Also note that you can't change the feed name with AssociateFeed. Instead, use UpdateFeed.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFeed service method.</param>
         /// <param name="cancellationToken">
@@ -102,14 +132,68 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  CreateDictionary
+
+
+
+        /// <summary>
+        /// Creates a custom dictionary for improving transcription accuracy. A dictionary contains
+        /// custom words and phrases that the ASR engine might not recognize, such as brand names,
+        /// technical terms, or proper nouns. You can reference a dictionary when configuring
+        /// a smart subtitles output.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDictionary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDictionary service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed one or more service quotas for your
+        /// account. Review your service quotas and either delete unused resources or request
+        /// a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateDictionary">REST API Reference for CreateDictionary Operation</seealso>
+        Task<CreateDictionaryResponse> CreateDictionaryAsync(CreateDictionaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFeed
 
 
 
         /// <summary>
-        /// Creates a feed. The feed is the target for live streams being sent by the calling
-        /// application. An example of a calling application is AWS Elemental MediaLive. After
-        /// you create the feed, you can associate a resource with the feed.
+        /// Creates a feed. The feed is the target for the live media stream that is being sent
+        /// by the calling application. An example of a calling application is AWS Elemental MediaLive.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// The key contents of the feed is an array of outputs. Each output represents an Elemental
+        /// Inference feature. After you create the feed, you must associate a resource with the
+        /// feed. At that point, you will have a useable feed: resource - feed - output or outputs.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFeed service method.</param>
         /// <param name="cancellationToken">
@@ -147,12 +231,58 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  DeleteDictionary
+
+
+
+        /// <summary>
+        /// Deletes the specified dictionary. You cannot delete a dictionary that is referenced
+        /// by a feed. You must first remove the dictionary reference from the feed's subtitling
+        /// configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDictionary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDictionary service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteDictionary">REST API Reference for DeleteDictionary Operation</seealso>
+        Task<DeleteDictionaryResponse> DeleteDictionaryAsync(DeleteDictionaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteFeed
 
 
 
         /// <summary>
-        /// Deletes the specified feed. The feed can be deleted at any time.
+        /// Deletes the specified feed. You can delete the feed at any time. Elemental Inference
+        /// doesn't block you from deleting a feed when the calling application is calling PutMedia
+        /// or GetMetadata on that feed, although both these calls will start to fail. For more
+        /// information about managing inactive feeds, see the Elemental Inference User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFeed service method.</param>
         /// <param name="cancellationToken">
@@ -193,8 +323,8 @@ namespace Amazon.ElementalInference
 
 
         /// <summary>
-        /// Releases the resource (for example, an MediaLive channel) that is associated with
-        /// this feed. The outputs in the feed become disabled.
+        /// Releases the resource (the source media) that is associated with this feed. The outputs
+        /// in the feed become DISABLED.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFeed service method.</param>
         /// <param name="cancellationToken">
@@ -230,6 +360,82 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  ExportDictionaryEntries
+
+
+
+        /// <summary>
+        /// Exports the entries from the specified dictionary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportDictionaryEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportDictionaryEntries service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ExportDictionaryEntries">REST API Reference for ExportDictionaryEntries Operation</seealso>
+        Task<ExportDictionaryEntriesResponse> ExportDictionaryEntriesAsync(ExportDictionaryEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDictionary
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified dictionary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDictionary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDictionary service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetDictionary">REST API Reference for GetDictionary Operation</seealso>
+        Task<GetDictionaryResponse> GetDictionaryAsync(GetDictionaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFeed
 
 
@@ -260,6 +466,41 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFeed">REST API Reference for GetFeed Operation</seealso>
         Task<GetFeedResponse> GetFeedAsync(GetFeedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDictionaries
+
+
+
+        /// <summary>
+        /// Lists the dictionaries in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDictionaries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDictionaries service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListDictionaries">REST API Reference for ListDictionaries Operation</seealso>
+        Task<ListDictionariesResponse> ListDictionariesAsync(ListDictionariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -424,12 +665,70 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  UpdateDictionary
+
+
+
+        /// <summary>
+        /// Updates the specified dictionary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDictionary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDictionary service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/UpdateDictionary">REST API Reference for UpdateDictionary Operation</seealso>
+        Task<UpdateDictionaryResponse> UpdateDictionaryAsync(UpdateDictionaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateFeed
 
 
 
         /// <summary>
-        /// Updates the name and/or outputs in a feed.
+        /// Updates the name and/or outputs in a feed. 
+        /// 
+        ///  
+        /// <para>
+        /// UpdateFeed is a PUT operation, which means that the payload that you specify completely
+        /// overwrites the existing payload. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This means that if you want to touch the array of outputs, you must pass in the full
+        /// new list. So you must omit outputs you want to delete, and include outputs you want
+        /// to add or modify. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to patch the array of outputs to make selective additions, use AssociateFeed.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeed service method.</param>
         /// <param name="cancellationToken">

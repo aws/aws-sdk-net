@@ -35,6 +35,7 @@ namespace Amazon.DevOpsAgent.Model
     public partial class MCPServerSigV4AuthorizationConfig
     {
         private Dictionary<string, string> _customHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _mcpRoleArn;
         private string _region;
         private string _roleArn;
         private string _service;
@@ -64,6 +65,26 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property McpRoleArn. 
+        /// <para>
+        /// IAM role ARN to assume for SigV4 signing. Optional — when omitted, credentials are
+        /// resolved at runtime via a monitor account association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string McpRoleArn
+        {
+            get { return this._mcpRoleArn; }
+            set { this._mcpRoleArn = value; }
+        }
+
+        // Check to see if McpRoleArn property is set
+        internal bool IsSetMcpRoleArn()
+        {
+            return this._mcpRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
         /// AWS region for SigV4 signing. Use '*' for SigV4a multi-region signing.
@@ -85,10 +106,11 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// IAM role ARN to assume for SigV4 signing.
+        /// Deprecated — use mcpRoleArn instead. IAM role ARN to assume for SigV4 signing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [Obsolete("Use mcpRoleArn instead.")]
+        [AWSProperty(Min=0, Max=255)]
         public string RoleArn
         {
             get { return this._roleArn; }

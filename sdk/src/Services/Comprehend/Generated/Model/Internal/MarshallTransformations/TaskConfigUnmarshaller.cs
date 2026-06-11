@@ -56,19 +56,19 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DocumentClassificationConfig", targetDepth))
+                if (context.TestExpression("DocumentClassificationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentClassificationConfigUnmarshaller.Instance;
                     unmarshalledObject.DocumentClassificationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityRecognitionConfig", targetDepth))
+                if (context.TestExpression("EntityRecognitionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityRecognitionConfigUnmarshaller.Instance;
                     unmarshalledObject.EntityRecognitionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LanguageCode", targetDepth))
+                if (context.TestExpression("LanguageCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);

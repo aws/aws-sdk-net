@@ -56,37 +56,37 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Domain", targetDepth))
+                if (context.TestExpression("Domain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FirstAccessed", targetDepth))
+                if (context.TestExpression("FirstAccessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstAccessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Hits", targetDepth))
+                if (context.TestExpression("Hits", targetDepth, ref reader))
                 {
                     var unmarshaller = HitsUnmarshaller.Instance;
                     unmarshalledObject.Hits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastAccessed", targetDepth))
+                if (context.TestExpression("LastAccessed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAccessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Protocol", targetDepth))
+                if (context.TestExpression("Protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UniqueSources", targetDepth))
+                if (context.TestExpression("UniqueSources", targetDepth, ref reader))
                 {
                     var unmarshaller = UniqueSourcesUnmarshaller.Instance;
                     unmarshalledObject.UniqueSources = unmarshaller.Unmarshall(context, ref reader);

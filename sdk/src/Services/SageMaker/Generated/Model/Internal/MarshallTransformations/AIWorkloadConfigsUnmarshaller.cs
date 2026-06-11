@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WorkloadSpec", targetDepth))
+                if (context.TestExpression("WorkloadSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadSpecUnmarshaller.Instance;
                     unmarshalledObject.WorkloadSpec = unmarshaller.Unmarshall(context, ref reader);

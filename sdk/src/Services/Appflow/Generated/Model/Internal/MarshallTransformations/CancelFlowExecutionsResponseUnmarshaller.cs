@@ -52,7 +52,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("invalidExecutions", targetDepth))
+                if (context.TestExpression("invalidExecutions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.InvalidExecutions = unmarshaller.Unmarshall(context, ref reader);

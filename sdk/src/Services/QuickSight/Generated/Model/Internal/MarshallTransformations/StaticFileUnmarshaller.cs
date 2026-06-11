@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImageStaticFile", targetDepth))
+                if (context.TestExpression("ImageStaticFile", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageStaticFileUnmarshaller.Instance;
                     unmarshalledObject.ImageStaticFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpatialStaticFile", targetDepth))
+                if (context.TestExpression("SpatialStaticFile", targetDepth, ref reader))
                 {
                     var unmarshaller = SpatialStaticFileUnmarshaller.Instance;
                     unmarshalledObject.SpatialStaticFile = unmarshaller.Unmarshall(context, ref reader);

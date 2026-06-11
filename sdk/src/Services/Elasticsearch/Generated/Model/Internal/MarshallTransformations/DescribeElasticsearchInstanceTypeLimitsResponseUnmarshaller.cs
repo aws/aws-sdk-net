@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LimitsByRole", targetDepth))
+                if (context.TestExpression("LimitsByRole", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Limits, StringUnmarshaller, LimitsUnmarshaller>(StringUnmarshaller.Instance, LimitsUnmarshaller.Instance);
                     response.LimitsByRole = unmarshaller.Unmarshall(context, ref reader);

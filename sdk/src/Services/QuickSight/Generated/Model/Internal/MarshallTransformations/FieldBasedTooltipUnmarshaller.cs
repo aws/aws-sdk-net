@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AggregationVisibility", targetDepth))
+                if (context.TestExpression("AggregationVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AggregationVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TooltipFields", targetDepth))
+                if (context.TestExpression("TooltipFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TooltipItem, TooltipItemUnmarshaller>(TooltipItemUnmarshaller.Instance);
                     unmarshalledObject.TooltipFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TooltipTitleType", targetDepth))
+                if (context.TestExpression("TooltipTitleType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TooltipTitleType = unmarshaller.Unmarshall(context, ref reader);

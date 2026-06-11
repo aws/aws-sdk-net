@@ -56,13 +56,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StatusCode", targetDepth))
+                if (context.TestExpression("StatusCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimestampMetricValuePairList", targetDepth))
+                if (context.TestExpression("TimestampMetricValuePairList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TimestampMetricValuePair, TimestampMetricValuePairUnmarshaller>(TimestampMetricValuePairUnmarshaller.Instance);
                     unmarshalledObject.TimestampMetricValuePairList = unmarshaller.Unmarshall(context, ref reader);

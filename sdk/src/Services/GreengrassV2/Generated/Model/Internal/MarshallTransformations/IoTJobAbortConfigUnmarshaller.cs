@@ -56,7 +56,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("criteriaList", targetDepth))
+                if (context.TestExpression("criteriaList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IoTJobAbortCriteria, IoTJobAbortCriteriaUnmarshaller>(IoTJobAbortCriteriaUnmarshaller.Instance);
                     unmarshalledObject.CriteriaList = unmarshaller.Unmarshall(context, ref reader);

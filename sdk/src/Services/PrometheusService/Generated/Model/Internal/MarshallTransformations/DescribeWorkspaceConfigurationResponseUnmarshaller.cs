@@ -52,7 +52,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("workspaceConfiguration", targetDepth))
+                if (context.TestExpression("workspaceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkspaceConfigurationDescriptionUnmarshaller.Instance;
                     response.WorkspaceConfiguration = unmarshaller.Unmarshall(context, ref reader);

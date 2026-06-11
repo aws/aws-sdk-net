@@ -56,37 +56,37 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containsDataFromDeletedResources", targetDepth))
+                if (context.TestExpression("containsDataFromDeletedResources", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ContainsDataFromDeletedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hitCount", targetDepth))
+                if (context.TestExpression("hitCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HitCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("missedCount", targetDepth))
+                if (context.TestExpression("missedCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MissedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utterance", targetDepth))
+                if (context.TestExpression("utterance", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Utterance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utteranceFirstRecordedInAggregationDuration", targetDepth))
+                if (context.TestExpression("utteranceFirstRecordedInAggregationDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UtteranceFirstRecordedInAggregationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utteranceLastRecordedInAggregationDuration", targetDepth))
+                if (context.TestExpression("utteranceLastRecordedInAggregationDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.UtteranceLastRecordedInAggregationDuration = unmarshaller.Unmarshall(context, ref reader);

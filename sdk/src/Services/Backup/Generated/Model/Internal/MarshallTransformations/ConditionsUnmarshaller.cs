@@ -56,25 +56,25 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StringEquals", targetDepth))
+                if (context.TestExpression("StringEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
                     unmarshalledObject.StringEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringLike", targetDepth))
+                if (context.TestExpression("StringLike", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
                     unmarshalledObject.StringLike = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringNotEquals", targetDepth))
+                if (context.TestExpression("StringNotEquals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
                     unmarshalledObject.StringNotEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringNotLike", targetDepth))
+                if (context.TestExpression("StringNotLike", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConditionParameter, ConditionParameterUnmarshaller>(ConditionParameterUnmarshaller.Instance);
                     unmarshalledObject.StringNotLike = unmarshaller.Unmarshall(context, ref reader);

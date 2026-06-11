@@ -67,8 +67,8 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -109,10 +109,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Family);
             }
 
+            if(publicRequest.IsSetIpcMode())
+            {
+                context.Writer.WritePropertyName("ipcMode");
+                context.Writer.WriteStringValue(publicRequest.IpcMode);
+            }
+
             if(publicRequest.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
                 context.Writer.WriteStringValue(publicRequest.Memory);
+            }
+
+            if(publicRequest.IsSetPidMode())
+            {
+                context.Writer.WritePropertyName("pidMode");
+                context.Writer.WriteStringValue(publicRequest.PidMode);
             }
 
             if(publicRequest.IsSetTags())
@@ -155,10 +167,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

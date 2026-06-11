@@ -56,13 +56,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("hasMoreErrors", targetDepth))
+                if (context.TestExpression("hasMoreErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HasMoreErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceErrors", targetDepth))
+                if (context.TestExpression("resourceErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceError, ResourceErrorUnmarshaller>(ResourceErrorUnmarshaller.Instance);
                     unmarshalledObject.ResourceErrors = unmarshaller.Unmarshall(context, ref reader);

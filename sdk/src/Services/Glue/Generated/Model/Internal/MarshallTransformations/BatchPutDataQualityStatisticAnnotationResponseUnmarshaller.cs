@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedInclusionAnnotations", targetDepth))
+                if (context.TestExpression("FailedInclusionAnnotations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnnotationError, AnnotationErrorUnmarshaller>(AnnotationErrorUnmarshaller.Instance);
                     response.FailedInclusionAnnotations = unmarshaller.Unmarshall(context, ref reader);

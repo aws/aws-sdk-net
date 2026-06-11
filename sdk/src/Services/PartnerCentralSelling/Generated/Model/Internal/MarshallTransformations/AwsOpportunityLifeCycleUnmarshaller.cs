@@ -56,31 +56,31 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClosedLostReason", targetDepth))
+                if (context.TestExpression("ClosedLostReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClosedLostReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextSteps", targetDepth))
+                if (context.TestExpression("NextSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextSteps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextStepsHistory", targetDepth))
+                if (context.TestExpression("NextStepsHistory", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProfileNextStepsHistory, ProfileNextStepsHistoryUnmarshaller>(ProfileNextStepsHistoryUnmarshaller.Instance);
                     unmarshalledObject.NextStepsHistory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Stage", targetDepth))
+                if (context.TestExpression("Stage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetCloseDate", targetDepth))
+                if (context.TestExpression("TargetCloseDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetCloseDate = unmarshaller.Unmarshall(context, ref reader);

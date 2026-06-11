@@ -56,19 +56,19 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("All", targetDepth))
+                if (context.TestExpression("All", targetDepth, ref reader))
                 {
                     var unmarshaller = AllUnmarshaller.Instance;
                     unmarshalledObject.All = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExcludedHeaders", targetDepth))
+                if (context.TestExpression("ExcludedHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedHeaders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludedHeaders", targetDepth))
+                if (context.TestExpression("IncludedHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.IncludedHeaders = unmarshaller.Unmarshall(context, ref reader);

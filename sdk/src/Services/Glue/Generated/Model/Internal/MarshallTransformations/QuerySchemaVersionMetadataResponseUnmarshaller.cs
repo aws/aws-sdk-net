@@ -52,19 +52,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MetadataInfoMap", targetDepth))
+                if (context.TestExpression("MetadataInfoMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, MetadataInfo, StringUnmarshaller, MetadataInfoUnmarshaller>(StringUnmarshaller.Instance, MetadataInfoUnmarshaller.Instance);
                     response.MetadataInfoMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SchemaVersionId", targetDepth))
+                if (context.TestExpression("SchemaVersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SchemaVersionId = unmarshaller.Unmarshall(context, ref reader);

@@ -103,7 +103,7 @@ namespace AWSSDK.UnitTests
             {
                 Bucket = outpostAccessPointName,
             };
-            var exception = Assert.ThrowsException<AmazonClientException>(() => {
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
                 S3ControlArnTestUtils.RunMockRequest(getBucketRequest, GetBucketRequestMarshaller.Instance, s3ControlConfig);
             });
             Assert.AreEqual("AccountId is required but not set", exception.Message);
@@ -124,7 +124,7 @@ namespace AWSSDK.UnitTests
             {
                 Name = accessPointName
             };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
             {
                 S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
             });
@@ -147,7 +147,7 @@ namespace AWSSDK.UnitTests
                 AccountId = "923456789012",
                 Name = accessPointName
             };
-            var exception = Assert.ThrowsException<AmazonClientException>(() =>
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() =>
             {
                 S3ControlArnTestUtils.RunMockRequest(getAccessPointRequest, GetAccessPointRequestMarshaller.Instance, s3ControlConfig);
             });

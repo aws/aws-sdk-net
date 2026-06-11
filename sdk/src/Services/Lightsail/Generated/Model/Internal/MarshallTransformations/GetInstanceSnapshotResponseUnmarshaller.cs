@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceSnapshot", targetDepth))
+                if (context.TestExpression("instanceSnapshot", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceSnapshotUnmarshaller.Instance;
                     response.InstanceSnapshot = unmarshaller.Unmarshall(context, ref reader);

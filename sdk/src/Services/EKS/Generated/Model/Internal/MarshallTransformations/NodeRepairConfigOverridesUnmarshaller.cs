@@ -56,25 +56,25 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("minRepairWaitTimeMins", targetDepth))
+                if (context.TestExpression("minRepairWaitTimeMins", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinRepairWaitTimeMins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeMonitoringCondition", targetDepth))
+                if (context.TestExpression("nodeMonitoringCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeMonitoringCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeUnhealthyReason", targetDepth))
+                if (context.TestExpression("nodeUnhealthyReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NodeUnhealthyReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repairAction", targetDepth))
+                if (context.TestExpression("repairAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepairAction = unmarshaller.Unmarshall(context, ref reader);

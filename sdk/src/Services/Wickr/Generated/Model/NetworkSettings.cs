@@ -35,10 +35,29 @@ namespace Amazon.Wickr.Model
     /// </summary>
     public partial class NetworkSettings
     {
+        private ConsentPopupConfig _consentPopup;
         private bool? _dataRetention;
         private bool? _enableClientMetrics;
         private bool? _enableTrustedDataFormat;
         private ReadReceiptConfig _readReceiptConfig;
+
+        /// <summary>
+        /// Gets and sets the property ConsentPopup. 
+        /// <para>
+        /// Consent popup configuration for the network, displayed to users on login.
+        /// </para>
+        /// </summary>
+        public ConsentPopupConfig ConsentPopup
+        {
+            get { return this._consentPopup; }
+            set { this._consentPopup = value; }
+        }
+
+        // Check to see if ConsentPopup property is set
+        internal bool IsSetConsentPopup()
+        {
+            return this._consentPopup != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataRetention. 

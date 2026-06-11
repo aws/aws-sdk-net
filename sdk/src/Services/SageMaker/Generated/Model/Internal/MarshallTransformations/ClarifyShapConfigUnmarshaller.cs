@@ -56,31 +56,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NumberOfSamples", targetDepth))
+                if (context.TestExpression("NumberOfSamples", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSamples = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Seed", targetDepth))
+                if (context.TestExpression("Seed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Seed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShapBaselineConfig", targetDepth))
+                if (context.TestExpression("ShapBaselineConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClarifyShapBaselineConfigUnmarshaller.Instance;
                     unmarshalledObject.ShapBaselineConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextConfig", targetDepth))
+                if (context.TestExpression("TextConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ClarifyTextConfigUnmarshaller.Instance;
                     unmarshalledObject.TextConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UseLogit", targetDepth))
+                if (context.TestExpression("UseLogit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseLogit = unmarshaller.Unmarshall(context, ref reader);

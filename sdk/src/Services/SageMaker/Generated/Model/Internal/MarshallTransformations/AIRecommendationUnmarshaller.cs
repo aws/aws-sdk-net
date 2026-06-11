@@ -56,37 +56,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AIBenchmarkJobArn", targetDepth))
+                if (context.TestExpression("AIBenchmarkJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AIBenchmarkJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentConfiguration", targetDepth))
+                if (context.TestExpression("DeploymentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AIRecommendationDeploymentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedPerformance", targetDepth))
+                if (context.TestExpression("ExpectedPerformance", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AIRecommendationPerformanceMetric, AIRecommendationPerformanceMetricUnmarshaller>(AIRecommendationPerformanceMetricUnmarshaller.Instance);
                     unmarshalledObject.ExpectedPerformance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDetails", targetDepth))
+                if (context.TestExpression("ModelDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AIRecommendationModelDetailsUnmarshaller.Instance;
                     unmarshalledObject.ModelDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OptimizationDetails", targetDepth))
+                if (context.TestExpression("OptimizationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AIRecommendationOptimizationDetail, AIRecommendationOptimizationDetailUnmarshaller>(AIRecommendationOptimizationDetailUnmarshaller.Instance);
                     unmarshalledObject.OptimizationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecommendationDescription", targetDepth))
+                if (context.TestExpression("RecommendationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RecommendationDescription = unmarshaller.Unmarshall(context, ref reader);

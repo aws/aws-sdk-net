@@ -52,49 +52,49 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedTimeStamp", targetDepth))
+                if (context.TestExpression("CreatedTimeStamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.CreatedTimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HomeRegion", targetDepth))
+                if (context.TestExpression("HomeRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HomeRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsReplicated", targetDepth))
+                if (context.TestExpression("IsReplicated", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsReplicated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTimeStamp", targetDepth))
+                if (context.TestExpression("LastUpdateTimeStamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastUpdateTimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegionStatuses", targetDepth))
+                if (context.TestExpression("RegionStatuses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RegionStatus, RegionStatusUnmarshaller>(RegionStatusUnmarshaller.Instance);
                     response.RegionStatuses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleArn", targetDepth))
+                if (context.TestExpression("RuleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RuleName", targetDepth))
+                if (context.TestExpression("RuleName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TelemetryRule", targetDepth))
+                if (context.TestExpression("TelemetryRule", targetDepth, ref reader))
                 {
                     var unmarshaller = TelemetryRuleUnmarshaller.Instance;
                     response.TelemetryRule = unmarshaller.Unmarshall(context, ref reader);

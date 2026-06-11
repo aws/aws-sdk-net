@@ -56,13 +56,13 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sqlTransformation", targetDepth))
+                if (context.TestExpression("sqlTransformation", targetDepth, ref reader))
                 {
                     var unmarshaller = DataIntegrationFlowSQLTransformationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqlTransformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transformationType", targetDepth))
+                if (context.TestExpression("transformationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransformationType = unmarshaller.Unmarshall(context, ref reader);

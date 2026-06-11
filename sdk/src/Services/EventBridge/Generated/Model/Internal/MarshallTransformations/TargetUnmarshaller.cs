@@ -56,103 +56,103 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppSyncParameters", targetDepth))
+                if (context.TestExpression("AppSyncParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AppSyncParametersUnmarshaller.Instance;
                     unmarshalledObject.AppSyncParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BatchParameters", targetDepth))
+                if (context.TestExpression("BatchParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = BatchParametersUnmarshaller.Instance;
                     unmarshalledObject.BatchParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                if (context.TestExpression("DeadLetterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
                     unmarshalledObject.DeadLetterConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EcsParameters", targetDepth))
+                if (context.TestExpression("EcsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsParametersUnmarshaller.Instance;
                     unmarshalledObject.EcsParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpParameters", targetDepth))
+                if (context.TestExpression("HttpParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpParametersUnmarshaller.Instance;
                     unmarshalledObject.HttpParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Input", targetDepth))
+                if (context.TestExpression("Input", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputPath", targetDepth))
+                if (context.TestExpression("InputPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputTransformer", targetDepth))
+                if (context.TestExpression("InputTransformer", targetDepth, ref reader))
                 {
                     var unmarshaller = InputTransformerUnmarshaller.Instance;
                     unmarshalledObject.InputTransformer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KinesisParameters", targetDepth))
+                if (context.TestExpression("KinesisParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = KinesisParametersUnmarshaller.Instance;
                     unmarshalledObject.KinesisParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RedshiftDataParameters", targetDepth))
+                if (context.TestExpression("RedshiftDataParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftDataParametersUnmarshaller.Instance;
                     unmarshalledObject.RedshiftDataParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RetryPolicy", targetDepth))
+                if (context.TestExpression("RetryPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = RetryPolicyUnmarshaller.Instance;
                     unmarshalledObject.RetryPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunCommandParameters", targetDepth))
+                if (context.TestExpression("RunCommandParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = RunCommandParametersUnmarshaller.Instance;
                     unmarshalledObject.RunCommandParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerPipelineParameters", targetDepth))
+                if (context.TestExpression("SageMakerPipelineParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerPipelineParametersUnmarshaller.Instance;
                     unmarshalledObject.SageMakerPipelineParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqsParameters", targetDepth))
+                if (context.TestExpression("SqsParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = SqsParametersUnmarshaller.Instance;
                     unmarshalledObject.SqsParameters = unmarshaller.Unmarshall(context, ref reader);

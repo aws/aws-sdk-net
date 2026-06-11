@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OutputResolution", targetDepth))
+                if (context.TestExpression("OutputResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputResolutionStackInputUnmarshaller.Instance;
                     unmarshalledObject.OutputResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetBands", targetDepth))
+                if (context.TestExpression("TargetBands", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TargetBands = unmarshaller.Unmarshall(context, ref reader);

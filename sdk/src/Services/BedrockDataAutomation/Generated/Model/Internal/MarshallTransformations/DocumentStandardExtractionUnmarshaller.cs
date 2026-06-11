@@ -56,13 +56,13 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("boundingBox", targetDepth))
+                if (context.TestExpression("boundingBox", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentBoundingBoxUnmarshaller.Instance;
                     unmarshalledObject.BoundingBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("granularity", targetDepth))
+                if (context.TestExpression("granularity", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentExtractionGranularityUnmarshaller.Instance;
                     unmarshalledObject.Granularity = unmarshaller.Unmarshall(context, ref reader);

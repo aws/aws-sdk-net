@@ -56,7 +56,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clusterLogging", targetDepth))
+                if (context.TestExpression("clusterLogging", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogSetup, LogSetupUnmarshaller>(LogSetupUnmarshaller.Instance);
                     unmarshalledObject.ClusterLogging = unmarshaller.Unmarshall(context, ref reader);

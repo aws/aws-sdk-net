@@ -56,13 +56,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CompliantCount", targetDepth))
+                if (context.TestExpression("CompliantCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SeveritySummary", targetDepth))
+                if (context.TestExpression("SeveritySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = SeveritySummaryUnmarshaller.Instance;
                     unmarshalledObject.SeveritySummary = unmarshaller.Unmarshall(context, ref reader);

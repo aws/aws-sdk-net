@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("textInferenceConfig", targetDepth))
+                if (context.TestExpression("textInferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TextInferenceConfigUnmarshaller.Instance;
                     unmarshalledObject.TextInferenceConfig = unmarshaller.Unmarshall(context, ref reader);

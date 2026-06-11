@@ -56,13 +56,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("resultsByTime", targetDepth))
+                if (context.TestExpression("resultsByTime", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EstimateByTime, EstimateByTimeUnmarshaller>(EstimateByTimeUnmarshaller.Instance);
                     unmarshalledObject.ResultsByTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usageType", targetDepth))
+                if (context.TestExpression("usageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UsageType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImageConfiguration", targetDepth))
+                if (context.TestExpression("ImageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ImageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageIdentifier", targetDepth))
+                if (context.TestExpression("ImageIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageRepositoryType", targetDepth))
+                if (context.TestExpression("ImageRepositoryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageRepositoryType = unmarshaller.Unmarshall(context, ref reader);

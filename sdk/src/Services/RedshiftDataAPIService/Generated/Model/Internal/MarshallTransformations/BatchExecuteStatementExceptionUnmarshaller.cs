@@ -72,7 +72,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("StatementId", targetDepth))
+                    if (context.TestExpression("StatementId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StatementId = unmarshaller.Unmarshall(context, ref reader);

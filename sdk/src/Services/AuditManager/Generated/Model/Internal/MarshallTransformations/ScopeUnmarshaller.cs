@@ -56,13 +56,13 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("awsAccounts", targetDepth))
+                if (context.TestExpression("awsAccounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AWSAccount, AWSAccountUnmarshaller>(AWSAccountUnmarshaller.Instance);
                     unmarshalledObject.AwsAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("awsServices", targetDepth))
+                if (context.TestExpression("awsServices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AWSService, AWSServiceUnmarshaller>(AWSServiceUnmarshaller.Instance);
                     unmarshalledObject.AwsServices = unmarshaller.Unmarshall(context, ref reader);

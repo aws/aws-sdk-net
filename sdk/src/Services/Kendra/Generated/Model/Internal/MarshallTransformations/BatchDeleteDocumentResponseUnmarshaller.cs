@@ -52,7 +52,7 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedDocuments", targetDepth))
+                if (context.TestExpression("FailedDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchDeleteDocumentResponseFailedDocument, BatchDeleteDocumentResponseFailedDocumentUnmarshaller>(BatchDeleteDocumentResponseFailedDocumentUnmarshaller.Instance);
                     response.FailedDocuments = unmarshaller.Unmarshall(context, ref reader);

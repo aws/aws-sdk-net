@@ -56,31 +56,31 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("findingDetails", targetDepth))
+                if (context.TestExpression("findingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingType", targetDepth))
+                if (context.TestExpression("findingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issueCode", targetDepth))
+                if (context.TestExpression("issueCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IssueCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("learnMoreLink", targetDepth))
+                if (context.TestExpression("learnMoreLink", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LearnMoreLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("locations", targetDepth))
+                if (context.TestExpression("locations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Location, LocationUnmarshaller>(LocationUnmarshaller.Instance);
                     unmarshalledObject.Locations = unmarshaller.Unmarshall(context, ref reader);

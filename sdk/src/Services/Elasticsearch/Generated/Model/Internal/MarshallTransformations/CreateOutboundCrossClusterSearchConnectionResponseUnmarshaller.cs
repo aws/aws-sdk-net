@@ -52,31 +52,31 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionAlias", targetDepth))
+                if (context.TestExpression("ConnectionAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("ConnectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = OutboundCrossClusterSearchConnectionStatusUnmarshaller.Instance;
                     response.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossClusterSearchConnectionId", targetDepth))
+                if (context.TestExpression("CrossClusterSearchConnectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CrossClusterSearchConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationDomainInfo", targetDepth))
+                if (context.TestExpression("DestinationDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
                     response.DestinationDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceDomainInfo", targetDepth))
+                if (context.TestExpression("SourceDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationUnmarshaller.Instance;
                     response.SourceDomainInfo = unmarshaller.Unmarshall(context, ref reader);

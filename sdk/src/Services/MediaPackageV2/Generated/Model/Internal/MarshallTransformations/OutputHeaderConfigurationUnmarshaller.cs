@@ -56,7 +56,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PublishMQCS", targetDepth))
+                if (context.TestExpression("PublishMQCS", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublishMQCS = unmarshaller.Unmarshall(context, ref reader);

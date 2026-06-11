@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("curatedQueries", targetDepth))
+                if (context.TestExpression("curatedQueries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CuratedQuery, CuratedQueryUnmarshaller>(CuratedQueryUnmarshaller.Instance);
                     unmarshalledObject.CuratedQueries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tables", targetDepth))
+                if (context.TestExpression("tables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QueryGenerationTable, QueryGenerationTableUnmarshaller>(QueryGenerationTableUnmarshaller.Instance);
                     unmarshalledObject.Tables = unmarshaller.Unmarshall(context, ref reader);

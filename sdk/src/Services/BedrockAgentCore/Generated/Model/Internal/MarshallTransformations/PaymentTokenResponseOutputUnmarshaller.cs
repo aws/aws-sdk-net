@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("coinbaseCdpTokenResponse", targetDepth))
+                if (context.TestExpression("coinbaseCdpTokenResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = CoinbaseCdpTokenResponseOutputUnmarshaller.Instance;
                     unmarshalledObject.CoinbaseCdpTokenResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stripePrivyTokenResponse", targetDepth))
+                if (context.TestExpression("stripePrivyTokenResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = StripePrivyTokenResponseOutputUnmarshaller.Instance;
                     unmarshalledObject.StripePrivyTokenResponse = unmarshaller.Unmarshall(context, ref reader);

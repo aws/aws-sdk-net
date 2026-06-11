@@ -56,25 +56,25 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attribute", targetDepth))
+                if (context.TestExpression("attribute", targetDepth, ref reader))
                 {
                     var unmarshaller = AttributeUnmarshaller.Instance;
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("measurement", targetDepth))
+                if (context.TestExpression("measurement", targetDepth, ref reader))
                 {
                     var unmarshaller = MeasurementUnmarshaller.Instance;
                     unmarshalledObject.Measurement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metric", targetDepth))
+                if (context.TestExpression("metric", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricUnmarshaller.Instance;
                     unmarshalledObject.Metric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transform", targetDepth))
+                if (context.TestExpression("transform", targetDepth, ref reader))
                 {
                     var unmarshaller = TransformUnmarshaller.Instance;
                     unmarshalledObject.Transform = unmarshaller.Unmarshall(context, ref reader);

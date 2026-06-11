@@ -52,31 +52,31 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceMatches", targetDepth))
+                if (context.TestExpression("FaceMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CompareFacesMatch, CompareFacesMatchUnmarshaller>(CompareFacesMatchUnmarshaller.Instance);
                     response.FaceMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceImageFace", targetDepth))
+                if (context.TestExpression("SourceImageFace", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparedSourceImageFaceUnmarshaller.Instance;
                     response.SourceImageFace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceImageOrientationCorrection", targetDepth))
+                if (context.TestExpression("SourceImageOrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceImageOrientationCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetImageOrientationCorrection", targetDepth))
+                if (context.TestExpression("TargetImageOrientationCorrection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetImageOrientationCorrection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnmatchedFaces", targetDepth))
+                if (context.TestExpression("UnmatchedFaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComparedFace, ComparedFaceUnmarshaller>(ComparedFaceUnmarshaller.Instance);
                     response.UnmatchedFaces = unmarshaller.Unmarshall(context, ref reader);

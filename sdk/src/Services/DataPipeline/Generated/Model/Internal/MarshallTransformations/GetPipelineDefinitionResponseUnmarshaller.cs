@@ -52,19 +52,19 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("parameterObjects", targetDepth))
+                if (context.TestExpression("parameterObjects", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParameterObject, ParameterObjectUnmarshaller>(ParameterObjectUnmarshaller.Instance);
                     response.ParameterObjects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameterValues", targetDepth))
+                if (context.TestExpression("parameterValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParameterValue, ParameterValueUnmarshaller>(ParameterValueUnmarshaller.Instance);
                     response.ParameterValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineObjects", targetDepth))
+                if (context.TestExpression("pipelineObjects", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineObject, PipelineObjectUnmarshaller>(PipelineObjectUnmarshaller.Instance);
                     response.PipelineObjects = unmarshaller.Unmarshall(context, ref reader);

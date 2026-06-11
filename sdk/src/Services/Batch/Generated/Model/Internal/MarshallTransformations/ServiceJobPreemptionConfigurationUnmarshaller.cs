@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("preemptionRetriesBeforeTermination", targetDepth))
+                if (context.TestExpression("preemptionRetriesBeforeTermination", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PreemptionRetriesBeforeTermination = unmarshaller.Unmarshall(context, ref reader);

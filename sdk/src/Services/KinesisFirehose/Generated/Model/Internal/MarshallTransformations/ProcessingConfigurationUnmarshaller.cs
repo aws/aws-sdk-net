@@ -56,13 +56,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enabled", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Processors", targetDepth))
+                if (context.TestExpression("Processors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Processor, ProcessorUnmarshaller>(ProcessorUnmarshaller.Instance);
                     unmarshalledObject.Processors = unmarshaller.Unmarshall(context, ref reader);

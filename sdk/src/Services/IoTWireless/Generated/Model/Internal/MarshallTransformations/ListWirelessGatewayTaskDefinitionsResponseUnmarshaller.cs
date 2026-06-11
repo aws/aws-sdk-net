@@ -52,13 +52,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TaskDefinitions", targetDepth))
+                if (context.TestExpression("TaskDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UpdateWirelessGatewayTaskEntry, UpdateWirelessGatewayTaskEntryUnmarshaller>(UpdateWirelessGatewayTaskEntryUnmarshaller.Instance);
                     response.TaskDefinitions = unmarshaller.Unmarshall(context, ref reader);

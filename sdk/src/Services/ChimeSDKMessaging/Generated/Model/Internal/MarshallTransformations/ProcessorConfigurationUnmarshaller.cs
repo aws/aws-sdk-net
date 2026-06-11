@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Lambda", targetDepth))
+                if (context.TestExpression("Lambda", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);

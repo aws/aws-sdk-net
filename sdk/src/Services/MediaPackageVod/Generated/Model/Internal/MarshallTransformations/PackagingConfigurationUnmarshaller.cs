@@ -56,55 +56,55 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cmafPackage", targetDepth))
+                if (context.TestExpression("cmafPackage", targetDepth, ref reader))
                 {
                     var unmarshaller = CmafPackageUnmarshaller.Instance;
                     unmarshalledObject.CmafPackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dashPackage", targetDepth))
+                if (context.TestExpression("dashPackage", targetDepth, ref reader))
                 {
                     var unmarshaller = DashPackageUnmarshaller.Instance;
                     unmarshalledObject.DashPackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsPackage", targetDepth))
+                if (context.TestExpression("hlsPackage", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsPackageUnmarshaller.Instance;
                     unmarshalledObject.HlsPackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mssPackage", targetDepth))
+                if (context.TestExpression("mssPackage", targetDepth, ref reader))
                 {
                     var unmarshaller = MssPackageUnmarshaller.Instance;
                     unmarshalledObject.MssPackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("packagingGroupId", targetDepth))
+                if (context.TestExpression("packagingGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PackagingGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

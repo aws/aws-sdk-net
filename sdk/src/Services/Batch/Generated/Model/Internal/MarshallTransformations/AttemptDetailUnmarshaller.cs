@@ -56,31 +56,31 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("container", targetDepth))
+                if (context.TestExpression("container", targetDepth, ref reader))
                 {
                     var unmarshaller = AttemptContainerDetailUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppedAt", targetDepth))
+                if (context.TestExpression("stoppedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskProperties", targetDepth))
+                if (context.TestExpression("taskProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttemptEcsTaskDetails, AttemptEcsTaskDetailsUnmarshaller>(AttemptEcsTaskDetailsUnmarshaller.Instance);
                     unmarshalledObject.TaskProperties = unmarshaller.Unmarshall(context, ref reader);

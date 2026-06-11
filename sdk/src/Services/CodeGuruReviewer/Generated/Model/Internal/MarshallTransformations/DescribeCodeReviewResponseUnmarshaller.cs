@@ -52,7 +52,7 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeReview", targetDepth))
+                if (context.TestExpression("CodeReview", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeReviewUnmarshaller.Instance;
                     response.CodeReview = unmarshaller.Unmarshall(context, ref reader);

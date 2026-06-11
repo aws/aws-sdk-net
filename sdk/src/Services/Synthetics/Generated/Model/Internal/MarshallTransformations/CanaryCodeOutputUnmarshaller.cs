@@ -56,25 +56,25 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlueprintTypes", targetDepth))
+                if (context.TestExpression("BlueprintTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.BlueprintTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dependencies", targetDepth))
+                if (context.TestExpression("Dependencies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dependency, DependencyUnmarshaller>(DependencyUnmarshaller.Instance);
                     unmarshalledObject.Dependencies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Handler", targetDepth))
+                if (context.TestExpression("Handler", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Handler = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationArn", targetDepth))
+                if (context.TestExpression("SourceLocationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceLocationArn = unmarshaller.Unmarshall(context, ref reader);

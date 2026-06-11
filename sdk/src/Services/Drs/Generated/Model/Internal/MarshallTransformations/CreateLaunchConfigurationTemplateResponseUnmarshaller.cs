@@ -52,7 +52,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("launchConfigurationTemplate", targetDepth))
+                if (context.TestExpression("launchConfigurationTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = LaunchConfigurationTemplateUnmarshaller.Instance;
                     response.LaunchConfigurationTemplate = unmarshaller.Unmarshall(context, ref reader);

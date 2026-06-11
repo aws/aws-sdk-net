@@ -52,43 +52,43 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationArn", targetDepth))
+                if (context.TestExpression("ApplicationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApplicationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CatalogId", targetDepth))
+                if (context.TestExpression("CatalogId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CatalogId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExternalFiltering", targetDepth))
+                if (context.TestExpression("ExternalFiltering", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalFilteringConfigurationUnmarshaller.Instance;
                     response.ExternalFiltering = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceArn", targetDepth))
+                if (context.TestExpression("InstanceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InstanceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceShare", targetDepth))
+                if (context.TestExpression("ResourceShare", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceShare = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceIntegrations", targetDepth))
+                if (context.TestExpression("ServiceIntegrations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceIntegrationUnion, ServiceIntegrationUnionUnmarshaller>(ServiceIntegrationUnionUnmarshaller.Instance);
                     response.ServiceIntegrations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShareRecipients", targetDepth))
+                if (context.TestExpression("ShareRecipients", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataLakePrincipal, DataLakePrincipalUnmarshaller>(DataLakePrincipalUnmarshaller.Instance);
                     response.ShareRecipients = unmarshaller.Unmarshall(context, ref reader);

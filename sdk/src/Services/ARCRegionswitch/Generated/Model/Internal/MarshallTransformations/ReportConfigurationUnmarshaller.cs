@@ -56,7 +56,7 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reportOutput", targetDepth))
+                if (context.TestExpression("reportOutput", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReportOutputConfiguration, ReportOutputConfigurationUnmarshaller>(ReportOutputConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ReportOutput = unmarshaller.Unmarshall(context, ref reader);

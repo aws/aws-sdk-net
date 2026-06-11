@@ -1,6 +1,7 @@
 ﻿using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -209,31 +210,55 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// projection expressions, and processes responses into document objects. It is intended for internal use within
     /// the document operation framework.</remarks>
     internal sealed class GetItemPipeline
-        : DocumentOperationPipeline<GetItemDocumentOperationRequest, GetItemRequest, GetItemResponse, Document>
+        : DocumentOperationPipeline<BaseGetItemDocumentOperationRequest, GetItemRequest, GetItemResponse, Document>
     {
         public GetItemPipeline(Table table) : base(table)
         {
         }
 
-        protected override void Validate(GetItemDocumentOperationRequest request)
+        protected override void Validate(BaseGetItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
-            if (request.Key == null || request.Key.Count == 0)
-                throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
-        }
-
-        protected override GetItemRequest Map(GetItemDocumentOperationRequest request)
-        {
-            return new GetItemRequest
+            switch (request)
             {
-                TableName = Table.TableName,
-                Key = Table.MakeKey(request.Key),
-                ConsistentRead = request.ConsistentRead
-            };
+                case GetItemDocumentOperationRequest getItemRequest:
+                    if (getItemRequest.Key == null || getItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                case InternalGetItemDocumentOperationRequest internalGetItemRequest:
+                    if (internalGetItemRequest.Key == null || internalGetItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("InternalGetItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");
+            }
         }
 
-        protected override void ApplyExpressions(GetItemDocumentOperationRequest request, GetItemRequest lowLevel)
+        protected override GetItemRequest Map(BaseGetItemDocumentOperationRequest request)
+        {
+            switch (request)
+            {
+                case GetItemDocumentOperationRequest getItemRequest:
+                    return new GetItemRequest
+                    {
+                        TableName = Table.TableName,
+                        Key = Table.MakeKey(getItemRequest.Key),
+                        ConsistentRead = request.ConsistentRead
+                    };
+                case InternalGetItemDocumentOperationRequest internalGetItemRequest:
+                    return new GetItemRequest
+                    {
+                        TableName = Table.TableName,
+                        Key = internalGetItemRequest.Key,
+                        ConsistentRead = request.ConsistentRead
+                    };
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");
+            }
+        }
+
+        protected override void ApplyExpressions(BaseGetItemDocumentOperationRequest request, GetItemRequest lowLevel)
         {
             if (request.ProjectionExpression is { IsSet: true })
                 request.ProjectionExpression.ApplyExpression(lowLevel, Table);
@@ -259,7 +284,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         protected override async Task<GetItemResponse> InvokeAsync(GetItemRequest lowLevel, CancellationToken ct) =>
             await Table.DDBClient.GetItemAsync(lowLevel, ct).ConfigureAwait(false);
 
-        protected override Document PostProcess(GetItemDocumentOperationRequest request, GetItemResponse serviceResponse)
+        protected override Document PostProcess(BaseGetItemDocumentOperationRequest request, GetItemResponse serviceResponse)
         {
             var map = serviceResponse.Item;
             return (map == null || map.Count == 0) ? null : Table.FromAttributeMap(map);
@@ -275,22 +300,45 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// that either a document or an update expression is provided exclusively, and manages the mapping of keys and
     /// update expressions.</remarks>
     internal sealed class UpdateItemPipeline :
-        DocumentOperationPipeline<UpdateItemDocumentOperationRequest, UpdateItemRequest, UpdateItemResponse, Document>
+        DocumentOperationPipeline<BaseUpdateItemDocumentOperationRequest, UpdateItemRequest, UpdateItemResponse, Document>
     {
         public UpdateItemPipeline(Table table) : base(table)
         {
         }
 
-        protected override void Validate(UpdateItemDocumentOperationRequest request)
+        protected override void Validate(BaseUpdateItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
             bool docSet = request.Document != null;
-            bool exprSet = request.UpdateExpression is { IsSet: true };
-            if ((docSet && exprSet) || (!docSet && !exprSet))
+            bool exprSet;
+            if (request.UpdateExpression is UpdateExpression { IsSet: true })
+            {
+                exprSet = true;
+            }
+            else
+            {
+                exprSet = request.UpdateExpression is { IsSet: true };
+            }
+
+            if (!docSet) { 
+                switch (request)
+                {
+                    case UpdateItemDocumentOperationRequest r when r.Key == null || r.Key.Count == 0:
+                        throw new InvalidOperationException("A key must be provided when Document is not set.");
+                    case UpdateItemDocumentOperationRequest r:
+                        if (!exprSet)
+                            throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (docSet && exprSet)
                 throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
         }
 
-        protected override UpdateItemRequest Map(UpdateItemDocumentOperationRequest request)
+        protected override UpdateItemRequest Map(BaseUpdateItemDocumentOperationRequest request)
         {
             var req = new UpdateItemRequest
             {
@@ -298,7 +346,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 ReturnValues = EnumMapper.Convert(request.ReturnValues)
             };
 
-            Key key = request.Key != null ? Table.MakeKey(request.Key) : null;
+            Key key = request switch
+            {
+                UpdateItemDocumentOperationRequest r => r.Key != null ? Table.MakeKey(r.Key) : null,
+                InternalUpdateItemDocumentOperationRequest ir => ir.Key,
+                _ => null
+            };
 
             if (request.Document != null)
             {
@@ -329,10 +382,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return req;
         }
 
-        protected override void ApplyExpressions(UpdateItemDocumentOperationRequest request, UpdateItemRequest lowLevel)
+        protected override void ApplyExpressions(BaseUpdateItemDocumentOperationRequest request,
+            UpdateItemRequest lowLevel)
         {
             if (request.UpdateExpression is { IsSet: true })
                 request.UpdateExpression.ApplyUpdateExpression(lowLevel, Table);
+
             if (request.ConditionalExpression is { IsSet: true })
                 request.ConditionalExpression.ApplyConditionalExpression(lowLevel, Table);
         }
@@ -356,7 +411,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         protected override async Task<UpdateItemResponse> InvokeAsync(UpdateItemRequest lowLevel, CancellationToken ct) =>
             await Table.DDBClient.UpdateItemAsync(lowLevel, ct).ConfigureAwait(false);
 
-        protected override Document PostProcess(UpdateItemDocumentOperationRequest request,
+        protected override Document PostProcess(BaseUpdateItemDocumentOperationRequest request,
             UpdateItemResponse serviceResponse)
         {
             var resp = (UpdateItemResponse)serviceResponse;
@@ -375,30 +430,50 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// invocation, and post-processing of results. The pipeline is intended for internal use within the document model.
     /// </remarks>
     internal sealed class DeleteItemPipeline :
-        DocumentOperationPipeline<DeleteItemDocumentOperationRequest, DeleteItemRequest, DeleteItemResponse, Document>
+        DocumentOperationPipeline<BaseDeleteItemDocumentOperationRequest, DeleteItemRequest, DeleteItemResponse, Document>
     {
         public DeleteItemPipeline(Table table) : base(table) { }
 
-        protected override void Validate(DeleteItemDocumentOperationRequest request)
+        protected override void Validate(BaseDeleteItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
-            if (request.Key == null || request.Key.Count == 0)
-                throw new InvalidOperationException("DeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+
+            switch (request)
+            {
+                case DeleteItemDocumentOperationRequest deleteItemRequest:
+                    if (deleteItemRequest.Key == null || deleteItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("DeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                case InternalDeleteItemDocumentOperationRequest internalDeleteItemRequest:
+                    if (internalDeleteItemRequest.Key == null || internalDeleteItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("InternalDeleteItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseDeleteItemDocumentOperationRequest");
+            }
         }
 
-        protected override DeleteItemRequest Map(DeleteItemDocumentOperationRequest request)
+        protected override DeleteItemRequest Map(BaseDeleteItemDocumentOperationRequest request)
         {
             var req = new DeleteItemRequest
             {
                 TableName = Table.TableName,
-                Key = Table.MakeKey(request.Key)
             };
+
+            var key = request switch
+            {
+                DeleteItemDocumentOperationRequest r => r.Key != null ? Table.MakeKey(r.Key) : null,
+                InternalDeleteItemDocumentOperationRequest ir => ir.Key,
+                _ => null
+            };
+            req.Key = key;
+
             if (request.ReturnValues == ReturnValues.AllOldAttributes)
                 req.ReturnValues = EnumMapper.Convert(request.ReturnValues);
             return req;
         }
 
-        protected override void ApplyExpressions(DeleteItemDocumentOperationRequest request, DeleteItemRequest lowLevel)
+        protected override void ApplyExpressions(BaseDeleteItemDocumentOperationRequest request, DeleteItemRequest lowLevel)
         {
             if (request.ConditionalExpression is { IsSet: true })
                 request.ConditionalExpression.ApplyExpression(lowLevel, Table);
@@ -424,7 +499,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             await Table.DDBClient.DeleteItemAsync(lowLevel, ct).ConfigureAwait(false);
 
 
-        protected override Document PostProcess(DeleteItemDocumentOperationRequest request, DeleteItemResponse serviceResponse)
+        protected override Document PostProcess(BaseDeleteItemDocumentOperationRequest request, DeleteItemResponse serviceResponse)
         {
             var resp = (DeleteItemResponse)serviceResponse;
             if (request.ReturnValues == ReturnValues.AllOldAttributes && resp.Attributes != null)

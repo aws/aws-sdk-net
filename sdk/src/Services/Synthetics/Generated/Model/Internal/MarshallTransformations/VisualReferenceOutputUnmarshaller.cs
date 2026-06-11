@@ -56,19 +56,19 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseCanaryRunId", targetDepth))
+                if (context.TestExpression("BaseCanaryRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseCanaryRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BaseScreenshots", targetDepth))
+                if (context.TestExpression("BaseScreenshots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BaseScreenshot, BaseScreenshotUnmarshaller>(BaseScreenshotUnmarshaller.Instance);
                     unmarshalledObject.BaseScreenshots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BrowserType", targetDepth))
+                if (context.TestExpression("BrowserType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BrowserType = unmarshaller.Unmarshall(context, ref reader);

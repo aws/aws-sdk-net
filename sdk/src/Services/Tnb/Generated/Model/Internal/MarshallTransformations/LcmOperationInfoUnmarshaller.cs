@@ -56,7 +56,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nsLcmOpOccId", targetDepth))
+                if (context.TestExpression("nsLcmOpOccId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NsLcmOpOccId = unmarshaller.Unmarshall(context, ref reader);

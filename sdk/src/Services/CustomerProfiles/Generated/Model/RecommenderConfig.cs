@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class RecommenderConfig
     {
         private EventsConfig _eventsConfig;
+        private Dictionary<string, List<string>> _excludedColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private Dictionary<string, List<string>> _includedColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private InferenceConfig _inferenceConfig;
         private int? _trainingFrequency;
@@ -58,13 +59,45 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExcludedColumns. 
+        /// <para>
+        /// A map of dataset type to a list of column names to exclude from training. The <c>_webAnalytics</c>
+        /// and <c>_catalogItem</c> keys are supported. The column names must be valid columns
+        /// defined in the recommender schema. All columns in the schema except the listed columns
+        /// will be used for training. The following columns are mandatory and cannot be excluded:
+        /// <c>Item.Id</c>, <c>EventTimestamp</c>, and <c>EventType</c> for <c>_webAnalytics</c>;
+        /// <c>Id</c> for <c>_catalogItem</c>. Mutually exclusive with IncludedColumns — both
+        /// cannot be specified in the same request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public Dictionary<string, List<string>> ExcludedColumns
+        {
+            get { return this._excludedColumns; }
+            set { this._excludedColumns = value; }
+        }
+
+        // Check to see if ExcludedColumns property is set
+        internal bool IsSetExcludedColumns()
+        {
+            return this._excludedColumns != null && (this._excludedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludedColumns. 
         /// <para>
-        /// A map of dataset type to a list of column names to train on. The column names must
-        /// be a subset of the columns defined in the recommender schema. If not specified, all
-        /// columns in the schema are used for training. The following columns are always included
-        /// and do not need to be specified: <c>Item.Id</c>, <c>ItemList[].Id</c>, <c>EventTimestamp</c>,
-        /// <c>EventType</c>, and <c>EventValue</c>.
+        /// A map of dataset type to a list of column names to train on. The <c>_webAnalytics</c>
+        /// and <c>_catalogItem</c> keys are supported. The column names must be a subset of the
+        /// columns defined in the recommender schema. If not specified, all columns in the schema
+        /// are used for training. The following columns are always included in training and do
+        /// not need to be specified: <c>Item.Id</c>, <c>EventTimestamp</c>, and <c>EventType</c>
+        /// for <c>_webAnalytics</c>; <c>Id</c> for <c>_catalogItem</c>. Mutually exclusive with
+        /// ExcludedColumns — both cannot be specified in the same request.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -106,10 +139,11 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property TrainingFrequency. 
         /// <para>
-        /// How often the recommender should retrain its model with new data.
+        /// How often the recommender should retrain its model with new data. If set to 0, automatic
+        /// retraining will not be enabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public int? TrainingFrequency
         {
             get { return this._trainingFrequency; }

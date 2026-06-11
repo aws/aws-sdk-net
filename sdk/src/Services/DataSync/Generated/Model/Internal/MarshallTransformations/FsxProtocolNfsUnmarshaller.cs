@@ -56,7 +56,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MountOptions", targetDepth))
+                if (context.TestExpression("MountOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = NfsMountOptionsUnmarshaller.Instance;
                     unmarshalledObject.MountOptions = unmarshaller.Unmarshall(context, ref reader);

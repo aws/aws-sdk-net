@@ -52,37 +52,37 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationResult", targetDepth))
+                if (context.TestExpression("AuthenticationResult", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationResultUnmarshaller.Instance;
                     response.AuthenticationResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainId", targetDepth))
+                if (context.TestExpression("DomainId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FraudDetectionResult", targetDepth))
+                if (context.TestExpression("FraudDetectionResult", targetDepth, ref reader))
                 {
                     var unmarshaller = FraudDetectionResultUnmarshaller.Instance;
                     response.FraudDetectionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionId", targetDepth))
+                if (context.TestExpression("SessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionName", targetDepth))
+                if (context.TestExpression("SessionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamingStatus", targetDepth))
+                if (context.TestExpression("StreamingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamingStatus = unmarshaller.Unmarshall(context, ref reader);

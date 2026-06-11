@@ -56,67 +56,67 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actorArn", targetDepth))
+                if (context.TestExpression("actorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("approvalRuleEventMetadata", targetDepth))
+                if (context.TestExpression("approvalRuleEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ApprovalRuleEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.ApprovalRuleEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("approvalRuleOverriddenEventMetadata", targetDepth))
+                if (context.TestExpression("approvalRuleOverriddenEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ApprovalRuleOverriddenEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.ApprovalRuleOverriddenEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("approvalStateChangedEventMetadata", targetDepth))
+                if (context.TestExpression("approvalStateChangedEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ApprovalStateChangedEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.ApprovalStateChangedEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventDate", targetDepth))
+                if (context.TestExpression("eventDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EventDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestCreatedEventMetadata", targetDepth))
+                if (context.TestExpression("pullRequestCreatedEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PullRequestCreatedEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.PullRequestCreatedEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestEventType", targetDepth))
+                if (context.TestExpression("pullRequestEventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PullRequestEventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestId", targetDepth))
+                if (context.TestExpression("pullRequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PullRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestMergedStateChangedEventMetadata", targetDepth))
+                if (context.TestExpression("pullRequestMergedStateChangedEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PullRequestMergedStateChangedEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.PullRequestMergedStateChangedEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestSourceReferenceUpdatedEventMetadata", targetDepth))
+                if (context.TestExpression("pullRequestSourceReferenceUpdatedEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PullRequestSourceReferenceUpdatedEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.PullRequestSourceReferenceUpdatedEventMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pullRequestStatusChangedEventMetadata", targetDepth))
+                if (context.TestExpression("pullRequestStatusChangedEventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = PullRequestStatusChangedEventMetadataUnmarshaller.Instance;
                     unmarshalledObject.PullRequestStatusChangedEventMetadata = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LegGeometryFormat", targetDepth))
+                if (context.TestExpression("LegGeometryFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LegGeometryFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Notices", targetDepth))
+                if (context.TestExpression("Notices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteResponseNotice, RouteResponseNoticeUnmarshaller>(RouteResponseNoticeUnmarshaller.Instance);
                     response.Notices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Routes", targetDepth))
+                if (context.TestExpression("Routes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
                     response.Routes = unmarshaller.Unmarshall(context, ref reader);

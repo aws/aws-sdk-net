@@ -56,103 +56,103 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aggregation", targetDepth))
+                if (context.TestExpression("Aggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AllowedAggregations", targetDepth))
+                if (context.TestExpression("AllowedAggregations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedAggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CellValueSynonyms", targetDepth))
+                if (context.TestExpression("CellValueSynonyms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CellValueSynonym, CellValueSynonymUnmarshaller>(CellValueSynonymUnmarshaller.Instance);
                     unmarshalledObject.CellValueSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnDataRole", targetDepth))
+                if (context.TestExpression("ColumnDataRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnDataRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnDescription", targetDepth))
+                if (context.TestExpression("ColumnDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnFriendlyName", targetDepth))
+                if (context.TestExpression("ColumnFriendlyName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnFriendlyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnName", targetDepth))
+                if (context.TestExpression("ColumnName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnSynonyms", targetDepth))
+                if (context.TestExpression("ColumnSynonyms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ColumnSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComparativeOrder", targetDepth))
+                if (context.TestExpression("ComparativeOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparativeOrderUnmarshaller.Instance;
                     unmarshalledObject.ComparativeOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultFormatting", targetDepth))
+                if (context.TestExpression("DefaultFormatting", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultFormattingUnmarshaller.Instance;
                     unmarshalledObject.DefaultFormatting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisableIndexing", targetDepth))
+                if (context.TestExpression("DisableIndexing", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DisableIndexing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsIncludedInTopic", targetDepth))
+                if (context.TestExpression("IsIncludedInTopic", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsIncludedInTopic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NeverAggregateInFilter", targetDepth))
+                if (context.TestExpression("NeverAggregateInFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NeverAggregateInFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonAdditive", targetDepth))
+                if (context.TestExpression("NonAdditive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.NonAdditive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotAllowedAggregations", targetDepth))
+                if (context.TestExpression("NotAllowedAggregations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NotAllowedAggregations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SemanticType", targetDepth))
+                if (context.TestExpression("SemanticType", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticTypeUnmarshaller.Instance;
                     unmarshalledObject.SemanticType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeGranularity", targetDepth))
+                if (context.TestExpression("TimeGranularity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);

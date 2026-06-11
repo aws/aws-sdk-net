@@ -56,19 +56,19 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveQueryTCU", targetDepth))
+                if (context.TestExpression("ActiveQueryTCU", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveQueryTCU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdate", targetDepth))
+                if (context.TestExpression("LastUpdate", targetDepth, ref reader))
                 {
                     var unmarshaller = LastUpdateUnmarshaller.Instance;
                     unmarshalledObject.LastUpdate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NotificationConfiguration", targetDepth))
+                if (context.TestExpression("NotificationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountSettingsNotificationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);

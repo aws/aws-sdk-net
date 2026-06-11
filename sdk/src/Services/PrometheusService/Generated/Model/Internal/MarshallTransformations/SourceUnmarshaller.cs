@@ -56,13 +56,13 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eksConfiguration", targetDepth))
+                if (context.TestExpression("eksConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EksConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EksConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

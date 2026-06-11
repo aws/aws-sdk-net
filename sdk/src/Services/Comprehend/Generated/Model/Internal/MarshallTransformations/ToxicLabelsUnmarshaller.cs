@@ -56,13 +56,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Labels", targetDepth))
+                if (context.TestExpression("Labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToxicContent, ToxicContentUnmarshaller>(ToxicContentUnmarshaller.Instance);
                     unmarshalledObject.Labels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Toxicity", targetDepth))
+                if (context.TestExpression("Toxicity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.Toxicity = unmarshaller.Unmarshall(context, ref reader);

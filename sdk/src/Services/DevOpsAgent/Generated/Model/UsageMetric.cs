@@ -40,7 +40,7 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Configured limit for this metric.
+        /// Configured limit for this metric. A value of -1 indicates no limit is enforced.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

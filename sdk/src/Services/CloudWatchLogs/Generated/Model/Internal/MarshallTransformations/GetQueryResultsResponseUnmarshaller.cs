@@ -52,37 +52,37 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionKey", targetDepth))
+                if (context.TestExpression("encryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queryLanguage", targetDepth))
+                if (context.TestExpression("queryLanguage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.QueryLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("results", targetDepth))
+                if (context.TestExpression("results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<ResultField>, JsonListUnmarshaller<ResultField,ResultFieldUnmarshaller>>(new JsonListUnmarshaller<ResultField, ResultFieldUnmarshaller>(ResultFieldUnmarshaller.Instance));
                     response.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statistics", targetDepth))
+                if (context.TestExpression("statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryStatisticsUnmarshaller.Instance;
                     response.Statistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);

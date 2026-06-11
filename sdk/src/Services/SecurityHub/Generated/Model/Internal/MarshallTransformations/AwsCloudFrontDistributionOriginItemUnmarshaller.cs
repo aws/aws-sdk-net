@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomOriginConfig", targetDepth))
+                if (context.TestExpression("CustomOriginConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginCustomOriginConfigUnmarshaller.Instance;
                     unmarshalledObject.CustomOriginConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginPath", targetDepth))
+                if (context.TestExpression("OriginPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OriginPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3OriginConfig", targetDepth))
+                if (context.TestExpression("S3OriginConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCloudFrontDistributionOriginS3OriginConfigUnmarshaller.Instance;
                     unmarshalledObject.S3OriginConfig = unmarshaller.Unmarshall(context, ref reader);

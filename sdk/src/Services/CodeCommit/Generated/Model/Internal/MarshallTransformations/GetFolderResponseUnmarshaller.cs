@@ -52,43 +52,43 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("commitId", targetDepth))
+                if (context.TestExpression("commitId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CommitId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("files", targetDepth))
+                if (context.TestExpression("files", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<File, FileUnmarshaller>(FileUnmarshaller.Instance);
                     response.Files = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("folderPath", targetDepth))
+                if (context.TestExpression("folderPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FolderPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subFolders", targetDepth))
+                if (context.TestExpression("subFolders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Folder, FolderUnmarshaller>(FolderUnmarshaller.Instance);
                     response.SubFolders = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subModules", targetDepth))
+                if (context.TestExpression("subModules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubModule, SubModuleUnmarshaller>(SubModuleUnmarshaller.Instance);
                     response.SubModules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("symbolicLinks", targetDepth))
+                if (context.TestExpression("symbolicLinks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SymbolicLink, SymbolicLinkUnmarshaller>(SymbolicLinkUnmarshaller.Instance);
                     response.SymbolicLinks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("treeId", targetDepth))
+                if (context.TestExpression("treeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TreeId = unmarshaller.Unmarshall(context, ref reader);

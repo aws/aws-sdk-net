@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnMetadata", targetDepth))
+                if (context.TestExpression("ColumnMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SharedColumnSemanticMetadata, SharedColumnSemanticMetadataUnmarshaller>(SharedColumnSemanticMetadataUnmarshaller.Instance);
                     unmarshalledObject.ColumnMetadata = unmarshaller.Unmarshall(context, ref reader);

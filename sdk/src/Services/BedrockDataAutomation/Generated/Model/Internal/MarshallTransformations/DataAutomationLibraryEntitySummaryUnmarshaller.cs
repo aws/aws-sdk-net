@@ -56,7 +56,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vocabulary", targetDepth))
+                if (context.TestExpression("vocabulary", targetDepth, ref reader))
                 {
                     var unmarshaller = VocabularyEntitySummaryUnmarshaller.Instance;
                     unmarshalledObject.Vocabulary = unmarshaller.Unmarshall(context, ref reader);

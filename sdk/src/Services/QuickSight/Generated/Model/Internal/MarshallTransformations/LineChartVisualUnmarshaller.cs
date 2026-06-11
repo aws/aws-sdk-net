@@ -56,43 +56,43 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Actions", targetDepth))
+                if (context.TestExpression("Actions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VisualCustomAction, VisualCustomActionUnmarshaller>(VisualCustomActionUnmarshaller.Instance);
                     unmarshalledObject.Actions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChartConfiguration", targetDepth))
+                if (context.TestExpression("ChartConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ChartConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnHierarchies", targetDepth))
+                if (context.TestExpression("ColumnHierarchies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnHierarchy, ColumnHierarchyUnmarshaller>(ColumnHierarchyUnmarshaller.Instance);
                     unmarshalledObject.ColumnHierarchies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subtitle", targetDepth))
+                if (context.TestExpression("Subtitle", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualSubtitleLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.Subtitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = VisualTitleLabelOptionsUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualContentAltText", targetDepth))
+                if (context.TestExpression("VisualContentAltText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VisualContentAltText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualId", targetDepth))
+                if (context.TestExpression("VisualId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VisualId = unmarshaller.Unmarshall(context, ref reader);

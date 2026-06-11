@@ -56,7 +56,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceptanceThreshold", targetDepth))
+                if (context.TestExpression("AcceptanceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AcceptanceThreshold = unmarshaller.Unmarshall(context, ref reader);

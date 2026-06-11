@@ -56,7 +56,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Contacts", targetDepth))
+                if (context.TestExpression("Contacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Contact, ContactUnmarshaller>(ContactUnmarshaller.Instance);
                     unmarshalledObject.Contacts = unmarshaller.Unmarshall(context, ref reader);

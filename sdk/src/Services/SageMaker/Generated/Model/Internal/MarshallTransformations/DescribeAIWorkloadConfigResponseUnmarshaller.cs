@@ -52,37 +52,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AIWorkloadConfigArn", targetDepth))
+                if (context.TestExpression("AIWorkloadConfigArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AIWorkloadConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AIWorkloadConfigName", targetDepth))
+                if (context.TestExpression("AIWorkloadConfigName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AIWorkloadConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AIWorkloadConfigs", targetDepth))
+                if (context.TestExpression("AIWorkloadConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = AIWorkloadConfigsUnmarshaller.Instance;
                     response.AIWorkloadConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatasetConfig", targetDepth))
+                if (context.TestExpression("DatasetConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AIDatasetConfigUnmarshaller.Instance;
                     response.DatasetConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

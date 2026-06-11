@@ -52,37 +52,37 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BaseLensVersion", targetDepth))
+                if (context.TestExpression("BaseLensVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaseLensVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestLensVersion", targetDepth))
+                if (context.TestExpression("LatestLensVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LatestLensVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensAlias", targetDepth))
+                if (context.TestExpression("LensAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LensAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensArn", targetDepth))
+                if (context.TestExpression("LensArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LensArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetLensVersion", targetDepth))
+                if (context.TestExpression("TargetLensVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TargetLensVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionDifferences", targetDepth))
+                if (context.TestExpression("VersionDifferences", targetDepth, ref reader))
                 {
                     var unmarshaller = VersionDifferencesUnmarshaller.Instance;
                     response.VersionDifferences = unmarshaller.Unmarshall(context, ref reader);

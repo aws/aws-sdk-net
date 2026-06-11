@@ -52,19 +52,19 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PopulationSize", targetDepth))
+                if (context.TestExpression("PopulationSize", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.PopulationSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SampledRequests", targetDepth))
+                if (context.TestExpression("SampledRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SampledHTTPRequest, SampledHTTPRequestUnmarshaller>(SampledHTTPRequestUnmarshaller.Instance);
                     response.SampledRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeWindow", targetDepth))
+                if (context.TestExpression("TimeWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeWindowUnmarshaller.Instance;
                     response.TimeWindow = unmarshaller.Unmarshall(context, ref reader);

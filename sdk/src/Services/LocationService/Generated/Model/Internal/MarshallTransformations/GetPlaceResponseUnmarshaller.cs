@@ -52,7 +52,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Place", targetDepth))
+                if (context.TestExpression("Place", targetDepth, ref reader))
                 {
                     var unmarshaller = PlaceUnmarshaller.Instance;
                     response.Place = unmarshaller.Unmarshall(context, ref reader);

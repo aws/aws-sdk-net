@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImageGenerationConfiguration", targetDepth))
+                if (context.TestExpression("ImageGenerationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageGenerationConfigurationUnmarshaller.Instance;
                     response.ImageGenerationConfiguration = unmarshaller.Unmarshall(context, ref reader);

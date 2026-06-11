@@ -56,13 +56,13 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bootstrapServers", targetDepth))
+                if (context.TestExpression("bootstrapServers", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BootstrapServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpc", targetDepth))
+                if (context.TestExpression("vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcDescriptionUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

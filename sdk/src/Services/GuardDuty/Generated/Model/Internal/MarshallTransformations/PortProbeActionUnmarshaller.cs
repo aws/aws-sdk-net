@@ -56,13 +56,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blocked", targetDepth))
+                if (context.TestExpression("blocked", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Blocked = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portProbeDetails", targetDepth))
+                if (context.TestExpression("portProbeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PortProbeDetail, PortProbeDetailUnmarshaller>(PortProbeDetailUnmarshaller.Instance);
                     unmarshalledObject.PortProbeDetails = unmarshaller.Unmarshall(context, ref reader);

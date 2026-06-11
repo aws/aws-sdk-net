@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IdleSettings", targetDepth))
+                if (context.TestExpression("IdleSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceIdleSettingsUnmarshaller.Instance;
                     unmarshalledObject.IdleSettings = unmarshaller.Unmarshall(context, ref reader);

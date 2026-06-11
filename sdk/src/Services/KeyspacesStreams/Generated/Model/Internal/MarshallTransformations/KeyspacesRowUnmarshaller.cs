@@ -56,19 +56,19 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rowMetadata", targetDepth))
+                if (context.TestExpression("rowMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyspacesMetadataUnmarshaller.Instance;
                     unmarshalledObject.RowMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("staticCells", targetDepth))
+                if (context.TestExpression("staticCells", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeyspacesCell, StringUnmarshaller, KeyspacesCellUnmarshaller>(StringUnmarshaller.Instance, KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.StaticCells = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("valueCells", targetDepth))
+                if (context.TestExpression("valueCells", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, KeyspacesCell, StringUnmarshaller, KeyspacesCellUnmarshaller>(StringUnmarshaller.Instance, KeyspacesCellUnmarshaller.Instance);
                     unmarshalledObject.ValueCells = unmarshaller.Unmarshall(context, ref reader);

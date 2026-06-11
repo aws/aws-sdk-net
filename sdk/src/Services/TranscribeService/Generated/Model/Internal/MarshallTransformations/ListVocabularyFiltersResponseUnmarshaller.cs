@@ -52,13 +52,13 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VocabularyFilters", targetDepth))
+                if (context.TestExpression("VocabularyFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VocabularyFilterInfo, VocabularyFilterInfoUnmarshaller>(VocabularyFilterInfoUnmarshaller.Instance);
                     response.VocabularyFilters = unmarshaller.Unmarshall(context, ref reader);

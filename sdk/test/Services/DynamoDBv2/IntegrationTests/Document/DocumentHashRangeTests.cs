@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             var itemCount = 10;
             var batchWrite = hashRangeTable.CreateBatchWrite();
-            var name = "Borg";
+            var name = UtilityMethods.GenerateName("Borg");
 
             // Put items
             for (int i = 0; i < itemCount; i++)
@@ -166,9 +166,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             // Paginated scan
             {
+                var scanFilter = new ScanFilter();
+                scanFilter.AddCondition("Name", ScanOperator.Equal, name);
                 var search = hashRangeTable.Scan(new ScanOperationConfig
                 {
-                    Limit = 1
+                    Limit = 1,
+                    ConsistentRead = true,
+                    Filter = scanFilter
                 });
 
                 var tokens = new List<string>();
@@ -180,6 +184,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 search = hashRangeTable.Scan(new ScanOperationConfig
                 {
                     Limit = 1,
+                    ConsistentRead = true,
+                    Filter = scanFilter,
                     PaginationToken = currentToken
                 });
                 var items = await search.GetNextSetAsync();
@@ -193,6 +199,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var search = hashRangeTable.Query(new QueryOperationConfig
                 {
                     Limit = 1,
+                    ConsistentRead = true,
                     Filter = filter
                 });
 
@@ -205,6 +212,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 search = hashRangeTable.Query(new QueryOperationConfig
                 {
                     Limit = 1,
+                    ConsistentRead = true,
                     Filter = filter,
                     PaginationToken = currentToken
                 });
@@ -547,9 +555,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         private async Task TestExpressionsOnQueryHelper(ITable hashRangeTable)
         {
+            var name = UtilityMethods.GenerateName("Gunnar");
+
             Document doc1 = new Document
             {
-                ["Name"] = "Gunnar",
+                ["Name"] = name,
                 ["Age"] = 77,
                 ["Job"] = "Retired"
             };
@@ -557,7 +567,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             Document doc2 = new Document
             {
-                ["Name"] = "Gunnar",
+                ["Name"] = name,
                 ["Age"] = 45,
                 ["Job"] = "Electrician"
             };
@@ -569,17 +579,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 ExpressionAttributeValues = { [":job"] = "Retired" }
             };
 
-            var search = hashRangeTable.Query("Gunnar", expression);
+            var search = hashRangeTable.Query(name, expression);
             var docs = await search.GetRemainingAsync();
             Assert.Equal(1, docs.Count);
             Assert.Equal(77, docs[0]["Age"].AsInt());
 
             search = hashRangeTable.Query(new QueryOperationConfig
             {
-                Filter = new QueryFilter("Name", QueryOperator.Equal, "Gunnar"),
+                Filter = new QueryFilter("Name", QueryOperator.Equal, name),
                 FilterExpression = expression,
                 AttributesToGet = new List<string> { "Age" },
-                Select = SelectValues.SpecificAttributes
+                Select = SelectValues.SpecificAttributes,
+                ConsistentRead = true
             });
             docs = await search.GetRemainingAsync();
             Assert.Equal(1, docs.Count);

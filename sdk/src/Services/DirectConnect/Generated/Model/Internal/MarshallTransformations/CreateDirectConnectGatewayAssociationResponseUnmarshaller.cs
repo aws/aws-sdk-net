@@ -52,7 +52,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("directConnectGatewayAssociation", targetDepth))
+                if (context.TestExpression("directConnectGatewayAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = DirectConnectGatewayAssociationUnmarshaller.Instance;
                     response.DirectConnectGatewayAssociation = unmarshaller.Unmarshall(context, ref reader);

@@ -72,13 +72,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ErrorCode", targetDepth))
+                    if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("ErrorCodeReason", targetDepth))
+                    if (context.TestExpression("ErrorCodeReason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCodeReason = unmarshaller.Unmarshall(context, ref reader);

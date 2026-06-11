@@ -56,19 +56,19 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComplianceType", targetDepth))
+                if (context.TestExpression("ComplianceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompliantSummary", targetDepth))
+                if (context.TestExpression("CompliantSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = CompliantSummaryUnmarshaller.Instance;
                     unmarshalledObject.CompliantSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonCompliantSummary", targetDepth))
+                if (context.TestExpression("NonCompliantSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = NonCompliantSummaryUnmarshaller.Instance;
                     unmarshalledObject.NonCompliantSummary = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Labels", targetDepth))
+                if (context.TestExpression("Labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntityLabel, EntityLabelUnmarshaller>(EntityLabelUnmarshaller.Instance);
                     response.Labels = unmarshaller.Unmarshall(context, ref reader);

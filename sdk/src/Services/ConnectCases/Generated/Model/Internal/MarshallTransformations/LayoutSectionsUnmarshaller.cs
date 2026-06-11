@@ -56,7 +56,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sections", targetDepth))
+                if (context.TestExpression("sections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Section, SectionUnmarshaller>(SectionUnmarshaller.Instance);
                     unmarshalledObject.Sections = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DnsRecords", targetDepth))
+                if (context.TestExpression("DnsRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DnsRecord, DnsRecordUnmarshaller>(DnsRecordUnmarshaller.Instance);
                     unmarshalledObject.DnsRecords = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NamespaceId", targetDepth))
+                if (context.TestExpression("NamespaceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingPolicy", targetDepth))
+                if (context.TestExpression("RoutingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoutingPolicy = unmarshaller.Unmarshall(context, ref reader);

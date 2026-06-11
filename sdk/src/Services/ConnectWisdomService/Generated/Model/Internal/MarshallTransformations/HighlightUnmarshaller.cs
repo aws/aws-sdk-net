@@ -56,13 +56,13 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("beginOffsetInclusive", targetDepth))
+                if (context.TestExpression("beginOffsetInclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BeginOffsetInclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endOffsetExclusive", targetDepth))
+                if (context.TestExpression("endOffsetExclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetExclusive = unmarshaller.Unmarshall(context, ref reader);

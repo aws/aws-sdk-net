@@ -52,7 +52,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scraper", targetDepth))
+                if (context.TestExpression("scraper", targetDepth, ref reader))
                 {
                     var unmarshaller = ScraperDescriptionUnmarshaller.Instance;
                     response.Scraper = unmarshaller.Unmarshall(context, ref reader);

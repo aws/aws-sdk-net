@@ -5125,6 +5125,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ScanMode EC2_AGENTLESS = new ScanMode("EC2_AGENTLESS");
         /// <summary>
+        /// Constant EC2_INSPECTOR_AGENT_BASED for ScanMode
+        /// </summary>
+        public static readonly ScanMode EC2_INSPECTOR_AGENT_BASED = new ScanMode("EC2_INSPECTOR_AGENT_BASED");
+        /// <summary>
         /// Constant EC2_SSM_AGENT_BASED for ScanMode
         /// </summary>
         public static readonly ScanMode EC2_SSM_AGENT_BASED = new ScanMode("EC2_SSM_AGENT_BASED");
@@ -6130,6 +6134,60 @@ namespace Amazon.Inspector2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VMScannerStatus.
+    /// </summary>
+    public class VMScannerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for VMScannerStatus
+        /// </summary>
+        public static readonly VMScannerStatus FAILED = new VMScannerStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for VMScannerStatus
+        /// </summary>
+        public static readonly VMScannerStatus PENDING = new VMScannerStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCESS for VMScannerStatus
+        /// </summary>
+        public static readonly VMScannerStatus SUCCESS = new VMScannerStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VMScannerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VMScannerStatus FindValue(string value)
+        {
+            return FindValue<VMScannerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VMScannerStatus(string value)
         {
             return FindValue(value);
         }

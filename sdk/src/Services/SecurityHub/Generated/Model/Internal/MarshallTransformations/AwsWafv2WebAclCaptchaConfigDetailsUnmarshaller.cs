@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImmunityTimeProperty", targetDepth))
+                if (context.TestExpression("ImmunityTimeProperty", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsWafv2WebAclCaptchaConfigImmunityTimePropertyDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImmunityTimeProperty = unmarshaller.Unmarshall(context, ref reader);

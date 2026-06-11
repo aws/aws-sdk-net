@@ -76,7 +76,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Tests a given trailing checksum for a signed, chunked stream
         /// </summary>
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("x-amz-checksum-sha1", CoreChecksumAlgorithm.SHA1, expectedSHA1Content)]
         [DataRow("x-amz-checksum-sha256", CoreChecksumAlgorithm.SHA256, expectedSHA256Content)]
         [DataRow("x-amz-checksum-crc32", CoreChecksumAlgorithm.CRC32, expectedCRC32Content)]

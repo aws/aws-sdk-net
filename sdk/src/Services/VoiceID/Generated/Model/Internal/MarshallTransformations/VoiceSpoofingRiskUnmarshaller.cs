@@ -56,7 +56,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RiskScore", targetDepth))
+                if (context.TestExpression("RiskScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RiskScore = unmarshaller.Unmarshall(context, ref reader);

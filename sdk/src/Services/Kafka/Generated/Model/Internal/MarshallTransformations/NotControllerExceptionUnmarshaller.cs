@@ -72,7 +72,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("invalidParameter", targetDepth))
+                    if (context.TestExpression("invalidParameter", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InvalidParameter = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("idMappingType", targetDepth))
+                if (context.TestExpression("idMappingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdMappingType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3KeyFilter", targetDepth))
+                if (context.TestExpression("S3KeyFilter", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketNotificationConfigurationS3KeyFilterUnmarshaller.Instance;
                     unmarshalledObject.S3KeyFilter = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aWSManagedClientApplicationReference", targetDepth))
+                if (context.TestExpression("aWSManagedClientApplicationReference", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedClientApplicationReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userManagedClientApplicationClientId", targetDepth))
+                if (context.TestExpression("userManagedClientApplicationClientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserManagedClientApplicationClientId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmrServerlessComputeConfig", targetDepth))
+                if (context.TestExpression("EmrServerlessComputeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EmrServerlessComputeConfigUnmarshaller.Instance;
                     unmarshalledObject.EmrServerlessComputeConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttachedFileInvalidRequestExceptionReason", targetDepth))
+                if (context.TestExpression("AttachedFileInvalidRequestExceptionReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttachedFileInvalidRequestExceptionReason = unmarshaller.Unmarshall(context, ref reader);

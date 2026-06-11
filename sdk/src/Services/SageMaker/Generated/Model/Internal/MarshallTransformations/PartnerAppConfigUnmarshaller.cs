@@ -56,25 +56,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdminUsers", targetDepth))
+                if (context.TestExpression("AdminUsers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdminUsers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arguments", targetDepth))
+                if (context.TestExpression("Arguments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Arguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssignedGroupPatterns", targetDepth))
+                if (context.TestExpression("AssignedGroupPatterns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AssignedGroupPatterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleGroupAssignments", targetDepth))
+                if (context.TestExpression("RoleGroupAssignments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RoleGroupAssignment, RoleGroupAssignmentUnmarshaller>(RoleGroupAssignmentUnmarshaller.Instance);
                     unmarshalledObject.RoleGroupAssignments = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RescoreCapacityUnits", targetDepth))
+                if (context.TestExpression("RescoreCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RescoreCapacityUnits = unmarshaller.Unmarshall(context, ref reader);

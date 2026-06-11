@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SharedDirectoryId", targetDepth))
+                if (context.TestExpression("SharedDirectoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SharedDirectoryId = unmarshaller.Unmarshall(context, ref reader);

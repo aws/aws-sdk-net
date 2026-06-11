@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("window", targetDepth))
+                if (context.TestExpression("window", targetDepth, ref reader))
                 {
                     var unmarshaller = WindowMaintenanceScheduleUnmarshaller.Instance;
                     unmarshalledObject.Window = unmarshaller.Unmarshall(context, ref reader);

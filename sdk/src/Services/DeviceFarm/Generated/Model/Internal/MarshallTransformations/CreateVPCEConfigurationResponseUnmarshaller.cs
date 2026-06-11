@@ -52,7 +52,7 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vpceConfiguration", targetDepth))
+                if (context.TestExpression("vpceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VPCEConfigurationUnmarshaller.Instance;
                     response.VpceConfiguration = unmarshaller.Unmarshall(context, ref reader);

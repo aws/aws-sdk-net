@@ -56,25 +56,25 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("desiredCapacity", targetDepth))
+                if (context.TestExpression("desiredCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DesiredCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maxCapacity", targetDepth))
+                if (context.TestExpression("maxCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingType", targetDepth))
+                if (context.TestExpression("scalingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetTrackingScalingConfigs", targetDepth))
+                if (context.TestExpression("targetTrackingScalingConfigs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetTrackingScalingConfiguration, TargetTrackingScalingConfigurationUnmarshaller>(TargetTrackingScalingConfigurationUnmarshaller.Instance);
                     unmarshalledObject.TargetTrackingScalingConfigs = unmarshaller.Unmarshall(context, ref reader);

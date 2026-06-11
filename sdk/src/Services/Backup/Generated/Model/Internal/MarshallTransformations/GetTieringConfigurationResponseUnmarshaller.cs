@@ -52,7 +52,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TieringConfiguration", targetDepth))
+                if (context.TestExpression("TieringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TieringConfigurationUnmarshaller.Instance;
                     response.TieringConfiguration = unmarshaller.Unmarshall(context, ref reader);

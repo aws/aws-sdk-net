@@ -56,37 +56,37 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("countBySeverity", targetDepth))
+                if (context.TestExpression("countBySeverity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                     unmarshalledObject.CountBySeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupedByAccount", targetDepth))
+                if (context.TestExpression("groupedByAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountStatistics, AccountStatisticsUnmarshaller>(AccountStatisticsUnmarshaller.Instance);
                     unmarshalledObject.GroupedByAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupedByDate", targetDepth))
+                if (context.TestExpression("groupedByDate", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DateStatistics, DateStatisticsUnmarshaller>(DateStatisticsUnmarshaller.Instance);
                     unmarshalledObject.GroupedByDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupedByFindingType", targetDepth))
+                if (context.TestExpression("groupedByFindingType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FindingTypeStatistics, FindingTypeStatisticsUnmarshaller>(FindingTypeStatisticsUnmarshaller.Instance);
                     unmarshalledObject.GroupedByFindingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupedByResource", targetDepth))
+                if (context.TestExpression("groupedByResource", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceStatistics, ResourceStatisticsUnmarshaller>(ResourceStatisticsUnmarshaller.Instance);
                     unmarshalledObject.GroupedByResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("groupedBySeverity", targetDepth))
+                if (context.TestExpression("groupedBySeverity", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SeverityStatistics, SeverityStatisticsUnmarshaller>(SeverityStatisticsUnmarshaller.Instance);
                     unmarshalledObject.GroupedBySeverity = unmarshaller.Unmarshall(context, ref reader);

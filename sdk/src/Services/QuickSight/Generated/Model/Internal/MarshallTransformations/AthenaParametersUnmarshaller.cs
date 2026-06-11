@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConsumerAccountRoleArn", targetDepth))
+                if (context.TestExpression("ConsumerAccountRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConsumerAccountRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkGroup", targetDepth))
+                if (context.TestExpression("WorkGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkGroup = unmarshaller.Unmarshall(context, ref reader);

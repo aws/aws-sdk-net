@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResultList", targetDepth))
+                if (context.TestExpression("ResultList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToxicLabels, ToxicLabelsUnmarshaller>(ToxicLabelsUnmarshaller.Instance);
                     response.ResultList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConditionExpression", targetDepth))
+                if (context.TestExpression("ConditionExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConditionExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateFilterCondition", targetDepth))
+                if (context.TestExpression("DateFilterCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetDateFilterConditionUnmarshaller.Instance;
                     unmarshalledObject.DateFilterCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericFilterCondition", targetDepth))
+                if (context.TestExpression("NumericFilterCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetNumericFilterConditionUnmarshaller.Instance;
                     unmarshalledObject.NumericFilterCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringFilterCondition", targetDepth))
+                if (context.TestExpression("StringFilterCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSetStringFilterConditionUnmarshaller.Instance;
                     unmarshalledObject.StringFilterCondition = unmarshaller.Unmarshall(context, ref reader);

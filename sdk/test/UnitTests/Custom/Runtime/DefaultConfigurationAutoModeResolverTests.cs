@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests.Runtime
             _resolver = new DefaultConfigurationAutoModeResolver(_runtimeInformationProvider.Object, _environmentVariableRetriever.Object);
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.Mobile)]
         [DataRow(false, "AWS_Lambda_java8", "us-east-1", null, null, null, "us-east-1", DefaultConfigurationMode.InRegion)]
         [DataRow(false, "AWS_Lambda_java8", null, "us-west-2", null, null, "us-east-1", DefaultConfigurationMode.CrossRegion)]

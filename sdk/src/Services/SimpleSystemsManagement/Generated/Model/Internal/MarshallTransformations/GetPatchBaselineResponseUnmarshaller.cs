@@ -52,97 +52,97 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApprovalRules", targetDepth))
+                if (context.TestExpression("ApprovalRules", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchRuleGroupUnmarshaller.Instance;
                     response.ApprovalRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApprovedPatches", targetDepth))
+                if (context.TestExpression("ApprovedPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.ApprovedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApprovedPatchesComplianceLevel", targetDepth))
+                if (context.TestExpression("ApprovedPatchesComplianceLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ApprovedPatchesComplianceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApprovedPatchesEnableNonSecurity", targetDepth))
+                if (context.TestExpression("ApprovedPatchesEnableNonSecurity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ApprovedPatchesEnableNonSecurity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AvailableSecurityUpdatesComplianceStatus", targetDepth))
+                if (context.TestExpression("AvailableSecurityUpdatesComplianceStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AvailableSecurityUpdatesComplianceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BaselineId", targetDepth))
+                if (context.TestExpression("BaselineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaselineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedDate", targetDepth))
+                if (context.TestExpression("CreatedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GlobalFilters", targetDepth))
+                if (context.TestExpression("GlobalFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = PatchFilterGroupUnmarshaller.Instance;
                     response.GlobalFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModifiedDate", targetDepth))
+                if (context.TestExpression("ModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OperatingSystem", targetDepth))
+                if (context.TestExpression("OperatingSystem", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OperatingSystem = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PatchGroups", targetDepth))
+                if (context.TestExpression("PatchGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.PatchGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RejectedPatches", targetDepth))
+                if (context.TestExpression("RejectedPatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.RejectedPatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RejectedPatchesAction", targetDepth))
+                if (context.TestExpression("RejectedPatchesAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RejectedPatchesAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sources", targetDepth))
+                if (context.TestExpression("Sources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PatchSource, PatchSourceUnmarshaller>(PatchSourceUnmarshaller.Instance);
                     response.Sources = unmarshaller.Unmarshall(context, ref reader);

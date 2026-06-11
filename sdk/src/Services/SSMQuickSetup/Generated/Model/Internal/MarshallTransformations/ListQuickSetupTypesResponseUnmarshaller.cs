@@ -52,7 +52,7 @@ namespace Amazon.SSMQuickSetup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("QuickSetupTypeList", targetDepth))
+                if (context.TestExpression("QuickSetupTypeList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<QuickSetupTypeOutput, QuickSetupTypeOutputUnmarshaller>(QuickSetupTypeOutputUnmarshaller.Instance);
                     response.QuickSetupTypeList = unmarshaller.Unmarshall(context, ref reader);

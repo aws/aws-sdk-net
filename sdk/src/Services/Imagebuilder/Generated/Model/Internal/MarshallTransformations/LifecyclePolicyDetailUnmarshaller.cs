@@ -56,19 +56,19 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyDetailActionUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exclusionRules", targetDepth))
+                if (context.TestExpression("exclusionRules", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyDetailExclusionRulesUnmarshaller.Instance;
                     unmarshalledObject.ExclusionRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filter", targetDepth))
+                if (context.TestExpression("filter", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecyclePolicyDetailFilterUnmarshaller.Instance;
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);

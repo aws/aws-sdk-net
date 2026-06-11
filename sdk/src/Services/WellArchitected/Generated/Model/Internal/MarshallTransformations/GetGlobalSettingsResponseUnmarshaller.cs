@@ -52,19 +52,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DiscoveryIntegrationStatus", targetDepth))
+                if (context.TestExpression("DiscoveryIntegrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DiscoveryIntegrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JiraConfiguration", targetDepth))
+                if (context.TestExpression("JiraConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountJiraConfigurationOutputUnmarshaller.Instance;
                     response.JiraConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationSharingStatus", targetDepth))
+                if (context.TestExpression("OrganizationSharingStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OrganizationSharingStatus = unmarshaller.Unmarshall(context, ref reader);

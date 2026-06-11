@@ -52,7 +52,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Root", targetDepth))
+                if (context.TestExpression("Root", targetDepth, ref reader))
                 {
                     var unmarshaller = RootUnmarshaller.Instance;
                     response.Root = unmarshaller.Unmarshall(context, ref reader);

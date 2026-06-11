@@ -56,19 +56,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageOptions", targetDepth))
+                if (context.TestExpression("storageOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPartitionStorageOptionsUnmarshaller.Instance;
                     unmarshalledObject.StorageOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uploadOptions", targetDepth))
+                if (context.TestExpression("uploadOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPartitionUploadOptionsUnmarshaller.Instance;
                     unmarshalledObject.UploadOptions = unmarshaller.Unmarshall(context, ref reader);

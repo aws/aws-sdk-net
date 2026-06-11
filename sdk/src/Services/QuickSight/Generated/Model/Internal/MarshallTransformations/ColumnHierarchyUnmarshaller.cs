@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimeHierarchy", targetDepth))
+                if (context.TestExpression("DateTimeHierarchy", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeHierarchyUnmarshaller.Instance;
                     unmarshalledObject.DateTimeHierarchy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExplicitHierarchy", targetDepth))
+                if (context.TestExpression("ExplicitHierarchy", targetDepth, ref reader))
                 {
                     var unmarshaller = ExplicitHierarchyUnmarshaller.Instance;
                     unmarshalledObject.ExplicitHierarchy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedHierarchy", targetDepth))
+                if (context.TestExpression("PredefinedHierarchy", targetDepth, ref reader))
                 {
                     var unmarshaller = PredefinedHierarchyUnmarshaller.Instance;
                     unmarshalledObject.PredefinedHierarchy = unmarshaller.Unmarshall(context, ref reader);

@@ -35,12 +35,34 @@ namespace Amazon.DevOpsAgent.Model
     /// </summary>
     public partial class RegisterServiceRequest : AmazonDevOpsAgentRequest
     {
+        private string _exchangeUrlPrivateConnectionName;
         private string _kmsKeyArn;
         private string _name;
         private string _privateConnectionName;
         private PostRegisterServiceSupportedService _service;
         private ServiceDetails _serviceDetails;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _targetUrlPrivateConnectionName;
+
+        /// <summary>
+        /// Gets and sets the property ExchangeUrlPrivateConnectionName. 
+        /// <para>
+        /// The name of the private connection to use for OAuth token exchange requests only.
+        /// Cannot be specified when privateConnectionName is provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=30)]
+        public string ExchangeUrlPrivateConnectionName
+        {
+            get { return this._exchangeUrlPrivateConnectionName; }
+            set { this._exchangeUrlPrivateConnectionName = value; }
+        }
+
+        // Check to see if ExchangeUrlPrivateConnectionName property is set
+        internal bool IsSetExchangeUrlPrivateConnectionName()
+        {
+            return this._exchangeUrlPrivateConnectionName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
@@ -156,6 +178,26 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetUrlPrivateConnectionName. 
+        /// <para>
+        /// The name of the private connection to use for API calls (target URL) only. Cannot
+        /// be specified when privateConnectionName is provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=30)]
+        public string TargetUrlPrivateConnectionName
+        {
+            get { return this._targetUrlPrivateConnectionName; }
+            set { this._targetUrlPrivateConnectionName = value; }
+        }
+
+        // Check to see if TargetUrlPrivateConnectionName property is set
+        internal bool IsSetTargetUrlPrivateConnectionName()
+        {
+            return this._targetUrlPrivateConnectionName != null;
         }
 
     }

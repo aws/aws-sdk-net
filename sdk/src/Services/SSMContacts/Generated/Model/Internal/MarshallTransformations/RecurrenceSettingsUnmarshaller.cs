@@ -56,37 +56,37 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DailySettings", targetDepth))
+                if (context.TestExpression("DailySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HandOffTime, HandOffTimeUnmarshaller>(HandOffTimeUnmarshaller.Instance);
                     unmarshalledObject.DailySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonthlySettings", targetDepth))
+                if (context.TestExpression("MonthlySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MonthlySetting, MonthlySettingUnmarshaller>(MonthlySettingUnmarshaller.Instance);
                     unmarshalledObject.MonthlySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfOnCalls", targetDepth))
+                if (context.TestExpression("NumberOfOnCalls", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfOnCalls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurrenceMultiplier", targetDepth))
+                if (context.TestExpression("RecurrenceMultiplier", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RecurrenceMultiplier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShiftCoverages", targetDepth))
+                if (context.TestExpression("ShiftCoverages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<CoverageTime>, StringUnmarshaller, JsonListUnmarshaller<CoverageTime,CoverageTimeUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<CoverageTime, CoverageTimeUnmarshaller>(CoverageTimeUnmarshaller.Instance));
                     unmarshalledObject.ShiftCoverages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WeeklySettings", targetDepth))
+                if (context.TestExpression("WeeklySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WeeklySetting, WeeklySettingUnmarshaller>(WeeklySettingUnmarshaller.Instance);
                     unmarshalledObject.WeeklySettings = unmarshaller.Unmarshall(context, ref reader);

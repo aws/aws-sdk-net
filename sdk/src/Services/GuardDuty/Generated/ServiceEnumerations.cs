@@ -2215,6 +2215,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly MalwareProtectionResourceType S3_BUCKET = new MalwareProtectionResourceType("S3_BUCKET");
         /// <summary>
+        /// Constant S3_POINT_IN_TIME_RECOVERY for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType S3_POINT_IN_TIME_RECOVERY = new MalwareProtectionResourceType("S3_POINT_IN_TIME_RECOVERY");
+        /// <summary>
         /// Constant S3_RECOVERY_POINT for MalwareProtectionResourceType
         /// </summary>
         public static readonly MalwareProtectionResourceType S3_RECOVERY_POINT = new MalwareProtectionResourceType("S3_RECOVERY_POINT");

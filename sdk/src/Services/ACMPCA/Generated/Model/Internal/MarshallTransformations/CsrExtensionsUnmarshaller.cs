@@ -56,13 +56,13 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyUsage", targetDepth))
+                if (context.TestExpression("KeyUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyUsageUnmarshaller.Instance;
                     unmarshalledObject.KeyUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubjectInformationAccess", targetDepth))
+                if (context.TestExpression("SubjectInformationAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessDescription, AccessDescriptionUnmarshaller>(AccessDescriptionUnmarshaller.Instance);
                     unmarshalledObject.SubjectInformationAccess = unmarshaller.Unmarshall(context, ref reader);

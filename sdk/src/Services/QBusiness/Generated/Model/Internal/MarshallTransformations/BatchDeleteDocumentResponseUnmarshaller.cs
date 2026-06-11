@@ -52,7 +52,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedDocuments", targetDepth))
+                if (context.TestExpression("failedDocuments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedDocument, FailedDocumentUnmarshaller>(FailedDocumentUnmarshaller.Instance);
                     response.FailedDocuments = unmarshaller.Unmarshall(context, ref reader);

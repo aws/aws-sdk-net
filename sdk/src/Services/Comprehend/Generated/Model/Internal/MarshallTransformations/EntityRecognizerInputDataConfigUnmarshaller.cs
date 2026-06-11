@@ -56,37 +56,37 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Annotations", targetDepth))
+                if (context.TestExpression("Annotations", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityRecognizerAnnotationsUnmarshaller.Instance;
                     unmarshalledObject.Annotations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AugmentedManifests", targetDepth))
+                if (context.TestExpression("AugmentedManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
                     unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataFormat", targetDepth))
+                if (context.TestExpression("DataFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Documents", targetDepth))
+                if (context.TestExpression("Documents", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityRecognizerDocumentsUnmarshaller.Instance;
                     unmarshalledObject.Documents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityList", targetDepth))
+                if (context.TestExpression("EntityList", targetDepth, ref reader))
                 {
                     var unmarshaller = EntityRecognizerEntityListUnmarshaller.Instance;
                     unmarshalledObject.EntityList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityTypes", targetDepth))
+                if (context.TestExpression("EntityTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntityTypesListItem, EntityTypesListItemUnmarshaller>(EntityTypesListItemUnmarshaller.Instance);
                     unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);

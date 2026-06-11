@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelHandshakeDetail", targetDepth))
+                if (context.TestExpression("channelHandshakeDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceptChannelHandshakeDetailUnmarshaller.Instance;
                     response.ChannelHandshakeDetail = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("slaConfiguration", targetDepth))
+                if (context.TestExpression("slaConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SlaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SlaConfiguration = unmarshaller.Unmarshall(context, ref reader);

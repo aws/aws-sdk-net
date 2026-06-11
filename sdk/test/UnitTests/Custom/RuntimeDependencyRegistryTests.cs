@@ -13,9 +13,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces.Internal;
 using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
-using Amazon.KeyManagementService;
-using Amazon.SSO;
-using Amazon.SSOOIDC;
 
 namespace AWSSDK.UnitTests
 {
@@ -85,82 +82,6 @@ namespace AWSSDK.UnitTests
 
             var registeredInstance = registry.GetInstance<IAWSSigV4aProvider>(AWS4aSignerCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, AWS4aSignerCRTWrapper.CRT_WRAPPER_CLASS_NAME,
                                         new CreateInstanceContext(new SigV4aCrtSignerContext(true)));
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
-        public void RegisterSSOInstance()
-        {
-            var expectedInstance = new Mock<IAmazonSSO>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-            registry.RegisterSSOClient(expectedInstance);
-
-
-            var registeredInstance = registry.GetInstance<IAmazonSSO>(
-                ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
-
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
-        public void RegisterSSOWithFactory()
-        {
-            var expectedInstance = new Mock<IAmazonSSO>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-
-            var factoryCalled = false;
-            registry.RegisterSSOClient((context) =>
-            {
-                factoryCalled = true;
-                Assert.AreEqual(RegionEndpoint.USWest2, context.SSOClientContextData.Region);
-                return expectedInstance;
-            });
-
-
-            var registeredInstance = registry.GetInstance<IAmazonSSO>(
-                ServiceClientHelpers.SSO_ASSEMBLY_NAME, ServiceClientHelpers.SSO_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOClientContext { Region = RegionEndpoint.USWest2 }));
-
-            Assert.IsTrue(factoryCalled);
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
-        public void RegisterSSOOIDCInstance()
-        {
-            var expectedInstance = new Mock<IAmazonSSOOIDC>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-            registry.RegisterSSOOIDCClient(expectedInstance);
-
-
-            var registeredInstance = registry.GetInstance<IAmazonSSOOIDC>(
-                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
-
-            Assert.AreSame(expectedInstance, registeredInstance);
-        }
-
-        [TestMethod]
-        public void RegisterSSOOIDCWithFactory()
-        {
-            var expectedInstance = new Mock<IAmazonSSOOIDC>().Object;
-            var registry = new GlobalRuntimeDependencyRegistry();
-
-            var factoryCalled = false;
-            registry.RegisterSSOOIDCClient((context) =>
-            {
-                factoryCalled = true;
-                Assert.AreEqual(RegionEndpoint.USWest2, context.SSOOIDCClientContextData.Region);
-                return expectedInstance;
-            });
-
-
-            var registeredInstance = registry.GetInstance<IAmazonSSOOIDC>(
-                ServiceClientHelpers.SSO_OIDC_ASSEMBLY_NAME, ServiceClientHelpers.SSO_OIDC_SERVICE_CLASS_NAME,
-                new CreateInstanceContext(new SSOOIDCClientContext { Region = RegionEndpoint.USWest2 }));
-
-            Assert.IsTrue(factoryCalled);
             Assert.AreSame(expectedInstance, registeredInstance);
         }
 

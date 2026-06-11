@@ -56,19 +56,19 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instances", targetDepth))
+                if (context.TestExpression("instances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnomalyInstance, AnomalyInstanceUnmarshaller>(AnomalyInstanceUnmarshaller.Instance);
                     unmarshalledObject.Instances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metric", targetDepth))
+                if (context.TestExpression("metric", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricUnmarshaller.Instance;
                     unmarshalledObject.Metric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);

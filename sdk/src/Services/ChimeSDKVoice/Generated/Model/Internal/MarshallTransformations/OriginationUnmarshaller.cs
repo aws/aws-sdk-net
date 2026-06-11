@@ -56,13 +56,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Disabled", targetDepth))
+                if (context.TestExpression("Disabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Disabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Routes", targetDepth))
+                if (context.TestExpression("Routes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OriginationRoute, OriginationRouteUnmarshaller>(OriginationRouteUnmarshaller.Instance);
                     unmarshalledObject.Routes = unmarshaller.Unmarshall(context, ref reader);

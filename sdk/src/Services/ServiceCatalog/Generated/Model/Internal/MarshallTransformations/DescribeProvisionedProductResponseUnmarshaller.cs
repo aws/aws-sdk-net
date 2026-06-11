@@ -52,13 +52,13 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchDashboards", targetDepth))
+                if (context.TestExpression("CloudWatchDashboards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudWatchDashboard, CloudWatchDashboardUnmarshaller>(CloudWatchDashboardUnmarshaller.Instance);
                     response.CloudWatchDashboards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedProductDetail", targetDepth))
+                if (context.TestExpression("ProvisionedProductDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedProductDetailUnmarshaller.Instance;
                     response.ProvisionedProductDetail = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = MssEncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mssManifests", targetDepth))
+                if (context.TestExpression("mssManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MssManifest, MssManifestUnmarshaller>(MssManifestUnmarshaller.Instance);
                     unmarshalledObject.MssManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentDurationSeconds", targetDepth))
+                if (context.TestExpression("segmentDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);

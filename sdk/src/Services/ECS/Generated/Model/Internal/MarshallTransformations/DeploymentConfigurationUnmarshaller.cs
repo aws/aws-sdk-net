@@ -56,55 +56,55 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alarms", targetDepth))
+                if (context.TestExpression("alarms", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentAlarmsUnmarshaller.Instance;
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("bakeTimeInMinutes", targetDepth))
+                if (context.TestExpression("bakeTimeInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BakeTimeInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("canaryConfiguration", targetDepth))
+                if (context.TestExpression("canaryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CanaryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CanaryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentCircuitBreaker", targetDepth))
+                if (context.TestExpression("deploymentCircuitBreaker", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentCircuitBreakerUnmarshaller.Instance;
                     unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleHooks", targetDepth))
+                if (context.TestExpression("lifecycleHooks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentLifecycleHook, DeploymentLifecycleHookUnmarshaller>(DeploymentLifecycleHookUnmarshaller.Instance);
                     unmarshalledObject.LifecycleHooks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("linearConfiguration", targetDepth))
+                if (context.TestExpression("linearConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LinearConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LinearConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maximumPercent", targetDepth))
+                if (context.TestExpression("maximumPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minimumHealthyPercent", targetDepth))
+                if (context.TestExpression("minimumHealthyPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("strategy", targetDepth))
+                if (context.TestExpression("strategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Strategy = unmarshaller.Unmarshall(context, ref reader);

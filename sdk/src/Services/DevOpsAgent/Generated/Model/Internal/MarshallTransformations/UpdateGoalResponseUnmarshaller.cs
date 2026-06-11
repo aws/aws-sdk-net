@@ -52,7 +52,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("goal", targetDepth))
+                if (context.TestExpression("goal", targetDepth, ref reader))
                 {
                     var unmarshaller = GoalUnmarshaller.Instance;
                     response.Goal = unmarshaller.Unmarshall(context, ref reader);

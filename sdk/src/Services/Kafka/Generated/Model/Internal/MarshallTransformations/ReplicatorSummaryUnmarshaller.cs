@@ -56,55 +56,55 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("currentVersion", targetDepth))
+                if (context.TestExpression("currentVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isReplicatorReference", targetDepth))
+                if (context.TestExpression("isReplicatorReference", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsReplicatorReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kafkaClustersSummary", targetDepth))
+                if (context.TestExpression("kafkaClustersSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KafkaClusterSummary, KafkaClusterSummaryUnmarshaller>(KafkaClusterSummaryUnmarshaller.Instance);
                     unmarshalledObject.KafkaClustersSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicationInfoSummaryList", targetDepth))
+                if (context.TestExpression("replicationInfoSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationInfoSummary, ReplicationInfoSummaryUnmarshaller>(ReplicationInfoSummaryUnmarshaller.Instance);
                     unmarshalledObject.ReplicationInfoSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorArn", targetDepth))
+                if (context.TestExpression("replicatorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicatorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorName", targetDepth))
+                if (context.TestExpression("replicatorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicatorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorResourceArn", targetDepth))
+                if (context.TestExpression("replicatorResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicatorResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("replicatorState", targetDepth))
+                if (context.TestExpression("replicatorState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReplicatorState = unmarshaller.Unmarshall(context, ref reader);

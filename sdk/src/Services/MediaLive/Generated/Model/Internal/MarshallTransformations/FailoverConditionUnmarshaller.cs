@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failoverConditionSettings", targetDepth))
+                if (context.TestExpression("failoverConditionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = FailoverConditionSettingsUnmarshaller.Instance;
                     unmarshalledObject.FailoverConditionSettings = unmarshaller.Unmarshall(context, ref reader);

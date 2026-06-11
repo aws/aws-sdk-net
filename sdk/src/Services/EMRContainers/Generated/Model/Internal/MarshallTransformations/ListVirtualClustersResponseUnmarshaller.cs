@@ -52,13 +52,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("virtualClusters", targetDepth))
+                if (context.TestExpression("virtualClusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VirtualCluster, VirtualClusterUnmarshaller>(VirtualClusterUnmarshaller.Instance);
                     response.VirtualClusters = unmarshaller.Unmarshall(context, ref reader);

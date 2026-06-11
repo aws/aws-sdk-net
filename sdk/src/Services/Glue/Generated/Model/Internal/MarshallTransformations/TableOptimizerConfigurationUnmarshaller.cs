@@ -56,37 +56,37 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compactionConfiguration", targetDepth))
+                if (context.TestExpression("compactionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CompactionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CompactionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enabled", targetDepth))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth))
+                if (context.TestExpression("orphanFileDeletionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OrphanFileDeletionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OrphanFileDeletionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retentionConfiguration", targetDepth))
+                if (context.TestExpression("retentionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RetentionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TableOptimizerVpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -40,7 +40,7 @@ namespace AWSSDK.UnitTests
         [Flags]
         public enum Flags { None = 0, Dualstack = 2, Accelerate = 4, PathStyle = 8, UseArnRegion = 16 }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("bucketname", "https://beta.example.com", Flags.None, "https://bucketname.beta.example.com", USEast1, S3)]
         [DataRow("arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.None, "https://myendpoint-123456789012.beta.example.com", USEast1, S3)]
         [DataRow("arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint", "https://beta.example.com", Flags.UseArnRegion, "https://myendpoint-123456789012.beta.example.com", USWest2, S3)]
@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
                 expectedUri, expectedRegion, expectedService);                        
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("", "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", Flags.None, "https://bucket.vpce-123-abc.s3.us-west-2.vpce.amazonaws.com", USWest2, S3)]
         [TestCategory("S3")]
         public void VpceEndpointTests_ListBuckets(string bucketName, string serviceUrl, Flags flags,
@@ -81,7 +81,6 @@ namespace AWSSDK.UnitTests
         
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException))]
         public void ThrowExceptionCustomEndpointAndOutpostsDualstackNotSupported()
         {
             var request = new ListObjectsRequest
@@ -91,7 +90,8 @@ namespace AWSSDK.UnitTests
 
             var config = CreateConfig("https://beta.example.com", Flags.Dualstack);
 
-            S3ArnTestUtils.RunMockRequest(request, ListObjectsRequestMarshaller.Instance, config);                        
+            Assert.ThrowsExactly<AmazonClientException>(() =>
+                S3ArnTestUtils.RunMockRequest(request, ListObjectsRequestMarshaller.Instance, config));
         }
 
         private AmazonS3Config CreateConfig(string serviceUrl, Flags flags)

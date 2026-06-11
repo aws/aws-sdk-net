@@ -56,67 +56,67 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConditionalSplit", targetDepth))
+                if (context.TestExpression("ConditionalSplit", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionalSplitActivityUnmarshaller.Instance;
                     unmarshalledObject.ConditionalSplit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContactCenter", targetDepth))
+                if (context.TestExpression("ContactCenter", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactCenterActivityUnmarshaller.Instance;
                     unmarshalledObject.ContactCenter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CUSTOM", targetDepth))
+                if (context.TestExpression("CUSTOM", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomMessageActivityUnmarshaller.Instance;
                     unmarshalledObject.CUSTOM = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EMAIL", targetDepth))
+                if (context.TestExpression("EMAIL", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailMessageActivityUnmarshaller.Instance;
                     unmarshalledObject.EMAIL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Holdout", targetDepth))
+                if (context.TestExpression("Holdout", targetDepth, ref reader))
                 {
                     var unmarshaller = HoldoutActivityUnmarshaller.Instance;
                     unmarshalledObject.Holdout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiCondition", targetDepth))
+                if (context.TestExpression("MultiCondition", targetDepth, ref reader))
                 {
                     var unmarshaller = MultiConditionalSplitActivityUnmarshaller.Instance;
                     unmarshalledObject.MultiCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PUSH", targetDepth))
+                if (context.TestExpression("PUSH", targetDepth, ref reader))
                 {
                     var unmarshaller = PushMessageActivityUnmarshaller.Instance;
                     unmarshalledObject.PUSH = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RandomSplit", targetDepth))
+                if (context.TestExpression("RandomSplit", targetDepth, ref reader))
                 {
                     var unmarshaller = RandomSplitActivityUnmarshaller.Instance;
                     unmarshalledObject.RandomSplit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SMS", targetDepth))
+                if (context.TestExpression("SMS", targetDepth, ref reader))
                 {
                     var unmarshaller = SMSMessageActivityUnmarshaller.Instance;
                     unmarshalledObject.SMS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Wait", targetDepth))
+                if (context.TestExpression("Wait", targetDepth, ref reader))
                 {
                     var unmarshaller = WaitActivityUnmarshaller.Instance;
                     unmarshalledObject.Wait = unmarshaller.Unmarshall(context, ref reader);

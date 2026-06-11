@@ -52,7 +52,7 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Template", targetDepth))
+                if (context.TestExpression("Template", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     response.Template = unmarshaller.Unmarshall(context, ref reader);

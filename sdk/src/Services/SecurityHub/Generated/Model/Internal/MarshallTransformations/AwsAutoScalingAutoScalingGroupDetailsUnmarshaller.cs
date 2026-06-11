@@ -56,55 +56,55 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityZones", targetDepth))
+                if (context.TestExpression("AvailabilityZones", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails, AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsUnmarshaller>(AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsUnmarshaller.Instance);
                     unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityRebalance", targetDepth))
+                if (context.TestExpression("CapacityRebalance", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckGracePeriod", targetDepth))
+                if (context.TestExpression("HealthCheckGracePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckGracePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HealthCheckType", targetDepth))
+                if (context.TestExpression("HealthCheckType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HealthCheckType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchConfigurationName", targetDepth))
+                if (context.TestExpression("LaunchConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LaunchConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LaunchTemplate", targetDepth))
+                if (context.TestExpression("LaunchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationUnmarshaller.Instance;
                     unmarshalledObject.LaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoadBalancerNames", targetDepth))
+                if (context.TestExpression("LoadBalancerNames", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.LoadBalancerNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MixedInstancesPolicy", targetDepth))
+                if (context.TestExpression("MixedInstancesPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsUnmarshaller.Instance;
                     unmarshalledObject.MixedInstancesPolicy = unmarshaller.Unmarshall(context, ref reader);

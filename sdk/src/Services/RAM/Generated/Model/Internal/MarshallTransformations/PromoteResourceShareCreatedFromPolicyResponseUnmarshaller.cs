@@ -52,7 +52,7 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("returnValue", targetDepth))
+                if (context.TestExpression("returnValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.ReturnValue = unmarshaller.Unmarshall(context, ref reader);

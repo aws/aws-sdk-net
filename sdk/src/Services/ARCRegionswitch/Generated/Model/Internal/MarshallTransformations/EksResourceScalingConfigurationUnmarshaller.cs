@@ -56,43 +56,43 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capacityMonitoringApproach", targetDepth))
+                if (context.TestExpression("capacityMonitoringApproach", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityMonitoringApproach = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksClusters", targetDepth))
+                if (context.TestExpression("eksClusters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EksCluster, EksClusterUnmarshaller>(EksClusterUnmarshaller.Instance);
                     unmarshalledObject.EksClusters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesResourceType", targetDepth))
+                if (context.TestExpression("kubernetesResourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesResourceTypeUnmarshaller.Instance;
                     unmarshalledObject.KubernetesResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scalingResources", targetDepth))
+                if (context.TestExpression("scalingResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dictionary<string, Dictionary<string, KubernetesScalingResource>>, JsonDictionaryUnmarshaller<string, Dictionary<string, KubernetesScalingResource>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, KubernetesScalingResource, StringUnmarshaller, KubernetesScalingResourceUnmarshaller>>>(new JsonDictionaryUnmarshaller<string, Dictionary<string, KubernetesScalingResource>, StringUnmarshaller, JsonDictionaryUnmarshaller<string, KubernetesScalingResource, StringUnmarshaller, KubernetesScalingResourceUnmarshaller>>(StringUnmarshaller.Instance, new JsonDictionaryUnmarshaller<string, KubernetesScalingResource, StringUnmarshaller, KubernetesScalingResourceUnmarshaller>(StringUnmarshaller.Instance, KubernetesScalingResourceUnmarshaller.Instance)));
                     unmarshalledObject.ScalingResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetPercent", targetDepth))
+                if (context.TestExpression("targetPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TargetPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutMinutes", targetDepth))
+                if (context.TestExpression("timeoutMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ungraceful", targetDepth))
+                if (context.TestExpression("ungraceful", targetDepth, ref reader))
                 {
                     var unmarshaller = EksResourceScalingUngracefulUnmarshaller.Instance;
                     unmarshalledObject.Ungraceful = unmarshaller.Unmarshall(context, ref reader);

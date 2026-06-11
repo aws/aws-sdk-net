@@ -56,19 +56,19 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("attachmentNetworkAclConfiguration", targetDepth))
+                if (context.TestExpression("attachmentNetworkAclConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NetworkACLEntry, NetworkACLEntryUnmarshaller>(NetworkACLEntryUnmarshaller.Instance);
                     unmarshalledObject.AttachmentNetworkAclConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("routableCIDRSpace", targetDepth))
+                if (context.TestExpression("routableCIDRSpace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoutableCIDRSpace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transitGatewayID", targetDepth))
+                if (context.TestExpression("transitGatewayID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransitGatewayID = unmarshaller.Unmarshall(context, ref reader);

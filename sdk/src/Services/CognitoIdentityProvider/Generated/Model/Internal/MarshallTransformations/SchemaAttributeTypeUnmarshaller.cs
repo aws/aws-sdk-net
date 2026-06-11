@@ -56,43 +56,43 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AttributeDataType", targetDepth))
+                if (context.TestExpression("AttributeDataType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AttributeDataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeveloperOnlyAttribute", targetDepth))
+                if (context.TestExpression("DeveloperOnlyAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DeveloperOnlyAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Mutable", targetDepth))
+                if (context.TestExpression("Mutable", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Mutable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberAttributeConstraints", targetDepth))
+                if (context.TestExpression("NumberAttributeConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = NumberAttributeConstraintsTypeUnmarshaller.Instance;
                     unmarshalledObject.NumberAttributeConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Required", targetDepth))
+                if (context.TestExpression("Required", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Required = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StringAttributeConstraints", targetDepth))
+                if (context.TestExpression("StringAttributeConstraints", targetDepth, ref reader))
                 {
                     var unmarshaller = StringAttributeConstraintsTypeUnmarshaller.Instance;
                     unmarshalledObject.StringAttributeConstraints = unmarshaller.Unmarshall(context, ref reader);

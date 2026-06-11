@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("associatedTranscriptsUrl", targetDepth))
+                if (context.TestExpression("associatedTranscriptsUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociatedTranscriptsUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botLocaleExportUrl", targetDepth))
+                if (context.TestExpression("botLocaleExportUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BotLocaleExportUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statistics", targetDepth))
+                if (context.TestExpression("statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = BotRecommendationResultStatisticsUnmarshaller.Instance;
                     unmarshalledObject.Statistics = unmarshaller.Unmarshall(context, ref reader);

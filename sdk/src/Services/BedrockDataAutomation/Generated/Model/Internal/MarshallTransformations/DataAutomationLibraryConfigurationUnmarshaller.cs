@@ -56,7 +56,7 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("libraries", targetDepth))
+                if (context.TestExpression("libraries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DataAutomationLibraryItem, DataAutomationLibraryItemUnmarshaller>(DataAutomationLibraryItemUnmarshaller.Instance);
                     unmarshalledObject.Libraries = unmarshaller.Unmarshall(context, ref reader);

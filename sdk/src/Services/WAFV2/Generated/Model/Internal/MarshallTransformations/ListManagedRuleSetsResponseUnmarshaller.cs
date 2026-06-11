@@ -52,13 +52,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedRuleSets", targetDepth))
+                if (context.TestExpression("ManagedRuleSets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedRuleSetSummary, ManagedRuleSetSummaryUnmarshaller>(ManagedRuleSetSummaryUnmarshaller.Instance);
                     response.ManagedRuleSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextMarker", targetDepth))
+                if (context.TestExpression("NextMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextMarker = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectedHome", targetDepth))
+                if (context.TestExpression("ConnectedHome", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectedHomeSettingsUnmarshaller.Instance;
                     unmarshalledObject.ConnectedHome = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaceSearch", targetDepth))
+                if (context.TestExpression("FaceSearch", targetDepth, ref reader))
                 {
                     var unmarshaller = FaceSearchSettingsUnmarshaller.Instance;
                     unmarshalledObject.FaceSearch = unmarshaller.Unmarshall(context, ref reader);

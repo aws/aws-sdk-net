@@ -56,37 +56,37 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cidrBlock", targetDepth))
+                if (context.TestExpression("cidrBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("icmpTypeCode", targetDepth))
+                if (context.TestExpression("icmpTypeCode", targetDepth, ref reader))
                 {
                     var unmarshaller = IcmpTypeCodeUnmarshaller.Instance;
                     unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("portRange", targetDepth))
+                if (context.TestExpression("portRange", targetDepth, ref reader))
                 {
                     var unmarshaller = PortRangeUnmarshaller.Instance;
                     unmarshalledObject.PortRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleAction", targetDepth))
+                if (context.TestExpression("ruleAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleNumber", targetDepth))
+                if (context.TestExpression("ruleNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RuleNumber = unmarshaller.Unmarshall(context, ref reader);

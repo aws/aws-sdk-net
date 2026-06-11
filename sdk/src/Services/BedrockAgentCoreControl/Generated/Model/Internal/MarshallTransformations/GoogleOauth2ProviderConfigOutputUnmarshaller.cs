@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientId", targetDepth))
+                if (context.TestExpression("clientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oauthDiscovery", targetDepth))
+                if (context.TestExpression("oauthDiscovery", targetDepth, ref reader))
                 {
                     var unmarshaller = Oauth2DiscoveryUnmarshaller.Instance;
                     unmarshalledObject.OauthDiscovery = unmarshaller.Unmarshall(context, ref reader);

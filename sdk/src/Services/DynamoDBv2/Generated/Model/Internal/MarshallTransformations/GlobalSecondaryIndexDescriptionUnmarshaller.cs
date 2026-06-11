@@ -56,67 +56,67 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Backfilling", targetDepth))
+                if (context.TestExpression("Backfilling", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Backfilling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexArn", targetDepth))
+                if (context.TestExpression("IndexArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexSizeBytes", targetDepth))
+                if (context.TestExpression("IndexSizeBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.IndexSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexStatus", targetDepth))
+                if (context.TestExpression("IndexStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ItemCount", targetDepth))
+                if (context.TestExpression("ItemCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeySchema", targetDepth))
+                if (context.TestExpression("KeySchema", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeySchemaElement, KeySchemaElementUnmarshaller>(KeySchemaElementUnmarshaller.Instance);
                     unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughput", targetDepth))
+                if (context.TestExpression("OnDemandThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandThroughputUnmarshaller.Instance;
                     unmarshalledObject.OnDemandThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Projection", targetDepth))
+                if (context.TestExpression("Projection", targetDepth, ref reader))
                 {
                     var unmarshaller = ProjectionUnmarshaller.Instance;
                     unmarshalledObject.Projection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughput", targetDepth))
+                if (context.TestExpression("ProvisionedThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmThroughput", targetDepth))
+                if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalSecondaryIndexWarmThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);

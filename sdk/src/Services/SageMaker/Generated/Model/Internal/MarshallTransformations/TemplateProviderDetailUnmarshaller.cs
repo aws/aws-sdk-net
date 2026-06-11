@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CfnTemplateProviderDetail", targetDepth))
+                if (context.TestExpression("CfnTemplateProviderDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = CfnTemplateProviderDetailUnmarshaller.Instance;
                     unmarshalledObject.CfnTemplateProviderDetail = unmarshaller.Unmarshall(context, ref reader);

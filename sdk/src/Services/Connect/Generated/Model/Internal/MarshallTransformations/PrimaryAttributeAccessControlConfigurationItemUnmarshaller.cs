@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PrimaryAttributeValues", targetDepth))
+                if (context.TestExpression("PrimaryAttributeValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrimaryAttributeValue, PrimaryAttributeValueUnmarshaller>(PrimaryAttributeValueUnmarshaller.Instance);
                     unmarshalledObject.PrimaryAttributeValues = unmarshaller.Unmarshall(context, ref reader);

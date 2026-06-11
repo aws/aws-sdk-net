@@ -52,19 +52,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StreamARN", targetDepth))
+                if (context.TestExpression("StreamARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamName", targetDepth))
+                if (context.TestExpression("StreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmThroughput", targetDepth))
+                if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = WarmThroughputObjectUnmarshaller.Instance;
                     response.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);

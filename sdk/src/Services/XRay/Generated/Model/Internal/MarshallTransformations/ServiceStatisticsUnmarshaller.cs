@@ -56,31 +56,31 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ErrorStatistics", targetDepth))
+                if (context.TestExpression("ErrorStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = ErrorStatisticsUnmarshaller.Instance;
                     unmarshalledObject.ErrorStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FaultStatistics", targetDepth))
+                if (context.TestExpression("FaultStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = FaultStatisticsUnmarshaller.Instance;
                     unmarshalledObject.FaultStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OkCount", targetDepth))
+                if (context.TestExpression("OkCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OkCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCount", targetDepth))
+                if (context.TestExpression("TotalCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalResponseTime", targetDepth))
+                if (context.TestExpression("TotalResponseTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalResponseTime = unmarshaller.Unmarshall(context, ref reader);

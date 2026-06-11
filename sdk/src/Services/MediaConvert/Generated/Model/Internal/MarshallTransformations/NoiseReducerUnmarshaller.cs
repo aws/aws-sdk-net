@@ -56,25 +56,25 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filter", targetDepth))
+                if (context.TestExpression("filter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("filterSettings", targetDepth))
+                if (context.TestExpression("filterSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NoiseReducerFilterSettingsUnmarshaller.Instance;
                     unmarshalledObject.FilterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("spatialFilterSettings", targetDepth))
+                if (context.TestExpression("spatialFilterSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NoiseReducerSpatialFilterSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpatialFilterSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("temporalFilterSettings", targetDepth))
+                if (context.TestExpression("temporalFilterSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NoiseReducerTemporalFilterSettingsUnmarshaller.Instance;
                     unmarshalledObject.TemporalFilterSettings = unmarshaller.Unmarshall(context, ref reader);

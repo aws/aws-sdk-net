@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AwsManagedHumanLoopRequestSource", targetDepth))
+                if (context.TestExpression("AwsManagedHumanLoopRequestSource", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsManagedHumanLoopRequestSource = unmarshaller.Unmarshall(context, ref reader);

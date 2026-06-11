@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SNSTopicArn", targetDepth))
+                if (context.TestExpression("SNSTopicArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SNSTopicArn = unmarshaller.Unmarshall(context, ref reader);

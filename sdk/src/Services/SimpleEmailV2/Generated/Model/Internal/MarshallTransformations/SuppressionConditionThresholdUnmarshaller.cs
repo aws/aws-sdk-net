@@ -56,13 +56,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConditionThresholdEnabled", targetDepth))
+                if (context.TestExpression("ConditionThresholdEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConditionThresholdEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverallConfidenceThreshold", targetDepth))
+                if (context.TestExpression("OverallConfidenceThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionConfidenceThresholdUnmarshaller.Instance;
                     unmarshalledObject.OverallConfidenceThreshold = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("envEnter", targetDepth))
+                if (context.TestExpression("envEnter", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignedEnvironmentEnterSessionActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.EnvEnter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("envExit", targetDepth))
+                if (context.TestExpression("envExit", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignedEnvironmentExitSessionActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.EnvExit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("syncInputJobAttachments", targetDepth))
+                if (context.TestExpression("syncInputJobAttachments", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignedSyncInputJobAttachmentsSessionActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.SyncInputJobAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taskRun", targetDepth))
+                if (context.TestExpression("taskRun", targetDepth, ref reader))
                 {
                     var unmarshaller = AssignedTaskRunSessionActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.TaskRun = unmarshaller.Unmarshall(context, ref reader);

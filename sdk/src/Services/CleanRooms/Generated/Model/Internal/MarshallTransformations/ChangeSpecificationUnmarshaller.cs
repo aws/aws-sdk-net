@@ -56,13 +56,13 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("collaboration", targetDepth))
+                if (context.TestExpression("collaboration", targetDepth, ref reader))
                 {
                     var unmarshaller = CollaborationChangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.Collaboration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("member", targetDepth))
+                if (context.TestExpression("member", targetDepth, ref reader))
                 {
                     var unmarshaller = MemberChangeSpecificationUnmarshaller.Instance;
                     unmarshalledObject.Member = unmarshaller.Unmarshall(context, ref reader);

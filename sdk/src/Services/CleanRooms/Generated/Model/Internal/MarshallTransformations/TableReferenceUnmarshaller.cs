@@ -56,19 +56,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("athena", targetDepth))
+                if (context.TestExpression("athena", targetDepth, ref reader))
                 {
                     var unmarshaller = AthenaTableReferenceUnmarshaller.Instance;
                     unmarshalledObject.Athena = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("glue", targetDepth))
+                if (context.TestExpression("glue", targetDepth, ref reader))
                 {
                     var unmarshaller = GlueTableReferenceUnmarshaller.Instance;
                     unmarshalledObject.Glue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("snowflake", targetDepth))
+                if (context.TestExpression("snowflake", targetDepth, ref reader))
                 {
                     var unmarshaller = SnowflakeTableReferenceUnmarshaller.Instance;
                     unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context, ref reader);

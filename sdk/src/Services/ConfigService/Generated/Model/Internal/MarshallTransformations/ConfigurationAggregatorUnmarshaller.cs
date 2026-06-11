@@ -56,49 +56,49 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountAggregationSources", targetDepth))
+                if (context.TestExpression("AccountAggregationSources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountAggregationSource, AccountAggregationSourceUnmarshaller>(AccountAggregationSourceUnmarshaller.Instance);
                     unmarshalledObject.AccountAggregationSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AggregatorFilters", targetDepth))
+                if (context.TestExpression("AggregatorFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregatorFiltersUnmarshaller.Instance;
                     unmarshalledObject.AggregatorFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationAggregatorArn", targetDepth))
+                if (context.TestExpression("ConfigurationAggregatorArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationAggregatorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationAggregatorName", targetDepth))
+                if (context.TestExpression("ConfigurationAggregatorName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationAggregatorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedBy", targetDepth))
+                if (context.TestExpression("CreatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdatedTime", targetDepth))
+                if (context.TestExpression("LastUpdatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationAggregationSource", targetDepth))
+                if (context.TestExpression("OrganizationAggregationSource", targetDepth, ref reader))
                 {
                     var unmarshaller = OrganizationAggregationSourceUnmarshaller.Instance;
                     unmarshalledObject.OrganizationAggregationSource = unmarshaller.Unmarshall(context, ref reader);

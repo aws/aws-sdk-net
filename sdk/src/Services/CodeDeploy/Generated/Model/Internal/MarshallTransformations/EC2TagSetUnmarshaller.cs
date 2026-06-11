@@ -56,7 +56,7 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2TagSetList", targetDepth))
+                if (context.TestExpression("ec2TagSetList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<EC2TagFilter>, JsonListUnmarshaller<EC2TagFilter,EC2TagFilterUnmarshaller>>(new JsonListUnmarshaller<EC2TagFilter, EC2TagFilterUnmarshaller>(EC2TagFilterUnmarshaller.Instance));
                     unmarshalledObject.Ec2TagSetList = unmarshaller.Unmarshall(context, ref reader);

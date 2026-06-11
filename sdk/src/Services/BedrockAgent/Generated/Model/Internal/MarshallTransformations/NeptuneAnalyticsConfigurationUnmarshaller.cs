@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fieldMapping", targetDepth))
+                if (context.TestExpression("fieldMapping", targetDepth, ref reader))
                 {
                     var unmarshaller = NeptuneAnalyticsFieldMappingUnmarshaller.Instance;
                     unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("graphArn", targetDepth))
+                if (context.TestExpression("graphArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GraphArn = unmarshaller.Unmarshall(context, ref reader);

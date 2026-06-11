@@ -36,6 +36,7 @@ namespace Amazon.Backup.Model
     public partial class StartScanJobRequest : AmazonBackupRequest
     {
         private string _backupVaultName;
+        private DateTime? _continuousScanEndTime;
         private string _iamRoleArn;
         private string _idempotencyToken;
         private MalwareScanner _malwareScanner;
@@ -67,6 +68,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupVaultName()
         {
             return this._backupVaultName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousScanEndTime. 
+        /// <para>
+        /// The point in time the scan job will scan up to for a continuous backup.
+        /// </para>
+        /// </summary>
+        public DateTime? ContinuousScanEndTime
+        {
+            get { return this._continuousScanEndTime; }
+            set { this._continuousScanEndTime = value; }
+        }
+
+        // Check to see if ContinuousScanEndTime property is set
+        internal bool IsSetContinuousScanEndTime()
+        {
+            return this._continuousScanEndTime.HasValue; 
         }
 
         /// <summary>

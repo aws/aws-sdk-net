@@ -46,6 +46,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioTimelinePattern())
+            {
+                context.Writer.WritePropertyName("AudioTimelinePattern");
+                context.Writer.WriteStringValue(requestObject.AudioTimelinePattern);
+            }
+
             if(requestObject.IsSetAvailabilityStartTimeConfiguration())
             {
                 context.Writer.WritePropertyName("AvailabilityStartTimeConfiguration");

@@ -56,13 +56,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainControllerIp", targetDepth))
+                if (context.TestExpression("DomainControllerIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainControllerIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Validations", targetDepth))
+                if (context.TestExpression("Validations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssessmentValidation, AssessmentValidationUnmarshaller>(AssessmentValidationUnmarshaller.Instance);
                     unmarshalledObject.Validations = unmarshaller.Unmarshall(context, ref reader);

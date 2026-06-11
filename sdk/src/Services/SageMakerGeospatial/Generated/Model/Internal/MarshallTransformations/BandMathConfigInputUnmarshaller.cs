@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomIndices", targetDepth))
+                if (context.TestExpression("CustomIndices", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomIndicesInputUnmarshaller.Instance;
                     unmarshalledObject.CustomIndices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PredefinedIndices", targetDepth))
+                if (context.TestExpression("PredefinedIndices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.PredefinedIndices = unmarshaller.Unmarshall(context, ref reader);

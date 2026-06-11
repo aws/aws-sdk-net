@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EnableResourceNameDnsAAAARecord", targetDepth))
+                if (context.TestExpression("EnableResourceNameDnsAAAARecord", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableResourceNameDnsAAAARecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableResourceNameDnsARecord", targetDepth))
+                if (context.TestExpression("EnableResourceNameDnsARecord", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableResourceNameDnsARecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HostnameType", targetDepth))
+                if (context.TestExpression("HostnameType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostnameType = unmarshaller.Unmarshall(context, ref reader);

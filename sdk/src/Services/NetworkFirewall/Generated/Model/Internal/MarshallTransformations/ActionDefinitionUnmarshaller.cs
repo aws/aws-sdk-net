@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PublishMetricAction", targetDepth))
+                if (context.TestExpression("PublishMetricAction", targetDepth, ref reader))
                 {
                     var unmarshaller = PublishMetricActionUnmarshaller.Instance;
                     unmarshalledObject.PublishMetricAction = unmarshaller.Unmarshall(context, ref reader);

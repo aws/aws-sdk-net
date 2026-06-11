@@ -52,7 +52,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StopTimestamp", targetDepth))
+                if (context.TestExpression("StopTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.StopTimestamp = unmarshaller.Unmarshall(context, ref reader);

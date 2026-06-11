@@ -724,7 +724,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFormation")]
         [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CloudFormationEndpointParameters();
@@ -732,7 +731,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -740,7 +742,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFormation")]
         [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CloudFormationEndpointParameters();
@@ -748,7 +749,10 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Dualstack and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -756,11 +760,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("CloudFormation")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new CloudFormationEndpointParameters();
-            var endpoint = new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonCloudFormationEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
     }

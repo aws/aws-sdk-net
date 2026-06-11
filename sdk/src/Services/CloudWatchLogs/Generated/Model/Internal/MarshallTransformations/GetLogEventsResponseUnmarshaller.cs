@@ -52,19 +52,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("events", targetDepth))
+                if (context.TestExpression("events", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputLogEvent, OutputLogEventUnmarshaller>(OutputLogEventUnmarshaller.Instance);
                     response.Events = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextBackwardToken", targetDepth))
+                if (context.TestExpression("nextBackwardToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextBackwardToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextForwardToken", targetDepth))
+                if (context.TestExpression("nextForwardToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextForwardToken = unmarshaller.Unmarshall(context, ref reader);

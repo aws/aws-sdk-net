@@ -56,13 +56,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applicationConfiguration", targetDepth))
+                if (context.TestExpression("applicationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Configuration, ConfigurationUnmarshaller>(ConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ApplicationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("monitoringConfiguration", targetDepth))
+                if (context.TestExpression("monitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Vpc", targetDepth))
+                if (context.TestExpression("Vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribedWebAppVpcConfigUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

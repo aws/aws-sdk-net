@@ -56,13 +56,13 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = SageMakerSavingsPlansConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("costCalculation", targetDepth))
+                if (context.TestExpression("costCalculation", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansCostCalculationUnmarshaller.Instance;
                     unmarshalledObject.CostCalculation = unmarshaller.Unmarshall(context, ref reader);

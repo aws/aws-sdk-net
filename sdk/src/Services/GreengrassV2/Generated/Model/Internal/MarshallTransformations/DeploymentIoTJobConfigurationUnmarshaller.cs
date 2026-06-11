@@ -56,19 +56,19 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("abortConfig", targetDepth))
+                if (context.TestExpression("abortConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IoTJobAbortConfigUnmarshaller.Instance;
                     unmarshalledObject.AbortConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth))
+                if (context.TestExpression("jobExecutionsRolloutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IoTJobExecutionsRolloutConfigUnmarshaller.Instance;
                     unmarshalledObject.JobExecutionsRolloutConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutConfig", targetDepth))
+                if (context.TestExpression("timeoutConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = IoTJobTimeoutConfigUnmarshaller.Instance;
                     unmarshalledObject.TimeoutConfig = unmarshaller.Unmarshall(context, ref reader);

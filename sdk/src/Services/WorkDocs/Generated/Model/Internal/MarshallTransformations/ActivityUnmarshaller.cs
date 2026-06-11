@@ -56,55 +56,55 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommentMetadata", targetDepth))
+                if (context.TestExpression("CommentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = CommentMetadataUnmarshaller.Instance;
                     unmarshalledObject.CommentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Initiator", targetDepth))
+                if (context.TestExpression("Initiator", targetDepth, ref reader))
                 {
                     var unmarshaller = UserMetadataUnmarshaller.Instance;
                     unmarshalledObject.Initiator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsIndirectActivity", targetDepth))
+                if (context.TestExpression("IsIndirectActivity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsIndirectActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OrganizationId", targetDepth))
+                if (context.TestExpression("OrganizationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OrganizationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OriginalParent", targetDepth))
+                if (context.TestExpression("OriginalParent", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceMetadataUnmarshaller.Instance;
                     unmarshalledObject.OriginalParent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Participants", targetDepth))
+                if (context.TestExpression("Participants", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantsUnmarshaller.Instance;
                     unmarshalledObject.Participants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceMetadata", targetDepth))
+                if (context.TestExpression("ResourceMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceMetadataUnmarshaller.Instance;
                     unmarshalledObject.ResourceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeStamp", targetDepth))
+                if (context.TestExpression("TimeStamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.TimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

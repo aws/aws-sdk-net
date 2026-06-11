@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("members", targetDepth))
+                if (context.TestExpression("members", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TrainedModelExportReceiverMember, TrainedModelExportReceiverMemberUnmarshaller>(TrainedModelExportReceiverMemberUnmarshaller.Instance);
                     unmarshalledObject.Members = unmarshaller.Unmarshall(context, ref reader);

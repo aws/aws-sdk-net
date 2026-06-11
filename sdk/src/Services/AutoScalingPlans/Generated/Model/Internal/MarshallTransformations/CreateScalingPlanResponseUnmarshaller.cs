@@ -52,7 +52,7 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScalingPlanVersion", targetDepth))
+                if (context.TestExpression("ScalingPlanVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.ScalingPlanVersion = unmarshaller.Unmarshall(context, ref reader);

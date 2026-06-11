@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Bottom", targetDepth))
+                if (context.TestExpression("Bottom", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.Bottom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InnerHorizontal", targetDepth))
+                if (context.TestExpression("InnerHorizontal", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.InnerHorizontal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InnerVertical", targetDepth))
+                if (context.TestExpression("InnerVertical", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.InnerVertical = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Left", targetDepth))
+                if (context.TestExpression("Left", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.Left = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Right", targetDepth))
+                if (context.TestExpression("Right", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.Right = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Top", targetDepth))
+                if (context.TestExpression("Top", targetDepth, ref reader))
                 {
                     var unmarshaller = TableBorderOptionsUnmarshaller.Instance;
                     unmarshalledObject.Top = unmarshaller.Unmarshall(context, ref reader);

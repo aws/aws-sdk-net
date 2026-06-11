@@ -56,31 +56,31 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DelayAfterAvailEndSeconds", targetDepth))
+                if (context.TestExpression("DelayAfterAvailEndSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DelayAfterAvailEndSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicVariables", targetDepth))
+                if (context.TestExpression("DynamicVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.DynamicVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth))
+                if (context.TestExpression("TrafficShapingRetrievalWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficShapingRetrievalWindowUnmarshaller.Instance;
                     unmarshalledObject.TrafficShapingRetrievalWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficShapingTpsConfiguration", targetDepth))
+                if (context.TestExpression("TrafficShapingTpsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficShapingTpsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TrafficShapingTpsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficShapingType", targetDepth))
+                if (context.TestExpression("TrafficShapingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrafficShapingType = unmarshaller.Unmarshall(context, ref reader);

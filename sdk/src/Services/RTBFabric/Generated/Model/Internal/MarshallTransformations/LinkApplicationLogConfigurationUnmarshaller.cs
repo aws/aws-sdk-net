@@ -56,7 +56,7 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sampling", targetDepth))
+                if (context.TestExpression("sampling", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkApplicationLogSamplingUnmarshaller.Instance;
                     unmarshalledObject.Sampling = unmarshaller.Unmarshall(context, ref reader);

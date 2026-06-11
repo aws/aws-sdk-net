@@ -56,73 +56,73 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("annotations", targetDepth))
+                if (context.TestExpression("annotations", targetDepth, ref reader))
                 {
                     var unmarshaller = AnnotationUnmarshaller.Instance;
                     unmarshalledObject.Annotations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inputSchema", targetDepth))
+                if (context.TestExpression("inputSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.InputSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instruction", targetDepth))
+                if (context.TestExpression("instruction", targetDepth, ref reader))
                 {
                     var unmarshaller = ToolInstructionUnmarshaller.Instance;
                     unmarshalledObject.Instruction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputFilters", targetDepth))
+                if (context.TestExpression("outputFilters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToolOutputFilter, ToolOutputFilterUnmarshaller>(ToolOutputFilterUnmarshaller.Instance);
                     unmarshalledObject.OutputFilters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSchema", targetDepth))
+                if (context.TestExpression("outputSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
                     unmarshalledObject.OutputSchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overrideInputValues", targetDepth))
+                if (context.TestExpression("overrideInputValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToolOverrideInputValue, ToolOverrideInputValueUnmarshaller>(ToolOverrideInputValueUnmarshaller.Instance);
                     unmarshalledObject.OverrideInputValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("title", targetDepth))
+                if (context.TestExpression("title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolId", targetDepth))
+                if (context.TestExpression("toolId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ToolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolName", targetDepth))
+                if (context.TestExpression("toolName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ToolName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolType", targetDepth))
+                if (context.TestExpression("toolType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ToolType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userInteractionConfiguration", targetDepth))
+                if (context.TestExpression("userInteractionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = UserInteractionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.UserInteractionConfiguration = unmarshaller.Unmarshall(context, ref reader);

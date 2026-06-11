@@ -56,13 +56,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockFoundationModelConfiguration", targetDepth))
+                if (context.TestExpression("bedrockFoundationModelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BedrockFoundationModelConfigurationForParsingUnmarshaller.Instance;
                     unmarshalledObject.BedrockFoundationModelConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parsingStrategy", targetDepth))
+                if (context.TestExpression("parsingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParsingStrategy = unmarshaller.Unmarshall(context, ref reader);

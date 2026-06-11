@@ -56,13 +56,13 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("coverEntireOrganization", targetDepth))
+                if (context.TestExpression("coverEntireOrganization", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CoverEntireOrganization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("organizationalUnits", targetDepth))
+                if (context.TestExpression("organizationalUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OrganizationalUnits = unmarshaller.Unmarshall(context, ref reader);

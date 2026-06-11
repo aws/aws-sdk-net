@@ -56,25 +56,25 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailureDetails", targetDepth))
+                if (context.TestExpression("FailureDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = FailureDetailsUnmarshaller.Instance;
                     unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StateChangeReason", targetDepth))
+                if (context.TestExpression("StateChangeReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StepStateChangeReasonUnmarshaller.Instance;
                     unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Timeline", targetDepth))
+                if (context.TestExpression("Timeline", targetDepth, ref reader))
                 {
                     var unmarshaller = StepTimelineUnmarshaller.Instance;
                     unmarshalledObject.Timeline = unmarshaller.Unmarshall(context, ref reader);

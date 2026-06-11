@@ -56,55 +56,55 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Artifacts", targetDepth))
+                if (context.TestExpression("Artifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsCodeBuildProjectArtifactsDetails, AwsCodeBuildProjectArtifactsDetailsUnmarshaller>(AwsCodeBuildProjectArtifactsDetailsUnmarshaller.Instance);
                     unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionKey", targetDepth))
+                if (context.TestExpression("EncryptionKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptionKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Environment", targetDepth))
+                if (context.TestExpression("Environment", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectEnvironmentUnmarshaller.Instance;
                     unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogsConfig", targetDepth))
+                if (context.TestExpression("LogsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectLogsConfigDetailsUnmarshaller.Instance;
                     unmarshalledObject.LogsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecondaryArtifacts", targetDepth))
+                if (context.TestExpression("SecondaryArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsCodeBuildProjectArtifactsDetails, AwsCodeBuildProjectArtifactsDetailsUnmarshaller>(AwsCodeBuildProjectArtifactsDetailsUnmarshaller.Instance);
                     unmarshalledObject.SecondaryArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceRole", targetDepth))
+                if (context.TestExpression("ServiceRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Source", targetDepth))
+                if (context.TestExpression("Source", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectSourceUnmarshaller.Instance;
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsCodeBuildProjectVpcConfigUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

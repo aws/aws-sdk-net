@@ -56,37 +56,37 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configurationOverrides", targetDepth))
+                if (context.TestExpression("configurationOverrides", targetDepth, ref reader))
                 {
                     var unmarshaller = ParametricConfigurationOverridesUnmarshaller.Instance;
                     unmarshalledObject.ConfigurationOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionRoleArn", targetDepth))
+                if (context.TestExpression("executionRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobDriver", targetDepth))
+                if (context.TestExpression("jobDriver", targetDepth, ref reader))
                 {
                     var unmarshaller = JobDriverUnmarshaller.Instance;
                     unmarshalledObject.JobDriver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobTags", targetDepth))
+                if (context.TestExpression("jobTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.JobTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameterConfiguration", targetDepth))
+                if (context.TestExpression("parameterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, TemplateParameterConfiguration, StringUnmarshaller, TemplateParameterConfigurationUnmarshaller>(StringUnmarshaller.Instance, TemplateParameterConfigurationUnmarshaller.Instance);
                     unmarshalledObject.ParameterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("releaseLabel", targetDepth))
+                if (context.TestExpression("releaseLabel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);

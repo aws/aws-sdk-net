@@ -56,13 +56,13 @@ namespace Amazon.MediaStore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerLevelMetrics", targetDepth))
+                if (context.TestExpression("ContainerLevelMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerLevelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MetricPolicyRules", targetDepth))
+                if (context.TestExpression("MetricPolicyRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricPolicyRule, MetricPolicyRuleUnmarshaller>(MetricPolicyRuleUnmarshaller.Instance);
                     unmarshalledObject.MetricPolicyRules = unmarshaller.Unmarshall(context, ref reader);

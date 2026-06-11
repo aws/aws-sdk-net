@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteAdvancedPromptOptimizationJob operation.
-    /// Batch delete the specified advanced prompt optimization jobs.
+    /// Deletes one or more advanced prompt optimization jobs.
     /// </summary>
     public partial class BatchDeleteAdvancedPromptOptimizationJobRequest : AmazonBedrockRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifiers. 
         /// <para>
-        /// List of advanced prompt optimization job identifiers to delete.
+        /// A list of advanced prompt optimization job identifiers (ARNs or IDs) to delete.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

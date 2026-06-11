@@ -56,19 +56,19 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectInstanceId", targetDepth))
+                if (context.TestExpression("connectInstanceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConnectInstanceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryptionConfig", targetDepth))
+                if (context.TestExpression("encryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceLinkedRoleArn", targetDepth))
+                if (context.TestExpression("serviceLinkedRoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceLinkedRoleArn = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("estimatedCostAfterDiscounts", targetDepth))
+                if (context.TestExpression("estimatedCostAfterDiscounts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedCostAfterDiscounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedCostBeforeDiscounts", targetDepth))
+                if (context.TestExpression("estimatedCostBeforeDiscounts", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedCostBeforeDiscounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedDiscounts", targetDepth))
+                if (context.TestExpression("estimatedDiscounts", targetDepth, ref reader))
                 {
                     var unmarshaller = EstimatedDiscountsUnmarshaller.Instance;
                     unmarshalledObject.EstimatedDiscounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedNetUnusedAmortizedCommitments", targetDepth))
+                if (context.TestExpression("estimatedNetUnusedAmortizedCommitments", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EstimatedNetUnusedAmortizedCommitments = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BlockPublicAccessConfiguration", targetDepth))
+                if (context.TestExpression("BlockPublicAccessConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockPublicAccessConfigurationUnmarshaller.Instance;
                     response.BlockPublicAccessConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BlockPublicAccessConfigurationMetadata", targetDepth))
+                if (context.TestExpression("BlockPublicAccessConfigurationMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = BlockPublicAccessConfigurationMetadataUnmarshaller.Instance;
                     response.BlockPublicAccessConfigurationMetadata = unmarshaller.Unmarshall(context, ref reader);

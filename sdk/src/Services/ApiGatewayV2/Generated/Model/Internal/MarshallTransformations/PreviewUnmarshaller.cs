@@ -56,19 +56,19 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("previewStatus", targetDepth))
+                if (context.TestExpression("previewStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviewStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("previewUrl", targetDepth))
+                if (context.TestExpression("previewUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreviewUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusException", targetDepth))
+                if (context.TestExpression("statusException", targetDepth, ref reader))
                 {
                     var unmarshaller = StatusExceptionUnmarshaller.Instance;
                     unmarshalledObject.StatusException = unmarshaller.Unmarshall(context, ref reader);

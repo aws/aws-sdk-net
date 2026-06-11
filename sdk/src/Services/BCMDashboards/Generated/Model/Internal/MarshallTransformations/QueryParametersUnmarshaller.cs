@@ -56,31 +56,31 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("costAndUsage", targetDepth))
+                if (context.TestExpression("costAndUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = CostAndUsageQueryUnmarshaller.Instance;
                     unmarshalledObject.CostAndUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reservationCoverage", targetDepth))
+                if (context.TestExpression("reservationCoverage", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservationCoverageQueryUnmarshaller.Instance;
                     unmarshalledObject.ReservationCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reservationUtilization", targetDepth))
+                if (context.TestExpression("reservationUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = ReservationUtilizationQueryUnmarshaller.Instance;
                     unmarshalledObject.ReservationUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("savingsPlansCoverage", targetDepth))
+                if (context.TestExpression("savingsPlansCoverage", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansCoverageQueryUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("savingsPlansUtilization", targetDepth))
+                if (context.TestExpression("savingsPlansUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansUtilizationQueryUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansUtilization = unmarshaller.Unmarshall(context, ref reader);

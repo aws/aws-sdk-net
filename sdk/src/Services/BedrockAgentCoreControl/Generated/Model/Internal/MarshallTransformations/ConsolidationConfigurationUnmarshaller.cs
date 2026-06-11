@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customConsolidationConfiguration", targetDepth))
+                if (context.TestExpression("customConsolidationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomConsolidationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomConsolidationConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrustStore", targetDepth))
+                if (context.TestExpression("TrustStore", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustStoreUnmarshaller.Instance;
                     unmarshalledObject.TrustStore = unmarshaller.Unmarshall(context, ref reader);

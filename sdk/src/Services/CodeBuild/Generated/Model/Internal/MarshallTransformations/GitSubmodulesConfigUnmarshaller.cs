@@ -56,7 +56,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fetchSubmodules", targetDepth))
+                if (context.TestExpression("fetchSubmodules", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.FetchSubmodules = unmarshaller.Unmarshall(context, ref reader);

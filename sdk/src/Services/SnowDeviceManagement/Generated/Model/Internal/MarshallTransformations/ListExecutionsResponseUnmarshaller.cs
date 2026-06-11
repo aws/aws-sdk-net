@@ -52,13 +52,13 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("executions", targetDepth))
+                if (context.TestExpression("executions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExecutionSummary, ExecutionSummaryUnmarshaller>(ExecutionSummaryUnmarshaller.Instance);
                     response.Executions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

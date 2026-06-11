@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LoggingConfiguration", targetDepth))
+                if (context.TestExpression("LoggingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LoggingConfigurationUnmarshaller.Instance;
                     response.LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentConfigurationName", targetDepth))
+                if (context.TestExpression("environmentConfigurationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentConfigurationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentId", targetDepth))
+                if (context.TestExpression("environmentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentParameters", targetDepth))
+                if (context.TestExpression("environmentParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EnvironmentParameter, EnvironmentParameterUnmarshaller>(EnvironmentParameterUnmarshaller.Instance);
                     unmarshalledObject.EnvironmentParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentResolvedAccount", targetDepth))
+                if (context.TestExpression("environmentResolvedAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = EnvironmentResolvedAccountUnmarshaller.Instance;
                     unmarshalledObject.EnvironmentResolvedAccount = unmarshaller.Unmarshall(context, ref reader);

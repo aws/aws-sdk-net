@@ -56,7 +56,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("float32", targetDepth))
+                if (context.TestExpression("float32", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<float, FloatUnmarshaller>(FloatUnmarshaller.Instance);
                     unmarshalledObject.Float32 = unmarshaller.Unmarshall(context, ref reader);

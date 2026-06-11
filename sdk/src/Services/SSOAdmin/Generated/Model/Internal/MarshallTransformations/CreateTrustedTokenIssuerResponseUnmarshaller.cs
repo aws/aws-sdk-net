@@ -52,7 +52,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrustedTokenIssuerArn", targetDepth))
+                if (context.TestExpression("TrustedTokenIssuerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrustedTokenIssuerArn = unmarshaller.Unmarshall(context, ref reader);

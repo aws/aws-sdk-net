@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ComparisonFormat", targetDepth))
+                if (context.TestExpression("ComparisonFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = ComparisonFormatConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ComparisonFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ComparisonMethod", targetDepth))
+                if (context.TestExpression("ComparisonMethod", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComparisonMethod = unmarshaller.Unmarshall(context, ref reader);

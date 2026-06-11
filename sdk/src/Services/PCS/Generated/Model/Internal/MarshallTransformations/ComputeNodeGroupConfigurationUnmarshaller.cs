@@ -56,7 +56,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeNodeGroupId", targetDepth))
+                if (context.TestExpression("computeNodeGroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ComputeNodeGroupId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("guardrailCoverage", targetDepth))
+                if (context.TestExpression("guardrailCoverage", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailCoverageUnmarshaller.Instance;
                     unmarshalledObject.GuardrailCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailProcessingLatency", targetDepth))
+                if (context.TestExpression("guardrailProcessingLatency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.GuardrailProcessingLatency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("usage", targetDepth))
+                if (context.TestExpression("usage", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailUsageUnmarshaller.Instance;
                     unmarshalledObject.Usage = unmarshaller.Unmarshall(context, ref reader);

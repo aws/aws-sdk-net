@@ -56,13 +56,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GeometryOffset", targetDepth))
+                if (context.TestExpression("GeometryOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Place", targetDepth))
+                if (context.TestExpression("Place", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutePassThroughPlaceUnmarshaller.Instance;
                     unmarshalledObject.Place = unmarshaller.Unmarshall(context, ref reader);

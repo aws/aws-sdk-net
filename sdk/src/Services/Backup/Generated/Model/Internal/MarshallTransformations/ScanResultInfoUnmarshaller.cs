@@ -56,7 +56,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScanResultStatus", targetDepth))
+                if (context.TestExpression("ScanResultStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScanResultStatus = unmarshaller.Unmarshall(context, ref reader);

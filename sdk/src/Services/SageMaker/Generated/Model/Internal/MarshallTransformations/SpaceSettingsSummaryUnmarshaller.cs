@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppType", targetDepth))
+                if (context.TestExpression("AppType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AppType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteAccess", targetDepth))
+                if (context.TestExpression("RemoteAccess", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpaceStorageSettings", targetDepth))
+                if (context.TestExpression("SpaceStorageSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SpaceStorageSettingsUnmarshaller.Instance;
                     unmarshalledObject.SpaceStorageSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DashManifests", targetDepth))
+                if (context.TestExpression("DashManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarvestedDashManifest, HarvestedDashManifestUnmarshaller>(HarvestedDashManifestUnmarshaller.Instance);
                     unmarshalledObject.DashManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HlsManifests", targetDepth))
+                if (context.TestExpression("HlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarvestedHlsManifest, HarvestedHlsManifestUnmarshaller>(HarvestedHlsManifestUnmarshaller.Instance);
                     unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LowLatencyHlsManifests", targetDepth))
+                if (context.TestExpression("LowLatencyHlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarvestedLowLatencyHlsManifest, HarvestedLowLatencyHlsManifestUnmarshaller>(HarvestedLowLatencyHlsManifestUnmarshaller.Instance);
                     unmarshalledObject.LowLatencyHlsManifests = unmarshaller.Unmarshall(context, ref reader);

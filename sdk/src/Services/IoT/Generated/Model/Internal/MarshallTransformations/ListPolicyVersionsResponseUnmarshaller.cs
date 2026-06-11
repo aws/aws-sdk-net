@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("policyVersions", targetDepth))
+                if (context.TestExpression("policyVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PolicyVersion, PolicyVersionUnmarshaller>(PolicyVersionUnmarshaller.Instance);
                     response.PolicyVersions = unmarshaller.Unmarshall(context, ref reader);

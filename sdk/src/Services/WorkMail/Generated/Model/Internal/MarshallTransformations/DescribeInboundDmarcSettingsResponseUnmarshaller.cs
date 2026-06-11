@@ -52,7 +52,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Enforced", targetDepth))
+                if (context.TestExpression("Enforced", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.Enforced = unmarshaller.Unmarshall(context, ref reader);

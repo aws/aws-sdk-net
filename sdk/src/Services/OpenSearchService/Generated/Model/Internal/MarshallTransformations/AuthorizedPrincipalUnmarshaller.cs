@@ -56,19 +56,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Principal", targetDepth))
+                if (context.TestExpression("Principal", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrincipalType", targetDepth))
+                if (context.TestExpression("PrincipalType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceOptions", targetDepth))
+                if (context.TestExpression("ServiceOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceOptionsUnmarshaller.Instance;
                     unmarshalledObject.ServiceOptions = unmarshaller.Unmarshall(context, ref reader);

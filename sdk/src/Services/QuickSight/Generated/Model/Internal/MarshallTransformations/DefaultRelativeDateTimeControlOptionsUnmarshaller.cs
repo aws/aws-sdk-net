@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommitMode", targetDepth))
+                if (context.TestExpression("CommitMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CommitMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DisplayOptions", targetDepth))
+                if (context.TestExpression("DisplayOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = RelativeDateTimeControlDisplayOptionsUnmarshaller.Instance;
                     unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);

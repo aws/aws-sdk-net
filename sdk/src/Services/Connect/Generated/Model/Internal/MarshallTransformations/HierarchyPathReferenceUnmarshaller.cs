@@ -56,31 +56,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LevelFive", targetDepth))
+                if (context.TestExpression("LevelFive", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupSummaryReferenceUnmarshaller.Instance;
                     unmarshalledObject.LevelFive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LevelFour", targetDepth))
+                if (context.TestExpression("LevelFour", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupSummaryReferenceUnmarshaller.Instance;
                     unmarshalledObject.LevelFour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LevelOne", targetDepth))
+                if (context.TestExpression("LevelOne", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupSummaryReferenceUnmarshaller.Instance;
                     unmarshalledObject.LevelOne = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LevelThree", targetDepth))
+                if (context.TestExpression("LevelThree", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupSummaryReferenceUnmarshaller.Instance;
                     unmarshalledObject.LevelThree = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LevelTwo", targetDepth))
+                if (context.TestExpression("LevelTwo", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupSummaryReferenceUnmarshaller.Instance;
                     unmarshalledObject.LevelTwo = unmarshaller.Unmarshall(context, ref reader);

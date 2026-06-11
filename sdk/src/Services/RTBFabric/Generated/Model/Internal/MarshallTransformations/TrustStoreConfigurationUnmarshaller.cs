@@ -56,7 +56,7 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificateAuthorityCertificates", targetDepth))
+                if (context.TestExpression("certificateAuthorityCertificates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.CertificateAuthorityCertificates = unmarshaller.Unmarshall(context, ref reader);

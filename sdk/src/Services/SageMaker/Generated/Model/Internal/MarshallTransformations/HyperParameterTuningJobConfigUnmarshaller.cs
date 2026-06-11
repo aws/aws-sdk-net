@@ -56,49 +56,49 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HyperParameterTuningJobObjective", targetDepth))
+                if (context.TestExpression("HyperParameterTuningJobObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobObjectiveUnmarshaller.Instance;
                     unmarshalledObject.HyperParameterTuningJobObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParameterRanges", targetDepth))
+                if (context.TestExpression("ParameterRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterRangesUnmarshaller.Instance;
                     unmarshalledObject.ParameterRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RandomSeed", targetDepth))
+                if (context.TestExpression("RandomSeed", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RandomSeed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceLimits", targetDepth))
+                if (context.TestExpression("ResourceLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceLimitsUnmarshaller.Instance;
                     unmarshalledObject.ResourceLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Strategy", targetDepth))
+                if (context.TestExpression("Strategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Strategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StrategyConfig", targetDepth))
+                if (context.TestExpression("StrategyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobStrategyConfigUnmarshaller.Instance;
                     unmarshalledObject.StrategyConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingJobEarlyStoppingType", targetDepth))
+                if (context.TestExpression("TrainingJobEarlyStoppingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrainingJobEarlyStoppingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TuningJobCompletionCriteria", targetDepth))
+                if (context.TestExpression("TuningJobCompletionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = TuningJobCompletionCriteriaUnmarshaller.Instance;
                     unmarshalledObject.TuningJobCompletionCriteria = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaseInsensitive", targetDepth))
+                if (context.TestExpression("CaseInsensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseInsensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnToJsonKeyMappings", targetDepth))
+                if (context.TestExpression("ColumnToJsonKeyMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ColumnToJsonKeyMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConvertDotsInJsonKeysToUnderscores", targetDepth))
+                if (context.TestExpression("ConvertDotsInJsonKeysToUnderscores", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ConvertDotsInJsonKeysToUnderscores = unmarshaller.Unmarshall(context, ref reader);

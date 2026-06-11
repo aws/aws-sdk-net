@@ -52,73 +52,73 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botId", targetDepth))
+                if (context.TestExpression("botId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("compositeSlotTypeSetting", targetDepth))
+                if (context.TestExpression("compositeSlotTypeSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = CompositeSlotTypeSettingUnmarshaller.Instance;
                     response.CompositeSlotTypeSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationDateTime", targetDepth))
+                if (context.TestExpression("creationDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("externalSourceSetting", targetDepth))
+                if (context.TestExpression("externalSourceSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = ExternalSourceSettingUnmarshaller.Instance;
                     response.ExternalSourceSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localeId", targetDepth))
+                if (context.TestExpression("localeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LocaleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parentSlotTypeSignature", targetDepth))
+                if (context.TestExpression("parentSlotTypeSignature", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParentSlotTypeSignature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotTypeId", targetDepth))
+                if (context.TestExpression("slotTypeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlotTypeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotTypeName", targetDepth))
+                if (context.TestExpression("slotTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SlotTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slotTypeValues", targetDepth))
+                if (context.TestExpression("slotTypeValues", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SlotTypeValue, SlotTypeValueUnmarshaller>(SlotTypeValueUnmarshaller.Instance);
                     response.SlotTypeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("valueSelectionSetting", targetDepth))
+                if (context.TestExpression("valueSelectionSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = SlotValueSelectionSettingUnmarshaller.Instance;
                     response.ValueSelectionSetting = unmarshaller.Unmarshall(context, ref reader);

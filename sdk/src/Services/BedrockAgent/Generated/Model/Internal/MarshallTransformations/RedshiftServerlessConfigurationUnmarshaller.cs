@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authConfiguration", targetDepth))
+                if (context.TestExpression("authConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RedshiftServerlessAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workgroupArn", targetDepth))
+                if (context.TestExpression("workgroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkgroupArn = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("service", targetDepth))
+                if (context.TestExpression("service", targetDepth, ref reader))
                 {
                     var unmarshaller = UpdatedExpressGatewayServiceUnmarshaller.Instance;
                     response.Service = unmarshaller.Unmarshall(context, ref reader);

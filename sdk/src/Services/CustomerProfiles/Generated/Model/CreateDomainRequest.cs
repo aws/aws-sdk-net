@@ -37,8 +37,8 @@ namespace Amazon.CustomerProfiles.Model
     /// 
     ///  
     /// <para>
-    /// Each Amazon Connect instance can be associated with only one domain. Multiple Amazon
-    /// Connect instances can be associated with one domain.
+    /// Each Connect Customer instance can be associated with only one domain. Multiple Connect
+    /// Customer instances can be associated with one domain.
     /// </para>
     ///  
     /// <para>
@@ -208,7 +208,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property RuleBasedMatching. 
         /// <para>
         /// The process of matching duplicate profiles using the Rule-Based matching. If <c>RuleBasedMatching</c>
-        /// = true, Amazon Connect Customer Profiles will start to match and merge your profiles
+        /// = true, Connect Customer Customer Profiles will start to match and merge your profiles
         /// according to your configuration in the <c>RuleBasedMatchingRequest</c>. You can use
         /// the <c>ListRuleBasedMatches</c> and <c>GetSimilarProfiles</c> API to return and review
         /// the results. Also, if you have configured <c>ExportingConfig</c> in the <c>RuleBasedMatchingRequest</c>,

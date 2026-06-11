@@ -31,8 +31,8 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove tags from a MediaConvert queue, preset, or job template. For information about
-    /// tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html
+    /// Remove tags from a MediaConvert queue, preset, job, or job template. For information
+    /// about tagging, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-mediaconvert-resources.html.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMediaConvertRequest
     {

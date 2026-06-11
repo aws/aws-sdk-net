@@ -56,7 +56,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MissingPermission", targetDepth))
+                if (context.TestExpression("MissingPermission", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MissingPermission = unmarshaller.Unmarshall(context, ref reader);

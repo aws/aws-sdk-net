@@ -41,9 +41,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates that there are additional email addresses on the suppression
-        /// list for your account. To view additional suppressed addresses, issue another request
-        /// to <c>ListSuppressedDestinations</c>, and pass this token in the <c>NextToken</c>
-        /// parameter.
+        /// list for your account or for the specified tenant. To view additional suppressed addresses,
+        /// issue another request to <c>ListSuppressedDestinations</c>, and pass this token in
+        /// the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
         public string NextToken

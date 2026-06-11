@@ -52,7 +52,7 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("signedConnectionString", targetDepth))
+                if (context.TestExpression("signedConnectionString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SignedConnectionString = unmarshaller.Unmarshall(context, ref reader);

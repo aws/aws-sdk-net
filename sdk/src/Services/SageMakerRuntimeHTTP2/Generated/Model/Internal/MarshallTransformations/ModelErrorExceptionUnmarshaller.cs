@@ -72,25 +72,25 @@ namespace Amazon.SageMakerRuntimeHTTP2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ErrorCode", targetDepth))
+                    if (context.TestExpression("ErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("LogStreamArn", targetDepth))
+                    if (context.TestExpression("LogStreamArn", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.LogStreamArn = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("OriginalMessage", targetDepth))
+                    if (context.TestExpression("OriginalMessage", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.OriginalMessage = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("OriginalStatusCode", targetDepth))
+                    if (context.TestExpression("OriginalStatusCode", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginalStatusCode = unmarshaller.Unmarshall(context, ref reader);

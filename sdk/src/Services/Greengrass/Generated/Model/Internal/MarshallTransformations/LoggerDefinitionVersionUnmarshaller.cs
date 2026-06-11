@@ -56,7 +56,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Loggers", targetDepth))
+                if (context.TestExpression("Loggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Logger, LoggerUnmarshaller>(LoggerUnmarshaller.Instance);
                     unmarshalledObject.Loggers = unmarshaller.Unmarshall(context, ref reader);

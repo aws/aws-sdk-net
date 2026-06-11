@@ -52,31 +52,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomInstructions", targetDepth))
+                if (context.TestExpression("CustomInstructions", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomInstructionsUnmarshaller.Instance;
                     response.CustomInstructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Topic", targetDepth))
+                if (context.TestExpression("Topic", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicDetailsUnmarshaller.Instance;
                     response.Topic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TopicId", targetDepth))
+                if (context.TestExpression("TopicId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TopicId = unmarshaller.Unmarshall(context, ref reader);

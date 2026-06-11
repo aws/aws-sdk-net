@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UserErrors", targetDepth))
+                if (context.TestExpression("UserErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserError, UserErrorUnmarshaller>(UserErrorUnmarshaller.Instance);
                     response.UserErrors = unmarshaller.Unmarshall(context, ref reader);

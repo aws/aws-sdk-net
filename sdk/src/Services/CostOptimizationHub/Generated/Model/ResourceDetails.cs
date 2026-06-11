@@ -36,15 +36,19 @@ namespace Amazon.CostOptimizationHub.Model
     {
         private AuroraDbClusterStorage _auroraDbClusterStorage;
         private ComputeSavingsPlans _computeSavingsPlans;
+        private DocumentDbCluster _documentDbCluster;
         private DynamoDbReservedCapacity _dynamoDbReservedCapacity;
+        private DynamoDbTable _dynamoDbTable;
         private EbsVolume _ebsVolume;
         private Ec2AutoScalingGroup _ec2AutoScalingGroup;
         private Ec2Instance _ec2Instance;
         private Ec2InstanceSavingsPlans _ec2InstanceSavingsPlans;
         private Ec2ReservedInstances _ec2ReservedInstances;
         private EcsService _ecsService;
+        private ElastiCacheCluster _elastiCacheCluster;
         private ElastiCacheReservedInstances _elastiCacheReservedInstances;
         private LambdaFunction _lambdaFunction;
+        private MemoryDbCluster _memoryDbCluster;
         private MemoryDbReservedInstances _memoryDbReservedInstances;
         private NatGateway _natGateway;
         private OpenSearchReservedInstances _openSearchReservedInstances;
@@ -52,7 +56,9 @@ namespace Amazon.CostOptimizationHub.Model
         private RdsDbInstanceStorage _rdsDbInstanceStorage;
         private RdsReservedInstances _rdsReservedInstances;
         private RedshiftReservedInstances _redshiftReservedInstances;
+        private SageMakerEndpoint _sageMakerEndpoint;
         private SageMakerSavingsPlans _sageMakerSavingsPlans;
+        private WorkSpaces _workSpaces;
 
         /// <summary>
         /// Gets and sets the property AuroraDbClusterStorage. 
@@ -91,6 +97,24 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentDbCluster. 
+        /// <para>
+        /// The Amazon DocumentDB cluster recommendation details.
+        /// </para>
+        /// </summary>
+        public DocumentDbCluster DocumentDbCluster
+        {
+            get { return this._documentDbCluster; }
+            set { this._documentDbCluster = value; }
+        }
+
+        // Check to see if DocumentDbCluster property is set
+        internal bool IsSetDocumentDbCluster()
+        {
+            return this._documentDbCluster != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DynamoDbReservedCapacity. 
         /// <para>
         /// The DynamoDB reserved capacity recommendation details.
@@ -106,6 +130,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetDynamoDbReservedCapacity()
         {
             return this._dynamoDbReservedCapacity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDbTable. 
+        /// <para>
+        /// The DynamoDB table recommendation details.
+        /// </para>
+        /// </summary>
+        public DynamoDbTable DynamoDbTable
+        {
+            get { return this._dynamoDbTable; }
+            set { this._dynamoDbTable = value; }
+        }
+
+        // Check to see if DynamoDbTable property is set
+        internal bool IsSetDynamoDbTable()
+        {
+            return this._dynamoDbTable != null;
         }
 
         /// <summary>
@@ -217,6 +259,24 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElastiCacheCluster. 
+        /// <para>
+        /// The ElastiCache cluster recommendation details.
+        /// </para>
+        /// </summary>
+        public ElastiCacheCluster ElastiCacheCluster
+        {
+            get { return this._elastiCacheCluster; }
+            set { this._elastiCacheCluster = value; }
+        }
+
+        // Check to see if ElastiCacheCluster property is set
+        internal bool IsSetElastiCacheCluster()
+        {
+            return this._elastiCacheCluster != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ElastiCacheReservedInstances. 
         /// <para>
         /// The ElastiCache reserved instances recommendation details.
@@ -250,6 +310,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetLambdaFunction()
         {
             return this._lambdaFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryDbCluster. 
+        /// <para>
+        /// The MemoryDB cluster recommendation details.
+        /// </para>
+        /// </summary>
+        public MemoryDbCluster MemoryDbCluster
+        {
+            get { return this._memoryDbCluster; }
+            set { this._memoryDbCluster = value; }
+        }
+
+        // Check to see if MemoryDbCluster property is set
+        internal bool IsSetMemoryDbCluster()
+        {
+            return this._memoryDbCluster != null;
         }
 
         /// <summary>
@@ -379,6 +457,24 @@ namespace Amazon.CostOptimizationHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SageMakerEndpoint. 
+        /// <para>
+        /// The SageMaker endpoint recommendation details.
+        /// </para>
+        /// </summary>
+        public SageMakerEndpoint SageMakerEndpoint
+        {
+            get { return this._sageMakerEndpoint; }
+            set { this._sageMakerEndpoint = value; }
+        }
+
+        // Check to see if SageMakerEndpoint property is set
+        internal bool IsSetSageMakerEndpoint()
+        {
+            return this._sageMakerEndpoint != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SageMakerSavingsPlans. 
         /// <para>
         /// The SageMaker AI Savings Plans recommendation details.
@@ -394,6 +490,24 @@ namespace Amazon.CostOptimizationHub.Model
         internal bool IsSetSageMakerSavingsPlans()
         {
             return this._sageMakerSavingsPlans != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkSpaces. 
+        /// <para>
+        /// The WorkSpaces recommendation details.
+        /// </para>
+        /// </summary>
+        public WorkSpaces WorkSpaces
+        {
+            get { return this._workSpaces; }
+            set { this._workSpaces = value; }
+        }
+
+        // Check to see if WorkSpaces property is set
+        internal bool IsSetWorkSpaces()
+        {
+            return this._workSpaces != null;
         }
 
     }

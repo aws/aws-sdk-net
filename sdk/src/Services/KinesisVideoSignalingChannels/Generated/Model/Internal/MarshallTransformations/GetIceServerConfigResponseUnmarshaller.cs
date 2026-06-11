@@ -52,7 +52,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model.Internal.MarshallTransforma
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IceServerList", targetDepth))
+                if (context.TestExpression("IceServerList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IceServer, IceServerUnmarshaller>(IceServerUnmarshaller.Instance);
                     response.IceServerList = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContactListDestination", targetDepth))
+                if (context.TestExpression("ContactListDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactListDestinationUnmarshaller.Instance;
                     unmarshalledObject.ContactListDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuppressionListDestination", targetDepth))
+                if (context.TestExpression("SuppressionListDestination", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionListDestinationUnmarshaller.Instance;
                     unmarshalledObject.SuppressionListDestination = unmarshaller.Unmarshall(context, ref reader);

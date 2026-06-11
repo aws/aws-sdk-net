@@ -52,55 +52,55 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessConfiguration", targetDepth))
+                if (context.TestExpression("AccessConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessConfigurationUnmarshaller.Instance;
                     response.AccessConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DefaultSegmentDeliveryConfiguration", targetDepth))
+                if (context.TestExpression("DefaultSegmentDeliveryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultSegmentDeliveryConfigurationUnmarshaller.Instance;
                     response.DefaultSegmentDeliveryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HttpConfiguration", targetDepth))
+                if (context.TestExpression("HttpConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = HttpConfigurationUnmarshaller.Instance;
                     response.HttpConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SegmentDeliveryConfigurations", targetDepth))
+                if (context.TestExpression("SegmentDeliveryConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SegmentDeliveryConfiguration, SegmentDeliveryConfigurationUnmarshaller>(SegmentDeliveryConfigurationUnmarshaller.Instance);
                     response.SegmentDeliveryConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceLocationName", targetDepth))
+                if (context.TestExpression("SourceLocationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SourceLocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

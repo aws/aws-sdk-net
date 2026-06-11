@@ -56,31 +56,31 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Assets", targetDepth))
+                if (context.TestExpression("Assets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AssetValue, StringUnmarshaller, AssetValueUnmarshaller>(StringUnmarshaller.Instance, AssetValueUnmarshaller.Instance);
                     unmarshalledObject.Assets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateTime", targetDepth))
+                if (context.TestExpression("DateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Geometry", targetDepth))
+                if (context.TestExpression("Geometry", targetDepth, ref reader))
                 {
                     var unmarshaller = GeometryUnmarshaller.Instance;
                     unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Properties", targetDepth))
+                if (context.TestExpression("Properties", targetDepth, ref reader))
                 {
                     var unmarshaller = PropertiesUnmarshaller.Instance;
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);

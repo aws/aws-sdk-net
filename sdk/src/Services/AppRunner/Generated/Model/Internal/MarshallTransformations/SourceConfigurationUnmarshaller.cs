@@ -56,25 +56,25 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationConfiguration", targetDepth))
+                if (context.TestExpression("AuthenticationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoDeploymentsEnabled", targetDepth))
+                if (context.TestExpression("AutoDeploymentsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeploymentsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CodeRepository", targetDepth))
+                if (context.TestExpression("CodeRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeRepositoryUnmarshaller.Instance;
                     unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageRepository", targetDepth))
+                if (context.TestExpression("ImageRepository", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageRepositoryUnmarshaller.Instance;
                     unmarshalledObject.ImageRepository = unmarshaller.Unmarshall(context, ref reader);

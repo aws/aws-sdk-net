@@ -52,37 +52,37 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Costs", targetDepth))
+                if (context.TestExpression("Costs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceResourceCost, ServiceResourceCostUnmarshaller>(ServiceResourceCostUnmarshaller.Instance);
                     response.Costs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceCollection", targetDepth))
+                if (context.TestExpression("ResourceCollection", targetDepth, ref reader))
                 {
                     var unmarshaller = CostEstimationResourceCollectionFilterUnmarshaller.Instance;
                     response.ResourceCollection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRange", targetDepth))
+                if (context.TestExpression("TimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = CostEstimationTimeRangeUnmarshaller.Instance;
                     response.TimeRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalCost", targetDepth))
+                if (context.TestExpression("TotalCost", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     response.TotalCost = unmarshaller.Unmarshall(context, ref reader);

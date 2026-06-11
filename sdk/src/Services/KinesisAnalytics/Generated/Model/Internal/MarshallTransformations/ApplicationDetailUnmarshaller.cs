@@ -56,73 +56,73 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApplicationARN", targetDepth))
+                if (context.TestExpression("ApplicationARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationCode", targetDepth))
+                if (context.TestExpression("ApplicationCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationDescription", targetDepth))
+                if (context.TestExpression("ApplicationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationName", targetDepth))
+                if (context.TestExpression("ApplicationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationStatus", targetDepth))
+                if (context.TestExpression("ApplicationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApplicationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ApplicationVersionId", targetDepth))
+                if (context.TestExpression("ApplicationVersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ApplicationVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLoggingOptionDescriptions", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingOptionDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CloudWatchLoggingOptionDescription, CloudWatchLoggingOptionDescriptionUnmarshaller>(CloudWatchLoggingOptionDescriptionUnmarshaller.Instance);
                     unmarshalledObject.CloudWatchLoggingOptionDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreateTimestamp", targetDepth))
+                if (context.TestExpression("CreateTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreateTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDescriptions", targetDepth))
+                if (context.TestExpression("InputDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InputDescription, InputDescriptionUnmarshaller>(InputDescriptionUnmarshaller.Instance);
                     unmarshalledObject.InputDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastUpdateTimestamp", targetDepth))
+                if (context.TestExpression("LastUpdateTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputDescriptions", targetDepth))
+                if (context.TestExpression("OutputDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OutputDescription, OutputDescriptionUnmarshaller>(OutputDescriptionUnmarshaller.Instance);
                     unmarshalledObject.OutputDescriptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceDataSourceDescriptions", targetDepth))
+                if (context.TestExpression("ReferenceDataSourceDescriptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReferenceDataSourceDescription, ReferenceDataSourceDescriptionUnmarshaller>(ReferenceDataSourceDescriptionUnmarshaller.Instance);
                     unmarshalledObject.ReferenceDataSourceDescriptions = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth))
+                if (context.TestExpression("autoScalingGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoScalingGroup, AutoScalingGroupUnmarshaller>(AutoScalingGroupUnmarshaller.Instance);
                     unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("remoteAccessSecurityGroup", targetDepth))
+                if (context.TestExpression("remoteAccessSecurityGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RemoteAccessSecurityGroup = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("identityContext", targetDepth))
+                if (context.TestExpression("identityContext", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IdentityContext = unmarshaller.Unmarshall(context, ref reader);

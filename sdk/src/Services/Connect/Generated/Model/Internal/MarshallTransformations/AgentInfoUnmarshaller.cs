@@ -56,85 +56,85 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceptedByAgentTimestamp", targetDepth))
+                if (context.TestExpression("AcceptedByAgentTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AcceptedByAgentTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AfterContactWorkDuration", targetDepth))
+                if (context.TestExpression("AfterContactWorkDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AfterContactWorkDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AfterContactWorkEndTimestamp", targetDepth))
+                if (context.TestExpression("AfterContactWorkEndTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AfterContactWorkEndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AfterContactWorkStartTimestamp", targetDepth))
+                if (context.TestExpression("AfterContactWorkStartTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AfterContactWorkStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AgentInitiatedHoldDuration", targetDepth))
+                if (context.TestExpression("AgentInitiatedHoldDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AgentInitiatedHoldDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth))
+                if (context.TestExpression("AgentPauseDurationInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AgentPauseDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Capabilities", targetDepth))
+                if (context.TestExpression("Capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipantCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth))
+                if (context.TestExpression("ConnectedToAgentTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ConnectedToAgentTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceInfo", targetDepth))
+                if (context.TestExpression("DeviceInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DeviceInfoUnmarshaller.Instance;
                     unmarshalledObject.DeviceInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HierarchyGroups", targetDepth))
+                if (context.TestExpression("HierarchyGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyGroupsUnmarshaller.Instance;
                     unmarshalledObject.HierarchyGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreviewEndTimestamp", targetDepth))
+                if (context.TestExpression("PreviewEndTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.PreviewEndTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StateTransitions", targetDepth))
+                if (context.TestExpression("StateTransitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StateTransition, StateTransitionUnmarshaller>(StateTransitionUnmarshaller.Instance);
                     unmarshalledObject.StateTransitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceEnhancementMode", targetDepth))
+                if (context.TestExpression("VoiceEnhancementMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VoiceEnhancementMode = unmarshaller.Unmarshall(context, ref reader);

@@ -67,8 +67,8 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -146,6 +146,17 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.FirewallRuleGroupId);
             }
 
+            if(publicRequest.IsSetFirewallRuleType())
+            {
+                context.Writer.WritePropertyName("FirewallRuleType");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FirewallRuleTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FirewallRuleType, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
@@ -166,10 +177,7 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

@@ -56,7 +56,7 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CloudWatchLogsLogGroup", targetDepth))
+                if (context.TestExpression("CloudWatchLogsLogGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLogsLogGroupUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLogsLogGroup = unmarshaller.Unmarshall(context, ref reader);

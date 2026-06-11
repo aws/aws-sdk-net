@@ -56,7 +56,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessBudgets", targetDepth))
+                if (context.TestExpression("accessBudgets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessBudget, AccessBudgetUnmarshaller>(AccessBudgetUnmarshaller.Instance);
                     unmarshalledObject.AccessBudgets = unmarshaller.Unmarshall(context, ref reader);

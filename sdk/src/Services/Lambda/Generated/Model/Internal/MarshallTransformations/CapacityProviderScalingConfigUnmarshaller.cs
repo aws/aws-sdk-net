@@ -56,19 +56,19 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaxVCpuCount", targetDepth))
+                if (context.TestExpression("MaxVCpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVCpuCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingMode", targetDepth))
+                if (context.TestExpression("ScalingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalingPolicies", targetDepth))
+                if (context.TestExpression("ScalingPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetTrackingScalingPolicy, TargetTrackingScalingPolicyUnmarshaller>(TargetTrackingScalingPolicyUnmarshaller.Instance);
                     unmarshalledObject.ScalingPolicies = unmarshaller.Unmarshall(context, ref reader);

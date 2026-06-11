@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InputDataConfig", targetDepth))
+                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AIWorkloadInputDataConfig, AIWorkloadInputDataConfigUnmarshaller>(AIWorkloadInputDataConfigUnmarshaller.Instance);
                     unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);

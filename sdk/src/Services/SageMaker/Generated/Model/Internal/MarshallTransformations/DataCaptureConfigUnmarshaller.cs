@@ -56,37 +56,37 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaptureContentTypeHeader", targetDepth))
+                if (context.TestExpression("CaptureContentTypeHeader", targetDepth, ref reader))
                 {
                     var unmarshaller = CaptureContentTypeHeaderUnmarshaller.Instance;
                     unmarshalledObject.CaptureContentTypeHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CaptureOptions", targetDepth))
+                if (context.TestExpression("CaptureOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CaptureOption, CaptureOptionUnmarshaller>(CaptureOptionUnmarshaller.Instance);
                     unmarshalledObject.CaptureOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationS3Uri", targetDepth))
+                if (context.TestExpression("DestinationS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableCapture", targetDepth))
+                if (context.TestExpression("EnableCapture", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableCapture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InitialSamplingPercentage", targetDepth))
+                if (context.TestExpression("InitialSamplingPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InitialSamplingPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyId", targetDepth))
+                if (context.TestExpression("KmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);

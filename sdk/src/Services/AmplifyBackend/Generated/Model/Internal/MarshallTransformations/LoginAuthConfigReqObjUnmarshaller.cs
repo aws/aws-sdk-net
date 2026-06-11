@@ -56,25 +56,25 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aws_cognito_identity_pool_id", targetDepth))
+                if (context.TestExpression("aws_cognito_identity_pool_id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsCognitoIdentityPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aws_cognito_region", targetDepth))
+                if (context.TestExpression("aws_cognito_region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsCognitoRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aws_user_pools_id", targetDepth))
+                if (context.TestExpression("aws_user_pools_id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsUserPoolsId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aws_user_pools_web_client_id", targetDepth))
+                if (context.TestExpression("aws_user_pools_web_client_id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AwsUserPoolsWebClientId = unmarshaller.Unmarshall(context, ref reader);

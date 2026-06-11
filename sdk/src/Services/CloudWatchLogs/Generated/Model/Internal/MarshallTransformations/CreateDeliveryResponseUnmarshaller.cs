@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("delivery", targetDepth))
+                if (context.TestExpression("delivery", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliveryUnmarshaller.Instance;
                     response.Delivery = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("filter", targetDepth))
+                if (context.TestExpression("filter", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalFilterUnmarshaller.Instance;
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("implicitFilterConfiguration", targetDepth))
+                if (context.TestExpression("implicitFilterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ImplicitFilterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ImplicitFilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfResults", targetDepth))
+                if (context.TestExpression("numberOfResults", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overrideSearchType", targetDepth))
+                if (context.TestExpression("overrideSearchType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverrideSearchType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rerankingConfiguration", targetDepth))
+                if (context.TestExpression("rerankingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorSearchRerankingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);

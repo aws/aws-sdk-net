@@ -56,25 +56,25 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilterExpression", targetDepth))
+                if (context.TestExpression("FilterExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FilterExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupARN", targetDepth))
+                if (context.TestExpression("GroupARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupName", targetDepth))
+                if (context.TestExpression("GroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InsightsConfiguration", targetDepth))
+                if (context.TestExpression("InsightsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InsightsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InsightsConfiguration = unmarshaller.Unmarshall(context, ref reader);

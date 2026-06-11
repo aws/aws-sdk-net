@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HeatMapColumnItemsLimitConfiguration", targetDepth))
+                if (context.TestExpression("HeatMapColumnItemsLimitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HeatMapColumnItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeatMapColumnSort", targetDepth))
+                if (context.TestExpression("HeatMapColumnSort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.HeatMapColumnSort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeatMapRowItemsLimitConfiguration", targetDepth))
+                if (context.TestExpression("HeatMapRowItemsLimitConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemsLimitConfigurationUnmarshaller.Instance;
                     unmarshalledObject.HeatMapRowItemsLimitConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeatMapRowSort", targetDepth))
+                if (context.TestExpression("HeatMapRowSort", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FieldSortOptions, FieldSortOptionsUnmarshaller>(FieldSortOptionsUnmarshaller.Instance);
                     unmarshalledObject.HeatMapRowSort = unmarshaller.Unmarshall(context, ref reader);

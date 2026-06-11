@@ -56,13 +56,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BudgetName", targetDepth))
+                if (context.TestExpression("BudgetName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BudgetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Notifications", targetDepth))
+                if (context.TestExpression("Notifications", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Notification, NotificationUnmarshaller>(NotificationUnmarshaller.Instance);
                     unmarshalledObject.Notifications = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentStatus", targetDepth))
+                if (context.TestExpression("AgentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentStatusIdentifierUnmarshaller.Instance;
                     unmarshalledObject.AgentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Queue", targetDepth))
+                if (context.TestExpression("Queue", targetDepth, ref reader))
                 {
                     var unmarshaller = QueueReferenceUnmarshaller.Instance;
                     unmarshalledObject.Queue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingProfile", targetDepth))
+                if (context.TestExpression("RoutingProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingProfileReferenceUnmarshaller.Instance;
                     unmarshalledObject.RoutingProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoutingStepExpression", targetDepth))
+                if (context.TestExpression("RoutingStepExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoutingStepExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subtype", targetDepth))
+                if (context.TestExpression("Subtype", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Subtype = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationTestType", targetDepth))
+                if (context.TestExpression("ValidationTestType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationTestType = unmarshaller.Unmarshall(context, ref reader);

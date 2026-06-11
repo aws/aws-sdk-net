@@ -52,19 +52,19 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdvancedEventSelectors", targetDepth))
+                if (context.TestExpression("AdvancedEventSelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdvancedEventSelector, AdvancedEventSelectorUnmarshaller>(AdvancedEventSelectorUnmarshaller.Instance);
                     response.AdvancedEventSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EventSelectors", targetDepth))
+                if (context.TestExpression("EventSelectors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventSelector, EventSelectorUnmarshaller>(EventSelectorUnmarshaller.Instance);
                     response.EventSelectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrailARN", targetDepth))
+                if (context.TestExpression("TrailARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrailARN = unmarshaller.Unmarshall(context, ref reader);

@@ -42,7 +42,9 @@ namespace Amazon.ECS.Model
         private DateTime? _deleteRequestedAt;
         private string _executionRoleArn;
         private string _family;
+        private DaemonIpcMode _ipcMode;
         private string _memory;
+        private DaemonPidMode _pidMode;
         private DateTime? _registeredAt;
         private string _registeredBy;
         private int? _revision;
@@ -166,6 +168,27 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpcMode. 
+        /// <para>
+        /// The IPC namespace mode for the daemon. A value of <c>shared</c> means the daemon shares
+        /// the IPC namespace with co-located tasks, allowing communication through POSIX shared
+        /// memory, semaphores, and message queues. A value of <c>none</c> means the daemon has
+        /// its own isolated IPC namespace.
+        /// </para>
+        /// </summary>
+        public DaemonIpcMode IpcMode
+        {
+            get { return this._ipcMode; }
+            set { this._ipcMode = value; }
+        }
+
+        // Check to see if IpcMode property is set
+        internal bool IsSetIpcMode()
+        {
+            return this._ipcMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
         /// The amount of memory (in MiB) used by the daemon task.
@@ -181,6 +204,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetMemory()
         {
             return this._memory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PidMode. 
+        /// <para>
+        /// The process namespace mode for the daemon. A value of <c>shared</c> means the daemon
+        /// shares the PID namespace with co-located tasks, giving it visibility into application
+        /// processes. A value of <c>none</c> means the daemon has its own isolated PID namespace.
+        /// </para>
+        /// </summary>
+        public DaemonPidMode PidMode
+        {
+            get { return this._pidMode; }
+            set { this._pidMode = value; }
+        }
+
+        // Check to see if PidMode property is set
+        internal bool IsSetPidMode()
+        {
+            return this._pidMode != null;
         }
 
         /// <summary>

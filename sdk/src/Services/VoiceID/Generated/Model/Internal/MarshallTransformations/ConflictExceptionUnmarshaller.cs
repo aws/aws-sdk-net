@@ -72,7 +72,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ConflictType", targetDepth))
+                    if (context.TestExpression("ConflictType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ConflictType = unmarshaller.Unmarshall(context, ref reader);

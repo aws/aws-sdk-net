@@ -56,13 +56,13 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("matchBasePaths", targetDepth))
+                if (context.TestExpression("matchBasePaths", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingRuleMatchBasePathsUnmarshaller.Instance;
                     unmarshalledObject.MatchBasePaths = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("matchHeaders", targetDepth))
+                if (context.TestExpression("matchHeaders", targetDepth, ref reader))
                 {
                     var unmarshaller = RoutingRuleMatchHeadersUnmarshaller.Instance;
                     unmarshalledObject.MatchHeaders = unmarshaller.Unmarshall(context, ref reader);

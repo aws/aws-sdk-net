@@ -56,37 +56,37 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("citation", targetDepth))
+                if (context.TestExpression("citation", targetDepth, ref reader))
                 {
                     var unmarshaller = CitationsDeltaUnmarshaller.Instance;
                     unmarshalledObject.Citation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("image", targetDepth))
+                if (context.TestExpression("image", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageBlockDeltaUnmarshaller.Instance;
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("reasoningContent", targetDepth, ref reader))
                 {
                     var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
                     unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("text", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolResult", targetDepth))
+                if (context.TestExpression("toolResult", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToolResultBlockDelta, ToolResultBlockDeltaUnmarshaller>(ToolResultBlockDeltaUnmarshaller.Instance);
                     unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolUse", targetDepth))
+                if (context.TestExpression("toolUse", targetDepth, ref reader))
                 {
                     var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;
                     unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);

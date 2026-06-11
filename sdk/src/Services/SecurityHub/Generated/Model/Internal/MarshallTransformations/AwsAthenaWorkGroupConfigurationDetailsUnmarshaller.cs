@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResultConfiguration", targetDepth))
+                if (context.TestExpression("ResultConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsAthenaWorkGroupConfigurationResultConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ResultConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("quickResponse", targetDepth))
+                if (context.TestExpression("quickResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = QuickResponseDataUnmarshaller.Instance;
                     response.QuickResponse = unmarshaller.Unmarshall(context, ref reader);

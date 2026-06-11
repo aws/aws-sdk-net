@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InstructionText", targetDepth))
+                if (context.TestExpression("InstructionText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstructionText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploadedDocumentMetadata", targetDepth))
+                if (context.TestExpression("UploadedDocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = UploadedDocumentMetadataUnmarshaller.Instance;
                     unmarshalledObject.UploadedDocumentMetadata = unmarshaller.Unmarshall(context, ref reader);

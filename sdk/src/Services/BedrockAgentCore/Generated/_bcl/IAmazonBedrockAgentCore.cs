@@ -1650,6 +1650,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -1698,6 +1703,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
@@ -3339,6 +3349,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
@@ -3402,6 +3417,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RetryableConflictException">
+        /// The exception that occurs when there is a retryable conflict performing an operation.
+        /// This is a temporary condition that may resolve itself with retries. We recommend implementing
+        /// exponential backoff retry logic in your application.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
         /// The exception that occurs when there is an error in the runtime client. This can happen
@@ -3756,6 +3776,11 @@ namespace Amazon.BedrockAgentCore
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
         /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
@@ -3794,6 +3819,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the specified resource does not exist. This can happen
         /// when using an invalid identifier or when trying to access a resource that has been
         /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This

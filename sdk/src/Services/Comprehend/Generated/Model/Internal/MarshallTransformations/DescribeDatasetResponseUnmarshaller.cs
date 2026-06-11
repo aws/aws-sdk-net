@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatasetProperties", targetDepth))
+                if (context.TestExpression("DatasetProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetPropertiesUnmarshaller.Instance;
                     response.DatasetProperties = unmarshaller.Unmarshall(context, ref reader);

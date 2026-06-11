@@ -56,7 +56,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IntendedUse", targetDepth))
+                if (context.TestExpression("IntendedUse", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IntendedUse = unmarshaller.Unmarshall(context, ref reader);

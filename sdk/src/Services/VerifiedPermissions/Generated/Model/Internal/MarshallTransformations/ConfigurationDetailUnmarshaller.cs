@@ -56,13 +56,13 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cognitoUserPoolConfiguration", targetDepth))
+                if (context.TestExpression("cognitoUserPoolConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CognitoUserPoolConfigurationDetailUnmarshaller.Instance;
                     unmarshalledObject.CognitoUserPoolConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openIdConnectConfiguration", targetDepth))
+                if (context.TestExpression("openIdConnectConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenIdConnectConfigurationDetailUnmarshaller.Instance;
                     unmarshalledObject.OpenIdConnectConfiguration = unmarshaller.Unmarshall(context, ref reader);

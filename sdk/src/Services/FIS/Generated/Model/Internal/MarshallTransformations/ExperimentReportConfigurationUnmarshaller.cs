@@ -56,25 +56,25 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSources", targetDepth))
+                if (context.TestExpression("dataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentReportConfigurationDataSourcesUnmarshaller.Instance;
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputs", targetDepth))
+                if (context.TestExpression("outputs", targetDepth, ref reader))
                 {
                     var unmarshaller = ExperimentReportConfigurationOutputsUnmarshaller.Instance;
                     unmarshalledObject.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("postExperimentDuration", targetDepth))
+                if (context.TestExpression("postExperimentDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PostExperimentDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("preExperimentDuration", targetDepth))
+                if (context.TestExpression("preExperimentDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PreExperimentDuration = unmarshaller.Unmarshall(context, ref reader);

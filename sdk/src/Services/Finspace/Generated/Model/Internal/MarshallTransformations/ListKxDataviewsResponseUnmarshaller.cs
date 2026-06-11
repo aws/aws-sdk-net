@@ -52,13 +52,13 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("kxDataviews", targetDepth))
+                if (context.TestExpression("kxDataviews", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KxDataviewListEntry, KxDataviewListEntryUnmarshaller>(KxDataviewListEntryUnmarshaller.Instance);
                     response.KxDataviews = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

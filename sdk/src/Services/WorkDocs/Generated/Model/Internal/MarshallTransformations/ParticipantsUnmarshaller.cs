@@ -56,13 +56,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Groups", targetDepth))
+                if (context.TestExpression("Groups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupMetadata, GroupMetadataUnmarshaller>(GroupMetadataUnmarshaller.Instance);
                     unmarshalledObject.Groups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Users", targetDepth))
+                if (context.TestExpression("Users", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserMetadata, UserMetadataUnmarshaller>(UserMetadataUnmarshaller.Instance);
                     unmarshalledObject.Users = unmarshaller.Unmarshall(context, ref reader);

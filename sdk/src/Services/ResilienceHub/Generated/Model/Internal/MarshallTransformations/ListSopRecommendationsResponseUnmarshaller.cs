@@ -52,13 +52,13 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sopRecommendations", targetDepth))
+                if (context.TestExpression("sopRecommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SopRecommendation, SopRecommendationUnmarshaller>(SopRecommendationUnmarshaller.Instance);
                     response.SopRecommendations = unmarshaller.Unmarshall(context, ref reader);

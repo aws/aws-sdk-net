@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
+                if (context.TestExpression("SubnetAvailabilityZone", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsRdsDbSubnetGroupSubnetAvailabilityZoneUnmarshaller.Instance;
                     unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetIdentifier", targetDepth))
+                if (context.TestExpression("SubnetIdentifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetStatus", targetDepth))
+                if (context.TestExpression("SubnetStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetStatus = unmarshaller.Unmarshall(context, ref reader);

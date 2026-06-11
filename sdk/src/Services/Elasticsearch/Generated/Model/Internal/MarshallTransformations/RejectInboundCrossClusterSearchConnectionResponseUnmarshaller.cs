@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CrossClusterSearchConnection", targetDepth))
+                if (context.TestExpression("CrossClusterSearchConnection", targetDepth, ref reader))
                 {
                     var unmarshaller = InboundCrossClusterSearchConnectionUnmarshaller.Instance;
                     response.CrossClusterSearchConnection = unmarshaller.Unmarshall(context, ref reader);

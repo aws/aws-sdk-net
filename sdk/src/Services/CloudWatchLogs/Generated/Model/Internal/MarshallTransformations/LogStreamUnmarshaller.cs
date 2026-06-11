@@ -56,49 +56,49 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("firstEventTimestamp", targetDepth))
+                if (context.TestExpression("firstEventTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.FirstEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastEventTimestamp", targetDepth))
+                if (context.TestExpression("lastEventTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.LastEventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastIngestionTime", targetDepth))
+                if (context.TestExpression("lastIngestionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeEpochLongMillisecondsUnmarshaller.Instance;
                     unmarshalledObject.LastIngestionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logStreamName", targetDepth))
+                if (context.TestExpression("logStreamName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storedBytes", targetDepth))
+                if (context.TestExpression("storedBytes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uploadSequenceToken", targetDepth))
+                if (context.TestExpression("uploadSequenceToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UploadSequenceToken = unmarshaller.Unmarshall(context, ref reader);

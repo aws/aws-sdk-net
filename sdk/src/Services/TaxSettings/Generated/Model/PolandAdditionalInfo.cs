@@ -36,6 +36,7 @@ namespace Amazon.TaxSettings.Model
     {
         private string _individualRegistrationNumber;
         private bool? _isGroupVatEnabled;
+        private PolandTaxRegistrationNumberType _taxRegistrationNumberType;
 
         /// <summary>
         /// Gets and sets the property IndividualRegistrationNumber. 
@@ -73,6 +74,25 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetIsGroupVatEnabled()
         {
             return this._isGroupVatEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaxRegistrationNumberType. 
+        /// <para>
+        /// The tax registration number type. Valid values are <c>EUTaxRegistrationNumber</c>,
+        /// <c>LocalTaxRegistrationNumber</c>, or <c>LocalRegistrationNumber</c>.
+        /// </para>
+        /// </summary>
+        public PolandTaxRegistrationNumberType TaxRegistrationNumberType
+        {
+            get { return this._taxRegistrationNumberType; }
+            set { this._taxRegistrationNumberType = value; }
+        }
+
+        // Check to see if TaxRegistrationNumberType property is set
+        internal bool IsSetTaxRegistrationNumberType()
+        {
+            return this._taxRegistrationNumberType != null;
         }
 
     }

@@ -52,25 +52,25 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("introspectionId", targetDepth))
+                if (context.TestExpression("introspectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntrospectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("introspectionResult", targetDepth))
+                if (context.TestExpression("introspectionResult", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceIntrospectionResultUnmarshaller.Instance;
                     response.IntrospectionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("introspectionStatus", targetDepth))
+                if (context.TestExpression("introspectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntrospectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("introspectionStatusDetail", targetDepth))
+                if (context.TestExpression("introspectionStatusDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntrospectionStatusDetail = unmarshaller.Unmarshall(context, ref reader);

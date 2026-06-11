@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mlSyntheticDataParameters", targetDepth))
+                if (context.TestExpression("mlSyntheticDataParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = MLSyntheticDataParametersUnmarshaller.Instance;
                     unmarshalledObject.MlSyntheticDataParameters = unmarshaller.Unmarshall(context, ref reader);

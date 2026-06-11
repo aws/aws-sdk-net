@@ -56,19 +56,19 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyCacheSecretIamArn", targetDepth))
+                if (context.TestExpression("KeyCacheSecretIamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyCacheSecretIamArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KeyCacheSecretId", targetDepth))
+                if (context.TestExpression("KeyCacheSecretId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KeyCacheSecretId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Krb5FileContents", targetDepth))
+                if (context.TestExpression("Krb5FileContents", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Krb5FileContents = unmarshaller.Unmarshall(context, ref reader);

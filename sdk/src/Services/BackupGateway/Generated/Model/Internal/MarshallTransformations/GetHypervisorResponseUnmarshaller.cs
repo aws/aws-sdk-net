@@ -52,7 +52,7 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Hypervisor", targetDepth))
+                if (context.TestExpression("Hypervisor", targetDepth, ref reader))
                 {
                     var unmarshaller = HypervisorDetailsUnmarshaller.Instance;
                     response.Hypervisor = unmarshaller.Unmarshall(context, ref reader);

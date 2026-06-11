@@ -79,6 +79,106 @@ namespace Amazon.TaxSettings
 
 
     /// <summary>
+    /// Constants used for properties of type ChileDocumentType.
+    /// </summary>
+    public class ChileDocumentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Invoice for ChileDocumentType
+        /// </summary>
+        public static readonly ChileDocumentType Invoice = new ChileDocumentType("Invoice");
+        /// <summary>
+        /// Constant Receipt for ChileDocumentType
+        /// </summary>
+        public static readonly ChileDocumentType Receipt = new ChileDocumentType("Receipt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChileDocumentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChileDocumentType FindValue(string value)
+        {
+            return FindValue<ChileDocumentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChileDocumentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomerType.
+    /// </summary>
+    public class CustomerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Business for CustomerType
+        /// </summary>
+        public static readonly CustomerType Business = new CustomerType("Business");
+        /// <summary>
+        /// Constant Individual for CustomerType
+        /// </summary>
+        public static readonly CustomerType Individual = new CustomerType("Individual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerType FindValue(string value)
+        {
+            return FindValue<CustomerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EntityExemptionAccountStatus.
     /// </summary>
     public class EntityExemptionAccountStatus : ConstantClass
@@ -523,6 +623,60 @@ namespace Amazon.TaxSettings
 
 
     /// <summary>
+    /// Constants used for properties of type PolandTaxRegistrationNumberType.
+    /// </summary>
+    public class PolandTaxRegistrationNumberType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EUTaxRegistrationNumber for PolandTaxRegistrationNumberType
+        /// </summary>
+        public static readonly PolandTaxRegistrationNumberType EUTaxRegistrationNumber = new PolandTaxRegistrationNumberType("EUTaxRegistrationNumber");
+        /// <summary>
+        /// Constant LocalRegistrationNumber for PolandTaxRegistrationNumberType
+        /// </summary>
+        public static readonly PolandTaxRegistrationNumberType LocalRegistrationNumber = new PolandTaxRegistrationNumberType("LocalRegistrationNumber");
+        /// <summary>
+        /// Constant LocalTaxRegistrationNumber for PolandTaxRegistrationNumberType
+        /// </summary>
+        public static readonly PolandTaxRegistrationNumberType LocalTaxRegistrationNumber = new PolandTaxRegistrationNumberType("LocalTaxRegistrationNumber");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolandTaxRegistrationNumberType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolandTaxRegistrationNumberType FindValue(string value)
+        {
+            return FindValue<PolandTaxRegistrationNumberType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolandTaxRegistrationNumberType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RegistrationType.
     /// </summary>
     public class RegistrationType : ConstantClass
@@ -853,9 +1007,17 @@ namespace Amazon.TaxSettings
         /// </summary>
         public static readonly TaxRegistrationType GST = new TaxRegistrationType("GST");
         /// <summary>
+        /// Constant NIP for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType NIP = new TaxRegistrationType("NIP");
+        /// <summary>
         /// Constant NRIC for TaxRegistrationType
         /// </summary>
         public static readonly TaxRegistrationType NRIC = new TaxRegistrationType("NRIC");
+        /// <summary>
+        /// Constant PAN for TaxRegistrationType
+        /// </summary>
+        public static readonly TaxRegistrationType PAN = new TaxRegistrationType("PAN");
         /// <summary>
         /// Constant SST for TaxRegistrationType
         /// </summary>
@@ -1019,6 +1181,10 @@ namespace Amazon.TaxSettings
         /// </summary>
         public static readonly ValidationExceptionErrorCode FieldValidationFailed = new ValidationExceptionErrorCode("FieldValidationFailed");
         /// <summary>
+        /// Constant GSTExistenceBlockSetPAN for ValidationExceptionErrorCode
+        /// </summary>
+        public static readonly ValidationExceptionErrorCode GSTExistenceBlockSetPAN = new ValidationExceptionErrorCode("GSTExistenceBlockSetPAN");
+        /// <summary>
         /// Constant InvalidToken for ValidationExceptionErrorCode
         /// </summary>
         public static readonly ValidationExceptionErrorCode InvalidToken = new ValidationExceptionErrorCode("InvalidToken");
@@ -1030,6 +1196,10 @@ namespace Amazon.TaxSettings
         /// Constant MissingInput for ValidationExceptionErrorCode
         /// </summary>
         public static readonly ValidationExceptionErrorCode MissingInput = new ValidationExceptionErrorCode("MissingInput");
+        /// <summary>
+        /// Constant NonIndiaCustomerCanNotSetPAN for ValidationExceptionErrorCode
+        /// </summary>
+        public static readonly ValidationExceptionErrorCode NonIndiaCustomerCanNotSetPAN = new ValidationExceptionErrorCode("NonIndiaCustomerCanNotSetPAN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

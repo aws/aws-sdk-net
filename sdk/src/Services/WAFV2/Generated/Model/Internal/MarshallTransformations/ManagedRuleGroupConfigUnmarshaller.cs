@@ -56,49 +56,49 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AWSManagedRulesACFPRuleSet", targetDepth))
+                if (context.TestExpression("AWSManagedRulesACFPRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSManagedRulesACFPRuleSetUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedRulesACFPRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AWSManagedRulesAntiDDoSRuleSet", targetDepth))
+                if (context.TestExpression("AWSManagedRulesAntiDDoSRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSManagedRulesAntiDDoSRuleSetUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedRulesAntiDDoSRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth))
+                if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedRulesATPRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth))
+                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth, ref reader))
                 {
                     var unmarshaller = AWSManagedRulesBotControlRuleSetUnmarshaller.Instance;
                     unmarshalledObject.AWSManagedRulesBotControlRuleSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LoginPath", targetDepth))
+                if (context.TestExpression("LoginPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PasswordField", targetDepth))
+                if (context.TestExpression("PasswordField", targetDepth, ref reader))
                 {
                     var unmarshaller = PasswordFieldUnmarshaller.Instance;
                     unmarshalledObject.PasswordField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PayloadType", targetDepth))
+                if (context.TestExpression("PayloadType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PayloadType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UsernameField", targetDepth))
+                if (context.TestExpression("UsernameField", targetDepth, ref reader))
                 {
                     var unmarshaller = UsernameFieldUnmarshaller.Instance;
                     unmarshalledObject.UsernameField = unmarshaller.Unmarshall(context, ref reader);

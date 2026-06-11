@@ -56,19 +56,19 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryModels", targetDepth))
+                if (context.TestExpression("DeliveryModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DeliveryModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedContractDuration", targetDepth))
+                if (context.TestExpression("ExpectedContractDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExpectedContractDurationUnmarshaller.Instance;
                     unmarshalledObject.ExpectedContractDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedCustomerSpend", targetDepth))
+                if (context.TestExpression("ExpectedCustomerSpend", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpectedCustomerSpend, ExpectedCustomerSpendUnmarshaller>(ExpectedCustomerSpendUnmarshaller.Instance);
                     unmarshalledObject.ExpectedCustomerSpend = unmarshaller.Unmarshall(context, ref reader);

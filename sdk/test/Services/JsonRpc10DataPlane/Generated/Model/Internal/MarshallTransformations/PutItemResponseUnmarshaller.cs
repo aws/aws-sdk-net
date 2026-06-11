@@ -52,19 +52,19 @@ namespace Amazon.JsonRpc10DataPlane.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attributes", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
                     response.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConsumedCapacity", targetDepth))
+                if (context.TestExpression("ConsumedCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = ConsumedCapacityUnmarshaller.Instance;
                     response.ConsumedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ItemCollectionMetrics", targetDepth))
+                if (context.TestExpression("ItemCollectionMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = ItemCollectionMetricsUnmarshaller.Instance;
                     response.ItemCollectionMetrics = unmarshaller.Unmarshall(context, ref reader);

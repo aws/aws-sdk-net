@@ -56,7 +56,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("costOptimizing", targetDepth))
+                if (context.TestExpression("costOptimizing", targetDepth, ref reader))
                 {
                     var unmarshaller = TrustedAdvisorCostOptimizingSummaryUnmarshaller.Instance;
                     unmarshalledObject.CostOptimizing = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("findings", targetDepth))
+                if (context.TestExpression("findings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Finding, FindingUnmarshaller>(FindingUnmarshaller.Instance);
                     response.Findings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Lex", targetDepth))
+                if (context.TestExpression("Lex", targetDepth, ref reader))
                 {
                     var unmarshaller = LexConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Lex = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("recordingConfiguration", targetDepth))
+                if (context.TestExpression("recordingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = RecordingConfigurationUnmarshaller.Instance;
                     response.RecordingConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,13 +52,13 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Legs", targetDepth))
+                if (context.TestExpression("Legs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Leg, LegUnmarshaller>(LegUnmarshaller.Instance);
                     response.Legs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Summary", targetDepth))
+                if (context.TestExpression("Summary", targetDepth, ref reader))
                 {
                     var unmarshaller = CalculateRouteSummaryUnmarshaller.Instance;
                     response.Summary = unmarshaller.Unmarshall(context, ref reader);

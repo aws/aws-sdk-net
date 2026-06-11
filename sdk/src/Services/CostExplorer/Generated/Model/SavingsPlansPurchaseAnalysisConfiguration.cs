@@ -38,6 +38,7 @@ namespace Amazon.CostExplorer.Model
         private AccountScope _accountScope;
         private AnalysisType _analysisType;
         private DateInterval _lookBackTimePeriod;
+        private int? _savingsPlansTargetCoverage;
         private List<SavingsPlans> _savingsPlansToAdd = AWSConfigs.InitializeCollections ? new List<SavingsPlans>() : null;
         private List<string> _savingsPlansToExclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -114,6 +115,28 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetLookBackTimePeriod()
         {
             return this._lookBackTimePeriod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SavingsPlansTargetCoverage. 
+        /// <para>
+        /// Specifies the target Savings Plans coverage as a percentage from <c>10</c> to <c>100</c>.
+        /// This field is required when <c>AnalysisType</c> is <c>TARGET_AVERAGE_COVERAGE</c>.
+        /// It defines the target average hourly coverage that the recommended Savings Plans commitment
+        /// should achieve over the lookback period.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=100)]
+        public int? SavingsPlansTargetCoverage
+        {
+            get { return this._savingsPlansTargetCoverage; }
+            set { this._savingsPlansTargetCoverage = value; }
+        }
+
+        // Check to see if SavingsPlansTargetCoverage property is set
+        internal bool IsSetSavingsPlansTargetCoverage()
+        {
+            return this._savingsPlansTargetCoverage.HasValue; 
         }
 
         /// <summary>

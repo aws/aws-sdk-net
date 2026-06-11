@@ -52,13 +52,13 @@ namespace Amazon.Evs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("environmentHosts", targetDepth))
+                if (context.TestExpression("environmentHosts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Host, HostUnmarshaller>(HostUnmarshaller.Instance);
                     response.EnvironmentHosts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

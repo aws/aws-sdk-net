@@ -56,13 +56,13 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("triggerProperties", targetDepth))
+                if (context.TestExpression("triggerProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = TriggerPropertiesUnmarshaller.Instance;
                     unmarshalledObject.TriggerProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggerType", targetDepth))
+                if (context.TestExpression("triggerType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TriggerType = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MaximumExecutionTimeoutInSeconds", targetDepth))
+                if (context.TestExpression("MaximumExecutionTimeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumExecutionTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TerminationWaitInSeconds", targetDepth))
+                if (context.TestExpression("TerminationWaitInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TerminationWaitInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrafficRoutingConfiguration", targetDepth))
+                if (context.TestExpression("TrafficRoutingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficRoutingConfigUnmarshaller.Instance;
                     unmarshalledObject.TrafficRoutingConfiguration = unmarshaller.Unmarshall(context, ref reader);

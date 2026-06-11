@@ -56,7 +56,7 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InAppMessageCampaigns", targetDepth))
+                if (context.TestExpression("InAppMessageCampaigns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InAppMessageCampaign, InAppMessageCampaignUnmarshaller>(InAppMessageCampaignUnmarshaller.Instance);
                     unmarshalledObject.InAppMessageCampaigns = unmarshaller.Unmarshall(context, ref reader);

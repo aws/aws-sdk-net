@@ -56,49 +56,49 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AugmentedManifests", targetDepth))
+                if (context.TestExpression("AugmentedManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AugmentedManifestsListItem, AugmentedManifestsListItemUnmarshaller>(AugmentedManifestsListItemUnmarshaller.Instance);
                     unmarshalledObject.AugmentedManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataFormat", targetDepth))
+                if (context.TestExpression("DataFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentReaderConfig", targetDepth))
+                if (context.TestExpression("DocumentReaderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentReaderConfigUnmarshaller.Instance;
                     unmarshalledObject.DocumentReaderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Documents", targetDepth))
+                if (context.TestExpression("Documents", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentClassifierDocumentsUnmarshaller.Instance;
                     unmarshalledObject.Documents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentType", targetDepth))
+                if (context.TestExpression("DocumentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LabelDelimiter", targetDepth))
+                if (context.TestExpression("LabelDelimiter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LabelDelimiter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3Uri", targetDepth))
+                if (context.TestExpression("S3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TestS3Uri", targetDepth))
+                if (context.TestExpression("TestS3Uri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TestS3Uri = unmarshaller.Unmarshall(context, ref reader);

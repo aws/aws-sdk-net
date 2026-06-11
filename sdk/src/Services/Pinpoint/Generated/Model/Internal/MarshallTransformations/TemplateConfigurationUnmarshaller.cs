@@ -56,31 +56,31 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmailTemplate", targetDepth))
+                if (context.TestExpression("EmailTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     unmarshalledObject.EmailTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InAppTemplate", targetDepth))
+                if (context.TestExpression("InAppTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     unmarshalledObject.InAppTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PushTemplate", targetDepth))
+                if (context.TestExpression("PushTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     unmarshalledObject.PushTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SMSTemplate", targetDepth))
+                if (context.TestExpression("SMSTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     unmarshalledObject.SMSTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VoiceTemplate", targetDepth))
+                if (context.TestExpression("VoiceTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateUnmarshaller.Instance;
                     unmarshalledObject.VoiceTemplate = unmarshaller.Unmarshall(context, ref reader);

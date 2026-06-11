@@ -52,13 +52,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("infrastructureConfiguration", targetDepth))
+                if (context.TestExpression("infrastructureConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InfrastructureConfigurationUnmarshaller.Instance;
                     response.InfrastructureConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestId", targetDepth))
+                if (context.TestExpression("requestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveDirectoryIdentityProvider", targetDepth))
+                if (context.TestExpression("ActiveDirectoryIdentityProvider", targetDepth, ref reader))
                 {
                     var unmarshaller = ActiveDirectoryIdentityProviderUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectoryIdentityProvider = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("containerImage", targetDepth))
+                if (context.TestExpression("containerImage", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerImageUnmarshaller.Instance;
                     unmarshalledObject.ContainerImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scriptModeConfig", targetDepth))
+                if (context.TestExpression("scriptModeConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ScriptModeConfigUnmarshaller.Instance;
                     unmarshalledObject.ScriptModeConfig = unmarshaller.Unmarshall(context, ref reader);

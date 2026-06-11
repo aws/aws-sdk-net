@@ -56,61 +56,61 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("behavior", targetDepth))
+                if (context.TestExpression("behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = BehaviorUnmarshaller.Instance;
                     unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricValue", targetDepth))
+                if (context.TestExpression("metricValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricValueUnmarshaller.Instance;
                     unmarshalledObject.MetricValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityProfileName", targetDepth))
+                if (context.TestExpression("securityProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingName", targetDepth))
+                if (context.TestExpression("thingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verificationState", targetDepth))
+                if (context.TestExpression("verificationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verificationStateDescription", targetDepth))
+                if (context.TestExpression("verificationStateDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationStateDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationEventAdditionalInfo", targetDepth))
+                if (context.TestExpression("violationEventAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ViolationEventAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.ViolationEventAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationEventTime", targetDepth))
+                if (context.TestExpression("violationEventTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ViolationEventTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationEventType", targetDepth))
+                if (context.TestExpression("violationEventType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationEventType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationId", targetDepth))
+                if (context.TestExpression("violationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationId = unmarshaller.Unmarshall(context, ref reader);

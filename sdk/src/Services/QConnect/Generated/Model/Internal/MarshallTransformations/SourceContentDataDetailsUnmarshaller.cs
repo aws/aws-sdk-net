@@ -56,31 +56,31 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("citationSpan", targetDepth))
+                if (context.TestExpression("citationSpan", targetDepth, ref reader))
                 {
                     var unmarshaller = CitationSpanUnmarshaller.Instance;
                     unmarshalledObject.CitationSpan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rankingData", targetDepth))
+                if (context.TestExpression("rankingData", targetDepth, ref reader))
                 {
                     var unmarshaller = RankingDataUnmarshaller.Instance;
                     unmarshalledObject.RankingData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("textData", targetDepth))
+                if (context.TestExpression("textData", targetDepth, ref reader))
                 {
                     var unmarshaller = TextDataUnmarshaller.Instance;
                     unmarshalledObject.TextData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

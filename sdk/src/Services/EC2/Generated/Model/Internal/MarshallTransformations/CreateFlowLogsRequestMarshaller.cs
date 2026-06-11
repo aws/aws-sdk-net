@@ -128,6 +128,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ResourceType", StringUtils.FromString(publicRequest.ResourceType));
                 }
+                if(publicRequest.IsSetTagFieldSpecifications())
+                {
+                    if (publicRequest.TagFieldSpecifications.Count == 0)
+                        request.Parameters.Add("TagFieldSpecification", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagFieldSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("TagFieldSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                            if(publicRequestlistValue.IsSetTagKeys())
+                            {
+                                if (publicRequestlistValue.TagKeys.Count == 0)
+                                    request.Parameters.Add("TagFieldSpecification" + "." + publicRequestlistValueIndex + "." + "TagKey", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.TagKeys)
+                                     {
+                                         request.Parameters.Add("TagFieldSpecification" + "." + publicRequestlistValueIndex + "." + "TagKey" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetTagSpecifications())
                 {
                     if (publicRequest.TagSpecifications.Count == 0)

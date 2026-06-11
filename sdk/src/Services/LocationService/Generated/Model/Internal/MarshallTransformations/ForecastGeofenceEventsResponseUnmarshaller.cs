@@ -52,25 +52,25 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DistanceUnit", targetDepth))
+                if (context.TestExpression("DistanceUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DistanceUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ForecastedEvents", targetDepth))
+                if (context.TestExpression("ForecastedEvents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ForecastedEvent, ForecastedEventUnmarshaller>(ForecastedEventUnmarshaller.Instance);
                     response.ForecastedEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpeedUnit", targetDepth))
+                if (context.TestExpression("SpeedUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SpeedUnit = unmarshaller.Unmarshall(context, ref reader);

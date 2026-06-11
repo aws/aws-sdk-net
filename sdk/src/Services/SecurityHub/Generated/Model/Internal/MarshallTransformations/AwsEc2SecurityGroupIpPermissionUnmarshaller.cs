@@ -56,43 +56,43 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FromPort", targetDepth))
+                if (context.TestExpression("FromPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FromPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpProtocol", targetDepth))
+                if (context.TestExpression("IpProtocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpRanges", targetDepth))
+                if (context.TestExpression("IpRanges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupIpRange, AwsEc2SecurityGroupIpRangeUnmarshaller>(AwsEc2SecurityGroupIpRangeUnmarshaller.Instance);
                     unmarshalledObject.IpRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Ipv6Ranges", targetDepth))
+                if (context.TestExpression("Ipv6Ranges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupIpv6Range, AwsEc2SecurityGroupIpv6RangeUnmarshaller>(AwsEc2SecurityGroupIpv6RangeUnmarshaller.Instance);
                     unmarshalledObject.Ipv6Ranges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrefixListIds", targetDepth))
+                if (context.TestExpression("PrefixListIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupPrefixListId, AwsEc2SecurityGroupPrefixListIdUnmarshaller>(AwsEc2SecurityGroupPrefixListIdUnmarshaller.Instance);
                     unmarshalledObject.PrefixListIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ToPort", targetDepth))
+                if (context.TestExpression("ToPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ToPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserIdGroupPairs", targetDepth))
+                if (context.TestExpression("UserIdGroupPairs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEc2SecurityGroupUserIdGroupPair, AwsEc2SecurityGroupUserIdGroupPairUnmarshaller>(AwsEc2SecurityGroupUserIdGroupPairUnmarshaller.Instance);
                     unmarshalledObject.UserIdGroupPairs = unmarshaller.Unmarshall(context, ref reader);

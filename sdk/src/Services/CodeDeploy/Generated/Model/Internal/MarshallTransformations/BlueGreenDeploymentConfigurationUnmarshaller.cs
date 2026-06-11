@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deploymentReadyOption", targetDepth))
+                if (context.TestExpression("deploymentReadyOption", targetDepth, ref reader))
                 {
                     var unmarshaller = DeploymentReadyOptionUnmarshaller.Instance;
                     unmarshalledObject.DeploymentReadyOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("greenFleetProvisioningOption", targetDepth))
+                if (context.TestExpression("greenFleetProvisioningOption", targetDepth, ref reader))
                 {
                     var unmarshaller = GreenFleetProvisioningOptionUnmarshaller.Instance;
                     unmarshalledObject.GreenFleetProvisioningOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("terminateBlueInstancesOnDeploymentSuccess", targetDepth))
+                if (context.TestExpression("terminateBlueInstancesOnDeploymentSuccess", targetDepth, ref reader))
                 {
                     var unmarshaller = BlueInstanceTerminationOptionUnmarshaller.Instance;
                     unmarshalledObject.TerminateBlueInstancesOnDeploymentSuccess = unmarshaller.Unmarshall(context, ref reader);

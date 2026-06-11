@@ -72,7 +72,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("ValidationExceptionType", targetDepth))
+                    if (context.TestExpression("ValidationExceptionType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ValidationExceptionType = unmarshaller.Unmarshall(context, ref reader);

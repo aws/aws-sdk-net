@@ -52,13 +52,13 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Invitations", targetDepth))
+                if (context.TestExpression("Invitations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Invitation, InvitationUnmarshaller>(InvitationUnmarshaller.Instance);
                     response.Invitations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

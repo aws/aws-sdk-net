@@ -52,13 +52,13 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("harvestJobs", targetDepth))
+                if (context.TestExpression("harvestJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarvestJob, HarvestJobUnmarshaller>(HarvestJobUnmarshaller.Instance);
                     response.HarvestJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

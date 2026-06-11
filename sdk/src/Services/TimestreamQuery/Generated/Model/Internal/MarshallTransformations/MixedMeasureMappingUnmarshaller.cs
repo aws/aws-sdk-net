@@ -56,31 +56,31 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MeasureName", targetDepth))
+                if (context.TestExpression("MeasureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeasureName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeasureValueType", targetDepth))
+                if (context.TestExpression("MeasureValueType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MeasureValueType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth))
+                if (context.TestExpression("MultiMeasureAttributeMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiMeasureAttributeMapping, MultiMeasureAttributeMappingUnmarshaller>(MultiMeasureAttributeMappingUnmarshaller.Instance);
                     unmarshalledObject.MultiMeasureAttributeMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceColumn", targetDepth))
+                if (context.TestExpression("SourceColumn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceColumn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetMeasureName", targetDepth))
+                if (context.TestExpression("TargetMeasureName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetMeasureName = unmarshaller.Unmarshall(context, ref reader);

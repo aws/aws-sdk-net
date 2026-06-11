@@ -56,13 +56,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("managedEBSVolume", targetDepth))
+                if (context.TestExpression("managedEBSVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceManagedEBSVolumeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedEBSVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);

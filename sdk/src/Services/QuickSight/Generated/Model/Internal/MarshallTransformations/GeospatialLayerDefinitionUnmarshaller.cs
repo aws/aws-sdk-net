@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LineLayer", targetDepth))
+                if (context.TestExpression("LineLayer", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialLineLayerUnmarshaller.Instance;
                     unmarshalledObject.LineLayer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PointLayer", targetDepth))
+                if (context.TestExpression("PointLayer", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialPointLayerUnmarshaller.Instance;
                     unmarshalledObject.PointLayer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolygonLayer", targetDepth))
+                if (context.TestExpression("PolygonLayer", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialPolygonLayerUnmarshaller.Instance;
                     unmarshalledObject.PolygonLayer = unmarshaller.Unmarshall(context, ref reader);

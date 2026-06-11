@@ -56,13 +56,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicyToPathList", targetDepth))
+                if (context.TestExpression("PolicyToPathList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PolicyToPath, PolicyToPathUnmarshaller>(PolicyToPathUnmarshaller.Instance);
                     unmarshalledObject.PolicyToPathList = unmarshaller.Unmarshall(context, ref reader);

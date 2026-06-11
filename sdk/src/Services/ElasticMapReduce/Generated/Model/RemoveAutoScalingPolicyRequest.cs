@@ -46,7 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// is applied is within this cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }
@@ -65,7 +65,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Specifies the ID of the instance group to which the scaling policy is applied.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=256)]
         public string InstanceGroupId
         {
             get { return this._instanceGroupId; }

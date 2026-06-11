@@ -56,37 +56,37 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientId", targetDepth))
+                if (context.TestExpression("ClientId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataIntegrationArn", targetDepth))
+                if (context.TestExpression("DataIntegrationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataIntegrationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataIntegrationAssociationArn", targetDepth))
+                if (context.TestExpression("DataIntegrationAssociationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataIntegrationAssociationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationURI", targetDepth))
+                if (context.TestExpression("DestinationURI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationURI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionConfiguration", targetDepth))
+                if (context.TestExpression("ExecutionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExecutionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastExecutionStatus", targetDepth))
+                if (context.TestExpression("LastExecutionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = LastExecutionStatusUnmarshaller.Instance;
                     unmarshalledObject.LastExecutionStatus = unmarshaller.Unmarshall(context, ref reader);

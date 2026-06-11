@@ -52,13 +52,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("links", targetDepth))
+                if (context.TestExpression("links", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListLinksResponseStructure, ListLinksResponseStructureUnmarshaller>(ListLinksResponseStructureUnmarshaller.Instance);
                     response.Links = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

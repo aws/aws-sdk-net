@@ -44,6 +44,7 @@ namespace Amazon.SageMaker.Model
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
+        private ClusterRestrictedInstanceGroupsConfig _restrictedInstanceGroupsConfig;
         private ClusterTieredStorageConfig _tieredStorageConfig;
 
         /// <summary>
@@ -231,6 +232,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRestrictedInstanceGroups()
         {
             return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestrictedInstanceGroupsConfig. 
+        /// <para>
+        /// The configuration for the restricted instance groups (RIG) in the SageMaker HyperPod
+        /// cluster.
+        /// </para>
+        /// </summary>
+        public ClusterRestrictedInstanceGroupsConfig RestrictedInstanceGroupsConfig
+        {
+            get { return this._restrictedInstanceGroupsConfig; }
+            set { this._restrictedInstanceGroupsConfig = value; }
+        }
+
+        // Check to see if RestrictedInstanceGroupsConfig property is set
+        internal bool IsSetRestrictedInstanceGroupsConfig()
+        {
+            return this._restrictedInstanceGroupsConfig != null;
         }
 
         /// <summary>

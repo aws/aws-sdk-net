@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Primary", targetDepth))
+                if (context.TestExpression("Primary", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEventsEndpointRoutingConfigFailoverConfigPrimaryDetailsUnmarshaller.Instance;
                     unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Secondary", targetDepth))
+                if (context.TestExpression("Secondary", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEventsEndpointRoutingConfigFailoverConfigSecondaryDetailsUnmarshaller.Instance;
                     unmarshalledObject.Secondary = unmarshaller.Unmarshall(context, ref reader);

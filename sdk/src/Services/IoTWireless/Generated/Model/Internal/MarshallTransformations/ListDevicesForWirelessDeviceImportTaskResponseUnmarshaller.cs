@@ -52,31 +52,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationName", targetDepth))
+                if (context.TestExpression("DestinationName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DestinationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImportedWirelessDeviceList", targetDepth))
+                if (context.TestExpression("ImportedWirelessDeviceList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImportedWirelessDevice, ImportedWirelessDeviceUnmarshaller>(ImportedWirelessDeviceUnmarshaller.Instance);
                     response.ImportedWirelessDeviceList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Positioning", targetDepth))
+                if (context.TestExpression("Positioning", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Positioning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Sidewalk", targetDepth))
+                if (context.TestExpression("Sidewalk", targetDepth, ref reader))
                 {
                     var unmarshaller = SidewalkListDevicesForImportInfoUnmarshaller.Instance;
                     response.Sidewalk = unmarshaller.Unmarshall(context, ref reader);

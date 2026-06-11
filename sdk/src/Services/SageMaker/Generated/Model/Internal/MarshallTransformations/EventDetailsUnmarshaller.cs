@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventMetadata", targetDepth))
+                if (context.TestExpression("EventMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = EventMetadataUnmarshaller.Instance;
                     unmarshalledObject.EventMetadata = unmarshaller.Unmarshall(context, ref reader);

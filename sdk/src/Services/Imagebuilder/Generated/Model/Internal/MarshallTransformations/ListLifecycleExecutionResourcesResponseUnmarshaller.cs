@@ -52,25 +52,25 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lifecycleExecutionId", targetDepth))
+                if (context.TestExpression("lifecycleExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LifecycleExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lifecycleExecutionState", targetDepth))
+                if (context.TestExpression("lifecycleExecutionState", targetDepth, ref reader))
                 {
                     var unmarshaller = LifecycleExecutionStateUnmarshaller.Instance;
                     response.LifecycleExecutionState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resources", targetDepth))
+                if (context.TestExpression("resources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LifecycleExecutionResource, LifecycleExecutionResourceUnmarshaller>(LifecycleExecutionResourceUnmarshaller.Instance);
                     response.Resources = unmarshaller.Unmarshall(context, ref reader);

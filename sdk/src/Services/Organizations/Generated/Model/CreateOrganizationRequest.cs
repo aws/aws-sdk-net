@@ -49,6 +49,13 @@ namespace Amazon.Organizations.Model
     /// the consolidated billing features by setting the <c>FeatureSet</c> parameter to <c>CONSOLIDATED_BILLING</c>,
     /// no policy types are enabled by default and you can't use organization policies.
     /// </para>
+    ///  
+    /// <para>
+    /// The <c>AccountJoinedOrganization</c> event is logged in CloudTrail and is available
+    /// only in the management account's event history. This event includes <c>joinedMethod:Invited</c>
+    /// and <c>joinedTime</c> fields to provide context on how and when the account joined
+    /// the organization.
+    /// </para>
     /// </summary>
     public partial class CreateOrganizationRequest : AmazonOrganizationsRequest
     {

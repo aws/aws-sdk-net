@@ -56,25 +56,25 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Analysis", targetDepth))
+                if (context.TestExpression("Analysis", targetDepth, ref reader))
                 {
                     var unmarshaller = AnalysisUnmarshaller.Instance;
                     unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Attribute", targetDepth))
+                if (context.TestExpression("Attribute", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientCertificateAttribute", targetDepth))
+                if (context.TestExpression("ClientCertificateAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientCertificateAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MimeHeaderAttribute", targetDepth))
+                if (context.TestExpression("MimeHeaderAttribute", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MimeHeaderAttribute = unmarshaller.Unmarshall(context, ref reader);

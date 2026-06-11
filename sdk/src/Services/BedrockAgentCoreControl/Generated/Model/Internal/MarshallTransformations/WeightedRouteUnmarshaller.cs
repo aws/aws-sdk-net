@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("trafficSplit", targetDepth))
+                if (context.TestExpression("trafficSplit", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetTrafficSplitEntry, TargetTrafficSplitEntryUnmarshaller>(TargetTrafficSplitEntryUnmarshaller.Instance);
                     unmarshalledObject.TrafficSplit = unmarshaller.Unmarshall(context, ref reader);

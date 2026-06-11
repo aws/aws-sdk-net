@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dolbyEDecode", targetDepth))
+                if (context.TestExpression("dolbyEDecode", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioDolbyEDecodeUnmarshaller.Instance;
                     unmarshalledObject.DolbyEDecode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tracks", targetDepth))
+                if (context.TestExpression("tracks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AudioTrack, AudioTrackUnmarshaller>(AudioTrackUnmarshaller.Instance);
                     unmarshalledObject.Tracks = unmarshaller.Unmarshall(context, ref reader);

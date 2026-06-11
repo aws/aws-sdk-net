@@ -52,7 +52,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("subscription", targetDepth))
+                if (context.TestExpression("subscription", targetDepth, ref reader))
                 {
                     var unmarshaller = EksAnywhereSubscriptionUnmarshaller.Instance;
                     response.Subscription = unmarshaller.Unmarshall(context, ref reader);

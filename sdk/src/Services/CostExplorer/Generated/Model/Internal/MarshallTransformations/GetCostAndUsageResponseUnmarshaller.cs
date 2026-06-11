@@ -52,25 +52,25 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionValueAttributes", targetDepth))
+                if (context.TestExpression("DimensionValueAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionValuesWithAttributes, DimensionValuesWithAttributesUnmarshaller>(DimensionValuesWithAttributesUnmarshaller.Instance);
                     response.DimensionValueAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupDefinitions", targetDepth))
+                if (context.TestExpression("GroupDefinitions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupDefinition, GroupDefinitionUnmarshaller>(GroupDefinitionUnmarshaller.Instance);
                     response.GroupDefinitions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageToken", targetDepth))
+                if (context.TestExpression("NextPageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultsByTime", targetDepth))
+                if (context.TestExpression("ResultsByTime", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResultByTime, ResultByTimeUnmarshaller>(ResultByTimeUnmarshaller.Instance);
                     response.ResultsByTime = unmarshaller.Unmarshall(context, ref reader);

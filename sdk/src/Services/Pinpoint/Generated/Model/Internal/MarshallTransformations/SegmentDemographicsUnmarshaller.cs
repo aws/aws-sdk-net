@@ -56,37 +56,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppVersion", targetDepth))
+                if (context.TestExpression("AppVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.AppVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Channel", targetDepth))
+                if (context.TestExpression("Channel", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeviceType", targetDepth))
+                if (context.TestExpression("DeviceType", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.DeviceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Make", targetDepth))
+                if (context.TestExpression("Make", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.Make = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Model", targetDepth))
+                if (context.TestExpression("Model", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Platform", targetDepth))
+                if (context.TestExpression("Platform", targetDepth, ref reader))
                 {
                     var unmarshaller = SetDimensionUnmarshaller.Instance;
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);

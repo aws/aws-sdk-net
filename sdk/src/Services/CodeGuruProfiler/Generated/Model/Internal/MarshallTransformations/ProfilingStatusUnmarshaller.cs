@@ -56,19 +56,19 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("latestAgentOrchestratedAt", targetDepth))
+                if (context.TestExpression("latestAgentOrchestratedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestAgentOrchestratedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestAgentProfileReportedAt", targetDepth))
+                if (context.TestExpression("latestAgentProfileReportedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestAgentProfileReportedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestAggregatedProfile", targetDepth))
+                if (context.TestExpression("latestAggregatedProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregatedProfileTimeUnmarshaller.Instance;
                     unmarshalledObject.LatestAggregatedProfile = unmarshaller.Unmarshall(context, ref reader);

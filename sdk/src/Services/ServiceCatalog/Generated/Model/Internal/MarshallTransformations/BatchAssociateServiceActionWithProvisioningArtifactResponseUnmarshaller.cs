@@ -52,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedServiceActionAssociations", targetDepth))
+                if (context.TestExpression("FailedServiceActionAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FailedServiceActionAssociation, FailedServiceActionAssociationUnmarshaller>(FailedServiceActionAssociationUnmarshaller.Instance);
                     response.FailedServiceActionAssociations = unmarshaller.Unmarshall(context, ref reader);

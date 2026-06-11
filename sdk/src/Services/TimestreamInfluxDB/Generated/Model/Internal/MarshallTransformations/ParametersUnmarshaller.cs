@@ -56,19 +56,19 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InfluxDBv2", targetDepth))
+                if (context.TestExpression("InfluxDBv2", targetDepth, ref reader))
                 {
                     var unmarshaller = InfluxDBv2ParametersUnmarshaller.Instance;
                     unmarshalledObject.InfluxDBv2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InfluxDBv3Core", targetDepth))
+                if (context.TestExpression("InfluxDBv3Core", targetDepth, ref reader))
                 {
                     var unmarshaller = InfluxDBv3CoreParametersUnmarshaller.Instance;
                     unmarshalledObject.InfluxDBv3Core = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InfluxDBv3Enterprise", targetDepth))
+                if (context.TestExpression("InfluxDBv3Enterprise", targetDepth, ref reader))
                 {
                     var unmarshaller = InfluxDBv3EnterpriseParametersUnmarshaller.Instance;
                     unmarshalledObject.InfluxDBv3Enterprise = unmarshaller.Unmarshall(context, ref reader);

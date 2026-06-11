@@ -56,13 +56,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("icebergCompaction", targetDepth))
+                if (context.TestExpression("icebergCompaction", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergCompactionSettingsUnmarshaller.Instance;
                     unmarshalledObject.IcebergCompaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("icebergSnapshotManagement", targetDepth))
+                if (context.TestExpression("icebergSnapshotManagement", targetDepth, ref reader))
                 {
                     var unmarshaller = IcebergSnapshotManagementSettingsUnmarshaller.Instance;
                     unmarshalledObject.IcebergSnapshotManagement = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationCidrBlock", targetDepth))
+                if (context.TestExpression("DestinationCidrBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationIpv6CidrBlock", targetDepth))
+                if (context.TestExpression("DestinationIpv6CidrBlock", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DestinationPrefixListId", targetDepth))
+                if (context.TestExpression("DestinationPrefixListId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GatewayId", targetDepth))
+                if (context.TestExpression("GatewayId", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
                     unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableId", targetDepth))
+                if (context.TestExpression("RouteTableId", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
                     unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcEndpointId", targetDepth))
+                if (context.TestExpression("VpcEndpointId", targetDepth, ref reader))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
                     unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);

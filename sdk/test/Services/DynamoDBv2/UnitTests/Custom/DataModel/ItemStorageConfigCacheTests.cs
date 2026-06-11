@@ -243,7 +243,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(cached);
 
             // subsequent call with null flatConfig should throw ArgumentNullException per implementation
-            Assert.ThrowsException<ArgumentNullException>(() =>
+            Assert.ThrowsExactly<ArgumentNullException>(() =>
             {
                 var _ = context.StorageConfigCache.GetConfig(typeof(TestEntity), null, conversionOnly: false);
             });

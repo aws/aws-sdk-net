@@ -56,19 +56,19 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CumulativeBytesMetered", targetDepth))
+                if (context.TestExpression("CumulativeBytesMetered", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CumulativeBytesMetered = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CumulativeBytesScanned", targetDepth))
+                if (context.TestExpression("CumulativeBytesScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProgressPercentage", targetDepth))
+                if (context.TestExpression("ProgressPercentage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ProgressPercentage = unmarshaller.Unmarshall(context, ref reader);

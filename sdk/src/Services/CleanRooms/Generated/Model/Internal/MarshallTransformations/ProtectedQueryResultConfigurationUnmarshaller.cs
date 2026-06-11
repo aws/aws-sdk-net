@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("outputConfiguration", targetDepth))
+                if (context.TestExpression("outputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedQueryOutputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OutputConfiguration = unmarshaller.Unmarshall(context, ref reader);

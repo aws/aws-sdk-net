@@ -56,13 +56,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionConfiguration", targetDepth))
+                if (context.TestExpression("encryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lakeFormationConfiguration", targetDepth))
+                if (context.TestExpression("lakeFormationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = LakeFormationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LakeFormationConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -34,6 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class GetDashManifestConfiguration
     {
+        private DashAudioTimelinePattern _audioTimelinePattern;
         private DashAvailabilityStartTimeConfiguration _availabilityStartTimeConfiguration;
         private List<DashBaseUrl> _baseUrls = AWSConfigs.InitializeCollections ? new List<DashBaseUrl>() : null;
         private DashCompactness _compactness;
@@ -54,6 +55,28 @@ namespace Amazon.MediaPackageV2.Model
         private UriPathType _uriPathType;
         private string _url;
         private DashUtcTiming _utcTiming;
+
+        /// <summary>
+        /// Gets and sets the property AudioTimelinePattern. 
+        /// <para>
+        /// How MediaPackage represents the audio timeline in the DASH manifest, using DASH Segment
+        /// Duration Patternization for audio adaptation sets. <c>PATTERNED</c> indicates that
+        /// MediaPackage uses a pattern-based segment template for audio, reducing manifest size.
+        /// <c>NONE</c> indicates that the manifest contains an explicit timeline for each audio
+        /// segment.
+        /// </para>
+        /// </summary>
+        public DashAudioTimelinePattern AudioTimelinePattern
+        {
+            get { return this._audioTimelinePattern; }
+            set { this._audioTimelinePattern = value; }
+        }
+
+        // Check to see if AudioTimelinePattern property is set
+        internal bool IsSetAudioTimelinePattern()
+        {
+            return this._audioTimelinePattern != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityStartTimeConfiguration. 

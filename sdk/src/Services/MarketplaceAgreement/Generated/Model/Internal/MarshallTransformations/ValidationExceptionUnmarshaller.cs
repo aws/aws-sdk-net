@@ -72,19 +72,19 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("fields", targetDepth))
+                    if (context.TestExpression("fields", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<ValidationExceptionField, ValidationExceptionFieldUnmarshaller>(ValidationExceptionFieldUnmarshaller.Instance);
                         unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("reason", targetDepth))
+                    if (context.TestExpression("reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("requestId", targetDepth))
+                    if (context.TestExpression("requestId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RequestId = unmarshaller.Unmarshall(context, ref reader);

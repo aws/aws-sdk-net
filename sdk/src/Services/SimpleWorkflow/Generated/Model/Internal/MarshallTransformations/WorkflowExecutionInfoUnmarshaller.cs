@@ -56,55 +56,55 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cancelRequested", targetDepth))
+                if (context.TestExpression("cancelRequested", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CancelRequested = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("closeStatus", targetDepth))
+                if (context.TestExpression("closeStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CloseStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("closeTimestamp", targetDepth))
+                if (context.TestExpression("closeTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CloseTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("execution", targetDepth))
+                if (context.TestExpression("execution", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
                     unmarshalledObject.Execution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionStatus", targetDepth))
+                if (context.TestExpression("executionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parent", targetDepth))
+                if (context.TestExpression("parent", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowExecutionUnmarshaller.Instance;
                     unmarshalledObject.Parent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startTimestamp", targetDepth))
+                if (context.TestExpression("startTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tagList", targetDepth))
+                if (context.TestExpression("tagList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TagList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workflowType", targetDepth))
+                if (context.TestExpression("workflowType", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkflowTypeUnmarshaller.Instance;
                     unmarshalledObject.WorkflowType = unmarshaller.Unmarshall(context, ref reader);

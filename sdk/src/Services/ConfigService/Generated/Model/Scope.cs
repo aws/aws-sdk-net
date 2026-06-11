@@ -40,6 +40,7 @@ namespace Amazon.ConfigService.Model
     {
         private string _complianceResourceId;
         private List<string> _complianceResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _servicePrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tagKey;
         private string _tagValue;
 
@@ -88,6 +89,36 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetComplianceResourceTypes()
         {
             return this._complianceResourceTypes != null && (this._complianceResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePrincipals. 
+        /// <para>
+        /// The service principals of the Amazon Web Services services for the rule.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The field is populated only if the service-linked rule is created by a service. The
+        /// field is empty if you create your own rule.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<string> ServicePrincipals
+        {
+            get { return this._servicePrincipals; }
+            set { this._servicePrincipals = value; }
+        }
+
+        // Check to see if ServicePrincipals property is set
+        internal bool IsSetServicePrincipals()
+        {
+            return this._servicePrincipals != null && (this._servicePrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

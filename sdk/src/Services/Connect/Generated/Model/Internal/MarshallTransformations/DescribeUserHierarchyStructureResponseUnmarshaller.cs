@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HierarchyStructure", targetDepth))
+                if (context.TestExpression("HierarchyStructure", targetDepth, ref reader))
                 {
                     var unmarshaller = HierarchyStructureUnmarshaller.Instance;
                     response.HierarchyStructure = unmarshaller.Unmarshall(context, ref reader);

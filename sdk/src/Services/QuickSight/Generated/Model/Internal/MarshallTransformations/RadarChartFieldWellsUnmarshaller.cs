@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RadarChartAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("RadarChartAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = RadarChartAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.RadarChartAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

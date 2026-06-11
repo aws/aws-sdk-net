@@ -56,25 +56,25 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("effectiveMode", targetDepth))
+                if (context.TestExpression("effectiveMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EffectiveMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inheritedFrom", targetDepth))
+                if (context.TestExpression("inheritedFrom", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageGroupReferenceUnmarshaller.Instance;
                     unmarshalledObject.InheritedFrom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mode", targetDepth))
+                if (context.TestExpression("mode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("repositoriesCount", targetDepth))
+                if (context.TestExpression("repositoriesCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RepositoriesCount = unmarshaller.Unmarshall(context, ref reader);

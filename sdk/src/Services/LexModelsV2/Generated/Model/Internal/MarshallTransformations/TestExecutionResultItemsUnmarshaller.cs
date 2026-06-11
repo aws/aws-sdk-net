@@ -56,31 +56,31 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversationLevelTestResults", targetDepth))
+                if (context.TestExpression("conversationLevelTestResults", targetDepth, ref reader))
                 {
                     var unmarshaller = ConversationLevelTestResultsUnmarshaller.Instance;
                     unmarshalledObject.ConversationLevelTestResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentClassificationTestResults", targetDepth))
+                if (context.TestExpression("intentClassificationTestResults", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentClassificationTestResultsUnmarshaller.Instance;
                     unmarshalledObject.IntentClassificationTestResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentLevelSlotResolutionTestResults", targetDepth))
+                if (context.TestExpression("intentLevelSlotResolutionTestResults", targetDepth, ref reader))
                 {
                     var unmarshaller = IntentLevelSlotResolutionTestResultsUnmarshaller.Instance;
                     unmarshalledObject.IntentLevelSlotResolutionTestResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overallTestResults", targetDepth))
+                if (context.TestExpression("overallTestResults", targetDepth, ref reader))
                 {
                     var unmarshaller = OverallTestResultsUnmarshaller.Instance;
                     unmarshalledObject.OverallTestResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utteranceLevelTestResults", targetDepth))
+                if (context.TestExpression("utteranceLevelTestResults", targetDepth, ref reader))
                 {
                     var unmarshaller = UtteranceLevelTestResultsUnmarshaller.Instance;
                     unmarshalledObject.UtteranceLevelTestResults = unmarshaller.Unmarshall(context, ref reader);

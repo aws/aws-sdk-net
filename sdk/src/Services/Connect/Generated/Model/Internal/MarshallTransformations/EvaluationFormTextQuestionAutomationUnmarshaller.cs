@@ -56,7 +56,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AnswerSource", targetDepth))
+                if (context.TestExpression("AnswerSource", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormQuestionAutomationAnswerSourceUnmarshaller.Instance;
                     unmarshalledObject.AnswerSource = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Agreement", targetDepth))
+                if (context.TestExpression("Agreement", targetDepth, ref reader))
                 {
                     var unmarshaller = DescribedAgreementUnmarshaller.Instance;
                     response.Agreement = unmarshaller.Unmarshall(context, ref reader);

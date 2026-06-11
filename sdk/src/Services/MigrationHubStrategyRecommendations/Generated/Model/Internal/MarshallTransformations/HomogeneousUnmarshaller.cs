@@ -56,7 +56,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("targetDatabaseEngine", targetDepth))
+                if (context.TestExpression("targetDatabaseEngine", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.TargetDatabaseEngine = unmarshaller.Unmarshall(context, ref reader);

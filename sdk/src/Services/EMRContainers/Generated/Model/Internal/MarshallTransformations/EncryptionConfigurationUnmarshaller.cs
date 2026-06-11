@@ -56,7 +56,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("inTransitEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("inTransitEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InTransitEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InTransitEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);

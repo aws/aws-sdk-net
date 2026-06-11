@@ -56,43 +56,43 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("artifactID", targetDepth))
+                if (context.TestExpression("artifactID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ArtifactID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("artifactSubType", targetDepth))
+                if (context.TestExpression("artifactSubType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ArtifactSubType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("artifactType", targetDepth))
+                if (context.TestExpression("artifactType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ArtifactType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("checksum", targetDepth))
+                if (context.TestExpression("checksum", targetDepth, ref reader))
                 {
                     var unmarshaller = ChecksumUnmarshaller.Instance;
                     unmarshalledObject.Checksum = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logicalID", targetDepth))
+                if (context.TestExpression("logicalID", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogicalID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputS3Configuration", targetDepth))
+                if (context.TestExpression("outputS3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OutputS3Configuration = unmarshaller.Unmarshall(context, ref reader);

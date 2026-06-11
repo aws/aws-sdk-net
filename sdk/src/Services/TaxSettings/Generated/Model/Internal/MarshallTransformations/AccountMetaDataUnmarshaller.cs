@@ -56,31 +56,31 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountName", targetDepth))
+                if (context.TestExpression("accountName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("address", targetDepth))
+                if (context.TestExpression("address", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     unmarshalledObject.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addressRoleMap", targetDepth))
+                if (context.TestExpression("addressRoleMap", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Jurisdiction, StringUnmarshaller, JurisdictionUnmarshaller>(StringUnmarshaller.Instance, JurisdictionUnmarshaller.Instance);
                     unmarshalledObject.AddressRoleMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("addressType", targetDepth))
+                if (context.TestExpression("addressType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AddressType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("seller", targetDepth))
+                if (context.TestExpression("seller", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Seller = unmarshaller.Unmarshall(context, ref reader);

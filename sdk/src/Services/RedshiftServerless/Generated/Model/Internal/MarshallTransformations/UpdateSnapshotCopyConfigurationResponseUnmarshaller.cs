@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("snapshotCopyConfiguration", targetDepth))
+                if (context.TestExpression("snapshotCopyConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SnapshotCopyConfigurationUnmarshaller.Instance;
                     response.SnapshotCopyConfiguration = unmarshaller.Unmarshall(context, ref reader);

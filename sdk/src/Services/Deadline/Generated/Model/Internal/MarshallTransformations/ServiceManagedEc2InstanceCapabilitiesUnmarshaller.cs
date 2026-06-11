@@ -56,61 +56,61 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("acceleratorCapabilities", targetDepth))
+                if (context.TestExpression("acceleratorCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceleratorCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.AcceleratorCapabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("allowedInstanceTypes", targetDepth))
+                if (context.TestExpression("allowedInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AllowedInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cpuArchitectureType", targetDepth))
+                if (context.TestExpression("cpuArchitectureType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CpuArchitectureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customAmounts", targetDepth))
+                if (context.TestExpression("customAmounts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FleetAmountCapability, FleetAmountCapabilityUnmarshaller>(FleetAmountCapabilityUnmarshaller.Instance);
                     unmarshalledObject.CustomAmounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customAttributes", targetDepth))
+                if (context.TestExpression("customAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FleetAttributeCapability, FleetAttributeCapabilityUnmarshaller>(FleetAttributeCapabilityUnmarshaller.Instance);
                     unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("excludedInstanceTypes", targetDepth))
+                if (context.TestExpression("excludedInstanceTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExcludedInstanceTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryMiB", targetDepth))
+                if (context.TestExpression("memoryMiB", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryMiBRangeUnmarshaller.Instance;
                     unmarshalledObject.MemoryMiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("osFamily", targetDepth))
+                if (context.TestExpression("osFamily", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OsFamily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rootEbsVolume", targetDepth))
+                if (context.TestExpression("rootEbsVolume", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2EbsVolumeUnmarshaller.Instance;
                     unmarshalledObject.RootEbsVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vCpuCount", targetDepth))
+                if (context.TestExpression("vCpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = VCpuCountRangeUnmarshaller.Instance;
                     unmarshalledObject.VCpuCount = unmarshaller.Unmarshall(context, ref reader);

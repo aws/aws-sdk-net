@@ -56,7 +56,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ampConfiguration", targetDepth))
+                if (context.TestExpression("ampConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AmpConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AmpConfiguration = unmarshaller.Unmarshall(context, ref reader);

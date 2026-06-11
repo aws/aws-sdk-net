@@ -52,19 +52,19 @@ namespace Amazon.Proton.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("desiredState", targetDepth))
+                if (context.TestExpression("desiredState", targetDepth, ref reader))
                 {
                     var unmarshaller = RevisionUnmarshaller.Instance;
                     response.DesiredState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestSuccessfulSync", targetDepth))
+                if (context.TestExpression("latestSuccessfulSync", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSyncAttemptUnmarshaller.Instance;
                     response.LatestSuccessfulSync = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestSync", targetDepth))
+                if (context.TestExpression("latestSync", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceSyncAttemptUnmarshaller.Instance;
                     response.LatestSync = unmarshaller.Unmarshall(context, ref reader);

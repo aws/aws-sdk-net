@@ -52,13 +52,13 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Domains", targetDepth))
+                if (context.TestExpression("Domains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainSummary, DomainSummaryUnmarshaller>(DomainSummaryUnmarshaller.Instance);
                     response.Domains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextPageMarker", targetDepth))
+                if (context.TestExpression("NextPageMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextPageMarker = unmarshaller.Unmarshall(context, ref reader);

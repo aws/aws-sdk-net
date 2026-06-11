@@ -56,49 +56,49 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoRenew", targetDepth))
+                if (context.TestExpression("AutoRenew", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoRenew = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Limits", targetDepth))
+                if (context.TestExpression("Limits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Limit, LimitUnmarshaller>(LimitUnmarshaller.Instance);
                     unmarshalledObject.Limits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProactiveEngagementStatus", targetDepth))
+                if (context.TestExpression("ProactiveEngagementStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProactiveEngagementStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionArn", targetDepth))
+                if (context.TestExpression("SubscriptionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubscriptionLimits", targetDepth))
+                if (context.TestExpression("SubscriptionLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = SubscriptionLimitsUnmarshaller.Instance;
                     unmarshalledObject.SubscriptionLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeCommitmentInSeconds", targetDepth))
+                if (context.TestExpression("TimeCommitmentInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TimeCommitmentInSeconds = unmarshaller.Unmarshall(context, ref reader);

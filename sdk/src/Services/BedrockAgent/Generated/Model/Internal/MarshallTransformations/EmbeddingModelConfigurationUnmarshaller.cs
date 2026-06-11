@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockEmbeddingModelConfiguration", targetDepth))
+                if (context.TestExpression("bedrockEmbeddingModelConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BedrockEmbeddingModelConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BedrockEmbeddingModelConfiguration = unmarshaller.Unmarshall(context, ref reader);

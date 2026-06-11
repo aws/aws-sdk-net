@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LanguageModel", targetDepth))
+                if (context.TestExpression("LanguageModel", targetDepth, ref reader))
                 {
                     var unmarshaller = LanguageModelUnmarshaller.Instance;
                     response.LanguageModel = unmarshaller.Unmarshall(context, ref reader);

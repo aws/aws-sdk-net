@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Aggregation", targetDepth))
+                if (context.TestExpression("Aggregation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Constant", targetDepth))
+                if (context.TestExpression("Constant", targetDepth, ref reader))
                 {
                     var unmarshaller = TopicRangeFilterConstantUnmarshaller.Instance;
                     unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Inclusive", targetDepth))
+                if (context.TestExpression("Inclusive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context, ref reader);

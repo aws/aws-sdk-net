@@ -52,7 +52,7 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("payload", targetDepth))
+                if (context.TestExpression("payload", targetDepth, ref reader))
                 {
                     var unmarshaller = PropertygraphSummaryValueMapUnmarshaller.Instance;
                     response.Payload = unmarshaller.Unmarshall(context, ref reader);

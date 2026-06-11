@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3Presign", targetDepth))
+                if (context.TestExpression("S3Presign", targetDepth, ref reader))
                 {
                     var unmarshaller = S3PresignUnmarshaller.Instance;
                     unmarshalledObject.S3Presign = unmarshaller.Unmarshall(context, ref reader);

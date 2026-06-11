@@ -52,13 +52,13 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApprovalTeams", targetDepth))
+                if (context.TestExpression("ApprovalTeams", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListApprovalTeamsResponseApprovalTeam, ListApprovalTeamsResponseApprovalTeamUnmarshaller>(ListApprovalTeamsResponseApprovalTeamUnmarshaller.Instance);
                     response.ApprovalTeams = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

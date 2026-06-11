@@ -56,55 +56,55 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomDeliveryConfiguration", targetDepth))
+                if (context.TestExpression("CustomDeliveryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomDeliveryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomDeliveryConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageConfiguration", targetDepth))
+                if (context.TestExpression("MessageConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MessageConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MessageConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Schedule", targetDepth))
+                if (context.TestExpression("Schedule", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduleUnmarshaller.Instance;
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SizePercent", targetDepth))
+                if (context.TestExpression("SizePercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizePercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = CampaignStateUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateConfiguration", targetDepth))
+                if (context.TestExpression("TemplateConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TemplateConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TemplateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TreatmentDescription", targetDepth))
+                if (context.TestExpression("TreatmentDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TreatmentDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TreatmentName", targetDepth))
+                if (context.TestExpression("TreatmentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TreatmentName = unmarshaller.Unmarshall(context, ref reader);

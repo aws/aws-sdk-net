@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("destinationIp", targetDepth))
+                if (context.TestExpression("destinationIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationPort", targetDepth))
+                if (context.TestExpression("destinationPort", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("interface", targetDepth))
+                if (context.TestExpression("interface", targetDepth, ref reader))
                 {
                     var unmarshaller = InterfaceUnmarshaller.Instance;
                     unmarshalledObject.Interface = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outboundIp", targetDepth))
+                if (context.TestExpression("outboundIp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutboundIp = unmarshaller.Unmarshall(context, ref reader);

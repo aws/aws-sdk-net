@@ -52,13 +52,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("collectionGroupDetails", targetDepth))
+                if (context.TestExpression("collectionGroupDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CollectionGroupDetail, CollectionGroupDetailUnmarshaller>(CollectionGroupDetailUnmarshaller.Instance);
                     response.CollectionGroupDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("collectionGroupErrorDetails", targetDepth))
+                if (context.TestExpression("collectionGroupErrorDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CollectionGroupErrorDetail, CollectionGroupErrorDetailUnmarshaller>(CollectionGroupErrorDetailUnmarshaller.Instance);
                     response.CollectionGroupErrorDetails = unmarshaller.Unmarshall(context, ref reader);

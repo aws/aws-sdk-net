@@ -44,6 +44,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private string _cacheSubnetGroupName;
         private DataTieringStatus _dataTiering;
+        private Durability _durability;
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -393,6 +394,26 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetDataTiering()
         {
             return this._dataTiering != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Durability. 
+        /// <para>
+        /// The durability setting of the cluster when the snapshot was taken. When restoring
+        /// from this snapshot, the cluster uses this durability setting unless overridden in
+        /// the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// </para>
+        /// </summary>
+        public Durability Durability
+        {
+            get { return this._durability; }
+            set { this._durability = value; }
+        }
+
+        // Check to see if Durability property is set
+        internal bool IsSetDurability()
+        {
+            return this._durability != null;
         }
 
         /// <summary>

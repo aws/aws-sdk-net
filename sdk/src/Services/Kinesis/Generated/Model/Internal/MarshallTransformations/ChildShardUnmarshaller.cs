@@ -56,19 +56,19 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HashKeyRange", targetDepth))
+                if (context.TestExpression("HashKeyRange", targetDepth, ref reader))
                 {
                     var unmarshaller = HashKeyRangeUnmarshaller.Instance;
                     unmarshalledObject.HashKeyRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParentShards", targetDepth))
+                if (context.TestExpression("ParentShards", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ParentShards = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ShardId", targetDepth))
+                if (context.TestExpression("ShardId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ShardId = unmarshaller.Unmarshall(context, ref reader);

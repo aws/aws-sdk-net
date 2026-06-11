@@ -35,6 +35,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.CreateInvoiceUnit(new CreateInvoiceUnitRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b42",
                 Description = "Example Invoice Unit Description",
                 InvoiceReceiver = "111111111111",
                 Name = "Example Invoice Unit",
@@ -133,6 +134,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.DeleteInvoiceUnit(new DeleteInvoiceUnitRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b44",
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678"
             });
 
@@ -148,6 +150,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.DeleteProcurementPortalPreference(new DeleteProcurementPortalPreferenceRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b47",
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
             });
 
@@ -496,6 +499,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.PutProcurementPortalPreference(new PutProcurementPortalPreferenceRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b45",
                 Contacts = new List<Contact> {
                     new Contact {
                         Email = "example-placeholder2@amazon.com",
@@ -591,6 +595,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b42",
                 Description = "Updated IU description",
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678",
                 Rule = new InvoiceUnitRule { LinkedAccounts = new List<string> {
@@ -612,6 +617,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.UpdateInvoiceUnit(new UpdateInvoiceUnitRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b43",
                 Description = "Updated IU description. All other fields remain unchanged",
                 InvoiceUnitArn = "arn:aws:invoicing::000000000000:invoice-unit/12345678"
             });
@@ -628,6 +634,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             var client = new AmazonInvoicingClient();
             var response = client.UpdateProcurementPortalPreferenceStatus(new UpdateProcurementPortalPreferenceStatusRequest 
             {
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b46",
                 EinvoiceDeliveryPreferenceStatus = "SUSPENDED",
                 EinvoiceDeliveryPreferenceStatusReason = "suspended example reason",
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",

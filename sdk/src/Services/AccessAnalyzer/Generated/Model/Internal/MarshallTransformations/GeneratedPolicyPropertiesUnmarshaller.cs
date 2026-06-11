@@ -56,19 +56,19 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudTrailProperties", targetDepth))
+                if (context.TestExpression("cloudTrailProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudTrailPropertiesUnmarshaller.Instance;
                     unmarshalledObject.CloudTrailProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isComplete", targetDepth))
+                if (context.TestExpression("isComplete", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsComplete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("principalArn", targetDepth))
+                if (context.TestExpression("principalArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrincipalArn = unmarshaller.Unmarshall(context, ref reader);

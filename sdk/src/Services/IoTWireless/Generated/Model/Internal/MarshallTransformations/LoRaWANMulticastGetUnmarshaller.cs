@@ -56,31 +56,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DlClass", targetDepth))
+                if (context.TestExpression("DlClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DlClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfDevicesInGroup", targetDepth))
+                if (context.TestExpression("NumberOfDevicesInGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDevicesInGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfDevicesRequested", targetDepth))
+                if (context.TestExpression("NumberOfDevicesRequested", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfDevicesRequested = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParticipatingGateways", targetDepth))
+                if (context.TestExpression("ParticipatingGateways", targetDepth, ref reader))
                 {
                     var unmarshaller = ParticipatingGatewaysMulticastUnmarshaller.Instance;
                     unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RfRegion", targetDepth))
+                if (context.TestExpression("RfRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context, ref reader);

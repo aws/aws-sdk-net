@@ -56,25 +56,25 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("capabilities", targetDepth))
+                if (context.TestExpression("capabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = KernelCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("devices", targetDepth))
+                if (context.TestExpression("devices", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Device, DeviceUnmarshaller>(DeviceUnmarshaller.Instance);
                     unmarshalledObject.Devices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("initProcessEnabled", targetDepth))
+                if (context.TestExpression("initProcessEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tmpfs", targetDepth))
+                if (context.TestExpression("tmpfs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tmpfs, TmpfsUnmarshaller>(TmpfsUnmarshaller.Instance);
                     unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context, ref reader);

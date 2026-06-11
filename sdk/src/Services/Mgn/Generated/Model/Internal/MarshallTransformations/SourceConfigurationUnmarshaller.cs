@@ -56,13 +56,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sourceEnvironment", targetDepth))
+                if (context.TestExpression("sourceEnvironment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceEnvironment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceS3Configuration", targetDepth))
+                if (context.TestExpression("sourceS3Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceS3ConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SourceS3Configuration = unmarshaller.Unmarshall(context, ref reader);

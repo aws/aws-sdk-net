@@ -56,13 +56,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContentSourceConfiguration", targetDepth))
+                if (context.TestExpression("ContentSourceConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentSourceConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ContentSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UserIdentityConfiguration", targetDepth))
+                if (context.TestExpression("UserIdentityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = UserIdentityConfigurationUnmarshaller.Instance;
                     unmarshalledObject.UserIdentityConfiguration = unmarshaller.Unmarshall(context, ref reader);

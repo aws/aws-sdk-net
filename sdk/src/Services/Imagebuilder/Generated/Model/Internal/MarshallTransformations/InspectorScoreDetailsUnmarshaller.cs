@@ -56,7 +56,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adjustedCvss", targetDepth))
+                if (context.TestExpression("adjustedCvss", targetDepth, ref reader))
                 {
                     var unmarshaller = CvssScoreDetailsUnmarshaller.Instance;
                     unmarshalledObject.AdjustedCvss = unmarshaller.Unmarshall(context, ref reader);

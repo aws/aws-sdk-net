@@ -56,7 +56,7 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InProgressTimeoutInMinutes", targetDepth))
+                if (context.TestExpression("InProgressTimeoutInMinutes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.InProgressTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);

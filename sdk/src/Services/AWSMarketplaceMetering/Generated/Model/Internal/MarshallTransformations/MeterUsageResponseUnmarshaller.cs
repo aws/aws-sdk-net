@@ -52,7 +52,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MeteringRecordId", targetDepth))
+                if (context.TestExpression("MeteringRecordId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MeteringRecordId = unmarshaller.Unmarshall(context, ref reader);

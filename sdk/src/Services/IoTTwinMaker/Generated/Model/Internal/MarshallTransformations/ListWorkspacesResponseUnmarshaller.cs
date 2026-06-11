@@ -52,13 +52,13 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workspaceSummaries", targetDepth))
+                if (context.TestExpression("workspaceSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WorkspaceSummary, WorkspaceSummaryUnmarshaller>(WorkspaceSummaryUnmarshaller.Instance);
                     response.WorkspaceSummaries = unmarshaller.Unmarshall(context, ref reader);

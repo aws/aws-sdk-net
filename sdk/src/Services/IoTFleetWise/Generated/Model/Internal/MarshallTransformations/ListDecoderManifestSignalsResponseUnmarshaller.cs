@@ -52,13 +52,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("signalDecoders", targetDepth))
+                if (context.TestExpression("signalDecoders", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SignalDecoder, SignalDecoderUnmarshaller>(SignalDecoderUnmarshaller.Instance);
                     response.SignalDecoders = unmarshaller.Unmarshall(context, ref reader);

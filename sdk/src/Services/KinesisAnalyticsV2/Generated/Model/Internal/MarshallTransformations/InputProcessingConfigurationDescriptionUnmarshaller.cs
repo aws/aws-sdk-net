@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InputLambdaProcessorDescription", targetDepth))
+                if (context.TestExpression("InputLambdaProcessorDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = InputLambdaProcessorDescriptionUnmarshaller.Instance;
                     unmarshalledObject.InputLambdaProcessorDescription = unmarshaller.Unmarshall(context, ref reader);

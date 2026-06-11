@@ -20,7 +20,7 @@ namespace AWSSDK_DotNet.UnitTests.ConstantClasses.S3
                 new object[] {typeof(S3StorageClass), "ObjectStorageClass"}
             };
 
-        [DataTestMethod]
+        [TestMethod]
         [DynamicData(nameof(ConstantTests))]
         public void EnumTests(Type constantClassType, string enumName)
         {

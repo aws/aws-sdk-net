@@ -52,31 +52,31 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmailTags", targetDepth))
+                if (context.TestExpression("EmailTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MessageTag, MessageTagUnmarshaller>(MessageTagUnmarshaller.Instance);
                     response.EmailTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FromEmailAddress", targetDepth))
+                if (context.TestExpression("FromEmailAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FromEmailAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Insights", targetDepth))
+                if (context.TestExpression("Insights", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EmailInsights, EmailInsightsUnmarshaller>(EmailInsightsUnmarshaller.Instance);
                     response.Insights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageId", targetDepth))
+                if (context.TestExpression("MessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subject", targetDepth))
+                if (context.TestExpression("Subject", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Subject = unmarshaller.Unmarshall(context, ref reader);

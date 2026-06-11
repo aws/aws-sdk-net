@@ -56,19 +56,19 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizingClaimMatchValue", targetDepth))
+                if (context.TestExpression("authorizingClaimMatchValue", targetDepth, ref reader))
                 {
                     var unmarshaller = AuthorizingClaimMatchValueTypeUnmarshaller.Instance;
                     unmarshalledObject.AuthorizingClaimMatchValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inboundTokenClaimName", targetDepth))
+                if (context.TestExpression("inboundTokenClaimName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InboundTokenClaimName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inboundTokenClaimValueType", targetDepth))
+                if (context.TestExpression("inboundTokenClaimValueType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InboundTokenClaimValueType = unmarshaller.Unmarshall(context, ref reader);

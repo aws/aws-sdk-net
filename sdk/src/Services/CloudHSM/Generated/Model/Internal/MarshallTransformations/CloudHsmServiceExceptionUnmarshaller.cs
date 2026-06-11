@@ -72,7 +72,7 @@ namespace Amazon.CloudHSM.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("retryable", targetDepth))
+                    if (context.TestExpression("retryable", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.Retryable = unmarshaller.Unmarshall(context, ref reader);

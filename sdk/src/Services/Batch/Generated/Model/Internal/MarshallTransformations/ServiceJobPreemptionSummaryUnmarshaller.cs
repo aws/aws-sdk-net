@@ -56,13 +56,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("preemptedAttemptCount", targetDepth))
+                if (context.TestExpression("preemptedAttemptCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PreemptedAttemptCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recentPreemptedAttempts", targetDepth))
+                if (context.TestExpression("recentPreemptedAttempts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceJobPreemptedAttempt, ServiceJobPreemptedAttemptUnmarshaller>(ServiceJobPreemptedAttemptUnmarshaller.Instance);
                     unmarshalledObject.RecentPreemptedAttempts = unmarshaller.Unmarshall(context, ref reader);

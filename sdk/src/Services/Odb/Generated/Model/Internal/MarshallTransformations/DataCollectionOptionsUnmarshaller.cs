@@ -56,19 +56,19 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("isDiagnosticsEventsEnabled", targetDepth))
+                if (context.TestExpression("isDiagnosticsEventsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsDiagnosticsEventsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isHealthMonitoringEnabled", targetDepth))
+                if (context.TestExpression("isHealthMonitoringEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsHealthMonitoringEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isIncidentLogsEnabled", targetDepth))
+                if (context.TestExpression("isIncidentLogsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsIncidentLogsEnabled = unmarshaller.Unmarshall(context, ref reader);

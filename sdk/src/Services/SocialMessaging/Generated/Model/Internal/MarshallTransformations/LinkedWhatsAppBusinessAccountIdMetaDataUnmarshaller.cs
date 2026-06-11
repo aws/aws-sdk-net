@@ -56,25 +56,25 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountName", targetDepth))
+                if (context.TestExpression("accountName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("registrationStatus", targetDepth))
+                if (context.TestExpression("registrationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RegistrationStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unregisteredWhatsAppPhoneNumbers", targetDepth))
+                if (context.TestExpression("unregisteredWhatsAppPhoneNumbers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WhatsAppPhoneNumberDetail, WhatsAppPhoneNumberDetailUnmarshaller>(WhatsAppPhoneNumberDetailUnmarshaller.Instance);
                     unmarshalledObject.UnregisteredWhatsAppPhoneNumbers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wabaId", targetDepth))
+                if (context.TestExpression("wabaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WabaId = unmarshaller.Unmarshall(context, ref reader);

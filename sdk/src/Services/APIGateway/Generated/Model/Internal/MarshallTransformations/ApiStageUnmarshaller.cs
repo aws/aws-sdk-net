@@ -56,19 +56,19 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("apiId", targetDepth))
+                if (context.TestExpression("apiId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApiId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stage", targetDepth))
+                if (context.TestExpression("stage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Stage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("throttle", targetDepth))
+                if (context.TestExpression("throttle", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ThrottleSettings, StringUnmarshaller, ThrottleSettingsUnmarshaller>(StringUnmarshaller.Instance, ThrottleSettingsUnmarshaller.Instance);
                     unmarshalledObject.Throttle = unmarshaller.Unmarshall(context, ref reader);

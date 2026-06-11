@@ -52,13 +52,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UpdateVehicleError, UpdateVehicleErrorUnmarshaller>(UpdateVehicleErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vehicles", targetDepth))
+                if (context.TestExpression("vehicles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UpdateVehicleResponseItem, UpdateVehicleResponseItemUnmarshaller>(UpdateVehicleResponseItemUnmarshaller.Instance);
                     response.Vehicles = unmarshaller.Unmarshall(context, ref reader);

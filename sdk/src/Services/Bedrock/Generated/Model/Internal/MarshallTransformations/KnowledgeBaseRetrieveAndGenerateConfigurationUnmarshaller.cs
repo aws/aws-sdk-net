@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("generationConfiguration", targetDepth))
+                if (context.TestExpression("generationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GenerationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseId", targetDepth))
+                if (context.TestExpression("knowledgeBaseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelArn", targetDepth))
+                if (context.TestExpression("modelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("orchestrationConfiguration", targetDepth))
+                if (context.TestExpression("orchestrationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OrchestrationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OrchestrationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrievalConfiguration", targetDepth))
+                if (context.TestExpression("retrievalConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseRetrievalConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RetrievalConfiguration = unmarshaller.Unmarshall(context, ref reader);

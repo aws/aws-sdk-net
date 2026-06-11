@@ -52,13 +52,13 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountLimit", targetDepth))
+                if (context.TestExpression("AccountLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountLimitUnmarshaller.Instance;
                     response.AccountLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AccountUsage", targetDepth))
+                if (context.TestExpression("AccountUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = AccountUsageUnmarshaller.Instance;
                     response.AccountUsage = unmarshaller.Unmarshall(context, ref reader);

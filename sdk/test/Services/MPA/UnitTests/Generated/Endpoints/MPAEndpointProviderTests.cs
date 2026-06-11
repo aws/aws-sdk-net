@@ -47,13 +47,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MPA")]
         [Description("For custom endpoint with fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new MPAEndpointParameters();
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonMPAEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonMPAEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -145,11 +147,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MPA")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new MPAEndpointParameters();
-            var endpoint = new AmazonMPAEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonMPAEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
     }

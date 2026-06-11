@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("importJob", targetDepth))
+                if (context.TestExpression("importJob", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportJobDataUnmarshaller.Instance;
                     response.ImportJob = unmarshaller.Unmarshall(context, ref reader);

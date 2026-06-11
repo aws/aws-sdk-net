@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CategoricalDimensionField", targetDepth))
+                if (context.TestExpression("CategoricalDimensionField", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoricalDimensionFieldUnmarshaller.Instance;
                     unmarshalledObject.CategoricalDimensionField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DateDimensionField", targetDepth))
+                if (context.TestExpression("DateDimensionField", targetDepth, ref reader))
                 {
                     var unmarshaller = DateDimensionFieldUnmarshaller.Instance;
                     unmarshalledObject.DateDimensionField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumericalDimensionField", targetDepth))
+                if (context.TestExpression("NumericalDimensionField", targetDepth, ref reader))
                 {
                     var unmarshaller = NumericalDimensionFieldUnmarshaller.Instance;
                     unmarshalledObject.NumericalDimensionField = unmarshaller.Unmarshall(context, ref reader);

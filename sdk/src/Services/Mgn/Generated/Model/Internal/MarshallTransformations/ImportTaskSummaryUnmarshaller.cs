@@ -56,19 +56,19 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("applications", targetDepth))
+                if (context.TestExpression("applications", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportTaskSummaryApplicationsUnmarshaller.Instance;
                     unmarshalledObject.Applications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("servers", targetDepth))
+                if (context.TestExpression("servers", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportTaskSummaryServersUnmarshaller.Instance;
                     unmarshalledObject.Servers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("waves", targetDepth))
+                if (context.TestExpression("waves", targetDepth, ref reader))
                 {
                     var unmarshaller = ImportTaskSummaryWavesUnmarshaller.Instance;
                     unmarshalledObject.Waves = unmarshaller.Unmarshall(context, ref reader);

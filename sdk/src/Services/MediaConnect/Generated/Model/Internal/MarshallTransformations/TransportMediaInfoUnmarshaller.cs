@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("programs", targetDepth))
+                if (context.TestExpression("programs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TransportStreamProgram, TransportStreamProgramUnmarshaller>(TransportStreamProgramUnmarshaller.Instance);
                     unmarshalledObject.Programs = unmarshaller.Unmarshall(context, ref reader);

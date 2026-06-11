@@ -1207,6 +1207,126 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type DatasetSchemaType.
+    /// </summary>
+    public class DatasetSchemaType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENTCORE_EVALUATION_PREDEFINED_V1 for DatasetSchemaType
+        /// </summary>
+        public static readonly DatasetSchemaType AGENTCORE_EVALUATION_PREDEFINED_V1 = new DatasetSchemaType("AGENTCORE_EVALUATION_PREDEFINED_V1");
+        /// <summary>
+        /// Constant AGENTCORE_EVALUATION_SIMULATED_V1 for DatasetSchemaType
+        /// </summary>
+        public static readonly DatasetSchemaType AGENTCORE_EVALUATION_SIMULATED_V1 = new DatasetSchemaType("AGENTCORE_EVALUATION_SIMULATED_V1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetSchemaType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetSchemaType FindValue(string value)
+        {
+            return FindValue<DatasetSchemaType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetSchemaType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DatasetStatus.
+    /// </summary>
+    public class DatasetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus ACTIVE = new DatasetStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATE_FAILED = new DatasetStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus CREATING = new DatasetStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETE_FAILED = new DatasetStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus DELETING = new DatasetStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus UPDATE_FAILED = new DatasetStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for DatasetStatus
+        /// </summary>
+        public static readonly DatasetStatus UPDATING = new DatasetStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatasetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatasetStatus FindValue(string value)
+        {
+            return FindValue<DatasetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatasetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DescriptorType.
     /// </summary>
     public class DescriptorType : ConstantClass
@@ -1258,6 +1378,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DescriptorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DraftStatus.
+    /// </summary>
+    public class DraftStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MODIFIED for DraftStatus
+        /// </summary>
+        public static readonly DraftStatus MODIFIED = new DraftStatus("MODIFIED");
+        /// <summary>
+        /// Constant UNMODIFIED for DraftStatus
+        /// </summary>
+        public static readonly DraftStatus UNMODIFIED = new DraftStatus("UNMODIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DraftStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DraftStatus FindValue(string value)
+        {
+            return FindValue<DraftStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DraftStatus(string value)
         {
             return FindValue(value);
         }
@@ -1942,6 +2112,110 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GatewayStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessBedrockApiFormat.
+    /// </summary>
+    public class HarnessBedrockApiFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat_completions for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Chat_completions = new HarnessBedrockApiFormat("chat_completions");
+        /// <summary>
+        /// Constant Converse_stream for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Converse_stream = new HarnessBedrockApiFormat("converse_stream");
+        /// <summary>
+        /// Constant Responses for HarnessBedrockApiFormat
+        /// </summary>
+        public static readonly HarnessBedrockApiFormat Responses = new HarnessBedrockApiFormat("responses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessBedrockApiFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessBedrockApiFormat FindValue(string value)
+        {
+            return FindValue<HarnessBedrockApiFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessBedrockApiFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessOpenAiApiFormat.
+    /// </summary>
+    public class HarnessOpenAiApiFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat_completions for HarnessOpenAiApiFormat
+        /// </summary>
+        public static readonly HarnessOpenAiApiFormat Chat_completions = new HarnessOpenAiApiFormat("chat_completions");
+        /// <summary>
+        /// Constant Responses for HarnessOpenAiApiFormat
+        /// </summary>
+        public static readonly HarnessOpenAiApiFormat Responses = new HarnessOpenAiApiFormat("responses");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessOpenAiApiFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessOpenAiApiFormat FindValue(string value)
+        {
+            return FindValue<HarnessOpenAiApiFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessOpenAiApiFormat(string value)
         {
             return FindValue(value);
         }
@@ -4060,6 +4334,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecretSourceType.
+    /// </summary>
+    public class SecretSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTERNAL for SecretSourceType
+        /// </summary>
+        public static readonly SecretSourceType EXTERNAL = new SecretSourceType("EXTERNAL");
+        /// <summary>
+        /// Constant MANAGED for SecretSourceType
+        /// </summary>
+        public static readonly SecretSourceType MANAGED = new SecretSourceType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecretSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecretSourceType FindValue(string value)
+        {
+            return FindValue<SecretSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecretSourceType(string value)
         {
             return FindValue(value);
         }

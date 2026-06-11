@@ -52,13 +52,13 @@ namespace Amazon.S3Files.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fileSystems", targetDepth))
+                if (context.TestExpression("fileSystems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListFileSystemsDescription, ListFileSystemsDescriptionUnmarshaller>(ListFileSystemsDescriptionUnmarshaller.Instance);
                     response.FileSystems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

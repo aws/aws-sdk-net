@@ -56,7 +56,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("criteriaList", targetDepth))
+                if (context.TestExpression("criteriaList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RetryCriteria, RetryCriteriaUnmarshaller>(RetryCriteriaUnmarshaller.Instance);
                     unmarshalledObject.CriteriaList = unmarshaller.Unmarshall(context, ref reader);

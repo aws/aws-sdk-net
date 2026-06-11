@@ -52,7 +52,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("readSetId", targetDepth))
+                if (context.TestExpression("readSetId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReadSetId = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("useLocalStorage", targetDepth))
+                if (context.TestExpression("useLocalStorage", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseLocalStorage = unmarshaller.Unmarshall(context, ref reader);

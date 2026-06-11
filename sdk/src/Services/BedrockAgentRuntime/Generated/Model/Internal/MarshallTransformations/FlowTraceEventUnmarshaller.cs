@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("trace", targetDepth))
+                if (context.TestExpression("trace", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTraceUnmarshaller.Instance;
                     unmarshalledObject.Trace = unmarshaller.Unmarshall(context, ref reader);

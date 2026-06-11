@@ -56,13 +56,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("managedWordListsConfig", targetDepth))
+                if (context.TestExpression("managedWordListsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailManagedWordsConfig, GuardrailManagedWordsConfigUnmarshaller>(GuardrailManagedWordsConfigUnmarshaller.Instance);
                     unmarshalledObject.ManagedWordListsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wordsConfig", targetDepth))
+                if (context.TestExpression("wordsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailWordConfig, GuardrailWordConfigUnmarshaller>(GuardrailWordConfigUnmarshaller.Instance);
                     unmarshalledObject.WordsConfig = unmarshaller.Unmarshall(context, ref reader);

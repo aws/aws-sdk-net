@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("subSlots", targetDepth))
+                if (context.TestExpression("subSlots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SubSlotTypeComposition, SubSlotTypeCompositionUnmarshaller>(SubSlotTypeCompositionUnmarshaller.Instance);
                     unmarshalledObject.SubSlots = unmarshaller.Unmarshall(context, ref reader);

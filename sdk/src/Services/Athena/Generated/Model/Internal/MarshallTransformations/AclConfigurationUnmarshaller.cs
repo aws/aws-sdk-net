@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3AclOption", targetDepth))
+                if (context.TestExpression("S3AclOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3AclOption = unmarshaller.Unmarshall(context, ref reader);

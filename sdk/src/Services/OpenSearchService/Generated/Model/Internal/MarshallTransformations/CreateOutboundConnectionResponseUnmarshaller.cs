@@ -52,43 +52,43 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionAlias", targetDepth))
+                if (context.TestExpression("ConnectionAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionId", targetDepth))
+                if (context.TestExpression("ConnectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionMode", targetDepth))
+                if (context.TestExpression("ConnectionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ConnectionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionProperties", targetDepth))
+                if (context.TestExpression("ConnectionProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionPropertiesUnmarshaller.Instance;
                     response.ConnectionProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionStatus", targetDepth))
+                if (context.TestExpression("ConnectionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = OutboundConnectionStatusUnmarshaller.Instance;
                     response.ConnectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LocalDomainInfo", targetDepth))
+                if (context.TestExpression("LocalDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
                     response.LocalDomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemoteDomainInfo", targetDepth))
+                if (context.TestExpression("RemoteDomainInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = DomainInformationContainerUnmarshaller.Instance;
                     response.RemoteDomainInfo = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("principalArn", targetDepth))
+                if (context.TestExpression("principalArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PrincipalArn = unmarshaller.Unmarshall(context, ref reader);

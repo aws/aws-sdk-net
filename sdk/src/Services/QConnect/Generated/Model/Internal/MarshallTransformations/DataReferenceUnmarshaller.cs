@@ -56,19 +56,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contentReference", targetDepth))
+                if (context.TestExpression("contentReference", targetDepth, ref reader))
                 {
                     var unmarshaller = ContentReferenceUnmarshaller.Instance;
                     unmarshalledObject.ContentReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("generativeReference", targetDepth))
+                if (context.TestExpression("generativeReference", targetDepth, ref reader))
                 {
                     var unmarshaller = GenerativeReferenceUnmarshaller.Instance;
                     unmarshalledObject.GenerativeReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("suggestedMessageReference", targetDepth))
+                if (context.TestExpression("suggestedMessageReference", targetDepth, ref reader))
                 {
                     var unmarshaller = SuggestedMessageReferenceUnmarshaller.Instance;
                     unmarshalledObject.SuggestedMessageReference = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeliveryStreamDescription", targetDepth))
+                if (context.TestExpression("DeliveryStreamDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = DeliveryStreamDescriptionUnmarshaller.Instance;
                     response.DeliveryStreamDescription = unmarshaller.Unmarshall(context, ref reader);

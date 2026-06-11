@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SemtechGnss", targetDepth))
+                if (context.TestExpression("SemtechGnss", targetDepth, ref reader))
                 {
                     var unmarshaller = SemtechGnssDetailUnmarshaller.Instance;
                     unmarshalledObject.SemtechGnss = unmarshaller.Unmarshall(context, ref reader);

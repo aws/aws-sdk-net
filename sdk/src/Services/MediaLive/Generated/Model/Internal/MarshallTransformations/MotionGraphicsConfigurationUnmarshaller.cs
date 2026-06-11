@@ -56,13 +56,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("motionGraphicsInsertion", targetDepth))
+                if (context.TestExpression("motionGraphicsInsertion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MotionGraphicsInsertion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("motionGraphicsSettings", targetDepth))
+                if (context.TestExpression("motionGraphicsSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = MotionGraphicsSettingsUnmarshaller.Instance;
                     unmarshalledObject.MotionGraphicsSettings = unmarshaller.Unmarshall(context, ref reader);

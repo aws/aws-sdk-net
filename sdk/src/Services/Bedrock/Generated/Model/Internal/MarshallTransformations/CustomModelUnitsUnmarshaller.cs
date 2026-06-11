@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customModelUnitsPerModelCopy", targetDepth))
+                if (context.TestExpression("customModelUnitsPerModelCopy", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CustomModelUnitsPerModelCopy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customModelUnitsVersion", targetDepth))
+                if (context.TestExpression("customModelUnitsVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomModelUnitsVersion = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domainPrefix", targetDepth))
+                if (context.TestExpression("domainPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DomainPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuthGrantType", targetDepth))
+                if (context.TestExpression("oAuthGrantType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OAuthGrantType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuthScopes", targetDepth))
+                if (context.TestExpression("oAuthScopes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OAuthScopes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redirectSignInURIs", targetDepth))
+                if (context.TestExpression("redirectSignInURIs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RedirectSignInURIs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("redirectSignOutURIs", targetDepth))
+                if (context.TestExpression("redirectSignOutURIs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.RedirectSignOutURIs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("socialProviderSettings", targetDepth))
+                if (context.TestExpression("socialProviderSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = SocialProviderSettingsUnmarshaller.Instance;
                     unmarshalledObject.SocialProviderSettings = unmarshaller.Unmarshall(context, ref reader);

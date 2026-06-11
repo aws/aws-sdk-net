@@ -56,7 +56,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdMarkerPassthrough", targetDepth))
+                if (context.TestExpression("AdMarkerPassthrough", targetDepth, ref reader))
                 {
                     var unmarshaller = AdMarkerPassthroughUnmarshaller.Instance;
                     unmarshalledObject.AdMarkerPassthrough = unmarshaller.Unmarshall(context, ref reader);

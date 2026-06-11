@@ -143,7 +143,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNull(actualMessage.SigningCertURL);
             Assert.IsNull(actualMessage.SignatureVersion);
 
-            Assert.ThrowsException<AmazonClientException>(() => actualMessage.IsMessageSignatureValid());
+            Assert.ThrowsExactly<AmazonClientException>(() => actualMessage.IsMessageSignatureValid());
         }
     }
 }

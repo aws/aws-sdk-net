@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aiConfig", targetDepth))
+                if (context.TestExpression("aiConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AIConfigUnmarshaller.Instance;
                     unmarshalledObject.AiConfig = unmarshaller.Unmarshall(context, ref reader);

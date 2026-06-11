@@ -56,7 +56,7 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("overrides", targetDepth))
+                if (context.TestExpression("overrides", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToscaOverride, ToscaOverrideUnmarshaller>(ToscaOverrideUnmarshaller.Instance);
                     unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);

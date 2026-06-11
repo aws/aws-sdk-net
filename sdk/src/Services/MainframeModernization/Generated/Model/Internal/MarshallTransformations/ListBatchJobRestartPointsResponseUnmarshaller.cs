@@ -52,7 +52,7 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("batchJobSteps", targetDepth))
+                if (context.TestExpression("batchJobSteps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobStep, JobStepUnmarshaller>(JobStepUnmarshaller.Instance);
                     response.BatchJobSteps = unmarshaller.Unmarshall(context, ref reader);

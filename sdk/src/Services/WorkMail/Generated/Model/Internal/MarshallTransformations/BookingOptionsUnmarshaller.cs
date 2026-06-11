@@ -56,19 +56,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoAcceptRequests", targetDepth))
+                if (context.TestExpression("AutoAcceptRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoAcceptRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoDeclineConflictingRequests", targetDepth))
+                if (context.TestExpression("AutoDeclineConflictingRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeclineConflictingRequests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoDeclineRecurringRequests", targetDepth))
+                if (context.TestExpression("AutoDeclineRecurringRequests", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.AutoDeclineRecurringRequests = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SnapshotLimits", targetDepth))
+                if (context.TestExpression("SnapshotLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = SnapshotLimitsUnmarshaller.Instance;
                     response.SnapshotLimits = unmarshaller.Unmarshall(context, ref reader);

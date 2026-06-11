@@ -7,7 +7,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class PreemptExpiryTests
     {
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(900, 5)]
         [DataRow(1199, 5)]
         [DataRow(1200, 5)]

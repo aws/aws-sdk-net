@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionConfigurations", targetDepth))
+                if (context.TestExpression("DimensionConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BodySectionRepeatDimensionConfiguration, BodySectionRepeatDimensionConfigurationUnmarshaller>(BodySectionRepeatDimensionConfigurationUnmarshaller.Instance);
                     unmarshalledObject.DimensionConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NonRepeatingVisuals", targetDepth))
+                if (context.TestExpression("NonRepeatingVisuals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NonRepeatingVisuals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PageBreakConfiguration", targetDepth))
+                if (context.TestExpression("PageBreakConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BodySectionRepeatPageBreakConfigurationUnmarshaller.Instance;
                     unmarshalledObject.PageBreakConfiguration = unmarshaller.Unmarshall(context, ref reader);

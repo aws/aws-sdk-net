@@ -56,49 +56,55 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CapacityProviderArn", targetDepth))
+                if (context.TestExpression("CapacityProviderArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CapacityProviderArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CapacityProviderScalingConfig", targetDepth))
+                if (context.TestExpression("CapacityProviderScalingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityProviderScalingConfigUnmarshaller.Instance;
                     unmarshalledObject.CapacityProviderScalingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceRequirements", targetDepth))
+                if (context.TestExpression("InstanceRequirements", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceRequirementsUnmarshaller.Instance;
                     unmarshalledObject.InstanceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KmsKeyArn", targetDepth))
+                if (context.TestExpression("KmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModified", targetDepth))
+                if (context.TestExpression("LastModified", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PermissionsConfig", targetDepth))
+                if (context.TestExpression("PermissionsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityProviderPermissionsConfigUnmarshaller.Instance;
                     unmarshalledObject.PermissionsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("PropagateTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = PropagateTagsUnmarshaller.Instance;
+                    unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("State", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfig", targetDepth))
+                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CapacityProviderVpcConfigUnmarshaller.Instance;
                     unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);

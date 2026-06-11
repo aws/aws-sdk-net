@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AssociationSet", targetDepth))
+                if (context.TestExpression("AssociationSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssociationSetDetails, AssociationSetDetailsUnmarshaller>(AssociationSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.AssociationSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerId", targetDepth))
+                if (context.TestExpression("OwnerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PropagatingVgwSet", targetDepth))
+                if (context.TestExpression("PropagatingVgwSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropagatingVgwSetDetails, PropagatingVgwSetDetailsUnmarshaller>(PropagatingVgwSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.PropagatingVgwSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteSet", targetDepth))
+                if (context.TestExpression("RouteSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteSetDetails, RouteSetDetailsUnmarshaller>(RouteSetDetailsUnmarshaller.Instance);
                     unmarshalledObject.RouteSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RouteTableId", targetDepth))
+                if (context.TestExpression("RouteTableId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcId", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);

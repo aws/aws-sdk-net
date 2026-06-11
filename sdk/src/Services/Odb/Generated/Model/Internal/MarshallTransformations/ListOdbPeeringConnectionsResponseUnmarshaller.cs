@@ -52,13 +52,13 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("odbPeeringConnections", targetDepth))
+                if (context.TestExpression("odbPeeringConnections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<OdbPeeringConnectionSummary, OdbPeeringConnectionSummaryUnmarshaller>(OdbPeeringConnectionSummaryUnmarshaller.Instance);
                     response.OdbPeeringConnections = unmarshaller.Unmarshall(context, ref reader);

@@ -54,7 +54,9 @@ namespace Amazon.ECS.Model
         private string _cpu;
         private string _executionRoleArn;
         private string _family;
+        private DaemonIpcMode _ipcMode;
         private string _memory;
+        private DaemonPidMode _pidMode;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskRoleArn;
         private List<DaemonVolume> _volumes = AWSConfigs.InitializeCollections ? new List<DaemonVolume>() : null;
@@ -146,6 +148,27 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpcMode. 
+        /// <para>
+        /// The IPC namespace mode for the daemon. When set to <c>shared</c>, the daemon shares
+        /// the IPC namespace with co-located tasks on the same container instance, allowing communication
+        /// through POSIX shared memory, semaphores, and message queues. When set to <c>none</c>,
+        /// the daemon gets its own isolated IPC namespace. The default is <c>none</c>.
+        /// </para>
+        /// </summary>
+        public DaemonIpcMode IpcMode
+        {
+            get { return this._ipcMode; }
+            set { this._ipcMode = value; }
+        }
+
+        // Check to see if IpcMode property is set
+        internal bool IsSetIpcMode()
+        {
+            return this._ipcMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
         /// The amount of memory (in MiB) used by the daemon task. It can be expressed as an integer
@@ -162,6 +185,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetMemory()
         {
             return this._memory != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PidMode. 
+        /// <para>
+        /// The process namespace mode for the daemon. When set to <c>shared</c>, the daemon shares
+        /// the PID namespace with co-located tasks on the same container instance, giving the
+        /// daemon visibility into application processes. When set to <c>none</c>, the daemon
+        /// gets its own isolated PID namespace. The default is <c>none</c>.
+        /// </para>
+        /// </summary>
+        public DaemonPidMode PidMode
+        {
+            get { return this._pidMode; }
+            set { this._pidMode = value; }
+        }
+
+        // Check to see if PidMode property is set
+        internal bool IsSetPidMode()
+        {
+            return this._pidMode != null;
         }
 
         /// <summary>

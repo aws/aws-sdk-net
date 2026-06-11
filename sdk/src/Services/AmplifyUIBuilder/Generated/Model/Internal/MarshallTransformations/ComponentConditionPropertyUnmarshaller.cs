@@ -56,43 +56,43 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("else", targetDepth))
+                if (context.TestExpression("else", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Else = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("field", targetDepth))
+                if (context.TestExpression("field", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Field = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operand", targetDepth))
+                if (context.TestExpression("operand", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operandType", targetDepth))
+                if (context.TestExpression("operandType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OperandType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("operator", targetDepth))
+                if (context.TestExpression("operator", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Operator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("property", targetDepth))
+                if (context.TestExpression("property", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Property = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("then", targetDepth))
+                if (context.TestExpression("then", targetDepth, ref reader))
                 {
                     var unmarshaller = ComponentPropertyUnmarshaller.Instance;
                     unmarshalledObject.Then = unmarshaller.Unmarshall(context, ref reader);

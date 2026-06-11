@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("metadataSchema", targetDepth))
+                if (context.TestExpression("metadataSchema", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetadataSchemaEntry, MetadataSchemaEntryUnmarshaller>(MetadataSchemaEntryUnmarshaller.Instance);
                     unmarshalledObject.MetadataSchema = unmarshaller.Unmarshall(context, ref reader);

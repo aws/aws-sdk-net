@@ -52,7 +52,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EmergencyContactList", targetDepth))
+                if (context.TestExpression("EmergencyContactList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EmergencyContact, EmergencyContactUnmarshaller>(EmergencyContactUnmarshaller.Instance);
                     response.EmergencyContactList = unmarshaller.Unmarshall(context, ref reader);

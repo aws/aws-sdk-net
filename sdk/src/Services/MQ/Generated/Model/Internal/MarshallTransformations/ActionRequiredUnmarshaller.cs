@@ -56,13 +56,13 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actionRequiredCode", targetDepth))
+                if (context.TestExpression("actionRequiredCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionRequiredCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("actionRequiredInfo", targetDepth))
+                if (context.TestExpression("actionRequiredInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActionRequiredInfo = unmarshaller.Unmarshall(context, ref reader);

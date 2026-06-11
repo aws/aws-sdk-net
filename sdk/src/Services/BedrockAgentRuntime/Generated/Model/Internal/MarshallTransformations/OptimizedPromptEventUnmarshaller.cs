@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("optimizedPrompt", targetDepth))
+                if (context.TestExpression("optimizedPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizedPromptUnmarshaller.Instance;
                     unmarshalledObject.OptimizedPrompt = unmarshaller.Unmarshall(context, ref reader);

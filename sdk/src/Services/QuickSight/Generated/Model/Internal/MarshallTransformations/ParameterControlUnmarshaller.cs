@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DateTimePicker", targetDepth))
+                if (context.TestExpression("DateTimePicker", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterDateTimePickerControlUnmarshaller.Instance;
                     unmarshalledObject.DateTimePicker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Dropdown", targetDepth))
+                if (context.TestExpression("Dropdown", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterDropDownControlUnmarshaller.Instance;
                     unmarshalledObject.Dropdown = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("List", targetDepth))
+                if (context.TestExpression("List", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterListControlUnmarshaller.Instance;
                     unmarshalledObject.List = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Slider", targetDepth))
+                if (context.TestExpression("Slider", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterSliderControlUnmarshaller.Instance;
                     unmarshalledObject.Slider = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextArea", targetDepth))
+                if (context.TestExpression("TextArea", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterTextAreaControlUnmarshaller.Instance;
                     unmarshalledObject.TextArea = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextField", targetDepth))
+                if (context.TestExpression("TextField", targetDepth, ref reader))
                 {
                     var unmarshaller = ParameterTextFieldControlUnmarshaller.Instance;
                     unmarshalledObject.TextField = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CircleRadius", targetDepth))
+                if (context.TestExpression("CircleRadius", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialCircleRadiusUnmarshaller.Instance;
                     unmarshalledObject.CircleRadius = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FillColor", targetDepth))
+                if (context.TestExpression("FillColor", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialColorUnmarshaller.Instance;
                     unmarshalledObject.FillColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StrokeColor", targetDepth))
+                if (context.TestExpression("StrokeColor", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialColorUnmarshaller.Instance;
                     unmarshalledObject.StrokeColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StrokeWidth", targetDepth))
+                if (context.TestExpression("StrokeWidth", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialLineWidthUnmarshaller.Instance;
                     unmarshalledObject.StrokeWidth = unmarshaller.Unmarshall(context, ref reader);

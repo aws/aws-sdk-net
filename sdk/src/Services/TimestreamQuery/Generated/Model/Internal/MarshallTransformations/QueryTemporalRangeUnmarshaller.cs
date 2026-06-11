@@ -56,7 +56,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Max", targetDepth))
+                if (context.TestExpression("Max", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryTemporalRangeMaxUnmarshaller.Instance;
                     unmarshalledObject.Max = unmarshaller.Unmarshall(context, ref reader);

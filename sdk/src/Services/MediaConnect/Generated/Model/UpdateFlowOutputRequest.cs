@@ -43,6 +43,7 @@ namespace Amazon.MediaConnect.Model
         private int? _maxLatency;
         private List<MediaStreamOutputConfigurationRequest> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfigurationRequest>() : null;
         private int? _minLatency;
+        private NdiOutputTimecodeSource _ndiOutputTimecodeSource;
         private string _ndiProgramName;
         private int? _ndiSpeedHqQuality;
         private string _outputArn;
@@ -222,6 +223,37 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetMinLatency()
         {
             return this._minLatency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NdiOutputTimecodeSource. 
+        /// <para>
+        /// Controls how MediaConnect generates timecodes for NDI output frames. If you don't
+        /// specify this field, MediaConnect leaves the value unchanged.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EMBEDDED_TIMECODE</c> - Preserves timecodes from the input transport stream. The
+        /// timecodes must be embedded in the video stream as SEI timing messages. If no embedded
+        /// timecode is detected, MediaConnect uses the UTC system time instead.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UTC_SYSTEM_TIME</c> - Generates timecodes based on the system clock time when
+        /// each frame is sent.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public NdiOutputTimecodeSource NdiOutputTimecodeSource
+        {
+            get { return this._ndiOutputTimecodeSource; }
+            set { this._ndiOutputTimecodeSource = value; }
+        }
+
+        // Check to see if NdiOutputTimecodeSource property is set
+        internal bool IsSetNdiOutputTimecodeSource()
+        {
+            return this._ndiOutputTimecodeSource != null;
         }
 
         /// <summary>

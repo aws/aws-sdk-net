@@ -56,73 +56,73 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("computeEnvironmentOrder", targetDepth))
+                if (context.TestExpression("computeEnvironmentOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ComputeEnvironmentOrder, ComputeEnvironmentOrderUnmarshaller>(ComputeEnvironmentOrderUnmarshaller.Instance);
                     unmarshalledObject.ComputeEnvironmentOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobQueueArn", targetDepth))
+                if (context.TestExpression("jobQueueArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobQueueArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobQueueName", targetDepth))
+                if (context.TestExpression("jobQueueName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobQueueName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobQueueType", targetDepth))
+                if (context.TestExpression("jobQueueType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobQueueType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobStateTimeLimitActions", targetDepth))
+                if (context.TestExpression("jobStateTimeLimitActions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobStateTimeLimitAction, JobStateTimeLimitActionUnmarshaller>(JobStateTimeLimitActionUnmarshaller.Instance);
                     unmarshalledObject.JobStateTimeLimitActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priority", targetDepth))
+                if (context.TestExpression("priority", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("schedulingPolicyArn", targetDepth))
+                if (context.TestExpression("schedulingPolicyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchedulingPolicyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("serviceEnvironmentOrder", targetDepth))
+                if (context.TestExpression("serviceEnvironmentOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ServiceEnvironmentOrder, ServiceEnvironmentOrderUnmarshaller>(ServiceEnvironmentOrderUnmarshaller.Instance);
                     unmarshalledObject.ServiceEnvironmentOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("state", targetDepth))
+                if (context.TestExpression("state", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tags", targetDepth))
+                if (context.TestExpression("tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);

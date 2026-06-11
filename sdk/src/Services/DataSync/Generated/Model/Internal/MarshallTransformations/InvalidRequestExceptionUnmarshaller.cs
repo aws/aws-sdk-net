@@ -72,13 +72,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("datasyncErrorCode", targetDepth))
+                    if (context.TestExpression("datasyncErrorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DatasyncErrorCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("errorCode", targetDepth))
+                    if (context.TestExpression("errorCode", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);

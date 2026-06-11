@@ -72,7 +72,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Retry-After", targetDepth))
+                    if (context.TestExpression("Retry-After", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context, ref reader);

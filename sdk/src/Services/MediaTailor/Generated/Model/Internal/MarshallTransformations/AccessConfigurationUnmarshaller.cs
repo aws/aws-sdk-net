@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessType", targetDepth))
+                if (context.TestExpression("AccessType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccessType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretsManagerAccessTokenConfiguration", targetDepth))
+                if (context.TestExpression("SecretsManagerAccessTokenConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerAccessTokenConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManagerAccessTokenConfiguration = unmarshaller.Unmarshall(context, ref reader);

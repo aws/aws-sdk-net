@@ -47,10 +47,64 @@ namespace Amazon.EC2
     ///
     /// Amazon Elastic Compute Cloud 
     /// <para>
-    /// You can access the features of Amazon Elastic Compute Cloud (Amazon EC2) programmatically.
-    /// For more information, see the <a href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon
-    /// EC2 Developer Guide</a>.
+    /// This is the <i>Amazon EC2 API Reference</i>. It provides descriptions, API request
+    /// parameters, and the XML response for each of the Amazon EC2 Query API actions. Note
+    /// that the Amazon EC2 API includes actions for Amazon EC2 plus additional services,
+    /// such as Amazon EBS and Amazon VPC.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Learn more</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// To learn about using the Query API, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html">Using
+    /// the API for Amazon EC2</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To learn about the permissions required to call an Amazon EC2 API action, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html">Actions,
+    /// resources, and condition keys for Amazon EC2</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get the list of API actions by service and resource, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html">Actions
+    /// by service</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get the alphabetical list of API actions, see .
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To get descriptions of the API error codes, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html">Error
+    /// codes for the Amazon EC2 API</a>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Alternatively, use one of the following methods to access the Amazon EC2 API, instead
+    /// of using the Query API directly:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/">Amazon Web Services
+    /// CLI Command Reference - ec2 commands</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html">CloudFormation
+    /// - Amazon EC2 resource type reference</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html">Amazon
+    /// Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://builder.aws.com/build/tools">Amazon Web Services SDKs</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonEC2Client : AmazonServiceClient, IAmazonEC2
     {
@@ -2667,6 +2721,63 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AttachImageWatermark
+
+
+        /// <summary>
+        /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
+        /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can attach watermarks. Watermarks cannot be added to public AMIs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachImageWatermark service method.</param>
+        /// 
+        /// <returns>The response from the AttachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">REST API Reference for AttachImageWatermark Operation</seealso>
+        public virtual AttachImageWatermarkResponse AttachImageWatermark(AttachImageWatermarkRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachImageWatermarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachImageWatermarkResponseUnmarshaller.Instance;
+
+            return Invoke<AttachImageWatermarkResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
+        /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Only the AMI owner can attach watermarks. Watermarks cannot be added to public AMIs.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachImageWatermark service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachImageWatermark">REST API Reference for AttachImageWatermark Operation</seealso>
+        public virtual Task<AttachImageWatermarkResponse> AttachImageWatermarkAsync(AttachImageWatermarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachImageWatermarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachImageWatermarkResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AttachImageWatermarkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AttachInternetGateway
 
 
@@ -3364,9 +3475,19 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>scheduled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>active</c> and there is no commitment duration or the commitment duration has
-        /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
-        /// duration.
+        /// elapsed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
+        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
+        /// charges are applied.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -3415,9 +3536,19 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>scheduled</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>active</c> and there is no commitment duration or the commitment duration has
-        /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
-        /// duration.
+        /// elapsed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
+        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
+        /// charges are applied.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -4727,6 +4858,53 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CreateCapacityReservationBySplittingResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCapacityReservationBySplittingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCapacityReservationCancellationQuote
+
+
+        /// <summary>
+        /// Generates a cancellation quote for a future-dated Capacity Reservation that is within
+        /// its commitment duration. The quote includes the cancellation terms and a quote ID
+        /// that you can pass to the <c>CancelCapacityReservation</c> action. Cancellation quotes
+        /// are valid for 24 hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationCancellationQuote service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationCancellationQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationCancellationQuote">REST API Reference for CreateCapacityReservationCancellationQuote Operation</seealso>
+        public virtual CreateCapacityReservationCancellationQuoteResponse CreateCapacityReservationCancellationQuote(CreateCapacityReservationCancellationQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationCancellationQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationCancellationQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationCancellationQuoteResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a cancellation quote for a future-dated Capacity Reservation that is within
+        /// its commitment duration. The quote includes the cancellation terms and a quote ID
+        /// that you can pass to the <c>CancelCapacityReservation</c> action. Cancellation quotes
+        /// are valid for 24 hours.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationCancellationQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationCancellationQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationCancellationQuote">REST API Reference for CreateCapacityReservationCancellationQuote Operation</seealso>
+        public virtual Task<CreateCapacityReservationCancellationQuoteResponse> CreateCapacityReservationCancellationQuoteAsync(CreateCapacityReservationCancellationQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationCancellationQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationCancellationQuoteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCapacityReservationCancellationQuoteResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17529,6 +17707,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityReservationCancellationQuotes
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation cancellation quotes. The results describe
+        /// only the quotes that you have previously generated by using the <c>CreateCapacityReservationCancellationQuote</c>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationCancellationQuotes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationCancellationQuotes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationCancellationQuotes">REST API Reference for DescribeCapacityReservationCancellationQuotes Operation</seealso>
+        public virtual DescribeCapacityReservationCancellationQuotesResponse DescribeCapacityReservationCancellationQuotes(DescribeCapacityReservationCancellationQuotesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationCancellationQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationCancellationQuotesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationCancellationQuotesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation cancellation quotes. The results describe
+        /// only the quotes that you have previously generated by using the <c>CreateCapacityReservationCancellationQuote</c>
+        /// action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationCancellationQuotes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationCancellationQuotes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationCancellationQuotes">REST API Reference for DescribeCapacityReservationCancellationQuotes Operation</seealso>
+        public virtual Task<DescribeCapacityReservationCancellationQuotesResponse> DescribeCapacityReservationCancellationQuotesAsync(DescribeCapacityReservationCancellationQuotesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationCancellationQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationCancellationQuotesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCapacityReservationCancellationQuotesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
 
@@ -28748,6 +28971,69 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = DetachClassicLinkVpcResponseUnmarshaller.Instance;
             
             return InvokeAsync<DetachClassicLinkVpcResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DetachImageWatermark
+
+
+        /// <summary>
+        /// Removes a watermark from the specified AMI. This is an idempotent operation. It succeeds
+        /// even if the watermark does not exist on the image.
+        /// 
+        ///  
+        /// <para>
+        /// Removing a watermark from an image does not affect derivative images that already
+        /// carry the watermark.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can detach watermarks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachImageWatermark service method.</param>
+        /// 
+        /// <returns>The response from the DetachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">REST API Reference for DetachImageWatermark Operation</seealso>
+        public virtual DetachImageWatermarkResponse DetachImageWatermark(DetachImageWatermarkRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachImageWatermarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachImageWatermarkResponseUnmarshaller.Instance;
+
+            return Invoke<DetachImageWatermarkResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a watermark from the specified AMI. This is an idempotent operation. It succeeds
+        /// even if the watermark does not exist on the image.
+        /// 
+        ///  
+        /// <para>
+        /// Removing a watermark from an image does not affect derivative images that already
+        /// carry the watermark.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the AMI owner can detach watermarks.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachImageWatermark service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachImageWatermark service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachImageWatermark">REST API Reference for DetachImageWatermark Operation</seealso>
+        public virtual Task<DetachImageWatermarkResponse> DetachImageWatermarkAsync(DetachImageWatermarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachImageWatermarkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachImageWatermarkResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetachImageWatermarkResponse>(request, options, cancellationToken);
         }
 
         #endregion

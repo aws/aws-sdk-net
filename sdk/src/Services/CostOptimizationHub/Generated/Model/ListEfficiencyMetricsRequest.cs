@@ -101,7 +101,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// the total number of groups exceeds this limit.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=1000)]
         public int? MaxResults
         {
             get { return this._maxResults; }

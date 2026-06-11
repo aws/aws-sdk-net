@@ -52,7 +52,7 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("plan", targetDepth))
+                if (context.TestExpression("plan", targetDepth, ref reader))
                 {
                     var unmarshaller = PlanUnmarshaller.Instance;
                     response.Plan = unmarshaller.Unmarshall(context, ref reader);

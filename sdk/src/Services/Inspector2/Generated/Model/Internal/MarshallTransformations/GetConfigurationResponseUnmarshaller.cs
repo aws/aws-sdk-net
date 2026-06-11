@@ -52,13 +52,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ec2Configuration", targetDepth))
+                if (context.TestExpression("ec2Configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ConfigurationStateUnmarshaller.Instance;
                     response.Ec2Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecrConfiguration", targetDepth))
+                if (context.TestExpression("ecrConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrConfigurationStateUnmarshaller.Instance;
                     response.EcrConfiguration = unmarshaller.Unmarshall(context, ref reader);

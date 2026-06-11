@@ -52,31 +52,31 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("format", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastEventId", targetDepth))
+                if (context.TestExpression("lastEventId", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.LastEventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastTrxTimestamp", targetDepth))
+                if (context.TestExpression("lastTrxTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.LastTrxTimestampInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("records", targetDepth))
+                if (context.TestExpression("records", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PropertygraphRecord, PropertygraphRecordUnmarshaller>(PropertygraphRecordUnmarshaller.Instance);
                     response.Records = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalRecords", targetDepth))
+                if (context.TestExpression("totalRecords", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.TotalRecords = unmarshaller.Unmarshall(context, ref reader);

@@ -55,8 +55,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// END_DATE_TOO_EARLY: You provided an invalid end date. It is too early for the transfer
-    /// to end.
+    /// END_DATE_TOO_EARLY: You provided an invalid end date. The end date is too early.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// END_DATE_TOO_LATE: You provided an invalid end date. The end date is too late.
     /// </para>
     ///  </li> <li> 
     /// <para>

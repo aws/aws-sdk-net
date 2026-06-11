@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth))
+                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServerlessVectorAcceleration = unmarshaller.Unmarshall(context, ref reader);

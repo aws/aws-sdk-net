@@ -52,13 +52,13 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RescoreId", targetDepth))
+                if (context.TestExpression("RescoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RescoreId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultItems", targetDepth))
+                if (context.TestExpression("ResultItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RescoreResultItem, RescoreResultItemUnmarshaller>(RescoreResultItemUnmarshaller.Instance);
                     response.ResultItems = unmarshaller.Unmarshall(context, ref reader);

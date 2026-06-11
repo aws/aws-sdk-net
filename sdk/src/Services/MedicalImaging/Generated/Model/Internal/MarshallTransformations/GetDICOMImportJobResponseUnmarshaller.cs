@@ -52,7 +52,7 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("jobProperties", targetDepth))
+                if (context.TestExpression("jobProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DICOMImportJobPropertiesUnmarshaller.Instance;
                     response.JobProperties = unmarshaller.Unmarshall(context, ref reader);

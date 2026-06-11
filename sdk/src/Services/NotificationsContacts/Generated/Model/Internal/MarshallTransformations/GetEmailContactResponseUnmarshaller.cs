@@ -52,7 +52,7 @@ namespace Amazon.NotificationsContacts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("emailContact", targetDepth))
+                if (context.TestExpression("emailContact", targetDepth, ref reader))
                 {
                     var unmarshaller = EmailContactUnmarshaller.Instance;
                     response.EmailContact = unmarshaller.Unmarshall(context, ref reader);

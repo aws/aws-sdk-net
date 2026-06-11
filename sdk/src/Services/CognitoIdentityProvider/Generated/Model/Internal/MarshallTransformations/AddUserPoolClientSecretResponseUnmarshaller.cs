@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClientSecretDescriptor", targetDepth))
+                if (context.TestExpression("ClientSecretDescriptor", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientSecretDescriptorTypeUnmarshaller.Instance;
                     response.ClientSecretDescriptor = unmarshaller.Unmarshall(context, ref reader);

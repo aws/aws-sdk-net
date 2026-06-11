@@ -56,7 +56,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sizeInGb", targetDepth))
+                if (context.TestExpression("sizeInGb", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SizeInGb = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("frontOfQueue", targetDepth))
+                if (context.TestExpression("frontOfQueue", targetDepth, ref reader))
                 {
                     var unmarshaller = FrontOfQueueDetailUnmarshaller.Instance;
                     response.FrontOfQueue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("frontOfQuotaShares", targetDepth))
+                if (context.TestExpression("frontOfQuotaShares", targetDepth, ref reader))
                 {
                     var unmarshaller = FrontOfQuotaSharesDetailUnmarshaller.Instance;
                     response.FrontOfQuotaShares = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("queueUtilization", targetDepth))
+                if (context.TestExpression("queueUtilization", targetDepth, ref reader))
                 {
                     var unmarshaller = QueueSnapshotUtilizationDetailUnmarshaller.Instance;
                     response.QueueUtilization = unmarshaller.Unmarshall(context, ref reader);

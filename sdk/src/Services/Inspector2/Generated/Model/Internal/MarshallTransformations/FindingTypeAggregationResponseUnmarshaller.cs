@@ -56,25 +56,25 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountId", targetDepth))
+                if (context.TestExpression("accountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exploitAvailableCount", targetDepth))
+                if (context.TestExpression("exploitAvailableCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ExploitAvailableCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("fixAvailableCount", targetDepth))
+                if (context.TestExpression("fixAvailableCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FixAvailableCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("severityCounts", targetDepth))
+                if (context.TestExpression("severityCounts", targetDepth, ref reader))
                 {
                     var unmarshaller = SeverityCountsUnmarshaller.Instance;
                     unmarshalledObject.SeverityCounts = unmarshaller.Unmarshall(context, ref reader);

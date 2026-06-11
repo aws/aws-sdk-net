@@ -56,31 +56,31 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("actors", targetDepth))
+                if (context.TestExpression("actors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Actor, ActorUnmarshaller>(ActorUnmarshaller.Instance);
                     unmarshalledObject.Actors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documents", targetDepth))
+                if (context.TestExpression("documents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentInfo, DocumentInfoUnmarshaller>(DocumentInfoUnmarshaller.Instance);
                     unmarshalledObject.Documents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("endpoints", targetDepth))
+                if (context.TestExpression("endpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Endpoint, EndpointUnmarshaller>(EndpointUnmarshaller.Instance);
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("integratedRepositories", targetDepth))
+                if (context.TestExpression("integratedRepositories", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegratedRepository, IntegratedRepositoryUnmarshaller>(IntegratedRepositoryUnmarshaller.Instance);
                     unmarshalledObject.IntegratedRepositories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceCode", targetDepth))
+                if (context.TestExpression("sourceCode", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceCodeRepository, SourceCodeRepositoryUnmarshaller>(SourceCodeRepositoryUnmarshaller.Instance);
                     unmarshalledObject.SourceCode = unmarshaller.Unmarshall(context, ref reader);

@@ -52,121 +52,121 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("automatedReasoningPolicy", targetDepth))
+                if (context.TestExpression("automatedReasoningPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailAutomatedReasoningPolicyUnmarshaller.Instance;
                     response.AutomatedReasoningPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockedInputMessaging", targetDepth))
+                if (context.TestExpression("blockedInputMessaging", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BlockedInputMessaging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("blockedOutputsMessaging", targetDepth))
+                if (context.TestExpression("blockedOutputsMessaging", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BlockedOutputsMessaging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contentPolicy", targetDepth))
+                if (context.TestExpression("contentPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailContentPolicyUnmarshaller.Instance;
                     response.ContentPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("contextualGroundingPolicy", targetDepth))
+                if (context.TestExpression("contextualGroundingPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailContextualGroundingPolicyUnmarshaller.Instance;
                     response.ContextualGroundingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("crossRegionDetails", targetDepth))
+                if (context.TestExpression("crossRegionDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailCrossRegionDetailsUnmarshaller.Instance;
                     response.CrossRegionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureRecommendations", targetDepth))
+                if (context.TestExpression("failureRecommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.FailureRecommendations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailArn", targetDepth))
+                if (context.TestExpression("guardrailArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GuardrailArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("guardrailId", targetDepth))
+                if (context.TestExpression("guardrailId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GuardrailId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kmsKeyArn", targetDepth))
+                if (context.TestExpression("kmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sensitiveInformationPolicy", targetDepth))
+                if (context.TestExpression("sensitiveInformationPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailSensitiveInformationPolicyUnmarshaller.Instance;
                     response.SensitiveInformationPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReasons", targetDepth))
+                if (context.TestExpression("statusReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.StatusReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("topicPolicy", targetDepth))
+                if (context.TestExpression("topicPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailTopicPolicyUnmarshaller.Instance;
                     response.TopicPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updatedAt", targetDepth))
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("wordPolicy", targetDepth))
+                if (context.TestExpression("wordPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = GuardrailWordPolicyUnmarshaller.Instance;
                     response.WordPolicy = unmarshaller.Unmarshall(context, ref reader);

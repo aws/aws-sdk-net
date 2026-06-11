@@ -52,13 +52,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TelemetryRuleSummaries", targetDepth))
+                if (context.TestExpression("TelemetryRuleSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TelemetryRuleSummary, TelemetryRuleSummaryUnmarshaller>(TelemetryRuleSummaryUnmarshaller.Instance);
                     response.TelemetryRuleSummaries = unmarshaller.Unmarshall(context, ref reader);

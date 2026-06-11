@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OverflowColumnHeaderVisibility", targetDepth))
+                if (context.TestExpression("OverflowColumnHeaderVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverflowColumnHeaderVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VerticalOverflowVisibility", targetDepth))
+                if (context.TestExpression("VerticalOverflowVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerticalOverflowVisibility = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("deleteVpcEndpointDetail", targetDepth))
+                if (context.TestExpression("deleteVpcEndpointDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteVpcEndpointDetailUnmarshaller.Instance;
                     response.DeleteVpcEndpointDetail = unmarshaller.Unmarshall(context, ref reader);

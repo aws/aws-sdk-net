@@ -31,7 +31,8 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAdvancedPromptOptimizationJob operation.
-    /// Creates an asynchronous batch job for advanced prompt optimization.
+    /// Creates an advanced prompt optimization job. The job optimizes your prompt templates
+    /// for specific models using your evaluation dataset and criteria.
     /// </summary>
     public partial class CreateAdvancedPromptOptimizationJobRequest : AmazonBedrockRequest
     {
@@ -47,7 +48,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Idempotency token for the request.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request but does not return an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -66,7 +69,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// KMS key ARN for encrypting output data.
+        /// The Amazon Resource Name (ARN) of the KMS key used for encrypting the output data.
+        /// If not specified, the output is encrypted with an Amazon-owned KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -85,7 +89,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InputConfig. 
         /// <para>
-        /// Input data configuration for the advanced prompt optimization job.
+        /// Specifies the S3 location of your JSONL input file containing prompt templates and
+        /// evaluation samples.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +109,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobDescription. 
         /// <para>
-        /// Description of the advanced prompt optimization job.
+        /// A description of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -123,7 +128,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// Name of the advanced prompt optimization job.
+        /// A name for the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -142,7 +147,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelConfigurations. 
         /// <para>
-        /// Model configurations for advanced prompt optimization.
+        /// A list of model configurations specifying the target models for prompt optimization.
+        /// You can specify up to 5 models.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -166,7 +172,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property OutputConfig. 
         /// <para>
-        /// Output data configuration for the advanced prompt optimization job.
+        /// Specifies the S3 location where optimization results will be stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,7 +191,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to associate with the job.
+        /// Tags to associate with the advanced prompt optimization job.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

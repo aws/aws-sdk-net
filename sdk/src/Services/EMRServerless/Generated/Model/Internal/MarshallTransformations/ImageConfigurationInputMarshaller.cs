@@ -46,6 +46,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetApplicationLevelDigestResolution())
+            {
+                context.Writer.WritePropertyName("applicationLevelDigestResolution");
+                context.Writer.WriteBooleanValue(requestObject.ApplicationLevelDigestResolution.Value);
+            }
+
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("imageUri");

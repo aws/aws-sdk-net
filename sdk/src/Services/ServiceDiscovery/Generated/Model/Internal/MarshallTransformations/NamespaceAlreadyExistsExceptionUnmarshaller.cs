@@ -72,13 +72,13 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("CreatorRequestId", targetDepth))
+                    if (context.TestExpression("CreatorRequestId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("NamespaceId", targetDepth))
+                    if (context.TestExpression("NamespaceId", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NamespaceId = unmarshaller.Unmarshall(context, ref reader);

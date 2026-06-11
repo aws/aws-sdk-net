@@ -56,7 +56,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("noteTemplateSettings", targetDepth))
+                if (context.TestExpression("noteTemplateSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NoteTemplateSettingsResponseUnmarshaller.Instance;
                     unmarshalledObject.NoteTemplateSettings = unmarshaller.Unmarshall(context, ref reader);

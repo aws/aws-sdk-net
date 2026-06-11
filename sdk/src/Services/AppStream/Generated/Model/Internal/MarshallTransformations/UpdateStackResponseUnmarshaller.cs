@@ -52,7 +52,7 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Stack", targetDepth))
+                if (context.TestExpression("Stack", targetDepth, ref reader))
                 {
                     var unmarshaller = StackUnmarshaller.Instance;
                     response.Stack = unmarshaller.Unmarshall(context, ref reader);

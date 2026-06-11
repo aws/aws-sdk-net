@@ -56,19 +56,19 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("headerMatches", targetDepth))
+                if (context.TestExpression("headerMatches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HeaderMatch, HeaderMatchUnmarshaller>(HeaderMatchUnmarshaller.Instance);
                     unmarshalledObject.HeaderMatches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("method", targetDepth))
+                if (context.TestExpression("method", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Method = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pathMatch", targetDepth))
+                if (context.TestExpression("pathMatch", targetDepth, ref reader))
                 {
                     var unmarshaller = PathMatchUnmarshaller.Instance;
                     unmarshalledObject.PathMatch = unmarshaller.Unmarshall(context, ref reader);

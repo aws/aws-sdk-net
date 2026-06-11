@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportHiddenFieldsOption", targetDepth))
+                if (context.TestExpression("ExportHiddenFieldsOption", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportHiddenFieldsOptionUnmarshaller.Instance;
                     unmarshalledObject.ExportHiddenFieldsOption = unmarshaller.Unmarshall(context, ref reader);

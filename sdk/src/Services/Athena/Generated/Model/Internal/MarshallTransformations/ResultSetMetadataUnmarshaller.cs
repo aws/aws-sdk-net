@@ -56,7 +56,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnInfo", targetDepth))
+                if (context.TestExpression("ColumnInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnInfo, ColumnInfoUnmarshaller>(ColumnInfoUnmarshaller.Instance);
                     unmarshalledObject.ColumnInfo = unmarshaller.Unmarshall(context, ref reader);

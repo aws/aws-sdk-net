@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tools", targetDepth))
+                if (context.TestExpression("tools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ToolDescriptionInput, ToolDescriptionInputUnmarshaller>(ToolDescriptionInputUnmarshaller.Instance);
                     unmarshalledObject.Tools = unmarshaller.Unmarshall(context, ref reader);

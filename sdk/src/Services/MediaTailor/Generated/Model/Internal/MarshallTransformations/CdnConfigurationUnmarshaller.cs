@@ -56,13 +56,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdSegmentUrlPrefix", targetDepth))
+                if (context.TestExpression("AdSegmentUrlPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdSegmentUrlPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContentSegmentUrlPrefix", targetDepth))
+                if (context.TestExpression("ContentSegmentUrlPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContentSegmentUrlPrefix = unmarshaller.Unmarshall(context, ref reader);

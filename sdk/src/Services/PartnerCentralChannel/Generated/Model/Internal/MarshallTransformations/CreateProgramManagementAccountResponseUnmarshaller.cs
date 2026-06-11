@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("programManagementAccountDetail", targetDepth))
+                if (context.TestExpression("programManagementAccountDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = CreateProgramManagementAccountDetailUnmarshaller.Instance;
                     response.ProgramManagementAccountDetail = unmarshaller.Unmarshall(context, ref reader);

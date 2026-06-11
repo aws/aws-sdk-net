@@ -56,19 +56,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PostRESPONSE", targetDepth))
+                if (context.TestExpression("PostRESPONSE", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance);
                     unmarshalledObject.PostRESPONSE = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreDNS", targetDepth))
+                if (context.TestExpression("PreDNS", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance);
                     unmarshalledObject.PreDNS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreREQUEST", targetDepth))
+                if (context.TestExpression("PreREQUEST", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProxyRule, ProxyRuleUnmarshaller>(ProxyRuleUnmarshaller.Instance);
                     unmarshalledObject.PreREQUEST = unmarshaller.Unmarshall(context, ref reader);

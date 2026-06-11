@@ -114,7 +114,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("response_checksum_validation=always")
             .ToString();
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(null)]
         [DataRow("")]
         [DataRow("  ")]
@@ -266,7 +266,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, false, "dualstack-disabled", true)]  // service client should supersede conflicting env var and profile values
         [DataRow(false, true, "dualstack-enabled", false)]
         [DataRow(null, true, "dualstack-disabled", true)]   // env var should supersede conflicting profile value
@@ -294,7 +294,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, false, "request-compression-disabled", true)]  // service client should supersede conflicting env var and profile values
         [DataRow(false, true, "request-compression-enabled", false)]
         [DataRow(null, true, "request-compression-disabled", true)]   // env var should supersede conflicting profile value
@@ -322,7 +322,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(3L, 2L, "min_compression_size_bytes", 3)]  // service client should supersede conflicting env var and profile values
         [DataRow(null, 2L, "min_compression_size_bytes", 2)]
         [DataRow(null, null, "min_compression_size_bytes", 128)]   // env var should supersede conflicting profile value
@@ -347,7 +347,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow("test123", "test12345", "set_sdk_ua_app_id", "test123")]  // service client should supersede conflicting env var and profile values
         [DataRow(null, "test12345", "set_sdk_ua_app_id", "test12345")]   // env var should supersede conflicting profile value
         [DataRow(null, null, "set_sdk_ua_app_id", "myAppId")]  // Use app id configured for the profile
@@ -360,11 +360,10 @@ namespace AWSSDK.UnitTests
                 config.ClientAppId = clientConfigValue;
             }
 
-            var envVariables = new Dictionary<string, string>();
-            if (envVarValue != null)
+            var envVariables = new Dictionary<string, string>
             {
-                envVariables.Add(AWS_SDK_UA_APP_ID, envVarValue);
-            }
+                { AWS_SDK_UA_APP_ID, envVarValue }
+            };
 
             using (new FallbackFactoryTestFixture(ProfileText, profileName, envVariables))
             {
@@ -372,7 +371,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(true, false, "fips-disabled", true)]  // service client should supersede conflicting env var and profile values
         [DataRow(false, true, "fips-enabled", false)]
         [DataRow(null, true, "fips-disabled", true)]   // env var should supersede conflicting profile value
@@ -407,7 +406,7 @@ namespace AWSSDK.UnitTests
         /// <param name="envVarValue"></param>
         /// <param name="profileName"></param>
         /// <param name="expectedAccountIdEndpointMode"></param>
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(AccountIdEndpointMode.REQUIRED, "PREFERRED", "account_id_endpoint_mode_required", AccountIdEndpointMode.REQUIRED)]  // service client should supersede conflicting env var and profile values
         [DataRow(null, "", "default", AccountIdEndpointMode.PREFERRED)] // default value should be preferred
         [DataRow(null, "REQUIRED", "account_id_endpoint_mode_disabled", AccountIdEndpointMode.REQUIRED)]   // env var should supersede conflicting profile value
@@ -435,7 +434,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(RequestChecksumCalculation.WHEN_REQUIRED, RequestChecksumCalculation.WHEN_SUPPORTED, "request_checksum_calculation_when_supported", RequestChecksumCalculation.WHEN_REQUIRED)] // service client should supersede conflicting env var and profile values
         [DataRow(RequestChecksumCalculation.WHEN_SUPPORTED, RequestChecksumCalculation.WHEN_REQUIRED, "request_checksum_calculation_when_required", RequestChecksumCalculation.WHEN_SUPPORTED)]
         [DataRow(null, RequestChecksumCalculation.WHEN_REQUIRED, "request_checksum_calculation_when_supported", RequestChecksumCalculation.WHEN_REQUIRED)] // env var should supersede conflicting profile value
@@ -464,7 +463,7 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        [DataTestMethod]
+        [TestMethod]
         [DataRow(ResponseChecksumValidation.WHEN_REQUIRED, ResponseChecksumValidation.WHEN_SUPPORTED, "response_checksum_validation_when_supported", ResponseChecksumValidation.WHEN_REQUIRED)] // service client should supersede conflicting env var and profile values
         [DataRow(ResponseChecksumValidation.WHEN_SUPPORTED, ResponseChecksumValidation.WHEN_REQUIRED, "response_checksum_validation_when_required", ResponseChecksumValidation.WHEN_SUPPORTED)]
         [DataRow(null, ResponseChecksumValidation.WHEN_REQUIRED, "response_checksum_validation_when_supported", ResponseChecksumValidation.WHEN_REQUIRED)] // env var should supersede conflicting profile value
@@ -878,7 +877,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestAssumeRoleWithWebIdentity_TokenPathIsNotAbsolute()
         {
-            Assert.ThrowsException<ArgumentException>(() => new AssumeRoleWithWebIdentityCredentials("myToken.jwt", "someRoleArn", "someRoleSessionName"));
+            Assert.ThrowsExactly<ArgumentException>(() => new AssumeRoleWithWebIdentityCredentials("myToken.jwt", "someRoleArn", "someRoleSessionName"));
         }
 
         [TestMethod]
@@ -888,7 +887,7 @@ namespace AWSSDK.UnitTests
             var roleArn = "someRoleArn";
             var currentDirectory = Directory.GetCurrentDirectory();
             var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, roleArn, roleSessionName));
+            Assert.ThrowsExactly<ArgumentOutOfRangeException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, roleArn, roleSessionName));
         }
 
         [TestMethod]
@@ -896,7 +895,7 @@ namespace AWSSDK.UnitTests
         {
             var currentDirectory = Directory.GetCurrentDirectory();
             var webIdentityTokenFilePath = Path.Combine(currentDirectory, "my-token.jwt");
-            Assert.ThrowsException<ArgumentNullException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, null, "validRoleSessionName"));
+            Assert.ThrowsExactly<ArgumentNullException>(() => new AssumeRoleWithWebIdentityCredentials(webIdentityTokenFilePath, null, "validRoleSessionName"));
         }
 
         // Further FallbackFactory tests involving retries live in AWSSDK.UnitTests.SecurityToken.Custom.FallbackCredentialsFactorySTSTests.

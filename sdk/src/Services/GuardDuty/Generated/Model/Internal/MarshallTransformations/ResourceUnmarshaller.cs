@@ -56,97 +56,97 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessKeyDetails", targetDepth))
+                if (context.TestExpression("accessKeyDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessKeyDetailsUnmarshaller.Instance;
                     unmarshalledObject.AccessKeyDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerDetails", targetDepth))
+                if (context.TestExpression("containerDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerUnmarshaller.Instance;
                     unmarshalledObject.ContainerDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsSnapshotDetails", targetDepth))
+                if (context.TestExpression("ebsSnapshotDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsSnapshotDetailsUnmarshaller.Instance;
                     unmarshalledObject.EbsSnapshotDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ebsVolumeDetails", targetDepth))
+                if (context.TestExpression("ebsVolumeDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EbsVolumeDetailsUnmarshaller.Instance;
                     unmarshalledObject.EbsVolumeDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2ImageDetails", targetDepth))
+                if (context.TestExpression("ec2ImageDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ImageDetailsUnmarshaller.Instance;
                     unmarshalledObject.Ec2ImageDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsClusterDetails", targetDepth))
+                if (context.TestExpression("ecsClusterDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsClusterDetailsUnmarshaller.Instance;
                     unmarshalledObject.EcsClusterDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksClusterDetails", targetDepth))
+                if (context.TestExpression("eksClusterDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EksClusterDetailsUnmarshaller.Instance;
                     unmarshalledObject.EksClusterDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceDetails", targetDepth))
+                if (context.TestExpression("instanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.InstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesDetails", targetDepth))
+                if (context.TestExpression("kubernetesDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesDetailsUnmarshaller.Instance;
                     unmarshalledObject.KubernetesDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaDetails", targetDepth))
+                if (context.TestExpression("lambdaDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaDetailsUnmarshaller.Instance;
                     unmarshalledObject.LambdaDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbInstanceDetails", targetDepth))
+                if (context.TestExpression("rdsDbInstanceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbInstanceDetailsUnmarshaller.Instance;
                     unmarshalledObject.RdsDbInstanceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsDbUserDetails", targetDepth))
+                if (context.TestExpression("rdsDbUserDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsDbUserDetailsUnmarshaller.Instance;
                     unmarshalledObject.RdsDbUserDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsLimitlessDbDetails", targetDepth))
+                if (context.TestExpression("rdsLimitlessDbDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsLimitlessDbDetailsUnmarshaller.Instance;
                     unmarshalledObject.RdsLimitlessDbDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recoveryPointDetails", targetDepth))
+                if (context.TestExpression("recoveryPointDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = RecoveryPointDetailsUnmarshaller.Instance;
                     unmarshalledObject.RecoveryPointDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("resourceType", targetDepth))
+                if (context.TestExpression("resourceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3BucketDetails", targetDepth))
+                if (context.TestExpression("s3BucketDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<S3BucketDetail, S3BucketDetailUnmarshaller>(S3BucketDetailUnmarshaller.Instance);
                     unmarshalledObject.S3BucketDetails = unmarshaller.Unmarshall(context, ref reader);

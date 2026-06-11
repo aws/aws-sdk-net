@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AppCookieStickinessPolicies", targetDepth))
+                if (context.TestExpression("AppCookieStickinessPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbAppCookieStickinessPolicy, AwsElbAppCookieStickinessPolicyUnmarshaller>(AwsElbAppCookieStickinessPolicyUnmarshaller.Instance);
                     unmarshalledObject.AppCookieStickinessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LbCookieStickinessPolicies", targetDepth))
+                if (context.TestExpression("LbCookieStickinessPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsElbLbCookieStickinessPolicy, AwsElbLbCookieStickinessPolicyUnmarshaller>(AwsElbLbCookieStickinessPolicyUnmarshaller.Instance);
                     unmarshalledObject.LbCookieStickinessPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OtherPolicies", targetDepth))
+                if (context.TestExpression("OtherPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.OtherPolicies = unmarshaller.Unmarshall(context, ref reader);

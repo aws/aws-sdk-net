@@ -56,13 +56,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PasswordPolicy", targetDepth))
+                if (context.TestExpression("PasswordPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = PasswordPolicyTypeUnmarshaller.Instance;
                     unmarshalledObject.PasswordPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SignInPolicy", targetDepth))
+                if (context.TestExpression("SignInPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = SignInPolicyTypeUnmarshaller.Instance;
                     unmarshalledObject.SignInPolicy = unmarshaller.Unmarshall(context, ref reader);

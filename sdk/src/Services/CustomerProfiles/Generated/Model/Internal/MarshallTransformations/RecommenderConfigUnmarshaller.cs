@@ -56,25 +56,31 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventsConfig", targetDepth))
+                if (context.TestExpression("EventsConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EventsConfigUnmarshaller.Instance;
                     unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IncludedColumns", targetDepth))
+                if (context.TestExpression("ExcludedColumns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.ExcludedColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("IncludedColumns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, List<string>, StringUnmarshaller, JsonListUnmarshaller<string,StringUnmarshaller>>(StringUnmarshaller.Instance, new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.IncludedColumns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InferenceConfig", targetDepth))
+                if (context.TestExpression("InferenceConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceConfigUnmarshaller.Instance;
                     unmarshalledObject.InferenceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingFrequency", targetDepth))
+                if (context.TestExpression("TrainingFrequency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TrainingFrequency = unmarshaller.Unmarshall(context, ref reader);

@@ -56,43 +56,43 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("activeAgentlessCollectors", targetDepth))
+                if (context.TestExpression("activeAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ActiveAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("denyListedAgentlessCollectors", targetDepth))
+                if (context.TestExpression("denyListedAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.DenyListedAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("healthyAgentlessCollectors", targetDepth))
+                if (context.TestExpression("healthyAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.HealthyAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("shutdownAgentlessCollectors", targetDepth))
+                if (context.TestExpression("shutdownAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ShutdownAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalAgentlessCollectors", targetDepth))
+                if (context.TestExpression("totalAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unhealthyAgentlessCollectors", targetDepth))
+                if (context.TestExpression("unhealthyAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnhealthyAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unknownAgentlessCollectors", targetDepth))
+                if (context.TestExpression("unknownAgentlessCollectors", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.UnknownAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);

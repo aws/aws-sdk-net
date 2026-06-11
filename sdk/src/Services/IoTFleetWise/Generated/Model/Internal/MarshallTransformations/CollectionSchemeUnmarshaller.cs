@@ -56,13 +56,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conditionBasedCollectionScheme", targetDepth))
+                if (context.TestExpression("conditionBasedCollectionScheme", targetDepth, ref reader))
                 {
                     var unmarshaller = ConditionBasedCollectionSchemeUnmarshaller.Instance;
                     unmarshalledObject.ConditionBasedCollectionScheme = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeBasedCollectionScheme", targetDepth))
+                if (context.TestExpression("timeBasedCollectionScheme", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeBasedCollectionSchemeUnmarshaller.Instance;
                     unmarshalledObject.TimeBasedCollectionScheme = unmarshaller.Unmarshall(context, ref reader);

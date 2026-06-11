@@ -52,13 +52,13 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("labels", targetDepth))
+                if (context.TestExpression("labels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Label, LabelUnmarshaller>(LabelUnmarshaller.Instance);
                     response.Labels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

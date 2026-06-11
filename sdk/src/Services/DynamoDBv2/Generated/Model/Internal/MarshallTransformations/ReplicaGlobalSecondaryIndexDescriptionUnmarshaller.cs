@@ -56,25 +56,25 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("IndexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
+                if (context.TestExpression("OnDemandThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
+                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth, ref reader))
                 {
                     var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
                     unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WarmThroughput", targetDepth))
+                if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalSecondaryIndexWarmThroughputDescriptionUnmarshaller.Instance;
                     unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context, ref reader);

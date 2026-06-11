@@ -548,6 +548,12 @@ namespace Amazon.MWAA.Model
         /// href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
         /// Airflow access modes</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// If set to <c>PUBLIC_AND_PRIVATE</c>, creates both a public network load balancer (NLB)
+        /// for browser access and a private VPC endpoint (VPCE) for worker-to-webserver communication.
+        /// This mode is only available for Apache Airflow version 3.2 and later.
+        /// </para>
         /// </summary>
         public WebserverAccessMode WebserverAccessMode
         {

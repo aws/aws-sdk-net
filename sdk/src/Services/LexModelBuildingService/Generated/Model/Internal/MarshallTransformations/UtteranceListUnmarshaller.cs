@@ -56,13 +56,13 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botVersion", targetDepth))
+                if (context.TestExpression("botVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("utterances", targetDepth))
+                if (context.TestExpression("utterances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UtteranceData, UtteranceDataUnmarshaller>(UtteranceDataUnmarshaller.Instance);
                     unmarshalledObject.Utterances = unmarshaller.Unmarshall(context, ref reader);

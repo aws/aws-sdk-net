@@ -56,19 +56,19 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LatestBlockers", targetDepth))
+                if (context.TestExpression("LatestBlockers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SyncBlocker, SyncBlockerUnmarshaller>(SyncBlockerUnmarshaller.Instance);
                     unmarshalledObject.LatestBlockers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParentResourceName", targetDepth))
+                if (context.TestExpression("ParentResourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ParentResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceName", targetDepth))
+                if (context.TestExpression("ResourceName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context, ref reader);

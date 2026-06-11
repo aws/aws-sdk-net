@@ -56,19 +56,19 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("spectrumConfig", targetDepth))
+                if (context.TestExpression("spectrumConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UplinkSpectrumConfigUnmarshaller.Instance;
                     unmarshalledObject.SpectrumConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetEirp", targetDepth))
+                if (context.TestExpression("targetEirp", targetDepth, ref reader))
                 {
                     var unmarshaller = EirpUnmarshaller.Instance;
                     unmarshalledObject.TargetEirp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transmitDisabled", targetDepth))
+                if (context.TestExpression("transmitDisabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.TransmitDisabled = unmarshaller.Unmarshall(context, ref reader);

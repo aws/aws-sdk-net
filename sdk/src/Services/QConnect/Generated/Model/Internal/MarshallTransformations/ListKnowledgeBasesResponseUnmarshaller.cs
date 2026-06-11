@@ -52,13 +52,13 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("knowledgeBaseSummaries", targetDepth))
+                if (context.TestExpression("knowledgeBaseSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KnowledgeBaseSummary, KnowledgeBaseSummaryUnmarshaller>(KnowledgeBaseSummaryUnmarshaller.Instance);
                     response.KnowledgeBaseSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

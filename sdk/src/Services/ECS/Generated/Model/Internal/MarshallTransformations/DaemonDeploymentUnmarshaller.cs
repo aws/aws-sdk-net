@@ -56,85 +56,85 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alarms", targetDepth))
+                if (context.TestExpression("alarms", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonDeploymentAlarmsUnmarshaller.Instance;
                     unmarshalledObject.Alarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("circuitBreaker", targetDepth))
+                if (context.TestExpression("circuitBreaker", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonCircuitBreakerUnmarshaller.Instance;
                     unmarshalledObject.CircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clusterArn", targetDepth))
+                if (context.TestExpression("clusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("daemonDeploymentArn", targetDepth))
+                if (context.TestExpression("daemonDeploymentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DaemonDeploymentArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deploymentConfiguration", targetDepth))
+                if (context.TestExpression("deploymentConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonDeploymentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("finishedAt", targetDepth))
+                if (context.TestExpression("finishedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FinishedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rollback", targetDepth))
+                if (context.TestExpression("rollback", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonRollbackUnmarshaller.Instance;
                     unmarshalledObject.Rollback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceDaemonRevisions", targetDepth))
+                if (context.TestExpression("sourceDaemonRevisions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DaemonDeploymentRevisionDetail, DaemonDeploymentRevisionDetailUnmarshaller>(DaemonDeploymentRevisionDetailUnmarshaller.Instance);
                     unmarshalledObject.SourceDaemonRevisions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startedAt", targetDepth))
+                if (context.TestExpression("startedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth))
+                if (context.TestExpression("statusReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stoppedAt", targetDepth))
+                if (context.TestExpression("stoppedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StoppedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetDaemonRevision", targetDepth))
+                if (context.TestExpression("targetDaemonRevision", targetDepth, ref reader))
                 {
                     var unmarshaller = DaemonDeploymentRevisionDetailUnmarshaller.Instance;
                     unmarshalledObject.TargetDaemonRevision = unmarshaller.Unmarshall(context, ref reader);

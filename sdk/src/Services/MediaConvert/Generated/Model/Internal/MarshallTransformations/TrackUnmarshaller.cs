@@ -56,43 +56,43 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioProperties", targetDepth))
+                if (context.TestExpression("audioProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioPropertiesUnmarshaller.Instance;
                     unmarshalledObject.AudioProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codec", targetDepth))
+                if (context.TestExpression("codec", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Codec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataProperties", targetDepth))
+                if (context.TestExpression("dataProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DataPropertiesUnmarshaller.Instance;
                     unmarshalledObject.DataProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("duration", targetDepth))
+                if (context.TestExpression("duration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("index", targetDepth))
+                if (context.TestExpression("index", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Index = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trackType", targetDepth))
+                if (context.TestExpression("trackType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TrackType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoProperties", targetDepth))
+                if (context.TestExpression("videoProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoPropertiesUnmarshaller.Instance;
                     unmarshalledObject.VideoProperties = unmarshaller.Unmarshall(context, ref reader);

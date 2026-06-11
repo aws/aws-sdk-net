@@ -56,7 +56,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventBusArn", targetDepth))
+                if (context.TestExpression("eventBusArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EventBusArn = unmarshaller.Unmarshall(context, ref reader);

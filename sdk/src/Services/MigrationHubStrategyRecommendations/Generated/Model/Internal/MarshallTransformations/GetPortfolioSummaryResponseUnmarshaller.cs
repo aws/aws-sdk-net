@@ -52,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assessmentSummary", targetDepth))
+                if (context.TestExpression("assessmentSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AssessmentSummaryUnmarshaller.Instance;
                     response.AssessmentSummary = unmarshaller.Unmarshall(context, ref reader);

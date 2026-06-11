@@ -56,7 +56,7 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EntitlementUsages", targetDepth))
+                if (context.TestExpression("EntitlementUsages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntitlementUsage, EntitlementUsageUnmarshaller>(EntitlementUsageUnmarshaller.Instance);
                     unmarshalledObject.EntitlementUsages = unmarshaller.Unmarshall(context, ref reader);

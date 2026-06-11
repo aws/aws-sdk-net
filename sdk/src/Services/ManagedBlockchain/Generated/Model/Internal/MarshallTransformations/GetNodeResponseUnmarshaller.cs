@@ -52,7 +52,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Node", targetDepth))
+                if (context.TestExpression("Node", targetDepth, ref reader))
                 {
                     var unmarshaller = NodeUnmarshaller.Instance;
                     response.Node = unmarshaller.Unmarshall(context, ref reader);

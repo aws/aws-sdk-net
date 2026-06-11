@@ -72,55 +72,55 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("Access-Control-Allow-Origin", targetDepth))
+                    if (context.TestExpression("Access-Control-Allow-Origin", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AccessControlAllowOrigin = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Access-Control-Expose-Headers", targetDepth))
+                    if (context.TestExpression("Access-Control-Expose-Headers", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AccessControlExposeHeaders = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Cache-Control", targetDepth))
+                    if (context.TestExpression("Cache-Control", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CacheControl = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Content-Security-Policy", targetDepth))
+                    if (context.TestExpression("Content-Security-Policy", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ContentSecurityPolicy = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("exceptionMessage", targetDepth))
+                    if (context.TestExpression("exceptionMessage", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ExceptionMessage = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("Strict-Transport-Security", targetDepth))
+                    if (context.TestExpression("Strict-Transport-Security", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.StrictTransportSecurity = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.XAmznErrorType = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("X-Content-Type-Options", targetDepth))
+                    if (context.TestExpression("X-Content-Type-Options", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.XContentTypeOptions = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("X-Frame-Options", targetDepth))
+                    if (context.TestExpression("X-Frame-Options", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.XFrameOptions = unmarshaller.Unmarshall(context, ref reader);

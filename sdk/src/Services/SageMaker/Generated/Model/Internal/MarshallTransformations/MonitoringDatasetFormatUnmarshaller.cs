@@ -56,19 +56,19 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Csv", targetDepth))
+                if (context.TestExpression("Csv", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringCsvDatasetFormatUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Json", targetDepth))
+                if (context.TestExpression("Json", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringJsonDatasetFormatUnmarshaller.Instance;
                     unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Parquet", targetDepth))
+                if (context.TestExpression("Parquet", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringParquetDatasetFormatUnmarshaller.Instance;
                     unmarshalledObject.Parquet = unmarshaller.Unmarshall(context, ref reader);

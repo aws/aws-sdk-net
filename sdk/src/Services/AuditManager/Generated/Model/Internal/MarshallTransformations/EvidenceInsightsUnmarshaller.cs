@@ -56,19 +56,19 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("compliantEvidenceCount", targetDepth))
+                if (context.TestExpression("compliantEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("inconclusiveEvidenceCount", targetDepth))
+                if (context.TestExpression("inconclusiveEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InconclusiveEvidenceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noncompliantEvidenceCount", targetDepth))
+                if (context.TestExpression("noncompliantEvidenceCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NoncompliantEvidenceCount = unmarshaller.Unmarshall(context, ref reader);

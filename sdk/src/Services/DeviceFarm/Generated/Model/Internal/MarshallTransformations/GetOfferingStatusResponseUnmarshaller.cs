@@ -52,19 +52,19 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("current", targetDepth))
+                if (context.TestExpression("current", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, OfferingStatus, StringUnmarshaller, OfferingStatusUnmarshaller>(StringUnmarshaller.Instance, OfferingStatusUnmarshaller.Instance);
                     response.Current = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextPeriod", targetDepth))
+                if (context.TestExpression("nextPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, OfferingStatus, StringUnmarshaller, OfferingStatusUnmarshaller>(StringUnmarshaller.Instance, OfferingStatusUnmarshaller.Instance);
                     response.NextPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

@@ -31,8 +31,8 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConnectClientAddIn operation.
-    /// Updates a Amazon Connect client add-in. Use this action to update the name and endpoint
-    /// URL of a Amazon Connect client add-in.
+    /// Updates a Connect Customer client add-in. Use this action to update the name and endpoint
+    /// URL of a Connect Customer client add-in.
     /// </summary>
     public partial class UpdateConnectClientAddInRequest : AmazonWorkSpacesRequest
     {
@@ -101,7 +101,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property URL. 
         /// <para>
-        /// The endpoint URL of the Amazon Connect client add-in.
+        /// The endpoint URL of the Connect Customer client add-in.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("selfGrantStatusDetails", targetDepth))
+                if (context.TestExpression("selfGrantStatusDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SelfGrantStatusDetail, SelfGrantStatusDetailUnmarshaller>(SelfGrantStatusDetailUnmarshaller.Instance);
                     unmarshalledObject.SelfGrantStatusDetails = unmarshaller.Unmarshall(context, ref reader);

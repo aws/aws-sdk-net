@@ -56,19 +56,19 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("maxVideoBitsPerSecond", targetDepth))
+                if (context.TestExpression("maxVideoBitsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVideoBitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minVideoBitsPerSecond", targetDepth))
+                if (context.TestExpression("minVideoBitsPerSecond", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinVideoBitsPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamOrder", targetDepth))
+                if (context.TestExpression("streamOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamOrder = unmarshaller.Unmarshall(context, ref reader);

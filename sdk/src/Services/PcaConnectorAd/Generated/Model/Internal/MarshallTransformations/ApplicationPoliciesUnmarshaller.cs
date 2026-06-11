@@ -56,13 +56,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Critical", targetDepth))
+                if (context.TestExpression("Critical", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Critical = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Policies", targetDepth))
+                if (context.TestExpression("Policies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ApplicationPolicy, ApplicationPolicyUnmarshaller>(ApplicationPolicyUnmarshaller.Instance);
                     unmarshalledObject.Policies = unmarshaller.Unmarshall(context, ref reader);

@@ -56,139 +56,139 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("addKeys", targetDepth))
+                if (context.TestExpression("addKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = AddKeysUnmarshaller.Instance;
                     unmarshalledObject.AddKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("copyValue", targetDepth))
+                if (context.TestExpression("copyValue", targetDepth, ref reader))
                 {
                     var unmarshaller = CopyValueUnmarshaller.Instance;
                     unmarshalledObject.CopyValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("csv", targetDepth))
+                if (context.TestExpression("csv", targetDepth, ref reader))
                 {
                     var unmarshaller = CSVUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dateTimeConverter", targetDepth))
+                if (context.TestExpression("dateTimeConverter", targetDepth, ref reader))
                 {
                     var unmarshaller = DateTimeConverterUnmarshaller.Instance;
                     unmarshalledObject.DateTimeConverter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deleteKeys", targetDepth))
+                if (context.TestExpression("deleteKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = DeleteKeysUnmarshaller.Instance;
                     unmarshalledObject.DeleteKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("grok", targetDepth))
+                if (context.TestExpression("grok", targetDepth, ref reader))
                 {
                     var unmarshaller = GrokUnmarshaller.Instance;
                     unmarshalledObject.Grok = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("listToMap", targetDepth))
+                if (context.TestExpression("listToMap", targetDepth, ref reader))
                 {
                     var unmarshaller = ListToMapUnmarshaller.Instance;
                     unmarshalledObject.ListToMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lowerCaseString", targetDepth))
+                if (context.TestExpression("lowerCaseString", targetDepth, ref reader))
                 {
                     var unmarshaller = LowerCaseStringUnmarshaller.Instance;
                     unmarshalledObject.LowerCaseString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("moveKeys", targetDepth))
+                if (context.TestExpression("moveKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = MoveKeysUnmarshaller.Instance;
                     unmarshalledObject.MoveKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseCloudfront", targetDepth))
+                if (context.TestExpression("parseCloudfront", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseCloudfrontUnmarshaller.Instance;
                     unmarshalledObject.ParseCloudfront = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseJSON", targetDepth))
+                if (context.TestExpression("parseJSON", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseJSONUnmarshaller.Instance;
                     unmarshalledObject.ParseJSON = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseKeyValue", targetDepth))
+                if (context.TestExpression("parseKeyValue", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseKeyValueUnmarshaller.Instance;
                     unmarshalledObject.ParseKeyValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parsePostgres", targetDepth))
+                if (context.TestExpression("parsePostgres", targetDepth, ref reader))
                 {
                     var unmarshaller = ParsePostgresUnmarshaller.Instance;
                     unmarshalledObject.ParsePostgres = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseRoute53", targetDepth))
+                if (context.TestExpression("parseRoute53", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseRoute53Unmarshaller.Instance;
                     unmarshalledObject.ParseRoute53 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseToOCSF", targetDepth))
+                if (context.TestExpression("parseToOCSF", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseToOCSFUnmarshaller.Instance;
                     unmarshalledObject.ParseToOCSF = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseVPC", targetDepth))
+                if (context.TestExpression("parseVPC", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseVPCUnmarshaller.Instance;
                     unmarshalledObject.ParseVPC = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parseWAF", targetDepth))
+                if (context.TestExpression("parseWAF", targetDepth, ref reader))
                 {
                     var unmarshaller = ParseWAFUnmarshaller.Instance;
                     unmarshalledObject.ParseWAF = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("renameKeys", targetDepth))
+                if (context.TestExpression("renameKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = RenameKeysUnmarshaller.Instance;
                     unmarshalledObject.RenameKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("splitString", targetDepth))
+                if (context.TestExpression("splitString", targetDepth, ref reader))
                 {
                     var unmarshaller = SplitStringUnmarshaller.Instance;
                     unmarshalledObject.SplitString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("substituteString", targetDepth))
+                if (context.TestExpression("substituteString", targetDepth, ref reader))
                 {
                     var unmarshaller = SubstituteStringUnmarshaller.Instance;
                     unmarshalledObject.SubstituteString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trimString", targetDepth))
+                if (context.TestExpression("trimString", targetDepth, ref reader))
                 {
                     var unmarshaller = TrimStringUnmarshaller.Instance;
                     unmarshalledObject.TrimString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeConverter", targetDepth))
+                if (context.TestExpression("typeConverter", targetDepth, ref reader))
                 {
                     var unmarshaller = TypeConverterUnmarshaller.Instance;
                     unmarshalledObject.TypeConverter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("upperCaseString", targetDepth))
+                if (context.TestExpression("upperCaseString", targetDepth, ref reader))
                 {
                     var unmarshaller = UpperCaseStringUnmarshaller.Instance;
                     unmarshalledObject.UpperCaseString = unmarshaller.Unmarshall(context, ref reader);

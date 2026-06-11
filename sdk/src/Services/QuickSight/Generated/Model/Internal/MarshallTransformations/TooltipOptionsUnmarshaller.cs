@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldBasedTooltip", targetDepth))
+                if (context.TestExpression("FieldBasedTooltip", targetDepth, ref reader))
                 {
                     var unmarshaller = FieldBasedTooltipUnmarshaller.Instance;
                     unmarshalledObject.FieldBasedTooltip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedTooltipType", targetDepth))
+                if (context.TestExpression("SelectedTooltipType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectedTooltipType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SheetTooltip", targetDepth))
+                if (context.TestExpression("SheetTooltip", targetDepth, ref reader))
                 {
                     var unmarshaller = SheetTooltipUnmarshaller.Instance;
                     unmarshalledObject.SheetTooltip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TooltipVisibility", targetDepth))
+                if (context.TestExpression("TooltipVisibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TooltipVisibility = unmarshaller.Unmarshall(context, ref reader);

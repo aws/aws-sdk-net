@@ -56,13 +56,13 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("offer", targetDepth))
+                if (context.TestExpression("offer", targetDepth, ref reader))
                 {
                     var unmarshaller = OfferInformationUnmarshaller.Instance;
                     unmarshalledObject.Offer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("product", targetDepth))
+                if (context.TestExpression("product", targetDepth, ref reader))
                 {
                     var unmarshaller = ProductInformationUnmarshaller.Instance;
                     unmarshalledObject.Product = unmarshaller.Unmarshall(context, ref reader);

@@ -209,6 +209,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.CreateTrainedModelRequest.MlModelTrainingPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.CreateTrainedModelRequest.Name</property>
     <min>1</min>
     <max>63</max>
@@ -573,6 +579,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.GetCollaborationTrainedModelResponse.MlModelTrainingPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.GetCollaborationTrainedModelResponse.Name</property>
     <min>1</min>
     <max>63</max>
@@ -867,6 +879,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.GetTrainedModelResponse.MlModelTrainingPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.GetTrainedModelResponse.Name</property>
     <min>1</min>
     <max>63</max>
@@ -919,6 +937,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.GetTrainedModelInferenceJobResponse.MlModelInferencePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.GetTrainedModelInferenceJobResponse.Name</property>
@@ -1477,6 +1501,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.StartTrainedModelInferenceJobRequest.MlModelInferencePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.StartTrainedModelInferenceJobRequest.Name</property>
     <min>1</min>
     <max>63</max>
@@ -1810,6 +1840,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.CollaborationTrainedModelInferenceJobSummary.MlModelInferencePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.CollaborationTrainedModelInferenceJobSummary.Name</property>
     <min>1</min>
     <max>63</max>
@@ -1862,6 +1898,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.CollaborationTrainedModelSummary.MlModelTrainingPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.CollaborationTrainedModelSummary.Name</property>
@@ -2156,6 +2198,18 @@
     <pattern>arn:aws[-a-z]*:cleanrooms-ml:[-a-z0-9]+:[0-9]{12}:membership/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/ml-input-channel/[-a-zA-Z0-9_/.]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.PayerConfiguration.ComputePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.PayerConfiguration.SyntheticDataPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.ProtectedQuerySQLParameters.AnalysisTemplateArn</property>
     <min>0</min>
     <max>200</max>
@@ -2242,6 +2296,12 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.TrainedModelInferenceJobSummary.MlModelInferencePayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.TrainedModelInferenceJobSummary.Name</property>
     <min>1</min>
     <max>63</max>
@@ -2292,6 +2352,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRoomsML.Model.TrainedModelSummary.MlModelTrainingPayerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRoomsML.Model.TrainedModelSummary.Name</property>

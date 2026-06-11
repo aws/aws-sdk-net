@@ -52,7 +52,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DatastoreProperties", targetDepth))
+                if (context.TestExpression("DatastoreProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = DatastorePropertiesUnmarshaller.Instance;
                     response.DatastoreProperties = unmarshaller.Unmarshall(context, ref reader);

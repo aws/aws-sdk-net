@@ -56,193 +56,199 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalManifests", targetDepth))
+                if (context.TestExpression("additionalManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HlsAdditionalManifest, HlsAdditionalManifestUnmarshaller>(HlsAdditionalManifestUnmarshaller.Instance);
                     unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("adMarkers", targetDepth))
+                if (context.TestExpression("adMarkers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.AdMarkers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audioOnlyHeader", targetDepth))
+                if (context.TestExpression("audioOnlyHeader", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AudioOnlyHeader = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("baseUrl", targetDepth))
+                if (context.TestExpression("baseUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BaseUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionLanguageMappings", targetDepth))
+                if (context.TestExpression("captionLanguageMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HlsCaptionLanguageMapping, HlsCaptionLanguageMappingUnmarshaller>(HlsCaptionLanguageMappingUnmarshaller.Instance);
                     unmarshalledObject.CaptionLanguageMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionLanguageSetting", targetDepth))
+                if (context.TestExpression("captionLanguageSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CaptionLanguageSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("captionSegmentLengthControl", targetDepth))
+                if (context.TestExpression("captionSegmentLengthControl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CaptionSegmentLengthControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("clientCache", targetDepth))
+                if (context.TestExpression("clientCache", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClientCache = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("codecSpecification", targetDepth))
+                if (context.TestExpression("codecSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destination", targetDepth))
+                if (context.TestExpression("destination", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("destinationSettings", targetDepth))
+                if (context.TestExpression("destinationSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DestinationSettingsUnmarshaller.Instance;
                     unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("directoryStructure", targetDepth))
+                if (context.TestExpression("directoryStructure", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryStructure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsEncryptionSettingsUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageBasedTrickPlay", targetDepth))
+                if (context.TestExpression("imageBasedTrickPlay", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageBasedTrickPlaySettings", targetDepth))
+                if (context.TestExpression("imageBasedTrickPlaySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsImageBasedTrickPlaySettingsUnmarshaller.Instance;
                     unmarshalledObject.ImageBasedTrickPlaySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifestCompression", targetDepth))
+                if (context.TestExpression("imageBasedTrickPlayVariants", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HlsImageBasedTrickPlayVariant, HlsImageBasedTrickPlayVariantUnmarshaller>(HlsImageBasedTrickPlayVariantUnmarshaller.Instance);
+                    unmarshalledObject.ImageBasedTrickPlayVariants = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("manifestCompression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestCompression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manifestDurationFormat", targetDepth))
+                if (context.TestExpression("manifestDurationFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManifestDurationFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minFinalSegmentLength", targetDepth))
+                if (context.TestExpression("minFinalSegmentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MinFinalSegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("minSegmentLength", targetDepth))
+                if (context.TestExpression("minSegmentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinSegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputSelection", targetDepth))
+                if (context.TestExpression("outputSelection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputSelection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programDateTime", targetDepth))
+                if (context.TestExpression("programDateTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgramDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("programDateTimePeriod", targetDepth))
+                if (context.TestExpression("programDateTimePeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ProgramDateTimePeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("progressiveWriteHlsManifest", targetDepth))
+                if (context.TestExpression("progressiveWriteHlsManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ProgressiveWriteHlsManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentControl", targetDepth))
+                if (context.TestExpression("segmentControl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentLength", targetDepth))
+                if (context.TestExpression("segmentLength", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentLengthControl", targetDepth))
+                if (context.TestExpression("segmentLengthControl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SegmentLengthControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentsPerSubdirectory", targetDepth))
+                if (context.TestExpression("segmentsPerSubdirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentsPerSubdirectory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("streamInfResolution", targetDepth))
+                if (context.TestExpression("streamInfResolution", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StreamInfResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetDurationCompatibilityMode", targetDepth))
+                if (context.TestExpression("targetDurationCompatibilityMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TargetDurationCompatibilityMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataId3Frame", targetDepth))
+                if (context.TestExpression("timedMetadataId3Frame", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataId3Frame = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timedMetadataId3Period", targetDepth))
+                if (context.TestExpression("timedMetadataId3Period", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimedMetadataId3Period = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timestampDeltaMilliseconds", targetDepth))
+                if (context.TestExpression("timestampDeltaMilliseconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimestampDeltaMilliseconds = unmarshaller.Unmarshall(context, ref reader);

@@ -56,37 +56,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApiKeyConnectionMetadata", targetDepth))
+                if (context.TestExpression("ApiKeyConnectionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadAPIKeyConnectionMetadataUnmarshaller.Instance;
                     unmarshalledObject.ApiKeyConnectionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AuthorizationCodeGrantMetadata", targetDepth))
+                if (context.TestExpression("AuthorizationCodeGrantMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadAuthorizationCodeGrantMetadataUnmarshaller.Instance;
                     unmarshalledObject.AuthorizationCodeGrantMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BasicAuthConnectionMetadata", targetDepth))
+                if (context.TestExpression("BasicAuthConnectionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadBasicAuthConnectionMetadataUnmarshaller.Instance;
                     unmarshalledObject.BasicAuthConnectionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ClientCredentialsGrantMetadata", targetDepth))
+                if (context.TestExpression("ClientCredentialsGrantMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadClientCredentialsGrantMetadataUnmarshaller.Instance;
                     unmarshalledObject.ClientCredentialsGrantMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IamConnectionMetadata", targetDepth))
+                if (context.TestExpression("IamConnectionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadIamConnectionMetadataUnmarshaller.Instance;
                     unmarshalledObject.IamConnectionMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoneConnectionMetadata", targetDepth))
+                if (context.TestExpression("NoneConnectionMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ReadNoneConnectionMetadataUnmarshaller.Instance;
                     unmarshalledObject.NoneConnectionMetadata = unmarshaller.Unmarshall(context, ref reader);

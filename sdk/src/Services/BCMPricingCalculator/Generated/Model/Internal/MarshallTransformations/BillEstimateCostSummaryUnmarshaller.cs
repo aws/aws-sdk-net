@@ -56,13 +56,13 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("serviceCostDifferences", targetDepth))
+                if (context.TestExpression("serviceCostDifferences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, CostDifference, StringUnmarshaller, CostDifferenceUnmarshaller>(StringUnmarshaller.Instance, CostDifferenceUnmarshaller.Instance);
                     unmarshalledObject.ServiceCostDifferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalCostDifference", targetDepth))
+                if (context.TestExpression("totalCostDifference", targetDepth, ref reader))
                 {
                     var unmarshaller = CostDifferenceUnmarshaller.Instance;
                     unmarshalledObject.TotalCostDifference = unmarshaller.Unmarshall(context, ref reader);

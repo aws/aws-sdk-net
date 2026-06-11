@@ -56,7 +56,7 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PushNotifications", targetDepth))
+                if (context.TestExpression("PushNotifications", targetDepth, ref reader))
                 {
                     var unmarshaller = PushNotificationPreferencesUnmarshaller.Instance;
                     unmarshalledObject.PushNotifications = unmarshaller.Unmarshall(context, ref reader);

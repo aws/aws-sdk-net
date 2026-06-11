@@ -56,19 +56,19 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateArn", targetDepth))
+                if (context.TestExpression("CertificateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertificateMetadata", targetDepth))
+                if (context.TestExpression("CertificateMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateMetadataUnmarshaller.Instance;
                     unmarshalledObject.CertificateMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("X509Attributes", targetDepth))
+                if (context.TestExpression("X509Attributes", targetDepth, ref reader))
                 {
                     var unmarshaller = X509AttributesUnmarshaller.Instance;
                     unmarshalledObject.X509Attributes = unmarshaller.Unmarshall(context, ref reader);

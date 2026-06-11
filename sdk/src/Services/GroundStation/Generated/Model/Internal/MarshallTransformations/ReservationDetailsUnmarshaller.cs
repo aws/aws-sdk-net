@@ -56,13 +56,13 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contact", targetDepth))
+                if (context.TestExpression("contact", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactReservationDetailsUnmarshaller.Instance;
                     unmarshalledObject.Contact = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("maintenance", targetDepth))
+                if (context.TestExpression("maintenance", targetDepth, ref reader))
                 {
                     var unmarshaller = MaintenanceReservationDetailsUnmarshaller.Instance;
                     unmarshalledObject.Maintenance = unmarshaller.Unmarshall(context, ref reader);

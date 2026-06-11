@@ -56,19 +56,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultRetention", targetDepth))
+                if (context.TestExpression("DefaultRetention", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionPeriodUnmarshaller.Instance;
                     unmarshalledObject.DefaultRetention = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumRetention", targetDepth))
+                if (context.TestExpression("MaximumRetention", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionPeriodUnmarshaller.Instance;
                     unmarshalledObject.MaximumRetention = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumRetention", targetDepth))
+                if (context.TestExpression("MinimumRetention", targetDepth, ref reader))
                 {
                     var unmarshaller = RetentionPeriodUnmarshaller.Instance;
                     unmarshalledObject.MinimumRetention = unmarshaller.Unmarshall(context, ref reader);

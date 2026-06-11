@@ -56,37 +56,37 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActualEvaluationOrder", targetDepth))
+                if (context.TestExpression("ActualEvaluationOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActualEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntriesWithConflicts", targetDepth))
+                if (context.TestExpression("EntriesWithConflicts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
                     unmarshalledObject.EntriesWithConflicts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntryAtExpectedEvaluationOrder", targetDepth))
+                if (context.TestExpression("EntryAtExpectedEvaluationOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = EntryDescriptionUnmarshaller.Instance;
                     unmarshalledObject.EntryAtExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntryViolationReasons", targetDepth))
+                if (context.TestExpression("EntryViolationReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EntryViolationReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedEntry", targetDepth))
+                if (context.TestExpression("ExpectedEntry", targetDepth, ref reader))
                 {
                     var unmarshaller = EntryDescriptionUnmarshaller.Instance;
                     unmarshalledObject.ExpectedEntry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpectedEvaluationOrder", targetDepth))
+                if (context.TestExpression("ExpectedEvaluationOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);

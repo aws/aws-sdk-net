@@ -52,13 +52,13 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("batchSegmentJobs", targetDepth))
+                if (context.TestExpression("batchSegmentJobs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BatchSegmentJobSummary, BatchSegmentJobSummaryUnmarshaller>(BatchSegmentJobSummaryUnmarshaller.Instance);
                     response.BatchSegmentJobs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

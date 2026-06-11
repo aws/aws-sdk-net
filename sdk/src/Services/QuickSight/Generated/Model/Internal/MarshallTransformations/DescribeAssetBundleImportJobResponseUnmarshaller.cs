@@ -52,91 +52,91 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssetBundleImportJobId", targetDepth))
+                if (context.TestExpression("AssetBundleImportJobId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AssetBundleImportJobId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssetBundleImportSource", targetDepth))
+                if (context.TestExpression("AssetBundleImportSource", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportSourceDescriptionUnmarshaller.Instance;
                     response.AssetBundleImportSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AwsAccountId", targetDepth))
+                if (context.TestExpression("AwsAccountId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AwsAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreatedTime", targetDepth))
+                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobError, AssetBundleImportJobErrorUnmarshaller>(AssetBundleImportJobErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureAction", targetDepth))
+                if (context.TestExpression("FailureAction", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("JobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideParameters", targetDepth))
+                if (context.TestExpression("OverrideParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobOverrideParametersUnmarshaller.Instance;
                     response.OverrideParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverridePermissions", targetDepth))
+                if (context.TestExpression("OverridePermissions", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobOverridePermissionsUnmarshaller.Instance;
                     response.OverridePermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideTags", targetDepth))
+                if (context.TestExpression("OverrideTags", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobOverrideTagsUnmarshaller.Instance;
                     response.OverrideTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OverrideValidationStrategy", targetDepth))
+                if (context.TestExpression("OverrideValidationStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetBundleImportJobOverrideValidationStrategyUnmarshaller.Instance;
                     response.OverrideValidationStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestId", targetDepth))
+                if (context.TestExpression("RequestId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RollbackErrors", targetDepth))
+                if (context.TestExpression("RollbackErrors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobError, AssetBundleImportJobErrorUnmarshaller>(AssetBundleImportJobErrorUnmarshaller.Instance);
                     response.RollbackErrors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Warnings", targetDepth))
+                if (context.TestExpression("Warnings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleImportJobWarning, AssetBundleImportJobWarningUnmarshaller>(AssetBundleImportJobWarningUnmarshaller.Instance);
                     response.Warnings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("LineString", targetDepth))
+                if (context.TestExpression("LineString", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<double>, JsonListUnmarshaller<double,DoubleUnmarshaller>>(new JsonListUnmarshaller<double, DoubleUnmarshaller>(DoubleUnmarshaller.Instance));
                     unmarshalledObject.LineString = unmarshaller.Unmarshall(context, ref reader);

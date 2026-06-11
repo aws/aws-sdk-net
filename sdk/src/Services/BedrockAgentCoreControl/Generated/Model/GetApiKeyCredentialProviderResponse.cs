@@ -35,6 +35,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class GetApiKeyCredentialProviderResponse : AmazonWebServiceResponse
     {
         private Secret _apiKeySecretArn;
+        private string _apiKeySecretJsonKey;
+        private SecretSourceType _apiKeySecretSource;
         private DateTime? _createdTime;
         private string _credentialProviderArn;
         private DateTime? _lastUpdatedTime;
@@ -57,6 +59,44 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetApiKeySecretArn()
         {
             return this._apiKeySecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiKeySecretJsonKey. 
+        /// <para>
+        /// The JSON key used to extract the API key value from the AWS Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ApiKeySecretJsonKey
+        {
+            get { return this._apiKeySecretJsonKey; }
+            set { this._apiKeySecretJsonKey = value; }
+        }
+
+        // Check to see if ApiKeySecretJsonKey property is set
+        internal bool IsSetApiKeySecretJsonKey()
+        {
+            return this._apiKeySecretJsonKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiKeySecretSource. 
+        /// <para>
+        /// The source type of the API key secret. Either <c>MANAGED</c> if the secret is managed
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// </para>
+        /// </summary>
+        public SecretSourceType ApiKeySecretSource
+        {
+            get { return this._apiKeySecretSource; }
+            set { this._apiKeySecretSource = value; }
+        }
+
+        // Check to see if ApiKeySecretSource property is set
+        internal bool IsSetApiKeySecretSource()
+        {
+            return this._apiKeySecretSource != null;
         }
 
         /// <summary>

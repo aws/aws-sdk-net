@@ -52,7 +52,7 @@ namespace Amazon.CloudHSMV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HsmId", targetDepth))
+                if (context.TestExpression("HsmId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HsmId = unmarshaller.Unmarshall(context, ref reader);

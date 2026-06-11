@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3GlueDataCatalog", targetDepth))
+                if (context.TestExpression("S3GlueDataCatalog", targetDepth, ref reader))
                 {
                     var unmarshaller = S3GlueDataCatalogUnmarshaller.Instance;
                     unmarshalledObject.S3GlueDataCatalog = unmarshaller.Unmarshall(context, ref reader);

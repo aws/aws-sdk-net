@@ -52,25 +52,25 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Address", targetDepth))
+                if (context.TestExpression("Address", targetDepth, ref reader))
                 {
                     var unmarshaller = AddressUnmarshaller.Instance;
                     response.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AddressExternalId", targetDepth))
+                if (context.TestExpression("AddressExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AddressExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CandidateAddressList", targetDepth))
+                if (context.TestExpression("CandidateAddressList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CandidateAddress, CandidateAddressUnmarshaller>(CandidateAddressUnmarshaller.Instance);
                     response.CandidateAddressList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationResult", targetDepth))
+                if (context.TestExpression("ValidationResult", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ValidationResult = unmarshaller.Unmarshall(context, ref reader);

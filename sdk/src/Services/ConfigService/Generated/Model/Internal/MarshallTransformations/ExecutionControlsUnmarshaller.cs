@@ -56,7 +56,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SsmControls", targetDepth))
+                if (context.TestExpression("SsmControls", targetDepth, ref reader))
                 {
                     var unmarshaller = SsmControlsUnmarshaller.Instance;
                     unmarshalledObject.SsmControls = unmarshaller.Unmarshall(context, ref reader);

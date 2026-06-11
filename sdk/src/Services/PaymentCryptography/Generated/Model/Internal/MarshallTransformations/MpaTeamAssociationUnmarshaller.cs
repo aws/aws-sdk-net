@@ -56,25 +56,25 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Action", targetDepth))
+                if (context.TestExpression("Action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AssociationState", targetDepth))
+                if (context.TestExpression("AssociationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AssociationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MpaStatus", targetDepth))
+                if (context.TestExpression("MpaStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = MpaStatusUnmarshaller.Instance;
                     unmarshalledObject.MpaStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MpaTeamArn", targetDepth))
+                if (context.TestExpression("MpaTeamArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MpaTeamArn = unmarshaller.Unmarshall(context, ref reader);

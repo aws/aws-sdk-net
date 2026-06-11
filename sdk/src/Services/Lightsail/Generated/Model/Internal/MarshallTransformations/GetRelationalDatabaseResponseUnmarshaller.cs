@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("relationalDatabase", targetDepth))
+                if (context.TestExpression("relationalDatabase", targetDepth, ref reader))
                 {
                     var unmarshaller = RelationalDatabaseUnmarshaller.Instance;
                     response.RelationalDatabase = unmarshaller.Unmarshall(context, ref reader);

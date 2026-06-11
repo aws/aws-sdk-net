@@ -33,7 +33,7 @@ namespace Amazon.Amplify
     public partial class AmazonAmplifyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Amplify", "4.0.3.32");
+            InternalSDKUtils.BuildUserAgentString("Amplify", "4.0.4.4");
 
         private static readonly AmazonAmplifyEndpointResolver EndpointResolver =
             new AmazonAmplifyEndpointResolver();

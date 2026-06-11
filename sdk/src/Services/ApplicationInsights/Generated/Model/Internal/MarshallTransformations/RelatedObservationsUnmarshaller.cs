@@ -56,7 +56,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ObservationList", targetDepth))
+                if (context.TestExpression("ObservationList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Observation, ObservationUnmarshaller>(ObservationUnmarshaller.Instance);
                     unmarshalledObject.ObservationList = unmarshaller.Unmarshall(context, ref reader);

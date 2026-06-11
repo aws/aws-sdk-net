@@ -56,19 +56,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conflictDetection", targetDepth))
+                if (context.TestExpression("conflictDetection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConflictDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conflictHandler", targetDepth))
+                if (context.TestExpression("conflictHandler", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConflictHandler = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaConflictHandlerConfig", targetDepth))
+                if (context.TestExpression("lambdaConflictHandlerConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaConflictHandlerConfigUnmarshaller.Instance;
                     unmarshalledObject.LambdaConflictHandlerConfig = unmarshaller.Unmarshall(context, ref reader);

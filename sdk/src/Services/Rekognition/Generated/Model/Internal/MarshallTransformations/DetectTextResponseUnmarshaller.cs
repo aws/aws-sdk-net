@@ -52,13 +52,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TextDetections", targetDepth))
+                if (context.TestExpression("TextDetections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TextDetection, TextDetectionUnmarshaller>(TextDetectionUnmarshaller.Instance);
                     response.TextDetections = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TextModelVersion", targetDepth))
+                if (context.TestExpression("TextModelVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TextModelVersion = unmarshaller.Unmarshall(context, ref reader);

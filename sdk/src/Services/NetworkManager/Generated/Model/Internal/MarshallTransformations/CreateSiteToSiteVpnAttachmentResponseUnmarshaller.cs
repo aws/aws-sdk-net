@@ -52,7 +52,7 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SiteToSiteVpnAttachment", targetDepth))
+                if (context.TestExpression("SiteToSiteVpnAttachment", targetDepth, ref reader))
                 {
                     var unmarshaller = SiteToSiteVpnAttachmentUnmarshaller.Instance;
                     response.SiteToSiteVpnAttachment = unmarshaller.Unmarshall(context, ref reader);

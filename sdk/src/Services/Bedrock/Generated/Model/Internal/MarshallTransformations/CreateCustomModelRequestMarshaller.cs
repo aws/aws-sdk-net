@@ -65,8 +65,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/custom-models/create-custom-model";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -84,6 +84,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientRequestToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCustomModelDataSource())
+            {
+                context.Writer.WritePropertyName("customModelDataSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomModelDataSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetModelKmsKeyArn())
             {
                 context.Writer.WritePropertyName("modelKmsKeyArn");
@@ -131,10 +142,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

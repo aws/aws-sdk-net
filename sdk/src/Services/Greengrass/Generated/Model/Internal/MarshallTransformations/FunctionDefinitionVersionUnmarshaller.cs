@@ -56,13 +56,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultConfig", targetDepth))
+                if (context.TestExpression("DefaultConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FunctionDefaultConfigUnmarshaller.Instance;
                     unmarshalledObject.DefaultConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Functions", targetDepth))
+                if (context.TestExpression("Functions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Function, FunctionUnmarshaller>(FunctionUnmarshaller.Instance);
                     unmarshalledObject.Functions = unmarshaller.Unmarshall(context, ref reader);

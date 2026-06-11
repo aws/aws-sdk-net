@@ -1,4 +1,5 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -19,6 +20,16 @@ public class CloudTrailModelFixture
 
     public SmithyModel Model { get; } = JsonSerializer.Deserialize<SmithyModel>(ModelBytes, Options)
         ?? throw new InvalidOperationException("Failed to deserialize SmithyModel.");
+
+    public ServiceIndex Index { get; }
+
+    public GenerationContext Context { get; }
+
+    public CloudTrailModelFixture()
+    {
+        Index = new ServiceIndex(Model);
+        Context = new GenerationContext(Index);
+    }
 
     public Shape DeserializeShape(string shapeId)
     {

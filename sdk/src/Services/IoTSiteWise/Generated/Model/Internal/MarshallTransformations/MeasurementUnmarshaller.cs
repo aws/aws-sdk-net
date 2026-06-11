@@ -56,7 +56,7 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("processingConfig", targetDepth))
+                if (context.TestExpression("processingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MeasurementProcessingConfigUnmarshaller.Instance;
                     unmarshalledObject.ProcessingConfig = unmarshaller.Unmarshall(context, ref reader);

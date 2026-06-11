@@ -65,8 +65,8 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/scan/job";
 #if !NETFRAMEWORK
-            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
@@ -77,6 +77,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("BackupVaultName");
                 context.Writer.WriteStringValue(publicRequest.BackupVaultName);
+            }
+
+            if(publicRequest.IsSetContinuousScanEndTime())
+            {
+                context.Writer.WritePropertyName("ContinuousScanEndTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ContinuousScanEndTime.Value)));
             }
 
             if(publicRequest.IsSetIamRoleArn())
@@ -123,10 +129,7 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
 
             writer.WriteEndObject();
             writer.Flush();
-            // ToArray() must be called here because aspects of sigv4 signing require a byte array
-#if !NETFRAMEWORK
-            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
-#else
+#if NETFRAMEWORK
             request.Content = memoryStream.ToArray();
 #endif
             

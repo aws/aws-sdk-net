@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FileSystemConfig", targetDepth))
+                if (context.TestExpression("FileSystemConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = FileSystemConfigUnmarshaller.Instance;
                     unmarshalledObject.FileSystemConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KernelSpecs", targetDepth))
+                if (context.TestExpression("KernelSpecs", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KernelSpec, KernelSpecUnmarshaller>(KernelSpecUnmarshaller.Instance);
                     unmarshalledObject.KernelSpecs = unmarshaller.Unmarshall(context, ref reader);

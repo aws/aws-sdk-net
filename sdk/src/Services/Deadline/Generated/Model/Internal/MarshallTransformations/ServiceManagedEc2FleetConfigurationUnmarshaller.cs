@@ -56,31 +56,37 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingConfiguration", targetDepth))
+                if (context.TestExpression("autoScalingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceManagedEc2AutoScalingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceCapabilities", targetDepth))
+                if (context.TestExpression("instanceCapabilities", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceManagedEc2InstanceCapabilitiesUnmarshaller.Instance;
                     unmarshalledObject.InstanceCapabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("instanceMarketOptions", targetDepth))
+                if (context.TestExpression("instanceMarketOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceManagedEc2InstanceMarketOptionsUnmarshaller.Instance;
                     unmarshalledObject.InstanceMarketOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageProfileId", targetDepth))
+                if (context.TestExpression("persistentVolumeConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = PersistentVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PersistentVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("storageProfileId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcConfiguration", targetDepth))
+                if (context.TestExpression("vpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

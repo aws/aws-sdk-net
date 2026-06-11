@@ -56,43 +56,43 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failedCancelSubmissionCount", targetDepth))
+                if (context.TestExpression("failedCancelSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedCancelSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failedDeleteSubmissionCount", targetDepth))
+                if (context.TestExpression("failedDeleteSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedDeleteSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failedStartSubmissionCount", targetDepth))
+                if (context.TestExpression("failedStartSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FailedStartSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pendingStartSubmissionCount", targetDepth))
+                if (context.TestExpression("pendingStartSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PendingStartSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulCancelSubmissionCount", targetDepth))
+                if (context.TestExpression("successfulCancelSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessfulCancelSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulDeleteSubmissionCount", targetDepth))
+                if (context.TestExpression("successfulDeleteSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessfulDeleteSubmissionCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("successfulStartSubmissionCount", targetDepth))
+                if (context.TestExpression("successfulStartSubmissionCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SuccessfulStartSubmissionCount = unmarshaller.Unmarshall(context, ref reader);

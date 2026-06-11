@@ -52,7 +52,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nodeSummaries", targetDepth))
+                if (context.TestExpression("nodeSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AnalyticsIntentNodeSummary, AnalyticsIntentNodeSummaryUnmarshaller>(AnalyticsIntentNodeSummaryUnmarshaller.Instance);
                     response.NodeSummaries = unmarshaller.Unmarshall(context, ref reader);

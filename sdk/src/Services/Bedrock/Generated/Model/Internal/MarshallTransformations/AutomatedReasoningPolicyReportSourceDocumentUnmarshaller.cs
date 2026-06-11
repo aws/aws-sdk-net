@@ -56,31 +56,31 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("atomicStatements", targetDepth))
+                if (context.TestExpression("atomicStatements", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyAtomicStatement, AutomatedReasoningPolicyAtomicStatementUnmarshaller>(AutomatedReasoningPolicyAtomicStatementUnmarshaller.Instance);
                     unmarshalledObject.AtomicStatements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentContent", targetDepth))
+                if (context.TestExpression("documentContent", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyAnnotatedChunk, AutomatedReasoningPolicyAnnotatedChunkUnmarshaller>(AutomatedReasoningPolicyAnnotatedChunkUnmarshaller.Instance);
                     unmarshalledObject.DocumentContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentHash", targetDepth))
+                if (context.TestExpression("documentHash", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentHash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentId", targetDepth))
+                if (context.TestExpression("documentId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentName", targetDepth))
+                if (context.TestExpression("documentName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentName = unmarshaller.Unmarshall(context, ref reader);

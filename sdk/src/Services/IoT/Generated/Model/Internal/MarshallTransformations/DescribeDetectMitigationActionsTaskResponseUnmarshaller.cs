@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taskSummary", targetDepth))
+                if (context.TestExpression("taskSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = DetectMitigationActionsTaskSummaryUnmarshaller.Instance;
                     response.TaskSummary = unmarshaller.Unmarshall(context, ref reader);

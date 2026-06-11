@@ -56,85 +56,85 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EngineVersion", targetDepth))
+                if (context.TestExpression("EngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = EngineVersionUnmarshaller.Instance;
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionParameters", targetDepth))
+                if (context.TestExpression("ExecutionParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ExecutionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedQueryResultsConfiguration", targetDepth))
+                if (context.TestExpression("ManagedQueryResultsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedQueryResultsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedQueryResultsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Query", targetDepth))
+                if (context.TestExpression("Query", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryExecutionContext", targetDepth))
+                if (context.TestExpression("QueryExecutionContext", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryExecutionContextUnmarshaller.Instance;
                     unmarshalledObject.QueryExecutionContext = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryExecutionId", targetDepth))
+                if (context.TestExpression("QueryExecutionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.QueryExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth))
+                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryResultsS3AccessGrantsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QueryResultsS3AccessGrantsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultConfiguration", targetDepth))
+                if (context.TestExpression("ResultConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResultConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultReuseConfiguration", targetDepth))
+                if (context.TestExpression("ResultReuseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultReuseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResultReuseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StatementType", targetDepth))
+                if (context.TestExpression("StatementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StatementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Statistics", targetDepth))
+                if (context.TestExpression("Statistics", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryExecutionStatisticsUnmarshaller.Instance;
                     unmarshalledObject.Statistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryExecutionStatusUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubstatementType", targetDepth))
+                if (context.TestExpression("SubstatementType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubstatementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkGroup", targetDepth))
+                if (context.TestExpression("WorkGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkGroup = unmarshaller.Unmarshall(context, ref reader);

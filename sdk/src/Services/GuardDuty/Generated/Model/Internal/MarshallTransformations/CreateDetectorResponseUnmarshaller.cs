@@ -52,13 +52,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("detectorId", targetDepth))
+                if (context.TestExpression("detectorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("unprocessedDataSources", targetDepth))
+                if (context.TestExpression("unprocessedDataSources", targetDepth, ref reader))
                 {
                     var unmarshaller = UnprocessedDataSourcesResultUnmarshaller.Instance;
                     response.UnprocessedDataSources = unmarshaller.Unmarshall(context, ref reader);

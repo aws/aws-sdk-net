@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PaperMargin", targetDepth))
+                if (context.TestExpression("PaperMargin", targetDepth, ref reader))
                 {
                     var unmarshaller = SpacingUnmarshaller.Instance;
                     unmarshalledObject.PaperMargin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaperOrientation", targetDepth))
+                if (context.TestExpression("PaperOrientation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaperOrientation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaperSize", targetDepth))
+                if (context.TestExpression("PaperSize", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaperSize = unmarshaller.Unmarshall(context, ref reader);

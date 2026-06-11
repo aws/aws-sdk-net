@@ -56,19 +56,19 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalLimits", targetDepth))
+                if (context.TestExpression("AdditionalLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalLimit, AdditionalLimitUnmarshaller>(AdditionalLimitUnmarshaller.Instance);
                     unmarshalledObject.AdditionalLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstanceLimits", targetDepth))
+                if (context.TestExpression("InstanceLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceLimitsUnmarshaller.Instance;
                     unmarshalledObject.InstanceLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageTypes", targetDepth))
+                if (context.TestExpression("StorageTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StorageType, StorageTypeUnmarshaller>(StorageTypeUnmarshaller.Instance);
                     unmarshalledObject.StorageTypes = unmarshaller.Unmarshall(context, ref reader);

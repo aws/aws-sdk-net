@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("secretsManager", targetDepth))
+                if (context.TestExpression("secretsManager", targetDepth, ref reader))
                 {
                     var unmarshaller = SecretsManagerLocationUnmarshaller.Instance;
                     unmarshalledObject.SecretsManager = unmarshaller.Unmarshall(context, ref reader);

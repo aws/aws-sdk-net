@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeploymentCircuitBreaker", targetDepth))
+                if (context.TestExpression("DeploymentCircuitBreaker", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsUnmarshaller.Instance;
                     unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaximumPercent", targetDepth))
+                if (context.TestExpression("MaximumPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaximumPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinimumHealthyPercent", targetDepth))
+                if (context.TestExpression("MinimumHealthyPercent", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinimumHealthyPercent = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("topics", targetDepth))
+                if (context.TestExpression("topics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GuardrailTopic, GuardrailTopicUnmarshaller>(GuardrailTopicUnmarshaller.Instance);
                     unmarshalledObject.Topics = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContainerName", targetDepth))
+                if (context.TestExpression("ContainerName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProxyConfigurationProperties", targetDepth))
+                if (context.TestExpression("ProxyConfigurationProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails, AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsUnmarshaller>(AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetailsUnmarshaller.Instance);
                     unmarshalledObject.ProxyConfigurationProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

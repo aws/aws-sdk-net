@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("SuggestedAnswers", targetDepth))
+                if (context.TestExpression("SuggestedAnswers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluationSuggestedAnswer, EvaluationSuggestedAnswerUnmarshaller>(EvaluationSuggestedAnswerUnmarshaller.Instance);
                     unmarshalledObject.SuggestedAnswers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SystemSuggestedValue", targetDepth))
+                if (context.TestExpression("SystemSuggestedValue", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationAnswerDataUnmarshaller.Instance;
                     unmarshalledObject.SystemSuggestedValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Value", targetDepth))
+                if (context.TestExpression("Value", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationAnswerDataUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);

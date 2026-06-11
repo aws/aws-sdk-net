@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scheduledAction", targetDepth))
+                if (context.TestExpression("scheduledAction", targetDepth, ref reader))
                 {
                     var unmarshaller = ScheduledActionResponseUnmarshaller.Instance;
                     response.ScheduledAction = unmarshaller.Unmarshall(context, ref reader);

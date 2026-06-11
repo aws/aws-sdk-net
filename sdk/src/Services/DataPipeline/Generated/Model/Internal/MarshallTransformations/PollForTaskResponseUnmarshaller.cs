@@ -52,7 +52,7 @@ namespace Amazon.DataPipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taskObject", targetDepth))
+                if (context.TestExpression("taskObject", targetDepth, ref reader))
                 {
                     var unmarshaller = TaskObjectUnmarshaller.Instance;
                     response.TaskObject = unmarshaller.Unmarshall(context, ref reader);

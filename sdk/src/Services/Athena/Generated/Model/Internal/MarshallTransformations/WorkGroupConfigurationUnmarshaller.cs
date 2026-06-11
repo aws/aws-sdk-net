@@ -56,91 +56,91 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalConfiguration", targetDepth))
+                if (context.TestExpression("AdditionalConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AdditionalConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BytesScannedCutoffPerQuery", targetDepth))
+                if (context.TestExpression("BytesScannedCutoffPerQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesScannedCutoffPerQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomerContentEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("CustomerContentEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerContentEncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomerContentEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnableMinimumEncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EnableMinimumEncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableMinimumEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnforceWorkGroupConfiguration", targetDepth))
+                if (context.TestExpression("EnforceWorkGroupConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnforceWorkGroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineConfiguration", targetDepth))
+                if (context.TestExpression("EngineConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EngineConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EngineVersion", targetDepth))
+                if (context.TestExpression("EngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = EngineVersionUnmarshaller.Instance;
                     unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ExecutionRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdentityCenterConfiguration", targetDepth))
+                if (context.TestExpression("IdentityCenterConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IdentityCenterConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IdentityCenterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManagedQueryResultsConfiguration", targetDepth))
+                if (context.TestExpression("ManagedQueryResultsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedQueryResultsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ManagedQueryResultsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("MonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth))
+                if (context.TestExpression("PublishCloudWatchMetricsEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PublishCloudWatchMetricsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth))
+                if (context.TestExpression("QueryResultsS3AccessGrantsConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = QueryResultsS3AccessGrantsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.QueryResultsS3AccessGrantsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequesterPaysEnabled", targetDepth))
+                if (context.TestExpression("RequesterPaysEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequesterPaysEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResultConfiguration", targetDepth))
+                if (context.TestExpression("ResultConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ResultConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ResultConfiguration = unmarshaller.Unmarshall(context, ref reader);

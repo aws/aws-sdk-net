@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("indexPolicy", targetDepth))
+                if (context.TestExpression("indexPolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = IndexPolicyUnmarshaller.Instance;
                     response.IndexPolicy = unmarshaller.Unmarshall(context, ref reader);

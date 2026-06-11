@@ -56,19 +56,19 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvisibleFields", targetDepth))
+                if (context.TestExpression("InvisibleFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InvisibleFieldInfo, InvisibleFieldInfoUnmarshaller>(InvisibleFieldInfoUnmarshaller.Instance);
                     unmarshalledObject.InvisibleFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReadOnlyFields", targetDepth))
+                if (context.TestExpression("ReadOnlyFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReadOnlyFieldInfo, ReadOnlyFieldInfoUnmarshaller>(ReadOnlyFieldInfoUnmarshaller.Instance);
                     unmarshalledObject.ReadOnlyFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequiredFields", targetDepth))
+                if (context.TestExpression("RequiredFields", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RequiredFieldInfo, RequiredFieldInfoUnmarshaller>(RequiredFieldInfoUnmarshaller.Instance);
                     unmarshalledObject.RequiredFields = unmarshaller.Unmarshall(context, ref reader);

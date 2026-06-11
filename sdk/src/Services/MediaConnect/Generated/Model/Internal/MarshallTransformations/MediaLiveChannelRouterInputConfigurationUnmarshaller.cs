@@ -56,25 +56,25 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mediaLiveChannelArn", targetDepth))
+                if (context.TestExpression("mediaLiveChannelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaLiveChannelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaLiveChannelOutputName", targetDepth))
+                if (context.TestExpression("mediaLiveChannelOutputName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaLiveChannelOutputName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaLivePipelineId", targetDepth))
+                if (context.TestExpression("mediaLivePipelineId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MediaLivePipelineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceTransitDecryption", targetDepth))
+                if (context.TestExpression("sourceTransitDecryption", targetDepth, ref reader))
                 {
                     var unmarshaller = MediaLiveTransitEncryptionUnmarshaller.Instance;
                     unmarshalledObject.SourceTransitDecryption = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Executions", targetDepth))
+                if (context.TestExpression("Executions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ListedExecution, ListedExecutionUnmarshaller>(ListedExecutionUnmarshaller.Instance);
                     response.Executions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkflowId", targetDepth))
+                if (context.TestExpression("WorkflowId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.WorkflowId = unmarshaller.Unmarshall(context, ref reader);

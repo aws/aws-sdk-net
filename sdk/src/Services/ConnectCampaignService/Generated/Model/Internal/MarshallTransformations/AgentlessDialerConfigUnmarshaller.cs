@@ -56,7 +56,7 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dialingCapacity", targetDepth))
+                if (context.TestExpression("dialingCapacity", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.DialingCapacity = unmarshaller.Unmarshall(context, ref reader);

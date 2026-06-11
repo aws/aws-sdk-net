@@ -56,25 +56,25 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("process", targetDepth))
+                if (context.TestExpression("process", targetDepth, ref reader))
                 {
                     var unmarshaller = ActorProcessUnmarshaller.Instance;
                     unmarshalledObject.Process = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("session", targetDepth))
+                if (context.TestExpression("session", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionUnmarshaller.Instance;
                     unmarshalledObject.Session = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("user", targetDepth))
+                if (context.TestExpression("user", targetDepth, ref reader))
                 {
                     var unmarshaller = UserUnmarshaller.Instance;
                     unmarshalledObject.User = unmarshaller.Unmarshall(context, ref reader);

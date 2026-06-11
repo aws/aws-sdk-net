@@ -52,13 +52,13 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Roles", targetDepth))
+                if (context.TestExpression("Roles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImpersonationRole, ImpersonationRoleUnmarshaller>(ImpersonationRoleUnmarshaller.Instance);
                     response.Roles = unmarshaller.Unmarshall(context, ref reader);

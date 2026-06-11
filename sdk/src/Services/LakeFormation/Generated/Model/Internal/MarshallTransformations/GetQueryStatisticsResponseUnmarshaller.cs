@@ -52,19 +52,19 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExecutionStatistics", targetDepth))
+                if (context.TestExpression("ExecutionStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionStatisticsUnmarshaller.Instance;
                     response.ExecutionStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlanningStatistics", targetDepth))
+                if (context.TestExpression("PlanningStatistics", targetDepth, ref reader))
                 {
                     var unmarshaller = PlanningStatisticsUnmarshaller.Instance;
                     response.PlanningStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("QuerySubmissionTime", targetDepth))
+                if (context.TestExpression("QuerySubmissionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.QuerySubmissionTime = unmarshaller.Unmarshall(context, ref reader);

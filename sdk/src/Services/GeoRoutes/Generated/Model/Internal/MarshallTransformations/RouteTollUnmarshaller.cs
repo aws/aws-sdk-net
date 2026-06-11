@@ -56,25 +56,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Country", targetDepth))
+                if (context.TestExpression("Country", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaymentSites", targetDepth))
+                if (context.TestExpression("PaymentSites", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteTollPaymentSite, RouteTollPaymentSiteUnmarshaller>(RouteTollPaymentSiteUnmarshaller.Instance);
                     unmarshalledObject.PaymentSites = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rates", targetDepth))
+                if (context.TestExpression("Rates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RouteTollRate, RouteTollRateUnmarshaller>(RouteTollRateUnmarshaller.Instance);
                     unmarshalledObject.Rates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Systems", targetDepth))
+                if (context.TestExpression("Systems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Systems = unmarshaller.Unmarshall(context, ref reader);

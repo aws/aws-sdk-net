@@ -56,25 +56,25 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificate", targetDepth))
+                if (context.TestExpression("certificate", targetDepth, ref reader))
                 {
                     var unmarshaller = ClientTlsCertificateUnmarshaller.Instance;
                     unmarshalledObject.Certificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("enforce", targetDepth))
+                if (context.TestExpression("enforce", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Enforce = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ports", targetDepth))
+                if (context.TestExpression("ports", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
                     unmarshalledObject.Ports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validation", targetDepth))
+                if (context.TestExpression("validation", targetDepth, ref reader))
                 {
                     var unmarshaller = TlsValidationContextUnmarshaller.Instance;
                     unmarshalledObject.Validation = unmarshaller.Unmarshall(context, ref reader);

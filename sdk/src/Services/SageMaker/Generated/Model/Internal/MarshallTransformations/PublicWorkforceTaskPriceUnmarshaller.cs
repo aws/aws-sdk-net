@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmountInUsd", targetDepth))
+                if (context.TestExpression("AmountInUsd", targetDepth, ref reader))
                 {
                     var unmarshaller = USDUnmarshaller.Instance;
                     unmarshalledObject.AmountInUsd = unmarshaller.Unmarshall(context, ref reader);

@@ -43,8 +43,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property CompliantEvidenceCount. 
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as compliant.
-        /// This includes evidence that was collected from Security Hub with a <i>Pass</i> ruling,
-        /// or collected from Config with a <i>Compliant</i> ruling. 
+        /// This includes evidence that was collected from Security Hub CSPM with a <i>Pass</i>
+        /// ruling, or collected from Config with a <i>Compliant</i> ruling. 
         /// </para>
         /// </summary>
         public int? CompliantEvidenceCount
@@ -63,8 +63,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property InconclusiveEvidenceCount. 
         /// <para>
         /// The number of evidence that a compliance check ruling isn't available for. Evidence
-        /// is inconclusive when the associated control uses Security Hub or Config as a data
-        /// source but you didn't enable those services. This is also the case when a control
+        /// is inconclusive when the associated control uses Security Hub CSPM or Config as a
+        /// data source but you didn't enable those services. This is also the case when a control
         /// uses a data source that doesn’t support compliance checks (for example, manual evidence,
         /// API calls, or CloudTrail). 
         /// </para>
@@ -91,8 +91,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property NoncompliantEvidenceCount. 
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as non-compliant.
-        /// This includes evidence that was collected from Security Hub with a <i>Fail</i> ruling,
-        /// or collected from Config with a <i>Non-compliant</i> ruling. 
+        /// This includes evidence that was collected from Security Hub CSPM with a <i>Fail</i>
+        /// ruling, or collected from Config with a <i>Non-compliant</i> ruling. 
         /// </para>
         /// </summary>
         public int? NoncompliantEvidenceCount

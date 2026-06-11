@@ -56,43 +56,43 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountScope", targetDepth))
+                if (context.TestExpression("AccountScope", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LookbackPeriodInDays", targetDepth))
+                if (context.TestExpression("LookbackPeriodInDays", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PaymentOption", targetDepth))
+                if (context.TestExpression("PaymentOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansPurchaseRecommendationDetails", targetDepth))
+                if (context.TestExpression("SavingsPlansPurchaseRecommendationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SavingsPlansPurchaseRecommendationDetail, SavingsPlansPurchaseRecommendationDetailUnmarshaller>(SavingsPlansPurchaseRecommendationDetailUnmarshaller.Instance);
                     unmarshalledObject.SavingsPlansPurchaseRecommendationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansPurchaseRecommendationSummary", targetDepth))
+                if (context.TestExpression("SavingsPlansPurchaseRecommendationSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = SavingsPlansPurchaseRecommendationSummaryUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansPurchaseRecommendationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SavingsPlansType", targetDepth))
+                if (context.TestExpression("SavingsPlansType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SavingsPlansType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TermInYears", targetDepth))
+                if (context.TestExpression("TermInYears", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TermInYears = unmarshaller.Unmarshall(context, ref reader);

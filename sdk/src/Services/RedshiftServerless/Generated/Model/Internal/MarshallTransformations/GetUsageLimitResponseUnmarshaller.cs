@@ -52,7 +52,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("usageLimit", targetDepth))
+                if (context.TestExpression("usageLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = UsageLimitUnmarshaller.Instance;
                     response.UsageLimit = unmarshaller.Unmarshall(context, ref reader);

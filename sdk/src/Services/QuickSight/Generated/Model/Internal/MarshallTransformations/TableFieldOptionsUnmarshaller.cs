@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Order", targetDepth))
+                if (context.TestExpression("Order", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Order = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PinnedFieldOptions", targetDepth))
+                if (context.TestExpression("PinnedFieldOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TablePinnedFieldOptionsUnmarshaller.Instance;
                     unmarshalledObject.PinnedFieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedFieldOptions", targetDepth))
+                if (context.TestExpression("SelectedFieldOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TableFieldOption, TableFieldOptionUnmarshaller>(TableFieldOptionUnmarshaller.Instance);
                     unmarshalledObject.SelectedFieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransposedTableOptions", targetDepth))
+                if (context.TestExpression("TransposedTableOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TransposedTableOption, TransposedTableOptionUnmarshaller>(TransposedTableOptionUnmarshaller.Instance);
                     unmarshalledObject.TransposedTableOptions = unmarshaller.Unmarshall(context, ref reader);

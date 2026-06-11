@@ -56,7 +56,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("taskProperties", targetDepth))
+                if (context.TestExpression("taskProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EcsTaskProperties, EcsTaskPropertiesUnmarshaller>(EcsTaskPropertiesUnmarshaller.Instance);
                     unmarshalledObject.TaskProperties = unmarshaller.Unmarshall(context, ref reader);

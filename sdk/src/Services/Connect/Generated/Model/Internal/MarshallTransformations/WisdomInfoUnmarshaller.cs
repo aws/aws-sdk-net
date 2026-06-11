@@ -56,13 +56,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AiAgents", targetDepth))
+                if (context.TestExpression("AiAgents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AiAgentInfo, AiAgentInfoUnmarshaller>(AiAgentInfoUnmarshaller.Instance);
                     unmarshalledObject.AiAgents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionArn", targetDepth))
+                if (context.TestExpression("SessionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SessionArn = unmarshaller.Unmarshall(context, ref reader);

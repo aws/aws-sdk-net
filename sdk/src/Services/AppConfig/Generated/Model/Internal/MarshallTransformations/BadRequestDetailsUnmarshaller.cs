@@ -56,7 +56,7 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InvalidConfiguration", targetDepth))
+                if (context.TestExpression("InvalidConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InvalidConfigurationDetail, InvalidConfigurationDetailUnmarshaller>(InvalidConfigurationDetailUnmarshaller.Instance);
                     unmarshalledObject.InvalidConfiguration = unmarshaller.Unmarshall(context, ref reader);

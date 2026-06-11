@@ -72,7 +72,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("context", targetDepth))
+                    if (context.TestExpression("context", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         unmarshalledObject.Context = unmarshaller.Unmarshall(context, ref reader);

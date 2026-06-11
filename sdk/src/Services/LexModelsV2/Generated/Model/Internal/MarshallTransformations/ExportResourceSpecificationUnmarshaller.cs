@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("botExportSpecification", targetDepth))
+                if (context.TestExpression("botExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = BotExportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.BotExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("botLocaleExportSpecification", targetDepth))
+                if (context.TestExpression("botLocaleExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = BotLocaleExportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.BotLocaleExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customVocabularyExportSpecification", targetDepth))
+                if (context.TestExpression("customVocabularyExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomVocabularyExportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.CustomVocabularyExportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testSetExportSpecification", targetDepth))
+                if (context.TestExpression("testSetExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = TestSetExportSpecificationUnmarshaller.Instance;
                     unmarshalledObject.TestSetExportSpecification = unmarshaller.Unmarshall(context, ref reader);

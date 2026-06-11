@@ -52,7 +52,7 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryptionConfig", targetDepth))
+                if (context.TestExpression("encryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigUnmarshaller.Instance;
                     response.EncryptionConfig = unmarshaller.Unmarshall(context, ref reader);

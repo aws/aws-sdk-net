@@ -56,13 +56,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuration", targetDepth))
+                if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityTypeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("typeInfo", targetDepth))
+                if (context.TestExpression("typeInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ActivityTypeInfoUnmarshaller.Instance;
                     unmarshalledObject.TypeInfo = unmarshaller.Unmarshall(context, ref reader);

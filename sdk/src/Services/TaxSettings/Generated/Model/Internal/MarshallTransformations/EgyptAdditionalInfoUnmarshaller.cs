@@ -56,13 +56,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("uniqueIdentificationNumber", targetDepth))
+                if (context.TestExpression("uniqueIdentificationNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UniqueIdentificationNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("uniqueIdentificationNumberExpirationDate", targetDepth))
+                if (context.TestExpression("uniqueIdentificationNumberExpirationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UniqueIdentificationNumberExpirationDate = unmarshaller.Unmarshall(context, ref reader);

@@ -56,85 +56,103 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arcRoutingControlConfig", targetDepth))
+                if (context.TestExpression("arcRoutingControlConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ArcRoutingControlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ArcRoutingControlConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customActionLambdaConfig", targetDepth))
+                if (context.TestExpression("auroraProvisionedScalingConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AuroraProvisionedScalingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuroraProvisionedScalingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("auroraServerlessScalingConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AuroraServerlessScalingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AuroraServerlessScalingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("customActionLambdaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomActionLambdaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomActionLambdaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("documentDbConfig", targetDepth))
+                if (context.TestExpression("documentDbConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentDbConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DocumentDbConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2AsgCapacityIncreaseConfig", targetDepth))
+                if (context.TestExpression("ec2AsgCapacityIncreaseConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2AsgCapacityIncreaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Ec2AsgCapacityIncreaseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsCapacityIncreaseConfig", targetDepth))
+                if (context.TestExpression("ecsCapacityIncreaseConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsCapacityIncreaseConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EcsCapacityIncreaseConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksResourceScalingConfig", targetDepth))
+                if (context.TestExpression("eksResourceScalingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = EksResourceScalingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EksResourceScalingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionApprovalConfig", targetDepth))
+                if (context.TestExpression("executionApprovalConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ExecutionApprovalConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ExecutionApprovalConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("globalAuroraConfig", targetDepth))
+                if (context.TestExpression("globalAuroraConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = GlobalAuroraConfigurationUnmarshaller.Instance;
                     unmarshalledObject.GlobalAuroraConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lambdaEventSourceMappingConfig", targetDepth))
+                if (context.TestExpression("lambdaEventSourceMappingConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LambdaEventSourceMappingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.LambdaEventSourceMappingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parallelConfig", targetDepth))
+                if (context.TestExpression("neptuneGlobalDatabaseConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = NeptuneGlobalDatabaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NeptuneGlobalDatabaseConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("parallelConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelExecutionBlockConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ParallelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsCreateCrossRegionReadReplicaConfig", targetDepth))
+                if (context.TestExpression("rdsCreateCrossRegionReadReplicaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsCreateCrossRegionReplicaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RdsCreateCrossRegionReadReplicaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rdsPromoteReadReplicaConfig", targetDepth))
+                if (context.TestExpression("rdsPromoteReadReplicaConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RdsPromoteReadReplicaConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RdsPromoteReadReplicaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("regionSwitchPlanConfig", targetDepth))
+                if (context.TestExpression("regionSwitchPlanConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RegionSwitchPlanConfigurationUnmarshaller.Instance;
                     unmarshalledObject.RegionSwitchPlanConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("route53HealthCheckConfig", targetDepth))
+                if (context.TestExpression("route53HealthCheckConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = Route53HealthCheckConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Route53HealthCheckConfig = unmarshaller.Unmarshall(context, ref reader);

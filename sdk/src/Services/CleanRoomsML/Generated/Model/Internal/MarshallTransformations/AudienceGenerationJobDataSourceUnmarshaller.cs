@@ -56,25 +56,25 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataSource", targetDepth))
+                if (context.TestExpression("dataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ConfigMapUnmarshaller.Instance;
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqlComputeConfiguration", targetDepth))
+                if (context.TestExpression("sqlComputeConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqlComputeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sqlParameters", targetDepth))
+                if (context.TestExpression("sqlParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedQuerySQLParametersUnmarshaller.Instance;
                     unmarshalledObject.SqlParameters = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("developerJwt", targetDepth))
+                if (context.TestExpression("developerJwt", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedAccountDeveloperJwtUnmarshaller.Instance;
                     unmarshalledObject.DeveloperJwt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("email", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedAccountEmailUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2", targetDepth))
+                if (context.TestExpression("oAuth2", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedAccountOAuth2Unmarshaller.Instance;
                     unmarshalledObject.OAuth2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("sms", targetDepth, ref reader))
                 {
                     var unmarshaller = LinkedAccountSmsUnmarshaller.Instance;
                     unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);

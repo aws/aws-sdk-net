@@ -56,13 +56,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ObjectLockEnabled", targetDepth))
+                if (context.TestExpression("ObjectLockEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ObjectLockEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Rule", targetDepth))
+                if (context.TestExpression("Rule", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsS3BucketObjectLockConfigurationRuleDetailsUnmarshaller.Instance;
                     unmarshalledObject.Rule = unmarshaller.Unmarshall(context, ref reader);

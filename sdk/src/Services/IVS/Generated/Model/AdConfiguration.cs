@@ -62,7 +62,10 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property MediaTailorPlaybackConfigurations. 
         /// <para>
-        /// List of integration configurations with media tailor resources.
+        /// List of integration configurations with MediaTailor resources. The first item in the
+        /// list is the default playback configuration used for the ad configuration. To select
+        /// a different configuration per viewing session, see <a href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels-generate-tokens.html">Generate
+        /// and Sign IVS Playback Tokens</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

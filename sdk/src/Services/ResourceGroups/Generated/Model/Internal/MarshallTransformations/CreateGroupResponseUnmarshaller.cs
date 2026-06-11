@@ -52,25 +52,25 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Group", targetDepth))
+                if (context.TestExpression("Group", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupUnmarshaller.Instance;
                     response.Group = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupConfiguration", targetDepth))
+                if (context.TestExpression("GroupConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = GroupConfigurationUnmarshaller.Instance;
                     response.GroupConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourceQuery", targetDepth))
+                if (context.TestExpression("ResourceQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceQueryUnmarshaller.Instance;
                     response.ResourceQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Tags", targetDepth))
+                if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);

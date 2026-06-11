@@ -52,13 +52,13 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("commentsForPullRequestData", targetDepth))
+                if (context.TestExpression("commentsForPullRequestData", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CommentsForPullRequest, CommentsForPullRequestUnmarshaller>(CommentsForPullRequestUnmarshaller.Instance);
                     response.CommentsForPullRequestData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

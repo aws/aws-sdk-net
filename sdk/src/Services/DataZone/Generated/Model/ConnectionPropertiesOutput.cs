@@ -45,6 +45,7 @@ namespace Amazon.DataZone.Model
         private S3PropertiesOutput _s3Properties;
         private SparkEmrPropertiesOutput _sparkEmrProperties;
         private SparkGluePropertiesOutput _sparkGlueProperties;
+        private VpcPropertiesOutput _vpcProperties;
         private WorkflowsMwaaPropertiesOutput _workflowsMwaaProperties;
         private WorkflowsServerlessPropertiesOutput _workflowsServerlessProperties;
 
@@ -244,6 +245,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetSparkGlueProperties()
         {
             return this._sparkGlueProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcProperties. 
+        /// <para>
+        /// The VPC properties of a connection.
+        /// </para>
+        /// </summary>
+        public VpcPropertiesOutput VpcProperties
+        {
+            get { return this._vpcProperties; }
+            set { this._vpcProperties = value; }
+        }
+
+        // Check to see if VpcProperties property is set
+        internal bool IsSetVpcProperties()
+        {
+            return this._vpcProperties != null;
         }
 
         /// <summary>

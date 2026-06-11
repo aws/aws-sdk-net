@@ -72,13 +72,13 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("originalStatusCode", targetDepth))
+                    if (context.TestExpression("originalStatusCode", targetDepth, ref reader))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.OriginalStatusCode = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("resourceName", targetDepth))
+                    if (context.TestExpression("resourceName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context, ref reader);

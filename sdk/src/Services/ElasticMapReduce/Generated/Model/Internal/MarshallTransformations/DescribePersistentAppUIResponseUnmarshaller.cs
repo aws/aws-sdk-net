@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PersistentAppUI", targetDepth))
+                if (context.TestExpression("PersistentAppUI", targetDepth, ref reader))
                 {
                     var unmarshaller = PersistentAppUIUnmarshaller.Instance;
                     response.PersistentAppUI = unmarshaller.Unmarshall(context, ref reader);

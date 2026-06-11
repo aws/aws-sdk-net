@@ -56,85 +56,85 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmiProductSummary", targetDepth))
+                if (context.TestExpression("AmiProductSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = AmiProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.AmiProductSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContainerProductSummary", targetDepth))
+                if (context.TestExpression("ContainerProductSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.ContainerProductSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataProductSummary", targetDepth))
+                if (context.TestExpression("DataProductSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.DataProductSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityArn", targetDepth))
+                if (context.TestExpression("EntityArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityId", targetDepth))
+                if (context.TestExpression("EntityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntityType", targetDepth))
+                if (context.TestExpression("EntityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EntityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
+                if (context.TestExpression("LastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MachineLearningProductSummary", targetDepth))
+                if (context.TestExpression("MachineLearningProductSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = MachineLearningProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.MachineLearningProductSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfferSetSummary", targetDepth))
+                if (context.TestExpression("OfferSetSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = OfferSetSummaryUnmarshaller.Instance;
                     unmarshalledObject.OfferSetSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfferSummary", targetDepth))
+                if (context.TestExpression("OfferSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = OfferSummaryUnmarshaller.Instance;
                     unmarshalledObject.OfferSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResaleAuthorizationSummary", targetDepth))
+                if (context.TestExpression("ResaleAuthorizationSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = ResaleAuthorizationSummaryUnmarshaller.Instance;
                     unmarshalledObject.ResaleAuthorizationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SaaSProductSummary", targetDepth))
+                if (context.TestExpression("SaaSProductSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = SaaSProductSummaryUnmarshaller.Instance;
                     unmarshalledObject.SaaSProductSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Visibility", targetDepth))
+                if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Visibility = unmarshaller.Unmarshall(context, ref reader);

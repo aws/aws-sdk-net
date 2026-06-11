@@ -52,7 +52,7 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("userAccessResultsList", targetDepth))
+                if (context.TestExpression("userAccessResultsList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserAccessResultItem, UserAccessResultItemUnmarshaller>(UserAccessResultItemUnmarshaller.Instance);
                     response.UserAccessResultsList = unmarshaller.Unmarshall(context, ref reader);

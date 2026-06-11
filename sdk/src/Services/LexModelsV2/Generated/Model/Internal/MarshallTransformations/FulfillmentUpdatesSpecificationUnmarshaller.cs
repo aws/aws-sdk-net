@@ -56,25 +56,25 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth))
+                if (context.TestExpression("active", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("startResponse", targetDepth))
+                if (context.TestExpression("startResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = FulfillmentStartResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.StartResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("timeoutInSeconds", targetDepth))
+                if (context.TestExpression("timeoutInSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("updateResponse", targetDepth))
+                if (context.TestExpression("updateResponse", targetDepth, ref reader))
                 {
                     var unmarshaller = FulfillmentUpdateResponseSpecificationUnmarshaller.Instance;
                     unmarshalledObject.UpdateResponse = unmarshaller.Unmarshall(context, ref reader);

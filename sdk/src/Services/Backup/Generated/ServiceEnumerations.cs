@@ -1754,6 +1754,10 @@ namespace Amazon.Backup
         /// Constant THREATS_FOUND for ScanResultStatus
         /// </summary>
         public static readonly ScanResultStatus THREATS_FOUND = new ScanResultStatus("THREATS_FOUND");
+        /// <summary>
+        /// Constant UNKNOWN for ScanResultStatus
+        /// </summary>
+        public static readonly ScanResultStatus UNKNOWN = new ScanResultStatus("UNKNOWN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

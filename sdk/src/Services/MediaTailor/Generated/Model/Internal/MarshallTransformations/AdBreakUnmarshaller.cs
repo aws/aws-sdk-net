@@ -56,37 +56,37 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdBreakMetadata", targetDepth))
+                if (context.TestExpression("AdBreakMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<KeyValuePair, KeyValuePairUnmarshaller>(KeyValuePairUnmarshaller.Instance);
                     unmarshalledObject.AdBreakMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MessageType", targetDepth))
+                if (context.TestExpression("MessageType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OffsetMillis", targetDepth))
+                if (context.TestExpression("OffsetMillis", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OffsetMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Slate", targetDepth))
+                if (context.TestExpression("Slate", targetDepth, ref reader))
                 {
                     var unmarshaller = SlateSourceUnmarshaller.Instance;
                     unmarshalledObject.Slate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpliceInsertMessage", targetDepth))
+                if (context.TestExpression("SpliceInsertMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = SpliceInsertMessageUnmarshaller.Instance;
                     unmarshalledObject.SpliceInsertMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSignalMessage", targetDepth))
+                if (context.TestExpression("TimeSignalMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeSignalMessageUnmarshaller.Instance;
                     unmarshalledObject.TimeSignalMessage = unmarshaller.Unmarshall(context, ref reader);

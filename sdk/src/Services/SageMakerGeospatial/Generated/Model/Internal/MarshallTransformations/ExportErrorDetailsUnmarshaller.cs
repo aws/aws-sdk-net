@@ -56,13 +56,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ExportResults", targetDepth))
+                if (context.TestExpression("ExportResults", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportErrorDetailsOutputUnmarshaller.Instance;
                     unmarshalledObject.ExportResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExportSourceImages", targetDepth))
+                if (context.TestExpression("ExportSourceImages", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportErrorDetailsOutputUnmarshaller.Instance;
                     unmarshalledObject.ExportSourceImages = unmarshaller.Unmarshall(context, ref reader);

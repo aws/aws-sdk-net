@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("slidingWindow", targetDepth))
+                if (context.TestExpression("slidingWindow", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessSlidingWindowConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SlidingWindow = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("summarization", targetDepth))
+                if (context.TestExpression("summarization", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessSummarizationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Summarization = unmarshaller.Unmarshall(context, ref reader);

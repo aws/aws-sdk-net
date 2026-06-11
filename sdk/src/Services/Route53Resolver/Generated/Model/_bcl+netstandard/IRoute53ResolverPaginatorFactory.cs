@@ -88,6 +88,16 @@ namespace Amazon.Route53Resolver.Model
         IListFirewallRulesPaginator ListFirewallRules(ListFirewallRulesRequest request);
 
         /// <summary>
+        /// Paginator for ListFirewallRuleTypes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFirewallRuleTypesPaginator ListFirewallRuleTypes(ListFirewallRuleTypesRequest request);
+
+        /// <summary>
         /// Paginator for ListOutpostResolvers operation
         ///</summary>
         [AWSPaginator(

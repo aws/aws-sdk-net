@@ -56,25 +56,25 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("basicAuthConfiguration", targetDepth))
+                if (context.TestExpression("basicAuthConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BasicAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("idcAuthConfiguration", targetDepth))
+                if (context.TestExpression("idcAuthConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IdcAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IdcAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("noAuthConfiguration", targetDepth))
+                if (context.TestExpression("noAuthConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.NoAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth))
+                if (context.TestExpression("oAuth2ClientCredentialConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = OAuth2ClientCredentialConfigurationUnmarshaller.Instance;
                     unmarshalledObject.OAuth2ClientCredentialConfiguration = unmarshaller.Unmarshall(context, ref reader);

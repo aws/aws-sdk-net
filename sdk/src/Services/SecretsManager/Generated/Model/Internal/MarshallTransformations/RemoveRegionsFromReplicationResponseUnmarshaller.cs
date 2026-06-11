@@ -52,13 +52,13 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ARN", targetDepth))
+                if (context.TestExpression("ARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReplicationStatus", targetDepth))
+                if (context.TestExpression("ReplicationStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ReplicationStatusType, ReplicationStatusTypeUnmarshaller>(ReplicationStatusTypeUnmarshaller.Instance);
                     response.ReplicationStatus = unmarshaller.Unmarshall(context, ref reader);

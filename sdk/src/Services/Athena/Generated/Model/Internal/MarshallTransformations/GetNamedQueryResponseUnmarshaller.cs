@@ -52,7 +52,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NamedQuery", targetDepth))
+                if (context.TestExpression("NamedQuery", targetDepth, ref reader))
                 {
                     var unmarshaller = NamedQueryUnmarshaller.Instance;
                     response.NamedQuery = unmarshaller.Unmarshall(context, ref reader);

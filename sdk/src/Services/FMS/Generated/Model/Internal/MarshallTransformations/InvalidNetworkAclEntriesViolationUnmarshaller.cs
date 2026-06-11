@@ -56,31 +56,31 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CurrentAssociatedNetworkAcl", targetDepth))
+                if (context.TestExpression("CurrentAssociatedNetworkAcl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrentAssociatedNetworkAcl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EntryViolations", targetDepth))
+                if (context.TestExpression("EntryViolations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EntryViolation, EntryViolationUnmarshaller>(EntryViolationUnmarshaller.Instance);
                     unmarshalledObject.EntryViolations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Subnet", targetDepth))
+                if (context.TestExpression("Subnet", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Subnet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
+                if (context.TestExpression("SubnetAvailabilityZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Vpc", targetDepth))
+                if (context.TestExpression("Vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);

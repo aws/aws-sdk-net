@@ -56,7 +56,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConditionThreshold", targetDepth))
+                if (context.TestExpression("ConditionThreshold", targetDepth, ref reader))
                 {
                     var unmarshaller = SuppressionConditionThresholdUnmarshaller.Instance;
                     unmarshalledObject.ConditionThreshold = unmarshaller.Unmarshall(context, ref reader);

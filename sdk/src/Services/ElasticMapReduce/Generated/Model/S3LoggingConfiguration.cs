@@ -49,18 +49,17 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>system-logs</c>: System-level logs including daemon logs, bootstrap logs, and
-        /// other infrastructure logs.
+        ///  <c>system-logs</c>: EMR Daemon logs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>application-logs</c>: Application-level logs from frameworks like Hadoop, Spark,
-        /// Hive, etc.
+        ///  <c>application-logs</c>: Framework logs from Hadoop, Spark, Hive and other applications
+        /// running on the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>persistent-ui-logs</c>: Logs for persistent application UIs like Spark History
-        /// Server.
+        ///  <c>persistent-ui-logs</c>: Logs required for persistent application UIs such as Spark
+        /// History Server and Tez UI.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -68,17 +67,20 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>emr-managed</c>: Logs are uploaded to both the EMR-managed S3 bucket and the customer-specified
-        /// S3 bucket (if LogUri is provided).
+        ///  <c>emr-managed</c>: Standard behavior. Logs are uploaded to S3 bucket as configured
+        /// in your LogUri, with certain logs retained by the service for operational support
+        /// and troubleshooting purposes.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>on-customer-s3only</c>: Logs are uploaded only to the customer-specified S3 bucket.
-        /// Requires LogUri to be specified in the cluster configuration.
+        /// This requires you to specify a LogUri when creating the cluster. Persistent-ui-logs
+        /// cannot have on-customer-s3only policy. Allowed policies for persistent-ui-logs are
+        /// emr-managed and disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>disabled</c>: Log upload is disabled for this log type.
+        ///  <c>disabled</c>: No S3 upload for this log type.
         /// </para>
         ///  </li> </ul>
         /// <para />

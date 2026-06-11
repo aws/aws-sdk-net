@@ -56,61 +56,61 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cisaData", targetDepth))
+                if (context.TestExpression("cisaData", targetDepth, ref reader))
                 {
                     var unmarshaller = CisaDataUnmarshaller.Instance;
                     unmarshalledObject.CisaData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cwes", targetDepth))
+                if (context.TestExpression("cwes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Cwes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("epssScore", targetDepth))
+                if (context.TestExpression("epssScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.EpssScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evidences", targetDepth))
+                if (context.TestExpression("evidences", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Evidence, EvidenceUnmarshaller>(EvidenceUnmarshaller.Instance);
                     unmarshalledObject.Evidences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("exploitObserved", targetDepth))
+                if (context.TestExpression("exploitObserved", targetDepth, ref reader))
                 {
                     var unmarshaller = ExploitObservedUnmarshaller.Instance;
                     unmarshalledObject.ExploitObserved = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("findingArn", targetDepth))
+                if (context.TestExpression("findingArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FindingArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("referenceUrls", targetDepth))
+                if (context.TestExpression("referenceUrls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ReferenceUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("riskScore", targetDepth))
+                if (context.TestExpression("riskScore", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RiskScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("tools", targetDepth))
+                if (context.TestExpression("tools", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Tools = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ttps", targetDepth))
+                if (context.TestExpression("ttps", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.Ttps = unmarshaller.Unmarshall(context, ref reader);

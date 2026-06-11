@@ -56,13 +56,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("OnDemandResizeSpecification", targetDepth))
+                if (context.TestExpression("OnDemandResizeSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = OnDemandResizingSpecificationUnmarshaller.Instance;
                     unmarshalledObject.OnDemandResizeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SpotResizeSpecification", targetDepth))
+                if (context.TestExpression("SpotResizeSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = SpotResizingSpecificationUnmarshaller.Instance;
                     unmarshalledObject.SpotResizeSpecification = unmarshaller.Unmarshall(context, ref reader);

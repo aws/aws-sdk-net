@@ -52,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AcceleratorAttributes", targetDepth))
+                if (context.TestExpression("AcceleratorAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AcceleratorAttributesUnmarshaller.Instance;
                     response.AcceleratorAttributes = unmarshaller.Unmarshall(context, ref reader);

@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAdvancedPromptOptimizationJob operation.
-    /// Retrieves the details and status of an advanced prompt optimization job.
+    /// Gets information about an advanced prompt optimization job.
     /// </summary>
     public partial class GetAdvancedPromptOptimizationJobRequest : AmazonBedrockRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// ARN or ID of the advanced prompt optimization job.
+        /// The ARN or ID of the advanced prompt optimization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

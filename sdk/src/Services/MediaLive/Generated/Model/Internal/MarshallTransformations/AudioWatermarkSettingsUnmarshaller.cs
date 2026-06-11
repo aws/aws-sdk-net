@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nielsenWatermarksSettings", targetDepth))
+                if (context.TestExpression("nielsenWatermarksSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = NielsenWatermarksSettingsUnmarshaller.Instance;
                     unmarshalledObject.NielsenWatermarksSettings = unmarshaller.Unmarshall(context, ref reader);

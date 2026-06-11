@@ -56,7 +56,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Iam", targetDepth))
+                if (context.TestExpression("Iam", targetDepth, ref reader))
                 {
                     var unmarshaller = IamAuthenticationMethodUnmarshaller.Instance;
                     unmarshalledObject.Iam = unmarshaller.Unmarshall(context, ref reader);

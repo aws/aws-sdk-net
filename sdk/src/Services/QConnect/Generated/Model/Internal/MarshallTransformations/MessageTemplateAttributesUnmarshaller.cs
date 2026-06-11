@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentAttributes", targetDepth))
+                if (context.TestExpression("agentAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentAttributesUnmarshaller.Instance;
                     unmarshalledObject.AgentAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customAttributes", targetDepth))
+                if (context.TestExpression("customAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.CustomAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customerProfileAttributes", targetDepth))
+                if (context.TestExpression("customerProfileAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomerProfileAttributesUnmarshaller.Instance;
                     unmarshalledObject.CustomerProfileAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemAttributes", targetDepth))
+                if (context.TestExpression("systemAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = SystemAttributesUnmarshaller.Instance;
                     unmarshalledObject.SystemAttributes = unmarshaller.Unmarshall(context, ref reader);

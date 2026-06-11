@@ -56,7 +56,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Positioning", targetDepth))
+                if (context.TestExpression("Positioning", targetDepth, ref reader))
                 {
                     var unmarshaller = SidewalkPositioningUnmarshaller.Instance;
                     unmarshalledObject.Positioning = unmarshaller.Unmarshall(context, ref reader);

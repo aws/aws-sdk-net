@@ -52,7 +52,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("odbNetwork", targetDepth))
+                if (context.TestExpression("odbNetwork", targetDepth, ref reader))
                 {
                     var unmarshaller = OdbNetworkUnmarshaller.Instance;
                     response.OdbNetwork = unmarshaller.Unmarshall(context, ref reader);

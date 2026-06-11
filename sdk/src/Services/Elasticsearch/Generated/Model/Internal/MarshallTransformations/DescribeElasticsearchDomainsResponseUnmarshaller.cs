@@ -52,7 +52,7 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DomainStatusList", targetDepth))
+                if (context.TestExpression("DomainStatusList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ElasticsearchDomainStatus, ElasticsearchDomainStatusUnmarshaller>(ElasticsearchDomainStatusUnmarshaller.Instance);
                     response.DomainStatusList = unmarshaller.Unmarshall(context, ref reader);

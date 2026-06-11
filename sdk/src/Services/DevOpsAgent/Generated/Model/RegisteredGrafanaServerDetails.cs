@@ -62,7 +62,7 @@ namespace Amazon.DevOpsAgent.Model
         /// Grafana instance URL (e.g., https://your-instance.grafana.net)
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Endpoint
         {
             get { return this._endpoint; }

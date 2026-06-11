@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("StaticFileDataSource", targetDepth))
+                if (context.TestExpression("StaticFileDataSource", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialStaticFileSourceUnmarshaller.Instance;
                     unmarshalledObject.StaticFileDataSource = unmarshaller.Unmarshall(context, ref reader);

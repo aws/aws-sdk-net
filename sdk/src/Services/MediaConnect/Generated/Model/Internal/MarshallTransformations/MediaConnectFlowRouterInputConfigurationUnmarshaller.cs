@@ -56,19 +56,19 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("flowArn", targetDepth))
+                if (context.TestExpression("flowArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("flowOutputArn", targetDepth))
+                if (context.TestExpression("flowOutputArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FlowOutputArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceTransitDecryption", targetDepth))
+                if (context.TestExpression("sourceTransitDecryption", targetDepth, ref reader))
                 {
                     var unmarshaller = FlowTransitEncryptionUnmarshaller.Instance;
                     unmarshalledObject.SourceTransitDecryption = unmarshaller.Unmarshall(context, ref reader);

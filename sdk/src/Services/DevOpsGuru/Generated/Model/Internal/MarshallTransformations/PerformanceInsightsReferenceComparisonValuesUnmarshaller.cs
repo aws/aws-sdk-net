@@ -56,13 +56,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ReferenceMetric", targetDepth))
+                if (context.TestExpression("ReferenceMetric", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceInsightsReferenceMetricUnmarshaller.Instance;
                     unmarshalledObject.ReferenceMetric = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReferenceScalar", targetDepth))
+                if (context.TestExpression("ReferenceScalar", targetDepth, ref reader))
                 {
                     var unmarshaller = PerformanceInsightsReferenceScalarUnmarshaller.Instance;
                     unmarshalledObject.ReferenceScalar = unmarshaller.Unmarshall(context, ref reader);

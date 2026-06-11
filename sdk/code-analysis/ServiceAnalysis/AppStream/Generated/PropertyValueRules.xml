@@ -249,6 +249,12 @@
     <pattern>^ami-[a-z0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.WorkspaceImageId</property>
+    <min>12</min>
+    <max>67</max>
+    <pattern>^wsi-[0-9a-z]{8,63}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Description</property>
     <max>256</max>
   </property-value-rule>

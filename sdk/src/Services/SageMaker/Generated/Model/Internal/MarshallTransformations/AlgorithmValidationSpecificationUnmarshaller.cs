@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ValidationProfiles", targetDepth))
+                if (context.TestExpression("ValidationProfiles", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AlgorithmValidationProfile, AlgorithmValidationProfileUnmarshaller>(AlgorithmValidationProfileUnmarshaller.Instance);
                     unmarshalledObject.ValidationProfiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ValidationRole", targetDepth))
+                if (context.TestExpression("ValidationRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ValidationRole = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSourceSelectionCriteria", targetDepth))
+                if (context.TestExpression("DataSourceSelectionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DataSourceSelectionCriteria = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptedLogGroupStrategy", targetDepth))
+                if (context.TestExpression("EncryptedLogGroupStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EncryptedLogGroupStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogGroupSelectionCriteria", targetDepth))
+                if (context.TestExpression("LogGroupSelectionCriteria", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupSelectionCriteria = unmarshaller.Unmarshall(context, ref reader);

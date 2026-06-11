@@ -56,31 +56,31 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("email", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeWindowUnmarshaller.Instance;
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("localTimeZoneConfig", targetDepth))
+                if (context.TestExpression("localTimeZoneConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = LocalTimeZoneConfigUnmarshaller.Instance;
                     unmarshalledObject.LocalTimeZoneConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("sms", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeWindowUnmarshaller.Instance;
                     unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("telephony", targetDepth))
+                if (context.TestExpression("telephony", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeWindowUnmarshaller.Instance;
                     unmarshalledObject.Telephony = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("whatsApp", targetDepth))
+                if (context.TestExpression("whatsApp", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeWindowUnmarshaller.Instance;
                     unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);

@@ -52,19 +52,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Answer", targetDepth))
+                if (context.TestExpression("Answer", targetDepth, ref reader))
                 {
                     var unmarshaller = ReviewTemplateAnswerUnmarshaller.Instance;
                     response.Answer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LensAlias", targetDepth))
+                if (context.TestExpression("LensAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.LensAlias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TemplateArn", targetDepth))
+                if (context.TestExpression("TemplateArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TemplateArn = unmarshaller.Unmarshall(context, ref reader);

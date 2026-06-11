@@ -56,19 +56,19 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("scaleOutWorkersPerMinute", targetDepth))
+                if (context.TestExpression("scaleOutWorkersPerMinute", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleOutWorkersPerMinute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("standbyWorkerCount", targetDepth))
+                if (context.TestExpression("standbyWorkerCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StandbyWorkerCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workerIdleDurationSeconds", targetDepth))
+                if (context.TestExpression("workerIdleDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.WorkerIdleDurationSeconds = unmarshaller.Unmarshall(context, ref reader);

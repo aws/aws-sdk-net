@@ -52,13 +52,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("domains", targetDepth))
+                if (context.TestExpression("domains", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DomainSummary, DomainSummaryUnmarshaller>(DomainSummaryUnmarshaller.Instance);
                     response.Domains = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

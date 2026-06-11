@@ -56,7 +56,7 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rescanDurationState", targetDepth))
+                if (context.TestExpression("rescanDurationState", targetDepth, ref reader))
                 {
                     var unmarshaller = EcrRescanDurationStateUnmarshaller.Instance;
                     unmarshalledObject.RescanDurationState = unmarshaller.Unmarshall(context, ref reader);

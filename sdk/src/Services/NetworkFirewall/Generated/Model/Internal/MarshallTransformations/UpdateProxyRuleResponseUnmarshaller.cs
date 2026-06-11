@@ -52,19 +52,19 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ProxyRule", targetDepth))
+                if (context.TestExpression("ProxyRule", targetDepth, ref reader))
                 {
                     var unmarshaller = ProxyRuleUnmarshaller.Instance;
                     response.ProxyRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RemovedConditions", targetDepth))
+                if (context.TestExpression("RemovedConditions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ProxyRuleCondition, ProxyRuleConditionUnmarshaller>(ProxyRuleConditionUnmarshaller.Instance);
                     response.RemovedConditions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UpdateToken", targetDepth))
+                if (context.TestExpression("UpdateToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.UpdateToken = unmarshaller.Unmarshall(context, ref reader);

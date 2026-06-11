@@ -52,19 +52,19 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("signature", targetDepth))
+                if (context.TestExpression("signature", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Signature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("slots", targetDepth))
+                if (context.TestExpression("slots", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BuiltinIntentSlot, BuiltinIntentSlotUnmarshaller>(BuiltinIntentSlotUnmarshaller.Instance);
                     response.Slots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("supportedLocales", targetDepth))
+                if (context.TestExpression("supportedLocales", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SupportedLocales = unmarshaller.Unmarshall(context, ref reader);

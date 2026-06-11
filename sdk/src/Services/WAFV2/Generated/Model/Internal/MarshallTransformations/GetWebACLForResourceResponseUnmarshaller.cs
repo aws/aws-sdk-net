@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WebACL", targetDepth))
+                if (context.TestExpression("WebACL", targetDepth, ref reader))
                 {
                     var unmarshaller = WebACLUnmarshaller.Instance;
                     response.WebACL = unmarshaller.Unmarshall(context, ref reader);

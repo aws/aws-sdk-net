@@ -56,7 +56,7 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("silentAudio", targetDepth))
+                if (context.TestExpression("silentAudio", targetDepth, ref reader))
                 {
                     var unmarshaller = SilentAudioUnmarshaller.Instance;
                     unmarshalledObject.SilentAudio = unmarshaller.Unmarshall(context, ref reader);

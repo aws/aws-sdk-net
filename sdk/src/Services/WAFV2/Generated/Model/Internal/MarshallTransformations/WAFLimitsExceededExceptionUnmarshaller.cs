@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("SourceType", targetDepth))
+                    if (context.TestExpression("SourceType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);

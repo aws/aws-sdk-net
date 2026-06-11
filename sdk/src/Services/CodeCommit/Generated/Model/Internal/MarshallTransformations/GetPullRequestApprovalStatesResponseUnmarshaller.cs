@@ -52,7 +52,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("approvals", targetDepth))
+                if (context.TestExpression("approvals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Approval, ApprovalUnmarshaller>(ApprovalUnmarshaller.Instance);
                     response.Approvals = unmarshaller.Unmarshall(context, ref reader);

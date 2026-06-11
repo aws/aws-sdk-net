@@ -52,7 +52,7 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PolicyVersion", targetDepth))
+                if (context.TestExpression("PolicyVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicyVersionUnmarshaller.Instance;
                     response.PolicyVersion = unmarshaller.Unmarshall(context, ref reader);

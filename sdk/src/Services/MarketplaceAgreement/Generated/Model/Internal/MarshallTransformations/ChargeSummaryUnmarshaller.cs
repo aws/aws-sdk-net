@@ -56,43 +56,43 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currencyCode", targetDepth))
+                if (context.TestExpression("currencyCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("estimatedTaxes", targetDepth))
+                if (context.TestExpression("estimatedTaxes", targetDepth, ref reader))
                 {
                     var unmarshaller = EstimatedTaxesUnmarshaller.Instance;
                     unmarshalledObject.EstimatedTaxes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("expectedCharges", targetDepth))
+                if (context.TestExpression("expectedCharges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpectedCharge, ExpectedChargeUnmarshaller>(ExpectedChargeUnmarshaller.Instance);
                     unmarshalledObject.ExpectedCharges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invoicingEntity", targetDepth))
+                if (context.TestExpression("invoicingEntity", targetDepth, ref reader))
                 {
                     var unmarshaller = InvoicingEntityUnmarshaller.Instance;
                     unmarshalledObject.InvoicingEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("itemizedCharges", targetDepth))
+                if (context.TestExpression("itemizedCharges", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ItemizedCharge, ItemizedChargeUnmarshaller>(ItemizedChargeUnmarshaller.Instance);
                     unmarshalledObject.ItemizedCharges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newAgreementValue", targetDepth))
+                if (context.TestExpression("newAgreementValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NewAgreementValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("newAgreementValueAfterTax", targetDepth))
+                if (context.TestExpression("newAgreementValueAfterTax", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NewAgreementValueAfterTax = unmarshaller.Unmarshall(context, ref reader);

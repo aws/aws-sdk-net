@@ -142,6 +142,10 @@ namespace Amazon.CostExplorer
         /// Constant MAX_SAVINGS for AnalysisType
         /// </summary>
         public static readonly AnalysisType MAX_SAVINGS = new AnalysisType("MAX_SAVINGS");
+        /// <summary>
+        /// Constant TARGET_AVERAGE_COVERAGE for AnalysisType
+        /// </summary>
+        public static readonly AnalysisType TARGET_AVERAGE_COVERAGE = new AnalysisType("TARGET_AVERAGE_COVERAGE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

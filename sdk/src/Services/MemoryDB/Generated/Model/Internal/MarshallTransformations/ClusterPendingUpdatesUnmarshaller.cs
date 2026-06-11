@@ -56,19 +56,19 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ACLs", targetDepth))
+                if (context.TestExpression("ACLs", targetDepth, ref reader))
                 {
                     var unmarshaller = ACLsUpdateStatusUnmarshaller.Instance;
                     unmarshalledObject.ACLs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Resharding", targetDepth))
+                if (context.TestExpression("Resharding", targetDepth, ref reader))
                 {
                     var unmarshaller = ReshardingStatusUnmarshaller.Instance;
                     unmarshalledObject.Resharding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceUpdates", targetDepth))
+                if (context.TestExpression("ServiceUpdates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PendingModifiedServiceUpdate, PendingModifiedServiceUpdateUnmarshaller>(PendingModifiedServiceUpdateUnmarshaller.Instance);
                     unmarshalledObject.ServiceUpdates = unmarshaller.Unmarshall(context, ref reader);

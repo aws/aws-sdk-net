@@ -56,7 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KeyStoreAccessOption", targetDepth))
+                if (context.TestExpression("KeyStoreAccessOption", targetDepth, ref reader))
                 {
                     var unmarshaller = KeyStoreAccessOptionUnmarshaller.Instance;
                     unmarshalledObject.KeyStoreAccessOption = unmarshaller.Unmarshall(context, ref reader);

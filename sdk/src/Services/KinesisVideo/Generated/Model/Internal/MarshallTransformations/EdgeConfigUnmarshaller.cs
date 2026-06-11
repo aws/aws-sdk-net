@@ -56,25 +56,25 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DeletionConfig", targetDepth))
+                if (context.TestExpression("DeletionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = DeletionConfigUnmarshaller.Instance;
                     unmarshalledObject.DeletionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HubDeviceArn", targetDepth))
+                if (context.TestExpression("HubDeviceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HubDeviceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecorderConfig", targetDepth))
+                if (context.TestExpression("RecorderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RecorderConfigUnmarshaller.Instance;
                     unmarshalledObject.RecorderConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UploaderConfig", targetDepth))
+                if (context.TestExpression("UploaderConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = UploaderConfigUnmarshaller.Instance;
                     unmarshalledObject.UploaderConfig = unmarshaller.Unmarshall(context, ref reader);

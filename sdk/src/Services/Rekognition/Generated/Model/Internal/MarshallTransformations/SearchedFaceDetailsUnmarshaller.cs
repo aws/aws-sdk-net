@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FaceDetail", targetDepth))
+                if (context.TestExpression("FaceDetail", targetDepth, ref reader))
                 {
                     var unmarshaller = FaceDetailUnmarshaller.Instance;
                     unmarshalledObject.FaceDetail = unmarshaller.Unmarshall(context, ref reader);

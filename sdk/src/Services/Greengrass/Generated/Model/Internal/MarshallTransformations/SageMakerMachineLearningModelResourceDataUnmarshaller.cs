@@ -56,19 +56,19 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DestinationPath", targetDepth))
+                if (context.TestExpression("DestinationPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DestinationPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OwnerSetting", targetDepth))
+                if (context.TestExpression("OwnerSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = ResourceDownloadOwnerSettingUnmarshaller.Instance;
                     unmarshalledObject.OwnerSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SageMakerJobArn", targetDepth))
+                if (context.TestExpression("SageMakerJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SageMakerJobArn = unmarshaller.Unmarshall(context, ref reader);

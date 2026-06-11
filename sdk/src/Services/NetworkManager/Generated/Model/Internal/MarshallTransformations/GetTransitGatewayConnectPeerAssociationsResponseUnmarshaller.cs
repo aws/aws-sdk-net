@@ -52,13 +52,13 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TransitGatewayConnectPeerAssociations", targetDepth))
+                if (context.TestExpression("TransitGatewayConnectPeerAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TransitGatewayConnectPeerAssociation, TransitGatewayConnectPeerAssociationUnmarshaller>(TransitGatewayConnectPeerAssociationUnmarshaller.Instance);
                     response.TransitGatewayConnectPeerAssociations = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DisplayHints", targetDepth))
+                if (context.TestExpression("DisplayHints", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrationSectionDisplayHintsUnmarshaller.Instance;
                     unmarshalledObject.DisplayHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SectionPath", targetDepth))
+                if (context.TestExpression("SectionPath", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SectionPath = unmarshaller.Unmarshall(context, ref reader);

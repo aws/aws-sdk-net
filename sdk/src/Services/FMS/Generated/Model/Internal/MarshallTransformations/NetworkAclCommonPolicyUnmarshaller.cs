@@ -56,7 +56,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NetworkAclEntrySet", targetDepth))
+                if (context.TestExpression("NetworkAclEntrySet", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkAclEntrySetUnmarshaller.Instance;
                     unmarshalledObject.NetworkAclEntrySet = unmarshaller.Unmarshall(context, ref reader);

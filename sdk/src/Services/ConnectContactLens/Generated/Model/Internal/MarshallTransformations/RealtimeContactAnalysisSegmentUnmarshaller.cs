@@ -56,19 +56,19 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Categories", targetDepth))
+                if (context.TestExpression("Categories", targetDepth, ref reader))
                 {
                     var unmarshaller = CategoriesUnmarshaller.Instance;
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostContactSummary", targetDepth))
+                if (context.TestExpression("PostContactSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = PostContactSummaryUnmarshaller.Instance;
                     unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth))
+                if (context.TestExpression("Transcript", targetDepth, ref reader))
                 {
                     var unmarshaller = TranscriptUnmarshaller.Instance;
                     unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);

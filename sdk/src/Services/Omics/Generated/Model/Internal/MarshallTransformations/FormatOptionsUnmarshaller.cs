@@ -56,13 +56,13 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tsvOptions", targetDepth))
+                if (context.TestExpression("tsvOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = TsvOptionsUnmarshaller.Instance;
                     unmarshalledObject.TsvOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vcfOptions", targetDepth))
+                if (context.TestExpression("vcfOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = VcfOptionsUnmarshaller.Instance;
                     unmarshalledObject.VcfOptions = unmarshaller.Unmarshall(context, ref reader);

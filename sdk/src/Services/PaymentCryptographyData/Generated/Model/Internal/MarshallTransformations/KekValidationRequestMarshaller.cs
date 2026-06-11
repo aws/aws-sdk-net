@@ -52,6 +52,12 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DeriveKeyAlgorithm);
             }
 
+            if(requestObject.IsSetRandomKeyMaxLength())
+            {
+                context.Writer.WritePropertyName("RandomKeyMaxLength");
+                context.Writer.WriteStringValue(requestObject.RandomKeyMaxLength);
+            }
+
         }
 
         /// <summary>

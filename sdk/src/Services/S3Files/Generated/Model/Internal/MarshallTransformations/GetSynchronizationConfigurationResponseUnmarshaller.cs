@@ -52,19 +52,19 @@ namespace Amazon.S3Files.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expirationDataRules", targetDepth))
+                if (context.TestExpression("expirationDataRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExpirationDataRule, ExpirationDataRuleUnmarshaller>(ExpirationDataRuleUnmarshaller.Instance);
                     response.ExpirationDataRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("importDataRules", targetDepth))
+                if (context.TestExpression("importDataRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ImportDataRule, ImportDataRuleUnmarshaller>(ImportDataRuleUnmarshaller.Instance);
                     response.ImportDataRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestVersionNumber", targetDepth))
+                if (context.TestExpression("latestVersionNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.LatestVersionNumber = unmarshaller.Unmarshall(context, ref reader);

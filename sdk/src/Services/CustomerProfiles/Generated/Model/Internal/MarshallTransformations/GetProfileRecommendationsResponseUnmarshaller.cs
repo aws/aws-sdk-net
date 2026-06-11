@@ -52,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Recommendations", targetDepth))
+                if (context.TestExpression("Recommendations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Recommendation, RecommendationUnmarshaller>(RecommendationUnmarshaller.Instance);
                     response.Recommendations = unmarshaller.Unmarshall(context, ref reader);

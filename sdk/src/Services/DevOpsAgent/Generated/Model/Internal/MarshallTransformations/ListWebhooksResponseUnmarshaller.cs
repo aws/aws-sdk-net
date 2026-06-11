@@ -52,7 +52,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("webhooks", targetDepth))
+                if (context.TestExpression("webhooks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Webhook, WebhookUnmarshaller>(WebhookUnmarshaller.Instance);
                     response.Webhooks = unmarshaller.Unmarshall(context, ref reader);

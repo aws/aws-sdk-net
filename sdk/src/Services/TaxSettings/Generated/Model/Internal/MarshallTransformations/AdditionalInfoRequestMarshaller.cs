@@ -46,6 +46,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBelgiumAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("belgiumAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BelgiumAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.BelgiumAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCanadaAdditionalInfo())
             {
                 context.Writer.WritePropertyName("canadaAdditionalInfo");
@@ -53,6 +64,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = CanadaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.CanadaAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetChileAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("chileAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChileAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.ChileAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -75,6 +97,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = EstoniaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.EstoniaAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetFranceAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("franceAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FranceAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.FranceAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -152,6 +185,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 
                 var marshaller = MalaysiaAdditionalInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.MalaysiaAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPhilippinesAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("philippinesAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PhilippinesAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.PhilippinesAdditionalInfo, context);
 
                 context.Writer.WriteEndObject();
             }

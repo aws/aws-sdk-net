@@ -56,7 +56,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("relativeAggregationDuration", targetDepth))
+                if (context.TestExpression("relativeAggregationDuration", targetDepth, ref reader))
                 {
                     var unmarshaller = RelativeAggregationDurationUnmarshaller.Instance;
                     unmarshalledObject.RelativeAggregationDuration = unmarshaller.Unmarshall(context, ref reader);

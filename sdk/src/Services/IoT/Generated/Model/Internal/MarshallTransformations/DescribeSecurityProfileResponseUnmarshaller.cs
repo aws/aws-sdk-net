@@ -52,67 +52,67 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("additionalMetricsToRetain", targetDepth))
+                if (context.TestExpression("additionalMetricsToRetain", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.AdditionalMetricsToRetain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("additionalMetricsToRetainV2", targetDepth))
+                if (context.TestExpression("additionalMetricsToRetainV2", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetricToRetain, MetricToRetainUnmarshaller>(MetricToRetainUnmarshaller.Instance);
                     response.AdditionalMetricsToRetainV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("alertTargets", targetDepth))
+                if (context.TestExpression("alertTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, AlertTarget, StringUnmarshaller, AlertTargetUnmarshaller>(StringUnmarshaller.Instance, AlertTargetUnmarshaller.Instance);
                     response.AlertTargets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("behaviors", targetDepth))
+                if (context.TestExpression("behaviors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Behavior, BehaviorUnmarshaller>(BehaviorUnmarshaller.Instance);
                     response.Behaviors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationDate", targetDepth))
+                if (context.TestExpression("creationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
+                if (context.TestExpression("lastModifiedDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("metricsExportConfig", targetDepth))
+                if (context.TestExpression("metricsExportConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricsExportConfigUnmarshaller.Instance;
                     response.MetricsExportConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityProfileArn", targetDepth))
+                if (context.TestExpression("securityProfileArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecurityProfileArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityProfileDescription", targetDepth))
+                if (context.TestExpression("securityProfileDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecurityProfileDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityProfileName", targetDepth))
+                if (context.TestExpression("securityProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SecurityProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Version = unmarshaller.Unmarshall(context, ref reader);

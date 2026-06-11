@@ -52,13 +52,13 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StreamInfoList", targetDepth))
+                if (context.TestExpression("StreamInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StreamInfo, StreamInfoUnmarshaller>(StreamInfoUnmarshaller.Instance);
                     response.StreamInfoList = unmarshaller.Unmarshall(context, ref reader);

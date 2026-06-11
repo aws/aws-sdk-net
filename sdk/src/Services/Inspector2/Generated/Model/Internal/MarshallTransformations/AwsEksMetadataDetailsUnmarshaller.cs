@@ -56,13 +56,13 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("namespace", targetDepth))
+                if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("workloadInfoList", targetDepth))
+                if (context.TestExpression("workloadInfoList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AwsEksWorkloadInfo, AwsEksWorkloadInfoUnmarshaller>(AwsEksWorkloadInfoUnmarshaller.Instance);
                     unmarshalledObject.WorkloadInfoList = unmarshaller.Unmarshall(context, ref reader);

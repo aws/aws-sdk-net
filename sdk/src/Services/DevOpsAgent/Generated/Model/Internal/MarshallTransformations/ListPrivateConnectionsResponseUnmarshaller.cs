@@ -52,7 +52,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("privateConnections", targetDepth))
+                if (context.TestExpression("privateConnections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PrivateConnectionSummary, PrivateConnectionSummaryUnmarshaller>(PrivateConnectionSummaryUnmarshaller.Instance);
                     response.PrivateConnections = unmarshaller.Unmarshall(context, ref reader);

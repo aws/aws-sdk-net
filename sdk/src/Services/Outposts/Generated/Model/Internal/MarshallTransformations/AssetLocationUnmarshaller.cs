@@ -56,7 +56,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("RackElevation", targetDepth))
+                if (context.TestExpression("RackElevation", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.RackElevation = unmarshaller.Unmarshall(context, ref reader);

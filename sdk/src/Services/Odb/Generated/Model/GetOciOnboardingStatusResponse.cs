@@ -34,10 +34,39 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class GetOciOnboardingStatusResponse : AmazonWebServiceResponse
     {
+        private List<OciIamRole> _autonomousDatabaseOciIntegrationIamRoles = AWSConfigs.InitializeCollections ? new List<OciIamRole>() : null;
         private string _existingTenancyActivationLink;
+        private string _linkedOciCompartmentId;
+        private string _linkedOciTenancyId;
         private string _newTenancyActivationLink;
         private OciIdentityDomain _ociIdentityDomain;
         private OciOnboardingStatus _status;
+        private List<SubscriptionError> _subscriptionErrors = AWSConfigs.InitializeCollections ? new List<SubscriptionError>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AutonomousDatabaseOciIntegrationIamRoles. 
+        /// <para>
+        /// The list of Amazon Web Services Identity and Access Management (IAM) service roles
+        /// used for Autonomous Database integration with Oracle Cloud Infrastructure (OCI).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<OciIamRole> AutonomousDatabaseOciIntegrationIamRoles
+        {
+            get { return this._autonomousDatabaseOciIntegrationIamRoles; }
+            set { this._autonomousDatabaseOciIntegrationIamRoles = value; }
+        }
+
+        // Check to see if AutonomousDatabaseOciIntegrationIamRoles property is set
+        internal bool IsSetAutonomousDatabaseOciIntegrationIamRoles()
+        {
+            return this._autonomousDatabaseOciIntegrationIamRoles != null && (this._autonomousDatabaseOciIntegrationIamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ExistingTenancyActivationLink. 
@@ -55,6 +84,44 @@ namespace Amazon.Odb.Model
         internal bool IsSetExistingTenancyActivationLink()
         {
             return this._existingTenancyActivationLink != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedOciCompartmentId. 
+        /// <para>
+        /// The unique identifier of the Oracle Cloud Infrastructure (OCI) compartment that is
+        /// linked to your Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        public string LinkedOciCompartmentId
+        {
+            get { return this._linkedOciCompartmentId; }
+            set { this._linkedOciCompartmentId = value; }
+        }
+
+        // Check to see if LinkedOciCompartmentId property is set
+        internal bool IsSetLinkedOciCompartmentId()
+        {
+            return this._linkedOciCompartmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedOciTenancyId. 
+        /// <para>
+        /// The unique identifier of the Oracle Cloud Infrastructure (OCI) tenancy that is linked
+        /// to your Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        public string LinkedOciTenancyId
+        {
+            get { return this._linkedOciTenancyId; }
+            set { this._linkedOciTenancyId = value; }
+        }
+
+        // Check to see if LinkedOciTenancyId property is set
+        internal bool IsSetLinkedOciTenancyId()
+        {
+            return this._linkedOciTenancyId != null;
         }
 
         /// <summary>
@@ -107,6 +174,30 @@ namespace Amazon.Odb.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionErrors. 
+        /// <para>
+        /// The list of errors that occurred during the subscription process for your Amazon Web
+        /// Services account, if any.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<SubscriptionError> SubscriptionErrors
+        {
+            get { return this._subscriptionErrors; }
+            set { this._subscriptionErrors = value; }
+        }
+
+        // Check to see if SubscriptionErrors property is set
+        internal bool IsSetSubscriptionErrors()
+        {
+            return this._subscriptionErrors != null && (this._subscriptionErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

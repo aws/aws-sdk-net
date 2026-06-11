@@ -52,13 +52,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accountPolicies", targetDepth))
+                if (context.TestExpression("accountPolicies", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccountPolicy, AccountPolicyUnmarshaller>(AccountPolicyUnmarshaller.Instance);
                     response.AccountPolicies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

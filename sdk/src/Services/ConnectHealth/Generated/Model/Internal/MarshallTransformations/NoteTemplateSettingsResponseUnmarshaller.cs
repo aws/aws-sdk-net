@@ -56,13 +56,13 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("customTemplate", targetDepth))
+                if (context.TestExpression("customTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomTemplateResponseUnmarshaller.Instance;
                     unmarshalledObject.CustomTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedTemplate", targetDepth))
+                if (context.TestExpression("managedTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedTemplateResponseUnmarshaller.Instance;
                     unmarshalledObject.ManagedTemplate = unmarshaller.Unmarshall(context, ref reader);

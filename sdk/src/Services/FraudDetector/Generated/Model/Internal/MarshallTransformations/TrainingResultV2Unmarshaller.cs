@@ -56,25 +56,25 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aggregatedVariablesImportanceMetrics", targetDepth))
+                if (context.TestExpression("aggregatedVariablesImportanceMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = AggregatedVariablesImportanceMetricsUnmarshaller.Instance;
                     unmarshalledObject.AggregatedVariablesImportanceMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataValidationMetrics", targetDepth))
+                if (context.TestExpression("dataValidationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = DataValidationMetricsUnmarshaller.Instance;
                     unmarshalledObject.DataValidationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingMetricsV2", targetDepth))
+                if (context.TestExpression("trainingMetricsV2", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingMetricsV2Unmarshaller.Instance;
                     unmarshalledObject.TrainingMetricsV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variableImportanceMetrics", targetDepth))
+                if (context.TestExpression("variableImportanceMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = VariableImportanceMetricsUnmarshaller.Instance;
                     unmarshalledObject.VariableImportanceMetrics = unmarshaller.Unmarshall(context, ref reader);

@@ -56,13 +56,13 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingGroups", targetDepth))
+                if (context.TestExpression("autoScalingGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoScalingGroupsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksEndpoints", targetDepth))
+                if (context.TestExpression("eksEndpoints", targetDepth, ref reader))
                 {
                     var unmarshaller = EksEndpointsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EksEndpoints = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClusterConfig", targetDepth))
+                if (context.TestExpression("ClusterConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = MonitoringClusterConfigUnmarshaller.Instance;
                     unmarshalledObject.ClusterConfig = unmarshaller.Unmarshall(context, ref reader);

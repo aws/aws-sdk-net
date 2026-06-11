@@ -56,19 +56,19 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IngressPointPasswordConfiguration", targetDepth))
+                if (context.TestExpression("IngressPointPasswordConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = IngressPointPasswordConfigurationUnmarshaller.Instance;
                     unmarshalledObject.IngressPointPasswordConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TlsAuthConfiguration", targetDepth))
+                if (context.TestExpression("TlsAuthConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TlsAuthConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TlsAuthConfiguration = unmarshaller.Unmarshall(context, ref reader);

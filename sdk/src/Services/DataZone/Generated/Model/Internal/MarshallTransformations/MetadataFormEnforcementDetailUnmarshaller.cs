@@ -56,7 +56,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("requiredMetadataForms", targetDepth))
+                if (context.TestExpression("requiredMetadataForms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MetadataFormReference, MetadataFormReferenceUnmarshaller>(MetadataFormReferenceUnmarshaller.Instance);
                     unmarshalledObject.RequiredMetadataForms = unmarshaller.Unmarshall(context, ref reader);

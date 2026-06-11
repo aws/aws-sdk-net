@@ -56,7 +56,7 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DefaultWatchlistId", targetDepth))
+                if (context.TestExpression("DefaultWatchlistId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultWatchlistId = unmarshaller.Unmarshall(context, ref reader);

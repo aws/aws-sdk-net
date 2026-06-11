@@ -56,13 +56,13 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionPolicyCount", targetDepth))
+                if (context.TestExpression("EncryptionPolicyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EncryptionPolicyCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NetworkPolicyCount", targetDepth))
+                if (context.TestExpression("NetworkPolicyCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NetworkPolicyCount = unmarshaller.Unmarshall(context, ref reader);

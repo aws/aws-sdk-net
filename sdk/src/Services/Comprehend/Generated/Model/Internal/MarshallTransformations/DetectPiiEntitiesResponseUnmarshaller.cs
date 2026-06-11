@@ -52,7 +52,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Entities", targetDepth))
+                if (context.TestExpression("Entities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PiiEntity, PiiEntityUnmarshaller>(PiiEntityUnmarshaller.Instance);
                     response.Entities = unmarshaller.Unmarshall(context, ref reader);

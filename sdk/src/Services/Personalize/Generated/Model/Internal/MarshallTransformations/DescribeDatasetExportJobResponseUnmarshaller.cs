@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("datasetExportJob", targetDepth))
+                if (context.TestExpression("datasetExportJob", targetDepth, ref reader))
                 {
                     var unmarshaller = DatasetExportJobUnmarshaller.Instance;
                     response.DatasetExportJob = unmarshaller.Unmarshall(context, ref reader);

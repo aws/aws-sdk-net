@@ -56,7 +56,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Redshift", targetDepth))
+                if (context.TestExpression("Redshift", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RedshiftScopeUnion, RedshiftScopeUnionUnmarshaller>(RedshiftScopeUnionUnmarshaller.Instance);
                     unmarshalledObject.Redshift = unmarshaller.Unmarshall(context, ref reader);

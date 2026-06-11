@@ -56,19 +56,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("dataProcessingDetails", targetDepth))
+                if (context.TestExpression("dataProcessingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProcessingDetailsUnmarshaller.Instance;
                     unmarshalledObject.DataProcessingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDetails", targetDepth))
+                if (context.TestExpression("trainingDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingDetailsUnmarshaller.Instance;
                     unmarshalledObject.TrainingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationDetails", targetDepth))
+                if (context.TestExpression("validationDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ValidationDetails = unmarshaller.Unmarshall(context, ref reader);

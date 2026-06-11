@@ -56,25 +56,25 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("heritageObtainedDetails", targetDepth))
+                if (context.TestExpression("heritageObtainedDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.HeritageObtainedDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("heritageObtainedParentEntity", targetDepth))
+                if (context.TestExpression("heritageObtainedParentEntity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HeritageObtainedParentEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("heritageObtainedReason", targetDepth))
+                if (context.TestExpression("heritageObtainedReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HeritageObtainedReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("taxExemptions", targetDepth))
+                if (context.TestExpression("taxExemptions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TaxExemption, TaxExemptionUnmarshaller>(TaxExemptionUnmarshaller.Instance);
                     unmarshalledObject.TaxExemptions = unmarshaller.Unmarshall(context, ref reader);

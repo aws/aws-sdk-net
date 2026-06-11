@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("APIKey", targetDepth))
+                if (context.TestExpression("APIKey", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.APIKey = unmarshaller.Unmarshall(context, ref reader);

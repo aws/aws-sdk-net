@@ -52,7 +52,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IndexingRule", targetDepth))
+                if (context.TestExpression("IndexingRule", targetDepth, ref reader))
                 {
                     var unmarshaller = IndexingRuleUnmarshaller.Instance;
                     response.IndexingRule = unmarshaller.Unmarshall(context, ref reader);

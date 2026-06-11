@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("weightedTargets", targetDepth))
+                if (context.TestExpression("weightedTargets", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WeightedTarget, WeightedTargetUnmarshaller>(WeightedTargetUnmarshaller.Instance);
                     unmarshalledObject.WeightedTargets = unmarshaller.Unmarshall(context, ref reader);

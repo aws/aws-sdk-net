@@ -52,7 +52,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("archiveRule", targetDepth))
+                if (context.TestExpression("archiveRule", targetDepth, ref reader))
                 {
                     var unmarshaller = ArchiveRuleSummaryUnmarshaller.Instance;
                     response.ArchiveRule = unmarshaller.Unmarshall(context, ref reader);

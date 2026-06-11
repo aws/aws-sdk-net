@@ -56,7 +56,7 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CodeStar", targetDepth))
+                if (context.TestExpression("CodeStar", targetDepth, ref reader))
                 {
                     var unmarshaller = CodeStarParametersUnmarshaller.Instance;
                     unmarshalledObject.CodeStar = unmarshaller.Unmarshall(context, ref reader);

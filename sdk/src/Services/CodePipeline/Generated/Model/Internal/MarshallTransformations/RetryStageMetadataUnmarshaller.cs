@@ -56,19 +56,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoStageRetryAttempt", targetDepth))
+                if (context.TestExpression("autoStageRetryAttempt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutoStageRetryAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("latestRetryTrigger", targetDepth))
+                if (context.TestExpression("latestRetryTrigger", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatestRetryTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("manualStageRetryAttempt", targetDepth))
+                if (context.TestExpression("manualStageRetryAttempt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualStageRetryAttempt = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth))
+                if (context.TestExpression("reversedDirectionSourceServerArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReversedDirectionSourceServerArn = unmarshaller.Unmarshall(context, ref reader);

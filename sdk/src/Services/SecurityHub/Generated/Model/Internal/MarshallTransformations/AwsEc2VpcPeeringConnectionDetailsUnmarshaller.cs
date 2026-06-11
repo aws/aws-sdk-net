@@ -56,31 +56,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccepterVpcInfo", targetDepth))
+                if (context.TestExpression("AccepterVpcInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2VpcPeeringConnectionVpcInfoDetailsUnmarshaller.Instance;
                     unmarshalledObject.AccepterVpcInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExpirationTime", targetDepth))
+                if (context.TestExpression("ExpirationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequesterVpcInfo", targetDepth))
+                if (context.TestExpression("RequesterVpcInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2VpcPeeringConnectionVpcInfoDetailsUnmarshaller.Instance;
                     unmarshalledObject.RequesterVpcInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEc2VpcPeeringConnectionStatusDetailsUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcPeeringConnectionId", targetDepth))
+                if (context.TestExpression("VpcPeeringConnectionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VpcPeeringConnectionId = unmarshaller.Unmarshall(context, ref reader);

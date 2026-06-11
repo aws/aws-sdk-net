@@ -56,37 +56,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageScanningConfiguration", targetDepth))
+                if (context.TestExpression("ImageScanningConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcrRepositoryImageScanningConfigurationDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImageScanningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImageTagMutability", targetDepth))
+                if (context.TestExpression("ImageTagMutability", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ImageTagMutability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LifecyclePolicy", targetDepth))
+                if (context.TestExpression("LifecyclePolicy", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsEcrRepositoryLifecyclePolicyDetailsUnmarshaller.Instance;
                     unmarshalledObject.LifecyclePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepositoryName", targetDepth))
+                if (context.TestExpression("RepositoryName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RepositoryPolicyText", targetDepth))
+                if (context.TestExpression("RepositoryPolicyText", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryPolicyText = unmarshaller.Unmarshall(context, ref reader);

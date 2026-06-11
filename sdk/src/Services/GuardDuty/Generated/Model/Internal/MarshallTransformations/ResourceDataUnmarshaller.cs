@@ -56,97 +56,97 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessKey", targetDepth))
+                if (context.TestExpression("accessKey", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessKeyUnmarshaller.Instance;
                     unmarshalledObject.AccessKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("autoscalingAutoScalingGroup", targetDepth))
+                if (context.TestExpression("autoscalingAutoScalingGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoscalingAutoScalingGroupUnmarshaller.Instance;
                     unmarshalledObject.AutoscalingAutoScalingGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudformationStack", targetDepth))
+                if (context.TestExpression("cloudformationStack", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudformationStackUnmarshaller.Instance;
                     unmarshalledObject.CloudformationStack = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("container", targetDepth))
+                if (context.TestExpression("container", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerFindingResourceUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2Image", targetDepth))
+                if (context.TestExpression("ec2Image", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2ImageUnmarshaller.Instance;
                     unmarshalledObject.Ec2Image = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2Instance", targetDepth))
+                if (context.TestExpression("ec2Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2InstanceUnmarshaller.Instance;
                     unmarshalledObject.Ec2Instance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2LaunchTemplate", targetDepth))
+                if (context.TestExpression("ec2LaunchTemplate", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2LaunchTemplateUnmarshaller.Instance;
                     unmarshalledObject.Ec2LaunchTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2NetworkInterface", targetDepth))
+                if (context.TestExpression("ec2NetworkInterface", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2NetworkInterfaceUnmarshaller.Instance;
                     unmarshalledObject.Ec2NetworkInterface = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ec2Vpc", targetDepth))
+                if (context.TestExpression("ec2Vpc", targetDepth, ref reader))
                 {
                     var unmarshaller = Ec2VpcUnmarshaller.Instance;
                     unmarshalledObject.Ec2Vpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsCluster", targetDepth))
+                if (context.TestExpression("ecsCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsClusterUnmarshaller.Instance;
                     unmarshalledObject.EcsCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ecsTask", targetDepth))
+                if (context.TestExpression("ecsTask", targetDepth, ref reader))
                 {
                     var unmarshaller = EcsTaskUnmarshaller.Instance;
                     unmarshalledObject.EcsTask = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eksCluster", targetDepth))
+                if (context.TestExpression("eksCluster", targetDepth, ref reader))
                 {
                     var unmarshaller = EksClusterUnmarshaller.Instance;
                     unmarshalledObject.EksCluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("iamInstanceProfile", targetDepth))
+                if (context.TestExpression("iamInstanceProfile", targetDepth, ref reader))
                 {
                     var unmarshaller = IamInstanceProfileV2Unmarshaller.Instance;
                     unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("kubernetesWorkload", targetDepth))
+                if (context.TestExpression("kubernetesWorkload", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesWorkloadUnmarshaller.Instance;
                     unmarshalledObject.KubernetesWorkload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Bucket", targetDepth))
+                if (context.TestExpression("s3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = S3BucketUnmarshaller.Instance;
                     unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Object", targetDepth))
+                if (context.TestExpression("s3Object", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
                     unmarshalledObject.S3Object = unmarshaller.Unmarshall(context, ref reader);

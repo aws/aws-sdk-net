@@ -56,13 +56,13 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("KMSEncryptionConfig", targetDepth))
+                if (context.TestExpression("KMSEncryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KMSEncryptionConfigUnmarshaller.Instance;
                     unmarshalledObject.KMSEncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NoEncryptionConfig", targetDepth))
+                if (context.TestExpression("NoEncryptionConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NoEncryptionConfig = unmarshaller.Unmarshall(context, ref reader);

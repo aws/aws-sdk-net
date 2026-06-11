@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("knowledgeBaseId", targetDepth))
+                if (context.TestExpression("knowledgeBaseId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseRetrievalConfiguration", targetDepth))
+                if (context.TestExpression("knowledgeBaseRetrievalConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseRetrievalConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeBaseRetrievalConfiguration = unmarshaller.Unmarshall(context, ref reader);

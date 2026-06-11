@@ -56,13 +56,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assetListing", targetDepth))
+                if (context.TestExpression("assetListing", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetListingUnmarshaller.Instance;
                     unmarshalledObject.AssetListing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dataProductListing", targetDepth))
+                if (context.TestExpression("dataProductListing", targetDepth, ref reader))
                 {
                     var unmarshaller = DataProductListingUnmarshaller.Instance;
                     unmarshalledObject.DataProductListing = unmarshaller.Unmarshall(context, ref reader);

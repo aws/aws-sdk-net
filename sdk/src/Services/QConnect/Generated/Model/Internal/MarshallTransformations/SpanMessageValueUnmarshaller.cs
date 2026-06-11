@@ -56,25 +56,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reasoning", targetDepth))
+                if (context.TestExpression("reasoning", targetDepth, ref reader))
                 {
                     var unmarshaller = SpanReasoningValueUnmarshaller.Instance;
                     unmarshalledObject.Reasoning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("text", targetDepth, ref reader))
                 {
                     var unmarshaller = SpanTextValueUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolResult", targetDepth))
+                if (context.TestExpression("toolResult", targetDepth, ref reader))
                 {
                     var unmarshaller = SpanToolResultValueUnmarshaller.Instance;
                     unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolUse", targetDepth))
+                if (context.TestExpression("toolUse", targetDepth, ref reader))
                 {
                     var unmarshaller = SpanToolUseValueUnmarshaller.Instance;
                     unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);

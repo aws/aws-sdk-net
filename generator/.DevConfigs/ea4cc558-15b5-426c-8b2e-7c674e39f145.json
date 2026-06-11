@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "Remove outdated xamarin links on httpClientFactory docs."
-    ]
-  }
-}

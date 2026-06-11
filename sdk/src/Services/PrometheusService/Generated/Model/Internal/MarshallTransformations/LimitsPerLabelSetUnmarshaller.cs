@@ -56,13 +56,13 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("labelSet", targetDepth))
+                if (context.TestExpression("labelSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.LabelSet = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("limits", targetDepth))
+                if (context.TestExpression("limits", targetDepth, ref reader))
                 {
                     var unmarshaller = LimitsPerLabelSetEntryUnmarshaller.Instance;
                     unmarshalledObject.Limits = unmarshaller.Unmarshall(context, ref reader);

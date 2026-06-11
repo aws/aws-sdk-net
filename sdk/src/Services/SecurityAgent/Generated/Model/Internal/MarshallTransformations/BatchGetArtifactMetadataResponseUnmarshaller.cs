@@ -52,7 +52,7 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("artifactMetadataList", targetDepth))
+                if (context.TestExpression("artifactMetadataList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ArtifactMetadataItem, ArtifactMetadataItemUnmarshaller>(ArtifactMetadataItemUnmarshaller.Instance);
                     response.ArtifactMetadataList = unmarshaller.Unmarshall(context, ref reader);

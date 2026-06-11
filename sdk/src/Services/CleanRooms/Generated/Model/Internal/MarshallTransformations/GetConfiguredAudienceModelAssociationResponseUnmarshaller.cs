@@ -52,7 +52,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("configuredAudienceModelAssociation", targetDepth))
+                if (context.TestExpression("configuredAudienceModelAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = ConfiguredAudienceModelAssociationUnmarshaller.Instance;
                     response.ConfiguredAudienceModelAssociation = unmarshaller.Unmarshall(context, ref reader);

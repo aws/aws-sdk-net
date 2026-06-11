@@ -56,19 +56,19 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FindingsCount", targetDepth))
+                if (context.TestExpression("FindingsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.FindingsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MeteredLinesOfCodeCount", targetDepth))
+                if (context.TestExpression("MeteredLinesOfCodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MeteredLinesOfCodeCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SuppressedLinesOfCodeCount", targetDepth))
+                if (context.TestExpression("SuppressedLinesOfCodeCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.SuppressedLinesOfCodeCount = unmarshaller.Unmarshall(context, ref reader);

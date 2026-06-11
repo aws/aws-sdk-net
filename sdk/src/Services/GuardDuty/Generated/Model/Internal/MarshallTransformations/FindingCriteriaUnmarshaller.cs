@@ -56,7 +56,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("criterion", targetDepth))
+                if (context.TestExpression("criterion", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, Condition, StringUnmarshaller, ConditionUnmarshaller>(StringUnmarshaller.Instance, ConditionUnmarshaller.Instance);
                     unmarshalledObject.Criterion = unmarshaller.Unmarshall(context, ref reader);

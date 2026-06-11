@@ -52,103 +52,103 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("baseModelArn", targetDepth))
+                if (context.TestExpression("baseModelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BaseModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
+                if (context.TestExpression("creationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customizationConfig", targetDepth))
+                if (context.TestExpression("customizationConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomizationConfigUnmarshaller.Instance;
                     response.CustomizationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("customizationType", targetDepth))
+                if (context.TestExpression("customizationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.CustomizationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("failureMessage", targetDepth))
+                if (context.TestExpression("failureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hyperParameters", targetDepth))
+                if (context.TestExpression("hyperParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.HyperParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobArn", targetDepth))
+                if (context.TestExpression("jobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("jobName", targetDepth))
+                if (context.TestExpression("jobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelArn", targetDepth))
+                if (context.TestExpression("modelArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelKmsKeyArn", targetDepth))
+                if (context.TestExpression("modelKmsKeyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelKmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelName", targetDepth))
+                if (context.TestExpression("modelName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("modelStatus", targetDepth))
+                if (context.TestExpression("modelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputDataConfig", targetDepth))
+                if (context.TestExpression("outputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OutputDataConfigUnmarshaller.Instance;
                     response.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingDataConfig", targetDepth))
+                if (context.TestExpression("trainingDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
                     response.TrainingDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trainingMetrics", targetDepth))
+                if (context.TestExpression("trainingMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = TrainingMetricsUnmarshaller.Instance;
                     response.TrainingMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationDataConfig", targetDepth))
+                if (context.TestExpression("validationDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidationDataConfigUnmarshaller.Instance;
                     response.ValidationDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("validationMetrics", targetDepth))
+                if (context.TestExpression("validationMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ValidatorMetric, ValidatorMetricUnmarshaller>(ValidatorMetricUnmarshaller.Instance);
                     response.ValidationMetrics = unmarshaller.Unmarshall(context, ref reader);

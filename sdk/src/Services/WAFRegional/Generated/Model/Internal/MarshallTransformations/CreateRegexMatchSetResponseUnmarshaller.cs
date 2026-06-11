@@ -52,13 +52,13 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChangeToken", targetDepth))
+                if (context.TestExpression("ChangeToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ChangeToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RegexMatchSet", targetDepth))
+                if (context.TestExpression("RegexMatchSet", targetDepth, ref reader))
                 {
                     var unmarshaller = RegexMatchSetUnmarshaller.Instance;
                     response.RegexMatchSet = unmarshaller.Unmarshall(context, ref reader);

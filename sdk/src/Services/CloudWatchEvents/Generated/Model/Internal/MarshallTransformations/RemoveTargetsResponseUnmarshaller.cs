@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FailedEntries", targetDepth))
+                if (context.TestExpression("FailedEntries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RemoveTargetsResultEntry, RemoveTargetsResultEntryUnmarshaller>(RemoveTargetsResultEntryUnmarshaller.Instance);
                     response.FailedEntries = unmarshaller.Unmarshall(context, ref reader);

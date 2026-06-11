@@ -56,13 +56,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DynamicCategoryDimensionConfiguration", targetDepth))
+                if (context.TestExpression("DynamicCategoryDimensionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BodySectionDynamicCategoryDimensionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamicCategoryDimensionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicNumericDimensionConfiguration", targetDepth))
+                if (context.TestExpression("DynamicNumericDimensionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = BodySectionDynamicNumericDimensionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamicNumericDimensionConfiguration = unmarshaller.Unmarshall(context, ref reader);

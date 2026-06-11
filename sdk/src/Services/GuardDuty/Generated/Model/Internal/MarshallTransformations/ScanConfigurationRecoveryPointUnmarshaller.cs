@@ -56,10 +56,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("backupVaultName", targetDepth))
+                if (context.TestExpression("backupVaultName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BackupVaultName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("continuousScanDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = ScanConfigurationContinuousScanDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ContinuousScanDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

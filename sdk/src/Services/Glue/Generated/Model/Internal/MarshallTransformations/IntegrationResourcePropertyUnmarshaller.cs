@@ -56,25 +56,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ResourceArn", targetDepth))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResourcePropertyArn", targetDepth))
+                if (context.TestExpression("ResourcePropertyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourcePropertyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceProcessingProperties", targetDepth))
+                if (context.TestExpression("SourceProcessingProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceProcessingPropertiesUnmarshaller.Instance;
                     unmarshalledObject.SourceProcessingProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetProcessingProperties", targetDepth))
+                if (context.TestExpression("TargetProcessingProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = TargetProcessingPropertiesUnmarshaller.Instance;
                     unmarshalledObject.TargetProcessingProperties = unmarshaller.Unmarshall(context, ref reader);

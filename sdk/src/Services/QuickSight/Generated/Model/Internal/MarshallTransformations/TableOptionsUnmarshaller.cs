@@ -56,25 +56,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CellStyle", targetDepth))
+                if (context.TestExpression("CellStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.CellStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HeaderStyle", targetDepth))
+                if (context.TestExpression("HeaderStyle", targetDepth, ref reader))
                 {
                     var unmarshaller = TableCellStyleUnmarshaller.Instance;
                     unmarshalledObject.HeaderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Orientation", targetDepth))
+                if (context.TestExpression("Orientation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Orientation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowAlternateColorOptions", targetDepth))
+                if (context.TestExpression("RowAlternateColorOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = RowAlternateColorOptionsUnmarshaller.Instance;
                     unmarshalledObject.RowAlternateColorOptions = unmarshaller.Unmarshall(context, ref reader);

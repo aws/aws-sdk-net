@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("GeospatialMapAggregatedFieldWells", targetDepth))
+                if (context.TestExpression("GeospatialMapAggregatedFieldWells", targetDepth, ref reader))
                 {
                     var unmarshaller = GeospatialMapAggregatedFieldWellsUnmarshaller.Instance;
                     unmarshalledObject.GeospatialMapAggregatedFieldWells = unmarshaller.Unmarshall(context, ref reader);

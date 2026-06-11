@@ -52,13 +52,13 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("platforms", targetDepth))
+                if (context.TestExpression("platforms", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SigningPlatform, SigningPlatformUnmarshaller>(SigningPlatformUnmarshaller.Instance);
                     response.Platforms = unmarshaller.Unmarshall(context, ref reader);

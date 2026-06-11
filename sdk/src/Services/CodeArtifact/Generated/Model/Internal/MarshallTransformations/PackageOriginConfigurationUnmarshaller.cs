@@ -56,7 +56,7 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("restrictions", targetDepth))
+                if (context.TestExpression("restrictions", targetDepth, ref reader))
                 {
                     var unmarshaller = PackageOriginRestrictionsUnmarshaller.Instance;
                     unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context, ref reader);

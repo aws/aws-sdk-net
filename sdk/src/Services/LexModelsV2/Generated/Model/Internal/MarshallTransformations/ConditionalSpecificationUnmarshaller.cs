@@ -56,19 +56,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth))
+                if (context.TestExpression("active", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("conditionalBranches", targetDepth))
+                if (context.TestExpression("conditionalBranches", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ConditionalBranch, ConditionalBranchUnmarshaller>(ConditionalBranchUnmarshaller.Instance);
                     unmarshalledObject.ConditionalBranches = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("defaultBranch", targetDepth))
+                if (context.TestExpression("defaultBranch", targetDepth, ref reader))
                 {
                     var unmarshaller = DefaultConditionalBranchUnmarshaller.Instance;
                     unmarshalledObject.DefaultBranch = unmarshaller.Unmarshall(context, ref reader);

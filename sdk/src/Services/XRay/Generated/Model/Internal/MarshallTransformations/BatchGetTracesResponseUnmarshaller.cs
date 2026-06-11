@@ -52,19 +52,19 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Traces", targetDepth))
+                if (context.TestExpression("Traces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Trace, TraceUnmarshaller>(TraceUnmarshaller.Instance);
                     response.Traces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedTraceIds", targetDepth))
+                if (context.TestExpression("UnprocessedTraceIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.UnprocessedTraceIds = unmarshaller.Unmarshall(context, ref reader);

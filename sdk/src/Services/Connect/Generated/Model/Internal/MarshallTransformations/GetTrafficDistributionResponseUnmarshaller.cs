@@ -52,31 +52,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AgentConfig", targetDepth))
+                if (context.TestExpression("AgentConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AgentConfigUnmarshaller.Instance;
                     response.AgentConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SignInConfig", targetDepth))
+                if (context.TestExpression("SignInConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = SignInConfigUnmarshaller.Instance;
                     response.SignInConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TelephonyConfig", targetDepth))
+                if (context.TestExpression("TelephonyConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = TelephonyConfigUnmarshaller.Instance;
                     response.TelephonyConfig = unmarshaller.Unmarshall(context, ref reader);

@@ -56,91 +56,91 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BucketARN", targetDepth))
+                if (context.TestExpression("BucketARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BucketARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BufferingHints", targetDepth))
+                if (context.TestExpression("BufferingHints", targetDepth, ref reader))
                 {
                     var unmarshaller = BufferingHintsUnmarshaller.Instance;
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchLoggingOptionsUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompressionFormat", targetDepth))
+                if (context.TestExpression("CompressionFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CompressionFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CustomTimeZone", targetDepth))
+                if (context.TestExpression("CustomTimeZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CustomTimeZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataFormatConversionConfiguration", targetDepth))
+                if (context.TestExpression("DataFormatConversionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataFormatConversionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DataFormatConversionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DynamicPartitioningConfiguration", targetDepth))
+                if (context.TestExpression("DynamicPartitioningConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DynamicPartitioningConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DynamicPartitioningConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ErrorOutputPrefix", targetDepth))
+                if (context.TestExpression("ErrorOutputPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ErrorOutputPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FileExtension", targetDepth))
+                if (context.TestExpression("FileExtension", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FileExtension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Prefix", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProcessingConfiguration", targetDepth))
+                if (context.TestExpression("ProcessingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleARN", targetDepth))
+                if (context.TestExpression("RoleARN", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BackupDescription", targetDepth))
+                if (context.TestExpression("S3BackupDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3BackupDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3BackupMode", targetDepth))
+                if (context.TestExpression("S3BackupMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("currentBuildSummary", targetDepth))
+                if (context.TestExpression("currentBuildSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = BuildSummaryUnmarshaller.Instance;
                     unmarshalledObject.CurrentBuildSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dependsOn", targetDepth))
+                if (context.TestExpression("dependsOn", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("identifier", targetDepth))
+                if (context.TestExpression("identifier", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ignoreFailure", targetDepth))
+                if (context.TestExpression("ignoreFailure", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IgnoreFailure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("priorBuildSummaryList", targetDepth))
+                if (context.TestExpression("priorBuildSummaryList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BuildSummary, BuildSummaryUnmarshaller>(BuildSummaryUnmarshaller.Instance);
                     unmarshalledObject.PriorBuildSummaryList = unmarshaller.Unmarshall(context, ref reader);

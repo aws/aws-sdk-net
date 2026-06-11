@@ -56,7 +56,7 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessLog", targetDepth))
+                if (context.TestExpression("accessLog", targetDepth, ref reader))
                 {
                     var unmarshaller = AccessLogUnmarshaller.Instance;
                     unmarshalledObject.AccessLog = unmarshaller.Unmarshall(context, ref reader);

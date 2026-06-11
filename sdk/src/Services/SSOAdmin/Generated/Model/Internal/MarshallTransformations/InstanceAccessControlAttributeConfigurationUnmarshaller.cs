@@ -56,7 +56,7 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessControlAttributes", targetDepth))
+                if (context.TestExpression("AccessControlAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AccessControlAttribute, AccessControlAttributeUnmarshaller>(AccessControlAttributeUnmarshaller.Instance);
                     unmarshalledObject.AccessControlAttributes = unmarshaller.Unmarshall(context, ref reader);

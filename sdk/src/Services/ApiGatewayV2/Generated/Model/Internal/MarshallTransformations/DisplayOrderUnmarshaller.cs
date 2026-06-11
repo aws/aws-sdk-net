@@ -56,19 +56,19 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("contents", targetDepth))
+                if (context.TestExpression("contents", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Section, SectionUnmarshaller>(SectionUnmarshaller.Instance);
                     unmarshalledObject.Contents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("overviewPageArn", targetDepth))
+                if (context.TestExpression("overviewPageArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverviewPageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("productPageArns", targetDepth))
+                if (context.TestExpression("productPageArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ProductPageArns = unmarshaller.Unmarshall(context, ref reader);

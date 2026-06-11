@@ -1004,7 +1004,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void MapGetObjectResponseToOpenStream_NullSource_ThrowsArgumentNullException()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => 
+            Assert.ThrowsExactly<ArgumentNullException>(() => 
                 ResponseMapper.MapGetObjectResponseToOpenStream(null),
                 "Mapping null source should throw ArgumentNullException");
         }
@@ -1025,11 +1025,11 @@ namespace AWSSDK.UnitTests
             response.Dispose();
 
             // Assert - accessing disposed stream should throw ObjectDisposedException
-            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Length, 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = memoryStream.Length, 
                 "Accessing Length of disposed stream should throw ObjectDisposedException");
-            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Position, 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = memoryStream.Position, 
                 "Accessing Position of disposed stream should throw ObjectDisposedException");
-            Assert.ThrowsException<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
                 "Reading from disposed stream should throw ObjectDisposedException");
             Assert.IsNull(response.ResponseStream, "ResponseStream should be null after disposal");
         }
@@ -1050,9 +1050,9 @@ namespace AWSSDK.UnitTests
             response.Dispose(); // Second call should not throw
 
             // Assert - stream should still be disposed after multiple dispose calls
-            Assert.ThrowsException<ObjectDisposedException>(() => _ = memoryStream.Length, 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = memoryStream.Length, 
                 "Stream should remain disposed after multiple dispose calls");
-            Assert.ThrowsException<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => memoryStream.Read(new byte[1], 0, 1), 
                 "Stream should remain disposed after multiple dispose calls");
             Assert.IsNull(response.ResponseStream, "ResponseStream should remain null after multiple dispose calls");
         }
@@ -1090,9 +1090,9 @@ namespace AWSSDK.UnitTests
             } // Dispose should be called here
 
             // Assert - stream should be disposed after using block
-            Assert.ThrowsException<ObjectDisposedException>(() => _ = capturedStream.Length, 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => _ = capturedStream.Length, 
                 "Stream should be disposed after using block");
-            Assert.ThrowsException<ObjectDisposedException>(() => capturedStream.Read(new byte[1], 0, 1), 
+            Assert.ThrowsExactly<ObjectDisposedException>(() => capturedStream.Read(new byte[1], 0, 1), 
                 "Stream should be disposed after using block");
         }
 

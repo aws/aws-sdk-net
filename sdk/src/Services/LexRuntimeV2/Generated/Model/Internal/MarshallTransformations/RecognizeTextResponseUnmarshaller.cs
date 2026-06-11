@@ -52,37 +52,37 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("interpretations", targetDepth))
+                if (context.TestExpression("interpretations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Interpretation, InterpretationUnmarshaller>(InterpretationUnmarshaller.Instance);
                     response.Interpretations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messages", targetDepth))
+                if (context.TestExpression("messages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Message, MessageUnmarshaller>(MessageUnmarshaller.Instance);
                     response.Messages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("recognizedBotMember", targetDepth))
+                if (context.TestExpression("recognizedBotMember", targetDepth, ref reader))
                 {
                     var unmarshaller = RecognizedBotMemberUnmarshaller.Instance;
                     response.RecognizedBotMember = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("requestAttributes", targetDepth))
+                if (context.TestExpression("requestAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.RequestAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SessionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sessionState", targetDepth))
+                if (context.TestExpression("sessionState", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionStateUnmarshaller.Instance;
                     response.SessionStateValue = unmarshaller.Unmarshall(context, ref reader);

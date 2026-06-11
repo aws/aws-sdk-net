@@ -56,37 +56,37 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HostUrl", targetDepth))
+                if (context.TestExpression("HostUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HostUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("KnowledgeArticleConfiguration", targetDepth))
+                if (context.TestExpression("KnowledgeArticleConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowKnowledgeArticleConfigurationUnmarshaller.Instance;
                     unmarshalledObject.KnowledgeArticleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SecretArn", targetDepth))
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceCatalogConfiguration", targetDepth))
+                if (context.TestExpression("ServiceCatalogConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowServiceCatalogConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ServiceCatalogConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ServiceNowBuildVersion", targetDepth))
+                if (context.TestExpression("ServiceNowBuildVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceNowBuildVersion = unmarshaller.Unmarshall(context, ref reader);

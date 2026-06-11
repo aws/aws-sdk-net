@@ -52,25 +52,25 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataSourceId", targetDepth))
+                if (context.TestExpression("DataSourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DataSourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupId", targetDepth))
+                if (context.TestExpression("GroupId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.GroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GroupOrderingIdSummaries", targetDepth))
+                if (context.TestExpression("GroupOrderingIdSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<GroupOrderingIdSummary, GroupOrderingIdSummaryUnmarshaller>(GroupOrderingIdSummaryUnmarshaller.Instance);
                     response.GroupOrderingIdSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IndexId", targetDepth))
+                if (context.TestExpression("IndexId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IndexId = unmarshaller.Unmarshall(context, ref reader);

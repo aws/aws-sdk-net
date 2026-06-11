@@ -52,31 +52,31 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Blocks", targetDepth))
+                if (context.TestExpression("Blocks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Block, BlockUnmarshaller>(BlockUnmarshaller.Instance);
                     response.Blocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentMetadata", targetDepth))
+                if (context.TestExpression("DocumentMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentMetadataUnmarshaller.Instance;
                     response.DocumentMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DocumentType", targetDepth))
+                if (context.TestExpression("DocumentType", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DocumentTypeListItem, DocumentTypeListItemUnmarshaller>(DocumentTypeListItemUnmarshaller.Instance);
                     response.DocumentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Entities", targetDepth))
+                if (context.TestExpression("Entities", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Entity, EntityUnmarshaller>(EntityUnmarshaller.Instance);
                     response.Entities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ErrorsListItem, ErrorsListItemUnmarshaller>(ErrorsListItemUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

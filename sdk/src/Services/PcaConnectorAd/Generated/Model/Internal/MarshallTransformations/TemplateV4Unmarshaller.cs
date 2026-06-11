@@ -56,55 +56,55 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateValidity", targetDepth))
+                if (context.TestExpression("CertificateValidity", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateValidityUnmarshaller.Instance;
                     unmarshalledObject.CertificateValidity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EnrollmentFlags", targetDepth))
+                if (context.TestExpression("EnrollmentFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = EnrollmentFlagsV4Unmarshaller.Instance;
                     unmarshalledObject.EnrollmentFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Extensions", targetDepth))
+                if (context.TestExpression("Extensions", targetDepth, ref reader))
                 {
                     var unmarshaller = ExtensionsV4Unmarshaller.Instance;
                     unmarshalledObject.Extensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GeneralFlags", targetDepth))
+                if (context.TestExpression("GeneralFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = GeneralFlagsV4Unmarshaller.Instance;
                     unmarshalledObject.GeneralFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HashAlgorithm", targetDepth))
+                if (context.TestExpression("HashAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrivateKeyAttributes", targetDepth))
+                if (context.TestExpression("PrivateKeyAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = PrivateKeyAttributesV4Unmarshaller.Instance;
                     unmarshalledObject.PrivateKeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrivateKeyFlags", targetDepth))
+                if (context.TestExpression("PrivateKeyFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = PrivateKeyFlagsV4Unmarshaller.Instance;
                     unmarshalledObject.PrivateKeyFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SubjectNameFlags", targetDepth))
+                if (context.TestExpression("SubjectNameFlags", targetDepth, ref reader))
                 {
                     var unmarshaller = SubjectNameFlagsV4Unmarshaller.Instance;
                     unmarshalledObject.SubjectNameFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupersededTemplates", targetDepth))
+                if (context.TestExpression("SupersededTemplates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SupersededTemplates = unmarshaller.Unmarshall(context, ref reader);

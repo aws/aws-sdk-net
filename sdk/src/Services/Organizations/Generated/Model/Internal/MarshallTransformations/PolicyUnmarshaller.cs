@@ -56,13 +56,13 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("Content", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PolicySummary", targetDepth))
+                if (context.TestExpression("PolicySummary", targetDepth, ref reader))
                 {
                     var unmarshaller = PolicySummaryUnmarshaller.Instance;
                     unmarshalledObject.PolicySummary = unmarshaller.Unmarshall(context, ref reader);

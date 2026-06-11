@@ -56,55 +56,55 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AllPointsMarker", targetDepth))
+                if (context.TestExpression("AllPointsMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartMarkerStyleSettingsUnmarshaller.Instance;
                     unmarshalledObject.AllPointsMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FieldId", targetDepth))
+                if (context.TestExpression("FieldId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineColor", targetDepth))
+                if (context.TestExpression("LineColor", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LineColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LineInterpolation", targetDepth))
+                if (context.TestExpression("LineInterpolation", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LineInterpolation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MaxValueMarker", targetDepth))
+                if (context.TestExpression("MaxValueMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartMarkerStyleSettingsUnmarshaller.Instance;
                     unmarshalledObject.MaxValueMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MinValueMarker", targetDepth))
+                if (context.TestExpression("MinValueMarker", targetDepth, ref reader))
                 {
                     var unmarshaller = LineChartMarkerStyleSettingsUnmarshaller.Instance;
                     unmarshalledObject.MinValueMarker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VisualType", targetDepth))
+                if (context.TestExpression("VisualType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VisualType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("XAxisField", targetDepth))
+                if (context.TestExpression("XAxisField", targetDepth, ref reader))
                 {
                     var unmarshaller = DimensionFieldUnmarshaller.Instance;
                     unmarshalledObject.XAxisField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("YAxisBehavior", targetDepth))
+                if (context.TestExpression("YAxisBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.YAxisBehavior = unmarshaller.Unmarshall(context, ref reader);

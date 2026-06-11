@@ -56,7 +56,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ValidateAddress", targetDepth))
+                if (context.TestExpression("ValidateAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = ValidateAddressActionOptionsUnmarshaller.Instance;
                     unmarshalledObject.ValidateAddress = unmarshaller.Unmarshall(context, ref reader);

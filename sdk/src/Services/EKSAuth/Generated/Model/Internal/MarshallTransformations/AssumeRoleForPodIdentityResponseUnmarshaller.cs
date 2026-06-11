@@ -52,31 +52,31 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assumedRoleUser", targetDepth))
+                if (context.TestExpression("assumedRoleUser", targetDepth, ref reader))
                 {
                     var unmarshaller = AssumedRoleUserUnmarshaller.Instance;
                     response.AssumedRoleUser = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("audience", targetDepth))
+                if (context.TestExpression("audience", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Audience = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("credentials", targetDepth))
+                if (context.TestExpression("credentials", targetDepth, ref reader))
                 {
                     var unmarshaller = CredentialsUnmarshaller.Instance;
                     response.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("podIdentityAssociation", targetDepth))
+                if (context.TestExpression("podIdentityAssociation", targetDepth, ref reader))
                 {
                     var unmarshaller = PodIdentityAssociationUnmarshaller.Instance;
                     response.PodIdentityAssociation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("subject", targetDepth))
+                if (context.TestExpression("subject", targetDepth, ref reader))
                 {
                     var unmarshaller = SubjectUnmarshaller.Instance;
                     response.Subject = unmarshaller.Unmarshall(context, ref reader);

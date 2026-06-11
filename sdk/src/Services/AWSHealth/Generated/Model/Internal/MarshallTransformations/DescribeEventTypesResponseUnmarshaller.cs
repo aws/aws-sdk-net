@@ -52,13 +52,13 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eventTypes", targetDepth))
+                if (context.TestExpression("eventTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventType, EventTypeUnmarshaller>(EventTypeUnmarshaller.Instance);
                     response.EventTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nextToken", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

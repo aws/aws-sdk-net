@@ -58,6 +58,23 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ClientSecret);
             }
 
+            if(requestObject.IsSetClientSecretConfig())
+            {
+                context.Writer.WritePropertyName("clientSecretConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SecretReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClientSecretConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetClientSecretSource())
+            {
+                context.Writer.WritePropertyName("clientSecretSource");
+                context.Writer.WriteStringValue(requestObject.ClientSecretSource);
+            }
+
         }
 
         /// <summary>

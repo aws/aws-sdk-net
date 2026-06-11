@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("paymentSession", targetDepth))
+                if (context.TestExpression("paymentSession", targetDepth, ref reader))
                 {
                     var unmarshaller = PaymentSessionUnmarshaller.Instance;
                     response.PaymentSession = unmarshaller.Unmarshall(context, ref reader);

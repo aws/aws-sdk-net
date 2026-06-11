@@ -56,31 +56,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomValuesConfiguration", targetDepth))
+                if (context.TestExpression("CustomValuesConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomValuesConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CustomValuesConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectAllValueOptions", targetDepth))
+                if (context.TestExpression("SelectAllValueOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SelectAllValueOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceColumn", targetDepth))
+                if (context.TestExpression("SourceColumn", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
                     unmarshalledObject.SourceColumn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceField", targetDepth))
+                if (context.TestExpression("SourceField", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceParameterName", targetDepth))
+                if (context.TestExpression("SourceParameterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceParameterName = unmarshaller.Unmarshall(context, ref reader);

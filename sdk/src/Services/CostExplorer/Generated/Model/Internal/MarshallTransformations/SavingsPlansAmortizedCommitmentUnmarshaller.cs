@@ -56,19 +56,19 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AmortizedRecurringCommitment", targetDepth))
+                if (context.TestExpression("AmortizedRecurringCommitment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmortizedRecurringCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AmortizedUpfrontCommitment", targetDepth))
+                if (context.TestExpression("AmortizedUpfrontCommitment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AmortizedUpfrontCommitment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TotalAmortizedCommitment", targetDepth))
+                if (context.TestExpression("TotalAmortizedCommitment", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TotalAmortizedCommitment = unmarshaller.Unmarshall(context, ref reader);

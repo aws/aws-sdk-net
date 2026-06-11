@@ -56,7 +56,7 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MinApprovalsRequired", targetDepth))
+                if (context.TestExpression("MinApprovalsRequired", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinApprovalsRequired = unmarshaller.Unmarshall(context, ref reader);

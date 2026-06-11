@@ -52,13 +52,13 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StorageOptimizerList", targetDepth))
+                if (context.TestExpression("StorageOptimizerList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StorageOptimizer, StorageOptimizerUnmarshaller>(StorageOptimizerUnmarshaller.Instance);
                     response.StorageOptimizerList = unmarshaller.Unmarshall(context, ref reader);

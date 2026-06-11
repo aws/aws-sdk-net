@@ -56,43 +56,49 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ancillarySourceSettings", targetDepth))
+                if (context.TestExpression("ancillarySourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AncillarySourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.AncillarySourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("aribSourceSettings", targetDepth))
+                if (context.TestExpression("aribSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = AribSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.AribSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("dvbSubSourceSettings", targetDepth))
+                if (context.TestExpression("dvbSubSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DvbSubSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.DvbSubSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("embeddedSourceSettings", targetDepth))
+                if (context.TestExpression("embeddedSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = EmbeddedSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.EmbeddedSourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte20SourceSettings", targetDepth))
+                if (context.TestExpression("scte20SourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte20SourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.Scte20SourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("scte27SourceSettings", targetDepth))
+                if (context.TestExpression("scte27SourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = Scte27SourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.Scte27SourceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("teletextSourceSettings", targetDepth))
+                if (context.TestExpression("smartSubtitleSourceSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = SmartSubtitleSourceSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SmartSubtitleSourceSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("teletextSourceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = TeletextSourceSettingsUnmarshaller.Instance;
                     unmarshalledObject.TeletextSourceSettings = unmarshaller.Unmarshall(context, ref reader);

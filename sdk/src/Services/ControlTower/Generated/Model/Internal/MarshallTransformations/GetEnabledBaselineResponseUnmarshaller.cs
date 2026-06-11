@@ -52,7 +52,7 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enabledBaselineDetails", targetDepth))
+                if (context.TestExpression("enabledBaselineDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = EnabledBaselineDetailsUnmarshaller.Instance;
                     response.EnabledBaselineDetails = unmarshaller.Unmarshall(context, ref reader);

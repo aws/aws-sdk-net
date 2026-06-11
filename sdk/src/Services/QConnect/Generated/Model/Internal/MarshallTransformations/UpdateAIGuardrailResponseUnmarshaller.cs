@@ -52,7 +52,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aiGuardrail", targetDepth))
+                if (context.TestExpression("aiGuardrail", targetDepth, ref reader))
                 {
                     var unmarshaller = AIGuardrailDataUnmarshaller.Instance;
                     response.AiGuardrail = unmarshaller.Unmarshall(context, ref reader);

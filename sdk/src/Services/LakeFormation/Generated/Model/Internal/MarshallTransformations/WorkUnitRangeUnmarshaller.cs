@@ -56,19 +56,19 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("WorkUnitIdMax", targetDepth))
+                if (context.TestExpression("WorkUnitIdMax", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitIdMax = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkUnitIdMin", targetDepth))
+                if (context.TestExpression("WorkUnitIdMin", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitIdMin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkUnitToken", targetDepth))
+                if (context.TestExpression("WorkUnitToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.WorkUnitToken = unmarshaller.Unmarshall(context, ref reader);

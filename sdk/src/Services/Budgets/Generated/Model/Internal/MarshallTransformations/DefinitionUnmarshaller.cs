@@ -56,19 +56,19 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IamActionDefinition", targetDepth))
+                if (context.TestExpression("IamActionDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = IamActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.IamActionDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScpActionDefinition", targetDepth))
+                if (context.TestExpression("ScpActionDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = ScpActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.ScpActionDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SsmActionDefinition", targetDepth))
+                if (context.TestExpression("SsmActionDefinition", targetDepth, ref reader))
                 {
                     var unmarshaller = SsmActionDefinitionUnmarshaller.Instance;
                     unmarshalledObject.SsmActionDefinition = unmarshaller.Unmarshall(context, ref reader);

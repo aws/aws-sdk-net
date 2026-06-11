@@ -56,7 +56,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("alwaysScheduleLast", targetDepth))
+                if (context.TestExpression("alwaysScheduleLast", targetDepth, ref reader))
                 {
                     var unmarshaller = SchedulingMinPriorityOverrideAlwaysScheduleLastUnmarshaller.Instance;
                     unmarshalledObject.AlwaysScheduleLast = unmarshaller.Unmarshall(context, ref reader);

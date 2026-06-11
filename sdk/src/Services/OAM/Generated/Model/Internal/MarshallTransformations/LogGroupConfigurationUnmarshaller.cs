@@ -56,7 +56,7 @@ namespace Amazon.OAM.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Filter", targetDepth))
+                if (context.TestExpression("Filter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Filter = unmarshaller.Unmarshall(context, ref reader);

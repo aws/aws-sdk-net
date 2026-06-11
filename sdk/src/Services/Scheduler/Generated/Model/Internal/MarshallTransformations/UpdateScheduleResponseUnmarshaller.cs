@@ -52,7 +52,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ScheduleArn", targetDepth))
+                if (context.TestExpression("ScheduleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ScheduleArn = unmarshaller.Unmarshall(context, ref reader);

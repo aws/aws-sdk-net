@@ -56,13 +56,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ShadowModelVariants", targetDepth))
+                if (context.TestExpression("ShadowModelVariants", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ShadowModelVariantConfig, ShadowModelVariantConfigUnmarshaller>(ShadowModelVariantConfigUnmarshaller.Instance);
                     unmarshalledObject.ShadowModelVariants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SourceModelVariantName", targetDepth))
+                if (context.TestExpression("SourceModelVariantName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SourceModelVariantName = unmarshaller.Unmarshall(context, ref reader);

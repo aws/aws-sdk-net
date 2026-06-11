@@ -52,7 +52,7 @@ namespace Amazon.WAFRegional.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IPSet", targetDepth))
+                if (context.TestExpression("IPSet", targetDepth, ref reader))
                 {
                     var unmarshaller = IPSetUnmarshaller.Instance;
                     response.IPSet = unmarshaller.Unmarshall(context, ref reader);

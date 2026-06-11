@@ -52,13 +52,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SupportedEndpointTypes", targetDepth))
+                if (context.TestExpression("SupportedEndpointTypes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SupportedEndpointType, SupportedEndpointTypeUnmarshaller>(SupportedEndpointTypeUnmarshaller.Instance);
                     response.SupportedEndpointTypes = unmarshaller.Unmarshall(context, ref reader);

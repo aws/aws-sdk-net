@@ -56,13 +56,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockRerankingConfiguration", targetDepth))
+                if (context.TestExpression("bedrockRerankingConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = VectorSearchBedrockRerankingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.BedrockRerankingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);

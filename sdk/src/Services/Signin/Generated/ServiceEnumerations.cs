@@ -35,6 +35,10 @@ namespace Amazon.Signin
         /// </summary>
         public static readonly OAuth2ErrorCode AUTHCODE_EXPIRED = new OAuth2ErrorCode("AUTHCODE_EXPIRED");
         /// <summary>
+        /// Constant CONFLICT for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode CONFLICT = new OAuth2ErrorCode("CONFLICT");
+        /// <summary>
         /// Constant INSUFFICIENT_PERMISSIONS for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode INSUFFICIENT_PERMISSIONS = new OAuth2ErrorCode("INSUFFICIENT_PERMISSIONS");
@@ -43,9 +47,17 @@ namespace Amazon.Signin
         /// </summary>
         public static readonly OAuth2ErrorCode INVALID_REQUEST = new OAuth2ErrorCode("INVALID_REQUEST");
         /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode RESOURCE_NOT_FOUND = new OAuth2ErrorCode("RESOURCE_NOT_FOUND");
+        /// <summary>
         /// Constant Server_error for OAuth2ErrorCode
         /// </summary>
         public static readonly OAuth2ErrorCode Server_error = new OAuth2ErrorCode("server_error");
+        /// <summary>
+        /// Constant SERVICE_QUOTA_EXCEEDED for OAuth2ErrorCode
+        /// </summary>
+        public static readonly OAuth2ErrorCode SERVICE_QUOTA_EXCEEDED = new OAuth2ErrorCode("SERVICE_QUOTA_EXCEEDED");
         /// <summary>
         /// Constant TOKEN_EXPIRED for OAuth2ErrorCode
         /// </summary>

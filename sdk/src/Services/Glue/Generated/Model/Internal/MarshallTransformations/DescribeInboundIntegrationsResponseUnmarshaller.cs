@@ -52,13 +52,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InboundIntegrations", targetDepth))
+                if (context.TestExpression("InboundIntegrations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<InboundIntegration, InboundIntegrationUnmarshaller>(InboundIntegrationUnmarshaller.Instance);
                     response.InboundIntegrations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Marker", targetDepth))
+                if (context.TestExpression("Marker", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Marker = unmarshaller.Unmarshall(context, ref reader);

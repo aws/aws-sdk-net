@@ -56,19 +56,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagRuleConfigurations", targetDepth))
+                if (context.TestExpression("TagRuleConfigurations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string,StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
                     unmarshalledObject.TagRuleConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TagRules", targetDepth))
+                if (context.TestExpression("TagRules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RowLevelPermissionTagRule, RowLevelPermissionTagRuleUnmarshaller>(RowLevelPermissionTagRuleUnmarshaller.Instance);
                     unmarshalledObject.TagRules = unmarshaller.Unmarshall(context, ref reader);

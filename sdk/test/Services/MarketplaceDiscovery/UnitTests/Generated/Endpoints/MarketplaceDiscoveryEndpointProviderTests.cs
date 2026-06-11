@@ -47,13 +47,15 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceDiscovery")]
         [Description("For custom endpoint with fips enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
         public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new MarketplaceDiscoveryEndpointParameters();
             parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            var endpoint = new AmazonMarketplaceDiscoveryEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonMarketplaceDiscoveryEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS and custom endpoint are not supported", exception.Message);
         }
 
         [TestMethod]
@@ -145,11 +147,13 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceDiscovery")]
         [Description("Missing region")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
         public void Missing_region_Test()
         {
             var parameters = new MarketplaceDiscoveryEndpointParameters();
-            var endpoint = new AmazonMarketplaceDiscoveryEndpointProvider().ResolveEndpoint(parameters);
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonMarketplaceDiscoveryEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);
         }
 
     }

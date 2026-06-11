@@ -56,25 +56,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("colorSpace", targetDepth))
+                if (context.TestExpression("colorSpace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColorSpace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorSpaceSettings", targetDepth))
+                if (context.TestExpression("colorSpaceSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoSelectorColorSpaceSettingsUnmarshaller.Instance;
                     unmarshalledObject.ColorSpaceSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("colorSpaceUsage", targetDepth))
+                if (context.TestExpression("colorSpaceUsage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ColorSpaceUsage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("selectorSettings", targetDepth))
+                if (context.TestExpression("selectorSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoSelectorSettingsUnmarshaller.Instance;
                     unmarshalledObject.SelectorSettings = unmarshaller.Unmarshall(context, ref reader);

@@ -56,31 +56,31 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudWatchMonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.CloudWatchMonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("containerLogRotationConfiguration", targetDepth))
+                if (context.TestExpression("containerLogRotationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ContainerLogRotationConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ContainerLogRotationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedLogs", targetDepth))
+                if (context.TestExpression("managedLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedLogsUnmarshaller.Instance;
                     unmarshalledObject.ManagedLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("persistentAppUI", targetDepth))
+                if (context.TestExpression("persistentAppUI", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PersistentAppUI = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
+                if (context.TestExpression("s3MonitoringConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);

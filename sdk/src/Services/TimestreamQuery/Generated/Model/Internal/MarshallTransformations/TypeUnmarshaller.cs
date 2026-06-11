@@ -56,25 +56,25 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArrayColumnInfo", targetDepth))
+                if (context.TestExpression("ArrayColumnInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnInfoUnmarshaller.Instance;
                     unmarshalledObject.ArrayColumnInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RowColumnInfo", targetDepth))
+                if (context.TestExpression("RowColumnInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ColumnInfo, ColumnInfoUnmarshaller>(ColumnInfoUnmarshaller.Instance);
                     unmarshalledObject.RowColumnInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ScalarType", targetDepth))
+                if (context.TestExpression("ScalarType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalarType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeSeriesMeasureValueColumnInfo", targetDepth))
+                if (context.TestExpression("TimeSeriesMeasureValueColumnInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnInfoUnmarshaller.Instance;
                     unmarshalledObject.TimeSeriesMeasureValueColumnInfo = unmarshaller.Unmarshall(context, ref reader);

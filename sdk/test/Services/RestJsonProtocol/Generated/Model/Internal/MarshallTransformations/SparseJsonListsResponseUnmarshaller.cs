@@ -52,13 +52,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sparseShortList", targetDepth))
+                if (context.TestExpression("sparseShortList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<int?, NullableIntUnmarshaller>(NullableIntUnmarshaller.Instance);
                     response.SparseShortList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sparseStringList", targetDepth))
+                if (context.TestExpression("sparseStringList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.SparseStringList = unmarshaller.Unmarshall(context, ref reader);

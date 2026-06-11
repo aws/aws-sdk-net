@@ -56,7 +56,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Files", targetDepth))
+                if (context.TestExpression("Files", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SnapshotFile, SnapshotFileUnmarshaller>(SnapshotFileUnmarshaller.Instance);
                     unmarshalledObject.Files = unmarshaller.Unmarshall(context, ref reader);

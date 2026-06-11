@@ -56,37 +56,37 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AclConfiguration", targetDepth))
+                if (context.TestExpression("AclConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = AclConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AclConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ColumnConfiguration", targetDepth))
+                if (context.TestExpression("ColumnConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ColumnConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ColumnConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConnectionConfiguration", targetDepth))
+                if (context.TestExpression("ConnectionConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConnectionConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ConnectionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DatabaseEngineType", targetDepth))
+                if (context.TestExpression("DatabaseEngineType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DatabaseEngineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SqlConfiguration", targetDepth))
+                if (context.TestExpression("SqlConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SqlConfigurationUnmarshaller.Instance;
                     unmarshalledObject.SqlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VpcConfiguration", targetDepth))
+                if (context.TestExpression("VpcConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = DataSourceVpcConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -52,7 +52,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("replicationSet", targetDepth))
+                if (context.TestExpression("replicationSet", targetDepth, ref reader))
                 {
                     var unmarshaller = ReplicationSetUnmarshaller.Instance;
                     response.ReplicationSet = unmarshaller.Unmarshall(context, ref reader);

@@ -56,19 +56,19 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DevAddr", targetDepth))
+                if (context.TestExpression("DevAddr", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DevAddr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FCntStart", targetDepth))
+                if (context.TestExpression("FCntStart", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FCntStart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SessionKeys", targetDepth))
+                if (context.TestExpression("SessionKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = SessionKeysAbpV1_1Unmarshaller.Instance;
                     unmarshalledObject.SessionKeys = unmarshaller.Unmarshall(context, ref reader);

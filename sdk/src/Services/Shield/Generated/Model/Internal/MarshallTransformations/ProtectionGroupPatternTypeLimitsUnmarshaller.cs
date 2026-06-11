@@ -56,7 +56,7 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArbitraryPatternLimits", targetDepth))
+                if (context.TestExpression("ArbitraryPatternLimits", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectionGroupArbitraryPatternLimitsUnmarshaller.Instance;
                     unmarshalledObject.ArbitraryPatternLimits = unmarshaller.Unmarshall(context, ref reader);

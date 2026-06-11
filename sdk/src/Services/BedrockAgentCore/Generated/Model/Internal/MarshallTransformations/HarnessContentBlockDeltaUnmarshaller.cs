@@ -56,25 +56,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("reasoningContent", targetDepth))
+                if (context.TestExpression("reasoningContent", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessReasoningContentBlockDeltaUnmarshaller.Instance;
                     unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("text", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolResult", targetDepth))
+                if (context.TestExpression("toolResult", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HarnessToolResultBlockDelta, HarnessToolResultBlockDeltaUnmarshaller>(HarnessToolResultBlockDeltaUnmarshaller.Instance);
                     unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("toolUse", targetDepth))
+                if (context.TestExpression("toolUse", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessToolUseBlockDeltaUnmarshaller.Instance;
                     unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context, ref reader);

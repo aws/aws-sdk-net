@@ -52,19 +52,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("userAliasesAdded", targetDepth))
+                if (context.TestExpression("userAliasesAdded", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserAlias, UserAliasUnmarshaller>(UserAliasUnmarshaller.Instance);
                     response.UserAliasesAdded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userAliasesDeleted", targetDepth))
+                if (context.TestExpression("userAliasesDeleted", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserAlias, UserAliasUnmarshaller>(UserAliasUnmarshaller.Instance);
                     response.UserAliasesDeleted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userAliasesUpdated", targetDepth))
+                if (context.TestExpression("userAliasesUpdated", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UserAlias, UserAliasUnmarshaller>(UserAliasUnmarshaller.Instance);
                     response.UserAliasesUpdated = unmarshaller.Unmarshall(context, ref reader);

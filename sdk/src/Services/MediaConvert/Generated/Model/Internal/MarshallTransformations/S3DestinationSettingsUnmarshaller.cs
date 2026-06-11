@@ -56,19 +56,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessControl", targetDepth))
+                if (context.TestExpression("accessControl", targetDepth, ref reader))
                 {
                     var unmarshaller = S3DestinationAccessControlUnmarshaller.Instance;
                     unmarshalledObject.AccessControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = S3EncryptionSettingsUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("storageClass", targetDepth))
+                if (context.TestExpression("storageClass", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context, ref reader);

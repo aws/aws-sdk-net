@@ -52,127 +52,127 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AutoMLJobArn", targetDepth))
+                if (context.TestExpression("AutoMLJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoMLJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobArtifacts", targetDepth))
+                if (context.TestExpression("AutoMLJobArtifacts", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobArtifactsUnmarshaller.Instance;
                     response.AutoMLJobArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobConfig", targetDepth))
+                if (context.TestExpression("AutoMLJobConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobConfigUnmarshaller.Instance;
                     response.AutoMLJobConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobName", targetDepth))
+                if (context.TestExpression("AutoMLJobName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoMLJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobObjective", targetDepth))
+                if (context.TestExpression("AutoMLJobObjective", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLJobObjectiveUnmarshaller.Instance;
                     response.AutoMLJobObjective = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobSecondaryStatus", targetDepth))
+                if (context.TestExpression("AutoMLJobSecondaryStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoMLJobSecondaryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("AutoMLJobStatus", targetDepth))
+                if (context.TestExpression("AutoMLJobStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.AutoMLJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("BestCandidate", targetDepth))
+                if (context.TestExpression("BestCandidate", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLCandidateUnmarshaller.Instance;
                     response.BestCandidate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("FailureReason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("GenerateCandidateDefinitionsOnly", targetDepth))
+                if (context.TestExpression("GenerateCandidateDefinitionsOnly", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.GenerateCandidateDefinitionsOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputDataConfig", targetDepth))
+                if (context.TestExpression("InputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoMLChannel, AutoMLChannelUnmarshaller>(AutoMLChannelUnmarshaller.Instance);
                     response.InputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastModifiedTime", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDeployConfig", targetDepth))
+                if (context.TestExpression("ModelDeployConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDeployConfigUnmarshaller.Instance;
                     response.ModelDeployConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ModelDeployResult", targetDepth))
+                if (context.TestExpression("ModelDeployResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ModelDeployResultUnmarshaller.Instance;
                     response.ModelDeployResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OutputDataConfig", targetDepth))
+                if (context.TestExpression("OutputDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AutoMLOutputDataConfigUnmarshaller.Instance;
                     response.OutputDataConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartialFailureReasons", targetDepth))
+                if (context.TestExpression("PartialFailureReasons", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AutoMLPartialFailureReason, AutoMLPartialFailureReasonUnmarshaller>(AutoMLPartialFailureReasonUnmarshaller.Instance);
                     response.PartialFailureReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ProblemType", targetDepth))
+                if (context.TestExpression("ProblemType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ProblemType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResolvedAttributes", targetDepth))
+                if (context.TestExpression("ResolvedAttributes", targetDepth, ref reader))
                 {
                     var unmarshaller = ResolvedAttributesUnmarshaller.Instance;
                     response.ResolvedAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);

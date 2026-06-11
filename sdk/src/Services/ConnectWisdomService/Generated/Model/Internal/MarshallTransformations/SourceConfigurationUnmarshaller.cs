@@ -56,7 +56,7 @@ namespace Amazon.ConnectWisdomService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("appIntegrations", targetDepth))
+                if (context.TestExpression("appIntegrations", targetDepth, ref reader))
                 {
                     var unmarshaller = AppIntegrationsConfigurationUnmarshaller.Instance;
                     unmarshalledObject.AppIntegrations = unmarshaller.Unmarshall(context, ref reader);

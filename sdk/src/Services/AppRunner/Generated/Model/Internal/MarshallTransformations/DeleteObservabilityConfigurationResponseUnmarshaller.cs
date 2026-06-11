@@ -52,7 +52,7 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ObservabilityConfiguration", targetDepth))
+                if (context.TestExpression("ObservabilityConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ObservabilityConfigurationUnmarshaller.Instance;
                     response.ObservabilityConfiguration = unmarshaller.Unmarshall(context, ref reader);

@@ -56,7 +56,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("schedulingExpression", targetDepth))
+                if (context.TestExpression("schedulingExpression", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SchedulingExpression = unmarshaller.Unmarshall(context, ref reader);

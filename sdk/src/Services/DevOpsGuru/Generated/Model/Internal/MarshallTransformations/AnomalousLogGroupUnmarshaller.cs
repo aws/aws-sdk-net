@@ -56,31 +56,31 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ImpactEndTime", targetDepth))
+                if (context.TestExpression("ImpactEndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImpactEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImpactStartTime", targetDepth))
+                if (context.TestExpression("ImpactStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ImpactStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogAnomalyShowcases", targetDepth))
+                if (context.TestExpression("LogAnomalyShowcases", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LogAnomalyShowcase, LogAnomalyShowcaseUnmarshaller>(LogAnomalyShowcaseUnmarshaller.Instance);
                     unmarshalledObject.LogAnomalyShowcases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LogGroupName", targetDepth))
+                if (context.TestExpression("LogGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NumberOfLogLinesScanned", targetDepth))
+                if (context.TestExpression("NumberOfLogLinesScanned", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfLogLinesScanned = unmarshaller.Unmarshall(context, ref reader);

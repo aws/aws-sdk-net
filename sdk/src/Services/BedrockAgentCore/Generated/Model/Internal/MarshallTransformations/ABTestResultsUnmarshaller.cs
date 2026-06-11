@@ -56,13 +56,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analysisTimestamp", targetDepth))
+                if (context.TestExpression("analysisTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.AnalysisTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluatorMetrics", targetDepth))
+                if (context.TestExpression("evaluatorMetrics", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatorMetric, EvaluatorMetricUnmarshaller>(EvaluatorMetricUnmarshaller.Instance);
                     unmarshalledObject.EvaluatorMetrics = unmarshaller.Unmarshall(context, ref reader);

@@ -52,91 +52,91 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("detectorId", targetDepth))
+                if (context.TestExpression("detectorId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DetectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectorVersionId", targetDepth))
+                if (context.TestExpression("detectorVersionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DetectorVersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("detectorVersionStatus", targetDepth))
+                if (context.TestExpression("detectorVersionStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DetectorVersionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityId", targetDepth))
+                if (context.TestExpression("entityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EntityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("entityType", targetDepth))
+                if (context.TestExpression("entityType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EntityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluatedExternalModels", targetDepth))
+                if (context.TestExpression("evaluatedExternalModels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatedExternalModel, EvaluatedExternalModelUnmarshaller>(EvaluatedExternalModelUnmarshaller.Instance);
                     response.EvaluatedExternalModels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("evaluatedModelVersions", targetDepth))
+                if (context.TestExpression("evaluatedModelVersions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatedModelVersion, EvaluatedModelVersionUnmarshaller>(EvaluatedModelVersionUnmarshaller.Instance);
                     response.EvaluatedModelVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventId", targetDepth))
+                if (context.TestExpression("eventId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventTimestamp", targetDepth))
+                if (context.TestExpression("eventTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventTypeName", targetDepth))
+                if (context.TestExpression("eventTypeName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EventTypeName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("eventVariables", targetDepth))
+                if (context.TestExpression("eventVariables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EventVariableSummary, EventVariableSummaryUnmarshaller>(EventVariableSummaryUnmarshaller.Instance);
                     response.EventVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outcomes", targetDepth))
+                if (context.TestExpression("outcomes", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Outcomes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("predictionTimestamp", targetDepth))
+                if (context.TestExpression("predictionTimestamp", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.PredictionTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ruleExecutionMode", targetDepth))
+                if (context.TestExpression("ruleExecutionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RuleExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("rules", targetDepth))
+                if (context.TestExpression("rules", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EvaluatedRule, EvaluatedRuleUnmarshaller>(EvaluatedRuleUnmarshaller.Instance);
                     response.Rules = unmarshaller.Unmarshall(context, ref reader);

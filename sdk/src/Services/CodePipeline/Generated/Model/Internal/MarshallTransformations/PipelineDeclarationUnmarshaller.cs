@@ -56,61 +56,61 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("artifactStore", targetDepth))
+                if (context.TestExpression("artifactStore", targetDepth, ref reader))
                 {
                     var unmarshaller = ArtifactStoreUnmarshaller.Instance;
                     unmarshalledObject.ArtifactStore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("artifactStores", targetDepth))
+                if (context.TestExpression("artifactStores", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, ArtifactStore, StringUnmarshaller, ArtifactStoreUnmarshaller>(StringUnmarshaller.Instance, ArtifactStoreUnmarshaller.Instance);
                     unmarshalledObject.ArtifactStores = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("executionMode", targetDepth))
+                if (context.TestExpression("executionMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pipelineType", targetDepth))
+                if (context.TestExpression("pipelineType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PipelineType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("stages", targetDepth))
+                if (context.TestExpression("stages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<StageDeclaration, StageDeclarationUnmarshaller>(StageDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Stages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("triggers", targetDepth))
+                if (context.TestExpression("triggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineTriggerDeclaration, PipelineTriggerDeclarationUnmarshaller>(PipelineTriggerDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Triggers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("variables", targetDepth))
+                if (context.TestExpression("variables", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<PipelineVariableDeclaration, PipelineVariableDeclarationUnmarshaller>(PipelineVariableDeclarationUnmarshaller.Instance);
                     unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("version", targetDepth))
+                if (context.TestExpression("version", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);

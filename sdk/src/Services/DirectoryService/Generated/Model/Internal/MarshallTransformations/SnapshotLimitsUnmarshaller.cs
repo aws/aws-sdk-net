@@ -56,19 +56,19 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManualSnapshotsCurrentCount", targetDepth))
+                if (context.TestExpression("ManualSnapshotsCurrentCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsCurrentCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManualSnapshotsLimit", targetDepth))
+                if (context.TestExpression("ManualSnapshotsLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ManualSnapshotsLimitReached", targetDepth))
+                if (context.TestExpression("ManualSnapshotsLimitReached", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ManualSnapshotsLimitReached = unmarshaller.Unmarshall(context, ref reader);

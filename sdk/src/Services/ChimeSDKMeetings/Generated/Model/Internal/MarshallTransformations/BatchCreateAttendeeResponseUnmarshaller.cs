@@ -52,13 +52,13 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Attendees", targetDepth))
+                if (context.TestExpression("Attendees", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Attendee, AttendeeUnmarshaller>(AttendeeUnmarshaller.Instance);
                     response.Attendees = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Errors", targetDepth))
+                if (context.TestExpression("Errors", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CreateAttendeeError, CreateAttendeeErrorUnmarshaller>(CreateAttendeeErrorUnmarshaller.Instance);
                     response.Errors = unmarshaller.Unmarshall(context, ref reader);

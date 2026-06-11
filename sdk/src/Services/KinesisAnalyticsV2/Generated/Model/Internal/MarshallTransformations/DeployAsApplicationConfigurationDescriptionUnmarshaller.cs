@@ -56,7 +56,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("S3ContentLocationDescription", targetDepth))
+                if (context.TestExpression("S3ContentLocationDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = S3ContentBaseLocationDescriptionUnmarshaller.Instance;
                     unmarshalledObject.S3ContentLocationDescription = unmarshaller.Unmarshall(context, ref reader);

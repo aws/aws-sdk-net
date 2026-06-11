@@ -56,31 +56,31 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("encryption", targetDepth))
+                if (context.TestExpression("encryption", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsEncryptionUnmarshaller.Instance;
                     unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("hlsManifests", targetDepth))
+                if (context.TestExpression("hlsManifests", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HlsManifest, HlsManifestUnmarshaller>(HlsManifestUnmarshaller.Instance);
                     unmarshalledObject.HlsManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("includeDvbSubtitles", targetDepth))
+                if (context.TestExpression("includeDvbSubtitles", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeDvbSubtitles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("segmentDurationSeconds", targetDepth))
+                if (context.TestExpression("segmentDurationSeconds", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SegmentDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("useAudioRenditionGroup", targetDepth))
+                if (context.TestExpression("useAudioRenditionGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.UseAudioRenditionGroup = unmarshaller.Unmarshall(context, ref reader);

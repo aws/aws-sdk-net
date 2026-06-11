@@ -50,6 +50,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _emailVerificationSubject;
         private int? _estimatedNumberOfUsers;
         private string _id;
+        private IssuerConfigurationType _issuerConfiguration;
+        private KeyConfigurationType _keyConfiguration;
         private LambdaConfigType _lambdaConfig;
         private DateTime? _lastModifiedDate;
         private UserPoolMfaType _mfaConfiguration;
@@ -407,6 +409,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerConfiguration. 
+        /// <para>
+        /// The issuer configuration for the user pool, including token issuing settings.
+        /// </para>
+        /// </summary>
+        public IssuerConfigurationType IssuerConfiguration
+        {
+            get { return this._issuerConfiguration; }
+            set { this._issuerConfiguration = value; }
+        }
+
+        // Check to see if IssuerConfiguration property is set
+        internal bool IsSetIssuerConfiguration()
+        {
+            return this._issuerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyConfiguration. 
+        /// <para>
+        /// The key configuration for the user pool, including encryption settings.
+        /// </para>
+        /// </summary>
+        public KeyConfigurationType KeyConfiguration
+        {
+            get { return this._keyConfiguration; }
+            set { this._keyConfiguration = value; }
+        }
+
+        // Check to see if KeyConfiguration property is set
+        internal bool IsSetKeyConfiguration()
+        {
+            return this._keyConfiguration != null;
         }
 
         /// <summary>

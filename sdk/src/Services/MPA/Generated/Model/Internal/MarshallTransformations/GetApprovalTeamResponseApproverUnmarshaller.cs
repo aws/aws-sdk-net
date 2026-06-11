@@ -56,55 +56,55 @@ namespace Amazon.MPA.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ApproverId", targetDepth))
+                if (context.TestExpression("ApproverId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ApproverId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastActivity", targetDepth))
+                if (context.TestExpression("LastActivity", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LastActivity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastActivityTime", targetDepth))
+                if (context.TestExpression("LastActivityTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastActivityTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MfaMethods", targetDepth))
+                if (context.TestExpression("MfaMethods", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MfaMethod, MfaMethodUnmarshaller>(MfaMethodUnmarshaller.Instance);
                     unmarshalledObject.MfaMethods = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PendingBaselineSessionArn", targetDepth))
+                if (context.TestExpression("PendingBaselineSessionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PendingBaselineSessionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryIdentityId", targetDepth))
+                if (context.TestExpression("PrimaryIdentityId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryIdentityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryIdentitySourceArn", targetDepth))
+                if (context.TestExpression("PrimaryIdentitySourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryIdentitySourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PrimaryIdentityStatus", targetDepth))
+                if (context.TestExpression("PrimaryIdentityStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PrimaryIdentityStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseTime", targetDepth))
+                if (context.TestExpression("ResponseTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ResponseTime = unmarshaller.Unmarshall(context, ref reader);

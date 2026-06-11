@@ -56,19 +56,19 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("networkPath", targetDepth))
+                if (context.TestExpression("networkPath", targetDepth, ref reader))
                 {
                     var unmarshaller = NetworkPathUnmarshaller.Instance;
                     unmarshalledObject.NetworkPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("openPortRange", targetDepth))
+                if (context.TestExpression("openPortRange", targetDepth, ref reader))
                 {
                     var unmarshaller = PortRangeUnmarshaller.Instance;
                     unmarshalledObject.OpenPortRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("protocol", targetDepth))
+                if (context.TestExpression("protocol", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);

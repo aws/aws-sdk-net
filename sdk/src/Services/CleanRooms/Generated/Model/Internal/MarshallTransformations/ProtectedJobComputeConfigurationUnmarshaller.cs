@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("worker", targetDepth))
+                if (context.TestExpression("worker", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedJobWorkerComputeConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Worker = unmarshaller.Unmarshall(context, ref reader);

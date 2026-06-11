@@ -65,10 +65,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        /// True means that the output was originally created in the feed by the AssociateFeed
-        /// operation. False means it was created using CreateFeed or UpdateFeed. You will need
-        /// this value if you use the UpdateFeed operation to modify the list of outputs in the
-        /// feed.
+        /// Information about the resource that is associated with the feed, if any.
         /// </para>
         /// </summary>
         public FeedAssociation Association
@@ -149,7 +146,7 @@ namespace Amazon.ElementalInference.Model
         /// Gets and sets the property Outputs. 
         /// <para>
         /// The array of outputs in the feed. You might have left this array unchanged, or you
-        /// might have changed it.
+        /// might have changed it. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -173,7 +170,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the output.
+        /// The status of the feed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,7 +189,7 @@ namespace Amazon.ElementalInference.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The name of the resource currently associated with the feed, if any.
+        /// The tags associated with the feed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

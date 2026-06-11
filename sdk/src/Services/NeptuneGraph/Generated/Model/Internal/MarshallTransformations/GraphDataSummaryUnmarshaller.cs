@@ -56,85 +56,85 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("edgeLabels", targetDepth))
+                if (context.TestExpression("edgeLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.EdgeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("edgeProperties", targetDepth))
+                if (context.TestExpression("edgeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dictionary<string, long>, JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
                     unmarshalledObject.EdgeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("edgeStructures", targetDepth))
+                if (context.TestExpression("edgeStructures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EdgeStructure, EdgeStructureUnmarshaller>(EdgeStructureUnmarshaller.Instance);
                     unmarshalledObject.EdgeStructures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeLabels", targetDepth))
+                if (context.TestExpression("nodeLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NodeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeProperties", targetDepth))
+                if (context.TestExpression("nodeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Dictionary<string, long>, JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>>(new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance));
                     unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nodeStructures", targetDepth))
+                if (context.TestExpression("nodeStructures", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<NodeStructure, NodeStructureUnmarshaller>(NodeStructureUnmarshaller.Instance);
                     unmarshalledObject.NodeStructures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numEdgeLabels", targetDepth))
+                if (context.TestExpression("numEdgeLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdgeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numEdgeProperties", targetDepth))
+                if (context.TestExpression("numEdgeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdgeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numEdges", targetDepth))
+                if (context.TestExpression("numEdges", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumEdges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numNodeLabels", targetDepth))
+                if (context.TestExpression("numNodeLabels", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodeLabels = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numNodeProperties", targetDepth))
+                if (context.TestExpression("numNodeProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodeProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numNodes", targetDepth))
+                if (context.TestExpression("numNodes", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalEdgePropertyValues", targetDepth))
+                if (context.TestExpression("totalEdgePropertyValues", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalEdgePropertyValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("totalNodePropertyValues", targetDepth))
+                if (context.TestExpression("totalNodePropertyValues", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNodePropertyValues = unmarshaller.Unmarshall(context, ref reader);

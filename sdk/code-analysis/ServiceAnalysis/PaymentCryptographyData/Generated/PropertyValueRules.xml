@@ -80,15 +80,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.RandomKeyReceive</property>
-    <min>32</min>
+    <min>16</min>
     <max>48</max>
-    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateAs2805KekValidationResponse.RandomKeySend</property>
-    <min>32</min>
+    <min>16</min>
     <max>48</max>
-    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAuthRequestCryptogramRequest.KeyIdentifier</property>
+    <min>7</min>
+    <max>322</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:(key/[0-9a-zA-Z]{16,64}|alias/[a-zA-Z0-9/_-]+)$|^alias/[a-zA-Z0-9/_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAuthRequestCryptogramRequest.TransactionData</property>
+    <min>2</min>
+    <max>1024</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAuthRequestCryptogramResponse.AuthRequestCryptogram</property>
+    <min>16</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAuthRequestCryptogramResponse.KeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.GenerateAuthRequestCryptogramResponse.KeyCheckValue</property>
+    <min>4</min>
+    <max>16</max>
+    <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateCardValidationDataRequest.KeyIdentifier</property>
@@ -134,7 +164,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateMacRequest.MacLength</property>
     <min>4</min>
-    <max>16</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.GenerateMacRequest.MessageData</property>
@@ -444,7 +474,7 @@
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacRequest.MacLength</property>
     <min>4</min>
-    <max>16</max>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.VerifyMacRequest.MessageData</property>
@@ -945,9 +975,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.KekValidationResponse.RandomKeySend</property>
-    <min>32</min>
+    <min>16</min>
     <max>48</max>
-    <pattern>(?:[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
+    <pattern>(?:[0-9a-fA-F]{16}|[0-9a-fA-F]{32}|[0-9a-fA-F]{48})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.MacAlgorithmDukpt.KeySerialNumber</property>
@@ -1083,7 +1113,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyMastercard.UnpredictableNumber</property>
-    <min>2</min>
+    <min>8</min>
     <max>8</max>
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>

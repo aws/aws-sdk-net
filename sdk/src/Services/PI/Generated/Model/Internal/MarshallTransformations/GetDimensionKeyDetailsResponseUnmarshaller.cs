@@ -52,7 +52,7 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Dimensions", targetDepth))
+                if (context.TestExpression("Dimensions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionKeyDetail, DimensionKeyDetailUnmarshaller>(DimensionKeyDetailUnmarshaller.Instance);
                     response.Dimensions = unmarshaller.Unmarshall(context, ref reader);

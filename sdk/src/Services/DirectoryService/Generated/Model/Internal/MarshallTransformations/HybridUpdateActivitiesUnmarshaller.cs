@@ -56,13 +56,13 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("HybridAdministratorAccount", targetDepth))
+                if (context.TestExpression("HybridAdministratorAccount", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HybridUpdateInfoEntry, HybridUpdateInfoEntryUnmarshaller>(HybridUpdateInfoEntryUnmarshaller.Instance);
                     unmarshalledObject.HybridAdministratorAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelfManagedInstances", targetDepth))
+                if (context.TestExpression("SelfManagedInstances", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<HybridUpdateInfoEntry, HybridUpdateInfoEntryUnmarshaller>(HybridUpdateInfoEntryUnmarshaller.Instance);
                     unmarshalledObject.SelfManagedInstances = unmarshaller.Unmarshall(context, ref reader);

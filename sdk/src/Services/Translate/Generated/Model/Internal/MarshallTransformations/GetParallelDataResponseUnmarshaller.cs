@@ -52,25 +52,25 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuxiliaryDataLocation", targetDepth))
+                if (context.TestExpression("AuxiliaryDataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelDataDataLocationUnmarshaller.Instance;
                     response.AuxiliaryDataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataLocation", targetDepth))
+                if (context.TestExpression("DataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelDataDataLocationUnmarshaller.Instance;
                     response.DataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LatestUpdateAttemptAuxiliaryDataLocation", targetDepth))
+                if (context.TestExpression("LatestUpdateAttemptAuxiliaryDataLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelDataDataLocationUnmarshaller.Instance;
                     response.LatestUpdateAttemptAuxiliaryDataLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ParallelDataProperties", targetDepth))
+                if (context.TestExpression("ParallelDataProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ParallelDataPropertiesUnmarshaller.Instance;
                     response.ParallelDataProperties = unmarshaller.Unmarshall(context, ref reader);

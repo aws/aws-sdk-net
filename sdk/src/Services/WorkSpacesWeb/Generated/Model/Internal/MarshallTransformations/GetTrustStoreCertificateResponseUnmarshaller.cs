@@ -52,13 +52,13 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("certificate", targetDepth))
+                if (context.TestExpression("certificate", targetDepth, ref reader))
                 {
                     var unmarshaller = CertificateUnmarshaller.Instance;
                     response.Certificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("trustStoreArn", targetDepth))
+                if (context.TestExpression("trustStoreArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrustStoreArn = unmarshaller.Unmarshall(context, ref reader);

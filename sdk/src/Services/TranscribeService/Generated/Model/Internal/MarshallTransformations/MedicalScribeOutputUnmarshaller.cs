@@ -56,13 +56,13 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ClinicalDocumentUri", targetDepth))
+                if (context.TestExpression("ClinicalDocumentUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ClinicalDocumentUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TranscriptFileUri", targetDepth))
+                if (context.TestExpression("TranscriptFileUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TranscriptFileUri = unmarshaller.Unmarshall(context, ref reader);

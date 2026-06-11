@@ -64,7 +64,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// The name of the collection.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=32)]
+        [AWSProperty(Min=3, Max=64)]
         public string Name
         {
             get { return this._name; }

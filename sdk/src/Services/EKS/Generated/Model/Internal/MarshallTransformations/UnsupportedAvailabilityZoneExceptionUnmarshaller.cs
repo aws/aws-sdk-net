@@ -72,19 +72,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("clusterName", targetDepth))
+                    if (context.TestExpression("clusterName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ClusterName = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("nodegroupName", targetDepth))
+                    if (context.TestExpression("nodegroupName", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NodegroupName = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("validZones", targetDepth))
+                    if (context.TestExpression("validZones", targetDepth, ref reader))
                     {
                         var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                         unmarshalledObject.ValidZones = unmarshaller.Unmarshall(context, ref reader);

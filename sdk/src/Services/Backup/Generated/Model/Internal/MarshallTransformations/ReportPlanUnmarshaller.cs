@@ -56,55 +56,55 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreationTime", targetDepth))
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DeploymentStatus", targetDepth))
+                if (context.TestExpression("DeploymentStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DeploymentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastAttemptedExecutionTime", targetDepth))
+                if (context.TestExpression("LastAttemptedExecutionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastAttemptedExecutionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("LastSuccessfulExecutionTime", targetDepth))
+                if (context.TestExpression("LastSuccessfulExecutionTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastSuccessfulExecutionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportDeliveryChannel", targetDepth))
+                if (context.TestExpression("ReportDeliveryChannel", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportDeliveryChannelUnmarshaller.Instance;
                     unmarshalledObject.ReportDeliveryChannel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportPlanArn", targetDepth))
+                if (context.TestExpression("ReportPlanArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReportPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportPlanDescription", targetDepth))
+                if (context.TestExpression("ReportPlanDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReportPlanDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportPlanName", targetDepth))
+                if (context.TestExpression("ReportPlanName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReportPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ReportSetting", targetDepth))
+                if (context.TestExpression("ReportSetting", targetDepth, ref reader))
                 {
                     var unmarshaller = ReportSettingUnmarshaller.Instance;
                     unmarshalledObject.ReportSetting = unmarshaller.Unmarshall(context, ref reader);

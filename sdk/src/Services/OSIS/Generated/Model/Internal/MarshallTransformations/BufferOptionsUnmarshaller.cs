@@ -56,7 +56,7 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("PersistentBufferEnabled", targetDepth))
+                if (context.TestExpression("PersistentBufferEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.PersistentBufferEnabled = unmarshaller.Unmarshall(context, ref reader);

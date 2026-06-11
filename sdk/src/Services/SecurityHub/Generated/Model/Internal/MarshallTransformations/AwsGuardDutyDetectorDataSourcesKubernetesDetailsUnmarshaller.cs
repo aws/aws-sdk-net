@@ -56,7 +56,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuditLogs", targetDepth))
+                if (context.TestExpression("AuditLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetailsUnmarshaller.Instance;
                     unmarshalledObject.AuditLogs = unmarshaller.Unmarshall(context, ref reader);

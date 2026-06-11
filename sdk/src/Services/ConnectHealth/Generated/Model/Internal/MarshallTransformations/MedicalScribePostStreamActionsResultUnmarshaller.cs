@@ -56,7 +56,7 @@ namespace Amazon.ConnectHealth.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clinicalNoteGenerationResult", targetDepth))
+                if (context.TestExpression("clinicalNoteGenerationResult", targetDepth, ref reader))
                 {
                     var unmarshaller = ClinicalNoteGenerationResultUnmarshaller.Instance;
                     unmarshalledObject.ClinicalNoteGenerationResult = unmarshaller.Unmarshall(context, ref reader);

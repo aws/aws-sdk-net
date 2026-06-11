@@ -56,19 +56,19 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("prodTrafficRoute", targetDepth))
+                if (context.TestExpression("prodTrafficRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficRouteUnmarshaller.Instance;
                     unmarshalledObject.ProdTrafficRoute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetGroups", targetDepth))
+                if (context.TestExpression("targetGroups", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<TargetGroupInfo, TargetGroupInfoUnmarshaller>(TargetGroupInfoUnmarshaller.Instance);
                     unmarshalledObject.TargetGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("testTrafficRoute", targetDepth))
+                if (context.TestExpression("testTrafficRoute", targetDepth, ref reader))
                 {
                     var unmarshaller = TrafficRouteUnmarshaller.Instance;
                     unmarshalledObject.TestTrafficRoute = unmarshaller.Unmarshall(context, ref reader);

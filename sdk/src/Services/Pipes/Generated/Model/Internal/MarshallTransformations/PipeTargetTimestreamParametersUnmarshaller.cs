@@ -56,49 +56,49 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DimensionMappings", targetDepth))
+                if (context.TestExpression("DimensionMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DimensionMapping, DimensionMappingUnmarshaller>(DimensionMappingUnmarshaller.Instance);
                     unmarshalledObject.DimensionMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("EpochTimeUnit", targetDepth))
+                if (context.TestExpression("EpochTimeUnit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EpochTimeUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MultiMeasureMappings", targetDepth))
+                if (context.TestExpression("MultiMeasureMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<MultiMeasureMapping, MultiMeasureMappingUnmarshaller>(MultiMeasureMappingUnmarshaller.Instance);
                     unmarshalledObject.MultiMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SingleMeasureMappings", targetDepth))
+                if (context.TestExpression("SingleMeasureMappings", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SingleMeasureMapping, SingleMeasureMappingUnmarshaller>(SingleMeasureMappingUnmarshaller.Instance);
                     unmarshalledObject.SingleMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeFieldType", targetDepth))
+                if (context.TestExpression("TimeFieldType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeFieldType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimestampFormat", targetDepth))
+                if (context.TestExpression("TimestampFormat", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimestampFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeValue", targetDepth))
+                if (context.TestExpression("TimeValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TimeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("VersionValue", targetDepth))
+                if (context.TestExpression("VersionValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VersionValue = unmarshaller.Unmarshall(context, ref reader);

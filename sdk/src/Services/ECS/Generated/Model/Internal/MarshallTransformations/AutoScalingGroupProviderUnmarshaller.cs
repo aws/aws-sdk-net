@@ -56,25 +56,25 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("autoScalingGroupArn", targetDepth))
+                if (context.TestExpression("autoScalingGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AutoScalingGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedDraining", targetDepth))
+                if (context.TestExpression("managedDraining", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagedDraining = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedScaling", targetDepth))
+                if (context.TestExpression("managedScaling", targetDepth, ref reader))
                 {
                     var unmarshaller = ManagedScalingUnmarshaller.Instance;
                     unmarshalledObject.ManagedScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("managedTerminationProtection", targetDepth))
+                if (context.TestExpression("managedTerminationProtection", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ManagedTerminationProtection = unmarshaller.Unmarshall(context, ref reader);

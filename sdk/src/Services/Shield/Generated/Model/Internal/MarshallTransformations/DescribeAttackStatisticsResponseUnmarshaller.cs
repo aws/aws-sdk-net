@@ -52,13 +52,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataItems", targetDepth))
+                if (context.TestExpression("DataItems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttackStatisticsDataItem, AttackStatisticsDataItemUnmarshaller>(AttackStatisticsDataItemUnmarshaller.Instance);
                     response.DataItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TimeRange", targetDepth))
+                if (context.TestExpression("TimeRange", targetDepth, ref reader))
                 {
                     var unmarshaller = TimeRangeUnmarshaller.Instance;
                     response.TimeRange = unmarshaller.Unmarshall(context, ref reader);

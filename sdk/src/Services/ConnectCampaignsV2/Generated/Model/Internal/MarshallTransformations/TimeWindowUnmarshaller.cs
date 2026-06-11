@@ -56,13 +56,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("openHours", targetDepth))
+                if (context.TestExpression("openHours", targetDepth, ref reader))
                 {
                     var unmarshaller = OpenHoursUnmarshaller.Instance;
                     unmarshalledObject.OpenHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("restrictedPeriods", targetDepth))
+                if (context.TestExpression("restrictedPeriods", targetDepth, ref reader))
                 {
                     var unmarshaller = RestrictedPeriodsUnmarshaller.Instance;
                     unmarshalledObject.RestrictedPeriods = unmarshaller.Unmarshall(context, ref reader);

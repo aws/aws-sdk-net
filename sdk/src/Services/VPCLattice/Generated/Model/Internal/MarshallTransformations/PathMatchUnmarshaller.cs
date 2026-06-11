@@ -56,13 +56,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("caseSensitive", targetDepth))
+                if (context.TestExpression("caseSensitive", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CaseSensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("match", targetDepth))
+                if (context.TestExpression("match", targetDepth, ref reader))
                 {
                     var unmarshaller = PathMatchTypeUnmarshaller.Instance;
                     unmarshalledObject.Match = unmarshaller.Unmarshall(context, ref reader);

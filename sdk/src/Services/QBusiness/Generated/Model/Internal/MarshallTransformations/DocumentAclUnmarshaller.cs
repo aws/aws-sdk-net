@@ -56,13 +56,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("allowlist", targetDepth))
+                if (context.TestExpression("allowlist", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentAclMembershipUnmarshaller.Instance;
                     unmarshalledObject.Allowlist = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("denyList", targetDepth))
+                if (context.TestExpression("denyList", targetDepth, ref reader))
                 {
                     var unmarshaller = DocumentAclMembershipUnmarshaller.Instance;
                     unmarshalledObject.DenyList = unmarshaller.Unmarshall(context, ref reader);

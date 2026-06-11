@@ -24,7 +24,7 @@ namespace AWSSDK.UnitTests.CognitoSync
             Assert.AreEqual(syncRequestTypes.Count, dictionary.Count);
             foreach (var syncRequest in syncRequestTypes)
             {
-                Assert.IsTrue(dictionary.Contains(syncRequest), "Method cache does not contain EC2 request type {0}", syncRequest.Name);
+                Assert.IsTrue(dictionary.Contains(syncRequest), $"Method cache does not contain EC2 request type {syncRequest.Name}");
             }
         }
     }

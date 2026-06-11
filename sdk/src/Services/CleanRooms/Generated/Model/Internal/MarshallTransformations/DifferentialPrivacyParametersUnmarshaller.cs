@@ -56,7 +56,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sensitivityParameters", targetDepth))
+                if (context.TestExpression("sensitivityParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DifferentialPrivacySensitivityParameters, DifferentialPrivacySensitivityParametersUnmarshaller>(DifferentialPrivacySensitivityParametersUnmarshaller.Instance);
                     unmarshalledObject.SensitivityParameters = unmarshaller.Unmarshall(context, ref reader);

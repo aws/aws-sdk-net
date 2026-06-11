@@ -52,7 +52,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("mediaId", targetDepth))
+                if (context.TestExpression("mediaId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.MediaId = unmarshaller.Unmarshall(context, ref reader);

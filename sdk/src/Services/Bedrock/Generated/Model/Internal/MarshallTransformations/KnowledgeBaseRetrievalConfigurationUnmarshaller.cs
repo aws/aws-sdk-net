@@ -56,7 +56,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("vectorSearchConfiguration", targetDepth))
+                if (context.TestExpression("vectorSearchConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = KnowledgeBaseVectorSearchConfigurationUnmarshaller.Instance;
                     unmarshalledObject.VectorSearchConfiguration = unmarshaller.Unmarshall(context, ref reader);

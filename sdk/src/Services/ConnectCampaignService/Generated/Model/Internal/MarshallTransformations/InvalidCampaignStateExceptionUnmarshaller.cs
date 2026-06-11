@@ -72,13 +72,13 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    if (context.TestExpression("state", targetDepth))
+                    if (context.TestExpression("state", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
-                    if (context.TestExpression("x-amzn-ErrorType", targetDepth))
+                    if (context.TestExpression("x-amzn-ErrorType", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.XAmzErrorType = unmarshaller.Unmarshall(context, ref reader);

@@ -60,6 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The ID of the cluster to which the instance group belongs.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=256)]
         public string ClusterId
         {
             get { return this._clusterId; }

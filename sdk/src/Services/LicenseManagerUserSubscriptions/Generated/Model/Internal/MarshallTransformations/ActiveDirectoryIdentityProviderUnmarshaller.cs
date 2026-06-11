@@ -56,25 +56,25 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ActiveDirectorySettings", targetDepth))
+                if (context.TestExpression("ActiveDirectorySettings", targetDepth, ref reader))
                 {
                     var unmarshaller = ActiveDirectorySettingsUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectorySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ActiveDirectoryType", targetDepth))
+                if (context.TestExpression("ActiveDirectoryType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ActiveDirectoryType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DirectoryId", targetDepth))
+                if (context.TestExpression("DirectoryId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DirectoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IsSharedActiveDirectory", targetDepth))
+                if (context.TestExpression("IsSharedActiveDirectory", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsSharedActiveDirectory = unmarshaller.Unmarshall(context, ref reader);

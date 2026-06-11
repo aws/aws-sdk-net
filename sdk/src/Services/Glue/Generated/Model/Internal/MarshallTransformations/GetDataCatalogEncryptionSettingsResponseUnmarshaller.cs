@@ -52,7 +52,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("DataCatalogEncryptionSettings", targetDepth))
+                if (context.TestExpression("DataCatalogEncryptionSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = DataCatalogEncryptionSettingsUnmarshaller.Instance;
                     response.DataCatalogEncryptionSettings = unmarshaller.Unmarshall(context, ref reader);

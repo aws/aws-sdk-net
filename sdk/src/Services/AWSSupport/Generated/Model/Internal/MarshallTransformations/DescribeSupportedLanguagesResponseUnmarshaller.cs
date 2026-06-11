@@ -52,7 +52,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("supportedLanguages", targetDepth))
+                if (context.TestExpression("supportedLanguages", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SupportedLanguage, SupportedLanguageUnmarshaller>(SupportedLanguageUnmarshaller.Instance);
                     response.SupportedLanguages = unmarshaller.Unmarshall(context, ref reader);

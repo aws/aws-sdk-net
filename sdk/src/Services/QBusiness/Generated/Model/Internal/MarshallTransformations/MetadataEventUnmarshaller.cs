@@ -56,31 +56,31 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("conversationId", targetDepth))
+                if (context.TestExpression("conversationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("finalTextMessage", targetDepth))
+                if (context.TestExpression("finalTextMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FinalTextMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sourceAttributions", targetDepth))
+                if (context.TestExpression("sourceAttributions", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<SourceAttribution, SourceAttributionUnmarshaller>(SourceAttributionUnmarshaller.Instance);
                     unmarshalledObject.SourceAttributions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("systemMessageId", targetDepth))
+                if (context.TestExpression("systemMessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SystemMessageId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("userMessageId", targetDepth))
+                if (context.TestExpression("userMessageId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.UserMessageId = unmarshaller.Unmarshall(context, ref reader);

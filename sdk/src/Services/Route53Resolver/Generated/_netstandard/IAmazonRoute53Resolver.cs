@@ -294,6 +294,129 @@ namespace Amazon.Route53Resolver
 
         #endregion
                 
+        #region  BatchCreateFirewallRule
+
+
+
+        /// <summary>
+        /// Creates multiple DNS Firewall rules in the specified rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchCreateFirewallRule">REST API Reference for BatchCreateFirewallRule Operation</seealso>
+        Task<BatchCreateFirewallRuleResponse> BatchCreateFirewallRuleAsync(BatchCreateFirewallRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchDeleteFirewallRule
+
+
+
+        /// <summary>
+        /// Deletes multiple DNS Firewall rules from the specified rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchDeleteFirewallRule">REST API Reference for BatchDeleteFirewallRule Operation</seealso>
+        Task<BatchDeleteFirewallRuleResponse> BatchDeleteFirewallRuleAsync(BatchDeleteFirewallRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchUpdateFirewallRule
+
+
+
+        /// <summary>
+        /// Updates multiple DNS Firewall rules in the specified rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateFirewallRule service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.LimitExceededException">
+        /// The request caused one or more limits to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/BatchUpdateFirewallRule">REST API Reference for BatchUpdateFirewallRule Operation</seealso>
+        Task<BatchUpdateFirewallRuleResponse> BatchUpdateFirewallRuleAsync(BatchUpdateFirewallRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFirewallDomainList
 
 
@@ -2098,6 +2221,44 @@ namespace Amazon.Route53Resolver
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
         Task<ListFirewallRulesResponse> ListFirewallRulesAsync(ListFirewallRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListFirewallRuleTypes
+
+
+
+        /// <summary>
+        /// Retrieves the available rule types that can be used in DNS Firewall rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFirewallRuleTypes service method, as returned by Route53Resolver.</returns>
+        /// <exception cref="Amazon.Route53Resolver.Model.AccessDeniedException">
+        /// The current account doesn't have the IAM permissions required to perform the specified
+        /// Resolver operation.
+        /// 
+        ///  
+        /// <para>
+        /// This error can also be thrown when a customer has reached the 5120 character limit
+        /// for a resource policy for CloudWatch Logs.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.InternalServiceErrorException">
+        /// We encountered an unknown error. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ThrottlingException">
+        /// The request was throttled. Try again in a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.Route53Resolver.Model.ValidationException">
+        /// You have provided an invalid command. If you ran the <c>UpdateFirewallDomains</c>
+        /// request. supported values are <c>ADD</c>, <c>REMOVE</c>, or <c>REPLACE</c> a domain.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleTypes">REST API Reference for ListFirewallRuleTypes Operation</seealso>
+        Task<ListFirewallRuleTypesResponse> ListFirewallRuleTypesAsync(ListFirewallRuleTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

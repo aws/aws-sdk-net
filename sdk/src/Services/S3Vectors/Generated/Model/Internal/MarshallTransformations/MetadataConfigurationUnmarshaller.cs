@@ -56,7 +56,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nonFilterableMetadataKeys", targetDepth))
+                if (context.TestExpression("nonFilterableMetadataKeys", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NonFilterableMetadataKeys = unmarshaller.Unmarshall(context, ref reader);

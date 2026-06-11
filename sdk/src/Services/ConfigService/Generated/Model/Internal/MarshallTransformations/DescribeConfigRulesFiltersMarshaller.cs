@@ -52,6 +52,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EvaluationMode);
             }
 
+            if(requestObject.IsSetRuleEvaluationVisibility())
+            {
+                context.Writer.WritePropertyName("RuleEvaluationVisibility");
+                context.Writer.WriteStringValue(requestObject.RuleEvaluationVisibility);
+            }
+
         }
 
         /// <summary>

@@ -52,13 +52,13 @@ namespace Amazon.ControlCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CommonControls", targetDepth))
+                if (context.TestExpression("CommonControls", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CommonControlSummary, CommonControlSummaryUnmarshaller>(CommonControlSummaryUnmarshaller.Instance);
                     response.CommonControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("NextToken", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);

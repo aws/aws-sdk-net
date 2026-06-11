@@ -56,13 +56,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fmtp", targetDepth))
+                if (context.TestExpression("fmtp", targetDepth, ref reader))
                 {
                     var unmarshaller = FmtpUnmarshaller.Instance;
                     unmarshalledObject.Fmtp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lang", targetDepth))
+                if (context.TestExpression("lang", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Lang = unmarshaller.Unmarshall(context, ref reader);

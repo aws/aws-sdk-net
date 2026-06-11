@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("UnprocessedIdentityIds", targetDepth))
+                if (context.TestExpression("UnprocessedIdentityIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<UnprocessedIdentityId, UnprocessedIdentityIdUnmarshaller>(UnprocessedIdentityIdUnmarshaller.Instance);
                     response.UnprocessedIdentityIds = unmarshaller.Unmarshall(context, ref reader);

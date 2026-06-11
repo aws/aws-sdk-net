@@ -56,19 +56,19 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("InferenceInputNameConfiguration", targetDepth))
+                if (context.TestExpression("InferenceInputNameConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceInputNameConfigurationUnmarshaller.Instance;
                     unmarshalledObject.InferenceInputNameConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InputTimeZoneOffset", targetDepth))
+                if (context.TestExpression("InputTimeZoneOffset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InputTimeZoneOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("S3InputConfiguration", targetDepth))
+                if (context.TestExpression("S3InputConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = InferenceS3InputConfigurationUnmarshaller.Instance;
                     unmarshalledObject.S3InputConfiguration = unmarshaller.Unmarshall(context, ref reader);

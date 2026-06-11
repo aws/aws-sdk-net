@@ -56,7 +56,7 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("credit", targetDepth))
+                if (context.TestExpression("credit", targetDepth, ref reader))
                 {
                     var unmarshaller = MonetaryAmountUnmarshaller.Instance;
                     unmarshalledObject.Credit = unmarshaller.Unmarshall(context, ref reader);

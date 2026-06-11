@@ -56,13 +56,13 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("approximateNumberOfObjectsToProcess", targetDepth))
+                if (context.TestExpression("approximateNumberOfObjectsToProcess", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.ApproximateNumberOfObjectsToProcess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("numberOfRuns", targetDepth))
+                if (context.TestExpression("numberOfRuns", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.NumberOfRuns = unmarshaller.Unmarshall(context, ref reader);

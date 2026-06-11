@@ -52,7 +52,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("heritageStatus", targetDepth))
+                if (context.TestExpression("heritageStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.HeritageStatus = unmarshaller.Unmarshall(context, ref reader);

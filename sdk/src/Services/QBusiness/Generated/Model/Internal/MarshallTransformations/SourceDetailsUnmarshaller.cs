@@ -56,19 +56,19 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audioSourceDetails", targetDepth))
+                if (context.TestExpression("audioSourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = AudioSourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AudioSourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("imageSourceDetails", targetDepth))
+                if (context.TestExpression("imageSourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = ImageSourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.ImageSourceDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("videoSourceDetails", targetDepth))
+                if (context.TestExpression("videoSourceDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = VideoSourceDetailsUnmarshaller.Instance;
                     unmarshalledObject.VideoSourceDetails = unmarshaller.Unmarshall(context, ref reader);

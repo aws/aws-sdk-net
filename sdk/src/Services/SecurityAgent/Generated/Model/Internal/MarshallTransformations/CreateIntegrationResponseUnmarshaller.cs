@@ -52,7 +52,7 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("integrationId", targetDepth))
+                if (context.TestExpression("integrationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.IntegrationId = unmarshaller.Unmarshall(context, ref reader);

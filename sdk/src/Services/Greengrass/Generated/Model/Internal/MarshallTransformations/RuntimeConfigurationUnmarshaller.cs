@@ -56,7 +56,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TelemetryConfiguration", targetDepth))
+                if (context.TestExpression("TelemetryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TelemetryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TelemetryConfiguration = unmarshaller.Unmarshall(context, ref reader);

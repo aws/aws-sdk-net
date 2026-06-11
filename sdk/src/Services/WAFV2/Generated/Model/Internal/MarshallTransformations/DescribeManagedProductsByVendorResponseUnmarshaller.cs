@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ManagedProducts", targetDepth))
+                if (context.TestExpression("ManagedProducts", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ManagedProductDescriptor, ManagedProductDescriptorUnmarshaller>(ManagedProductDescriptorUnmarshaller.Instance);
                     response.ManagedProducts = unmarshaller.Unmarshall(context, ref reader);

@@ -56,25 +56,25 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringConsumption", targetDepth))
+                if (context.TestExpression("RecurringConsumption", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurringConsumptionUnmarshaller.Instance;
                     unmarshalledObject.RecurringConsumption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RecurringRetrieval", targetDepth))
+                if (context.TestExpression("RecurringRetrieval", targetDepth, ref reader))
                 {
                     var unmarshaller = RecurringRetrievalUnmarshaller.Instance;
                     unmarshalledObject.RecurringRetrieval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);

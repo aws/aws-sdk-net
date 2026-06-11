@@ -56,7 +56,7 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("criteria", targetDepth))
+                if (context.TestExpression("criteria", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<FilterCriterion, FilterCriterionUnmarshaller>(FilterCriterionUnmarshaller.Instance);
                     unmarshalledObject.Criteria = unmarshaller.Unmarshall(context, ref reader);

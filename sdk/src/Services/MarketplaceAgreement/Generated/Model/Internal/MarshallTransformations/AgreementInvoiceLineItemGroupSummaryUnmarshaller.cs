@@ -56,43 +56,43 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agreementId", targetDepth))
+                if (context.TestExpression("agreementId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AgreementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invoiceBillingPeriod", targetDepth))
+                if (context.TestExpression("invoiceBillingPeriod", targetDepth, ref reader))
                 {
                     var unmarshaller = InvoiceBillingPeriodUnmarshaller.Instance;
                     unmarshalledObject.InvoiceBillingPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invoiceId", targetDepth))
+                if (context.TestExpression("invoiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvoiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invoiceType", targetDepth))
+                if (context.TestExpression("invoiceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InvoiceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("invoicingEntity", targetDepth))
+                if (context.TestExpression("invoicingEntity", targetDepth, ref reader))
                 {
                     var unmarshaller = InvoicingEntityUnmarshaller.Instance;
                     unmarshalledObject.InvoicingEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("issuedTime", targetDepth))
+                if (context.TestExpression("issuedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.IssuedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pricingCurrencyAmount", targetDepth))
+                if (context.TestExpression("pricingCurrencyAmount", targetDepth, ref reader))
                 {
                     var unmarshaller = PricingCurrencyAmountUnmarshaller.Instance;
                     unmarshalledObject.PricingCurrencyAmount = unmarshaller.Unmarshall(context, ref reader);

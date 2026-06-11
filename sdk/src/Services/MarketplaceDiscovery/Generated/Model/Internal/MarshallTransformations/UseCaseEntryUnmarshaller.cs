@@ -56,7 +56,7 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("useCase", targetDepth))
+                if (context.TestExpression("useCase", targetDepth, ref reader))
                 {
                     var unmarshaller = UseCaseUnmarshaller.Instance;
                     unmarshalledObject.UseCase = unmarshaller.Unmarshall(context, ref reader);

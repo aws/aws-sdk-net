@@ -52,7 +52,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContactFlowModuleAlias", targetDepth))
+                if (context.TestExpression("ContactFlowModuleAlias", targetDepth, ref reader))
                 {
                     var unmarshaller = ContactFlowModuleAliasInfoUnmarshaller.Instance;
                     response.ContactFlowModuleAlias = unmarshaller.Unmarshall(context, ref reader);

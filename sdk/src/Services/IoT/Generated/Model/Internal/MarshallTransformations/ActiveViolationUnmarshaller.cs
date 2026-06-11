@@ -56,61 +56,61 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("behavior", targetDepth))
+                if (context.TestExpression("behavior", targetDepth, ref reader))
                 {
                     var unmarshaller = BehaviorUnmarshaller.Instance;
                     unmarshalledObject.Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastViolationTime", targetDepth))
+                if (context.TestExpression("lastViolationTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastViolationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lastViolationValue", targetDepth))
+                if (context.TestExpression("lastViolationValue", targetDepth, ref reader))
                 {
                     var unmarshaller = MetricValueUnmarshaller.Instance;
                     unmarshalledObject.LastViolationValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityProfileName", targetDepth))
+                if (context.TestExpression("securityProfileName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("thingName", targetDepth))
+                if (context.TestExpression("thingName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ThingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verificationState", targetDepth))
+                if (context.TestExpression("verificationState", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("verificationStateDescription", targetDepth))
+                if (context.TestExpression("verificationStateDescription", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VerificationStateDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationEventAdditionalInfo", targetDepth))
+                if (context.TestExpression("violationEventAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = ViolationEventAdditionalInfoUnmarshaller.Instance;
                     unmarshalledObject.ViolationEventAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationId", targetDepth))
+                if (context.TestExpression("violationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ViolationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("violationStartTime", targetDepth))
+                if (context.TestExpression("violationStartTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ViolationStartTime = unmarshaller.Unmarshall(context, ref reader);

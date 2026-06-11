@@ -56,13 +56,13 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("postLaunchActionsLaunchStatusList", targetDepth))
+                if (context.TestExpression("postLaunchActionsLaunchStatusList", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<JobPostLaunchActionsLaunchStatus, JobPostLaunchActionsLaunchStatusUnmarshaller>(JobPostLaunchActionsLaunchStatusUnmarshaller.Instance);
                     unmarshalledObject.PostLaunchActionsLaunchStatusList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ssmAgentDiscoveryDatetime", targetDepth))
+                if (context.TestExpression("ssmAgentDiscoveryDatetime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SsmAgentDiscoveryDatetime = unmarshaller.Unmarshall(context, ref reader);

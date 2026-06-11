@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tlsCertificates", targetDepth))
+                if (context.TestExpression("tlsCertificates", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<LoadBalancerTlsCertificate, LoadBalancerTlsCertificateUnmarshaller>(LoadBalancerTlsCertificateUnmarshaller.Instance);
                     response.TlsCertificates = unmarshaller.Unmarshall(context, ref reader);

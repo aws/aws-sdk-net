@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CaLogs", targetDepth))
+                if (context.TestExpression("CaLogs", targetDepth, ref reader))
                 {
                     var unmarshaller = LogConfigurationsUnmarshaller.Instance;
                     unmarshalledObject.CaLogs = unmarshaller.Unmarshall(context, ref reader);

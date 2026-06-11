@@ -56,37 +56,37 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdditionalResources", targetDepth))
+                if (context.TestExpression("AdditionalResources", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AdditionalResources, AdditionalResourcesUnmarshaller>(AdditionalResourcesUnmarshaller.Instance);
                     unmarshalledObject.AdditionalResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ChoiceId", targetDepth))
+                if (context.TestExpression("ChoiceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ChoiceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("HelpfulResource", targetDepth))
+                if (context.TestExpression("HelpfulResource", targetDepth, ref reader))
                 {
                     var unmarshaller = ChoiceContentUnmarshaller.Instance;
                     unmarshalledObject.HelpfulResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ImprovementPlan", targetDepth))
+                if (context.TestExpression("ImprovementPlan", targetDepth, ref reader))
                 {
                     var unmarshaller = ChoiceContentUnmarshaller.Instance;
                     unmarshalledObject.ImprovementPlan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Title", targetDepth))
+                if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);

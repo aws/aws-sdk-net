@@ -56,7 +56,7 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("tagQueryConfiguration", targetDepth))
+                if (context.TestExpression("tagQueryConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = TagQueryConfigurationUnmarshaller.Instance;
                     unmarshalledObject.TagQueryConfiguration = unmarshaller.Unmarshall(context, ref reader);
