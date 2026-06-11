@@ -21,8 +21,14 @@ done
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-# Get git commit ID
-COMMIT_ID="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$(git rev-parse HEAD 2>/dev/null || echo "unknown")}"
+# Get build metadata (from build-metadata.json written by artifact step, or fallback)
+if [ -f "$SCRIPT_DIR/build-metadata.json" ]; then
+    COMMIT_ID="$(jq -r '.commitId' "$SCRIPT_DIR/build-metadata.json")"
+    SDK_VERSION="$(jq -r '.productVersion' "$SCRIPT_DIR/build-metadata.json")"
+else
+    COMMIT_ID="unknown"
+    SDK_VERSION="unknown"
+fi
 
 # Clean previous artifacts
 rm -rf "$SCRIPT_DIR/BenchmarkDotNet.Artifacts"
@@ -51,10 +57,11 @@ EPOCH=$(date +%s)
 # the CI publisher converts Nanoseconds→Microseconds before CloudWatch publish,
 # but the evaluator compares raw measurements against CloudWatch values without
 # converting. Using Microseconds directly avoids this unit mismatch.
-find "$RESULTS_DIR" -name "*-report-full-compressed.json" -print0 | xargs -0 cat | jq -s --arg productId "$PRODUCT_ID" --arg commitId "$COMMIT_ID" --argjson date "$EPOCH" '
+find "$RESULTS_DIR" -name "*-report-full-compressed.json" -print0 | xargs -0 cat | jq -s --arg productId "$PRODUCT_ID" --arg commitId "$COMMIT_ID" --arg sdkVersion "$SDK_VERSION" --argjson date "$EPOCH" '
 {
     productId: $productId,
     commitId: $commitId,
+    sdkVersion: $sdkVersion,
     results: [
         .[] | .Benchmarks[]? | select(.Statistics != null) |
         (
