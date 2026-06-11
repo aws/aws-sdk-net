@@ -31,45 +31,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes a dataset version or an entire dataset (all versions + name claim). Asynchronous
-    /// 202.
-    /// 
-    ///  
-    /// <para>
-    /// <strong>State transitions:</strong>
-    /// </para>
-    ///  <ul> <li>If <c>datasetVersion</c> is absent (full delete): status transitions to
-    /// DELETING immediately.</li> <li>If <c>datasetVersion</c> is provided (version-specific
-    /// delete): status transitions to UPDATING.</li> </ul> 
-    /// <para>
-    /// <strong>State guard (full delete):</strong> Returns ConflictException (DATASET_NOT_READY)
-    /// if the dataset status is in {CREATING, UPDATING}. Deletion is allowed from ACTIVE,
-    /// CREATE_FAILED, UPDATE_FAILED, and DELETE_FAILED states.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>State guard (version-specific delete):</strong> Returns ConflictException
-    /// (DATASET_NOT_READY) if the dataset status is not in {ACTIVE, CREATE_FAILED, UPDATE_FAILED}.
-    /// </para>
-    ///  
-    /// <para>
-    /// Fails with ConflictException (REFERENCED_BY_EVAL_JOB) if referenced by an active evaluation
-    /// job (full delete only).
-    /// </para>
-    ///  
-    /// <para>
-    /// If the delete workflow fails after retries, status is set to DELETE_FAILED (full delete)
-    /// or UPDATE_FAILED (version-specific delete). Calling DeleteDataset on a DELETE_FAILED
-    /// dataset re-triggers the delete workflow (idempotent retry path).
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Version parameter:</strong>
-    /// </para>
-    ///  <ul> <li>If <c>datasetVersion</c> is absent: deletes ALL versions and the Dataset
-    /// record itself.</li> <li>If <c>datasetVersion</c> is provided: deletes only that specific
-    /// DatasetVersion. Returns ResourceNotFoundException if the specified version does not
-    /// exist.</li> </ul>
+    /// Deletes a dataset version or an entire dataset asynchronously. If <c>datasetVersion</c>
+    /// is absent, deletes all versions and the dataset record itself. If provided, deletes
+    /// only that specific version.
     /// </summary>
     public partial class DeleteDatasetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -98,8 +62,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// Optional version to delete. Use &quot;DRAFT&quot; or omit to delete the draft. Returns
-        /// ResourceNotFoundException if the specified version does not exist.
+        ///  Optional version to delete. If absent, deletes the entire dataset. If provided, deletes
+        /// only that specific version. 
         /// </para>
         /// </summary>
         public string DatasetVersion

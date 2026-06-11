@@ -35,13 +35,15 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class MetadataSchemaEntry
     {
         private ExtractionConfig _extractionConfig;
+        private ExtractionType _extractionType;
         private string _key;
         private MetadataValueType _type;
 
         /// <summary>
         /// Gets and sets the property ExtractionConfig. 
         /// <para>
-        /// Configuration for extracting this metadata value from conversational content.
+        /// Configuration for extracting this metadata value from conversational content. Applicable
+        /// only if extractionType is LLM inferred.
         /// </para>
         /// </summary>
         public ExtractionConfig ExtractionConfig
@@ -54,6 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExtractionConfig()
         {
             return this._extractionConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtractionType. 
+        /// <para>
+        /// Specifies whether the metadata value is extracted by the LLM or passed through deterministically
+        /// from the event.
+        /// </para>
+        /// </summary>
+        public ExtractionType ExtractionType
+        {
+            get { return this._extractionType; }
+            set { this._extractionType = value; }
+        }
+
+        // Check to see if ExtractionType property is set
+        internal bool IsSetExtractionType()
+        {
+            return this._extractionType != null;
         }
 
         /// <summary>

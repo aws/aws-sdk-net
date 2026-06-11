@@ -58,7 +58,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatasetVersion.
+        /// Gets and sets the property DatasetVersion. 
+        /// <para>
+        ///  The version number of this published snapshot. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DatasetVersion

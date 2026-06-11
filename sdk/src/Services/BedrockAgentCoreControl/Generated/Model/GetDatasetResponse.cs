@@ -130,7 +130,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// The resolved version: &quot;DRAFT&quot; (default) or the requested version number.
+        ///  The resolved version: "DRAFT" (default) or the requested version number. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,9 +167,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DownloadUrl. 
         /// <para>
-        /// Presigned S3 URL to download the consolidated dataset.jsonl file for the resolved
-        /// version (DRAFT or published). TTL: 5 minutes. Omitted if the file does not yet exist
-        /// (e.g. during CREATING) or on presign failure.
+        ///  Presigned Amazon S3 URL to download the consolidated dataset file for the resolved
+        /// version. Expires after 5 minutes. Omitted if the file does not yet exist. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -188,7 +187,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DownloadUrlExpiresAt. 
         /// <para>
-        /// Expiry timestamp for downloadUrl.
+        ///  Expiry timestamp for the download URL. 
         /// </para>
         /// </summary>
         public DateTime? DownloadUrlExpiresAt
@@ -206,9 +205,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DraftStatus. 
         /// <para>
-        /// Publish synchronization state. Only authoritative when status == ACTIVE. MODIFIED
-        /// — DRAFT has unpublished changes (or no published versions yet). UNMODIFIED — DRAFT
-        /// matches the latest published version exactly.
+        ///  Publish synchronization state. Only authoritative when status is ACTIVE. MODIFIED
+        /// indicates DRAFT has unpublished changes. UNMODIFIED indicates DRAFT matches the latest
+        /// published version. 
         /// </para>
         /// </summary>
         public DraftStatus DraftStatus
@@ -226,7 +225,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExampleCount. 
         /// <para>
-        /// Example count for DRAFT.
+        ///  The number of examples in the DRAFT. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -245,7 +244,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED.
+        ///  Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED. Describes
+        /// the reason for the failure. 
         /// </para>
         /// </summary>
         public string FailureReason
@@ -263,7 +263,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// AWS KMS key ARN used for SSE-KMS on service S3 writes, if configured.
+        ///  KMS key ARN used for server-side encryption on service Amazon S3 writes, if configured.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -282,7 +283,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property SchemaType. 
         /// <para>
-        /// The schema type declared at create time. Immutable after creation.
+        ///  The schema type declared at create time. Immutable after creation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

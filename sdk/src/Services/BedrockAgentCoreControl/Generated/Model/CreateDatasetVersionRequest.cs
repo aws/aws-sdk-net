@@ -31,25 +31,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatasetVersion operation.
-    /// Publishes the current DRAFT as a new numbered version.
-    /// 
-    ///  
-    /// <para>
-    /// Snapshots the DRAFT examples as the next version (1, 2, 3, ...). The DRAFT is preserved
-    /// and remains editable after publishing. Returns immediately with status UPDATING. Poll
-    /// GetDataset until status transitions to ACTIVE (draftStatus=UNMODIFIED) or UPDATE_FAILED.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>State guard:</strong> Returns ConflictException (DATASET_NOT_READY) if status
-    /// is in {CREATING, UPDATING, DELETING}, or DATASET_IN_FAILED_STATE if status is in {CREATE_FAILED,
-    /// DELETE_FAILED}.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Quota:</strong> MAX_VERSIONS_PER_DATASET applies to published versions only
-    /// (not DRAFT).
-    /// </para>
+    /// Publishes the current DRAFT as a new numbered version. The DRAFT is preserved and
+    /// remains editable after publishing. Returns immediately with status UPDATING. Poll
+    /// <c>GetDataset</c> until status transitions to ACTIVE or UPDATE_FAILED.
     /// </summary>
     public partial class CreateDatasetVersionRequest : AmazonBedrockAgentCoreControlRequest
     {

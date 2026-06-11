@@ -32,16 +32,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the UpdateDataset operation.
     /// Updates a dataset's metadata. Synchronous operation. Only provided fields are updated;
-    /// omitted fields remain unchanged.
-    /// 
-    ///  
-    /// <para>
-    /// To modify dataset content, use AddDatasetExamples, UpdateDatasetExamples, or DeleteDatasetExamples.
-    /// </para>
-    ///  
-    /// <para>
-    /// Cannot update: name, schemaType, kmsKeyArn (immutable after creation).
-    /// </para>
+    /// omitted fields remain unchanged. To modify dataset content, use <c>AddDatasetExamples</c>,
+    /// <c>UpdateDatasetExamples</c>, or <c>DeleteDatasetExamples</c>.
     /// </summary>
     public partial class UpdateDatasetRequest : AmazonBedrockAgentCoreControlRequest
     {

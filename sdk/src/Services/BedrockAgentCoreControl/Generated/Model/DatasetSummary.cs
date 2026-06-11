@@ -142,7 +142,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DraftStatus. 
         /// <para>
-        /// Publish synchronization state. Only authoritative when status == ACTIVE.
+        ///  Publish synchronization state. Only authoritative when status is ACTIVE. 
         /// </para>
         /// </summary>
         public DraftStatus DraftStatus

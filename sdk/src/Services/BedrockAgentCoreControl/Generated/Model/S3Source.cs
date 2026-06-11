@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// S3 location of a JSONL file containing dataset examples.
+    /// Amazon S3 location of a JSONL file containing dataset examples.
     /// </summary>
     public partial class S3Source
     {
@@ -39,7 +39,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// S3 URI of the JSONL file (e.g. s3://my-bucket/path/to/examples.jsonl).
+        ///  Amazon S3 URI of the JSONL file (for example, <c>s3://my-bucket/path/to/examples.jsonl</c>).
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

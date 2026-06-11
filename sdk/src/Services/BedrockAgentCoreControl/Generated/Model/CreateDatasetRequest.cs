@@ -31,13 +31,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
-    /// Creates a new Dataset resource asynchronously.
-    /// 
-    ///  
-    /// <para>
-    /// Returns immediately with status CREATING. Poll GetDataset until status transitions
-    /// to ACTIVE or CREATE_FAILED (with failureReason).
-    /// </para>
+    /// Creates a new dataset resource asynchronously. Returns immediately with status CREATING.
+    /// Poll <c>GetDataset</c> until status transitions to ACTIVE or CREATE_FAILED.
     /// </summary>
     public partial class CreateDatasetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -52,7 +47,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional idempotency token.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If you don't specify this field, a value is randomly generated for
+        /// you. If this token matches a previous request, the service ignores the request, but
+        /// doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -71,8 +70,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetName. 
         /// <para>
-        /// Human-readable name for the dataset. Unique within the account (case-insensitive).
-        /// Immutable after creation.
+        ///  Human-readable name for the dataset. Must be unique within the account. Immutable
+        /// after creation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,7 +109,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// Optional AWS KMS key ARN for SSE-KMS on service S3 writes.
+        ///  Optional KMS key ARN for server-side encryption on service Amazon S3 writes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -129,7 +128,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property SchemaType. 
         /// <para>
-        /// Versioned schema type governing the structure of examples. Immutable after creation.
+        ///  Versioned schema type governing the structure of examples. Immutable after creation.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,8 +148,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Source of initial examples. Provide either inline examples or an S3 URI pointing to
-        /// a JSONL file.
+        ///  Source of initial examples. Provide either inline examples or an S3 URI pointing
+        /// to a JSONL file. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

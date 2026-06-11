@@ -31,37 +31,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataset operation.
-    /// Retrieves dataset metadata only.
-    /// 
-    ///  
-    /// <para>
-    /// Use <c>?datasetVersion=DRAFT</c> or <c>?datasetVersion=N</c> to retrieve a specific
-    /// version's metadata. If absent, defaults to DRAFT (the mutable working copy). Returns
-    /// ResourceNotFoundException if the specified version is not found.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Initial state after CreateDataset:</strong> When CreateDataset completes successfully
-    /// (status transitions to ACTIVE), only a DRAFT working copy exists. No published versions
-    /// exist until CreateDatasetVersion is called. At this point draftStatus is MODIFIED
-    /// because the DRAFT has content that has never been published.
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>Default version behavior:</strong> When <c>datasetVersion</c> is omitted,
-    /// the operation returns the DRAFT working copy. To retrieve a specific published version,
-    /// pass the version number as a string (e.g. <c>?datasetVersion=1</c>).
-    /// </para>
-    ///  
-    /// <para>
-    /// <strong>State guard:</strong> Allowed for all statuses including DELETING. Returns
-    /// the dataset record with its current status so callers can observe the deletion in
-    /// progress.
-    /// </para>
-    ///  
-    /// <para>
-    /// For paginated example IDs use ListDatasetExamples.
-    /// </para>
+    /// Retrieves dataset metadata. Use the <c>datasetVersion</c> query parameter to retrieve
+    /// a specific version's metadata. If absent, defaults to DRAFT. For paginated example
+    /// content, use <c>ListDatasetExamples</c>.
     /// </summary>
     public partial class GetDatasetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -90,7 +62,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
-        /// Version to retrieve: &quot;DRAFT&quot; or a version number. Defaults to DRAFT if absent.
+        ///  Version to retrieve: "DRAFT" or a version number. Defaults to DRAFT if absent. 
         /// </para>
         /// </summary>
         public string DatasetVersion

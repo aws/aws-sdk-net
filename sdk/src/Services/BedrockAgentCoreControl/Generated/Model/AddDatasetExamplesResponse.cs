@@ -101,7 +101,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExampleIds. 
         /// <para>
-        /// IDs of all added examples (auto-generated UUIDs).
+        ///  IDs of all added examples (auto-generated UUIDs). 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

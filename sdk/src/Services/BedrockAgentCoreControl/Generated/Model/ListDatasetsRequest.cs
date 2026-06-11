@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatasets operation.
-    /// Lists all datasets in the caller's account, paginated. No presigned URLs in list results.
+    /// Lists all datasets in the caller's account, paginated.
     /// </summary>
     public partial class ListDatasetsRequest : AmazonBedrockAgentCoreControlRequest
     {
