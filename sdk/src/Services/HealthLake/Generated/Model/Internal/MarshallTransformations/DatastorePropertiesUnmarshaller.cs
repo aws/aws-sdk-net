@@ -56,6 +56,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AnalyticsConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AnalyticsConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AnalyticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -110,10 +116,22 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityProviderConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NlpConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = NlpConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.NlpConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PreloadDataConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = PreloadDataConfigUnmarshaller.Instance;
                     unmarshalledObject.PreloadDataConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ProfileConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProfileConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProfileConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SseConfiguration", targetDepth, ref reader))

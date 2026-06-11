@@ -34,6 +34,7 @@ namespace Amazon.HealthLake.Model
     /// </summary>
     public partial class DatastoreProperties
     {
+        private AnalyticsConfiguration _analyticsConfiguration;
         private DateTime? _createdAt;
         private string _datastoreArn;
         private string _datastoreEndpoint;
@@ -43,8 +44,26 @@ namespace Amazon.HealthLake.Model
         private FHIRVersion _datastoreTypeVersion;
         private ErrorCause _errorCause;
         private IdentityProviderConfiguration _identityProviderConfiguration;
+        private NlpConfiguration _nlpConfiguration;
         private PreloadDataConfig _preloadDataConfig;
+        private ProfileConfiguration _profileConfiguration;
         private SseConfiguration _sseConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AnalyticsConfiguration. <para>The analytics configuration
+        /// for the data store.</para>
+        /// </summary>
+        public AnalyticsConfiguration AnalyticsConfiguration
+        {
+            get { return this._analyticsConfiguration; }
+            set { this._analyticsConfiguration = value; }
+        }
+
+        // Check to see if AnalyticsConfiguration property is set
+        internal bool IsSetAnalyticsConfiguration()
+        {
+            return this._analyticsConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -216,6 +235,22 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NlpConfiguration. <para>The natural language processing
+        /// (NLP) configuration for the data store.</para>
+        /// </summary>
+        public NlpConfiguration NlpConfiguration
+        {
+            get { return this._nlpConfiguration; }
+            set { this._nlpConfiguration = value; }
+        }
+
+        // Check to see if NlpConfiguration property is set
+        internal bool IsSetNlpConfiguration()
+        {
+            return this._nlpConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreloadDataConfig. 
         /// <para>
         /// The preloaded Synthea data configuration for the data store.
@@ -231,6 +266,22 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetPreloadDataConfig()
         {
             return this._preloadDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. <para>The profile configuration for
+        /// the data store.</para>
+        /// </summary>
+        public ProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
         }
 
         /// <summary>

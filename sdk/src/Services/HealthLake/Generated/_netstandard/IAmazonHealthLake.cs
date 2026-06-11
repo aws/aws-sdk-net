@@ -434,6 +434,42 @@ namespace Amazon.HealthLake
 
         #endregion
                 
+        #region  UpdateFHIRDatastore
+
+
+
+        /// <summary>
+        /// Update the properties of a FHIR-enabled data store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFHIRDatastore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFHIRDatastore service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ConflictException">
+        /// The data store is in a transition state and the user requested action cannot be performed.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateFHIRDatastore">REST API Reference for UpdateFHIRDatastore Operation</seealso>
+        Task<UpdateFHIRDatastoreResponse> UpdateFHIRDatastoreAsync(UpdateFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region DetermineServiceOperationEndpoint
 
         /// <summary>
