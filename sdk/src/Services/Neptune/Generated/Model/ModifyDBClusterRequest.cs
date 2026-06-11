@@ -48,6 +48,7 @@ namespace Amazon.Neptune.Model
         private bool? _enableIAMDatabaseAuthentication;
         private string _engineVersion;
         private string _masterUserPassword;
+        private string _networkType;
         private string _newDBClusterIdentifier;
         private string _optionGroupName;
         private int? _port;
@@ -356,6 +357,38 @@ namespace Amazon.Neptune.Model
         internal bool IsSetMasterUserPassword()
         {
             return this._masterUserPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b> <c>IPV4</c> </b>   –   The DB cluster uses only IPv4 addresses for communication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>DUAL</c> </b>   –   The DB cluster uses both IPv4 and IPv6 addresses for communication.
+        /// The DB subnet group associated with the cluster must support IPv6.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

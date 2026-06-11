@@ -74,6 +74,7 @@ namespace Amazon.Neptune.Model
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
         private bool? _multiAZ;
+        private string _networkType;
         private List<OptionGroupMembership> _optionGroupMemberships = AWSConfigs.InitializeCollections ? new List<OptionGroupMembership>() : null;
         private PendingModifiedValues _pendingModifiedValues;
         private bool? _performanceInsightsEnabled;
@@ -754,6 +755,28 @@ namespace Amazon.Neptune.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the DB instance. Inherited from the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c>, <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>
