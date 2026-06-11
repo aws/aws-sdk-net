@@ -46,7 +46,6 @@ namespace Amazon.Runtime.Internal.Transform
     /// </summary>
     public class JsonUnmarshallerContext : UnmarshallerContext
     {
-        private const string DELIMITER = "/";
         #region Private members
 
         private Stream baseStream;
@@ -57,20 +56,17 @@ namespace Amazon.Runtime.Internal.Transform
         private bool disposed = false;
         private bool wasPeeked = false;
 
-        // Property names are no longer pushed onto the path stack (that was the per-property string
-        // allocation we removed). But AWSSDK.Core must stay compatible with service packages that were
-        // generated before reader-based matching existed: those still call the legacy path-based
-        // TestExpression(string, int) overload, which matches against CurrentPath. To keep that working
-        // without re-introducing an allocation on the hot path, we capture the current property name as
-        // raw UTF-8 bytes into a reused, pooled buffer on each Read, and only materialize a string lazily
-        // when CurrentPath is actually read (i.e. by old packages or by exception diagnostics).
+        // Property names are pushed onto the path stack's StringBuilder on each PropertyName token
+        // via a pooled char[] (no string allocation on the hot path). The path string is only
+        // materialized (via StringBuilder.ToString) when CurrentPath is actually read — typically only
+        // on exception for diagnostics, or by the legacy path-based TestExpression(string, int) overload
+        // used by older service packages. We also capture the current property name into a reused pooled
+        // buffer for reader-based TestExpression matching (ValueTextEquals).
         private byte[] currentPropertyNameBuffer = null;
         private int currentPropertyNameLength = 0;
         // Set only when a property name contains JSON escapes, where a raw-byte copy can't be compared
         // against the unescaped expression the legacy overload expects.
         private string currentPropertyNameEscaped = null;
-        private bool onPropertyName = false;
-        private string cachedCurrentPath = null;
         #endregion
 
         #region Constructors
@@ -231,27 +227,15 @@ namespace Amazon.Runtime.Internal.Transform
         /// The current Json path that is being unmarshalled.
         /// </summary>
         /// <remarks>
-        /// Property names are not tracked on the path stack, so the stack only contributes the depth
-        /// delimiters. When positioned on a property name we append the captured name lazily so the
-        /// legacy path-based <c>TestExpression(string, int)</c> overload (used by service packages
-        /// generated before reader-based matching) and exception diagnostics still see the field name.
-        /// The built string is cached until the next token is read.
+        /// The path stack tracks both depth delimiters and property names. The string is only
+        /// materialized (via StringBuilder.ToString) when this property is read — typically on
+        /// exception for diagnostics, or by the legacy path-based TestExpression overload.
         /// </remarks>
         public override string CurrentPath
         {
             get
             {
-                if (!onPropertyName)
-                    return this.stack.CurrentPath;
-
-                if (cachedCurrentPath == null)
-                {
-                    string name = currentPropertyNameEscaped
-                        ?? Encoding.UTF8.GetString(currentPropertyNameBuffer, 0, currentPropertyNameLength);
-                    cachedCurrentPath = this.stack.CurrentPath + name;
-                }
-
-                return cachedCurrentPath;
+                return this.stack.CurrentPath;
             }
         }
 
@@ -410,23 +394,17 @@ namespace Amazon.Runtime.Internal.Transform
         }
 
         /// <summary>
-        /// Captures the current property name so the legacy path-based <c>TestExpression(string, int)</c>
-        /// overload can match against <see cref="CurrentPath"/> without us pushing names onto the stack.
-        /// The common (unescaped) case only copies bytes into a reused pooled buffer; no string is
-        /// allocated until <see cref="CurrentPath"/> is read.
+        /// Captures the current property name into a reused pooled buffer for reader-based
+        /// TestExpression matching (ValueTextEquals). The name is also pushed onto the path
+        /// stack in <see cref="UpdateContext"/> for CurrentPath diagnostics.
         /// </summary>
         private void CaptureCurrentPropertyName(ref StreamingUtf8JsonReader reader)
         {
-            // The position is changing, so any previously built path string is now stale.
-            cachedCurrentPath = null;
-
             if (currentToken != JsonTokenType.PropertyName)
             {
-                onPropertyName = false;
                 return;
             }
 
-            onPropertyName = true;
             currentPropertyNameEscaped = null;
 
             ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
@@ -461,11 +439,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
                 // Push '/' for object start and array start.
-                stack.Push(new PathSegment
-                {
-                    SegmentType = PathSegmentType.Delimiter,
-                    Value = DELIMITER
-                });
+                stack.PushDelimiter();
             }
             else if (currentToken.Value == JsonTokenType.EndObject || currentToken.Value == JsonTokenType.EndArray)
             {
@@ -475,32 +449,33 @@ namespace Amazon.Runtime.Internal.Transform
                     stack.Pop();
                     if (stack.Count > 0 && stack.Peek().SegmentType != PathSegmentType.Delimiter)
                     {
-                        // Pop a non-delimiter Value segment sitting beneath the closed scope. Property
-                        // names are no longer pushed, so in normal documents nothing is popped here.
+                        // Pop the property name segment sitting beneath the closed scope.
                         stack.Pop();
                     }
                 }
             }
-            // Property names are intentionally not pushed onto the stack; they only ever served to
-            // build CurrentPath for path-based matching, which JSON unmarshalling no longer uses.
-            // Depth is unaffected, as property names never carried a delimiter.
+            else if (currentToken.Value == JsonTokenType.PropertyName)
+            {
+                if (currentPropertyNameEscaped != null)
+                {
+                    stack.PushPropertyName(currentPropertyNameEscaped);
+                }
+                else
+                {
+                    stack.PushPropertyName(currentPropertyNameBuffer, currentPropertyNameLength);
+                }
+            }
             else if (stack.Count == 0 && currentToken == JsonTokenType.String)
             {
                 // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
                 // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
                 // so we should just push the value so that it can be retrieved later.
                 string t = ReadText(ref reader);
-                stack.Push(new PathSegment
-                {
-                    SegmentType = PathSegmentType.Value,
-                    Value = t
-                });
+                stack.PushPropertyName(t);
             }
             else if (currentToken.Value != JsonTokenType.None && stack.Peek().SegmentType != PathSegmentType.Delimiter)
             {
-                // Pop a previously pushed Value segment when a scalar or null follows it. Since property
-                // names are no longer pushed, the only such segment is a raw top-level string; the
-                // Delimiter guard leaves scalars nested inside an object or array untouched.
+                // Pop the property name segment when its value (scalar/null) follows it.
                 stack.Pop();
             }
 
@@ -546,14 +521,14 @@ namespace Amazon.Runtime.Internal.Transform
         private struct PathSegment
         {
             internal PathSegmentType SegmentType { get; set; }
-            internal string Value { get; set; }
+            internal int Length { get; set; }
         }
 
         private class JsonPathStack
         {
-            private Stack<PathSegment> stack = new Stack<PathSegment>();
+            private readonly Stack<PathSegment> stack = new Stack<PathSegment>();
             int currentDepth = 0;
-            private StringBuilder stackStringBuilder = new StringBuilder(128);
+            private readonly StringBuilder stackStringBuilder = new StringBuilder(128);
             private string stackString;
 
             public int CurrentDepth
@@ -565,25 +540,42 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 get
                 {
-                    if (this.stackString == null)                    
+                    if (this.stackString == null)
                         this.stackString = this.stackStringBuilder.ToString();
-                    
+
                     return this.stackString;
                 }
-            }                        
-
-            internal void Push(PathSegment segment)
-            {
-                if (segment.SegmentType == PathSegmentType.Delimiter)
-                {
-                    currentDepth++;
-                }
-
-                stackStringBuilder.Append(segment.Value);
-                stackString = null;
-                stack.Push(segment);
             }
-                        
+
+            internal void PushDelimiter()
+            {
+                currentDepth++;
+                stackStringBuilder.Append('/');
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Delimiter, Length = 1 });
+            }
+
+            internal void PushPropertyName(byte[] buffer, int length)
+            {
+                // No try/finally needed: buffer contents are already validated UTF-8 by System.Text.Json,
+                // so GetChars and Append cannot throw here.
+                var charCount = Encoding.UTF8.GetCharCount(buffer, 0, length);
+                var chars = ArrayPool<char>.Shared.Rent(charCount);
+                Encoding.UTF8.GetChars(buffer, 0, length, chars, 0);
+                stackStringBuilder.Append(chars, 0, charCount);
+                ArrayPool<char>.Shared.Return(chars);
+
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = charCount });
+            }
+
+            internal void PushPropertyName(string escaped)
+            {
+                stackStringBuilder.Append(escaped);
+                stackString = null;
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = escaped.Length });
+            }
+
             internal PathSegment Pop()
             {
                 var segment = this.stack.Pop();
@@ -592,11 +584,11 @@ namespace Amazon.Runtime.Internal.Transform
                     currentDepth--;
                 }
 
-                stackStringBuilder.Remove(stackStringBuilder.Length - segment.Value.Length, segment.Value.Length);
+                stackStringBuilder.Remove(stackStringBuilder.Length - segment.Length, segment.Length);
                 stackString = null;
                 return segment;
             }
-            
+
             internal PathSegment Peek()
             {
                 return this.stack.Peek();
