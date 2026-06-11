@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ControlPlanePlacementResponse Object
+    /// Response Unmarshaller for EtcdPlacementResponse Object
     /// </summary>  
-    public class ControlPlanePlacementResponseUnmarshaller : IJsonUnmarshaller<ControlPlanePlacementResponse, JsonUnmarshallerContext>
+    public class EtcdPlacementResponseUnmarshaller : IJsonUnmarshaller<EtcdPlacementResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ControlPlanePlacementResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EtcdPlacementResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ControlPlanePlacementResponse unmarshalledObject = new ControlPlanePlacementResponse();
+            EtcdPlacementResponse unmarshalledObject = new EtcdPlacementResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,12 +56,6 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("groupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("spreadLevel", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,12 +67,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static ControlPlanePlacementResponseUnmarshaller _instance = new ControlPlanePlacementResponseUnmarshaller();        
+        private static EtcdPlacementResponseUnmarshaller _instance = new EtcdPlacementResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ControlPlanePlacementResponseUnmarshaller Instance
+        public static EtcdPlacementResponseUnmarshaller Instance
         {
             get
             {

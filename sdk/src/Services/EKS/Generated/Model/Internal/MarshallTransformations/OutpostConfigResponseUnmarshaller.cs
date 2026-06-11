@@ -68,6 +68,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ControlPlanePlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("etcdInstanceType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EtcdInstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("etcdPlacement", targetDepth, ref reader))
+                {
+                    var unmarshaller = EtcdPlacementResponseUnmarshaller.Instance;
+                    unmarshalledObject.EtcdPlacement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("outpostArns", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

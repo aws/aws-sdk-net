@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ControlPlanePlacementRequest Marshaller
+    /// EtcdPlacementRequest Marshaller
     /// </summary>
-    public class ControlPlanePlacementRequestMarshaller : IRequestMarshaller<ControlPlanePlacementRequest, JsonMarshallerContext> 
+    public class EtcdPlacementRequestMarshaller : IRequestMarshaller<EtcdPlacementRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +42,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ControlPlanePlacementRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(EtcdPlacementRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGroupName())
-            {
-                context.Writer.WritePropertyName("groupName");
-                context.Writer.WriteStringValue(requestObject.GroupName);
-            }
-
             if(requestObject.IsSetSpreadLevel())
             {
                 context.Writer.WritePropertyName("spreadLevel");
@@ -63,7 +57,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ControlPlanePlacementRequestMarshaller Instance = new ControlPlanePlacementRequestMarshaller();
+        public readonly static EtcdPlacementRequestMarshaller Instance = new EtcdPlacementRequestMarshaller();
 
     }
 }

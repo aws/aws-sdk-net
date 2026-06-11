@@ -63,6 +63,23 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEtcdInstanceType())
+            {
+                context.Writer.WritePropertyName("etcdInstanceType");
+                context.Writer.WriteStringValue(requestObject.EtcdInstanceType);
+            }
+
+            if(requestObject.IsSetEtcdPlacement())
+            {
+                context.Writer.WritePropertyName("etcdPlacement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EtcdPlacementRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.EtcdPlacement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOutpostArns())
             {
                 context.Writer.WritePropertyName("outpostArns");
