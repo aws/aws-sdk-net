@@ -1,3 +1,23 @@
+### 4.0.268.0 (2026-06-11 18:18 UTC)
+* AWSSupport (4.0.1.0)
+	* Adding new BDD representation of endpoint ruleset
+* BedrockAgentCore (4.0.28.0)
+	* Adds support to perform cross account data plane actions on an AgentCore Memory resource
+* BedrockAgentCoreControl (4.0.41.0)
+	* Supports deterministic metadata for AgentCore Memory
+* DynamoDBv2 (4.0.21.2)
+	* Reduce memory allocations in DynamoDB Document Model JSON serialization.
+* EKS (4.0.18.0)
+	* Introduce new CreateCluster parameters for Amazon EKS local clusters on AWS Outposts. Added etcdInstanceType for configuring the EC2 instance type for dedicated etcd instances, and spreadLevel for configuring the placement group spread level for Kubernetes control plane and etcd instances.
+* HealthLake (4.0.5.0)
+	* Adds the UpdateFHIRDatastore API and adds analytics, NLP, and profile configuration support to CreateFHIRDatastore and DescribeFHIRDatastore.
+* Neptune (4.0.7.0)
+	* Amazon Neptune now supports IPv6 dual-stack networking. You can create and manage Neptune DB clusters accessible over both IPv4 and IPv6 by specifying NetworkType as DUAL in CreateDBCluster, ModifyDBCluster, RestoreDBClusterFromSnapshot, and RestoreDBClusterToPointInTime API operations
+* Omics (4.0.12.0)
+	* Adds support for workflowName in the ListRuns API response.
+* Core 4.0.9.1
+	* For .NET 8+ reduce allocations when computing the HMAC by using .NET's newer static .NET runtime HashData method
+
 ### 4.0.267.0 (2026-06-10 18:18 UTC)
 * ConnectHealth (4.0.3.0)
 	* Add support for MedicalScribeBinaryAudioEvent in the Medical Scribe streaming input. This new event type lets you send audio as a raw binary payload instead of a base64-encoded value
