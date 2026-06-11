@@ -75,7 +75,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             writer.WriteEndArray();
 
             writer.Flush();
-            return Encoding.UTF8.GetString(stream.ToArray());
+            return Encoding.UTF8.GetString(stream.GetBuffer(), 0, (int)stream.Length);
         }
     }
 }
