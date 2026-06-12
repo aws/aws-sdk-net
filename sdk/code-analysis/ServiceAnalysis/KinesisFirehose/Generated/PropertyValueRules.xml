@@ -430,13 +430,13 @@
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfiguration.KeyARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:(key|alias)/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DeliveryStreamEncryptionConfigurationInput.KeyARN</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:(key|alias)/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+    <pattern>arn:.*:kms:[a-zA-Z0-9\-]+:\d{12}:key/[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisFirehose.Model.DestinationDescription.DestinationId</property>
