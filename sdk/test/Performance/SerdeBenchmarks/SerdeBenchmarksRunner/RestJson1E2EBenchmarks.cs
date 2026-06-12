@@ -37,8 +37,10 @@ public class RestJson1E2EBenchmarks
     private AmazonRestJsonDataPlaneClient _getClientL = null!;
     private AmazonRestJsonDataPlaneClient _putMetricClientS = null!;
     private AmazonRestJsonDataPlaneClient _putMetricClientM = null!;
+    private AmazonRestJsonDataPlaneClient _putMetricClientL = null!;
     private AmazonRestJsonDataPlaneClient _getMetricClientS = null!;
     private AmazonRestJsonDataPlaneClient _getMetricClientM = null!;
+    private AmazonRestJsonDataPlaneClient _getMetricClientL = null!;
 
     private CopyObjectRequest _copyObjectBaseline = null!;
     private CopyObjectRequest _copyObjectMedium = null!;
@@ -48,8 +50,10 @@ public class RestJson1E2EBenchmarks
     private GetObjectRequest _getObjectRequest = null!;
     private PutMetricDataRequest _putMetricDataS = null!;
     private PutMetricDataRequest _putMetricDataM = null!;
+    private PutMetricDataRequest _putMetricDataL = null!;
     private GetMetricDataRequest _getMetricDataS = null!;
     private GetMetricDataRequest _getMetricDataM = null!;
+    private GetMetricDataRequest _getMetricDataL = null!;
 
     private static readonly byte[] CopyOutputBaseline = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] CopyOutputM = Encoding.UTF8.GetBytes(
@@ -61,6 +65,7 @@ public class RestJson1E2EBenchmarks
     private static readonly byte[] EmptyJson = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricJson(5));
     private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricJson(50));
+    private static readonly byte[] GetMetricResponseL = Encoding.UTF8.GetBytes(BuildGetMetricJson(500));
 
     private static string BuildGetMetricJson(int datapoints)
     {
@@ -103,8 +108,10 @@ public class RestJson1E2EBenchmarks
         _getClientL = CreateClient(GetObjectL);
         _putMetricClientS = CreateClient(EmptyJson);
         _putMetricClientM = CreateClient(EmptyJson);
+        _putMetricClientL = CreateClient(EmptyJson);
         _getMetricClientS = CreateClient(GetMetricResponseS);
         _getMetricClientM = CreateClient(GetMetricResponseM);
+        _getMetricClientL = CreateClient(GetMetricResponseL);
 
         _copyObjectBaseline = new CopyObjectRequest { Bucket = "bucket", Key = "key", CopySource = "src/key" };
         _copyObjectMedium = new CopyObjectRequest
@@ -120,10 +127,12 @@ public class RestJson1E2EBenchmarks
         _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[100 * 1024]) };
         _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1024 * 1024]) };
         _getObjectRequest = new GetObjectRequest { Bucket = "bucket", Key = "key" };
-        _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(3) };
-        _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(20) };
+        _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(5) };
+        _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(50) };
+        _putMetricDataL = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(500) };
         _getMetricDataS = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(1) };
         _getMetricDataM = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(5) };
+        _getMetricDataL = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(25) };
     }
 
     private static List<MetricDatum> CreateMetricData(int count)
@@ -152,8 +161,10 @@ public class RestJson1E2EBenchmarks
     [Benchmark] public async Task restJson1_e2e_GetObject_L() => await _getClientL.GetObjectAsync(_getObjectRequest);
     [Benchmark] public async Task restJson1_e2e_PutMetricData_S() => await _putMetricClientS.PutMetricDataAsync(_putMetricDataS);
     [Benchmark] public async Task restJson1_e2e_PutMetricData_M() => await _putMetricClientM.PutMetricDataAsync(_putMetricDataM);
+    [Benchmark] public async Task restJson1_e2e_PutMetricData_L() => await _putMetricClientL.PutMetricDataAsync(_putMetricDataL);
     [Benchmark] public async Task restJson1_e2e_GetMetricData_S() => await _getMetricClientS.GetMetricDataAsync(_getMetricDataS);
     [Benchmark] public async Task restJson1_e2e_GetMetricData_M() => await _getMetricClientM.GetMetricDataAsync(_getMetricDataM);
+    [Benchmark] public async Task restJson1_e2e_GetMetricData_L() => await _getMetricClientL.GetMetricDataAsync(_getMetricDataL);
 
     [GlobalCleanup]
     public void Cleanup()
@@ -166,7 +177,9 @@ public class RestJson1E2EBenchmarks
         _getClientL?.Dispose();
         _putMetricClientS?.Dispose();
         _putMetricClientM?.Dispose();
+        _putMetricClientL?.Dispose();
         _getMetricClientS?.Dispose();
         _getMetricClientM?.Dispose();
+        _getMetricClientL?.Dispose();
     }
 }

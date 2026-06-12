@@ -41,9 +41,12 @@ public class MockHttpHandler : HttpMessageHandler
 
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        // Drain the request content to ensure full serialization cost is measured
+        // Drain the request content to simulate the serialization cost.
+        // In production, HttpClient calls content.SerializeToStreamAsync(networkStream) which
+        // for ReadOnlyMemoryContent writes the span directly without allocating a byte[] copy.
+        // CopyToAsync(Stream.Null) mirrors this behavior without network I/O.
         if (request.Content != null)
-            await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+            await request.Content.CopyToAsync(Stream.Null, cancellationToken).ConfigureAwait(false);
 
         var response = new HttpResponseMessage(_statusCode)
         {
