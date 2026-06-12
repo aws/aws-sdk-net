@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 using System;
-using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -55,18 +54,6 @@ namespace Amazon.Runtime.Internal.Transform
         private JsonTokenType? currentToken = null;
         private bool disposed = false;
         private bool wasPeeked = false;
-
-        // Property names are pushed onto the path stack's StringBuilder on each PropertyName token
-        // via a pooled char[] (no string allocation on the hot path). The path string is only
-        // materialized (via StringBuilder.ToString) when CurrentPath is actually read — typically only
-        // on exception for diagnostics, or by the legacy path-based TestExpression(string, int) overload
-        // used by older service packages. We also capture the current property name into a reused pooled
-        // buffer for reader-based TestExpression matching (ValueTextEquals).
-        private byte[] currentPropertyNameBuffer = null;
-        private int currentPropertyNameLength = 0;
-        // Set only when a property name contains JSON escapes, where a raw-byte copy can't be compared
-        // against the unescaped expression the legacy overload expects.
-        private string currentPropertyNameEscaped = null;
         #endregion
 
         #region Constructors
@@ -228,8 +215,8 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         /// <remarks>
         /// The path stack tracks both depth delimiters and property names. The string is only
-        /// materialized (via StringBuilder.ToString) when this property is read — typically on
-        /// exception for diagnostics, or by the legacy path-based TestExpression overload.
+        /// materialized when this property is read — typically on exception for diagnostics,
+        /// or by the legacy path-based TestExpression overload.
         /// </remarks>
         public override string CurrentPath
         {
@@ -393,48 +380,9 @@ namespace Amazon.Runtime.Internal.Transform
             return peek;
         }
 
-        /// <summary>
-        /// Captures the current property name into a reused pooled buffer for reader-based
-        /// TestExpression matching (ValueTextEquals). The name is also pushed onto the path
-        /// stack in <see cref="UpdateContext"/> for CurrentPath diagnostics.
-        /// </summary>
-        private void CaptureCurrentPropertyName(ref StreamingUtf8JsonReader reader)
-        {
-            if (currentToken != JsonTokenType.PropertyName)
-            {
-                return;
-            }
-
-            currentPropertyNameEscaped = null;
-
-            ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
-
-            // Property names containing JSON escape sequences are vanishingly rare for AWS shapes. In that
-            // case decode to a string so the legacy comparison sees the unescaped name; the hot path for
-            // ordinary identifiers only copies the raw bytes.
-            if (name.IndexOf((byte)'\\') >= 0)
-            {
-                currentPropertyNameEscaped = reader.Reader.GetString();
-                currentPropertyNameLength = 0;
-                return;
-            }
-
-            if (currentPropertyNameBuffer == null || currentPropertyNameBuffer.Length < name.Length)
-            {
-                if (currentPropertyNameBuffer != null)
-                    ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
-                currentPropertyNameBuffer = ArrayPool<byte>.Shared.Rent(name.Length);
-            }
-
-            name.CopyTo(currentPropertyNameBuffer);
-            currentPropertyNameLength = name.Length;
-        }
-
         private void UpdateContext(ref StreamingUtf8JsonReader reader)
         {
             if (!currentToken.HasValue) return;
-
-            CaptureCurrentPropertyName(ref reader);
 
             if (currentToken.Value == JsonTokenType.StartObject || currentToken.Value == JsonTokenType.StartArray)
             {
@@ -456,13 +404,15 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else if (currentToken.Value == JsonTokenType.PropertyName)
             {
-                if (currentPropertyNameEscaped != null)
+                ReadOnlySpan<byte> name = reader.Reader.ValueSpan;
+                if (name.IndexOf((byte)'\\') >= 0)
                 {
-                    stack.PushPropertyName(currentPropertyNameEscaped);
+                    // The name contains JSON escape sequences; decode it so the path shows the unescaped name.
+                    stack.PushPropertyName(reader.Reader.GetString());
                 }
                 else
                 {
-                    stack.PushPropertyName(currentPropertyNameBuffer, currentPropertyNameLength);
+                    stack.PushPropertyName(name);
                 }
             }
             else if (stack.Count == 0 && currentToken == JsonTokenType.String)
@@ -499,12 +449,6 @@ namespace Amazon.Runtime.Internal.Transform
                         baseStream.Dispose();
                         baseStream = null;
                     }
-
-                    if (currentPropertyNameBuffer != null)
-                    {
-                        ArrayPool<byte>.Shared.Return(currentPropertyNameBuffer);
-                        currentPropertyNameBuffer = null;
-                    }
                 }
                 disposed = true;
             }
@@ -528,7 +472,13 @@ namespace Amazon.Runtime.Internal.Transform
         {
             private readonly Stack<PathSegment> stack = new Stack<PathSegment>();
             int currentDepth = 0;
-            private readonly StringBuilder stackStringBuilder = new StringBuilder(128);
+            // The current path as UTF-8 bytes. Delimiters and property names are appended as they
+            // are read and trimmed back off (by adjusting pathLength) as their scopes close. The
+            // path string is only materialized when CurrentPath is read — typically on exception
+            // for diagnostics, or by the legacy path-based TestExpression(string, int) overload
+            // used by service packages generated before reader-based matching existed.
+            private byte[] pathBytes = new byte[256];
+            private int pathLength = 0;
             private string stackString;
 
             public int CurrentDepth
@@ -540,8 +490,7 @@ namespace Amazon.Runtime.Internal.Transform
             {
                 get
                 {
-                    if (this.stackString == null)
-                        this.stackString = this.stackStringBuilder.ToString();
+                    this.stackString ??= Encoding.UTF8.GetString(pathBytes, 0, pathLength);
 
                     return this.stackString;
                 }
@@ -550,30 +499,29 @@ namespace Amazon.Runtime.Internal.Transform
             internal void PushDelimiter()
             {
                 currentDepth++;
-                stackStringBuilder.Append('/');
+                EnsureCapacity(1);
+                pathBytes[pathLength++] = (byte)'/';
                 stackString = null;
                 stack.Push(new PathSegment { SegmentType = PathSegmentType.Delimiter, Length = 1 });
             }
 
-            internal void PushPropertyName(byte[] buffer, int length)
+            internal void PushPropertyName(ReadOnlySpan<byte> utf8Name)
             {
-                // No try/finally needed: buffer contents are already validated UTF-8 by System.Text.Json,
-                // so GetChars and Append cannot throw here.
-                var charCount = Encoding.UTF8.GetCharCount(buffer, 0, length);
-                var chars = ArrayPool<char>.Shared.Rent(charCount);
-                Encoding.UTF8.GetChars(buffer, 0, length, chars, 0);
-                stackStringBuilder.Append(chars, 0, charCount);
-                ArrayPool<char>.Shared.Return(chars);
-
+                EnsureCapacity(utf8Name.Length);
+                utf8Name.CopyTo(pathBytes.AsSpan(pathLength));
+                pathLength += utf8Name.Length;
                 stackString = null;
-                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = charCount });
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = utf8Name.Length });
             }
 
-            internal void PushPropertyName(string escaped)
+            internal void PushPropertyName(string name)
             {
-                stackStringBuilder.Append(escaped);
+                var byteCount = Encoding.UTF8.GetByteCount(name);
+                EnsureCapacity(byteCount);
+                Encoding.UTF8.GetBytes(name, 0, name.Length, pathBytes, pathLength);
+                pathLength += byteCount;
                 stackString = null;
-                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = escaped.Length });
+                stack.Push(new PathSegment { SegmentType = PathSegmentType.Value, Length = byteCount });
             }
 
             internal PathSegment Pop()
@@ -584,9 +532,25 @@ namespace Amazon.Runtime.Internal.Transform
                     currentDepth--;
                 }
 
-                stackStringBuilder.Remove(stackStringBuilder.Length - segment.Length, segment.Length);
+                pathLength -= segment.Length;
                 stackString = null;
                 return segment;
+            }
+
+            /// <summary>
+            /// Grows <see cref="pathBytes"/> if needed to fit <paramref name="additionalBytes"/> more bytes.
+            /// The buffer is doubled (or grown to the required size, whichever is larger) and never
+            /// shrinks; Pop only moves <see cref="pathLength"/> back, so the buffer is reused for the
+            /// remainder of the document.
+            /// </summary>
+            private void EnsureCapacity(int additionalBytes)
+            {
+                if (pathLength + additionalBytes <= pathBytes.Length)
+                {
+                    return;
+                }
+
+                Array.Resize(ref pathBytes, Math.Max(pathBytes.Length * 2, pathLength + additionalBytes));
             }
 
             internal PathSegment Peek()
