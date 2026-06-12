@@ -939,6 +939,101 @@ namespace Amazon.DevOpsAgent
 
         #endregion
         
+        #region  CreateTrigger
+
+
+        /// <summary>
+        /// Creates a new Trigger in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
+        public virtual CreateTriggerResponse CreateTrigger(CreateTriggerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTriggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new Trigger in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
+        public virtual Task<CreateTriggerResponse> CreateTriggerAsync(CreateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTriggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAgentSpace
 
 
@@ -1319,6 +1414,101 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = DeletePrivateConnectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePrivateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTrigger
+
+
+        /// <summary>
+        /// Deletes a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
+        public virtual DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTriggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
+        public virtual Task<DeleteTriggerResponse> DeleteTriggerAsync(DeleteTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2758,6 +2948,101 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTrigger
+
+
+        /// <summary>
+        /// Gets a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrigger service method.</param>
+        /// 
+        /// <returns>The response from the GetTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
+        public virtual GetTriggerResponse GetTrigger(GetTriggerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<GetTriggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a Trigger from the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
+        public virtual Task<GetTriggerResponse> GetTriggerAsync(GetTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTriggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4282,6 +4567,101 @@ namespace Amazon.DevOpsAgent
 
         #endregion
         
+        #region  ListTriggers
+
+
+        /// <summary>
+        /// Lists Triggers in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
+        /// 
+        /// <returns>The response from the ListTriggers service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        public virtual ListTriggersResponse ListTriggers(ListTriggersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListTriggersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists Triggers in the specified agent space
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTriggers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTriggers service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
+        public virtual Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTriggersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListWebhooks
 
 
@@ -5612,6 +5992,101 @@ namespace Amazon.DevOpsAgent
             options.ResponseUnmarshaller = UpdateRecommendationResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrigger
+
+
+        /// <summary>
+        /// Updates the status of an existing Trigger
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
+        public virtual UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTriggerResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the status of an existing Trigger
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrigger service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
+        public virtual Task<UpdateTriggerResponse> UpdateTriggerAsync(UpdateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion

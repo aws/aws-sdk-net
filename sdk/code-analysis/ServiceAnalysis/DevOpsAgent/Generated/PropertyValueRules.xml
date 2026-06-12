@@ -146,6 +146,25 @@
     <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.CreateTriggerRequest.Type</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeleteAgentSpaceRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -186,6 +205,16 @@
     <min>3</min>
     <max>30</max>
     <pattern>[a-z0-9]([a-z0-9-]*[a-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.DeleteTriggerRequest.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.DeregisterServiceRequest.ServiceId</property>
@@ -375,6 +404,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.GetTriggerRequest.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListAgentSpacesRequest.MaxResults</property>
@@ -645,6 +684,30 @@
     <pattern>arn:aws:aidevops:[a-z0-9-]+:\d{12}:(agentspace|service)/[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ListTriggersResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.ListWebhooksRequest.AgentSpaceId</property>
     <pattern>[a-zA-Z0-9-]{1,64}</pattern>
   </property-value-rule>
@@ -868,6 +931,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.UpdateRecommendationRequest.RecommendationId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.UpdateTriggerRequest.TriggerId</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
@@ -1428,6 +1511,11 @@
     <pattern>https://[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])\.service-now\.com/?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.ScheduleCondition.Expression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SelfManagedInput.Certificate</property>
     <min>1</min>
     <max>32768</max>
@@ -1509,6 +1597,26 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.AgentSpaceId</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.TriggerId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.Trigger.Type</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.Webhook.WebhookId</property>
