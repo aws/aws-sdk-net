@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "Fix for regression where LastKnownLocation of marshalling exception would not display correct path."
+      "Fix regression where AmazonUnmarshallingException.LastKnownLocation did not display the correct path."
     ]
   }
 }

@@ -418,7 +418,7 @@ namespace Amazon.Runtime.Internal.Transform
             else if (stack.Count == 0 && currentToken == JsonTokenType.String)
             {
                 // if the stack is empty and the token type is a string, then the document is a raw string with no opening or
-                // closing delimeter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
+                // closing delimiter. Per smithy spec https://smithy.io/2.0/spec/simple-types.html#document this is allowed
                 // so we should just push the value so that it can be retrieved later.
                 string t = ReadText(ref reader);
                 stack.PushPropertyName(t);
