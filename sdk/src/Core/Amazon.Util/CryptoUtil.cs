@@ -240,6 +240,31 @@ namespace Amazon.Util
             /// <summary>
             /// Computes an MD5 hash
             /// </summary>
+            /// <param name="data">Input to compute the hash code for</param>
+            /// <param name="offset">Offset into the byte array from which to begin using data</param>
+            /// <param name="count">Number of bytes in the array to use as data</param>
+            /// <returns>Computed hash code</returns>
+            public byte[] ComputeMD5Hash(byte[] data, int offset, int count)
+            {
+#if NET8_0_OR_GREATER
+                if (_md5HashDataAvailable)
+                {
+                    try
+                    {
+                        return MD5.HashData(data.AsSpan(offset, count));
+                    }
+                    catch (CryptographicException)
+                    {
+                        _md5HashDataAvailable = false;
+                    }
+                }
+#endif
+                return new MD5Managed().ComputeHash(data, offset, count);
+            }
+
+            /// <summary>
+            /// Computes an MD5 hash
+            /// </summary>
             /// <param name="steam">Input to compute the hash code for</param>
             /// <returns>Computed hash code</returns>
             public byte[] ComputeMD5Hash(Stream steam)
