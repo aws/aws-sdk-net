@@ -1,0 +1,21 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added ComputeMD5Hash(byte[], int, int) overload to ICryptoUtil to support hashing from offset/count ranges without copying."
+    ],
+    "type": "patch",
+    "updateMinimum": true,
+    "backwardIncompatibilitiesToIgnore": [ 
+      "Amazon.Util.ICryptoUtil/MethodAbstractMethodAdded"
+    ]
+  },
+  "services": [
+    {
+      "serviceName": "SQS",
+      "type": "patch",
+      "changeLogMessages": [
+        "Reduce memory allocations in SQS MD5 validation pipeline."
+      ]
+    }
+  ]
+}
