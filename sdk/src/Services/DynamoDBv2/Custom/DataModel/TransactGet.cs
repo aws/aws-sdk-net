@@ -101,6 +101,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal TracerProvider TracerProvider { get; set; }
 
+        internal TransactGetItemOperationConfig OperationConfig { get; set; }
+
         internal abstract void PopulateResults();
 
         /// <inheritdoc/>
@@ -131,13 +133,24 @@ namespace Amazon.DynamoDBv2.DataModel
         public void AddKey(object hashKey, object rangeKey)
         {
             Key key = _context.MakeKey(hashKey, rangeKey, _storageConfig, _config);
-            DocumentTransaction.AddKeyHelper(key);
+            AddKey(key);
         }
 
         /// <inheritdoc/>
         public void AddKey(T keyObject)
         {
             Key key = _context.MakeKey(keyObject, _storageConfig, _config);
+            AddKey(key);
+        }
+
+        private void AddKey(Key key)
+        {
+            if (_storageConfig.ProjectionExpression != null && _storageConfig.ProjectionExpression.IsSet)
+            {
+                DocumentTransaction.AddKeyHelper(key, OperationConfig);
+                return;
+            }
+
             DocumentTransaction.AddKeyHelper(key);
         }
 
@@ -162,6 +175,11 @@ namespace Amazon.DynamoDBv2.DataModel
             _config = config;
             _storageConfig = context.StorageConfigCache.GetConfig<T>(config);
             var table = context.GetTargetTable(_storageConfig, config);
+
+            OperationConfig = new TransactGetItemOperationConfig()
+            {
+                ProjectionExpression = _storageConfig.ProjectionExpression,
+            };
 
             // Table.CreateTransactGet() returns the IDocumentTransactGet interface.
             // But since we rely on the internal behavior of DocumentTransactGet, we instantiate it via the constructor.

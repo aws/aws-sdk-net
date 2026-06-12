@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Eliminate intermediate string and byte[] allocation in XML marshallers."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}
