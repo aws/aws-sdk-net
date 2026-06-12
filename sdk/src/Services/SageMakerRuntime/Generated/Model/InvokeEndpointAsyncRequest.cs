@@ -58,6 +58,7 @@ namespace Amazon.SageMakerRuntime.Model
     public partial class InvokeEndpointAsyncRequest : AmazonSageMakerRuntimeRequest
     {
         private string _accept;
+        private MemoryStream _body;
         private string _contentType;
         private string _customAttributes;
         private string _endpointName;
@@ -85,6 +86,38 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetAccept()
         {
             return this._accept != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// Provides inline input data for the inference request, in the format specified in the
+        /// <c>ContentType</c> request header. Use this parameter to send the request payload
+        /// directly in the API call instead of uploading it to Amazon S3 and referencing it with
+        /// <c>InputLocation</c>. The inline payload can be up to 128,000 bytes.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Body</c> and <c>InputLocation</c> are mutually exclusive. Provide exactly one
+        /// of them.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common
+        /// Data Formats-Inference</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=128000)]
+        public MemoryStream Body
+        {
+            get { return this._body; }
+            set { this._body = value; }
+        }
+
+        // Check to see if Body property is set
+        internal bool IsSetBody()
+        {
+            return this._body != null;
         }
 
         /// <summary>
@@ -211,7 +244,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// The Amazon S3 URI where the inference request payload is stored.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=1024)]
         public string InputLocation
         {
             get { return this._inputLocation; }

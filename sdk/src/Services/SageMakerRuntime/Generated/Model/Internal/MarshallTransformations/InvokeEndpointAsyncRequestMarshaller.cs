@@ -59,6 +59,7 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
         public IRequest Marshall(InvokeEndpointAsyncRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMakerRuntime");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-05-13";
             request.HttpMethod = "POST";
 
@@ -66,6 +67,14 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 throw new AmazonSageMakerRuntimeException("Request object does not have required field EndpointName set");
             request.AddPathResource("{EndpointName}", StringUtils.FromString(publicRequest.EndpointName));
             request.ResourcePath = "/endpoints/{EndpointName}/async-invocations";
+            request.ContentStream =  publicRequest.Body ?? new MemoryStream();
+            if(request.ContentStream.CanSeek)
+            {
+                request.ContentStream.Seek(0, SeekOrigin.Begin);
+            }
+            request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
+                request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
         
             if (publicRequest.IsSetAccept()) 
             {
