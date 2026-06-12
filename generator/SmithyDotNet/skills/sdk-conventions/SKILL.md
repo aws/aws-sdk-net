@@ -17,12 +17,14 @@ Patterns the generated code must follow so its **public API surface** matches th
 - XML doc comments on public types and members (content, not formatting)
 - `partial` modifier on all generated types
 - Namespace structure (`Amazon.{ServiceName}`, `Amazon.{ServiceName}.Model`)
+- `internal bool IsSet{Property}()` per member — the public `AWSSDKUtils.IsPropertySet`
+  reflection API and existing marshallers invoke these by name
 
 ## What Can Differ
 
 - Whitespace, indentation, blank lines (Roslyn formatter handles this)
 - File names — prefer `{TypeName}.g.cs` to distinguish generated files
-- Internal members (`IsSet` methods, backing fields, private helpers)
+- Backing fields and other private helpers (the generator omits them — see Property Pattern below)
 - `using` directive order
 - `#region` blocks (purely cosmetic)
 - Code comments outside XML docs
@@ -146,9 +148,17 @@ The public surface must match. Internal implementation can vary.
 /// </summary>
 [AWSProperty(Required=true)]
 public string EventData { get; set; }
+
+/// <summary>
+/// Checks to see if the EventData property is set.
+/// </summary>
+internal bool IsSetEventData() => this.EventData != null;
 ```
 
-The generator emits auto-properties (`{ get; set; }`); only the public signature matters. The current SDK uses explicit backing fields + `IsSet` methods internally, but that form is preferred only if a later customization requires it (e.g. collection `IsSet` semantics).
+The generator emits auto-properties (`{ get; set; }`) plus an internal `IsSet{Property}()`
+method per member. The current SDK uses explicit backing fields, but the public surface (and
+the reflection API) only needs the property and the IsSet method — a backing field is not
+required.
 
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait
@@ -158,13 +168,16 @@ The generator emits auto-properties (`{ get; set; }`); only the public signature
 
 ### Collection Properties
 
-Collections default to `null` (SDK V4 convention):
+Collections use the `AWSConfigs.InitializeCollections` initializer to support both V4 (null
+default) and V3-compat (empty list default) modes. The matching `IsSet` encodes the V3/V4
+"empty counts as set?" rule so callers see consistent behavior in both modes:
 
 ```csharp
-public List<AuditEvent> AuditEvents { get; set; }
-```
+[AWSProperty(Required=true, Min=1, Max=100)]
+public List<AuditEvent> AuditEvents { get; set; } = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
 
-The current SDK uses `AWSConfigs.InitializeCollections` for backwards compatibility. The generator should match this behavior for AWS SDK use, but the internal mechanism can differ.
+internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
+```
 
 ## Reference: Existing Generator
 

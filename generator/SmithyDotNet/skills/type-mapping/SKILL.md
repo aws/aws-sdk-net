@@ -48,22 +48,21 @@ The generator will support an opt-in mode that respects Smithy's nullability tra
 
 ## Collection Defaults
 
-Collections use `AWSConfigs.InitializeCollections` for SDK V4 backwards compatibility:
+Collections use `AWSConfigs.InitializeCollections` for SDK V4 backwards compatibility. The
+generator emits an auto-property with the initializer expression directly, plus an internal
+`IsSet{Property}()` method that the AWS SDK runtime (and marshallers) call:
 
 ```csharp
-// Field initializer
-private List<AuditEvent> _auditEvents = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
+public List<AuditEvent> AuditEvents { get; set; } = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
+
+internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
 ```
 
-When `AWSConfigs.InitializeCollections` is `false` (V4 default), collections start as `null`. When `true` (V3 compat), they start as empty.
-
-The `IsSet` check for collections accounts for this:
-```csharp
-internal bool IsSetAuditEvents()
-{
-    return this._auditEvents != null && (this._auditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
-}
-```
+When `AWSConfigs.InitializeCollections` is `false` (V4 default), collections start as `null`,
+and an empty list still counts as "set" (the caller cleared the value). When `true` (V3 compat),
+collections start empty and an empty list counts as "not set". The `IsSet` method encodes that
+rule so callers — including the public reflection API `AWSSDKUtils.IsPropertySet` — see the
+correct answer in both modes.
 
 ## Constrained Shapes
 
