@@ -35,6 +35,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<Document> Results { get; }
 
         /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
+        /// <summary>
         /// Add a single item to get, identified by its hash primary key,
         /// using the specified expression to identify the attributes to retrieve.
         /// </summary>
@@ -107,6 +113,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<TransactGetRequestItem> Items { get; private set; }
+        internal ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
         internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
@@ -117,6 +124,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public List<Document> Results { get; internal set; }
 
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
+
         #endregion
 
 
@@ -126,12 +136,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Constructs a DocumentTransactGet instance for a specific table.
         /// </summary>
         /// <param name="targetTable">Table to get items from.</param>
-        public DocumentTransactGet(Table targetTable)
+        /// <param name="returnConsumedCapacity">Type of ReturnConsumedCapacity to be returned after Execute call.</param>
+        public DocumentTransactGet(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity = null)
         {
             TargetTable = targetTable;
             Items = new List<TransactGetRequestItem>();
             TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -188,14 +200,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void ExecuteHelper()
         {
-            var items = GetMultiTransactGet().GetItems();
+            var (items, consumedCapacity) = GetMultiTransactGet().GetItems();
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
+            ConsumedCapacity = consumedCapacity;
         }
 
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
+            var (items, consumedCapacity) = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
             Results = items.Values.SingleOrDefault() ?? new List<Document>();
+            ConsumedCapacity = consumedCapacity;
         }
 
         internal void AddKeyHelper(Key key, TransactGetItemOperationConfig operationConfig = null)
@@ -212,7 +226,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new MultiTransactGet
             {
-                Items = Items.ToList()
+                Items = Items.ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
@@ -235,6 +250,24 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="transactionPart">DocumentTransactGet to add.</param>
         void AddTransactionPart(IDocumentTransactGet transactionPart);
+
+        /// <summary>
+        /// Sets type of ReturnConsumedCapacity to be returned after Execute call
+        /// </summary>
+        /// <param name="returnConsumedCapacity">ReturnConsumedCapacity to set.</param>
+        void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity);
+
+        /// <summary>
+        /// List of DocumentTransactWrite objects to include in the multi-table
+        /// transaction request.
+        /// </summary>
+        ReturnConsumedCapacity ReturnConsumedCapacity { get; }
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -248,6 +281,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactGet> TransactionParts { get; private set; }
+
+        /// <inheritdoc/>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
 
         #endregion
 
@@ -279,6 +318,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             TransactionParts.Add(transactionPart);
         }
 
+        /// <inheritdoc/>
+        public void SetReturnConsumedCapacity(ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            ReturnConsumedCapacity = returnConsumedCapacity;
+        }
+
         #endregion
 
 
@@ -286,7 +331,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal void ExecuteHelper()
         {
-            var items = GetMultiTransactGet().GetItems();
+            var (items, consumedCapacity) = GetMultiTransactGet().GetItems();
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -295,11 +340,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 items.TryGetValue(docTransactGet, out var results);
                 docTransactGet.Results = results ?? new List<Document>();
             }
+            ConsumedCapacity = consumedCapacity;
         }
 
         internal async Task ExecuteHelperAsync(CancellationToken cancellationToken)
         {
-            var items = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
+            var (items, consumedCapacity) = await GetMultiTransactGet().GetItemsAsync(cancellationToken).ConfigureAwait(false);
             var errMsg = $"All transactionParts must be of type {nameof(DocumentTransactGet)}";
 
             foreach (var transactionPart in TransactionParts)
@@ -308,6 +354,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 items.TryGetValue(docTransactGet, out var results);
                 docTransactGet.Results = results ?? new List<Document>();
             }
+            ConsumedCapacity = consumedCapacity;
         }
 
         private MultiTransactGet GetMultiTransactGet()
@@ -319,7 +366,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     var docTransactGet = x as DocumentTransactGet ?? throw new InvalidOperationException(errMsg);
                     return docTransactGet.Items;
-                }).ToList()
+                }).ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
@@ -344,18 +392,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Properties
 
         public List<TransactGetRequestItem> Items { get; set; }
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         #endregion
 
 
         #region Public methods
 
-        public Dictionary<DocumentTransactGet, List<Document>> GetItems()
+        public (Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities) GetItems()
         {
             return GetItemsHelper();
         }
 
-        public Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsAsync(CancellationToken cancellationToken)
+        public Task<(Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities)> GetItemsAsync(CancellationToken cancellationToken)
         {
             return GetItemsHelperAsync(cancellationToken);
         }
@@ -365,9 +414,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #region Private helper methods
 
-        private Dictionary<DocumentTransactGet, List<Document>> GetItemsHelper()
+        private (Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities) GetItemsHelper()
         {
-            if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
+            if (Items == null || !Items.Any()) return (new Dictionary<DocumentTransactGet, List<Document>>(), new List<ConsumedCapacity>());
 
             var request = ConstructRequest(isAsync: false);
 #if NETSTANDARD
@@ -382,23 +431,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
 #endif
             var response = internalClient.TransactGetItems(request);
-            return GetDocuments(response.Responses);
+            return (GetDocuments(response.Responses), response.ConsumedCapacity);
         }
 
-        private async Task<Dictionary<DocumentTransactGet, List<Document>>> GetItemsHelperAsync(CancellationToken cancellationToken)
+        private async Task<(Dictionary<DocumentTransactGet, List<Document>> Documents, List<ConsumedCapacity> ConsumedCapacities)> GetItemsHelperAsync(CancellationToken cancellationToken)
         {
-            if (Items == null || !Items.Any()) return new Dictionary<DocumentTransactGet, List<Document>>();
+            if (Items == null || !Items.Any()) return (new Dictionary<DocumentTransactGet, List<Document>>(), new List<ConsumedCapacity>());
 
             var request = ConstructRequest(isAsync: true);
             var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
             var response = await dynamoDbClient.TransactGetItemsAsync(request, cancellationToken).ConfigureAwait(false);
-            return GetDocuments(response.Responses);
+            
+            return (GetDocuments(response.Responses), response.ConsumedCapacity);
         }
 
         private TransactGetItemsRequest ConstructRequest(bool isAsync)
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
-            var request = new TransactGetItemsRequest { TransactItems = transactItems };
+
+            var request = new TransactGetItemsRequest 
+            { 
+                TransactItems = transactItems,
+                ReturnConsumedCapacity = ReturnConsumedCapacity
+            };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }

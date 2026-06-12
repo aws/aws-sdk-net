@@ -2,6 +2,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -28,6 +29,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             await TestMultiTableDocumentBatchWriteHelper(hashTable, hashRangeTable);
             await TestMultiTableDocumentTransactWriteHelper(hashTable, hashRangeTable, conversion);
+            await TestMultiTableDocumentTransactGetWithReturnCapacityConsumed(hashTable,hashRangeTable, conversion);
+            await TestMultiTableDocumentTransactWriteWithReturnCapacityConsumed(hashTable, hashRangeTable, conversion);
         }
 
         [Theory]
@@ -48,6 +51,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             await TestMultiTableDocumentBatchWriteHelper(hashTable, hashRangeTable);
             await TestMultiTableDocumentTransactWriteHelper(hashTable, hashRangeTable, conversion);
+            await TestMultiTableDocumentTransactGetWithReturnCapacityConsumed(hashTable, hashRangeTable, conversion);
+            await TestMultiTableDocumentTransactWriteWithReturnCapacityConsumed(hashTable, hashRangeTable, conversion);
         }
 
         private async Task TestMultiTableDocumentBatchWriteHelper(ITable hashTable, ITable hashRangeTable)
@@ -324,6 +329,176 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Equal(0, hTransactGet.Results.Count);
                 Assert.Equal(0, hrTransactGet.Results.Count);
             }
+        }
+
+        private async Task TestMultiTableDocumentTransactGetWithReturnCapacityConsumed(ITable hashTable, ITable hashRangeTable, DynamoDBEntryConversion conversion)
+        {
+            var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            var hDoc1 = new Document
+            {
+                ["Id"] = 6011,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 1000,
+                ["Garbage"] = "asdf"
+            };
+
+            var hDoc2 = new Document
+            {
+                ["Id"] = 6012,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 500,
+                ["Garbage"] = "hjkl"
+            };
+
+            {
+                var transactWrite = hashTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(hDoc1);
+                transactWrite.AddDocumentToPut(hDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            var hrDoc1 = new Document
+            {
+                ["Name"] = "Alan",
+                ["Age"] = 30,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 100,
+                ["Garbage"] = "xcvb"
+            };
+
+            var hrDoc2 = new Document
+            {
+                ["Name"] = "Diane",
+                ["Age"] = 40,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 150,
+                ["Garbage"] = "qwer"
+            };
+
+            {
+                var transactWrite = hashRangeTable.CreateTransactWrite();
+                transactWrite.AddDocumentToPut(hrDoc1);
+                transactWrite.AddDocumentToPut(hrDoc2);
+                multiTableDocumentTransactWrite.AddTransactionPart(transactWrite);
+            }
+
+            await multiTableDocumentTransactWrite.ExecuteAsync();
+
+            {
+                var multiTableDocumentTransactGet = new MultiTableDocumentTransactGet();
+
+                var hTransactGet = hashTable.CreateTransactGet();
+                hTransactGet.AddKey(hashKey: 6011);
+                hTransactGet.AddKey(hashKey: 6012);
+                multiTableDocumentTransactGet.AddTransactionPart(hTransactGet);
+
+                var hrTransactGet = hashRangeTable.CreateTransactGet();
+                hrTransactGet.AddKey(hashKey: "Alan", rangeKey: 30);
+                hrTransactGet.AddKey(hashKey: "Diane", rangeKey: 40);
+                multiTableDocumentTransactGet.AddTransactionPart(hrTransactGet);
+
+                multiTableDocumentTransactGet.SetReturnConsumedCapacity(ReturnConsumedCapacity.TOTAL);
+                await multiTableDocumentTransactGet.ExecuteAsync();
+                Assert.Equal(2, hTransactGet.Results.Count);
+                Assert.Equal(2, hrTransactGet.Results.Count);
+
+                Assert.Equal(2, multiTableDocumentTransactGet.ConsumedCapacity.Count);
+                Assert.Collection(
+                    multiTableDocumentTransactGet.ConsumedCapacity.OrderBy(x => x.ReadCapacityUnits),
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    },
+                    capacity =>
+                    {
+                        Assert.Equal(4, capacity.ReadCapacityUnits);
+                        Assert.Null(capacity.WriteCapacityUnits);
+                        Assert.Null(capacity.GlobalSecondaryIndexes);
+                        Assert.Null(capacity.LocalSecondaryIndexes);
+                    });
+
+                Assert.True(AreValuesEqual(hDoc1, hTransactGet.Results[0], conversion));
+                Assert.True(AreValuesEqual(hDoc2, hTransactGet.Results[1], conversion));
+                Assert.True(AreValuesEqual(hrDoc1, hrTransactGet.Results[0], conversion));
+                Assert.True(AreValuesEqual(hrDoc2, hrTransactGet.Results[1], conversion));
+            }
+        }
+
+        private async Task TestMultiTableDocumentTransactWriteWithReturnCapacityConsumed(ITable hashTable, ITable hashRangeTable, DynamoDBEntryConversion conversion)
+        {
+            var multiTableDocumentTransactWrite = new MultiTableDocumentTransactWrite();
+
+            var hDoc1 = new Document
+            {
+                ["Id"] = 6011,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 1000,
+                ["Garbage"] = "asdf"
+            };
+
+            var hDoc2 = new Document
+            {
+                ["Id"] = 6012,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Price"] = 500,
+                ["Garbage"] = "hjkl"
+            };
+
+            var transactWriteHDoc = hashTable.CreateTransactWrite();
+            transactWriteHDoc.AddDocumentToPut(hDoc1);
+            transactWriteHDoc.AddDocumentToPut(hDoc2);
+            multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHDoc);
+            
+            var hrDoc1 = new Document
+            {
+                ["Name"] = "Alan",
+                ["Age"] = 30,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 100,
+                ["Garbage"] = "xcvb"
+            };
+
+            var hrDoc2 = new Document
+            {
+                ["Name"] = "Diane",
+                ["Age"] = 40,
+                ["Data"] = Guid.NewGuid().ToString(),
+                ["Score"] = 150,
+                ["Garbage"] = "qwer"
+            };
+            
+            var transactWriteHrDoc = hashRangeTable.CreateTransactWrite();
+            transactWriteHrDoc.AddDocumentToPut(hrDoc1);
+            transactWriteHrDoc.AddDocumentToPut(hrDoc2);
+
+            multiTableDocumentTransactWrite.AddTransactionPart(transactWriteHrDoc);
+            multiTableDocumentTransactWrite.SetReturnConsumedCapacity(ReturnConsumedCapacity.TOTAL);
+
+            await multiTableDocumentTransactWrite.ExecuteAsync();
+
+            Assert.Equal(2, multiTableDocumentTransactWrite.TransactionParts.Count);
+
+            Assert.Equal(2, multiTableDocumentTransactWrite.ConsumedCapacity.Count);
+            Assert.Collection(
+                multiTableDocumentTransactWrite.ConsumedCapacity.OrderBy(x => x.WriteCapacityUnits),
+                capacity =>
+                {
+                    Assert.Equal(4, capacity.WriteCapacityUnits);
+                    Assert.Null(capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.GlobalSecondaryIndexes);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                },
+                capacity =>
+                {
+                    Assert.Equal(4, capacity.WriteCapacityUnits);
+                    Assert.Null(capacity.ReadCapacityUnits);
+                    Assert.Null(capacity.GlobalSecondaryIndexes);
+                    Assert.Null(capacity.LocalSecondaryIndexes);
+                });
         }
 
         private bool AreValuesEqual(Document docA, Document docB, DynamoDBEntryConversion conversion = null)

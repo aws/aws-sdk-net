@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(5, typeof(TransactGetConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(TransactGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "OperationPrefix-" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123", rangeKey: "Name");
             await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
@@ -193,7 +193,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123",rangeKey: "Name");
             await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(TransactWriteConfig).GetProperties().Length);
+            Assert.AreEqual(7, typeof(TransactWriteConfig).GetProperties().Length);
         }
 
         [TestMethod]

@@ -31,11 +31,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
 
+        /// <summary>
+        /// Type of ReturnConsumedCapacity to be returned after Execute call
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
+            config.ReturnConsumedCapacity = ReturnConsumedCapacity;
 
             return config;
         }
