@@ -64,7 +64,6 @@ namespace Amazon.BedrockAgentCore.Model
         /// quality.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public RecommendationEvaluationConfig EvaluationConfig
         {
             get { return this._evaluationConfig; }

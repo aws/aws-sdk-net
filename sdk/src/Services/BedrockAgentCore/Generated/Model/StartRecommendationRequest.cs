@@ -38,8 +38,10 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _clientToken;
         private string _description;
+        private string _kmsKeyArn;
         private string _name;
         private RecommendationConfig _recommendationConfig;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RecommendationType _type;
 
         /// <summary>
@@ -83,6 +85,26 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key used to encrypt recommendation data. If provided, customer
+        /// data is encrypted at rest with the specified key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the recommendation. Must be unique within your account.
@@ -119,6 +141,30 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetRecommendationConfig()
         {
             return this._recommendationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tag keys and values to associate with the recommendation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

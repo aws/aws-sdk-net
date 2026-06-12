@@ -1389,6 +1389,180 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type InsightsFailureCategory.
+    /// </summary>
+    public class InsightsFailureCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CodingUseCaseSpecificFailureTypesCategoryDependencyIssues for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory CodingUseCaseSpecificFailureTypesCategoryDependencyIssues = new InsightsFailureCategory("coding-use-case-specific-failure-types-category-dependency-issues");
+        /// <summary>
+        /// Constant CodingUseCaseSpecificFailureTypesCategoryEdgeCaseOversights for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory CodingUseCaseSpecificFailureTypesCategoryEdgeCaseOversights = new InsightsFailureCategory("coding-use-case-specific-failure-types-category-edge-case-oversights");
+        /// <summary>
+        /// Constant ConfigurationMismatchCategoryToolDefinition for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ConfigurationMismatchCategoryToolDefinition = new InsightsFailureCategory("configuration-mismatch-category-tool-definition");
+        /// <summary>
+        /// Constant ContextHandlingErrorCategoryContextHandlingFailures for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ContextHandlingErrorCategoryContextHandlingFailures = new InsightsFailureCategory("context-handling-error-category-context-handling-failures");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryAuthentication for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryAuthentication = new InsightsFailureCategory("execution-error-category-authentication");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryEnvironment for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryEnvironment = new InsightsFailureCategory("execution-error-category-environment");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryFormatting for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryFormatting = new InsightsFailureCategory("execution-error-category-formatting");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryRateLimiting for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryRateLimiting = new InsightsFailureCategory("execution-error-category-rate-limiting");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryResourceExhaustion for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryResourceExhaustion = new InsightsFailureCategory("execution-error-category-resource-exhaustion");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryResourceNotFound for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryResourceNotFound = new InsightsFailureCategory("execution-error-category-resource-not-found");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryServiceErrors for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryServiceErrors = new InsightsFailureCategory("execution-error-category-service-errors");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryTimeout for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryTimeout = new InsightsFailureCategory("execution-error-category-timeout");
+        /// <summary>
+        /// Constant ExecutionErrorCategoryToolSchema for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory ExecutionErrorCategoryToolSchema = new InsightsFailureCategory("execution-error-category-tool-schema");
+        /// <summary>
+        /// Constant HallucinationCategoryFabricateToolOutputs for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryFabricateToolOutputs = new InsightsFailureCategory("hallucination-category-fabricate-tool-outputs");
+        /// <summary>
+        /// Constant HallucinationCategoryHallCapabilities for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryHallCapabilities = new InsightsFailureCategory("hallucination-category-hall-capabilities");
+        /// <summary>
+        /// Constant HallucinationCategoryHallHistory for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryHallHistory = new InsightsFailureCategory("hallucination-category-hall-history");
+        /// <summary>
+        /// Constant HallucinationCategoryHallMisunderstand for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryHallMisunderstand = new InsightsFailureCategory("hallucination-category-hall-misunderstand");
+        /// <summary>
+        /// Constant HallucinationCategoryHallParams for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryHallParams = new InsightsFailureCategory("hallucination-category-hall-params");
+        /// <summary>
+        /// Constant HallucinationCategoryHallUsage for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory HallucinationCategoryHallUsage = new InsightsFailureCategory("hallucination-category-hall-usage");
+        /// <summary>
+        /// Constant IncorrectActionsCategoryClarification for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory IncorrectActionsCategoryClarification = new InsightsFailureCategory("incorrect-actions-category-clarification");
+        /// <summary>
+        /// Constant IncorrectActionsCategoryInappropriateInfoRequest for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory IncorrectActionsCategoryInappropriateInfoRequest = new InsightsFailureCategory("incorrect-actions-category-inappropriate-info-request");
+        /// <summary>
+        /// Constant IncorrectActionsCategoryPoorInformationRetrieval for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory IncorrectActionsCategoryPoorInformationRetrieval = new InsightsFailureCategory("incorrect-actions-category-poor-information-retrieval");
+        /// <summary>
+        /// Constant IncorrectActionsCategoryToolSelection for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory IncorrectActionsCategoryToolSelection = new InsightsFailureCategory("incorrect-actions-category-tool-selection");
+        /// <summary>
+        /// Constant LlmOutputCategoryNonsensical for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory LlmOutputCategoryNonsensical = new InsightsFailureCategory("llm-output-category-nonsensical");
+        /// <summary>
+        /// Constant OrchestrationRelatedErrorsCategoryGoalDeviation for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory OrchestrationRelatedErrorsCategoryGoalDeviation = new InsightsFailureCategory("orchestration-related-errors-category-goal-deviation");
+        /// <summary>
+        /// Constant OrchestrationRelatedErrorsCategoryPrematureTermination for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory OrchestrationRelatedErrorsCategoryPrematureTermination = new InsightsFailureCategory("orchestration-related-errors-category-premature-termination");
+        /// <summary>
+        /// Constant OrchestrationRelatedErrorsCategoryReasoningMismatch for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory OrchestrationRelatedErrorsCategoryReasoningMismatch = new InsightsFailureCategory("orchestration-related-errors-category-reasoning-mismatch");
+        /// <summary>
+        /// Constant OrchestrationRelatedErrorsCategoryUnawareTermination for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory OrchestrationRelatedErrorsCategoryUnawareTermination = new InsightsFailureCategory("orchestration-related-errors-category-unaware-termination");
+        /// <summary>
+        /// Constant RepetitiveBehaviorCategoryRepetitionInfo for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory RepetitiveBehaviorCategoryRepetitionInfo = new InsightsFailureCategory("repetitive-behavior-category-repetition-info");
+        /// <summary>
+        /// Constant RepetitiveBehaviorCategoryRepetitionTool for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory RepetitiveBehaviorCategoryRepetitionTool = new InsightsFailureCategory("repetitive-behavior-category-repetition-tool");
+        /// <summary>
+        /// Constant RepetitiveBehaviorCategoryStepRepetition for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory RepetitiveBehaviorCategoryStepRepetition = new InsightsFailureCategory("repetitive-behavior-category-step-repetition");
+        /// <summary>
+        /// Constant TaskInstructionCategoryNonCompliance for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory TaskInstructionCategoryNonCompliance = new InsightsFailureCategory("task-instruction-category-non-compliance");
+        /// <summary>
+        /// Constant TaskInstructionCategoryProblemId for InsightsFailureCategory
+        /// </summary>
+        public static readonly InsightsFailureCategory TaskInstructionCategoryProblemId = new InsightsFailureCategory("task-instruction-category-problem-id");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightsFailureCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightsFailureCategory FindValue(string value)
+        {
+            return FindValue<InsightsFailureCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightsFailureCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstrumentBalanceToken.
     /// </summary>
     public class InstrumentBalanceToken : ConstantClass

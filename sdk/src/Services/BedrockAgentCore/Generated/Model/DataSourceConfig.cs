@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class DataSourceConfig
     {
         private CloudWatchLogsSource _cloudWatchLogs;
+        private OnlineEvaluationConfigSource _onlineEvaluationConfigSource;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogs. 
@@ -52,6 +53,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCloudWatchLogs()
         {
             return this._cloudWatchLogs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnlineEvaluationConfigSource. 
+        /// <para>
+        /// Reference an existing OnlineEvaluationConfig as session source
+        /// </para>
+        /// </summary>
+        public OnlineEvaluationConfigSource OnlineEvaluationConfigSource
+        {
+            get { return this._onlineEvaluationConfigSource; }
+            set { this._onlineEvaluationConfigSource = value; }
+        }
+
+        // Check to see if OnlineEvaluationConfigSource property is set
+        internal bool IsSetOnlineEvaluationConfigSource()
+        {
+            return this._onlineEvaluationConfigSource != null;
         }
 
     }

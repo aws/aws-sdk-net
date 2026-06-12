@@ -42,6 +42,8 @@ namespace Amazon.BedrockAgentCore.Model
         private List<string> _errorDetails = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EvaluationJobResults _evaluationResults;
         private List<Evaluator> _evaluators = AWSConfigs.InitializeCollections ? new List<Evaluator>() : null;
+        private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
+        private string _kmsKeyArn;
         private BatchEvaluationStatus _status;
         private DateTime? _updatedAt;
 
@@ -203,6 +205,49 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetEvaluators()
         {
             return this._evaluators != null && (this._evaluators.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// The list of insight analyses applied during the batch evaluation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<Insight> Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The ARN of the KMS key used to encrypt evaluation data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

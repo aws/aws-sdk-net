@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("onlineEvaluationConfigSource", targetDepth, ref reader))
+                {
+                    var unmarshaller = OnlineEvaluationConfigSourceUnmarshaller.Instance;
+                    unmarshalledObject.OnlineEvaluationConfigSource = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

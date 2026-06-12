@@ -90,6 +90,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -104,6 +110,20 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 var marshaller = RecommendationConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.RecommendationConfig, context);
 
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
                 context.Writer.WriteEndObject();
             }
 

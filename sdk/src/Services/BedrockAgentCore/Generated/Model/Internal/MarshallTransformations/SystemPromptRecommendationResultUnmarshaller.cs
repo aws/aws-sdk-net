@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("explanation", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Explanation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("recommendedSystemPrompt", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

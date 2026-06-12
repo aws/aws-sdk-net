@@ -136,6 +136,20 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetVariants())
             {
                 context.Writer.WritePropertyName("variants");
