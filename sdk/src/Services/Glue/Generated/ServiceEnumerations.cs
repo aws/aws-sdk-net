@@ -7501,6 +7501,14 @@ namespace Amazon.Glue
     {
 
         /// <summary>
+        /// Constant DEFAULT for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes DEFAULT = new TableAttributes("DEFAULT");
+        /// <summary>
+        /// Constant LATEST_ICEBERG_METADATA for TableAttributes
+        /// </summary>
+        public static readonly TableAttributes LATEST_ICEBERG_METADATA = new TableAttributes("LATEST_ICEBERG_METADATA");
+        /// <summary>
         /// Constant NAME for TableAttributes
         /// </summary>
         public static readonly TableAttributes NAME = new TableAttributes("NAME");
