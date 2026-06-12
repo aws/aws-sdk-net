@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -20,6 +21,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 using System.Net;
 using System.Text;
 
@@ -170,6 +172,29 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Message);
             Assert.AreEqual(ErrorType.Unknown, response.Type);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [DataRow("{\"Item\":{\"topKey\":{\"M\":{\"deepKey\":{\"M\":{\"deeperKey\":{\"S\":[[[invalid}}}}}}}", "/Item/topKey/M/deepKey/M/deeperKey/S/", DisplayName = "Deeply nested")]
+        [DataRow("{\"Item\":{\"top\\u0041Key\":{\"S\":[[[invalid}}}", "/Item/topAKey/S/", DisplayName = "Escaped property name")]
+        public void UnmarshalJsonExceptionLastKnownLocationReflectsFullPath(string json, string expectedPath)
+        {
+            var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
+            var webResponse = new WebResponseData { StatusCode = HttpStatusCode.OK };
+            webResponse.Headers.Add("Content-Length", stream.Length.ToString());
+            webResponse.Headers.Add(HeaderKeys.RequestIdHeader, "test-request-id");
+            var context = new JsonUnmarshallerContext(stream, false, webResponse);
+
+            try
+            {
+                GetItemResponseUnmarshaller.Instance.UnmarshallResponse(context);
+                Assert.Fail("Expected AmazonUnmarshallingException");
+            }
+            catch (AmazonUnmarshallingException ex)
+            {
+                Assert.AreEqual(expectedPath, ex.LastKnownLocation);
+            }
         }
 
         private void RunJsonErrorUnmarshallingTest(string body, string xAmzErrorTypeValue, string xAmznErrorMessageValue,
