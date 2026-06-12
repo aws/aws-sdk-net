@@ -13,8 +13,8 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Buffers;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Text;
 using Amazon.Runtime.Internal.Util;
@@ -449,6 +449,8 @@ namespace Amazon.Runtime.Internal.Transform
                         baseStream.Dispose();
                         baseStream = null;
                     }
+
+                    stack.Dispose();
                 }
                 disposed = true;
             }
@@ -468,7 +470,7 @@ namespace Amazon.Runtime.Internal.Transform
             internal int Length { get; set; }
         }
 
-        private class JsonPathStack
+        private class JsonPathStack : IDisposable
         {
             private readonly Stack<PathSegment> stack = new Stack<PathSegment>();
             int currentDepth = 0;
@@ -477,7 +479,7 @@ namespace Amazon.Runtime.Internal.Transform
             // path string is only materialized when CurrentPath is read — typically on exception
             // for diagnostics, or by the legacy path-based TestExpression(string, int) overload
             // used by service packages generated before reader-based matching existed.
-            private byte[] pathBytes = new byte[256];
+            private byte[] pathBytes = ArrayPool<byte>.Shared.Rent(256);
             private int pathLength = 0;
             private string stackString;
 
@@ -539,9 +541,8 @@ namespace Amazon.Runtime.Internal.Transform
 
             /// <summary>
             /// Grows <see cref="pathBytes"/> if needed to fit <paramref name="additionalBytes"/> more bytes.
-            /// The buffer is doubled (or grown to the required size, whichever is larger) and never
-            /// shrinks; Pop only moves <see cref="pathLength"/> back, so the buffer is reused for the
-            /// remainder of the document.
+            /// The old buffer is returned to the pool and a new one rented. Pop only moves
+            /// <see cref="pathLength"/> back, so the buffer is reused for the remainder of the document.
             /// </summary>
             private void EnsureCapacity(int additionalBytes)
             {
@@ -550,7 +551,20 @@ namespace Amazon.Runtime.Internal.Transform
                     return;
                 }
 
-                Array.Resize(ref pathBytes, Math.Max(pathBytes.Length * 2, pathLength + additionalBytes));
+                var newSize = Math.Max(pathBytes.Length * 2, pathLength + additionalBytes);
+                var newBuffer = ArrayPool<byte>.Shared.Rent(newSize);
+                Buffer.BlockCopy(pathBytes, 0, newBuffer, 0, pathLength);
+                ArrayPool<byte>.Shared.Return(pathBytes);
+                pathBytes = newBuffer;
+            }
+
+            public void Dispose()
+            {
+                if (pathBytes != null)
+                {
+                    ArrayPool<byte>.Shared.Return(pathBytes);
+                    pathBytes = null;
+                }
             }
 
             internal PathSegment Peek()

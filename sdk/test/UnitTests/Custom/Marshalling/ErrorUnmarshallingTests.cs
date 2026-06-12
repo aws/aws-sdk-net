@@ -176,9 +176,10 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        public void UnmarshalJsonExceptionIncludesDeeplyNestedPropertyInLastKnownLocation()
+        [DataRow("{\"Item\":{\"topKey\":{\"M\":{\"deepKey\":{\"M\":{\"deeperKey\":{\"S\":[[[invalid}}}}}}}", "/Item/topKey/M/deepKey/M/deeperKey/S/", DisplayName = "Deeply nested")]
+        [DataRow("{\"Item\":{\"top\\u0041Key\":{\"S\":[[[invalid}}}", "/Item/topAKey/S/", DisplayName = "Escaped property name")]
+        public void UnmarshalJsonExceptionLastKnownLocationReflectsFullPath(string json, string expectedPath)
         {
-            var json = "{\"Item\":{\"topKey\":{\"M\":{\"deepKey\":{\"M\":{\"deeperKey\":{\"S\":[[[invalid}}}}}}}";
             var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
             var webResponse = new WebResponseData { StatusCode = HttpStatusCode.OK };
             webResponse.Headers.Add("Content-Length", stream.Length.ToString());
@@ -192,8 +193,7 @@ namespace AWSSDK.UnitTests.Custom.Marshalling
             }
             catch (AmazonUnmarshallingException ex)
             {
-                Assert.IsNotNull(ex.LastKnownLocation);
-                Assert.AreEqual("/Item/topKey/M/deepKey/M/deeperKey/S/", ex.LastKnownLocation);
+                Assert.AreEqual(expectedPath, ex.LastKnownLocation);
             }
         }
 
