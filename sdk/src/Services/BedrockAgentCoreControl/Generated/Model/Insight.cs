@@ -30,31 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// The configuration for writing evaluation results to CloudWatch logs with embedded
-    /// metric format (EMF) for monitoring.
+    /// A reference to an insight analysis to run against sessions.
     /// </summary>
-    public partial class CloudWatchOutputConfig
+    public partial class Insight
     {
-        private string _logGroupName;
+        private string _insightId;
 
         /// <summary>
-        /// Gets and sets the property LogGroupName. 
-        /// <para>
-        ///  The name of the CloudWatch log group where evaluation results will be written. The
-        /// log group will be created if it doesn't exist. 
-        /// </para>
+        /// Gets and sets the property InsightId.
         /// </summary>
         [AWSProperty(Required=true)]
-        public string LogGroupName
+        public string InsightId
         {
-            get { return this._logGroupName; }
-            set { this._logGroupName = value; }
+            get { return this._insightId; }
+            set { this._insightId = value; }
         }
 
-        // Check to see if LogGroupName property is set
-        internal bool IsSetLogGroupName()
+        // Check to see if InsightId property is set
+        internal bool IsSetInsightId()
         {
-            return this._logGroupName != null;
+            return this._insightId != null;
         }
 
     }

@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private Dictionary<string, ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentConfiguration>() : null;
         private DateTime? _createdAt;
         private string _description;
+        private string _kmsKeyArn;
         private VersionLineageMetadata _lineageMetadata;
         private DateTime? _updatedAt;
         private string _versionId;
@@ -161,6 +162,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// KMS key ARN used to encrypt component configurations, if CMK was provided.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

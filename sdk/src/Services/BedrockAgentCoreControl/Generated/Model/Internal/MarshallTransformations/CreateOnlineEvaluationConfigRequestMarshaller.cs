@@ -84,6 +84,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetClusteringConfig())
+            {
+                context.Writer.WritePropertyName("clusteringConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusteringConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ClusteringConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDataSourceConfig())
             {
                 context.Writer.WritePropertyName("dataSourceConfig");
@@ -123,6 +134,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 
                     var marshaller = EvaluatorReferenceMarshaller.Instance;
                     marshaller.Marshall(publicRequestEvaluatorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInsights())
+            {
+                context.Writer.WritePropertyName("insights");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInsightsListValue in publicRequest.Insights)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InsightMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInsightsListValue, context);
 
                     context.Writer.WriteEndObject();
                 }

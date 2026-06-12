@@ -717,6 +717,60 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type ClusteringFrequency.
+    /// </summary>
+    public class ClusteringFrequency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAILY for ClusteringFrequency
+        /// </summary>
+        public static readonly ClusteringFrequency DAILY = new ClusteringFrequency("DAILY");
+        /// <summary>
+        /// Constant MONTHLY for ClusteringFrequency
+        /// </summary>
+        public static readonly ClusteringFrequency MONTHLY = new ClusteringFrequency("MONTHLY");
+        /// <summary>
+        /// Constant WEEKLY for ClusteringFrequency
+        /// </summary>
+        public static readonly ClusteringFrequency WEEKLY = new ClusteringFrequency("WEEKLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusteringFrequency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusteringFrequency FindValue(string value)
+        {
+            return FindValue<ClusteringFrequency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusteringFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CodeInterpreterNetworkMode.
     /// </summary>
     public class CodeInterpreterNetworkMode : ConstantClass
