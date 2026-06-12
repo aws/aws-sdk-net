@@ -2545,6 +2545,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType MinSize = new UpdateParamType("MinSize");
         /// <summary>
+        /// Constant NetworkAccess for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType NetworkAccess = new UpdateParamType("NetworkAccess");
+        /// <summary>
         /// Constant NodeRepairConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType NodeRepairConfig = new UpdateParamType("NodeRepairConfig");
@@ -2580,6 +2584,18 @@ namespace Amazon.EKS
         /// Constant ResolveConflicts for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ResolveConflicts = new UpdateParamType("ResolveConflicts");
+        /// <summary>
+        /// Constant RoleArn for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleArn = new UpdateParamType("RoleArn");
+        /// <summary>
+        /// Constant RoleMappingsToAddOrUpdate for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToAddOrUpdate = new UpdateParamType("RoleMappingsToAddOrUpdate");
+        /// <summary>
+        /// Constant RoleMappingsToRemove for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType RoleMappingsToRemove = new UpdateParamType("RoleMappingsToRemove");
         /// <summary>
         /// Constant SecurityGroups for UpdateParamType
         /// </summary>
@@ -2768,6 +2784,10 @@ namespace Amazon.EKS
         /// Constant AutoModeUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType AutoModeUpdate = new UpdateType("AutoModeUpdate");
+        /// <summary>
+        /// Constant CapabilityUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType CapabilityUpdate = new UpdateType("CapabilityUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
