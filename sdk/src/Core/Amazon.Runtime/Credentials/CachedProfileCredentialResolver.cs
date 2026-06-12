@@ -191,7 +191,7 @@ namespace Amazon.Runtime.Credentials
         /// 2. Else if <see cref="AWSConfigs.AWSProfilesLocation"/> is set, use that.
         /// 3. Else fall back to <see cref="SharedCredentialsFile.DefaultFilePath"/>.
         /// </summary>
-        private static string GetEffectiveCredentialsFilePath(string profilesLocation)
+        internal static string GetEffectiveCredentialsFilePath(string profilesLocation)
         {
             if (!string.IsNullOrEmpty(profilesLocation))
                 return profilesLocation;
@@ -212,7 +212,7 @@ namespace Amazon.Runtime.Credentials
         /// 3. <see cref="AWSConfigs.DisableLegacyPersistenceStore"/> is false.
         /// This mirrors the same conditions used by <see cref="CredentialProfileStoreChain.TryGetProfile"/>.
         /// </summary>
-        private static string GetNetSdkCredentialsFilePath(string profilesLocation)
+        internal static string GetNetSdkCredentialsFilePath(string profilesLocation)
         {
             if (!string.IsNullOrEmpty(profilesLocation))
                 return null;
@@ -228,74 +228,6 @@ namespace Amazon.Runtime.Credentials
                 return null;
 
             return Path.Combine(settingsFolder, SettingsConstants.RegisteredProfiles + ".json");
-        }
-
-        /// <summary>
-        /// A shared file system watcher for a single file path. Multiple <see cref="ProfileCredentialEntry"/>
-        /// instances may depend on the same file (e.g., <c>~/.aws/config</c>), but only one OS-level
-        /// watcher is created per unique file path.
-        /// <para />
-        /// When a change is detected, a monotonic <see cref="ChangeToken"/> is incremented. Each
-        /// <see cref="ProfileCredentialEntry"/> stores the token value it last observed; validity is
-        /// determined by comparing the stored token to the current token rather than resetting shared state.
-        /// This avoids cross-entry interference when multiple profiles depend on the same file.
-        /// </summary>
-        private sealed class SharedFileWatcher : IDisposable
-        {
-            private long _changeToken;
-            private readonly FileSystemWatcher _watcher;
-
-            /// <summary>
-            /// Gets the current monotonic change token. Each file system event increments this value.
-            /// Entries compare their last-seen token against this to determine staleness.
-            /// </summary>
-            public long ChangeToken => Interlocked.Read(ref _changeToken);
-
-            public SharedFileWatcher(string filePath)
-            {
-                _watcher = TryCreateWatcher(filePath);
-            }
-
-            private FileSystemWatcher TryCreateWatcher(string filePath)
-            {
-                var directory = Path.GetDirectoryName(filePath);
-                var fileName = Path.GetFileName(filePath);
-
-                if (string.IsNullOrEmpty(directory) || !Directory.Exists(directory))
-                    return null;
-
-                try
-                {
-                    var watcher = new FileSystemWatcher(directory, fileName)
-                    {
-                        NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.Size | NotifyFilters.FileName,
-                        EnableRaisingEvents = true
-                    };
-                    watcher.Changed += OnFileEvent;
-                    watcher.Created += OnFileEvent;
-                    watcher.Deleted += OnFileEvent;
-                    watcher.Renamed += OnFileRenamed;
-                    // Treat buffer overflow as a change — fail safe rather than returning stale credentials.
-                    watcher.Error += OnWatcherError;
-                    return watcher;
-                }
-                catch (Exception ex) when (!(ex is OutOfMemoryException))
-                {
-                    // If we can't create a watcher (e.g., unsupported filesystem, invalid path,
-                    // or I/O error), return null. The cache will never auto-invalidate for this
-                    // file, but credentials will still be re-resolved on application restart.
-                    return null;
-                }
-            }
-
-            private void OnFileEvent(object sender, FileSystemEventArgs e) => Interlocked.Increment(ref _changeToken);
-            private void OnFileRenamed(object sender, RenamedEventArgs e) => Interlocked.Increment(ref _changeToken);
-            private void OnWatcherError(object sender, ErrorEventArgs e) => Interlocked.Increment(ref _changeToken);
-
-            public void Dispose()
-            {
-                _watcher?.Dispose();
-            }
         }
 
         /// <summary>

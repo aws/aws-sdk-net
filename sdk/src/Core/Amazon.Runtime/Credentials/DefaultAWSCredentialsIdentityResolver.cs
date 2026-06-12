@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -47,6 +48,14 @@ namespace Amazon.Runtime.Credentials
         private readonly CachedProfileCredentialResolver _cachedProfileCredentialResolver = new();
         private static readonly Lazy<DefaultAWSCredentialsIdentityResolver> _defaultInstance = new();
         private bool _disposed;
+        private readonly ConcurrentDictionary<string, SharedFileWatcher> _fileWatchers = new();
+        private SharedFileWatcher _credentialsFileWatcher;
+        private SharedFileWatcher _configFileWatcher;
+        private SharedFileWatcher _netSdkCredentialsFileWatcher;
+        private long _lastSeenCredentialsFileToken;
+        private long _lastSeenConfigFileToken;
+        private long _lastSeenNetSdkFileToken;
+        private volatile bool _cachedCredentialsAreFileBacked;
 
         public DefaultAWSCredentialsIdentityResolver()
         {
@@ -142,12 +151,88 @@ namespace Amazon.Runtime.Credentials
             var cached = _cachedCredentials;
             if (cached != null)
             {
-                if (!_lastKnownEnvironmentState.HasEnvironmentChanged())
+                if (!_lastKnownEnvironmentState.HasEnvironmentChanged() && !HasCredentialsFileChanged())
                 {
                     return cached;
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Returns true if the cached credentials were resolved from a file (a static
+        /// BasicAWSCredentials / SessionAWSCredentials profile) and any of the backing files have
+        /// changed since they were resolved. Purely an in-memory change-token comparison, no I/O on
+        /// this path, so it is safe to call on every credential resolution.
+        /// <para />
+        /// Returns false for credential types that refresh themselves (SSO, assume-role, web identity,
+        /// container, instance profile), so a file touch never forces a needless re-resolution of those.
+        /// </summary>
+        private bool HasCredentialsFileChanged()
+        {
+            if (!_cachedCredentialsAreFileBacked)
+                return false;
+
+            if (_credentialsFileWatcher != null && _credentialsFileWatcher.ChangeToken != _lastSeenCredentialsFileToken)
+                return true;
+
+            if (_configFileWatcher != null && _configFileWatcher.ChangeToken != _lastSeenConfigFileToken)
+                return true;
+
+            if (_netSdkCredentialsFileWatcher != null && _netSdkCredentialsFileWatcher.ChangeToken != _lastSeenNetSdkFileToken)
+                return true;
+
+            return false;
+        }
+
+        /// <summary>
+        /// After the credential chain resolves, set up (or tear down) file-change tracking for the
+        /// newly cached credentials. Tracking is only enabled for static, file-backed credential types
+        /// (<see cref="BasicAWSCredentials"/> / <see cref="SessionAWSCredentials"/>) — the only types
+        /// that read their values from the credentials/config file once and never refresh. Every other
+        /// type manages its own refresh, so file-change invalidation is intentionally skipped for them.
+        /// <para />
+        /// Must only be called while holding <see cref="_credentialResolutionLock"/>, before
+        /// <see cref="_cachedCredentials"/> is published, so that a concurrent lock-free reader that
+        /// observes the new credentials also observes the tracking state captured here.
+        /// </summary>
+        private void UpdateFileChangeTracking(AWSCredentials resolvedCredentials)
+        {
+            var type = resolvedCredentials.GetType();
+            var isFileBacked = type == typeof(BasicAWSCredentials) || type == typeof(SessionAWSCredentials);
+
+            if (!isFileBacked)
+            {
+                _cachedCredentialsAreFileBacked = false;
+                return;
+            }
+
+            // The default chain resolves the profile with no explicit location override
+            // (see _credentialProfileChain), so resolve file paths the same way.
+            var credentialsFilePath = CachedProfileCredentialResolver.GetEffectiveCredentialsFilePath(null);
+            var configFilePath = SharedCredentialsFile.DefaultConfigFilePath;
+            var netSdkCredentialsFilePath = CachedProfileCredentialResolver.GetNetSdkCredentialsFilePath(null);
+
+            _credentialsFileWatcher = GetOrCreateFileWatcher(credentialsFilePath);
+            _configFileWatcher = GetOrCreateFileWatcher(configFilePath);
+            _netSdkCredentialsFileWatcher = GetOrCreateFileWatcher(netSdkCredentialsFilePath);
+
+            _lastSeenCredentialsFileToken = _credentialsFileWatcher?.ChangeToken ?? 0;
+            _lastSeenConfigFileToken = _configFileWatcher?.ChangeToken ?? 0;
+            _lastSeenNetSdkFileToken = _netSdkCredentialsFileWatcher?.ChangeToken ?? 0;
+
+            _cachedCredentialsAreFileBacked = true;
+        }
+
+        /// <summary>
+        /// Gets or creates a shared file watcher for the given path. Returns null for a null/empty path.
+        /// Multiple resolutions that depend on the same file reuse one watcher, minimizing OS handles.
+        /// </summary>
+        private SharedFileWatcher GetOrCreateFileWatcher(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath))
+                return null;
+            return _fileWatchers.GetOrAdd(filePath, path => new SharedFileWatcher(path));
         }
 
         /// <summary>
@@ -213,6 +298,7 @@ namespace Amazon.Runtime.Credentials
                 // snapshot is being updated.
                 _cachedCredentials = null;
                 _lastKnownEnvironmentState.UpdateEnvironment();
+                UpdateFileChangeTracking(resolvedCredentials);
                 _cachedCredentials = resolvedCredentials;
                 return resolvedCredentials;
             }
@@ -379,6 +465,9 @@ namespace Amazon.Runtime.Credentials
             {
                 _credentialResolutionLock.Dispose();
                 _cachedProfileCredentialResolver.Dispose();
+
+                foreach (var watcher in _fileWatchers.Values)
+                    watcher.Dispose();
             }
             _disposed = true;
         }
