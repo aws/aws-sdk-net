@@ -1670,6 +1670,92 @@ namespace AWSSDK_DotNet.UnitTests
             mockClient.VerifyAll();
         }
 
+
+        [TestMethod]
+        public void TransactGet_WithProjectionExpression()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(x => x.TransactGetItems(It.Is<TransactGetItemsRequest>(x =>
+            x.TransactItems != null &&
+            x.TransactItems.Count == 1 &&
+            x.TransactItems[0].Get != null &&
+            // Table
+            x.TransactItems[0].Get.TableName == "ContextTestEntity" &&
+            // Key
+            x.TransactItems[0].Get.Key != null &&
+            x.TransactItems[0].Get.Key.Count == 2 &&
+            // ExpressionAttributeNames
+            x.TransactItems[0].Get.ExpressionAttributeNames != null &&
+            x.TransactItems[0].Get.ExpressionAttributeNames.Count == 7 &&
+            x.TransactItems[0].Get.ProjectionExpression.Replace(" ", "")
+                == "#P0,#P1,#P2,#P3,#P4,#P5,#P6"
+                )))
+               .Returns(new TransactGetItemsResponse { Responses = new() })
+               .Verifiable();
+
+            // Set a prefix on the context config, but we'll override it on the operation config so we don't expect it to be used
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "" };
+
+            var transactGet = context.CreateTransactGet<ContextTestEntity>(transactGetConfig);
+            transactGet.AddKey(123, "Name");
+            transactGet.Execute();
+
+            // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
+            mockClient.VerifyAll();
+        }
+
+        [TestMethod]
+        public void MultiTableTransactGet_WithProjectionExpression()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+
+            mockClient
+                .Setup(x => x.TransactGetItems(It.Is<TransactGetItemsRequest>(r =>
+                    r.TransactItems != null &&
+                    r.TransactItems.Count == 1 &&
+                    r.TransactItems[0].Get != null &&
+
+                    r.TransactItems[0].Get.TableName == "ContextTestEntity" &&
+
+                    r.TransactItems[0].Get.Key != null &&
+                    r.TransactItems[0].Get.Key.Count == 2 &&
+
+                    r.TransactItems[0].Get.ExpressionAttributeNames != null &&
+                    r.TransactItems[0].Get.ExpressionAttributeNames.Count == 7 &&
+
+                    r.TransactItems[0].Get.ProjectionExpression.Replace(" ", "") ==
+                        "#P0,#P1,#P2,#P3,#P4,#P5,#P6"
+                )))
+                .Returns(new TransactGetItemsResponse { Responses = new() })
+                .Verifiable();
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                TableNamePrefix = "ContextPrefix-",
+                DisableFetchingTableMetadata = true
+            });
+
+            var transactGetConfig = new TransactGetConfig
+            {
+                TableNamePrefix = ""
+            };
+
+            var transactGet = context.CreateTransactGet<ContextTestEntity>(transactGetConfig);
+            transactGet.AddKey(123, "Name");
+
+            var multiTableTransactGet = context.CreateMultiTableTransactGet(transactGet);
+
+            multiTableTransactGet.Execute();
+
+            mockClient.VerifyAll();
+        }
+
         [TestMethod]
         public void DeleteItem_WithConditionalExpression()
         {
