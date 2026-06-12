@@ -1,3 +1,28 @@
+### 4.0.269.0 (2026-06-12 18:20 UTC)
+* BedrockAgentCore (4.0.29.0)
+	* Added tagging and CMK support across optimization, an explanation field in recommendation output, and an insights feature to identify failure patterns, extract user intents, and summarize execution behavior
+* BedrockAgentCoreControl (4.0.42.0)
+	* Added tagging and CMK support for optimizations and an insights feature to identify failure patterns, extract user intents, and summarize execution behavior
+* CertificateManager (4.0.5.0)
+	* Certificate transparency logging opt-out is no longer available. Per compliance requirements, all public ACM certificates are automatically recorded in certificate transparency logs. The CertificateTransparencyLoggingPreference option is deprecated.
+* DevOpsAgent (4.0.7.0)
+	* Adds support for Trigger CRUD APIs (CreateTrigger, GetTrigger, UpdateTrigger, DeleteTrigger, ListTriggers) for managing schedule-based automation triggers in DevOps Agent agent spaces.
+* DynamoDBv2 (4.0.21.3)
+	* Projection support in TransactGet at the DynamoDBContext level
+* EKS (4.0.19.0)
+	* Patches missing enum values for EKS updates
+* Glue (4.0.32.0)
+	* Adds support for retrieving Apache Iceberg table metadata via GetTable. Use the new AttributesToGet parameter with LATEST ICEBERG METADATA to receive schema, partition specs, sort orders, and table properties in the response.
+* IdentityManagement (4.0.10.5)
+	* Updating documentation for select service-specific credential APIs
+* KinesisFirehose (4.0.5.0)
+	* Update KeyARN in DeliveryStreamEncryptionConfigurationInput to accept KMS key ARNs only (not alias ARNs), matching service behavior.
+* SageMakerRuntime (4.0.4.0)
+	* Added support for inline request payloads to the InvokeEndpointAsync operation to allow users to provide the inference payload directly in the request Body (up to 128,000 bytes) as an alternative to uploading the payload to Amazon S3 and passing InputLocation.
+* Core 4.0.9.2
+	* Eliminate intermediate string and byte[] allocation in XML marshallers.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.268.0 (2026-06-11 18:18 UTC)
 * AWSSupport (4.0.1.0)
 	* Adding new BDD representation of endpoint ruleset
