@@ -1386,7 +1386,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <c>license-included</c> 
+        /// RDS for Microsoft SQL Server - <c>license-included | bring-your-own-media</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2248,9 +2248,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <dl> <dt>Db2</dt> <dd> 
         /// <para>
-        /// Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition
-        /// (SE). The main use case for standby replicas is cross-Region disaster recovery. Because
-        /// it doesn't accept user connections, a standby replica can't serve a read-only workload.
+        /// Standby DB replicas are included in Db2 Advanced Edition (AE), Db2 Community Edition
+        /// (CE), and Db2 Standard Edition (SE). The main use case for standby replicas is cross-Region
+        /// disaster recovery. Because it doesn't accept user connections, a standby replica can't
+        /// serve a read-only workload.
         /// </para>
         ///  
         /// <para>

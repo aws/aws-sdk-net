@@ -1037,6 +1037,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>db2-ce</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
@@ -1209,7 +1213,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <c>license-included</c> 
+        /// RDS for Microsoft SQL Server - <c>license-included | bring-your-own-media</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
