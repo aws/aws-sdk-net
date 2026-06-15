@@ -6051,6 +6051,83 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  DeleteLineageEvent
+
+
+        /// <summary>
+        /// Deletes the specified lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLineageEvent service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteLineageEvent">REST API Reference for DeleteLineageEvent Operation</seealso>
+        public virtual DeleteLineageEventResponse DeleteLineageEvent(DeleteLineageEventRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLineageEventResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLineageEventResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified lineage event.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLineageEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLineageEvent service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteLineageEvent">REST API Reference for DeleteLineageEvent Operation</seealso>
+        public virtual Task<DeleteLineageEventResponse> DeleteLineageEventAsync(DeleteLineageEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLineageEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLineageEventResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLineageEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteListing
 
 
