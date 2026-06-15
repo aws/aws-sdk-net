@@ -1,3 +1,25 @@
+### 4.0.270.0 (2026-06-15 19:16 UTC)
+* BedrockRuntime (4.0.21.0)
+	* InvokeGuardrailChecks API evaluates prompts and responses against safety checks (content filters, prompt attacks, sensitive info) without creating guardrail resources. It's a detect-only API, returning numeric scores so you can build adaptive logic as per your application.
+* CloudWatchLogs (4.0.27.0)
+	* Added endTimeOffset parameter to Scheduled Queries APIs (Create, Update, Get) enabling bounded time window configuration. Introduced scheduleType filter (CUSTOMER MANAGED, AWS MANAGED) for ListScheduledQueries and exposed it in Get and Update responses.
+* DataZone (4.0.31.0)
+	* Adds support for deleting lineage events in Amazon DataZone.
+* Mgn (4.0.10.0)
+	* AWS Transform for VMware now supports Amazon FSx for NetApp ONTAP as a target storage. Customers can migrate source server disks directly to FSx for NetApp ONTAP iSCSI LUNs. Target storage is configurable per source server, and compute, network, and storage migrate together in coordinated waves.
+* RDS (4.0.21.5)
+	* Adding support for RDS SQL Server BYOM and DB2 Community Edition
+* SQS (4.0.3.5)
+	* Reduce memory allocations in SQS MD5 validation pipeline.
+* WAFV2 (4.0.10.0)
+	* AWS WAF now supports AI traffic monetization for CloudFront. Configure payment networks and pricing on your web ACL, use the new Monetize rule action to charge AI agents via x402, and monitor revenue with new GetRevenueStatisticsSummary, GetRevenueStatistics, and ListSettlementRecords APIs.
+* WorkSpaces (4.0.13.0)
+	* Added a validation for null check for ImageIds in DescribeWorkspaceImages API request parameters.
+* Core 4.0.9.3
+	* Added ComputeMD5Hash(byte[], int, int) overload to ICryptoUtil to support hashing from offset/count ranges without copying.
+	* Fix regression where AmazonUnmarshallingException.LastKnownLocation did not display the correct path.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.269.0 (2026-06-12 18:20 UTC)
 * BedrockAgentCore (4.0.29.0)
 	* Added tagging and CMK support across optimization, an explanation field in recommendation output, and an insights feature to identify failure patterns, extract user intents, and summarize execution behavior

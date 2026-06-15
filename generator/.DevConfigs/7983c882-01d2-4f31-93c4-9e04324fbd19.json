@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fix regression where AmazonUnmarshallingException.LastKnownLocation did not display the correct path."
-    ]
-  }
-}

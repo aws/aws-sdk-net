@@ -33,7 +33,7 @@ namespace Amazon.Sustainability
     public partial class AmazonSustainabilityConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Sustainability", "4.0.1.4");
+            InternalSDKUtils.BuildUserAgentString("Sustainability", "4.0.1.5");
 
         private static readonly AmazonSustainabilityEndpointResolver EndpointResolver =
             new AmazonSustainabilityEndpointResolver();
