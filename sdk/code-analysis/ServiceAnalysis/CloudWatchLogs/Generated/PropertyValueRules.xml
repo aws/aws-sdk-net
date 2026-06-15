@@ -187,8 +187,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateScheduledQueryRequest.Name</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-/.#]+$</pattern>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateScheduledQueryRequest.QueryString</property>
@@ -311,7 +310,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteScheduledQueryRequest.Identifier</property>
-    <pattern>[\w#+=/:,.@-]*</pattern>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DeleteSubscriptionFilterRequest.FilterName</property>
@@ -943,7 +943,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryRequest.Identifier</property>
-    <pattern>[\w#+=/:,.@-]*</pattern>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryResponse.CreationTime</property>
@@ -968,8 +969,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryResponse.Name</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-/.#]+$</pattern>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryResponse.QueryString</property>
@@ -998,7 +998,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryHistoryRequest.Identifier</property>
-    <pattern>[\w#+=/:,.@-]*</pattern>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryHistoryRequest.MaxResults</property>
@@ -1016,8 +1017,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryHistoryResponse.Name</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-/.#]+$</pattern>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.GetScheduledQueryHistoryResponse.NextToken</property>
@@ -1544,7 +1544,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateScheduledQueryRequest.Identifier</property>
-    <pattern>[\w#+=/:,.@-]*</pattern>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateScheduledQueryRequest.QueryString</property>
@@ -1590,8 +1591,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateScheduledQueryResponse.Name</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-/.#]+$</pattern>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateScheduledQueryResponse.QueryString</property>
@@ -2551,8 +2551,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ScheduledQuerySummary.Name</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>^[a-zA-Z0-9_\-/.#]+$</pattern>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ScheduledQuerySummary.ScheduleExpression</property>

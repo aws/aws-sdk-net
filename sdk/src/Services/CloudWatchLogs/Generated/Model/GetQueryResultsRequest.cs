@@ -63,7 +63,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// You can retrieve up to 100,000 log event results from a query, if available, by using
     /// pagination. Use the <c>nextToken</c> returned in the response to request additional
-    /// pages of results, with each page returning up to 10,000 log events.
+    /// pages of results, with each page returning up to 10,000 log events. This is only supported
+    /// for Logs Insights QL and is currently not supported for PPL and SQL query languages.
     /// </para>
     ///  
     /// <para>

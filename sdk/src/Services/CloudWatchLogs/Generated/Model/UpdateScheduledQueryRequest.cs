@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _description;
         private DestinationConfiguration _destinationConfiguration;
+        private long? _endTimeOffset;
         private string _executionRoleArn;
         private string _identifier;
         private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -88,6 +89,25 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTimeOffset. 
+        /// <para>
+        /// The updated time offset in seconds that defines the end of the lookback period for
+        /// the query.
+        /// </para>
+        /// </summary>
+        public long? EndTimeOffset
+        {
+            get { return this._endTimeOffset; }
+            set { this._endTimeOffset = value; }
+        }
+
+        // Check to see if EndTimeOffset property is set
+        internal bool IsSetEndTimeOffset()
+        {
+            return this._endTimeOffset.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The updated ARN of the IAM role that grants permissions to execute the query and deliver
@@ -113,7 +133,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The ARN or name of the scheduled query to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=300)]
         public string Identifier
         {
             get { return this._identifier; }

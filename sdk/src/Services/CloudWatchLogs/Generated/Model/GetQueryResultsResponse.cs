@@ -69,7 +69,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// If there are more log events remaining in the results, the response includes a <c>nextToken</c>.
         /// You can use this token in a subsequent <c>GetQueryResults</c> request to get the next
         /// set of results. You can retrieve up to 100,000 log event results from a query by paginating
-        /// with this token.
+        /// with this token. This is only supported for Logs Insights QL and is currently not
+        /// supported for PPL and SQL query languages.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

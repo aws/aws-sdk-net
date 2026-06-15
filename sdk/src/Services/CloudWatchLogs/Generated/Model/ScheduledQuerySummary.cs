@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _name;
         private string _scheduledQueryArn;
         private string _scheduleExpression;
+        private ScheduleType _scheduleType;
         private ScheduledQueryState _state;
         private string _timezone;
 
@@ -145,7 +146,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The name of the scheduled query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=300)]
         public string Name
         {
             get { return this._name; }
@@ -193,6 +194,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetScheduleExpression()
         {
             return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleType. 
+        /// <para>
+        /// The schedule type of the scheduled query. Valid values are <c>CUSTOMER_MANAGED</c>
+        /// and <c>AWS_MANAGED</c>.
+        /// </para>
+        /// </summary>
+        public ScheduleType ScheduleType
+        {
+            get { return this._scheduleType; }
+            set { this._scheduleType = value; }
+        }
+
+        // Check to see if ScheduleType property is set
+        internal bool IsSetScheduleType()
+        {
+            return this._scheduleType != null;
         }
 
         /// <summary>
