@@ -127,47 +127,54 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("select-type", "2");
 
             // Parameters
-            using (var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture))
+            var xmlWriterSettings = new XmlWriterSettings()
             {
-                var xmlWriterSettings = new XmlWriterSettings()
+                Encoding = Encoding.UTF8,
+                OmitXmlDeclaration = true,
+                NewLineHandling = NewLineHandling.Entitize
+            };
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            var bufferTextWriter = new XMLEncodedBufferTextWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using (var xmlWriter = XmlWriter.Create(bufferTextWriter, xmlWriterSettings))
+            {
+#else
+            var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
+            {
+#endif
+                xmlWriter.WriteStartElement("SelectObjectContentRequest", S3Constants.S3RequestXmlNamespace);
+                xmlWriter.WriteElementString("Expression",
+                    S3Transforms.ToXmlStringValue(selectObjectContentRequest.Expression));
+                xmlWriter.WriteElementString("ExpressionType",
+                    S3Transforms.ToXmlStringValue(selectObjectContentRequest.ExpressionType.Value));
+                selectObjectContentRequest.InputSerialization.Marshall("InputSerialization", xmlWriter);
+                selectObjectContentRequest.OutputSerialization.Marshall("OutputSerialization", xmlWriter);
+                xmlWriter.WriteStartElement("RequestProgress");
+                xmlWriter.WriteElementString("Enabled",
+                    selectObjectContentRequest.RequestProgress.GetValueOrDefault(false).ToString()
+                        .ToUpperInvariant());
+                xmlWriter.WriteEndElement();
+                if (selectObjectContentRequest.IsSetScanRange())
                 {
-                    Encoding = Encoding.UTF8,
-                    OmitXmlDeclaration = true,
-                    NewLineHandling = NewLineHandling.Entitize
-                };
-                using (var xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings))
-                {
-                    xmlWriter.WriteStartElement("SelectObjectContentRequest", S3Constants.S3RequestXmlNamespace);
-                    xmlWriter.WriteElementString("Expression",
-                        S3Transforms.ToXmlStringValue(selectObjectContentRequest.Expression));
-                    xmlWriter.WriteElementString("ExpressionType",
-                        S3Transforms.ToXmlStringValue(selectObjectContentRequest.ExpressionType.Value));
-                    selectObjectContentRequest.InputSerialization.Marshall("InputSerialization", xmlWriter);
-                    selectObjectContentRequest.OutputSerialization.Marshall("OutputSerialization", xmlWriter);
-                    xmlWriter.WriteStartElement("RequestProgress");
-                    xmlWriter.WriteElementString("Enabled",
-                        selectObjectContentRequest.RequestProgress.GetValueOrDefault(false).ToString()
-                            .ToUpperInvariant());
-                    xmlWriter.WriteEndElement();
-                    if (selectObjectContentRequest.IsSetScanRange())
-                    {
-                        selectObjectContentRequest.ScanRange.Marshall("ScanRange", xmlWriter);
-                    }
-                    xmlWriter.WriteEndElement();
+                    selectObjectContentRequest.ScanRange.Marshall("ScanRange", xmlWriter);
                 }
+                xmlWriter.WriteEndElement();
+            }
 
-                try
-                {
-                    var content = stringWriter.ToString();
-                    request.Content = Encoding.UTF8.GetBytes(content);
-                    request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
+            try
+            {
+#if NETFRAMEWORK
+                var content = stringWriter.ToString();
+                request.Content = Encoding.UTF8.GetBytes(content);
+#endif
+                request.Headers[HeaderKeys.ContentTypeHeader] = "application/xml";
 
-                    ChecksumUtils.SetChecksumData(request);
-                }
-                catch (EncoderFallbackException e)
-                {
-                    throw new AmazonServiceException("Unable to marshall request to XML", e);
-                }
+                ChecksumUtils.SetChecksumData(request);
+            }
+            catch (EncoderFallbackException e)
+            {
+                throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
 
             return request;
